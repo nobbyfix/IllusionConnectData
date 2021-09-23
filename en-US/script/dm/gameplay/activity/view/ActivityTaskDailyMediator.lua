@@ -153,9 +153,13 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 			local name = taskData:getName()
 			local config = taskData:getConfig()
 			local taskId = config.Id
-			local titleText1 = panel:getChildByName("title_1")
+			local titleText1 = panel:getChildByFullName("Panel_1.title_1")
 
 			titleText1:setString(Strings:get(name))
+
+			if getCurrentLanguage() ~= GameLanguageType.CN then
+				titleText1:setString("")
+			end
 
 			local Image4 = panel:getChildByName("Image_4")
 
@@ -190,11 +194,13 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 
 				mark:addTo(panel):posite(378, 53)
 				mark:setName("TodoMark")
+				mark:setVisible(true)
 			elseif taskStatus == TaskStatus.kFinishNotGet then
 				local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-				btnGet:addTo(panel):posite(378, 39)
+				btnGet:addTo(panel):posite(362, 48)
 				btnGet:setName("TodoMark")
+				btnGet:setVisible(true)
 
 				local function callFunc()
 					self:onClickGetReward(subActivityId, taskId)
@@ -207,8 +213,9 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 			elseif taskStatus == TaskStatus.kUnfinish then
 				local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-				btnGo:addTo(panel):posite(378, 39)
+				btnGo:addTo(panel):posite(362, 48)
 				btnGo:setName("TodoMark")
+				btnGo:setVisible(true)
 			end
 
 			local rewards = taskData:getReward().Content

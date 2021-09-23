@@ -582,9 +582,9 @@ function ActivityCollapsedMainMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 

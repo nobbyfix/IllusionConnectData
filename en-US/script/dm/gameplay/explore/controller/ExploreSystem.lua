@@ -33,6 +33,7 @@ ExploreZombieState = {
 	kOpen = 1,
 	kHide = -1
 }
+ExploreCloseChooseId = "999"
 local MapOpenType = {
 	openType = 1
 }

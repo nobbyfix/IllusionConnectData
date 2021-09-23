@@ -180,7 +180,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.8,
 					position = {
 						x = 0,
-						y = -180,
+						y = -80,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -327,7 +327,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.8,
 					position = {
 						x = 0,
-						y = -180,
+						y = -80,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -409,7 +409,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.95,
 					position = {
 						x = 0,
-						y = -180,
+						y = -100,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -438,7 +438,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					scale = 0.95,
 					position = {
 						x = 0,
-						y = -180,
+						y = -100,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -787,10 +787,10 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -814,8 +814,8 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -868,7 +868,14 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 			actor = __getnode__(_root, "MLYTLSha_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
 				}
 			end
 		}),
@@ -946,7 +953,14 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 			actor = __getnode__(_root, "MLYTLSha_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
 				}
 			end
 		}),
@@ -1099,7 +1113,14 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 			actor = __getnode__(_root, "MLYTLSha_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
 				}
 			end
 		}),
@@ -1203,7 +1224,14 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 			actor = __getnode__(_root, "MLYTLSha_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
 				}
 			end
 		}),
@@ -1318,7 +1346,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.25,
+						scale = 0.9,
 						duration = 0.5
 					}
 				end
@@ -1331,7 +1359,7 @@ function scene_elitestory19_1a.actions.start_elitestory19_1a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 0.5,
 								y = -0.4

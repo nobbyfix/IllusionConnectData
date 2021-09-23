@@ -99,6 +99,7 @@ function ActivityTaskStageStarMediator:setupView()
 	self._buyPanel = self._rightPanel:getChildByFullName("buyDone")
 	self._notBuyPanel = self._rightPanel:getChildByFullName("notbuy")
 
+	AdjustUtils.adjustLayoutByType(self._rightPanel, AdjustUtils.kAdjustType.Right)
 	self:getView():getChildByFullName("cloneCell.panel_super.title"):setString(Strings:get("ACT_StageStar_Buytitle"))
 
 	local actBtnBuy = self._notBuyPanel:getChildByFullName("actBtnBuy")
@@ -161,7 +162,13 @@ end
 
 function ActivityTaskStageStarMediator:createTableView()
 	local size = self._cloneCell:getContentSize()
-	local tableView = cc.TableView:create(cc.size(655, 475))
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
+	local width = winSize.width - 299 - (winSize.width - 1136) / 2 - self._listView:getPositionX()
+
+	self._listView:setContentSize(cc.size(width, self._listView:getContentSize().height))
+
+	local tableView = cc.TableView:create(cc.size(width, 475))
 
 	local function numberOfCells(view)
 		return #self._taskList

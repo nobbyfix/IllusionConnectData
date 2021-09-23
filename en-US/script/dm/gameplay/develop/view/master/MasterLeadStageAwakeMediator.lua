@@ -182,12 +182,12 @@ function MasterLeadStageAwakeMediator:refreshView()
 		image:addTo(mc_di):offset(-150, 0)
 	end
 
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust2",
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe2_1",
 		id = self._masterData:getModel()
 	})
 
-	role:addTo(mc_role):offset(150, -200)
+	role:addTo(mc_role):offset(-400, -200)
 
 	local info = self._leadStageDetailConfig[self._curLeadStageLevel]
 	local allSkills = info.skills

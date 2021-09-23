@@ -301,10 +301,10 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -328,8 +328,8 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -686,7 +686,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0.05
@@ -703,7 +703,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -720,7 +720,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0.05
@@ -737,7 +737,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -786,7 +786,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0.05
@@ -803,7 +803,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -820,7 +820,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0.05
@@ -837,7 +837,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -958,7 +958,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1147,7 +1147,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1173,10 +1173,10 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1200,8 +1200,8 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -1315,7 +1315,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -1.5,
 							y = 0
@@ -1343,7 +1343,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1385,7 +1385,7 @@ function scene_story03_1a.actions.start_story03_1a(_root, args)
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = -1.5,
 							y = 0

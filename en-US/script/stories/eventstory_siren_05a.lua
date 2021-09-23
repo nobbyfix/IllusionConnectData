@@ -529,11 +529,11 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					modelId = "Model_JDCZhang",
 					id = "JDCZhang_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.75,
 					zorder = 6,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -557,8 +557,8 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -46,
-								y = 750.7
+								x = -68.5,
+								y = 1064
 							}
 						}
 					}
@@ -574,11 +574,11 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					modelId = "Model_HLMGen",
 					id = "HLMGen_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					zorder = 6,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -602,8 +602,8 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -35,
-								y = 718
+								x = -49,
+								y = 1130
 							}
 						}
 					}
@@ -1200,7 +1200,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.4,
 							y = 0.1
@@ -1217,7 +1217,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.45,
 							y = 0.2
@@ -1234,7 +1234,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.5,
 							y = 0.3
@@ -1251,7 +1251,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.55,
 							y = 0.2
@@ -1268,7 +1268,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.6,
 							y = 0.1
@@ -1285,7 +1285,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1302,7 +1302,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.7,
 							y = -0.1
@@ -1319,7 +1319,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.75,
 							y = -0.2
@@ -1336,7 +1336,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.8,
 							y = -0.3
@@ -1353,7 +1353,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 1.8,
 							y = -1.3
@@ -1377,7 +1377,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.7,
 							y = 0.1
@@ -1394,7 +1394,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0.2
@@ -1411,7 +1411,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.6,
 							y = 0.3
@@ -1428,7 +1428,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.55,
 							y = 0.2
@@ -1445,7 +1445,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0.1
@@ -1462,7 +1462,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1479,7 +1479,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.4,
 							y = -0.1
@@ -1496,7 +1496,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.35,
 							y = -0.2
@@ -1513,7 +1513,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = -0.3
@@ -1530,7 +1530,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = -0.7,
 							y = -1.3
@@ -1706,7 +1706,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.35,
 							y = -1
@@ -1723,7 +1723,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.75,
 							y = -1
@@ -1751,7 +1751,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.8,
 							y = -1
@@ -1768,7 +1768,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.8,
 							y = -0.3
@@ -1834,7 +1834,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.3,
 							y = -1
@@ -1851,7 +1851,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.3,
 							y = -0.3
@@ -2027,7 +2027,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 1,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = -0.5,
 							y = -0.3
@@ -2069,7 +2069,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = -0.5,
 							y = -0.3
@@ -2250,7 +2250,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -400,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -2267,7 +2267,7 @@ function scene_eventstory_siren_05a.actions.start_eventstory_siren_05a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -315,
+						y = -390,
 						refpt = {
 							x = 0.75,
 							y = 0

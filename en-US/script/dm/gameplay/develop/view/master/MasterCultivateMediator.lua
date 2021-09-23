@@ -289,13 +289,12 @@ function MasterCultivateMediator:refreshRole()
 
 		panel:removeAllChildren()
 
-		local role = IconFactory:createRoleIconSprite({
-			iconType = "Bust2",
+		local role = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe2_1",
 			id = self._masterData:getModel()
 		})
 
-		role:addTo(panel):posite(60, -130)
-		role:setScale(0.8)
+		role:addTo(panel):posite(-500, -220)
 
 		if self._masterData:getIsLock() then
 			role:setSaturation(-100)

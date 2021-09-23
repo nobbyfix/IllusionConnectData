@@ -228,10 +228,10 @@ function scene_HeroStory_KTSJKe_01a.actions.start_HeroStory_KTSJKe_01a(_root, ar
 					modelId = "Model_KTSJKe",
 					id = "KTSJKe_speak",
 					rotationX = 0,
-					scale = 1.035,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -255,8 +255,8 @@ function scene_HeroStory_KTSJKe_01a.actions.start_HeroStory_KTSJKe_01a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -54.5,
-								y = 988.5
+								x = 47,
+								y = 733
 							}
 						}
 					}
@@ -557,7 +557,7 @@ function scene_HeroStory_KTSJKe_01a.actions.start_HeroStory_KTSJKe_01a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -574,11 +574,11 @@ function scene_HeroStory_KTSJKe_01a.actions.start_HeroStory_KTSJKe_01a(_root, ar
 					modelId = "Model_Story_KTSJKe",
 					id = "KTSJKe_speak2",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.85,
 							y = 0

@@ -440,6 +440,7 @@ all.Skill_MLYDi_Passive = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_MLYDi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -487,6 +488,7 @@ all.Skill_MLYDi_Passive = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_MLYDi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -967,6 +969,7 @@ all.Skill_MLYDi_Passive_EX = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_MLYDi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -1014,6 +1017,7 @@ all.Skill_MLYDi_Passive_EX = {
 						tags = {
 							"STATUS",
 							"MURDERER",
+							"ABNORMAL",
 							"Skill_MLYDi_Passive",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"

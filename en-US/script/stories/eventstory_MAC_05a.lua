@@ -170,10 +170,10 @@ function scene_eventstory_MAC_05a.actions.start_eventstory_MAC_05a(_root, args)
 					modelId = "Model_ZTXCun",
 					id = "ZTXCun_speak",
 					rotationX = 0,
-					scale = 1.235,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.55,
 							y = -0.05
@@ -231,11 +231,11 @@ function scene_eventstory_MAC_05a.actions.start_eventstory_MAC_05a(_root, args)
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -252,14 +252,14 @@ function scene_eventstory_MAC_05a.actions.start_eventstory_MAC_05a(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -462,10 +462,10 @@ function scene_eventstory_MAC_05a.actions.start_eventstory_MAC_05a(_root, args)
 					modelId = "Model_CZheng",
 					id = "CZheng_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -445,
+						y = -430,
 						refpt = {
 							x = 0.325,
 							y = 0
@@ -596,7 +596,7 @@ function scene_eventstory_MAC_05a.actions.start_eventstory_MAC_05a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -445,
+							y = -430,
 							refpt = {
 								x = -0.5,
 								y = 0

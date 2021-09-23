@@ -159,10 +159,10 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu_speak",
 					rotationX = 0,
-					scale = 1.4,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -450,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -186,8 +186,8 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 73.5,
-								y = 691.5
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}
@@ -252,10 +252,10 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -279,8 +279,8 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -537,10 +537,10 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 					modelId = "Model_LLan",
 					id = "LLan_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -395,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -563,8 +563,8 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = -9.5,
-								y = 770.7
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -629,11 +629,11 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 					modelId = "Model_LCYShi",
 					id = "LCYShi_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.68,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -350,
+						y = -380,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -657,8 +657,8 @@ function scene_HeroStory_JNLong_04aend.actions.start_HeroStory_JNLong_04aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 49.4,
-								y = 746.2
+								x = 64.2,
+								y = 1144
 							}
 						}
 					}

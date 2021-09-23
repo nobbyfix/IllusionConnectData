@@ -1133,11 +1133,15 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 	local chapterInfo = self._model:getStageByStageIndex(self._stageIndex)
 	local chapterConfig = chapterInfo:getConfig()
 	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			self._activitySystem:requestDoChildActivity(self._activity:getId(), self._model:getId(), {
 				doActivityType = 106,
 				pointId = pointId
@@ -1163,7 +1167,20 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 		end
 
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
-		self._gallerySystem:setActivityStorySaveStatus(self._gallerySystem:getStoryIdByStoryLink(storyLink), true)
+		self._gallerySystem:setActivityStorySaveStatus(self._gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
+
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+		StatisticSystem:send({
+			op_type = "plot_activity",
+			point = "plot_end",
+			type = "plot_end",
+			activityid = self._activity:getTitle(),
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs
+		})
 	end
 
 	local storyAgent = storyDirector:getStoryAgent()
@@ -1272,6 +1289,18 @@ function ActivityMapNewMediator:onClickAditionButton()
 end
 
 function ActivityMapNewMediator:onClickStory()
+	local unlock, tips = self._gallerySystem:checkEnabled()
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+
+		return
+	end
+
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
 	local view = self:getInjector():getInstance("GalleryMemoryPackView")

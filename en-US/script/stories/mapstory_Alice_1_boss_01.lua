@@ -57,10 +57,10 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -84,8 +84,8 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -109,10 +109,10 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 					modelId = "Model_ATSheng",
 					id = "ATSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -240,
+						y = -230,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -136,8 +136,8 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = -31,
-								y = 683
+								x = -38.5,
+								y = 958
 							}
 						}
 					}
@@ -161,10 +161,10 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -325,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -188,8 +188,8 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -213,10 +213,10 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 					modelId = "Model_ALSi",
 					id = "ALSi_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.57,
 					position = {
 						x = 0,
-						y = -120,
+						y = -175,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -240,8 +240,8 @@ function scene_mapstory_Alice_1_boss_01.actions.start_mapstory_Alice_1_boss_01(_
 								y = 0.5
 							},
 							position = {
-								x = 13.3,
-								y = 525.5
+								x = 19.5,
+								y = 806.9
 							}
 						}
 					}

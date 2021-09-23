@@ -72,14 +72,12 @@ function ShopBuySurfaceMediator:refreshView()
 	self._iconPanel:removeAllChildren()
 
 	local roleModel = self._itemData:getModel()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust16",
-		id = roleModel,
-		size = cc.size(375, 446)
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe16",
+		id = roleModel
 	})
 
-	img:addTo(self._iconPanel):center(self._iconPanel:getContentSize()):offset(0, -90)
+	img:addTo(self._iconPanel):center(self._iconPanel:getContentSize())
 	self._surfaceName:setString(self._itemData:getName())
 	self._listView:removeAllChildren()
 	self._listView:setScrollBarEnabled(false)

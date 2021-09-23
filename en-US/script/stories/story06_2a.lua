@@ -404,10 +404,10 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -431,8 +431,8 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -549,7 +549,7 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.9,
 							y = 0
@@ -601,7 +601,7 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 0.85,
 								y = 0
@@ -664,7 +664,7 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -882,7 +882,7 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 				actor = __getnode__(_root, "MLYTLSha_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.4
+						duration = 0
 					}
 				end
 			}),
@@ -891,10 +891,17 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 				actor = __getnode__(_root, "BLTu_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.4
+						duration = 0
 					}
 				end
 			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
 		}),
 		act({
 			action = "hide",
@@ -953,10 +960,10 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -980,8 +987,8 @@ function scene_story06_2a.actions.start_story06_2a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -1234,7 +1241,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 				actor = __getnode__(_root, "FEMSi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			}),
@@ -1243,7 +1250,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 				actor = __getnode__(_root, "HSheng_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			})
@@ -1256,7 +1263,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1364,7 +1371,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -1444,7 +1451,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 			actor = __getnode__(_root, "FEMSi_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -1456,7 +1463,7 @@ function scene_story06_2a.actions.start_story06_2b(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1487,7 +1494,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0.05
@@ -1504,7 +1511,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1521,7 +1528,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0.05
@@ -1538,7 +1545,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1598,7 +1605,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 			actor = __getnode__(_root, "FEMSi_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -1610,7 +1617,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -1709,7 +1716,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -1721,7 +1728,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1743,7 +1750,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 				actor = __getnode__(_root, "HSheng_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.18,
+						scale = 0.8,
 						duration = 0.5
 					}
 				end
@@ -1756,7 +1763,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -330,
+							y = -260,
 							refpt = {
 								x = 0.5,
 								y = -0.15
@@ -1804,7 +1811,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 				actor = __getnode__(_root, "HSheng_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.05,
+						scale = 0.75,
 						duration = 0.5
 					}
 				end
@@ -1817,7 +1824,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -330,
+							y = -260,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1835,7 +1842,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1852,7 +1859,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1869,7 +1876,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1886,7 +1893,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1952,7 +1959,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.85,
 							y = 0
@@ -1966,7 +1973,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 			actor = __getnode__(_root, "HSheng_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -2053,7 +2060,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 				actor = __getnode__(_root, "FEMSi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			}),
@@ -2062,7 +2069,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 				actor = __getnode__(_root, "ZTXChang_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			})
@@ -2102,7 +2109,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 			actor = __getnode__(_root, "HSheng_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -2125,7 +2132,7 @@ function scene_story06_2a.actions.start_story06_2c(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -2300,7 +2307,7 @@ function scene_story06_2a.actions.start_story06_2d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -2317,7 +2324,7 @@ function scene_story06_2a.actions.start_story06_2d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2334,7 +2341,7 @@ function scene_story06_2a.actions.start_story06_2d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -2351,7 +2358,7 @@ function scene_story06_2a.actions.start_story06_2d(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2414,7 +2421,7 @@ function scene_story06_2a.actions.start_story06_2e(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -2595,7 +2602,7 @@ function scene_story06_2a.actions.start_story06_2f(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -2814,7 +2821,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "FEMSi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			}),
@@ -2823,7 +2830,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "HSheng_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			})
@@ -2902,7 +2909,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -2973,7 +2980,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -2986,10 +2993,10 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					modelId = "Model_KTSJKe",
 					id = "KTSJKe_speak",
 					rotationX = 0,
-					scale = 1.035,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -3044,7 +3051,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.7,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = -1,
 							y = 0
@@ -3175,7 +3182,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3232,7 +3239,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.9,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 3.5,
 							y = 3.5
@@ -3343,7 +3350,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -3404,7 +3411,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "FEMSi_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -3437,7 +3444,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -3459,7 +3466,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "ZTXChang_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.35,
+						scale = 0.7,
 						duration = 0.3
 					}
 				end
@@ -3472,7 +3479,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -368,
+							y = -270,
 							refpt = {
 								x = 0.6,
 								y = -0.3
@@ -3535,7 +3542,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "ZTXChang_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.08,
+						scale = 0.6,
 						duration = 0.2
 					}
 				end
@@ -3548,7 +3555,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -368,
+							y = -270,
 							refpt = {
 								x = 0.6,
 								y = 0
@@ -3644,7 +3651,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -3656,7 +3663,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3724,7 +3731,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -3855,7 +3862,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "FEMSi_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			}),
@@ -3864,7 +3871,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 				actor = __getnode__(_root, "HSheng_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.1
+						duration = 0
 					}
 				end
 			})
@@ -3915,7 +3922,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -3927,7 +3934,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -330,
+						y = -260,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -3971,7 +3978,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "HSheng_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -3994,7 +4001,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -4042,7 +4049,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -4144,7 +4151,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "HSheng_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -4161,10 +4168,10 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					modelId = "Model_MGNa",
 					id = "MGNa_speak",
 					rotationX = 0,
-					scale = 1.115,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 1.75,
 							y = 0
@@ -4201,7 +4208,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -4226,7 +4233,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -375,
+							y = -440,
 							refpt = {
 								x = 1,
 								y = 0
@@ -4315,7 +4322,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -4397,7 +4404,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 			actor = __getnode__(_root, "FEMSi_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0
 				}
 			end
 		}),
@@ -4499,7 +4506,7 @@ function scene_story06_2a.actions.start_story06_2g(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -540,
+						y = -260,
 						refpt = {
 							x = 1.5,
 							y = 0

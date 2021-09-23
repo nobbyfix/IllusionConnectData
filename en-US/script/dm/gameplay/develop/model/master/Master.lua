@@ -934,7 +934,7 @@ function Master:getMaxStar()
 end
 
 function Master:getImage()
-	local sprite = IconFactory:createRoleIconSprite({
+	local sprite = IconFactory:createRoleIconSpriteNew({
 		iconType = 2,
 		id = self:getModel()
 	})
@@ -947,11 +947,9 @@ function Master:getImage()
 end
 
 function Master:getHalfImage()
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = self:getModel(),
-		size = cc.size(190, 273)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_2",
+		id = self:getModel()
 	})
 
 	sprite:setAnchorPoint(cc.p(0, 0))

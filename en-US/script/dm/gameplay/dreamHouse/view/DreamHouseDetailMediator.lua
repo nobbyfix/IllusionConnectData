@@ -389,7 +389,7 @@ function DreamHouseDetailMediator:setupBattleCell(cell, idx)
 	local masterId = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "EnemyMaster")
 	local roleId = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterId, "HeroShow")
 	local model = IconFactory:getRoleModelByKey("HeroBase", roleId)
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = model
 	})
 
@@ -697,7 +697,7 @@ function DreamHouseDetailMediator:refreshBattleInfo()
 						id = IconFactory:getRoleModelByKey("HeroBase", key)
 					}
 					preStr = Strings:get(ConfigReader:getDataByNameIdAndKey("HeroBase", key, "Name"))
-					local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+					local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 					headImgName:setScale(0.2)
 

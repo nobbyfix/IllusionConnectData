@@ -87,6 +87,36 @@ end
 function scene_LLanDate03.actions.start_LLanDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -125,11 +155,11 @@ function scene_LLanDate03.actions.start_LLanDate03(_root, args)
 					modelId = "Model_LLan",
 					id = "LLan_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.72,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -465,
+						y = -390,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -153,8 +183,8 @@ function scene_LLanDate03.actions.start_LLanDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 771
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -1503,7 +1533,7 @@ function scene_LLanDate03.actions.start_LLanDate03p(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -465,
+						y = -390,
 						refpt = {
 							x = 1.5,
 							y = 0

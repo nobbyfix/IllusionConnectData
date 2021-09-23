@@ -194,11 +194,11 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 					modelId = "Model_Story_YYing",
 					id = "YYing_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.8,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -222,8 +222,8 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 915
+								x = -2.7,
+								y = 914
 							}
 						}
 					}
@@ -283,7 +283,7 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 					zorder = 8,
 					position = {
 						x = 0,
-						y = -370,
+						y = -500,
 						refpt = {
 							x = 0.8,
 							y = -0.05
@@ -307,8 +307,8 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -14,
-								y = 792
+								x = -13.3,
+								y = 795.2
 							}
 						}
 					}
@@ -464,7 +464,7 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -400,
+						y = -475,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -488,8 +488,8 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 13,
-								y = 830
+								x = 18.4,
+								y = 835.5
 							}
 						}
 					}
@@ -537,39 +537,26 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 				}
 			end
 		}),
-		concurrent({
-			act({
-				action = "changeTexture",
-				actor = __getnode__(_root, "YYing_face"),
-				args = function (_ctx)
-					return {
-						resType = 0,
-						image = "YYing/YYing_face_4.png",
-						pathType = "STORY_FACE"
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "dialog_speak_name_233",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YYing_speak"
+					},
+					content = {
+						"eventstory_zuohe_01a_8"
+					},
+					durations = {
+						0.03
 					}
-				end
-			}),
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						name = "dialog_speak_name_233",
-						dialogImage = "jq_dialogue_bg_1.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							"YYing_speak"
-						},
-						content = {
-							"eventstory_zuohe_01a_8"
-						},
-						durations = {
-							0.03
-						}
-					}
-				end
-			})
+				}
+			end
 		}),
 		concurrent({
 			act({
@@ -608,11 +595,11 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -629,14 +616,14 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -651,13 +638,13 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 					modelId = "Model_ZTXCun",
 					id = "ZTXCun_speak",
 					rotationX = 0,
-					scale = 1.235,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.55,
-							y = -0.05
+							y = 0
 						}
 					}
 				}
@@ -1043,7 +1030,7 @@ function scene_eventstory_zuohe_01a.actions.start_eventstory_zuohe_01a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_5.png",
+					image = "YYing/YYing_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end

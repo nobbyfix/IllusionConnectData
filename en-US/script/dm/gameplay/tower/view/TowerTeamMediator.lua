@@ -184,12 +184,10 @@ function TowerTeamMediator:setMasterView()
 	end)
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust4",
-		id = self._masterData:getModel(),
-		size = cc.size(340.17, 337)
+		frameId = "bustframe4_3",
+		id = self._masterData:getModel()
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))
 	masterIcon:setPosition(cc.p(0, 0))
@@ -718,7 +716,7 @@ function TowerTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 

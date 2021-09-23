@@ -179,10 +179,10 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -206,8 +206,8 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -263,7 +263,7 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.1,
 							y = 0
@@ -312,11 +312,11 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -430,
+						y = -360,
 						refpt = {
 							x = 0.725,
 							y = 0
@@ -336,12 +336,12 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 							visible = true,
 							id = "YLMGZhu_face",
 							anchorPoint = {
-								x = 0.7,
-								y = 0.1
+								x = 0.5,
+								y = 0.5
 							},
 							position = {
-								x = 88,
-								y = 663
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}
@@ -492,7 +492,7 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					duration = 0.75,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.05,
 							y = 0
@@ -573,7 +573,7 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					duration = 0.75,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -743,7 +743,7 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.1,
 							y = 0
@@ -1034,10 +1034,10 @@ function scene_elitestory17_1a.actions.start_elitestory17_1a(_root, args)
 					modelId = "Model_SLMen",
 					id = "SLMen_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -285,
+						y = -250,
 						refpt = {
 							x = 0.75,
 							y = 0

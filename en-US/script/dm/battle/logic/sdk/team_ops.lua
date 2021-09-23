@@ -18,10 +18,10 @@ local function excludeTarget(env, target, joinReferee)
 	return target
 end
 
-local function forceFleeTarget(env, target)
+local function forceFleeTarget(env, target, joinReferee)
 	local formationSystem = env.global["$FormationSystem"]
 
-	if not formationSystem:fleeUnit(target, env["$id"], true) then
+	if not formationSystem:fleeUnit(target, env["$id"], true, joinReferee) then
 		return nil
 	end
 
@@ -91,14 +91,14 @@ function exports.Flee(env, duration, target)
 	return true
 end
 
-function exports.ForceFlee(env, duration)
+function exports.ForceFlee(env, duration, joinReferee)
 	local target = env["$actor"]
 
 	if target == nil then
 		return false
 	end
 
-	local unit = forceFleeTarget(env, target)
+	local unit = forceFleeTarget(env, target, joinReferee)
 
 	if unit == nil then
 		return false

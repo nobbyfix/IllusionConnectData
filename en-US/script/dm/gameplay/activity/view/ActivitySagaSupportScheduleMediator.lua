@@ -244,7 +244,7 @@ function ActivitySagaSupportScheduleMediator:updateCell(data)
 		local d = {
 			id = heroData.ModelId
 		}
-		heroImg = IconFactory:createRoleIconSprite(d)
+		heroImg = IconFactory:createRoleIconSpriteNew(d)
 
 		heroImg:setScale(0.6)
 		heroImg:addTo(rolePanel):posite(50, 45)

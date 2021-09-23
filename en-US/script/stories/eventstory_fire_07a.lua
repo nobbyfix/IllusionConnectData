@@ -259,11 +259,11 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -287,8 +287,8 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -377,14 +377,14 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 			args = function (_ctx)
 				return {
 					brightness = -255,
-					modelId = "Model_Story_ZTXChang",
+					modelId = "Model_ZTXChang",
 					id = "ZTXChangHHH",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -412,10 +412,10 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 					modelId = "Model_YDZZong",
 					id = "FTW",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -460,
+						y = -350,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -442,10 +442,10 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 					modelId = "Model_YDZZong",
 					id = "FTW2",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -460,
+						y = -350,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -472,10 +472,10 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 					modelId = "Model_YDZZong",
 					id = "FTW3",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -460,
+						y = -350,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -502,7 +502,7 @@ function scene_eventstory_fire_07a.actions.start_eventstory_fire_07a(_root, args
 					modelId = "Model_YDZZong",
 					id = "FTW4",
 					rotationX = 0,
-					scale = 1.1,
+					scale = 0.7,
 					position = {
 						x = 0,
 						y = -450,

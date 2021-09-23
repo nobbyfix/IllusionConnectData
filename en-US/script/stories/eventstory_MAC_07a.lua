@@ -199,11 +199,11 @@ function scene_eventstory_MAC_07a.actions.start_eventstory_MAC_07a(_root, args)
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.68,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -225,8 +225,8 @@ function scene_eventstory_MAC_07a.actions.start_eventstory_MAC_07a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -19.9,
-								y = 601
+								x = 6.1,
+								y = 714.8
 							}
 						}
 					}
@@ -832,10 +832,10 @@ function scene_eventstory_MAC_07a.actions.start_eventstory_MAC_07a(_root, args)
 					modelId = "Model_SSQXin",
 					id = "SSQXin_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.66,
 					position = {
 						x = 0,
-						y = -310,
+						y = -280,
 						refpt = {
 							x = 0.25,
 							y = 0

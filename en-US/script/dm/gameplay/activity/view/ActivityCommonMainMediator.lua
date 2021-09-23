@@ -227,6 +227,27 @@ function ActivityCommonMainMediator:enterWithData(data)
 	self:initData()
 	self:initView()
 	self:setStageView()
+	self:showStoryReward(data.rewards)
+end
+
+function ActivityCommonMainMediator:showStoryReward(rewards)
+	if not rewards then
+		return
+	end
+
+	local delegate = {}
+	local outSelf = self
+
+	function delegate:willClose(popupMediator, data)
+	end
+
+	local view = self:getInjector():getInstance("getRewardView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		maskOpacity = 0
+	}, {
+		rewards = rewards
+	}, delegate))
 end
 
 function ActivityCommonMainMediator:resumeWithData()
@@ -424,6 +445,31 @@ function ActivityCommonMainMediator:initInfo()
 		end
 	end
 
+	if ui == ActivityType_UI.KActivityAnimal and getCurrentLanguage() ~= GameLanguageType.CN then
+		local titles = {
+			"title",
+			"title_0",
+			"title_1"
+		}
+
+		for i, v in ipairs(titles) do
+			local title = self._stagePanel:getChildByName(v)
+
+			if title then
+				title:setString("")
+			end
+		end
+
+		local title = self._stagePanel:getChildByName("title_0")
+
+		if title then
+			title:setAnchorPoint(0.5, 0.5)
+			title:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			title:setString(Strings:get("ActivityBlock_Animal_Map_Name_1_1"))
+			title:setPositionX(200)
+		end
+	end
+
 	if self._voteBtn then
 		self._voteBtn:setVisible(self._activity:isVote())
 	end
@@ -597,9 +643,9 @@ function ActivityCommonMainMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 

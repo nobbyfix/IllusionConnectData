@@ -397,6 +397,7 @@ function TaskSystem:requestTaskList(params, callback, mediator, blockUI)
 	taskService:requestTaskList(params, blockUI, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:getTaskListModel():synchronizeModel(response.data)
+			self:dispatch(Event:new(EVT_TASK_REFRESHVIEW, {}))
 
 			if mediator and DisposableObject:isDisposed(mediator) then
 				return

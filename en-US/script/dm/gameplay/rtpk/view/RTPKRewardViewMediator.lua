@@ -319,7 +319,9 @@ function RTPKRewardViewMediator:addRankGradePanel(cell, index)
 	bg2:setVisible(index % 2 ~= 0)
 
 	local gradeIndex = info.GradePic
-	local icon = IconFactory:createRTPKGradeIcon(info.Id)
+	local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+		hideName = true
+	})
 
 	icon:setScale(0.25)
 	rankIcon:removeAllChildren()

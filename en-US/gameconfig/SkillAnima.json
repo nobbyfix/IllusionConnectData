@@ -15798,6 +15798,652 @@
             }
         ]
     },
+    "Master_BiLei_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
+    "Master_BiLei_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 38
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 41
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 44
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 48
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 51
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 57
+            }
+        ]
+    },
+    "Master_BiLei_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 6,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 36
+            }
+        ]
+    },
+    "Master_BiLei_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill4"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_Buff",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 48
+            }
+        ]
+    },
+    "Master_BiLei_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
+    "Master_BiLei_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 38
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 41
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 44
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 48
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 51
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 57
+            }
+        ]
+    },
+    "Master_BiLei_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 6,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 36
+            }
+        ]
+    },
+    "Master_BiLei_3_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_BLei_Skill4"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_Buff",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 48
+            }
+        ]
+    },
     "Master_BiLei_skill1": {
         "events": [
             {
@@ -16366,6 +17012,496 @@
             }
         ]
     },
+    "Master_FuHun_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Steam_Gun_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            }
+        ]
+    },
+    "Master_FuHun_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill2"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_Impact_13",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 54
+            }
+        ]
+    },
+    "Master_FuHun_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Energy_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_Buff",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 39
+            }
+        ]
+    },
+    "Master_FuHun_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill4"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Chain_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 37
+            }
+        ]
+    },
+    "Master_FuHun_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Steam_Gun_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            }
+        ]
+    },
+    "Master_FuHun_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill2"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_Impact_13",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 54
+            }
+        ]
+    },
+    "Master_FuHun_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Energy_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shield_Buff",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 14
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 39
+            }
+        ]
+    },
+    "Master_FuHun_3_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_FHun_Skill4"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Chain_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 37
+            }
+        ]
+    },
     "Master_FuHun_skill1": {
         "events": [
             {
@@ -16740,6 +17876,13 @@
                             "rate": 1
                         },
                         "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill2"
+                        },
+                        "e": "skillMovie"
                     }
                 ],
                 "f": 0
@@ -16849,6 +17992,18 @@
                 "evts": [
                     {
                         "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_Spell_6",
                             "rate": 1
                         },
@@ -16909,7 +18064,7 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt1"
+                            "act": "hurt"
                         },
                         "e": "hit"
                     },
@@ -16929,6 +18084,651 @@
         "events": [
             {
                 "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill4"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Whoosh_9",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "Master_LieSha_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shoot",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gun",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            }
+        ]
+    },
+    "Master_LieSha_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gather",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Energy_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_9",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 31
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 36
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 45
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 54
+            }
+        ]
+    },
+    "Master_LieSha_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spell_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 26
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gun_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 45
+            }
+        ]
+    },
+    "Master_LieSha_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill4"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Whoosh_9",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "Master_LieSha_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Shoot",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gun",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            }
+        ]
+    },
+    "Master_LieSha_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gather",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Energy_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_9",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 31
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 36
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 1,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 45
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit1"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 54
+            }
+        ]
+    },
+    "Master_LieSha_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spell_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 26
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Gun_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 34
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    },
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 45
+            }
+        ]
+    },
+    "Master_LieSha_3_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_LSha_Skill4"
+                        },
+                        "e": "skillMovie"
+                    },
                     {
                         "d": {
                             "file": "Se_Skill_Whoosh_9",
@@ -17465,6 +19265,550 @@
         ]
     },
     "Master_SenLing_1_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill4_F"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill4_B"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spell_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_19",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 35
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 12
+            }
+        ]
+    },
+    "Master_SenLing_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill2"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Branch_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 42
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill3_F"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill3_B"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_Impact_13",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 38
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Forest",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 42
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill4_F"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill4_B"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spell_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 17
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_19",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 35
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 12
+            }
+        ]
+    },
+    "Master_SenLing_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill2"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_6",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Branch_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 27
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 42
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    },
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill3_F"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_SLing_Skill3_B"
+                        },
+                        "e": "skillMovie"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Magic_Impact_13",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 38
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Wood_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Forest",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 42
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 2,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 51
+            }
+        ]
+    },
+    "Master_SenLing_3_skill4": {
         "events": [
             {
                 "evts": [
@@ -18185,6 +20529,834 @@
         ]
     },
     "Master_XueZhan_1_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill4"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_7",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 41
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Explode_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 44
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 5,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 56
+            }
+        ]
+    },
+    "Master_XueZhan_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_11",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "Master_XueZhan_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_7",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spear_Sharp",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 6,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 45
+            }
+        ]
+    },
+    "Master_XueZhan_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Lance_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "Master_XueZhan_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill4"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_7",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 41
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Explode_5",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 44
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 5,
+                            "type": 3
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 56
+            }
+        ]
+    },
+    "Master_XueZhan_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_11",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "Master_XueZhan_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill2"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_10",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Cut_7",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_4",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 4
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Buff_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 22
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Spear_Sharp",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 30
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Laser_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 39
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 6,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 43
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt"
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 45
+            }
+        ]
+    },
+    "Master_XueZhan_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Sword_Spirit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "act": "start",
+                            "id": "Movie_XZhan_Skill3"
+                        },
+                        "e": "skillMovie"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Lance_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "force": 3,
+                            "type": 5
+                        },
+                        "e": "rockScreen"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "Master_XueZhan_3_skill4": {
         "events": [
             {
                 "evts": [
@@ -32948,6 +36120,126 @@
             }
         ]
     },
+    "ameng_animal_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TTKMeng_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TTKMeng_Animal_Sand_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 6
+            }
+        ]
+    },
+    "ameng_animal_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TTKMeng_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TTKMeng_Animal_Sand_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            }
+        ]
+    },
+    "ameng_animal_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_TTKMeng_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TTKMeng_Animal_Sand_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 21
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_TTKMeng_Animal_Sand_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 20
+            }
+        ]
+    },
     "amlya_skill1": {
         "events": [
             {
@@ -36025,6 +39317,162 @@
                     }
                 ],
                 "f": 38
+            }
+        ]
+    },
+    "hdi_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_HLa_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HLa_Sickle_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "hdi_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_HLa_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HLa_Sickle_Magic_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HLa_Dog",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 20
+            }
+        ]
+    },
+    "hdi_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_HLa_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HLa_Sickle_Magic_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HLa_Sickle_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 29
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 36
             }
         ]
     },
@@ -39348,6 +42796,150 @@
             }
         ]
     },
+    "ltnan_animal_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SLMen_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SLMen_Animal_Water_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 12
+            }
+        ]
+    },
+    "ltnan_animal_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SLMen_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SLMen_Animal_Water_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 10
+            }
+        ]
+    },
+    "ltnan_animal_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SLMen_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 29
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SLMen_Animal_Water_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 39
+            }
+        ]
+    },
     "lwang_black_skill1": {
         "events": [
             {
@@ -39817,6 +43409,678 @@
                     }
                 ],
                 "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_2_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_2_skill1_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_2_skill1_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_2_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_2_skill2_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_2_skill2_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_2_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_2_skill3_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_2_skill3_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_2_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "master_lmzfu_2_skill4_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "master_lmzfu_2_skill4_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "master_lmzfu_3_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_3_skill1_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_3_skill1_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Chop_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 13
+            }
+        ]
+    },
+    "master_lmzfu_3_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 7
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_3_skill2_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_3_skill2_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Smash_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 8
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "down",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 17
+            }
+        ]
+    },
+    "master_lmzfu_3_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_3_skill3_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_3_skill3_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Explode_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "master_lmzfu_3_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "master_lmzfu_3_skill4_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            }
+        ]
+    },
+    "master_lmzfu_3_skill4_3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 10
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_MLady_Axe_Magic_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
             }
         ]
     },
@@ -42623,6 +46887,173 @@
                 "f": 27
             }
         ]
+    },
+    "sfei_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XDE_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 5
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "sfei_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XDE_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 20
+            }
+        ]
+    },
+    "sfei_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XDE_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 23
+            }
+        ]
+    },
+    "sfei_skill3_1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_XDE_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Whoosh_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            }
+        ]
+    },
+    "sfei_skill3_2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_XDE_Particle_Whoosh_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            }
+        ]
+    },
+    "sfei_skill3_3": {
+        "events": []
     },
     "skong_skill1": {
         "events": [

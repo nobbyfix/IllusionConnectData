@@ -179,11 +179,11 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 					modelId = "Model_DFQi",
 					id = "DFQi_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -260,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -207,8 +207,8 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 								y = 0.5
 							},
 							position = {
-								x = 9.5,
-								y = 688.5
+								x = 6.2,
+								y = 835
 							}
 						}
 					}
@@ -294,11 +294,11 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -321,8 +321,8 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 								y = 0.5
 							},
 							position = {
-								x = -19.9,
-								y = 601
+								x = 6.1,
+								y = 714.8
 							}
 						}
 					}
@@ -399,7 +399,7 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -416,7 +416,7 @@ function scene_HeroStory_ZZBBWei_01aend.actions.start_HeroStory_ZZBBWei_01aend(_
 					duration = 0,
 					position = {
 						x = 0,
-						y = -260,
+						y = -250,
 						refpt = {
 							x = 0.75,
 							y = 0

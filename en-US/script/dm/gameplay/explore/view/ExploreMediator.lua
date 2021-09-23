@@ -380,7 +380,13 @@ function ExploreMediator:setupView(ignoreAnim)
 			name4:setOverflow(cc.LabelOverflow.SHRINK)
 			name4:setDimensions(200, 160)
 
-			if language ~= GameLanguageType.CN then
+			if language == GameLanguageType.FR or language == GameLanguageType.TH or language == GameLanguageType.ES or language == GameLanguageType.DE then
+				name1:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.VERTICAL_TEXT_ALIGNMENT_BOTTOM)
+				name1:setAnchorPoint(cc.p(0.5, 0))
+				name1:posite(50, -6)
+				name2:setLineSpacing(-30)
+				name2:setAdditionalKerning(-10)
+			elseif language ~= GameLanguageType.CN then
 				name2:setLineSpacing(-30)
 				name2:setAdditionalKerning(-10)
 

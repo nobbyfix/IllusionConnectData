@@ -139,11 +139,11 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 					modelId = "Model_LDu",
 					id = "LDu_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.74,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -350,
+						y = -400,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -167,8 +167,8 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 11.5,
-								y = 774.5
+								x = -30.5,
+								y = 1089
 							}
 						}
 					}
@@ -327,7 +327,14 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 			actor = __getnode__(_root, "LDu_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.25
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
 				}
 			end
 		}),
@@ -339,11 +346,11 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -367,8 +374,8 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -424,11 +431,11 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -452,11 +459,27 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "CLMan_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
 				}
 			end
 		}),
@@ -473,15 +496,6 @@ function scene_blockstory01_4end.actions.start_blockstory01_4end(_root, args)
 			act({
 				action = "fadeIn",
 				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.25
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "CLMan_speak"),
 				args = function (_ctx)
 					return {
 						duration = 0.25

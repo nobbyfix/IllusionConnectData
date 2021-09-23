@@ -222,15 +222,14 @@ end
 function GalleryDateMediator:initView()
 	self._heroPanel:removeAllChildren()
 
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = self._heroData:getModel()
 	})
 
 	self._heroPanel:addChild(img)
-	img:setAnchorPoint(cc.p(0.5, 0.5))
-	img:setPosition(cc.p(self._heroPanel:getContentSize().width / 2 + 50, self._heroPanel:getContentSize().height / 2 - 150))
+	img:setPosition(cc.p(self._heroPanel:getContentSize().width / 2 + 50, self._heroPanel:getContentSize().height / 2 - 110))
 	self:doViewSound()
 
 	if self._type == GalleryFuncName.kGift then
@@ -832,7 +831,7 @@ function GalleryDateMediator:refreshLove()
 		fullBgEnd:setVisible(data.proportion == 1)
 
 		local heroNode = rewardTip:getChildByFullName("hero")
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = self._heroData:getModel()
 		})
 

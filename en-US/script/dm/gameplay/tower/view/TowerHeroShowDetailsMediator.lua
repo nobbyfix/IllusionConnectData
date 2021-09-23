@@ -97,13 +97,12 @@ function TowerHeroShowDetailsMediator:initView()
 	end)
 
 	self._roleNode = self._mainPanel:getChildByName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
+	local realImage = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = self._heroData:getModel()
 	})
 
-	realImage:setAnchorPoint(0.5, 0.5)
 	realImage:setPosition(cc.p(125, -155))
 	self._roleNode:addChild(realImage)
 

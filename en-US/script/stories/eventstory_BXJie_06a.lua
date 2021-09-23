@@ -201,11 +201,11 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06a(_root, ar
 						modelId = "Model_LLan",
 						id = "LLan_speak",
 						rotationX = 0,
-						scale = 1.05,
+						scale = 0.72,
 						zorder = 2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -229,8 +229,8 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -10,
-									y = 770
+									x = -23.5,
+									y = 1095
 								}
 							}
 						}

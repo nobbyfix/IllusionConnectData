@@ -32,6 +32,8 @@ function ActivityTaskAchievementMediator:onRegister()
 	self._cellPanel:setVisible(false)
 	self._cloneNode:getChildByFullName("btn_get"):setSwallowTouches(false)
 	self._cloneNode:getChildByFullName("btn_go"):setSwallowTouches(false)
+	self._cellPanel:getChildByFullName("cell.process.loadingBar"):setScale9Enabled(true)
+	self._cellPanel:getChildByFullName("cell.process.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self:adjustView()
 end
 
@@ -220,13 +222,15 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		if taskStatus == TaskStatus.kGet then
 			local mark = self._cloneNode:getChildByFullName("doneanim"):clone()
 
-			mark:addTo(panel)
+			mark:addTo(panel):posite(810, 45)
 			mark:setName("TodoMark")
+			mark:setVisible(true)
 		elseif taskStatus == TaskStatus.kFinishNotGet then
 			local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-			btnGet:addTo(panel)
+			btnGet:addTo(panel):posite(810, 45)
 			btnGet:setName("TodoMark")
+			btnGet:setVisible(true)
 
 			local function callFunc()
 				self:onClickGetReward(subActivityId, taskData)
@@ -239,8 +243,9 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		elseif taskStatus == TaskStatus.kUnfinish then
 			local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-			btnGo:addTo(panel)
+			btnGo:addTo(panel):posite(810, 45)
 			btnGo:setName("TodoMark")
+			btnGo:setVisible(true)
 		end
 
 		local rewards = taskData:getReward().Content

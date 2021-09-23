@@ -89,10 +89,10 @@ function FirstRechargeMediator:setupView()
 
 	self._title = self._main:getChildByName("decs")
 	self._heroName = self._main:getChildByName("heroName")
-	self._hero = IconFactory:createRoleIconSprite({
+	self._hero = IconFactory:createRoleIconSpriteNew({
 		id = "Model_ZZBBWei",
 		useAnim = true,
-		iconType = 6
+		frameId = "bustframe9"
 	})
 	local heroName = ConfigReader:getDataByNameIdAndKey("HeroBase", "ZZBBWei", "Name")
 

@@ -320,6 +320,10 @@ function LoginSystem:requestPlayerInfo(callback)
 				local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
 
 				monthSignInSystem:syncTodayReward()
+
+				local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+				surfaceSystem:initSurfaceCustomData()
 			else
 				local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 

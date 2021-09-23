@@ -45,6 +45,10 @@ local timeLimitShopConfig = {
 	storybook = {
 		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
 	},
+	xide = {
+		BG = "jqtd_txt_typl_di",
+		TimeOutLineColor = cc.c4b(186, 51, 20, 255)
+	},
 	deepsea = {
 		TimeOutLineColor = cc.c4b(1, 6, 187, 255),
 		bgSize = cc.size(1136, 640)
@@ -75,6 +79,10 @@ local timeLimitShopConfig = {
 	riddle = {
 		BG = "jqtd_txt_zhyazl_di",
 		TimeOutLineColor = cc.c4b(105, 0, 106, 255)
+	},
+	animal = {
+		BG = "jqtd_txt_zwzj_di",
+		TimeOutLineColor = cc.c4b(164, 116, 91, 255)
 	}
 }
 local btnHandlers = {

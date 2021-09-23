@@ -161,9 +161,9 @@ function ClubApplyMediator:refreshView()
 end
 
 function ClubApplyMediator:refreshNotHasView()
-	local rolePic = IconFactory:createRoleIconSprite({
+	local rolePic = IconFactory:createRoleIconSpriteNew({
 		id = "Model_MGNa",
-		iconType = 6
+		frameId = "bustframe9"
 	})
 
 	rolePic:setScale(0.7)

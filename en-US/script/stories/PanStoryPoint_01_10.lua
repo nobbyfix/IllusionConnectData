@@ -162,10 +162,10 @@ function scene_PanStoryPoint_01_10.actions.start_PanStoryPoint_01_10(_root, args
 					modelId = "Model_YFZZhu",
 					id = "YFZZhu_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -255,
+						y = -200,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -189,8 +189,8 @@ function scene_PanStoryPoint_01_10.actions.start_PanStoryPoint_01_10(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -39.5,
-								y = 624
+								x = -48,
+								y = 766
 							}
 						}
 					}

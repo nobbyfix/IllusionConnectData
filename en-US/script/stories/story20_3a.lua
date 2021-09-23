@@ -305,10 +305,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_KTSJKe",
 					id = "KTSJKe_speak",
 					rotationX = 0,
-					scale = 1.035,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -332,8 +332,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -54.5,
-								y = 988.5
+								x = -68.5,
+								y = 1274
 							}
 						}
 					}
@@ -389,10 +389,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_MGNa",
 					id = "MGNa_speak",
 					rotationX = 0,
-					scale = 1.115,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.9,
 							y = 0
@@ -416,8 +416,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -214,
-								y = 748.5
+								x = -369.5,
+								y = 1262
 							}
 						}
 					}
@@ -526,10 +526,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_PNCao",
 					id = "PNCao_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -552,8 +552,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 635.5
+								x = -11.5,
+								y = 1097
 							}
 						},
 						{
@@ -564,7 +564,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 							image = "PNCao/PNCao_face_8.png",
 							layoutMode = 1,
 							zorder = 1100,
-							visible = true,
+							visible = false,
 							id = "PNCao_muou",
 							scale = 0.98,
 							anchorPoint = {
@@ -916,10 +916,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -943,8 +943,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -1055,7 +1055,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1157,7 +1157,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -550,
+						y = -440,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1259,10 +1259,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1286,8 +1286,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}
@@ -1440,11 +1440,11 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -1461,14 +1461,14 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -1579,10 +1579,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1606,8 +1606,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -1752,7 +1752,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -305,
+							y = -300,
 							refpt = {
 								x = -0.5,
 								y = 0.25
@@ -1769,7 +1769,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -245,
+							y = -420,
 							refpt = {
 								x = 1.5,
 								y = 0.5
@@ -1786,7 +1786,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -550,
+							y = -440,
 							refpt = {
 								x = 1.25,
 								y = -0.25
@@ -1820,7 +1820,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -450,
+							y = -350,
 							refpt = {
 								x = 1.5,
 								y = 0
@@ -1837,7 +1837,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = -0.5,
 								y = -0.75
@@ -1919,7 +1919,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -305,
+							y = -300,
 							refpt = {
 								x = 1.5,
 								y = 0.25
@@ -1957,7 +1957,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -245,
+							y = -420,
 							refpt = {
 								x = -0.25,
 								y = -0.25
@@ -1995,7 +1995,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -550,
+							y = -440,
 							refpt = {
 								x = -0.75,
 								y = 1.25
@@ -2071,7 +2071,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -450,
+							y = -350,
 							refpt = {
 								x = -0.5,
 								y = 0
@@ -2109,7 +2109,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 1.5,
 								y = 0.5
@@ -2277,10 +2277,10 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -2304,8 +2304,8 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -2964,13 +2964,13 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 			args = function (_ctx)
 				return {
 					brightness = -255,
-					modelId = "Model_Story_ZTXChang",
+					modelId = "Model_ZTXChang",
 					id = "ZTXChang_speak2",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = -0.5,
 							y = 0
@@ -3008,7 +3008,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -368,
+							y = -270,
 							refpt = {
 								x = 0.8,
 								y = 0
@@ -3025,7 +3025,7 @@ function scene_story20_3a.actions.start_story20_3a(_root, args)
 						duration = 1,
 						position = {
 							x = 0,
-							y = -368,
+							y = -270,
 							refpt = {
 								x = 0.3,
 								y = 0

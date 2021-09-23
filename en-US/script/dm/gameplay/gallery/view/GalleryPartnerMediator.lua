@@ -336,11 +336,9 @@ function GalleryPartnerMediator:createTeamCell(cell, index)
 				self:onClickHeroIcon(sender, eventType, id)
 			end)
 
-			local heroIcon = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust7",
-				id = roleModel,
-				size = cc.size(245, 336)
+			local heroIcon = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe7_1",
+				id = roleModel
 			})
 
 			heroIcon:setScale(0.5)

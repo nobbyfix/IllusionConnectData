@@ -66,6 +66,36 @@ end
 function scene_CLManDate01.actions.start_CLManDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -95,10 +125,10 @@ function scene_CLManDate01.actions.start_CLManDate01(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -122,8 +152,8 @@ function scene_CLManDate01.actions.start_CLManDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -212,7 +242,7 @@ function scene_CLManDate01.actions.start_CLManDate01b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -229,7 +259,7 @@ function scene_CLManDate01.actions.start_CLManDate01b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -246,7 +276,7 @@ function scene_CLManDate01.actions.start_CLManDate01b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -263,7 +293,7 @@ function scene_CLManDate01.actions.start_CLManDate01b(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -366,7 +396,7 @@ function scene_CLManDate01.actions.start_CLManDate01c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -383,7 +413,7 @@ function scene_CLManDate01.actions.start_CLManDate01c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -400,7 +430,7 @@ function scene_CLManDate01.actions.start_CLManDate01c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -417,7 +447,7 @@ function scene_CLManDate01.actions.start_CLManDate01c(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1088,7 +1118,7 @@ function scene_CLManDate01.actions.start_CLManDate01h(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1105,7 +1135,7 @@ function scene_CLManDate01.actions.start_CLManDate01h(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1122,7 +1152,7 @@ function scene_CLManDate01.actions.start_CLManDate01h(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1139,7 +1169,7 @@ function scene_CLManDate01.actions.start_CLManDate01h(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1200,7 +1230,7 @@ function scene_CLManDate01.actions.start_CLManDate01i(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.1
@@ -1217,7 +1247,7 @@ function scene_CLManDate01.actions.start_CLManDate01i(_root, args)
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1928,7 +1958,7 @@ function scene_CLManDate01.actions.start_CLManDate01o(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1945,7 +1975,7 @@ function scene_CLManDate01.actions.start_CLManDate01o(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1962,7 +1992,7 @@ function scene_CLManDate01.actions.start_CLManDate01o(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0.05
@@ -1979,7 +2009,7 @@ function scene_CLManDate01.actions.start_CLManDate01o(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -296,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0

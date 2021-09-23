@@ -85,6 +85,36 @@ end
 function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,11 +153,11 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 					modelId = "Model_HLMGen",
 					id = "HLMGen_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 275,
-						y = -243,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -151,8 +181,8 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -35.3,
-								y = 716.5
+								x = -49,
+								y = 1130
 							}
 						}
 					}
@@ -219,7 +249,24 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 					duration = 0.2,
 					position = {
 						x = 275,
-						y = -143,
+						y = -390,
+						refpt = {
+							x = 0.25,
+							y = 0.1
+						}
+					}
+				}
+			end
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "HLMGen_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0.2,
+					position = {
+						x = 275,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -236,10 +283,10 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 					duration = 0.2,
 					position = {
 						x = 275,
-						y = -243,
+						y = -390,
 						refpt = {
 							x = 0.25,
-							y = 0
+							y = 0.1
 						}
 					}
 				}
@@ -253,24 +300,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02(_root, args)
 					duration = 0.2,
 					position = {
 						x = 275,
-						y = -143,
-						refpt = {
-							x = 0.25,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "HLMGen_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2,
-					position = {
-						x = 275,
-						y = -243,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -514,7 +544,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02d(_root, args)
 					duration = 0.2,
 					position = {
 						x = 275,
-						y = -263,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -733,7 +763,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02f(_root, args)
 				actor = __getnode__(_root, "HLMGen_speak"),
 				args = function (_ctx)
 					return {
-						scale = 2,
+						scale = 1.4,
 						duration = 1.2
 					}
 				end
@@ -945,7 +975,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02h(_root, args)
 				actor = __getnode__(_root, "HLMGen_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1,
+						scale = 0.7,
 						duration = 1.2
 					}
 				end
@@ -958,7 +988,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02h(_root, args)
 						duration = 1.2,
 						position = {
 							x = 275,
-							y = -243,
+							y = -390,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1114,7 +1144,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02i(_root, args)
 				actor = __getnode__(_root, "HLMGen_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1,
+						scale = 0.7,
 						duration = 1.2
 					}
 				end
@@ -1127,7 +1157,7 @@ function scene_HLMGenDate02.actions.start_HLMGenDate02i(_root, args)
 						duration = 1.2,
 						position = {
 							x = 275,
-							y = -243,
+							y = -390,
 							refpt = {
 								x = 0.25,
 								y = 0

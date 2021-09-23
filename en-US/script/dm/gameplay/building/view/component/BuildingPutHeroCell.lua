@@ -33,7 +33,7 @@ function BuildingPutHeroCell:updateIcon()
 
 	heroPanel:removeAllChildren()
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = heroInfo:getModel()
 	})
 

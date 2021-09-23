@@ -202,11 +202,9 @@ function LeadStageArenaTeamListMediator:refreshTeamView()
 				vis = lv > 0
 			}
 			local roleModel = self._masterSystem:getMasterLeadStageModel(teamInfo.masterId, id or "")
-			local sprite = IconFactory:createRoleIconSprite({
-				stencil = 6,
-				iconType = "Bust6",
-				id = roleModel,
-				size = cc.size(190, 269)
+			local sprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe6_1",
+				id = roleModel
 			})
 
 			roleNode:addChild(sprite)
@@ -480,11 +478,9 @@ function LeadStageArenaTeamListMediator:createMovingPet(cell)
 
 		local id, lv = self._masterSystem:getMasterLeadStatgeLevel(teamInfo.masterId)
 		local roleModel = self._masterSystem:getMasterLeadStageModel(teamInfo.masterId, id or "")
-		local sprite = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust6",
-			id = roleModel,
-			size = cc.size(190, 269)
+		local sprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_1",
+			id = roleModel
 		})
 
 		roleNode:addChild(sprite)
@@ -751,11 +747,9 @@ function LeadStageArenaTeamListMediator:refreshRivalTeamView()
 			roleNode:removeAllChildren()
 
 			local roleModel = self._masterSystem:getMasterLeadStageModel(teamInfo.masterId, teamInfo.leadId)
-			local sprite = IconFactory:createRoleIconSprite({
-				stencil = 6,
-				iconType = "Bust6",
-				id = roleModel,
-				size = cc.size(190, 269)
+			local sprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe6_1",
+				id = roleModel
 			})
 
 			roleNode:addChild(sprite)

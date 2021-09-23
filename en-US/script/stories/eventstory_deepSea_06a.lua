@@ -802,14 +802,14 @@ function scene_eventstory_deepSea_06a.actions.start_eventstory_deepSea_06a(_root
 						modelId = "Model_ALPo",
 						id = "zuitianshi",
 						rotationX = 0,
-						scale = 0.75,
+						scale = 0.55,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.8,
-								y = 0.4
+								y = 0.3
 							}
 						}
 					}
@@ -1859,11 +1859,11 @@ function scene_eventstory_deepSea_06a.actions.start_eventstory_deepSea_06a(_root
 						modelId = "Model_ALPo",
 						id = "ALPo",
 						rotationX = 0,
-						scale = 0.95,
+						scale = 0.63,
 						zorder = 90,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1887,8 +1887,8 @@ function scene_eventstory_deepSea_06a.actions.start_eventstory_deepSea_06a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.65,
-									y = 781
+									x = 7,
+									y = 1020
 								}
 							}
 						}

@@ -1910,11 +1910,11 @@ function scene_eventstory_deepSea_02a.actions.start_eventstory_deepSea_02a(_root
 						modelId = "Model_ALPo",
 						id = "ALPo",
 						rotationX = 0,
-						scale = 0.95,
+						scale = 0.63,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1938,8 +1938,8 @@ function scene_eventstory_deepSea_02a.actions.start_eventstory_deepSea_02a(_root
 									y = 0.5
 								},
 								position = {
-									x = -1.65,
-									y = 781
+									x = 7,
+									y = 1020
 								}
 							}
 						}
@@ -2662,7 +2662,7 @@ function scene_eventstory_deepSea_02a.actions.start_eventstory_deepSea_02a(_root
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -330,
+							y = -300,
 							refpt = {
 								x = 0.2,
 								y = 0

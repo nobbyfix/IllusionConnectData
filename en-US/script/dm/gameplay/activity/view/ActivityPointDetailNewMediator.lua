@@ -359,9 +359,9 @@ function ActivityPointDetailNewMediator:setupView()
 	self._rolePanel:removeAllChildren()
 
 	local pointHead = point:getConfig().PointHead
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = pointHead
 	})
 
@@ -432,13 +432,11 @@ function ActivityPointDetailNewMediator:setupView()
 	listView:removeAllChildren()
 	listView:setScrollBarEnabled(false)
 
-	local textData = string.split(desc, "<font")
+	desc = string.gsub(desc, "${fontName}", "asset/font/CustomFont_FZYH_M.TTF")
 
-	if #textData <= 1 then
-		desc = string.format("<font face='asset/font/CustomFont_FZYH_M.TTF' size='18' color='#D2D2D2'>%s</font>", desc)
-	end
-
-	self:addContent(Strings:get("BlockPoint_Condition_Name_3") .. desc, listView)
+	self:addContent(Strings:get("BlockPoint_Condition_Name_3", {
+		fontName = "asset/font/CustomFont_FZYH_M.TTF"
+	}) .. desc, listView)
 
 	local descs = self._point:getGuideDesc()
 	self._addDesc = false
@@ -577,16 +575,14 @@ function ActivityPointDetailNewMediator:refreshTeamView()
 		roleModel = self:getOwnMasterRoleModel(self:getOwnMasterId(self._sortPointId))
 	end
 
-	local masterIcon = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust5",
-		id = roleModel,
-		size = cc.size(446, 115)
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_4",
+		id = roleModel
 	})
 	local masterPanel = self._teamPanel:getChildByName("masterIcon")
 
 	masterPanel:removeAllChildren()
-	masterIcon:addTo(masterPanel):setPosition(220, 20)
+	masterIcon:addTo(masterPanel):center(masterPanel:getContentSize())
 end
 
 function ActivityPointDetailNewMediator:onClickBack(sender, eventType)

@@ -258,6 +258,7 @@ all.Skill_DDing_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -454,6 +455,7 @@ all.Skill_DDing_Proud_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -571,6 +573,7 @@ all.Skill_DDing_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

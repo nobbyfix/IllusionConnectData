@@ -493,8 +493,16 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 		end
 
 		local skillDesc = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "SkillPic")
+		local configId = self._dataModel:getConfigId()
+		local rareity = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "Rareity")
 
-		effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect)
+		if rareity == 15 then
+			effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , true)
+
+			break
+		end
+
+		effectLayer:pushPortraitEffect(modelId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , false)
 
 		break
 	end

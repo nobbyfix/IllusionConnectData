@@ -560,7 +560,7 @@ function DebugBox:clearTime()
 end
 
 function DebugBox:addShowLocalTime()
-	if DEBUG ~= 0 then
+	if self._timeLabel and not DisposableObject:isDisposed(self._timeLabel) then
 		local label = ccui.Text:create("", TTF_FONT_FZYH_R, 20)
 
 		label:addTo(self._timeLabel):posite(70, -20)

@@ -85,6 +85,36 @@ end
 function scene_DNTLuoDate02.actions.start_DNTLuoDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,11 +153,11 @@ function scene_DNTLuoDate02.actions.start_DNTLuoDate02(_root, args)
 					modelId = "Model_DNTLuo",
 					id = "DNTLuo_speak",
 					rotationX = 0,
-					scale = 0.85,
+					scale = 0.7,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -220,
+						y = -215,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -151,8 +181,8 @@ function scene_DNTLuoDate02.actions.start_DNTLuoDate02(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 7.5,
-								y = 703.5
+								x = 13.5,
+								y = 802
 							}
 						}
 					}
@@ -227,7 +257,7 @@ function scene_DNTLuoDate02.actions.start_DNTLuoDate02(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -220,
+						y = -215,
 						refpt = {
 							x = 0.42,
 							y = 0
@@ -1779,7 +1809,7 @@ function scene_DNTLuoDate02.actions.start_DNTLuoDate02p(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -220,
+						y = -215,
 						refpt = {
 							x = -1.1,
 							y = 0

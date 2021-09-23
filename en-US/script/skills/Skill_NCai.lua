@@ -157,6 +157,7 @@ all.Skill_NCai_Proud = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"NCai_Unique"
 					}
@@ -441,6 +442,7 @@ all.Skill_NCai_Proud_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"NCai_Unique"
 					}

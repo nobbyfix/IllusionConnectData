@@ -217,12 +217,10 @@ function TowerChooseRoleMediator:addCell(cell, idx)
 	end)
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust4",
-		id = data:getModel(),
-		size = cc.size(284.92, 370.26)
+		frameId = "bustframe4_1",
+		id = data:getModel()
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))
 	masterIcon:setPosition(cc.p(0, 0))

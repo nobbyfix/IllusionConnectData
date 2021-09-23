@@ -235,11 +235,11 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_LLan",
 					id = "LLan",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.72,
 					zorder = 33,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -263,8 +263,8 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 								y = 0.5
 							},
 							position = {
-								x = -9.5,
-								y = 770.8
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -432,7 +432,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.5,
 								y = -0.1
@@ -500,7 +500,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -645,7 +645,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -662,11 +662,11 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_JNLong",
 					id = "JNLong",
 					rotationX = 0,
-					scale = 1.02,
+					scale = 0.65,
 					zorder = 32,
 					position = {
 						x = -160,
-						y = -335,
+						y = -330,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -690,8 +690,8 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.5
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -918,7 +918,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1078,7 +1078,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -1244,7 +1244,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -1368,11 +1368,11 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					modelId = "Model_Story_JNLong",
 					id = "Mask_JNLong",
 					rotationX = 0,
-					scale = 1.02,
+					scale = 0.65,
 					zorder = 28,
 					position = {
 						x = -160,
-						y = -335,
+						y = -330,
 						refpt = {
 							x = 1.35,
 							y = 0
@@ -1408,7 +1408,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = -0.1
@@ -1478,7 +1478,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = -0.1
@@ -1496,7 +1496,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.7,
 						position = {
 							x = -160,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.77,
 								y = 0
@@ -1572,7 +1572,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1651,7 +1651,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.3,
 								y = -0.15
@@ -1668,7 +1668,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = -160,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -1814,7 +1814,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.25,
 								y = -0.3
@@ -1843,7 +1843,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.25,
 								y = -0.4
@@ -1893,7 +1893,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0,
 						position = {
 							x = -160,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.55,
 								y = 0
@@ -1910,7 +1910,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 						duration = 0.4,
 						position = {
 							x = -160,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.55,
 								y = 0
@@ -2049,7 +2049,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2293,7 +2293,7 @@ function scene_DreamChallenge_5_dulandeer_04a.actions.start_DreamChallenge_5_dul
 					duration = 0.9,
 					position = {
 						x = 0,
-						y = -345,
+						y = -390,
 						refpt = {
 							x = 1.35,
 							y = 0

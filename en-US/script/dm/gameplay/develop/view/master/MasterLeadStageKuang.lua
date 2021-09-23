@@ -1,31 +1,40 @@
 MasterLeadStageKuang = class("MasterLeadStageKuang", BaseWidget, _M)
 local iconOffsetInfo = {
 	[0] = {
-		sten = 0
+		frame2 = "bustframe13_4",
+		frame1 = "bustframe13_3"
 	},
 	{
-		sten = 0
+		frame2 = "bustframe13_4",
+		frame1 = "bustframe13_3"
 	},
 	{
-		sten = 0
+		frame2 = "bustframe13_4",
+		frame1 = "bustframe13_3"
 	},
 	{
-		sten = 0
+		frame2 = "bustframe13_4",
+		frame1 = "bustframe13_3"
 	},
 	{
-		sten = 13
+		frame2 = "bustframe13_8",
+		frame1 = "bustframe13_7"
 	},
 	{
-		sten = 13
+		frame2 = "bustframe13_8",
+		frame1 = "bustframe13_7"
 	},
 	{
-		sten = 13
+		frame2 = "bustframe13_8",
+		frame1 = "bustframe13_7"
 	},
 	{
-		sten = 13
+		frame2 = "bustframe13_8",
+		frame1 = "bustframe13_7"
 	},
 	{
-		sten = 14
+		frame2 = "bustframe13_10",
+		frame1 = "bustframe13_9"
 	}
 }
 
@@ -88,45 +97,35 @@ function MasterLeadStageKuang:refreshInfo()
 
 	local info = {
 		id = mid,
-		iconType = "Bust13",
-		stencil = iconOffsetInfo[self._leadStageLevel].sten
+		frameId = iconOffsetInfo[self._leadStageLevel].frame2
 	}
-
-	if info.stencil == 0 then
-		info.stencil = 1
-		info.size = cc.size(261, 394)
-	end
-
-	local icon = IconFactory:createRoleIconSprite(info)
+	local icon = IconFactory:createRoleIconSpriteNew(info)
 
 	icon:setAnchorPoint(cc.p(0, 0))
 	icon:addTo(self._heroIconBg)
 	icon:setOpacity(50)
 
 	if self._leadStageLevel == 8 then
-		icon:offset(0, -27)
+		icon:offset(0, 0)
 		self._imgKuang:setPositionY(470)
 		self._imgZhezhao:setPositionY(470)
+	else
+		icon:offset(0, 2)
 	end
 
 	local info = {
 		id = mid,
-		iconType = "Bust14",
-		stencil = iconOffsetInfo[self._leadStageLevel].sten
+		frameId = iconOffsetInfo[self._leadStageLevel].frame1
 	}
-
-	if info.stencil == 0 then
-		info.stencil = 1
-		info.size = cc.size(261, 394)
-	end
-
-	local icon = IconFactory:createRoleIconSprite(info)
+	local icon = IconFactory:createRoleIconSpriteNew(info)
 
 	icon:setAnchorPoint(cc.p(0, 0))
 	icon:addTo(self._heroIcon)
 
 	if self._leadStageLevel == 8 then
-		icon:offset(0, -27)
+		icon:offset(0, 10)
+	else
+		icon:offset(0, 2)
 	end
 end
 

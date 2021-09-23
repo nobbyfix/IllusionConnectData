@@ -697,7 +697,7 @@ function StoryStageTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -794,18 +794,14 @@ function StoryStageTeamMediator:refreshMasterInfo()
 	local img = nil
 
 	if self._playerMasterMode == 1 then
-		img = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust6",
-			id = model,
-			size = cc.size(188, 274)
+		img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_2",
+			id = model
 		})
 	else
-		img = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust12",
-			id = model,
-			size = cc.size(188, 274)
+		img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_2",
+			id = model
 		})
 	end
 

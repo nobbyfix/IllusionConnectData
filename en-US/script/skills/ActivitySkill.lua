@@ -1148,6 +1148,7 @@ all.Skill_Buff_Overlying = {
 							"NUMERIC",
 							"DEBUFF",
 							"POISON",
+							"ABNORMAL",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
 						}
@@ -1340,6 +1341,7 @@ all.Skill_Buff_Overlying = {
 							"NUMERIC",
 							"DEBUFF",
 							"POISON",
+							"ABNORMAL",
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
 						}

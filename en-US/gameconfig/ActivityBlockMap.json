@@ -577,6 +577,61 @@
         ],
         "Type": "NORMAL"
     },
+    "AnimalM01": {
+        "BGM": "Mus_Story_Animal_Main",
+        "Background": "Animal_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_AnimalAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "AnimalSN01",
+            "AnimalSN02",
+            "AnimalSN03",
+            "AnimalSN04",
+            "AnimalSN05",
+            "AnimalSN06",
+            "AnimalSN07",
+            "AnimalSN08"
+        ],
+        "SubStoryPoint": [
+            "AnimalS01S01",
+            "AnimalS01S02",
+            "AnimalS01S03",
+            "AnimalS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "AnimalM02": {
+        "BGM": "Mus_Story_Animal_Main",
+        "Background": "Animal_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_AnimalAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "AnimalSE01",
+            "AnimalSE02",
+            "AnimalSE03",
+            "AnimalSE04",
+            "AnimalSE05",
+            "AnimalSE06",
+            "AnimalSE07",
+            "AnimalSE08",
+            "AnimalSE09",
+            "AnimalSE10",
+            "AnimalSE11"
+        ],
+        "SubStoryPoint": [
+            "AnimalS02S01",
+            "AnimalS02S02",
+            "AnimalS02S03",
+            "AnimalS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "BakingE01": {
         "BGM": "Mus_Story_Common_2",
         "Background": "Baking_Scene03",

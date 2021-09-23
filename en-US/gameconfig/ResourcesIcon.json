@@ -630,6 +630,23 @@
         "Shine": "",
         "Sicon": "icon_HD_Power"
     },
+    "IR_AnimalStamina": {
+        "Desc": "IR_AnimalStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_animal_stamina_1"
+        ],
+        "Licon": "ico_m_animal_stamina_1",
+        "Name": "IR_AnimalStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_animal_stamina_2"
+    },
     "IR_Arena": {
         "Desc": "ResourcesIcon_5_Desc",
         "LargeIcons": [
@@ -1161,7 +1178,10 @@
         "Quality": [
             4
         ],
-        "Resource": [],
+        "Resource": [
+            "IR_NewArenaCoin",
+            "IR_NewArenaCoin_1"
+        ],
         "Segmentation": [
             1
         ],

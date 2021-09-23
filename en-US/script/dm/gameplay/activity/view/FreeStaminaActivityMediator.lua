@@ -65,7 +65,7 @@ function FreeStaminaActivityMediator:setupView()
 		local data = self._dataList[i]
 		local panel = self._main:getChildByName("Panel_" .. i)
 		local roleNode = panel:getChildByName("rolepanel")
-		local img, jsonPath = IconFactory:createRoleIconSprite({
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 			iconType = 2,
 			id = roleModelId[i]
 		})

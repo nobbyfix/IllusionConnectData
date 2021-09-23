@@ -831,5 +831,113 @@ all.Skill_KMLa_Passive_Death_EX = {
 		return _env
 	end
 }
+all.Skill_KMLa_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		this.MaxHpRateFactor = externs.MaxHpRateFactor
+
+		if this.MaxHpRateFactor == nil then
+			this.MaxHpRateFactor = 0.2
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3200
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_KMLa"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.count1 = 0
+		_env.count = 0
+		_env.dam = 0
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.RetainObject(_env, _env.TARGET)
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.9,
+				0
+			}, 100, "skill3"))
+			global.AssignRoles(_env, _env.TARGET, "target")
+		end)
+		exec["@time"]({
+			2500
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+
+			if hp * this.MaxHpRateFactor > atk * 4 then
+				_env.dam = atk * 4
+			else
+				_env.dam = hp * this.MaxHpRateFactor
+			end
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage + _env.dam)
+		end)
+		exec["@time"]({
+			3200
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

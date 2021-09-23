@@ -448,11 +448,11 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 						modelId = "Model_JNLong",
 						id = "JNLong_speak",
 						rotationX = 0,
-						scale = 1.02,
+						scale = 0.65,
 						zorder = 30,
 						position = {
 							x = 0,
-							y = -335,
+							y = -330,
 							refpt = {
 								x = 0.54,
 								y = 0
@@ -476,8 +476,8 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 177.5,
-									y = 806.4
+									x = 268.5,
+									y = 1184
 								}
 							}
 						}
@@ -503,11 +503,11 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 						modelId = "Model_LLan",
 						id = "LLan_speak",
 						rotationX = 0,
-						scale = 1.05,
+						scale = 0.72,
 						zorder = 25,
 						position = {
 							x = 0,
-							y = -345,
+							y = -390,
 							refpt = {
 								x = 0.32,
 								y = 0
@@ -531,8 +531,8 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -10,
-									y = 770
+									x = -23.5,
+									y = 1095
 								}
 							}
 						}
@@ -1990,11 +1990,11 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 						modelId = "Model_Story_CLMan",
 						id = "CLMan_speak",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 15,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.34,
 								y = 0
@@ -2018,8 +2018,8 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -2056,11 +2056,11 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 						modelId = "Model_Story_ZTXChang",
 						id = "ZTXChang_speak",
 						rotationX = 0,
-						scale = 0.98,
+						scale = 0.6,
 						zorder = 10,
 						position = {
 							x = 0,
-							y = -300,
+							y = -270,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -2084,8 +2084,8 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -50.8,
-									y = 789
+									x = -51.3,
+									y = 977.5
 								}
 							}
 						}
@@ -2122,11 +2122,11 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 						modelId = "Model_Story_FTLEShi",
 						id = "FTLEShi_speak",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.6,
 						zorder = 5,
 						position = {
 							x = 0,
-							y = -400,
+							y = -280,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -2150,8 +2150,8 @@ function scene_eventstory_BXJie_08a.actions.start_eventstory_BXJie_08a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -16,
-									y = 998
+									x = -41.5,
+									y = 1286.1
 								}
 							}
 						}

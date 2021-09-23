@@ -526,7 +526,7 @@ function CooperateBossInviteFriendMediator:setupHeroAttrAdds()
 			local heroCell = self._recommendHero1Clone:clone()
 			local icon = heroCell:getChildByFullName("icon")
 			local config = ConfigReader:getRecordById("HeroBase", heros[i])
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -815,9 +815,9 @@ function CooperateBossInviteFriendMediator:setupBossState()
 	self._bossRole:removeAllChildren()
 
 	local roleModel = ConfigReader:getDataByNameIdAndKey("CooperateBossMain", self._data.bossInfo.confId, "RoleModel")
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

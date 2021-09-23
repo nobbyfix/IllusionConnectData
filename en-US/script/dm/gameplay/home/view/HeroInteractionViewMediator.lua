@@ -98,9 +98,9 @@ function HeroInteractionViewMediator:initHeroView()
 	self._heroPanel:removeAllChildren()
 
 	local hero = self._heroSystem:getHeroById(self._heroId)
-	local heroSp, _, _, picInfo = IconFactory:createRoleIconSprite({
+	local heroSp, _, _, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = hero:getModel()
 	})
 

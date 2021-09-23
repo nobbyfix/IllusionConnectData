@@ -701,11 +701,11 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSiheibian",
 						rotationX = 0,
-						scale = 1.01,
+						scale = 0.58,
 						zorder = 100,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -723,11 +723,11 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSibaibian",
 						rotationX = 0,
-						scale = 1.006,
+						scale = 0.576,
 						zorder = 105,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -744,11 +744,11 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSi",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.57,
 						zorder = 110,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -772,8 +772,8 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 13.2,
-									y = 525.6
+									x = 19.5,
+									y = 806.9
 								}
 							}
 						}
@@ -1009,7 +1009,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.57,
 									y = 0
@@ -1026,7 +1026,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.57,
 									y = 0
@@ -1043,7 +1043,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.57,
 									y = 0
@@ -1070,7 +1070,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0.1
@@ -1087,7 +1087,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0.1
@@ -1104,7 +1104,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0.1
@@ -1130,7 +1130,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0
@@ -1147,7 +1147,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0
@@ -1164,7 +1164,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.57,
 								y = 0
@@ -1237,7 +1237,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.59,
 									y = 0
@@ -1254,7 +1254,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.59,
 									y = 0
@@ -1271,7 +1271,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.59,
 									y = 0
@@ -1302,7 +1302,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1319,7 +1319,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1336,7 +1336,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1362,7 +1362,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0.1
@@ -1379,7 +1379,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0.1
@@ -1396,7 +1396,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0.1
@@ -1422,7 +1422,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1439,7 +1439,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1456,7 +1456,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.43,
 								y = 0
@@ -1529,7 +1529,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.41,
 									y = 0
@@ -1546,7 +1546,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.41,
 									y = 0
@@ -1563,7 +1563,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.41,
 									y = 0
@@ -1583,7 +1583,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -1600,7 +1600,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -1617,7 +1617,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -2012,7 +2012,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2029,7 +2029,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2046,7 +2046,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2065,7 +2065,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2082,7 +2082,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2099,7 +2099,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2118,7 +2118,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2135,7 +2135,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2152,7 +2152,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0.08
@@ -2171,7 +2171,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2188,7 +2188,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2205,7 +2205,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -2501,8 +2501,8 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -9.3,
-									y = 635.3
+									x = -11.5,
+									y = 1097
 								}
 							}
 						}
@@ -2637,7 +2637,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.2,
 									y = 0.2
@@ -2654,7 +2654,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.2,
 									y = 0.2
@@ -2671,7 +2671,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.2,
 									y = 0.2
@@ -2685,7 +2685,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaoheibian"),
 					args = function (_ctx)
 						return {
-							scale = 0.76,
+							scale = 0.5,
 							duration = 0.25
 						}
 					end
@@ -2695,7 +2695,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaobaibian"),
 					args = function (_ctx)
 						return {
-							scale = 0.756,
+							scale = 0.496,
 							duration = 0.25
 						}
 					end
@@ -2705,7 +2705,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCao"),
 					args = function (_ctx)
 						return {
-							scale = 0.75,
+							scale = 0.49,
 							duration = 0.25
 						}
 					end
@@ -2888,7 +2888,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = 0
@@ -2905,7 +2905,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = 0
@@ -2922,7 +2922,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.3,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = 0
@@ -2936,7 +2936,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaoheibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.09,
+							scale = 0.71,
 							duration = 0.3
 						}
 					end
@@ -2946,7 +2946,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaobaibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.086,
+							scale = 0.706,
 							duration = 0.3
 						}
 					end
@@ -2956,7 +2956,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCao"),
 					args = function (_ctx)
 						return {
-							scale = 1.08,
+							scale = 0.7,
 							duration = 0.3
 						}
 					end
@@ -3103,7 +3103,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -3120,7 +3120,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -3137,7 +3137,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -3151,7 +3151,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaoheibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.59,
+							scale = 1.01,
 							duration = 0.1
 						}
 					end
@@ -3161,7 +3161,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaobaibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.586,
+							scale = 1.006,
 							duration = 0.1
 						}
 					end
@@ -3171,7 +3171,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCao"),
 					args = function (_ctx)
 						return {
-							scale = 1.58,
+							scale = 1,
 							duration = 0.1
 						}
 					end
@@ -3999,7 +3999,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -4016,7 +4016,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -4033,7 +4033,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -4047,7 +4047,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaoheibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.09,
+						scale = 0.71,
 						duration = 0
 					}
 				end
@@ -4057,7 +4057,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaobaibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.086,
+						scale = 0.706,
 						duration = 0
 					}
 				end
@@ -4067,7 +4067,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCao"),
 				args = function (_ctx)
 					return {
-						scale = 1.08,
+						scale = 0.7,
 						duration = 0
 					}
 				end
@@ -4186,7 +4186,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.1
@@ -4203,7 +4203,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.1
@@ -4220,7 +4220,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.1
@@ -4332,7 +4332,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -4349,7 +4349,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -4366,7 +4366,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -4429,7 +4429,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -4446,7 +4446,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -4463,7 +4463,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -4514,7 +4514,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.25,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -4531,7 +4531,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.25,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -4548,7 +4548,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0.25,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -4583,7 +4583,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -4600,7 +4600,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -4617,7 +4617,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -5027,7 +5027,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5044,7 +5044,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5061,7 +5061,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5075,7 +5075,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaoheibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.59,
+							scale = 1.01,
 							duration = 0.2
 						}
 					end
@@ -5085,7 +5085,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaobaibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.586,
+							scale = 1.006,
 							duration = 0.2
 						}
 					end
@@ -5095,7 +5095,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCao"),
 					args = function (_ctx)
 						return {
-							scale = 1.58,
+							scale = 1,
 							duration = 0.2
 						}
 					end
@@ -5752,7 +5752,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -5769,7 +5769,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -5786,7 +5786,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -5800,7 +5800,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaoheibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.09,
+						scale = 0.71,
 						duration = 0
 					}
 				end
@@ -5810,7 +5810,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaobaibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.086,
+						scale = 0.706,
 						duration = 0
 					}
 				end
@@ -5820,7 +5820,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCao"),
 				args = function (_ctx)
 					return {
-						scale = 1.08,
+						scale = 0.7,
 						duration = 0
 					}
 				end
@@ -5883,7 +5883,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5900,7 +5900,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5917,7 +5917,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.3
@@ -5931,7 +5931,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaoheibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.59,
+							scale = 1.01,
 							duration = 0.2
 						}
 					end
@@ -5941,7 +5941,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCaobaibian"),
 					args = function (_ctx)
 						return {
-							scale = 1.586,
+							scale = 1.006,
 							duration = 0.2
 						}
 					end
@@ -5951,7 +5951,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 					actor = __getnode__(_root, "PNCao"),
 					args = function (_ctx)
 						return {
-							scale = 1.58,
+							scale = 1,
 							duration = 0.2
 						}
 					end
@@ -6086,7 +6086,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -6103,7 +6103,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -6120,7 +6120,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -6134,7 +6134,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaoheibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.09,
+						scale = 0.71,
 						duration = 0
 					}
 				end
@@ -6144,7 +6144,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCaobaibian"),
 				args = function (_ctx)
 					return {
-						scale = 1.086,
+						scale = 0.706,
 						duration = 0
 					}
 				end
@@ -6154,7 +6154,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 				actor = __getnode__(_root, "PNCao"),
 				args = function (_ctx)
 					return {
-						scale = 1.08,
+						scale = 0.7,
 						duration = 0
 					}
 				end
@@ -6820,7 +6820,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.06
@@ -6837,7 +6837,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.06
@@ -6854,7 +6854,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.5,
 									y = -0.06
@@ -7564,7 +7564,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.8,
 								y = 0
@@ -7581,7 +7581,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.8,
 								y = 0
@@ -7598,7 +7598,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.8,
 								y = 0
@@ -7615,7 +7615,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -7632,7 +7632,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -7649,7 +7649,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 						duration = 0,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -8038,7 +8038,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -8055,7 +8055,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -8072,7 +8072,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.49,
 									y = 0
@@ -8262,7 +8262,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8279,7 +8279,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8296,7 +8296,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.25,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8395,7 +8395,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.45,
 									y = 0
@@ -8412,7 +8412,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.45,
 									y = 0
@@ -8429,7 +8429,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.15,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.45,
 									y = 0
@@ -8515,7 +8515,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.7,
 									y = 0
@@ -8532,7 +8532,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.7,
 									y = 0
@@ -8549,7 +8549,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.7,
 									y = 0
@@ -8568,7 +8568,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8585,7 +8585,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8602,7 +8602,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.51,
 									y = 0
@@ -8619,7 +8619,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.8,
 									y = 0
@@ -8636,7 +8636,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.8,
 									y = 0
@@ -8653,7 +8653,7 @@ function scene_eventstory_Logan_04a.actions.start_eventstory_Logan_04a(_root, ar
 							duration = 0.1,
 							position = {
 								x = 0,
-								y = -375,
+								y = -420,
 								refpt = {
 									x = 0.8,
 									y = 0

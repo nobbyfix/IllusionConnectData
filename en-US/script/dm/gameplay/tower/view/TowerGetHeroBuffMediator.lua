@@ -55,9 +55,9 @@ function TowerGetHeroBuffMediator:initView()
 	self._main = view:getChildByFullName("content")
 	self._buffPanel = self._main:getChildByFullName("buffPanel")
 	self._infoNode = self._main:getChildByFullName("infoNode")
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = self._role:getModel()
 	})
 

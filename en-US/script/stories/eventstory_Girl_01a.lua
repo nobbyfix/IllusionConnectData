@@ -391,11 +391,11 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 						modelId = "Model_Story_CLMan",
 						id = "CLMan",
 						rotationX = 0,
-						scale = 0.9,
+						scale = 0.63,
 						zorder = 5,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 1.5,
 								y = 0
@@ -419,8 +419,8 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 									y = 0.5
 								},
 								position = {
-									x = 60.5,
-									y = 787
+									x = 77.5,
+									y = 1045.5
 								}
 							}
 						}
@@ -1126,7 +1126,7 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -1203,7 +1203,7 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.62,
 								y = 0
@@ -1359,7 +1359,7 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -1490,7 +1490,7 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.62,
 								y = 0
@@ -1660,7 +1660,7 @@ function scene_eventstory_Girl_01a.actions.start_eventstory_Girl_01a(_root, args
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 1.5,
 							y = 0

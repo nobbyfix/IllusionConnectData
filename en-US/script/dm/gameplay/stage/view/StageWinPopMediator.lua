@@ -127,7 +127,7 @@ function StageWinPopMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addCallbackAtFrame(45, function ()
 		anim:stop()
 	end)
@@ -205,9 +205,10 @@ function StageWinPopMediator:showHeroPanel()
 		self:getView():getChildByFullName("content.btnStatistic"):setVisible(false)
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 

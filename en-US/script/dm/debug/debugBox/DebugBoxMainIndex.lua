@@ -70,7 +70,8 @@ DebugBoxMainIndex = {
 					"打开测试面板",
 					"修改服务器时间",
 					"调cross和游戏服时间",
-					"设置DEBUG模式"
+					"设置DEBUG模式",
+					"开启ldebug"
 				}
 			},
 			{
@@ -337,7 +338,14 @@ DebugBoxMainIndex = {
 			{
 				"bust展示",
 				{
-					"设置bust"
+					"设置bust",
+					"显示主角",
+					"显示伙伴",
+					"主角和伙伴",
+					"特殊bust",
+					"不裁切主角",
+					"不裁切主角伙伴",
+					"未觉醒伙伴"
 				}
 			},
 			{
@@ -386,6 +394,10 @@ DebugBoxMainIndex = {
 			{
 				"调cross和游戏服时间",
 				"changeTagetServerTime"
+			},
+			{
+				"开启ldebug",
+				"openLdebug"
 			},
 			{
 				"无限充值开启",
@@ -814,6 +826,34 @@ DebugBoxMainIndex = {
 			{
 				"设置bust",
 				"DebugShowBustAni"
+			},
+			{
+				"显示主角",
+				"DebugShowBustAniMaster"
+			},
+			{
+				"显示伙伴",
+				"DebugShowBustAniHero"
+			},
+			{
+				"主角和伙伴",
+				"DebugShowBustAniAll"
+			},
+			{
+				"特殊bust",
+				"DebugShowBustAniSpe"
+			},
+			{
+				"不裁切主角",
+				"DebugShowBustAniNoStencil"
+			},
+			{
+				"不裁切主角伙伴",
+				"DebugShowBustAniNoStencil2"
+			},
+			{
+				"未觉醒伙伴",
+				"DebugShowBustAniNoStencil3"
 			},
 			{
 				"增加源阶",

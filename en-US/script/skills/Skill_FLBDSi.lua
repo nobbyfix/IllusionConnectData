@@ -442,7 +442,7 @@ all.Skill_FLBDSi_Passive = {
 					cardlocation = global.Random(_env, 1, 4)
 				end
 
-				local card = global.BackToWindow(_env, _env.unit, cardlocation)
+				local card = global.BackToCard_ResultCheck(_env, _env.unit, "window", cardlocation)
 				local buff = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
@@ -874,7 +874,7 @@ all.Skill_FLBDSi_Passive_EX = {
 					cardlocation = global.Random(_env, 1, 4)
 				end
 
-				local card = global.BackToWindow(_env, _env.unit, cardlocation)
+				local card = global.BackToCard_ResultCheck(_env, _env.unit, "window", cardlocation)
 				local buff = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
@@ -892,15 +892,17 @@ all.Skill_FLBDSi_Passive_EX = {
 
 				local cardvaluechange = global.CardCostEnchant(_env, "-", this.EnergyFactor, 1)
 
-				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					tags = {
-						"CARDBUFF",
-						"UNDISPELLABLE",
-						"Skill_FLBDSi_Passive_EX"
-					}
-				}, {
-					cardvaluechange
-				})
+				if card then
+					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+						tags = {
+							"CARDBUFF",
+							"UNDISPELLABLE",
+							"Skill_FLBDSi_Passive_EX"
+						}
+					}, {
+						cardvaluechange
+					})
+				end
 			end
 		end)
 

@@ -492,19 +492,15 @@ function GalleryPartnerInfoMediator:refreshInfo()
 	local heroIcon = nil
 
 	if hasHero then
-		heroIcon = IconFactory:createRoleIconSprite({
+		heroIcon = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust5",
-			stencil = 1,
-			id = roleModel,
-			size = cc.size(368, 446)
+			frameId = "bustframe4_8",
+			id = roleModel
 		})
 	else
-		heroIcon = IconFactory:createRoleIconSprite({
-			stencil = 1,
-			iconType = "Bust5",
-			id = roleModel,
-			size = cc.size(368, 446)
+		heroIcon = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe4_8",
+			id = roleModel
 		})
 	end
 
@@ -577,7 +573,7 @@ function GalleryPartnerInfoMediator:refreshLove()
 		fullBgEnd:setVisible(data.proportion == 1)
 
 		local heroNode = rewardTip:getChildByFullName("hero")
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = roleModel
 		})
 

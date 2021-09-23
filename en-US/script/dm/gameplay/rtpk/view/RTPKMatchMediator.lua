@@ -177,8 +177,8 @@ function RTPKMatchMediator:setMyselfInfo(data)
 		}))
 	end
 
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = heroData:getModel(),
 		useAnim = self._settingModel:getRoleDynamic()
 	})
@@ -249,8 +249,8 @@ function RTPKMatchMediator:setRivalInfo(data)
 
 	local model = IconFactory:getRoleModelByKey("HeroBase", rivalInfo.s or "ZTXChang")
 	local sfModel = ConfigReader:getDataByNameIdAndKey("Surface", rivalInfo.sf, "Model")
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = sfModel or model,
 		useAnim = self._settingModel:getRoleDynamic()
 	})

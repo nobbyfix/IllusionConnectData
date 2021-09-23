@@ -172,7 +172,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityFireWorksMainView",
 		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView",
-		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView"
+		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView",
+		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -200,7 +201,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView",
-		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -233,7 +235,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -336,6 +339,9 @@ ActivityLogin14Config = {
 			cc.c4b(255, 165, 218, 255),
 			cc.c4b(255, 239, 163, 255)
 		}
+	},
+	EightDays_Animal = {
+		resFile = "asset/ui/ActivityAnimalLogin14.csb"
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -476,6 +482,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityRiddle] = {
 			name = "zhuyemianZ__zhentanduijuerukouzhuye",
 			position = cc.p(-151, 50)
+		},
+		[ActivityType_UI.KActivityAnimal] = {
+			name = "zhuye_xinyuanyimiaochangjing",
+			position = cc.p(-131, 60)
 		}
 	}
 }

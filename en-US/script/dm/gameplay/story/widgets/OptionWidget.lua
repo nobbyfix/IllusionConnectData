@@ -86,7 +86,7 @@ function OptionWidget:updateView(data, onEnd)
 	end
 
 	if data.modelId then
-		local rolePic = IconFactory:createRoleIconSprite({
+		local rolePic = IconFactory:createRoleIconSpriteNew({
 			iconType = 2,
 			id = data.modelId
 		})

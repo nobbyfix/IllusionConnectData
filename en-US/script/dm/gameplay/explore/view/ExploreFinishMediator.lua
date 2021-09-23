@@ -355,9 +355,9 @@ function ExploreFinishMediator:setupView()
 	heroNode:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

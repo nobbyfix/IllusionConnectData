@@ -130,15 +130,14 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 	layer:getChildByName("selected"):setVisible(self._curMasterId == data:getId())
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust1",
-		id = data:getModel(),
-		size = cc.size(155, 319)
+		frameId = "bustframe1",
+		id = data:getModel()
 	}
-	local rolePic = IconFactory:createRoleIconSprite(info)
+	local rolePic = IconFactory:createRoleIconSpriteNew(info)
 
 	if rolePic then
 		rolePic:addTo(layer)
+		rolePic:setPosition(cc.p(-100, -200))
 		rolePic:setPosition(layer:getChildByName("bg"):getPosition())
 		layer:getChildByName("touchLayer"):setSwallowTouches(false)
 		layer:getChildByName("touchLayer"):addClickEventListener(function ()

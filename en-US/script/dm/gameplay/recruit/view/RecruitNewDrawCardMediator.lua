@@ -957,8 +957,8 @@ function RecruitNewDrawCardMediator:createSPHeroImage(parent, heroId, scale, her
 	heroLayout_Sp:setClippingEnabled(true)
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
-	local heroImage = IconFactory:createRoleIconSprite({
-		iconType = 6,
+	local heroImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel,
 		useAnim = useAnim
 	})
@@ -1708,7 +1708,8 @@ function RecruitNewDrawCardMediator:showOneAnim()
 				data = {
 					newHero = false,
 					heroId = itemConfig.TargetId.id,
-					rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+					rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -1766,7 +1767,8 @@ function RecruitNewDrawCardMediator:showOneAnim()
 				data = {
 					newHero = false,
 					heroId = itemConfig.TargetId.id,
-					rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+					rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -1821,7 +1823,8 @@ function RecruitNewDrawCardMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -1899,7 +1902,8 @@ function RecruitNewDrawCardMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -2078,11 +2082,9 @@ function RecruitNewDrawCardMediator:createRewardHero(data, pos, adjustZoom, rewa
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
 	local roleAnim = anim:getChildByFullName("roleAnim")
 	local roleNode = roleAnim:getChildByFullName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = roleModel,
-		size = cc.size(245, 336)
+	local realImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = roleModel
 	})
 
 	realImage:addTo(roleNode)
@@ -2232,7 +2234,8 @@ function RecruitNewDrawCardMediator:showNewHeroView(heroArr, animFrame)
 				heroId = id,
 				callback = callback,
 				newHero = newHero,
-				animFrame = animFrame
+				animFrame = animFrame,
+				fragmentCount = data.fragmentCount
 			}))
 		end
 	else

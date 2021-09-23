@@ -544,7 +544,7 @@ all.Skill_WLSTNCi_Unique = {
 					piece = 4
 				end
 
-				global.DelayCall(_env, delaytime * (i - 1), global.Chess_Piece, piece, global.GetCellById(_env, global.Random(_env, 1, 9), global.GetSide(_env, global.EnemyField(_env))), this.dmgFactor[2], 0)
+				global.DelayCall(_env, delaytime * (i - 1), global.Chess_Piece, piece, global.getCellBySideAndNo(_env, global.GetSide(_env, global.EnemyField(_env)), global.Random(_env, 1, 9)), this.dmgFactor[2], 0)
 			end
 		end)
 		exec["@time"]({
@@ -1187,7 +1187,7 @@ all.Skill_WLSTNCi_Unique_EX = {
 					piece = 4
 				end
 
-				global.DelayCall(_env, delaytime * (i - 1), global.Chess_Piece, piece, global.GetCellById(_env, global.Random(_env, 1, 9), global.GetSide(_env, global.EnemyField(_env))), this.dmgFactor[2], 0)
+				global.DelayCall(_env, delaytime * (i - 1), global.Chess_Piece, piece, global.getCellBySideAndNo(_env, global.GetSide(_env, global.EnemyField(_env)), global.Random(_env, 1, 9)), this.dmgFactor[2], 0)
 			end
 		end)
 		exec["@time"]({

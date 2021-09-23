@@ -274,6 +274,10 @@ function LeadStageArenaMainMediator:refreshRankView()
 	rankPanelClone:setVisible(false)
 
 	local function callback()
+		if not checkDependInstance(self) then
+			return
+		end
+
 		self._rankList = self._rankSystem:getRankListByType(self._rankType)
 
 		for i = 1, 3 do
@@ -480,6 +484,8 @@ function LeadStageArenaMainMediator:onClickEnter()
 	local data = self._developSystem:getPlayer():getPlayerStageArena()
 
 	if data.rivalRid and data.rivalRid == "" then
+		self._leadStageArenaSystem:requestEnter()
+
 		local view = self:getInjector():getInstance("LeadStageArenaLoadingView")
 
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
@@ -510,6 +516,10 @@ function LeadStageArenaMainMediator:enterRivalView()
 	end
 
 	self._leadStageArenaSystem:requestEnter(callback, true)
+end
+
+function LeadStageArenaMainMediator:enterRivalViewNoReq()
+	self._leadStageArenaSystem:enterRivalView()
 end
 
 function LeadStageArenaMainMediator:refreshTopInfo()

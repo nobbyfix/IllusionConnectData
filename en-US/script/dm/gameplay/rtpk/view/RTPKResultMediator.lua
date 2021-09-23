@@ -83,14 +83,18 @@ function RTPKResultMediator:setupView(data)
 
 				for i = 1, 2 do
 					local oldIconNode = upAnim:getChildByName("oldicon" .. i)
-					local curGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, true)
+					local curGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, {
+						useAnim = true
+					})
 
 					curGradeIcon:addTo(oldIconNode):offset(0, 20)
 				end
 
 				for i = 1, 4 do
 					local newIconNode = upAnim:getChildByName("newicon" .. i)
-					local newGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, true)
+					local newGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, {
+						useAnim = true
+					})
 
 					newGradeIcon:addTo(newIconNode):offset(0, 20)
 				end
@@ -100,7 +104,9 @@ function RTPKResultMediator:setupView(data)
 				end)
 			else
 				local mc_nowGradeIcon = anim:getChildByName("mc_gradeIcon")
-				local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, true)
+				local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, {
+					useAnim = true
+				})
 
 				nowGradeIcon:addTo(mc_nowGradeIcon):offset(0, 20)
 			end
@@ -125,7 +131,9 @@ function RTPKResultMediator:setupView(data)
 			anim:addTo(self._aniNode):offset(0, -30)
 
 			local mc_nowGradeIcon = anim:getChildByName("mc_gradeIcon")
-			local nowGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, true)
+			local nowGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, {
+				useAnim = true
+			})
 
 			nowGradeIcon:addTo(mc_nowGradeIcon):offset(0, 20)
 			anim:addCallbackAtFrame(55, function ()

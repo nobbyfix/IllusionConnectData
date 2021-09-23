@@ -57,10 +57,10 @@ function scene_mapstory_Japan_2_clue_01.actions.start_mapstory_Japan_2_clue_01(_
 					modelId = "Model_YDZZong",
 					id = "YDZZong_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -460,
+						y = -350,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -127,10 +127,10 @@ function scene_mapstory_Japan_2_clue_01.actions.start_mapstory_Japan_2_clue_01(_
 					modelId = "Model_YBYa",
 					id = "YBYa_speak",
 					rotationX = 0,
-					scale = 1.1,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -340,
+						y = -440,
 						refpt = {
 							x = 0.3,
 							y = 0

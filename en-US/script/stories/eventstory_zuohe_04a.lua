@@ -149,11 +149,11 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 					modelId = "Model_Story_YYing",
 					id = "YYing_speak",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.8,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -165,7 +165,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 							name = "YYing_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "YYing/YYing_face_5.png",
+							image = "YYing/YYing_face_1.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -177,8 +177,8 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 915
+								x = -2.7,
+								y = 914
 							}
 						}
 					}
@@ -197,7 +197,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 					zorder = 8,
 					position = {
 						x = 0,
-						y = -370,
+						y = -500,
 						refpt = {
 							x = 0.8,
 							y = -0.05
@@ -221,8 +221,8 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -14,
-								y = 792
+								x = -13.3,
+								y = 795.2
 							}
 						}
 					}
@@ -241,7 +241,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -400,
+						y = -475,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -265,8 +265,8 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = 13,
-								y = 830
+								x = 18.4,
+								y = 835.5
 							}
 						}
 					}
@@ -407,7 +407,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_1.png",
+					image = "YYing/YYing_face_4.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -439,7 +439,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "GYCZi/GYCZi_face_4.png",
+					image = "GYCZi/GYCZi_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1107,7 +1107,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1139,7 +1139,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "SYAi/SYAi_face_2.png",
+					image = "SYAi/SYAi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1191,7 +1191,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "GYCZi/GYCZi_face_5.png",
+					image = "GYCZi/GYCZi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1243,7 +1243,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1381,7 +1381,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -400,
+						y = -360,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1523,7 +1523,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "YYing/YYing_face_3.png",
+					image = "YYing/YYing_face_5.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -1653,7 +1653,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 					duration = 0,
 					position = {
 						x = 0,
-						y = -370,
+						y = -500,
 						refpt = {
 							x = 0.85,
 							y = 0.05
@@ -1668,7 +1668,7 @@ function scene_eventstory_zuohe_04a.actions.start_eventstory_zuohe_04a(_root, ar
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "SYAi/SYAi_face_2.png",
+					image = "SYAi/SYAi_face_3.png",
 					pathType = "STORY_FACE"
 				}
 			end

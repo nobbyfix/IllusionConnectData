@@ -169,8 +169,13 @@ function DreamHouseTeamMediator:initData(data)
 
 	self._ignoreReloadData = true
 	self._curTeam = self._data.team
+	local cjson = require("cjson.safe")
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, "DreamHouseTeamStates", "BattleSuccess")
 
-	self._curTeam:setHeroes(tmpTeam)
+	if data ~= self._battleId .. "BattleFailed" then
+		self._curTeam:setHeroes(tmpTeam)
+	end
 
 	self._curMasterId = self._curTeam:getMasterId()
 	self._oldMasterId = self._curMasterId
@@ -1021,7 +1026,7 @@ function DreamHouseTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -1516,5 +1521,65 @@ function DreamHouseTeamMediator:initLockIconsByDreamChallenge()
 			}))
 		end)
 		widget:addTo(iconBg):center(iconBg:getContentSize())
+	end
+end
+
+function DreamHouseTeamMediator:onClickMasterSkill()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	local params = {
+		isFromDream = true,
+		masterId = self._curMasterId,
+		active = self._skillActive
+	}
+	local view = self:getInjector():getInstance("MasterLeaderSkillView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, params))
+end
+
+function CommonTeamMediator:checkMasterSkillActive()
+	self._masterSkillPanel:removeAllChildren()
+
+	self._skillActive = {}
+	local skills = self._masterSystem:getMasterLeaderSkillList(self._curMasterId)
+
+	for i = 1, #skills do
+		local skill = skills[i]
+		local skillId = skill:getId()
+		local info = {
+			levelHide = true,
+			id = skillId,
+			skillType = skill:getSkillType()
+		}
+		local newSkillNode = IconFactory:createMasterSkillIcon(info)
+
+		newSkillNode:setScale(0.36)
+		self._masterSkillPanel:addChild(newSkillNode, 2)
+
+		local index = i <= 3 and i or i - 3
+		local posX = 20 + (index - 1) * 55
+		local posY = i <= 3 and 61 or 10
+
+		newSkillNode:setPosition(cc.p(posX, posY))
+
+		local conditions = skill:getActiveCondition()
+		local isActive = true
+
+		newSkillNode:setGray(not isActive)
+
+		if isActive then
+			self._skillActive[i] = true
+			local shangceng = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangceng:addTo(newSkillNode)
+			shangceng:setPosition(cc.p(46.5, 46.5))
+			shangceng:setScale(1.42)
+		else
+			newSkillNode:setGray(true)
+
+			self._skillActive[i] = false
+		end
 	end
 end

@@ -471,9 +471,9 @@ function ActivityPointDetailMediator:setupView()
 	self._rolePanel:removeAllChildren()
 
 	local pointHead = point:getConfig().PointHead
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = pointHead
 	})
 
@@ -612,9 +612,9 @@ function ActivityPointDetailMediator:setupBossView()
 	self._rolePanel:removeAllChildren()
 
 	local pointHead = point:getConfig().PointHead
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = pointHead
 	})
 
@@ -824,16 +824,14 @@ function ActivityPointDetailMediator:refreshTeamView()
 		roleModel = self:getOwnMasterRoleModel(self:getOwnMasterId(self._pointId))
 	end
 
-	local masterIcon = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust5",
-		id = roleModel,
-		size = cc.size(446, 115)
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_4",
+		id = roleModel
 	})
 	local masterPanel = self._teamPanel:getChildByName("masterIcon")
 
 	masterPanel:removeAllChildren()
-	masterIcon:addTo(masterPanel):setPosition(220, 20)
+	masterIcon:addTo(masterPanel):center(masterPanel:getContentSize())
 end
 
 function ActivityPointDetailMediator:onClickBack(sender, eventType)

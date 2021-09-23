@@ -12,13 +12,6 @@ function BattleHeroTipWidget:_setupUI()
 
 	descLabel:setVisible(false)
 
-	local richText = ccui.RichText:createWithXML("", {})
-
-	richText:setAnchorPoint(descLabel:getAnchorPoint())
-	richText:setPosition(cc.p(descLabel:getPosition()))
-	richText:addTo(descLabel:getParent())
-
-	self._skillDesc = richText
 	self._skillDescWidth = descLabel:getContentSize().width
 	self._skillName = view:getChildByFullName("skillNode.skillName")
 	self._skillIcon = view:getChildByFullName("skillNode.skillIcon")
@@ -37,7 +30,6 @@ function BattleHeroTipWidget:_setupUI()
 	view:getChildByFullName("atk.label"):setOpacity(153)
 	view:getChildByFullName("def.label"):setOpacity(153)
 	view:getChildByFullName("hp.label"):setOpacity(153)
-	self._skillDesc:setOpacity(153)
 end
 
 function BattleHeroTipWidget:setupHeroInfo(cardInfo)
@@ -141,18 +133,36 @@ function BattleHeroTipWidget:setSkillInfo(skillId, level, range)
 	self._rangePic:setPositionX(self._skillIcon:getPositionX() + 50)
 	self:showSkillInfo()
 
-	local desc = ConfigReader:getEffectDesc("Skill", descKey, skillId, level)
-	local tmpl = TextTemplate:new(desc)
-	desc = tmpl:stringify({
-		fontSize = 18,
-		fontName = TTF_FONT_FZYH_R
-	})
+	local fz = 18
+	local height = 400
+	local descText = nil
 
-	self._skillDesc:setString(desc)
-	self._skillDesc:ignoreContentAdaptWithSize(true)
-	self._skillDesc:rebuildElements()
-	self._skillDesc:formatText()
-	self._skillDesc:renderContent(self._skillDescWidth, 0)
+	repeat
+		local style = {
+			fontName = TTF_FONT_FZYH_R,
+			fontSize = fz
+		}
+		local showText = ConfigReader:getEffectDesc("Skill", descKey, skillId, level, style)
+		descText = ccui.RichText:createWithXML(showText, {})
+
+		descText:renderContent(self._skillDescWidth, 0, true)
+
+		height = descText:getContentSize().height
+		fz = fz - 2
+	until height <= 200 or fz < 2
+
+	local view = self:getView()
+
+	view:getChildByFullName("skillNode"):removeChildByName("descLabel")
+
+	local descLabel = view:getChildByFullName("skillNode.skillDesc")
+
+	descLabel:setVisible(false)
+	descText:setAnchorPoint(descLabel:getAnchorPoint())
+	descText:setPosition(cc.p(descLabel:getPosition()))
+	descText:addTo(descLabel:getParent())
+	descText:setOpacity(153)
+	descText:setName("descLabel")
 	self:getView():setVisible(true)
 end
 

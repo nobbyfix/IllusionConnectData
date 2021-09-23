@@ -59,14 +59,14 @@ function ActivityTaskMonthCardMediator:setupView()
 	if activityConfig.showHero then
 		local heroPanel = self._main:getChildByName("heroPanel")
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", activityConfig.showHero)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
 		heroSprite:setScale(1.1)
 		heroSprite:addTo(heroPanel)
-		heroSprite:setPosition(cc.p(275, 90))
+		heroSprite:setPosition(cc.p(345, 90))
 	end
 
 	self:createTableView()

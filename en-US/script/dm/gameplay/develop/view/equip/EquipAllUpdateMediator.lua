@@ -313,7 +313,7 @@ function EquipAllUpdateMediator:refreshEquipBaseInfo()
 				local heroInfo = {
 					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
 				}
-				local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+				local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 				headImgName:setScale(0.2)
 

@@ -317,11 +317,11 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 					modelId = "Model_XSMLi",
 					id = "XSMLi_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.75,
 					zorder = 20,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -345,8 +345,8 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -182,
-								y = 792.5
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -500,7 +500,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -517,7 +517,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -574,7 +574,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 					duration = 0.15,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = -0.1
@@ -591,7 +591,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -505,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1290,7 +1290,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -505,
+							y = -480,
 							refpt = {
 								x = 0.65,
 								y = -0.1
@@ -1304,7 +1304,7 @@ function scene_elitestory13_1a.actions.start_elitestory13_1a(_root, args)
 				actor = __getnode__(_root, "XSMLi_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.305,
+						scale = 1.1,
 						duration = 0.5
 					}
 				end

@@ -406,11 +406,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSiheibian",
 						rotationX = 0,
-						scale = 1.01,
+						scale = 0.58,
 						zorder = 403,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -428,11 +428,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSibaibian",
 						rotationX = 0,
-						scale = 1.006,
+						scale = 0.576,
 						zorder = 406,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -449,11 +449,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSi",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.57,
 						zorder = 409,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.51,
 								y = 0
@@ -477,8 +477,8 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 13.2,
-									y = 525.6
+									x = 19.5,
+									y = 806.9
 								}
 							}
 						}
@@ -556,11 +556,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ATSheng",
 						id = "ATShengheibian",
 						rotationX = 0,
-						scale = 1.01,
+						scale = 0.61,
 						zorder = 203,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = -0.45,
 								y = 0
@@ -578,11 +578,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ATSheng",
 						id = "ATShengbaibian",
 						rotationX = 0,
-						scale = 1.006,
+						scale = 0.606,
 						zorder = 206,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = -0.45,
 								y = 0
@@ -599,11 +599,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_ATSheng",
 						id = "ATSheng",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.6,
 						zorder = 209,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = -0.45,
 								y = 0
@@ -627,8 +627,8 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -31.2,
-									y = 684
+									x = -38.5,
+									y = 958
 								}
 							}
 						}
@@ -673,11 +673,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_PNCao",
 						id = "PNCaoheibian",
 						rotationX = 0,
-						scale = 1.09,
+						scale = 0.71,
 						zorder = 303,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -695,11 +695,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_PNCao",
 						id = "PNCaobaibian",
 						rotationX = 0,
-						scale = 1.086,
+						scale = 0.706,
 						zorder = 306,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -716,11 +716,11 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						modelId = "Model_PNCao",
 						id = "PNCao",
 						rotationX = 0,
-						scale = 1.08,
+						scale = 0.7,
 						zorder = 309,
 						position = {
 							x = 0,
-							y = -375,
+							y = -420,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -744,8 +744,8 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = -9.3,
-									y = 635.3
+									x = -11.5,
+									y = 1097
 								}
 							}
 						}
@@ -1091,7 +1091,7 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = 0.28,
 								y = 0
@@ -1108,7 +1108,7 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = 0.28,
 								y = 0
@@ -1125,7 +1125,7 @@ function scene_eventstory_Logan_05a.actions.start_eventstory_Logan_05a(_root, ar
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -295,
+							y = -230,
 							refpt = {
 								x = 0.28,
 								y = 0

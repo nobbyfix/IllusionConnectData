@@ -436,11 +436,11 @@ function scene_eventstory_Halloween_09a.actions.start_eventstory_Halloween_09a(_
 					modelId = "Model_MTZMEShi",
 					id = "MTZMEShi_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 675,
-						y = -310,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -464,8 +464,8 @@ function scene_eventstory_Halloween_09a.actions.start_eventstory_Halloween_09a(_
 								y = 0.5
 							},
 							position = {
-								x = -6,
-								y = 872.5
+								x = -10.5,
+								y = 1081
 							}
 						}
 					}
@@ -1283,7 +1283,7 @@ function scene_eventstory_Halloween_09a.actions.start_eventstory_Halloween_09a(_
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -310,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1735,7 +1735,7 @@ function scene_eventstory_Halloween_09a.actions.start_eventstory_Halloween_09a(_
 					duration = 0.5,
 					position = {
 						x = -75,
-						y = -310,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -1752,7 +1752,7 @@ function scene_eventstory_Halloween_09a.actions.start_eventstory_Halloween_09a(_
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -310,
+						y = -390,
 						refpt = {
 							x = 0.65,
 							y = 0

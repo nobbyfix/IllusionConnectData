@@ -803,7 +803,7 @@
     },
     "DreamHouseUnlockParm": {
         "Condition": {
-            "LEVEL": 999
+            "STAGE": "M01S02"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -816,7 +816,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "LEVEL": 999
+            "LEVEL": 1
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",

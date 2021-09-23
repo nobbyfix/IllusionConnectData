@@ -1,4 +1,4687 @@
 {
+    "AnimalSE01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "MTZMEShi": "HSYZhai",
+                "id": "AnimalM02P01proN01",
+                "pos": 1
+            },
+            {
+                "forbidid": "MTZMEShi",
+                "id": "AnimalM02P01proN03",
+                "pos": 3
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Animal_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS09N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S01",
+        "EnemyMaster": "AnimalE02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE01",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS09N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_XSMLi",
+        "PointPicture": "",
+        "PointReward": "AnimalSE01E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "MTZMEShi": "HSYZhai",
+                "id": "AnimalM02P01proN01",
+                "pos": 1
+            },
+            {
+                "forbidid": "MTZMEShi",
+                "id": "AnimalM02P01proN03",
+                "pos": 3
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Animal_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS09M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S01",
+        "EnemyMaster": "AnimalM02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_1",
+                "4": "Animal_Buff_Star4_2_1",
+                "5": "Animal_Buff_Star5_2_1",
+                "6": "Animal_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE01",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS09M_Name",
+        "NextPoint": [
+            "AnimalSE02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_XSMLi",
+        "PointPicture": "",
+        "PointReward": "AnimalSE01M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS10N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S02",
+        "EnemyMaster": "AnimalE02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE02",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS10N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "AnimalSE02E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS10M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S02",
+        "EnemyMaster": "AnimalM02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_2",
+                "4": "Animal_Buff_Star4_2_2",
+                "5": "Animal_Buff_Star5_2_2",
+                "6": "Animal_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE02",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS10M_Name",
+        "NextPoint": [
+            "AnimalSE03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_NFEr",
+        "PointPicture": "",
+        "PointReward": "AnimalSE02M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS11N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S03",
+        "EnemyMaster": "AnimalE02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE03",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS11N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_KMLa",
+        "PointPicture": "",
+        "PointReward": "AnimalSE03E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS11M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S03",
+        "EnemyMaster": "AnimalM02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_3",
+                "4": "Animal_Buff_Star4_2_3",
+                "5": "Animal_Buff_Star5_2_3",
+                "6": "Animal_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE03",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS11M_Name",
+        "NextPoint": [
+            "AnimalSE04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_KMLa",
+        "PointPicture": "",
+        "PointReward": "AnimalSE03M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS12N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S04",
+        "EnemyMaster": "AnimalE02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE04",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS12N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_AJTa",
+        "PointPicture": "",
+        "PointReward": "AnimalSE04E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS12M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S04",
+        "EnemyMaster": "AnimalM02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_4",
+                "4": "Animal_Buff_Star4_2_4",
+                "5": "Animal_Buff_Star5_2_4",
+                "6": "Animal_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE04",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS12M_Name",
+        "NextPoint": [
+            "AnimalSE05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_AJTa",
+        "PointPicture": "",
+        "PointReward": "AnimalSE04M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE05E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalM02P05proN02",
+                "pos": 2
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS13N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S05",
+        "EnemyMaster": "AnimalE02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE05",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS13N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe",
+        "PointPicture": "",
+        "PointReward": "AnimalSE05E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS13M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S05",
+        "EnemyMaster": "AnimalM02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_5",
+                "4": "Animal_Buff_Star4_2_5",
+                "5": "Animal_Buff_Star5_2_5",
+                "6": "Animal_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE05",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS13M_Name",
+        "NextPoint": [
+            "AnimalSE06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe",
+        "PointPicture": "",
+        "PointReward": "AnimalSE05M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE06E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalM02P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS14N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S06",
+        "EnemyMaster": "AnimalE02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE06",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS14N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "AnimalSE06E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE06M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalM02P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS14M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S06",
+        "EnemyMaster": "AnimalM02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE06M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_6",
+                "4": "Animal_Buff_Star4_2_6",
+                "5": "Animal_Buff_Star5_2_6",
+                "6": "Animal_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE06",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS14M_Name",
+        "NextPoint": [
+            "AnimalSE07M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLWan",
+        "PointPicture": "",
+        "PointReward": "AnimalSE06M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE06M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE07E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "AnimalM02P07proN04",
+                "pos": 4
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS15N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S07",
+        "EnemyMaster": "AnimalE02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE07",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS15N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_TPGZhu",
+        "PointPicture": "",
+        "PointReward": "AnimalSE07E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE07M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "AnimalM02P07proN04",
+                "pos": 4
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS15M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S07",
+        "EnemyMaster": "AnimalM02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_7",
+                "4": "Animal_Buff_Star4_2_7",
+                "5": "Animal_Buff_Star5_2_7",
+                "6": "Animal_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE07",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS15M_Name",
+        "NextPoint": [
+            "AnimalSE08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_TPGZhu",
+        "PointPicture": "",
+        "PointReward": "AnimalSE07M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE08E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "AnimalM02P08proN02",
+                "pos": 2
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS16N_BlockDesc",
+        "EnemyCard": "CardAnimalE02S08",
+        "EnemyMaster": "AnimalE02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE08",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS16N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSE08E_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSE08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSE08M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "AnimalM02P08proN02",
+                "pos": 2
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS16M_BlockDesc",
+        "EnemyCard": "CardAnimalM02S08",
+        "EnemyMaster": "AnimalM02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSE08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_2_8",
+                "4": "Animal_Buff_Star4_2_8",
+                "5": "Animal_Buff_Star5_2_8",
+                "6": "Animal_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSE08",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS16M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSE08M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSE08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSH01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalH01P01proN05",
+                "pos": 5
+            },
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalH01P01proN05",
+                "pos": 2
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Animal_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS01H_BlockDesc",
+        "EnemyCard": "CardAnimalSH01M",
+        "EnemyMaster": "AnimalH01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSH01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE09",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS01H_Name",
+        "NextPoint": [
+            "AnimalSH02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SDTZi",
+        "PointPicture": "",
+        "PointReward": "AnimalSH01M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSH01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSH02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS02H_BlockDesc",
+        "EnemyCard": "CardAnimalSH02M",
+        "EnemyMaster": "AnimalH01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSH02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE10",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS02H_Name",
+        "NextPoint": [
+            "AnimalSH03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FEMSi",
+        "PointPicture": "",
+        "PointReward": "AnimalSH02M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSH02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSH03M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalH01P03proN01",
+                "pos": 1
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Boss_2",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS03H_BlockDesc",
+        "EnemyCard": "CardAnimalSH03M",
+        "EnemyMaster": "AnimalH01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSH03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSE11",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS03H_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLYDe",
+        "PointPicture": "",
+        "PointReward": "AnimalSH03M_PointReward",
+        "PointTime": {
+            "start": "2021-10-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSH03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 20
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XDE",
+                "id": "AnimalM01P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS01N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S01",
+        "EnemyMaster": "AnimalE01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN01",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS01N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSN01E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XDE",
+                "id": "AnimalM01P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS01M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S01",
+        "EnemyMaster": "AnimalM01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_1",
+                "4": "Animal_Buff_Star4_1_1",
+                "5": "Animal_Buff_Star5_1_1",
+                "6": "Animal_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN01",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS01M_Name",
+        "NextPoint": [
+            "AnimalSN02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSN01M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN02E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "FLYDe",
+                "id": "AnimalM01P02proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS02N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S02",
+        "EnemyMaster": "AnimalE01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN02",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS02N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_BEr",
+        "PointPicture": "",
+        "PointReward": "AnimalSN02E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN02M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "FLYDe",
+                "id": "AnimalM01P02proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS02M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S02",
+        "EnemyMaster": "AnimalM01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_2",
+                "4": "Animal_Buff_Star4_1_2",
+                "5": "Animal_Buff_Star5_1_2",
+                "6": "Animal_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN02",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS02M_Name",
+        "NextPoint": [
+            "AnimalSN03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_BEr",
+        "PointPicture": "",
+        "PointReward": "AnimalSN02M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS03N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S03",
+        "EnemyMaster": "AnimalE01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN03",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS03N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN03E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS03M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S03",
+        "EnemyMaster": "AnimalM01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_3",
+                "4": "Animal_Buff_Star4_1_3",
+                "5": "Animal_Buff_Star5_1_3",
+                "6": "Animal_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN03",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS03M_Name",
+        "NextPoint": [
+            "AnimalSN04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN03M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS04N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S04",
+        "EnemyMaster": "AnimalE01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN04",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS04N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN04E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS04M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S04",
+        "EnemyMaster": "AnimalM01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_4",
+                "4": "Animal_Buff_Star4_1_4",
+                "5": "Animal_Buff_Star5_1_4",
+                "6": "Animal_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN04",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS04M_Name",
+        "NextPoint": [
+            "AnimalSN05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN04M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN05E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "YXZChun",
+                "id": "AnimalM01P05proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS05N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S05",
+        "EnemyMaster": "AnimalE01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN05",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS05N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "AnimalSN05E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN05M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "YXZChun",
+                "id": "AnimalM01P05proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS05M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S05",
+        "EnemyMaster": "AnimalM01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_5",
+                "4": "Animal_Buff_Star4_1_5",
+                "5": "Animal_Buff_Star5_1_5",
+                "6": "Animal_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN05",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS05M_Name",
+        "NextPoint": [
+            "AnimalSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "AnimalSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN06E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "CZheng",
+                "id": "AnimalM01P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS06N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S06",
+        "EnemyMaster": "AnimalE01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN06",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS06N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "AnimalSN06E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN06M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "CZheng",
+                "id": "AnimalM01P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS06M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S06",
+        "EnemyMaster": "AnimalM01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_6",
+                "4": "Animal_Buff_Star4_1_6",
+                "5": "Animal_Buff_Star5_1_6",
+                "6": "Animal_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN06",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS06M_Name",
+        "NextPoint": [
+            "AnimalSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "AnimalSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN07E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalM01P07proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS07N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S07",
+        "EnemyMaster": "AnimalE01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN07",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS07N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN07E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN07M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "HSYZhai",
+                "id": "AnimalM01P07proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Animal_Normal",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS07M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S07",
+        "EnemyMaster": "AnimalM01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_7",
+                "4": "Animal_Buff_Star4_1_7",
+                "5": "Animal_Buff_Star5_1_7",
+                "6": "Animal_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN07",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS07M_Name",
+        "NextPoint": [
+            "AnimalSN08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "AnimalSN07M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS08N_BlockDesc",
+        "EnemyCard": "CardAnimalE01S08",
+        "EnemyMaster": "AnimalE01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "AnimalSN08",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS08N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSN08E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 12
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "AnimalSN08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "AnimalSN08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Animal_Boss_1",
+            "",
+            ""
+        ],
+        "Background": "Animal_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Animal",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_AnimalS08M_BlockDesc",
+        "EnemyCard": "CardAnimalM01S08",
+        "EnemyMaster": "AnimalM01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "AnimalSN08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LEMHou": "Hero_ABlock_LEMHou_Extra",
+            "XDE": "Hero_ABlock_XDE_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_LEMHou_Buff_Star3",
+                "4": "Animal_LEMHou_Buff_Star4",
+                "5": "Animal_LEMHou_Buff_Star5",
+                "6": "Animal_LEMHou_Buff_Star6"
+            },
+            "XDE": {
+                "3": "Animal_XDE_Buff_Star3",
+                "4": "Animal_XDE_Buff_Star4",
+                "5": "Animal_XDE_Buff_Star5",
+                "6": "Animal_XDE_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEMHou": {
+                "3": "Animal_Buff_Star3_1_8",
+                "4": "Animal_Buff_Star4_1_8",
+                "5": "Animal_Buff_Star5_1_8",
+                "6": "Animal_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_LZHua",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Animal_ExchangeItem",
+        "Map": "AnimalSN08",
+        "Master": "",
+        "Name": "BlockPoint_AnimalS08M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointPicture": "",
+        "PointReward": "AnimalSN08M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "AnimalSN08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Animal_Tittle_1",
+            "SpecialRule_Animal_Rule_1",
+            "SpecialRule_Animal_Rule_2",
+            "SpecialRule_Animal_Rule_4",
+            "SpecialRule_Animal_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCost": {
+            "IR_AnimalStamina": 6
+        },
+        "StaminaCostAgain": "",
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "DeepSeaS01E": {
         "AiRules": "",
         "Assist": "",

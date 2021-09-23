@@ -354,11 +354,11 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 					modelId = "Model_Story_CLMan",
 					id = "CLMan",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -382,8 +382,8 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -1514,11 +1514,11 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.1,
 							y = 0
@@ -1542,8 +1542,8 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -1578,11 +1578,11 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -400,
+						y = -280,
 						refpt = {
 							x = 0.9,
 							y = 0
@@ -1606,8 +1606,8 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -1819,7 +1819,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1901,11 +1901,11 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						modelId = "Model_NFEr",
 						id = "NFEr",
 						rotationX = 0,
-						scale = 0.8,
+						scale = 0.68,
 						zorder = 5,
 						position = {
 							x = 0,
-							y = -580,
+							y = -470,
 							refpt = {
 								x = -0.45,
 								y = 0
@@ -1929,8 +1929,8 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 									y = 0.5
 								},
 								position = {
-									x = -38.8,
-									y = 1324.4
+									x = -68.5,
+									y = 1369
 								}
 							}
 						}
@@ -1976,7 +1976,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -580,
+							y = -470,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -2770,7 +2770,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.1,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -2911,7 +2911,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0.1
@@ -2928,7 +2928,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0
@@ -2945,7 +2945,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0.1
@@ -2962,7 +2962,7 @@ function scene_eventstory_dreamtowersd_08a.actions.start_eventstory_dreamtowersd
 						duration = 0.2,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.45,
 								y = 0

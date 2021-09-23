@@ -682,6 +682,9 @@ function SourceMediator:onClickGo(data)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 	local url = data.URL
+
+	dump(url, "url >>>>>>>>>>>")
+
 	local context = self:getInjector():instantiate(URLContext)
 	local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
 

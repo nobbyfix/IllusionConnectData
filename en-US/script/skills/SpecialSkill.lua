@@ -784,6 +784,7 @@ all.Skill_MainStage_EnterDaze_Passive_1_1 = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -825,6 +826,7 @@ all.Skill_MainStage_EnterDaze_Passive_1_1 = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -2197,6 +2199,7 @@ all.Skill_ALPo_Unique_Special = {
 						"STATUS",
 						"DEBUFF",
 						"MUTE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -2429,6 +2432,7 @@ all.Skill_JDCZhang_Unique_Special = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2690,6 +2694,7 @@ all.Skill_ALSi_Unique_Special = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2937,6 +2942,7 @@ all.Skill_Frozen = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -3246,6 +3252,7 @@ all.Skill_SSQXin_Unique_Special = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -4560,6 +4567,7 @@ all.Skill_MainStage_PreEnter_Freeze = {
 					"STATUS",
 					"DEBUFF",
 					"FREEZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -4612,6 +4620,7 @@ all.Skill_MainStage_PreEnter_Daze = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -5515,6 +5524,7 @@ all.Skill_MainStage_EnemyMasterBurning_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -5560,6 +5570,7 @@ all.Skill_MainStage_EnemyMasterBurning_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -6912,6 +6923,7 @@ all.Skill_MainStage_EnterDaze_Passive = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -6968,6 +6980,7 @@ all.Skill_MainStage_EnterFreeze_Passive = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {

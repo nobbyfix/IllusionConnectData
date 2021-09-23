@@ -157,11 +157,11 @@ function scene_HeroStory_BBLMa_05a.actions.start_HeroStory_BBLMa_05a(_root, args
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -178,14 +178,14 @@ function scene_HeroStory_BBLMa_05a.actions.start_HeroStory_BBLMa_05a(_root, args
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -250,11 +250,11 @@ function scene_HeroStory_BBLMa_05a.actions.start_HeroStory_BBLMa_05a(_root, args
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -278,8 +278,8 @@ function scene_HeroStory_BBLMa_05a.actions.start_HeroStory_BBLMa_05a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}

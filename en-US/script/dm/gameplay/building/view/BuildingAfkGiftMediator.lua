@@ -626,8 +626,8 @@ function BuildingAfkGiftMediator:updateHero()
 	self._heroPanel:removeAllChildren()
 
 	self._sharedSpine = nil
-	local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = self._heroData:getModel(),
 		useAnim = self._settingModel:getRoleDynamic()
 	})

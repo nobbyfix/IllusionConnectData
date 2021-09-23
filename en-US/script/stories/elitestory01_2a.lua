@@ -1693,10 +1693,10 @@ function scene_elitestory01_2a.actions.start_elitestory01_2a(_root, args)
 					modelId = "Model_KMLa",
 					id = "KMLa_speak",
 					rotationX = 0,
-					scale = 1.3,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -490,
+						y = -160,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -1742,7 +1742,7 @@ function scene_elitestory01_2a.actions.start_elitestory01_2a(_root, args)
 					duration = 0,
 					position = {
 						x = 0,
-						y = -490,
+						y = -160,
 						refpt = {
 							x = 0.5,
 							y = 0

@@ -478,7 +478,8 @@ function GalleryMemoryPackMediator:onClickCallback(data, index)
 	local value = {
 		type = GalleryMemoryType.STORY,
 		storyType = data:getType(),
-		storyId = data:getId()
+		storyId = data:getId(),
+		title = data:getTitle()
 	}
 	local view = self:getInjector():getInstance("GalleryMemoryListView")
 

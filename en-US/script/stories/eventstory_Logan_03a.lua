@@ -1989,11 +1989,11 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSiheibian",
 						rotationX = 0,
-						scale = 1.01,
+						scale = 0.58,
 						zorder = 500,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -2011,11 +2011,11 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSibaibian",
 						rotationX = 0,
-						scale = 1.006,
+						scale = 0.576,
 						zorder = 505,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -2032,11 +2032,11 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 						modelId = "Model_ALSi",
 						id = "ALSi",
 						rotationX = 0,
-						scale = 1,
+						scale = 0.57,
 						zorder = 510,
 						position = {
 							x = 0,
-							y = -240,
+							y = -175,
 							refpt = {
 								x = 0.49,
 								y = 0
@@ -2060,8 +2060,8 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 									y = 0.5
 								},
 								position = {
-									x = 13.2,
-									y = 525.6
+									x = 19.5,
+									y = 806.9
 								}
 							}
 						}
@@ -3108,7 +3108,7 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.29,
 									y = 0
@@ -3125,7 +3125,7 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.29,
 									y = 0
@@ -3142,7 +3142,7 @@ function scene_eventstory_Logan_03a.actions.start_eventstory_Logan_03a(_root, ar
 							duration = 0.2,
 							position = {
 								x = 0,
-								y = -240,
+								y = -175,
 								refpt = {
 									x = 0.29,
 									y = 0

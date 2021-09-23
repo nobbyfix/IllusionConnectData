@@ -32,6 +32,8 @@ function BattleItemMediator:enterWithData(data)
 	local cardArray = handler:getCardArray()
 
 	cardArray:FlyCard(function ()
-		self:close()
+		if not DisposableObject:isDisposed(self) then
+			self:close()
+		end
 	end)
 end

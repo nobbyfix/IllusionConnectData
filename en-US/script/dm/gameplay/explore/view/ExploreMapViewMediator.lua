@@ -1538,6 +1538,7 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 				local view = self:getInjector():getInstance("ExploreCaseAlertView")
 
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+					caseType = "BATTLE",
 					battleId = caseFactor.mapbattlepoint,
 					caseFactor = caseFactor.casefactor,
 					callback = function (chooseId)
@@ -1545,6 +1546,19 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 							enterBattle()
 						elseif caseFactor.casefactor:getQuickBattleOption() == chooseId then
 							enterQuickBattle()
+						elseif ExploreCloseChooseId == chooseId then
+							obj.endTriggering = true
+
+							self._exploreSystem:endTrigger(function (response)
+								obj.endTriggering = false
+
+								self:endTriggerCallBack(response, case, dealEndDialogue)
+							end, {
+								objectId = objId,
+								params = {
+									type = "1"
+								}
+							}, true, self)
 						else
 							obj.endTriggering = true
 
@@ -1599,6 +1613,7 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 			local view = self:getInjector():getInstance("ExploreCaseAlertView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+				caseType = "CHOICE",
 				caseFactor = caseFactor.casefactor,
 				callback = tempFunc
 			}))

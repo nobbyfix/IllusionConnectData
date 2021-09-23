@@ -101,8 +101,8 @@ function ExploreObjectMediator:initView()
 
 		node:setAnchorPoint(cc.p(0, 0))
 	elseif type == 5 then
-		node = IconFactory:createRoleIconSprite({
-			type = 2,
+		node = IconFactory:createRoleIconSpriteNew({
+			iconType = 2,
 			id = resName
 		})
 	else

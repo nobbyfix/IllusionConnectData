@@ -84,11 +84,11 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -112,8 +112,8 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}

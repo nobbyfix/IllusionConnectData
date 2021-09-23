@@ -793,6 +793,7 @@ local kExcludeExpelled = "expelled"
 local kExcludeFlee = "flee"
 local kExcludeReviving = "reviving"
 local kExcludeExpelledJoinreferee = "expelled_joinreferee"
+local kExcludeFleedJoinreferee = "fleed_joinreferee"
 
 function FormationSystem:_excludeUnit(unit, reason, workId, force)
 	local excludingUnits = self._excludingUnits
@@ -832,8 +833,12 @@ function FormationSystem:expelUnit(unit, workId, force, joinReferee)
 	end
 end
 
-function FormationSystem:fleeUnit(unit, workId, force)
-	return self:_excludeUnit(unit, kExcludeFlee, workId, force)
+function FormationSystem:fleeUnit(unit, workId, force, joinReferee)
+	if joinReferee then
+		return self:_excludeUnit(unit, kExcludeFleedJoinreferee, workId, force)
+	else
+		return self:_excludeUnit(unit, kExcludeFlee, workId, force)
+	end
 end
 
 function FormationSystem:reviveUnit(unit, force)
@@ -876,6 +881,8 @@ function FormationSystem:processExcludingUnits(workId)
 	local cntRefereeExpelled = 0
 	local fleeUnits = nil
 	local cntFlee = 0
+	local fleeRefereeUnits = nil
+	local cntFleedExpelled = 0
 
 	for i = 1, total do
 		local unit = excludingUnits[i]
@@ -914,6 +921,13 @@ function FormationSystem:processExcludingUnits(workId)
 
 				cntRefereeExpelled = cntRefereeExpelled + 1
 				expelledRefereeUnits[cntRefereeExpelled] = unit
+			elseif reason == kExcludeExpelledJoinreferee then
+				if fleeRefereeUnits == nil then
+					fleeRefereeUnits = {}
+				end
+
+				cntFleedExpelled = cntFleedExpelled + 1
+				fleeRefereeUnits[cntFleedExpelled] = unit
 			elseif reason == kExcludeFlee then
 				if fleeUnits == nil then
 					fleeUnits = {}
@@ -937,6 +951,10 @@ function FormationSystem:processExcludingUnits(workId)
 
 	if fleeUnits then
 		self:removeExpelledUnits(fleeUnits, true)
+	end
+
+	if fleeRefereeUnits then
+		self:removeExpelledUnits(fleeRefereeUnits, true, true)
 	end
 
 	if deadUnits then

@@ -193,11 +193,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_Story_CLMan",
 					id = "CLMan",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -221,8 +221,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -259,11 +259,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang",
 					rotationX = 0,
-					scale = 0.98,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -300,
+						y = -270,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -287,8 +287,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -323,11 +323,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.6,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -400,
+						y = -280,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -351,8 +351,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -377,11 +377,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_KMLa",
 					id = "KMLa",
 					rotationX = 0,
-					scale = 0.94,
+					scale = 0.65,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -260,
+						y = -160,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -405,8 +405,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 40,
-								y = 630
+								x = 47,
+								y = 733
 							}
 						}
 					}
@@ -484,11 +484,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_XLai",
 					id = "XLai",
 					rotationX = 0,
-					scale = 1.35,
+					scale = 0.76,
 					zorder = 6,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -512,8 +512,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -119,
-								y = 865.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -538,11 +538,11 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 					modelId = "Model_WEDe",
 					id = "WEDe",
 					rotationX = 0,
-					scale = 1.225,
+					scale = 0.65,
 					zorder = 6,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -565,8 +565,8 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 124,
-								y = 788
+								x = 190.5,
+								y = 1380
 							}
 						}
 					}
@@ -1015,7 +1015,7 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 1.35,
 								y = 0
@@ -1113,7 +1113,7 @@ function scene_eventstory_baking_03a.actions.start_eventstory_baking_03a(_root, 
 						duration = 0,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.25,
 								y = 0

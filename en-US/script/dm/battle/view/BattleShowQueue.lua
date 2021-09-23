@@ -96,7 +96,9 @@ function BattleShowQueue:show()
 				self._mainMediator:showMaster(infoFirst.friendMaster, infoFirst.enemyMaster)
 			elseif infoFirst.showType == battleShowType.battleItem then
 				delayCallByTime(100, function ()
-					self._mainMediator:showBattleItem(infoFirst)
+					if not DisposableObject:isDisposed(self) then
+						self._mainMediator:showBattleItem(infoFirst)
+					end
 				end)
 			end
 		end

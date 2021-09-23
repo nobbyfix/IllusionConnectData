@@ -108,6 +108,14 @@ return {
 				normal = "main_xz_1.png"
 			}
 		},
+		mAnnounceNode = {
+			mFunc = "onClickGameAnnounce",
+			mTempName = "BoardTitle",
+			mBtn = {
+				press = "zhujiemian_btn_gonggao.png",
+				normal = "zhujiemian_btn_gonggao.png"
+			}
+		},
 		mPassNode = {
 			mFunc = "onPassBtn",
 			redPointFunc = "passRedPoint",

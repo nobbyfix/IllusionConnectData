@@ -154,7 +154,7 @@ function BuildingLoveAddMediator:updateTableCell(cell, index)
 		node_head:setVisible(true)
 
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", k)
-		local icon = IconFactory:createRoleIconSprite({
+		local icon = IconFactory:createRoleIconSpriteNew({
 			id = roleModel
 		})
 

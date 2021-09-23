@@ -54,8 +54,8 @@ function EquipResolveMediator:onRegister()
 
 	local roleNode = self._main:getChildByName("roleNode")
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", "SDTZi")
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 

@@ -157,11 +157,11 @@ function scene_PanStoryPoint_00.actions.start_PanStoryPoint_00(_root, args)
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -185,8 +185,8 @@ function scene_PanStoryPoint_00.actions.start_PanStoryPoint_00(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}

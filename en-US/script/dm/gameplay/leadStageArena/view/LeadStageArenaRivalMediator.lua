@@ -223,8 +223,8 @@ function LeadStageArenaRivalMediator:refreshRivalViewDone()
 	oldRole:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", self._oldRole)
-	local heroIcon = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -475,8 +475,8 @@ function LeadStageArenaRivalMediator:refreshRivalView()
 	roleNode:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", rivalData.rivalShowId)
-	local heroIcon = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -505,11 +505,9 @@ function LeadStageArenaRivalMediator:refreshRivalTeamView(index)
 			roleNode:removeAllChildren()
 
 			local roleModel = self._masterSystem:getMasterLeadStageModel(teamInfo.masterId, teamInfo.leadId)
-			local sprite = IconFactory:createRoleIconSprite({
-				stencil = 6,
-				iconType = "Bust6",
-				id = roleModel,
-				size = cc.size(190, 269)
+			local sprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe6_1",
+				id = roleModel
 			})
 
 			roleNode:addChild(sprite)

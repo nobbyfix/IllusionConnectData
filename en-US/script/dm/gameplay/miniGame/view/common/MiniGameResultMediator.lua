@@ -83,10 +83,10 @@ function MiniGameResultMediator:createAnim(data)
 	title:addTo(winPanel)
 
 	local heroNode = anim:getChildByFullName("roleNode")
-	local heroIcon = IconFactory:createRoleIconSprite({
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
 		id = "Model_YFZZhu",
 		useAnim = true,
-		iconType = "Bust9"
+		frameId = "bustframe17"
 	})
 
 	heroIcon:setScale(1.1)

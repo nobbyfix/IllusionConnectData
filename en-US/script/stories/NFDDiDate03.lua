@@ -66,6 +66,36 @@ end
 function scene_NFDDiDate03.actions.start_NFDDiDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg3")
 		}),
@@ -95,11 +125,11 @@ function scene_NFDDiDate03.actions.start_NFDDiDate03(_root, args)
 					modelId = "Model_NFDDi",
 					id = "NFDDi_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.65,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -465,
+						y = -350,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -123,8 +153,8 @@ function scene_NFDDiDate03.actions.start_NFDDiDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -18,
-								y = 747.5
+								x = -34.5,
+								y = 1169
 							}
 						}
 					}
@@ -201,7 +231,7 @@ function scene_NFDDiDate03.actions.start_NFDDiDate03(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -465,
+						y = -350,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -253,7 +283,7 @@ function scene_NFDDiDate03.actions.start_NFDDiDate03(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -465,
+						y = -350,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1575,7 +1605,7 @@ function scene_NFDDiDate03.actions.start_NFDDiDate03p(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -465,
+						y = -350,
 						refpt = {
 							x = 1.5,
 							y = 0

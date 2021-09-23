@@ -756,7 +756,7 @@ function PetRaceSystem:createRoleIcon(data)
 		roleModel = ConfigReader:getDataByNameIdAndKey("Surface", data.surfaceId, "Model") or roleModel
 	end
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = roleModel
 	})
 

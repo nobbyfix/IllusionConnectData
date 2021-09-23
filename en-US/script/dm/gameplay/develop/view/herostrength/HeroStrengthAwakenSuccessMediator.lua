@@ -35,9 +35,9 @@ function HeroStrengthAwakenSuccessMediator:initNodes()
 	self._nodeAnim = self._main:getChildByName("animNode")
 	self._awakeRoleNode = self._main:getChildByFullName("heropanel")
 	local roleModel = self._heroData:getAwakenStarConfig().ModelId
-	local masterIcon = IconFactory:createRoleIconSprite({
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		useAnim = true,
-		iconType = "Bust4",
 		id = roleModel
 	})
 

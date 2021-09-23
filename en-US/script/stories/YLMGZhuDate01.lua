@@ -87,6 +87,36 @@ end
 function scene_YLMGZhuDate01.actions.start_YLMGZhuDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg3")
 		}),
@@ -125,11 +155,11 @@ function scene_YLMGZhuDate01.actions.start_YLMGZhuDate01(_root, args)
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.75,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -430,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -149,12 +179,12 @@ function scene_YLMGZhuDate01.actions.start_YLMGZhuDate01(_root, args)
 							visible = true,
 							id = "YLMGZhu_face",
 							anchorPoint = {
-								x = 0.7,
-								y = 0.1
+								x = 0.5,
+								y = 0.5
 							},
 							position = {
-								x = 88,
-								y = 663
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}
@@ -1408,7 +1438,7 @@ function scene_YLMGZhuDate01.actions.start_YLMGZhuDate01p(_root, args)
 					duration = 1.5,
 					position = {
 						x = 0,
-						y = -465,
+						y = -360,
 						refpt = {
 							x = -0.5,
 							y = 0

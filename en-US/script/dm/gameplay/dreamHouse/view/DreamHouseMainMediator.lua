@@ -294,7 +294,7 @@ function DreamHouseMainMediator:setInfoUI(cell, idx)
 
 		if roldId then
 			local model = IconFactory:getRoleModelByKey("HeroBase", roldId)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = model
 			})
 
@@ -722,7 +722,7 @@ function DreamHouseMainMediator:refreshView()
 		roleItem:setVisible(true)
 
 		local model = IconFactory:getRoleModelByKey("HeroBase", roleId)
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = model
 		})
 

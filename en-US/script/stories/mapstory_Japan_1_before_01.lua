@@ -348,7 +348,7 @@ function scene_mapstory_Japan_1_before_01.actions.start_mapstory_Japan_1_before_
 						}
 					},
 					modelOffset = {
-						x = 10,
+						x = -200,
 						y = 0
 					}
 				}

@@ -753,6 +753,7 @@ all.Skill_ALSi_Passive_Death = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

@@ -220,6 +220,17 @@ function NewHeroMediator:showResult(data)
 	bgPanel:setScale(1.2)
 	bgPanel:runAction(cc.ScaleTo:create(0.2, 1))
 
+	if not newHero and data.fragmentCount then
+		local text = ccui.Text:create(Strings:get("DrawcardUI1", {
+			value = data.fragmentCount
+		}), TTF_FONT_FZYH_M, 18)
+
+		text:setAnchorPoint(cc.p(0.5, 0.5))
+		text:addTo(main):center(main:getContentSize()):offset(0, -280)
+		text:setOpacity(0)
+		text:runAction(cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.5)))
+	end
+
 	local anim = cc.MovieClip:create("zonghe_choukahuodeyinghun")
 
 	anim:addTo(main:getChildByName("animPanel"))
@@ -243,13 +254,13 @@ function NewHeroMediator:showResult(data)
 				end)
 
 				local function createRoleIcon(parent)
-					local realImage = IconFactory:createRoleIconSprite({
+					local realImage = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust6",
+						frameId = "bustframe6_5",
 						id = roleModel
 					})
 
-					realImage:addTo(parent):posite(0, -125)
+					realImage:addTo(parent):posite(-300, -250)
 				end
 
 				local roleNode = ssrdonghuaguang:getChildByFullName("roleNode")
@@ -281,15 +292,15 @@ function NewHeroMediator:showResult(data)
 				end)
 
 				local roleNode = heroAnim:getChildByName("roleNode")
-				local realImage = IconFactory:createRoleIconSprite({
+				local realImage = IconFactory:createRoleIconSpriteNew({
 					useAnim = true,
-					iconType = "Bust6",
+					frameId = "bustframe6_5",
 					id = roleModel
 				})
 
 				realImage:addTo(roleNode)
 				heroAnim:addTo(heroNode)
-				heroAnim:setPosition(cc.p(-10, -123))
+				heroAnim:setPosition(cc.p(-300, -300))
 				anim:addCallbackAtFrame(20, function ()
 					self:addShare()
 				end)

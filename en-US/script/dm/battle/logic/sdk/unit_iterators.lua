@@ -51,6 +51,24 @@ function FilterMeta.__call(t, ...)
 	return t.__func(...)
 end
 
+local function makeBuffMatchFunction(env, tagOrFilter)
+	if tagOrFilter == nil then
+		return nil
+	end
+
+	local atype = type(tagOrFilter)
+
+	if atype == "string" then
+		return function (buff)
+			return buff:isMatched(tagOrFilter)
+		end
+	elseif atype == "table" or atype == "function" then
+		return function (buff)
+			return tagOrFilter(env, buff)
+		end
+	end
+end
+
 function exports.ONESELF(env, who)
 	return MakeFilter(function (_, unit)
 		return unit == who
@@ -233,9 +251,10 @@ end
 
 function exports.HASBUFFTAG(env, filter)
 	local buffSystem = env.global["$BuffSystem"]
+	local matchFunc = makeBuffMatchFunction(env, filter)
 
 	return MakeFilter(function (_, unit)
-		local buffs = buffSystem:selectBuffsOnTarget(unit, filter)
+		local buffs = buffSystem:selectBuffsOnTarget(unit, matchFunc)
 
 		return #buffs > 0
 	end)

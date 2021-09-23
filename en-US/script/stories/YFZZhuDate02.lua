@@ -85,6 +85,36 @@ end
 function scene_YFZZhuDate02.actions.start_YFZZhuDate02(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,11 +153,11 @@ function scene_YFZZhuDate02.actions.start_YFZZhuDate02(_root, args)
 					modelId = "Model_YFZZhu",
 					id = "YFZZhu_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -255,
+						y = -200,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -151,8 +181,8 @@ function scene_YFZZhuDate02.actions.start_YFZZhuDate02(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -39.5,
-								y = 624
+								x = -48,
+								y = 766
 							}
 						}
 					}
@@ -1866,7 +1896,7 @@ function scene_YFZZhuDate02.actions.start_YFZZhuDate02p(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -255,
+						y = -200,
 						refpt = {
 							x = -0.5,
 							y = 0

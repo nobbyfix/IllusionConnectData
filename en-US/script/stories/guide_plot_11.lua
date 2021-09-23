@@ -67,11 +67,11 @@ function scene_guide_plot_11.actions.action_guide_plot_11(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -368,
+						y = -300,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -95,8 +95,8 @@ function scene_guide_plot_11.actions.action_guide_plot_11(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}

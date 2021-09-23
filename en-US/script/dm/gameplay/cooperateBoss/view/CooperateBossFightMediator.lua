@@ -113,9 +113,9 @@ function CooperateBossFightMediator:refreashView()
 	self._bossLevel:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
 
 	local model = self._cooperatorBoss:getRoleModelId()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 

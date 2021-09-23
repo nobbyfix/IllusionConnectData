@@ -374,13 +374,11 @@ function CrusadeMainMediator:updateCheckPointView(node, style)
 
 	local role = infoPanel:getChildByFullName("role")
 	local info = {
-		stencil = 1,
-		iconType = "Bust7",
+		frameId = "bustframe7_2",
 		id = point:getRoleModel(),
-		size = cc.size(245, 350),
 		useAnim = index == curIndex
 	}
-	local icon = IconFactory:createRoleIconSprite(info)
+	local icon = IconFactory:createRoleIconSpriteNew(info)
 
 	icon:setAnchorPoint(cc.p(0.5, 0.5))
 	icon:addTo(role):center(role:getContentSize()):offset(0, -50)
@@ -598,7 +596,7 @@ function CrusadeMainMediator:setRecommendHeroView()
 			end
 
 			local config = ConfigReader:getRecordById("HeroBase", recommendHero[i].Hero[1])
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 

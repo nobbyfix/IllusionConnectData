@@ -138,6 +138,7 @@ function ShopSpine:playAnimation(action, actionRepeat, voice, callback)
 
 	if voice then
 		self:stopEffect()
+		dump(voice, "播放了 ：")
 
 		self._heroEffect, _ = AudioEngine:getInstance():playEffect(voice, false, function ()
 			if callback then
@@ -148,7 +149,11 @@ function ShopSpine:playAnimation(action, actionRepeat, voice, callback)
 end
 
 function ShopSpine:stopEffect(action, voice)
-	AudioEngine:getInstance():stopEffect(self._heroEffect)
+	if self._heroEffect then
+		AudioEngine:getInstance():stopEffect(self._heroEffect)
+
+		self._heroEffect = nil
+	end
 end
 
 function ShopSpine:getActionStatus()

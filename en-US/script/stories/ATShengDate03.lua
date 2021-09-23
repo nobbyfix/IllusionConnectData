@@ -117,6 +117,36 @@ end
 function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -155,11 +185,11 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					modelId = "Model_ATSheng",
 					id = "ATSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.6,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -183,8 +213,8 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -31,
-								y = 683
+								x = -38.5,
+								y = 958
 							}
 						}
 					}
@@ -244,7 +274,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -261,7 +291,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -278,7 +308,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.55,
 							y = 0
@@ -295,7 +325,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -357,7 +387,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -374,7 +404,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -391,7 +421,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -408,7 +438,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03(_root, args)
 					duration = 0.25,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -758,7 +788,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03e(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -240,
+							y = -225,
 							refpt = {
 								x = 0.5,
 								y = -0.2
@@ -772,7 +802,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03e(_root, args)
 				actor = __getnode__(_root, "ATSheng_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1.2,
+						scale = 0.7,
 						duration = 0.3
 					}
 				end
@@ -808,7 +838,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03e(_root, args)
 						duration = 0.5,
 						position = {
 							x = 0,
-							y = -240,
+							y = -225,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -822,7 +852,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03e(_root, args)
 				actor = __getnode__(_root, "ATSheng_speak"),
 				args = function (_ctx)
 					return {
-						scale = 1,
+						scale = 0.6,
 						duration = 0.5
 					}
 				end
@@ -1891,7 +1921,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -1908,7 +1938,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1925,7 +1955,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -1942,7 +1972,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2005,7 +2035,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2022,7 +2052,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2039,7 +2069,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2056,7 +2086,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2131,7 +2161,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2148,7 +2178,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2165,7 +2195,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2182,7 +2212,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2277,7 +2307,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2294,7 +2324,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -2311,7 +2341,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = -0.05
@@ -2328,7 +2358,7 @@ function scene_ATShengDate03.actions.start_ATShengDate03q(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -240,
+						y = -225,
 						refpt = {
 							x = 0.5,
 							y = 0

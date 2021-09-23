@@ -231,13 +231,13 @@ function NewShareMediator:showResult(data)
 				end)
 
 				local function createRoleIcon(parent)
-					local realImage = IconFactory:createRoleIconSprite({
+					local realImage = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust6",
+						frameId = "bustframe6_5",
 						id = roleModel
 					})
 
-					realImage:addTo(parent):posite(0, -125)
+					realImage:addTo(parent):posite(-280, -260)
 				end
 
 				local roleNode = ssrdonghuaguang:getChildByFullName("roleNode")
@@ -269,15 +269,15 @@ function NewShareMediator:showResult(data)
 				end)
 
 				local roleNode = heroAnim:getChildByName("roleNode")
-				local realImage = IconFactory:createRoleIconSprite({
+				local realImage = IconFactory:createRoleIconSpriteNew({
 					useAnim = true,
-					iconType = "Bust6",
+					frameId = "bustframe6_5",
 					id = roleModel
 				})
 
 				realImage:addTo(roleNode)
 				heroAnim:addTo(heroNode)
-				heroAnim:setPosition(cc.p(-10, -123))
+				heroAnim:setPosition(cc.p(-280, -260))
 				anim:addCallbackAtFrame(20, function ()
 					self:addShare()
 				end)

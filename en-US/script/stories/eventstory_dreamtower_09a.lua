@@ -311,10 +311,10 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_Story_SDTZi",
 					id = "SDTZi_speak_Daily",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 1,
 					position = {
 						x = 0,
-						y = -400,
+						y = -380,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -372,11 +372,11 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_YLSBai",
 					id = "YLSBai_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.65,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.725,
 							y = 0
@@ -400,8 +400,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0
 							},
 							position = {
-								x = 68,
-								y = 800
+								x = 93,
+								y = 1185
 							}
 						}
 					}
@@ -457,10 +457,10 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -484,8 +484,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}
@@ -710,11 +710,11 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_ZTXChang_YYing",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 1,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -410,
+						y = -340,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -738,8 +738,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = -36,
-								y = 795
+								x = -35.1,
+								y = 786.2
 							}
 						}
 					}
@@ -889,10 +889,10 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_MLYTLSha",
 					id = "MLYTLSha_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -355,
+						y = -320,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -916,8 +916,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = -29,
-								y = 829
+								x = -34.5,
+								y = 1096
 							}
 						}
 					}
@@ -1014,7 +1014,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -400,
+						y = -380,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -1041,7 +1041,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -400,
+							y = -380,
 							refpt = {
 								x = 0.75,
 								y = 0
@@ -1058,7 +1058,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -355,
+							y = -320,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -1171,7 +1171,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0,
 						position = {
 							x = 0,
-							y = -140,
+							y = -100,
 							refpt = {
 								x = 0.5,
 								y = 0
@@ -1258,7 +1258,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -340,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1368,10 +1368,10 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1395,8 +1395,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}
@@ -1461,7 +1461,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_ATSheng",
 					id = "ATSheng_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.6,
 					zorder = 5,
 					position = {
 						x = 0,
@@ -1489,8 +1489,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = -31,
-								y = 683
+								x = -38.5,
+								y = 958
 							}
 						}
 					}
@@ -1546,7 +1546,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -400,
+						y = -380,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1563,7 +1563,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1773,7 +1773,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1922,10 +1922,10 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					modelId = "Model_LFEr",
 					id = "LFEr_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -290,
+						y = -330,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -1949,8 +1949,8 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 								y = 0.5
 							},
 							position = {
-								x = -15.5,
-								y = 700.5
+								x = -30.5,
+								y = 999
 							}
 						}
 					}
@@ -1984,7 +1984,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -140,
+							y = -100,
 							refpt = {
 								x = 0.25,
 								y = 0
@@ -2044,7 +2044,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 					duration = 0,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -2135,7 +2135,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -305,
+							y = -300,
 							refpt = {
 								x = 1.5,
 								y = 0
@@ -2152,7 +2152,7 @@ function scene_eventstory_dreamtower_09a.actions.start_eventstory_dreamtower_09a
 						duration = 0.75,
 						position = {
 							x = 0,
-							y = -140,
+							y = -100,
 							refpt = {
 								x = 0.5,
 								y = 0

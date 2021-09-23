@@ -67,10 +67,10 @@ function scene_mapstory_Japan_1_middle_02.actions.start_mapstory_Japan_1_middle_
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -300,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -94,8 +94,8 @@ function scene_mapstory_Japan_1_middle_02.actions.start_mapstory_Japan_1_middle_
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}

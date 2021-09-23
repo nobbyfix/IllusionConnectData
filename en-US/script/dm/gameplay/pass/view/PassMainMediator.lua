@@ -385,8 +385,8 @@ function PassMainMediator:initBigRewardNode()
 
 			local heroPanel = self._ringNode:getChildByFullName("heroPanel")
 			local roleModel = IconFactory:getRoleModelByKey("HeroBase", goodReward.hero)
-			local heroImg = IconFactory:createRoleIconSprite({
-				iconType = "Bust4",
+			local heroImg = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe9",
 				id = roleModel
 			})
 
@@ -409,11 +409,7 @@ function PassMainMediator:initBigRewardNode()
 					return
 				end
 
-				if heroInfo.showType == HeroShowType.kHas then
-					self:onClickHeroDetail(goodReward.hero)
-				elseif heroInfo.showType == HeroShowType.kNotOwn then
-					self:onClickDetail(goodReward.hero)
-				end
+				self:onClickHeroDetail(goodReward.hero)
 			end)
 		end
 
@@ -826,25 +822,15 @@ function PassMainMediator:getBigRewardName(code)
 end
 
 function PassMainMediator:onClickDetail(id)
-	local view = self:getInjector():getInstance("HeroShowNotOwnView")
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		showType = 1,
-		id = id
+	local view = self:getInjector():getInstance("HeroInfoView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		heroId = id
 	}))
 end
 
 function PassMainMediator:onClickHeroDetail(id)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-
-	local view = self:getInjector():getInstance("HeroShowNotOwnView")
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		showType = 2,
-		id = id
-	}))
+	self:onClickDetail(id)
 end

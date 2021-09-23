@@ -108,9 +108,9 @@ function BattleHeroShowPopMediator:initView()
 	self._enterHeroAudio = AudioEngine:getInstance():playEffect("Voice_" .. heroId .. "_25", false)
 	local heroConfig = ConfigReader:getRecordById("HeroBase", heroId)
 	local model = heroConfig.RoleModel
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = model
 	})
 	local infoNode = self:getView():getChildByFullName("content.infoNode.node")
