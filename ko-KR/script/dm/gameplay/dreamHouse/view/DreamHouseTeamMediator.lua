@@ -1539,7 +1539,7 @@ function DreamHouseTeamMediator:onClickMasterSkill()
 	}, params))
 end
 
-function CommonTeamMediator:checkMasterSkillActive()
+function DreamHouseTeamMediator:checkMasterSkillActive()
 	self._masterSkillPanel:removeAllChildren()
 
 	self._skillActive = {}
