@@ -7228,7 +7228,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_BiLei_Bust5",
         "Bust2": "Master_BiLei_Bust2",
         "Bust3": "Master_BiLei_Bust3",
         "Bust4": "Master_BiLei_Bust4",
@@ -7237,17 +7237,35 @@
         "Bust7": "Master_BiLei_Bust7",
         "Bust8": "Master_BiLei_Bust8",
         "Bust9": "Master_BiLei_Bust9",
-        "BustAwake": "",
+        "BustAwake": [
+            11,
+            -456
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            195,
+            -400
+        ],
+        "BustTemp2": [
+            209,
+            -400
+        ],
+        "BustTemp3": [
+            195,
+            -389
+        ],
+        "BustTemp4": [
+            195,
+            -400
+        ],
+        "BustTemp5": [
+            198,
+            -400
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_BiLei_head",
         "HeadMain": "Master_BiLei_HeadMain",
         "Height": 200,
         "Hero": "Master_BiLei",
@@ -7256,8 +7274,8 @@
         "MasterHeadWide": "",
         "Model": "Master_BiLei",
         "Name": "MasterBase_Name_Master_BiLei",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_BiLei_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7274,8 +7292,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_FuHun": {
         "Animation": "Enemy_CSZhe",
@@ -7288,7 +7306,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_FuHun_Bust5",
         "Bust2": "Master_XueZhan_Bust2",
         "Bust3": "Master_XueZhan_Bust3",
         "Bust4": "Master_XueZhan_Bust4",
@@ -7297,17 +7315,35 @@
         "Bust7": "",
         "Bust8": "",
         "Bust9": "",
-        "BustAwake": "",
+        "BustAwake": [
+            -184,
+            -284
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            -173,
+            -162
+        ],
+        "BustTemp2": [
+            -83,
+            -162
+        ],
+        "BustTemp3": [
+            -78,
+            -252
+        ],
+        "BustTemp4": [
+            -107,
+            -221
+        ],
+        "BustTemp5": [
+            -132,
+            -162
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_FuHun_head",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_FuHun",
@@ -7316,8 +7352,8 @@
         "MasterHeadWide": "",
         "Model": "Master_FuHun",
         "Name": "MasterBase_Name_Master_XueZhan",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_XueZhan_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7334,8 +7370,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_JiangJun": {
         "Animation": "Enemy_CSZhe",
@@ -7348,7 +7384,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_XueZhan_Bust5",
         "Bust2": "Master_XueZhan_Bust2",
         "Bust3": "Master_XueZhan_Bust3",
         "Bust4": "Master_XueZhan_Bust4",
@@ -7357,17 +7393,35 @@
         "Bust7": "",
         "Bust8": "",
         "Bust9": "",
-        "BustAwake": "",
+        "BustAwake": [
+            -175,
+            -470
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            9,
+            -414
+        ],
+        "BustTemp2": [
+            31,
+            -414
+        ],
+        "BustTemp3": [
+            9,
+            -406
+        ],
+        "BustTemp4": [
+            9,
+            -414
+        ],
+        "BustTemp5": [
+            -7,
+            -414
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_XueZhan_head",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_JiangJun",
@@ -7376,8 +7430,8 @@
         "MasterHeadWide": "",
         "Model": "Master_JiangJun",
         "Name": "MasterBase_Name_Master_XueZhan",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_XueZhan_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7394,8 +7448,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_LieSha": {
         "Animation": "Master_LieSha",
@@ -7408,7 +7462,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_LieSha_Bust5",
         "Bust2": "Master_LieSha_Bust2",
         "Bust3": "Master_LieSha_Bust3",
         "Bust4": "Master_LieSha_Bust4",
@@ -7417,17 +7471,35 @@
         "Bust7": "Master_LieSha_Bust7",
         "Bust8": "Master_LieSha_Bust8",
         "Bust9": "Master_LieSha_Bust9",
-        "BustAwake": "",
+        "BustAwake": [
+            69,
+            -457
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            253,
+            -401
+        ],
+        "BustTemp2": [
+            271,
+            -401
+        ],
+        "BustTemp3": [
+            253,
+            -396
+        ],
+        "BustTemp4": [
+            253,
+            -401
+        ],
+        "BustTemp5": [
+            256,
+            -401
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_LieSha_head",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_LieSha",
@@ -7436,8 +7508,8 @@
         "MasterHeadWide": "",
         "Model": "Master_LieSha",
         "Name": "MasterBase_Name_Master_LieSha",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_LieSha_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7454,8 +7526,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_SenLing": {
         "Animation": "Enemy_CFZhe",
@@ -7468,7 +7540,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_SenLing_Bust5",
         "Bust2": "Master_LieSha_Bust2",
         "Bust3": "Master_LieSha_Bust3",
         "Bust4": "Master_LieSha_Bust4",
@@ -7477,17 +7549,35 @@
         "Bust7": "",
         "Bust8": "",
         "Bust9": "",
-        "BustAwake": "",
+        "BustAwake": [
+            -48,
+            -404
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            -64,
+            -348
+        ],
+        "BustTemp2": [
+            -43,
+            -348
+        ],
+        "BustTemp3": [
+            -64,
+            -339
+        ],
+        "BustTemp4": [
+            -64,
+            -348
+        ],
+        "BustTemp5": [
+            -62,
+            -348
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_SenLing_head",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_SenLing",
@@ -7496,8 +7586,8 @@
         "MasterHeadWide": "",
         "Model": "Master_SenLing",
         "Name": "MasterBase_Name_Master_LieSha",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_LieSha_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7514,8 +7604,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.1,
+        "bustZoom": 1.1
     },
     "Model_Enemy_Master_WuShi": {
         "Animation": "Enemy_XXZhe",
@@ -7528,7 +7618,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_BiLei_Bust5",
         "Bust2": "Master_BiLei_Bust2",
         "Bust3": "Master_BiLei_Bust3",
         "Bust4": "Master_BiLei_Bust4",
@@ -7537,17 +7627,35 @@
         "Bust7": "",
         "Bust8": "",
         "Bust9": "",
-        "BustAwake": "",
+        "BustAwake": [
+            11,
+            -456
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            195,
+            -400
+        ],
+        "BustTemp2": [
+            209,
+            -400
+        ],
+        "BustTemp3": [
+            195,
+            -389
+        ],
+        "BustTemp4": [
+            195,
+            -400
+        ],
+        "BustTemp5": [
+            198,
+            -400
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_BiLei_head",
         "HeadMain": "Master_BiLei_HeadMain",
         "Height": 200,
         "Hero": "Master_WuShi",
@@ -7556,8 +7664,8 @@
         "MasterHeadWide": "",
         "Model": "Master_WuShi",
         "Name": "MasterBase_Name_Master_BiLei",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_BiLei_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7574,8 +7682,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_XueZhan": {
         "Animation": "Master_XueZhan",
@@ -7588,7 +7696,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_XueZhan_Bust5",
         "Bust2": "Master_XueZhan_Bust2",
         "Bust3": "Master_XueZhan_Bust3",
         "Bust4": "Master_XueZhan_Bust4",
@@ -7597,17 +7705,35 @@
         "Bust7": "Master_XueZhan_Bust7",
         "Bust8": "Master_XueZhan_Bust8",
         "Bust9": "Master_XueZhan_Bust9",
-        "BustAwake": "",
+        "BustAwake": [
+            -175,
+            -470
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            9,
+            -414
+        ],
+        "BustTemp2": [
+            31,
+            -414
+        ],
+        "BustTemp3": [
+            9,
+            -406
+        ],
+        "BustTemp4": [
+            9,
+            -414
+        ],
+        "BustTemp5": [
+            -7,
+            -414
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_XueZhan_head",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_XueZhan",
@@ -7616,8 +7742,8 @@
         "MasterHeadWide": "",
         "Model": "Master_XueZhan",
         "Name": "MasterBase_Name_Master_XueZhan",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_XueZhan_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7634,8 +7760,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Master_ZhaoHuan": {
         "Animation": "Enemy_CFZhe",
@@ -7648,7 +7774,7 @@
         "Bust13": "",
         "Bust14": "",
         "Bust15": "",
-        "Bust16": "",
+        "Bust16": "Master_LieSha_Bust5",
         "Bust2": "Master_LieSha_Bust2",
         "Bust3": "Master_LieSha_Bust3",
         "Bust4": "Master_LieSha_Bust4",
@@ -7657,17 +7783,35 @@
         "Bust7": "",
         "Bust8": "",
         "Bust9": "",
-        "BustAwake": "",
+        "BustAwake": [
+            69,
+            -457
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            253,
+            -401
+        ],
+        "BustTemp2": [
+            271,
+            -401
+        ],
+        "BustTemp3": [
+            253,
+            -396
+        ],
+        "BustTemp4": [
+            253,
+            -401
+        ],
+        "BustTemp5": [
+            256,
+            -401
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "Master_LieSha_head",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_ZhaoHuan",
@@ -7676,8 +7820,8 @@
         "MasterHeadWide": "",
         "Model": "Master_ZhaoHuan",
         "Name": "MasterBase_Name_Master_LieSha",
-        "Path": "",
-        "PicType": "",
+        "Path": 1,
+        "PicType": 1,
         "Portrait": "Master_LieSha_Portrait",
         "SVPText": "",
         "SkillRange": "",
@@ -7694,8 +7838,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 1.0,
+        "bustZoom": 1.0
     },
     "Model_Enemy_Mirror_Blue": {
         "Animation": "mirrorleft",

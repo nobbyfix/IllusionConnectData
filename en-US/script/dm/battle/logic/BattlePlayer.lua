@@ -736,6 +736,7 @@ function BattlePlayer:clearStatus(battleContext)
 				local trapSystem = battleContext:getObject("TrapSystem")
 
 				trapSystem:triggerTrap(unit)
+				formationSystem:clearOldResident(unit)
 			end
 		else
 			formationSystem:buryUnit(unit)
