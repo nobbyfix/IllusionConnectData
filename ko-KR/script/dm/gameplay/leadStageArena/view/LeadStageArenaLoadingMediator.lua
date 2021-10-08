@@ -90,7 +90,7 @@ end
 function LeadStageArenaLoadingMediator:close()
 	self:dismiss()
 
-	if self._delegate:getLeadStageArenaSystem():getEnterErrorCode() == 1 then
+	if self._delegate:getLeadStageArenaSystem():getEnterErrorCode() ~= 0 then
 		return
 	end
 
