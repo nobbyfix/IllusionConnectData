@@ -272,12 +272,15 @@
                         ],
                         [
                             "WEDe"
+                        ],
+                        [
+                            "LLan"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -337,6 +340,21 @@
                         ]
                     ],
                     "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Defense"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -668,12 +686,15 @@
                         ],
                         [
                             "SLMen"
+                        ],
+                        [
+                            "XSMLi"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -889,6 +910,21 @@
                         ]
                     ],
                     "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Aoe"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -1618,12 +1654,15 @@
                         ],
                         [
                             "FEMSi"
+                        ],
+                        [
+                            "FLBDSi"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -1683,6 +1722,21 @@
                         ]
                     ],
                     "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -2014,12 +2068,15 @@
                         ],
                         [
                             "KTSJKe"
+                        ],
+                        [
+                            "CZheng"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -2081,6 +2138,21 @@
                         ]
                     ],
                     "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Attack"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -2412,12 +2484,15 @@
                         ],
                         [
                             "MLYTLSha"
+                        ],
+                        [
+                            "LYXi"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -2479,6 +2554,21 @@
                         ]
                     ],
                     "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Cure"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -3280,19 +3370,13 @@
                 {
                     "param": [
                         [
-                            "ZTXChang"
+                            "LDu"
                         ],
                         [
-                            "FTLEShi"
-                        ],
-                        [
-                            "CLMan"
+                            "YBYa"
                         ],
                         [
                             "ATSheng"
-                        ],
-                        [
-                            "XLai"
                         ]
                     ],
                     "range": "group",
@@ -3314,7 +3398,7 @@
                     ],
                     "range": "group",
                     "scope": [
-                        3,
+                        4,
                         99
                     ],
                     "type": "tag"

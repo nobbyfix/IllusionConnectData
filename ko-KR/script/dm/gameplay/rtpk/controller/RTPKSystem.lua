@@ -873,6 +873,7 @@ function RTPKSystem:enterRobotBattle(data)
 			opPanelClazz = "BattleUIMediator",
 			mainView = "rtpvpRobotBattle",
 			opPanelRes = "asset/ui/BattleUILayer.csb",
+			isShowEmoji = true,
 			canChangeSpeedLevel = true,
 			finalHitShow = true,
 			battleSettingType = SettingBattleTypes.kArena,
@@ -990,6 +991,7 @@ function RTPKSystem:enterPvpBattle(data)
 		viewConfig = {
 			mainView = "rtpvpBattle",
 			opPanelRes = "asset/ui/BattleUILayer.csb",
+			isShowEmoji = true,
 			disableHeroTip = true,
 			canChangeSpeedLevel = false,
 			opPanelClazz = "BattleUIMediator",
@@ -1040,4 +1042,18 @@ function RTPKSystem:doReset()
 	if unlock then
 		self:requestRTPKInfo(nil, false)
 	end
+end
+
+function RTPKSystem:requestUseEmoji(emojiList)
+	local params = {
+		list = emojiList
+	}
+
+	self._rtpkService:requestUseEmoji(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("RTPK_EMO_Tips3")
+			}))
+		end
+	end, true)
 end

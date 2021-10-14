@@ -154,6 +154,7 @@ function ChangeHeadImgMediator:getData()
 			local festival = {}
 			local rare = {}
 			local zodiac = {}
+			local leadstage = {}
 			local data = self._settingSystem:getShowHeadFrameList()
 
 			for i = 1, #data do
@@ -165,8 +166,8 @@ function ChangeHeadImgMediator:getData()
 					table.insert(festival, v)
 				elseif v.config.Type == KFrameType.RARE then
 					table.insert(rare, v)
-				elseif v.config.Type == KFrameType.Zodiac then
-					table.insert(zodiac, v)
+				elseif v.config.Type == KFrameType.LEADSTAGE then
+					table.insert(leadstage, v)
 				end
 
 				if tostring(v.id) == tostring(self._player:getCurHeadFrame()) then
@@ -180,7 +181,7 @@ function ChangeHeadImgMediator:getData()
 				activity,
 				festival,
 				rare,
-				zodiac
+				leadstage
 			}
 		end
 
@@ -208,6 +209,8 @@ function ChangeHeadImgMediator:initTabBar()
 		local lightText = _btn:getChildByFullName("light.text")
 		local darkText = _btn:getChildByFullName("dark.text")
 
+		lightText:setVisible(false)
+		darkText:setVisible(false)
 		lightText:enableOutline(cc.c4b(3, 1, 4, 51), 1)
 		lightText:setColor(cc.c4b(177, 235, 16, 73.94999999999999))
 		lightText:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
@@ -222,13 +225,16 @@ end
 function ChangeHeadImgMediator:setTabBarStatus()
 	for i = 1, 2 do
 		local _btn = self:getView():getChildByFullName("main.btn_" .. i)
+		local text = _btn:getChildByFullName("text")
 
 		if i == self._tabType then
 			_btn:getChildByFullName("light"):setVisible(true)
 			_btn:getChildByFullName("dark"):setVisible(false)
+			text:setTextColor(cc.c3b(0, 0, 0))
 		else
 			_btn:getChildByFullName("light"):setVisible(false)
 			_btn:getChildByFullName("dark"):setVisible(true)
+			text:setTextColor(cc.c3b(255, 255, 255))
 		end
 	end
 end
@@ -265,6 +271,7 @@ function ChangeHeadImgMediator:setSelectTab()
 			_btn:setPosition((i - 1) * 73 + 13, 15)
 			_btn:getChildByFullName("Text_48"):setString(menu[i].title)
 			_btn:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+			_btn:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 
 			local function callfunc(sender)
 				self:onChangeSelectType(sender)
@@ -295,6 +302,7 @@ function ChangeHeadImgMediator:resetSelect()
 				end
 
 				menu[j]:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+				menu[j]:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 			end
 		end
 	end
@@ -311,11 +319,13 @@ function ChangeHeadImgMediator:onChangeSelectStatus()
 			local btn = menu[self._selectTypePre]
 
 			btn:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+			btn:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 		end
 
 		local btn = menu[self._selectType]
 
 		btn:getChildByName("image"):loadTexture("sz_btn_01.png", 1)
+		btn:getChildByName("Text_48"):setTextColor(cc.c3b(0, 0, 0))
 	end
 end
 

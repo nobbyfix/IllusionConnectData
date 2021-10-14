@@ -108,6 +108,7 @@ function HeroEvolutionView:createView(info)
 	self._upBtn:addClickEventListener(function ()
 		self:onEvolutionClicked()
 	end)
+	self._mainPanel:getChildByFullName("upBtn.name1"):setString("")
 	self._infoPanel:getChildByFullName("level_1"):setString(self._showLevel .. "/" .. self._maxLevel)
 
 	self._sourcePanel = self._mainPanel:getChildByFullName("costNode2.costBg")

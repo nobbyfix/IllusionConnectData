@@ -2109,6 +2109,82 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15106_3": {
+        "ATK": "UR_Decoration_ATK_AD",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_AD",
+        "Desc": "CO_Decoration_15106_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_dsgzuaccess",
+        "Name": "Decoration_15106_3_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Support"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15106_3",
+        "Sort": 299026,
+        "StartEquipEndID": "Rareity15_DecorationStone3_8",
+        "StartEquipStarID": "Rareity15_DecorationStone3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Decoration_15107_1": {
+        "ATK": "UR_Decoration_ATK_AH",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Decoration_15107_1_Desc",
+        "HP": "UR_Decoration_HP_AH",
+        "Icon": "ico_equip_cqqzpuaccess",
+        "Name": "Decoration_15107_1_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15107_1",
+        "Sort": 299029,
+        "StartEquipEndID": "Rareity15_DecorationStone1_8",
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -3800,6 +3876,44 @@
         "Sort": 299025,
         "StartEquipEndID": "Rareity15_Shoes1_8",
         "StartEquipStarID": "Rareity15_Shoes1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15108_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15108_2_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_zmushoes",
+        "Name": "Shoes_15108_2_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15108_2",
+        "Sort": 299028,
+        "StartEquipEndID": "Rareity15_Shoes2_8",
+        "StartEquipStarID": "Rareity15_Shoes2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -5838,6 +5952,44 @@
         "Sort": 299024,
         "StartEquipEndID": "Rareity15_Top1_8",
         "StartEquipStarID": "Rareity15_Top1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15108_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15108_2_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_lquancloth",
+        "Name": "Tops_15108_2_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15108_2",
+        "Sort": 299027,
+        "StartEquipEndID": "Rareity15_Top2_8",
+        "StartEquipStarID": "Rareity15_Top2_1",
         "URUPSkillLV": [
             30,
             40,

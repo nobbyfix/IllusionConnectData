@@ -4166,6 +4166,11 @@ local modules = {
 							res = "asset/ui/RTPKNewSeason.csb",
 							name = "RTPKNewSeasonTipsView",
 							mediator = "RTPKNewSeasonTipsMediator"
+						},
+						{
+							res = "asset/ui/RTPKEmoji.csb",
+							name = "RTPKEmojiView",
+							mediator = "RTPKEmojiMediator"
 						}
 					}
 				}

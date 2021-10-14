@@ -270,6 +270,7 @@ all.Skill_WSLi_Unique = {
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
+						"DAMAGERESULT",
 						"Skill_WSLi_Unique",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -296,6 +297,7 @@ all.Skill_WSLi_Unique = {
 							tags = {
 								"DEBUFF",
 								"MAXHPDOWN",
+								"DAMAGERESULT",
 								"Skill_WSLi_Unique",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"
@@ -312,6 +314,7 @@ all.Skill_WSLi_Unique = {
 							tags = {
 								"DEBUFF",
 								"MAXHPDOWN",
+								"DAMAGERESULT",
 								"Skill_WSLi_Unique",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"
@@ -868,6 +871,7 @@ all.Skill_WSLi_Unique_EX = {
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
+						"DAMAGERESULT",
 						"Skill_WSLi_Unique",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -899,6 +903,7 @@ all.Skill_WSLi_Unique_EX = {
 							tags = {
 								"DEBUFF",
 								"MAXHPDOWN",
+								"DAMAGERESULT",
 								"Skill_WSLi_Unique",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"
@@ -915,6 +920,7 @@ all.Skill_WSLi_Unique_EX = {
 							tags = {
 								"DEBUFF",
 								"MAXHPDOWN",
+								"DAMAGERESULT",
 								"Skill_WSLi_Unique",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"

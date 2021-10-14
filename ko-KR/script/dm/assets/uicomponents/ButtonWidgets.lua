@@ -64,7 +64,7 @@ function CommonButtonWithName:setButtonName(buttonName, buttonName1)
 	self._nameText:setString(buttonName)
 
 	if self._nameText1 then
-		self._nameText1:setString(buttonName1 or "")
+		self._nameText1:setString("")
 	end
 end
 

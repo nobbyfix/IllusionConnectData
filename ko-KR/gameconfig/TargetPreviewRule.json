@@ -101,6 +101,9 @@
     "Target_FLBDSi": {
         "Function": ""
     },
+    "Target_FLEr": {
+        "Function": "return MainTarget()"
+    },
     "Target_FLYDe": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -328,6 +331,9 @@
     },
     "Target_YMHTPu": {
         "Function": "return MainTarget()"
+    },
+    "Target_YMJDe": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
     "Target_YSLBin": {
         "Function": "return MainTarget()"

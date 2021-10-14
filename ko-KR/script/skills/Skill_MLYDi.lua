@@ -293,11 +293,11 @@ all.Skill_MLYDi_Unique = {
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 then
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "main_jinnibaodian",
+						anim = "main_jinnibaodianjiangluo",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
-							0.3
+							0.5
 						}
 					})
 
@@ -822,11 +822,11 @@ all.Skill_MLYDi_Unique_EX = {
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 then
 					global.AnimForTrgt(_env, unit, {
 						loop = 1,
-						anim = "main_jinnibaodian",
+						anim = "main_jinnibaodianjiangluo",
 						zOrder = "TopLayer",
 						pos = {
 							0.5,
-							0.3
+							0.5
 						}
 					})
 

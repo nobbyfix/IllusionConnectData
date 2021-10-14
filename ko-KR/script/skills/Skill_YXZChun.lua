@@ -396,6 +396,28 @@ all.Skill_YXZChun_Passive = {
 
 			if global.INSTATUS(_env, "SummonedYXZChun")(_env, _env.unit) then
 				global.ApplyRPRecovery(_env, _env.unit, this.RageFactor)
+
+				if global.SelectBuffCount(_env, _env.unit, "Skill_YXZChun_Passive") == 0 then
+					global.ApplyRPDamage(_env, _env.unit, this.RageFactor)
+
+					local buffeft1 = global.SpecialNumericEffect(_env, "+TigerDamageRate", {
+						"?Normal"
+					}, this.DmgRateFactor)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"Skill_YXZChun_Passive",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
 			end
 		end)
 
@@ -484,6 +506,16 @@ all.Skill_YXZChun_Tiger_Normal = {
 		this.main = global["[duration]"](this, {
 			933
 		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
@@ -538,6 +570,24 @@ all.Skill_YXZChun_Tiger_Normal = {
 					})
 				end
 			end
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.AddStatus(_env, _env.ACTOR, "SummonedYXZChun")
 		end)
 
 		return _env
@@ -993,6 +1043,28 @@ all.Skill_YXZChun_Passive_EX = {
 			if global.INSTATUS(_env, "SummonedYXZChun")(_env, _env.unit) then
 				global.ApplyRPRecovery(_env, _env.unit, this.RageFactor)
 				global.CloneBuff(_env, _env.unit, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "BUFF"))
+
+				if global.SelectBuffCount(_env, _env.unit, "Skill_YXZChun_Passive") == 0 then
+					global.ApplyRPDamage(_env, _env.unit, this.RageFactor)
+
+					local buffeft1 = global.SpecialNumericEffect(_env, "+TigerDamageRate", {
+						"?Normal"
+					}, this.DmgRateFactor)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"Skill_YXZChun_Passive",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
 			end
 		end)
 

@@ -66,6 +66,11 @@ local mappings = {
 		name = "RTPKMatchMediator",
 		type = "@C"
 	},
+	RTPKEmojiMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKEmojiMediator",
+		name = "RTPKEmojiMediator",
+		type = "@C"
+	},
 	RTPKNewSeasonTipsMediator = {
 		url = "dm.gameplay.rtpk.view.RTPKNewSeasonTipsMediator",
 		name = "RTPKNewSeasonTipsMediator",

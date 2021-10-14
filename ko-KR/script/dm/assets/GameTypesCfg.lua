@@ -1,13 +1,13 @@
 CurrencyIdKind = {
 	kCrusadeEnergy = "IR_Crusade_Energy",
-	kDiamondDrawURItem = "IM_DiamondDraw_UR",
+	kSurface = "IR_Surface",
 	kActivityHolidayPower = "IR_HolidayStamina",
 	kDiamondDrawExItem = "IM_DiamondDrawEX",
 	kPve = "IR_Pve",
 	kActivityKnightPower = "IR_KnightStamina",
 	kActivityFemalePower = "IR_FemaleStamina",
-	kGoldDrawItem = "IM_GoldDraw",
 	kAcitvityStaminaPower = "IR_AcitvityStamina",
+	kGoldDrawItem = "IM_GoldDraw",
 	kActivityStoryBookPower = "IR_StoryBookStamina",
 	kActivityMusicPower = "IR_MusicFestivalStamina",
 	kActivityDetectivePower = "IR_DetectiveStamina",
@@ -16,15 +16,16 @@ CurrencyIdKind = {
 	kActivityTerrorPower = "IR_TerrorStamina",
 	kActivityRiddlePower = "IR_RiddleStamina",
 	kGold = "IR_Gold",
-	kMazeInfinityGold = "IR_PansLabInfGOLD",
-	kMazeNormalGold = "IR_PansLabGOLD",
+	kAcitvityHalloweenPowerRe = "IR_HalloweenStamina_Re",
 	kMazeGold = "IR_PansLab",
-	kPetRace = "IR_KON",
+	kMazeNormalGold = "IR_PansLabGOLD",
+	kMazeInfinityGold = "IR_PansLabInfGOLD",
 	kCrystal = "IR_Crystal",
 	kTECH = "IR_TECH",
-	KMasterStage_Exp = "IM_MasterStage_Exp",
+	kPetRace = "IR_KON",
 	kAcitvitySnowPower = "IR_SnowflakeStamina",
 	kTrial = "IR_Tower",
+	KMasterStage_Exp = "IM_MasterStage_Exp",
 	kStageArenaPower = "IR_StageArena",
 	kEquip13 = "IR_Equip13",
 	kEquip14 = "IR_Equip14",
@@ -46,7 +47,7 @@ CurrencyIdKind = {
 	kActivityAnimalPower = "IR_AnimalStamina",
 	kStageArenaOldCoin = "IM_StageArena",
 	kDiamond = "IR_Diamond",
-	kSurface = "IR_Surface",
+	kDiamondDrawURItem = "IM_DiamondDraw_UR",
 	kActivitySummerRePower = "IR_SummerReStamina",
 	kActivityCollapsedPower = "IR_CollapsedStamina"
 }
@@ -405,6 +406,7 @@ UserDefaultKey = {
 	kRoleEffectOffKey = "setting_role_effect",
 	KURMapCountKey = "KURMapCountKey",
 	kSoundCVDownloadKey = "sound_cv_download_over",
+	KSetBoardMovePos = "KSetBoardMovePos",
 	kSpinePortraitDownloadKey = "spine_portrait_download_over"
 }
 CommonRewardType = {
@@ -461,6 +463,10 @@ kMasterState = {
 }
 PowerConfigMap = {
 	IM_HalloweenBossStamina = {
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_1",
+		func = "getItemCount"
+	},
+	IM_HalloweenBossStamina_Re = {
 		tips = "ACTIVITY_Halloween_NOT_ENOUGH_1",
 		func = "getItemCount"
 	},
@@ -533,6 +539,15 @@ PowerConfigMap = {
 		tableName = "Reset"
 	},
 	[CurrencyIdKind.kAcitvityHalloweenPower] = {
+		all = "Act_Halloween_Power_RecAll",
+		perMin = "Act_Halloween_Power_RecPerMin",
+		next = "Act_Halloween_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityHalloweenStamina_Reset",
+		tips = "ACTIVITY_Halloween_NOT_ENOUGH_2",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kAcitvityHalloweenPowerRe] = {
 		all = "Act_Halloween_Power_RecAll",
 		perMin = "Act_Halloween_Power_RecPerMin",
 		next = "Act_Halloween_Power_RecNext",

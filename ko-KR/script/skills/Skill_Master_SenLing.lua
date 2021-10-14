@@ -81,13 +81,19 @@ all.Sk_Master_SenLing_Action1 = {
 		this.DmgFactor = externs.DmgFactor
 
 		if this.DmgFactor == nil then
-			this.DmgFactor = 0.3
+			this.DmgFactor = 0.2
 		end
 
 		this.HpFactor = externs.HpFactor
 
 		if this.HpFactor == nil then
 			this.HpFactor = 0.3
+		end
+
+		this.RpFactor = externs.RpFactor
+
+		if this.RpFactor == nil then
+			this.RpFactor = 300
 		end
 
 		local main = __action(this, {
@@ -103,6 +109,16 @@ all.Sk_Master_SenLing_Action1 = {
 		this.main = global["[load]"](this, {
 			"Movie_SLing_Skill2"
 		}, main)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
 
 		return this
 	end,
@@ -143,9 +159,9 @@ all.Sk_Master_SenLing_Action1 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local myHp = global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)
 
-			global.ApplyHPReduce(_env, _env.ACTOR, maxHp * this.DmgFactor)
+			global.ApplyHPReduce(_env, _env.ACTOR, myHp * this.DmgFactor)
 
 			local units = global.RandomN(_env, 1, global.FriendDiedUnits(_env))
 
@@ -192,6 +208,34 @@ all.Sk_Master_SenLing_Action1 = {
 			local global = _env.global
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.isRevive = externs.isRevive
+
+		assert(_env.isRevive ~= nil, "External variable `isRevive` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if _env.isRevive == true and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "Sk_Master_SenLing_Action1")(_env, _env.unit) then
+				global.ApplyRPRecovery(_env, _env.unit, this.RpFactor)
+			end
 		end)
 
 		return _env
@@ -329,6 +373,12 @@ all.Sk_Master_SenLing_Action3 = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
+		this.DmgFactor = externs.DmgFactor
+
+		if this.DmgFactor == nil then
+			this.DmgFactor = 0.2
+		end
+
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -380,6 +430,9 @@ all.Sk_Master_SenLing_Action3 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local myHp = global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)
+
+			global.ApplyHPReduce(_env, _env.ACTOR, myHp * this.DmgFactor)
 
 			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)

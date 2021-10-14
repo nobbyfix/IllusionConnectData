@@ -495,6 +495,9 @@ function BattleLogic:on_EntityHurt(_, args)
 	if hurt.deadly and target ~= nil then
 		target:setLifeStage(ULS_Dying)
 		self._skillSystem:activateSpecificTrigger(target, "DYING")
+		self._skillSystem:activateGlobalTrigger("UNIT_DYING", {
+			unit = target
+		})
 	end
 
 	local targetHpComp = target:getComponent("Health")

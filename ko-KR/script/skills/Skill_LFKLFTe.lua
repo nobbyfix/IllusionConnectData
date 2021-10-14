@@ -729,13 +729,15 @@ all.DaGunPassive = {
 
 			global.ApplyRPRecovery(_env, _env.ACTOR, rp)
 
-			local buff = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "SECTSKILL"))
+			local buff = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "SECTSKILL", "Skill_YSTLu_Passive_Key", "HURTRATEUP", "UNHURTRATEUP", "CRITRATEUP", "ATKUP", "DEFUP", "DEFRATEUP", "ATKRATEUP", "ABSORPTIONUP", "BLOCKRATEUP"))
 			local buff2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ALL(_env, "NUMERIC", "Fight_MaxCostBuff", "UNDISPELLABLE", "UNSTEALABLE"))
 
 			global.ApplyBuff(_env, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
-				tags = {}
+				tags = {
+					"DAGUN_PREPARE"
+				}
 			}, {
 				buff,
 				buff2
@@ -753,6 +755,7 @@ all.DaGunPassive = {
 			})
 			global.DelayCall(_env, 1550, global.ResetDisplayZorder, _env.ACTOR)
 			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DEBUFF"), 99)
+			global.DelayCall(_env, 1580, global.DispelBuff, _env.ACTOR, global.BUFF_MARKED(_env, "DAGUN_PREPARE"), 99)
 			global.DaGun(_env, _env.ACTOR)
 		end)
 

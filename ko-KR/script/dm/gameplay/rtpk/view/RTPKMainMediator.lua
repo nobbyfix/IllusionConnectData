@@ -37,6 +37,10 @@ local kBtnHandlers = {
 	["seasonRule.btn_rule"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickSeasonRule"
+	},
+	["bg_bottom.btn_emoji"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickEmoji"
 	}
 }
 
@@ -715,6 +719,14 @@ end
 
 function RTPKMainMediator:onClickSeasonRule()
 	local view = self:getInjector():getInstance("RTPKBuffDetailView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}))
+end
+
+function RTPKMainMediator:onClickEmoji()
+	local view = self:getInjector():getInstance("RTPKEmojiView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)

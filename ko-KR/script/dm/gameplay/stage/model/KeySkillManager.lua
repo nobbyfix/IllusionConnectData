@@ -620,8 +620,20 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 	local totalHeroes, ownHeroesNum = nil
 
 	if #param == 0 then
-		ownHeroesNum = #self._ownHeroList
-		totalHeroes = #self._allHeroList
+		totalHeroes = 0
+		ownHeroesNum = 0
+
+		for i, v in pairs(self._ownHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				ownHeroesNum = ownHeroesNum + 1
+			end
+		end
+
+		for i, v in pairs(self._allHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				totalHeroes = totalHeroes + 1
+			end
+		end
 	else
 		local heroesTemp = {}
 
@@ -633,7 +645,15 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 			end
 		end
 
+		for id, v in pairs(heroesTemp) do
+			if heroSystem:isLinkStageHero(id) then
+				heroesTemp[id] = nil
+			end
+		end
+
 		totalTargetHeroes = table.nums(heroesTemp)
+
+		dump(totalTargetHeroes, "totalTargetHeroes-_")
 
 		if totalTargetHeroes == 0 then
 			return false
@@ -654,7 +674,7 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 				end
 			end
 
-			if active and not table.indexof(heroes, heroId) then
+			if active and not table.indexof(heroes, heroId) and not heroSystem:isLinkStageHero(heroId) then
 				heroes[#heroes + 1] = heroId
 			end
 		end

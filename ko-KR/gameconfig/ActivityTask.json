@@ -1282,7 +1282,7 @@
     "AHalloween_AchieveMentTask_ExchangeAchieve_1": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "conditionType": "Condi_AhalloweenExchangeAchieve_Re",
                 "factor1": [
                     5000
                 ]
@@ -1299,7 +1299,7 @@
     "AHalloween_AchieveMentTask_ExchangeAchieve_2": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "conditionType": "Condi_AhalloweenExchangeAchieve_Re",
                 "factor1": [
                     10000
                 ]
@@ -1316,7 +1316,7 @@
     "AHalloween_AchieveMentTask_ExchangeAchieve_3": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "conditionType": "Condi_AhalloweenExchangeAchieve_Re",
                 "factor1": [
                     15000
                 ]
@@ -1333,7 +1333,7 @@
     "AHalloween_AchieveMentTask_ExchangeAchieve_4": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "conditionType": "Condi_AhalloweenExchangeAchieve_Re",
                 "factor1": [
                     20000
                 ]
@@ -1350,7 +1350,7 @@
     "AHalloween_AchieveMentTask_ExchangeAchieve_5": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenExchangeAchieve",
+                "conditionType": "Condi_AhalloweenExchangeAchieve_Re",
                 "factor1": [
                     30000
                 ]
@@ -1367,12 +1367,12 @@
     "AHalloween_AchieveMentTask_StageStarSum_1": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenStageStarSum",
+                "conditionType": "Condi_AhalloweenStageStarSum_Re",
                 "factor1": [
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1387,12 +1387,12 @@
     "AHalloween_AchieveMentTask_StageStarSum_2": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenStageStarSum",
+                "conditionType": "Condi_AhalloweenStageStarSum_Re",
                 "factor1": [
                     20
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1407,12 +1407,12 @@
     "AHalloween_AchieveMentTask_StageStarSum_3": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenStageStarSum",
+                "conditionType": "Condi_AhalloweenStageStarSum_Re",
                 "factor1": [
                     30
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1427,12 +1427,12 @@
     "AHalloween_AchieveMentTask_StageStarSum_4": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenStageStarSum",
+                "conditionType": "Condi_AhalloweenStageStarSum_Re",
                 "factor1": [
                     40
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1447,12 +1447,12 @@
     "AHalloween_AchieveMentTask_StageStarSum_5": {
         "Condition": [
             {
-                "conditionType": "Condi_AhalloweenStageStarSum",
+                "conditionType": "Condi_AhalloweenStageStarSum_Re",
                 "factor1": [
                     50
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1540,7 +1540,7 @@
                     15
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1560,7 +1560,7 @@
                     30
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1580,7 +1580,7 @@
                     45
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1600,7 +1600,7 @@
                     60
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1620,7 +1620,7 @@
                     75
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1640,7 +1640,7 @@
                     100
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1660,7 +1660,7 @@
                     200
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1680,7 +1680,7 @@
                     300
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1700,7 +1700,7 @@
                     400
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1720,7 +1720,7 @@
                     500
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1740,7 +1740,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -1760,7 +1760,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Halloween_Map"
+                    "ActivityBlock_Halloween_Map_Re"
                 ]
             }
         ],
@@ -6877,7 +6877,7 @@
                     2000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -6897,7 +6897,7 @@
                     5000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -6917,7 +6917,7 @@
                     8000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -6937,7 +6937,7 @@
                     12000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -7025,7 +7025,7 @@
                     10000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -7045,7 +7045,7 @@
                     20000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -7065,7 +7065,7 @@
                     40000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -7085,7 +7085,7 @@
                     60000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -7105,7 +7105,7 @@
                     80000
                 ],
                 "params": [
-                    "Activity_Darts_210918"
+                    "Activity_Darts_211014"
                 ]
             }
         ],
@@ -11309,6 +11309,222 @@
         "Name": "Activity_busu_20210710Task_9_Name",
         "OrderNum": 9,
         "Reward": "Activity_busu_20210710Task_9_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "FGao"
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_dumeise_20211014Task_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "FGao"
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_dumeise_20211014Task_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "FGao"
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_dumeise_20211014Task_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "FGao"
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_dumeise_20211014Task_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_dumeise_20211014Task_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_dumeise_20211014Task_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_dumeise_20211014Task_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_dumeise_20211014Task_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_dumeise_20211014Task_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_dumeise_20211014Task_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_dumeise_20211014Task_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_dumeise_20211014Task_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_dumeise_20211014Task_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_dumeise_20211014Task_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_dumeise_20211014Task_9_Reward",
         "TaskIcon": ""
     },
     "Activity_jiami_20211007Task_1": {
@@ -16896,6 +17112,23 @@
         "Reward": "Detective_Login_8_Reward",
         "TaskIcon": ""
     },
+    "DrawCard_SP_KTSJKe_Activity_Task": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "DrawCard_SP_KTSJKe_Activity_Task_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "DrawCard_SP_KTSJKe_Activity_Task_Name",
+        "OrderNum": 1,
+        "Reward": "DrawCard_SP_KTSJKe_Activity_Task_Reward",
+        "TaskIcon": ""
+    },
     "DrawCard_SP_PNCao_Activity_Task": {
         "Condition": [
             {
@@ -19648,6 +19881,142 @@
         "Name": "EightDays_8_Name",
         "OrderNum": 8,
         "Reward": "EightDays_20210923_8_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20211014_1_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20211014_2_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20211014_3_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20211014_4_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20211014_5_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20211014_6_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20211014_7_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211014_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20211014_8_Reward",
         "TaskIcon": ""
     },
     "Female_AchieveMentTask_01": {
@@ -25515,6 +25884,108 @@
         "Name": "Puzzle_DailyTask_06_Name",
         "OrderNum": 6,
         "Reward": "Puzzle_DailyTask_16_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_01_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_01_Name",
+        "OrderNum": 1,
+        "Reward": "Puzzle_DailyTask_21_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_02_Desc",
+        "Destination": "view://TowerView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_02_Name",
+        "OrderNum": 2,
+        "Reward": "Puzzle_DailyTask_22_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_03_Desc",
+        "Destination": "view://buyCurrencyView&viewType=popup&_currencyType=1",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_03_Name",
+        "OrderNum": 3,
+        "Reward": "Puzzle_DailyTask_23_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_24": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AttendArena",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_04_Desc",
+        "Destination": "view://arenaView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_04_Name",
+        "OrderNum": 4,
+        "Reward": "Puzzle_DailyTask_24_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_25": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapTimes",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_05_Desc",
+        "Destination": "view://ExploreView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_05_Name",
+        "OrderNum": 5,
+        "Reward": "Puzzle_DailyTask_25_Reward",
+        "TaskIcon": ""
+    },
+    "Puzzle_DailyTask_26": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ResourceStage",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Puzzle_DailyTask_06_Desc",
+        "Destination": "view://SpStageMainView&viewType=push&spType=exp",
+        "ExtraReward": "",
+        "Name": "Puzzle_DailyTask_06_Name",
+        "OrderNum": 6,
+        "Reward": "Puzzle_DailyTask_26_Reward",
         "TaskIcon": ""
     },
     "Return_Choice_1": {

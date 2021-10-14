@@ -1753,7 +1753,7 @@ function RecruitMainMediator:refreshActivityUpView()
 		return
 	end
 
-	local previewImg = self._recruitDataShow:getPreview().img
+	local previewImg = self._recruitDataShow:getPreview().imgcolor
 
 	local function setName(node, rect, size)
 		local name = node:getChildByName("name")
@@ -1771,8 +1771,11 @@ function RecruitMainMediator:refreshActivityUpView()
 
 		local namebg = node:getChildByName("namebg")
 
-		namebg:loadTexture(previewImg[1] .. ".png", ccui.TextureResType.plistType)
 		namebg:setScale9Enabled(true)
+
+		local color = string.split(previewImg[1], ",")
+
+		namebg:setColor(cc.c3b(color[1], color[2], color[3]))
 
 		if previewType == "1UP" then
 			namebg:setCapInsets(cc.rect(80, 10, 1, 1))
@@ -1816,9 +1819,13 @@ function RecruitMainMediator:refreshActivityUpView()
 
 			if descbg then
 				if previewType == "2UP" and index == 2 then
-					descbg:loadTexture(previewImg[3] .. ".png", ccui.TextureResType.plistType)
+					local color = string.split(previewImg[3], ",")
+
+					descbg:setColor(cc.c3b(color[1], color[2], color[3]))
 				else
-					descbg:loadTexture(previewImg[2] .. ".png", ccui.TextureResType.plistType)
+					local color = string.split(previewImg[2], ",")
+
+					descbg:setColor(cc.c3b(color[1], color[2], color[3]))
 				end
 
 				descbg:getParent():removeChildByName("descRichText" .. index)

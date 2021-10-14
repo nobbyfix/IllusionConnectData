@@ -79,7 +79,7 @@ local function getEmptyCell(emptyCells, positions)
 	return nil
 end
 
-function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd, fromAction)
+function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd, fromAction, rightNowSit)
 	local battleField = self._battleField
 	local unitType = unit:getUnitType()
 
@@ -109,7 +109,11 @@ function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd,
 
 	local enterAction = BattleEnterAction:new(isUserCmd):withActor(unit)
 
-	self._actionScheduler:addEmergentAction(enterAction)
+	if rightNowSit then
+		self._actionScheduler:addEmergentActionAtFirst(enterAction)
+	else
+		self._actionScheduler:addEmergentAction(enterAction)
+	end
 
 	if self._eventCenter then
 		self._eventCenter:dispatchEvent("UnitPreEnter", {
@@ -160,7 +164,7 @@ function FormationSystem:CanBeSitBy(cellId, seatRules)
 	return false, "InvalidTargetPosition"
 end
 
-function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, seatRules)
+function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, seatRules, rightNowSit)
 	local cellId = makeCellId(player:getSide(), cellNo)
 	local battleField = self._battleField
 
@@ -204,7 +208,7 @@ function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCm
 		unit = entityManager:createHeroUnit(unitData)
 	end
 
-	return self:_settleUnit(player, unit, cellId, animation, isUserCmd, "SpawnUnit")
+	return self:_settleUnit(player, unit, cellId, animation, isUserCmd, "SpawnUnit", rightNowSit)
 end
 
 local function extend(values, constants)

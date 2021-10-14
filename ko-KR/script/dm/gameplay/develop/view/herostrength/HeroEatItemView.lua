@@ -104,6 +104,8 @@ function HeroEatItemView:createView(info)
 	self._gotoBtn:addClickEventListener(function ()
 		self._mediator:onClickedGoto()
 	end)
+	self._showPanel:getChildByFullName("gotoBtn.name1"):setString("")
+	self._showPanel:getChildByFullName("upBtn.panel.name1"):setString("")
 
 	self._upBtn = self._showPanel:getChildByFullName("upBtn")
 

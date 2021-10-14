@@ -675,8 +675,10 @@ all.Skill_LLan_Unique_Awken = {
 			for _, unit in global.__iter__(global.FriendUnits(_env, -global.COL_OF(_env, _env.ACTOR))) do
 				global.ApplyBuff(_env, unit, {
 					timing = 1,
-					duration = 3,
 					display = "UnHurtRateUp",
+					group = "Skill_LLan_Unique_Awken",
+					duration = 3,
+					limit = 1,
 					tags = {
 						"STATUS",
 						"BUFF",

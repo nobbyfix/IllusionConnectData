@@ -198,6 +198,11 @@ function BattleUIMediator:setupSubWidgets()
 
 	self._passiveSkillTip:setListener(self)
 
+	local rtpkEmojiNode = header:getChildByName("emoji")
+	self._rtpkEmojiWidget = self:autoManageObject(BattleRTPKEmojiPanelWidget:new(rtpkEmojiNode))
+
+	self._rtpkEmojiWidget:setListener(self)
+
 	local leftStageLevel = header:getChildByName("leftStageLevel")
 	self._leftStageLevel = self:autoManageObject(LeadStagePassiveSkillWidget:new(leftStageLevel, true))
 
@@ -243,6 +248,12 @@ function BattleUIMediator:willStartEnterTransition()
 
 	if self._speedupBtn then
 		local view = self._speedupBtn:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
+	end
+
+	if self._rtpkEmojiWidget then
+		local view = self._rtpkEmojiWidget:getView()
 
 		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
 	end
@@ -410,6 +421,10 @@ function BattleUIMediator:fade()
 		self._passiveSkillTip:hide()
 	end
 
+	if self._rtpkEmojiWidget then
+		-- Nothing
+	end
+
 	if self._speedupBtn then
 		local view = self._speedupBtn:getView()
 
@@ -525,6 +540,13 @@ function BattleUIMediator:fade()
 
 		if self._speedupBtn then
 			local view = self._speedupBtn:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._rtpkEmojiWidget then
+			local view = self._rtpkEmojiWidget:getView()
 
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
@@ -763,6 +785,14 @@ function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
 	if viewConfig.noHpFormat then
 		self._leftHeadWidget:setHpFormat(false)
 		self._rightHeadWidget:setHpFormat(false)
+	end
+
+	if viewConfig.isShowEmoji then
+		if self._rtpkEmojiWidget then
+			self._rtpkEmojiWidget:getView():setVisible(true)
+		end
+	elseif self._rtpkEmojiWidget then
+		self._rtpkEmojiWidget:getView():setVisible(false)
 	end
 
 	self._deadCountWidget:enabled(false)
@@ -1140,6 +1170,15 @@ end
 
 function BattleUIMediator:isTouchEnabled()
 	return self._touchEnalbed
+end
+
+function BattleUIMediator:onEmojiSelect(emojiId)
+	local args = {
+		emojiId = emojiId
+	}
+
+	self._mainMediator:sendMessage("emojiUsed", args, function (isOK, reason)
+	end)
 end
 
 function BattleUIMediator:applyHeroCard(cardArray, card, targetPositionIndex)

@@ -494,7 +494,7 @@ all.Skill_SP_KTSJKe_Passive = {
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and units[1] and global.SUMMONS(_env, _env.unit) and not global.INSTATUS(_env, "SummonedSP_KTSJKe")(_env, _env.unit) then
 				local SummonedSP_KTSJKe = global.Summon(_env, _env.ACTOR, "SummonedSP_KTSJKe", this.summonFactor, nil, {
-					global.GetCellId(_env, _env.unit)
+					global.abs(_env, global.GetCellId(_env, _env.unit))
 				})
 
 				if SummonedSP_KTSJKe then
@@ -1218,7 +1218,7 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and units[1] and global.SUMMONS(_env, _env.unit) and not global.INSTATUS(_env, "SummonedSP_KTSJKe")(_env, _env.unit) then
 				local SummonedSP_KTSJKe = global.Summon(_env, _env.ACTOR, "SummonedSP_KTSJKe", this.summonFactor, nil, {
-					global.GetCellId(_env, _env.unit)
+					global.abs(_env, global.GetCellId(_env, _env.unit))
 				})
 
 				if SummonedSP_KTSJKe then
@@ -1285,7 +1285,7 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 
 				global.Kick(_env, wife[1])
 				global.ReviveByUnit(_env, _env.ACTOR, this.Factor, this.RpFactor, {
-					cellid
+					global.abs(_env, cellid)
 				})
 			end
 		end)
