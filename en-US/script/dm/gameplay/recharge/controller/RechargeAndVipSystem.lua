@@ -170,7 +170,7 @@ function RechargeAndVipSystem:getCanContinueBuy(monthCardId)
 	local data = self._rechargeAndVipModel:getMonthCardMap()[monthCardId]
 	local curTime = self._gameServerAgent:remoteTimeMillis()
 
-	if data._endTimes > curTime + data._time * data._renewalTimes then
+	if data._endTimes > curTime + data._time * data._renewalTimes * 86400000 then
 		return false
 	end
 

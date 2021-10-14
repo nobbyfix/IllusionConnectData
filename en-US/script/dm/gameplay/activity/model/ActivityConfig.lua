@@ -23,6 +23,8 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.activity.model.PuzzleGameActivity")
+require("dm.gameplay.cooperateBoss.model.CooperateBoss")
 require("dm.gameplay.activity.model.return.ActivityReturn")
 require("dm.gameplay.activity.model.return.ActivityReturnLetter")
 require("dm.gameplay.activity.model.return.ActivityReturnCarnival")
@@ -89,6 +91,7 @@ ActivityModel = {
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
 	[ActivityType.KTPURCHASE] = ActivityTpurchase,
 	[ActivityType.KMiniGame] = MiniGameActivity,
+	[ActivityType.KPuzzleGame] = PuzzleGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
 	[ActivityType.KLetter] = ActivityReturnLetter,
 	[ActivityType.KReturnCarnival] = ActivityReturnCarnival,
@@ -136,7 +139,8 @@ ActivityUI = {
 	[ActivityType.KRechargeActivity] = "RechargeActivityView",
 	[ActivityType.KDrawCardFeedbackActivity] = "ActivityDrawCardFeedbackView",
 	[ActivityType.KColourEgg] = "TaskActivityView",
-	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView"
+	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView",
+	[ActivityType.KPuzzleGame] = "ActivityPuzzleGameView"
 }
 ActivityMark = {
 	kWonderful2 = "WONDERFUL2",

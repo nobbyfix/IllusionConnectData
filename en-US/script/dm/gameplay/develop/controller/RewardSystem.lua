@@ -25,6 +25,7 @@ RewardType = {
 	kDecorate = 20,
 	kItem = 2,
 	kBackground = 22,
+	kRTPKEmoji = 30,
 	kSurface = 7,
 	kStory = "STORY"
 }
@@ -114,6 +115,12 @@ function RewardSystem.class:getName(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Information.name)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", id)
+
+			if config and config.Id then
+				return Strings:get(config.EMJName)
 			end
 		end
 	end
@@ -277,6 +284,12 @@ function RewardSystem.class:getDesc(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Information.desc)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", id)
+
+			if config and config.Id then
+				return Strings:get(config.Log)
 			end
 		end
 	end

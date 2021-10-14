@@ -95,9 +95,9 @@ function RegularBattleLogic:setupStateTransitions(battleContext)
 	local timedOutState = RegularLogicState_Timedout:new("timedOut")
 	local diligentState = RegularLogicState_DiligentRound:new("diligentRound", 2000)
 
-	startState:setupContext(battleContext):addTransition("COMPLETED", waitingState):enableOperation("heroCard"):enableOperation("doskill")
-	waitingState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("TIMEDOUT", timedOutState):enableOperation("heroCard"):enableOperation("doskill")
-	actionSchedulerState:setupContext(battleContext):addTransition("NEXT_WAVE", nextWaveState):addTransition("BOUT_END", beforeNextBoutState):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState):addTransition("DILIGENT_ROUND", diligentState):enableOperation("heroCard"):enableOperation("skillCard"):enableOperation("doskill"):enableOperation("refreshSkillCard")
+	startState:setupContext(battleContext):addTransition("COMPLETED", waitingState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("doskill")
+	waitingState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("TIMEDOUT", timedOutState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("doskill")
+	actionSchedulerState:setupContext(battleContext):addTransition("NEXT_WAVE", nextWaveState):addTransition("BOUT_END", beforeNextBoutState):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState):addTransition("DILIGENT_ROUND", diligentState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("skillCard"):enableOperation("doskill"):enableOperation("refreshSkillCard")
 	beforeNextBoutState:setupContext(battleContext):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState)
 	nextWaveState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("NEXT_BOUT", nextBoutState)
 	nextBoutState:setupContext(battleContext):addTransition("FINISHED", actionSchedulerState)
@@ -275,6 +275,13 @@ function RegularBattleLogic:setupInputHandlers()
 	self:setupInputHandler("refreshSkillCard", self.handle_RefreshSkillCard, true)
 	self:setupInputHandler("leave", self.handle_Leave)
 	self:setupInputHandler("Leave", self.handle_Leave)
+	self:setupInputHandler("emojiUsed", self.handle_EmojiUsed, true)
+end
+
+function RegularBattleLogic:handle_EmojiUsed(player, op, args)
+	if self._battleRecorder and player:getMasterUnit() then
+		self._battleRecorder:recordEvent(player:getMasterUnit():getId(), "Emoji", args)
+	end
 end
 
 function RegularBattleLogic:handle_HeroCard(player, op, args)

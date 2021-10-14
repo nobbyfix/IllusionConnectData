@@ -572,6 +572,6 @@ end
 
 function PlayerInfoMediator:setButton(view, txt, txten, name)
 	view:getChildByName("txt"):setString(txt)
-	view:getChildByName("txten"):setString(txten)
+	view:getChildByName("txten"):setString("")
 	view:setName(name)
 end

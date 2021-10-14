@@ -17,6 +17,8 @@ function BattleDataHelper:getIntegralBattleData(data)
 	data.playerData.leadStageLevel = leadStageLevel_l
 	data.enemyData.leadStageLevel = leadStageLevel_r
 
+	dump(data, "datadsxskcndskcndskcd", 8)
+
 	return data
 end
 
@@ -419,6 +421,8 @@ function BattleDataHelper:fillHeroData(hero, rid, waveStr, idx, isEnemy, summon,
 		hero.sex = self:getSex("HeroBase", hero)
 	end
 
+	hero.sheilUplimit = self:getSheilUpLimit("Shield_UpLimit_Pets")
+
 	return hero
 end
 
@@ -427,6 +431,16 @@ function BattleDataHelper:getSex(HeroTag, hero)
 	sex = sex or 0
 
 	return sex
+end
+
+function BattleDataHelper:getSheilUpLimit(ruleKey)
+	local sheilUp = ConfigReader:getDataByNameIdAndKey("ConfigValue", ruleKey, "content")
+
+	if sheilUp and sheilUp ~= "" then
+		return sheilUp
+	end
+
+	return nil
 end
 
 function BattleDataHelper:getSufaceIndex(HeroTag, hero)
@@ -555,6 +569,8 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		local data = ConfigReader:getRecordById("MasterLeadStage", master.leadStageId)
 		master.modelId = data.ModelId
 	end
+
+	master.sheilUplimit = self:getSheilUpLimit("Shield_UpLimit_Master")
 end
 
 local function deepCopy(desc, src)

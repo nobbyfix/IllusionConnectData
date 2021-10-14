@@ -442,7 +442,11 @@ function HomeSystem:getWonderfulActData()
 	end
 
 	if next(sortBanner) then
-		return sortBanner[math.random(1, #sortBanner)]
+		table.sort(sortBanner, function (a, b)
+			return b.Sort < a.Sort
+		end)
+
+		return sortBanner[1], sortBanner[math.random(1, #sortBanner)]
 	end
 
 	return nil
@@ -514,4 +518,28 @@ function HomeSystem:getHomeBackgroundList()
 	end)
 
 	return list
+end
+
+function HomeSystem:getBordHeroPos(heroId)
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+	local info = cc.UserDefault:getInstance():getStringForKey(playerId .. UserDefaultKey.KSetBoardMovePos .. heroId) or ""
+
+	if info == "" then
+		info = {
+			0,
+			0,
+			1
+		}
+	else
+		info = string.split(info, "_")
+	end
+
+	return info
+end
+
+function HomeSystem:setBordHeroPos(heroId, posX, posY, scale)
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+	local str = posX .. "_" .. posY .. "_" .. scale
+
+	cc.UserDefault:getInstance():setStringForKey(playerId .. UserDefaultKey.KSetBoardMovePos .. heroId, str)
 end

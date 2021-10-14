@@ -1937,6 +1937,21 @@ local modules = {
 							mediator = "ActivityBlockFudaiPreviewMeditor"
 						},
 						{
+							res = "asset/ui/ActivityPuzzleGame.csb",
+							name = "ActivityPuzzleGameView",
+							mediator = "ActivityPuzzleGameMediator"
+						},
+						{
+							res = "asset/ui/ActivityPuzzleGameTask.csb",
+							name = "ActivityPuzzleGameTaskView",
+							mediator = "ActivityPuzzleGameTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityFudaiPreview.csb",
+							name = "ActivityBlockFudaiPreview",
+							mediator = "ActivityBlockFudaiPreviewMeditor"
+						},
+						{
 							res = "asset/ui/ActivityBlockDetective.csb",
 							name = "ActivityBlockDetectiveView",
 							mediator = "ActivityBlockDectiveMediator"
@@ -4143,6 +4158,11 @@ local modules = {
 							res = "asset/ui/RTPKNewSeason.csb",
 							name = "RTPKNewSeasonTipsView",
 							mediator = "RTPKNewSeasonTipsMediator"
+						},
+						{
+							res = "asset/ui/RTPKEmoji.csb",
+							name = "RTPKEmojiView",
+							mediator = "RTPKEmojiMediator"
 						}
 					}
 				}

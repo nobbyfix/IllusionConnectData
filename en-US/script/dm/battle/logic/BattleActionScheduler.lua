@@ -122,6 +122,10 @@ function BattleActionScheduler:addEmergentAction(action)
 	self._emergentActions[#self._emergentActions + 1] = action
 end
 
+function BattleActionScheduler:addEmergentActionAtFirst(action)
+	table.insert(self._emergentActions, 1, action)
+end
+
 function BattleActionScheduler:addUserActionAtFirst(action)
 	local actionIndex = #self._userActions + 1
 

@@ -106,7 +106,8 @@
             "XLai",
             "GYCZi",
             "LYXi",
-            "XBKLDi"
+            "XBKLDi",
+            "HLDNan"
         ],
         "Party": "Cure",
         "PartyDesc": "Party_Cure_Desc",
@@ -201,9 +202,10 @@
     },
     "MNJH": {
         "IncludeHero": [
+            "SP_KTSJKe",
             "SP_PNCao",
-            "XDE",
             "MGNa",
+            "XDE",
             "WSLi",
             "MYing",
             "TLSi",
@@ -217,7 +219,8 @@
             "PNCao",
             "YSuo",
             "JDCZhang",
-            "HLMGen"
+            "HLMGen",
+            "LYSi"
         ],
         "Party": "MNJH",
         "PartyDesc": "PartyDesc_MNJH",
@@ -262,6 +265,7 @@
     },
     "SP": {
         "IncludeHero": [
+            "SP_KTSJKe",
             "SP_SSQXin",
             "SP_PNCao"
         ],
@@ -289,7 +293,9 @@
             "TLMi",
             "XLai",
             "YSuo",
-            "NCai"
+            "LYSi",
+            "NCai",
+            "HLDNan"
         ],
         "Party": "SR",
         "PartyDesc": "Party_SR_Desc",
@@ -334,6 +340,7 @@
             "BQDShe",
             "AJTa",
             "SRen",
+            "YXNMei",
             "LYXi",
             "BHTZi",
             "YSLBin",
@@ -356,14 +363,13 @@
             "XHMao",
             "TLSi",
             "FLBDSi",
+            "YXZChun",
             "LFKLFTe",
-            "YXNMei",
             "WSLi",
             "MYing",
+            "MLYDi",
             "XLDBLTe",
             "AMLBLTe",
-            "MLYDi",
-            "YXZChun",
             "LEMHou",
             "XDE"
         ],
@@ -412,16 +418,18 @@
     },
     "Summon": {
         "IncludeHero": [
+            "SP_KTSJKe",
             "PNCao",
             "LDu",
             "JNLong",
             "YBYa",
             "SGHQShou",
             "ATSheng",
+            "LYSi",
             "PDLa",
             "XHMao",
-            "LFKLFTe",
-            "YXZChun"
+            "YXZChun",
+            "LFKLFTe"
         ],
         "Party": "Summon",
         "PartyDesc": "Party_Summon_Desc",
@@ -438,13 +446,13 @@
             "TTKMeng",
             "FEMSi",
             "HSheng",
+            "YXNMei",
             "BHTZi",
             "QBTe",
             "KEDGong",
             "LSLTe",
             "TLSi",
             "FLBDSi",
-            "YXNMei",
             "XLDBLTe",
             "AMLBLTe"
         ],
@@ -525,7 +533,8 @@
             "TLMi",
             "YMHTPu",
             "YKDMLai",
-            "JSTDing"
+            "JSTDing",
+            "HLDNan"
         ],
         "Party": "XD",
         "PartyDesc": "PartyDesc_XD",

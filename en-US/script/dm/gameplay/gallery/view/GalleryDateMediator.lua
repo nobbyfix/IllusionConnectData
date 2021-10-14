@@ -877,6 +877,13 @@ function GalleryDateMediator:onClickDate()
 	local storyId = dateData.storyId
 	local storyOption = dateData.option
 
+	self._gallerySystem:setCurDate({
+		heroData = self._heroData,
+		storyIndex = storyIndex,
+		storyId = storyId,
+		storyOption = storyOption
+	})
+
 	local function endCallBack()
 		local settingSystem = self:getInjector():getInstance(SettingSystem)
 		local mainBgMuisId = settingSystem:getCurBGMusicId()
@@ -885,21 +892,13 @@ function GalleryDateMediator:onClickDate()
 			AudioEngine:getInstance():playBackgroundMusic(mainBgMuisId)
 		end
 
-		local options = self._gallerySystem:getDateOptions()
+		local options, loves = self._gallerySystem:getDateOptionsValue()
 		local params = {
 			heroId = self._heroId,
 			storyIndex = storyIndex,
 			options = options
 		}
-		local addLove = 0
-
-		for i = 1, #options do
-			local index = options[i]
-
-			if storyOption[i] and storyOption[i][index] then
-				addLove = addLove + storyOption[i][index]
-			end
-		end
+		local addLove = loves
 
 		self._gallerySystem:requestHeroDate(params, function ()
 			self:dispatch(ShowTipEvent({

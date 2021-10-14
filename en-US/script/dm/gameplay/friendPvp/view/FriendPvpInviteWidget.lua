@@ -103,6 +103,10 @@ function FriendPvpInviteWidget:setupView()
 	local tipsText = tipsPanel:getChildByName("tipsText")
 	local actBtn = tipsPanel:getChildByName("goBtn")
 	local btnText = actBtn:getChildByName("text")
+
+	btnText:disableEffect(1)
+	btnText:setTextColor(cc.c3b(0, 0, 0))
+
 	local callFunc = nil
 
 	if self._curTabType == kShowTab.kFriend then
@@ -291,11 +295,17 @@ function FriendPvpInviteWidget:refreshTableCell(cell, index)
 
 	local limitLevel = 20
 	local kickOutBtn = cell:getChildByName("refBtn")
+	local lbText = kickOutBtn:getChildByFullName("btnText")
 
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
 	kickOutBtn:setVisible(false)
 
 	local inviteBtn = cell:getChildByName("actBtn")
+	local lbText = inviteBtn:getChildByFullName("btnText")
 
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
 	inviteBtn:setVisible(true)
 
 	local function callFunc()

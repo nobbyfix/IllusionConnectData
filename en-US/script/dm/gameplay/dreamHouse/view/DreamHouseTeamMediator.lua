@@ -27,6 +27,13 @@ local kHeroRarityBgAnim = {
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
+local posTeamImg = {
+	bp = "sz_nuqihuifu.png",
+	def = "sz_fangyu.png",
+	on = "sz_kefangzhi.png",
+	atk = "sz_gongji.png",
+	off = "sz_jinzhi.png"
+}
 
 function DreamHouseTeamMediator:onRegister()
 	super.onRegister(self)
@@ -367,23 +374,44 @@ function DreamHouseTeamMediator:initWidgetInfo()
 	self._teamPosInfoTip = self._main:getChildByFullName("teamPosInfo")
 	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
 	local teamPosData = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "PositionLimit")
+	local blockBattleConfig = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", self._battleId, "BlockBattleConfig")
+	local passiveParmData = ConfigReader:getDataByNameIdAndKey("BlockBattle", blockBattleConfig, "FriendSpecialPassiveParm")
 
 	self._teamPosPanel:setVisible(false)
 
-	if teamPosData and #teamPosData > 0 then
+	if teamPosData and #teamPosData > 0 or passiveParmData and passiveParmData.cellcfg then
 		self._teamPosPanel:setVisible(true)
 
 		for i = 1, 9 do
 			local on = self._teamPosPanel:getChildByFullName("on_" .. i)
-			local off = self._teamPosPanel:getChildByFullName("off_" .. i)
 
-			on:setVisible(true)
-			off:setVisible(false)
+			on:loadTexture(posTeamImg.on, ccui.TextureResType.plistType)
+		end
 
-			for index, value in ipairs(teamPosData) do
-				if value == i then
-					on:setVisible(false)
-					off:setVisible(true)
+		if passiveParmData and passiveParmData.cellcfg then
+			for i = 1, #passiveParmData.cellcfg do
+				local data = passiveParmData.cellcfg[i]
+
+				if data then
+					if data.type == 1 then
+						self._teamPosPanel:getChildByFullName("on_" .. data.cell):loadTexture(posTeamImg.atk, ccui.TextureResType.plistType)
+					elseif data.type == 2 then
+						self._teamPosPanel:getChildByFullName("on_" .. data.cell):loadTexture(posTeamImg.def, ccui.TextureResType.plistType)
+					elseif data.type == 3 then
+						self._teamPosPanel:getChildByFullName("on_" .. data.cell):loadTexture(posTeamImg.bp, ccui.TextureResType.plistType)
+					end
+				end
+			end
+		end
+
+		if teamPosData and #teamPosData > 0 then
+			for i = 1, 9 do
+				local on = self._teamPosPanel:getChildByFullName("on_" .. i)
+
+				for index, value in ipairs(teamPosData) do
+					if value == i then
+						on:loadTexture(posTeamImg.off, ccui.TextureResType.plistType)
+					end
 				end
 			end
 		end
@@ -393,15 +421,36 @@ function DreamHouseTeamMediator:initWidgetInfo()
 		if eventType == ccui.TouchEventType.began then
 			for i = 1, 9 do
 				local on = self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. i)
-				local off = self._teamPosInfoTip:getChildByFullName("teamPos.off_" .. i)
 
-				on:setVisible(true)
-				off:setVisible(false)
+				on:loadTexture(posTeamImg.on, ccui.TextureResType.plistType)
+			end
 
-				for index, value in ipairs(teamPosData) do
-					if value == i then
-						on:setVisible(false)
-						off:setVisible(true)
+			if passiveParmData and passiveParmData.cellcfg then
+				for i = 1, #passiveParmData.cellcfg do
+					local data = passiveParmData.cellcfg[i]
+
+					if data then
+						if data.type == 1 then
+							self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. data.cell):loadTexture(posTeamImg.atk, ccui.TextureResType.plistType)
+						elseif data.type == 2 then
+							self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. data.cell):loadTexture(posTeamImg.def, ccui.TextureResType.plistType)
+						elseif data.type == 3 then
+							self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. data.cell):loadTexture(posTeamImg.bp, ccui.TextureResType.plistType)
+						end
+					end
+				end
+			end
+
+			dump(teamPosData, "teamPosData >>>>>>")
+
+			if teamPosData and #teamPosData > 0 then
+				for i = 1, 9 do
+					local on = self._teamPosInfoTip:getChildByFullName("teamPos.on_" .. i)
+
+					for index, value in ipairs(teamPosData) do
+						if value == i then
+							on:loadTexture(posTeamImg.off, ccui.TextureResType.plistType)
+						end
 					end
 				end
 			end

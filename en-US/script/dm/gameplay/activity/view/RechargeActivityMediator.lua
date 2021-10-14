@@ -94,6 +94,12 @@ local rewardListConfig = {
 		y = 248
 	}
 }
+local bgInfo = {
+	Activity_Gashapon_20211016 = {
+		bg1 = "znqd_btn_zy_rukou",
+		bg2 = "hd_bg_znqd"
+	}
+}
 
 function RechargeActivityMediator:initialize()
 	super.initialize(self)
@@ -201,6 +207,13 @@ function RechargeActivityMediator:initView()
 	anim = cc.MovieClip:create("dabeij_menghuanzhenbao")
 
 	anim:addTo(image2):center(image2:getContentSize()):offset(0, -17)
+
+	local image1 = self._main:getChildByName("image1")
+
+	if bgInfo[self._activityId] then
+		image2:loadTexture("asset/lang_ui/activity/" .. bgInfo[self._activityId].bg1 .. ".png", ccui.TextureResType.localType)
+		image1:loadTexture("asset/scene/" .. bgInfo[self._activityId].bg2 .. ".jpg", ccui.TextureResType.localType)
+	end
 end
 
 function RechargeActivityMediator:updateData(isInit)

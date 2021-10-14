@@ -144844,6 +144844,26 @@
             0.15
         ]
     },
+    "Star_FGao_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_FGao_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
     "Star_FLBDSi_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -144905,6 +144925,60 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_FLBDSi_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_FLEr_3_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_FLEr_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_FLEr_4_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_FLEr_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_FLEr_5": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_FLEr_5_Desc",
         "EffectRange": [
             "ALL"
         ],
@@ -145294,7 +145368,6 @@
     },
     "Star_HLDNan_3_1": {
         "AttrType": [
-            "ATK_RATE",
             "HP_RATE"
         ],
         "EffectDesc": "Star_HLDNan_3_1_Desc",
@@ -145308,8 +145381,7 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
-            0.1,
-            0.1
+            0.2
         ]
     },
     "Star_HLDNan_4": {
@@ -145317,6 +145389,42 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_HLDNan_4_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_HLDNan_4_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_HLDNan_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_HLDNan_5": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_HLDNan_5_Desc",
         "EffectRange": [
             "ALL"
         ],
@@ -150533,6 +150641,80 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_YMHTPu_4_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_YMJDe_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_YMJDe_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_YMJDe_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_YMJDe_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_YMJDe_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_YMJDe_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_YMJDe_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_YMJDe_6_Desc",
         "EffectRange": [
             "ALL"
         ],

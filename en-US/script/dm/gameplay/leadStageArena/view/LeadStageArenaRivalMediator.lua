@@ -218,18 +218,7 @@ function LeadStageArenaRivalMediator:refreshRivalViewDone()
 	end, 0.3)
 
 	local roleNode = self._rivalNode:getChildByFullName("roleNode")
-	local oldRole = self._rivalNode:getChildByFullName("oldRole")
 
-	oldRole:removeAllChildren()
-
-	local roleModel = IconFactory:getRoleModelByKey("HeroBase", self._oldRole)
-	local heroIcon = IconFactory:createRoleIconSpriteNew({
-		frameId = "bustframe9",
-		id = roleModel
-	})
-
-	oldRole:addChild(heroIcon)
-	heroIcon:setPosition(cc.p(400, 80))
 	self:refreshRivalView()
 
 	local animNode = self._rivalNode:getChildByFullName("Node_1")
@@ -247,8 +236,7 @@ function LeadStageArenaRivalMediator:refreshRivalViewDone()
 	end)
 
 	local nodeToActionMap = {
-		[roleNode] = mc_roleNode,
-		[oldRole] = mc_oldRole
+		[roleNode] = mc_roleNode
 	}
 	local startFunc, stopFunc = CommonUtils.bindNodeToActionNode(nodeToActionMap, animNode)
 

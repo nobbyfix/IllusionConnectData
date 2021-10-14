@@ -209,12 +209,12 @@ function HeroCard:getCardIndex()
 	return self._cardIndex
 end
 
-function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEvent)
+function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEvent, rightNowSit)
 	local animation = {
 		name = "spawn"
 	}
 	local formationSystem = battleContext:getObject("FormationSystem")
-	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._seatRules)
+	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._seatRules, rightNowSit)
 
 	if not unit then
 		return unit, detail

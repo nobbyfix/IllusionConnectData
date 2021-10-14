@@ -54,6 +54,10 @@ local kBtnHandlers = {
 	bustbtn = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickBust"
+	},
+	movebtn = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickMove"
 	}
 }
 local kPanelType = {
@@ -122,6 +126,10 @@ function BuildingAfkGiftMediator:onRegister()
 	self._bustBtn = self:getView():getChildByFullName("bustbtn")
 
 	self._bustBtn:setVisible(false)
+
+	self._moveBtn = self:getView():getChildByFullName("movebtn")
+
+	self._moveBtn:setVisible(false)
 
 	self._sendBtn = self:bindWidget("leftActionPanel.giftPanel.sendBtn", OneLevelViceButton, {
 		handler = {
@@ -367,6 +375,7 @@ function BuildingAfkGiftMediator:initWidgetInfo()
 
 	if self._canSetBoardHero then
 		self._rightActNode:setVisible(true)
+		self._moveBtn:setVisible(true)
 		self:createTabController()
 	else
 		self._rightActNode:setVisible(false)
@@ -1203,4 +1212,9 @@ function BuildingAfkGiftMediator:onClickBust()
 		id = self._heroId,
 		setHomeBgId = self._bgImageId
 	}))
+end
+
+function BuildingAfkGiftMediator:onClickMove()
+	self:dispatch(Event:new(EVT_HOMEVIEW_SETBORAD_MOVE))
+	self:onClickRemove()
 end

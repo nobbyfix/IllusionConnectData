@@ -90,7 +90,7 @@ function MiniGameResultMediator:createAnim(data)
 	})
 
 	heroIcon:setScale(1.1)
-	heroIcon:setPosition(cc.p(50, -220))
+	heroIcon:setPosition(cc.p(-320, -300))
 	heroNode:addChild(heroIcon)
 
 	local curScore = self._mainPanel:getChildByFullName("Text_curScore")

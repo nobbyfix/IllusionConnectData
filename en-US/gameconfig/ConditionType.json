@@ -1371,6 +1371,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc"
     },
+    "Condi_ZuoHeChengjiuDian_Re": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ZuoHeChengjiuDian_Re.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc"
+    },
     "Condi_attendTargetResStage": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",

@@ -76,6 +76,11 @@ local mappings = {
 		name = "RTPKMatchMediator",
 		type = "@C"
 	},
+	RTPKEmojiMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKEmojiMediator",
+		name = "RTPKEmojiMediator",
+		type = "@C"
+	},
 	RTPKNewSeasonTipsMediator = {
 		url = "dm.gameplay.rtpk.view.RTPKNewSeasonTipsMediator",
 		name = "RTPKNewSeasonTipsMediator",
@@ -1371,6 +1376,11 @@ local mappings = {
 		name = "ActivitySunflowerMainMediator",
 		type = "@C"
 	},
+	ActivityPuzzleGameMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameMediator",
+		name = "ActivityPuzzleGameMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportRankMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportRankMediator",
 		name = "ActivitySagaSupportRankMediator",
@@ -1654,6 +1664,11 @@ local mappings = {
 	EightDayLoginMediator = {
 		url = "dm.gameplay.activity.view.EightDayLoginMediator",
 		name = "EightDayLoginMediator",
+		type = "@C"
+	},
+	ActivityPuzzleGameTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameTaskMediator",
+		name = "ActivityPuzzleGameTaskMediator",
 		type = "@C"
 	},
 	ActivityTaskMonthCardMediator = {

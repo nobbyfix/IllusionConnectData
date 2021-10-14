@@ -301,10 +301,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 			newPanel:addTo(desc)
 
 			height = height + newPanel:getContentSize().height
-			height = height + 50
+			height = height + 20
 			height_bottom = height
 
-			nextPanel:setPositionY(height_bottom - 4.5)
+			nextPanel:setPositionY(height_bottom + 10)
 		else
 			nextPanel:setVisible(false)
 		end

@@ -187,8 +187,8 @@ all.Sk_Master_LieSha_Action1 = {
 				}, this.DeDefRateFactor)
 
 				global.ApplyBuff(_env, unit, {
-					timing = 2,
-					duration = 3,
+					timing = 4,
+					duration = 45,
 					display = "DefDown",
 					tags = {
 						"NUMERIC",
@@ -596,10 +596,10 @@ all.Sk_Master_LieSha_Action3 = {
 
 			if global.EnemyMaster(_env) then
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
-					timing = 2,
+					timing = 4,
 					display = "UnHurtRateDown",
 					group = "Sk_Master_LieSha_Action3",
-					duration = 2,
+					duration = 30,
 					limit = 1,
 					tags = {
 						"NUMERIC",

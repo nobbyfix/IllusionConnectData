@@ -217,6 +217,10 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 
 	self._topBarContainer:addChild(self._iconContainer, 10)
 
+	self._rtpkBubbleNode = cc.Node:create()
+
+	self._rtpkBubbleNode:addTo(self._topBarContainer, 10):setName("rtpkBubbleNode")
+
 	local topBar = self:autoManageObject(BattleRoleTopBar:new(self._topBarContainer, nil, self._isLeftTeam, viewContext))
 
 	topBar:bindActor(self)
@@ -3947,6 +3951,109 @@ function BattleRoleObject:emoteBubble(args)
 	bubble:setViewContext(self._context)
 
 	self._bubble = bubble
+
+	return
+	--- END OF BLOCK #4 ---
+
+
+
+end
+
+function BattleRoleObject:RtpkEmoji(args)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-3, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	slot2 = if self._rtpkbubble then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 4-9, warpins: 1 ---
+	self._rtpkbubble:removeView()
+
+	self._rtpkbubble = nil
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 10-39, warpins: 2 ---
+	local resFile = "asset/ui/EmojiTopTalkWidget.csb"
+	local node = cc.CSLoader:createNode(resFile)
+	local _rtpkbubble = BattleRTPKEmoteWidget:new(node, args, function (sender)
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #0 1-4, warpins: 1 ---
+		--- END OF BLOCK #0 ---
+
+		slot1 = if self._rtpkbubble then
+		JUMP TO BLOCK #1
+		else
+		JUMP TO BLOCK #2
+		end
+
+
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #1 5-12, warpins: 1 ---
+		self._rtpkbubble:removeView()
+
+		self._rtpkbubble = nil
+
+		--- END OF BLOCK #1 ---
+
+		FLOW; TARGET BLOCK #2
+
+
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #2 13-13, warpins: 2 ---
+		return
+		--- END OF BLOCK #2 ---
+
+
+
+	end)
+	local pos = cc.p(self:getModelWidth() / 2, self:getModelHeight() - 100)
+
+	--- END OF BLOCK #2 ---
+
+	slot6 = if not self:isLeft()
+	 then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #4
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 40-59, warpins: 1 ---
+	_rtpkbubble:getView():setScaleX(-1)
+
+	pos = cc.p(-self:getModelWidth() / 2, self:getModelHeight() - 100)
+
+	--- END OF BLOCK #3 ---
+
+	FLOW; TARGET BLOCK #4
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 60-81, warpins: 2 ---
+	_rtpkbubble:getView():setPosition(pos)
+	_rtpkbubble:getView():addTo(self._rtpkBubbleNode, 101)
+	_rtpkbubble:setViewContext(self._context)
+
+	self._rtpkbubble = _rtpkbubble
 
 	return
 	--- END OF BLOCK #4 ---

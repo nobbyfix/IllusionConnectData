@@ -239,6 +239,7 @@ all.Skill_HLa_Unique = {
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
+						"DAMAGERESULT",
 						"Skill_HLa_Unique",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -380,21 +381,24 @@ all.Skill_HLa_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buff = global.NumericEffect(_env, "+def", {
-				"+Normal",
-				"+Normal"
-			}, 0)
 
-			global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.unit), _env.card, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"CARDBUFF",
-					"Skill_HLa_Passive_Check"
-				}
-			}, {
-				buff
-			}, "week_shoupaitishi")
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+				local buff = global.NumericEffect(_env, "+def", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.unit), _env.card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"Skill_HLa_Passive_Check"
+					}
+				}, {
+					buff
+				}, "week_shoupaitishi")
+			end
 		end)
 
 		return _env
@@ -421,7 +425,7 @@ all.Skill_HLa_Passive = {
 			local global = _env.global
 			local maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-			if _env.isRevive == true or global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "Skill_HLa_Passive_Check")) > 0 then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and (_env.isRevive == true or global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "Skill_HLa_Passive_Check")) > 0) then
 				local buffeft = global.MaxHpEffect(_env, -maxhp * this.MaxhpReduce)
 
 				global.ApplyBuff(_env, _env.unit, {
@@ -471,7 +475,7 @@ all.Skill_HLa_Passive = {
 			local global = _env.global
 			local maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-			if _env.isTransform == true then
+			if _env.isTransform == true and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
 				local buffeft = global.MaxHpEffect(_env, -maxhp * this.MaxhpReduce)
 
 				global.ApplyBuff(_env, _env.unit, {
@@ -622,6 +626,7 @@ all.Skill_HLa_Proud_EX = {
 				tags = {
 					"DEBUFF",
 					"MAXHPDOWN",
+					"DAMAGERESULT",
 					"Skill_HLa_Proud",
 					"UNDISPELLABLE",
 					"UNSTEALABLE"
@@ -753,6 +758,7 @@ all.Skill_HLa_Unique_EX = {
 					tags = {
 						"DEBUFF",
 						"MAXHPDOWN",
+						"DAMAGERESULT",
 						"Skill_HLa_Unique",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -895,21 +901,24 @@ all.Skill_HLa_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buff = global.NumericEffect(_env, "+def", {
-				"+Normal",
-				"+Normal"
-			}, 0)
 
-			global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.unit), _env.card, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"CARDBUFF",
-					"Skill_HLa_Passive_Check"
-				}
-			}, {
-				buff
-			}, "week_shoupaitishi")
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+				local buff = global.NumericEffect(_env, "+def", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.unit), _env.card, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"CARDBUFF",
+						"Skill_HLa_Passive_Check"
+					}
+				}, {
+					buff
+				}, "week_shoupaitishi")
+			end
 		end)
 
 		return _env
@@ -936,7 +945,7 @@ all.Skill_HLa_Passive_EX = {
 			local global = _env.global
 			local maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-			if _env.isRevive == true or global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "Skill_HLa_Passive_Check")) > 0 then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and (_env.isRevive == true or global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "Skill_HLa_Passive_Check")) > 0) then
 				local buffeft = global.MaxHpEffect(_env, -maxhp * this.MaxhpReduce)
 
 				global.ApplyBuff(_env, _env.unit, {
@@ -986,7 +995,7 @@ all.Skill_HLa_Passive_EX = {
 			local global = _env.global
 			local maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
 
-			if _env.isTransform == true then
+			if _env.isTransform == true and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
 				local buffeft = global.MaxHpEffect(_env, -maxhp * this.MaxhpReduce)
 
 				global.ApplyBuff(_env, _env.unit, {

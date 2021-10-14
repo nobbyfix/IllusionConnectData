@@ -1710,6 +1710,11 @@ end
 
 function ShopSystem:getMonthCardHeadFrame()
 	local data = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Test_RealTime", "content")
+
+	if not data then
+		return nil
+	end
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	for i, v in pairs(data.normal) do
@@ -1728,4 +1733,6 @@ function ShopSystem:getMonthCardHeadFrame()
 			end
 		end
 	end
+
+	return nil
 end

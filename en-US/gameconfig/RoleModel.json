@@ -694,7 +694,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_ALPo",
         "DeathVoice": "",
-        "Filename": "battlepic_ALPo",
+        "Filename": "portraitpic_ALPo",
         "HeadMain": "HeadMain_ALPo",
         "Height": 200,
         "Hero": "ALPo",
@@ -971,7 +971,7 @@
         "CommonResource": "ALSi",
         "CutIn": "CutIn_ALSi",
         "DeathVoice": "",
-        "Filename": "battlepic_ALSi",
+        "Filename": "portraitpic_ALSi",
         "HeadMain": "HeadMain_ALSi",
         "Height": 200,
         "Hero": "ALSi_Enemy",
@@ -7052,7 +7052,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_cxgdie",
         "DeathVoice": "",
-        "Filename": "battlepic_cxgdie",
+        "Filename": "portraitpic_cxgdie",
         "HeadMain": "HeadMain_MZGXiu",
         "Height": 200,
         "Hero": "MZGXiu",
@@ -7265,7 +7265,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_BiLei_head",
+        "Filename": "Master_BiLei_whole",
         "HeadMain": "Master_BiLei_HeadMain",
         "Height": 200,
         "Hero": "Master_BiLei",
@@ -7343,7 +7343,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_FuHun_head",
+        "Filename": "Master_FuHun_whole",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_FuHun",
@@ -7421,7 +7421,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_XueZhan_head",
+        "Filename": "Master_XueZhan_whole",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_JiangJun",
@@ -7499,7 +7499,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_LieSha_head",
+        "Filename": "Master_LieSha_whole",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_LieSha",
@@ -7577,7 +7577,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_SenLing_head",
+        "Filename": "Master_SenLing_whole",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_SenLing",
@@ -7655,7 +7655,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_BiLei_head",
+        "Filename": "Master_BiLei_whole",
         "HeadMain": "Master_BiLei_HeadMain",
         "Height": 200,
         "Hero": "Master_WuShi",
@@ -7733,7 +7733,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_XueZhan_head",
+        "Filename": "Master_XueZhan_whole",
         "HeadMain": "Master_XueZhan_HeadMain",
         "Height": 200,
         "Hero": "Master_XueZhan",
@@ -7811,7 +7811,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "Master_LieSha_head",
+        "Filename": "Master_LieSha_whole",
         "HeadMain": "Master_LieSha_HeadMain",
         "Height": 200,
         "Hero": "Master_ZhaoHuan",
@@ -10679,6 +10679,274 @@
         "bustAwakeZoom": 0.96,
         "bustZoom": 1.0
     },
+    "Model_FGao_Awake": {
+        "Animation": "dmse",
+        "BattlePosition": "HeroBase_BattlePosition_FGao",
+        "BattleShow": "",
+        "Bust1": "Bust1_FGao_Awake",
+        "Bust10": "Bust10_FGao_Awake",
+        "Bust11": "Bust11_FGao_Awake",
+        "Bust12": "Bust12_FGao_Awake",
+        "Bust13": "Bust13_FGao_Awake",
+        "Bust14": "Bust14_FGao_Awake",
+        "Bust15": "Bust15_FGao_Awake",
+        "Bust16": "",
+        "Bust2": "Bust2_FGao_Awake",
+        "Bust3": "Bust3_FGao_Awake",
+        "Bust4": "Bust4_FGao_Awake",
+        "Bust5": "Bust5_FGao_Awake",
+        "Bust6": "Bust6_FGao_Awake",
+        "Bust7": "Bust7_FGao_Awake",
+        "Bust8": "Bust8_FGao_Awake",
+        "Bust9": "Bust9_FGao_Awake",
+        "BustAwake": [
+            -40,
+            -267
+        ],
+        "BustAwake2": [
+            117,
+            -210
+        ],
+        "BustTemp1": [
+            -120,
+            -446
+        ],
+        "BustTemp2": [
+            -109,
+            -453
+        ],
+        "BustTemp3": [
+            -111,
+            -456
+        ],
+        "BustTemp4": [
+            -109,
+            -453
+        ],
+        "BustTemp5": [
+            -109,
+            -453
+        ],
+        "CommonResource": "",
+        "CutIn": "Portraitpic_FGao_Awake",
+        "DeathVoice": "",
+        "Filename": "portrait_dmse_awaken",
+        "HeadMain": "HeadMain_FGao_Awake",
+        "Height": 200,
+        "Hero": "FGao",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FGao",
+        "MasterHeadWide": "",
+        "Model": "dmse",
+        "Name": "HeroBase_Name_FGao",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_FGao_Awake",
+        "SVPText": "SVPText_FGao",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "FGao",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FGao",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [],
+        "TruthBubble": [
+            "Truth_FGao_1",
+            "Truth_FGao_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.5,
+        "bustZoom": 0.76
+    },
+    "Model_FGao_UnAwake": {
+        "Animation": "",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": [
+            -50,
+            -278
+        ],
+        "BustAwake2": [
+            108,
+            -221
+        ],
+        "BustTemp1": [
+            -134,
+            -463
+        ],
+        "BustTemp2": [
+            -123,
+            -470
+        ],
+        "BustTemp3": [
+            -125,
+            -472
+        ],
+        "BustTemp4": [
+            -123,
+            -470
+        ],
+        "BustTemp5": [
+            -123,
+            -470
+        ],
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "portrait_dmse_awakelock",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "FGao",
+        "HpTierCount": "",
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "dmse",
+        "Name": "HeroBase_Name_FGao",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_FGao_UnAwake",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": "",
+        "SoundVoiceCondition": "",
+        "SoundVoiceText": "",
+        "Tag": "",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": "",
+        "Type": "",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.5,
+        "bustZoom": 0.76
+    },
+    "Model_FGao_holloween": {
+        "Animation": "dmse_holloween",
+        "BattlePosition": "HeroBase_BattlePosition_FGao",
+        "BattleShow": "",
+        "Bust1": "Bust1_FGao_holloween",
+        "Bust10": "Bust10_FGao_holloween",
+        "Bust11": "Bust11_FGao_holloween",
+        "Bust12": "Bust12_FGao_holloween",
+        "Bust13": "Bust13_FGao_holloween",
+        "Bust14": "Bust14_FGao_holloween",
+        "Bust15": "Bust15_FGao_holloween",
+        "Bust16": "Bust16_FGao_holloween",
+        "Bust2": "Bust2_FGao_holloween",
+        "Bust3": "Bust3_FGao_holloween",
+        "Bust4": "Bust4_FGao_holloween",
+        "Bust5": "Bust5_FGao_holloween",
+        "Bust6": "Bust6_FGao_holloween",
+        "Bust7": "Bust7_FGao_holloween",
+        "Bust8": "Bust8_FGao_holloween",
+        "Bust9": "Bust9_FGao_holloween",
+        "BustAwake": [
+            -184,
+            -541
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -112,
+            -812
+        ],
+        "BustTemp2": [
+            -93,
+            -824
+        ],
+        "BustTemp3": [
+            -107,
+            -812
+        ],
+        "BustTemp4": [
+            -106,
+            -826
+        ],
+        "BustTemp5": [
+            -112,
+            -812
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_dmse_holloween",
+        "DeathVoice": "",
+        "Filename": "portrait_dmse_holloween",
+        "HeadMain": "HeadMain_FGao_holloween",
+        "Height": 200,
+        "Hero": "FGao",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FGao",
+        "MasterHeadWide": "",
+        "Model": "dmse_holloween",
+        "Name": "HeroBase_Name_FGao",
+        "Path": 2,
+        "PicType": 3,
+        "Portrait": "Portraitpic_FGao_holloween",
+        "SVPText": "SVPText_FGao",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "FGao",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FGao",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_bihu"
+        ],
+        "TruthBubble": [
+            "Truth_FGao_1",
+            "Truth_FGao_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.56,
+        "bustZoom": 0.76
+    },
     "Model_FLBDSi": {
         "Animation": "ahui",
         "BattlePosition": "HeroBase_BattlePosition_FLBDSi",
@@ -10773,66 +11041,66 @@
         "bustZoom": 0.8
     },
     "Model_FLEr": {
-        "Animation": "FenLiEr",
+        "Animation": "glai",
         "BattlePosition": "HeroBase_BattlePosition_FLEr",
         "BattleShow": "",
-        "Bust1": "",
-        "Bust10": "",
-        "Bust11": "",
-        "Bust12": "",
-        "Bust13": "",
-        "Bust14": "",
-        "Bust15": "",
+        "Bust1": "Bust1_FLEr",
+        "Bust10": "Bust10_FLEr",
+        "Bust11": "Bust11_FLEr",
+        "Bust12": "Bust12_FLEr",
+        "Bust13": "Bust13_FLEr",
+        "Bust14": "Bust14_FLEr",
+        "Bust15": "Bust15_FLEr",
         "Bust16": "",
-        "Bust2": "",
-        "Bust3": "",
-        "Bust4": "",
-        "Bust5": "",
-        "Bust6": "",
-        "Bust7": "",
-        "Bust8": "",
-        "Bust9": "",
+        "Bust2": "Bust2_FLEr",
+        "Bust3": "Bust3_FLEr",
+        "Bust4": "Bust4_FLEr",
+        "Bust5": "Bust5_FLEr",
+        "Bust6": "Bust6_FLEr",
+        "Bust7": "Bust7_FLEr",
+        "Bust8": "Bust8_FLEr",
+        "Bust9": "Bust9_FLEr",
         "BustAwake": [
-            41,
-            -177
+            -46,
+            -473
         ],
         "BustAwake2": "",
         "BustTemp1": [
-            220,
-            -217
+            135,
+            -407
         ],
         "BustTemp2": [
-            226,
-            -217
+            147,
+            -407
         ],
         "BustTemp3": [
-            226,
-            -217
+            135,
+            -407
         ],
         "BustTemp4": [
-            226,
-            -217
+            155,
+            -407
         ],
         "BustTemp5": [
-            226,
-            -217
+            147,
+            -407
         ],
         "CommonResource": "",
-        "CutIn": "",
+        "CutIn": "CutIn_glai",
         "DeathVoice": "",
-        "Filename": "portraitpic_battlepic_FLEr",
-        "HeadMain": "",
+        "Filename": "portrait_glai",
+        "HeadMain": "HeadMain_FLEr",
         "Height": 200,
-        "Hero": "",
-        "HpTierCount": "",
-        "MVPText": "",
+        "Hero": "FLEr",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FLEr",
         "MasterHeadWide": "",
-        "Model": "FLEr",
+        "Model": "glai",
         "Name": "HeroBase_Name_FLEr",
         "Path": 2,
         "PicType": 2,
         "Portrait": "Portraitpic_FLEr",
-        "SVPText": "",
+        "SVPText": "SVPText_FLEr",
         "SkillRange": "SingleUnit_Word",
         "SoundEffect": [],
         "SoundVoice": [],
@@ -10843,17 +11111,27 @@
             10
         ],
         "SoundVoiceText": [],
-        "Tag": "FenLiEr",
-        "TagDesc": "",
-        "TagPic": "",
-        "TruthBubble": "",
-        "Type": "",
+        "Tag": "FLEr",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FLEr",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_FLEr"
+        ],
+        "TruthBubble": [
+            "Truth_FLEr_1",
+            "Truth_FLEr_2"
+        ],
+        "Type": "Hero",
         "UniqueVoice": "",
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": 0.94,
-        "bustZoom": 1.08
+        "bustAwakeZoom": 0.84,
+        "bustZoom": 0.82
     },
     "Model_FLYDe": {
         "Animation": "xge",
@@ -14787,7 +15065,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_KTSJKe",
         "DeathVoice": "",
-        "Filename": "battlepic_KTSJKe",
+        "Filename": "portraitpic_KTSJKe",
         "HeadMain": "HeadMain_KTSJKe",
         "Height": 200,
         "Hero": "KTSJKe",
@@ -15856,7 +16134,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_LDu",
         "DeathVoice": "",
-        "Filename": "battlepic_LDu",
+        "Filename": "portraitpic_LDu",
         "HeadMain": "HeadMain_LDu",
         "Height": 200,
         "Hero": "LDu_Enemy01",
@@ -24036,7 +24314,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_PNCao",
         "DeathVoice": "",
-        "Filename": "battlepic_PNCao",
+        "Filename": "portraitpic_PNCao",
         "HeadMain": "HeadMain_PNCao",
         "Height": 200,
         "Hero": "PNCao",
@@ -25186,17 +25464,35 @@
         "Bust7": "Bust7_SGHQShou",
         "Bust8": "Bust8_SGHQShou",
         "Bust9": "Bust9_SGHQShou",
-        "BustAwake": "",
+        "BustAwake": [
+            -118,
+            -388
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            -85,
+            -558
+        ],
+        "BustTemp2": [
+            -105,
+            -599
+        ],
+        "BustTemp3": [
+            -89,
+            -583
+        ],
+        "BustTemp4": [
+            -75,
+            -558
+        ],
+        "BustTemp5": [
+            -93,
+            -569
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_SGHQShou",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "portraitpic_SGHQShou",
         "HeadMain": "HeadMain_SGHQShou",
         "Height": 200,
         "Hero": "SGHQShou_Lucy",
@@ -25205,8 +25501,8 @@
         "MasterHeadWide": "",
         "Model": "SGHQShou_Lucy",
         "Name": "HeroBase_Name_YFZZhu",
-        "Path": "",
-        "PicType": "",
+        "Path": 2,
+        "PicType": 2,
         "Portrait": "Portraitpic_SGHQShou",
         "SVPText": "SVPText_SGHQShou",
         "SkillRange": "",
@@ -25236,8 +25532,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 0.62,
+        "bustZoom": 0.8
     },
     "Model_SGHQShou_Vanessa": {
         "Animation": "SanGeHuoQiangShou_Vanessa",
@@ -25259,17 +25555,35 @@
         "Bust7": "Bust7_SGHQShou",
         "Bust8": "Bust8_SGHQShou",
         "Bust9": "Bust9_SGHQShou",
-        "BustAwake": "",
+        "BustAwake": [
+            -118,
+            -388
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            -85,
+            -558
+        ],
+        "BustTemp2": [
+            -105,
+            -599
+        ],
+        "BustTemp3": [
+            -89,
+            -583
+        ],
+        "BustTemp4": [
+            -75,
+            -558
+        ],
+        "BustTemp5": [
+            -93,
+            -569
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_SGHQShou",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "portraitpic_SGHQShou",
         "HeadMain": "HeadMain_SGHQShou",
         "Height": 200,
         "Hero": "SGHQShou_Vanessa",
@@ -25278,8 +25592,8 @@
         "MasterHeadWide": "",
         "Model": "SGHQShou_Vanessa",
         "Name": "HeroBase_Name_YFZZhu",
-        "Path": "",
-        "PicType": "",
+        "Path": 2,
+        "PicType": 2,
         "Portrait": "Portraitpic_SGHQShou",
         "SVPText": "SVPText_SGHQShou",
         "SkillRange": "",
@@ -25309,8 +25623,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 0.62,
+        "bustZoom": 0.8
     },
     "Model_SGHQShou_sd": {
         "Animation": "SGHQShou_sd",
@@ -40157,6 +40471,99 @@
         "bustAwakeZoom": 0.76,
         "bustZoom": 0.76
     },
+    "Model_YMJDe": {
+        "Animation": "aske",
+        "BattlePosition": "HeroBase_BattlePosition_YMJDe",
+        "BattleShow": "",
+        "Bust1": "Bust1_YMJDe",
+        "Bust10": "Bust10_YMJDe",
+        "Bust11": "Bust11_YMJDe",
+        "Bust12": "Bust12_YMJDe",
+        "Bust13": "Bust13_YMJDe",
+        "Bust14": "Bust14_YMJDe",
+        "Bust15": "Bust15_YMJDe",
+        "Bust16": "",
+        "Bust2": "Bust2_YMJDe",
+        "Bust3": "Bust3_YMJDe",
+        "Bust4": "Bust4_YMJDe",
+        "Bust5": "Bust5_YMJDe",
+        "Bust6": "Bust6_YMJDe",
+        "Bust7": "Bust7_YMJDe",
+        "Bust8": "Bust8_YMJDe",
+        "Bust9": "Bust9_YMJDe",
+        "BustAwake": [
+            -141,
+            -391
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -80,
+            -399
+        ],
+        "BustTemp2": [
+            -11,
+            -425
+        ],
+        "BustTemp3": [
+            -67,
+            -420
+        ],
+        "BustTemp4": [
+            -58,
+            -429
+        ],
+        "BustTemp5": [
+            -49,
+            -421
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_aske",
+        "DeathVoice": "",
+        "Filename": "portrait_aske",
+        "HeadMain": "HeadMain_YMJDe",
+        "Height": 200,
+        "Hero": "YMJDe",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_YMJDe",
+        "MasterHeadWide": "",
+        "Model": "aske",
+        "Name": "HeroBase_Name_YMJDe",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_YMJDe",
+        "SVPText": "SVPText_YMJDe",
+        "SkillRange": "ColUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "YMJDe",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_YMJDe",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_YMJDe"
+        ],
+        "TruthBubble": [
+            "Truth_YMJDe_1",
+            "Truth_YMJDe_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.65,
+        "bustZoom": 0.7
+    },
     "Model_YSLBin": {
         "Animation": "AiDeHua",
         "BattlePosition": "HeroBase_BattlePosition_YSLBin",
@@ -41029,6 +41436,157 @@
         "bustAwakeZoom": "",
         "bustZoom": ""
     },
+    "Model_YXZChun_Tiger_holloween": {
+        "Animation": "qjwan_holloween_laohu",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": "",
+        "BustAwake2": "",
+        "BustTemp1": "",
+        "BustTemp2": "",
+        "BustTemp3": "",
+        "BustTemp4": "",
+        "BustTemp5": "",
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "YXZChun_Tiger",
+        "HpTierCount": 1,
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "qjwan_holloween_laohu",
+        "Name": "HeroBase_Name_YXZChun_Tiger",
+        "Path": "",
+        "PicType": "",
+        "Portrait": "",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "YXZChun_Tiger",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": [],
+        "Type": "Summoned",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": "",
+        "bustZoom": ""
+    },
+    "Model_YXZChun_holloween": {
+        "Animation": "qjwan_holloween",
+        "BattlePosition": "HeroBase_BattlePosition_YXZChun",
+        "BattleShow": "",
+        "Bust1": "Bust1_YXZChun_holloween",
+        "Bust10": "Bust10_YXZChun_holloween",
+        "Bust11": "Bust11_YXZChun_holloween",
+        "Bust12": "Bust12_YXZChun_holloween",
+        "Bust13": "Bust13_YXZChun_holloween",
+        "Bust14": "Bust14_YXZChun_holloween",
+        "Bust15": "Bust15_YXZChun_holloween",
+        "Bust16": "Bust16_YXZChun_holloween",
+        "Bust2": "Bust2_YXZChun_holloween",
+        "Bust3": "Bust3_YXZChun_holloween",
+        "Bust4": "Bust4_YXZChun_holloween",
+        "Bust5": "Bust5_YXZChun_holloween",
+        "Bust6": "Bust6_YXZChun_holloween",
+        "Bust7": "Bust7_YXZChun_holloween",
+        "Bust8": "Bust8_YXZChun_holloween",
+        "Bust9": "Bust9_YXZChun_holloween",
+        "BustAwake": [
+            -98,
+            -244
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -364,
+            -383
+        ],
+        "BustTemp2": [
+            -307,
+            -409
+        ],
+        "BustTemp3": [
+            -357,
+            -524
+        ],
+        "BustTemp4": [
+            -329,
+            -406
+        ],
+        "BustTemp5": [
+            -366,
+            -409
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_qjwan_holloween",
+        "DeathVoice": "",
+        "Filename": "portrait_qjwan_holloween",
+        "HeadMain": "HeadMain_YXZChun_holloween",
+        "Height": 200,
+        "Hero": "YXZChun",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_YXZChun",
+        "MasterHeadWide": "",
+        "Model": "qjwan_holloween",
+        "Name": "HeroBase_Name_YXZChun",
+        "Path": 2,
+        "PicType": 3,
+        "Portrait": "Portraitpic_YXZChun_holloween",
+        "SVPText": "SVPText_YXZChun",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "YXZChun",
+        "TagDesc": [],
+        "TagPic": [],
+        "TruthBubble": [
+            "Truth_YXZChun_1",
+            "Truth_YXZChun_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.5,
+        "bustZoom": 0.78
+    },
     "Model_YXiu": {
         "Animation": "",
         "BattlePosition": "",
@@ -41718,7 +42276,7 @@
         "CommonResource": "",
         "CutIn": "CutIn_ZTXChang_YYing",
         "DeathVoice": "",
-        "Filename": "battlepic_ZTXChang_YYing",
+        "Filename": "portraitpic_ZTXChang_YYing",
         "HeadMain": "HeadMain_ZTXChang_YYing",
         "Height": 200,
         "Hero": "ZTXChang",

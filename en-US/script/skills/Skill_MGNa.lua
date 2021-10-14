@@ -267,6 +267,55 @@ all.Skill_MGNa_Unique = {
 		return _env
 	end
 }
+all.MGNa_Kick = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "MGNa")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, unit_one in global.__iter__(global.FriendUnits(_env)) do
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED_ALL(_env, "Skill_MGNa_Passive", "UNDISPELLABLE"), 99)
+				end
+
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MGNa_Kick"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
 all.Skill_MGNa_Passive = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -298,6 +347,16 @@ all.Skill_MGNa_Passive = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
 		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive3)
 
 		return this
 	end,
@@ -313,6 +372,17 @@ all.Skill_MGNa_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "MGNa_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MGNa_Kick"
+				}
+			}, {
+				buff
+			})
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
@@ -378,6 +448,28 @@ all.Skill_MGNa_Passive = {
 				}, {
 					buffeft1
 				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive"), 99)
+				end
 			end
 		end)
 
@@ -813,6 +905,16 @@ all.Skill_MGNa_Passive_EX = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
 		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive3)
 
 		return this
 	end,
@@ -828,6 +930,18 @@ all.Skill_MGNa_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "MGNa_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MGNa_Kick"
+				}
+			}, {
+				buff
+			})
+
 			local buffeft2 = global.NumericEffect(_env, "+atkrate", {
 				"+Normal",
 				"+Normal"
@@ -859,7 +973,7 @@ all.Skill_MGNa_Passive_EX = {
 					tags = {
 						"STATUS",
 						"NUMERIC",
-						"Skill_MGNa_Passive_EX2",
+						"Skill_MGNa_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -904,13 +1018,35 @@ all.Skill_MGNa_Passive_EX = {
 					tags = {
 						"STATUS",
 						"NUMERIC",
-						"Skill_MGNa_Passive_EX2",
+						"Skill_MGNa_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
 					buffeft1
 				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive")) > 0 then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive"), 99)
+				end
 			end
 		end)
 

@@ -600,6 +600,8 @@ all.Skill_Cross_Buff_XLDBLTe = {
 							tags = {
 								"STATUS",
 								"BUFF",
+								"ATKUP",
+								"ABSORPTIONUP",
 								"Cross_Buff_XLDBLTe",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"

@@ -953,7 +953,7 @@ all.Skill_BQDShe_Unique_Awaken = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.5,
+				3.6,
 				0
 			}
 		end
@@ -1057,6 +1057,7 @@ all.Skill_BQDShe_Unique_Awaken = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {

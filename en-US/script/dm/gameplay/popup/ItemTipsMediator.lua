@@ -144,6 +144,16 @@ function ItemTipsMediator:getCountInfo(info)
 		return info
 	end
 
+	if info.rewardType == RewardType.kRTPKEmoji then
+		local info = {
+			count = self._developSystem:getPlayer():getUnlockedEmoji()[id] and 1 or 0,
+			showCount = true,
+			text = Strings:get("bag_UI7")
+		}
+
+		return info
+	end
+
 	local info = {}
 	local config = ConfigReader:getRecordById("ItemConfig", id)
 

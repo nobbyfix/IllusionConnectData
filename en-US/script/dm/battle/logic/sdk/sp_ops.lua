@@ -151,7 +151,7 @@ function exports.Recruit(env, cardfilter, location, cost)
 	end
 end
 
-function exports.RecruitCard(env, card, location, cost, otherPlayer)
+function exports.RecruitCard(env, card, location, cost, otherPlayer, rightNowSit)
 	local player = otherPlayer or env["$actor"]:getOwner()
 	local battleField = env.global["$BattleContext"]:getObject("BattleField")
 	local cellId = battleField:findEmptyCellId(player:getSide(), location)
@@ -168,7 +168,7 @@ function exports.RecruitCard(env, card, location, cost, otherPlayer)
 	local index = cardWindow:getCardIndex(card)
 
 	if index then
-		local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
+		local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true, rightNowSit)
 
 		if not ok then
 			return false
@@ -196,7 +196,7 @@ function exports.RecruitCard(env, card, location, cost, otherPlayer)
 		local removed, isFront = player:getCardPool():removeCard(card)
 
 		if removed then
-			local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true)
+			local ok, detail = card:usedByPlayer(player, env.global["$BattleContext"], cellId, cost or 0, true, rightNowSit)
 
 			if not ok then
 				return false
@@ -322,8 +322,8 @@ function exports.InheritCard(env, card, modelId, ignorePassive, ignoreUnique)
 	return nil
 end
 
-function exports.BackToCard(env, unit)
-	local player = env["$actor"]:getOwner()
+function exports.BackToCard(env, unit, owner)
+	local player = owner or env["$actor"]:getOwner()
 
 	if unit:getCardInfo() then
 		local formationSystem = env.global["$FormationSystem"]
@@ -378,8 +378,14 @@ function exports.BackToCard(env, unit)
 	end
 end
 
-function exports.BackToWindow(env, unit, windowIndex)
-	local player = env["$actor"]:getOwner()
+function exports.GetWindowCard(env, windowIndex, owner)
+	local player = owner or env["$actor"]:getOwner()
+
+	return player:takeCardAtIndex(windowIndex)
+end
+
+function exports.BackToWindow(env, unit, windowIndex, owner)
+	local player = owner or env["$actor"]:getOwner()
 
 	if unit:getCardInfo() then
 		local formationSystem = env.global["$FormationSystem"]

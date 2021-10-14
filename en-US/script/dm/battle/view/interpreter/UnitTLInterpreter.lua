@@ -381,7 +381,10 @@ function UnitTLInterpreter:act_TransportExt(action, args, mode)
 	local oldTimeScale = role:getRoleAnim():getTimeScale()
 
 	role:getRoleAnim():setTimeScale(timeScale)
+	role:setBusyState(true)
 	role:moveWithDuration(pos, duration, function ()
+		role:setBusyState(false)
+
 		if not ignoreSwitch then
 			self._unitManager:exchange(oldCellId, dataModel:getCellId())
 		end
@@ -715,10 +718,12 @@ function UnitTLInterpreter:act_Flee(action, args)
 		self._heroHeadWidget:unitFlee(self._id)
 	end
 
-	local fleeWidget = self._battleUIMediator:getFleeWidget()
+	if self._battleUIMediator.getFleeWidget then
+		local fleeWidget = self._battleUIMediator:getFleeWidget()
 
-	if fleeWidget then
-		fleeWidget:reduceNum(args.cell, args.flags)
+		if fleeWidget then
+			fleeWidget:reduceNum(args.cell, args.flags)
+		end
 	end
 end
 
@@ -1697,6 +1702,10 @@ function UnitTLInterpreter:act_ShowAtkAndDef(action, args)
 	local unhurtrate = args.detail.unhurtrate or 0
 
 	self._unit:showAtkAndDef(atk, def, hurtrate, unhurtrate)
+end
+
+function UnitTLInterpreter:act_Emoji(action, args)
+	self._unit:RtpkEmoji(args)
 end
 
 function UnitTLInterpreter:act_SetRootVisible(action, args)

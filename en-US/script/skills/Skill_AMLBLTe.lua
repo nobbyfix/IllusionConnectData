@@ -568,6 +568,7 @@ all.Skill_Cross_Buff_AMLBLTe = {
 							tags = {
 								"STATUS",
 								"BUFF",
+								"DEFUP",
 								"Cross_Buff_AMLBLTe",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"

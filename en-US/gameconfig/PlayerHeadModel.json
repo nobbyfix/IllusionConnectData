@@ -551,6 +551,18 @@
         "UnlockDesc": "FGao_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_FGao_2": {
+        "HeadDesc": "Surface_FGao_holloween_Desc",
+        "HeadMove": "",
+        "HeadName": "FGao_2_HeadName",
+        "HeroMasterId": "FGao",
+        "IconPath": "asset/heros/dmse_holloween/battlepic_dmse_holloween.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_FGao_2",
+        "Type": 5,
+        "UnlockDesc": "FGao_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_FLBDSi": {
         "HeadDesc": "HeroBase_Desc_FLBDSi",
         "HeadMove": "",
@@ -561,6 +573,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "FLBDSi_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_FLEr": {
+        "HeadDesc": "HeroBase_Desc_FLEr",
+        "HeadMove": "",
+        "HeadName": "FLEr_HeadName",
+        "HeroMasterId": "FLEr",
+        "IconPath": "asset/heros/FLEr/battlepic_glai.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "FLEr_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_FLYDe": {
@@ -665,7 +689,7 @@
         "HeadName": "HLDNan_HeadName",
         "HeroMasterId": "HLDNan",
         "IconPath": "asset/heros/HLDNan/battlepic_HLDNan.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "HLDNan_HeadUnlock",
@@ -2111,6 +2135,18 @@
         "UnlockDesc": "YMHTPu_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_YMJDe": {
+        "HeadDesc": "HeroBase_Desc_YMJDe",
+        "HeadMove": "",
+        "HeadName": "YMJDe_HeadName",
+        "HeroMasterId": "YMJDe",
+        "IconPath": "asset/heros/YMJDe/battlepic_aske.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "YMJDe_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_YSLBin": {
         "HeadDesc": "HeroBase_Desc_YSLBin",
         "HeadMove": "",
@@ -2193,6 +2229,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "YXZChun_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_YXZChun_2": {
+        "HeadDesc": "Surface_YXZChun_holloween_Desc",
+        "HeadMove": "",
+        "HeadName": "YXZChun_2_HeadName",
+        "HeroMasterId": "YXZChun",
+        "IconPath": "asset/heros/qjwan_holloween/battlepic_qjwan_holloween.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_YXZChun_2",
+        "Type": 5,
+        "UnlockDesc": "YXZChun_2_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_YYing": {
@@ -2349,6 +2397,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_DCJKang",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FGao": {
+        "HeadDesc": "HeroAwaken_FGao_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_FGao_1_Name",
+        "HeroMasterId": "FGao",
+        "IconPath": "asset/heros/dmse/battlepic_dmse_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FGao",
         "Zoom": 1.0
     },
     "HeroAwaken_FLYDe": {

@@ -315,6 +315,11 @@ function RTPKRewardViewMediator:addRankGradePanel(cell, index)
 	local recivedText = panel:getChildByName("Image_87")
 
 	rankIcon:ignoreContentAdaptWithSize(true)
+
+	local lbText = btnGet:getChildByName("name")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
 	bg1:setVisible(index % 2 == 0)
 	bg2:setVisible(index % 2 ~= 0)
 
@@ -450,7 +455,10 @@ function RTPKRewardViewMediator:addWinTaskPanel(cell, index)
 	local btnGet = panel:getChildByName("rewardFinishBtn")
 	local notGetText = panel:getChildByName("ranktext1")
 	local recivedText = panel:getChildByName("Image_87")
+	local lbText = btnGet:getChildByName("name")
 
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
 	bg1:setVisible(index % 2 == 0)
 	bg2:setVisible(index % 2 ~= 0)
 	descText:setString(Strings:get("RTPK_WinReward_UI02", {

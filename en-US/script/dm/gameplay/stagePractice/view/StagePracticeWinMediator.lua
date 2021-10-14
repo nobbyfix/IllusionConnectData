@@ -129,7 +129,7 @@ function StagePracticeWinMediator:showWinAni()
 	local titleText = anim:getChildByName("titleTexts")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(-200, -200))
+	self._mvpSprite:setPosition(cc.p(-360, -200))
 	anim:addCallbackAtFrame(19, function ()
 		self._title:changeParent(titleText)
 		self._title:setLocalZOrder(-1)

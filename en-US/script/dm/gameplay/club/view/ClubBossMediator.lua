@@ -327,6 +327,11 @@ function ClubBossMediator:initNodes()
 	self._skillTipPanel:setVisible(false)
 
 	self._bottomAttackNode = self._mainPanel:getChildByFullName("bottomAttackNode")
+	local lbText = self._mainPanel:getChildByFullName("rewardNode.butonNode.btnBg.Text_135")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
+
 	self._btnBasePanel = self._mainPanel:getChildByFullName("bottomAttackNode.btnPanel")
 
 	self._btnBasePanel:setVisible(false)

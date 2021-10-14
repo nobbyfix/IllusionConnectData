@@ -261,6 +261,56 @@ all.Skill_JDCZhang_Unique = {
 		return _env
 	end
 }
+all.JDCZhang_Kick = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "JDCZhang")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, unit_one in global.__iter__(global.FriendUnits(_env)) do
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED_ALL(_env, "Skill_JDCZhang_Passive", "UNDISPELLABLE"), 99)
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED_ALL(_env, "Skill_JDCZhang_Passive_Key1", "UNDISPELLABLE"), 99)
+				end
+
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "JDCZhang_Kick"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
 all.Skill_JDCZhang_Passive = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -342,6 +392,18 @@ all.Skill_JDCZhang_Passive = {
 					buffeft1
 				}, 1, 0)
 			end
+
+			local buff = global.PassiveFunEffectBuff(_env, "JDCZhang_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"JDCZhang_Kick"
+				}
+			}, {
+				buff
+			})
 		end)
 
 		return _env
@@ -503,7 +565,8 @@ all.Skill_JDCZhang_Passive_Key = {
 							"BUFF",
 							"HURTRATEUP",
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Skill_JDCZhang_Passive_Key1"
 						}
 					}, {
 						buffeft1
@@ -600,7 +663,8 @@ all.Skill_JDCZhang_Passive_Key = {
 							"BUFF",
 							"HURTRATEUP",
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Skill_JDCZhang_Passive_Key1"
 						}
 					}, {
 						buffeft1
@@ -943,7 +1007,7 @@ all.Skill_JDCZhang_Passive_EX = {
 						"NUMERIC",
 						"BUFF",
 						"UNHURTRATEUP",
-						"Skill_JDCZhang_Passive_EX2",
+						"Skill_JDCZhang_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -951,6 +1015,18 @@ all.Skill_JDCZhang_Passive_EX = {
 					buffeft1
 				}, 1, 0)
 			end
+
+			local buff = global.PassiveFunEffectBuff(_env, "JDCZhang_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"JDCZhang_Kick"
+				}
+			}, {
+				buff
+			})
 		end)
 
 		return _env
@@ -993,7 +1069,7 @@ all.Skill_JDCZhang_Passive_EX = {
 						"NUMERIC",
 						"BUFF",
 						"UNHURTRATEUP",
-						"Skill_JDCZhang_Passive_EX2",
+						"Skill_JDCZhang_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
 					}
@@ -1019,7 +1095,7 @@ all.Skill_JDCZhang_Passive_EX = {
 			local global = _env.global
 
 			if global.FriendMaster(_env) then
-				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BUFF", "UNDISPELLABLE", "Skill_JDCZhang_Passive_EX2"), 1)
+				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED_ALL(_env, "BUFF", "UNDISPELLABLE", "Skill_JDCZhang_Passive"), 1)
 			end
 		end)
 

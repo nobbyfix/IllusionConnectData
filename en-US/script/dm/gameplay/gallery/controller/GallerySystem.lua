@@ -23,6 +23,9 @@ GallerySystem:has("_customDataSystem", {
 GallerySystem:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
+GallerySystem:has("_curDate", {
+	is = "rw"
+})
 
 function GallerySystem:initialize()
 	super.initialize(self)
@@ -999,4 +1002,63 @@ function GallerySystem:getStoryIdByStoryLink(link, pointId)
 	end
 
 	return nil
+end
+
+function GallerySystem:isShowSkip()
+	local curDate = self:getCurDate()
+	local heroData = curDate.heroData
+	local storyOption = curDate.storyOption
+	local storyIndex = curDate.storyIndex
+	local lastDate1 = heroData:getLastDate()
+	local lastDate = lastDate1[tostring(storyIndex)] or {}
+
+	if #lastDate < #storyOption then
+		return false
+	end
+
+	local skip = true
+
+	for index, value in ipairs(storyOption) do
+		local v = lastDate[index]
+
+		if v.point ~= value[v.index] then
+			skip = false
+		end
+	end
+
+	return skip
+end
+
+function GallerySystem:getDateOptionsValue()
+	local options = self._dateOptions
+	local curDate = self:getCurDate()
+	local heroData = curDate.heroData
+	local storyOption = curDate.storyOption
+	local storyIndex = curDate.storyIndex
+	local lastDate1 = heroData:getLastDate()
+	local lastDate = lastDate1[tostring(storyIndex)] or {}
+	local opts = {}
+	local loves = 0
+
+	if #options >= #lastDate then
+		opts = options
+
+		for index, optionIndex in ipairs(options) do
+			if storyOption[index] and storyOption[index][optionIndex] then
+				loves = loves + storyOption[index][optionIndex]
+			end
+		end
+	else
+		for index, value in ipairs(lastDate) do
+			if options[index] then
+				opts[index] = options[index]
+				loves = loves + storyOption[index][opts[index]]
+			else
+				opts[index] = value.index
+				loves = loves + value.point
+			end
+		end
+	end
+
+	return opts, loves
 end

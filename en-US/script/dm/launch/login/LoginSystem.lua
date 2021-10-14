@@ -462,6 +462,24 @@ function LoginSystem:getLimitTimeBg()
 	end
 end
 
+function LoginSystem:getIsNewLoading()
+	local loadingTime = ConfigReader:getDataByNameIdAndKey("ConfigValue", "AnniversaryLoading", "content")
+
+	if loadingTime and loadingTime.start then
+		local startDate = TimeUtil:parseDateTime(nil, loadingTime.start[1])
+		local curTime = self:getInjector():getInstance(GameServerAgent):remoteTimestamp()
+		local startTs = TimeUtil:timeByRemoteDate(startDate)
+		local endDate = TimeUtil:parseDateTime(nil, loadingTime.start[2])
+		local endTs = TimeUtil:timeByRemoteDate(endDate)
+
+		if startTs < curTime and curTime < endTs then
+			return true
+		end
+	end
+
+	return false
+end
+
 function LoginSystem:syncPatFaceData(response)
 	self._patFaceSaveData = {}
 	self._pvSaveData = {}

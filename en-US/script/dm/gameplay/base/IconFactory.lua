@@ -680,6 +680,7 @@ function IconFactory:createRoleIconSprite(info)
 		node:setContentSize(size)
 		node:setAnchorPoint(cc.p(0.5, 0.5))
 		sprite:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:setName("hero")
 		sprite:addTo(node)
 		sprite:setPosition(x + size.width * 0.5, y + size.height * 0.5)
 
@@ -912,6 +913,7 @@ function IconFactory:createRoleIconSpriteNew(info)
 		node:setContentSize(size)
 		node:setAnchorPoint(cc.p(0, 0))
 		node:setPosition(cc.p(0, 0))
+		sprite:setName("hero")
 		sprite:addTo(node)
 		node:setScale(frameInfo.Scale)
 
@@ -1027,6 +1029,12 @@ function IconFactory:createIcon(info, style)
 
 			if config and config.Id then
 				return IconFactory:createBackgroundIcon(info, style)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", tostring(id))
+
+			if config and config.Id then
+				return IconFactory:createRTPKEmojiIcon(info, style)
 			end
 		end
 	end
@@ -4971,6 +4979,27 @@ function IconFactory:createMasterLeadStageSkillIcon(info, style, clickfun)
 	node:setLock(isLock)
 
 	return node
+end
+
+function IconFactory:createRTPKEmojiIcon(info, style)
+	local config = ConfigReader:getRecordById("MasterFace", info.id)
+
+	if config then
+		local quaImgType = 1
+		local qualityImg = GameStyle:getItemQuaRectFile(5, quaImgType)
+		local quaRectImg = IconFactory:createSprite(qualityImg)
+		local size = cc.size(110, 110)
+		local node = self:createBaseNode(style and style.isWidget)
+
+		node:setContentSize(size)
+		IconFactory:centerAddNode(node, quaRectImg)
+
+		local emojiImg = ccui.ImageView:create("asset/emotion/" .. config.EMJPic, 0)
+
+		emojiImg:addTo(node):center(node:getContentSize()):setScale(0.54)
+
+		return node
+	end
 end
 
 function IconFactory:getSpMvpBattleEndMid(model)

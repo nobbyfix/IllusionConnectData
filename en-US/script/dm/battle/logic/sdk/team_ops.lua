@@ -113,8 +113,8 @@ function exports.ForceFlee(env, duration, joinReferee)
 	return true
 end
 
-function exports.WontDie(env)
-	local target = env["$actor"]
+function exports.WontDie(env, target)
+	local target = target or env["$actor"]
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:wontDieUnit(target)
@@ -135,6 +135,12 @@ function exports.Expel(env, target, animation)
 	env.global.RecordEffect(env, unit:getId(), "Expelled", animation)
 
 	return true
+end
+
+function exports.ForceKick(env, target)
+	local formationSystem = env.global["$FormationSystem"]
+
+	return formationSystem:_kickUnit(target)
 end
 
 function exports.Kick(env, target, joinReferee)
@@ -267,6 +273,13 @@ function exports.KillTarget(env, target)
 	local workId = env["$id"]
 
 	target:setLifeStage(ULS_Dying)
+
+	local skillSystem = env.global["$SkillSystem"]
+
+	skillSystem:activateSpecificTrigger(target, "DYING")
+	skillSystem:activateGlobalTrigger("UNIT_DYING", {
+		unit = target
+	})
 
 	local formationSystem = env.global["$FormationSystem"]
 

@@ -202,6 +202,20 @@ function CooperateBossInviteFriendMediator:initView()
 	self._friendBtn = self._main:getChildByFullName("friendPanel.friend")
 	self._clubFriendBtn = self._main:getChildByFullName("friendPanel.clubFriend")
 	self._noFriend = self._main:getChildByFullName("friendPanel.noFriend")
+	local lbText = self._friendBtn:getChildByFullName("text")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
+
+	local lbText = self._clubFriendBtn:getChildByFullName("text")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
+
+	local lbText = self._noFriend:getChildByFullName("text")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
 end
 
 function CooperateBossInviteFriendMediator:setupFriendState()
@@ -1112,6 +1126,11 @@ function CooperateBossInviteFriendMediator:refreshFriendCell(cell, index)
 	local helped = cell:getChildByName("helped")
 	local inviteBtn = cell:getChildByName("invite")
 	local inviting = cell:getChildByName("inviting")
+	local lbText = inviteBtn:getChildByFullName("text")
+
+	lbText:disableEffect(1)
+	lbText:setTextColor(cc.c3b(0, 0, 0))
+
 	local isInTeam = false
 
 	for i = 1, #self._data.bossInfo.battleRecordLst do
