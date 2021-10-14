@@ -440,7 +440,7 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 	end
 
 	local btnText = self._leftView:getChildByFullName("button_give.Text_127")
-	local strId = self._activityConfig.ButtonText or Activity_Monster_Shop_UI5
+	local strId = self._activityConfig.ButtonText or "Activity_Monster_Shop_UI5"
 
 	btnText:setString(Strings:get(strId))
 	AdjustUtils.adjustLayoutUIByRootNode(self._leftView)

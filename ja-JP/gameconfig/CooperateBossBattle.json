@@ -94,6 +94,25 @@
             }
         ]
     },
+    "CooperateBoss_FGao": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_FGao",
+        "Name": "HeroBase_Name_FGao",
+        "PointHead": "Model_FGao",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_FLYDe": {
         "BGM": [
             "Mus_Battle_Whale",

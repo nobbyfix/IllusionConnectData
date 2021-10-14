@@ -84,6 +84,12 @@ BasePlayer:has("_playerStageArena", {
 BasePlayer:has("_stageArenafriends", {
 	is = "r"
 })
+BasePlayer:has("_usedEmoji", {
+	is = "rw"
+})
+BasePlayer:has("_unlockedEmoji", {
+	is = "rw"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -108,6 +114,8 @@ function BasePlayer:initialize(config)
 	self._background = {}
 	self._playerStageArena = {}
 	self._stageArenafriends = {}
+	self._usedEmoji = {}
+	self._unlockedEmoji = {}
 end
 
 function BasePlayer:synchronizeInfoDiff(diffData)
@@ -249,6 +257,16 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 				self._stageArenafriends[index] = info
 				index = index + 1
 			end
+		end
+	end
+
+	if diffData.usedEmoji then
+		self._usedEmoji = diffData.usedEmoji
+	end
+
+	if diffData.unlockedEmoji then
+		for k, v in pairs(diffData.unlockedEmoji) do
+			self._unlockedEmoji[k] = v
 		end
 	end
 end

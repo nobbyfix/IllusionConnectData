@@ -53,6 +53,7 @@ function ClubLogMediator:initNodes()
 
 	self._mainPanel:getChildByFullName("title_node.Text_1"):setString(Strings:get("Club_Text121"))
 	self._mainPanel:getChildByFullName("title_node.Text_2"):setString(Strings:get("UITitle_EN_Rizhi"))
+	self._notHasLabel:setTextColor(cc.c3b(208, 208, 208))
 end
 
 function ClubLogMediator:createData()
@@ -188,7 +189,7 @@ function ClubLogMediator:createTableView()
 		local middleHeight = mainLayout:getContentSize().height / 2
 		local timeLabel = cc.Label:createWithTTF("", TTF_FONT_FZYH_R, 18)
 
-		timeLabel:setTextColor(cc.c3b(35, 35, 35))
+		timeLabel:setTextColor(cc.c3b(208, 208, 208))
 		timeLabel:setString(data:getTimeStr())
 		timeLabel:setAnchorPoint(0, 1)
 		timeLabel:posite(22, realHeight)

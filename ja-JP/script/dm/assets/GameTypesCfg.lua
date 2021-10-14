@@ -403,6 +403,7 @@ UserDefaultKey = {
 	kRoleEffectOffKey = "setting_role_effect",
 	KURMapCountKey = "KURMapCountKey",
 	kSoundCVDownloadKey = "sound_cv_download_over",
+	KSetBoardMovePos = "KSetBoardMovePos",
 	kSpinePortraitDownloadKey = "spine_portrait_download_over"
 }
 CommonRewardType = {

@@ -26,6 +26,7 @@ local kBtnHandlers = {
 }
 
 function CooperateBossInviteMediator:initialize()
+	dump("CooperateBossInviteMediator")
 	super.initialize(self)
 end
 
@@ -120,7 +121,7 @@ end
 
 function CooperateBossInviteMediator:refreashView()
 	self._bossName:setString(self._cooperateBossSystem:getBossName(self._bossConfigId))
-	self._bossLevelText:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
+	self._bossLevelText:setPosition((self._bossName:getContentSize().width + 20) * math.sin(math.rad(83)) + self._bossName:getPositionX(), self._bossName:getPositionY() + self._bossName:getContentSize().width * math.sin(math.rad(7)))
 	self._friend:setString(self._friendName)
 
 	local model = self:getRoleModelId()

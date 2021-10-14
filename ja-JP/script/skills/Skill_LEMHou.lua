@@ -832,7 +832,19 @@ all.Skill_LEMHou_Passive_EX = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buffeft,
+					buffeft
+				})
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"BUFF",
+						"LEMHou_Passive_Rp",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
 					buff
 				})
 
@@ -877,6 +889,7 @@ all.Skill_LEMHou_Passive_EX = {
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 99)
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "LEMHou_Passive_Rp", "UNDISPELLABLE", "UNSTEALABLE"), 99)
 			end
 		end)
 

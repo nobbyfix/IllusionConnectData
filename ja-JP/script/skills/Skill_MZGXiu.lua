@@ -432,6 +432,7 @@ function all.Kamikakushi(_env, unit)
 		"+Normal",
 		"+Normal"
 	}, 1)
+	local buff2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ALL(_env, "MAXHPDOWN", "DAMAGERESULT"))
 
 	global.ApplyBuff(_env, unit, {
 		timing = 0,
@@ -441,7 +442,8 @@ function all.Kamikakushi(_env, unit)
 			"GUIDIE_SHENYIN"
 		}
 	}, {
-		buff
+		buff,
+		buff2
 	})
 	global.SwitchActionTo(_env, "hurt1", "stand")
 	global.SwitchActionTo(_env, "down", "stand")

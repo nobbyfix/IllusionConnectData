@@ -1424,6 +1424,32 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		damage.val = 0
 	end
 
+	if global.SelectHeroPassiveCount(_env, target, "EquipSkill_Tops_15108_2") > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "EquipSkill_Armor_15108_2")(_env, target)
+
+		if DamageFactor and DamageFactor ~= 0 then
+			local summons_damage = damage.val * 0.3
+			damage.val = damage.val * 0.7
+			local summons_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				summons_count = summons_count + 1
+			end
+
+			summons_damage = summons_damage / summons_count
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+				global.ApplyHPDamage(_env, unit, summons_damage)
+			end
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -1942,6 +1968,32 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damage.val = 0
+	end
+
+	if global.SelectHeroPassiveCount(_env, target, "EquipSkill_Tops_15108_2") > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "EquipSkill_Armor_15108_2")(_env, target)
+
+		if DamageFactor and DamageFactor ~= 0 then
+			local summons_damage = damage.val * 0.3
+			damage.val = damage.val * 0.7
+			local summons_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				summons_count = summons_count + 1
+			end
+
+			summons_damage = summons_damage / summons_count
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+				global.ApplyHPDamage(_env, unit, summons_damage)
+			end
+		end
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -2481,6 +2533,32 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
+	end
+
+	if global.SelectHeroPassiveCount(_env, target, "EquipSkill_Tops_15108_2") > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "EquipSkill_Armor_15108_2")(_env, target)
+
+		if DamageFactor and DamageFactor ~= 0 then
+			local summons_damage = damages[n].val * 0.3
+			damages[n].val = damages[n].val * 0.7
+			local summons_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				summons_count = summons_count + 1
+			end
+
+			summons_damage = summons_damage / summons_count
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+				global.ApplyHPDamage(_env, unit, summons_damage)
+			end
+		end
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -3051,6 +3129,32 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
+	end
+
+	if global.SelectHeroPassiveCount(_env, target, "EquipSkill_Tops_15108_2") > 0 then
+		local DamageFactor = global.SpecialPropGetter(_env, "EquipSkill_Armor_15108_2")(_env, target)
+
+		if DamageFactor and DamageFactor ~= 0 then
+			local summons_damage = damages[n].val * 0.3
+			damages[n].val = damages[n].val * 0.7
+			local summons_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				summons_count = summons_count + 1
+			end
+
+			summons_damage = summons_damage / summons_count
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+				global.AddAnim(_env, {
+					loop = 1,
+					anim = "cisha_zhanshupai",
+					zOrder = "TopLayer",
+					pos = global.UnitPos(_env, unit)
+				})
+				global.ApplyHPDamage(_env, unit, summons_damage)
+			end
+		end
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -3866,9 +3970,9 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	local card = nil
 
 	if cond == "card" then
-		card = global.BackToCard(_env, unit)
+		card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
 	elseif cond == "window" then
-		card = global.BackToWindow(_env, unit, location)
+		card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
 	end
 
 	if card then

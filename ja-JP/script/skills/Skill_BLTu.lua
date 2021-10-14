@@ -720,7 +720,7 @@ all.BLTu_Protecto_Kick = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MARKED(_env, "BLTu")(_env, _env.unit) then
+			if global.MARKED(_env, "BLTu")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "BAOHUZHAO", "BLTu_Unique"), 99)
 			end
 		end)

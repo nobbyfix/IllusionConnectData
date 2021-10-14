@@ -106,6 +106,9 @@ function ActivityBlockWsjMediator:onRegister()
 	self._tipNode = self._main:getChildByName("tipNode")
 	self._roleNode = self._main:getChildByName("roleNode")
 	self._timeNode = self._main:getChildByName("timeNode")
+
+	self._timeNode:setVisible(false)
+
 	self._enterPanel = self._main:getChildByName("enterPanel")
 	self._taskBtn = self._main:getChildByName("taskBtn")
 	self._cardBtn = self._main:getChildByName("cardBtn")

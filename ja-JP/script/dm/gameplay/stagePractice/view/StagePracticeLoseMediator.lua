@@ -117,7 +117,7 @@ function StagePracticeLoseMediator:showLoseAni()
 		end
 
 		mvpSpritePanel:addChild(self._mvpSprite)
-		self._mvpSprite:setPosition(cc.p(-200, -200))
+		self._mvpSprite:setPosition(cc.p(-360, -200))
 	end
 
 	anim:addCallbackAtFrame(45, function ()

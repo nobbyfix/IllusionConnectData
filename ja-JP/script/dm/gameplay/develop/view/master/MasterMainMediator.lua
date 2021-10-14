@@ -276,8 +276,8 @@ function MasterMainMediator:initTabBtn()
 				btn:getChildByFullName("light_1.text"):setString(tabName)
 
 				if btn:getChildByFullName("dark_1.text1") then
-					btn:getChildByFullName("dark_1.text1"):setString(tabName1)
-					btn:getChildByFullName("light_1.text1"):setString(tabName1)
+					btn:getChildByFullName("dark_1.text1"):setString("")
+					btn:getChildByFullName("light_1.text1"):setString("")
 				end
 
 				btn:setVisible(true)

@@ -159,6 +159,9 @@ Hero:has("_nextEventType", {
 Hero:has("_clone", {
 	is = "rw"
 })
+Hero:has("_lastDate", {
+	is = "rw"
+})
 
 function Hero:initialize(heroId, player)
 	super.initialize(self)
@@ -214,6 +217,8 @@ function Hero:initialize(heroId, player)
 	self:initSys()
 	self:initSoundList()
 	self:initStarRewardsConfig()
+
+	self._lastDate = {}
 end
 
 function Hero:getConfig()
@@ -423,6 +428,18 @@ function Hero:synchronize(data)
 
 	if hasBaseAttrChange then
 		self:rCreateEffect()
+	end
+
+	if data.lastDate then
+		for storyIndex, options in pairs(data.lastDate) do
+			local opts = {}
+
+			for key, value in pairs(options) do
+				opts[tonumber(key) + 1] = value
+			end
+
+			self._lastDate[storyIndex] = opts
+		end
 	end
 end
 

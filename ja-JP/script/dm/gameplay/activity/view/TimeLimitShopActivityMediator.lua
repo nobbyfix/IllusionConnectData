@@ -90,6 +90,17 @@ local timeLimitShopConfig = {
 	animal = {
 		BG = "jqtd_txt_zwzj_di",
 		TimeOutLineColor = cc.c4b(164, 116, 91, 255)
+	},
+	halloweenday = {
+		TimeOutLineColor = cc.c4b(32, 1, 187, 255),
+		cell = {
+			cellPanel = "deepseaCell",
+			cellDi = {
+				"jqtd_img_ayzl_jldi.png",
+				"jqtd_img_ayzl_jldih.png"
+			},
+			nameColor = cc.c4b(144, 144, 250, 115)
+		}
 	}
 }
 local btnHandlers = {

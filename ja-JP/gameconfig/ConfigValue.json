@@ -2391,6 +2391,17 @@
         "clz": "string",
         "content": 0.6
     },
+    "DefaultEMJ": {
+        "clz": "array",
+        "content": [
+            "EMJ_001",
+            "EMJ_002",
+            "EMJ_003",
+            "EMJ_004",
+            "EMJ_005",
+            "EMJ_006"
+        ]
+    },
     "Default_Model_Board": {
         "clz": "string",
         "content": "ZTXChang"
@@ -2595,6 +2606,26 @@
                 "Title": "DreamChallenge_Rule_Info_0"
             }
         ]
+    },
+    "EMJ_LongCD_Num": {
+        "clz": "int",
+        "content": 3
+    },
+    "EMJ_LongCD_T": {
+        "clz": "int",
+        "content": 15
+    },
+    "EMJ_Long_CD": {
+        "clz": "int",
+        "content": 2
+    },
+    "EMJ_MaxEquip": {
+        "clz": "int",
+        "content": 6
+    },
+    "EMJ_Short_CD": {
+        "clz": "int",
+        "content": 20
     },
     "EliteBlock_MapList": {
         "clz": "string[]",
@@ -3425,6 +3456,13 @@
     "HeroAfkEventLove": {
         "clz": "int",
         "content": 4
+    },
+    "HeroBoard_ScaleRange": {
+        "clz": "double[]",
+        "content": [
+            0.5,
+            1.5
+        ]
     },
     "HeroCostAttr_ATK": {
         "clz": "dict",
@@ -8053,6 +8091,14 @@
         "clz": "int",
         "content": 5
     },
+    "Shield_UpLimit_Master": {
+        "clz": "double",
+        "content": 1
+    },
+    "Shield_UpLimit_Pets": {
+        "clz": "double",
+        "content": 1
+    },
     "ShopTalkShow": {
         "clz": "string[]",
         "content": [
@@ -9393,7 +9439,9 @@
             "WLSTNCi",
             "LEMHou",
             "XDE",
-            "HLa"
+            "HLa",
+            "YMJDe",
+            "FLEr"
         ]
     },
     "Tower_1_GrowMaxValue": {

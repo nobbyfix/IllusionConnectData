@@ -11,11 +11,21 @@ function HealthComponent:initWithRawData(data)
 	super.initWithRawData(self, data)
 
 	local ratio = data.ratio or 1
+	local sheilUplimit = data.sheilUplimit or 1
 
+	self:setSheilUpLimit(sheilUplimit)
 	self:setMaxHp(data.maxHp * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
 	self:setHp((data.hp or data.maxHp) * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
 
 	self._orgMaxHp = self._maxHp
+end
+
+function HealthComponent:setSheilUpLimit(sheilUplimit)
+	self._sheilUplimit = sheilUplimit
+end
+
+function HealthComponent:getSheilUpLimit()
+	return self._sheilUplimit
 end
 
 function HealthComponent:setHp(val)
@@ -163,6 +173,7 @@ function HealthComponent:copyComponent(srcComp, ratio)
 
 	self:setMaxHp(srcComp:getMaxHp() * hpRatio + hpEx)
 	self:setHp(self:getMaxHp() * curHpRatio)
+	self:setSheilUpLimit(srcComp:getSheilUpLimit())
 end
 
 function HealthComponent:getShield()
@@ -175,6 +186,7 @@ function HealthComponent:addShield(shieldValue, upLimit, source)
 	shieldValue = shieldValue * self:getShieldRatio()
 	local newValue = self:getShield() + shieldValue
 	self._shield = upLimit and upLimit < newValue and upLimit or newValue
+	self._shield = self._sheilUplimit and self._shield > self._sheilUplimit * self._maxHp and self._sheilUplimit * self._maxHp or self._shield
 	self._shieldSources = self._shieldSources or {}
 
 	if source then

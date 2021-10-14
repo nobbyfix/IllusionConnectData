@@ -66,7 +66,15 @@ function ActivityTaskMonthCardMediator:setupView()
 
 		heroSprite:setScale(1.1)
 		heroSprite:addTo(heroPanel)
-		heroSprite:setPosition(cc.p(275, 90))
+		heroSprite:setPosition(cc.p(345, 90))
+
+		if activityConfig.ModelPos then
+			heroSprite:posite(activityConfig.ModelPos[1], activityConfig.ModelPos[2])
+		end
+
+		if activityConfig.ModelScale then
+			heroSprite:setScale(activityConfig.ModelScale)
+		end
 	end
 
 	self:createTableView()

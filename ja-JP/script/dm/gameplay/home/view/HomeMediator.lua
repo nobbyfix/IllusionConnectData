@@ -455,6 +455,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_HEROES_SYNC_SHOW, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_ACTIVITY_REFRESH, self, self.onBackFlowActivityRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MAIL_NEW, self, self.refreshActivityCalendarRedPoint)
+	self:mapEventListener(self:getEventDispatcher(), EVT_HOMEVIEW_SETBORAD_MOVE, self, self.setShowHeroMoveViewVis)
 end
 
 function HomeMediator:onBackFlowActivityRefresh(event)
@@ -1252,7 +1253,6 @@ function HomeMediator:initWidget()
 	self._topFuncLayout = self:getView():getChildByFullName("mTopFuncLayout")
 	self._homePanel = self:getView():getChildByName("mHomePanel")
 	self._showHeroPanel = self._homePanel:getChildByName("heroPanel")
-	self._safeTouchLayout = self:getView():getChildByName("touchPanel")
 	self._menuStateBtn = self:getView():getChildByName("unfoldMenuBtn")
 
 	self._menuStateBtn:getChildByName("redPoint"):setLocalZOrder(100)
@@ -1277,6 +1277,20 @@ function HomeMediator:initWidget()
 	local mChallengeNode = self._rightFuncLayout:getChildByFullName("mChallengeNode")
 
 	extraActBtn:setPosition(cc.p(mChallengeNode:getPositionX() - 95, mChallengeNode:getPositionY() - 85))
+
+	self._safeTouchLayout = self:getView():getChildByName("touchPanel")
+	self._panelHeroLayout = self:getView():getChildByName("Panel_hero")
+	self._setBoardNode = self:getView():getChildByName("Node_setBoard")
+	self._boardHeroLayOut = self:getView():getChildByName("Node_setBoard")
+
+	if not self._setBoardNode:getChildByFullName("boardNode") then
+		local boardNode = cc.CSLoader:createNode("asset/ui/SetBoardMove.csb")
+
+		boardNode:addTo(self._setBoardNode)
+		boardNode:setName("boardNode")
+	end
+
+	self:hideShowHeroMove()
 
 	local iconMc = cc.MovieClip:create("baoxiang_jiayuanshouqu")
 
@@ -1740,6 +1754,9 @@ function HomeMediator:setBoardHeroSprite()
 	heroSprite:setPosition(cc.p(160, -70))
 	heroSprite:setTouchEnabled(false)
 
+	self._heroSprite = heroSprite
+	self._moveHeroSp = self._heroSprite:getChildByFullName("hero")
+
 	if surfaceId then
 		local surfaceData = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "ClickAction")
 		local num = #surfaceData
@@ -1815,6 +1832,8 @@ function HomeMediator:setBoardHeroSprite()
 			touchPanel:addTo(heroSprite, num + 1 - i)
 		end
 	end
+
+	self:setShowHeroMoveView()
 end
 
 function HomeMediator:openBoardHeroButton(times)
@@ -3071,6 +3090,363 @@ function HomeMediator:setShowHero(event)
 	self:setBoardHeroSprite()
 end
 
+function HomeMediator:setShowHeroMoveViewVis()
+	self._setBoardNode:setVisible(true)
+	self._safeTouchLayout:setVisible(true)
+	self._panelHeroLayout:setVisible(true)
+	self._safeTouchLayout:setSwallowTouches(true)
+end
+
+function HomeMediator:setShowHeroMoveView()
+	self._scaleRange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroBoard_ScaleRange", "content")
+	local node = self._setBoardNode:getChildByFullName("boardNode")
+	self._slider = node:getChildByFullName("Slider_1")
+
+	local function callback(sender, eventType)
+		self._localPos = {
+			0,
+			0
+		}
+		self._localScale = 1
+
+		self:updateShowHeroMoveView()
+	end
+
+	mapButtonHandlerClick(nil, node:getChildByFullName("Button_huanyuan"), {
+		func = callback
+	})
+
+	local function callback(sender, eventType)
+		local targetPos = cc.p(self._moveHeroSp:getPositionX() - self._originPos[1], self._moveHeroSp:getPositionY() - self._originPos[2])
+
+		self._homeSystem:setBordHeroPos(self._showHeroId, targetPos.x, targetPos.y, self._nowScale)
+		self:hideShowHeroMove()
+	end
+
+	mapButtonHandlerClick(nil, node:getChildByFullName("Button_OK"), {
+		func = callback
+	})
+
+	local function callback(sender, eventType)
+		local info = self._homeSystem:getBordHeroPos(self._showHeroId)
+		self._localScale = info[3]
+		self._localPos = {
+			info[1],
+			info[2]
+		}
+
+		self:updateShowHeroMoveView()
+		self:hideShowHeroMove()
+	end
+
+	mapButtonHandlerClick(nil, node:getChildByFullName("Button_Cancel"), {
+		func = callback
+	})
+	self._slider:addEventListener(function (sender, eventType)
+		if eventType == ccui.SliderEventType.percentChanged then
+			self:onSliderChanged()
+		end
+	end)
+	self._panelHeroLayout:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.began then
+			self._isOnOwn = false
+			local beganPos = sender:getTouchBeganPosition()
+			self._touchBeganPos = beganPos
+		elseif eventType == ccui.TouchEventType.moved then
+			local beganPos = sender:getTouchBeganPosition()
+			local movedPos = sender:getTouchMovePosition()
+
+			if not self._isDrag then
+				self._isDrag = self:checkTouchType(beganPos, movedPos)
+			end
+
+			if self._isDrag and not self._isOnOwn then
+				self:changeMovingPos(movedPos)
+			end
+		elseif eventType == ccui.TouchEventType.ended or eventType == ccui.TouchEventType.canceled then
+			if self._isDrag then
+				self._targetPos = cc.p(self._panelHeroLayout:getPosition())
+			end
+
+			self._isDrag = false
+		end
+	end)
+	self._moveHeroSp:setAnchorPoint(cc.p(0.5, 0.5))
+
+	local s = self._moveHeroSp:getScale()
+	local size = self._moveHeroSp:getContentSize()
+
+	self._moveHeroSp:setPosition(cc.p(self._moveHeroSp:getPositionX() + size.width * s / 2, self._moveHeroSp:getPositionY() + size.height * s / 2))
+
+	self._originScale = self._moveHeroSp:getScale()
+	self._originPos = {
+		self._moveHeroSp:getPositionX(),
+		self._moveHeroSp:getPositionY()
+	}
+
+	self._moveHeroSp:setAnchorPoint(cc.p(0.5, 0.5))
+	self._panelHeroLayout:setAnchorPoint(cc.p(0.5, 0.5))
+
+	local info = self._homeSystem:getBordHeroPos(self._showHeroId)
+	self._localScale = info[3]
+	self._localPos = {
+		info[1],
+		info[2]
+	}
+
+	self._moveHeroSp:setPosition(cc.p(self._originPos[1] + self._localPos[1], self._originPos[2] + self._localPos[2]))
+	self._moveHeroSp:setScale(self._originScale * self._localScale)
+
+	local size = self._moveHeroSp:getContentSize()
+	size.width = size.width * self._originScale
+	size.height = size.height * self._originScale
+
+	self._panelHeroLayout:setContentSize(size)
+	self._panelHeroLayout:setScale(self._localScale)
+
+	local targetPos = self._moveHeroSp:getParent():convertToWorldSpace(cc.p(self._moveHeroSp:getPosition()))
+	local targetPos = self._panelHeroLayout:getParent():convertToNodeSpace(targetPos)
+	self._targetPos = targetPos
+
+	self._panelHeroLayout:setPosition(cc.p(self._targetPos))
+
+	local minScale = self._scaleRange[1]
+	local maxScale = self._scaleRange[2]
+	local total = maxScale - minScale
+
+	self._slider:setPercent((self._localScale - minScale) / total * 100)
+	self:onSliderChanged()
+end
+
+function HomeMediator:onSliderChanged(event)
+	local per = self._slider:getPercent() / 100
+	local minScale = self._scaleRange[1]
+	local maxScale = self._scaleRange[2]
+	local total = maxScale - minScale
+	local nowScale = per * total + minScale
+	self._nowScale = nowScale
+
+	self._panelHeroLayout:setScale(nowScale)
+	self._moveHeroSp:setScale(self._originScale * nowScale)
+	self:updateShowHeroMoveViewText()
+end
+
+function HomeMediator:updateShowHeroMoveView()
+	local node = self._setBoardNode:getChildByFullName("boardNode")
+	local posText = node:getChildByFullName("Text_2")
+	local scaleText = node:getChildByFullName("Text_2_0")
+
+	self._moveHeroSp:setPosition(cc.p(self._originPos[1] + self._localPos[1], self._originPos[2] + self._localPos[2]))
+
+	local targetPos = self._moveHeroSp:getParent():convertToWorldSpace(cc.p(self._moveHeroSp:getPosition()))
+	local targetPos = self._panelHeroLayout:getParent():convertToNodeSpace(targetPos)
+	self._targetPos = targetPos
+
+	self._panelHeroLayout:setPosition(cc.p(self._targetPos))
+
+	local minScale = self._scaleRange[1]
+	local maxScale = self._scaleRange[2]
+	local total = maxScale - minScale
+
+	self._slider:setPercent((self._localScale - minScale) / total * 100)
+	self:onSliderChanged()
+end
+
+function HomeMediator:updateShowHeroMoveViewText()
+	local node = self._setBoardNode:getChildByFullName("boardNode")
+	local posText = node:getChildByFullName("Text_2")
+	local scaleText = node:getChildByFullName("Text_2_0")
+	local x = self._moveHeroSp:getPositionX() - self._originPos[1]
+	local y = self._moveHeroSp:getPositionY() - self._originPos[2]
+
+	posText:setString(Strings:get("Hero_setBoard_UI3", {
+		Num = math.floor(x) .. "," .. math.floor(y)
+	}))
+	scaleText:setString(Strings:get("Hero_setBoard_UI4", {
+		Num = self._nowScale * 100 .. "%"
+	}))
+end
+
+function HomeMediator:changeMovingPos(pos)
+	local xOffset = pos.x - self._touchBeganPos.x
+	local yOffset = pos.y - self._touchBeganPos.y
+	local xTar = self._targetPos.x + xOffset
+	local yTar = self._targetPos.y + yOffset
+	local tarPos = cc.p(xTar, yTar)
+
+	self._panelHeroLayout:setPosition(tarPos)
+
+	local targetPos = self._panelHeroLayout:getParent():convertToWorldSpace(cc.p(self._panelHeroLayout:getPosition()))
+	local targetPos = self._moveHeroSp:getParent():convertToNodeSpace(targetPos)
+
+	self._moveHeroSp:setPosition(cc.p(targetPos))
+	self:updateShowHeroMoveViewText()
+end
+
+function HomeMediator:hideShowHeroMove()
+	self._setBoardNode:setVisible(false)
+	self._safeTouchLayout:setVisible(false)
+	self._panelHeroLayout:setVisible(false)
+
+	self._localScale = self._panelHeroLayout:getScale()
+end
+
+function HomeMediator:checkTouchType(pos1, pos2)
+	local xOffset = math.abs(pos1.x - pos2.x)
+	local yOffset = math.abs(pos1.y - pos2.y)
+
+	if xOffset > 10 or yOffset > 10 then
+		local dragDeg1 = math.deg(math.atan(yOffset / xOffset))
+		local dragDeg2 = math.deg(math.atan(xOffset / yOffset))
+
+		if dragDeg1 > 30 or dragDeg2 > 30 then
+			return true
+		end
+	end
+
+	return false
+end
+
+function HomeMediator:mailRedPoint()
+	local mailSystem = self:getInjector():getInstance(MailSystem)
+
+	return mailSystem:queryRedPointState()
+end
+
+function HomeMediator:rankRedPoint()
+	local rankSystem = self:getInjector():getInstance(RankSystem)
+
+	return rankSystem:getRewardRedPoint()
+end
+
+function HomeMediator:friendRedPoint()
+	local friendSystem = self:getInjector():getInstance(FriendSystem)
+
+	return friendSystem:queryRedPointState()
+end
+
+function HomeMediator:activityRedPoint()
+	local st = self._activitySystem:getHomeRedPointSta()
+	local movieClipNode = self:getView():getChildByFullName("mRightFuncLayout.mActivity2Node.mMovieClip.huodong_xinzhujiemian")
+
+	movieClipNode:addCallbackAtFrame(10, function ()
+		movieClipNode:getChildByName("guang"):setVisible(st)
+	end)
+
+	return st
+end
+
+function HomeMediator:firstRechargeRedPoint()
+	local player = self:getDevelopSystem():getPlayer()
+	local rechargeState = player:getFirstRecharge()
+
+	if rechargeState == 1 then
+		return true
+	else
+		return false
+	end
+end
+
+function HomeMediator:arenaRedPoint()
+	local unlock = self._systemKeeper:isUnlock("Arena_All")
+
+	if not unlock then
+		return false
+	end
+
+	local arenaSystem = self:getInjector():getInstance(ArenaSystem)
+	local petRaceSystem = self:getInjector():getInstance(PetRaceSystem)
+	local coopBoss = self:getInjector():getInstance(CooperateBossSystem)
+	local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return arenaSystem:checkAwardRed() or petRaceSystem:redPointShow() or coopBoss:redPointShow() or leadStageArena:checkShowRed()
+end
+
+function HomeMediator:exploreRedPoint()
+	local exploreSystem = self:getInjector():getInstance(ExploreSystem)
+
+	return exploreSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:heroRedPoint()
+	local heroSystem = self._developSystem:getHeroSystem()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local pointFirstPassCheck1 = customDataSystem:getValue(PrefixType.kGlobal, "S02S02_FirstPassState", "false")
+	local pointFirstPassCheck2 = customDataSystem:getValue(PrefixType.kGlobal, "M03S02_FirstPassState", "false")
+
+	return pointFirstPassCheck1 == "true" or pointFirstPassCheck2 == "true" or heroSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:teamRedPoint()
+	local unlock, tips = self._systemKeeper:isUnlock("Hero_Group")
+
+	if not unlock then
+		return false
+	end
+
+	local stageSystem = self:getInjector():getInstance(StageSystem)
+
+	return stageSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:recruitRedPoint()
+	local recruitSystem = self:getInjector():getInstance(RecruitSystem)
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local pointFirstPassCheck1 = customDataSystem:getValue(PrefixType.kGlobal, "M02S01_FirstPassState", "false")
+	local pointFirstPassCheck2 = customDataSystem:getValue(PrefixType.kGlobal, "M03S04_FirstPassState", "false")
+
+	return pointFirstPassCheck1 == "true" or pointFirstPassCheck2 == "true" or recruitSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:taskRedPoint()
+	local taskSystem = self:getInjector():getInstance(TaskSystem)
+
+	return taskSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:galleryRedPoint()
+	local gallerySystem = self:getInjector():getInstance(GallerySystem)
+
+	return gallerySystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:shopRedPoint()
+	return self._shopSystem:getRedPoint()
+end
+
+function HomeMediator:bagRedPoint()
+	local bagSystem = self:getInjector():getInstance(BagSystem)
+
+	return bagSystem:isBagRedPointShow()
+end
+
+function HomeMediator:challengeRedPoint()
+	local spStageSystem = self:getInjector():getInstance(SpStageSystem)
+	local stagePracticeSystem = self:getInjector():getInstance(StagePracticeSystem)
+	local crusadeSystem = self:getInjector():getInstance(CrusadeSystem)
+	local dreamSystem = self:getInjector():getInstance(DreamChallengeSystem)
+
+	return spStageSystem:checkIsShowRedPoint() or stagePracticeSystem:checkAwardRed() or crusadeSystem:canCrusadeSweep() or dreamSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:onMainChapterRedPoint()
+	local stageSystem = self:getInjector():getInstance(StageSystem)
+
+	return stageSystem:hasHomeRedPoint()
+end
+
+function HomeMediator:masterRedPoint()
+	local masterSystem = self._developSystem:getMasterSystem()
+
+	return masterSystem:checkIsShowRedPoint()
+end
+
+function HomeMediator:onClubRedPoint()
+	local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+	return clubSystem:hasHomeRedPoint() or clubSystem:hasHomeActivityRedPoint()
+end
+
 function HomeMediator:checkClubRedPoint()
 	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 	local clubSystem = self._clubSystem
@@ -3625,7 +4001,7 @@ function HomeMediator:setComplexActivityEntry()
 end
 
 function HomeMediator:setActivityCalendar()
-	local activityDate = self._homeSystem:getWonderfulActData()
+	local activityDate, actBubbleData = self._homeSystem:getWonderfulActData()
 	local wonderfulAct = self._rightFuncLayout:getChildByName("wonderfulAct")
 	local activityTalk = self._urlFuncLayout:getChildByFullName("activityBtn.talkBg")
 	local activityBtnBunle = self._urlFuncLayout:getChildByFullName("activityBtn.talkBg.talk")
@@ -3657,6 +4033,12 @@ function HomeMediator:setActivityCalendar()
 		self:refreshActivityCalendarRedPoint()
 	end
 
+	if not actBubbleData then
+		activityTalk:setVisible(false)
+	else
+		activityTalk:setVisible(true)
+	end
+
 	local activityBtn = self._urlFuncLayout:getChildByFullName("activityBtn")
 	local unlock, tips = self._systemKeeper:isUnlock("ActivityCalendar")
 
@@ -3669,8 +4051,8 @@ function HomeMediator:setActivityCalendar()
 			end
 		end)
 
-		if activityDate and activityDate.Bubble and #activityDate.Bubble > 0 then
-			activityBtnBunle:setString(Strings:get(activityDate.Bubble[math.random(1, #activityDate.Bubble)]))
+		if actBubbleData and actBubbleData.Bubble and #actBubbleData.Bubble > 0 then
+			activityBtnBunle:setString(Strings:get(actBubbleData.Bubble[math.random(1, #actBubbleData.Bubble)]))
 		end
 
 		local function nodeSparkle(node, delay1, delay2)
@@ -3681,7 +4063,7 @@ function HomeMediator:setActivityCalendar()
 			local delay2 = cc.DelayTime:create(delay2)
 			local fadeIn = cc.FadeIn:create(0.2)
 			local changeText = cc.CallFunc:create(function ()
-				if activityDate and activityDate.Bubble then
+				if actBubbleData and actBubbleData.Bubble then
 					self._urlFuncLayout:getChildByFullName("activityBtn.talkBg.talk"):setString(Strings:get(self._homeSystem:getActivityCalenderBubble(activityDate.Bubble)))
 				end
 			end)

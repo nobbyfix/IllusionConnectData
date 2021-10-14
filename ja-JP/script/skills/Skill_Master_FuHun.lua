@@ -318,9 +318,6 @@ all.Sk_Master_FuHun_Action2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"))
-
 			local buffeft1 = global.Immune(_env)
 			local buffeft2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "DEBUFF"))
 

@@ -107,7 +107,7 @@ end
 
 function CooperateBossFightMediator:refreashView()
 	self._bossName:setString(self._cooperateBossSystem:getBossName(self._configBossId))
-	self._bossLevel:setPositionX(self._bossName:getContentSize().width + self._bossName:getPositionX() + 20)
+	self._bossLevel:setPosition((self._bossName:getContentSize().width + 20) * math.sin(math.rad(83)) + self._bossName:getPositionX(), self._bossName:getPositionY() + self._bossName:getContentSize().width * math.sin(math.rad(7)))
 
 	local model = self._cooperatorBoss:getRoleModelId()
 	local img, jsonPath = IconFactory:createRoleIconSpriteNew({

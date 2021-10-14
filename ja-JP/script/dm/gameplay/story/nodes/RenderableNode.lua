@@ -1878,6 +1878,23 @@ function SkipButtonNode:onClickSkip()
 		return
 	end
 
+	if self._date then
+		self:showLovesTips()
+
+		return
+	end
+
+	self:skip()
+end
+
+function SkipButtonNode:skip()
+	local agent = self:getAgent()
+
+	if agent == nil then
+		return
+	end
+
+	agent:setAutoPlayState(false, true)
 	AudioEngine:getInstance():stopEffectsByType()
 	AudioEngine:getInstance():playEffect("Se_Click_Story_2", false)
 
@@ -1898,11 +1915,59 @@ function SkipButtonNode:onClickSkip()
 	agent:skip(true)
 end
 
+function SkipButtonNode:showLovesTips()
+	local agent = self:getAgent()
+
+	agent:setAutoPlayState(false, true)
+
+	if agent.showSkipChoose then
+		local ctx = agent:getCurrentScriptCtx()
+
+		if ctx ~= nil then
+			local scene = ctx:getScene()
+			local actor = scene:getChildById("skipChoose")
+
+			if actor == nil then
+				actor = StageNodeFactory:createSkipChooseDialog(scene)
+			end
+
+			if actor then
+				actor:show()
+
+				local director = agent:getDirector()
+				local gallerySystem = director:getInjector():getInstance(GallerySystem)
+				local opts, loves = gallerySystem:getDateOptionsValue()
+				local text = Strings:get("UI_DateSpik", {
+					fontName = TTF_FONT_FZYH_M,
+					Num = loves
+				})
+
+				actor:setView({
+					type = "date",
+					text = text,
+					textSize = cc.size(560, 0)
+				})
+			end
+		end
+	end
+end
+
 function SkipButtonNode:hide()
 	self._renderNode:setVisible(false)
 end
 
-function SkipButtonNode:show()
+function SkipButtonNode:show(args)
+	if args.date then
+		self._date = args.date
+		local agent = self:getAgent()
+		local director = agent:getDirector()
+		local gallerySystem = director:getInjector():getInstance(GallerySystem)
+
+		self._renderNode:setVisible(gallerySystem:isShowSkip())
+
+		return
+	end
+
 	self._renderNode:setVisible(true)
 end
 
@@ -2075,11 +2140,11 @@ function GuideSkipAllButtonNode:onClickSkip()
 	agent:skip(true)
 end
 
-function SkipButtonNode:hide()
+function GuideSkipAllButtonNode:hide()
 	self._renderNode:setVisible(false)
 end
 
-function SkipButtonNode:show()
+function GuideSkipAllButtonNode:show()
 	self._renderNode:setVisible(true)
 end
 
@@ -2330,9 +2395,8 @@ end
 
 function SkipChooseNode:createRenderNode(config)
 	local renderNode = cc.CSLoader:createNode("asset/ui/SkipChooseDialog.csb")
-	local btnOk = renderNode:getChildByFullName("main.btnOk.button")
-	local btnCanel = renderNode:getChildByFullName("main.btnCanel.button")
-	local bg = renderNode:getChildByFullName("main.bg")
+	local btnOk = renderNode:getChildByFullName("main.btnOk")
+	local btnCanel = renderNode:getChildByFullName("main.btnCanel")
 
 	btnOk:getChildByName("name"):setString(Strings:get("story_des_4"))
 	btnOk:getChildByName("name1"):setString(Strings:get("UITitle_EN_Queding"))
@@ -2343,13 +2407,15 @@ function SkipChooseNode:createRenderNode(config)
 
 	touchLayer:addClickEventListener(function ()
 	end)
-	mapButtonHandlerClick(self, btnOk, function (sender, eventType)
+	mapButtonHandlerClick(self, btnOk:getChildByName("button"), function (sender, eventType)
 		self:onClickBtnOk()
 	end, renderNode)
-	mapButtonHandlerClick(self, btnCanel, function (sender, eventType)
+	mapButtonHandlerClick(self, btnCanel:getChildByName("button"), function (sender, eventType)
 		self:onClickBtnCanel()
 	end, renderNode)
 	renderNode:setVisible(false)
+
+	self._desLab = renderNode:getChildByFullName("main.desLab")
 
 	return renderNode
 end
@@ -2363,7 +2429,14 @@ function SkipChooseNode:onClickBtnOk()
 		return
 	end
 
-	agent:skip(true)
+	local ctx = agent:getCurrentScriptCtx()
+
+	if ctx ~= nil then
+		local scene = ctx:getScene()
+		local actor = scene:getChildById("skipButton")
+
+		actor:skip()
+	end
 end
 
 function SkipChooseNode:onClickBtnCanel()
@@ -2371,6 +2444,29 @@ function SkipChooseNode:onClickBtnCanel()
 end
 
 function SkipChooseNode:onClickBtnBack()
+end
+
+function SkipChooseNode:setView(data)
+	if data and data.type == "date" then
+		self._desLab:setString("")
+
+		local desc = self._desLab:getChildByName("desLabRichText")
+
+		if not desc then
+			local richText = ccui.RichText:createWithXML("", {})
+
+			richText:addTo(self._desLab)
+			richText:setName("desLabRichText")
+
+			desc = richText
+
+			if data.textSize then
+				richText:renderContent(data.textSize.width, data.textSize.height)
+			end
+		end
+
+		desc:setString(data.text)
+	end
 end
 
 function SkipChooseNode:show()

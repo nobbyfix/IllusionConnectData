@@ -472,7 +472,7 @@ function SkipButtonShow:start(args)
 	local actor = self:getActor()
 
 	if actor then
-		actor:show()
+		actor:show(args)
 	end
 
 	return BehaviorResult.Success
