@@ -19,6 +19,10 @@ function CooperateBattleSession:buildBattleData(mapId, pointId, playerData, enem
 	self:fillHeroAttrEffect(playerData)
 	self:modifyEnemyMasterModel(enemyData)
 
+	local randomizer = Random:new(randomSeed)
+
+	self:_buildCardPool(playerData, randomizer)
+
 	return BattleDataHelper:getIntegralBattleData({
 		playerData = playerData,
 		enemyData = enemyData

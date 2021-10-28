@@ -13153,6 +13153,4230 @@
         ],
         "WipeExtraReward": ""
     },
+    "DuskSE01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE02P01proN05",
+                "pos": 4
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS09N_BlockDesc",
+        "EnemyCard": "CardDuskSE01E",
+        "EnemyMaster": "DuskE02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE01",
+        "Master": "",
+        "Name": "BlockPoint_DuskS09N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE01E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskE02P01proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM02P01proN05",
+                "pos": 4
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS09M_BlockDesc",
+        "EnemyCard": "CardDuskSE01M",
+        "EnemyMaster": "DuskM02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_1",
+                "4": "Dusk_Buff_Star4_2_1",
+                "5": "Dusk_Buff_Star5_2_1",
+                "6": "Dusk_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE01",
+        "Master": "",
+        "Name": "BlockPoint_DuskS09M_Name",
+        "NextPoint": [
+            "DuskSE02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE01M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskM02P01proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE02E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE02P02proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS10N_BlockDesc",
+        "EnemyCard": "CardDuskSE02E",
+        "EnemyMaster": "DuskE02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE02",
+        "Master": "",
+        "Name": "BlockPoint_DuskS10N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE02E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE02M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM02P02proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS10M_BlockDesc",
+        "EnemyCard": "CardDuskSE02M",
+        "EnemyMaster": "DuskM02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_2",
+                "4": "Dusk_Buff_Star4_2_2",
+                "5": "Dusk_Buff_Star5_2_2",
+                "6": "Dusk_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE02",
+        "Master": "",
+        "Name": "BlockPoint_DuskS10M_Name",
+        "NextPoint": [
+            "DuskSE03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE02M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Dusk_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS11N_BlockDesc",
+        "EnemyCard": "CardDuskSE03E",
+        "EnemyMaster": "DuskE02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE03",
+        "Master": "",
+        "Name": "BlockPoint_DuskS11N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE03E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Dusk_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS11M_BlockDesc",
+        "EnemyCard": "CardDuskSE03M",
+        "EnemyMaster": "DuskM02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_3",
+                "4": "Dusk_Buff_Star4_2_3",
+                "5": "Dusk_Buff_Star5_2_3",
+                "6": "Dusk_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE03",
+        "Master": "",
+        "Name": "BlockPoint_DuskS11M_Name",
+        "NextPoint": [
+            "DuskSE04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSE03M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_6"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS12N_BlockDesc",
+        "EnemyCard": "CardDuskSE04E",
+        "EnemyMaster": "DuskE02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE04",
+        "Master": "",
+        "Name": "BlockPoint_DuskS12N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSE04E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS12M_BlockDesc",
+        "EnemyCard": "CardDuskSE04M",
+        "EnemyMaster": "DuskM02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_4",
+                "4": "Dusk_Buff_Star4_2_4",
+                "5": "Dusk_Buff_Star5_2_4",
+                "6": "Dusk_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE04",
+        "Master": "",
+        "Name": "BlockPoint_DuskS12M_Name",
+        "NextPoint": [
+            "DuskSE05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSE04M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS13N_BlockDesc",
+        "EnemyCard": "CardDuskSE05E",
+        "EnemyMaster": "DuskE02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE05",
+        "Master": "",
+        "Name": "BlockPoint_DuskS13N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSE05E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS13M_BlockDesc",
+        "EnemyCard": "CardDuskSE05M",
+        "EnemyMaster": "DuskM02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_5",
+                "4": "Dusk_Buff_Star4_2_5",
+                "5": "Dusk_Buff_Star5_2_5",
+                "6": "Dusk_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE05",
+        "Master": "",
+        "Name": "BlockPoint_DuskS13M_Name",
+        "NextPoint": [
+            "DuskSE06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSE05M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE06E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS14N_BlockDesc",
+        "EnemyCard": "CardDuskSE06E",
+        "EnemyMaster": "DuskE02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE06",
+        "Master": "",
+        "Name": "BlockPoint_DuskS14N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE06E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE06M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS14M_BlockDesc",
+        "EnemyCard": "CardDuskSE06M",
+        "EnemyMaster": "DuskM02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE06M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_6",
+                "4": "Dusk_Buff_Star4_2_6",
+                "5": "Dusk_Buff_Star5_2_6",
+                "6": "Dusk_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE06",
+        "Master": "",
+        "Name": "BlockPoint_DuskS14M_Name",
+        "NextPoint": [
+            "DuskSE07M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE06M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE06M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS15N_BlockDesc",
+        "EnemyCard": "CardDuskSE07E",
+        "EnemyMaster": "DuskE02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE07",
+        "Master": "",
+        "Name": "BlockPoint_DuskS15N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE07E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS15M_BlockDesc",
+        "EnemyCard": "CardDuskSE07M",
+        "EnemyMaster": "DuskM02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_7",
+                "4": "Dusk_Buff_Star4_2_7",
+                "5": "Dusk_Buff_Star5_2_7",
+                "6": "Dusk_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE07",
+        "Master": "",
+        "Name": "BlockPoint_DuskS15M_Name",
+        "NextPoint": [
+            "DuskSE08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE07M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS16N_BlockDesc",
+        "EnemyCard": "CardDuskSE08E",
+        "EnemyMaster": "DuskE02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE08",
+        "Master": "",
+        "Name": "BlockPoint_DuskS16N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE08E_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSE08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSE08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS16M_BlockDesc",
+        "EnemyCard": "CardDuskSE08M",
+        "EnemyMaster": "DuskM02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSE08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_2_8",
+                "4": "Dusk_Buff_Star4_2_8",
+                "5": "Dusk_Buff_Star5_2_8",
+                "6": "Dusk_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSE08",
+        "Master": "",
+        "Name": "BlockPoint_DuskS16M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSE08M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSE08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSH01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS01H_BlockDesc",
+        "EnemyCard": "CardDuskSH01M",
+        "EnemyMaster": "DuskH01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSH01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE09",
+        "Master": "",
+        "Name": "BlockPoint_DuskS01H_Name",
+        "NextPoint": [
+            "DuskSH02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSH01M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSH01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSH02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS02H_BlockDesc",
+        "EnemyCard": "CardDuskSH02M",
+        "EnemyMaster": "DuskH01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSH02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE10",
+        "Master": "",
+        "Name": "BlockPoint_DuskS02H_Name",
+        "NextPoint": [
+            "DuskSH03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSH02M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSH02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSH03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS03H_BlockDesc",
+        "EnemyCard": "CardDuskSH03M",
+        "EnemyMaster": "DuskH01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSH03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSE11",
+        "Master": "",
+        "Name": "BlockPoint_DuskS03H_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSH03M_PointReward",
+        "PointTime": {
+            "start": "2021-11-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSH03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P01proN02",
+                "pos": 2
+            },
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS01N_BlockDesc",
+        "EnemyCard": "CardDuskSN01E",
+        "EnemyMaster": "DuskE01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN01",
+        "Master": "",
+        "Name": "BlockPoint_DuskS01N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN01E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P01proN02",
+                "pos": 2
+            },
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS01M_BlockDesc",
+        "EnemyCard": "CardDuskSN01M",
+        "EnemyMaster": "DuskM01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_1",
+                "4": "Dusk_Buff_Star4_1_1",
+                "5": "Dusk_Buff_Star5_1_1",
+                "6": "Dusk_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN01",
+        "Master": "",
+        "Name": "BlockPoint_DuskS01M_Name",
+        "NextPoint": [
+            "DuskSN02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN01M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN02E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P02proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS02N_BlockDesc",
+        "EnemyCard": "CardDuskSN02E",
+        "EnemyMaster": "DuskE01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN02",
+        "Master": "",
+        "Name": "BlockPoint_DuskS02N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN02E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskE01P02proN06"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN02M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P02proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS02M_BlockDesc",
+        "EnemyCard": "CardDuskSN02M",
+        "EnemyMaster": "DuskM01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_2",
+                "4": "Dusk_Buff_Star4_1_2",
+                "5": "Dusk_Buff_Star5_1_2",
+                "6": "Dusk_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN02",
+        "Master": "",
+        "Name": "BlockPoint_DuskS02M_Name",
+        "NextPoint": [
+            "DuskSN03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN02M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskM01P02proN06"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN03E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P03proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS03N_BlockDesc",
+        "EnemyCard": "CardDuskSN03E",
+        "EnemyMaster": "DuskE01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN03",
+        "Master": "",
+        "Name": "BlockPoint_DuskS03N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN03E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskE01P03proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN03M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P03proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS03M_BlockDesc",
+        "EnemyCard": "CardDuskSN03M",
+        "EnemyMaster": "DuskM01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_3",
+                "4": "Dusk_Buff_Star4_1_3",
+                "5": "Dusk_Buff_Star5_1_3",
+                "6": "Dusk_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN03",
+        "Master": "",
+        "Name": "BlockPoint_DuskS03M_Name",
+        "NextPoint": [
+            "DuskSN04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN03M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskM01P03proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN04E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P04proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS04N_BlockDesc",
+        "EnemyCard": "CardDuskSN04E",
+        "EnemyMaster": "DuskE01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN04",
+        "Master": "",
+        "Name": "BlockPoint_DuskS04N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN04E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN04M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P04proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS04M_BlockDesc",
+        "EnemyCard": "CardDuskSN04M",
+        "EnemyMaster": "DuskM01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_4",
+                "4": "Dusk_Buff_Star4_1_4",
+                "5": "Dusk_Buff_Star5_1_4",
+                "6": "Dusk_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN04",
+        "Master": "",
+        "Name": "BlockPoint_DuskS04M_Name",
+        "NextPoint": [
+            "DuskSN05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN04M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Dusk_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS05N_BlockDesc",
+        "EnemyCard": "CardDuskSN05E",
+        "EnemyMaster": "DuskE01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN05",
+        "Master": "",
+        "Name": "BlockPoint_DuskS05N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSN05E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5",
+            "SpecialRule_Dusk_Rule_7"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Dusk_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS05M_BlockDesc",
+        "EnemyCard": "CardDuskSN05M",
+        "EnemyMaster": "DuskM01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_5",
+                "4": "Dusk_Buff_Star4_1_5",
+                "5": "Dusk_Buff_Star5_1_5",
+                "6": "Dusk_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN05",
+        "Master": "",
+        "Name": "BlockPoint_DuskS05M_Name",
+        "NextPoint": [
+            "DuskSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5",
+            "SpecialRule_Dusk_Rule_7"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN06E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskE01P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS06N_BlockDesc",
+        "EnemyCard": "CardDuskSN06E",
+        "EnemyMaster": "DuskE01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN06",
+        "Master": "",
+        "Name": "BlockPoint_DuskS06N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN06E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskE01P06proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN06M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "XBKLDi",
+                "id": "DuskM01P06proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS06M_BlockDesc",
+        "EnemyCard": "CardDuskSN06M",
+        "EnemyMaster": "DuskM01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_6",
+                "4": "Dusk_Buff_Star4_1_6",
+                "5": "Dusk_Buff_Star5_1_6",
+                "6": "Dusk_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN06",
+        "Master": "",
+        "Name": "BlockPoint_DuskS06M_Name",
+        "NextPoint": [
+            "DuskSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_FLEr",
+        "PointPicture": "",
+        "PointReward": "DuskSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DuskM01P06proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS07N_BlockDesc",
+        "EnemyCard": "CardDuskSN07E",
+        "EnemyMaster": "DuskE01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN07",
+        "Master": "",
+        "Name": "BlockPoint_DuskS07N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN07E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS07M_BlockDesc",
+        "EnemyCard": "CardDuskSN07M",
+        "EnemyMaster": "DuskM01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_7",
+                "4": "Dusk_Buff_Star4_1_7",
+                "5": "Dusk_Buff_Star5_1_7",
+                "6": "Dusk_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN07",
+        "Master": "",
+        "Name": "BlockPoint_DuskS07M_Name",
+        "NextPoint": [
+            "DuskSN08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_YMJDe",
+        "PointPicture": "",
+        "PointReward": "DuskSN07M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS08N_BlockDesc",
+        "EnemyCard": "CardDuskSN08E",
+        "EnemyMaster": "DuskE01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DuskSN08",
+        "Master": "",
+        "Name": "BlockPoint_DuskS08N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSN08E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DuskSN08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DuskSN08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Dusk",
+            "",
+            ""
+        ],
+        "Background": "Dusk_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Dusk",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DuskS08M_BlockDesc",
+        "EnemyCard": "CardDuskSN08M",
+        "EnemyMaster": "DuskM01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DuskSN08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "FLEr": "Hero_ABlock_FLEr_Extra",
+            "HLa": "Hero_ABlock_HLa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "FLEr": {
+                "3": "Dusk_FLEr_Buff_Star3",
+                "4": "Dusk_FLEr_Buff_Star4",
+                "5": "Dusk_FLEr_Buff_Star5"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "HLa": {
+                "3": "Dusk_Buff_Star3_1_8",
+                "4": "Dusk_Buff_Star4_1_8",
+                "5": "Dusk_Buff_Star5_1_8",
+                "6": "Dusk_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "Map": "DuskSN08",
+        "Master": "",
+        "Name": "BlockPoint_DuskS08M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointPicture": "",
+        "PointReward": "DuskSN08M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DuskSN08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Dusk_Tittle_1",
+            "SpecialRule_Dusk_Rule_5"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DuskStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "FWorksSE01E": {
         "AiRules": "",
         "Assist": [

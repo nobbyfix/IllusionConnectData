@@ -12,6 +12,7 @@ function SkillDescWidget:initialize(view, data)
 
 	self._skill = data.skill
 	self._mediator = data.mediator
+	self._scroll = data.scroll
 
 	self:initSubviews(view)
 end
@@ -33,6 +34,9 @@ function SkillDescWidget:initSubviews(view)
 	skillTouchPanel:addClickEventListener(function ()
 		self:hide()
 	end)
+
+	self._desc = self._skillTipPanel:getChildByName("desc")
+	self._nextPanel = nextPanel
 end
 
 function SkillDescWidget:refreshInfo(skill, role, isMaster)
@@ -146,9 +150,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	local name = infoNode:getChildByFullName("name")
 
 	name:setString(skill:getName())
+	self._nextPanel:removeFromParent()
 
 	local bg = self._skillTipPanel:getChildByName("Image_bg")
-	local desc = self._skillTipPanel:getChildByName("desc")
+	local desc = self._desc
 
 	desc:setString("")
 	desc:removeAllChildren()
@@ -159,7 +164,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	if self._isMaster ~= true then
 		self._starAttrs = self._role:getStarAttrs()
-		local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+		local nextPanel = self._nextPanel
+
+		nextPanel:addTo(desc)
+
 		local titleStr = ""
 		local nextDes = ""
 		local check_star = 0
@@ -217,7 +225,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 			height = height + 50
 			height_bottom = height
 
-			nextPanel:setPositionY(height_bottom - 4.5)
+			nextPanel:setPosition(-10, height_bottom - 25.5)
 		else
 			nextPanel:setVisible(false)
 		end
@@ -288,8 +296,33 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	height = height + 110
 
-	bg:setContentSize(cc.size(432, height))
-	infoNode:setPositionY(height - 90)
+	if height > 400 and self._scroll then
+		if not self.listView then
+			local listView = ccui.ListView:create()
+
+			listView:setScrollBarEnabled(false)
+			listView:addTo(self._skillTipPanel):posite(10, 15)
+
+			self.listView = listView
+
+			self.listView:setContentSize(cc.size(432, 300))
+		end
+
+		local lauout = ccui.Layout:create()
+
+		lauout:setContentSize(cc.size(432, height - 110))
+		desc:changeParent(lauout):posite(0, 0)
+		self.listView:removeAllChildren()
+		self.listView:pushBackCustomItem(lauout)
+		bg:setContentSize(cc.size(432, height))
+		infoNode:setPositionY(height - 90)
+		bg:setContentSize(cc.size(432, 400))
+		infoNode:setPositionY(310)
+	else
+		desc:changeParent(self._skillTipPanel):posite(13, 18)
+		bg:setContentSize(cc.size(432, height))
+		infoNode:setPositionY(height - 90)
+	end
 end
 
 function SkillDescWidget:createSkillDescPanel(title, skill, style)

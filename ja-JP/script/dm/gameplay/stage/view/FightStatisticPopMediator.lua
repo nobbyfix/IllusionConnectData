@@ -148,12 +148,15 @@ function FightStatisticPopMediator:processData()
 
 			for _, sumId in ipairs(v.summoned) do
 				local _data = self._playData.unitSummary[sumId]
-				local dmg = _data.damage or 0
-				local receiveDamage = _data.receiveDamage or 0
-				local cure = _data.cure or 0
-				_tab.dmg = _tab.dmg + dmg
-				_tab.receiveDamage = _tab.receiveDamage + receiveDamage
-				_tab.cure = _tab.cure + cure
+
+				if _data then
+					local dmg = _data.damage or 0
+					local receiveDamage = _data.receiveDamage or 0
+					local cure = _data.cure or 0
+					_tab.dmg = _tab.dmg + dmg
+					_tab.receiveDamage = _tab.receiveDamage + receiveDamage
+					_tab.cure = _tab.cure + cure
+				end
 			end
 
 			_tab.dmg = math.ceil(_tab.dmg)

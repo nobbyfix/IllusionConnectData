@@ -300,6 +300,48 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Dusk": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_dusk_1",
+        "Name": "ActivityBlock_Dusk_Name",
+        "Num": 19,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Dusk_1",
+                    "Memory_Act_Dusk_2",
+                    "Memory_Act_Dusk_3",
+                    "Memory_Act_Dusk_4",
+                    "Memory_Act_Dusk_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Dusk_6",
+                    "Memory_Act_Dusk_7",
+                    "Memory_Act_Dusk_8",
+                    "Memory_Act_Dusk_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Fire": {
         "ActiviType": "",
         "Condition": "",

@@ -9,6 +9,10 @@ function GetRewardMediator:initialize()
 end
 
 function GetRewardMediator:dispose()
+	if self._anim then
+		self._anim:clearCallbacks()
+	end
+
 	super.dispose(self)
 end
 
@@ -231,6 +235,7 @@ function GetRewardMediator:showOneIcon(index)
 	end
 
 	local anim = cc.MovieClip:create("icon_group_gongxihuode")
+	self._anim = anim
 
 	anim:setPlaySpeed(1.5)
 	anim:setPosition(cc.p(-8, 27))

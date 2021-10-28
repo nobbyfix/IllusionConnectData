@@ -468,6 +468,16 @@ all.Skill_XHMao_Wolf_Normal = {
 		this.main = global["[duration]"](this, {
 			833
 		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
@@ -508,6 +518,24 @@ all.Skill_XHMao_Wolf_Normal = {
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.AddStatus(_env, _env.ACTOR, "SummonedXHMao")
 		end)
 
 		return _env
@@ -844,6 +872,168 @@ all.Skill_XHMao_Passive_EX = {
 
 				if SummonedXHMao then
 					global.AddStatus(_env, SummonedXHMao, "SummonedXHMao")
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_XHMao_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.RateFactor = externs.RateFactor
+
+		if this.RateFactor == nil then
+			this.RateFactor = 400
+		end
+
+		this.WolfNum = externs.WolfNum
+
+		if this.WolfNum == nil then
+			this.WolfNum = 2
+		end
+
+		this.summonFactorHp = externs.summonFactorHp
+
+		if this.summonFactorHp == nil then
+			this.summonFactorHp = 1
+		end
+
+		this.summonFactorAtk = externs.summonFactorAtk
+
+		if this.summonFactorAtk == nil then
+			this.summonFactorAtk = 2
+		end
+
+		this.summonFactorDef = externs.summonFactorDef
+
+		if this.summonFactorDef == nil then
+			this.summonFactorDef = 1
+		end
+
+		this.WolfRateFactor = externs.WolfRateFactor
+
+		if this.WolfRateFactor == nil then
+			this.WolfRateFactor = 100
+		end
+
+		this.summonFactor = {
+			this.summonFactorHp,
+			this.summonFactorAtk,
+			this.summonFactorDef
+		}
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.FriendMaster(_env) then
+				global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.RateFactor)
+			end
+
+			for i = 1, this.WolfNum do
+				local SummonedXHMao = global.Summon(_env, _env.ACTOR, "SummonedXHMao", this.summonFactor, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if SummonedXHMao then
+					global.AddStatus(_env, SummonedXHMao, "SummonedXHMao")
+
+					local buff = global.PassiveFunEffectBuff(_env, "Skill_XHMao_Wolf_Passive", {
+						WolfRateFactor = this.WolfRateFactor
+					})
+
+					global.ApplyBuff(_env, SummonedXHMao, {
+						duration = 99,
+						group = "Skill_XHMao_Passive_Awaken",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"BUFF",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					})
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_XHMao_Wolf_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.WolfRateFactor = externs.WolfRateFactor
+
+		if this.WolfRateFactor == nil then
+			this.WolfRateFactor = 100
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.WolfRateFactor)
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				if global.MARKED(_env, "XHMao")(_env, unit) then
+					global.ApplyRPRecovery(_env, unit, this.WolfRateFactor)
 				end
 			end
 		end)

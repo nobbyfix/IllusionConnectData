@@ -200,7 +200,13 @@ return {
 				mTempName = "Home_En_Call",
 				fontSize = 30
 			},
-			redPointPos = cc.p(36, 4)
+			redPointPos = cc.p(36, 4),
+			drawNodePos = {
+				cc.p(40, 15),
+				cc.p(116, 89),
+				cc.p(41, 161),
+				cc.p(-26, 87)
+			}
 		},
 		mCardsGroupNode = {
 			mFunc = "onCardsGroupBtn",
@@ -215,7 +221,13 @@ return {
 				mTempName = "Home_En_Biandui",
 				fontSize = 26
 			},
-			redPointPos = cc.p(60, 6)
+			redPointPos = cc.p(60, 6),
+			drawNodePos = {
+				cc.p(64, 0),
+				cc.p(130, 74),
+				cc.p(65, 136),
+				cc.p(0, 76)
+			}
 		},
 		mGuildNode = {
 			mFunc = "onGuildBtn",
@@ -230,7 +242,13 @@ return {
 				mTempName = "Home_En_Jieshe",
 				fontSize = 26
 			},
-			redPointPos = cc.p(60, 6)
+			redPointPos = cc.p(60, 6),
+			drawNodePos = {
+				cc.p(64, 34),
+				cc.p(116, 80),
+				cc.p(65, 130),
+				cc.p(16, 78)
+			}
 		},
 		mBackFlowNode = {
 			mFunc = "onBackFlowBtn",

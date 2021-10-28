@@ -302,6 +302,10 @@ function RecruitMainMediator:initView()
 
 	self._urEquipNode:setVisible(false)
 
+	self._diamondNode = self._main:getChildByFullName("diamond")
+
+	self._diamondNode:setVisible(false)
+
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Skip"), TTF_FONT_FZYH_R, 20)
 
 	title1:enableOutline(cc.c4b(0, 0, 0, 204), 2)
@@ -435,7 +439,7 @@ function RecruitMainMediator:initTabController()
 			}
 		end
 
-		if previewType then
+		if previewType and previewType ~= "diamond" then
 			temp.tabImage = {
 				"asset/ui/recruit/" .. btnImage .. "1.png",
 				"asset/ui/recruit/" .. btnImage .. "1.png",
@@ -654,6 +658,7 @@ function RecruitMainMediator:onClickSkill(skill, heroData, skillDescPosX)
 
 	if not self._skillWidget then
 		self._skillWidget = self:autoManageObject(self:getInjector():injectInto(SkillDescWidget:new(SkillDescWidget:createWidgetNode(), {
+			scroll = true,
 			skill = skill,
 			mediator = self
 		})))
@@ -921,6 +926,13 @@ function RecruitMainMediator:runNodeActions()
 			if size.width > 1386 then
 				bg:setScale(0.6666666666666666)
 			end
+
+			local previewType = self._recruitDataShow:getPreview().type
+
+			if previewType == "diamond" then
+				bg:setOpacity(178.5)
+				bg:setFlippedX(true)
+			end
 		end
 	end
 end
@@ -984,6 +996,7 @@ end
 function RecruitMainMediator:refreshLeftTopNode()
 	local id = self._recruitDataShow:getId()
 	local type = self._recruitDataShow:getType()
+	local previewType = self._recruitDataShow:getPreview().type
 
 	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
 		if id == RecruitNewPlayerPool then
@@ -1088,6 +1101,10 @@ function RecruitMainMediator:refreshLeftTopNode()
 
 	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
 		self._drawNode:setPosition(cc.p(900, self._leftTimeNode:getPositionY() - 23))
+
+		if previewType == "diamond" then
+			self._drawNode:setPosition(cc.p(1020, self._leftTimeNode:getPositionY() - 23))
+		end
 	else
 		self._drawNode:setPosition(cc.p(self._leftTimeNode:getPositionX(), self._leftTimeNode:getPositionY() - 62))
 	end
@@ -1189,9 +1206,14 @@ function RecruitMainMediator:updateView()
 	self._tipBtn:setVisible(type ~= RecruitPoolType.kDiamond and type ~= RecruitPoolType.kEquip and self._recruitDataShow:getId() ~= RecruitNewPlayerPool)
 	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityUREquip))
 
+	local previewType = self._recruitDataShow:getPreview().type
+
 	if type == RecruitPoolType.kActivityUREquip then
 		self._main:getChildByFullName("node1"):setPositionY(85)
 		self._main:getChildByFullName("node2"):setPositionY(85)
+	elseif previewType == "diamond" then
+		self._main:getChildByFullName("node1"):setPositionY(65)
+		self._main:getChildByFullName("node2"):setPositionY(65)
 	else
 		self._main:getChildByFullName("node1"):setPositionY(97)
 		self._main:getChildByFullName("node2"):setPositionY(97)
@@ -1206,6 +1228,7 @@ function RecruitMainMediator:updateView()
 	self:refreshActivityUpView()
 	self:runNodeActions()
 	self:refreshUREQuipInfo()
+	self:refreshDiamondView()
 
 	local costNode1 = self._main:getChildByFullName("node1.recruitBtn1")
 	local costNode2 = self._main:getChildByFullName("node2.recruitBtn2")
@@ -1265,7 +1288,15 @@ function RecruitMainMediator:updateView()
 		self._recruitBtn2:setVisible(false)
 	end
 
-	if hasLeft ~= "" then
+	if previewType == "diamond" then
+		self:getView():getChildByFullName("main.node1.recruitBtn1"):loadTextures("lj_bbtl.png", "lj_bbtl.png", "lj_bbtl.png", 1)
+	else
+		self:getView():getChildByFullName("main.node1.recruitBtn1"):loadTextures("lj_bbt.png", "lj_bbt.png", "lj_bbt.png", 1)
+	end
+
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if hasLeft ~= "" and previewType ~= "diamond" then
 		self._leftCountNode:setVisible(true)
 		self._leftCountNode:getChildByFullName("text"):setString(hasLeft)
 		self._leftCountNode:getChildByFullName("text"):setPositionX(240)
@@ -1389,7 +1420,9 @@ function RecruitMainMediator:onRecruit1Clicked()
 		times = times
 	}
 
-	if self._bagSystem:checkCostEnough(costId, costCount) then
+	if self._bagSystem:checkCostEnough(costId, costCount, {
+		notShowTip = true
+	}) then
 		self._recruitSystem:requestRecruit(param)
 	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawExZuoHeItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
@@ -1972,4 +2005,196 @@ function RecruitMainMediator:refreshUREQuipInfo()
 	else
 		self._urEquipNode:setVisible(false)
 	end
+end
+
+function RecruitMainMediator:refreshDiamondView()
+	self._diamondNode:setVisible(false)
+
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if previewType ~= "diamond" then
+		return
+	end
+
+	local type = self._recruitDataShow:getType()
+	local nodeShow = type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub
+	local common_text_node = self._middleTimeNode:getChildByFullName("common_text")
+
+	common_text_node:removeAllChildren()
+	self._middleTimeNode:setVisible(nodeShow)
+	self._diamondNode:setVisible(true)
+
+	local text1 = self._diamondNode:getChildByName("Text_title")
+	local text2 = self._diamondNode:getChildByName("Text_title2")
+
+	text1:enableShadow(cc.c4b(65, 63, 140, 71.4), cc.size(0, -6), 1)
+	text2:enableShadow(cc.c4b(65, 63, 140, 71.4), cc.size(0, -6), 1)
+
+	local id = self._recruitDataShow:getId()
+	local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+	local activity = self._activitySystem:getActivityById(activityId)
+	local activityConfig = activity:getActivityConfig()
+	local bonusShow = activityConfig.BonusShow
+	local smallCell = self._diamondNode:getChildByName("Panel_small")
+
+	smallCell:setVisible(false)
+
+	local bigCell = self._diamondNode:getChildByName("Panel_big")
+
+	bigCell:setVisible(false)
+
+	local width = 0
+
+	if not self._diamondNode.hasInit then
+		self._diamondNode.bonusList = {}
+		self._diamondNode.hasInit = true
+
+		for i, v in pairs(bonusShow) do
+			local cell = nil
+
+			if v.type == "rareity" then
+				cell = smallCell:clone()
+
+				cell:setVisible(true)
+
+				local rareityImage = ccui.ImageView:create(GameStyle:getHeroRarityImage(tonumber(v.value)), 1)
+
+				rareityImage:setAnchorPoint(cc.p(0.5, 0.5))
+				rareityImage:addTo(cell):posite(35, 65):setScale(0.9)
+			elseif v.type == "hero" then
+				cell = bigCell:clone()
+
+				cell:setVisible(true)
+
+				local heroConfig = ConfigReader:getRecordById("HeroBase", v.value)
+				local heroImg = IconFactory:createRoleIconSprite({
+					id = heroConfig.RoleModel
+				})
+
+				heroImg:addTo(cell):posite(67, 61):setScale(0.3)
+			elseif v.type == "item" then
+				cell = bigCell:clone()
+
+				cell:setVisible(true)
+
+				local itemPic = IconFactory:createPic({
+					id = v.value
+				})
+
+				itemPic:addTo(cell):posite(67, 60):setScale(0.5)
+			end
+
+			if cell then
+				cell:addTo(self._diamondNode):posite(250 + width, 129)
+
+				width = width + cell:getContentSize().width
+				local timesText = cell:getChildByName("Text_times")
+
+				timesText:setString(Strings:get("DiamondDrawDesc", {
+					num = i
+				}))
+
+				local color = i % 2 == 1 and cc.c3b(255, 210, 0) or cc.c3b(255, 255, 255)
+
+				timesText:setTextColor(color)
+				timesText:enableOutline(cc.c4b(104, 108, 179, 60), 1)
+
+				local descText = cell:getChildByName("Text_desc")
+
+				descText:setString(Strings:get(v.desc))
+
+				self._diamondNode.bonusList[#self._diamondNode.bonusList + 1] = cell
+			end
+		end
+
+		local heroNamePanel = self._diamondNode:getChildByName("heroNamePanel")
+
+		heroNamePanel:setVisible(false)
+
+		local heroInfo = self._recruitDataShow:getRoleDetail()
+
+		if heroInfo then
+			for i = 1, #heroInfo do
+				local heroData = heroInfo[i]
+				local heroId = heroData.hero
+
+				if heroId then
+					local config = ConfigReader:getRecordById("HeroBase", tostring(heroId))
+					local namePanel = heroNamePanel:clone()
+
+					namePanel:setVisible(true)
+					namePanel:addTo(self._diamondNode)
+					namePanel:setPosition(cc.p(heroData.detail[1], heroData.detail[2]))
+
+					local image_Name_Bg = namePanel:getChildByFullName("Image_109")
+					local node_Rareity = namePanel:getChildByFullName("node_Rareity")
+
+					node_Rareity:removeAllChildren()
+
+					local rareityImage = ccui.ImageView:create(GameStyle:getHeroRarityImage(config.Rareity), 1)
+
+					rareityImage:setAnchorPoint(cc.p(0.5, 0))
+					rareityImage:setScale(0.61)
+					rareityImage:addTo(node_Rareity)
+
+					local nameText = namePanel:getChildByFullName("Text_132")
+
+					nameText:enableShadow(cc.c4b(0, 0, 0, 90), cc.size(0, -3), 3)
+					nameText:setString(Strings:get(config.Name))
+
+					if config.Rareity == 15 then
+						local width_Name = cc.Label:createWithTTF(Strings:get(config.Name), CUSTOM_TTF_FONT_1, 40)
+
+						width_Name:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+
+						if width_Name:getContentSize().width > 150 then
+							image_Name_Bg:setScaleX(1.8)
+						end
+					end
+
+					local nicheText = namePanel:getChildByFullName("Text_131")
+
+					nicheText:setString(Strings:get(config.Position))
+
+					local Image_bg = namePanel:getChildByFullName("Image_bg")
+
+					Image_bg:setScaleX(nicheText:getContentSize().width / 156)
+
+					local path = self:getHeroImagePath(heroId)
+					local role = ccui.ImageView:create(path)
+
+					role:addTo(self._diamondNode, -1 - i)
+					role:setPosition(cc.p(heroData.heroposition[1], heroData.heroposition[2]))
+					role:setScale(heroData.scale)
+				end
+			end
+		end
+	end
+
+	local times = self._recruitSystem:getDrawTimeById(id)
+
+	if self._diamondNode.bonusList then
+		for i, cell in pairs(self._diamondNode.bonusList) do
+			local doneImg = cell:getChildByName("Image_done")
+
+			doneImg:setVisible(i <= times["10"])
+			doneImg:setLocalZOrder(100)
+		end
+	end
+end
+
+function RecruitMainMediator:getHeroImagePath(heroId)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "RoleModel")
+	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "Bust4")
+	local modelID = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "Model")
+	local commonResource = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "CommonResource")
+
+	if not commonResource or commonResource == "" then
+		commonResource = modelID
+	end
+
+	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+	local path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(picInfo.Path)], commonResource, picInfo.Filename)
+
+	return path
 end
