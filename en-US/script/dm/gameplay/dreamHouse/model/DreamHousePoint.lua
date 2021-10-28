@@ -132,6 +132,21 @@ function DreamHousePoint:isPerfectPass()
 	return self:isPass() and self._totalStar == totalStarNum
 end
 
+function DreamHousePoint:isCurrentPerfectPass()
+	local totalStarNum = 0
+	local starNum = 0
+
+	for i = 1, #self._battleIds do
+		local battleId = self._battleIds[i]
+		local num = self:getBattleStarNum(battleId)
+		local starCond = ConfigReader:getDataByNameIdAndKey("DreamHouseBattle", battleId, "Star")
+		totalStarNum = totalStarNum + #starCond
+		starNum = starNum + num
+	end
+
+	return starNum == totalStarNum
+end
+
 function DreamHousePoint:getBattleStarNum(battleId)
 	local num = 0
 

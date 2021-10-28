@@ -112,6 +112,16 @@
             "storage": 5000
         }
     },
+    "AcitvityDuskStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityFemaleStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -143,6 +153,16 @@
         }
     },
     "AcitvityHalloweenStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityHalloweenStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,

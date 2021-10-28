@@ -499,6 +499,14 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 		local configId = self._dataModel:getConfigId()
 		local rareity = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "Rareity")
 
+		if not rareity then
+			local enemyInfo = ConfigReader:getRecordById("EnemyHero", configId)
+
+			if enemyInfo then
+				rareity = enemyInfo.Rarity
+			end
+		end
+
 		if rareity == 15 then
 			effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , true)
 
@@ -724,6 +732,10 @@ function UnitTLInterpreter:act_Flee(action, args)
 		if fleeWidget then
 			fleeWidget:reduceNum(args.cell, args.flags)
 		end
+	end
+
+	if self._heroHeadWidget and self._heroHeadWidget.unitDie then
+		self._heroHeadWidget:unitDie(self._id)
 	end
 end
 

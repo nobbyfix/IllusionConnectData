@@ -95,6 +95,7 @@ function CooperateBossBuyTimeMediator:refreshView()
 	end
 
 	self._des2:setString(Strings:get("CooperateBoss_PopUp_UI03", {
+		buy = tostring(#configBuyTimes - self._buyTime),
 		num = #configBuyTimes
 	}))
 end

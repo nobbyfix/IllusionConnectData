@@ -2134,6 +2134,39 @@ function ActivitySystem:tryEnterActivityMailView()
 	end
 end
 
+function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callback)
+	local storyPoint = activity:getBlockMapActivity(subActivityId):getPointById(pointId)
+
+	if not storyPoint:isPass() then
+		local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+		local function endCallBack()
+			self:requestDoChildActivity(activity:getId(), subActivityId, {
+				doActivityType = 106,
+				pointId = pointId
+			}, function (response)
+				local gallerySystem = DmGame:getInstance()._injector:getInstance("GallerySystem")
+
+				gallerySystem:setActivityStorySaveStatus(gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
+				storyDirector:notifyWaiting("story_play_end")
+				callback(response.data.reward)
+			end)
+		end
+
+		local storyAgent = storyDirector:getStoryAgent()
+
+		storyAgent:setSkipCheckSave(true)
+		storyAgent:trigger(storyLink, function ()
+			AudioEngine:getInstance():stopBackgroundMusic()
+		end, endCallBack)
+
+		return
+	end
+
+	callback()
+end
+
 function ActivitySystem:requestLightPuzzleOnePiece(activityId, pieceIndex, callback)
 	local param = {
 		doActivityType = 101
@@ -2222,37 +2255,4 @@ function ActivitySystem:requestGetPuzzleTaskReward(activityId, taskId, callback)
 			self:dispatch(Event:new(EVT_PUZZLEGAME_TASK_REFRESH))
 		end
 	end)
-end
-
-function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callback)
-	local storyPoint = activity:getBlockMapActivity(subActivityId):getPointById(pointId)
-
-	if not storyPoint:isPass() then
-		local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
-		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-
-		local function endCallBack()
-			self:requestDoChildActivity(activity:getId(), subActivityId, {
-				doActivityType = 106,
-				pointId = pointId
-			}, function (response)
-				local gallerySystem = DmGame:getInstance()._injector:getInstance("GallerySystem")
-
-				gallerySystem:setActivityStorySaveStatus(gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
-				storyDirector:notifyWaiting("story_play_end")
-				callback(response.data.reward)
-			end)
-		end
-
-		local storyAgent = storyDirector:getStoryAgent()
-
-		storyAgent:setSkipCheckSave(true)
-		storyAgent:trigger(storyLink, function ()
-			AudioEngine:getInstance():stopBackgroundMusic()
-		end, endCallBack)
-
-		return
-	end
-
-	callback()
 end

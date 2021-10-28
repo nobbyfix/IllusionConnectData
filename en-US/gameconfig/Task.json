@@ -5582,6 +5582,36 @@
             "VIP": 0
         }
     },
+    "StageArena_Task16_1": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    48000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3016,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_16_1",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task17": {
         "AccumulateTimes": 0,
         "AfterFinish": 0,
@@ -5944,7 +5974,7 @@
     },
     "StageArena_Task28": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -5974,7 +6004,7 @@
     },
     "StageArena_Task29": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6034,7 +6064,7 @@
     },
     "StageArena_Task30": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6064,7 +6094,7 @@
     },
     "StageArena_Task31": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6092,9 +6122,39 @@
             "VIP": 0
         }
     },
+    "StageArena_Task31_1": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    115000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3031,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_31_1",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task32": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6124,7 +6184,7 @@
     },
     "StageArena_Task33": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6154,7 +6214,7 @@
     },
     "StageArena_Task34": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6184,7 +6244,7 @@
     },
     "StageArena_Task35": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6214,7 +6274,7 @@
     },
     "StageArena_Task36": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6244,7 +6304,7 @@
     },
     "StageArena_Task37": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6274,7 +6334,7 @@
     },
     "StageArena_Task38": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6302,9 +6362,39 @@
             "VIP": 0
         }
     },
+    "StageArena_Task38_1": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    150000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3038,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_38_1",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task39": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6364,7 +6454,7 @@
     },
     "StageArena_Task40": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6394,7 +6484,7 @@
     },
     "StageArena_Task41": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6424,7 +6514,7 @@
     },
     "StageArena_Task42": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6454,7 +6544,7 @@
     },
     "StageArena_Task43": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6484,7 +6574,7 @@
     },
     "StageArena_Task44": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6512,9 +6602,39 @@
             "VIP": 0
         }
     },
+    "StageArena_Task44_1": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    180000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3044,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_44_1",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task45": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6544,7 +6664,7 @@
     },
     "StageArena_Task46": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6574,7 +6694,7 @@
     },
     "StageArena_Task47": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6604,7 +6724,7 @@
     },
     "StageArena_Task48": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6634,7 +6754,7 @@
     },
     "StageArena_Task49": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6694,7 +6814,7 @@
     },
     "StageArena_Task50": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6724,7 +6844,7 @@
     },
     "StageArena_Task51": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6754,7 +6874,7 @@
     },
     "StageArena_Task52": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6784,7 +6904,7 @@
     },
     "StageArena_Task53": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6814,7 +6934,7 @@
     },
     "StageArena_Task54": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6844,7 +6964,7 @@
     },
     "StageArena_Task55": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6874,7 +6994,7 @@
     },
     "StageArena_Task56": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6904,7 +7024,7 @@
     },
     "StageArena_Task57": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6934,7 +7054,7 @@
     },
     "StageArena_Task58": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -6964,7 +7084,7 @@
     },
     "StageArena_Task59": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0
@@ -7024,7 +7144,7 @@
     },
     "StageArena_Task60": {
         "AccumulateTimes": 0,
-        "AfterFinish": "",
+        "AfterFinish": 0,
         "ClientCondition": {
             "LEVEL": 1,
             "VIP": 0

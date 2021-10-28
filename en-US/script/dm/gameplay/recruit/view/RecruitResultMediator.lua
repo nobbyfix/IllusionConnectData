@@ -224,18 +224,6 @@ function RecruitMainMediator:refreshBg(heroId)
 end
 
 function RecruitMainMediator:showResultAnim(showBtnsPanel)
-	if CommonUtils.GetSwitch("fn_Recruit_StoreCommunity") then
-		for k, data in pairs(self._rewards) do
-			if data.code and data.type == 3 then
-				local heroConfig = ConfigReader:getRecordById("HeroBase", data.code)
-
-				if heroConfig and heroConfig.Rareity >= 14 then
-					self._settingSystem:showStoreCommunityView(self._rewards)
-				end
-			end
-		end
-	end
-
 	local cardType = self._recruitDataShow:getType()
 	local showBtnsPanel = showBtnsPanel or cardType ~= RecruitPoolType.kActivity and cardType ~= RecruitPoolType.kDiamond
 	local length = #self._showAnimNodes

@@ -234,6 +234,7 @@ all.Skill_AMLBLTe_Unique = {
 						duration = 99,
 						limit = 1,
 						tags = {
+							"BUFF",
 							"AMLBLTe_Undead",
 							"UNDEAD",
 							"STATUS",
@@ -285,6 +286,7 @@ all.Skill_AMLBLTe_Unique = {
 				duration = 99,
 				display = "Shield",
 				tags = {
+					"BUFF",
 					"SHIELD",
 					"STATUS",
 					"DISPELLABLE",
@@ -300,6 +302,7 @@ all.Skill_AMLBLTe_Unique = {
 					duration = 99,
 					display = "Shield",
 					tags = {
+						"BUFF",
 						"SHIELD",
 						"STATUS",
 						"DISPELLABLE",
@@ -904,6 +907,7 @@ all.Skill_AMLBLTe_Unique_EX = {
 						duration = 99,
 						limit = 1,
 						tags = {
+							"BUFF",
 							"AMLBLTe_Undead",
 							"UNDEAD",
 							"STATUS",
@@ -955,6 +959,7 @@ all.Skill_AMLBLTe_Unique_EX = {
 				duration = 99,
 				display = "Shield",
 				tags = {
+					"BUFF",
 					"SHIELD",
 					"STATUS",
 					"DISPELLABLE",
@@ -970,6 +975,7 @@ all.Skill_AMLBLTe_Unique_EX = {
 					duration = 99,
 					display = "Shield",
 					tags = {
+						"BUFF",
 						"SHIELD",
 						"STATUS",
 						"DISPELLABLE",

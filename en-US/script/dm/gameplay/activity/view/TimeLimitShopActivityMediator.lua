@@ -83,6 +83,13 @@ local timeLimitShopConfig = {
 	animal = {
 		BG = "jqtd_txt_zwzj_di",
 		TimeOutLineColor = cc.c4b(164, 116, 91, 255)
+	},
+	dusk = {
+		CellBuyEndImg = "jqtd_img_yywgzl_jldih.png",
+		CellBuyImg = "jqtd_img_yywgzl_jldi.png",
+		BG = "jqtd_txt_yywgzl_di",
+		TimeOutLineColor = cc.c4b(105, 0, 106, 255),
+		CellNameColor = cc.c4b(159, 122, 165, 89.25)
 	}
 }
 local btnHandlers = {
@@ -155,22 +162,22 @@ function TimeLimitShopActivityMediator:setupView()
 		self._bg:setContentSize(config.bgSize)
 	end
 
-	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell")
-
-	if not self._cellClone and config.cell then
-		self._cellClone = self._view:getChildByFullName(config.cell.cellPanel)
-
-		if config.cell.cellDi then
-			self._cellClone:getChildByFullName("cell.bg"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[1])
-			self._cellClone:getChildByFullName("cell.bg_buy"):loadTexture("asset/ui/activity/" .. config.cell.cellDi[2])
-		end
-
-		if config.cell.nameColor then
-			self._cellClone:getChildByFullName("cell.goods_name"):setTextColor(config.cell.nameColor)
-		end
-	end
+	self._cellClone = self._view:getChildByFullName(self._packType .. "Cell") or self._view:getChildByFullName("foolsdayCell")
 
 	assert(self._cellClone ~= nil, "Error:Not Found ItemCell By Type:" .. self._packType)
+
+	if config and config.CellBuyImg then
+		self._cellClone:getChildByFullName("cell.bg"):loadTexture("asset/ui/activity/" .. config.CellBuyImg, ccui.TextureResType.localType)
+	end
+
+	if config and config.CellBuyEndImg then
+		self._cellClone:getChildByFullName("cell.bg_buy"):loadTexture("asset/ui/activity/" .. config.CellBuyEndImg, ccui.TextureResType.localType)
+	end
+
+	if config and config.CellNameColor then
+		self._cellClone:getChildByFullName("cell.goods_name"):setColor(config.CellNameColor)
+	end
+
 	self:enableTimeLimitShopTimer()
 	self:setUpPackageState()
 	self:setupAnim()

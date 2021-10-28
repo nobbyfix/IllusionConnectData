@@ -85,13 +85,15 @@ local kAddBtnFuncMap = {
 	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = function (self)
 		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 		self._shopSystem:tryEnter({
-			shopId = ShopSpecialId.kShopTimeLimit
+			subid = "Shop_TimeLimit",
+			shopId = ShopSpecialId.KShopTimelimitedmall
 		})
 	end,
 	[CurrencyIdKind.kDiamondDrawURItem] = function (self)
 		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 		self._shopSystem:tryEnter({
-			shopId = ShopSpecialId.kShopTimeLimit
+			subid = "Shop_TimeLimit",
+			shopId = ShopSpecialId.KShopTimelimitedmall
 		})
 	end
 }
@@ -775,6 +777,10 @@ function TopInfoWidget:updateTitle(title, fontSize)
 				_titleNode:setFontSize(fontSize)
 			elseif getCurrentLanguage() ~= GameLanguageType.CN then
 				_titleNode:setFontSize(37)
+			end
+
+			if getCurrentLanguage() ~= GameLanguageType.CN then
+				_titleNode:setPositionY(50)
 			end
 
 			_titleNode:setPositionX(x)

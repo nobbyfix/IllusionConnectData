@@ -629,6 +629,7 @@ function ShopSystem:syncSurface(data)
 end
 
 function ShopSystem:getSurfaceList()
+	local curTime = self:getCurSystemTime()
 	local list = {}
 	local keyList = ConfigReader:getKeysOfTable("ShopSurface")
 
@@ -644,7 +645,13 @@ function ShopSystem:getSurfaceList()
 			if hasSurface and hasSurface:getUnlock() then
 				local surfaceItem = ShopSurface:new(key)
 
-				table.insert(list, surfaceItem)
+				if surfaceItem:getIsLimit() then
+					if surfaceItem:getStartMills() <= curTime and curTime <= surfaceItem:getEndMills() then
+						table.insert(list, surfaceItem)
+					end
+				else
+					table.insert(list, surfaceItem)
+				end
 			elseif canBuySurface then
 				table.insert(list, canBuySurface)
 			end

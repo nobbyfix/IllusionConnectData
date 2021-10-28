@@ -71,6 +71,22 @@ function ActstageBattleSession:buildCoreBattleLogic()
 	return battleLogic
 end
 
+function ActstageBattleSession:_adjustPlayerData(data, extra)
+	super._adjustPlayerData(self, data, extra)
+
+	local heros = data.waves and data.waves[1].heros
+
+	if heros then
+		for idx, hero in pairs(heros) do
+			local enemyCfg = ConfigReader:getRecordById("EnemyHero", hero.configId)
+
+			if enemyCfg and enemyCfg.RageRules then
+				hero.angerRules = enemyCfg.RageRules
+			end
+		end
+	end
+end
+
 function ActstageBattleSession:getBattleResultAndWinnerIds()
 	local battleSimulator = self._battleSimulator
 	local battleResult = battleSimulator and battleSimulator:getBattleResult()

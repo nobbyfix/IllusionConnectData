@@ -257,6 +257,12 @@
     "Target_SLWan": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_SNGLSi": {
+        "Function": ""
+    },
+    "Target_SP_ALPo": {
+        "Function": "return MainTarget()"
+    },
     "Target_SP_KTSJKe": {
         "Function": "return MainTarget()"
     },

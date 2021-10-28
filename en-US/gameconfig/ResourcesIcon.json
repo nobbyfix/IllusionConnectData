@@ -324,7 +324,41 @@
         "Shine": "",
         "Sicon": "IM_HD_HalloweenBossStamina_Small"
     },
+    "IM_HalloweenBossStamina_Re": {
+        "Desc": "IM_HalloweenBossStamina_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenBossStamina"
+        ],
+        "Licon": "IM_HD_HalloweenBossStamina",
+        "Name": "IM_HalloweenBossStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenBossStamina_Small"
+    },
     "IM_HalloweenExchange_4": {
+        "Desc": "IM_Exchange_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenExchange_4"
+        ],
+        "Licon": "IM_HD_HalloweenExchange_4",
+        "Name": "IM_HalloweenExchange_4_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenExchange_4_Small"
+    },
+    "IM_HalloweenExchange_4_Re": {
         "Desc": "IM_Exchange_FunctionDesc",
         "LargeIcons": [
             "IM_HD_HalloweenExchange_4"
@@ -1079,6 +1113,40 @@
         "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
     },
     "IR_HalloweenStaminaConsumed": {
+        "Desc": "IR_HalloweenStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_HalloweenAcitvityStamina"
+        ],
+        "Licon": "IR_HD_HalloweenAcitvityStamina",
+        "Name": "IR_HalloweenStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
+    },
+    "IR_HalloweenStamina_Re": {
+        "Desc": "IR_HalloweenStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_HalloweenAcitvityStamina"
+        ],
+        "Licon": "IR_HD_HalloweenAcitvityStamina",
+        "Name": "IR_HalloweenStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
+    },
+    "IR_HalloweenStamina_ReConsumed": {
         "Desc": "IR_HalloweenStamina_FunctionDesc",
         "LargeIcons": [
             "IR_HD_HalloweenAcitvityStamina"

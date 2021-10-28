@@ -1450,6 +1450,13 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	local deers = global.FriendUnits(_env, global.SUMMONS * global.HASSTATUS(_env, "SummonedSNGLSi"))
+	local deer_ratio = global.SpecialPropGetter(_env, "Skill_SNGLSi_Passive")(_env, global.FriendField(_env))
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
+		damage = global.SNGLSi_Damage_Share(_env, deers, damage, deer_ratio)
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -1994,6 +2001,13 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				global.ApplyHPDamage(_env, unit, summons_damage)
 			end
 		end
+	end
+
+	local deers = global.FriendUnits(_env, global.SUMMONS * global.HASSTATUS(_env, "SummonedSNGLSi"))
+	local deer_ratio = global.SpecialPropGetter(_env, "Skill_SNGLSi_Passive")(_env, global.FriendField(_env))
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
+		damage = global.SNGLSi_Damage_Share(_env, deers, damage, deer_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -2559,6 +2573,13 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				global.ApplyHPDamage(_env, unit, summons_damage)
 			end
 		end
+	end
+
+	local deers = global.FriendUnits(_env, global.SUMMONS * global.HASSTATUS(_env, "SummonedSNGLSi"))
+	local deer_ratio = global.SpecialPropGetter(_env, "Skill_SNGLSi_Passive")(_env, global.FriendField(_env))
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
+		damages[n] = global.SNGLSi_Damage_Share(_env, deers, damages[n], deer_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -3155,6 +3176,13 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				global.ApplyHPDamage(_env, unit, summons_damage)
 			end
 		end
+	end
+
+	local deers = global.FriendUnits(_env, global.SUMMONS * global.HASSTATUS(_env, "SummonedSNGLSi"))
+	local deer_ratio = global.SpecialPropGetter(_env, "Skill_SNGLSi_Passive")(_env, global.FriendField(_env))
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
+		damages[n] = global.SNGLSi_Damage_Share(_env, deers, damages[n], deer_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)

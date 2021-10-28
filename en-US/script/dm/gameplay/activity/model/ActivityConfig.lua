@@ -177,7 +177,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFireWorks] = "ActivityFireWorksMainView",
 		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView",
-		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView"
+		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView",
+		[ActivityType_UI.KActivityDusk] = "ActivityDuskMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -206,7 +207,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFireWorks] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView",
-		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityDusk] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -240,7 +242,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFireWorks] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityDusk] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -346,6 +349,13 @@ ActivityLogin14Config = {
 	},
 	EightDays_Animal = {
 		resFile = "asset/ui/ActivityAnimalLogin14.csb"
+	},
+	EightDays_Dusk = {
+		resFile = "asset/ui/ActivityDuskLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(202, 247, 252, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -451,6 +461,18 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(255, 252, 208, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivityDusk] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(153, 255, 255, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(254, 255, 144, 255)
+				}
+			}
 		}
 	},
 	anim = {
@@ -490,6 +512,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityAnimal] = {
 			name = "zhuye_xinyuanyimiaochangjing",
 			position = cc.p(-131, 60)
+		},
+		[ActivityType_UI.KActivityDusk] = {
+			name = "ZSfuben_TX_zhushenhuanghunfuben",
+			position = cc.p(130, 128)
 		}
 	}
 }

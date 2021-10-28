@@ -403,10 +403,30 @@ function HomeSystem:getBannerAct()
 			local activityId = bannerInfo.TypeId
 
 			if self._activitySystem:isActivityOpen(activityId) and not self._activitySystem:isActivityOver(activityId) then
-				animName[#animName + 1] = {
-					bannerInfo = bannerInfo,
-					id = activityId
-				}
+				local bannerTime = bannerInfo.BannerTime
+				local isOpen = true
+
+				if bannerTime then
+					local start = bannerTime.start[1]
+					local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+					local mills = TimeUtil:timeByRemoteDate({
+						year = y,
+						month = mon,
+						day = d,
+						hour = h,
+						min = m,
+						sec = s
+					})
+					mills = mills * 1000
+					isOpen = self._activitySystem:isActivityOpen(bannerInfo.TypeId, mills)
+				end
+
+				if isOpen then
+					animName[#animName + 1] = {
+						bannerInfo = bannerInfo,
+						id = activityId
+					}
+				end
 			end
 		elseif bannerType == ActivityBannerType.kCooperateBoss and self._cooperateSystem:cooperateBossShow() then
 			animName[#animName + 1] = {

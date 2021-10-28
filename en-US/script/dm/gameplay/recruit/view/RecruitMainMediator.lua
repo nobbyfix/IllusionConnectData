@@ -17,9 +17,6 @@ RecruitMainMediator:has("_activitySystem", {
 RecruitMainMediator:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
-RecruitMainMediator:has("_settingSystem", {
-	is = "r"
-}):injectWith("SettingSystem")
 require("dm.gameplay.recruit.view.RecruitResultMediator")
 
 local kBtnHandlers = {
@@ -306,6 +303,10 @@ function RecruitMainMediator:initView()
 	self._urEquipNode = self._main:getChildByFullName("urequip")
 
 	self._urEquipNode:setVisible(false)
+
+	self._diamondNode = self._main:getChildByFullName("diamond")
+
+	self._diamondNode:setVisible(false)
 
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Skip"), TTF_FONT_FZYH_R, 24)
 
@@ -1216,6 +1217,7 @@ function RecruitMainMediator:updateView()
 	self:refreshActivityUpView()
 	self:runNodeActions()
 	self:refreshUREQuipInfo()
+	self:refreshDiamondView()
 
 	local costNode1 = self._main:getChildByFullName("node1.recruitBtn1")
 	local costNode2 = self._main:getChildByFullName("node2.recruitBtn2")
@@ -1410,7 +1412,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 		notShowTip = true
 	}) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem or costId == CurrencyIdKind.kDiamondDrawEX_SAGA then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1445,7 +1447,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem or costId == CurrencyIdKind.kDiamondDrawEX_SAGA then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {

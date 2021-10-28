@@ -903,7 +903,7 @@ function CooperateBossInviteFriendMediator:setupBossTime()
 		elseif timeTab.hour > 0 then
 			str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.s .. Strings:get("TimeUtil_Sec")
 		else
-			timeTab.min = math.max(1, timeTab.min)
+			timeTab.min = math.max(0, timeTab.min)
 			str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.s .. Strings:get("TimeUtil_Sec")
 		end
 
