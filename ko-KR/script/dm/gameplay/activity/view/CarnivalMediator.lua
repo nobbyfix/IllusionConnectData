@@ -850,8 +850,9 @@ function CarnivalMediator:onClickPlayStory()
 		local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 
 		local function endCallback()
+			local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 			local customKey = self._model:getId() .. "_story"
-			local customData = self._customDataSystem:getValue(PrefixType.kGlobal, customKey)
+			local customData = customDataSystem:getValue(PrefixType.kGlobal, customKey)
 			local id_first = 0
 
 			if not customData then

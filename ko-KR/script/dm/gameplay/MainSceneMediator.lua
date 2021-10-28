@@ -214,6 +214,9 @@ local muiscCfg = {
 	},
 	ActivityAnimalMainView = {
 		noAutoPlay = true
+	},
+	ActivityDuskMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

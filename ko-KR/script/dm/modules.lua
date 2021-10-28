@@ -2093,6 +2093,11 @@ local modules = {
 							res = "asset/ui/ActivityAnimalMain.csb",
 							name = "ActivityAnimalMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityDuskMain.csb",
+							name = "ActivityDuskMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

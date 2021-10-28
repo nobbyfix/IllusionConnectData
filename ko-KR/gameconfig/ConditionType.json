@@ -503,6 +503,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_DrawTimeReward_Desc"
     },
+    "Condi_DuskExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Dusk_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DuskExchangeAchieve_Desc"
+    },
     "Condi_EliteStage": {
         "AchieveType1": "SIZEREACH",
         "AchieveType2": "",

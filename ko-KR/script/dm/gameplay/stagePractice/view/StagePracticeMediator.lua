@@ -449,6 +449,8 @@ function StagePracticeMediator:resumeWithData(viewData)
 	if self._tableView then
 		self:refreshCurCell()
 	end
+
+	self:showReward(self._curPointData:getId())
 end
 
 function StagePracticeMediator:resertcurPointIndex(userdata)

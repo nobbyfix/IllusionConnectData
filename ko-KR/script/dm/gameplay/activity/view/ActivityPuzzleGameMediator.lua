@@ -210,6 +210,14 @@ function ActivityPuzzleGameMediator:createPuzzleBg()
 	puzzleBg:setAnchorPoint(oldAnchor)
 	puzzleBg:setPosition(oldPos)
 	puzzleBg:setScale(oldScale)
+
+	local titleImg = self._activity:getActivityConfig().PuzzleTopUI
+	local title = self._main:getChildByFullName("Image_1")
+
+	if titleImg then
+		title:ignoreContentAdaptWithSize(true)
+		title:loadTexture(titleImg .. ".png", ccui.TextureResType.plistType)
+	end
 end
 
 function ActivityPuzzleGameMediator:refreshRedPoint()

@@ -947,6 +947,222 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_Dusk_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_1",
+        "Name": "DuskS01S01_Name",
+        "Num": 990,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_00a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_1",
+        "Name": "DuskS01S02_Name",
+        "Num": 991,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_1",
+        "Name": "DuskS01S03_Name",
+        "Num": 992,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_1",
+        "Name": "DuskS01S04_Name",
+        "Num": 993,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S05"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_1",
+        "Name": "DuskS01S05_Name",
+        "Num": 994,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS02S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_2",
+        "Name": "DuskS02S01_Name",
+        "Num": 995,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_05a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS02S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_2",
+        "Name": "DuskS02S02_Name",
+        "Num": 996,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_06a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS02S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_2",
+        "Name": "DuskS02S03_Name",
+        "Num": 997,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_07a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Dusk_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS02S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_dusk_2",
+        "Name": "DuskS02S04_Name",
+        "Num": 998,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_dusk_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_FireWorks_1": {
         "Condition": [
             {

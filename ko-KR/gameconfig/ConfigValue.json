@@ -2196,6 +2196,10 @@
         "clz": "int",
         "content": 3
     },
+    "CooperationBossBumbleTip": {
+        "clz": "int",
+        "content": 480
+    },
     "Crusade_5_Star_buff": {
         "clz": "string",
         "content": "Crusade_ExcellentHero_Stars"
@@ -3448,7 +3452,7 @@
                 ]
             ],
             "love": 10,
-            "loveMax": 9,
+            "loveMax": 11,
             "time": [
                 5,
                 9,
@@ -9450,7 +9454,10 @@
             "XDE",
             "Hla",
             "YMJDe",
-            "FLEr"
+            "FLEr",
+            "SP_ALPo",
+            "SNGLSi",
+            "HLDNan"
         ]
     },
     "Tower_1_GrowMaxValue": {

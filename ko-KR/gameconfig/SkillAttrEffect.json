@@ -1677,6 +1677,146 @@
             0.6
         ]
     },
+    "Dusk_FLEr_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.05,
+            0.05
+        ]
+    },
+    "Dusk_FLEr_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Dusk_FLEr_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Dusk_YMJDe_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Dusk_YMJDe_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.35,
+            0.35
+        ]
+    },
+    "Dusk_YMJDe_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "Dusk_YMJDe_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.55,
+            0.55
+        ]
+    },
     "EffectAttr001": {
         "AttrType": [
             "ATK_RATE"
@@ -2551,6 +2691,24 @@
             39
         ]
     },
+    "Gallery_10Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            191
+        ]
+    },
     "Gallery_10Cost_2": {
         "AttrType": [
             "ATK"
@@ -2567,6 +2725,60 @@
         "Target": "SELF",
         "Value": [
             19
+        ]
+    },
+    "Gallery_10Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            47
+        ]
+    },
+    "Gallery_10Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            191
+        ]
+    },
+    "Gallery_10Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            47
         ]
     },
     "Gallery_10Cost_3": {
@@ -2875,6 +3087,24 @@
             40
         ]
     },
+    "Gallery_11Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            189
+        ]
+    },
     "Gallery_11Cost_2": {
         "AttrType": [
             "ATK"
@@ -2891,6 +3121,60 @@
         "Target": "SELF",
         "Value": [
             20
+        ]
+    },
+    "Gallery_11Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            47
+        ]
+    },
+    "Gallery_11Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            189
+        ]
+    },
+    "Gallery_11Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            47
         ]
     },
     "Gallery_11Cost_3": {
@@ -3199,6 +3483,24 @@
             42
         ]
     },
+    "Gallery_12Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            197
+        ]
+    },
     "Gallery_12Cost_2": {
         "AttrType": [
             "ATK"
@@ -3215,6 +3517,60 @@
         "Target": "SELF",
         "Value": [
             20
+        ]
+    },
+    "Gallery_12Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            51
+        ]
+    },
+    "Gallery_12Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            197
+        ]
+    },
+    "Gallery_12Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            51
         ]
     },
     "Gallery_12Cost_3": {
@@ -3523,6 +3879,24 @@
             43
         ]
     },
+    "Gallery_13Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            201
+        ]
+    },
     "Gallery_13Cost_2": {
         "AttrType": [
             "ATK"
@@ -3539,6 +3913,60 @@
         "Target": "SELF",
         "Value": [
             21
+        ]
+    },
+    "Gallery_13Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            52
+        ]
+    },
+    "Gallery_13Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            201
+        ]
+    },
+    "Gallery_13Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            52
         ]
     },
     "Gallery_13Cost_3": {
@@ -3847,6 +4275,24 @@
             44
         ]
     },
+    "Gallery_14Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            209
+        ]
+    },
     "Gallery_14Cost_2": {
         "AttrType": [
             "ATK"
@@ -3863,6 +4309,60 @@
         "Target": "SELF",
         "Value": [
             22
+        ]
+    },
+    "Gallery_14Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            53
+        ]
+    },
+    "Gallery_14Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            209
+        ]
+    },
+    "Gallery_14Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            53
         ]
     },
     "Gallery_14Cost_3": {
@@ -4171,6 +4671,24 @@
             45
         ]
     },
+    "Gallery_15Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            210
+        ]
+    },
     "Gallery_15Cost_2": {
         "AttrType": [
             "ATK"
@@ -4187,6 +4705,60 @@
         "Target": "SELF",
         "Value": [
             23
+        ]
+    },
+    "Gallery_15Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            54
+        ]
+    },
+    "Gallery_15Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            210
+        ]
+    },
+    "Gallery_15Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            54
         ]
     },
     "Gallery_15Cost_3": {
@@ -4495,6 +5067,24 @@
             46
         ]
     },
+    "Gallery_16Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            218
+        ]
+    },
     "Gallery_16Cost_2": {
         "AttrType": [
             "ATK"
@@ -4511,6 +5101,60 @@
         "Target": "SELF",
         "Value": [
             23
+        ]
+    },
+    "Gallery_16Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            52
+        ]
+    },
+    "Gallery_16Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            218
+        ]
+    },
+    "Gallery_16Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            52
         ]
     },
     "Gallery_16Cost_3": {
@@ -4819,6 +5463,24 @@
             48
         ]
     },
+    "Gallery_17Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            222
+        ]
+    },
     "Gallery_17Cost_2": {
         "AttrType": [
             "ATK"
@@ -4835,6 +5497,60 @@
         "Target": "SELF",
         "Value": [
             24
+        ]
+    },
+    "Gallery_17Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            59
+        ]
+    },
+    "Gallery_17Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            222
+        ]
+    },
+    "Gallery_17Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            59
         ]
     },
     "Gallery_17Cost_3": {
@@ -5143,6 +5859,24 @@
             49
         ]
     },
+    "Gallery_18Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            230
+        ]
+    },
     "Gallery_18Cost_2": {
         "AttrType": [
             "ATK"
@@ -5159,6 +5893,60 @@
         "Target": "SELF",
         "Value": [
             25
+        ]
+    },
+    "Gallery_18Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            60
+        ]
+    },
+    "Gallery_18Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            230
+        ]
+    },
+    "Gallery_18Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            60
         ]
     },
     "Gallery_18Cost_3": {
@@ -5467,6 +6255,24 @@
             50
         ]
     },
+    "Gallery_19Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            231
+        ]
+    },
     "Gallery_19Cost_2": {
         "AttrType": [
             "ATK"
@@ -5483,6 +6289,60 @@
         "Target": "SELF",
         "Value": [
             25
+        ]
+    },
+    "Gallery_19Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            58
+        ]
+    },
+    "Gallery_19Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            231
+        ]
+    },
+    "Gallery_19Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            58
         ]
     },
     "Gallery_19Cost_3": {
@@ -5791,6 +6651,24 @@
             51
         ]
     },
+    "Gallery_20Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            239
+        ]
+    },
     "Gallery_20Cost_2": {
         "AttrType": [
             "ATK"
@@ -5807,6 +6685,60 @@
         "Target": "SELF",
         "Value": [
             26
+        ]
+    },
+    "Gallery_20Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            59
+        ]
+    },
+    "Gallery_20Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            239
+        ]
+    },
+    "Gallery_20Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            59
         ]
     },
     "Gallery_20Cost_3": {
@@ -6115,6 +7047,24 @@
             24
         ]
     },
+    "Gallery_3Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            84
+        ]
+    },
     "Gallery_3Cost_2": {
         "AttrType": [
             "ATK"
@@ -6131,6 +7081,60 @@
         "Target": "SELF",
         "Value": [
             12
+        ]
+    },
+    "Gallery_3Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            28
+        ]
+    },
+    "Gallery_3Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            84
+        ]
+    },
+    "Gallery_3Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            28
         ]
     },
     "Gallery_3Cost_3": {
@@ -6439,6 +7443,24 @@
             27
         ]
     },
+    "Gallery_4Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            105
+        ]
+    },
     "Gallery_4Cost_2": {
         "AttrType": [
             "ATK"
@@ -6455,6 +7477,60 @@
         "Target": "SELF",
         "Value": [
             14
+        ]
+    },
+    "Gallery_4Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            33
+        ]
+    },
+    "Gallery_4Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            105
+        ]
+    },
+    "Gallery_4Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            33
         ]
     },
     "Gallery_4Cost_3": {
@@ -6763,6 +7839,24 @@
             30
         ]
     },
+    "Gallery_5Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            126
+        ]
+    },
     "Gallery_5Cost_2": {
         "AttrType": [
             "ATK"
@@ -6779,6 +7873,60 @@
         "Target": "SELF",
         "Value": [
             15
+        ]
+    },
+    "Gallery_5Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            35
+        ]
+    },
+    "Gallery_5Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            126
+        ]
+    },
+    "Gallery_5Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            35
         ]
     },
     "Gallery_5Cost_3": {
@@ -7087,6 +8235,24 @@
             33
         ]
     },
+    "Gallery_6Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            147
+        ]
+    },
     "Gallery_6Cost_2": {
         "AttrType": [
             "ATK"
@@ -7103,6 +8269,60 @@
         "Target": "SELF",
         "Value": [
             16
+        ]
+    },
+    "Gallery_6Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            37
+        ]
+    },
+    "Gallery_6Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            147
+        ]
+    },
+    "Gallery_6Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            37
         ]
     },
     "Gallery_6Cost_3": {
@@ -7411,6 +8631,24 @@
             36
         ]
     },
+    "Gallery_7Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            168
+        ]
+    },
     "Gallery_7Cost_2": {
         "AttrType": [
             "ATK"
@@ -7427,6 +8665,60 @@
         "Target": "SELF",
         "Value": [
             18
+        ]
+    },
+    "Gallery_7Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            42
+        ]
+    },
+    "Gallery_7Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            168
+        ]
+    },
+    "Gallery_7Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            42
         ]
     },
     "Gallery_7Cost_3": {
@@ -7735,6 +9027,24 @@
             38
         ]
     },
+    "Gallery_8Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            184
+        ]
+    },
     "Gallery_8Cost_2": {
         "AttrType": [
             "ATK"
@@ -7751,6 +9061,60 @@
         "Target": "SELF",
         "Value": [
             18
+        ]
+    },
+    "Gallery_8Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            45
+        ]
+    },
+    "Gallery_8Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            184
+        ]
+    },
+    "Gallery_8Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            45
         ]
     },
     "Gallery_8Cost_3": {
@@ -8059,6 +9423,24 @@
             39
         ]
     },
+    "Gallery_9Cost_19": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            188
+        ]
+    },
     "Gallery_9Cost_2": {
         "AttrType": [
             "ATK"
@@ -8075,6 +9457,60 @@
         "Target": "SELF",
         "Value": [
             19
+        ]
+    },
+    "Gallery_9Cost_20": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            45
+        ]
+    },
+    "Gallery_9Cost_21": {
+        "AttrType": [
+            "HP"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            188
+        ]
+    },
+    "Gallery_9Cost_22": {
+        "AttrType": [
+            "ATK"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            45
         ]
     },
     "Gallery_9Cost_3": {
@@ -8201,6 +9637,42 @@
         "Target": "SELF",
         "Value": [
             104
+        ]
+    },
+    "Gallery_Cost_10_Def": {
+        "AttrType": [
+            "DEF"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            6
+        ]
+    },
+    "Gallery_Cost_11_Def": {
+        "AttrType": [
+            "DEF"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            6
         ]
     },
     "Gallery_Cost_1_Def": {
@@ -12724,6 +14196,26 @@
             0.8
         ]
     },
+    "Hero_ABlock_FLEr_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
     "Hero_ABlock_FLYDe_Extra": {
         "AttrType": [
             "HURTRATE"
@@ -12780,6 +14272,26 @@
         "Value": [
             0.6,
             0.6
+        ]
+    },
+    "Hero_ABlock_HLa_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
         ]
     },
     "Hero_ABlock_HSYZhai_Extra": {
@@ -13400,6 +14912,26 @@
         "Target": "SELF",
         "Value": [
             0.5
+        ]
+    },
+    "Hero_ABlock_YMJDe_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
         ]
     },
     "Hero_ABlock_YSLBin_Extra": {
@@ -145294,7 +146826,6 @@
     },
     "Star_HLDNan_3_1": {
         "AttrType": [
-            "ATK_RATE",
             "HP_RATE"
         ],
         "EffectDesc": "Star_HLDNan_3_1_Desc",
@@ -145308,8 +146839,7 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
-            0.1,
-            0.1
+            0.2
         ]
     },
     "Star_HLDNan_4": {
@@ -145317,6 +146847,42 @@
             "SKILLRATE"
         ],
         "EffectDesc": "Star_HLDNan_4_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_HLDNan_4_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_HLDNan_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_HLDNan_5": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_HLDNan_5_Desc",
         "EffectRange": [
             "ALL"
         ],
@@ -148470,6 +150036,154 @@
             0.15
         ]
     },
+    "Star_SNGLSi_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SNGLSi_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_SNGLSi_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SNGLSi_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SNGLSi_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_SNGLSi_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SNGLSi_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_SNGLSi_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
+    "Star_SP_ALPo_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SP_ALPo_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_SP_ALPo_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SP_ALPo_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SP_ALPo_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_SP_ALPo_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SP_ALPo_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_SP_ALPo_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
     "Star_SP_KTSJKe_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -149744,6 +151458,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_XHMao_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_XHMao_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_XLDBLTe_3_1": {

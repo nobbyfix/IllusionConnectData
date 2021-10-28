@@ -503,6 +503,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_TPGZhu_Awake"
     },
+    "XHMao": {
+        "AnimSound": "Se_Effect_Awakening_XHMao",
+        "Animation": "lbi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.6
+        ],
+        "ModelId": "Model_XHMao_Awake",
+        "Name": "XHMao_Awake_Name",
+        "NameDesc": "XHMao_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_XHMao_UnAwake",
+        "Reward": "HeroAwaken_XHMao",
+        "ShowHero": "XHMao",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "XHMao_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_XHMao_Awake"
+    },
     "YBYa": {
         "AnimSound": "Se_Effect_Awakening_YBYa",
         "Animation": "hmyyue_Awaken",

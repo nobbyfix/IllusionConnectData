@@ -784,7 +784,7 @@ function DreamHouseDetailMediator:refreshBattleInfo()
 	local spawn = cc.Spawn:create(fadeIn, scaleTo)
 	local delay = cc.DelayTime:create(delayTime)
 	local callfunc = cc.CallFunc:create(function ()
-		self._enterBtnView:setVisible(not self._pointData:isPerfectPass())
+		self._enterBtnView:setVisible(not self._pointData:isCurrentPerfectPass())
 	end)
 
 	self._enterBtnView:runAction(cc.Sequence:create(delay, callfunc, spawn))
@@ -1096,7 +1096,7 @@ function DreamHouseDetailMediator:onClickBack(sender, eventType)
 end
 
 function DreamHouseDetailMediator:onClickResetBtn()
-	if self._pointData:isPerfectPass() then
+	if self._pointData:isCurrentPerfectPass() then
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,
 			tip = Strings:get("DreamHouse_Second_UI17")
@@ -1173,7 +1173,7 @@ function DreamHouseDetailMediator:onClickTeamBtn()
 	local battleStarData = self._pointData:getPoints()[battleId]
 
 	if battleStarData then
-		if self._pointData:isPerfectPass() then
+		if self._pointData:isCurrentPerfectPass() then
 			self:dispatch(ShowTipEvent({
 				duration = 0.35,
 				tip = Strings:get("Perfect Pass!")

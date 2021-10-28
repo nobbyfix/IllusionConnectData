@@ -357,6 +357,24 @@ function BattleDataHelper:dealWithSkills(skills, summon, summonMap)
 	local protoFactory = PrototypeFactory:getInstance()
 
 	for name, config in pairs(skills) do
+		if name == "passive" or name == "extrapasv" then
+			for i, cfg in ipairs(config) do
+				if type(cfg) == "userdata" then
+					config[i] = nil
+				end
+			end
+
+			local ret = {}
+
+			for k, v in pairs(config) do
+				ret[#ret + 1] = v
+			end
+
+			skills[name] = ret
+		end
+	end
+
+	for name, config in pairs(skills) do
 		if name == "passive" then
 			for i, cfg in ipairs(config) do
 				self:fillSkillData(cfg, protoFactory)

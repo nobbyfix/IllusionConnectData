@@ -113,6 +113,13 @@ local timeLimitShopConfig = {
 			},
 			nameColor = cc.c4b(144, 144, 250, 115)
 		}
+	},
+	dusk = {
+		CellBuyEndImg = "jqtd_img_yywgzl_jldih.png",
+		CellBuyImg = "jqtd_img_yywgzl_jldi.png",
+		BG = "jqtd_txt_yywgzl_di",
+		TimeOutLineColor = cc.c4b(105, 0, 106, 255),
+		CellNameColor = cc.c4b(159, 122, 165, 89.25)
 	}
 }
 local btnHandlers = {
@@ -204,7 +211,24 @@ function TimeLimitShopActivityMediator:setupView()
 		end
 	end
 
+	if not self._cellClone then
+		self._cellClone = self._view:getChildByFullName("foolsdayCell")
+	end
+
 	assert(self._cellClone ~= nil, "Error:Not Found ItemCell By Type:" .. self._packType)
+
+	if config and config.CellBuyImg then
+		self._cellClone:getChildByFullName("cell.bg"):loadTexture("asset/ui/activity/" .. config.CellBuyImg, ccui.TextureResType.localType)
+	end
+
+	if config and config.CellBuyEndImg then
+		self._cellClone:getChildByFullName("cell.bg_buy"):loadTexture("asset/ui/activity/" .. config.CellBuyEndImg, ccui.TextureResType.localType)
+	end
+
+	if config and config.CellNameColor then
+		self._cellClone:getChildByFullName("cell.goods_name"):setColor(config.CellNameColor)
+	end
+
 	self:enableTimeLimitShopTimer()
 	self:setUpPackageState()
 	self:setupAnim()

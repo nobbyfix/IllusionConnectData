@@ -401,6 +401,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_Dusk": {
+        "BGM": "Mus_Story_Dusk_Main",
+        "BGPContraction": "anualshop_scene_main_dusk_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Dusk_Desc",
+            "img": "Activity_ExchangeBG_Dusk",
+            "name": "HomeBackground_Dusk_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Dusk_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Dusk_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Dusk",
+        "Unlook": 1
+    },
     "HomeBackground_Female": {
         "BGM": "Mus_Story_Girl_Main",
         "BGPContraction": "anualshop_scene_main_female_preview",

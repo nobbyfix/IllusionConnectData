@@ -179,6 +179,12 @@ function HomeMediator:dispose()
 
 	self._hasPayIncomplete = false
 
+	if self._coopInviteTimer then
+		self._coopInviteTimer:stop()
+
+		self._coopInviteTimer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -188,6 +194,7 @@ function HomeMediator:resumeWithData(data)
 	self:setComplexActivityEntry()
 	self:setActivityCalendar()
 	self:randomBoardRoleAndBg()
+	self:showCoopTips()
 
 	if self._motion and not self._motion:isRunning() then
 		self:enableAccelerator()
@@ -463,6 +470,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_ACTIVITY_REFRESH, self, self.onBackFlowActivityRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MAIL_NEW, self, self.refreshActivityCalendarRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOMEVIEW_SETBORAD_MOVE, self, self.setShowHeroMoveViewVis)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.showCoopTips)
 end
 
 function HomeMediator:onBackFlowActivityRefresh(event)
@@ -1057,7 +1065,10 @@ function HomeMediator:initAnim()
 	mainMovieClip:addCallbackAtFrame(20, function ()
 		self._leftFuncLayout:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveBy:create(0.21, cc.p(-25, 0))))
 		self._topFuncLayout:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveBy:create(0.21, cc.p(-25, 0))))
-		wonderfulAct:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveTo:create(0.21, cc.p(wonderfulActPosX, wonderfulActPosY))))
+
+		local nowWonderfulActPosY = wonderfulAct:getPositionY()
+
+		wonderfulAct:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveBy:create(0.21, cc.p(0, wonderfulActPosY - nowWonderfulActPosY))))
 	end)
 
 	local playerNode = self:getView():getChildByName("playerNode")
@@ -1100,6 +1111,7 @@ function HomeMediator:initAnim()
 		self._urlFuncLayout:runAction(action)
 	end, 0.1)
 	mainMovieClip:gotoAndPlay(0)
+	self:showCoopTips(nodes[5])
 end
 
 function HomeMediator:checkNewSystemUnlock()
@@ -2736,6 +2748,21 @@ function HomeMediator:initButtons(config)
 					local mLangDesc = self:getView():getChildByFullName(fullName)
 
 					mLangDesc:setString(infos)
+				elseif name == "drawNodePos" then
+					local touchLayer = self:getView():getChildByFullName(layout .. "." .. node .. ".mTouchLayer")
+
+					if touchLayer and next(infos) then
+						local shape = ccui.HittingPolygon:create(infos)
+
+						touchLayer:setHittingShape(shape)
+
+						if false then
+							local drawNode = cc.DrawNode:create()
+
+							drawNode:drawPoly(infos, #infos, true, cc.c4f(0, 0, 1, 1))
+							touchLayer:addChild(drawNode)
+						end
+					end
 				end
 			end
 		end
@@ -3864,6 +3891,15 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(-90, 145),
 			imgpos = cc.p(60, 20),
 			redpos = cc.p(115, 51)
+		},
+		[ActivityType_UI.KActivityDusk] = {
+			img = "dusk_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "ZSrukou_TX_zhushenhuanghunfuben",
+			imgZorder = 2,
+			aimpos = cc.p(60, 60),
+			imgpos = cc.p(65, 25),
+			redpos = cc.p(115, 56)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -4081,4 +4117,80 @@ function HomeMediator:refreshActivityCalendarRedPoint()
 	end
 
 	self._activityBtnRedPoint:setVisible(self._activitySystem:isActivityCalendarRedpointShowAll())
+end
+
+function HomeMediator:showCoopTips(baseview)
+	if not self._coopInviteTip then
+		local cooperateTip = baseview:getChildByFullName("coopInviteTip")
+		local icon = cc.Sprite:createWithSpriteFrameName("main_img_qipao.png")
+		local mengyan = cc.Sprite:create("asset/emotion/mengyan_01.png")
+
+		mengyan:addTo(icon):center(icon:getContentSize()):offset(-22, 10)
+		mengyan:setScale(0.24)
+
+		local label = cc.Label:createWithTTF(Strings:get("CooperateBoss_InviteTip"), TTF_FONT_FZYH_R, 18)
+
+		label:setTextColor(cc.c3b(31, 37, 32))
+		label:addTo(icon):center(icon:getContentSize()):offset(20, 5)
+		label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+		label:setOverflow(cc.LabelOverflow.NONE)
+		icon:setName("coopInviteTip")
+		icon:setPosition(cc.p(95, 35))
+		icon:addTo(baseview)
+
+		self._coopInviteTip = icon
+	end
+
+	self._coopInviteTip:stopAllActions()
+	self._coopInviteTip:setVisible(false)
+
+	if self._cooperateSystem:getcooperateBossState() == kCooperateBossState.kStart then
+		local times = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperationBossBumbleTip", "content") or 30
+
+		local function callback(data)
+			local maps = data.invitedBossIdMap
+
+			if #maps > 0 then
+				self._coopInviteTip:stopAllActions()
+				self._coopInviteTip:setVisible(true)
+
+				local delayTimeAct = cc.DelayTime:create(times)
+				local callFuncAct = cc.CallFunc:create(function ()
+					self._coopInviteTip:setVisible(false)
+				end)
+				local action = cc.Sequence:create(delayTimeAct, callFuncAct)
+
+				self._coopInviteTip:runAction(action)
+
+				if not self._coopInviteTimer then
+					local bossData = maps[1]
+					local bossConfig = ConfigReader:getRecordById("CooperateBossMain", bossData.confId)
+					local endTime = bossData.bossCreateTime + bossConfig.Time
+
+					local function checkTimeFunc()
+						local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+						local remainTime = endTime - remoteTimestamp
+
+						if remainTime <= 0 then
+							if self._coopInviteTimer then
+								self._coopInviteTimer:stop()
+
+								self._coopInviteTimer = nil
+							end
+
+							self:showCoopTips()
+						end
+					end
+
+					self._coopInviteTimer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+					checkTimeFunc()
+				end
+			end
+
+			self:dispatch(Event:new(EVT_COOPERATE_BOSS_SELF_REFRESH))
+		end
+
+		self._cooperateSystem:requestCooperateBossMain(callback)
+	end
 end

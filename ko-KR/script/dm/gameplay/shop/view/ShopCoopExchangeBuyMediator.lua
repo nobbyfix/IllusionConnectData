@@ -173,6 +173,11 @@ function ShopCoopExchangeBuyMediator:refreshBaseShowView()
 	self._sliderPanel:setVisible(true)
 	self._buyBtn:setVisible(true)
 	self._curCount:setString("x" .. targetList[1].amount)
+
+	if targetList[1].type == RewardType.kHero then
+		self._curCount:setString("x1")
+	end
+
 	self:refreshMoney()
 end
 
