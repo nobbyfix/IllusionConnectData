@@ -708,9 +708,7 @@ all.Skill_BBLMa_Unique_EX = {
 				this.ProbRateFactor1 = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15101_First")(_env, _env.ACTOR)
 				this.ProbRateFactor2 = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15101_Second")(_env, _env.ACTOR)
 
-				if not global.MASTER(_env, _env.TARGET) then
-					global.Serious_Injury(_env, _env.ACTOR, _env.TARGET, 20, 4)
-				end
+				global.Serious_Injury(_env, _env.ACTOR, _env.TARGET, 0.6, 20, 4)
 			end
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)

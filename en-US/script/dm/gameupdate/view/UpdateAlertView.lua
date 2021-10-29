@@ -169,12 +169,10 @@ function UpdateAlertView:setUi(data)
 
 	panel:setLocalZOrder(-3)
 
-	local img = IconFactory:createRoleIconSpriteNew({
-		id = "Model_ZTXChang",
-		frameId = "bustframe9"
-	})
+	local xiaoye = sp.SkeletonAnimation:create("asset/anim/portraitpic_ZTXChang.skel")
 
-	img:addTo(self._main, -1):posite(1000, 280)
+	xiaoye:addTo(self._main, -1):posite(1080, -460)
+	xiaoye:setScale(0.8)
 end
 
 function UpdateAlertView:onCancelClicked(sender, eventType)
