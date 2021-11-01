@@ -14114,6 +14114,26 @@
             0.6
         ]
     },
+    "Hero_ABlock_HLa_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            3,
+            0.3
+        ]
+    },
     "Hero_ABlock_HSYZhai_Extra": {
         "AttrType": [
             "UNHURTRATE",
@@ -14618,6 +14638,26 @@
         "Target": "SELF",
         "Value": [
             0.8
+        ]
+    },
+    "Hero_ABlock_TLSi_Halloween_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            3,
+            0.3
         ]
     },
     "Hero_ABlock_TPGZhu_Extra": {
