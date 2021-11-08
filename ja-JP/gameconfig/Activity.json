@@ -1144,6 +1144,61 @@
             "LEVEL": 1
         },
         "Desc": "ActivityAwake_DailyTask_Desc",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Awake_DailyTask_Activity",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2021-11-15 05:00:00",
+            "start": [
+                "2021-11-08 05:00:00",
+                "2021-11-15 05:00:00"
+            ]
+        },
+        "Title": "ActivityAwake_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
+        "Version": ""
+    },
+    "ActivityAwake_XHMao_20211108_DailyTask": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_XHMao",
+            "ModelPos": [
+                300,
+                160
+            ],
+            "ModelScale": 0.8,
+            "TaskTopUI": "hd_txt_czzl",
+            "task": [
+                "Activity_XHMao_20211028Task_1",
+                "Activity_XHMao_20211028Task_2",
+                "Activity_XHMao_20211028Task_3",
+                "Activity_XHMao_20211028Task_4",
+                "Activity_XHMao_20211028Task_5",
+                "Activity_XHMao_20211028Task_6",
+                "Activity_XHMao_20211028Task_7",
+                "Activity_XHMao_20211028Task_8",
+                "Activity_XHMao_20211028Task_9",
+                "Activity_XHMao_20211028Task_10",
+                "Activity_XHMao_20211028Task_11",
+                "Activity_XHMao_20211028Task_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityAwake_DailyTask_Desc",
         "Enable": 1,
         "Icon": "",
         "LeftBanner": "hd_btn_tmxh",
