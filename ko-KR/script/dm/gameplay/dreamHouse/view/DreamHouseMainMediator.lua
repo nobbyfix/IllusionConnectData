@@ -836,12 +836,13 @@ function DreamHouseMainMediator:initAnim()
 	end)
 
 	local topInfoNode = self:getView():getChildByFullName("main.topinfo")
+	local initX, initY = topInfoNode:getPosition()
 
 	topInfoNode:setOpacity(0)
-	topInfoNode:setPositionY(620)
+	topInfoNode:setPositionY(initY + 50)
 	anim:addCallbackAtFrame(1, function (cid, mc)
 		local fadeIn = cc.FadeIn:create(0.15)
-		local moveTo = cc.MoveTo:create(0.15, cc.p(0, 570))
+		local moveTo = cc.MoveTo:create(0.15, cc.p(initX, initY))
 		local spawn = cc.Spawn:create(fadeIn, moveTo)
 
 		topInfoNode:runAction(spawn)
@@ -871,6 +872,16 @@ function DreamHouseMainMediator:initAnim()
 
 		detailBg:runAction(cc.Sequence:create(easeInOut, easeInOut1))
 	end)
+
+	local winSize = cc.Director:getInstance():getWinSize()
+	local offsetY = math.max(0, (winSize.height - 640) * 0.5)
+	local diImg = anim:getChildByName("bottomdi")
+
+	for i = 33, 38 do
+		anim:addCallbackAtFrame(i, function ()
+			diImg:offset(0, -offsetY)
+		end)
+	end
 
 	local detailPanel = self:getView():getChildByFullName("main.detailPanel")
 

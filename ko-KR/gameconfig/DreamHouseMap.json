@@ -16,5 +16,23 @@
         "Swtich": 1,
         "UnlockReward": "DH01_UnlockReward",
         "UnlockTime": "2021-05-28 05:00:00"
+    },
+    "DH02_Map": {
+        "HeroId": [
+            "TPGZhu",
+            "SDTZi",
+            "MGNa"
+        ],
+        "Name": "DH02_MapDes",
+        "PointId": [
+            "DH02N01_Point",
+            "DH02N02_Point",
+            "DH02N03_Point"
+        ],
+        "RewardShow": "DH02_CoreRewardShow",
+        "SortNumber": 2,
+        "Swtich": 1,
+        "UnlockReward": "DH02_UnlockReward",
+        "UnlockTime": "2021-11-10 05:00:00"
     }
 }

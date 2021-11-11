@@ -14,49 +14,7 @@ RecruitSystem:has("_systemKeeper", {
 	is = "rw"
 }):injectWith("SystemKeeper")
 
-RecruitAutoBuyCard = "RecruitAutoBuyCard"
-RecruitAutoBuyCardEx = "RecruitAutoBuyCardEx"
 RecruitNewPlayerPool = "DrawCard_NewPlayer"
-RecruitAutoBuyCardUR = "RecruitAutoBuyCardUR"
-RecruitCurrencyStr = {
-	KUserDefault = {
-		[CurrencyIdKind.kDiamondDrawItem] = RecruitAutoBuyCard,
-		[CurrencyIdKind.kDiamondDrawExItem] = RecruitAutoBuyCardEx,
-		[CurrencyIdKind.kDiamondDrawURItem] = RecruitAutoBuyCardUR
-	},
-	KGoToShop = {
-		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI21"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_2"),
-		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("Recruit_UI_8")
-	},
-	KBuyTitle = {
-		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("Recruit_UI16"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("Recruit_UI_1"),
-		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("Recruit_UI_7")
-	},
-	KBuyTitle1 = {
-		[CurrencyIdKind.kDiamondDrawItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
-		[CurrencyIdKind.kDiamondDrawExItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu"),
-		[CurrencyIdKind.kDiamondDrawURItem] = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
-	},
-	KBuyContent = {
-		[CurrencyIdKind.kDiamondDrawItem] = "Recruit_UI18",
-		[CurrencyIdKind.kDiamondDrawExItem] = "Recruit_UI_3",
-		[CurrencyIdKind.kDiamondDrawURItem] = "Recruit_UI_9"
-	},
-	KBuyPrice = {
-		single = {
-			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content"),
-			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_SinglePrice", "content") or 88888888,
-			[CurrencyIdKind.kDiamondDrawURItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_UR_SinglePrice", "content") or 88888888
-		},
-		ten = {
-			[CurrencyIdKind.kDiamondDrawItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content"),
-			[CurrencyIdKind.kDiamondDrawExItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_TenTimesPrice", "content") or 99999999,
-			[CurrencyIdKind.kDiamondDrawURItem] = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCardEX_UR_TenTimesPrice", "content") or 99999999
-		}
-	}
-}
 ItemsPosition1 = {
 	cc.p(350, 171)
 }
@@ -207,6 +165,38 @@ function RecruitSystem:initialize()
 	super.initialize(self)
 
 	self._manager = RecruitPoolManager:new()
+
+	self:initRecruitCurrencyStr()
+end
+
+function RecruitSystem:initRecruitCurrencyStr()
+	RecruitCurrencyStr = {
+		KUserDefault = {},
+		KGoToShop = {},
+		KBuyTitle = {},
+		KBuyTitle1 = {},
+		KBuyContent = {}
+	}
+	local DrawCard_AllType = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_AllType", "content")
+
+	for itemId, info in pairs(DrawCard_AllType) do
+		RecruitCurrencyStr.KUserDefault[itemId] = info[1]
+		RecruitCurrencyStr.KGoToShop[itemId] = Strings:get(info[2])
+		RecruitCurrencyStr.KBuyTitle[itemId] = Strings:get(info[3])
+		RecruitCurrencyStr.KBuyTitle1[itemId] = Strings:get(info[4])
+		RecruitCurrencyStr.KBuyContent[itemId] = info[5]
+	end
+
+	RecruitCurrencyStr.KBuyPrice = {
+		single = {},
+		ten = {}
+	}
+	local DrawCard_AllPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_AllPrice", "content")
+
+	for itemId, info in pairs(DrawCard_AllPrice) do
+		RecruitCurrencyStr.KBuyPrice.single[itemId] = info[1]
+		RecruitCurrencyStr.KBuyPrice.ten[itemId] = info[2]
+	end
 end
 
 function RecruitSystem:sync(data, player)

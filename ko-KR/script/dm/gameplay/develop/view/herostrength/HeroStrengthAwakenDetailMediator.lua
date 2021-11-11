@@ -658,12 +658,7 @@ function HeroStrengthAwakenDetailMediator:onClickStiveItem()
 end
 
 function HeroStrengthAwakenDetailMediator:onClickLoveItem()
-	local view = self:getInjector():getInstance("GalleryDateView")
-
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		type = "gift",
-		id = self._heroId
-	}))
+	self._heroSystem:tryEnterDate(self._heroId, GalleryFuncName.kGift)
 end
 
 function HeroStrengthAwakenDetailMediator:runStartAction()

@@ -389,6 +389,7 @@ StatisticPointConfig = {
 	guide_Club_skip = 22298,
 	guide_main_building_1 = 10701,
 	guide_main_stage_1_2_14 = 10314,
+	guide_photo_8 = 21408,
 	guide_plot_7start_begin = 10703,
 	guide_main_stage_1_1_12 = 10212,
 	guide_main_stage_1_4_5 = 10606,

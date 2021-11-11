@@ -3490,6 +3490,99 @@
         "bustAwakeZoom": 0.55,
         "bustZoom": 0.74
     },
+    "Model_CKFSJi": {
+        "Animation": "mke",
+        "BattlePosition": "HeroBase_BattlePosition_CKFSJi",
+        "BattleShow": "",
+        "Bust1": "Bust1_CKFSJi",
+        "Bust10": "Bust10_CKFSJi",
+        "Bust11": "Bust11_CKFSJi",
+        "Bust12": "Bust12_CKFSJi",
+        "Bust13": "Bust13_CKFSJi",
+        "Bust14": "Bust14_CKFSJi",
+        "Bust15": "Bust15_CKFSJi",
+        "Bust16": "",
+        "Bust2": "Bust2_CKFSJi",
+        "Bust3": "Bust3_CKFSJi",
+        "Bust4": "Bust4_CKFSJi",
+        "Bust5": "Bust5_CKFSJi",
+        "Bust6": "Bust6_CKFSJi",
+        "Bust7": "Bust7_CKFSJi",
+        "Bust8": "Bust8_CKFSJi",
+        "Bust9": "Bust9_CKFSJi",
+        "BustAwake": [
+            -169,
+            -673
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -5,
+            -631
+        ],
+        "BustTemp2": [
+            4,
+            -650
+        ],
+        "BustTemp3": [
+            4,
+            -650
+        ],
+        "BustTemp4": [
+            -2,
+            -650
+        ],
+        "BustTemp5": [
+            -2,
+            -650
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_mke",
+        "DeathVoice": "",
+        "Filename": "portrait_mke",
+        "HeadMain": "HeadMain_CKFSJi",
+        "Height": 200,
+        "Hero": "CKFSJi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_CKFSJi",
+        "MasterHeadWide": "",
+        "Model": "mke",
+        "Name": "HeroBase_Name_CKFSJi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_CKFSJi",
+        "SVPText": "SVPText_CKFSJi",
+        "SkillRange": "AllUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "CKFSJi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_CKFSJi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_CKFSJi"
+        ],
+        "TruthBubble": [
+            "Truth_CKFSJi_1",
+            "Truth_CKFSJi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.72,
+        "bustZoom": 0.72
+    },
     "Model_CLMan": {
         "Animation": "ChaLiMan",
         "BattlePosition": "HeroBase_BattlePosition_CLMan",
@@ -38052,6 +38145,99 @@
         "bustAwakeZoom": 0.8,
         "bustZoom": 0.8
     },
+    "Model_XBKLDi_christmas": {
+        "Animation": "yasong_christmas",
+        "BattlePosition": "HeroBase_BattlePosition_XBKLDi",
+        "BattleShow": "",
+        "Bust1": "Bust1_XBKLDi_christmas",
+        "Bust10": "Bust10_XBKLDi_christmas",
+        "Bust11": "Bust11_XBKLDi_christmas",
+        "Bust12": "Bust12_XBKLDi_christmas",
+        "Bust13": "Bust13_XBKLDi_christmas",
+        "Bust14": "Bust14_XBKLDi_christmas",
+        "Bust15": "Bust15_XBKLDi_christmas",
+        "Bust16": "Bust16_XBKLDi_christmas",
+        "Bust2": "Bust2_XBKLDi_christmas",
+        "Bust3": "Bust3_XBKLDi_christmas",
+        "Bust4": "Bust4_XBKLDi_christmas",
+        "Bust5": "Bust5_XBKLDi_christmas",
+        "Bust6": "Bust6_XBKLDi_christmas",
+        "Bust7": "Bust7_XBKLDi_christmas",
+        "Bust8": "Bust8_XBKLDi_christmas",
+        "Bust9": "Bust9_XBKLDi_christmas",
+        "BustAwake": [
+            -282,
+            -328
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -390,
+            -619
+        ],
+        "BustTemp2": [
+            -390,
+            -619
+        ],
+        "BustTemp3": [
+            -390,
+            -619
+        ],
+        "BustTemp4": [
+            -390,
+            -649
+        ],
+        "BustTemp5": [
+            -400,
+            -649
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_yasong_christmas",
+        "DeathVoice": "",
+        "Filename": "portrait_yasong_christmas",
+        "HeadMain": "HeadMain_XBKLDi_christmas",
+        "Height": 200,
+        "Hero": "XBKLDi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_XBKLDi",
+        "MasterHeadWide": "",
+        "Model": "yasong_christmas",
+        "Name": "HeroBase_Name_XBKLDi",
+        "Path": 2,
+        "PicType": 3,
+        "Portrait": "Portraitpic_XBKLDi",
+        "SVPText": "SVPText_XBKLDi",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "XBKLDi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_XBKLDi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_fuhuo"
+        ],
+        "TruthBubble": [
+            "Truth_XBKLDi_1",
+            "Truth_XBKLDi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.49,
+        "bustZoom": 0.7
+    },
     "Model_XDE": {
         "Animation": "sfei",
         "BattlePosition": "HeroBase_BattlePosition_XDE",
@@ -39036,6 +39222,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.8,
         "bustZoom": 0.8
+    },
+    "Model_XXFSi": {
+        "Animation": "xma",
+        "BattlePosition": "HeroBase_BattlePosition_XXFSi",
+        "BattleShow": "",
+        "Bust1": "Bust1_XXFSi",
+        "Bust10": "Bust10_XXFSi",
+        "Bust11": "Bust11_XXFSi",
+        "Bust12": "Bust12_XXFSi",
+        "Bust13": "Bust13_XXFSi",
+        "Bust14": "Bust14_XXFSi",
+        "Bust15": "Bust15_XXFSi",
+        "Bust16": "",
+        "Bust2": "Bust2_XXFSi",
+        "Bust3": "Bust3_XXFSi",
+        "Bust4": "Bust4_XXFSi",
+        "Bust5": "Bust5_XXFSi",
+        "Bust6": "Bust6_XXFSi",
+        "Bust7": "Bust7_XXFSi",
+        "Bust8": "Bust8_XXFSi",
+        "Bust9": "Bust9_XXFSi",
+        "BustAwake": [
+            -146,
+            -428
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            22,
+            -388
+        ],
+        "BustTemp2": [
+            22,
+            -393
+        ],
+        "BustTemp3": [
+            22,
+            -388
+        ],
+        "BustTemp4": [
+            22,
+            -392
+        ],
+        "BustTemp5": [
+            22,
+            -388
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_xma",
+        "DeathVoice": "",
+        "Filename": "portrait_xma",
+        "HeadMain": "HeadMain_XXFSi",
+        "Height": 200,
+        "Hero": "XXFSi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_XXFSi",
+        "MasterHeadWide": "",
+        "Model": "xma",
+        "Name": "HeroBase_Name_XXFSi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_XXFSi",
+        "SVPText": "SVPText_XXFSi",
+        "SkillRange": "RowUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "XXFSi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_XXFSi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_XXFSi"
+        ],
+        "TruthBubble": [
+            "Truth_XXFSi_1",
+            "Truth_XXFSi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.7,
+        "bustZoom": 0.7
     },
     "Model_XueZhan_HeiHei": {
         "Animation": "Master_XueZhan_s2",
@@ -41014,29 +41293,29 @@
         "Bust8": "Bust8_YSLBin_WSJie",
         "Bust9": "Bust9_YSLBin_WSJie",
         "BustAwake": [
-            -27,
-            -205
+            -98,
+            -411
         ],
         "BustAwake2": "",
         "BustTemp1": [
-            -134,
-            -730
+            -152,
+            -759
         ],
         "BustTemp2": [
-            -134,
-            -775
+            -152,
+            -759
         ],
         "BustTemp3": [
-            -134,
-            -775
+            -153,
+            -792
         ],
         "BustTemp4": [
-            -132,
-            -764
+            -153,
+            -792
         ],
         "BustTemp5": [
-            -134,
-            -730
+            -153,
+            -792
         ],
         "CommonResource": "",
         "CutIn": "CutIn_YSLBin_WSJie",
@@ -41084,7 +41363,7 @@
         "WinVoice": "",
         "Zoom": 1.0,
         "bustAwakeZoom": 1.0,
-        "bustZoom": 1.9
+        "bustZoom": 1.45
     },
     "Model_YSTLu": {
         "Animation": "YaSiTaLu",

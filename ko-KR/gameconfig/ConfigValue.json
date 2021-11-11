@@ -2500,6 +2500,49 @@
         "clz": "int",
         "content": 400
     },
+    "DrawCard_AllPrice": {
+        "clz": "dict",
+        "content": {
+            "IM_DiamondDraw": [
+                200,
+                188
+            ],
+            "IM_DiamondDrawEX": [
+                400,
+                400
+            ],
+            "IM_DiamondDraw_UR": [
+                400,
+                400
+            ]
+        }
+    },
+    "DrawCard_AllType": {
+        "clz": "dict",
+        "content": {
+            "IM_DiamondDraw": [
+                "RecruitAutoBuyCard",
+                "Recruit_UI21",
+                "Recruit_UI16",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI18"
+            ],
+            "IM_DiamondDrawEX": [
+                "RecruitAutoBuyCardEx",
+                "Recruit_UI_2",
+                "Recruit_UI_1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_3"
+            ],
+            "IM_DiamondDraw_UR": [
+                "RecruitAutoBuyCardUR",
+                "Recruit_UI_8",
+                "Recruit_UI_7",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_9"
+            ]
+        }
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
@@ -2694,7 +2737,8 @@
             "E16",
             "E17",
             "E18",
-            "E19"
+            "E19",
+            "E20"
         ]
     },
     "EliteStage_RestCost": {
@@ -8142,7 +8186,8 @@
             "Shop1",
             "Shop6",
             "Shop_Diamond",
-            "Shop_Crystal"
+            "Shop_Crystal",
+            "Shop_URMap"
         ]
     },
     "Shop_Sort": {
@@ -9457,7 +9502,9 @@
             "FLEr",
             "SP_ALPo",
             "SNGLSi",
-            "HLDNan"
+            "HLDNan",
+            "XXFSi",
+            "CKFSJi"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -9672,6 +9719,26 @@
         "clz": "double",
         "content": 0.15
     },
+    "TrapModel_Castle": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_meikejineng",
+            "EffectPos": 230,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Dun": {
+        "clz": "dict",
+        "content": {
+            "Effect": "dun_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
     "TrapModel_EquipSkill_Shoes_15006": {
         "clz": "dict",
         "content": {
@@ -9687,6 +9754,26 @@
         "content": {
             "Effect": "jihan_bufftexiao",
             "EffectPos": 45,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Huo": {
+        "clz": "dict",
+        "content": {
+            "Effect": "huo_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jian": {
+        "clz": "dict",
+        "content": {
+            "Effect": "jian_bumengguanjizhitexiao",
+            "EffectPos": 5,
             "Loop": 1,
             "Priority": null,
             "Type": 1
@@ -9845,6 +9932,17 @@
             "CO_WeaponStone_2": "Weapon",
             "CO_WeaponStone_3": "Weapon"
         }
+    },
+    "URmap_Shop_TransItem": {
+        "clz": "dict",
+        "content": {
+            "itemID": "IR_URMapCoin",
+            "transNum": 1
+        }
+    },
+    "URmap_Shop_UnlockTime": {
+        "clz": "int",
+        "content": 120
     },
     "VillageDecorateShopIcon": {
         "clz": "string[]",

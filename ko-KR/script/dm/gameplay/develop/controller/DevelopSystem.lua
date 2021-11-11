@@ -130,7 +130,7 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._bagSystem:showTips(data.bag.items)
 		self:getBag():synchronize(data.bag.items, isDiff)
 		self._heroSystem:syncHeroShowIds()
-		self._bagSystem:synchronize(data.bag.items)
+		self._bagSystem:synchronize(data.bag.items, isDiff)
 	end
 
 	if data.bag and data.bag.del then

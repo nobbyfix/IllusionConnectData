@@ -225,12 +225,13 @@ function DreamHouseDetailMediator:initAnim()
 	mainMc:addTo(self._bgAnim):offset(0, 0)
 
 	local topInfoNode = self:getView():getChildByFullName("main.topinfo")
+	local initX, initY = topInfoNode:getPosition()
 
 	topInfoNode:setOpacity(0)
-	topInfoNode:setPositionY(620)
+	topInfoNode:setPositionY(initY + 50)
 	mainMc:addCallbackAtFrame(1, function (cid, mc)
 		local fadeIn = cc.FadeIn:create(0.15)
-		local moveTo = cc.MoveTo:create(0.15, cc.p(0, 570))
+		local moveTo = cc.MoveTo:create(0.15, cc.p(initX, initY))
 		local spawn = cc.Spawn:create(fadeIn, moveTo)
 
 		topInfoNode:runAction(spawn)

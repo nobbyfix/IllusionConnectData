@@ -771,9 +771,10 @@ function SpStageDftMediator:isTimeEnough()
 	return true
 end
 
-function SpStageDftMediator:isStaminaCostEnough()
+function SpStageDftMediator:isStaminaCostEnough(times)
+	times = times or 1
 	local config = self._config[self._curIndex]
-	local staminaCost = config.StaminaCost
+	local staminaCost = config.StaminaCost * times
 	local energy = self._developSystem:getEnergy()
 
 	if energy < staminaCost then
@@ -931,6 +932,10 @@ end
 
 function SpStageDftMediator:onClickWipeTimes(times)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	if not self:isStaminaCostEnough(times) then
+		return
+	end
 
 	local params = {
 		spType = self:getSpStageSystem():getStageTypeById(self._data.stageId),

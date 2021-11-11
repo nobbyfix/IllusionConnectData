@@ -1410,7 +1410,7 @@ function RecruitMainMediator:onRecruit1Clicked()
 		notShowTip = true
 	}) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem then
+	elseif RecruitCurrencyStr.KUserDefault[costId] then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1445,7 +1445,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawExItem or costId == CurrencyIdKind.kDiamondDrawURItem then
+	elseif RecruitCurrencyStr.KUserDefault[costId] then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {

@@ -981,6 +981,11 @@ local mappings = {
 		name = "BagURMapMediator",
 		type = "@C"
 	},
+	BagURExhangeMeditor = {
+		url = "dm.gameplay.develop.view.bag.BagURExhangeMeditor",
+		name = "BagURExhangeMeditor",
+		type = "@C"
+	},
 	BagUseScrollMediator = {
 		url = "dm.gameplay.develop.view.bag.BagUseScrollMediator",
 		name = "BagUseScrollMediator",
@@ -1771,6 +1776,11 @@ local mappings = {
 		name = "DreamHouseMainMediator",
 		type = "@C"
 	},
+	GalleryPartnerPastCell = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerPastCell",
+		name = "GalleryPartnerPastCell",
+		type = "@C"
+	},
 	GalleryMemoryListMediator = {
 		url = "dm.gameplay.gallery.view.GalleryMemoryListMediator",
 		name = "GalleryMemoryListMediator",
@@ -1786,6 +1796,11 @@ local mappings = {
 		name = "GalleryPartnerMediator",
 		type = "@C"
 	},
+	GalleryBookMediator = {
+		url = "dm.gameplay.gallery.view.GalleryBookMediator",
+		name = "GalleryBookMediator",
+		type = "@C"
+	},
 	GalleryAlbumMediator = {
 		url = "dm.gameplay.gallery.view.GalleryAlbumMediator",
 		name = "GalleryAlbumMediator",
@@ -1799,6 +1814,16 @@ local mappings = {
 	GalleryDateMediator = {
 		url = "dm.gameplay.gallery.view.GalleryDateMediator",
 		name = "GalleryDateMediator",
+		type = "@C"
+	},
+	GalleryPartnerNewMediator = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerNewMediator",
+		name = "GalleryPartnerNewMediator",
+		type = "@C"
+	},
+	GalleryPartnerInfoNewMediator = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerInfoNewMediator",
+		name = "GalleryPartnerInfoNewMediator",
 		type = "@C"
 	},
 	GalleryPartnerRewardMediator = {
@@ -1824,6 +1849,11 @@ local mappings = {
 	GalleryMemoryInfoMediator = {
 		url = "dm.gameplay.gallery.view.GalleryMemoryInfoMediator",
 		name = "GalleryMemoryInfoMediator",
+		type = "@C"
+	},
+	GalleryGiftCellWidget = {
+		url = "dm.gameplay.gallery.view.GalleryGiftCellWidget",
+		name = "GalleryGiftCellWidget",
 		type = "@C"
 	},
 	GalleryAlbumShotsMediator = {
@@ -2044,6 +2074,11 @@ local mappings = {
 	ShopBuyMonthCardFMediator = {
 		url = "dm.gameplay.shop.view.ShopBuyMonthCardFMediator",
 		name = "ShopBuyMonthCardFMediator",
+		type = "@C"
+	},
+	ShopURExchangeMediator = {
+		url = "dm.gameplay.shop.view.ShopURExchangeMediator",
+		name = "ShopURExchangeMediator",
 		type = "@C"
 	},
 	ShopDebrisSellMediator = {

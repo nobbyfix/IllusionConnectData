@@ -124,6 +124,7 @@ function PetRaceFinalEightLayer:initFinalHeroIconInfo(index)
 
 			heroIcon:setTag(101)
 			node_head:addChild(heroIcon)
+			heroIcon:setPosition(cc.p(0, -9))
 
 			local power_text = node_own:getChildByName("Text_power")
 

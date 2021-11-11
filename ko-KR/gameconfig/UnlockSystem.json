@@ -1988,6 +1988,26 @@
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Tower_UnlockDesc"
     },
+    "Shop_URMap_Unlock": {
+        "Condition": {
+            "SERVER": 120
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_URMap_Unlock_Desc",
+        "Name": "Shop_URmap_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_URMapCoin"
+        ],
+        "ShowCondition": {
+            "SERVER": 120
+        },
+        "Tip": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_URMap_Unlock_UnlockDesc"
+    },
     "Shop_Unlock": {
         "Condition": {
             "LEVEL": 1

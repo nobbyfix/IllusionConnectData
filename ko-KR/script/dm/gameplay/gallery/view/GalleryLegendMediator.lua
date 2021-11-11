@@ -36,6 +36,33 @@ function GalleryLegendMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshBySync)
 end
 
+function GalleryLegendMediator:enterWithData(data)
+	self:setupTopInfoWidget()
+	self:setupView(data)
+	self:runStartAnim()
+end
+
+function GalleryLegendMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		title = Strings:get("Gallery_Legend_UI1"),
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function GalleryLegendMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
 function GalleryLegendMediator:setupView()
 	self:initData()
 	self:initWidgetInfo()
@@ -311,10 +338,10 @@ function GalleryLegendMediator:runStartAnim()
 
 	self._main:runAction(spawn)
 	self._tableViewPanel:setOpacity(0)
-	self._tableViewPanel:setPosition(cc.p(303, 80))
+	self._tableViewPanel:setPosition(cc.p(140, 80))
 
 	local delay = cc.DelayTime:create(0.2)
-	local moveto = cc.MoveTo:create(0.3, cc.p(303, 49))
+	local moveto = cc.MoveTo:create(0.3, cc.p(140, 49))
 	local fadeIn = cc.FadeIn:create(0.2)
 	local callback = cc.CallFunc:create(function ()
 		self._heroView:reloadData()

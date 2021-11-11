@@ -1915,7 +1915,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS01S01"
                 ]
             }
@@ -1939,7 +1939,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS01S02"
                 ]
             }
@@ -1963,7 +1963,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS01S03"
                 ]
             }
@@ -1987,7 +1987,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS01S04"
                 ]
             }
@@ -2011,7 +2011,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS02S01"
                 ]
             }
@@ -2035,7 +2035,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS02S02"
                 ]
             }
@@ -2059,7 +2059,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS02S03"
                 ]
             }
@@ -2083,7 +2083,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Map_Re",
                     "RiddleS02S04"
                 ]
             }
@@ -2745,6 +2745,249 @@
         "Time": "Memory_Activi_20_Time",
         "Type": "ACTIVI"
     },
+    "Memory_Activi_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_21_Desc",
+        "Englishname": "Memory_ACTIVI_21_Englishname",
+        "Listpicture": "s_album_active_fire_1",
+        "Name": "Memory_ACTIVI_21_Name",
+        "Num": 21,
+        "Picture": "scene_story_fire_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_21_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_22_Desc",
+        "Englishname": "Memory_ACTIVI_22_Englishname",
+        "Listpicture": "s_album_active_fire_2",
+        "Name": "Memory_ACTIVI_22_Name",
+        "Num": 22,
+        "Picture": "scene_story_fire_2",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_22_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_23_Desc",
+        "Englishname": "Memory_ACTIVI_23_Englishname",
+        "Listpicture": "s_album_active_female_1",
+        "Name": "Memory_ACTIVI_23_Name",
+        "Num": 23,
+        "Picture": "scene_story_female_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_23_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_24": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_24_Desc",
+        "Englishname": "Memory_ACTIVI_24_Englishname",
+        "Listpicture": "s_album_active_storybook_1",
+        "Name": "Memory_ACTIVI_24_Name",
+        "Num": 24,
+        "Picture": "scene_cg_storybook_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_24_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_25": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_25_Desc",
+        "Englishname": "Memory_ACTIVI_25_Englishname",
+        "Listpicture": "s_album_active_deepsea_4",
+        "Name": "Memory_ACTIVI_25_Name",
+        "Num": 25,
+        "Picture": "scene_cg_deepsea_4",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_25_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_26": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_26_Desc",
+        "Englishname": "Memory_ACTIVI_26_Englishname",
+        "Listpicture": "s_album_active_deepsea_1",
+        "Name": "Memory_ACTIVI_26_Name",
+        "Num": 26,
+        "Picture": "scene_cg_deepsea_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_26_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_27": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_27_Desc",
+        "Englishname": "Memory_ACTIVI_27_Englishname",
+        "Listpicture": "s_album_active_terror_3",
+        "Name": "Memory_ACTIVI_27_Name",
+        "Num": 27,
+        "Picture": "scene_cg_terror_3",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_27_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_28": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_28_Desc",
+        "Englishname": "Memory_ACTIVI_28_Englishname",
+        "Listpicture": "s_album_active_terror_2",
+        "Name": "Memory_ACTIVI_28_Name",
+        "Num": 28,
+        "Picture": "scene_cg_terror_2",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_28_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_29": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_29_Desc",
+        "Englishname": "Memory_ACTIVI_29_Englishname",
+        "Listpicture": "s_album_active_fireworks_1",
+        "Name": "Memory_ACTIVI_29_Name",
+        "Num": 29,
+        "Picture": "scene_cg_fireworks_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_29_Time",
+        "Type": "ACTIVI"
+    },
     "Memory_Activi_3": {
         "Condition": [
             {
@@ -2770,6 +3013,195 @@
         "Screen": "",
         "StoryLink": "",
         "Time": "Memory_Activi_3_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_30": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_30_Desc",
+        "Englishname": "Memory_ACTIVI_30_Englishname",
+        "Listpicture": "s_album_active_riddle_1",
+        "Name": "Memory_ACTIVI_30_Name",
+        "Num": 30,
+        "Picture": "scene_cg_riddle_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_30_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_31": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_31_Desc",
+        "Englishname": "Memory_ACTIVI_31_Englishname",
+        "Listpicture": "s_album_active_riddle_4",
+        "Name": "Memory_ACTIVI_31_Name",
+        "Num": 31,
+        "Picture": "scene_cg_riddle_4",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_31_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_32": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_32_Desc",
+        "Englishname": "Memory_ACTIVI_32_Englishname",
+        "Listpicture": "s_album_active_riddle_3",
+        "Name": "Memory_ACTIVI_32_Name",
+        "Num": 32,
+        "Picture": "scene_cg_riddle_3",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_32_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_33": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_33_Desc",
+        "Englishname": "Memory_ACTIVI_33_Englishname",
+        "Listpicture": "s_album_active_animal_1",
+        "Name": "Memory_ACTIVI_33_Name",
+        "Num": 33,
+        "Picture": "scene_cg_animal_1",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_33_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_34": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_34_Desc",
+        "Englishname": "Memory_ACTIVI_34_Englishname",
+        "Listpicture": "s_album_active_animal_2",
+        "Name": "Memory_ACTIVI_34_Name",
+        "Num": 34,
+        "Picture": "scene_cg_animal_2",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_34_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_35": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_35_Desc",
+        "Englishname": "Memory_ACTIVI_35_Englishname",
+        "Listpicture": "s_album_active_dusk_2",
+        "Name": "Memory_ACTIVI_35_Name",
+        "Num": 35,
+        "Picture": "scene_cg_dusk_2",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_35_Time",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_36": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M01",
+                    "M01S01"
+                ]
+            }
+        ],
+        "Desc": "Memory_ACTIVI_36_Desc",
+        "Englishname": "Memory_ACTIVI_36_Englishname",
+        "Listpicture": "s_album_active_dusk_3",
+        "Name": "Memory_ACTIVI_36_Name",
+        "Num": 36,
+        "Picture": "scene_cg_dusk_3",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "Memory_Activi_36_Time",
         "Type": "ACTIVI"
     },
     "Memory_Activi_4": {
@@ -2968,6 +3400,19 @@
         "Name": "Memory_Activity_wsj_Name",
         "Num": 21,
         "Picture": "pintu_scene_znq_wsj",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_Puzzle_5": {
+        "Condition": "",
+        "Desc": "Memory_Activity_5_Desc",
+        "Englishname": "Memory_Activity_5_EnName",
+        "Listpicture": "pintu_img_1",
+        "Name": "Memory_Activity_5_Name",
+        "Num": 40,
+        "Picture": "pintu_scene_pintu_1",
         "Screen": "",
         "StoryLink": "",
         "Time": "",

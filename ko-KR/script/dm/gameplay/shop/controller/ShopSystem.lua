@@ -1707,3 +1707,7 @@ function ShopSystem:getMonthCardHeadFrame()
 
 	return nil
 end
+
+function ShopSystem:getRedPointForShopExchange()
+	return self._bagSystem:getRedPointForShopExchange()
+end

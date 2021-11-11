@@ -652,7 +652,7 @@ function BagSelectMaterialMediator:initComposeData(data)
 		self._cellsHeight[self._cellNum] = param
 	end
 
-	local repleaseItems = self._bagSystem:getAllComposeEntrys(self._curMaterial.id, self._curComposeId)
+	local repleaseItems = {}
 	local repleaseNum = #repleaseItems
 
 	if repleaseNum > 0 then

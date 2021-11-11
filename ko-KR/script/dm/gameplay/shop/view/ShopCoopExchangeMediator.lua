@@ -227,7 +227,7 @@ function ShopCoopExchangeMediator:createTableView()
 	end
 
 	local function cellSize(table, idx)
-		return listSize.width, size.height
+		return listSize.width, size.height + 10
 	end
 
 	local function cellAtIndex(table, idx)
@@ -246,7 +246,7 @@ function ShopCoopExchangeMediator:createTableView()
 				local itemCell = self._cloneCell:clone()
 
 				itemCell:setSwallowTouches(false)
-				itemCell:setPosition(cc.p(8 + (size.width + 15) * (i - 1), 0))
+				itemCell:setPosition(cc.p(8 + (size.width + 30) * (i - 1), 0))
 				bar:addChild(itemCell, 0, i)
 				self:updataCell(itemCell, itemIdx)
 			end
