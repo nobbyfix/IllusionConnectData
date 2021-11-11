@@ -875,7 +875,7 @@ function IconFactory:createRoleIconSpriteNew(info)
 		local offsetX = math.max(0, realPosX)
 		local offsetY = math.max(0, spriteSize.height - realPosY - clipSzie.height)
 		local width = realPosX < 0 and clipSzie.width + realPosX or clipSzie.width
-		local height = spriteSize.height - realPosY - clipSzie.height < 0 and clipSzie.height + spriteSize.height - realPosY - clipSzie.height or clipSzie.height
+		local height = offsetY < 0 and clipSzie.height + offsetY or clipSzie.height
 
 		sprite:setTextureRect(cc.rect(offsetX, offsetY, math.min(width, spriteSize.width - offsetX), height))
 		sprite:setScale(bustZoom * frameInfo.Scale)

@@ -68,6 +68,7 @@
             "storage": 1
         },
         "RsShow": "IR_Gold",
+        "ShopType": "",
         "Shop_Id": 10001,
         "UnlockSystem": "Shop_Groceries"
     },
@@ -160,6 +161,7 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_Arena",
+        "ShopType": "",
         "Shop_Id": 10002,
         "UnlockSystem": "Shop_Arena"
     },
@@ -228,6 +230,7 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_Club",
+        "ShopType": "",
         "Shop_Id": 10003,
         "UnlockSystem": "Shop_Club"
     },
@@ -294,6 +297,7 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_Equip13",
+        "ShopType": "",
         "Shop_Id": 10004,
         "UnlockSystem": "Shop_Equip"
     },
@@ -368,6 +372,7 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_KON",
+        "ShopType": "",
         "Shop_Id": 10005,
         "UnlockSystem": "Shop_KOF"
     },
@@ -490,6 +495,7 @@
             "storage": 1
         },
         "RsShow": "IR_Crystal",
+        "ShopType": "",
         "Shop_Id": 10007,
         "UnlockSystem": "Unlock_Shop_Crystal"
     },
@@ -526,6 +532,7 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_Diamond",
+        "ShopType": "",
         "Shop_Id": 10006,
         "UnlockSystem": "Unlock_Shop_Diamond"
     },
@@ -594,7 +601,186 @@
             "resetMode": "NONE"
         },
         "RsShow": "IR_NewArenaCoin",
+        "ShopType": "",
         "Shop_Id": 10008,
         "UnlockSystem": "Shop_StageArenaShop_Unlock"
+    },
+    "Shop_URMap": {
+        "DefaultCostType": "IR_URMapCoin",
+        "ENName": "",
+        "Name": "Shop_URMap",
+        "Positions": [
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "UNLOCKTIME": "2021-11-10 05:00:00"
+                },
+                "ShopId": "Shop_URmap_1"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_2"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_3"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_4"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_5"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_6"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_7"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_8"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_9"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_10"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_11"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_12"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_13"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_14"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_15"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_16"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_17"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_18"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_19"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_20"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_21"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_22"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_23"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_24"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_25"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_URmap_26"
+            }
+        ],
+        "RefreshCurrency": "",
+        "RefreshMaxTimes": 0,
+        "RefreshPrice": [
+            100,
+            200,
+            300
+        ],
+        "ResetSystem": {
+            "resetMode": "NONE"
+        },
+        "RsShow": "IR_URMapCoin",
+        "ShopType": "URmap",
+        "Shop_Id": 10007,
+        "UnlockSystem": "Shop_URMap_Unlock"
     }
 }

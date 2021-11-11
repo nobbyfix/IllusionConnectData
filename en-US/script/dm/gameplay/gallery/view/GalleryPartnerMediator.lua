@@ -104,6 +104,33 @@ function GalleryPartnerMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_GALLERY_BOX_GET_SUCC, self, self.refreshRewardRedPoint)
 end
 
+function GalleryPartnerMediator:enterWithData(data)
+	self:setupTopInfoWidget()
+	self:setupView(data)
+	self:runStartAnim()
+end
+
+function GalleryPartnerMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		title = Strings:get("GALLERY_UI1"),
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function GalleryPartnerMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
 function GalleryPartnerMediator:setupView(data)
 	self:initData(data)
 	self:initWidgetInfo()

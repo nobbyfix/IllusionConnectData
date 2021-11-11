@@ -2676,6 +2676,235 @@
         ],
         "StoryLink": "eventstory_deepSea_08a"
     },
+    "DuskS01S01": {
+        "FirstReward": "DuskS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DuskM01",
+        "Name": "DuskS01S01_Name",
+        "NextStoryPoint": [
+            "DuskS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_dusk_00a"
+    },
+    "DuskS01S02": {
+        "FirstReward": "DuskS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DuskM01",
+        "Name": "DuskS01S02_Name",
+        "NextStoryPoint": [
+            "DuskS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [
+            "DuskS01S01"
+        ],
+        "StoryLink": "eventstory_dusk_01a"
+    },
+    "DuskS01S03": {
+        "FirstReward": "DuskS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DuskM01",
+        "Name": "DuskS01S03_Name",
+        "NextStoryPoint": [
+            "DuskS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSN02"
+        ],
+        "PreStoryPoint": [
+            "DuskS01S02"
+        ],
+        "StoryLink": "eventstory_dusk_02a"
+    },
+    "DuskS01S04": {
+        "FirstReward": "DuskS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DuskM01",
+        "Name": "DuskS01S04_Name",
+        "NextStoryPoint": [
+            "DuskS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSN05"
+        ],
+        "PreStoryPoint": [
+            "DuskS01S03"
+        ],
+        "StoryLink": "eventstory_dusk_03a"
+    },
+    "DuskS01S05": {
+        "FirstReward": "DuskS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DuskM01",
+        "Name": "DuskS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSN07"
+        ],
+        "PreStoryPoint": [
+            "DuskS01S04"
+        ],
+        "StoryLink": "eventstory_dusk_04a"
+    },
+    "DuskS02S01": {
+        "FirstReward": "DuskS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DuskM02",
+        "Name": "DuskS02S01_Name",
+        "NextStoryPoint": [
+            "DuskS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_dusk_05a"
+    },
+    "DuskS02S02": {
+        "FirstReward": "DuskS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DuskM02",
+        "Name": "DuskS02S02_Name",
+        "NextStoryPoint": [
+            "DuskS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSE02"
+        ],
+        "PreStoryPoint": [
+            "DuskS02S01"
+        ],
+        "StoryLink": "eventstory_dusk_06a"
+    },
+    "DuskS02S03": {
+        "FirstReward": "DuskS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DuskM02",
+        "Name": "DuskS02S03_Name",
+        "NextStoryPoint": [
+            "DuskS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSE05"
+        ],
+        "PreStoryPoint": [
+            "DuskS02S02"
+        ],
+        "StoryLink": "eventstory_dusk_07a"
+    },
+    "DuskS02S04": {
+        "FirstReward": "DuskS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DuskM02",
+        "Name": "DuskS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DuskSE07"
+        ],
+        "PreStoryPoint": [
+            "DuskS02S03"
+        ],
+        "StoryLink": "eventstory_dusk_08a"
+    },
     "FemaleS01E01": {
         "FirstReward": "FemaleS01E01_Reward",
         "Icon": "s_album_story_1",

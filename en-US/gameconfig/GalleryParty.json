@@ -1,4 +1,12 @@
 {
+    "AllHero": {
+        "IncludeHero": [],
+        "Party": "AllHero",
+        "PartyDesc": "",
+        "PartyReward": [],
+        "ShowRank": 8,
+        "Type": 1
+    },
     "Aoe": {
         "IncludeHero": [
             "SP_PNCao",
@@ -51,7 +59,8 @@
             "SLWan",
             "WSLi",
             "LEMHou",
-            "FLEr"
+            "FLEr",
+            "YMJDe"
         ],
         "Party": "Attack",
         "PartyDesc": "Party_Attack_Desc",
@@ -374,7 +383,8 @@
             "AMLBLTe",
             "LEMHou",
             "XDE",
-            "HLa"
+            "HLa",
+            "YMJDe"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -397,7 +407,8 @@
             "KMLa",
             "KXuan",
             "TTKMeng",
-            "HLa"
+            "HLa",
+            "YMJDe"
         ],
         "Party": "SSZS",
         "PartyDesc": "PartyDesc_SSZS",

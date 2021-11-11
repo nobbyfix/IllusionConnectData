@@ -1795,7 +1795,7 @@ function HeroSystem:setShowHeroType(type)
 	self._showHeroType = type
 end
 
-function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter)
+function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter, callback)
 	assert(self:hasHero(heroId), heroId .. " 英魂未获得")
 
 	if type == GalleryFuncName.kGift then
@@ -1845,12 +1845,17 @@ function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter)
 
 			if not ignoreEnter then
 				if type == GalleryFuncName.kGift then
-					local view = self:getInjector():getInstance("GalleryDateView")
+					if callback then
+						callback()
+					else
+						local view = self:getInjector():getInstance("GalleryPartnerInfoNewView")
 
-					self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-						id = heroId,
-						type = type
-					}))
+						self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+							tabIndex = 2,
+							id = heroId,
+							type = type
+						}))
+					end
 				elseif type == GalleryFuncName.kDate then
 					local view = self:getInjector():getInstance("GalleryDateView")
 

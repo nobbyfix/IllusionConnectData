@@ -22,6 +22,26 @@ function GalleryParty:getDesc()
 end
 
 function GalleryParty:getHeroIds()
+	if not next(self._config.IncludeHero) then
+		local heros = {}
+		local data = {}
+		local config = ConfigReader:getDataTable("GalleryParty")
+
+		for k, v in pairs(config) do
+			if v.Type == 1 then
+				data[v.ShowRank] = v
+			end
+		end
+
+		for i, v in ipairs(data) do
+			for i, id in ipairs(v.IncludeHero) do
+				table.insert(heros, id)
+			end
+		end
+
+		self._config.IncludeHero = heros
+	end
+
 	return self._config.IncludeHero
 end
 

@@ -1709,6 +1709,63 @@
         "Type": 5,
         "Unlook": 1
     },
+    "Surface_CKFSJi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -44,
+                    1590
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -101,
+                    1399
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_CKFSJi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "CKFSJi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_CKFSJi",
+        "Name": "Surface_CKFSJi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_CLMan_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -3160,7 +3217,9 @@
     },
     "Surface_FLEr_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_asikeshe"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3217,7 +3276,9 @@
     },
     "Surface_FLYDe_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xge_bufftexiao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3274,7 +3335,9 @@
     },
     "Surface_FLYDe_Awake": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xge_bufftexiao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5783,10 +5846,10 @@
     "Surface_LFKLFTe_1": {
         "ActivityId": "",
         "AnimeList": [
+            "ws_shuiruchang",
             "zuo_dagunzhuahen",
             "you_dagunzhuahen",
-            "pugong_dagunpugong",
-            "die_zhanshupai"
+            "pugong_dagunpugong"
         ],
         "ClickAction": [
             {
@@ -6015,7 +6078,9 @@
     },
     "Surface_LSLTe_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "baozha_weienbaodian"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6072,7 +6137,9 @@
     },
     "Surface_LSLTe_2": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "baozha_weienbaodian"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6699,7 +6766,9 @@
     },
     "Surface_MLYDi_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_jinnibaodianjiangluo"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7155,7 +7224,10 @@
     },
     "Surface_MYing_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_meiweisiyindao",
+            "main_meiweisiyinlang"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -8874,7 +8946,9 @@
     },
     "Surface_SP_ALPo_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_lijiya"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -10128,7 +10202,16 @@
     },
     "Surface_WLSTNCi_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xbdan_qiatudazhao",
+            "xbshi_qiatudazhao",
+            "zxshi_qiatudazhao",
+            "xbcha_qiatudazhao",
+            "zjcha_qiatudazhao",
+            "xbmi_qiatudazhao",
+            "hhmi_qiatudazhao",
+            "skill_qiatudazhao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -10411,9 +10494,68 @@
         "Type": 1,
         "Unlook": 1
     },
-    "Surface_XDE_1": {
+    "Surface_XBKLDi_2": {
         "ActivityId": "",
         "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -51,
+                    1608
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -50,
+                    1399
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XBKLDi_christmas_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_XBKLDi_2_GainShort",
+        "GoodsId": "",
+        "Hero": "XBKLDi",
+        "Link": "",
+        "LongDesc": "Surface_XBKLDi_christmas_LongDesc",
+        "Model": "Model_XBKLDi_christmas",
+        "Name": "Surface_XBKLDi_christmas_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
+    },
+    "Surface_XDE_1": {
+        "ActivityId": "",
+        "AnimeList": [
+            "main_sufeidazhao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -10859,6 +11001,63 @@
         "LongDesc": "",
         "Model": "Model_XSMLi",
         "Name": "Surface_XSMLi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_XXFSi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -8,
+                    1278
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    18,
+                    1088
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XXFSi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "XXFSi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XXFSi",
+        "Name": "Surface_XXFSi_1_Name",
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
@@ -11730,8 +11929,8 @@
                 "action": "touch2",
                 "part": "head",
                 "point": [
-                    -13,
-                    641
+                    -10,
+                    861
                 ],
                 "range": [
                     128,
@@ -11742,8 +11941,8 @@
                 "action": "touch1",
                 "part": "body",
                 "point": [
-                    12,
-                    618
+                    14,
+                    746
                 ],
                 "range": [
                     128,

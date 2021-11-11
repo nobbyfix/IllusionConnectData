@@ -6435,7 +6435,7 @@
                     2000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6455,7 +6455,7 @@
                     5000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6475,7 +6475,7 @@
                     8000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6495,7 +6495,7 @@
                     12000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6755,7 +6755,7 @@
                     10000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6775,7 +6775,7 @@
                     20000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6795,7 +6795,7 @@
                     40000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6815,7 +6815,7 @@
                     60000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -6835,7 +6835,7 @@
                     80000
                 ],
                 "params": [
-                    "Activity_Darts_211016"
+                    "Activity_Darts_211112"
                 ]
             }
         ],
@@ -12235,6 +12235,222 @@
         "Reward": "Activity_YSTLuTask_9_Reward",
         "TaskIcon": ""
     },
+    "Activity_YSTLu_1Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_YSTLu_1Task_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_YSTLu_1Task_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_YSTLu_1Task_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_YSTLu_1Task_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_YSTLu_1Task_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_YSTLu_1Task_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_YSTLu_1Task_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_YSTLu_1Task_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_YSTLu_1Task_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_YSTLu_1Task_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_YSTLu_1Task_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLu_1Task_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_YSTLu_1Task_9_Reward",
+        "TaskIcon": ""
+    },
     "Activity_ZTXChangTask_1": {
         "Condition": [
             {
@@ -17439,6 +17655,773 @@
         "Reward": "DrawCard_SP_SSQXin_Activity_Task_Reward",
         "TaskIcon": ""
     },
+    "Dusk_AchieveMentTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    50
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Dusk_AchieveMentTask_001_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Dusk_AchieveMentTask_002_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    200
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Dusk_AchieveMentTask_003_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    300
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Dusk_AchieveMentTask_004_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    400
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Dusk_AchieveMentTask_005_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DuskExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Dusk_AchieveMentTask_006_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DuskExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Dusk_AchieveMentTask_007_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DuskExchangeAchieve",
+                "factor1": [
+                    16000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Dusk_AchieveMentTask_008_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DuskExchangeAchieve",
+                "factor1": [
+                    20000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Dusk_AchieveMentTask_009_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DuskExchangeAchieve",
+                "factor1": [
+                    25000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Dusk_AchieveMentTask_010_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk",
+                    "ActivityBlock_Dusk_Map",
+                    "DuskM01",
+                    "DuskSN05",
+                    "DuskSN05M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Dusk_AchieveMentTask_011_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk",
+                    "ActivityBlock_Dusk_Map",
+                    "DuskM01",
+                    "DuskSN08",
+                    "DuskSN08M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Dusk_AchieveMentTask_012_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk",
+                    "ActivityBlock_Dusk_Map",
+                    "DuskM02",
+                    "DuskSE04",
+                    "DuskSE04M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "Dusk_AchieveMentTask_013_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk",
+                    "ActivityBlock_Dusk_Map",
+                    "DuskM02",
+                    "DuskSE07",
+                    "DuskSE07M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "Dusk_AchieveMentTask_014_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk",
+                    "ActivityBlock_Dusk_Map",
+                    "DuskM02",
+                    "DuskSE08",
+                    "DuskSE08M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "Dusk_AchieveMentTask_015_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    3
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_16_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_16_Name",
+        "OrderNum": 16,
+        "Reward": "Dusk_AchieveMentTask_016_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_17": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_17_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_17_Name",
+        "OrderNum": 17,
+        "Reward": "Dusk_AchieveMentTask_017_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_18": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    8
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_18_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_18_Name",
+        "OrderNum": 18,
+        "Reward": "Dusk_AchieveMentTask_018_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_19": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_19_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_19_Name",
+        "OrderNum": 19,
+        "Reward": "Dusk_AchieveMentTask_019_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_20": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    12
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_20_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_20_Name",
+        "OrderNum": 20,
+        "Reward": "Dusk_AchieveMentTask_020_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    14
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_21_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_21_Name",
+        "OrderNum": 21,
+        "Reward": "Dusk_AchieveMentTask_021_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    16
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_22_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_22_Name",
+        "OrderNum": 22,
+        "Reward": "Dusk_AchieveMentTask_022_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_AchieveMentTask_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Dusk_AchieveMentTask_01",
+                    "Dusk_AchieveMentTask_02",
+                    "Dusk_AchieveMentTask_03",
+                    "Dusk_AchieveMentTask_04",
+                    "Dusk_AchieveMentTask_05",
+                    "Dusk_AchieveMentTask_06",
+                    "Dusk_AchieveMentTask_07",
+                    "Dusk_AchieveMentTask_08",
+                    "Dusk_AchieveMentTask_09",
+                    "Dusk_AchieveMentTask_10",
+                    "Dusk_AchieveMentTask_11",
+                    "Dusk_AchieveMentTask_12",
+                    "Dusk_AchieveMentTask_13",
+                    "Dusk_AchieveMentTask_14"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_AchieveMentTask_23_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_AchieveMentTask_23_Name",
+        "OrderNum": 23,
+        "Reward": "Dusk_AchieveMentTask_023_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Dusk_DailyTask_01_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Dusk_DailyTask_02_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Dusk_DailyTask_03_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Dusk_DailyTask_04_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Dusk_DailyTask_05_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_DailyTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Dusk_DailyTask_01",
+                    "Dusk_DailyTask_02",
+                    "Dusk_DailyTask_03",
+                    "Dusk_DailyTask_04",
+                    "Dusk_DailyTask_05"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Dusk_DailyTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_DailyTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Dusk_DailyTask_06_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_1_Name",
+        "OrderNum": 1,
+        "Reward": "Dusk_Login_01_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_2_Name",
+        "OrderNum": 2,
+        "Reward": "Dusk_Login_02_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_3_Name",
+        "OrderNum": 3,
+        "Reward": "Dusk_Login_03_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_4_Name",
+        "OrderNum": 4,
+        "Reward": "Dusk_Login_04_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_5_Name",
+        "OrderNum": 5,
+        "Reward": "Dusk_Login_05_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_6_Name",
+        "OrderNum": 6,
+        "Reward": "Dusk_Login_06_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_7_Name",
+        "OrderNum": 7,
+        "Reward": "Dusk_Login_07_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_8_Name",
+        "OrderNum": 8,
+        "Reward": "Dusk_Login_08_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_9_Name",
+        "OrderNum": 9,
+        "Reward": "Dusk_Login_09_Reward",
+        "TaskIcon": ""
+    },
+    "Dusk_Login_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Dusk_Login_10_Name",
+        "OrderNum": 10,
+        "Reward": "Dusk_Login_10_Reward",
+        "TaskIcon": ""
+    },
     "EightDays_20210809_1": {
         "Condition": [
             {
@@ -18525,6 +19508,142 @@
         "Name": "EightDays_8_Name",
         "OrderNum": 8,
         "Reward": "EightDays_20211108_8_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20211124_1_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20211124_2_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20211124_3_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20211124_4_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20211124_5_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20211124_6_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20211124_7_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20211124_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20211124_8_Reward",
         "TaskIcon": ""
     },
     "EightDays_Zuohe_1": {
@@ -26129,7 +27248,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_01_Name",
         "OrderNum": 1,
-        "Reward": "Puzzle_DailyTask_01_Reward",
+        "Reward": "Puzzle_DailyTask_21_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_02": {
@@ -26146,7 +27265,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_02_Name",
         "OrderNum": 2,
-        "Reward": "Puzzle_DailyTask_02_Reward",
+        "Reward": "Puzzle_DailyTask_22_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_03": {
@@ -26163,7 +27282,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_03_Name",
         "OrderNum": 3,
-        "Reward": "Puzzle_DailyTask_03_Reward",
+        "Reward": "Puzzle_DailyTask_23_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_04": {
@@ -26180,7 +27299,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_04_Name",
         "OrderNum": 4,
-        "Reward": "Puzzle_DailyTask_04_Reward",
+        "Reward": "Puzzle_DailyTask_24_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_05": {
@@ -26197,7 +27316,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_05_Name",
         "OrderNum": 5,
-        "Reward": "Puzzle_DailyTask_05_Reward",
+        "Reward": "Puzzle_DailyTask_25_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_06": {
@@ -26214,7 +27333,7 @@
         "ExtraReward": "",
         "Name": "Puzzle_DailyTask_06_Name",
         "OrderNum": 6,
-        "Reward": "Puzzle_DailyTask_06_Reward",
+        "Reward": "Puzzle_DailyTask_26_Reward",
         "TaskIcon": ""
     },
     "Puzzle_DailyTask_11": {

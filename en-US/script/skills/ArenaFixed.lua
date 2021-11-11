@@ -1114,7 +1114,7 @@ all.ArenaFixed_18 = {
 					_env.count = _env.count + 1
 				end
 
-				global.ApplyRPRecovery(_env, _env.ACTOR, _env.count * 80)
+				global.ApplyRPRecovery(_env, _env.ACTOR, _env.count * 70)
 			end
 		end)
 

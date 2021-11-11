@@ -377,6 +377,29 @@
             3.7
         ]
     },
+    "CKFSJi": {
+        "Reward": {},
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "CLMan": {
         "Reward": {
             "1": 80,
@@ -626,7 +649,11 @@
             "2": 90,
             "3": 80
         },
-        "RewardNumShow": [],
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,
@@ -838,7 +865,11 @@
             "2": 30,
             "3": 10
         },
-        "RewardNumShow": [],
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,
@@ -2532,6 +2563,29 @@
             3.6
         ]
     },
+    "XXFSi": {
+        "Reward": {},
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "YBYa": {
         "Reward": {
             "1": 100,
@@ -2722,8 +2776,16 @@
         ]
     },
     "YMJDe": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,

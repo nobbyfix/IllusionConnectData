@@ -85,3 +85,9 @@ function BagService:mainInfoURSuite(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function BagService:transferURScroll(params, callback, blockUI)
+	local request = self:newRequest(10219, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

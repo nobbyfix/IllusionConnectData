@@ -311,6 +311,18 @@
         "UnlockDesc": "BQDShe_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_CKFSJi": {
+        "HeadDesc": "HeroBase_Desc_CKFSJi",
+        "HeadMove": "",
+        "HeadName": "CKFSJi_HeadName",
+        "HeroMasterId": "CKFSJi",
+        "IconPath": "asset/heros/mke/battlepic_mke.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "CKFSJi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_CLMan": {
         "HeadDesc": "HeroBase_Desc_CLMan",
         "HeadMove": "",
@@ -1955,6 +1967,18 @@
         "UnlockDesc": "XBKLDi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_XBKLDi_2": {
+        "HeadDesc": "Surface_XBKLDi_christmas_Desc",
+        "HeadMove": "",
+        "HeadName": "XBKLDi_2_HeadName",
+        "HeroMasterId": "XBKLDi",
+        "IconPath": "asset/heros/yasong_christmas/battlepic_yasong_christmas.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_XBKLDi_2",
+        "Type": 5,
+        "UnlockDesc": "XBKLDi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_XDE": {
         "HeadDesc": "HeroBase_Desc_XDE",
         "HeadMove": "",
@@ -2037,6 +2061,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "XSMLi_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_XXFSi": {
+        "HeadDesc": "HeroBase_Desc_XXFSi",
+        "HeadMove": "",
+        "HeadName": "XXFSi_HeadName",
+        "HeroMasterId": "XXFSi",
+        "IconPath": "asset/heros/xma/battlepic_xma.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "XXFSi_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_YBYa": {
@@ -2165,7 +2201,7 @@
         "HeadName": "YMJDe_HeadName",
         "HeroMasterId": "YMJDe",
         "IconPath": "asset/heros/YMJDe/battlepic_aske.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "YMJDe_HeadUnlock",

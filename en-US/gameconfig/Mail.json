@@ -584,6 +584,32 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Dusk_AchieveMentTask_Activity": {
+        "Content": "Mail_Dusk_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Dusk_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Dusk_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Dusk_DailyTask_Activity": {
+        "Content": "Mail_Dusk_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Dusk_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Dusk_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Animal": {
         "Content": "Mail_EightDays_Animal_Content",
         "ExpireAfterRead": 72000,
@@ -646,6 +672,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_SevenDays_Detective_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Dusk": {
+        "Content": "Mail_EightDays_Dusk_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Dusk_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Dusk_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

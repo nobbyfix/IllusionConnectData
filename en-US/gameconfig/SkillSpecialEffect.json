@@ -7925,6 +7925,45 @@
             "slot": "Hero_Unique_BQDShe"
         }
     },
+    "StarSE_CKFSJi_4": {
+        "Desc": "StarSE_CKFSJi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_CKFSJi_EX",
+            "before": "Hero_Unique_CKFSJi",
+            "slot": "Hero_Unique_CKFSJi"
+        }
+    },
+    "StarSE_CKFSJi_5": {
+        "Desc": "StarSE_CKFSJi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_CKFSJi_EX",
+            "before": "Hero_PBattle_CKFSJi",
+            "slot": "Hero_PBattle_CKFSJi"
+        }
+    },
+    "StarSE_CKFSJi_6": {
+        "Desc": "StarSE_CKFSJi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_CKFSJi_EX",
+            "before": "Hero_Proud_CKFSJi",
+            "slot": "Hero_Proud_CKFSJi"
+        }
+    },
     "StarSE_CLMan_4": {
         "Desc": "StarSE_CLMan_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -11563,6 +11602,45 @@
             "after": "Hero_Proud_XSMLi_EX",
             "before": "Hero_Proud_XSMLi",
             "slot": "Hero_Proud_XSMLi"
+        }
+    },
+    "StarSE_XXFSi_4": {
+        "Desc": "StarSE_XXFSi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XXFSi_EX",
+            "before": "Hero_Unique_XXFSi",
+            "slot": "Hero_Unique_XXFSi"
+        }
+    },
+    "StarSE_XXFSi_5": {
+        "Desc": "StarSE_XXFSi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_XXFSi_EX",
+            "before": "Hero_PBattle_XXFSi",
+            "slot": "Hero_PBattle_XXFSi"
+        }
+    },
+    "StarSE_XXFSi_6": {
+        "Desc": "StarSE_XXFSi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_XXFSi_EX",
+            "before": "Hero_Proud_XXFSi",
+            "slot": "Hero_Proud_XXFSi"
         }
     },
     "StarSE_YBYa_4": {

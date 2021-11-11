@@ -693,6 +693,13 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		attacker.critrate = 0
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
+		local singleweaken = 2 * global.SpecialPropGetter(_env, "singleweaken")(_env, actor)
+		local singleunhurtratedown = 2 * global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
+		attacker.defweaken = attacker.defweaken + singleweaken
+		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
+	end
+
 	local damage = global.EvalSingleDamage(_env, attacker, defender, dmgFactor)
 
 	for i = 1, #Flags do
@@ -719,6 +726,11 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		if cost > 14 then
 			damage.val = damage.val * 1.2
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2_efc")) > 0 then
+		global.DispelBuff(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
 	return damage
@@ -978,6 +990,13 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		attacker.critrate = 0
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
+		local singleweaken = global.SpecialPropGetter(_env, "singleweaken")(_env, actor)
+		local singleunhurtratedown = global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
+		attacker.defweaken = attacker.defweaken + singleweaken
+		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
+	end
+
 	local damage = global.EvalAOEDamage(_env, attacker, defender, dmgFactor)
 
 	for i = 1, #Flags do
@@ -1004,6 +1023,11 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		if cost > 14 then
 			damage.val = damage.val * 1.2
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2_efc")) > 0 then
+		global.DispelBuff(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
 	return damage
@@ -1455,6 +1479,14 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 		damage = global.SNGLSi_Damage_Share(_env, deers, damage, deer_ratio)
+	end
+
+	if global.SelectHeroPassiveCount(_env, actor, "Skill_CKFSJi_Passive") > 0 then
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local HealRateFactor = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
+		local heal = atk * HealRateFactor
+
+		global.ApplyHPRecovery_ResultCheck(_env, _env.actor, heal)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -2227,11 +2259,21 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
-	if result and result.crit and global.MARKED(_env, "QTQCi")(_env, actor) then
-		local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+	if result and result.crit then
+		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
-		if RpFactor and RpFactor ~= 0 then
-			global.ApplyRPRecovery(_env, actor, RpFactor)
+		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
+				global.ApplyHPDamage(_env, unit, damage * aoecritsplitrate)
+			end
+		end
+
+		if global.MARKED(_env, "QTQCi")(_env, actor) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
 		end
 	end
 
@@ -2580,6 +2622,14 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 		damages[n] = global.SNGLSi_Damage_Share(_env, deers, damages[n], deer_ratio)
+	end
+
+	if global.SelectHeroPassiveCount(_env, actor, "Skill_CKFSJi_Passive") > 0 then
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local HealRateFactor = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
+		local heal = atk * HealRateFactor
+
+		global.ApplyHPRecovery_ResultCheck(_env, _env.actor, heal)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -3292,11 +3342,21 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
-	if result and result.crit and global.MARKED(_env, "QTQCi")(_env, actor) then
-		local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+	if result and result.crit then
+		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
-		if RpFactor and RpFactor ~= 0 and n == total then
-			global.ApplyRPRecovery(_env, actor, RpFactor)
+		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
+				global.ApplyHPDamage(_env, unit, damages[n] * aoecritsplitrate)
+			end
+		end
+
+		if global.MARKED(_env, "QTQCi")(_env, actor) then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_QTQCi_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and n == total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
 		end
 	end
 

@@ -143,7 +143,7 @@ function BagMediator:onRegister()
 	self._composeBtn = self:bindWidget("mainpanel.detail_panel.composebtn", TwoLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onUseClicked, self)
+			func = bind1(self.onComposeClicked, self)
 		}
 	})
 	self._sellbtn = self:bindWidget("mainpanel.detail_panel.sellbtn", TwoLevelViceButton, {
@@ -619,6 +619,7 @@ function BagMediator:updateDetailButtons(notHasShow)
 		buttons.useBtn:setVisible(false)
 		buttons.lockBtn:setVisible(false)
 		buttons.composeBtn:setVisible(false)
+		buttons.composeBtn:setButtonName(Strings:get("bag_UI21"), Strings:get("bag_UI21"))
 
 		local subType = item:getSubType()
 		local page = item:getType()
@@ -642,6 +643,7 @@ function BagMediator:updateDetailButtons(notHasShow)
 				buttons.useBtn:setButtonName(Strings:get(str), Strings:get(str1))
 			end
 		elseif subType == ItemTypes.K_COMPOSE then
+			buttons.sellBtn:setVisible(false)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI31"), Strings:get("UITitle_EN_ZueXi"))
 			buttons.useBtn:setVisible(true)
 			self:setButtonEnabled(buttons.useBtn, true)
@@ -649,6 +651,9 @@ function BagMediator:updateDetailButtons(notHasShow)
 			if self:checkCanUseCompose(item) == false then
 				buttons.useBtn:setButtonName(Strings:get("bag_Compose_UI_1"), Strings:get("bag_Compose_UI_1_EN"))
 			end
+
+			buttons.composeBtn:setVisible(true)
+			buttons.composeBtn:setButtonName(Strings:get("Shop_URMap_Button_Desc3"), Strings:get("Shop_URMap_Button_Desc3"))
 		elseif subType == ItemTypes.K_HERO_F then
 			buttons.useBtn:setVisible(true)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
@@ -688,7 +693,6 @@ function BagMediator:updateDetailButtons(notHasShow)
 			self:setButtonEnabled(buttons.useBtn, true)
 		elseif page == ItemPages.kConsumable then
 			if item:getSubType() == ItemTypes.k_MAP_IN then
-				buttons.sellBtn:setVisible(false)
 				buttons.useBtn:setVisible(false)
 				buttons.composeBtn:setVisible(false)
 			else
@@ -709,6 +713,9 @@ function BagMediator:updateDetailButtons(notHasShow)
 			buttons.composeBtn:getView():setPositionX(278)
 		elseif buttons.sellBtn:isVisible() and not buttons.useBtn:isVisible() and not buttons.composeBtn:isVisible() then
 			buttons.sellBtn:getView():setPositionX(186)
+		elseif buttons.composeBtn:isVisible() and buttons.useBtn:isVisible() and not buttons.sellBtn:isVisible() then
+			buttons.composeBtn:getView():setPositionX(95)
+			buttons.useBtn:getView():setPositionX(278)
 		else
 			buttons.useBtn:getView():setPositionX(186)
 			buttons.composeBtn:getView():setPositionX(186)
@@ -1382,6 +1389,43 @@ function BagMediator:onUseClicked(sender, eventType)
 	end
 end
 
+function BagMediator:onComposeClicked(sender, eventType)
+	if not self:isEntryIdValid(self._curEntryId) then
+		return
+	end
+
+	local entry = self._bagSystem:getEntryById(self._curEntryId)
+
+	if not entry then
+		return
+	end
+
+	local item = entry.item
+	local pageType = item:getType()
+	local subType = item:getSubType()
+
+	if subType == ItemTypes.K_COMPOSE then
+		if self:checkCanUseCompose(item) and entry.count == 1 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("Shop_URMap_Untransform_Tips_Desc1")
+			}))
+
+			return
+		end
+
+		local ChangeTipView = self:getInjector():getInstance("BagURExhangeView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, ChangeTipView, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			sourceId = self._curEntryId
+		}, nil))
+	else
+		self:onUseClicked(sender, eventType)
+	end
+end
+
 function BagMediator:getUseConsumConfigMap()
 	if not self._useConsumConfigMap then
 		self._useConsumConfigMap = {
@@ -1786,7 +1830,7 @@ function BagMediator:readyUseGalleryItem()
 		return false
 	end
 
-	local view = self:getInjector():getInstance("GalleryMainView")
+	local view = self:getInjector():getInstance("GalleryPartnerNewView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil))
 end

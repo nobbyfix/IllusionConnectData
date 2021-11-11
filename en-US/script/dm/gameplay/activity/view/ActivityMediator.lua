@@ -124,7 +124,7 @@ function ActivityMediator:updateTabController()
 		local name3Text = btn:getChildByName("name3")
 		local localLanguage = getCurrentLanguage()
 
-		if localLanguage ~= GameLanguageType.CN then
+		if localLanguage ~= GameLanguageType.CN or utf8.len(textdes) > 4 then
 			name3Text:setString(textdes)
 			name3Text:setVisible(true)
 			name1Text:setVisible(false)

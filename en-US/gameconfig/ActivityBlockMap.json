@@ -825,6 +825,62 @@
         ],
         "Type": "NORMAL"
     },
+    "DuskM01": {
+        "BGM": "Mus_Story_Dusk_Main",
+        "Background": "Dusk_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DuskAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DuskSN01",
+            "DuskSN02",
+            "DuskSN03",
+            "DuskSN04",
+            "DuskSN05",
+            "DuskSN06",
+            "DuskSN07",
+            "DuskSN08"
+        ],
+        "SubStoryPoint": [
+            "DuskS01S01",
+            "DuskS01S02",
+            "DuskS01S03",
+            "DuskS01S04",
+            "DuskS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "DuskM02": {
+        "BGM": "Mus_Story_Dusk_Farewell",
+        "Background": "Dusk_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DuskAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DuskSE01",
+            "DuskSE02",
+            "DuskSE03",
+            "DuskSE04",
+            "DuskSE05",
+            "DuskSE06",
+            "DuskSE07",
+            "DuskSE08",
+            "DuskSE09",
+            "DuskSE10",
+            "DuskSE11"
+        ],
+        "SubStoryPoint": [
+            "DuskS02S01",
+            "DuskS02S02",
+            "DuskS02S03",
+            "DuskS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "FWorksM01": {
         "BGM": "Mus_Story_Fireworks_Main",
         "Background": "FireWorks_Scene02",

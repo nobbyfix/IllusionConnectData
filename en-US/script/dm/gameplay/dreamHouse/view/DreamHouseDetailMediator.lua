@@ -225,12 +225,13 @@ function DreamHouseDetailMediator:initAnim()
 	mainMc:addTo(self._bgAnim):offset(0, 0)
 
 	local topInfoNode = self:getView():getChildByFullName("main.topinfo")
+	local initX, initY = topInfoNode:getPosition()
 
 	topInfoNode:setOpacity(0)
-	topInfoNode:setPositionY(620)
+	topInfoNode:setPositionY(initY + 50)
 	mainMc:addCallbackAtFrame(1, function (cid, mc)
 		local fadeIn = cc.FadeIn:create(0.15)
-		local moveTo = cc.MoveTo:create(0.15, cc.p(0, 570))
+		local moveTo = cc.MoveTo:create(0.15, cc.p(initX, initY))
 		local spawn = cc.Spawn:create(fadeIn, moveTo)
 
 		topInfoNode:runAction(spawn)
@@ -348,10 +349,7 @@ function DreamHouseDetailMediator:setupTopView()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
 
 	self._topInfoWidget:updateView(config)
-
-	local labelWordCount = string.len(config.title) / 3
-
-	self._main:getChildByName("infoBtn"):setPositionX(labelWordCount * 70 + 25)
+	self._main:getChildByName("infoBtn"):setPositionX(self._topInfoWidget:getTitleWidth() + 25)
 end
 
 function DreamHouseDetailMediator:setupBattleList()

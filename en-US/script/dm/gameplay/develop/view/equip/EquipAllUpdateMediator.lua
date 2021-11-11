@@ -1355,6 +1355,7 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 		items = items
 	}
 
+	dump(param, "======= param")
 	self._equipSystem:requestEquipStarUp(param)
 end
 

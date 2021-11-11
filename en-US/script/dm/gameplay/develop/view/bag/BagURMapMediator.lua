@@ -20,6 +20,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickBottomReward"
 	},
+	["main.Button_1"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickShop"
+	},
 	btn_rule = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRule"
@@ -322,6 +326,13 @@ function BagURMapMediator:refreshBottomView()
 	local hasRedPoint = self._taskSystem:hasUnreceivedTask(TaskType.kURMap)
 
 	rewardPoint:setVisible(hasRedPoint or self._bagSystem:checkURMapCountKey())
+
+	local btn = self._main:getChildByFullName("Button_1")
+	local unlockSystem = self:getInjector():getInstance(SystemKeeper)
+
+	if not unlockSystem:isUnlock("Shop_URMap_Unlock") then
+		btn:setVisible(false)
+	end
 end
 
 function BagURMapMediator:onClickGetBox(data, state, index)
@@ -568,4 +579,15 @@ function BagURMapMediator:onClickRule()
 		rule = Rule,
 		ruleReplaceInfo = {}
 	}))
+end
+
+function BagURMapMediator:onClickShop()
+	local shopSystem = self:getInjector():getInstance("ShopSystem")
+
+	shopSystem:requestGetShop("Shop_URMap", function ()
+		shopSystem:tryEnter({
+			shopId = "Shop_Normal",
+			rightTabIndex = 5
+		})
+	end)
 end

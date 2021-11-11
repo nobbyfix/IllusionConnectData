@@ -1186,7 +1186,7 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "Halloween_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1218,7 +1218,7 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "Halloween_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -1604,7 +1604,7 @@ function scene_eventstory_Halloween_01a.actions.start_eventstory_Halloween_01a(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_233",
+					name = "Halloween_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",

@@ -801,6 +801,448 @@
             "start": "2021-07-07 05:00:00"
         }
     },
+    "DuskSE01": {
+        "BlockPoint": [
+            "DuskSE01M",
+            "DuskSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS09M_Name",
+        "NextPoint": [
+            "DuskSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS02S01"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE02": {
+        "BlockPoint": [
+            "DuskSE02M",
+            "DuskSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS10M_Name",
+        "NextPoint": [
+            "DuskSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE03": {
+        "BlockPoint": [
+            "DuskSE03M",
+            "DuskSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS11M_Name",
+        "NextPoint": [
+            "DuskSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS02S02"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE04": {
+        "BlockPoint": [
+            "DuskSE04M",
+            "DuskSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS12M_Name",
+        "NextPoint": [
+            "DuskSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE05": {
+        "BlockPoint": [
+            "DuskSE05M",
+            "DuskSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS13M_Name",
+        "NextPoint": [
+            "DuskSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE06": {
+        "BlockPoint": [
+            "DuskSE06M",
+            "DuskSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS14M_Name",
+        "NextPoint": [
+            "DuskSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS02S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE07": {
+        "BlockPoint": [
+            "DuskSE07M",
+            "DuskSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS15M_Name",
+        "NextPoint": [
+            "DuskSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE08": {
+        "BlockPoint": [
+            "DuskSE08M",
+            "DuskSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS16M_Name",
+        "NextPoint": [
+            "DuskSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS02S04"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE09": {
+        "BlockPoint": [
+            "DuskSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS01H_Name",
+        "NextPoint": [
+            "DuskSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE10": {
+        "BlockPoint": [
+            "DuskSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS02H_Name",
+        "NextPoint": [
+            "DuskSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSE11": {
+        "BlockPoint": [
+            "DuskSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM02",
+        "Name": "BlockPoint_DuskS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2021-11-07 05:00:00"
+        }
+    },
+    "DuskSN01": {
+        "BlockPoint": [
+            "DuskSN01M",
+            "DuskSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS01M_Name",
+        "NextPoint": [
+            "DuskSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN02": {
+        "BlockPoint": [
+            "DuskSN02M",
+            "DuskSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS02M_Name",
+        "NextPoint": [
+            "DuskSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN03": {
+        "BlockPoint": [
+            "DuskSN03M",
+            "DuskSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS03M_Name",
+        "NextPoint": [
+            "DuskSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN04": {
+        "BlockPoint": [
+            "DuskSN04M",
+            "DuskSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS04M_Name",
+        "NextPoint": [
+            "DuskSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN05": {
+        "BlockPoint": [
+            "DuskSN05M",
+            "DuskSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS05M_Name",
+        "NextPoint": [
+            "DuskSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN06": {
+        "BlockPoint": [
+            "DuskSN06M",
+            "DuskSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS06M_Name",
+        "NextPoint": [
+            "DuskSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN07": {
+        "BlockPoint": [
+            "DuskSN07M",
+            "DuskSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS07M_Name",
+        "NextPoint": [
+            "DuskSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
+    "DuskSN08": {
+        "BlockPoint": [
+            "DuskSN08M",
+            "DuskSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "DuskM01",
+        "Name": "BlockPoint_DuskS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DuskSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DuskS01S05"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2021-11-16 05:00:00"
+        }
+    },
     "FWorksSE01": {
         "BlockPoint": [
             "FWorksSE01M",
