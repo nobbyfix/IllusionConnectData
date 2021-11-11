@@ -21627,22 +21627,22 @@
         "FirstKillReward": "RiddleSE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21669,7 +21669,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE01E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -21685,10 +21685,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -21754,32 +21754,32 @@
         "FirstKillReward": "RiddleSE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_1",
-                "4": "Riddle_Buff_Star4_2_1",
-                "5": "Riddle_Buff_Star5_2_1",
-                "6": "Riddle_Buff_Star6_2_1"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -21792,7 +21792,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE01",
         "Master": "",
         "Name": "BlockPoint_RiddleS09M_Name",
@@ -21805,7 +21805,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE01M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -21821,10 +21821,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -21889,22 +21889,22 @@
         "FirstKillReward": "RiddleSE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21931,7 +21931,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE02E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -21947,10 +21947,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22016,32 +22016,32 @@
         "FirstKillReward": "RiddleSE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_2",
-                "4": "Riddle_Buff_Star4_2_2",
-                "5": "Riddle_Buff_Star5_2_2",
-                "6": "Riddle_Buff_Star6_2_2"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -22054,7 +22054,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE02",
         "Master": "",
         "Name": "BlockPoint_RiddleS10M_Name",
@@ -22067,7 +22067,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE02M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22083,10 +22083,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -22151,22 +22151,22 @@
         "FirstKillReward": "RiddleSE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -22193,7 +22193,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE03E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22210,10 +22210,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22286,32 +22286,32 @@
         "FirstKillReward": "RiddleSE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_3",
-                "4": "Riddle_Buff_Star4_2_3",
-                "5": "Riddle_Buff_Star5_2_3",
-                "6": "Riddle_Buff_Star6_2_3"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -22324,7 +22324,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE03",
         "Master": "",
         "Name": "BlockPoint_RiddleS11M_Name",
@@ -22337,7 +22337,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE03M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22354,10 +22354,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -22435,22 +22435,22 @@
         "FirstKillReward": "RiddleSE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -22472,7 +22472,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE04E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22484,10 +22484,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22553,32 +22553,32 @@
         "FirstKillReward": "RiddleSE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_4",
-                "4": "Riddle_Buff_Star4_2_4",
-                "5": "Riddle_Buff_Star5_2_4",
-                "6": "Riddle_Buff_Star6_2_4"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -22586,7 +22586,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE04",
         "Master": "",
         "Name": "BlockPoint_RiddleS12M_Name",
@@ -22599,7 +22599,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE04M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22611,10 +22611,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -22679,22 +22679,22 @@
         "FirstKillReward": "RiddleSE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -22721,7 +22721,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE05E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22737,10 +22737,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22806,32 +22806,32 @@
         "FirstKillReward": "RiddleSE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_5",
-                "4": "Riddle_Buff_Star4_2_5",
-                "5": "Riddle_Buff_Star5_2_5",
-                "6": "Riddle_Buff_Star6_2_5"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -22844,7 +22844,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE05",
         "Master": "",
         "Name": "BlockPoint_RiddleS13M_Name",
@@ -22857,7 +22857,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE05M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22873,10 +22873,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -22941,22 +22941,22 @@
         "FirstKillReward": "RiddleSE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -22983,7 +22983,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE06E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -22999,10 +22999,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -23068,32 +23068,32 @@
         "FirstKillReward": "RiddleSE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_6",
-                "4": "Riddle_Buff_Star4_2_6",
-                "5": "Riddle_Buff_Star5_2_6",
-                "6": "Riddle_Buff_Star6_2_6"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -23106,7 +23106,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE06",
         "Master": "",
         "Name": "BlockPoint_RiddleS14M_Name",
@@ -23119,7 +23119,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE06M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23135,10 +23135,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -23203,22 +23203,22 @@
         "FirstKillReward": "RiddleSE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -23245,7 +23245,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE07E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23262,10 +23262,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -23338,32 +23338,32 @@
         "FirstKillReward": "RiddleSE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_7",
-                "4": "Riddle_Buff_Star4_2_7",
-                "5": "Riddle_Buff_Star5_2_7",
-                "6": "Riddle_Buff_Star6_2_7"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -23376,7 +23376,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE07",
         "Master": "",
         "Name": "BlockPoint_RiddleS15M_Name",
@@ -23389,7 +23389,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE07M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23406,10 +23406,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -23481,22 +23481,22 @@
         "FirstKillReward": "RiddleSE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -23523,7 +23523,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE08E_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23539,10 +23539,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -23608,32 +23608,32 @@
         "FirstKillReward": "RiddleSE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_2_8",
-                "4": "Riddle_Buff_Star4_2_8",
-                "5": "Riddle_Buff_Star5_2_8",
-                "6": "Riddle_Buff_Star6_2_8"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -23646,7 +23646,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSE08",
         "Master": "",
         "Name": "BlockPoint_RiddleS16M_Name",
@@ -23657,7 +23657,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSE08M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23673,10 +23673,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -23741,22 +23741,22 @@
         "FirstKillReward": "RiddleSH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -23785,7 +23785,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSH01M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23801,10 +23801,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -23869,22 +23869,22 @@
         "FirstKillReward": "RiddleSH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -23908,7 +23908,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSH02M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -23920,10 +23920,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -23994,22 +23994,22 @@
         "FirstKillReward": "RiddleSH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -24036,7 +24036,7 @@
         "PointPicture": "",
         "PointReward": "RiddleSH03M_PointReward",
         "PointTime": {
-            "start": "2021-09-07 05:00:00"
+            "start": "2021-11-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -24052,10 +24052,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 20
+            "IR_RiddleStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -24120,22 +24120,22 @@
         "FirstKillReward": "RiddleSN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -24176,10 +24176,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -24245,28 +24245,28 @@
         "FirstKillReward": "RiddleSN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
+            "AMLBLTe": {
                 "3": "Riddle_Buff_Star3_1_1",
                 "4": "Riddle_Buff_Star4_1_1",
                 "5": "Riddle_Buff_Star5_1_1",
@@ -24283,7 +24283,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN01",
         "Master": "",
         "Name": "BlockPoint_RiddleS01M_Name",
@@ -24310,10 +24310,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -24378,22 +24378,22 @@
         "FirstKillReward": "RiddleSN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -24425,10 +24425,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -24494,32 +24494,32 @@
         "FirstKillReward": "RiddleSN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_2",
-                "4": "Riddle_Buff_Star4_1_2",
-                "5": "Riddle_Buff_Star5_1_2",
-                "6": "Riddle_Buff_Star6_1_2"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -24527,7 +24527,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN02",
         "Master": "",
         "Name": "BlockPoint_RiddleS02M_Name",
@@ -24550,10 +24550,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -24629,22 +24629,22 @@
         "FirstKillReward": "RiddleSN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -24679,10 +24679,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -24767,32 +24767,32 @@
         "FirstKillReward": "RiddleSN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_3",
-                "4": "Riddle_Buff_Star4_1_3",
-                "5": "Riddle_Buff_Star5_1_3",
-                "6": "Riddle_Buff_Star6_1_3"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -24800,7 +24800,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN03",
         "Master": "",
         "Name": "BlockPoint_RiddleS03M_Name",
@@ -24826,10 +24826,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -24918,22 +24918,22 @@
         "FirstKillReward": "RiddleSN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -24968,10 +24968,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -25056,32 +25056,32 @@
         "FirstKillReward": "RiddleSN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_4",
-                "4": "Riddle_Buff_Star4_1_4",
-                "5": "Riddle_Buff_Star5_1_4",
-                "6": "Riddle_Buff_Star6_1_4"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -25089,7 +25089,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN04",
         "Master": "",
         "Name": "BlockPoint_RiddleS04M_Name",
@@ -25115,10 +25115,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -25191,22 +25191,22 @@
         "FirstKillReward": "RiddleSN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -25247,10 +25247,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -25316,32 +25316,32 @@
         "FirstKillReward": "RiddleSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_5",
-                "4": "Riddle_Buff_Star4_1_5",
-                "5": "Riddle_Buff_Star5_1_5",
-                "6": "Riddle_Buff_Star6_1_5"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -25354,7 +25354,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN05",
         "Master": "",
         "Name": "BlockPoint_RiddleS05M_Name",
@@ -25381,10 +25381,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -25449,22 +25449,22 @@
         "FirstKillReward": "RiddleSN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -25505,10 +25505,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -25574,32 +25574,32 @@
         "FirstKillReward": "RiddleSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_6",
-                "4": "Riddle_Buff_Star4_1_6",
-                "5": "Riddle_Buff_Star5_1_6",
-                "6": "Riddle_Buff_Star6_1_6"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -25612,7 +25612,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN06",
         "Master": "",
         "Name": "BlockPoint_RiddleS06M_Name",
@@ -25639,10 +25639,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -25713,22 +25713,22 @@
         "FirstKillReward": "RiddleSN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -25769,10 +25769,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -25838,32 +25838,32 @@
         "FirstKillReward": "RiddleSN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_7",
-                "4": "Riddle_Buff_Star4_1_7",
-                "5": "Riddle_Buff_Star5_1_7",
-                "6": "Riddle_Buff_Star6_1_7"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -25876,7 +25876,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN07",
         "Master": "",
         "Name": "BlockPoint_RiddleS07M_Name",
@@ -25903,10 +25903,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -25977,22 +25977,22 @@
         "FirstKillReward": "RiddleSN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -26033,10 +26033,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 12
+            "IR_RiddleStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -26102,32 +26102,32 @@
         "FirstKillReward": "RiddleSN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MLYDi": "Hero_ABlock_MLYDi_Extra",
-            "YXZChun": "Hero_ABlock_YXZChun_Extra"
+            "AMLBLTe": "Hero_ABlock_AMLBLTe_Extra",
+            "YXZChun": "Hero_ABlock_YMJDe_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_MLYDi_Buff_Star3",
-                "4": "Riddle_MLYDi_Buff_Star4",
-                "5": "Riddle_MLYDi_Buff_Star5",
-                "6": "Riddle_MLYDi_Buff_Star6"
+            "AMLBLTe": {
+                "3": "Riddle_AMLBLTe_Buff_Star3",
+                "4": "Riddle_AMLBLTe_Buff_Star4",
+                "5": "Riddle_AMLBLTe_Buff_Star5",
+                "6": "Riddle_AMLBLTe_Buff_Star6"
             },
-            "YXZChun": {
-                "3": "Riddle_YXZChun_Buff_Star3",
-                "4": "Riddle_YXZChun_Buff_Star4",
-                "5": "Riddle_YXZChun_Buff_Star5",
-                "6": "Riddle_YXZChun_Buff_Star6"
+            "YMJDe": {
+                "3": "Riddle_YMJDe_Buff_Star3",
+                "4": "Riddle_YMJDe_Buff_Star4",
+                "5": "Riddle_YMJDe_Buff_Star5",
+                "6": "Riddle_YMJDe_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MLYDi": {
-                "3": "Riddle_Buff_Star3_1_8",
-                "4": "Riddle_Buff_Star4_1_8",
-                "5": "Riddle_Buff_Star5_1_8",
-                "6": "Riddle_Buff_Star6_1_8"
+            "AMLBLTe": {
+                "3": "Riddle_Buff_Star3_1_1",
+                "4": "Riddle_Buff_Star4_1_1",
+                "5": "Riddle_Buff_Star5_1_1",
+                "6": "Riddle_Buff_Star6_1_1"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -26140,7 +26140,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Riddle_ExchangeItem",
+        "MainShowItem": "IM_Riddle_ExchangeItem_Re",
         "Map": "RiddleSN08",
         "Master": "",
         "Name": "BlockPoint_RiddleS08M_Name",
@@ -26165,10 +26165,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_RiddleStamina": 6
+            "IR_RiddleStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [

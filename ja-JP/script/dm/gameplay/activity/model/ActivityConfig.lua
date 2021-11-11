@@ -355,6 +355,9 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(202, 247, 252, 255)
 		}
+	},
+	EightDays_Riddle_Re = {
+		resFile = "asset/ui/ActivityRiddleLogin14.csb"
 	}
 }
 ActivityMainMapTitleConfig = {

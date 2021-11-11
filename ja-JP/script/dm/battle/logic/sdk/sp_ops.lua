@@ -246,7 +246,7 @@ function exports.InheritCard(env, card, modelId, ignorePassive, ignoreUnique)
 		local player = env["$actor"]:getOwner()
 		local _cardInfo = card:getCardInfo()
 		local cardSystem = env.global["$CardSystem"]
-		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "b")
+		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "c")
 
 		if cardInfo.hero and cardInfo.hero.skills then
 			for k, v in pairs(cardInfo.hero.skills.passive or {}) do

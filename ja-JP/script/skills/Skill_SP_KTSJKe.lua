@@ -1278,8 +1278,9 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 			local units = global.FriendUnits(_env, global.MARKED(_env, "SP_KTSJKe_Wife"))
+			local count = global.FriendUnits(_env, global.MARKED(_env, "SP_KTSJKe"))
 
-			if #units > 0 then
+			if #units > 0 and #count == 0 then
 				local wife = global.RandomN(_env, 1, units)
 				local cellid = global.GetCellId(_env, wife[1])
 

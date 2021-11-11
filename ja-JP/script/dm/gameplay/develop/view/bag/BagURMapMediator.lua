@@ -20,6 +20,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickBottomReward"
 	},
+	["main.Button_1"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickShop"
+	},
 	btn_rule = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRule"
@@ -568,4 +572,13 @@ function BagURMapMediator:onClickRule()
 		rule = Rule,
 		ruleReplaceInfo = {}
 	}))
+end
+
+function BagURMapMediator:onClickShop()
+	local shopSystem = self:getInjector():getInstance("ShopSystem")
+
+	shopSystem:tryEnter({
+		shopId = "Shop_Normal",
+		rightTabIndex = 5
+	})
 end

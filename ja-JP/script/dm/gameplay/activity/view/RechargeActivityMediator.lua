@@ -201,6 +201,22 @@ function RechargeActivityMediator:initView()
 	anim = cc.MovieClip:create("dabeij_menghuanzhenbao")
 
 	anim:addTo(image2):center(image2:getContentSize()):offset(0, -17)
+
+	local activity = self._activitySystem:getActivityById(self._activityId)
+
+	if activity then
+		local config = activity:getActivityConfig()
+
+		if config.Bg1 then
+			local image1 = self._main:getChildByName("image1")
+
+			image1:loadTexture("asset/scene/" .. config.Bg1 .. ".jpg")
+		end
+
+		if config.Bg2 then
+			image2:loadTexture("asset/ui/activity/" .. config.Bg2 .. ".png")
+		end
+	end
 end
 
 function RechargeActivityMediator:updateData(isInit)

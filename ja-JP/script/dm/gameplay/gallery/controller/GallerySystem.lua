@@ -60,7 +60,7 @@ function GallerySystem:tryEnter(param)
 	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
 	local function callback()
-		local view = self:getInjector():getInstance("GalleryMainView")
+		local view = self:getInjector():getInstance("GalleryBookView")
 
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil))
 	end

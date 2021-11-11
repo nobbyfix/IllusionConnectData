@@ -112,7 +112,7 @@ function scene_guide_photo.actions.action_guide_photo(_root, args)
 		wait({
 			args = function (_ctx)
 				return {
-					type = "enter_GalleryPartnerMediator",
+					type = "enter_GalleryBookMediator",
 					mask = {
 						touchMask = true,
 						opacity = 0
@@ -123,7 +123,30 @@ function scene_guide_photo.actions.action_guide_photo(_root, args)
 		click({
 			args = function (_ctx)
 				return {
-					id = "GalleryPartnerMediator.firstPanel",
+					id = "GalleryBookMediator.touchPanel4",
+					statisticPoint = "guide_photo_8",
+					mask = {
+						touchMask = true,
+						opacity = 0
+					}
+				}
+			end
+		}),
+		wait({
+			args = function (_ctx)
+				return {
+					type = "enter_GalleryPartnerNewMediator",
+					mask = {
+						touchMask = true,
+						opacity = 0
+					}
+				}
+			end
+		}),
+		click({
+			args = function (_ctx)
+				return {
+					id = "GalleryPartnerNewMediator.firstPanel",
 					statisticPoint = "guide_photo_3",
 					mask = {
 						touchMask = true,
@@ -135,7 +158,7 @@ function scene_guide_photo.actions.action_guide_photo(_root, args)
 		wait({
 			args = function (_ctx)
 				return {
-					type = "enter_GalleryPartnerInfoMediator",
+					type = "enter_GalleryPartnerInfoNewMediator",
 					mask = {
 						touchMask = true,
 						opacity = 0
@@ -146,7 +169,7 @@ function scene_guide_photo.actions.action_guide_photo(_root, args)
 		click({
 			args = function (_ctx)
 				return {
-					id = "GalleryPartnerInfoMediator.jushiBtn",
+					id = "GalleryPartnerInfoNewMediator.jushiBtn",
 					arrowPos = 3,
 					statisticPoint = "guide_photo_4",
 					mask = {
@@ -156,34 +179,6 @@ function scene_guide_photo.actions.action_guide_photo(_root, args)
 					offset = {
 						x = 0,
 						y = 10
-					}
-				}
-			end
-		}),
-		wait({
-			args = function (_ctx)
-				return {
-					type = "enter_GalleryPartnerPastMediator",
-					mask = {
-						touchMask = true,
-						opacity = 0
-					}
-				}
-			end
-		}),
-		click({
-			args = function (_ctx)
-				return {
-					id = "GalleryPartnerPastMediator.rewardNode",
-					arrowPos = 3,
-					statisticPoint = "guide_photo_5",
-					mask = {
-						touchMask = true,
-						opacity = 0
-					},
-					offset = {
-						x = 0,
-						y = 0
 					}
 				}
 			end

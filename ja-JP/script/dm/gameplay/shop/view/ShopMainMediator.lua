@@ -293,7 +293,12 @@ function ShopMainMediator:initMember()
 	self._refreshTime:setAdditionalKerning(2)
 
 	self._refresh_btn = self._refreshPanel:getChildByFullName("refresh_btn")
+	self._exchange_btn = self._view:getChildByFullName("Button_exchange")
 
+	self._exchange_btn:setVisible(false)
+	self._exchange_btn:addClickEventListener(function ()
+		self:onClickExhange()
+	end)
 	self:adjustView()
 end
 
@@ -349,6 +354,13 @@ function ShopMainMediator:refreshView()
 			layout:setTouchEnabled(false)
 			self:createCell(layout, i)
 		end
+	end
+
+	self._exchange_btn:setVisible(false)
+
+	if self._shopId == "Shop_URMap" then
+		self._exchange_btn:setVisible(true)
+		self:refreshExchangeRedpoint()
 	end
 
 	self:runListAnim()
@@ -566,6 +578,10 @@ function ShopMainMediator:initLeftTabController(disOnClickTab)
 					return self._shopSystem:getRedPointForMonthcard()
 				end
 
+				if self._leftArr[i].shopId == ShopSpecialId.KShopTimelimitedmall then
+					return self._shopSystem:getRedPointByPackageType(ShopSpecialId.kShopTimeLimit)
+				end
+
 				return false
 			end
 		}
@@ -681,6 +697,8 @@ function ShopMainMediator:onClickTabBtns(name, tag)
 end
 
 function ShopMainMediator:onClickTab(name, tag)
+	self._exchange_btn:setVisible(false)
+
 	self._leftTabIndex = tag
 	local shopId = ""
 	shopId = self._leftArr[self._leftTabIndex].shopId
@@ -1001,6 +1019,26 @@ function ShopMainMediator:onClickRefresh()
 	self:showShopRefreshView(shopGroup)
 end
 
+function ShopMainMediator:onClickExhange()
+	local data = self._bagSystem:getRepeatURItems()
+
+	if next(data) then
+		self._bagSystem:setURExchangeRedPoint(false)
+		self:refreshExchangeRedpoint()
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+
+		local view = self:getInjector():getInstance("ShopURExchangeView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data))
+	else
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Shop_URMap_Button_Desc5")
+		}))
+	end
+end
+
 function ShopMainMediator:showShopSellView()
 	local view = self:getInjector():getInstance("ShopSellView")
 
@@ -1042,6 +1080,10 @@ function ShopMainMediator:onBuyPackageSuccCallback(event)
 
 	self:createLeftShopConfig()
 	self:initLeftTabController(not self._fresh)
+end
+
+function ShopMainMediator:refreshExchangeRedpoint()
+	self._exchange_btn:getChildByFullName("redpoint"):setVisible(self._shopSystem:getRedPointForShopExchange())
 end
 
 function ShopMainMediator:stopItemActions()

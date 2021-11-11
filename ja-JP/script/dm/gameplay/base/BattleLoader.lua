@@ -12,6 +12,7 @@ function BattleLoader:_collectResData(data)
 	end
 
 	local modelIdsMap = {}
+	local mcClibIdsMap = {}
 
 	local function insertModel(model, priority)
 		local prePriority = modelIdsMap[model]
@@ -23,6 +24,16 @@ function BattleLoader:_collectResData(data)
 		modelIdsMap[model] = priority
 	end
 
+	local function insertMClib(surfaceId)
+		if surfaceId then
+			local animeList = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "AnimeList")
+
+			for k, v in pairs(animeList or {}) do
+				mcClibIdsMap[v] = true
+			end
+		end
+	end
+
 	local function collectPlayerData(player)
 		local waveData = player.waves and player.waves[1]
 
@@ -31,6 +42,7 @@ function BattleLoader:_collectResData(data)
 
 			if master then
 				insertModel(master.modelId, 1)
+				insertMClib(master.surfaceId)
 			end
 
 			local heros = waveData.heros
@@ -38,6 +50,7 @@ function BattleLoader:_collectResData(data)
 			if heros then
 				for _, hero in ipairs(heros) do
 					insertModel(hero.modelId, 1)
+					insertMClib(hero.surfaceId)
 				end
 			end
 		end
@@ -49,6 +62,7 @@ function BattleLoader:_collectResData(data)
 				local hero = card.hero
 
 				insertModel(hero.modelId, 2)
+				insertMClib(hero.surfaceId)
 			end
 		end
 
@@ -117,6 +131,14 @@ function BattleLoader:_collectResData(data)
 		list[#list + 1] = {
 			type = "spine",
 			model = model
+		}
+	end
+
+	for k, v in pairs(mcClibIdsMap) do
+		local list = modelIdsPriorityList[1]
+		list[#list + 1] = {
+			type = "mclibObj",
+			id = k
 		}
 	end
 
@@ -233,6 +255,8 @@ function BattleLoader:pushBattleView(dispatcher, data, forceNoScene, isPvP)
 			else
 				MemCacheUtils:asyncAddTexture(fileName, "battle")
 			end
+		elseif info.type == "mclibObj" then
+			MemCacheUtils:addMovieClip(info.id, "battle")
 		end
 	end
 

@@ -63,8 +63,12 @@ function BagSystem:tryEnter(data)
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, bagView, nil, data))
 end
 
-function BagSystem:synchronize(data)
+function BagSystem:synchronize(data, isDiff)
 	self:dispatch(Event:new(EVT_BAG_SYNCHRONIZED, {}))
+
+	if isDiff then
+		self:updataURExhangeRedPoint(data)
+	end
 end
 
 function BagSystem:getBag()
@@ -1920,4 +1924,131 @@ function BagSystem:setURMapCountKeyValue()
 	local cur = table.nums(dataTable)
 
 	cc.UserDefault:getInstance():setIntegerForKey(playerId .. UserDefaultKey.KURMapCountKey, cur)
+end
+
+function BagSystem:checkCanUseCompose(item)
+	local result = true
+	local composeTimes = self:getComposeTimes()
+
+	if item:getSubType() == ItemTypes.K_COMPOSE and composeTimes then
+		local configData = ConfigReader:getRecordById("Compose", item:getId())
+
+		if configData and configData.Times and configData.Times > 0 then
+			local currentTime = composeTimes[item:getId()]
+
+			if currentTime and configData.Times <= currentTime then
+				result = false
+			end
+		end
+	end
+
+	return result
+end
+
+function BagSystem:getRepeatURItems()
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local equipSystem = developSystem:getEquipSystem()
+	local ids = {}
+	local bagIds = self:getAllEntryIds()
+	local kTabFilterMap = self:getTabFilterMap()
+	local filterFunc = kTabFilterMap[BagItemShowType.kCompose]
+
+	for _, entryId in ipairs(bagIds) do
+		local entry = self:getEntryById(entryId)
+		local isvislble = self:getItemIsVisible(entryId)
+
+		if entry and isvislble and filterFunc(entry.item) then
+			local configData = ConfigReader:getRecordById("Compose", entryId)
+
+			if configData and configData.IfTrans and configData.IfTrans > 0 then
+				if self:checkCanUseCompose(entry.item) then
+					if entry.count > 1 then
+						table.insert(ids, {
+							isEatAll = true,
+							itemId = entryId,
+							allCount = entry.count - 1
+						})
+					end
+				else
+					table.insert(ids, {
+						isEatAll = true,
+						itemId = entryId,
+						allCount = entry.count
+					})
+				end
+			end
+		end
+	end
+
+	return ids
+end
+
+function BagSystem:transferURScroll(params, callback)
+	local param = {
+		items = params
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:transferURScroll(param, function (response)
+		if response.resCode == GS_SUCCESS then
+			local rewards = response.data.rewards
+
+			if rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = {
+						rewards
+					}
+				}))
+			end
+
+			if callback then
+				callback()
+			end
+		end
+	end, true)
+end
+
+function BagSystem:getRedPointForShopExchange()
+	return self:getURExchangeRedPoint()
+end
+
+function BagSystem:updataURExhangeRedPoint(data)
+	for k, v in pairs(data) do
+		local itemConfig = self:getItemConfig(k)
+
+		if itemConfig and itemConfig.Page == ItemPages.kCompose then
+			local entry = self:getEntryById(k)
+			local isRed = false
+
+			print(self:checkCanUseCompose(entry.item))
+
+			if self:checkCanUseCompose(entry.item) then
+				if entry.count > 1 then
+					isRed = true
+				end
+			else
+				isRed = true
+			end
+
+			if isRed then
+				self:setURExchangeRedPoint(true)
+			end
+		end
+	end
+end
+
+function BagSystem:getURExchangeRedPoint()
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+
+	return cc.UserDefault:getInstance():getBoolForKey(playerId .. UserDefaultKey.KURExchangeRedPoint)
+end
+
+function BagSystem:setURExchangeRedPoint(status)
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+
+	cc.UserDefault:getInstance():setBoolForKey(playerId .. UserDefaultKey.KURExchangeRedPoint, status)
 end

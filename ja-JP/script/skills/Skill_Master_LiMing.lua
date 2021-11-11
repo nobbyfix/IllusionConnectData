@@ -337,7 +337,7 @@ all.Sk_Master_LiMing_Action3 = {
 		this.RpFactor = externs.RpFactor
 
 		if this.RpFactor == nil then
-			this.RpFactor = 15
+			this.RpFactor = 6
 		end
 
 		local main = __action(this, {
@@ -496,7 +496,7 @@ all.RpUpUp_LiMing = {
 		this.Factor = externs.Factor
 
 		if this.Factor == nil then
-			this.Factor = 15
+			this.Factor = 6
 		end
 
 		local passive = __action(this, {

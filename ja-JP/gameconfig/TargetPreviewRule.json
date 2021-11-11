@@ -23,6 +23,9 @@
     "RANGE_LZHua": {
         "Function": "return HasBuff(\"RANGE_LZHua\")"
     },
+    "RANGE_ZXJi": {
+        "Function": "return HasBuff(\"Activity_Create_Glass\")"
+    },
     "RandomEnemy": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
@@ -73,6 +76,9 @@
     },
     "Target_BQDShe": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_CKFSJi": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
     },
     "Target_CLMan": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
@@ -316,6 +322,9 @@
     },
     "Target_XSMLi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
+    "Target_XXFSi": {
+        "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
     },
     "Target_YBYa": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"

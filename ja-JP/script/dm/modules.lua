@@ -558,6 +558,11 @@ local modules = {
 							res = "asset/ui/bagURMapReward.csb",
 							name = "BagURMapRewardView",
 							mediator = "BagURMapRewardMediator"
+						},
+						{
+							res = "asset/ui/HeroShowTranlate.csb",
+							name = "BagURExhangeView",
+							mediator = "BagURExhangeMeditor"
 						}
 					}
 				}
@@ -2985,7 +2990,8 @@ local modules = {
 				name = "gallery",
 				requires = {
 					"dm.gameplay.gallery.controller.GallerySystem",
-					"dm.gameplay.gallery.service.GalleryService"
+					"dm.gameplay.gallery.service.GalleryService",
+					"dm.gameplay.gallery.view.GalleryGiftCellWidget"
 				},
 				injections = {
 					singletons = {
@@ -3079,6 +3085,26 @@ local modules = {
 							res = "asset/ui/GalleryLegendInfo.csb",
 							name = "GalleryLegendInfoView",
 							mediator = "GalleryLegendInfoMediator"
+						},
+						{
+							res = "asset/ui/GalleryBook.csb",
+							name = "GalleryBookView",
+							mediator = "GalleryBookMediator"
+						},
+						{
+							res = "asset/ui/GalleryPartnerNew.csb",
+							name = "GalleryPartnerNewView",
+							mediator = "GalleryPartnerNewMediator"
+						},
+						{
+							res = "asset/ui/GalleryPartnerInfoNew.csb",
+							name = "GalleryPartnerInfoNewView",
+							mediator = "GalleryPartnerInfoNewMediator"
+						},
+						{
+							res = "asset/ui/GalleryGiftWidget.csb",
+							name = "GalleryGiftCellView",
+							mediator = "GalleryGiftCellMediator"
 						}
 					}
 				}
@@ -3345,6 +3371,11 @@ local modules = {
 							res = "asset/ui/shopBuyUINormal.csb",
 							name = "ShopCoopExchangeBuyView",
 							mediator = "ShopCoopExchangeBuyMediator"
+						},
+						{
+							res = "asset/ui/shopURExchange.csb",
+							name = "ShopURExchangeView",
+							mediator = "ShopURExchangeMediator"
 						}
 					}
 				}

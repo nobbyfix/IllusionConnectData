@@ -423,6 +423,7 @@ function ExploreMapCaseAlertMediator:createImg(parent, pic)
 		})
 
 		node:setAnchorPoint(cc.p(0.5, 0.5))
+		node:offset(0, -158)
 	end
 
 	node = node or cc.Node:create()

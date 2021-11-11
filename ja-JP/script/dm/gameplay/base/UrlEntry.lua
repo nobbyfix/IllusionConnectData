@@ -161,6 +161,10 @@ local kExtResponseMap = {
 		instanceName = "GallerySystem",
 		entry = ViewAreaEntry:new("GalleryMainView")
 	},
+	GalleryBookView = {
+		instanceName = "GallerySystem",
+		entry = ViewAreaEntry:new("GalleryBookView")
+	},
 	RecruitView = {
 		instanceName = "RecruitSystem",
 		entry = ViewAreaEntry:new("RecruitView")

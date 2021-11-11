@@ -53,6 +53,33 @@ function GalleryMemoryMediator:onRegister()
 	self._heroSystem = self._developSystem:getHeroSystem()
 end
 
+function GalleryMemoryMediator:enterWithData(data)
+	self:setupTopInfoWidget()
+	self:setupView(data)
+	self:runStartAnim()
+end
+
+function GalleryMemoryMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		title = Strings:get("GALLERY_UI2"),
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function GalleryMemoryMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
 function GalleryMemoryMediator:setupView()
 	self:initWidgetInfo()
 	self:initView()

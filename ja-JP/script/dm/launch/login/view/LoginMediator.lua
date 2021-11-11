@@ -590,7 +590,10 @@ function LoginMediator:beforeLoading()
 
 	fadeout(self._hero, 0.6, function ()
 		fadeout(self._newBGAnim, 2, function ()
-			self._whaleAnim:gotoAndPlay(0)
+			if self._whaleAnim then
+				self._whaleAnim:gotoAndPlay(0)
+			end
+
 			self._bgAnim:gotoAndPlay(112)
 			self._bgAnim:addCallbackAtFrame(113, function ()
 				self:launchLoading()
@@ -861,39 +864,53 @@ function LoginMediator:initAnim(callback)
 		bgAnim:addTo(bgNode):center(bgNode:getContentSize())
 	end
 
-	local anim1 = self._bgAnim:getChildByName("donghua")
-	local anim2 = anim1:getChildByName("niao")
-	local anim3 = anim2:getChildByName("niao1")
-	local anim4 = anim2:getChildByName("niao2")
-	local anim5 = anim1:getChildByName("jingyu")
-	local anim6 = cc.MovieClip:create("yuyu_xindenglu")
+	local isNewLoading = self._loginSystem:getIsNewLoading()
 
-	anim6:addTo(anim5):posite(150, -50)
-	anim6:addEndCallback(function ()
-		anim6:stop()
-	end)
-	anim6:gotoAndPlay(0)
+	if isNewLoading then
+		local bgNode = self._bgAnim:getChildByName("donghua")
 
-	self._whaleAnim = anim6
-	local animPath = "asset/anim/jingyu.skel"
+		bgNode:removeAllChildren()
 
-	if cc.FileUtils:getInstance():isFileExist(animPath) then
-		local spineNode = sp.SkeletonAnimation:create(animPath)
+		local bgAnim = cc.MovieClip:create("zong_KoreaAnniversariesLoading")
 
-		spineNode:playAnimation(0, "niao", true)
-		spineNode:addTo(anim3)
+		bgAnim:addTo(bgNode):center(bgNode:getContentSize())
 
-		local spineNode = sp.SkeletonAnimation:create(animPath)
+		self._whaleAnim = nil
+	else
+		local anim1 = self._bgAnim:getChildByName("donghua")
+		local anim2 = anim1:getChildByName("niao")
+		local anim3 = anim2:getChildByName("niao1")
+		local anim4 = anim2:getChildByName("niao2")
+		local anim5 = anim1:getChildByName("jingyu")
+		local anim6 = cc.MovieClip:create("yuyu_xindenglu")
 
-		spineNode:playAnimation(0, "niao", true)
-		spineNode:addTo(anim4)
+		anim6:addTo(anim5):posite(150, -50)
+		anim6:addEndCallback(function ()
+			anim6:stop()
+		end)
+		anim6:gotoAndPlay(0)
 
-		local node = anim6:getChildByName("jingyu1")
-		local spineNode = sp.SkeletonAnimation:create(animPath)
+		self._whaleAnim = anim6
+		local animPath = "asset/anim/jingyu.skel"
 
-		spineNode:playAnimation(0, "jingyu", true)
-		spineNode:addTo(node)
-		spineNode:setPosition(cc.p(0, -180))
+		if cc.FileUtils:getInstance():isFileExist(animPath) then
+			local spineNode = sp.SkeletonAnimation:create(animPath)
+
+			spineNode:playAnimation(0, "niao", true)
+			spineNode:addTo(anim3)
+
+			local spineNode = sp.SkeletonAnimation:create(animPath)
+
+			spineNode:playAnimation(0, "niao", true)
+			spineNode:addTo(anim4)
+
+			local node = anim6:getChildByName("jingyu1")
+			local spineNode = sp.SkeletonAnimation:create(animPath)
+
+			spineNode:playAnimation(0, "jingyu", true)
+			spineNode:addTo(node)
+			spineNode:setPosition(cc.p(0, -180))
+		end
 	end
 
 	self._bgAnim:gotoAndStop(113)

@@ -714,5 +714,79 @@ all.Skill_LZHua_Passive = {
 		return _env
 	end
 }
+all.ToolCard_XCZi = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Cost = externs.Cost
+
+		if this.Cost == nil then
+			this.Cost = 0
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		this.main = global["[duration]"](this, {
+			0
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.isLeft = externs.isLeft
+
+		assert(_env.isLeft ~= nil, "External variable `isLeft` is not provided.")
+
+		_env.cellId = externs.cellId
+
+		assert(_env.cellId ~= nil, "External variable `cellId` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local units = nil
+
+			if _env.isLeft then
+				units = global.FriendCells(_env, global.CELL_IN_POS(_env, _env.cellId))
+			else
+				units = global.EnemyCells(_env, global.CELL_IN_POS(_env, _env.cellId))
+			end
+
+			if global.GetCellUnit(_env, units[1]) then
+				if global.SelectBuffCount(_env, global.GetCellUnit(_env, units[1]), global.BUFF_MARKED(_env, "Jingzi")) <= 0 then
+					if global.INSTATUS(_env, "SummonedGlass1")(_env, global.GetCellUnit(_env, units[1])) or global.INSTATUS(_env, "SummonedGlass2")(_env, global.GetCellUnit(_env, units[1])) then
+						global.AddAnim(_env, {
+							loop = 1,
+							anim = "main_cameraf",
+							zOrder = "TopLayer",
+							pos = global.UnitPos(_env, global.GetCellUnit(_env, units[1]))
+						})
+						global.Sound(_env, "Se_Skill_Camera_Hit", 1)
+						global.Kick(_env, global.GetCellUnit(_env, units[1]), true)
+					else
+						global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
+					end
+				else
+					global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
+				end
+			else
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, global.FriendField(_env)), this.Cost)
+			end
+
+			global.RelocateExtraCard(_env, "skill", this.Cost)
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -2979,7 +2979,8 @@ all.Activity_Create_Glass = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Activity_Create_Glass"
 						}
 					}, {
 						buff1,
@@ -3016,7 +3017,8 @@ all.Activity_Create_Glass = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Activity_Create_Glass"
 						}
 					}, {
 						buff1,
@@ -3106,7 +3108,8 @@ all.Activity_Create_Glass = {
 						"UNDISPELLABLE",
 						"STEALTH",
 						"UNSTEALABLE",
-						"Invisible_Immune"
+						"Invisible_Immune",
+						"Activity_Create_Glass"
 					}
 				}, {
 					buffeft1,
@@ -3203,7 +3206,8 @@ all.Activity_Create_Glass1 = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Activity_Create_Glass"
 						}
 					}, {
 						buff1,
@@ -3240,7 +3244,8 @@ all.Activity_Create_Glass1 = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE"
+							"UNSTEALABLE",
+							"Activity_Create_Glass"
 						}
 					}, {
 						buff1,
@@ -3332,7 +3337,8 @@ all.Activity_Create_Glass1 = {
 						"UNDISPELLABLE",
 						"STEALTH",
 						"UNSTEALABLE",
-						"Invisible_Immune"
+						"Invisible_Immune",
+						"Activity_Create_Glass"
 					}
 				}, {
 					buffeft1,

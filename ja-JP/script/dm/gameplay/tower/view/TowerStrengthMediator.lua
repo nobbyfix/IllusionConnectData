@@ -781,7 +781,7 @@ function TowerStrengthMediator:getHeroInfoById(id)
 		rareity = heroInfo:getRarity(),
 		qualityLevel = heroInfo:getQualityLevel(),
 		name = heroInfo:getName(),
-		roleModel = heroInfo:getRoleModel(),
+		roleModel = heroInfo:getModel(),
 		type = heroInfo:getType(),
 		cost = heroInfo:getCost(),
 		combat = heroInfo:getCombat(),

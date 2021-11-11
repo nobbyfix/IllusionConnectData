@@ -555,7 +555,7 @@
         "Desc": "Surface_ALSi_2_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_Shop_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_ALSi_2",
         "Hero": "ALSi",
         "Link": "",
         "LongDesc": "Surface_ALSi_2_LongDesc",
@@ -564,7 +564,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -612,7 +612,7 @@
         "Desc": "Surface_ALSi_forest_Decs",
         "GainDesc": "Surface_CLMan_2_GainDesc",
         "GainShortDesc": "Surface_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_ALSi_3",
         "Hero": "ALSi",
         "Link": "",
         "LongDesc": "Surface_ALSi_forest_LongDesc",
@@ -621,7 +621,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
         "Type": 3,
         "Unlook": 1
@@ -783,7 +783,7 @@
         "Desc": "Surface_ATSheng_dwhui_Decs",
         "GainDesc": "Surface_CLMan_2_GainDesc",
         "GainShortDesc": "Surface_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_ATSheng_2",
         "Hero": "ATSheng",
         "Link": "",
         "LongDesc": "Surface_ATSheng_dwhui_LongDecs",
@@ -792,7 +792,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
         "Type": 3,
         "Unlook": 1
@@ -1239,7 +1239,7 @@
         "Desc": "Surface_BEr_2_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_Shop_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_BEr_2",
         "Hero": "BEr",
         "Link": "",
         "LongDesc": "Surface_BEr_2_LongDesc",
@@ -1248,7 +1248,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 20,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -1650,6 +1650,63 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 5,
+        "Unlook": 1
+    },
+    "Surface_CKFSJi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -44,
+                    1590
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -101,
+                    1399
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_CKFSJi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "CKFSJi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_CKFSJi",
+        "Name": "Surface_CKFSJi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
         "Unlook": 1
     },
     "Surface_CLMan_1": {
@@ -2517,7 +2574,7 @@
         "Desc": "Surface_DDing_2_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_Shop_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_DDing_2",
         "Hero": "DDing",
         "Link": "",
         "LongDesc": "Surface_DDing_2_LongDesc",
@@ -2526,7 +2583,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -3103,7 +3160,9 @@
     },
     "Surface_FLEr_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_asikeshe"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3160,7 +3219,9 @@
     },
     "Surface_FLYDe_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xge_bufftexiao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3217,7 +3278,9 @@
     },
     "Surface_FLYDe_Awake": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xge_bufftexiao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -3372,7 +3435,7 @@
         "Desc": "Surface_FTLEShi_2_Desc",
         "GainDesc": "Surface_Activity_GainDesc",
         "GainShortDesc": "Surface_Activity_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_FTLEShi_2",
         "Hero": "FTLEShi",
         "Link": "",
         "LongDesc": "Surface_FTLEShi_2_LongDesc",
@@ -3381,7 +3444,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 4,
         "Unlook": 1
@@ -4113,7 +4176,7 @@
         "Desc": "Surface_HSheng_2_Desc",
         "GainDesc": "Surface_HSheng_Detective_GainDesc",
         "GainShortDesc": "Surface_HSheng_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_HSheng_2",
         "Hero": "HSheng",
         "Link": "",
         "LongDesc": "Surface_HSheng_2_LongDesc",
@@ -4122,7 +4185,7 @@
         "NotGetUnlook": "",
         "Quality": 4,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": "",
         "Unlook": 1
@@ -4398,7 +4461,7 @@
         "Desc": "Surface_JNLong_2_Desc",
         "GainDesc": "Surface_JNLong_Winter_GainDesc",
         "GainShortDesc": "Surface_Winter_GainShort",
-        "GoodsId": "Surface_6",
+        "GoodsId": "ShopSurface_Surface_JNLong_2",
         "Hero": "JNLong",
         "Link": "",
         "LongDesc": "Surface_JNLong_2_LongDesc",
@@ -4740,7 +4803,7 @@
         "Desc": "Surface_KMLa_vt_Decs",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_GainShort",
-        "GoodsId": "Surface_Sunflower1",
+        "GoodsId": "ShopSurface_Surface_KMLa_2",
         "Hero": "KMLa",
         "Link": "",
         "LongDesc": "Surface_KMLa_vt_LongDesc",
@@ -4911,7 +4974,7 @@
         "Desc": "Surface_KTSJKe_2_Desc",
         "GainDesc": "Surface_KTSJKe_QPao_GainDesc",
         "GainShortDesc": "Surface_QPao_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_KTSJKe_2",
         "Hero": "KTSJKe",
         "Link": "",
         "LongDesc": "Surface_KTSJKe_2_LongDesc",
@@ -4920,7 +4983,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 10,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -5669,10 +5732,10 @@
     "Surface_LFKLFTe_1": {
         "ActivityId": "",
         "AnimeList": [
+            "ws_shuiruchang",
             "zuo_dagunzhuahen",
             "you_dagunzhuahen",
-            "pugong_dagunpugong",
-            "die_zhanshupai"
+            "pugong_dagunpugong"
         ],
         "ClickAction": [
             {
@@ -5901,7 +5964,9 @@
     },
     "Surface_LSLTe_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "baozha_weienbaodian"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -5958,7 +6023,9 @@
     },
     "Surface_LSLTe_2": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "baozha_weienbaodian"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -6113,7 +6180,7 @@
         "Desc": "Surface_LYSi_CDan_Desc",
         "GainDesc": "Surface_ActYGHM_GainDesc",
         "GainShortDesc": "Surface_ActYGHM_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_LYSi_2",
         "Hero": "LYSi",
         "Link": "",
         "LongDesc": "Surface_LYSi_CDan_LongDesc",
@@ -6122,7 +6189,7 @@
         "NotGetUnlook": 0,
         "Quality": 4,
         "RepeatReward": 10,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -6225,9 +6292,9 @@
             }
         ],
         "Desc": "Surface_LYXi_2_Desc",
-        "GainDesc": "Surface_LYXi_QPao_GainDesc",
-        "GainShortDesc": "Surface_QPao_GainShort",
-        "GoodsId": "Surface_11",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_LYXi_2",
         "Hero": "LYXi",
         "Link": "",
         "LongDesc": "Surface_LYXi_2_LongDesc",
@@ -6235,11 +6302,11 @@
         "Name": "Surface_LYXi_2_Name",
         "NotGetUnlook": "",
         "Quality": 5,
-        "RepeatReward": 20,
-        "ShopID": "",
+        "RepeatReward": 118,
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 3,
-        "Unlook": 0
+        "Type": 2,
+        "Unlook": 1
     },
     "Surface_LYXi_Awake": {
         "ActivityId": "",
@@ -6585,7 +6652,9 @@
     },
     "Surface_MLYDi_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_jinnibaodianjiangluo"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7041,7 +7110,10 @@
     },
     "Surface_MYing_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_meiweisiyindao",
+            "main_meiweisiyinlang"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -7766,7 +7838,7 @@
         "Desc": "Surface_PDLa_toy_Desc",
         "GainDesc": "",
         "GainShortDesc": "Surface_PDLa_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_PDLa_2",
         "Hero": "PDLa",
         "Link": "",
         "LongDesc": "Surface_PDLa_toy_LongDecs",
@@ -7775,7 +7847,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": "",
         "Unlook": 1
@@ -8573,7 +8645,7 @@
         "Desc": "Surface_SGHQShou_sd_Desc",
         "GainDesc": "Surface_SGHQShou_sd_GainDesc",
         "GainShortDesc": "Surface_GainShort",
-        "GoodsId": "Surface_20201210",
+        "GoodsId": "ShopSurface_Surface_SGHQShou_sd",
         "Hero": "SGHQShou",
         "Link": "",
         "LongDesc": "Surface_SGHQShou_sd_LongDesc",
@@ -8817,7 +8889,9 @@
     },
     "Surface_SP_ALPo_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "main_lijiya"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -9713,7 +9787,7 @@
         "Desc": "Surface_TPGZhu_2_Desc",
         "GainDesc": "Surface_TPGZhu_QPao_GainDesc",
         "GainShortDesc": "Surface_QPao_GainShort",
-        "GoodsId": "Surface_9",
+        "GoodsId": "ShopSurface_Surface_TPGZhu_2",
         "Hero": "TPGZhu",
         "Link": "",
         "LongDesc": "Surface_TPGZhu_2_LongDesc",
@@ -9722,7 +9796,7 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": 40,
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
@@ -10071,7 +10145,16 @@
     },
     "Surface_WLSTNCi_1": {
         "ActivityId": "",
-        "AnimeList": "",
+        "AnimeList": [
+            "xbdan_qiatudazhao",
+            "xbshi_qiatudazhao",
+            "zxshi_qiatudazhao",
+            "xbcha_qiatudazhao",
+            "zjcha_qiatudazhao",
+            "xbmi_qiatudazhao",
+            "hhmi_qiatudazhao",
+            "skill_qiatudazhao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -10354,9 +10437,68 @@
         "Type": 1,
         "Unlook": 1
     },
-    "Surface_XDE_1": {
+    "Surface_XBKLDi_2": {
         "ActivityId": "",
         "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -51,
+                    1608
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -50,
+                    1399
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XBKLDi_christmas_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_XBKLDi_2_GainShort",
+        "GoodsId": "",
+        "Hero": "XBKLDi",
+        "Link": "",
+        "LongDesc": "Surface_XBKLDi_christmas_LongDesc",
+        "Model": "Model_XBKLDi_christmas",
+        "Name": "Surface_XBKLDi_christmas_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
+    },
+    "Surface_XDE_1": {
+        "ActivityId": "",
+        "AnimeList": [
+            "main_sufeidazhao"
+        ],
         "ClickAction": [
             {
                 "action": "touch2",
@@ -10802,6 +10944,63 @@
         "LongDesc": "",
         "Model": "Model_XSMLi",
         "Name": "Surface_XSMLi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_XXFSi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -8,
+                    1278
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    18,
+                    1088
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XXFSi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "XXFSi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XXFSi",
+        "Name": "Surface_XXFSi_1_Name",
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
@@ -11673,8 +11872,8 @@
                 "action": "touch2",
                 "part": "head",
                 "point": [
-                    -13,
-                    641
+                    -10,
+                    861
                 ],
                 "range": [
                     128,
@@ -11685,8 +11884,8 @@
                 "action": "touch1",
                 "part": "body",
                 "point": [
-                    12,
-                    618
+                    14,
+                    746
                 ],
                 "range": [
                     128,
