@@ -333,6 +333,8 @@ function BagURMapMediator:refreshBottomView()
 	if not unlockSystem:isUnlock("Shop_URMap_Unlock") then
 		btn:setVisible(false)
 	end
+
+	btn:getChildByFullName("Text_1"):setString(Strings:get("Shop_URMap"))
 end
 
 function BagURMapMediator:onClickGetBox(data, state, index)
