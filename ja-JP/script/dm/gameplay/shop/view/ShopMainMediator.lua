@@ -852,7 +852,6 @@ function ShopMainMediator:showPackageShop()
 		shopId = self._shopId,
 		enterData = self._enterData,
 		parentMediator = self,
-		rightTabIndex = self._data.rightTabIndex,
 		subId = self._data.subid,
 		packageId = self._data.packageId
 	})
