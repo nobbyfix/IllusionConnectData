@@ -14,7 +14,7 @@ local kBtnHandlers = {}
 local animNames = {
 	{
 		animName = "JQHG_XZ_tujianzhurukouxuanzhong",
-		kTabSwitch = "fn_gallery_legend",
+		kTabSwitch = "fn_gallery_huiyi",
 		kTabBtnsLock = "Memory",
 		viewName = "GalleryMemoryView",
 		mc_title = "mc_name1",
@@ -64,7 +64,7 @@ local animNames = {
 	},
 	{
 		animName = "JQQD_XZ_tujianzhurukouxuanzhong",
-		kTabSwitch = "fn_gallery_huiyi",
+		kTabSwitch = "fn_gallery_legend",
 		kTabBtnsLock = "HerosLegend",
 		viewName = "GalleryLegendView",
 		mc_title = "mc_name3",

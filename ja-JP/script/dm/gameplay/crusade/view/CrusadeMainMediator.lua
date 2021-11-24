@@ -655,6 +655,26 @@ end
 
 function CrusadeMainMediator:showGetReward()
 	if #self._crusadeSystem:getShowAwardAfterBattle() > 0 then
+		local delegate = {}
+		local outself = self
+
+		function delegate:willClose(popupMediator, data)
+			local playerId = outself._developSystem:getPlayer():getRid()
+			local volume = cc.UserDefault:getInstance():getStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum)
+
+			if outself._crusade:getCrusadeFloorId() == outself._crusadeSystem:getFloorIdByFloorNum(11) and volume ~= "11" then
+				local storyDirector = outself:getInjector():getInstance(story.StoryDirector)
+				local storyLink = "guide_plot_expedition"
+				local storyAgent = storyDirector:getStoryAgent()
+
+				storyAgent:setSkipCheckSave(true)
+				storyAgent:trigger(storyLink, nil, function ()
+					outself._crusadeSystem:showWorldRuleView()
+				end)
+				cc.UserDefault:getInstance():setStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum, "11")
+			end
+		end
+
 		local rewards = self._crusadeSystem:getShowAwardAfterBattle()
 		local view = self:getInjector():getInstance("getRewardView")
 
@@ -663,7 +683,7 @@ function CrusadeMainMediator:showGetReward()
 		}, {
 			needClick = true,
 			rewards = rewards
-		}))
+		}, delegate))
 		self._crusadeSystem:setShowAwardAfterBattle({})
 	end
 end

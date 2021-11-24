@@ -367,6 +367,7 @@ function ClubRankMediator:onCellClicked(sender, eventType, idx)
 				outSelf._textFieldCanMove = true
 			end
 
+			local friendSystem = self:getInjector():getInstance(FriendSystem)
 			local view = self:getInjector():getInstance("PlayerInfoView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

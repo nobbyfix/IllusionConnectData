@@ -174,6 +174,7 @@ function DialogueSpeak:start(args)
 		end
 	end)
 	context:getAgent():addStoryStatisticStep(100)
+	context:getAgent():addStoryValidPlayCount()
 
 	if args.audio then
 		local curAudio = context:getVar("guideAudio")
@@ -375,6 +376,10 @@ function DialogueChooseShow:start(args)
 			self:finish(BehaviorResult.Success)
 		end
 	end)
+
+	local context = self.context
+
+	context:getAgent():addStoryValidPlayCount()
 end
 
 function DialogueChooseShow:getActionName()
@@ -416,6 +421,10 @@ function PrinterEffectShow:start(args)
 
 		self.context:setVar("printerEffectudio", guideAudioId)
 	end
+
+	local context = self.context
+
+	context:getAgent():addStoryValidPlayCount()
 end
 
 PrinterEffectHide = class("PrinterEffectHide", BaseAction)
@@ -661,6 +670,10 @@ function StoryNewsNodeShow:start(args)
 			self:finish(BehaviorResult.Success)
 		end
 	end)
+
+	local context = self.context
+
+	context:getAgent():addStoryValidPlayCount()
 end
 
 StoryNewsNodeHide = class("StoryNewsNodeHide", BaseAction)

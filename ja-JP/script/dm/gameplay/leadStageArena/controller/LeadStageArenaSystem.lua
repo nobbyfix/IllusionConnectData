@@ -23,7 +23,6 @@ LeadStageArenaSystem:has("_shopSystem", {
 
 EVT_LEADSTAGE_AEANA_SEASONINFO = "EVT_LEADSTAGE_AEANA_SEASONINFO"
 EVT_LEADSTAGE_AEANA_REFRESH_INFO = "EVT_LEADSTAGE_AEANA_REFRESH_INFO"
-local StageArena_RedPoint_Num = ConfigReader:getRecordById("ConfigValue", "StageArena_RedPoint_Num").content
 
 function LeadStageArenaSystem:initialize()
 	super.initialize(self)
@@ -778,6 +777,8 @@ function LeadStageArenaSystem:getConfigLevelLimit()
 end
 
 function LeadStageArenaSystem:getStageArenaPowerLimit()
+	local StageArena_RedPoint_Num = ConfigReader:getRecordById("ConfigValue", "StageArena_RedPoint_Num").content
+
 	return StageArena_RedPoint_Num
 end
 

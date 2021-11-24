@@ -363,7 +363,18 @@ function ActivitySystem:requestFinishActstage(activityId, subActivityId, params)
 						self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityStageFinishView"), {}, data, self))
 					end
 
-					local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", data.pointId, "StoryLink")
+					local activity = self:getActivityById(activityId)
+					local subActivity = activity:getBlockMapActivity(subActivityId)
+					local point = nil
+
+					if subActivity:getType() == ActivityType.KActivityBlockMapNew then
+						point = subActivity:getSubPointById(params.pointId)
+					else
+						point = subActivity:getPointById(params.pointId)
+					end
+
+					local pointConfig = point:getConfig()
+					local storyLink = pointConfig.StoryLink
 					local storynames = storyLink and storyLink.win
 					local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 					local storyAgent = storyDirector:getStoryAgent()
@@ -2140,6 +2151,8 @@ function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callb
 	if not storyPoint:isPass() then
 		local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local storyAgent = storyDirector:getStoryAgent()
 
 		local function endCallBack()
 			self:requestDoChildActivity(activity:getId(), subActivityId, {
@@ -2152,9 +2165,24 @@ function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callb
 				storyDirector:notifyWaiting("story_play_end")
 				callback(response.data.reward)
 			end)
-		end
 
-		local storyAgent = storyDirector:getStoryAgent()
+			local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+			local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+			StatisticSystem:send({
+				id_first = 1,
+				type = "plot_end",
+				op_type = "plot_activity",
+				point = "plot_end",
+				activityid = activity:getTitle(),
+				plot_id = storyLink,
+				plot_name = storyPoint:getName(),
+				totaltime = endTs - startTs,
+				detail = statisticsData.detail,
+				amount = statisticsData.amount,
+				misc = statisticsData.misc
+			})
+		end
 
 		storyAgent:setSkipCheckSave(true)
 		storyAgent:trigger(storyLink, function ()

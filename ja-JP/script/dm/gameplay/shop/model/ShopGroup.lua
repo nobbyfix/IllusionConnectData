@@ -132,6 +132,26 @@ function ShopGroup:getShopGoodByIndex(index)
 	return self._goodsList[index]
 end
 
+function ShopGroup:getGoodsList()
+	local list = {}
+
+	for i, goods in ipairs(self._goodsList) do
+		local time = goods:getTime()
+
+		if time and next(time) then
+			local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
+
+			if time[1] <= curTime and curTime <= time[2] then
+				list[#list + 1] = goods
+			end
+		else
+			list[#list + 1] = goods
+		end
+	end
+
+	return list
+end
+
 function ShopGroup:forceRefreshRemainTime()
 	self._remainTime = self:getNextRefreshTime() - self:getCurSystemTime()
 end

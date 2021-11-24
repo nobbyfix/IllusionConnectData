@@ -108,6 +108,22 @@ local timeLimitShopConfig = {
 		BG = "jqtd_txt_yywgzl_di",
 		TimeOutLineColor = cc.c4b(105, 0, 106, 255),
 		CellNameColor = cc.c4b(159, 122, 165, 89.25)
+	},
+	silentnight = {
+		CellBuyImg = "jqtd_img_sdqjzl_jldi.png",
+		CellBuyEndImg = "jqtd_img_sdqjzl_jldih.png",
+		CellNameColor = cc.c4b(224, 193, 148, 89.25)
+	},
+	Anniversary = {
+		TimeOutLineColor = cc.c4b(195, 73, 36, 255),
+		cell = {
+			cellPanel = "deepseaCell",
+			cellDi = {
+				"jqtd_img_ydzr_jldi.png",
+				"jqtd_img_ydzr_jldih.png"
+			},
+			nameColor = cc.c3b(250, 166, 149)
+		}
 	}
 }
 local btnHandlers = {

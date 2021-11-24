@@ -123,6 +123,8 @@ function ActivityCommonMainMediator:onRegister()
 	self._teamBtn = self._main:getChildByName("teamBtn")
 	self._loginBtn = self._main:getChildByName("loginBtn")
 	self._animNode = self._main:getChildByName("animNode")
+	self._rightBtn = self._main:getChildByFullName("btnNode.rightBtn")
+	self._leftBtn = self._main:getChildByFullName("btnNode.leftBtn")
 
 	self._starAddImg:setVisible(false)
 
@@ -279,6 +281,8 @@ function ActivityCommonMainMediator:initView()
 	self:updateRolePanel()
 	self:playBackgroundMusic()
 	self:updateStage()
+	self._rightBtn:setVisible(#self._roles > 1)
+	self._leftBtn:setVisible(#self._roles > 1)
 end
 
 function ActivityCommonMainMediator:playBackgroundMusic()

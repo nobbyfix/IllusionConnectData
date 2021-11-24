@@ -18,6 +18,9 @@ PlayerInfoWidget:has("_eventDispatcher", {
 PlayerInfoWidget:has("_passSystem", {
 	is = "r"
 }):injectWith("PassSystem")
+PlayerInfoWidget:has("_settingSystem", {
+	is = "r"
+}):injectWith("SettingSystem")
 
 function PlayerInfoWidget.class:createWidgetNode()
 	local resFile = "asset/ui/PlayerInfoWidget.csb"

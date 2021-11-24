@@ -1327,6 +1327,7 @@ function ClubSystem:requestJoinClub(data, extraData)
 
 			record:synchronize(info)
 
+			local friendSystem = self:getInjector():getInstance(FriendSystem)
 			local view = self:getInjector():getInstance("PlayerInfoView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

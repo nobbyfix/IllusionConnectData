@@ -597,6 +597,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_MZGXiu": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_MZGXiu",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SP_ALPo",
+                    "LFKLFTe"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "SRen",
+                    "MZu",
+                    "QBTe"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_MZGXiu_Show",
+        "RoleModel": "Model_MZGXiu",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_PDLa": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

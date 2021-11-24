@@ -250,7 +250,6 @@ function HeroStarBoxMediator:refreshView()
 				id = roleModel
 			})
 
-			heroIcon:setScale(0.8)
 			heroIcon:addTo(panel):center(panel:getContentSize())
 
 			local rarity = node:getChildByFullName("rarity")

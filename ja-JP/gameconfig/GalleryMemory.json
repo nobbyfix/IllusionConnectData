@@ -631,8 +631,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS01",
                     "DeepSeaS01M"
@@ -658,8 +658,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS02",
                     "DeepSeaS02M"
@@ -685,8 +685,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS05",
                     "DeepSeaS05M"
@@ -712,8 +712,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS07",
                     "DeepSeaS07M"
@@ -739,8 +739,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS09",
                     "DeepSeaS09M"
@@ -766,8 +766,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS10",
                     "DeepSeaS10M"
@@ -793,8 +793,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS13",
                     "DeepSeaS13M"
@@ -820,8 +820,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS16",
                     "DeepSeaS16M"
@@ -1807,7 +1807,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS01S01"
                 ]
             }
@@ -1831,7 +1831,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS01S02"
                 ]
             }
@@ -1855,7 +1855,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS01S03"
                 ]
             }
@@ -1879,7 +1879,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS01S04"
                 ]
             }
@@ -1903,7 +1903,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS02S01"
                 ]
             }
@@ -1927,7 +1927,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS02S02"
                 ]
             }
@@ -1951,7 +1951,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS02S03"
                 ]
             }
@@ -1975,7 +1975,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Riddle_Map",
+                    "ActivityBlock_Riddle_Re_Map",
                     "RiddleS02S04"
                 ]
             }
@@ -1988,6 +1988,222 @@
         "Picture": "",
         "Screen": "",
         "StoryLink": "eventstory_404_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "SilentNightS01S01_Name",
+        "Num": 990,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_00",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "SilentNightS01S02_Name",
+        "Num": 991,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_01",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "SilentNightS01S03_Name",
+        "Num": 992,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_02",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "SilentNightS01S04_Name",
+        "Num": 993,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_03",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S06"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "SilentNightS01S06_Name",
+        "Num": 994,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_04",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS02S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_2",
+        "Name": "SilentNightS02S01_Name",
+        "Num": 995,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_05",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS02S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_2",
+        "Name": "SilentNightS02S02_Name",
+        "Num": 996,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_06",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS02S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_2",
+        "Name": "SilentNightS02S03_Name",
+        "Num": 997,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_07",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_SilentNight_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS02S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_silentnight_2",
+        "Name": "SilentNightS02S04_Name",
+        "Num": 998,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_wish_08",
         "Time": "",
         "Type": "STORY"
     },

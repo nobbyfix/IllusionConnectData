@@ -455,7 +455,7 @@ all.Skill_Enemy_SummonedBOtuA_Unique = {
 			local global = _env.global
 			local setLoction = nil
 
-			if _env.TARGET ~= global.EnemyMaster(_env) then
+			if _env.TARGET ~= global.EnemyMaster(_env) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
 				setLoction = global.GetCell(_env, _env.TARGET)
 
 				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
@@ -531,7 +531,7 @@ all.Skill_Enemy_SummonedBOtuA_Passive = {
 
 			global.print(_env, "-========判断")
 
-			_env.petsss = global.EnemyUnits(_env, global.PETS - global.SUMMONS)
+			_env.petsss = global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN"))
 
 			if _env.petsss[1] then
 				local units = global.RandomN(_env, 1, _env.petsss)

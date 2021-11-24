@@ -715,15 +715,19 @@ function ExploreStageMediator:initStoryPoint()
 				callback()
 
 				local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+				local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
 
 				StatisticSystem:send({
-					op_type = "plot_world_map",
-					point = "plot_end",
-					type = "plot_end",
 					id_first = 1,
+					op_type = "plot_world_map",
+					type = "plot_end",
+					point = "plot_end",
 					plot_id = storyLink,
 					plot_name = self._mapTypeObj:getBeforeStoryName(),
-					totaltime = endTs - startTs
+					totaltime = endTs - startTs,
+					detail = statisticsData.detail,
+					amount = statisticsData.amount,
+					misc = statisticsData.misc
 				})
 			end)
 			self._customDataSystem:setValue(PrefixType.kGlobal, customKey, "1")
@@ -755,15 +759,19 @@ function ExploreStageMediator:onClickStoryPoint()
 
 	local function endCallback()
 		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
 
 		StatisticSystem:send({
-			op_type = "plot_world_map",
-			point = "plot_end",
-			type = "plot_end",
 			id_first = 0,
+			op_type = "plot_world_map",
+			type = "plot_end",
+			point = "plot_end",
 			plot_id = storyLink,
 			plot_name = self._mapTypeObj:getBeforeStoryName(),
-			totaltime = endTs - startTs
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
 		})
 	end
 

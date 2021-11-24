@@ -308,7 +308,10 @@ function RankMediator:initWigetInfo()
 
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
+		local showView = false
+
 		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
+			showView = true
 			local view = self:getInjector():getInstance("PlayerInfoView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
@@ -320,6 +323,7 @@ function RankMediator:initWigetInfo()
 				tip = Strings:get("RelationText9")
 			}))
 		else
+			showView = true
 			local view = self:getInjector():getInstance("PlayerInfoView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

@@ -102,6 +102,16 @@
             "storage": 5000
         }
     },
+    "AcitvityDeepSeaStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityDetectiveStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -213,6 +223,16 @@
         }
     },
     "AcitvityRiddleStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySilentNightStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,

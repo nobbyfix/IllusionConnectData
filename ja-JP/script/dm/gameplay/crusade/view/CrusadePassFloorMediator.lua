@@ -72,20 +72,6 @@ function CrusadePassFloorMediator:addRankAwardPanel()
 end
 
 function CrusadePassFloorMediator:onClickClose()
-	local playerId = self._developSystem:getPlayer():getRid()
-	local volume = cc.UserDefault:getInstance():getStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum)
-
-	if self._crusade:getCrusadeFloorId() == self._crusadeSystem:getFloorIdByFloorNum(11) and volume ~= "11" then
-		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-		local storyLink = "guide_plot_expedition"
-		local storyAgent = storyDirector:getStoryAgent()
-
-		storyAgent:setSkipCheckSave(true)
-		storyAgent:trigger(storyLink, nil, function ()
-		end)
-		cc.UserDefault:getInstance():setStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum, "11")
-	end
-
 	self:close()
 end
 

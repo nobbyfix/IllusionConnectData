@@ -1156,6 +1156,19 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20211123"
     },
+    "ActivityBannerCooperateBoss_20211208": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "gongdou_img_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20211208",
+        "Sort": 5004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20211208"
+    },
     "ActivityBannerDeepSea": {
         "BannerTime": "",
         "Bubble": "",
@@ -1168,6 +1181,19 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_DeepSea"
+    },
+    "ActivityBannerDeepSea_Re": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "deepsea_txt_zjm_banner.png",
+        "Important": "",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_DeepSea_Re",
+        "Sort": 3007,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_DeepSea_Re"
     },
     "ActivityBannerDetective": {
         "BannerTime": "",
@@ -1337,6 +1363,19 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_Riddle_Re"
+    },
+    "ActivityBannerSilentNight": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "silentnight_txt_zjm_banner.png",
+        "Important": "",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_SilentNight",
+        "Sort": 3016,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_SilentNight"
     },
     "ActivityBannerSnowflake": {
         "BannerTime": "",
@@ -2484,6 +2523,32 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20211111_2_2_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20211124_1_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_LFKLFTe.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LFKLFTe_20211124_1",
+        "Sort": 3004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211124_1_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20211124_1_2_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SRen.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SRen_20211124_1",
+        "Sort": 3005,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211124_1_2_Activity"
+    },
     "ActivityBanner_DrawCard_1UP_ZuoHe02_1_Activity": {
         "BannerTime": "",
         "Bubble": "",
@@ -3082,6 +3147,32 @@
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20211111_2_1_Activity"
     },
+    "ActivityBanner_DrawCard_2UP_20211124_1_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_MZuQBTe.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_MZuQBTe_20211124_1",
+        "Sort": 3006,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20211124_1_1_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20211124_1_2_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_YLMGZhu_LDu.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_LDuYLMGZhu_20211124_1",
+        "Sort": 3007,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20211124_1_2_Activity"
+    },
     "ActivityBanner_EightDays_20210424_Activity": {
         "BannerTime": "",
         "Bubble": "",
@@ -3107,6 +3198,21 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_KMLa_1_Activity"
+    },
+    "ActivityBanner_SP_ALPo": {
+        "BannerTime": "",
+        "Bubble": [
+            "DrawCard_SP_ALPo_Bubble"
+        ],
+        "EarlyShow": "",
+        "Icon": "main_rk_SP_ALPo",
+        "Img": "activity_banner_SP_ALPo.png",
+        "Important": 1,
+        "Link": "view://RecruitNewDrawCardView",
+        "Sort": 10008,
+        "Switch": "fn_DrawCard_SP",
+        "Type": "Activity",
+        "TypeId": "DrawCard_SP_ALPo_Activity"
     },
     "ActivityBanner_SP_KTSJKe": {
         "BannerTime": "",
@@ -3164,6 +3270,19 @@
         "Type": "Activity",
         "TypeId": "DrawCard_UR_2UP_20211116_Activity"
     },
+    "ActivityBanner_UR_2UP_20211202": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_urbanner_1.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_UR_2UP_20211202",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_UR_2UP_20211202_Activity"
+    },
     "ActivityBanner_YSLBin_1": {
         "BannerTime": "",
         "Bubble": "",
@@ -3214,6 +3333,25 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_Dusk_Exchange"
+    },
+    "ActivityExchangeBannerSilentNight": {
+        "BannerTime": {
+            "end": "2021-12-31 05:00:00",
+            "start": [
+                "2021-12-28 05:00:00",
+                "2021-12-31 05:00:00"
+            ]
+        },
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "silentnight_txt_exchange_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=ActivityBlock_SilentNight_Exchange",
+        "Sort": 3018,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_SilentNight_Exchange"
     },
     "Activity_Darts_20201223": {
         "BannerTime": "",

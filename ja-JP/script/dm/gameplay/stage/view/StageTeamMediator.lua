@@ -31,6 +31,9 @@ local kBtnHandlers = {
 	["main.right.button"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCardsTurnRight"
+	},
+	limittips = {
+		func = "onClickLimitTipsPanel"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -104,9 +107,7 @@ function StageTeamMediator:enterWithData(data)
 	self._stageId = data and data.stageId and data.stageId or ""
 	self._spData = data and data.data and data.data or {}
 	self._cardsExcept = self._spData.cardsExcept and self._spData.cardsExcept or {}
-
-	dump(data, "data >>>>>>>>>>")
-
+	self._limitHero = data.limitHero or {}
 	self._curTabType = data and data.tabType and data.tabType or 1
 	self._masterList = self._masterSystem:getShowMasterList()
 	self._canChange = true
@@ -169,6 +170,14 @@ function StageTeamMediator:resumeWithData()
 	end
 
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
+
+	if self:isCrusadeStage() then
+		self._limitHero = self._crusadeSystem:getCrusade():getLimitHero()
+
+		self:initData()
+		self:refreshPetNode()
+		self:refreshListView()
+	end
 end
 
 function StageTeamMediator:initData(team)
@@ -205,8 +214,6 @@ function StageTeamMediator:initData(team)
 		self._recommondJob = self:getSpStageSystem():getIntroductionJob(self._stageId)
 	end
 
-	dump(self._recommondJob, "self._recommondJob: ")
-
 	for _, v in pairs(modelTmp._heroes) do
 		self._teamPets[teamPetIndex] = v
 		self._tempTeams[teamPetIndex] = v
@@ -242,14 +249,25 @@ function StageTeamMediator:updateData()
 	table.copy(self._petList, {})
 end
 
+function StageTeamMediator:isLimitHero(heroId)
+	for i, v in pairs(self._limitHero) do
+		if v == heroId then
+			return true
+		end
+	end
+
+	return false
+end
+
 function StageTeamMediator:removeExceptHeros()
 	local heros = self._curTeam:getHeroes()
 	local showHeros = {}
 
 	for i = 1, #heros do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, heros[i])
+		local isLimit = self:isLimitHero(heros[i])
 
-		if not isExcept then
+		if not isExcept and not isLimit then
 			showHeros[#showHeros + 1] = heros[i]
 		end
 	end
@@ -264,8 +282,9 @@ function StageTeamMediator:showOneKeyHeros()
 
 	for i = 1, #orderPets do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, orderPets[i])
+		local isLimit = self:isLimitHero(orderPets[i])
 
-		if #self._orderPets < self._maxTeamPetNum and not isExcept then
+		if #self._orderPets < self._maxTeamPetNum and not isExcept and not isLimit then
 			self._orderPets[#self._orderPets + 1] = orderPets[i]
 		else
 			self._leavePets[#self._leavePets + 1] = orderPets[i]
@@ -340,6 +359,11 @@ function StageTeamMediator:initWidgetInfo()
 
 	self._pageTipPanel:removeAllChildren()
 	self._pageTipPanel:setTouchEnabled(true)
+
+	self._limitTips = self:getView():getChildByName("limittips")
+
+	self._limitTips:setVisible(false)
+	self._limitTips:setLocalZOrder(999999)
 
 	local width = 0
 
@@ -419,10 +443,10 @@ function StageTeamMediator:ignoreSafeArea()
 end
 
 function StageTeamMediator:createTeamCell(cell, index)
-	local node = cell:getChildByTag(12138)
-	node = node:getChildByFullName("myPetClone")
+	local petNode = cell:getChildByTag(12138)
+	local node = petNode:getChildByFullName("myPetClone")
 
-	node:setVisible(false)
+	petNode:setVisible(false)
 
 	cell.id = nil
 
@@ -430,7 +454,7 @@ function StageTeamMediator:createTeamCell(cell, index)
 		return
 	end
 
-	node:setVisible(true)
+	petNode:setVisible(true)
 
 	local id = self._petListAll[index - 1]
 	node.id = id
@@ -712,6 +736,10 @@ function StageTeamMediator:onClickCell(sender, eventType, index)
 	if eventType == ccui.TouchEventType.began then
 		self._isReturn = true
 		self._isOnTeam = false
+
+		if self:isLimitHero(sender.id) then
+			self._isOnTeam = true
+		end
 	elseif eventType == ccui.TouchEventType.moved then
 		local beganPos = sender:getTouchBeganPosition()
 		local movedPos = sender:getTouchMovePosition()
@@ -731,6 +759,14 @@ function StageTeamMediator:onClickCell(sender, eventType, index)
 	elseif eventType == ccui.TouchEventType.ended or eventType == ccui.TouchEventType.canceled then
 		sender:setVisible(true)
 		sender:setSwallowTouches(false)
+
+		if self:isLimitHero(sender.id) then
+			self._isDrag = false
+
+			self._limitTips:setVisible(true)
+
+			return
+		end
 
 		if self._guildCallback and not self._isDrag then
 			self._isOnTeam = true
@@ -948,8 +984,9 @@ function StageTeamMediator:removeTeamPet(index)
 	if cellId then
 		local idIndex = table.indexof(self._petList, cellId)
 		local selectCanceled = self:isSelectCanceledByDray(cellId, id)
+		local isLimit = self:isLimitHero(cellId)
 
-		if idIndex and not selectCanceled then
+		if idIndex and not selectCanceled and not isLimit then
 			table.remove(self._petList, idIndex)
 
 			self._teamPets[index] = cellId
@@ -1006,7 +1043,7 @@ function StageTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, nil, , , self._stageType)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, nil, , , self._stageType, self._limitHero)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}
@@ -1100,6 +1137,20 @@ function StageTeamMediator:initHero(node, info)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
+		end
+	end
+
+	if self:isLimitHero(heroId) then
+		node:setColor(cc.c3b(80, 80, 80))
+
+		if node:getParent() and node:getParent():getChildByName("Text_limit") then
+			node:getParent():getChildByName("Text_limit"):setVisible(true)
+		end
+	else
+		node:setColor(cc.c3b(255, 255, 255))
+
+		if node:getParent() and node:getParent():getChildByName("Text_limit") then
+			node:getParent():getChildByName("Text_limit"):setVisible(false)
 		end
 	end
 end
@@ -1388,6 +1439,10 @@ function StageTeamMediator:checkToExit(func, isIgnore, translateId)
 	local isCrusade = self:isCrusadeStage()
 
 	if #self._teamPets < 1 then
+		if isCrusade then
+			return true
+		end
+
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,
 			tip = Strings:find("ARENA_TEMA_EMPTY")
@@ -1831,4 +1886,8 @@ function StageTeamMediator:changeTeamByMode(event)
 	if not self:isSpecialStage() then
 		self._editBox:setText(self._nowName)
 	end
+end
+
+function StageTeamMediator:onClickLimitTipsPanel()
+	self._limitTips:setVisible(false)
 end

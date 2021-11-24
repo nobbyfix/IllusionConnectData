@@ -649,10 +649,20 @@ function ActivityPointDetailNewMediator:onChallenge()
 		mapId = self._sortPointId,
 		pointId = pointId
 	}, function (rsdata)
-		self:close()
-
 		if rsdata.resCode == GS_SUCCESS then
-			self._activitySystem:enterActstageBattle(rsdata.data, activityId, subActivityId)
+			local function endFunc()
+				self:close()
+				self._activitySystem:enterActstageBattle(rsdata.data, activityId, subActivityId)
+			end
+
+			local pointConfig = self._point:getConfig()
+			local storyLink = pointConfig.StoryLink
+			local storynames = storyLink and storyLink.enter
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(false)
+			storyAgent:trigger(storynames, nil, endFunc)
 		end
 	end, true)
 end

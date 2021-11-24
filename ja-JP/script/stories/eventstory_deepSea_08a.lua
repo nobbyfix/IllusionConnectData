@@ -1097,11 +1097,16 @@ function scene_eventstory_deepSea_08a.actions.start_eventstory_deepSea_08a(_root
 					title = "News_deepSea_Fitz03",
 					content = {
 						"eventstory_deepSea_08a_18",
-						"eventstory_deepSea_08a_19",
-						"eventstory_deepSea_08a_20",
-						"eventstory_deepSea_08a_21",
+						"eventstory_deepSea_08a_19_1",
+						"eventstory_deepSea_08a_19_2",
+						"eventstory_deepSea_08a_20_1",
+						"eventstory_deepSea_08a_20_2",
+						"eventstory_deepSea_08a_20_3",
+						"eventstory_deepSea_08a_21_1",
+						"eventstory_deepSea_08a_21_2",
 						"eventstory_deepSea_08a_22",
-						"eventstory_deepSea_08a_23"
+						"eventstory_deepSea_08a_23_1",
+						"eventstory_deepSea_08a_23_2"
 					}
 				}
 			end

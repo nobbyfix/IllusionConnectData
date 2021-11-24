@@ -180,6 +180,10 @@ function MainTLInterpreter:act_ChangeBG(action, args)
 	self._mainMediator:changeBackground(args.filename)
 end
 
+function MainTLInterpreter:act_ForbidSkill(action, args)
+	self._battleUIMediator:forbidSkillChange(args)
+end
+
 function MainTLInterpreter:act_Timeup(action, args)
 	self._context:finishBattle(args.result)
 	self._mainMediator:battleTimeup(args.result)

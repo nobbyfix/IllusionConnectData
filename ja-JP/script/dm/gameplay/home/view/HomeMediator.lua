@@ -3910,6 +3910,15 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 60),
 			imgpos = cc.p(65, 25),
 			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivitySilentNight] = {
+			img = "silentnight_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "rukou_shengdanzhuyefubenrukou",
+			imgZorder = 2,
+			aimpos = cc.p(60, 58),
+			imgpos = cc.p(65, 50),
+			redpos = cc.p(115, 56)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

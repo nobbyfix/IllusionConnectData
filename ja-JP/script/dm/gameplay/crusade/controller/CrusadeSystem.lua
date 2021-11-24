@@ -313,23 +313,29 @@ function CrusadeSystem:getFloorIsFirstPassById(floorNum)
 end
 
 function CrusadeSystem:getCurPointCombat(pointNum)
-	local dynamicDifficulty = self._crusade:getDynamicDifficulty() + 1
 	local pointCombat = self:getCurCrusadeFloorModel():getCombatValue()
 	local id = self:getCurCrusadeFloorModel():getId()
 	local floorNum = self:getFloorNumByFloorId(id)
-	local isFirstPass = ""
+	local combatMap = self._crusade:getFloorCombat()
+	local combat = 0
+	local pointList = self:getCurCrusadeFloorModel():getSubPoint()
+	local dynamicDifficulty = self:getCurCrusadeFloorModel():getDynamicDifficulty()
 
-	for k, combat in pairs(pointCombat) do
+	for k, v in pairs(pointCombat) do
 		if pointNum == k then
 			if floorNum >= 11 then
-				combat = combat * dynamicDifficulty
+				if combatMap[pointList[k]] then
+					combat = combatMap[pointList[k]]
+				else
+					combat = pointCombat[k] * dynamicDifficulty[k]
+				end
+			else
+				combat = pointCombat[k]
 			end
-
-			isFirstPass = combat
 		end
 	end
 
-	return isFirstPass
+	return math.modf(combat)
 end
 
 function CrusadeSystem:getCurPointNum()
@@ -651,8 +657,20 @@ function CrusadeSystem:showCrusadeTeamView(isFrist)
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		stageType = StageTeamType.CRUSADE,
-		data = data
+		data = data,
+		limitHero = self._crusade:getLimitHero()
 	}))
+end
+
+function CrusadeSystem:showWorldRuleView()
+	local id = self:getCurCrusadeFloorModel():getId()
+	local floorNum = self:getFloorNumByFloorId(id)
+
+	if floorNum == 11 then
+		local view = self:getInjector():getInstance("CrusadeWorldRuleView")
+
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
+	end
 end
 
 function CrusadeSystem:checkIsRecommend(checkId, heroInfo)
@@ -762,15 +780,9 @@ function CrusadeSystem:enterBattleView(data)
 	}
 
 	function battleDelegate:onLeavingBattle()
-		outSelf:requestLeaveBattle(function (data)
-			local realData = battleSession:getExitSummary()
-			local loseData = {
-				viewType = "crusade",
-				battleStatist = realData.statist.players
-			}
-
-			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, outSelf:getInjector():getInstance("StageLosePopView"), {}, loseData, self))
-		end)
+		BattleLoader:popBattleView(outSelf, {
+			viewName = "CrusadeMainView"
+		})
 	end
 
 	function battleDelegate:onPauseBattle(continueCallback, leaveCallback)
