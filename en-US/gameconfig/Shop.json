@@ -543,7 +543,21 @@
         "Positions": [
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1638316800,
+                        1640995199
+                    ]
+                },
+                "ShopId": "Shop_StageArena_10"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1635724800,
+                        1638316799
+                    ]
                 },
                 "ShopId": "Shop_StageArena_9"
             },

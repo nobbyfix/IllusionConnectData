@@ -1134,6 +1134,7 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 	local chapterConfig = chapterInfo:getConfig()
 	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
 	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyAgent = storyDirector:getStoryAgent()
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
@@ -1170,20 +1171,22 @@ function ActivityMapNewMediator:onClickPlayStory(pointId, isCheck)
 		self._gallerySystem:setActivityStorySaveStatus(self._gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
 
 		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
 
 		StatisticSystem:send({
+			type = "plot_end",
 			op_type = "plot_activity",
 			point = "plot_end",
-			type = "plot_end",
 			activityid = self._activity:getTitle(),
 			plot_id = storyLink,
 			plot_name = storyPoint:getName(),
 			id_first = isFirst,
-			totaltime = endTs - startTs
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
 		})
 	end
-
-	local storyAgent = storyDirector:getStoryAgent()
 
 	storyAgent:setSkipCheckSave(not isCheck)
 	storyAgent:trigger(storyLink, function ()

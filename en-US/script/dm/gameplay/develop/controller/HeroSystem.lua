@@ -1707,7 +1707,17 @@ function HeroSystem:sortOnTeamPets(idList)
 	end)
 end
 
-function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType)
+function HeroSystem:isLimitHero(list, heroId)
+	for i, v in pairs(list) do
+		if v == heroId then
+			return 1
+		end
+	end
+
+	return 0
+end
+
+function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType, limitList)
 	local func = type and HeroSortFuncs.SortFunc[type] or HeroSortFuncs.SortFunc[9]
 
 	if not checkInTeam then
@@ -1721,6 +1731,15 @@ function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, 
 
 				if aHasNum ~= bHasNum then
 					return bHasNum < aHasNum
+				end
+			end
+
+			if limitList then
+				local aLimit = self:isLimitHero(limitList, a.id or a)
+				local bLimit = self:isLimitHero(limitList, b.id or b)
+
+				if aLimit ~= bLimit then
+					return aLimit < bLimit
 				end
 			end
 

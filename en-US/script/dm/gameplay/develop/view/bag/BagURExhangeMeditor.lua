@@ -158,20 +158,8 @@ function BagURExhangeMeditor:onExchangeClicked(sender, eventType)
 		[self._sourceId] = self._curCount
 	}
 
-	self._bagSystem:transferURScroll(sendParam, function ()
-		if checkDependInstance(self) then
-			self:refreshData()
-
-			self._curCount = self._max
-
-			if self._curCount < 1 then
-				self:onBackClicked()
-			else
-				self:refreshView()
-				self:refreshSlider()
-			end
-		end
-	end)
+	self._bagSystem:transferURScroll(sendParam, nil)
+	self:close()
 end
 
 function BagURExhangeMeditor:onAddClicked(sender, eventType)

@@ -1279,6 +1279,62 @@
         ],
         "Type": "ELITE"
     },
+    "SilentNightM01": {
+        "BGM": "Mus_Redwhite",
+        "Background": "SilentNight_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SilentNightAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "SilentNightSN01",
+            "SilentNightSN02",
+            "SilentNightSN03",
+            "SilentNightSN04",
+            "SilentNightSN05",
+            "SilentNightSN06",
+            "SilentNightSN07",
+            "SilentNightSN08"
+        ],
+        "SubStoryPoint": [
+            "SilentNightS01S01",
+            "SilentNightS01S02",
+            "SilentNightS01S03",
+            "SilentNightS01S04",
+            "SilentNightS01S06"
+        ],
+        "Type": "NORMAL"
+    },
+    "SilentNightM02": {
+        "BGM": "Mus_Story_Christmas",
+        "Background": "SilentNight_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SilentNightAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "SilentNightSE01",
+            "SilentNightSE02",
+            "SilentNightSE03",
+            "SilentNightSE04",
+            "SilentNightSE05",
+            "SilentNightSE06",
+            "SilentNightSE07",
+            "SilentNightSE08",
+            "SilentNightSE09",
+            "SilentNightSE10",
+            "SilentNightSE11"
+        ],
+        "SubStoryPoint": [
+            "SilentNightS02S01",
+            "SilentNightS02S02",
+            "SilentNightS02S03",
+            "SilentNightS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

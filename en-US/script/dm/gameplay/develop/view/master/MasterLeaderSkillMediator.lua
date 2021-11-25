@@ -305,7 +305,6 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 	local isShowGray = isActive or isActive == nil or self._isFromDream and self._curTabIdx == 1
 
 	infoPanel:setLayoutType(ccui.LayoutType.VERTICAL)
-	print("----------------index-----------------" .. index)
 
 	local height = self:createSkillDescPanel(infoPanel, skill, isShowGray, starHeight)
 
@@ -360,45 +359,39 @@ local SKILL_EFF_TAG = 1001
 local SKILL_DESC_TAG = 1000
 
 function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive, heightAdd)
-	layout:removeChildByTag(SKILL_DESC_TAG)
+	local style = {
+		fontName = TTF_FONT_FZYH_M
+	}
+	local desc = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)
+	local label = layout:getChildByTag(SKILL_DESC_TAG)
 
-	local fontSize = 18
-	local height = 200
-	local descText = nil
-	local changeSize = false
+	if label == nil then
+		label = ccui.RichText:createWithXML(desc, {})
 
-	repeat
-		local style = {
-			fontName = TTF_FONT_FZYH_M,
-			fontSize = fontSize
-		}
-		local showText = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)
-		descText = ccui.RichText:createWithXML(showText, {})
-		local language = getCurrentLanguage()
+		label:addTo(layout)
+	else
+		label:setString(desc)
+	end
 
-		if language ~= GameLanguageType.CN then
-			descText:setVerticalSpace(-5)
-		else
-			descText:setVerticalSpace(8)
-		end
+	local language = getCurrentLanguage()
 
-		descText:renderContent(listWidth, 0, true)
+	if language ~= GameLanguageType.CN then
+		label:setVerticalSpace(1)
+	else
+		label:setVerticalSpace(8)
+	end
 
-		height = descText:getContentSize().height
-		fontSize = fontSize - 2
-	until height <= 95 or fontSize < 2
+	label:renderContent(listWidth, 0)
 
-	descText:addTo(layout):posite(0, 0)
-
-	local height = descText:getContentSize().height
+	local height = label:getContentSize().height
 
 	layout:setContentSize(cc.size(listWidth, height))
-	descText:setTag(SKILL_DESC_TAG)
+	label:setTag(SKILL_DESC_TAG)
 
 	if isActive then
-		descText:setColor(cc.c3b(255, 255, 255))
+		label:setColor(cc.c3b(255, 255, 255))
 	else
-		descText:setColor(cc.c3b(195, 195, 195))
+		label:setColor(cc.c3b(195, 195, 195))
 	end
 
 	return height
@@ -512,39 +505,24 @@ function MasterLeaderSkillMediator:refreshLeadStageCell(cell, skillInfo)
 	name:setString(Strings:get(self._config.Name))
 	name:setColor(cc.c3b(255, 165, 0))
 
-	local fontSize = 18
-	local height = 100
-	local descText = nil
-	local changeSize = false
+	local showText = nil
 
-	repeat
-		local showText = nil
+	if skillInfo.kind == "Skill" then
+		showText = SkillPrototype:getSkillEffectDesc(skillInfo.skillId, skillInfo.level, {})
+	else
+		local skillProto = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
+		local style = {
+			fontName = TTF_FONT_FZYH_M
+		}
+		showText = SkillPrototype:getAttrEffectDesc(skillInfo.skillVId, skillInfo.level, style)
+	end
 
-		if skillInfo.kind == "Skill" then
-			showText = SkillPrototype:getSkillEffectDesc(skillInfo.skillId, skillInfo.level, {
-				fontSize = fontSize
-			})
-		else
-			local skillProto = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
-			local style = {
-				fontName = TTF_FONT_FZYH_M,
-				fontSize = fontSize
-			}
-			local attrDescs = skillProto:getAttrDescs(skillInfo.level, style) or {}
-			showText = attrDescs[1]
-		end
+	local label2 = ccui.RichText:createWithXML(showText, {})
 
-		descText = ccui.RichText:createWithXML(showText, {})
-
-		descText:setVerticalSpace(1)
-		descText:renderContent(infoPanel:getContentSize().width - 8, 0, true)
-
-		height = descText:getContentSize().height
-		fontSize = fontSize - 2
-	until height < 57 or fontSize < 2
-
-	descText:setAnchorPoint(cc.p(0, 1))
-	descText:addTo(infoPanel):posite(0, 0)
+	label2:setVerticalSpace(1)
+	label2:renderContent(infoPanel:getContentSize().width, 0)
+	label2:setAnchorPoint(cc.p(0, 1))
+	label2:addTo(infoPanel):posite(0, 0)
 end
 
 function MasterLeaderSkillMediator:onCloseBtnClick()

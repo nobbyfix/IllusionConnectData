@@ -3395,5 +3395,122 @@ all.Skill_JZi1_Unique = {
 		return _env
 	end
 }
+all.Activity_Christmas_Death = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AtkRateFactor = externs.AtkRateFactor
+
+		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+
+		this.DefRateFactor = externs.DefRateFactor
+
+		assert(this.DefRateFactor ~= nil, "External variable `DefRateFactor` is not provided.")
+
+		this.MaxHpRateFactor = externs.MaxHpRateFactor
+
+		assert(this.MaxHpRateFactor ~= nil, "External variable `MaxHpRateFactor` is not provided.")
+
+		this.BodytypeFactor = externs.BodytypeFactor
+
+		assert(this.BodytypeFactor ~= nil, "External variable `BodytypeFactor` is not provided.")
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local setLoction = global.GetCellId(_env, _env.ACTOR)
+			local unit = global.ReviveByUnit(_env, _env.ACTOR, 1, 0, {
+				-setLoction
+			})
+
+			if unit then
+				global.AddStatus(_env, unit, "Activity_Christmas")
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "Activity_Christmas")(_env, _env.ACTOR) then
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.AtkRateFactor)
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, this.DefRateFactor)
+				local buffeft3 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1,
+					buffeft2,
+					buffeft3
+				})
+				global.setRoleScale(_env, _env.ACTOR, this.BodytypeFactor)
+				global.ApplyRPRecovery(_env, _env.ACTOR, 10000)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

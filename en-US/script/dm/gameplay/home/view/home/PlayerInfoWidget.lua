@@ -18,6 +18,9 @@ PlayerInfoWidget:has("_eventDispatcher", {
 PlayerInfoWidget:has("_passSystem", {
 	is = "r"
 }):injectWith("PassSystem")
+PlayerInfoWidget:has("_settingSystem", {
+	is = "r"
+}):injectWith("SettingSystem")
 
 function PlayerInfoWidget.class:createWidgetNode()
 	local resFile = "asset/ui/PlayerInfoWidget.csb"
@@ -383,9 +386,9 @@ function PlayerInfoWidget:onClickHead(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
-		local view = self:getInjector():getInstance("settingView")
+		local player = self._developSystem:getPlayer()
 
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil))
+		self._settingSystem:tryEnter(player:getRid())
 	end
 end
 

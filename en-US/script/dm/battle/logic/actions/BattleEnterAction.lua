@@ -52,7 +52,6 @@ function DoEnterSkillsState:enter(battleAction)
 	local buffSystem = battleContext:getObject("BuffSystem")
 
 	buffSystem:triggerEnterBuffs(actor)
-	battleContext:getObject("SkillSystem"):buildSkillsForActor(actor)
 	battleAction:changeState(AfterEnteringState:new())
 end
 

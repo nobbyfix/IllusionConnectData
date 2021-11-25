@@ -733,6 +733,12 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
+		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
+		damage.val = (1 + Factor * 0.05) * damage.val
+	end
+
 	return damage
 end
 
@@ -1030,6 +1036,12 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
+		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
+		damage.val = (1 + Factor * 0.05) * damage.val
+	end
+
 	return damage
 end
 
@@ -1136,6 +1148,11 @@ function all.EvalRecovery_FlagCheck(_env, actor, target, healFactorRate, healFac
 
 	if LowerHp_HealExtra_RatioCheck and LowerHp_HealExtra_RatioCheck ~= 0 and healee.hpRatio < LowerHp_HealExtra_RatioCheck then
 		heal = heal * (1 + LowerHp_HealExtra_ExtraRate)
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15117_2")) > 0 then
+		local healeft = global.SpecialPropGetter(_env, "curerate_weapon_15117_2")(_env, actor)
+		heal = heal * (1 + healeft)
 	end
 
 	return heal
@@ -1715,8 +1732,10 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		local singlecritsplitrate = global.SpecialPropGetter(_env, "singlecritsplitrate")(_env, actor)
 
 		if singlecritsplitrate and singlecritsplitrate ~= 0 then
+			local splitval = damage.val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damage * singlecritsplitrate)
+				global.ApplyHPDamage(_env, unit, splitval * singlecritsplitrate)
 			end
 		end
 
@@ -2259,12 +2278,14 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
-	if result and result.crit then
+	if damage and damage.crit then
 		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
 		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			local splitval = damage.val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damage * aoecritsplitrate)
+				global.ApplyHPDamage(_env, unit, splitval * aoecritsplitrate)
 			end
 		end
 
@@ -2751,8 +2772,10 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		local singlecritsplitrate = global.SpecialPropGetter(_env, "singlecritsplitrate")(_env, actor)
 
 		if singlecritsplitrate and singlecritsplitrate ~= 0 then
+			local splitval = global.damage[n].val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damages[n] * singlecritsplitrate)
+				global.ApplyHPDamage(_env, unit, splitval * singlecritsplitrate)
 			end
 		end
 
@@ -3342,12 +3365,14 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
-	if result and result.crit then
+	if damages[n] and damages[n].crit then
 		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
 		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			local splitval = damages[n].val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damages[n] * aoecritsplitrate)
+				global.ApplyHPDamage(_env, unit, splitval * aoecritsplitrate)
 			end
 		end
 

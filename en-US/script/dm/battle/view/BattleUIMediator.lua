@@ -1278,12 +1278,49 @@ function BattleUIMediator:applyMasterSkill(sender, skillType)
 	self._mainMediator:sendMessage("doskill", args, function (isOK, reason)
 		if not isOK then
 			cclog("warning", "use skill failure: %s", reason)
+
+			if reason == "AlreadyInProcess" then
+				self:cancelMasterSkill(sender, skillType)
+			end
+
 			sender:setSkillTouchEnabled(true)
 
 			return
 		else
 			sender:setSkillTouchEnabled(true)
 			sender:willExecute()
+		end
+	end)
+end
+
+function BattleUIMediator:checkSkillState(sender)
+	if self._viewContext == nil then
+		return
+	end
+
+	local mainPlayerController = self._viewContext:getValue("MainPlayerController")
+
+	if not mainPlayerController then
+		return
+	end
+
+	self._mainMediator:sendMessage("checkMasterSkillState", args, function (isOK, reason)
+	end)
+end
+
+function BattleUIMediator:cancelMasterSkill(sender, skillType)
+	local args = {
+		type = skillType
+	}
+
+	self._mainMediator:sendMessage("cancelskill", args, function (isOK, reason)
+		print(isOK, reason)
+
+		if not isOK then
+			sender:setSkillTouchEnabled(true)
+			cclog("warning", "cancel skill failure: %s", reason)
+		else
+			sender:setSkillTouchEnabled(true)
 		end
 	end)
 end
@@ -1881,6 +1918,12 @@ function BattleUIMediator:adjustCardBuff(idxInSlot)
 
 	if card then
 		card:playAddBuffAnim()
+	end
+end
+
+function BattleUIMediator:forbidSkillChange(args)
+	if self._masterWidget then
+		self._masterWidget:forbidSkillChange(args)
 	end
 end
 

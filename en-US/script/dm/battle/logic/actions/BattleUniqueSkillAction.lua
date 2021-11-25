@@ -65,19 +65,19 @@ function BattleUniqueSkillAction:cancel(battleContext)
 
 	if self._actorSkillComp:getUniqueSkillRoutine() == self then
 		self._actorSkillComp:setUniqueSkillRoutine(nil)
-	end
 
-	if actor:getUnitType() == BattleUnitType.kMaster then
-		local angerComp = self._actorAngerComp
-		local anger = angerComp:getAnger()
-		local battleRecorder = battleContext:getObject("BattleRecorder")
+		if actor:getUnitType() == BattleUnitType.kMaster then
+			local angerComp = self._actorAngerComp
+			local anger = angerComp:getAnger()
+			local battleRecorder = battleContext:getObject("BattleRecorder")
 
-		if battleRecorder then
-			local actorId = actor:getId()
+			if battleRecorder then
+				local actorId = actor:getId()
 
-			battleRecorder:recordEvent(actorId, "CancelUnique", {
-				anger = anger
-			})
+				battleRecorder:recordEvent(actorId, "CancelUnique", {
+					anger = anger
+				})
+			end
 		end
 	end
 end

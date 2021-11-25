@@ -501,6 +501,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_SilentNight": {
+        "BGM": "Mus_Story_SilentNight",
+        "BGPContraction": "anualshop_scene_main_silentnight_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_SilentNight_Desc",
+            "img": "Activity_ExchangeBG_SilentNight",
+            "name": "HomeBackground_SilentNight_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "SilentNight_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_SilentNight_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_SilentNight",
+        "Unlook": 0
+    },
     "HomeBackground_Storybook": {
         "BGM": "Mus_Main_Scene",
         "BGPContraction": "anualshop_scene_main_storybook_preview",

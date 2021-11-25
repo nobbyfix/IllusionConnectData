@@ -927,5 +927,183 @@ all.Skill_MZGXiu_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_MZGXiu_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.CritRate = externs.CritRate
+
+		if this.CritRate == nil then
+			this.CritRate = 0.15
+		end
+
+		this.CritStrg = externs.CritStrg
+
+		if this.CritStrg == nil then
+			this.CritStrg = 0.15
+		end
+
+		this.RpFactor = externs.RpFactor
+
+		if this.RpFactor == nil then
+			this.RpFactor = 150
+		end
+
+		this.AbsorptionFactor = externs.AbsorptionFactor
+
+		if this.AbsorptionFactor == nil then
+			this.AbsorptionFactor = 0.1
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_BEFORE_UNIQUE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local flag = 0
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.FRONT_OF(_env, _env.ACTOR, true))) do
+				if unit then
+					flag = 1
+				end
+			end
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and flag == 1 then
+				global.Kamikakushi(_env, _env.ACTOR)
+
+				local buff_crit = global.NumericEffect(_env, "+critrate", {
+					"+Normal",
+					"+Normal"
+				}, this.CritRate)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					display = "CritRateUp",
+					group = "Skill_MZGXiu_Passive_Crit",
+					duration = 99,
+					limit = 6,
+					tags = {
+						"NUMERIC",
+						"CRITRATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff_crit
+				}, 1, 0)
+
+				local buff_critstrg = global.NumericEffect(_env, "+critstrg", {
+					"+Normal",
+					"+Normal"
+				}, this.CritStrg)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					display = "CritStrgUp",
+					group = "Skill_MZGXiu_Passive_Critstrg",
+					duration = 99,
+					limit = 6,
+					tags = {
+						"NUMERIC",
+						"CRITSTRGUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff_critstrg
+				}, 1, 0)
+				global.ApplyRPRecovery(_env, _env.ACTOR, this.RpFactor)
+
+				local buffeft2 = global.NumericEffect(_env, "+absorption", {
+					"+Normal",
+					"+Normal"
+				}, this.AbsorptionFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					duration = 99,
+					group = "Skill_MZGXiu_Passive_Absorption",
+					timing = 0,
+					limit = 6,
+					tags = {
+						"NUMERIC",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
+				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN"), 99)
+				global.SwitchActionTo(_env, "hurt1", "hurt1")
+				global.SwitchActionTo(_env, "down", "down")
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

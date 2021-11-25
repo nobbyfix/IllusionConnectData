@@ -419,6 +419,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_MTZMEShi_Awake"
     },
+    "MZGXiu": {
+        "AnimSound": "Se_Effect_Awakening_MZGXiu",
+        "Animation": "cxgdie_Awaken",
+        "CutIn": [
+            -280,
+            0,
+            0.84
+        ],
+        "ModelId": "Model_MZGXiu_Awake",
+        "Name": "MZGXiu_Awake_Name",
+        "NameDesc": "MZGXiu_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_MZGXiu_UnAwake",
+        "Reward": "HeroAwaken_MZGXiu",
+        "ShowHero": "MZGXiu",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "MZGXiu_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_MZGXiu_Awake"
+    },
     "PDLa": {
         "AnimSound": "Se_Effect_Awakening_PDLa",
         "Animation": "ansi_Awaken",
@@ -507,8 +528,8 @@
         "AnimSound": "Se_Effect_Awakening_XHMao",
         "Animation": "lbi_Awaken",
         "CutIn": [
-            0,
-            0,
+            -170,
+            100,
             0.6
         ],
         "ModelId": "Model_XHMao_Awake",

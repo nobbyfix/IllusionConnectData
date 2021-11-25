@@ -3717,6 +3717,231 @@
         ],
         "StoryLink": "eventstory_404_08a"
     },
+    "SilentNightS01S01": {
+        "FirstReward": "SilentNightS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SilentNightM01",
+        "Name": "SilentNightS01S01_Name",
+        "NextStoryPoint": [
+            "SilentNightS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_wish_00"
+    },
+    "SilentNightS01S02": {
+        "FirstReward": "SilentNightS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SilentNightM01",
+        "Name": "SilentNightS01S02_Name",
+        "NextStoryPoint": [
+            "SilentNightS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_wish_01a"
+    },
+    "SilentNightS01S03": {
+        "FirstReward": "SilentNightS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SilentNightM01",
+        "Name": "SilentNightS01S03_Name",
+        "NextStoryPoint": [
+            "SilentNightS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSN02"
+        ],
+        "PreStoryPoint": [
+            "SilentNightS01S02"
+        ],
+        "StoryLink": "eventstory_wish_02a"
+    },
+    "SilentNightS01S04": {
+        "FirstReward": "SilentNightS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SilentNightM01",
+        "Name": "SilentNightS01S04_Name",
+        "NextStoryPoint": [
+            "SilentNightS01S06"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSN05"
+        ],
+        "PreStoryPoint": [
+            "SilentNightS01S03"
+        ],
+        "StoryLink": "eventstory_wish_03a"
+    },
+    "SilentNightS01S06": {
+        "FirstReward": "SilentNightS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SilentNightM01",
+        "Name": "SilentNightS01S06_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSN07"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_wish_04a"
+    },
+    "SilentNightS02S01": {
+        "FirstReward": "SilentNightS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SilentNightM02",
+        "Name": "SilentNightS02S01_Name",
+        "NextStoryPoint": [
+            "SilentNightS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_wish_05"
+    },
+    "SilentNightS02S02": {
+        "FirstReward": "SilentNightS01S09_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SilentNightM02",
+        "Name": "SilentNightS02S02_Name",
+        "NextStoryPoint": [
+            "SilentNightS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSE02"
+        ],
+        "PreStoryPoint": [
+            "SilentNightS02S01"
+        ],
+        "StoryLink": "eventstory_wish_06"
+    },
+    "SilentNightS02S03": {
+        "FirstReward": "SilentNightS01S10_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SilentNightM02",
+        "Name": "SilentNightS02S03_Name",
+        "NextStoryPoint": [
+            "SilentNightS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSE05"
+        ],
+        "PreStoryPoint": [
+            "SilentNightS02S02"
+        ],
+        "StoryLink": "eventstory_wish_07"
+    },
+    "SilentNightS02S04": {
+        "FirstReward": "SilentNightS01S11_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SilentNightM02",
+        "Name": "SilentNightS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SilentNightSE07"
+        ],
+        "PreStoryPoint": [
+            "SilentNightS02S03"
+        ],
+        "StoryLink": "eventstory_wish_08a"
+    },
     "StoryBookS01E01": {
         "FirstReward": "StoryBookS01E01_Reward",
         "Icon": "s_album_story_1",

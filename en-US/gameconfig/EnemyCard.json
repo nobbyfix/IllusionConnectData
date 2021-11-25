@@ -17877,10 +17877,7 @@
             "Crusade01P01U02N01",
             "Crusade01P01U03N02",
             "Crusade01P01U03N03",
-            "Crusade01P01U03N04",
-            "Crusade01P01U03N04",
             "Crusade01P01U03N05",
-            "Crusade01P01U03N07",
             "Crusade01P01U03N09"
         ],
         "CardLibrary": {
@@ -17891,7 +17888,12 @@
             ],
             "2": [
                 2,
-                8,
+                2,
+                1
+            ],
+            "3": [
+                3,
+                5,
                 1
             ]
         },
@@ -17900,9 +17902,13 @@
                 "library",
                 "1"
             ],
-            "8": [
+            "2": [
                 "library",
                 "2"
+            ],
+            "5": [
+                "library",
+                "3"
             ]
         },
         "FirstFormation": {
@@ -17917,34 +17923,12 @@
             "3": [
                 "fixed",
                 "Crusade01P01U01N03"
-            ],
-            "4": [
-                "fixed",
-                "Crusade01P01U01N04"
-            ],
-            "5": [
-                "fixed",
-                "Crusade01P01U01N05"
-            ],
-            "6": [
-                "fixed",
-                "Crusade01P01U01N06"
-            ],
-            "7": [
-                "fixed",
-                "Crusade01P01U01N07"
-            ],
-            "9": [
-                "fixed",
-                "Crusade01P01U01N09"
             ]
         }
     },
     "CardCrusade01P02": {
         "CardCollection": [
             "Crusade01P02U02N01",
-            "Crusade01P02U03N03",
-            "Crusade01P02U03N04",
             "Crusade01P02U03N04",
             "Crusade01P02U03N07",
             "Crusade01P02U03N09"
@@ -17957,7 +17941,12 @@
             ],
             "2": [
                 2,
-                6,
+                2,
+                1
+            ],
+            "3": [
+                3,
+                4,
                 1
             ]
         },
@@ -17966,23 +17955,19 @@
                 "library",
                 "1"
             ],
-            "6": [
+            "2": [
                 "library",
                 "2"
+            ],
+            "4": [
+                "library",
+                "3"
             ]
         },
         "FirstFormation": {
-            "1": [
-                "fixed",
-                "Crusade01P02U01N01"
-            ],
             "2": [
                 "fixed",
                 "Crusade01P02U01N02"
-            ],
-            "3": [
-                "fixed",
-                "Crusade01P02U01N03"
             ],
             "4": [
                 "fixed",
@@ -17995,14 +17980,6 @@
             "6": [
                 "fixed",
                 "Crusade01P02U01N06"
-            ],
-            "7": [
-                "fixed",
-                "Crusade01P02U01N07"
-            ],
-            "9": [
-                "fixed",
-                "Crusade01P02U01N09"
             ]
         }
     },
@@ -18012,12 +17989,7 @@
             "Crusade01P03U03N01",
             "Crusade01P03U03N02",
             "Crusade01P03U03N03",
-            "Crusade01P03U03N04",
-            "Crusade01P03U03N04",
-            "Crusade01P03U03N07",
-            "Crusade01P03U03N09",
-            "Crusade01P03U04N02",
-            "Crusade01P03U04N03"
+            "Crusade01P03U04N02"
         ],
         "CardLibrary": {
             "1": [
@@ -18027,12 +17999,12 @@
             ],
             "2": [
                 2,
-                8,
+                2,
                 1
             ],
             "3": [
-                9,
-                10,
+                3,
+                5,
                 1
             ]
         },
@@ -18041,13 +18013,13 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "3"
-            ],
-            "8": [
+            "2": [
                 "library",
                 "2"
+            ],
+            "5": [
+                "library",
+                "3"
             ]
         },
         "FirstFormation": {
@@ -18062,14 +18034,6 @@
             "3": [
                 "fixed",
                 "Crusade01P03U01N03"
-            ],
-            "4": [
-                "fixed",
-                "Crusade01P03U01N04"
-            ],
-            "5": [
-                "fixed",
-                "Crusade01P03U01N05"
             ]
         }
     },
@@ -18080,10 +18044,6 @@
             "Crusade01P04U03N02",
             "Crusade01P04U03N03",
             "Crusade01P04U03N04",
-            "Crusade01P04U03N04",
-            "Crusade01P04U03N05",
-            "Crusade01P04U03N07",
-            "Crusade01P04U03N09",
             "Crusade01P04U04N03",
             "Crusade01P04U04N05"
         ],
@@ -18095,12 +18055,17 @@
             ],
             "2": [
                 2,
-                9,
+                2,
                 1
             ],
             "3": [
-                10,
-                11,
+                3,
+                6,
+                1
+            ],
+            "4": [
+                7,
+                7,
                 1
             ]
         },
@@ -18109,13 +18074,17 @@
                 "library",
                 "1"
             ],
-            "11": [
+            "2": [
+                "library",
+                "2"
+            ],
+            "6": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
-                "2"
+                "4"
             ]
         },
         "FirstFormation": {
@@ -18128,18 +18097,11 @@
     "CardCrusade01P05": {
         "CardCollection": [
             "Crusade01P05U02N01",
-            "Crusade01P05U03N01",
             "Crusade01P05U03N02",
-            "Crusade01P05U03N03",
-            "Crusade01P05U03N04",
-            "Crusade01P05U03N04",
             "Crusade01P05U03N05",
+            "Crusade01P05U03N06",
             "Crusade01P05U03N07",
-            "Crusade01P05U03N09",
             "Crusade01P05U04N02",
-            "Crusade01P05U04N03",
-            "Crusade01P05U04N05",
-            "Crusade01P05U05N04",
             "Crusade01P05U05N06"
         ],
         "CardLibrary": {
@@ -18150,17 +18112,17 @@
             ],
             "2": [
                 2,
-                9,
+                2,
                 1
             ],
             "3": [
-                10,
-                12,
+                3,
+                6,
                 1
             ],
             "4": [
-                13,
-                14,
+                7,
+                7,
                 1
             ]
         },
@@ -18169,17 +18131,17 @@
                 "library",
                 "1"
             ],
-            "12": [
+            "2": [
+                "library",
+                "2"
+            ],
+            "6": [
                 "library",
                 "3"
             ],
-            "14": [
+            "7": [
                 "library",
                 "4"
-            ],
-            "9": [
-                "library",
-                "2"
             ]
         },
         "FirstFormation": {
@@ -18192,7 +18154,9 @@
     "CardCrusade01P06": {
         "CardCollection": [
             "Crusade01P06U02N04",
-            "Crusade01P06U03N05"
+            "Crusade01P06U02N05",
+            "Crusade01P06U03N05",
+            "Crusade01P06U03N06"
         ],
         "CardLibrary": {
             "1": [
@@ -18202,7 +18166,12 @@
             ],
             "2": [
                 2,
-                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                4,
                 1
             ]
         },
@@ -18211,23 +18180,40 @@
                 "library",
                 "1"
             ],
-            "2": [
+            "3": [
                 "library",
                 "2"
+            ],
+            "4": [
+                "library",
+                "3"
             ]
         },
         "FirstFormation": {
             "2": [
                 "fixed",
                 "Crusade01P06U01N02"
+            ],
+            "4": [
+                "fixed",
+                "Crusade01P06U01N04"
+            ],
+            "5": [
+                "fixed",
+                "Crusade01P06U01N05"
+            ],
+            "6": [
+                "fixed",
+                "Crusade01P06U01N06"
             ]
         }
     },
     "CardCrusade01P07": {
         "CardCollection": [
             "Crusade01P07U02N02",
+            "Crusade01P07U02N03",
+            "Crusade01P07U02N04",
             "Crusade01P07U03N03",
-            "Crusade01P07U03N04",
             "Crusade01P07U03N04",
             "Crusade01P07U04N05",
             "Crusade01P07U04N06"
@@ -18247,6 +18233,11 @@
                 5,
                 6,
                 1
+            ],
+            "4": [
+                7,
+                7,
+                1
             ]
         },
         "DrawCard": {
@@ -18261,6 +18252,10 @@
             "6": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -18276,8 +18271,8 @@
             "Crusade01P08U03N02",
             "Crusade01P08U03N03",
             "Crusade01P08U03N04",
-            "Crusade01P08U03N04",
             "Crusade01P08U04N05",
+            "Crusade01P08U04N07",
             "Crusade01P08U04N06"
         ],
         "CardLibrary": {
@@ -18288,10 +18283,15 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
+                3,
+                5,
+                1
+            ],
+            "4": [
                 6,
                 7,
                 1
@@ -18302,13 +18302,17 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -18324,11 +18328,9 @@
             "Crusade01P09U03N02",
             "Crusade01P09U03N03",
             "Crusade01P09U03N04",
-            "Crusade01P09U03N04",
             "Crusade01P09U04N04",
             "Crusade01P09U04N05",
-            "Crusade01P09U04N06",
-            "Crusade01P09U05N06"
+            "Crusade01P09U04N06"
         ],
         "CardLibrary": {
             "1": [
@@ -18338,17 +18340,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                5,
                 1
             ],
             "4": [
-                9,
-                9,
+                6,
+                7,
                 1
             ]
         },
@@ -18357,15 +18359,15 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "5": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
             ]
@@ -18396,16 +18398,21 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                6,
                 1
             ],
             "4": [
+                5,
                 7,
+                1
+            ],
+            "5": [
+                8,
                 8,
                 1
             ]
@@ -18415,17 +18422,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -18433,9 +18444,10 @@
     "CardCrusade01P11": {
         "CardCollection": [
             "Crusade01P11U02N01",
+            "Crusade01P11U02N02",
+            "Crusade01P11U02N03",
             "Crusade01P11U03N01",
             "Crusade01P11U03N02",
-            "Crusade01P11U03N04",
             "Crusade01P11U03N04",
             "Crusade01P11U04N02",
             "Crusade01P11U04N04"
@@ -18448,12 +18460,17 @@
             ],
             "2": [
                 2,
-                5,
+                4,
                 1
             ],
             "3": [
-                6,
+                5,
                 7,
+                1
+            ],
+            "4": [
+                8,
+                8,
                 1
             ]
         },
@@ -18462,13 +18479,17 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "4": [
                 "library",
                 "2"
             ],
             "7": [
                 "library",
                 "3"
+            ],
+            "8": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {}
@@ -18476,9 +18497,10 @@
     "CardCrusade01P12": {
         "CardCollection": [
             "Crusade01P12U02N01",
+            "Crusade01P12U02N02",
+            "Crusade01P12U02N03",
             "Crusade01P12U03N01",
             "Crusade01P12U03N02",
-            "Crusade01P12U03N04",
             "Crusade01P12U03N04",
             "Crusade01P12U04N02",
             "Crusade01P12U04N04"
@@ -18491,12 +18513,17 @@
             ],
             "2": [
                 2,
-                5,
+                4,
                 1
             ],
             "3": [
-                6,
+                5,
                 7,
+                1
+            ],
+            "4": [
+                8,
+                8,
                 1
             ]
         },
@@ -18505,13 +18532,17 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "4": [
                 "library",
                 "2"
             ],
             "7": [
                 "library",
                 "3"
+            ],
+            "8": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {}
@@ -18535,16 +18566,21 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                5,
                 1
             ],
             "4": [
+                5,
                 6,
+                1
+            ],
+            "5": [
+                7,
                 8,
                 1
             ]
@@ -18554,17 +18590,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "5": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -18588,11 +18628,126 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
+                1
+            ],
+            "4": [
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "2": [
+                "library",
+                "2"
+            ],
+            "4": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
+            ]
+        },
+        "FirstFormation": {}
+    },
+    "CardCrusade01P15": {
+        "CardCollection": [
+            "Crusade01P15U02N02",
+            "Crusade01P15U03N02",
+            "Crusade01P15U03N06",
+            "Crusade01P15U04N01",
+            "Crusade01P15U04N02",
+            "Crusade01P15U04N03",
+            "Crusade01P15U04N05",
+            "Crusade01P15U05N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                2,
+                1
+            ],
+            "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "2": [
+                "library",
+                "2"
+            ],
+            "4": [
+                "library",
+                "3"
+            ],
+            "8": [
+                "library",
+                "4"
+            ]
+        },
+        "FirstFormation": {}
+    },
+    "CardCrusade01P16": {
+        "CardCollection": [
+            "Crusade01P16U02N02",
+            "Crusade01P16U03N01",
+            "Crusade01P16U03N02",
+            "Crusade01P16U03N03",
+            "Crusade01P16U04N02",
+            "Crusade01P16U04N03",
+            "Crusade01P16U04N06",
+            "Crusade01P16U05N07"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                2,
+                1
+            ],
+            "3": [
+                3,
                 5,
                 1
             ],
@@ -18607,7 +18762,7 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
@@ -18622,121 +18777,12 @@
         },
         "FirstFormation": {}
     },
-    "CardCrusade01P15": {
-        "CardCollection": [
-            "Crusade01P15U02N02",
-            "Crusade01P15U03N02",
-            "Crusade01P15U03N04",
-            "Crusade01P15U03N04",
-            "Crusade01P15U03N05",
-            "Crusade01P15U04N01",
-            "Crusade01P15U04N02",
-            "Crusade01P15U04N03",
-            "Crusade01P15U04N05",
-            "Crusade01P15U05N04",
-            "Crusade01P15U05N05",
-            "Crusade01P15U05N06"
-        ],
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "2": [
-                2,
-                5,
-                1
-            ],
-            "3": [
-                6,
-                9,
-                1
-            ],
-            "4": [
-                10,
-                12,
-                1
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
-                "library",
-                "2"
-            ],
-            "9": [
-                "library",
-                "3"
-            ]
-        },
-        "FirstFormation": {}
-    },
-    "CardCrusade01P16": {
-        "CardCollection": [
-            "Crusade01P16U02N02",
-            "Crusade01P16U03N01",
-            "Crusade01P16U03N02",
-            "Crusade01P16U04N02",
-            "Crusade01P16U04N06",
-            "Crusade01P16U05N07"
-        ],
-        "CardLibrary": {
-            "1": [
-                1,
-                1,
-                1
-            ],
-            "2": [
-                2,
-                3,
-                1
-            ],
-            "3": [
-                4,
-                5,
-                1
-            ],
-            "4": [
-                6,
-                6,
-                1
-            ]
-        },
-        "DrawCard": {
-            "1": [
-                "library",
-                "1"
-            ],
-            "3": [
-                "library",
-                "2"
-            ],
-            "5": [
-                "library",
-                "3"
-            ],
-            "6": [
-                "library",
-                "4"
-            ]
-        },
-        "FirstFormation": {}
-    },
     "CardCrusade01P17": {
         "CardCollection": [
             "Crusade01P17U02N02",
             "Crusade01P17U03N02",
             "Crusade01P17U03N07",
             "Crusade01P17U04N02",
-            "Crusade01P17U04N06",
             "Crusade01P17U05N07"
         ],
         "CardLibrary": {
@@ -18747,17 +18793,17 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                5,
                 1
             ],
             "4": [
-                6,
-                6,
+                5,
+                5,
                 1
             ]
         },
@@ -18766,15 +18812,15 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "5": [
+            "4": [
                 "library",
                 "3"
             ],
-            "6": [
+            "5": [
                 "library",
                 "4"
             ]
@@ -18812,16 +18858,16 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                6,
                 1
             ],
             "4": [
-                7,
+                5,
                 7,
                 1
             ]
@@ -18831,11 +18877,11 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
@@ -18856,7 +18902,6 @@
             "Crusade01P19U02N01",
             "Crusade01P19U03N03",
             "Crusade01P19U03N04",
-            "Crusade01P19U03N04",
             "Crusade01P19U04N04",
             "Crusade01P19U04N06",
             "Crusade01P19U05N05",
@@ -18870,17 +18915,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                8,
+                7,
                 1
             ]
         },
@@ -18889,17 +18939,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -18914,7 +18968,6 @@
             "Crusade01P20U02N01",
             "Crusade01P20U03N03",
             "Crusade01P20U03N04",
-            "Crusade01P20U03N04",
             "Crusade01P20U04N04",
             "Crusade01P20U04N06",
             "Crusade01P20U05N05",
@@ -18928,17 +18981,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                8,
+                7,
                 1
             ]
         },
@@ -18947,17 +19005,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -18971,8 +19033,8 @@
         "CardCollection": [
             "Crusade01P21U02N04",
             "Crusade01P21U03N02",
+            "Crusade01P21U03N06",
             "Crusade01P21U04N05",
-            "Crusade01P21U04N07",
             "Crusade01P21U05N09"
         ],
         "CardLibrary": {
@@ -19051,11 +19113,11 @@
             ],
             "3": [
                 3,
-                4,
+                3,
                 1
             ],
             "4": [
-                5,
+                4,
                 5,
                 1
             ]
@@ -19069,7 +19131,7 @@
                 "library",
                 "2"
             ],
-            "4": [
+            "3": [
                 "library",
                 "3"
             ],
@@ -19097,7 +19159,6 @@
         "CardCollection": [
             "Crusade01P23U02N01",
             "Crusade01P23U03N01",
-            "Crusade01P23U03N03",
             "Crusade01P23U04N01",
             "Crusade01P23U04N02",
             "Crusade01P23U04N03",
@@ -19112,17 +19173,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
+                3,
+                1
+            ],
+            "4": [
                 4,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                8,
+                7,
                 1
             ]
         },
@@ -19131,17 +19197,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -19154,7 +19224,6 @@
     "CardCrusade01P24": {
         "CardCollection": [
             "Crusade01P24U02N01",
-            "Crusade01P24U03N01",
             "Crusade01P24U03N03",
             "Crusade01P24U04N01",
             "Crusade01P24U04N02",
@@ -19170,17 +19239,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
+                3,
+                1
+            ],
+            "4": [
                 4,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                8,
+                7,
                 1
             ]
         },
@@ -19189,17 +19263,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -19212,13 +19290,11 @@
     "CardCrusade01P25": {
         "CardCollection": [
             "Crusade01P25U02N04",
-            "Crusade01P25U03N01",
+            "Crusade01P25U03N06",
             "Crusade01P25U04N01",
             "Crusade01P25U04N02",
             "Crusade01P25U04N03",
-            "Crusade01P25U04N06",
-            "Crusade01P25U05N02",
-            "Crusade01P25U05N03"
+            "Crusade01P25U05N02"
         ],
         "CardLibrary": {
             "1": [
@@ -19233,12 +19309,12 @@
             ],
             "3": [
                 3,
-                6,
+                3,
                 1
             ],
             "4": [
-                7,
-                8,
+                4,
+                6,
                 1
             ]
         },
@@ -19251,11 +19327,11 @@
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
             ]
@@ -19290,16 +19366,21 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                5,
                 1
             ],
             "4": [
+                5,
                 6,
+                1
+            ],
+            "5": [
+                7,
                 8,
                 1
             ]
@@ -19309,17 +19390,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "5": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19343,16 +19428,21 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                5,
                 1
             ],
             "4": [
+                5,
                 6,
+                1
+            ],
+            "5": [
+                7,
                 8,
                 1
             ]
@@ -19362,17 +19452,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "5": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19380,16 +19474,12 @@
     "CardCrusade01P28": {
         "CardCollection": [
             "Crusade01P28U02N02",
-            "Crusade01P28U03N01",
-            "Crusade01P28U03N04",
             "Crusade01P28U03N04",
             "Crusade01P28U03N05",
+            "Crusade01P28U03N06",
             "Crusade01P28U04N02",
             "Crusade01P28U04N03",
-            "Crusade01P28U04N05",
-            "Crusade01P28U04N06",
             "Crusade01P28U05N02",
-            "Crusade01P28U05N04",
             "Crusade01P28U05N05"
         ],
         "CardLibrary": {
@@ -19400,17 +19490,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                5,
                 1
             ],
             "4": [
-                10,
-                12,
+                6,
+                7,
+                1
+            ],
+            "5": [
+                8,
+                8,
                 1
             ]
         },
@@ -19419,17 +19514,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19438,13 +19537,9 @@
         "CardCollection": [
             "Crusade01P29U02N02",
             "Crusade01P29U03N01",
-            "Crusade01P29U03N04",
-            "Crusade01P29U03N04",
             "Crusade01P29U03N05",
             "Crusade01P29U04N02",
-            "Crusade01P29U04N03",
             "Crusade01P29U04N05",
-            "Crusade01P29U04N06",
             "Crusade01P29U05N02",
             "Crusade01P29U05N04",
             "Crusade01P29U05N05"
@@ -19457,17 +19552,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -19476,17 +19576,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19494,10 +19598,13 @@
     "CardCrusade01P30": {
         "CardCollection": [
             "Crusade01P30U02N04",
+            "Crusade01P30U03N06",
             "Crusade01P30U03N07",
             "Crusade01P30U04N02",
             "Crusade01P30U04N09",
-            "Crusade01P30U05N03"
+            "Crusade01P30U05N03",
+            "Crusade01P30U05N04",
+            "Crusade01P30U05N05"
         ],
         "CardLibrary": {
             "1": [
@@ -19517,7 +19624,12 @@
             ],
             "4": [
                 5,
-                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -19534,9 +19646,13 @@
                 "library",
                 "3"
             ],
-            "5": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19547,9 +19663,9 @@
             "Crusade01P31U03N01",
             "Crusade01P31U03N02",
             "Crusade01P31U03N04",
-            "Crusade01P31U03N04",
             "Crusade01P31U04N02",
             "Crusade01P31U04N04",
+            "Crusade01P31U04N05",
             "Crusade01P31U05N07"
         ],
         "CardLibrary": {
@@ -19560,16 +19676,16 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                7,
+                3,
+                5,
                 1
             ],
             "4": [
-                8,
+                6,
                 8,
                 1
             ]
@@ -19579,11 +19695,11 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "5": [
                 "library",
                 "3"
             ],
@@ -19599,7 +19715,6 @@
             "Crusade01P32U02N02",
             "Crusade01P32U03N02",
             "Crusade01P32U03N04",
-            "Crusade01P32U03N04",
             "Crusade01P32U04N02",
             "Crusade01P32U04N04",
             "Crusade01P32U05N04",
@@ -19614,17 +19729,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -19633,17 +19753,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19652,12 +19776,8 @@
         "CardCollection": [
             "Crusade01P33U02N02",
             "Crusade01P33U03N02",
-            "Crusade01P33U03N04",
-            "Crusade01P33U03N04",
             "Crusade01P33U03N05",
             "Crusade01P33U04N01",
-            "Crusade01P33U04N02",
-            "Crusade01P33U04N03",
             "Crusade01P33U04N05",
             "Crusade01P33U05N04",
             "Crusade01P33U05N05",
@@ -19671,17 +19791,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -19690,17 +19815,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19708,9 +19837,9 @@
     "CardCrusade01P34": {
         "CardCollection": [
             "Crusade01P34U02N02",
+            "Crusade01P34U02N03",
             "Crusade01P34U03N01",
             "Crusade01P34U03N02",
-            "Crusade01P34U03N04",
             "Crusade01P34U03N04",
             "Crusade01P34U04N02",
             "Crusade01P34U04N04",
@@ -19724,16 +19853,16 @@
             ],
             "2": [
                 2,
-                5,
+                3,
                 1
             ],
             "3": [
+                4,
                 6,
-                7,
                 1
             ],
             "4": [
-                8,
+                7,
                 8,
                 1
             ]
@@ -19743,11 +19872,11 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "3": [
                 "library",
                 "2"
             ],
-            "7": [
+            "6": [
                 "library",
                 "3"
             ],
@@ -19763,9 +19892,8 @@
             "Crusade01P35U02N02",
             "Crusade01P35U03N02",
             "Crusade01P35U03N04",
-            "Crusade01P35U03N04",
             "Crusade01P35U03N05",
-            "Crusade01P35U04N01",
+            "Crusade01P35U03N06",
             "Crusade01P35U04N02",
             "Crusade01P35U04N03",
             "Crusade01P35U04N05"
@@ -19778,12 +19906,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
+                3,
                 6,
-                9,
+                1
+            ],
+            "4": [
+                7,
+                8,
                 1
             ]
         },
@@ -19792,13 +19925,17 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "6": [
                 "library",
                 "3"
+            ],
+            "8": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {}
@@ -19807,7 +19944,6 @@
         "CardCollection": [
             "Crusade01P36U02N02",
             "Crusade01P36U03N02",
-            "Crusade01P36U03N04",
             "Crusade01P36U03N04",
             "Crusade01P36U04N02",
             "Crusade01P36U04N04",
@@ -19823,17 +19959,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -19842,17 +19983,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19860,7 +20005,6 @@
     "CardCrusade01P37": {
         "CardCollection": [
             "Crusade01P37U02N02",
-            "Crusade01P37U03N04",
             "Crusade01P37U03N04",
             "Crusade01P37U03N05",
             "Crusade01P37U04N01",
@@ -19877,17 +20021,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -19896,17 +20045,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -19919,8 +20072,7 @@
             "Crusade01P38U04N01",
             "Crusade01P38U04N07",
             "Crusade01P38U04N09",
-            "Crusade01P38U05N02",
-            "Crusade01P38U05N03"
+            "Crusade01P38U05N02"
         ],
         "CardLibrary": {
             "1": [
@@ -19930,17 +20082,17 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                6,
                 1
             ],
             "4": [
+                5,
                 7,
-                8,
                 1
             ]
         },
@@ -19949,15 +20101,15 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "7": [
                 "library",
                 "4"
             ]
@@ -19975,9 +20127,9 @@
             "Crusade01P39U03N01",
             "Crusade01P39U03N02",
             "Crusade01P39U03N04",
-            "Crusade01P39U03N04",
             "Crusade01P39U04N02",
             "Crusade01P39U04N04",
+            "Crusade01P39U04N05",
             "Crusade01P39U05N07"
         ],
         "CardLibrary": {
@@ -19988,16 +20140,16 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                7,
+                3,
+                5,
                 1
             ],
             "4": [
-                8,
+                6,
                 8,
                 1
             ]
@@ -20007,11 +20159,11 @@
                 "library",
                 "1"
             ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "5": [
                 "library",
                 "3"
             ],
@@ -20027,8 +20179,6 @@
             "Crusade01P40U02N07",
             "Crusade01P40U03N02",
             "Crusade01P40U03N09",
-            "Crusade01P40U04N01",
-            "Crusade01P40U04N04",
             "Crusade01P40U04N06",
             "Crusade01P40U05N03"
         ],
@@ -20040,17 +20190,17 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                6,
                 1
             ],
             "4": [
-                7,
-                7,
+                5,
+                5,
                 1
             ]
         },
@@ -20059,15 +20209,15 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "7": [
+            "5": [
                 "library",
                 "4"
             ]
@@ -20091,7 +20241,6 @@
         "CardCollection": [
             "Crusade01P41U02N02",
             "Crusade01P41U03N04",
-            "Crusade01P41U03N04",
             "Crusade01P41U03N05",
             "Crusade01P41U04N01",
             "Crusade01P41U04N05",
@@ -20107,17 +20256,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -20126,17 +20280,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20146,10 +20304,6 @@
             "Crusade01P42U02N02",
             "Crusade01P42U03N02",
             "Crusade01P42U03N04",
-            "Crusade01P42U03N04",
-            "Crusade01P42U03N05",
-            "Crusade01P42U04N01",
-            "Crusade01P42U04N02",
             "Crusade01P42U04N03",
             "Crusade01P42U04N05",
             "Crusade01P42U05N04",
@@ -20164,17 +20318,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -20183,17 +20342,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20202,8 +20365,8 @@
         "CardCollection": [
             "Crusade01P43U02N05",
             "Crusade01P43U03N01",
+            "Crusade01P43U03N06",
             "Crusade01P43U04N02",
-            "Crusade01P43U04N03",
             "Crusade01P43U04N05",
             "Crusade01P43U04N07"
         ],
@@ -20220,6 +20383,11 @@
             ],
             "3": [
                 3,
+                4,
+                1
+            ],
+            "4": [
+                5,
                 6,
                 1
             ]
@@ -20233,9 +20401,13 @@
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -20253,8 +20425,6 @@
         "CardCollection": [
             "Crusade01P44U02N07",
             "Crusade01P44U03N01",
-            "Crusade01P44U03N09",
-            "Crusade01P44U04N02",
             "Crusade01P44U04N03",
             "Crusade01P44U04N07",
             "Crusade01P44U05N09"
@@ -20267,17 +20437,17 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                7,
+                4,
+                5,
                 1
             ]
         },
@@ -20286,15 +20456,15 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "7": [
+            "5": [
                 "library",
                 "4"
             ]
@@ -20319,7 +20489,6 @@
             "Crusade01P45U02N02",
             "Crusade01P45U03N02",
             "Crusade01P45U03N04",
-            "Crusade01P45U03N04",
             "Crusade01P45U04N02",
             "Crusade01P45U04N04",
             "Crusade01P45U05N04",
@@ -20334,17 +20503,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -20353,17 +20527,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20371,7 +20549,6 @@
     "CardCrusade01P46": {
         "CardCollection": [
             "Crusade01P46U02N02",
-            "Crusade01P46U03N04",
             "Crusade01P46U03N04",
             "Crusade01P46U03N05",
             "Crusade01P46U04N01",
@@ -20388,17 +20565,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -20407,17 +20589,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20426,12 +20612,8 @@
         "CardCollection": [
             "Crusade01P47U02N02",
             "Crusade01P47U03N02",
-            "Crusade01P47U03N04",
-            "Crusade01P47U03N04",
             "Crusade01P47U03N05",
-            "Crusade01P47U04N01",
             "Crusade01P47U04N02",
-            "Crusade01P47U04N03",
             "Crusade01P47U04N05",
             "Crusade01P47U05N04",
             "Crusade01P47U05N05",
@@ -20445,17 +20627,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -20464,17 +20651,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20483,8 +20674,6 @@
         "CardCollection": [
             "Crusade01P48U02N07",
             "Crusade01P48U03N01",
-            "Crusade01P48U03N09",
-            "Crusade01P48U04N02",
             "Crusade01P48U04N03",
             "Crusade01P48U04N07",
             "Crusade01P48U05N09"
@@ -20497,17 +20686,17 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                7,
+                4,
+                5,
                 1
             ]
         },
@@ -20516,15 +20705,15 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "7": [
+            "5": [
                 "library",
                 "4"
             ]
@@ -20549,9 +20738,6 @@
             "Crusade01P49U02N02",
             "Crusade01P49U03N02",
             "Crusade01P49U03N03",
-            "Crusade01P49U03N07",
-            "Crusade01P49U04N01",
-            "Crusade01P49U04N02",
             "Crusade01P49U04N03",
             "Crusade01P49U04N09",
             "Crusade01P49U05N01",
@@ -20566,17 +20752,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                11,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -20585,17 +20776,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20618,16 +20813,16 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
                 5,
-                6,
                 1
             ],
             "4": [
-                7,
+                6,
                 7,
                 1
             ]
@@ -20637,11 +20832,11 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "5": [
                 "library",
                 "3"
             ],
@@ -20650,11 +20845,17 @@
                 "4"
             ]
         },
-        "FirstFormation": {}
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "Crusade01P50U01N02"
+            ]
+        }
     },
     "CardCrusade02P01": {
         "CardCollection": [
             "Crusade02P01U02N02",
+            "Crusade02P01U02N03",
             "Crusade02P01U03N02",
             "Crusade02P01U03N05",
             "Crusade02P01U04N01",
@@ -20682,6 +20883,11 @@
                 6,
                 7,
                 1
+            ],
+            "5": [
+                8,
+                8,
+                1
             ]
         },
         "DrawCard": {
@@ -20700,6 +20906,10 @@
             "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20709,12 +20919,11 @@
             "Crusade02P02U02N02",
             "Crusade02P02U03N02",
             "Crusade02P02U03N04",
-            "Crusade02P02U03N04",
+            "Crusade02P02U03N06",
             "Crusade02P02U04N01",
             "Crusade02P02U04N07",
             "Crusade02P02U04N09",
-            "Crusade02P02U05N02",
-            "Crusade02P02U05N03"
+            "Crusade02P02U05N02"
         ],
         "CardLibrary": {
             "1": [
@@ -20724,17 +20933,17 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
                 5,
-                7,
                 1
             ],
             "4": [
+                6,
                 8,
-                9,
                 1
             ]
         },
@@ -20743,15 +20952,15 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "5": [
                 "library",
                 "3"
             ],
-            "9": [
+            "8": [
                 "library",
                 "4"
             ]
@@ -20763,9 +20972,8 @@
             "Crusade02P03U02N02",
             "Crusade02P03U03N02",
             "Crusade02P03U03N04",
-            "Crusade02P03U03N04",
+            "Crusade02P03U03N06",
             "Crusade02P03U04N01",
-            "Crusade02P03U04N04",
             "Crusade02P03U04N06",
             "Crusade02P03U05N02",
             "Crusade02P03U05N03"
@@ -20778,17 +20986,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
                 5,
-                7,
                 1
             ],
             "4": [
+                6,
+                7,
+                1
+            ],
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -20797,17 +21010,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "5": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20818,10 +21035,7 @@
             "Crusade02P04U03N02",
             "Crusade02P04U03N03",
             "Crusade02P04U03N04",
-            "Crusade02P04U03N04",
             "Crusade02P04U04N01",
-            "Crusade02P04U04N05",
-            "Crusade02P04U04N06",
             "Crusade02P04U05N02",
             "Crusade02P04U05N03"
         ],
@@ -20833,17 +21047,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                5,
                 1
             ],
             "4": [
-                9,
-                10,
+                6,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                7,
                 1
             ]
         },
@@ -20852,17 +21071,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -20877,9 +21100,6 @@
             "Crusade02P05U02N01",
             "Crusade02P05U03N02",
             "Crusade02P05U03N03",
-            "Crusade02P05U03N04",
-            "Crusade02P05U03N04",
-            "Crusade02P05U04N01",
             "Crusade02P05U04N05",
             "Crusade02P05U04N06",
             "Crusade02P05U05N02",
@@ -20893,17 +21113,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                10,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                7,
                 1
             ]
         },
@@ -20912,17 +21137,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -20936,7 +21165,6 @@
         "CardCollection": [
             "Crusade02P06U02N02",
             "Crusade02P06U03N02",
-            "Crusade02P06U03N04",
             "Crusade02P06U03N04",
             "Crusade02P06U04N02",
             "Crusade02P06U04N04",
@@ -20952,17 +21180,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -20971,17 +21204,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -20990,7 +21227,6 @@
         "CardCollection": [
             "Crusade02P07U02N02",
             "Crusade02P07U03N02",
-            "Crusade02P07U03N04",
             "Crusade02P07U03N04",
             "Crusade02P07U04N02",
             "Crusade02P07U04N04",
@@ -21006,17 +21242,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -21025,17 +21266,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21043,14 +21288,10 @@
     "CardCrusade02P08": {
         "CardCollection": [
             "Crusade02P08U02N02",
-            "Crusade02P08U03N02",
-            "Crusade02P08U03N04",
             "Crusade02P08U03N04",
             "Crusade02P08U03N05",
-            "Crusade02P08U04N01",
+            "Crusade02P08U03N06",
             "Crusade02P08U04N02",
-            "Crusade02P08U04N03",
-            "Crusade02P08U04N05",
             "Crusade02P08U05N04",
             "Crusade02P08U05N05",
             "Crusade02P08U05N06"
@@ -21063,17 +21304,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                5,
                 1
             ],
             "4": [
-                10,
-                12,
+                6,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -21082,17 +21328,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21101,12 +21351,8 @@
         "CardCollection": [
             "Crusade02P09U02N02",
             "Crusade02P09U03N02",
-            "Crusade02P09U03N04",
-            "Crusade02P09U03N04",
             "Crusade02P09U03N05",
-            "Crusade02P09U04N01",
             "Crusade02P09U04N02",
-            "Crusade02P09U04N03",
             "Crusade02P09U04N05",
             "Crusade02P09U05N04",
             "Crusade02P09U05N05",
@@ -21120,17 +21366,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -21139,17 +21390,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21157,7 +21412,6 @@
     "CardCrusade02P10": {
         "CardCollection": [
             "Crusade02P10U02N02",
-            "Crusade02P10U03N04",
             "Crusade02P10U03N04",
             "Crusade02P10U03N05",
             "Crusade02P10U04N01",
@@ -21174,17 +21428,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -21193,17 +21452,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21211,7 +21474,6 @@
     "CardCrusade02P11": {
         "CardCollection": [
             "Crusade02P11U02N02",
-            "Crusade02P11U03N04",
             "Crusade02P11U03N04",
             "Crusade02P11U03N05",
             "Crusade02P11U04N01",
@@ -21228,17 +21490,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -21247,17 +21514,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21265,7 +21536,6 @@
     "CardCrusade02P12": {
         "CardCollection": [
             "Crusade02P12U02N02",
-            "Crusade02P12U03N04",
             "Crusade02P12U03N04",
             "Crusade02P12U03N05",
             "Crusade02P12U04N01",
@@ -21282,17 +21552,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 7,
                 1
             ],
-            "4": [
+            "5": [
                 8,
-                9,
+                8,
                 1
             ]
         },
@@ -21301,17 +21576,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "7": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21320,9 +21599,7 @@
         "CardCollection": [
             "Crusade02P13U02N02",
             "Crusade02P13U03N04",
-            "Crusade02P13U03N04",
             "Crusade02P13U03N05",
-            "Crusade02P13U04N01",
             "Crusade02P13U04N05",
             "Crusade02P13U04N06",
             "Crusade02P13U05N02",
@@ -21337,17 +21614,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                4,
                 1
             ],
             "4": [
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
                 8,
-                10,
                 1
             ]
         },
@@ -21356,26 +21638,30 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
     },
     "CardCrusade02P14": {
         "CardCollection": [
-            "Crusade02P14U02N02",
             "Crusade02P14U02N04",
             "Crusade02P14U03N02",
+            "Crusade02P14U03N05",
             "Crusade02P14U04N02",
             "Crusade02P14U04N04",
             "Crusade02P14U05N04",
@@ -21385,41 +21671,50 @@
         "CardLibrary": {
             "1": [
                 1,
-                2,
+                1,
                 1
             ],
             "2": [
-                3,
-                3,
+                2,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                5,
                 1
             ],
             "4": [
+                5,
                 6,
+                1
+            ],
+            "5": [
+                7,
                 8,
                 1
             ]
         },
         "DrawCard": {
-            "2": [
+            "1": [
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "5": [
+            "4": [
                 "library",
                 "3"
             ],
-            "8": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21428,7 +21723,6 @@
         "CardCollection": [
             "Crusade02P15U02N02",
             "Crusade02P15U03N02",
-            "Crusade02P15U03N04",
             "Crusade02P15U03N04",
             "Crusade02P15U04N02",
             "Crusade02P15U04N04",
@@ -21444,17 +21738,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
+                3,
+                4,
+                1
+            ],
+            "4": [
                 5,
                 6,
                 1
             ],
-            "4": [
+            "5": [
                 7,
-                9,
+                8,
                 1
             ]
         },
@@ -21463,17 +21762,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21483,9 +21786,6 @@
             "Crusade02P16U02N01",
             "Crusade02P16U03N02",
             "Crusade02P16U03N03",
-            "Crusade02P16U03N04",
-            "Crusade02P16U03N04",
-            "Crusade02P16U04N01",
             "Crusade02P16U04N05",
             "Crusade02P16U04N06",
             "Crusade02P16U05N02",
@@ -21500,17 +21800,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                11,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                8,
                 1
             ]
         },
@@ -21519,17 +21824,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21540,9 +21849,7 @@
             "Crusade02P17U02N02",
             "Crusade02P17U02N03",
             "Crusade02P17U03N04",
-            "Crusade02P17U03N04",
             "Crusade02P17U03N05",
-            "Crusade02P17U04N01",
             "Crusade02P17U04N02",
             "Crusade02P17U04N03",
             "Crusade02P17U04N09"
@@ -21550,32 +21857,41 @@
         "CardLibrary": {
             "1": [
                 1,
-                3,
+                1,
                 1
             ],
             "2": [
+                2,
                 4,
-                6,
                 1
             ],
             "3": [
+                5,
+                6,
+                1
+            ],
+            "4": [
                 7,
-                10,
+                8,
                 1
             ]
         },
         "DrawCard": {
-            "10": [
-                "library",
-                "3"
-            ],
-            "3": [
+            "1": [
                 "library",
                 "1"
             ],
-            "6": [
+            "4": [
                 "library",
                 "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ],
+            "8": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {}
@@ -21585,8 +21901,6 @@
             "Crusade02P18U02N02",
             "Crusade02P18U03N03",
             "Crusade02P18U03N04",
-            "Crusade02P18U03N04",
-            "Crusade02P18U04N01",
             "Crusade02P18U04N05",
             "Crusade02P18U04N09",
             "Crusade02P18U05N02",
@@ -21601,17 +21915,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                4,
                 1
             ],
             "4": [
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
                 8,
-                10,
                 1
             ]
         },
@@ -21620,17 +21939,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21640,13 +21963,9 @@
             "Crusade02P19U02N02",
             "Crusade02P19U03N01",
             "Crusade02P19U03N03",
-            "Crusade02P19U03N04",
-            "Crusade02P19U03N04",
             "Crusade02P19U04N02",
             "Crusade02P19U04N05",
             "Crusade02P19U04N06",
-            "Crusade02P19U04N07",
-            "Crusade02P19U05N03",
             "Crusade02P19U05N09"
         ],
         "CardLibrary": {
@@ -21657,17 +21976,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                11,
+                5,
+                7,
                 1
             ]
         },
@@ -21676,17 +21995,17 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -21701,11 +22020,8 @@
             "Crusade02P20U02N02",
             "Crusade02P20U03N01",
             "Crusade02P20U03N03",
-            "Crusade02P20U04N01",
             "Crusade02P20U04N05",
             "Crusade02P20U04N06",
-            "Crusade02P20U04N07",
-            "Crusade02P20U04N09",
             "Crusade02P20U05N02",
             "Crusade02P20U05N07"
         ],
@@ -21717,17 +22033,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
                 4,
-                8,
                 1
             ],
             "4": [
-                9,
-                10,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                7,
                 1
             ]
         },
@@ -21736,17 +22057,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -21762,12 +22087,8 @@
             "Crusade02P21U03N02",
             "Crusade02P21U03N03",
             "Crusade02P21U03N04",
-            "Crusade02P21U03N04",
             "Crusade02P21U04N01",
             "Crusade02P21U04N05",
-            "Crusade02P21U04N06",
-            "Crusade02P21U04N09",
-            "Crusade02P21U05N02",
             "Crusade02P21U05N03",
             "Crusade02P21U05N07"
         ],
@@ -21779,17 +22100,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                5,
                 1
             ],
             "4": [
-                10,
-                12,
+                6,
+                7,
+                1
+            ],
+            "5": [
+                8,
+                8,
                 1
             ]
         },
@@ -21798,17 +22124,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21818,15 +22148,11 @@
             "Crusade02P22U02N01",
             "Crusade02P22U03N02",
             "Crusade02P22U03N03",
-            "Crusade02P22U03N04",
-            "Crusade02P22U03N04",
-            "Crusade02P22U04N01",
             "Crusade02P22U04N05",
             "Crusade02P22U04N06",
             "Crusade02P22U04N09",
             "Crusade02P22U05N02",
-            "Crusade02P22U05N03",
-            "Crusade02P22U05N07"
+            "Crusade02P22U05N03"
         ],
         "CardLibrary": {
             "1": [
@@ -21836,17 +22162,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                7,
+                1
+            ],
+            "5": [
+                8,
+                8,
                 1
             ]
         },
@@ -21855,17 +22186,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21874,14 +22209,11 @@
         "CardCollection": [
             "Crusade02P23U02N02",
             "Crusade02P23U03N03",
-            "Crusade02P23U03N04",
-            "Crusade02P23U03N04",
+            "Crusade02P23U03N06",
             "Crusade02P23U04N01",
             "Crusade02P23U04N05",
-            "Crusade02P23U04N06",
             "Crusade02P23U04N09",
             "Crusade02P23U05N02",
-            "Crusade02P23U05N03",
             "Crusade02P23U05N04"
         ],
         "CardLibrary": {
@@ -21892,17 +22224,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                11,
+                5,
+                7,
+                1
+            ],
+            "5": [
+                8,
+                8,
                 1
             ]
         },
@@ -21911,17 +22248,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "7": [
+                "library",
+                "4"
+            ],
+            "8": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {}
@@ -21930,15 +22271,10 @@
         "CardCollection": [
             "Crusade02P24U02N02",
             "Crusade02P24U03N01",
-            "Crusade02P24U03N03",
-            "Crusade02P24U03N04",
             "Crusade02P24U03N04",
             "Crusade02P24U04N01",
             "Crusade02P24U04N05",
-            "Crusade02P24U04N06",
-            "Crusade02P24U04N07",
             "Crusade02P24U05N02",
-            "Crusade02P24U05N03",
             "Crusade02P24U05N09"
         ],
         "CardLibrary": {
@@ -21949,17 +22285,22 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                7,
                 1
             ]
         },
@@ -21968,17 +22309,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -21993,14 +22338,10 @@
             "Crusade02P25U02N02",
             "Crusade02P25U03N01",
             "Crusade02P25U03N03",
-            "Crusade02P25U03N09",
-            "Crusade02P25U04N01",
             "Crusade02P25U04N04",
             "Crusade02P25U04N05",
-            "Crusade02P25U04N06",
             "Crusade02P25U05N02",
-            "Crusade02P25U05N03",
-            "Crusade02P25U05N07"
+            "Crusade02P25U05N03"
         ],
         "CardLibrary": {
             "1": [
@@ -22010,17 +22351,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                11,
+                5,
+                6,
+                1
+            ],
+            "5": [
+                7,
+                7,
                 1
             ]
         },
@@ -22029,17 +22375,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22054,13 +22404,9 @@
             "Crusade03P01U02N01",
             "Crusade03P01U03N01",
             "Crusade03P01U03N02",
-            "Crusade03P01U03N04",
-            "Crusade03P01U03N04",
-            "Crusade03P01U04N02",
             "Crusade03P01U04N03",
             "Crusade03P01U04N05",
-            "Crusade03P01U05N07",
-            "Crusade03P01U05N09"
+            "Crusade03P01U05N07"
         ],
         "CardLibrary": {
             "1": [
@@ -22070,17 +22416,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                10,
+                5,
+                6,
                 1
             ]
         },
@@ -22089,17 +22435,17 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -22118,13 +22464,7 @@
             "Crusade03P02U02N01",
             "Crusade03P02U03N01",
             "Crusade03P02U03N02",
-            "Crusade03P02U03N04",
-            "Crusade03P02U03N04",
-            "Crusade03P02U03N07",
-            "Crusade03P02U04N03",
             "Crusade03P02U04N04",
-            "Crusade03P02U04N05",
-            "Crusade03P02U05N06",
             "Crusade03P02U05N07"
         ],
         "CardLibrary": {
@@ -22135,17 +22475,17 @@
             ],
             "2": [
                 2,
-                6,
+                2,
                 1
             ],
             "3": [
-                7,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                11,
+                5,
+                5,
                 1
             ]
         },
@@ -22154,17 +22494,17 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "6": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "5": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -22186,14 +22526,7 @@
         "CardCollection": [
             "Crusade03P03U02N01",
             "Crusade03P03U03N01",
-            "Crusade03P03U03N02",
-            "Crusade03P03U03N04",
-            "Crusade03P03U03N04",
-            "Crusade03P03U03N07",
             "Crusade03P03U04N02",
-            "Crusade03P03U04N03",
-            "Crusade03P03U04N05",
-            "Crusade03P03U05N04",
             "Crusade03P03U05N07",
             "Crusade03P03U05N09"
         ],
@@ -22205,17 +22538,22 @@
             ],
             "2": [
                 2,
-                6,
+                2,
                 1
             ],
             "3": [
-                7,
-                9,
+                3,
+                3,
                 1
             ],
             "4": [
-                10,
-                12,
+                4,
+                4,
+                1
+            ],
+            "5": [
+                5,
+                5,
                 1
             ]
         },
@@ -22224,17 +22562,21 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "6": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "3": [
                 "library",
                 "3"
+            ],
+            "4": [
+                "library",
+                "4"
+            ],
+            "5": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22256,14 +22598,11 @@
         "CardCollection": [
             "Crusade03P04U02N02",
             "Crusade03P04U03N03",
-            "Crusade03P04U03N05",
-            "Crusade03P04U04N01",
             "Crusade03P04U04N02",
             "Crusade03P04U04N03",
             "Crusade03P04U04N05",
-            "Crusade03P04U05N01",
             "Crusade03P04U05N04",
-            "Crusade03P04U05N06"
+            "Crusade03P04U06N04"
         ],
         "CardLibrary": {
             "1": [
@@ -22273,22 +22612,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                7,
+                3,
+                3,
                 1
             ],
             "4": [
-                8,
-                10,
+                4,
+                6,
                 1
             ],
             "5": [
-                11,
-                12,
+                7,
+                7,
                 1
             ]
         },
@@ -22297,21 +22636,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "12": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "3": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22327,11 +22666,9 @@
             "Crusade03P05U03N03",
             "Crusade03P05U04N01",
             "Crusade03P05U04N02",
-            "Crusade03P05U04N03",
-            "Crusade03P05U04N04",
-            "Crusade03P05U05N02",
             "Crusade03P05U05N04",
-            "Crusade03P05U05N09"
+            "Crusade03P05U05N09",
+            "Crusade03P05U06N03"
         ],
         "CardLibrary": {
             "1": [
@@ -22346,17 +22683,17 @@
             ],
             "3": [
                 3,
-                6,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                5,
                 1
             ],
             "5": [
-                10,
-                11,
+                6,
+                7,
                 1
             ]
         },
@@ -22365,21 +22702,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
             "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22393,9 +22730,6 @@
         "CardCollection": [
             "Crusade03P06U02N02",
             "Crusade03P06U03N02",
-            "Crusade03P06U03N05",
-            "Crusade03P06U03N07",
-            "Crusade03P06U04N02",
             "Crusade03P06U04N05",
             "Crusade03P06U05N04",
             "Crusade03P06U05N06",
@@ -22409,17 +22743,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                4,
+                1
+            ],
+            "5": [
+                5,
+                6,
                 1
             ]
         },
@@ -22428,17 +22767,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "4": [
                 "library",
                 "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22457,14 +22800,9 @@
             "Crusade03P07U02N01",
             "Crusade03P07U03N02",
             "Crusade03P07U03N03",
-            "Crusade03P07U03N05",
-            "Crusade03P07U03N07",
-            "Crusade03P07U04N02",
             "Crusade03P07U04N04",
             "Crusade03P07U04N06",
-            "Crusade03P07U05N04",
-            "Crusade03P07U05N06",
-            "Crusade03P07U05N07"
+            "Crusade03P07U05N04"
         ],
         "CardLibrary": {
             "1": [
@@ -22474,17 +22812,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                11,
+                5,
+                6,
                 1
             ]
         },
@@ -22493,17 +22831,17 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -22521,8 +22859,6 @@
         "CardCollection": [
             "Crusade03P08U02N02",
             "Crusade03P08U03N04",
-            "Crusade03P08U03N04",
-            "Crusade03P08U04N04",
             "Crusade03P08U04N05",
             "Crusade03P08U04N07",
             "Crusade03P08U05N07",
@@ -22536,17 +22872,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                8,
+                4,
+                5,
+                1
+            ],
+            "5": [
+                6,
+                6,
                 1
             ]
         },
@@ -22555,17 +22896,21 @@
                 "library",
                 "1"
             ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "8": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22584,13 +22929,10 @@
             "Crusade03P09U02N02",
             "Crusade03P09U03N03",
             "Crusade03P09U03N04",
-            "Crusade03P09U03N04",
             "Crusade03P09U04N02",
-            "Crusade03P09U04N05",
-            "Crusade03P09U04N09",
-            "Crusade03P09U05N02",
             "Crusade03P09U05N04",
-            "Crusade03P09U05N06"
+            "Crusade03P09U06N07",
+            "Crusade03P09U06N09"
         ],
         "CardLibrary": {
             "1": [
@@ -22600,22 +22942,27 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                4,
                 1
             ],
             "4": [
-                8,
-                10,
+                5,
+                5,
                 1
             ],
             "5": [
-                11,
-                12,
+                6,
+                6,
+                1
+            ],
+            "6": [
+                7,
+                7,
                 1
             ]
         },
@@ -22624,31 +22971,31 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "12": [
-                "library",
-                "5"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "5": [
+                "library",
+                "4"
+            ],
+            "6": [
+                "library",
+                "5"
+            ],
+            "7": [
+                "library",
+                "6"
             ]
         },
         "FirstFormation": {
             "2": [
                 "fixed",
                 "Crusade03P09U01N02"
-            ],
-            "6": [
-                "fixed",
-                "Crusade03P09U01N06"
             ]
         }
     },
@@ -22656,14 +23003,10 @@
         "CardCollection": [
             "Crusade03P10U02N02",
             "Crusade03P10U03N03",
-            "Crusade03P10U03N04",
-            "Crusade03P10U03N04",
-            "Crusade03P10U04N02",
             "Crusade03P10U04N05",
-            "Crusade03P10U04N09",
             "Crusade03P10U05N02",
-            "Crusade03P10U05N06",
-            "Crusade03P10U05N07"
+            "Crusade03P10U05N07",
+            "Crusade03P10U06N04"
         ],
         "CardLibrary": {
             "1": [
@@ -22673,22 +23016,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                3,
                 1
             ],
             "4": [
-                8,
-                10,
+                4,
+                4,
                 1
             ],
             "5": [
-                11,
-                12,
+                5,
+                6,
                 1
             ]
         },
@@ -22697,21 +23040,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "12": [
-                "library",
-                "5"
-            ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "3": [
                 "library",
                 "3"
+            ],
+            "4": [
+                "library",
+                "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22719,17 +23062,9 @@
                 "fixed",
                 "Crusade03P10U01N02"
             ],
-            "3": [
-                "fixed",
-                "Crusade03P10U01N03"
-            ],
             "5": [
                 "fixed",
                 "Crusade03P10U01N05"
-            ],
-            "6": [
-                "fixed",
-                "Crusade03P10U01N06"
             ]
         }
     },
@@ -22739,11 +23074,7 @@
             "Crusade03P11U03N01",
             "Crusade03P11U03N02",
             "Crusade03P11U03N04",
-            "Crusade03P11U03N04",
             "Crusade03P11U04N02",
-            "Crusade03P11U04N03",
-            "Crusade03P11U04N05",
-            "Crusade03P11U05N07",
             "Crusade03P11U05N09"
         ],
         "CardLibrary": {
@@ -22754,17 +23085,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                5,
                 1
             ],
             "4": [
-                9,
-                10,
+                6,
+                6,
                 1
             ]
         },
@@ -22773,17 +23104,17 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "5": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -22800,13 +23131,7 @@
     "CardCrusade03P12": {
         "CardCollection": [
             "Crusade03P12U02N01",
-            "Crusade03P12U03N01",
             "Crusade03P12U03N02",
-            "Crusade03P12U03N04",
-            "Crusade03P12U03N04",
-            "Crusade03P12U03N07",
-            "Crusade03P12U04N03",
-            "Crusade03P12U04N04",
             "Crusade03P12U04N05",
             "Crusade03P12U05N06",
             "Crusade03P12U05N07"
@@ -22819,17 +23144,22 @@
             ],
             "2": [
                 2,
-                6,
+                2,
                 1
             ],
             "3": [
-                7,
-                9,
+                3,
+                3,
                 1
             ],
             "4": [
-                10,
-                11,
+                4,
+                4,
+                1
+            ],
+            "5": [
+                5,
+                5,
                 1
             ]
         },
@@ -22838,17 +23168,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "4"
-            ],
-            "6": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "3": [
                 "library",
                 "3"
+            ],
+            "4": [
+                "library",
+                "4"
+            ],
+            "5": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -22869,16 +23203,10 @@
     "CardCrusade03P13": {
         "CardCollection": [
             "Crusade03P13U02N01",
-            "Crusade03P13U03N01",
             "Crusade03P13U03N02",
             "Crusade03P13U03N04",
-            "Crusade03P13U03N04",
-            "Crusade03P13U03N07",
             "Crusade03P13U04N02",
             "Crusade03P13U04N03",
-            "Crusade03P13U04N05",
-            "Crusade03P13U05N04",
-            "Crusade03P13U05N07",
             "Crusade03P13U05N09"
         ],
         "CardLibrary": {
@@ -22889,17 +23217,17 @@
             ],
             "2": [
                 2,
-                6,
+                2,
                 1
             ],
             "3": [
-                7,
-                9,
+                3,
+                4,
                 1
             ],
             "4": [
-                10,
-                12,
+                5,
+                6,
                 1
             ]
         },
@@ -22908,27 +23236,23 @@
                 "library",
                 "1"
             ],
-            "12": [
-                "library",
-                "4"
-            ],
-            "6": [
+            "2": [
                 "library",
                 "2"
             ],
-            "9": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
             "2": [
                 "fixed",
                 "Crusade03P13U01N02"
-            ],
-            "3": [
-                "fixed",
-                "Crusade03P13U01N03"
             ],
             "9": [
                 "fixed",
@@ -22939,15 +23263,12 @@
     "CardCrusade03P14": {
         "CardCollection": [
             "Crusade03P14U02N02",
-            "Crusade03P14U03N03",
             "Crusade03P14U03N05",
-            "Crusade03P14U04N01",
             "Crusade03P14U04N02",
-            "Crusade03P14U04N03",
             "Crusade03P14U04N05",
             "Crusade03P14U05N01",
             "Crusade03P14U05N04",
-            "Crusade03P14U05N06"
+            "Crusade03P14U06N02"
         ],
         "CardLibrary": {
             "1": [
@@ -22957,22 +23278,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                7,
+                3,
+                3,
                 1
             ],
             "4": [
-                8,
-                10,
+                4,
+                5,
                 1
             ],
             "5": [
-                11,
-                12,
+                6,
+                7,
                 1
             ]
         },
@@ -22981,21 +23302,21 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "12": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "3": [
                 "library",
                 "3"
+            ],
+            "5": [
+                "library",
+                "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -23009,13 +23330,11 @@
         "CardCollection": [
             "Crusade03P15U02N01",
             "Crusade03P15U03N03",
-            "Crusade03P15U04N01",
             "Crusade03P15U04N02",
-            "Crusade03P15U04N03",
             "Crusade03P15U04N04",
             "Crusade03P15U05N02",
-            "Crusade03P15U05N04",
-            "Crusade03P15U05N09"
+            "Crusade03P15U05N09",
+            "Crusade03P15U06N05"
         ],
         "CardLibrary": {
             "1": [
@@ -23030,17 +23349,17 @@
             ],
             "3": [
                 3,
-                6,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                5,
                 1
             ],
             "5": [
-                10,
-                11,
+                6,
+                7,
                 1
             ]
         },
@@ -23049,21 +23368,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
             "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -23078,7 +23397,6 @@
             "Crusade03P16U02N02",
             "Crusade03P16U03N02",
             "Crusade03P16U03N04",
-            "Crusade03P16U03N04",
             "Crusade03P16U04N02",
             "Crusade03P16U04N04",
             "Crusade03P16U05N04"
@@ -23091,17 +23409,17 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                6,
+                3,
+                4,
                 1
             ],
             "4": [
-                7,
-                7,
+                5,
+                6,
                 1
             ]
         },
@@ -23110,15 +23428,15 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "7": [
+            "6": [
                 "library",
                 "4"
             ]
@@ -23138,14 +23456,10 @@
         "CardCollection": [
             "Crusade03P17U02N01",
             "Crusade03P17U03N02",
-            "Crusade03P17U03N04",
-            "Crusade03P17U03N04",
             "Crusade03P17U03N05",
             "Crusade03P17U04N02",
             "Crusade03P17U04N05",
-            "Crusade03P17U04N09",
-            "Crusade03P17U05N04",
-            "Crusade03P17U05N07"
+            "Crusade03P17U05N04"
         ],
         "CardLibrary": {
             "1": [
@@ -23155,17 +23469,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                10,
+                5,
+                6,
                 1
             ]
         },
@@ -23174,17 +23488,17 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -23201,14 +23515,11 @@
     "CardCrusade03P18": {
         "CardCollection": [
             "Crusade03P18U02N02",
-            "Crusade03P18U03N01",
             "Crusade03P18U03N02",
             "Crusade03P18U03N05",
-            "Crusade03P18U04N01",
             "Crusade03P18U04N02",
             "Crusade03P18U04N04",
-            "Crusade03P18U05N05",
-            "Crusade03P18U05N07"
+            "Crusade03P18U05N05"
         ],
         "CardLibrary": {
             "1": [
@@ -23218,17 +23529,17 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                4,
                 1
             ],
             "4": [
-                8,
-                9,
+                5,
+                6,
                 1
             ]
         },
@@ -23237,15 +23548,15 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "4": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
             ]
@@ -23265,13 +23576,10 @@
         "CardCollection": [
             "Crusade03P19U02N02",
             "Crusade03P19U03N03",
-            "Crusade03P19U03N05",
             "Crusade03P19U04N02",
             "Crusade03P19U04N05",
-            "Crusade03P19U04N09",
             "Crusade03P19U05N02",
-            "Crusade03P19U05N04",
-            "Crusade03P19U05N06"
+            "Crusade03P19U06N09"
         ],
         "CardLibrary": {
             "1": [
@@ -23281,22 +23589,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                5,
                 1
             ],
             "5": [
-                10,
-                11,
+                6,
+                6,
                 1
             ]
         },
@@ -23305,21 +23613,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -23336,14 +23644,12 @@
     "CardCrusade03P20": {
         "CardCollection": [
             "Crusade03P20U02N02",
-            "Crusade03P20U03N03",
             "Crusade03P20U03N05",
             "Crusade03P20U04N02",
             "Crusade03P20U04N05",
             "Crusade03P20U04N09",
             "Crusade03P20U05N02",
-            "Crusade03P20U05N06",
-            "Crusade03P20U05N09"
+            "Crusade03P20U06N09"
         ],
         "CardLibrary": {
             "1": [
@@ -23353,22 +23659,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
+                3,
+                3,
+                1
+            ],
+            "4": [
                 4,
                 6,
                 1
             ],
-            "4": [
-                7,
-                9,
-                1
-            ],
             "5": [
-                10,
-                11,
+                7,
+                7,
                 1
             ]
         },
@@ -23377,35 +23683,27 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "6": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
             "2": [
                 "fixed",
                 "Crusade03P20U01N02"
-            ],
-            "5": [
-                "fixed",
-                "Crusade03P20U01N05"
-            ],
-            "6": [
-                "fixed",
-                "Crusade03P20U01N06"
             ]
         }
     },
@@ -23413,7 +23711,6 @@
         "CardCollection": [
             "Crusade03P21U02N02",
             "Crusade03P21U03N02",
-            "Crusade03P21U03N04",
             "Crusade03P21U03N04",
             "Crusade03P21U04N02",
             "Crusade03P21U04N04",
@@ -23427,17 +23724,17 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                6,
+                3,
+                4,
                 1
             ],
             "4": [
-                7,
-                7,
+                5,
+                6,
                 1
             ]
         },
@@ -23446,15 +23743,15 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "4": [
                 "library",
                 "3"
             ],
-            "7": [
+            "6": [
                 "library",
                 "4"
             ]
@@ -23474,14 +23771,10 @@
         "CardCollection": [
             "Crusade03P22U02N01",
             "Crusade03P22U03N02",
-            "Crusade03P22U03N04",
-            "Crusade03P22U03N04",
             "Crusade03P22U03N05",
             "Crusade03P22U04N02",
             "Crusade03P22U04N05",
-            "Crusade03P22U04N09",
-            "Crusade03P22U05N04",
-            "Crusade03P22U05N07"
+            "Crusade03P22U05N04"
         ],
         "CardLibrary": {
             "1": [
@@ -23491,17 +23784,17 @@
             ],
             "2": [
                 2,
-                5,
+                2,
                 1
             ],
             "3": [
-                6,
-                8,
+                3,
+                4,
                 1
             ],
             "4": [
-                9,
-                10,
+                5,
+                6,
                 1
             ]
         },
@@ -23510,17 +23803,17 @@
                 "library",
                 "1"
             ],
-            "10": [
-                "library",
-                "4"
-            ],
-            "5": [
+            "2": [
                 "library",
                 "2"
             ],
-            "8": [
+            "4": [
                 "library",
                 "3"
+            ],
+            "6": [
+                "library",
+                "4"
             ]
         },
         "FirstFormation": {
@@ -23538,9 +23831,6 @@
         "CardCollection": [
             "Crusade03P23U02N02",
             "Crusade03P23U03N01",
-            "Crusade03P23U03N02",
-            "Crusade03P23U03N05",
-            "Crusade03P23U04N01",
             "Crusade03P23U04N02",
             "Crusade03P23U04N04",
             "Crusade03P23U05N05",
@@ -23554,17 +23844,22 @@
             ],
             "2": [
                 2,
-                4,
+                2,
                 1
             ],
             "3": [
-                5,
-                7,
+                3,
+                3,
                 1
             ],
             "4": [
-                8,
-                9,
+                4,
+                5,
+                1
+            ],
+            "5": [
+                6,
+                6,
                 1
             ]
         },
@@ -23573,17 +23868,21 @@
                 "library",
                 "1"
             ],
-            "4": [
+            "2": [
                 "library",
                 "2"
             ],
-            "7": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -23600,14 +23899,11 @@
     "CardCrusade03P24": {
         "CardCollection": [
             "Crusade03P24U02N02",
-            "Crusade03P24U03N03",
             "Crusade03P24U03N05",
             "Crusade03P24U04N02",
             "Crusade03P24U04N05",
-            "Crusade03P24U04N09",
             "Crusade03P24U05N02",
-            "Crusade03P24U05N04",
-            "Crusade03P24U05N06"
+            "Crusade03P24U06N09"
         ],
         "CardLibrary": {
             "1": [
@@ -23617,22 +23913,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                5,
                 1
             ],
             "5": [
-                10,
-                11,
+                6,
+                6,
                 1
             ]
         },
@@ -23641,21 +23937,21 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "6": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
@@ -23672,14 +23968,12 @@
     "CardCrusade03P25": {
         "CardCollection": [
             "Crusade03P25U02N02",
-            "Crusade03P25U03N03",
             "Crusade03P25U03N05",
             "Crusade03P25U04N02",
             "Crusade03P25U04N05",
-            "Crusade03P25U04N09",
             "Crusade03P25U05N02",
-            "Crusade03P25U05N06",
-            "Crusade03P25U05N09"
+            "Crusade03P25U05N09",
+            "Crusade03P25U06N09"
         ],
         "CardLibrary": {
             "1": [
@@ -23689,22 +23983,22 @@
             ],
             "2": [
                 2,
-                3,
+                2,
                 1
             ],
             "3": [
-                4,
-                6,
+                3,
+                3,
                 1
             ],
             "4": [
-                7,
-                9,
+                4,
+                5,
                 1
             ],
             "5": [
-                10,
-                11,
+                6,
+                7,
                 1
             ]
         },
@@ -23713,35 +24007,27 @@
                 "library",
                 "1"
             ],
-            "11": [
-                "library",
-                "5"
-            ],
-            "3": [
+            "2": [
                 "library",
                 "2"
             ],
-            "6": [
+            "3": [
                 "library",
                 "3"
             ],
-            "9": [
+            "5": [
                 "library",
                 "4"
+            ],
+            "7": [
+                "library",
+                "5"
             ]
         },
         "FirstFormation": {
             "2": [
                 "fixed",
                 "Crusade03P25U01N02"
-            ],
-            "5": [
-                "fixed",
-                "Crusade03P25U01N05"
-            ],
-            "6": [
-                "fixed",
-                "Crusade03P25U01N06"
             ]
         }
     },
@@ -120411,6 +120697,1919 @@
             "9": [
                 "fixed",
                 "SD_N01M12W01P09"
+            ]
+        }
+    },
+    "CardSilentNightSE01E": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE02P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightE02P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightE02P01U01N03"
+            ],
+            "4": [
+                "fixed",
+                "SNightE02P01U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightE02P01U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightE02P01U01N06"
+            ],
+            "7": [
+                "fixed",
+                "SNightE02P01U01N07"
+            ],
+            "9": [
+                "fixed",
+                "SNightE02P01U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSE01M": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightM02P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightM02P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightM02P01U01N03"
+            ],
+            "4": [
+                "fixed",
+                "SNightM02P01U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightM02P01U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightM02P01U01N06"
+            ],
+            "7": [
+                "fixed",
+                "SNightM02P01U01N07"
+            ],
+            "9": [
+                "fixed",
+                "SNightM02P01U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSE02E": {
+        "CardCollection": [
+            "SNightE02P02U02N06",
+            "SNightE02P02U02N09",
+            "SNightE02P02U03N03",
+            "SNightE02P02U03N05",
+            "SNightE02P02U03N07",
+            "SNightE02P02U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE02P02U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightE02P02U01N05"
+            ],
+            "7": [
+                "fixed",
+                "SNightE02P02U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSE02M": {
+        "CardCollection": [
+            "SNightM02P02U02N06",
+            "SNightM02P02U02N09",
+            "SNightM02P02U03N03",
+            "SNightM02P02U03N05",
+            "SNightM02P02U03N07",
+            "SNightM02P02U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM02P02U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightM02P02U01N05"
+            ],
+            "7": [
+                "fixed",
+                "SNightM02P02U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSE03E": {
+        "CardCollection": [
+            "SNightE02P03U02N04",
+            "SNightE02P03U02N05",
+            "SNightE02P03U02N06",
+            "SNightE02P03U02N07",
+            "SNightE02P03U02N09",
+            "SNightE02P03U03N05",
+            "SNightE02P03U03N07",
+            "SNightE02P03U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE02P03U01N02"
+            ],
+            "4": [
+                "fixed",
+                "SNightE02P03U01N04"
+            ],
+            "6": [
+                "fixed",
+                "SNightE02P03U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSE03M": {
+        "CardCollection": [
+            "SNightM02P03U02N04",
+            "SNightM02P03U02N05",
+            "SNightM02P03U02N06",
+            "SNightM02P03U02N07",
+            "SNightM02P03U02N09",
+            "SNightM02P03U03N05",
+            "SNightM02P03U03N07",
+            "SNightM02P03U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM02P03U01N02"
+            ],
+            "4": [
+                "fixed",
+                "SNightM02P03U01N04"
+            ],
+            "6": [
+                "fixed",
+                "SNightM02P03U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSE04E": {
+        "CardCollection": [
+            "SNightE02P04U02N04",
+            "SNightE02P04U02N05",
+            "SNightE02P04U02N06",
+            "SNightE02P04U02N07",
+            "SNightE02P04U02N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE02P04U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightE02P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightE02P04U01N03"
+            ]
+        }
+    },
+    "CardSilentNightSE04M": {
+        "CardCollection": [
+            "SNightM02P04U02N04",
+            "SNightM02P04U02N05",
+            "SNightM02P04U02N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightM02P04U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightM02P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightM02P04U01N03"
+            ]
+        }
+    },
+    "CardSilentNightSE05E": {
+        "CardCollection": [
+            "SNightE02P05U02N02",
+            "SNightE02P05U02N05",
+            "SNightE02P05U02N06",
+            "SNightE02P05U02N07",
+            "SNightE02P05U03N02",
+            "SNightE02P05U03N04"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE02P05U01N01"
+            ],
+            "3": [
+                "fixed",
+                "SNightE02P05U01N03"
+            ],
+            "4": [
+                "fixed",
+                "SNightE02P05U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightE02P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightE02P05U01N06"
+            ],
+            "9": [
+                "fixed",
+                "SNightE02P05U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSE05M": {
+        "CardCollection": [
+            "SNightM02P05U02N02",
+            "SNightM02P05U02N05",
+            "SNightM02P05U02N06",
+            "SNightM02P05U03N02"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightM02P05U01N01"
+            ],
+            "3": [
+                "fixed",
+                "SNightM02P05U01N03"
+            ],
+            "4": [
+                "fixed",
+                "SNightM02P05U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightM02P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightM02P05U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSE06E": {
+        "CardCollection": [
+            "SNightE02P06U02N01",
+            "SNightE02P06U02N05",
+            "SNightE02P06U02N09",
+            "SNightE02P06U03N03",
+            "SNightE02P06U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightE02P06U01N04"
+            ],
+            "6": [
+                "fixed",
+                "SNightE02P06U01N06"
+            ],
+            "7": [
+                "fixed",
+                "SNightE02P06U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSE06M": {
+        "CardCollection": [
+            "SNightM02P06U02N01",
+            "SNightM02P06U02N09",
+            "SNightM02P06U03N03",
+            "SNightM02P06U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                4,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "4": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightM02P06U01N04"
+            ],
+            "6": [
+                "fixed",
+                "SNightM02P06U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSE07E": {
+        "CardCollection": [
+            "SNightE02P07U02N04",
+            "SNightE02P07U02N05",
+            "SNightE02P07U02N06",
+            "SNightE02P07U03N01",
+            "SNightE02P07U03N02",
+            "SNightE02P07U03N03",
+            "SNightE02P07U03N07",
+            "SNightE02P07U03N09",
+            "SNightE02P07U04N01",
+            "SNightE02P07U04N02",
+            "SNightE02P07U04N03",
+            "SNightE02P07U04N04",
+            "SNightE02P07U04N05",
+            "SNightE02P07U04N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                9,
+                1
+            ],
+            "4": [
+                10,
+                14,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "14": [
+                "library",
+                "4"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE02P07U01N02"
+            ],
+            "7": [
+                "fixed",
+                "SNightE02P07U01N07"
+            ],
+            "9": [
+                "fixed",
+                "SNightE02P07U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSE07M": {
+        "CardCollection": [
+            "SNightM02P07U02N04",
+            "SNightM02P07U02N05",
+            "SNightM02P07U03N01",
+            "SNightM02P07U03N02",
+            "SNightM02P07U03N03",
+            "SNightM02P07U04N01",
+            "SNightM02P07U04N02",
+            "SNightM02P07U04N03",
+            "SNightM02P07U04N04",
+            "SNightM02P07U04N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                6,
+                1
+            ],
+            "4": [
+                7,
+                10,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "4"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM02P07U01N02"
+            ],
+            "7": [
+                "fixed",
+                "SNightM02P07U01N07"
+            ],
+            "9": [
+                "fixed",
+                "SNightM02P07U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSE08E": {
+        "CardCollection": [
+            "SNightE02P08U02N01",
+            "SNightE02P08U02N02",
+            "SNightE02P08U02N05",
+            "SNightE02P08U02N07",
+            "SNightE02P08U03N02",
+            "SNightE02P08U03N04",
+            "SNightE02P08U03N06",
+            "SNightE02P08U03N07",
+            "SNightE02P08U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightE02P08U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightE02P08U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightE02P08U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSE08M": {
+        "CardCollection": [
+            "SNightM02P08U02N01",
+            "SNightM02P08U02N02",
+            "SNightM02P08U02N07",
+            "SNightM02P08U03N02",
+            "SNightM02P08U03N04",
+            "SNightM02P08U03N06",
+            "SNightM02P08U03N07"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "5": [
+                "fixed",
+                "SNightM02P08U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightM02P08U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSH01M": {
+        "CardCollection": [
+            "SNightH01P01U02N04",
+            "SNightH01P01U02N05",
+            "SNightH01P01U02N06",
+            "SNightH01P01U03N07",
+            "SNightH01P01U03N09",
+            "SNightH01P01U04N01",
+            "SNightH01P01U04N02",
+            "SNightH01P01U04N03",
+            "SNightH01P01U04N07"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ],
+            "4": [
+                7,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ],
+            "9": [
+                "library",
+                "4"
+            ]
+        },
+        "FirstFormation": {
+            "5": [
+                "fixed",
+                "SNightH01P01U01N05"
+            ],
+            "9": [
+                "fixed",
+                "SNightH01P01U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSH02M": {
+        "CardCollection": [
+            "SNightH01P02U02N04",
+            "SNightH01P02U02N05",
+            "SNightH01P02U02N09",
+            "SNightH01P02U03N01",
+            "SNightH01P02U03N06",
+            "SNightH01P02U03N07",
+            "SNightH01P02U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightH01P02U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightH01P02U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightH01P02U01N06"
+            ],
+            "7": [
+                "fixed",
+                "SNightH01P02U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSH03M": {
+        "CardCollection": [
+            "SNightH01P03U02N01",
+            "SNightH01P03U02N02",
+            "SNightH01P03U02N03",
+            "SNightH01P03U02N05",
+            "SNightH01P03U02N07",
+            "SNightH01P03U03N02",
+            "SNightH01P03U03N05",
+            "SNightH01P03U03N06",
+            "SNightH01P03U03N07",
+            "SNightH01P03U04N04",
+            "SNightH01P03U04N05",
+            "SNightH01P03U04N06",
+            "SNightH01P03U04N07",
+            "SNightH01P03U04N09",
+            "SNightH01P03U05N01",
+            "SNightH01P03U05N02",
+            "SNightH01P03U05N03",
+            "SNightH01P03U05N05",
+            "SNightH01P03U05N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                10,
+                1
+            ],
+            "4": [
+                11,
+                15,
+                1
+            ],
+            "5": [
+                16,
+                19,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "3"
+            ],
+            "15": [
+                "library",
+                "4"
+            ],
+            "19": [
+                "library",
+                "5"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightH01P03U01N02"
+            ],
+            "4": [
+                "fixed",
+                "SNightH01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightH01P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightH01P03U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSN01E": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE01P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightE01P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightE01P01U01N03"
+            ]
+        }
+    },
+    "CardSilentNightSN01M": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightM01P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightM01P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightM01P01U01N03"
+            ]
+        }
+    },
+    "CardSilentNightSN02E": {
+        "CardCollection": [
+            "SNightE01P02U02N05",
+            "SNightE01P02U02N06",
+            "SNightE01P02U02N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE01P02U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightE01P02U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightE01P02U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSN02M": {
+        "CardCollection": [
+            "SNightM01P02U02N05",
+            "SNightM01P02U02N06",
+            "SNightM01P02U02N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM01P02U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightM01P02U01N05"
+            ],
+            "6": [
+                "fixed",
+                "SNightM01P02U01N06"
+            ]
+        }
+    },
+    "CardSilentNightSN03E": {
+        "CardCollection": [
+            "SNightE01P03U02N02",
+            "SNightE01P03U02N07",
+            "SNightE01P03U03N01",
+            "SNightE01P03U03N05",
+            "SNightE01P03U03N06",
+            "SNightE01P03U04N04"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightE01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightE01P03U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN03M": {
+        "CardCollection": [
+            "SNightM01P03U02N02",
+            "SNightM01P03U02N07",
+            "SNightM01P03U03N01",
+            "SNightM01P03U03N05",
+            "SNightM01P03U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightM01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "SNightM01P03U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN04E": {
+        "CardCollection": [
+            "SNightE01P04U02N02",
+            "SNightE01P04U02N04",
+            "SNightE01P04U02N05",
+            "SNightE01P04U03N04",
+            "SNightE01P04U03N06",
+            "SNightE01P04U03N07",
+            "SNightE01P04U03N09",
+            "SNightE01P04U04N04",
+            "SNightE01P04U04N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ],
+            "4": [
+                9,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ],
+            "9": [
+                "library",
+                "4"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE01P04U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightE01P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightE01P04U01N03"
+            ],
+            "5": [
+                "fixed",
+                "SNightE01P04U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN04M": {
+        "CardCollection": [
+            "SNightM01P04U02N04",
+            "SNightM01P04U02N05",
+            "SNightM01P04U03N04",
+            "SNightM01P04U03N06",
+            "SNightM01P04U03N07",
+            "SNightM01P04U04N05",
+            "SNightM01P04U04N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                6,
+                1
+            ],
+            "4": [
+                7,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ],
+            "7": [
+                "library",
+                "4"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM01P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightM01P04U01N03"
+            ],
+            "5": [
+                "fixed",
+                "SNightM01P04U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN05E": {
+        "CardCollection": [
+            "SNightE01P05U02N02",
+            "SNightE01P05U02N03",
+            "SNightE01P05U02N05",
+            "SNightE01P05U03N04",
+            "SNightE01P05U03N06",
+            "SNightE01P05U03N07"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE01P05U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightE01P05U01N05"
+            ],
+            "9": [
+                "fixed",
+                "SNightE01P05U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSN05M": {
+        "CardCollection": [
+            "SNightM01P05U02N02",
+            "SNightM01P05U02N05",
+            "SNightM01P05U03N04",
+            "SNightM01P05U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                4,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "4": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM01P05U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightM01P05U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN06E": {
+        "CardCollection": [
+            "SNightE01P06U02N02",
+            "SNightE01P06U02N05",
+            "SNightE01P06U02N07",
+            "SNightE01P06U03N03",
+            "SNightE01P06U03N04",
+            "SNightE01P06U03N05",
+            "SNightE01P06U03N06",
+            "SNightE01P06U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightE01P06U01N04"
+            ],
+            "6": [
+                "fixed",
+                "SNightE01P06U01N06"
+            ],
+            "9": [
+                "fixed",
+                "SNightE01P06U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSN06M": {
+        "CardCollection": [
+            "SNightM01P06U02N02",
+            "SNightM01P06U02N05",
+            "SNightM01P06U03N03",
+            "SNightM01P06U03N05",
+            "SNightM01P06U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "4": [
+                "fixed",
+                "SNightM01P06U01N04"
+            ],
+            "9": [
+                "fixed",
+                "SNightM01P06U01N09"
+            ]
+        }
+    },
+    "CardSilentNightSN07E": {
+        "CardCollection": [
+            "SNightE01P07U02N02",
+            "SNightE01P07U02N03",
+            "SNightE01P07U02N04",
+            "SNightE01P07U02N09",
+            "SNightE01P07U03N05",
+            "SNightE01P07U03N06",
+            "SNightE01P07U03N07",
+            "SNightE01P07U03N09",
+            "SNightE01P07U04N05"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightE01P07U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightE01P07U01N05"
+            ],
+            "7": [
+                "fixed",
+                "SNightE01P07U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSN07M": {
+        "CardCollection": [
+            "SNightM01P07U02N02",
+            "SNightM01P07U02N04",
+            "SNightM01P07U02N09",
+            "SNightM01P07U03N05",
+            "SNightM01P07U03N07",
+            "SNightM01P07U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "SNightM01P07U01N02"
+            ],
+            "5": [
+                "fixed",
+                "SNightM01P07U01N05"
+            ]
+        }
+    },
+    "CardSilentNightSN08E": {
+        "CardCollection": [
+            "SNightE01P08U02N04",
+            "SNightE01P08U02N05",
+            "SNightE01P08U02N06",
+            "SNightE01P08U02N07",
+            "SNightE01P08U02N09",
+            "SNightE01P08U03N07",
+            "SNightE01P08U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightE01P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightE01P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightE01P08U01N03"
+            ],
+            "6": [
+                "fixed",
+                "SNightE01P08U01N06"
+            ],
+            "7": [
+                "fixed",
+                "SNightE01P08U01N07"
+            ]
+        }
+    },
+    "CardSilentNightSN08M": {
+        "CardCollection": [
+            "SNightM01P08U02N04",
+            "SNightM01P08U02N06",
+            "SNightM01P08U02N07",
+            "SNightM01P08U02N09",
+            "SNightM01P08U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "SNightM01P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "SNightM01P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "SNightM01P08U01N03"
+            ],
+            "6": [
+                "fixed",
+                "SNightM01P08U01N06"
             ]
         }
     },

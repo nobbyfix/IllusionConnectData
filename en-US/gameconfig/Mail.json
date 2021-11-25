@@ -779,6 +779,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_SilentNight": {
+        "Content": "Mail_EightDays_SilentNight_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_SilentNight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_SilentNight_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Snowflake": {
         "Content": "Mail_EightDays_Snowflake_Content",
         "ExpireAfterRead": 72000,
@@ -1686,6 +1699,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_Shandangdingyue_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_SilentNight_AchieveMentTask_Activity": {
+        "Content": "Mail_SilentNight_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_SilentNight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_SilentNight_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_SilentNight_DailyTask_Activity": {
+        "Content": "Mail_SilentNight_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_SilentNight_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_SilentNight_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

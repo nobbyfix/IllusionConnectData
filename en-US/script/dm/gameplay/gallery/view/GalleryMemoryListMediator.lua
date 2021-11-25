@@ -401,6 +401,7 @@ function GalleryMemoryListMediator:onClickCallback(sender, data, inde, stageType
 				self:refreshRedPoint(sender, data, false)
 
 				local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+				local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
 
 				StatisticSystem:send({
 					type = "plot_end",
@@ -411,7 +412,10 @@ function GalleryMemoryListMediator:onClickCallback(sender, data, inde, stageType
 					stagetype = self._storyType == "STORYLIST" and stageType or nil,
 					plot_id = storyLink,
 					plot_name = data:getTitle(),
-					totaltime = endTs - startTs
+					totaltime = endTs - startTs,
+					detail = statisticsData.detail,
+					amount = statisticsData.amount,
+					misc = statisticsData.misc
 				})
 			end)
 		end

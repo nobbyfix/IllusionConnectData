@@ -324,23 +324,21 @@ function RankMediator:initWigetInfo()
 
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
-		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
-			local view = self:getInjector():getInstance("PlayerInfoView")
+		local showView = false
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, myselfData))
+		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
+			showView = true
 		elseif myselfData:getRid() == "" then
 			self:dispatch(ShowTipEvent({
 				duration = 0.35,
 				tip = Strings:get("RelationText9")
 			}))
 		else
-			local view = self:getInjector():getInstance("PlayerInfoView")
+			showView = true
+		end
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, myselfData, nil))
+		if showView then
+			self._friendSystem:showFriendPlayerInfoView(myselfData:getRid(), myselfData)
 		end
 	end)
 	self._title1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
@@ -507,11 +505,7 @@ function RankMediator:onClickRankCell(cell)
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, nil)
 	else
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 end
 

@@ -194,6 +194,9 @@
     "Target_LYXi": {
         "Function": "return GenInfo(FriendAll(),Green)"
     },
+    "Target_MDSi": {
+        "Function": "return MainTarget()"
+    },
     "Target_MGNa": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -277,6 +280,9 @@
     },
     "Target_SRen": {
         "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_SSBYa": {
+        "Function": "return MainTarget()"
     },
     "Target_SSQXin": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"
