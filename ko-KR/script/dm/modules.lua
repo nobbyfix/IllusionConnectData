@@ -291,6 +291,16 @@ local modules = {
 							res = "asset/ui/Alert.csb",
 							name = "DownloadAlertView",
 							mediator = "DownloadAlertMediator"
+						},
+						{
+							res = "asset/ui/SetHeroShow.csb",
+							name = "SetHeroShowView",
+							mediator = "SetHeroShowMediator"
+						},
+						{
+							res = "asset/ui/SetHeroShowDetail.csb",
+							name = "SetHeroShowDetailView",
+							mediator = "SetHeroShowDetailMediator"
 						}
 					}
 				}
@@ -2103,6 +2113,11 @@ local modules = {
 							res = "asset/ui/ActivityDuskMain.csb",
 							name = "ActivityDuskMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivitySilentNightMain.csb",
+							name = "ActivitySilentNightMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}
@@ -3775,6 +3790,11 @@ local modules = {
 							res = "asset/ui/CrusadeSweepResult.csb",
 							name = "CrusadeSweepResultView",
 							mediator = "CrusadeSweepResultMediator"
+						},
+						{
+							res = "asset/ui/CrusadeWorldRule.csb",
+							name = "CrusadeWorldRuleView",
+							mediator = "CrusadeWorldRuleMediator"
 						}
 					}
 				}

@@ -598,7 +598,7 @@
         "HeadName": "HLDNan_HeadName",
         "HeroMasterId": "HLDNan",
         "IconPath": "asset/heros/HLDNan/battlepic_HLDNan.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "HLDNan_HeadUnlock",
@@ -965,6 +965,17 @@
         "SurfaceMasterId": "Surface_LYXi_2",
         "Type": 5,
         "UnlockDesc": "LYXi_2_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_MDSi": {
+        "HeadDesc": "HeroBase_Desc_MDSi",
+        "HeadName": "MDSi_HeadName",
+        "HeroMasterId": "MDSi",
+        "IconPath": "asset/heros/tnli/battlepic_tnli.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "MDSi_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_MGNa": {
@@ -1478,7 +1489,7 @@
         "HeadName": "SNGLSi_HeadName",
         "HeroMasterId": "SNGLSi",
         "IconPath": "asset/heros/SNGLSi/battlepic_bni.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SNGLSi_HeadUnlock",
@@ -1548,6 +1559,17 @@
         "SurfaceMasterId": "Surface_SRen_2",
         "Type": 5,
         "UnlockDesc": "SRen_2_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_SSBYa": {
+        "HeadDesc": "HeroBase_Desc_SSBYa",
+        "HeadName": "SSBYa_HeadName",
+        "HeroMasterId": "SSBYa",
+        "IconPath": "asset/heros/kptwei/battlepic_kptwei.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SSBYa_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SSQXin": {
@@ -2017,7 +2039,7 @@
         "HeadName": "YSTLu_2_HeadName",
         "HeroMasterId": "YSTLu",
         "IconPath": "asset/heros/astlsi_christmas/battlepic_astlsi_christmas.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_YSTLu_2",
         "Type": 5,
         "UnlockDesc": "YSTLu_2_HeadUnlock",
@@ -2384,6 +2406,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_MTZMEShi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_MZGXiu": {
+        "HeadDesc": "HeroAwaken_MZGXiu_Desc",
+        "HeadName": "HeroAwaken_MZGXiu_1_Name",
+        "HeroMasterId": "MZGXiu",
+        "IconPath": "asset/heros/cxgdie/battlepic_cxgdie_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_MZGXiu",
         "Zoom": 1.0
     },
     "HeroAwaken_PDLa": {

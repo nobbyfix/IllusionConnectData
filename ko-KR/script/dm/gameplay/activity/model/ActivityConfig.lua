@@ -177,7 +177,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityTerror] = "ActivityTerrorMainView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView",
-		[ActivityType_UI.KActivityDusk] = "ActivityDuskMainView"
+		[ActivityType_UI.KActivityDusk] = "ActivityDuskMainView",
+		[ActivityType_UI.KActivitySilentNight] = "ActivitySilentNightMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -207,7 +208,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityTerror] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView",
-		[ActivityType_UI.KActivityDusk] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityDusk] = "ActivityMapNewView",
+		[ActivityType_UI.KActivitySilentNight] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -242,7 +244,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityDusk] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityDusk] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivitySilentNight] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -358,6 +361,16 @@ ActivityLogin14Config = {
 	},
 	EightDays_Riddle_Re = {
 		resFile = "asset/ui/ActivityRiddleLogin14.csb"
+	},
+	EightDays_SilentNight = {
+		resFile = "asset/ui/ActivitySilentNightLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 251, 189, 255)
+		}
+	},
+	EightDays_DeepSea_Re = {
+		resFile = "asset/ui/ActivityDeepSeaLogin.csb"
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -518,6 +531,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityDusk] = {
 			name = "ZSfuben_TX_zhushenhuanghunfuben",
 			position = cc.p(130, 128)
+		},
+		[ActivityType_UI.KActivitySilentNight] = {
+			name = "fuben_shengdanzhuyefubenrukou",
+			position = cc.p(178, 120)
 		}
 	}
 }

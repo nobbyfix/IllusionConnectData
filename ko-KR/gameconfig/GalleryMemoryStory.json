@@ -313,8 +313,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_DeepSea",
-                    "ActivityBlock_DeepSea_Map",
+                    "ActivityBlock_DeepSea_Re",
+                    "ActivityBlock_DeepSea_Map_Re",
                     "DeepSeaM01",
                     "DeepSeaS01",
                     "DeepSeaS01M"
@@ -550,6 +550,48 @@
                     "Memory_Act_Riddle_6",
                     "Memory_Act_Riddle_7",
                     "Memory_Act_Riddle_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_SilentNight": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "ActivityBlock_SilentNight_Name",
+        "Num": 20,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_SilentNight_1",
+                    "Memory_Act_SilentNight_2",
+                    "Memory_Act_SilentNight_3",
+                    "Memory_Act_SilentNight_4",
+                    "Memory_Act_SilentNight_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_SilentNight_6",
+                    "Memory_Act_SilentNight_7",
+                    "Memory_Act_SilentNight_8",
+                    "Memory_Act_SilentNight_9"
                 ],
                 "type": "ELITE"
             }

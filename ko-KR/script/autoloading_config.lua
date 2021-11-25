@@ -2146,6 +2146,11 @@ local mappings = {
 		name = "CrusadeSystem",
 		type = "@C"
 	},
+	CrusadeWorldRuleMediator = {
+		url = "dm.gameplay.crusade.view.CrusadeWorldRuleMediator",
+		name = "CrusadeWorldRuleMediator",
+		type = "@C"
+	},
 	CrusadePowerMediator = {
 		url = "dm.gameplay.crusade.view.CrusadePowerMediator",
 		name = "CrusadePowerMediator",
@@ -3036,6 +3041,11 @@ local mappings = {
 		name = "EVT_BUGFEEDBACK_SUCC",
 		type = "@V"
 	},
+	SetHeroShowDetailMediator = {
+		url = "dm.gameplay.setting.view.SetHeroShowDetailMediator",
+		name = "SetHeroShowDetailMediator",
+		type = "@C"
+	},
 	SetAreaPopMediator = {
 		url = "dm.gameplay.setting.view.SetAreaPopMediator",
 		name = "SetAreaPopMediator",
@@ -3044,6 +3054,11 @@ local mappings = {
 	ExitGameMediator = {
 		url = "dm.gameplay.setting.view.ExitGameMediator",
 		name = "ExitGameMediator",
+		type = "@C"
+	},
+	SetHeroShowMediator = {
+		url = "dm.gameplay.setting.view.SetHeroShowMediator",
+		name = "SetHeroShowMediator",
 		type = "@C"
 	},
 	ChangeHeadImgMediator = {

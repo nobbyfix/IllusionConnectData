@@ -224,6 +224,10 @@ function ShopGoods:setCondition(condition)
 	self._condition = condition
 end
 
+function ShopGoods:getTime()
+	return self._condition.TIME
+end
+
 function ShopGoods:getCondition()
 	local systemKeeper = DmGame:getInstance()._injector:getInstance(SystemKeeper)
 

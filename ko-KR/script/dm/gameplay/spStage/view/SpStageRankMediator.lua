@@ -271,12 +271,7 @@ function SpStageRankMediator:onClickCell(cell)
 
 	local function gotoView(response)
 		record:setIsFriend(response.isFriend)
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(record:getRid(), function (response)

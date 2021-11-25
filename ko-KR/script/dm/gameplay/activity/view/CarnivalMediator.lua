@@ -860,16 +860,20 @@ function CarnivalMediator:onClickPlayStory()
 			end
 
 			local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+			local statisticsData = storyAgent:getStoryStatisticsData(storyId)
 
 			StatisticSystem:send({
+				type = "plot_end",
 				op_type = "plot_activity",
 				point = "plot_end",
-				type = "plot_end",
 				activityid = self._model:getTitle(),
 				plot_id = storyId,
 				plot_name = Strings:get(group:getDesc()),
 				id_first = id_first,
-				totaltime = endTs - startTs
+				totaltime = endTs - startTs,
+				detail = statisticsData.detail,
+				amount = statisticsData.amount,
+				misc = statisticsData.misc
 			})
 		end
 

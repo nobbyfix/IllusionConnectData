@@ -120,6 +120,11 @@ local timeLimitShopConfig = {
 		BG = "jqtd_txt_yywgzl_di",
 		TimeOutLineColor = cc.c4b(105, 0, 106, 255),
 		CellNameColor = cc.c4b(159, 122, 165, 89.25)
+	},
+	silentnight = {
+		CellBuyImg = "jqtd_img_sdqjzl_jldi.png",
+		CellBuyEndImg = "jqtd_img_sdqjzl_jldih.png",
+		CellNameColor = cc.c4b(224, 193, 148, 89.25)
 	}
 }
 local btnHandlers = {

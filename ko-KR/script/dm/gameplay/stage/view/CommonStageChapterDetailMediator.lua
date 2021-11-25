@@ -1065,6 +1065,12 @@ function CommonStageChapterDetailMediator:refreshCurrentView()
 	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)
 
 	self:refreshChapterView()
+
+	local top = self:getView():getChildByFullName("topinfo_node.currency_bar_2.starNode")
+	local topStar = top:getChildByName("count")
+	local stageManager = self._stageSystem._stageManager
+
+	topStar:setString(stageManager:getAllStageStar())
 end
 
 function CommonStageChapterDetailMediator:onClickLeft()
@@ -1293,6 +1299,7 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 	local chapterConfig = stageSystem:getMapConfigByIndex(self._chapterIndex, self._stageType)
 	local storyLink = ConfigReader:getDataByNameIdAndKey("StoryPoint", pointId, "StoryLink")
 	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyAgent = storyDirector:getStoryAgent()
 
 	local function endCallBack()
 		local storyPoint = stageSystem:getPointById(pointId)
@@ -1343,6 +1350,7 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 		end
 
 		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
 
 		StatisticSystem:send({
 			point = "plot_end",
@@ -1352,12 +1360,13 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 			plot_id = storyLink,
 			plot_name = storyPoint:getName(),
 			id_first = isFirst,
-			totaltime = endTs - startTs
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
 		})
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
 	end
-
-	local storyAgent = storyDirector:getStoryAgent()
 
 	storyAgent:setSkipCheckSave(true)
 

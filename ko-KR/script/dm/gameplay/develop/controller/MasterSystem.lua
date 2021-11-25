@@ -1073,11 +1073,18 @@ function MasterSystem:getMasterActiveSkills(masterId)
 
 	for i, v in ipairs(skills) do
 		if skills[v].level > 0 then
-			table.insert(ret, {
+			local info = {
 				skillId = v,
 				level = skills[v].level,
 				kind = leadStageData:getSkillKind(v)
-			})
+			}
+
+			if leadStageData:getSkillKind(v) == "Attr" then
+				local sid = leadStageDetailConfig[curLv].SkillName[i]
+				info.skillVId = sid
+			end
+
+			table.insert(ret, info)
 		end
 	end
 

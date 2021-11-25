@@ -733,6 +733,12 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
+		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
+		damage.val = (1 + Factor * 0.05) * damage.val
+	end
+
 	return damage
 end
 
@@ -1030,6 +1036,12 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
+		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
+		damage.val = (1 + Factor * 0.05) * damage.val
+	end
+
 	return damage
 end
 
@@ -1136,6 +1148,11 @@ function all.EvalRecovery_FlagCheck(_env, actor, target, healFactorRate, healFac
 
 	if LowerHp_HealExtra_RatioCheck and LowerHp_HealExtra_RatioCheck ~= 0 and healee.hpRatio < LowerHp_HealExtra_RatioCheck then
 		heal = heal * (1 + LowerHp_HealExtra_ExtraRate)
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15117_2")) > 0 then
+		local healeft = global.SpecialPropGetter(_env, "curerate_weapon_15117_2")(_env, actor)
+		heal = heal * (1 + healeft)
 	end
 
 	return heal

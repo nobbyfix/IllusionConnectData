@@ -6,12 +6,84 @@ GameValueSetMediator:has("_settingSystem", {
 GameValueSetMediator:has("_loginSystem", {
 	is = "r"
 }):injectWith("LoginSystem")
+GameValueSetMediator:has("_developSystem", {
+	is = "r"
+}):injectWith("DevelopSystem")
 
-local kBtnHandlers = {}
+local kBtnRightList = {
+	{
+		btnRes = "sz_btn_grxx_bdsj.png",
+		btnShow = "isBindPhoneBtnShow",
+		btnName = "Setting_Ui_Text_Bind",
+		id = "bindPhoneBtn",
+		callback = {
+			func = "onClickBindPhoneBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_yxgg.png",
+		btnShow = "isGameAnnounceShow",
+		btnName = "Setting_Text_GameAnnounce",
+		id = "gameAnnounce",
+		callback = {
+			func = "onClickGameAnnounce"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_wtfk.png",
+		btnShow = "isBugFeedbackShow",
+		btnName = "Setting_Text26",
+		id = "bugFeedback",
+		callback = {
+			func = "onClickBugFeedBack"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_qd.png",
+		btnShow = "isCheckInBtnShow",
+		btnName = "Setting_Ui_Text_7",
+		id = "checkInBtn",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickCheckInBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_xzyy.png",
+		btnShow = "isSoundDomShow",
+		btnName = "setting_ui_DownloadVoice",
+		id = "soundDom",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickSoundCVBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_xzzr.png",
+		btnShow = "isResourceDomShow",
+		btnName = "setting_ui_DownloadResource",
+		id = "resourceDom",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickSpinePortraitBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_hb.png",
+		btnShow = "isNaverCafeShow",
+		btnName = "setting_ui_naverCafe",
+		id = "naveCafeBtn",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickNaverCafeBtn"
+		}
+	}
+}
 local soundOpenImage = "sz_btn_sy02.png"
 local soundCloseImage = "sz_btn_sy01.png"
 local volumeConHeight = 9
-local volumeConWidth = 2.4
+local volumeConWidth = 2.6
+local volumeConWidth2 = 2.4
 local adjustSafeX = 100
 local UNBING_TIPS_TYPE = {
 	WARNING = 1,
@@ -31,6 +103,14 @@ local kBtnHandlers = {
 	["main.btn_3_view.unBind"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onUnBind"
+	},
+	["main.bg.btn_close"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "close"
+	},
+	["main.codeExchange"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickCode"
 	}
 }
 
@@ -47,20 +127,6 @@ function GameValueSetMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	self._settingModel = self._settingSystem:getSettingModel()
-
-	self:bindWidget("main.bg", PopupNormalWidget, {
-		btnHandler = {
-			clickAudio = "Se_Click_Close_2",
-			func = bind1(self.close, self)
-		},
-		title = Strings:get("Setting_GameValue_Set"),
-		title1 = Strings:get("UITitle_EN_Youxishezhi"),
-		bgSize = {
-			width = 690,
-			height = 408
-		}
-	})
-
 	self._cancelBtn = self:bindWidget("main.bindTips.btn_cancel", OneLevelMainButton, {
 		handler = {
 			clickAudio = "Se_Click_Cancle",
@@ -75,6 +141,9 @@ function GameValueSetMediator:onRegister()
 	})
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_GET_BIND_INFO, self, self.refreshBindView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.showDownloadReward)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT_OVER, self, self.downloadPortraitOver)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.downloadSoundCVOver)
 end
 
 function GameValueSetMediator:enterWithData()
@@ -84,11 +153,13 @@ function GameValueSetMediator:enterWithData()
 	self:setupView()
 	self:initGameSetValue()
 	self:setTab()
+	self:refreshRightList()
 end
 
 function GameValueSetMediator:setupView()
 	local soundSetView = self:getView():getChildByFullName("main.btn_1_view")
 	local pictureSetView = self:getView():getChildByFullName("main.btn_2_view")
+	self._main = self:getView():getChildByFullName("main")
 	self._musicSlider = soundSetView:getChildByFullName("Slider_1")
 	self._musicTag = soundSetView:getChildByFullName("image1")
 	self._musicVolumeCon = soundSetView:getChildByFullName("volumeCon1")
@@ -102,6 +173,10 @@ function GameValueSetMediator:setupView()
 	self._adjustCon = pictureSetView:getChildByFullName("volumeCon")
 	self._unBindTips = self:getView():getChildByFullName("main.bindTips")
 	self._editBox = self._unBindTips:getChildByName("TextField")
+	self._listView = self:getView():getChildByFullName("main.rightList")
+
+	self._listView:setScrollBarEnabled(false)
+
 	local checkBox = pictureSetView:getChildByFullName("checkBox")
 	local isOff = self._settingModel:isTouchEffectOff()
 
@@ -201,7 +276,7 @@ function GameValueSetMediator:initMusicSlider()
 		self._musicTag:loadTexture(soundOpenImage, ccui.TextureResType.plistType)
 	end
 
-	self._musicVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+	self._musicVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 	self._musicSlider:setPercent(percent)
 	self._musicSlider:addEventListener(function (event)
 		self._musicSlider:stopAllActions()
@@ -214,7 +289,7 @@ function GameValueSetMediator:initMusicSlider()
 			self._musicTag:loadTexture(soundOpenImage, ccui.TextureResType.plistType)
 		end
 
-		self._musicVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+		self._musicVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 
 		local volume = percent / 100 * SoundVolumeMax
 
@@ -232,7 +307,7 @@ function GameValueSetMediator:initSoundSlider()
 		self._soundTag:loadTexture(soundOpenImage, ccui.TextureResType.plistType)
 	end
 
-	self._soundVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+	self._soundVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 	self._soundSlider:setPercent(percent)
 	self._soundSlider:addEventListener(function (event)
 		self._soundSlider:stopAllActions()
@@ -245,7 +320,7 @@ function GameValueSetMediator:initSoundSlider()
 			self._soundTag:loadTexture(soundOpenImage, ccui.TextureResType.plistType)
 		end
 
-		self._soundVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+		self._soundVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 
 		local volume = percent / 100 * SoundVolumeMax
 
@@ -264,7 +339,7 @@ function GameValueSetMediator:initRoleSoundSlider()
 	end
 
 	self._roleSlider:setPercent(percent)
-	self._roleVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+	self._roleVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 	self._roleSlider:addEventListener(function (event)
 		self._roleSlider:stopAllActions()
 
@@ -276,7 +351,7 @@ function GameValueSetMediator:initRoleSoundSlider()
 			self._roleTag:loadTexture(soundOpenImage, ccui.TextureResType.plistType)
 		end
 
-		self._roleVolumeCon:setContentSize(cc.size(volumeConWidth * percent, volumeConHeight))
+		self._roleVolumeCon:setContentSize(cc.size(volumeConWidth2 * percent, volumeConHeight))
 
 		local volume = percent / 100 * SoundVolumeMax
 
@@ -640,4 +715,180 @@ function GameValueSetMediator:onBindOKClicked()
 
 		REBOOT("REBOOT_NOUPDATE")
 	end
+end
+
+function GameValueSetMediator:refreshRightList()
+	if self._listView == nil then
+		return
+	end
+
+	self._listView:removeAllItems()
+	self._listView:setScrollBarEnabled(false)
+
+	local cloneCell = self._main:getChildByFullName("rightCellClone")
+
+	for i = 1, #kBtnRightList do
+		local isShow, pointShow = self[kBtnRightList[i].btnShow](self)
+
+		if isShow then
+			local cell = cloneCell:clone()
+
+			cell:getChildByName("Text"):setString(Strings:get(kBtnRightList[i].btnName))
+			cell:loadTextures(kBtnRightList[i].btnRes, kBtnRightList[i].btnRes, kBtnRightList[i].btnRes, ccui.TextureResType.plistType)
+			cell:getChildByName("redPoint"):setVisible(pointShow or false)
+			self:mapButtonHandlerClick(cell, kBtnRightList[i].callback)
+			self._listView:pushBackCustomItem(cell)
+		end
+	end
+end
+
+function GameValueSetMediator:isBindPhoneBtnShow()
+	local bindState = SDKHelper:readCacheValue("loginType")
+
+	return SDKHelper:isEnableSdk() and LOGIN_TYPE_GUEST == bindState
+end
+
+function GameValueSetMediator:isGameAnnounceShow()
+	return false
+end
+
+function GameValueSetMediator:isBugFeedbackShow()
+	local urlData = ConfigReader:getRecordById("ConfigValue", "GusetCenterURL")
+
+	if urlData and urlData.content then
+		return true
+	end
+
+	return false
+end
+
+function GameValueSetMediator:isCheckInBtnShow()
+	return CommonUtils.GetSwitch("fn_check_in")
+end
+
+function GameValueSetMediator:isSoundDomShow()
+	if not self._settingSystem:hasPackage() then
+		return false
+	end
+
+	local isSoundCVDownloadOver = self._settingSystem:isSoundCVDownloadOver()
+	local isGetReward2 = self._settingSystem:gotSoundCVReward()
+
+	if not isSoundCVDownloadOver then
+		return true
+	end
+
+	if not isGetReward2 then
+		return true, true
+	end
+
+	return false
+end
+
+function GameValueSetMediator:isResourceDomShow()
+	if not self._settingSystem:hasPackage() then
+		return false
+	end
+
+	local isPortraitDownloadOver = self._settingSystem:isPortraitDownloadOver()
+	local isGetReward1 = self._settingSystem:gotPortraitReward()
+
+	if not isPortraitDownloadOver then
+		return true
+	end
+
+	if not isGetReward1 then
+		return true, true
+	end
+
+	return false
+end
+
+function GameValueSetMediator:onClickGameAnnounce(sender, eventType)
+	if CommonUtils.GetSwitch("fn_announce_check_in") then
+		local view = self:getInjector():getInstance("serverAnnounceViewNew")
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				popupMediator:resetData()
+			end
+		}
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			isDeductTime = 0
+		}, delegate))
+	else
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("HeroStory_Team_UI1")
+		}))
+	end
+end
+
+function GameValueSetMediator:onClickCheckInBtn()
+	local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
+
+	monthSignInSystem:tryEnter()
+end
+
+function GameValueSetMediator:onClickBindPhoneBtn()
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		SDKHelper:showBindPhone()
+	end
+end
+
+function GameValueSetMediator:onClickSpinePortraitBtn()
+	self._settingSystem:downloadPortrait()
+end
+
+function GameValueSetMediator:onClickSoundCVBtn()
+	self._settingSystem:downloadSoundCV()
+end
+
+function GameValueSetMediator:showDownloadReward(event)
+	self:refreshRightList()
+
+	local data = event:getData()
+
+	if data.rewards and #data.rewards > 0 then
+		local view = self:getInjector():getInstance("getRewardView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			maskOpacity = 0
+		}, {
+			rewards = data.rewards
+		}))
+	end
+end
+
+function GameValueSetMediator:onClickBugFeedBack(sender, eventType)
+	local url = ConfigReader:getRecordById("ConfigValue", "GusetCenterURL").content
+
+	cc.Application:getInstance():openURL(url or "")
+end
+
+function GameValueSetMediator:onClickCode()
+	local view = self:getInjector():getInstance("SettingCodeExchangeView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}))
+end
+
+function GameValueSetMediator:downloadPortraitOver()
+	self:refreshRightList()
+end
+
+function GameValueSetMediator:downloadSoundCVOver()
+	self:refreshRightList()
+end
+
+function GameValueSetMediator:isNaverCafeShow()
+	return SDKHelper and SDKHelper:isEnableSdk()
+end
+
+function GameValueSetMediator:onClickNaverCafeBtn()
+	local url = ConfigReader:getRecordById("ConfigValue", "NaverCafeURL").content
+
+	cc.Application:getInstance():openURL(url)
 end

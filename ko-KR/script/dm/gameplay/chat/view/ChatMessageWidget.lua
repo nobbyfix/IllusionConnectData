@@ -232,12 +232,7 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 				leadStageId = senderInfo.leadStageId,
 				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)
@@ -520,12 +515,7 @@ function PrivateMessageWidget:onClickHead(senderInfo, sender)
 				leadStageId = senderInfo.leadStageId,
 				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)

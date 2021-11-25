@@ -704,6 +704,10 @@ end
 function FormationSystem:changeUnitSettled(unit)
 	if unit:isInStages(ULS_Newborn) then
 		unit:setLifeStage(ULS_Normal)
+
+		local skillSystem = self._battleContext:getObject("SkillSystem")
+
+		skillSystem:buildSkillsForActor(unit)
 		unit:getFSM():changeState(UnitSimpleState:new("Preparing", 600))
 
 		local processRecorder = self._processRecorder

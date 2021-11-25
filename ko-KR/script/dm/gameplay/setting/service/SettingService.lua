@@ -82,3 +82,15 @@ function SettingService:requestCancleUnBindAccount(url, info, callback)
 
 	easyHttpRequest(url, data, nil, callback)
 end
+
+function SettingService:requestPlayerInfo(params, callback, blockUI)
+	local request = self:newRequest(11414, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function SettingService:changeShowHero(params, callback, blockUI)
+	local request = self:newRequest(10031, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

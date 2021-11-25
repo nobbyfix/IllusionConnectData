@@ -44,6 +44,8 @@ end
 function ShopBuyPackageMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
+
+	self._heroSystem = self._developSystem:getHeroSystem()
 end
 
 function ShopBuyPackageMediator:enterWithData(data)
@@ -269,6 +271,35 @@ end
 
 function ShopBuyPackageMediator:onClickedBuyBtn()
 	if self._shopSystem:getVersionCanBuy(self._data, Strings:get("Activity_Version_Tips1")) then
+		local condition = self._data.getCondition and self._data:getCondition()
+
+		if condition and condition.heroid then
+			local heroNames = {}
+			local ret = false
+
+			for i, v in ipairs(condition.heroid) do
+				local heroInfo = self._heroSystem:getHeroInfoById(v)
+
+				if not self._heroSystem:hasHero(v) then
+					table.insert(heroNames, heroInfo.name)
+
+					ret = true
+				end
+			end
+
+			if ret then
+				local tips = #heroNames == 1 and heroNames[1] or table.concat(heroNames, ", ")
+
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("Error_suipian1", {
+						hero = tips
+					})
+				}))
+
+				return
+			end
+		end
+
 		if self._isFree == KShopBuyType.KCoin then
 			if self._maxNumber == 0 then
 				AudioEngine:getInstance():playEffect("Se_Alert_Error", false)

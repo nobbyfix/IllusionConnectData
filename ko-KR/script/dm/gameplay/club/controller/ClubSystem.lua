@@ -159,13 +159,7 @@ function ClubSystem:showMemberPlayerInfoView(playerId)
 				leadStageId = memberData:getLeadStageId(),
 				leadStageLevel = memberData:getLeadStageLevel()
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				remainLastView = true,
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(memberData:getRid(), function (response)
@@ -1327,11 +1321,9 @@ function ClubSystem:requestJoinClub(data, extraData)
 
 			record:synchronize(info)
 
-			local view = self:getInjector():getInstance("PlayerInfoView")
+			local friendSystem = self:getInjector():getInstance(FriendSystem)
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record, nil))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end, true)
 	end
 end

@@ -586,8 +586,10 @@ end
 function BagURMapMediator:onClickShop()
 	local shopSystem = self:getInjector():getInstance("ShopSystem")
 
-	shopSystem:tryEnter({
-		shopId = "Shop_Normal",
-		rightTabIndex = 5
-	})
+	shopSystem:requestGetShop("Shop_URMap", function ()
+		shopSystem:tryEnter({
+			shopId = "Shop_Normal",
+			rightTabIndex = 5
+		})
+	end)
 end

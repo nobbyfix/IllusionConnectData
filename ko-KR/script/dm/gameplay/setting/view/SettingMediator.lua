@@ -1,37 +1,12 @@
 SettingMediator = class("SettingMediator", DmPopupViewMediator, _M)
 
-SettingMediator:has("_developSystem", {
-	is = "r"
-}):injectWith("DevelopSystem")
 SettingMediator:has("_settingSystem", {
 	is = "r"
 }):injectWith("SettingSystem")
-SettingMediator:has("_gameServer", {
+SettingMediator:has("_developSystem", {
 	is = "r"
-}):injectWith("GameServerAgent")
-SettingMediator:has("_rechargeAndVipModel", {
-	is = "r"
-}):injectWith("RechargeAndVipModel")
-SettingMediator:has("_gameServerAgent", {
-	is = "r"
-}):injectWith("GameServerAgent")
-SettingMediator:has("_rechargeAndVipSystem", {
-	is = "r"
-}):injectWith("RechargeAndVipSystem")
-SettingMediator:has("_systemKeeper", {
-	is = "rw"
-}):injectWith("SystemKeeper")
+}):injectWith("DevelopSystem")
 
-ScreenRecorderError = {
-	["-5805"] = "手机存储空间不足，无法继续录制",
-	["-5800"] = "很遗憾，录屏过程中发生未知错误",
-	["-5804"] = "录制过程中出现不明原因，录制失败",
-	["-5806"] = "其他应用程序中断录制",
-	["-5803"] = "录制未能启动",
-	["-5807"] = "录制进程发生异常，录制失败",
-	["-5802"] = "该功能被“家长控制”禁止，不能使用",
-	["-5801"] = "您拒绝了录制，允许后可使用录制功能"
-}
 local kBtnHandlers = {
 	["main.setUsr.btn_changename"] = {
 		clickAudio = "Se_Click_Common_2",
@@ -45,246 +20,225 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickExit"
 	},
-	["main.setUsr.btn_welfareCode"] = {
-		clickAudio = "Se_Click_Common_1",
-		func = "onClickCode"
-	},
-	["main.setUsr.headImg"] = {
-		clickAudio = "Se_Click_Common_1",
-		func = "onClickChangeHeadImg"
-	},
 	["main.setUsr.changeHeadBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickChangeHeadImg"
+	},
+	["main.bgNode.close"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickClose"
 	},
 	["main.setUsr.btn_changeslogan"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickChangeSlogan"
 	},
-	["main.setUsr.sexBtn"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickSetSex"
-	},
-	["main.setUsr.birthDayBtn"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickSetBirthDay"
-	},
 	["main.setUsr.areaBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickSetArea"
 	},
-	["main.setUsr.tagsPanel"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickSetTags"
-	},
-	["main.setUsr.tagsPanel.monthCard"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickBuyMonthCard"
-	},
 	["main.setUsr.copyBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCopyPlayerID"
+	},
+	["main.btn_chat"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickBtn"
+	},
+	["main.btn_add"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickBtn"
+	},
+	["main.btn_Ok"] = {
+		clickAudio = "Se_Click_Confirm",
+		func = "onClickBtn"
 	}
 }
-local kBtnRightList = {
-	{
-		btnRes = "sz_btn_grxx_bdsj.png",
-		btnShow = "isBindPhoneBtnShow",
-		btnName = "Setting_Ui_Text_Bind",
-		id = "bindPhoneBtn",
-		callback = {
-			func = "onClickBindPhoneBtn"
-		}
+local kHeroRarityBg = {
+	[15] = {
+		"wjxx_hbzs_sp1.png",
+		"wjxx_hbzs_zhezhao1.png"
 	},
-	{
-		btnRes = "sz_btn_grxx_yxgg.png",
-		btnShow = "isGameAnnounceShow",
-		btnName = "Setting_Text_GameAnnounce",
-		id = "gameAnnounce",
-		callback = {
-			func = "onClickGameAnnounce"
-		}
+	[14] = {
+		"wjxx_hbzs_ssr1.png",
+		"wjxx_hbzs_zhezhao1.png"
 	},
-	{
-		btnRes = "sz_btn_grxx_wtfk.png",
-		btnShow = "isBugFeedbackShow",
-		btnName = "Setting_Text26",
-		id = "bugFeedback",
-		callback = {
-			func = "onClickBugFeedBack"
-		}
+	[13] = {
+		"wjxx_hbzs_sr1.png",
+		"wjxx_hbzs_zhezhao2.png"
 	},
-	{
-		btnRes = "sz_btn_grxx_qd.png",
-		btnShow = "isCheckInBtnShow",
-		btnName = "Setting_Ui_Text_7",
-		id = "checkInBtn",
-		callback = {
-			clickAudio = "Se_Click_Common_2",
-			func = "onClickCheckInBtn"
-		}
+	[12] = {
+		"wjxx_hbzs_r1.png",
+		"wjxx_hbzs_zhezhao2.png"
 	},
-	{
-		btnRes = "sz_btn_grxx_xzyy.png",
-		btnShow = "isSoundDomShow",
-		btnName = "setting_ui_DownloadVoice",
-		id = "soundDom",
-		callback = {
-			clickAudio = "Se_Click_Common_2",
-			func = "onClickSoundCVBtn"
-		}
-	},
-	{
-		btnRes = "sz_btn_grxx_xzzr.png",
-		btnShow = "isResourceDomShow",
-		btnName = "setting_ui_DownloadResource",
-		id = "resourceDom",
-		callback = {
-			clickAudio = "Se_Click_Common_2",
-			func = "onClickSpinePortraitBtn"
-		}
-	},
-	{
-		btnRes = "sz_btn_grxx_hb.png",
-		btnShow = "isNaverCafeShow",
-		btnName = "setting_ui_naverCafe",
-		id = "naveCafeBtn",
-		callback = {
-			clickAudio = "Se_Click_Common_2",
-			func = "onClickNaverCafeBtn"
-		}
+	[11] = {
+		"wjxx_hbzs_r1.png",
+		"wjxx_hbzs_zhezhao2.png"
 	}
 }
-local maxLength = nil
-local constellationAge = {
-	120,
-	219,
-	321,
-	420,
-	521,
-	622,
-	723,
-	823,
-	923,
-	1024,
-	1123,
-	1222
-}
-local constellation = {
-	"Aquarius",
-	"Pisces",
-	"Aries",
-	"Taurus",
-	"Gemini",
-	"Cancer",
-	"Leo",
-	"Virgo",
-	"Libra",
-	"Scorpio",
-	"Sagittarius",
-	"Capricorn"
-}
-local playerTagsArray = nil
-local LOGIN_TYPE_GUEST = 1
-local CSD_CLIENT_VERSION = 3560
 
 function SettingMediator:initialize()
 	super.initialize(self)
 end
 
 function SettingMediator:dispose()
-	if self._tabController then
-		self._tabController:dispose()
-
-		self._tabController = nil
-	end
-
 	super.dispose(self)
 end
 
 function SettingMediator:onRegister()
 	super.onRegister(self)
 	self:mapEventListeners()
-
-	maxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Slogan_Max", "content")
-	playerTagsArray = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Tag", "content")
-
 	self:mapButtonHandlersClick(kBtnHandlers)
-	self:bindWidget("main.bgNode", PopupNormalWidget, {
-		btnHandler = {
-			clickAudio = "Se_Click_Close_2",
-			func = bind1(self.onClickClose, self)
-		},
-		title = Strings:get("Setting_Title_Player_Info"),
-		title1 = Strings:get("UITitle_EN_Gerenxinxi"),
-		bgSize = {
-			width = 902,
-			height = 480
-		}
-	})
 
+	self._heroSystem = self._developSystem:getHeroSystem()
+	self._friendSystem = self:getInjector():getInstance(FriendSystem)
+	self._chatSystem = self:getInjector():getInstance(ChatSystem)
+end
+
+function SettingMediator:enterWithData(data)
+	self:initNode()
+	self:initData(data)
+	self:showSettingView()
+	self:showPlayerServerInfo()
+	self:showHeroList()
+	self:setButtonStatus()
+end
+
+function SettingMediator:initNode()
+	self._view = self:getView()
 	self._main = self:getView():getChildByName("main")
 	self._listView = self._main:getChildByFullName("listView")
 	self._usrNode = self._main:getChildByFullName("setUsr")
 	self._sloganEditBox = self._main:getChildByFullName("setUsr.TextField")
+	self._cellClone = self._main:getChildByFullName("roleStand_1")
 
-	self:loadPlayerInfo()
+	self._cellClone:setVisible(false)
 end
 
-function SettingMediator:loadPlayerInfo()
-	local player = self._developSystem:getPlayer()
-	self._playerGender = player:getGender()
-	self._playerBirthday = player:getBirthday()
-	self._playerArea = player:getCity()
-	self._playerTags = player:getTags()
+function SettingMediator:initData(data)
+	self._player = data.player
+	self._record = data.record
+	self._playerGender = self._player.gender
+	self._playerArea = self._player.city
+	self._clubName = self._player.clubName
+	local rid = self._developSystem:getPlayer():getRid()
+	self._isSelf = false
+
+	if rid == self._player.id then
+		self._isSelf = true
+	end
 end
 
 function SettingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGENAME_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGESLOGAN_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADIMG_SUCC, self, self.showSettingView)
-	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_REWARDS_SUCC, self, self.showDownloadReward)
-	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_PORTRAIT_OVER, self, self.downloadPortraitOver)
-	self:mapEventListener(self:getEventDispatcher(), EVT_DOWNLOAD_SOUNDCV_OVER, self, self.downloadSoundCVOver)
-	self:mapEventListener(self:getEventDispatcher(), EVT_BIND_ACCOUNT, self, self.refreshRightList)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADFRAME_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.showSettingView)
 end
 
-function SettingMediator:enterWithData(data)
-	self._settingModel = self._settingSystem:getSettingModel()
+function SettingMediator:showSettingView()
+	local layout = self._main
 
-	self:showSettingView()
-	self:showPlayerInfoView()
-	self:setGameVersion()
-	self:refreshRightList()
-end
+	layout:setVisible(true)
 
-function SettingMediator:showPlayerInfoView()
-	local genderView = self._usrNode:getChildByName("sex")
-	local birthdayView = self._usrNode:getChildByName("birthDay")
-	local constellationView = self._usrNode:getChildByName("constellation")
-	local cityView = self._usrNode:getChildByName("area")
-	local tagsView = self._usrNode:getChildByName("tagsPanel")
+	local player = self._player
+	local nameText = layout:getChildByFullName("setUsr.name_value")
 
-	if self._playerGender == 0 then
-		genderView:setString("")
-	elseif self._playerGender == 1 then
-		genderView:setString(Strings:get("Player_Gender_XY"))
-	elseif self._playerGender == 2 then
-		genderView:setString(Strings:get("Player_Gender_XX"))
-	end
-
-	if self._playerBirthday == nil or self._playerBirthday == "" then
-		birthdayView:setString("")
-		constellationView:setString("")
+	if self._isSelf then
+		nameText:setString(self._developSystem:getPlayer():getNickName())
 	else
-		local birthdayTab, constellationStr = self:parseTimeStr(self._playerBirthday)
-
-		birthdayView:setString(tostring(birthdayTab.month) .. Strings:get("Setting_UI_Month") .. tostring(birthdayTab.day) .. Strings:get("Setting_UI_Day") .. "  " .. constellationStr)
-		constellationView:setString(constellationStr)
-		constellationView:setVisible(false)
+		nameText:setString(player.nickname)
 	end
+
+	self._main:getChildByFullName("setUsr.btn_changename"):setVisible(self._isSelf)
+
+	local idText = layout:getChildByFullName("setUsr.id_value")
+	local idStr = string.split(player.id, "_")
+
+	idText:setString(idStr[1])
+
+	local levelText = layout:getChildByFullName("setUsr.level_value")
+
+	levelText:setString(player.level)
+
+	local maxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Slogan_Max", "content")
+
+	if self._isSelf then
+		self._lastSlogan = self._developSystem:getPlayer():getSlogan()
+	else
+		self._lastSlogan = player.slogan
+	end
+
+	self._main:getChildByFullName("setUsr.btn_changeslogan"):setVisible(self._isSelf)
+
+	if self._sloganEditBox:getDescription() == "TextField" then
+		self._sloganEditBox:setMaxLength(maxLength)
+		self._sloganEditBox:setMaxLengthEnabled(true)
+		self._sloganEditBox:setString(Strings:get(self._lastSlogan))
+		self._sloganEditBox:setPlaceHolderColor(cc.c4b(255, 255, 255, 255))
+
+		if self._isSelf then
+			self._sloganEditBox = convertTextFieldToEditBox(self._sloganEditBox, nil, MaskWordType.CHAT)
+
+			self._sloganEditBox:setReturnType(0)
+			self._sloganEditBox:setInputMode(0)
+			self._sloganEditBox:onEvent(function (eventName, sender)
+				if eventName == "began" then
+					self._sloganEditBox:setPlaceHolder("")
+					self._sloganEditBox:setText("")
+				elseif eventName == "ended" then
+					self:changePlayerSlogan()
+				elseif eventName == "return" then
+					-- Nothing
+				elseif eventName == "changed" then
+					-- Nothing
+				elseif eventName == "ForbiddenWord" then
+					self._sloganEditBox:setText(self._lastSlogan)
+					self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+						tip = Strings:get("Common_Tip1_1")
+					}))
+				elseif eventName == "Exceed" then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("Tips_WordNumber_Limit", {
+							number = sender:getMaxLength()
+						})
+					}))
+				end
+			end)
+		end
+	end
+
+	self._main:getChildByFullName("setUsr.changeHeadBtn"):setVisible(self._isSelf)
+
+	local headImg = player.headImg
+	local headFrame = player.headFrame
+
+	if self._isSelf then
+		headImg = self._developSystem:getPlayer():getHeadId()
+		headFrame = self._developSystem:getPlayer():getCurHeadFrame()
+	end
+
+	local headicon, oldIcon = IconFactory:createPlayerIcon({
+		clipType = 4,
+		id = headImg,
+		size = cc.size(93, 94),
+		headFrameId = headFrame
+	})
+	local iconbg = layout:getChildByFullName("setUsr.headImg")
+
+	iconbg:removeAllChildren()
+	headicon:addTo(iconbg):center(iconbg:getContentSize())
+	headicon:setScale(0.85)
+	oldIcon:setScale(0.5)
+
+	local fightLab = self._usrNode:getChildByName("fight")
+
+	fightLab:setString(tostring(player.combat))
+
+	local cityView = self._usrNode:getChildByName("area")
+
+	self._main:getChildByFullName("setUsr.areaBtn"):setVisible(self._isSelf)
+	self._main:getChildByFullName("setUsr.Image2"):setVisible(self._isSelf)
 
 	if self._playerArea == nil or self._playerArea == "" then
 		cityView:setString("")
@@ -298,154 +252,331 @@ function SettingMediator:showPlayerInfoView()
 		cityView:setString(str1 .. "  " .. str2)
 	end
 
-	if self._playerTags == nil or self._playerTags == "" then
-		local firstTag = tagsView:getChildByName("tag1")
+	local clubName = self._usrNode:getChildByName("clubName")
 
-		firstTag:getChildByName("text"):setString("")
-		firstTag:getChildByName("img"):setVisible(true)
-
-		for i = 2, 3 do
-			local _tag = tagsView:getChildByName("tag" .. i)
-
-			_tag:setVisible(false)
-		end
+	if self._clubName and self._clubName ~= "" then
+		clubName:setString(self._clubName)
 	else
-		local firstTag = tagsView:getChildByName("tag1")
+		clubName:setString(Strings:get("Petrace_Text_78"))
+	end
 
-		firstTag:getChildByName("img"):setVisible(false)
+	self._main:getChildByFullName("setUsr.btn_exit"):setVisible(self._isSelf)
+	self._main:getChildByFullName("setUsr.btn_gameSet"):setVisible(self._isSelf)
 
-		local cjson = require("cjson.safe")
-		local playerTags = cjson.decode(self._playerTags)
+	local rtpkPanel = self._main:getChildByFullName("rtPK")
+	local stageArenaPanel = self._main:getChildByFullName("leaderStage")
+	local noRank = self._main:getChildByFullName("wuTag")
 
-		for i = 1, 3 do
-			local tag = playerTags[i]
-			local _cell = tagsView:getChildByName("tag" .. i)
+	rtpkPanel:setVisible(false)
+	stageArenaPanel:setVisible(false)
 
-			if tag then
-				_cell:setVisible(true)
-				_cell:getChildByName("text"):setString(Strings:get(playerTagsArray[tag]))
-			elseif i == 1 then
-				_cell:setVisible(true)
-				_cell:getChildByName("img"):setVisible(true)
-				_cell:getChildByName("text"):setString("")
+	local rtpkRank = player.rtpkRank
+	local stageArenaRank = player.stageArenaRank
+
+	if rtpkRank == -1 and stageArenaRank == -1 then
+		noRank:setVisible(true)
+		rtpkPanel:setVisible(false)
+		stageArenaPanel:setVisible(false)
+	else
+		noRank:setVisible(false)
+
+		if rtpkRank > 0 then
+			rtpkPanel:setVisible(true)
+
+			local rtpkScore = player.rtpkScore
+			local rTPKSystem = self:getInjector():getInstance(RTPKSystem)
+			local info = rTPKSystem:getGradeConfigByScore(rtpkScore)
+			local iconPanel = rtpkPanel:getChildByFullName("icon")
+			local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+				hideName = true
+			})
+
+			icon:addTo(iconPanel):center(iconPanel:getContentSize()):offset(0, 10)
+			icon:setScale(0.35)
+
+			local name = rtpkPanel:getChildByFullName("tagName")
+
+			name:setString(Strings:get(info.Name))
+
+			if rtpkRank <= 3 then
+				rtpkPanel:getChildByFullName("rankDi"):loadTexture(RankTopImage[rtpkRank], 1)
 			else
-				_cell:setVisible(false)
+				rtpkPanel:getChildByFullName("rank"):setString(rtpkRank)
 			end
+		end
+
+		if stageArenaRank > 0 then
+			stageArenaPanel:setVisible(true)
+
+			local stageArenaScore = player.stageArenaScore
+			local leadStageArenaSystem = self:getInjector():getInstance(LeadStageArenaSystem)
+
+			stageArenaPanel:getChildByFullName("tagName"):setString(stageArenaScore)
+
+			if stageArenaRank <= 3 then
+				stageArenaPanel:getChildByFullName("rankDi"):loadTexture(RankTopImage[stageArenaRank], 1)
+			else
+				stageArenaPanel:getChildByFullName("rank"):setString(stageArenaRank)
+			end
+		end
+	end
+
+	self._btnOkNode = self._main:getChildByFullName("btn_Ok")
+	self._btnChatNode = self._main:getChildByFullName("btn_chat")
+	self._btnAddNode = self._main:getChildByFullName("btn_add")
+
+	self._btnOkNode:setVisible(not self._isSelf)
+	self._btnChatNode:setVisible(not self._isSelf)
+	self._btnAddNode:setVisible(not self._isSelf)
+
+	if not self._isSelf then
+		-- Nothing
+	end
+end
+
+function SettingMediator:showPlayerServerInfo()
+	local starNum = self._usrNode:getChildByFullName("starLevel")
+	local heroNum = self._usrNode:getChildByFullName("heroNum")
+	local surfaceNum = self._usrNode:getChildByFullName("surfaceNum")
+	local leaderNum = self._usrNode:getChildByFullName("leaderLab")
+
+	starNum:setString(tostring(self._player.totalStar))
+	heroNum:setString(tostring(self._player.totalHeroes))
+	surfaceNum:setString(tostring(self._player.totalSurface))
+
+	if self._player.leadStageId and self._player.leadStageId ~= "" then
+		local info = ConfigReader:getRecordById("MasterLeadStage", self._player.leadStageId)
+
+		leaderNum:setString(Strings:get(info.RomanNum) .. Strings:get(info.StageName))
+	else
+		leaderNum:setString("")
+	end
+end
+
+function SettingMediator:showHeroList()
+	for i = 1, 4 do
+		if not self._main:getChildByFullName("cellClone" .. i) then
+			local panel = self._cellClone:clone()
+
+			panel:setVisible(true)
+			panel:setName("cellClone" .. i)
+			panel:addTo(self._main):posite(434 + (i - 1) * 150, 230)
+		end
+	end
+
+	if self._isSelf then
+		local myHeros = self._developSystem:getPlayer():getShowHeroes()
+
+		for i = 1, 4 do
+			local panel = self._main:getChildByFullName("cellClone" .. i)
+			local jia = panel:getChildByFullName("jia")
+
+			jia:setVisible(false)
+
+			local role = panel:getChildByFullName("role")
+
+			role:removeAllChildren()
+
+			local starPanel = panel:getChildByFullName("starPanel")
+
+			starPanel:setVisible(false)
+
+			if myHeros[i] then
+				local roleModel = IconFactory:getRoleModelByKey("HeroBase", myHeros[i])
+				local heroData = self._heroSystem:getHeroById(myHeros[i])
+
+				if heroData then
+					roleModel = heroData:getModel()
+				end
+
+				local showData = {
+					model = roleModel,
+					maxStar = heroData:getMaxStar(),
+					star = heroData:getStar(),
+					litterStar = heroData:getLittleStar(),
+					awakenLevel = heroData:getAwakenLevel(),
+					rarity = heroData:getRarity(),
+					level = heroData:getLevel()
+				}
+
+				self:showHeroModel(showData, panel)
+			else
+				jia:setVisible(true)
+
+				local imgDi = panel:getChildByFullName("di")
+
+				imgDi:loadTexture("wjxx_hbzs_di3.png", 1)
+
+				local imgMask = panel:getChildByFullName("mask")
+
+				imgMask:setVisible(false)
+			end
+
+			role:addClickEventListener(function ()
+				AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+				local outSelf = self
+				local delegate = {
+					willClose = function (self, popupMediator, data)
+						if myHeros[data.index] then
+							myHeros[data.index] = data.selectId
+						else
+							myHeros[#myHeros + 1] = data.selectId
+						end
+
+						local ret = {}
+
+						for i = 1, 4 do
+							if myHeros[i] then
+								table.insert(ret, myHeros[i])
+							end
+						end
+
+						outSelf._settingSystem:changeShowHero(ret, function ()
+							if checkDependInstance(self) then
+								outSelf:showHeroList()
+							end
+						end)
+					end
+				}
+				local view = self:getInjector():getInstance("SetHeroShowView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+				}, {
+					index = i,
+					selectId = myHeros[i]
+				}, delegate))
+			end)
+		end
+
+		return
+	end
+
+	for i = 1, 4 do
+		local panel = self._main:getChildByFullName("cellClone" .. i)
+		local jia = panel:getChildByFullName("jia")
+
+		jia:setVisible(false)
+
+		local role = panel:getChildByFullName("role")
+
+		role:removeAllChildren()
+
+		local starPanel = panel:getChildByFullName("starPanel")
+
+		starPanel:setVisible(false)
+
+		local info = self._player.showHeroes[i]
+
+		if info then
+			local heroData = self._heroSystem:getHeroInfoById(info.heroId)
+			local showData = {
+				model = ConfigReader:getDataByNameIdAndKey("Surface", info.surfaceId, "Model"),
+				maxStar = heroData.maxStar,
+				star = info.star,
+				litterStar = info.litterStar,
+				awakenLevel = info.awakenLevel,
+				rarity = info.rarity,
+				level = info.level
+			}
+
+			self:showHeroModel(showData, panel)
+			role:addClickEventListener(function ()
+				AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+				local view = self:getInjector():getInstance("SetHeroShowDetailView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+				}, {
+					heros = self._player.showHeroes,
+					index = i
+				}))
+			end)
+		else
+			local imgDi = panel:getChildByFullName("di")
+
+			imgDi:loadTexture("wjxx_hbzs_di3.png", 1)
+
+			local imgMask = panel:getChildByFullName("mask")
+
+			imgMask:setVisible(false)
 		end
 	end
 end
 
-function SettingMediator:showSettingView()
-	local layout = self._main
+function SettingMediator:showHeroModel(info, panel)
+	local starPanel = panel:getChildByFullName("starPanel")
+	local role = panel:getChildByFullName("role")
+	local imgDi = panel:getChildByFullName("di")
+	local imgMask = panel:getChildByFullName("mask")
 
-	layout:setVisible(true)
+	imgDi:loadTexture(kHeroRarityBg[info.rarity][1], 1)
+	imgMask:loadTexture(kHeroRarityBg[info.rarity][2], 1)
+	imgMask:setVisible(true)
+	starPanel:setVisible(true)
+	role:setVisible(true)
 
-	local player = self._developSystem:getPlayer()
-	local nameText = layout:getChildByFullName("setUsr.name_value")
-
-	nameText:setString(player:getNickName())
-
-	local idText = layout:getChildByFullName("setUsr.id_value")
-	local idStr = string.split(player:getRid(), "_")
-
-	idText:setString(idStr[1])
-
-	local levelText = layout:getChildByFullName("setUsr.level_value")
-
-	levelText:setString(player:getLevel())
-
-	self._lastSlogan = player:getSlogan()
-
-	if self._sloganEditBox:getDescription() == "TextField" then
-		self._sloganEditBox:setMaxLength(maxLength)
-		self._sloganEditBox:setMaxLengthEnabled(true)
-		self._sloganEditBox:setString(self._lastSlogan)
-		self._sloganEditBox:setPlaceHolderColor(cc.c4b(255, 255, 255, 255))
-
-		self._sloganEditBox = convertTextFieldToEditBox(self._sloganEditBox, nil, MaskWordType.CHAT)
-
-		self._sloganEditBox:setReturnType(0)
-		self._sloganEditBox:setInputMode(0)
-		self._sloganEditBox:onEvent(function (eventName, sender)
-			if eventName == "began" then
-				self._sloganEditBox:setPlaceHolder("")
-				self._sloganEditBox:setText("")
-			elseif eventName == "ended" then
-				self:changePlayerSlogan()
-			elseif eventName == "return" then
-				-- Nothing
-			elseif eventName == "changed" then
-				-- Nothing
-			elseif eventName == "ForbiddenWord" then
-				self._sloganEditBox:setText(self._lastSlogan)
-				self:getEventDispatcher():dispatchEvent(ShowTipEvent({
-					tip = Strings:get("Common_Tip1_1")
-				}))
-			elseif eventName == "Exceed" then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("Tips_WordNumber_Limit", {
-						number = sender:getMaxLength()
-					})
-				}))
-			end
-		end)
-	end
-
-	local config = ConfigReader:getRecordById("LevelConfig", tostring(player:getLevel()))
-	local expText = layout:getChildByFullName("setUsr.exp_value")
-	local nextLevelDifValue = config.PlayerExp - player:getExp()
-
-	expText:setString(Strings:get("Setting_NextLevel_Dif", {
-		num = nextLevelDifValue
-	}))
-
-	local expbar = layout:getChildByFullName("setUsr.expbar")
-	local percent = player:getExp() / config.PlayerExp * 100
-
-	expbar:setPercent(percent)
-
-	local headicon, oldIcon = IconFactory:createPlayerIcon({
-		clipType = 4,
-		id = player:getHeadId(),
-		size = cc.size(93, 94),
-		headFrameId = player:getCurHeadFrame()
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_7",
+		id = info.model
 	})
-	local iconbg = layout:getChildByFullName("setUsr.headImg")
 
-	iconbg:removeAllChildren()
-	headicon:addTo(iconbg)
-	headicon:setPosition(cc.p(50, 50))
-	headicon:setScale(1.15)
-	oldIcon:setScale(0.5)
-	layout:getChildByFullName("setUsr.Image_99"):setVisible(false)
+	heroIcon:setScale(0.7)
+	heroIcon:addTo(role):center(role:getContentSize())
 
-	local targetBtn = self:getView():getChildByFullName("main.setUsr.btn_welfareCode")
+	local starBg = starPanel:getChildByFullName("starBg")
 
-	if GameConfigs.hideWelfareCodeBtn then
-		targetBtn:setVisible(false)
-	else
-		targetBtn:setVisible(true)
+	starBg:removeAllChildren()
+
+	local starBgWidth = starBg:getContentSize().width
+	local offsetX = (HeroStarCountMax - info.maxStar) * starBgWidth / 14
+
+	for i = 1, info.maxStar do
+		local path = nil
+
+		if i <= info.star then
+			path = "img_yinghun_img_star_full.png"
+		elseif i == info.star + 1 and info.litterStar then
+			path = "img_yinghun_img_star_half.png"
+		else
+			path = "img_yinghun_img_star_empty.png"
+		end
+
+		if info.awakenLevel > 0 then
+			path = "jx_img_star.png"
+		end
+
+		local star = cc.Sprite:createWithSpriteFrameName(path)
+
+		star:addTo(starBg)
+		star:setPosition(cc.p(offsetX + i / 7 * starBgWidth, 22))
+		star:setScale(0.4)
 	end
-end
 
-function SettingMediator:setGameVersion()
-	local version = self:getView():getChildByFullName("main.gameVersion")
-	local curVersion = app:getAssetsManager():getCurrentVersion()
+	starBg:setScale(0.9)
 
-	if curVersion == 0 then
-		curVersion = "dev"
-	end
+	local rarityBg = starPanel:getChildByFullName("rarityBg")
 
-	local versionStr = "(" .. curVersion .. ")"
-	local baseVersion = app.pkgConfig.packJobId
+	rarityBg:removeAllChildren()
 
-	if baseVersion then
-		versionStr = baseVersion .. versionStr
-	end
+	local rarityAnim = IconFactory:getHeroRarityAnim(info.rarity)
 
-	version:setString(Strings:get("Setting_Text10", {
-		num = versionStr
+	rarityAnim:addTo(rarityBg):posite(20, 34)
+	rarityAnim:setScale(0.8)
+
+	local levelImage = starPanel:getChildByName("levelImage")
+	local level = starPanel:getChildByFullName("level")
+
+	level:setString(Strings:get("Strenghten_Text78", {
+		level = info.level
 	}))
+
+	local levelImageWidth = levelImage:getContentSize().width
+	local levelWidth = level:getContentSize().width
+
+	levelImage:setScaleX((levelWidth + 10) / levelImageWidth)
 end
 
 function SettingMediator:changePlayerSlogan()
@@ -473,57 +604,10 @@ function SettingMediator:changePlayerSlogan()
 	self._settingSystem:requestChangePlayerSlogan(newStr)
 end
 
-function SettingMediator:enterDownlandView(type)
-	local view = self:getInjector():getInstance("resourceDownloadPopView")
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		type = type
-	}))
-end
-
-function SettingMediator:refreshRightList()
-	if self._listView == nil then
-		return
-	end
-
-	self._listView:removeAllItems()
-	self._listView:setScrollBarEnabled(false)
-
-	local cloneCell = self._main:getChildByFullName("rightCellClone")
-
-	for i = 1, #kBtnRightList do
-		local isShow, pointShow = self[kBtnRightList[i].btnShow](self)
-
-		if isShow then
-			local cell = cloneCell:clone()
-
-			cell:getChildByName("Text"):setString(Strings:get(kBtnRightList[i].btnName))
-			cell:loadTextures(kBtnRightList[i].btnRes, kBtnRightList[i].btnRes, kBtnRightList[i].btnRes, ccui.TextureResType.plistType)
-			cell:getChildByName("redPoint"):setVisible(pointShow or false)
-			self:mapButtonHandlerClick(cell, kBtnRightList[i].callback)
-			self._listView:pushBackCustomItem(cell)
-		end
-	end
-end
-
 function SettingMediator:onClickClose(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		self:close()
 	end
-end
-
-function SettingMediator:downloadPortraitOver()
-	local targetNode = self._main:getChildByFullName("resourceDom.redPoint")
-
-	targetNode:setVisible(true)
-end
-
-function SettingMediator:downloadSoundCVOver()
-	local targetNode = self._main:getChildByFullName("soundDom.redPoint")
-
-	targetNode:setVisible(true)
 end
 
 function SettingMediator:onClickGameValueSet()
@@ -549,12 +633,6 @@ function SettingMediator:onClickChangeSlogan(sender, eventType)
 		self._sloganEditBox:setText("")
 		self._sloganEditBox:openKeyboard()
 	end
-end
-
-function SettingMediator:onClickBugFeedBack(sender, eventType)
-	local url = ConfigReader:getRecordById("ConfigValue", "GusetCenterURL").content
-
-	cc.Application:getInstance():openURL(url or "")
 end
 
 function SettingMediator:onClickGameAnnounce(sender, eventType)
@@ -607,100 +685,18 @@ function SettingMediator:onClickChangeHeadImg(sender, eventType)
 	end
 end
 
-function SettingMediator:onClickCheckInBtn()
-	local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
-
-	monthSignInSystem:tryEnter()
-end
-
-function SettingMediator:onClickBindPhoneBtn()
-	if SDKHelper and SDKHelper:isEnableSdk() then
-		SDKHelper:showBindPhone()
-	end
-end
-
-function SettingMediator:onClickSpinePortraitBtn()
-	self._settingSystem:downloadPortrait()
-end
-
-function SettingMediator:onClickSoundCVBtn()
-	self._settingSystem:downloadSoundCV()
-end
-
-function SettingMediator:onClickNaverCafeBtn()
-	local url = ConfigReader:getRecordById("ConfigValue", "NaverCafeURL").content
-
-	cc.Application:getInstance():openURL(url)
-end
-
-function SettingMediator:showDownloadReward(event)
-	self:refreshRightList()
-
-	local data = event:getData()
-
-	if data.rewards and #data.rewards > 0 then
-		local view = self:getInjector():getInstance("getRewardView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			maskOpacity = 0
-		}, {
-			rewards = data.rewards
-		}))
-	end
-end
-
 function SettingMediator:commitPlayerInfo()
 	local playerInfo = {
 		gender = self._playerGender,
 		city = self._playerArea,
 		birthday = self._playerBirthday,
-		tags = self._playerTags
+		tags = 0
 	}
 
 	self._settingSystem:requestUpdatePlayerInfo(playerInfo, function ()
 		cc.UserDefault:getInstance():setStringForKey("playerCity", self._playerArea)
-		self:showPlayerInfoView()
+		self:showSettingView()
 	end)
-end
-
-function SettingMediator:onClickSetSex()
-	local view = self:getInjector():getInstance("SetSexPopView")
-	local delegate = {}
-	local outSelf = self
-
-	function delegate:willClose(_, data)
-		if data then
-			outSelf._playerGender = data.playerGender
-
-			outSelf:commitPlayerInfo()
-		end
-	end
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		gender = self._playerGender
-	}, delegate))
-end
-
-function SettingMediator:onClickSetBirthDay()
-	local view = self:getInjector():getInstance("SetBirthdayPopView")
-	local delegate = {}
-	local outSelf = self
-
-	function delegate:willClose(_, data)
-		if data then
-			outSelf._playerBirthday = data.birthday
-
-			outSelf:commitPlayerInfo()
-		end
-	end
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		birthday = self._playerBirthday
-	}, delegate))
 end
 
 function SettingMediator:onClickSetArea()
@@ -747,29 +743,9 @@ function SettingMediator:onClickSetArea()
 	}, delegate))
 end
 
-function SettingMediator:onClickSetTags()
-	local view = self:getInjector():getInstance("SetTagsPopView")
-	local delegate = {}
-	local outSelf = self
-
-	function delegate:willClose(_, data)
-		if data then
-			outSelf._playerTags = data.playerTags
-
-			outSelf:commitPlayerInfo()
-		end
-	end
-
-	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		playerTags = self._playerTags
-	}, delegate))
-end
-
 function SettingMediator:onClickCopyPlayerID()
-	local player = self._developSystem:getPlayer()
-	local idStr = string.split(player:getRid(), "_")
+	local player = self._player
+	local idStr = string.split(player.id, "_")
 
 	if app.getDevice and app.getDevice() then
 		app.getDevice():copyStringToClipboard(idStr[1])
@@ -795,93 +771,229 @@ function SettingMediator:onClickBuyMonthCard()
 	})
 end
 
-function SettingMediator:parseTimeStr(timeStr)
-	local _tab = {}
-	local _str = nil
-	local strTab = string.split(timeStr, "-")
-	_tab.year = tonumber(strTab[1])
-	_tab.month = tonumber(strTab[2])
-	_tab.day = tonumber(strTab[3])
-	local tag = 0
-	local _compData = _tab.month * 100 + _tab.day
+function SettingMediator:onClickBtn(sender)
+	local name = sender:getName()
 
-	for k, v in ipairs(constellationAge) do
-		if v <= _compData then
-			tag = tag + 1
+	if name == "ok" then
+		self:onOkClicked()
+	elseif name == "sendMsg" then
+		self:onSendMsgClicked()
+	elseif name == "addFriend" then
+		self:onAddFriendClicked()
+	elseif name == "removeFriend" then
+		self:onRemoveFriendClicked()
+	elseif name == "addShield" then
+		self:onAddShieldClicked()
+	elseif name == "removeShield" then
+		self:onRemoveShieldClicked()
+	end
+end
+
+function SettingMediator:setButtonStatus()
+	if self._isSelf then
+		return
+	end
+
+	local chatBtn = self._main:getChildByName("btn_chat")
+	local btnOk = self._main:getChildByName("btn_Ok")
+	local friendBtn = self._main:getChildByName("btn_add")
+	local isShield = self._record:getBlock()
+	local isFriend = self._friendSystem:checkIsFriend(self._record:getRid())
+
+	if isShield then
+		chatBtn:setVisible(false)
+		btnOk:setVisible(false)
+		self:setButton(self._btnAddNode, Strings:get("RANK_REMOVE_SHIELD"), Strings:get("RANK_REMOVE_SHIELD_EN"), "removeShield")
+		friendBtn:setPositionX(btnOk:getPositionX())
+
+		return
+	end
+
+	if isFriend then
+		self:setButton(self._btnChatNode, Strings:get("SettingUI_05"), Strings:get("RANK_ADD_SHIELD_EN"), "addShield")
+		self:setButton(self._btnOkNode, Strings:get("RANK_REMOVE_FRIEND"), Strings:get("RANK_REMOVE_FRIEND_EN"), "removeFriend")
+		self:setButton(self._btnAddNode, Strings:get("RANK_CHAT"), Strings:get("UIFRIEND_EN_Faxiaoxi"), "sendMsg")
+	else
+		self:setButton(self._btnChatNode, Strings:get("SettingUI_05"), Strings:get("RANK_ADD_SHIELD_EN"), "addShield")
+		self:setButton(self._btnOkNode, Strings:get("RANK_CHAT"), Strings:get("UIFRIEND_EN_Faxiaoxi"), "sendMsg")
+		self:setButton(self._btnAddNode, Strings:get("RANK_ADD_FRIEND"), Strings:get("UIFRIEND_EN_Jiahaoyou"), "addFriend")
+	end
+end
+
+function SettingMediator:setButton(view, txt, txten, name)
+	view:getChildByName("txt"):setString(txt)
+	view:setName(name)
+end
+
+function SettingMediator:onSendMsgClicked()
+	if self._record.lastView ~= "friendChatView" then
+		local data = {
+			rid = self._record:getRid(),
+			nickname = self._record:getNickName(),
+			level = self._record:getLevel(),
+			combat = self._record:getCombat(),
+			headImage = self._record:getHeadId(),
+			vipLevel = self._record:getVipLevel(),
+			heroes = self._record:getHeroes(),
+			master = self._record:getMaster(),
+			clubName = self._record:getClubName(),
+			slogan = self._record:getSlogan(),
+			online = self._record:getOnline(),
+			lastOfflineTime = self._record:getLastOfflineTime(),
+			isFriend = self._record:getIsFriend(),
+			close = self._record:getIsFriend() == 1 and self._record:getFamiliarity() or nil,
+			leadStageId = self._record:getLeadStageId(),
+			leadStageLevel = self._record:getLeadStageLevel()
+		}
+
+		self._friendSystem:addRecentFriend(data)
+
+		local data = {
+			subTabType = 2,
+			selectFriendIndex = 1,
+			tabType = kFriendType.kRecent
+		}
+
+		self._friendSystem:tryEnter(data)
+	end
+
+	self:close()
+end
+
+function SettingMediator:onAddFriendClicked()
+	local record = Friend:new()
+
+	record:synchronize({
+		rid = self._record:getRid(),
+		nickname = self._record:getNickName(),
+		vip = self._record:getVipLevel(),
+		level = self._record:getLevel(),
+		combat = self._record:getCombat(),
+		headImage = self._record:getHeadId(),
+		clubName = self._record:getClubName()
+	})
+
+	local view = self:getInjector():getInstance("FriendAddPopView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, record))
+	self:close()
+end
+
+function SettingMediator:onOkClicked()
+	self:close()
+end
+
+function SettingMediator:onRemoveFriendClicked()
+	local outSelf = self
+	local delegate = {}
+
+	function delegate:willClose(popupMediator, data)
+		if data.response == AlertResponse.kOK then
+			outSelf._friendSystem:requestDeleteFriend(outSelf._record:getRid(), function ()
+				outSelf:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					duration = 0.35,
+					tip = Strings:get("Friend_Remove_Friend_Succ")
+				}))
+				outSelf:close()
+			end)
+		elseif data.response == AlertResponse.kCancel then
+			-- Nothing
 		end
 	end
 
-	if tag == 0 then
-		tag = 12
-	end
+	local data = {
+		title = Strings:get("UPDATE_UI7"),
+		title1 = Strings:get("UITitle_EN_Tishi"),
+		content = Strings:get("Friend_UI33"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
 
-	_str = Strings:get(constellation[tag])
-
-	return _tab, _str
+	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
 end
 
-function SettingMediator:isBindPhoneBtnShow()
-	local bindState = SDKHelper:readCacheValue("loginType")
+function SettingMediator:onAddShieldClicked()
+	local outSelf = self
+	local delegate = {}
 
-	return SDKHelper:isEnableSdk() and LOGIN_TYPE_GUEST == bindState
+	function delegate:willClose(popupMediator, data)
+		if data.response == AlertResponse.kOK then
+			outSelf:requestBlockUser(outSelf._record:getRid(), false)
+		elseif data.response == AlertResponse.kCancel then
+			-- Nothing
+		end
+	end
+
+	local data = {
+		title = Strings:get("UPDATE_UI7"),
+		title1 = Strings:get("UITitle_EN_Tishi"),
+		content = Strings:get("RANK_ADD_SHIELD_CONTENT"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
 end
 
-function SettingMediator:isGameAnnounceShow()
-	return false
+function SettingMediator:onRemoveShieldClicked()
+	local friendCount = self._friendSystem:getFriendModel():getFriendCount(kFriendType.kGame)
+	local maxCount = self._friendSystem:getFriendModel():getMaxFriendsCount()
+
+	if self._chatSystem:getBlockUserFriendStatus(self._record:getRid()) and maxCount <= friendCount then
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == AlertResponse.kOK then
+					outSelf:requestBlockUser(outSelf._record:getRid(), true)
+				elseif data.response == AlertResponse.kCancel then
+					-- Nothing
+				end
+			end
+		}
+		local data = {
+			title = Strings:get("UPDATE_UI7"),
+			title1 = Strings:get("UITitle_EN_Tishi"),
+			content = Strings:get("RANK_REMOVE_SHIELD_FRIENDFULL_CONTENT"),
+			sureBtn = {},
+			cancelBtn = {}
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
+
+		return
+	end
+
+	self:requestBlockUser(self._record:getRid(), true)
 end
 
-function SettingMediator:isBugFeedbackShow()
-	local urlData = ConfigReader:getRecordById("ConfigValue", "GusetCenterURL")
+function SettingMediator:requestBlockUser(shieldId, status)
+	local function callback(data)
+		if data then
+			local tips = self._chatSystem:getBlockUserStatus(shieldId) and Strings:get("Chat_ShieldSuccess_Tips") or Strings:get("Chat_ShieldCancel_Tips")
 
-	if urlData and urlData.content then
-		return true
+			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+				duration = 0.35,
+				tip = tips
+			}))
+			self._friendSystem:requestFriendsMainInfo()
+			self:close()
+		end
 	end
 
-	return false
-end
-
-function SettingMediator:isCheckInBtnShow()
-	return CommonUtils.GetSwitch("fn_check_in")
-end
-
-function SettingMediator:isSoundDomShow()
-	if not self._settingSystem:hasPackage() then
-		return false
+	if not status or not {} then
+		local block = {
+			shieldId
+		}
 	end
 
-	local isSoundCVDownloadOver = self._settingSystem:isSoundCVDownloadOver()
-	local isGetReward2 = self._settingSystem:gotSoundCVReward()
+	local unblock = status and {
+		shieldId
+	} or {}
 
-	if not isSoundCVDownloadOver then
-		return true
-	end
-
-	if not isGetReward2 then
-		return true, true
-	end
-
-	return false
-end
-
-function SettingMediator:isResourceDomShow()
-	if not self._settingSystem:hasPackage() then
-		return false
-	end
-
-	local isPortraitDownloadOver = self._settingSystem:isPortraitDownloadOver()
-	local isGetReward1 = self._settingSystem:gotPortraitReward()
-
-	if not isPortraitDownloadOver then
-		return true
-	end
-
-	if not isGetReward1 then
-		return true, true
-	end
-
-	return false
-end
-
-function SettingMediator:isNaverCafeShow()
-	return SDKHelper and SDKHelper:isEnableSdk()
+	self._chatSystem:requestBlockUser(block, unblock, callback)
 end

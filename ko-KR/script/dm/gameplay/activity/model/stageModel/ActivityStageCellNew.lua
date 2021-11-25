@@ -205,7 +205,7 @@ function ActivityStageCellNew:setCellState(selectPointId, id)
 		if self._pointType == kStageTypeMap.StoryPoint then
 			rewardPanel:setVisible(true)
 
-			if #self._rewards > 0 then
+			if self._rewards and #self._rewards > 0 then
 				local label = ccui.Text:create(self._getRewardStr, TTF_FONT_FZYH_R, 18)
 
 				label:setTextColor(cc.c3b(255, 255, 255))

@@ -907,5 +907,137 @@ all.Skill_SNGLSi_Death = {
 		return _env
 	end
 }
+all.Skill_SNGLSi_Unique_Activity = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			2800
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_SNGLSi"
+		}, main)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.RetainObject(_env, _env.TARGET)
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Speak(_env, _env.ACTOR, {
+				{
+					"SNGLSi_SlientNight_1",
+					3000
+				}
+			}, "", 0)
+			global.GroundEft(_env, _env.ACTOR, "Ground_SNGLSi")
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+		end)
+		exec["@time"]({
+			2067
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local i = global.Random(_env, 1, 3)
+			local summoned_name = nil
+
+			if i == 1 then
+				summoned_name = "SummonedSNGLSi1"
+			elseif i == 2 then
+				summoned_name = "SummonedSNGLSi2"
+			else
+				summoned_name = "SummonedSNGLSi3"
+			end
+
+			local SummonedSNGLSi = global.SummonEnemy(_env, _env.ACTOR, summoned_name, {
+				1,
+				0,
+				1
+			}, nil, {
+				9
+			})
+
+			if SummonedSNGLSi then
+				global.AddStatus(_env, SummonedSNGLSi, "SummonedSNGLSi123")
+			end
+		end)
+		exec["@time"]({
+			2750
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SummonedSNGLSi123")(_env, _env.unit) then
+				for _, unit in global.__iter__(global.EnemyUnits(_env, global.MARKED(_env, "BLTu"))) do
+					global.Kick(_env, unit, true)
+				end
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

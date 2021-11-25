@@ -1075,7 +1075,9 @@
         "RoleModel": "Model_XHMao_Wolf",
         "Sex": 1,
         "SkillRate": 0.0,
-        "SummonSurface": "",
+        "SummonSurface": [
+            "Model_XHMao_Wolf_animal"
+        ],
         "Type": "Summoned",
         "UniqueSkill": ""
     },

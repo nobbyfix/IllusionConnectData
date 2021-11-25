@@ -90,6 +90,33 @@ BaseRankRecord:has("_leadStageId", {
 BaseRankRecord:has("_leadStageLevel", {
 	is = "rw"
 })
+BaseRankRecord:has("_totalStar", {
+	is = "rw"
+})
+BaseRankRecord:has("_totalHeroes", {
+	is = "rw"
+})
+BaseRankRecord:has("_totalSurface", {
+	is = "rw"
+})
+BaseRankRecord:has("_maxStageLevel", {
+	is = "rw"
+})
+BaseRankRecord:has("_showHeroes", {
+	is = "rw"
+})
+BaseRankRecord:has("_rtkpRank", {
+	is = "rw"
+})
+BaseRankRecord:has("_rtpkScore", {
+	is = "rw"
+})
+BaseRankRecord:has("_stageArenaRank", {
+	is = "rw"
+})
+BaseRankRecord:has("_stageArenaScore", {
+	is = "rw"
+})
 
 function BaseRankRecord:initialize()
 	super.initialize(self)
@@ -107,6 +134,15 @@ function BaseRankRecord:initialize()
 	self._headFrame = ""
 	self._board = "ZTXChang"
 	self._surfaceId = nil
+	self._totalStar = 0
+	self._totalHeroes = 0
+	self._totalSurface = 0
+	self._maxStageLevel = 0
+	self._showHeroes = {}
+	self._rtkpRank = 0
+	self._rtpkScore = 0
+	self._stageArenaRank = 0
+	self._stageArenaScore = 0
 end
 
 function BaseRankRecord:synchronize(data)
@@ -150,6 +186,15 @@ function BaseRankRecord:synchronize(data)
 		self._block = data.block
 		self._leadStageId = data.leadStageId or ""
 		self._leadStageLevel = data.leadStageLevel or 0
+		self._totalStar = data.totalStar or 0
+		self._totalHeroes = data.totalHeroes or 0
+		self._totalSurface = data.totalSurface or 0
+		self._maxStageLevel = data.maxStageLevel or 0
+		self._showHeroes = data.showHeroes or {}
+		self._rtkpRank = data.rtkpRank or 0
+		self._rtpkScore = data.rtpkScore or 0
+		self._stageArenaRank = data.stageArenaRank or 0
+		self._stageArenaScore = data.stageArenaScore or 0
 	end
 end
 

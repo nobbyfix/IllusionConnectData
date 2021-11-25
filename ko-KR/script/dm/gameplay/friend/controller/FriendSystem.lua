@@ -738,3 +738,19 @@ function FriendSystem:getHasApplyList()
 
 	return {}
 end
+
+function FriendSystem:showFriendPlayerInfoView(rid, record)
+	local settingSystem = self:getInjector():getInstance(SettingSystem)
+
+	settingSystem:requestPlayerInfo(rid, function (response)
+		local data = response.data
+		local view = self:getInjector():getInstance("settingView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			player = data,
+			record = record
+		}))
+	end)
+end

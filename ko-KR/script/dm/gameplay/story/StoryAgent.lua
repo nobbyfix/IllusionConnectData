@@ -110,6 +110,7 @@ function BaseStoryAgent:_runScript(scriptname, setEnv, onEnd)
 		return
 	end
 
+	self._curPlayCount = 0
 	local context = self:getInjector():instantiate(StoryContext)
 
 	context:initGeneralVariables()
@@ -417,6 +418,66 @@ function BaseStoryAgent:getStoryAudioPlay(fileNameStr)
 	local isHasType, storyTypeStr = self:getStoryType(fileNameStr)
 
 	return cc.UserDefault:getInstance():getBoolForKey(storyTypeStr, false)
+end
+
+function BaseStoryAgent:calculateStoryTotalPlayCount(scriptName)
+	local hasBranch = 0
+	local allCount = 0
+	local path = "script/stories/" .. scriptName .. ".lua"
+	local content = io.readfile(path)
+
+	if not content then
+		path = "script/stories/" .. scriptName .. ".luac"
+		content = io.readfile(path)
+	end
+
+	if content then
+		local speakCount = 0
+
+		for i in string.gfind(content, "'speak'") do
+			speakCount = speakCount + 1
+		end
+
+		local printerCount = 0
+
+		for i in string.gfind(content, "'printerEffect'") do
+			printerCount = printerCount + 1
+		end
+
+		printerCount = printerCount * 0.5
+		local chooseCount = 0
+
+		for i in string.gfind(content, "'dialogueChoose'") do
+			chooseCount = chooseCount + 1
+		end
+
+		if chooseCount > 0 then
+			hasBranch = 1
+		end
+
+		local newsCount = 0
+
+		for i in string.gfind(content, "'newsNode'") do
+			newsCount = newsCount + 1
+		end
+
+		newsCount = newsCount * 0.5
+		allCount = speakCount + printerCount + chooseCount + newsCount
+	end
+
+	return allCount, hasBranch
+end
+
+function BaseStoryAgent:addStoryValidPlayCount()
+	self._curPlayCount = self._curPlayCount + 1
+end
+
+function BaseStoryAgent:getStoryStatisticsData(scriptname)
+	local data = {
+		amount = self._curPlayCount
+	}
+
+	return data
 end
 
 StoryAgent = class("StoryAgent", BaseStoryAgent)

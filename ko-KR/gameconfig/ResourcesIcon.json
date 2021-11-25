@@ -824,6 +824,23 @@
         "Shine": "",
         "Sicon": "ico_m_deepsea_stamina_2"
     },
+    "IR_DeepSeaStamina_Re": {
+        "Desc": "IR_DeepSeaStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_deepsea_stamina_1"
+        ],
+        "Licon": "ico_m_deepsea_stamina_1",
+        "Name": "IR_DeepSeaStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_deepsea_stamina_2"
+    },
     "IR_DetectiveStamina": {
         "Desc": "IR_DetectiveStamina_FunctionDesc",
         "LargeIcons": [
@@ -1400,6 +1417,23 @@
         "Shine": "",
         "Sicon": "ico_m_riddle_stamina_2"
     },
+    "IR_SilentNightStamina": {
+        "Desc": "IR_SilentNightStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_silentnight_stamina_1"
+        ],
+        "Licon": "ico_m_silentnight_stamina_1",
+        "Name": "IR_SilentNightStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_silentnight_stamina_2"
+    },
     "IR_SnowflakeStamina": {
         "Desc": "IR_SnowflakeStamina_FunctionDesc",
         "LargeIcons": [
@@ -1627,6 +1661,74 @@
         ],
         "Shine": "",
         "Sicon": "IR_HD_ZuoHeAcitvityStamina1"
+    },
+    "Memory_Activi_Puzzle_1": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activi_Puzzle_1_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_2": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activity_2_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_3": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activity_wsj_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_5": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activity_5_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
     },
     "PlayerHeroExp": {
         "Desc": "ResourcesIcon_PlayerHeroExp_Desc",

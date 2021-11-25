@@ -1205,12 +1205,7 @@ function ClubNewHallMediator:infoBtn(sender, eventType)
 			leadStageId = memberData:getLeadStageId(),
 			leadStageLevel = memberData:getLeadStageLevel()
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(memberData:getRid(), function (response)

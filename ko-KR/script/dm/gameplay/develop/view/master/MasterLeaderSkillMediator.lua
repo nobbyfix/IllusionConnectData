@@ -507,8 +507,7 @@ function MasterLeaderSkillMediator:refreshLeadStageCell(cell, skillInfo)
 		local style = {
 			fontName = TTF_FONT_FZYH_M
 		}
-		local attrDescs = skillProto:getAttrDescs(skillInfo.level, style) or {}
-		showText = attrDescs[1]
+		showText = SkillPrototype:getAttrEffectDesc(skillInfo.skillVId, skillInfo.level, style)
 	end
 
 	local label2 = ccui.RichText:createWithXML(showText, {})

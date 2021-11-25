@@ -369,12 +369,7 @@ function FriendFindMediator:getPushFriendInfo(data)
 			leadStageId = data:getLeadStageId(),
 			leadStageLevel = data:getLeadStageLevel()
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)

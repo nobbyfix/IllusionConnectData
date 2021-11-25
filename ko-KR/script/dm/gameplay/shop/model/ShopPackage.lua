@@ -320,3 +320,7 @@ end
 function ShopPackage:getGameCoin()
 	return self._config.GameCoin
 end
+
+function ShopPackage:getCondition()
+	return self._config.Condition
+end

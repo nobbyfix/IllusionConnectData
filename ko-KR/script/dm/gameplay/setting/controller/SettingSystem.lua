@@ -1006,6 +1006,14 @@ end
 function SettingSystem:getHomeBgId()
 	local defValue = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HomeBackground_Default", "content")
 	local value = cc.UserDefault:getInstance():getStringForKey("HomeViewBG_ID", defValue)
+	local config = ConfigReader:getRecordById("HomeBackground", value)
+
+	if not config then
+		value = defValue
+
+		self:setHomeBgId(value)
+	end
+
 	local limitId = self:getLimitTimeBg()
 
 	return limitId or value
@@ -1107,6 +1115,8 @@ end
 
 function SettingSystem:requestUpdatePlayerInfo(playerInfo, callback)
 	self._settingService:requestUpdatePlayerInfo(playerInfo, true, function (response)
+		dump(response, "response >>>>>>>>>>")
+
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Set_PlayerInfo_Suc")
@@ -1224,6 +1234,22 @@ function SettingSystem:dealWeatherData(data)
 
 		self._settingModel:setWeatherData(_weatherData)
 	end
+end
+
+function SettingSystem:requestPlayerInfo(rid, callback)
+	local params = {
+		rid = rid
+	}
+
+	self._settingService:requestPlayerInfo(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_GET_PLAYER_INFO_SUCC))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end, false)
 end
 
 KTabType = {
@@ -1440,4 +1466,29 @@ function SettingSystem:checkCondition(unlockCondition)
 	end
 
 	return isOK, argeNum
+end
+
+function SettingSystem:tryEnter(rid)
+	self:requestPlayerInfo(rid, function (response)
+		local data = response.data
+		local view = self:getInjector():getInstance("settingView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			player = data
+		}))
+	end)
+end
+
+function SettingSystem:changeShowHero(param, callback)
+	local params = {
+		heroes = param
+	}
+
+	self._settingService:changeShowHero(params, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response)
+		end
+	end, true)
 end
