@@ -651,6 +651,7 @@ function ActivityPointDetailNewMediator:onChallenge()
 	}, function (rsdata)
 		if rsdata.resCode == GS_SUCCESS then
 			local function endFunc()
+				self:close()
 				self._activitySystem:enterActstageBattle(rsdata.data, activityId, subActivityId)
 			end
 
@@ -662,7 +663,6 @@ function ActivityPointDetailNewMediator:onChallenge()
 
 			storyAgent:setSkipCheckSave(false)
 			storyAgent:trigger(storynames, nil, endFunc)
-			self:close()
 		end
 	end, true)
 end
