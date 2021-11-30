@@ -38,6 +38,16 @@ local kBtnRightList = {
 	},
 	{
 		btnRes = "sz_btn_grxx_wtfk.png",
+		btnShow = "isAccountCenterBtnShow",
+		btnName = "setting_ui_AccountCenter",
+		id = "accountBtn",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickAccountCenterBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_wtfk.png",
 		btnShow = "isBugFeedbackShow",
 		btnName = "Setting_Text26",
 		id = "bugFeedback",
@@ -53,6 +63,16 @@ local kBtnRightList = {
 		callback = {
 			clickAudio = "Se_Click_Common_2",
 			func = "onClickCheckInBtn"
+		}
+	},
+	{
+		btnRes = "sz_btn_grxx_wtfk.png",
+		btnShow = "isQuestionBtnShow",
+		btnName = "setting_ui_QuestionBtn",
+		id = "questionBtn",
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickQuestionBtn"
 		}
 	},
 	{
@@ -528,6 +548,18 @@ function GameValueSetMediator:isResourceDomShow()
 	return false
 end
 
+function GameValueSetMediator:isAccountCenterBtnShow()
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		return true
+	end
+
+	return false
+end
+
+function GameValueSetMediator:isQuestionBtnShow()
+	return false
+end
+
 function GameValueSetMediator:onClickGameAnnounce(sender, eventType)
 	if CommonUtils.GetSwitch("fn_announce_check_in") then
 		local view = self:getInjector():getInstance("serverAnnounceViewNew")
@@ -546,6 +578,20 @@ function GameValueSetMediator:onClickGameAnnounce(sender, eventType)
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("HeroStory_Team_UI1")
 		}))
+	end
+end
+
+function GameValueSetMediator:onClickQuestionBtn(sender, eventType)
+	if eventType == ccui.TouchEventType.ended and SDKHelper and SDKHelper:isEnableSdk() then
+		local url = ConfigReader:getDataByNameIdAndKey("ConfigValue", "SDK_Question_URL", "content") or "https://www.qidian.com/"
+
+		SDKHelper:userQuestion(url)
+	end
+end
+
+function GameValueSetMediator:onClickAccountCenterBtn(sender, eventType)
+	if eventType == ccui.TouchEventType.ended and SDKHelper and SDKHelper:isEnableSdk() then
+		SDKHelper:userCenterByPwrdView()
 	end
 end
 
@@ -586,11 +632,10 @@ function GameValueSetMediator:showDownloadReward(event)
 end
 
 function GameValueSetMediator:onClickBugFeedBack(sender, eventType)
-	local baseVersion = app.pkgConfig.packJobId
-	local CSD_CLIENT_VERSION = 3560
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		local player = self._developSystem:getPlayer()
 
-	if SDKHelper and SDKHelper:isEnableSdk() and CSD_CLIENT_VERSION < tonumber(baseVersion) then
-		SDKHelper:showCustomerService()
+		SDKHelper:openAIHelpElva(tostring(player:getRid()), player:getNickName(), self._developSystem:getServerId())
 	else
 		local CSDHelper = require("sdk.CSDHelper")
 		local player = self._developSystem:getPlayer()
