@@ -60,12 +60,6 @@ function BattleMasterWidget:setupView(view)
 	end
 
 	view:setVisible(false)
-
-	if not self._skillStSchedule then
-		self._skillStSchedule = LuaScheduler:getInstance():schedule(function ()
-			self:checkSkillState()
-		end, 0.01, true)
-	end
 end
 
 function BattleMasterWidget:StackSkill(skillId, stacknum, totalnum)

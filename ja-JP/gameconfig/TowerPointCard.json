@@ -1998,9 +1998,26 @@
         ]
     },
     "SNGLSi": {
-        "Reward": {},
-        "RewardNumShow": [],
-        "Tower_1_Weight": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
         "Tower_2_Weight": [
             1.05,
             0.3,
@@ -2008,9 +2025,26 @@
         ]
     },
     "SP_ALPo": {
-        "Reward": {},
-        "RewardNumShow": [],
-        "Tower_1_Weight": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
         "Tower_2_Weight": [
             1.05,
             0.3,
