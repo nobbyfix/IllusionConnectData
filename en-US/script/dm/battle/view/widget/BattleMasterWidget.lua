@@ -267,10 +267,6 @@ function BattleMasterWidget:onClickedSkill(sender, eventType)
 			return
 		end
 
-		if self._executingcancel then
-			return
-		end
-
 		if sender.skillEnabled then
 			self:executeSkill(sender)
 		end
