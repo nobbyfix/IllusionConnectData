@@ -4099,6 +4099,66 @@
         "bustAwakeZoom": 0.96,
         "bustZoom": 1.0
     },
+    "Model_CLMan_minigame": {
+        "Animation": "",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": "",
+        "BustAwake2": "",
+        "BustTemp1": "",
+        "BustTemp2": "",
+        "BustTemp3": "",
+        "BustTemp4": "",
+        "BustTemp5": "",
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "",
+        "HpTierCount": "",
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "chaliman_minigame",
+        "Name": "",
+        "Path": "",
+        "PicType": "",
+        "Portrait": "",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": "",
+        "SoundVoice": "",
+        "SoundVoiceCondition": "",
+        "SoundVoiceText": "",
+        "Tag": "",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": "",
+        "Type": "",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": "",
+        "bustAwakeZoom": "",
+        "bustZoom": ""
+    },
     "Model_CLMan_uniform": {
         "Animation": "nna_uniform",
         "BattlePosition": "HeroBase_BattlePosition_CLMan",
@@ -10627,6 +10687,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 1.0,
         "bustZoom": 1.0
+    },
+    "Model_FEMSi_wvt": {
+        "Animation": "xlte_wvt",
+        "BattlePosition": "HeroBase_BattlePosition_FEMSi",
+        "BattleShow": "",
+        "Bust1": "Bust1_FEMSi_wvt",
+        "Bust10": "Bust10_FEMSi_wvt",
+        "Bust11": "Bust11_FEMSi_wvt",
+        "Bust12": "Bust12_FEMSi_wvt",
+        "Bust13": "Bust13_FEMSi_wvt",
+        "Bust14": "Bust14_FEMSi_wvt",
+        "Bust15": "Bust15_FEMSi_wvt",
+        "Bust16": "Bust16_FEMSi_wvt",
+        "Bust2": "Bust2_FEMSi_wvt",
+        "Bust3": "Bust3_FEMSi_wvt",
+        "Bust4": "Bust4_FEMSi_wvt",
+        "Bust5": "Bust5_FEMSi_wvt",
+        "Bust6": "Bust6_FEMSi_wvt",
+        "Bust7": "Bust7_FEMSi_wvt",
+        "Bust8": "Bust8_FEMSi_wvt",
+        "Bust9": "Bust9_FEMSi_wvt",
+        "BustAwake": [
+            53,
+            -279
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            93,
+            -492
+        ],
+        "BustTemp2": [
+            100,
+            -506
+        ],
+        "BustTemp3": [
+            100,
+            -506
+        ],
+        "BustTemp4": [
+            100,
+            -506
+        ],
+        "BustTemp5": [
+            100,
+            -506
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_xlte_wvt",
+        "DeathVoice": "",
+        "Filename": "portrait_xlte_wvt",
+        "HeadMain": "HeadMain_FEMSi_wvt",
+        "Height": 200,
+        "Hero": "FEMSi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FEMSi",
+        "MasterHeadWide": "",
+        "Model": "xlte_wvt",
+        "Name": "HeroBase_Name_FEMSi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_FEMSi",
+        "SVPText": "SVPText_FEMSi",
+        "SkillRange": "AllUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "FEMSi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FEMSi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_mubiao"
+        ],
+        "TruthBubble": [
+            "Truth_FEMSi_1",
+            "Truth_FEMSi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.58,
+        "bustZoom": 0.78
     },
     "Model_FGao": {
         "Animation": "dmse",
@@ -24768,6 +24921,99 @@
         "bustAwakeZoom": 0.62,
         "bustZoom": 0.92
     },
+    "Model_PSKe": {
+        "Animation": "hdie",
+        "BattlePosition": "HeroBase_BattlePosition_PSKe",
+        "BattleShow": "",
+        "Bust1": "Bust1_PSKe",
+        "Bust10": "Bust10_PSKe",
+        "Bust11": "Bust11_PSKe",
+        "Bust12": "Bust12_PSKe",
+        "Bust13": "Bust13_PSKe",
+        "Bust14": "Bust14_PSKe",
+        "Bust15": "Bust15_PSKe",
+        "Bust16": "",
+        "Bust2": "Bust2_PSKe",
+        "Bust3": "Bust3_PSKe",
+        "Bust4": "Bust4_PSKe",
+        "Bust5": "Bust5_PSKe",
+        "Bust6": "Bust6_PSKe",
+        "Bust7": "Bust7_PSKe",
+        "Bust8": "Bust8_PSKe",
+        "Bust9": "Bust9_PSKe",
+        "BustAwake": [
+            -29,
+            -217
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            68,
+            -305
+        ],
+        "BustTemp2": [
+            73,
+            -327
+        ],
+        "BustTemp3": [
+            74,
+            -327
+        ],
+        "BustTemp4": [
+            74,
+            -327
+        ],
+        "BustTemp5": [
+            74,
+            -327
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_hdie",
+        "DeathVoice": "",
+        "Filename": "portrait_hdie",
+        "HeadMain": "HeadMain_PSKe",
+        "Height": 200,
+        "Hero": "PSKe",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_PSKe",
+        "MasterHeadWide": "",
+        "Model": "hdie",
+        "Name": "HeroBase_Name_PSKe",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_PSKe",
+        "SVPText": "SVPText_PSKe",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "PSKe",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_PSKe",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_PSKe"
+        ],
+        "TruthBubble": [
+            "Truth_PSKe_1",
+            "Truth_PSKe_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.65,
+        "bustZoom": 0.8
+    },
     "Model_QBTe": {
         "Animation": "qmi",
         "BattlePosition": "HeroBase_BattlePosition_QBTe",
@@ -25761,6 +26007,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.76,
         "bustZoom": 0.76
+    },
+    "Model_SGBao": {
+        "Animation": "byu",
+        "BattlePosition": "HeroBase_BattlePosition_SGBao",
+        "BattleShow": "",
+        "Bust1": "Bust1_SGBao",
+        "Bust10": "Bust10_SGBao",
+        "Bust11": "Bust11_SGBao",
+        "Bust12": "Bust12_SGBao",
+        "Bust13": "Bust13_SGBao",
+        "Bust14": "Bust14_SGBao",
+        "Bust15": "Bust15_SGBao",
+        "Bust16": "",
+        "Bust2": "Bust2_SGBao",
+        "Bust3": "Bust3_SGBao",
+        "Bust4": "Bust4_SGBao",
+        "Bust5": "Bust5_SGBao",
+        "Bust6": "Bust6_SGBao",
+        "Bust7": "Bust7_SGBao",
+        "Bust8": "Bust8_SGBao",
+        "Bust9": "Bust9_SGBao",
+        "BustAwake": [
+            -86,
+            -416
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            32,
+            -499
+        ],
+        "BustTemp2": [
+            40,
+            -520
+        ],
+        "BustTemp3": [
+            40,
+            -520
+        ],
+        "BustTemp4": [
+            40,
+            -520
+        ],
+        "BustTemp5": [
+            40,
+            -520
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_byu",
+        "DeathVoice": "",
+        "Filename": "portrait_byu",
+        "HeadMain": "HeadMain_SGBao",
+        "Height": 200,
+        "Hero": "SGBao",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_SGBao",
+        "MasterHeadWide": "",
+        "Model": "byu",
+        "Name": "HeroBase_Name_SGBao",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_SGBao",
+        "SVPText": "SVPText_SGBao",
+        "SkillRange": "ColUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "SGBao",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_SGBao",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_SGBao"
+        ],
+        "TruthBubble": [
+            "Truth_SGBao_1",
+            "Truth_SGBao_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.65,
+        "bustZoom": 0.74
     },
     "Model_SGHQShou": {
         "Animation": "SanGeHuoQiangShou",

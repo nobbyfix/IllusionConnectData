@@ -191,6 +191,14 @@ function EnergyReservoir:update(dt, count, speedScale)
 		end
 	end
 
+	if changed then
+		return {
+			self._energy,
+			self._tmpEnergy * 0.001,
+			self._immediateSpeed
+		}
+	end
+
 	if isKeyframe then
 		return {
 			self._energy,

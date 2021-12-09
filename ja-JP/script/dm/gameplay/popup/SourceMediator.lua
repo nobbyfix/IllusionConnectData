@@ -385,11 +385,6 @@ function SourceMediator:createCell(cell, index)
 	desc:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 	local goBtn = cell:getChildByName("btn_go")
-	local lbText = goBtn:getChildByName("Text_btn")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
-
 	local notopenImg = cell:getChildByName("Image_notopen")
 
 	desc:setVisible(false)
@@ -589,15 +584,7 @@ function SourceMediator:setBlockPanel(blockPanel, params)
 
 	local wipeOne = blockPanel:getChildByName("btn_wipeone")
 	local wipeMulti = blockPanel:getChildByName("btn_wipemulti")
-	local lbText = wipeOne:getChildByName("Text_btn")
 
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
-
-	local lbText = wipeMulti:getChildByName("Text_btn")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
 	wipeOne:setVisible(false)
 	wipeMulti:setVisible(false)
 	self:createFallItems(blockPanel, blockConfig)

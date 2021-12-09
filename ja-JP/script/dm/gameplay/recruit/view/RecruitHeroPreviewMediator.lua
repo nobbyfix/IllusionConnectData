@@ -67,6 +67,7 @@ function RecruitHeroPreviewMediator:onRegister()
 end
 
 function RecruitHeroPreviewMediator:enterWithData(data)
+	self._data = data
 	self._heroType = 1
 	self._showType = {}
 	self._recruitPool = data.recruitPool
@@ -596,6 +597,17 @@ function RecruitHeroPreviewMediator:setItemsView()
 	end
 end
 
+function RecruitHeroPreviewMediator:isRichText(string)
+	local str = "<font"
+	local count = string:find(str)
+
+	if count ~= nil then
+		return true
+	else
+		return false
+	end
+end
+
 function RecruitHeroPreviewMediator:setDescView()
 	local id = self._recruitPool:getId()
 	local cardType = self._recruitPool:getType()
@@ -611,10 +623,15 @@ function RecruitHeroPreviewMediator:setDescView()
 
 		local text1 = self._descPanel:getChildByName("text1")
 
-		text1:setAnchorPoint(cc.p(0, 0))
-		text1:changeParent(layout):posite(0, 0):setName("text")
-		text1:getVirtualRenderer():setDimensions(747, 0)
+		text1:setString("")
 
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:addTo(layout):posite(0, 0):setName("text")
+		richText:renderContent(740, 0)
+
+		listView.descLayout = layout
 		local richText = ccui.RichText:createWithXML("", {})
 
 		richText:setAnchorPoint(cc.p(0, 0))
@@ -623,47 +640,70 @@ function RecruitHeroPreviewMediator:setDescView()
 		listView.descLayout = layout
 	end
 
+	local function convertRichText(string)
+		if not self:isRichText(string) then
+			local rtStr = "<outline color='#000000' size = '1'><font face='${fontName}'  size='18' color='#C3C3C3'>${text}</font></outline>"
+			local templateStr = TextTemplate:new(rtStr)
+			string = templateStr:stringify({
+				fontName = TTF_FONT_FZYH_R,
+				text = string
+			})
+		end
+
+		return string
+	end
+
+	local heroes = self._data.heroes or {}
+	local params = {}
+
+	for i, v in pairs(heroes) do
+		local nameId = ConfigReader:getDataByNameIdAndKey("HeroBase", v, "Name")
+		local name = Strings:get(nameId)
+		params["DrawHeroName" .. i] = name
+	end
+
+	params.fontName = TTF_FONT_FZYH_R
 	local text1 = listView.descLayout:getChildByName("text")
 
 	self._descPanel:getChildByName("text2"):setString("")
 
-	if descList and #descList then
-		local string = Strings:get(descList[1])
+	if cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+		text1:setString(convertRichText(Strings:get("Recruit_UI22") .. "\n" .. Strings:get("Recruit_UI23")))
+	elseif cardType == RecruitPoolType.kActivityUREquip then
+		text1:setString(convertRichText(Strings:get(self._recruitPool:getRareTitle())))
+	elseif descList and #descList then
+		local string = Strings:get(descList[1], params)
+		string = convertRichText(string)
 
 		for i = 2, #descList do
-			string = string .. "\n" .. Strings:get(descList[i])
+			local str = Strings:get(descList[i], params)
+			string = string .. "<br/>" .. convertRichText(str)
 		end
 
 		text1:setString(string)
+	else
+		text1:setString(convertRichText(Strings:get("Recruit_UI14") .. "\n" .. Strings:get("Recruit_UI15")))
 	end
 
-	if cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
-		text1:setString(Strings:get("Recruit_UI22") .. "\n" .. Strings:get("Recruit_UI23"))
-	elseif cardType == RecruitPoolType.kActivityUREquip then
-		text1:setString(Strings:get(self._recruitPool:getRareTitle()))
-	end
+	text1:renderContent(750, 0)
 
 	local specialText = listView.descLayout:getChildByName("special_text")
 	local specialList = self._recruitPool:getSpecialDescList()
 
 	if specialList and #specialList > 0 then
-		local string = Strings:get(specialList[1], {
-			fontName = TTF_FONT_FZYH_M
-		})
+		local string = convertRichText(Strings:get(specialList[1], params))
 
 		for i = 2, #specialList do
-			string = string .. "<br/>" .. Strings:get(specialList[i], {
-				fontName = TTF_FONT_FZYH_M
-			})
+			string = string .. "<br/>" .. convertRichText(Strings:get(specialList[i], params))
 		end
 
 		specialText:setString(string)
-		specialText:renderContent(747, 0)
+		specialText:renderContent(750, 0)
 	end
 
 	local specialSize = specialText:getContentSize()
 
-	listView.descLayout:setContentSize(cc.size(748, text1:getContentSize().height + specialSize.height))
+	listView.descLayout:setContentSize(cc.size(760, text1:getContentSize().height + specialSize.height))
 	text1:setPositionY(specialSize.height)
 
 	local descData = self._previewData[TabType.kDesc]
@@ -684,10 +724,10 @@ function RecruitHeroPreviewMediator:setDescView()
 
 	if #data >= 4 then
 		listView:setPositionY(100)
-		listView:setContentSize(cc.size(748, 135))
+		listView:setContentSize(cc.size(760, 135))
 	else
 		listView:setPositionY(136)
-		listView:setContentSize(cc.size(748, 160))
+		listView:setContentSize(cc.size(760, 160))
 	end
 
 	for i = 1, 4 do

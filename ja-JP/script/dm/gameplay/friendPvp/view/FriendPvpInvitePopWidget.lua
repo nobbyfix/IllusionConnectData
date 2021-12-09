@@ -34,11 +34,6 @@ function FriendPvpInvitePopWidget:onInit()
 	self._main = self:getView():getChildByName("main")
 	self._refuseBtn = self._main:getChildByName("btn_refuse")
 	self._agreeBtn = self._main:getChildByName("btn_agree")
-	local lbText = self._agreeBtn:getChildByFullName("Text_212")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
-
 	self._checkBox = self._main:getChildByName("CheckBox")
 
 	local function agreeFunc()

@@ -835,6 +835,25 @@
             "type": "limit"
         }
     },
+    "ShopSurface_Surface_XBKLDi_2": {
+        "BackGroundImg": "sd_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2002,
+        "Surface": "Surface_XBKLDi_2",
+        "TimeType": {
+            "end": "2021-12-29 05:00:00",
+            "start": "2021-12-24 05:00:00",
+            "type": "limit"
+        }
+    },
     "ShopSurface_Surface_XHMao_2": {
         "BackGroundImg": "sd_bg",
         "ClientCondition": "",
@@ -908,6 +927,25 @@
         "TimeType": {
             "end": "2020-12-02 05:00:00",
             "start": "2020-11-30 05:00:00",
+            "type": "limit"
+        }
+    },
+    "ShopSurface_Surface_YSTLu_2": {
+        "BackGroundImg": "sd_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2002,
+        "Surface": "Surface_YSTLu_2",
+        "TimeType": {
+            "end": "2021-12-21 05:00:00",
+            "start": "2021-12-16 05:00:00",
             "type": "limit"
         }
     },

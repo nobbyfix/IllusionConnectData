@@ -308,10 +308,7 @@ function ExploreBagMediator:createCell(cell, index)
 			desc:setString(itemData:getFunctionDesc())
 
 			local useBtn = bagCell2:getChildByName("useBtn")
-			local lbText = useBtn:getChildByFullName("name")
 
-			lbText:disableEffect(1)
-			lbText:setTextColor(cc.c3b(0, 0, 0))
 			useBtn:setVisible(self._curTabType == 2)
 
 			if useBtn:isVisible() then

@@ -1271,6 +1271,11 @@ local mappings = {
 		name = "ActivityEggRewardMediator",
 		type = "@C"
 	},
+	ActivityPointDetailRuleMediator = {
+		url = "dm.gameplay.activity.view.ActivityPointDetailRuleMediator",
+		name = "ActivityPointDetailRuleMediator",
+		type = "@C"
+	},
 	ActivityFireMainMediator = {
 		url = "dm.gameplay.activity.view.ActivityFireMainMediator",
 		name = "ActivityFireMainMediator",
@@ -2486,6 +2491,26 @@ local mappings = {
 		name = "EVT_DARTS_PASSGAME_SUCC",
 		type = "@V"
 	},
+	EVT_JUMP_PLAYAGAIN = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_PLAYAGAIN",
+		type = "@V"
+	},
+	EVT_JUMP_RESULTCLOSE = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_RESULTCLOSE",
+		type = "@V"
+	},
+	EVT_JUMP_REWARDCONFIRM = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_REWARDCONFIRM",
+		type = "@V"
+	},
+	EVT_JUMP_QUIT_SUCC = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_QUIT_SUCC",
+		type = "@V"
+	},
 	EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS = {
 		url = "dm.gameplay.miniGame.MiniGameConfig",
 		name = "EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS",
@@ -2565,6 +2590,11 @@ local mappings = {
 		url = "dm.gameplay.miniGame.MiniGameConfig",
 		name = "EVT_CLUB_MINIGAME_SWEEEP_SCUESS",
 		type = "@V"
+	},
+	JumpMediator = {
+		url = "dm.gameplay.miniGame.view.jump.JumpMediator",
+		name = "JumpMediator",
+		type = "@C"
 	},
 	MiniGameRankMediator = {
 		url = "dm.gameplay.miniGame.view.common.MiniGameRankMediator",

@@ -268,6 +268,33 @@ CombatChangeAction = ccSequenceAction("CombatChangeAction", function (time, func
 		cc.Sequence:create(moveFadeAct, delayAction, fade_out, callbackFunc)
 	}
 end)
+UpDownAction = ccSequenceAction("UpDownAction", function (time, changeHeight)
+	time = time or 0.5
+	changeHeight = changeHeight or 10
+
+	return {
+		cc.Spawn:create(cc.MoveBy:create(time, cc.p(0, -changeHeight)), cc.FadeOut:create(time)),
+		cc.Spawn:create(cc.MoveBy:create(time, cc.p(0, changeHeight)), cc.FadeIn:create(time))
+	}
+end)
+UpDownActionWithNoFade = ccSequenceAction("UpDownActionWithNoFade", function (time, changeHeight)
+	time = time or 0.5
+	changeHeight = changeHeight or 10
+
+	return {
+		cc.MoveBy:create(time, cc.p(0, -changeHeight)),
+		cc.MoveBy:create(time, cc.p(0, changeHeight))
+	}
+end)
+LeftRightAction = ccSequenceAction("LeftRightAction", function (time, changeWidth)
+	time = time or 0.5
+	changeWidth = changeWidth or 10
+
+	return {
+		cc.MoveBy:create(time, cc.p(-changeWidth, 0)),
+		cc.MoveBy:create(time, cc.p(changeWidth, 0))
+	}
+end)
 TweenActionImpl = class("TweenActionImpl", objectlua.Object)
 TweenAction = ccAction("TweenAction", TweenActionImpl)
 

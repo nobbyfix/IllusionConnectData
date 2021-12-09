@@ -75,6 +75,14 @@ function exports.ApplyEnergyRecovery(env, player, energy)
 	env.global.RecordImmediately(env, player:getId(), "SyncERecovery", energyInfo)
 end
 
+function exports.ShowGrayEnergyEffect(env, player, isShow)
+	if not player then
+		return
+	end
+
+	env.global.RecordImmediately(env, player:getId(), "ShowGrayEnergyEffect", isShow)
+end
+
 function exports.Recruit(env, cardfilter, location, cost)
 	local player = env["$actor"]:getOwner()
 	local battleField = env.global["$BattleContext"]:getObject("BattleField")

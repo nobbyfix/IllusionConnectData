@@ -82,6 +82,33 @@ function BattleEnergyBar:_setupEnergyLabel(view)
 	self._oldEnergy = 0
 end
 
+function BattleEnergyBar:setBarGray(isGray)
+	self:getView():getChildByFullName("bar_node"):setGray(isGray)
+
+	local circleNode = self:getView():getChildByFullName("energy_circle")
+
+	circleNode:setVisible(not isGray)
+
+	local energy_bg = self:getView():getChildByFullName("energy_bg")
+
+	energy_bg:setVisible(not isGray)
+
+	if not self._shuiMoClip then
+		self._shuiMoClip = cc.MovieClip:create("shuimo_shuijingtiaoman")
+
+		self._shuiMoClip:addTo(circleNode:getParent())
+		self._shuiMoClip:setPosition(circleNode:getPosition())
+		self._shuiMoClip:setLocalZOrder(-1)
+		self._shuiMoClip:offset(7, -3)
+
+		self._shuimoAnim = self._shuiMoClip:getChildByName("clip")
+
+		self._shuimoAnim:gotoAndStop(1)
+	end
+
+	self._shuiMoClip:setVisible(isGray)
+end
+
 function BattleEnergyBar:_setupBarNode(view)
 	local record = {}
 
@@ -297,6 +324,10 @@ function BattleEnergyBar:_updateBarNodes()
 			end
 
 			circle:gotoAndStop(math.max(1, math.floor(remain * 30)))
+
+			if self._shuiMoClip then
+				self._shuimoAnim:gotoAndStop(math.max(1, math.floor(remain * 20)))
+			end
 		elseif circle then
 			self._circleAnims[i] = nil
 		end

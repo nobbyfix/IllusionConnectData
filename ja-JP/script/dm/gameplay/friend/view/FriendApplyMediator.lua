@@ -221,8 +221,6 @@ function FriendApplyMediator:refreshCell(cell, index)
 	local agreeBtn = cell:getChildByName("btn_agree")
 	local text1 = agreeBtn:getChildByName("text")
 
-	text1:disableEffect(1)
-	text1:setTextColor(cc.c3b(0, 0, 0))
 	text1:setAdditionalKerning(8)
 
 	local function agreeCallFunc(sender, eventType)

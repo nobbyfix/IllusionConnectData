@@ -392,7 +392,9 @@ end
 
 function BattleRTPKEmoteWidget:removeView()
 	if self._view then
-		self._view:removeFromParent(true)
+		if not tolua.isnull(self._view) then
+			self._view:removeFromParent(true)
+		end
 
 		self._view = nil
 	end

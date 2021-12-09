@@ -1034,6 +1034,12 @@
             150
         ]
     },
+    "BuyShowHero": {
+        "clz": "string[]",
+        "content": [
+            "TPGZhu"
+        ]
+    },
     "CDKey_Dif": {
         "clz": "string",
         "content": "#"
@@ -3812,7 +3818,8 @@
             "LFKLFTe",
             "BHTZi",
             "AMLBLTe",
-            "XLDBLTe"
+            "XLDBLTe",
+            "SGBao"
         ]
     },
     "HeroStar_BoxNum": {
@@ -6259,11 +6266,11 @@
     },
     "MergeClubNameMailId": {
         "clz": "string",
-        "content": "Mail_MergeClubName20210630"
+        "content": "Mail_MergeClubName_1"
     },
     "MergeSysMailId": {
         "clz": "string",
-        "content": "Mail_MergeReward20210630"
+        "content": "Mail_MergeReward_1"
     },
     "MonthCardForever_Desc": {
         "clz": "string",
@@ -9536,7 +9543,9 @@
             "XXFSi",
             "CKFSJi",
             "SSBYa",
-            "MDSi"
+            "MDSi",
+            "SGBao",
+            "PSKe"
         ]
     },
     "Tower_1_GrowMaxValue": {

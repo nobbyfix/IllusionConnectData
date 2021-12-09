@@ -2185,6 +2185,45 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15108_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Decoration_DEF_DH",
+        "Desc": "CO_Decoration_15108_2_Desc",
+        "HP": "UR_Decoration_HP_DH",
+        "Icon": "ico_equip_bxzyiaccess",
+        "Name": "Decoration_15108_2_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Cure"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15108_2",
+        "Sort": 299044,
+        "StartEquipEndID": "Rareity15_DecorationStone2_8",
+        "StartEquipStarID": "Rareity15_DecorationStone2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -3914,6 +3953,45 @@
         "Sort": 299028,
         "StartEquipEndID": "Rareity15_Shoes2_8",
         "StartEquipStarID": "Rareity15_Shoes2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15109_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15109_3_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_sczyishoes",
+        "Name": "Shoes_15109_3_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Cure"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15109_3",
+        "Sort": 299043,
+        "StartEquipEndID": "Rareity15_Shoes3_8",
+        "StartEquipStarID": "Rareity15_Shoes3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -5990,6 +6068,45 @@
         "Sort": 299027,
         "StartEquipEndID": "Rareity15_Top2_8",
         "StartEquipStarID": "Rareity15_Top2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15109_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15109_3_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_yxzyicloth",
+        "Name": "Tops_15109_3_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Cure"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15109_3",
+        "Sort": 299042,
+        "StartEquipEndID": "Rareity15_Top3_8",
+        "StartEquipStarID": "Rareity15_Top3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -8979,6 +9096,46 @@
         "Sort": 299040,
         "StartEquipEndID": "Rareity15_Weapon2_8",
         "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15118_3": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15118_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_xyzxiaweapon",
+        "Name": "Weapon_15118_3_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "FGao",
+            "FTLEShi",
+            "NCai"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15118_3",
+        "Sort": 299041,
+        "StartEquipEndID": "Rareity15_Weapon3_8",
+        "StartEquipStarID": "Rareity15_Weapon3_1",
         "URUPSkillLV": [
             30,
             40,

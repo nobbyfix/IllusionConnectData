@@ -1431,6 +1431,12 @@ function BattleUIMediator:syncEnergy(energy, remain, speed)
 	end
 end
 
+function BattleUIMediator:showGrayEnergyEffect(isShow)
+	if self._energyBar then
+		self._energyBar:setBarGray(isShow)
+	end
+end
+
 function BattleUIMediator:showRecoveryEnergyAnim()
 	if self._energyBar then
 		self._energyBar:showRecoveryEnergyAnim()

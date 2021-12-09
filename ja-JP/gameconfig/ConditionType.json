@@ -1021,12 +1021,26 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Decs"
     },
+    "Condi_MiniGameDailyScore_Jump": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump.dailyTotalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
+    },
     "Condi_MiniGameTotalScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.activities.activityMap.?1.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
+    },
+    "Condi_MiniGameTotalScore_Jump": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump.totalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
     "Condi_MusicFestivalExchangeAchieve": {
         "AchieveType1": "INCREASE",

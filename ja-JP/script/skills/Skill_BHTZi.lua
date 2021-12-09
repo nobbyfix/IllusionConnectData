@@ -672,7 +672,7 @@ all.Skill_BHTZi_Passive_Awaken = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do
 					local cardvaluechange1 = global.CardCostEnchant(_env, "-", this.CostNum, 1)
 

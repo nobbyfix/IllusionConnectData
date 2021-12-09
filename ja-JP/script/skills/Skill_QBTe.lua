@@ -373,46 +373,6 @@ all.Skill_QBTe_Passive = {
 	end
 }
 
-function all.CellRowLocation(_env, cell)
-	local this = _env.this
-	local global = _env.global
-	local location = 0
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 1 or global.abs(_env, global.IdOfCell(_env, cell)) == 2 or global.abs(_env, global.IdOfCell(_env, cell)) == 3 then
-		location = 1
-	end
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 4 or global.abs(_env, global.IdOfCell(_env, cell)) == 5 or global.abs(_env, global.IdOfCell(_env, cell)) == 6 then
-		location = 2
-	end
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 7 or global.abs(_env, global.IdOfCell(_env, cell)) == 8 or global.abs(_env, global.IdOfCell(_env, cell)) == 9 then
-		location = 3
-	end
-
-	return location
-end
-
-function all.CellColLocation(_env, cell)
-	local this = _env.this
-	local global = _env.global
-	local location = 0
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 1 or global.abs(_env, global.IdOfCell(_env, cell)) == 4 or global.abs(_env, global.IdOfCell(_env, cell)) == 7 then
-		location = 1
-	end
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 2 or global.abs(_env, global.IdOfCell(_env, cell)) == 5 or global.abs(_env, global.IdOfCell(_env, cell)) == 8 then
-		location = 2
-	end
-
-	if global.abs(_env, global.IdOfCell(_env, cell)) == 3 or global.abs(_env, global.IdOfCell(_env, cell)) == 6 or global.abs(_env, global.IdOfCell(_env, cell)) == 9 then
-		location = 3
-	end
-
-	return location
-end
-
 function all.LoveDaze(_env, unit1, unit2)
 	local this = _env.this
 	local global = _env.global

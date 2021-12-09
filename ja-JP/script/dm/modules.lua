@@ -2115,6 +2115,11 @@ local modules = {
 							res = "asset/ui/ActivitySilentNightMain.csb",
 							name = "ActivitySilentNightMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetailRule.csb",
+							name = "ActivityPointDetailRuleView",
+							mediator = "ActivityPointDetailRuleMediator"
 						}
 					}
 				}
@@ -4103,6 +4108,11 @@ local modules = {
 							res = "asset/ui/MiniGameResult.csb",
 							name = "MiniGameResultView",
 							mediator = "MiniGameResultMediator"
+						},
+						{
+							res = "asset/ui/Jump.csb",
+							name = "JumpView",
+							mediator = "JumpMediator"
 						}
 					}
 				}

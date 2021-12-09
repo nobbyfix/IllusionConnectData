@@ -239,6 +239,9 @@
     "Target_PNCao": {
         "Function": "return MainTarget()"
     },
+    "Target_PSKe": {
+        "Function": "return GenInfo(FriendAll(),Green)"
+    },
     "Target_QBTe": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
@@ -247,6 +250,9 @@
     },
     "Target_SDTZi": {
         "Function": "return GenInfo(EnemyAll(),Red)"
+    },
+    "Target_SGBao": {
+        "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
     "Target_SGHQShou": {
         "Function": "return MainTarget()"

@@ -14766,6 +14766,26 @@
             0.8
         ]
     },
+    "Hero_ABlock_SGHQShou_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
     "Hero_ABlock_SLWan_Extra": {
         "AttrType": [
             "HURTRATE"
@@ -144104,6 +144124,86 @@
             ]
         ]
     },
+    "SilentNight_SGHQShou_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "SilentNight_SGHQShou_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.3,
+            0.3
+        ]
+    },
+    "SilentNight_SGHQShou_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "SilentNight_SGHQShou_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
     "SilentNight_SNGLSi_Buff_Star3": {
         "AttrType": [
             "HURTRATE",
@@ -150120,6 +150220,60 @@
             0.15
         ]
     },
+    "Star_PSKe_3_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_PSKe_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_PSKe_4_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_PSKe_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_PSKe_5": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_PSKe_5_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
+        ]
+    },
     "Star_QBTe_3_1": {
         "AttrType": [
             "ATK_RATE",
@@ -150360,6 +150514,80 @@
         "Value": [
             0.1,
             0.1
+        ]
+    },
+    "Star_SGBao_3_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SGBao_3_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
+        ]
+    },
+    "Star_SGBao_4_1": {
+        "AttrType": [
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_SGBao_4_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SGBao_5_1": {
+        "AttrType": [
+            "ATK_RATE"
+        ],
+        "EffectDesc": "Star_SGBao_5_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.2
+        ]
+    },
+    "Star_SGBao_6": {
+        "AttrType": [
+            "SKILLRATE"
+        ],
+        "EffectDesc": "Star_SGBao_6_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15
         ]
     },
     "Star_SGHQShou_3_1": {
