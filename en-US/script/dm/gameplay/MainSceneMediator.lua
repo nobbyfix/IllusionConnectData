@@ -220,6 +220,9 @@ local muiscCfg = {
 	},
 	ActivitySilentNightMainView = {
 		noAutoPlay = true
+	},
+	JumpView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

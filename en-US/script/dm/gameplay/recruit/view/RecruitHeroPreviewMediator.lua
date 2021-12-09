@@ -67,6 +67,7 @@ function RecruitHeroPreviewMediator:onRegister()
 end
 
 function RecruitHeroPreviewMediator:enterWithData(data)
+	self._data = data
 	self._heroType = 1
 	self._showType = {}
 	self._recruitPool = data.recruitPool
@@ -235,6 +236,19 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 	end
 
 	if heroRewardConfig then
+		local heroInfo = self._recruitPool:getRoleDetail()
+		local heroUpList = {}
+
+		if heroInfo then
+			for i = 1, #heroInfo do
+				local heroId = heroInfo[i].hero
+
+				if heroId then
+					heroUpList[#heroUpList + 1] = heroId
+				end
+			end
+		end
+
 		for i = 1, #heroRewardConfig do
 			local reward = heroRewardConfig[i]
 
@@ -242,6 +256,13 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 				local config = ConfigReader:getRecordById("HeroBase", reward.code)
 
 				if config then
+					if table.find(heroUpList, reward.code) then
+						reward.up = 1
+					else
+						reward.up = 0
+					end
+
+					reward.index = i
 					herosRewards[#herosRewards + 1] = reward
 				end
 			elseif reward.type == 2 then
@@ -278,6 +299,16 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 	end
 
 	table.sort(itemRewards, item_compare)
+
+	local function hero_compare(a, b)
+		if a.up == b.up then
+			return a.index < b.index
+		else
+			return b.up < a.up
+		end
+	end
+
+	table.sort(herosRewards, hero_compare)
 
 	local previewData = {
 		[TabType.kHero] = herosRewards,
@@ -420,7 +451,40 @@ function RecruitHeroPreviewMediator:createHeroCell(cell, index)
 				heroIcon:setScale(0.8)
 				heroIcon:addTo(cell)
 				heroIcon:setAnchorPoint(cc.p(0, 0.5))
-				heroIcon:setPosition(cc.p(80 + 156 * (i - 1), 86))
+
+				local posX = 90 + 156 * (i - 1)
+
+				heroIcon:setPosition(cc.p(posX, 86))
+				heroIcon:setLocalZOrder(0)
+
+				if reward.up > 0 then
+					local bgImg = ccui.ImageView:create()
+
+					bgImg:setScale(0.95)
+					bgImg:setAnchorPoint(cc.p(0.5, 0.5))
+					bgImg:setPosition(cc.p(posX, 92))
+					bgImg:addTo(cell)
+					bgImg:setLocalZOrder(-1)
+					bgImg:loadTexture("ck_bg_bjv_2.png", 1)
+
+					local textBg = ccui.ImageView:create()
+
+					textBg:setScale(1)
+					textBg:setAnchorPoint(cc.p(0.5, 0.5))
+					textBg:setPosition(cc.p(posX, 160))
+					textBg:addTo(cell)
+					textBg:setLocalZOrder(1)
+					textBg:loadTexture("ck_bg_bjv_1.png", 1)
+
+					local string = Strings:get("Recruit_UI_UP", {
+						fontName = TTF_FONT_FZYH_M
+					})
+					local richText = ccui.RichText:createWithXML(string, {})
+
+					richText:setAnchorPoint(cc.p(0.5, 0.5))
+					richText:addTo(cell):posite(posX, 160)
+					richText:setLocalZOrder(20)
+				end
 			end
 		end
 	end
@@ -534,20 +598,114 @@ function RecruitHeroPreviewMediator:setItemsView()
 	end
 end
 
+function RecruitHeroPreviewMediator:isRichText(string)
+	local str = "<font"
+	local count = string:find(str)
+
+	if count ~= nil then
+		return true
+	else
+		return false
+	end
+end
+
 function RecruitHeroPreviewMediator:setDescView()
 	local id = self._recruitPool:getId()
 	local cardType = self._recruitPool:getType()
+	local descList = self._recruitPool:getDescList()
+	local listView = self._descPanel:getChildByName("ListView_desc")
+
+	listView:setScrollBarEnabled(false)
+
+	if not listView.descLayout then
+		local layout = ccui.Layout:create()
+
+		listView:pushBackCustomItem(layout)
+
+		local text1 = self._descPanel:getChildByName("text1")
+
+		text1:setString("")
+
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:addTo(layout):posite(0, 0):setName("text")
+		richText:renderContent(740, 0)
+
+		listView.descLayout = layout
+		local richText = ccui.RichText:createWithXML("", {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:addTo(layout):posite(0, 0):setName("special_text")
+
+		listView.descLayout = layout
+	end
+
+	local function convertRichText(string)
+		if not self:isRichText(string) then
+			local rtStr = "<outline color='#000000' size = '1'><font face='${fontName}'  size='18' color='#C3C3C3'>${text}</font></outline>"
+			local templateStr = TextTemplate:new(rtStr)
+			string = templateStr:stringify({
+				fontName = TTF_FONT_FZYH_R,
+				text = string
+			})
+		end
+
+		return string
+	end
+
+	local heroes = self._data.heroes or {}
+	local params = {}
+
+	for i, v in pairs(heroes) do
+		local nameId = ConfigReader:getDataByNameIdAndKey("HeroBase", v, "Name")
+		local name = Strings:get(nameId)
+		params["DrawHeroName" .. i] = name
+	end
+
+	params.fontName = TTF_FONT_FZYH_R
+	local text1 = listView.descLayout:getChildByName("text")
 
 	self._descPanel:getChildByName("text2"):setString("")
-	self._descPanel:getChildByName("text1"):getVirtualRenderer():setDimensions(740, 0)
 
 	if cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
-		self._descPanel:getChildByName("text1"):setString(Strings:get("Recruit_UI22") .. "\n" .. Strings:get("Recruit_UI23"))
+		text1:setString(convertRichText(Strings:get("Recruit_UI22") .. "\n" .. Strings:get("Recruit_UI23")))
 	elseif cardType == RecruitPoolType.kActivityUREquip then
-		self._descPanel:getChildByName("text1"):setString(Strings:get(self._recruitPool:getRareTitle()))
+		text1:setString(convertRichText(Strings:get(self._recruitPool:getRareTitle())))
+	elseif descList and #descList then
+		local string = Strings:get(descList[1], params)
+		string = convertRichText(string)
+
+		for i = 2, #descList do
+			local str = Strings:get(descList[i], params)
+			string = string .. "<br/>" .. convertRichText(str)
+		end
+
+		text1:setString(string)
 	else
-		self._descPanel:getChildByName("text1"):setString(Strings:get("Recruit_UI14") .. "\n" .. Strings:get("Recruit_UI15"))
+		text1:setString(convertRichText(Strings:get("Recruit_UI14") .. "\n" .. Strings:get("Recruit_UI15")))
 	end
+
+	text1:renderContent(750, 0)
+
+	local specialText = listView.descLayout:getChildByName("special_text")
+	local specialList = self._recruitPool:getSpecialDescList()
+
+	if specialList and #specialList > 0 then
+		local string = convertRichText(Strings:get(specialList[1], params))
+
+		for i = 2, #specialList do
+			string = string .. "<br/>" .. convertRichText(Strings:get(specialList[i], params))
+		end
+
+		specialText:setString(string)
+		specialText:renderContent(750, 0)
+	end
+
+	local specialSize = specialText:getContentSize()
+
+	listView.descLayout:setContentSize(cc.size(760, text1:getContentSize().height + specialSize.height))
+	text1:setPositionY(specialSize.height)
 
 	local descData = self._previewData[TabType.kDesc]
 	local data = {}
@@ -565,26 +723,12 @@ function RecruitHeroPreviewMediator:setDescView()
 		end
 	end
 
-	local listView = self._descPanel:getChildByName("ListView_desc")
-
-	listView:setScrollBarEnabled(false)
-
-	local layout = ccui.Layout:create()
-
-	layout:setAnchorPoint(0, 1)
-
-	local size = self._descPanel:getChildByName("text1"):getContentSize()
-
-	layout:setContentSize(size)
-	self._descPanel:getChildByName("text1"):changeParent(layout):posite(0, size.height)
-	listView:pushBackCustomItem(layout)
-
 	if #data >= 4 then
 		listView:setPositionY(100)
-		listView:setContentSize(cc.size(size.width, 135))
+		listView:setContentSize(cc.size(760, 135))
 	else
 		listView:setPositionY(136)
-		listView:setContentSize(cc.size(size.width, 160))
+		listView:setContentSize(cc.size(760, 160))
 	end
 
 	for i = 1, 4 do

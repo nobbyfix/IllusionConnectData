@@ -1034,6 +1034,12 @@
             150
         ]
     },
+    "BuyShowHero": {
+        "clz": "string[]",
+        "content": [
+            "TPGZhu"
+        ]
+    },
     "CDKey_Dif": {
         "clz": "string",
         "content": "#"
@@ -3757,7 +3763,8 @@
             "LFKLFTe",
             "BHTZi",
             "AMLBLTe",
-            "XLDBLTe"
+            "XLDBLTe",
+            "SGBao"
         ]
     },
     "HeroStar_BoxNum": {
@@ -5250,6 +5257,10 @@
             "RTPK": "RTPK_SystemName",
             "STAGE_ARENA": "StageArena_SystemName"
         }
+    },
+    "LeadStage_Effective_Rate": {
+        "clz": "double",
+        "content": 1.5
     },
     "LeadStage_Mail": {
         "clz": "string",

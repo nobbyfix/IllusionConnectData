@@ -146,9 +146,9 @@ function scene_eventstory_Lover_08a:stage(args)
 				type = "Image",
 				image = "scene_cg_terror_1.jpg",
 				layoutMode = 1,
-				zorder = 101,
+				zorder = 105,
 				id = "cg_found",
-				scale = 1,
+				scale = 0.82,
 				anchorPoint = {
 					x = 0.5,
 					y = 0.5
@@ -1015,15 +1015,6 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 				end
 			}),
 			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "cg_love"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
 				action = "play",
 				actor = __getnode__(_root, "yin_wsl_laugh"),
 				args = function (_ctx)
@@ -1119,6 +1110,15 @@ function scene_eventstory_Lover_08a.actions.start_eventstory_Lover_08a(_root, ar
 			args = function (_ctx)
 				return {
 					duration = 2
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "cg_love"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
 				}
 			end
 		}),

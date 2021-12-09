@@ -1541,7 +1541,7 @@ all.Skill_FLYDe_Unique_PV = {
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-				if result.deadly == true then
+				if result and result.deadly == true then
 					_env.kill = _env.kill + 1
 				end
 			end
@@ -1582,7 +1582,7 @@ all.Skill_FLYDe_Unique_PV = {
 					damage.val = damage.val * (1 - this.DamageDown)
 					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-					if result.deadly == true then
+					if result and result.deadly == true then
 						_env.kill = _env.kill + 1
 					end
 				end
@@ -1626,7 +1626,7 @@ all.Skill_FLYDe_Unique_PV = {
 					damage.val = damage.val * (1 - this.DamageDown) * (1 - this.DamageDown)
 					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-					if result.deadly == true then
+					if result and result.deadly == true then
 						_env.kill = _env.kill + 1
 					end
 				end
@@ -1784,7 +1784,7 @@ all.Skill_FLYDe_Passive_Awaken = {
 				if damage.val > 0 then
 					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-					if result.deadly == true then
+					if result and result.deadly == true then
 						_env.count = _env.count + 1
 					end
 

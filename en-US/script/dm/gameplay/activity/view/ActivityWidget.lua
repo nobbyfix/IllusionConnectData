@@ -286,11 +286,6 @@ function ActivityTaskCellWidget:initSubviews(view)
 	self._curText = self._view:getChildByName("Text_curvalue")
 	self._targetText = self._view:getChildByName("Text_target")
 	self._actBtn = self._view:getChildByName("btn_act")
-	local lbText = self._actBtn:getChildByName("Text_str")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
-
 	self._gotImage = self._view:getChildByName("Image_got")
 
 	self._actBtn:setSwallowTouches(false)
@@ -474,11 +469,6 @@ function ActivityExchangeCellWidget:initSubviews(view)
 	self._exchangeBtn = self._view:getChildByName("btn_exchange")
 
 	self._exchangeBtn:setSwallowTouches(false)
-
-	local lbText = self._exchangeBtn:getChildByName("Text_str")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
 
 	self._iconClone = self._view:getChildByName("costicon")
 	self._imageChooseState = self._view:getChildByName("Image_state")

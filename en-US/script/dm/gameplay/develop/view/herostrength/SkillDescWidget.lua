@@ -1,6 +1,6 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
 local listWidth = 391
-local listWidthBig = 440
+local KMaxHeight = 500
 
 function SkillDescWidget.class:createWidgetNode()
 	local resFile = "asset/ui/SkillDescWidget.csb"
@@ -15,8 +15,6 @@ function SkillDescWidget:initialize(view, data)
 	self._mediator = data.mediator
 
 	self:initSubviews(view)
-
-	self._isBig = false
 end
 
 function SkillDescWidget:dispose()
@@ -36,93 +34,14 @@ function SkillDescWidget:initSubviews(view)
 	skillTouchPanel:addClickEventListener(function ()
 		self:hide()
 	end)
-end
 
-function SkillDescWidget:checkIsBigBg(skill)
-	self._isBig = false
-	local totalHeight = 0
-	local skillDesc = self._isMaster and skill:getMasterSkillDescKey() or skill:getDesc()
-
-	if skillDesc and skillDesc ~= "" then
-		local style = {
-			fontSize = 20,
-			fontName = TTF_FONT_FZYH_R
-		}
-
-		if not self._isMaster then
-			style = {
-				fontSize = 20,
-				SkillRate = self._role:getSkillRateShow(),
-				fontName = TTF_FONT_FZYH_R
-			}
-		end
-
-		local desc = ConfigReader:getEffectDesc("Skill", skillDesc, skill:getSkillProId(), skill:getLevel(), style)
-		local label = ccui.RichText:createWithXML(desc, {})
-
-		label:setVerticalSpace(1)
-		label:renderContent(listWidth, 0)
-		label:setAnchorPoint(cc.p(0, 1))
-
-		local height = label:getContentSize().height
-		totalHeight = totalHeight + height
-	end
-
-	if self._isMaster ~= true then
-		self._starAttrs = self._role:getStarAttrs()
-		local titleStr = ""
-		local nextDes = ""
-		local check_star = 0
-
-		for i = 1, #self._starAttrs do
-			local params = self._starAttrs[i]
-
-			if params.star then
-				check_star = params.star
-				titleStr = Strings:get("Hero_Star_UI_Effect_Desc", {
-					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
-				})
-			end
-
-			if params.info and self._role:getStar() < check_star then
-				for index = 1, #params.info do
-					local value = params.info[index]
-
-					if value.isHide == 0 and value.beforeSkillId and value.beforeSkillId == skill:getSkillId() then
-						nextDes = value.desc
-
-						break
-					end
-				end
-			end
-
-			if nextDes ~= "" then
-				break
-			end
-		end
-
-		if titleStr ~= "" and nextDes ~= "" then
-			local label = ccui.RichText:createWithXML(nextDes, {})
-
-			label:setVerticalSpace(1)
-			label:renderContent(listWidth, 0)
-
-			local height = label:getContentSize().height
-			totalHeight = totalHeight + height
-		end
-	end
-
-	if totalHeight > 450 then
-		self._isBig = true
-	end
+	self._desc = self._skillTipPanel:getChildByName("desc")
+	self._nextPanel = nextPanel
 end
 
 function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	self._role = role
 	self._isMaster = isMaster
-
-	self:checkIsBigBg(skill)
-
 	local infoNode = self._skillTipPanel:getChildByFullName("infoNode")
 	local iconPanel = infoNode:getChildByFullName("iconPanel")
 
@@ -231,9 +150,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 	local name = infoNode:getChildByFullName("name")
 
 	name:setString(skill:getName())
+	self._nextPanel:removeFromParent()
 
 	local bg = self._skillTipPanel:getChildByName("Image_bg")
-	local desc = self._skillTipPanel:getChildByName("desc")
+	local desc = self._desc
 
 	desc:setString("")
 	desc:removeAllChildren()
@@ -244,7 +164,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	if self._isMaster ~= true then
 		self._starAttrs = self._role:getStarAttrs()
-		local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+		local nextPanel = self._nextPanel
+
+		nextPanel:addTo(desc)
+
 		local titleStr = ""
 		local nextDes = ""
 		local check_star = 0
@@ -290,10 +213,8 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 				Text_title:getVirtualRenderer():setDimensions(400, 38)
 			end
 
-			local imgWidth = self._isBig and listWidthBig or listWidth + 20
-
-			Text_title:setPositionX(imgWidth / 2)
-			Image_line_2:setPositionX(imgWidth)
+			Image_line_1:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
+			Image_line_2:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
 
 			local newPanel = self:createEffectDescPanel(nextDes)
 
@@ -301,10 +222,10 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 			newPanel:addTo(desc)
 
 			height = height + newPanel:getContentSize().height
-			height = height + 20
+			height = height + 50
 			height_bottom = height
 
-			nextPanel:setPositionY(height_bottom + 10)
+			nextPanel:setPosition(-10, height_bottom - 25.5)
 		else
 			nextPanel:setVisible(false)
 		end
@@ -375,11 +296,29 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	height = height + 110
 
-	if self._isBig == true then
-		bg:setContentSize(cc.size(listWidthBig + 20, height))
-		infoNode:setPositionY(height - 90)
+	if KMaxHeight < height then
+		if not self._listView then
+			local listView = ccui.ListView:create()
+
+			listView:setScrollBarEnabled(false)
+			listView:addTo(self._skillTipPanel):posite(10, 15)
+
+			self._listView = listView
+
+			self._listView:setContentSize(cc.size(432, KMaxHeight - 100))
+		end
+
+		local layout = ccui.Layout:create()
+
+		layout:setContentSize(cc.size(432, height - 110))
+		desc:changeParent(layout):posite(0, 0)
+		self._listView:removeAllChildren()
+		self._listView:pushBackCustomItem(layout)
+		bg:setContentSize(cc.size(432, KMaxHeight))
+		infoNode:setPositionY(KMaxHeight - 90)
 	else
-		bg:setContentSize(cc.size(listWidth + 40, height))
+		desc:changeParent(self._skillTipPanel):posite(13, 18)
+		bg:setContentSize(cc.size(432, height))
 		infoNode:setPositionY(height - 90)
 	end
 end
@@ -396,18 +335,6 @@ function SkillDescWidget:createSkillDescPanel(title, skill, style)
 
 	local height = label:getContentSize().height
 
-	if height > 450 or self._isBig == true then
-		self._isBig = true
-		strWidth = listWidthBig
-		label = ccui.RichText:createWithXML(desc, {})
-
-		label:setVerticalSpace(1)
-		label:renderContent(strWidth, 0)
-		label:setAnchorPoint(cc.p(0, 1))
-	end
-
-	height = label:getContentSize().height
-
 	layout:setContentSize(cc.size(strWidth, height))
 	label:addTo(layout)
 	label:setPosition(cc.p(0, height))
@@ -417,11 +344,6 @@ end
 
 function SkillDescWidget:createEffectDescPanel(desc)
 	local strWidth = listWidth
-
-	if self._isBig == true then
-		strWidth = listWidthBig
-	end
-
 	local layout = ccui.Layout:create()
 	local label = ccui.RichText:createWithXML(desc, {})
 

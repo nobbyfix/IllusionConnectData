@@ -24,6 +24,9 @@ MiniGameActivity:has("_dailyTaskList", {
 MiniGameActivity:has("_dailyRewards", {
 	is == "r"
 })
+MiniGameActivity:has("_maxReward", {
+	is == "r"
+})
 
 function MiniGameActivity:initialize(id)
 	super.initialize(self, id)
@@ -70,7 +73,9 @@ function MiniGameActivity:synchronize(data)
 	end
 
 	if data.dailyTotalRewards then
-		self._dailyRewards = data.dailyTotalRewards
+		for k, v in pairs(data.dailyTotalRewards) do
+			self._dailyRewards[k] = v
+		end
 	end
 end
 
@@ -91,6 +96,10 @@ function MiniGameActivity:syncTaskList(taskData, taskList)
 			end
 		end
 	end
+end
+
+function MiniGameActivity:resetData()
+	self._dailyRewards = {}
 end
 
 function MiniGameActivity:isLimitReward()
@@ -131,10 +140,6 @@ function MiniGameActivity:canBuyTimes()
 	return self._buyTimes < self:getLimitBuyTimes()
 end
 
-function MiniGameActivity:canBuyTimesBanZang()
-	return self._buyTimes < self:getBanZangLimitBuyTimes()
-end
-
 function MiniGameActivity:getCost()
 	local data = self:getBuyCost()
 	local amountList = data.amount
@@ -146,35 +151,12 @@ function MiniGameActivity:getCost()
 	}
 end
 
-function MiniGameActivity:getBanZangCost()
-	local data = self:getActivityConfig().buyTimesCost
-	local amountList = data.amount
-	local amount = amountList[self._buyTimes + 1] or amountList[#amountList]
-
-	return {
-		id = data.id,
-		amount = amount
-	}
-end
-
 function MiniGameActivity:getAllTimes()
 	return self:getActivityConfig().times
 end
 
-function MiniGameActivity:getBanZangAllTimes()
-	return self:getActivityConfig().maxTimes
-end
-
 function MiniGameActivity:getLimitBuyTimes()
 	return self:getActivityConfig().buyTimes
-end
-
-function MiniGameActivity:getBanZangLimitBuyTimes()
-	return self:getActivityConfig().buyLimit
-end
-
-function MiniGameActivity:getbBanZangBuyCostItemId()
-	return self:getActivityConfig().buyTimesCost.id
 end
 
 function MiniGameActivity:getBuyCost()
@@ -197,44 +179,10 @@ function MiniGameActivity:getTask()
 	return self:getActivityConfig().task
 end
 
-function MiniGameActivity:hasBanZangRewardRedPoint()
-	for key, value in pairs(self._finalTaskList) do
-		local state = 0
-		state = value.taskStatus
-
-		if state == 1 then
-			return true
-		end
-	end
-
-	for key, value in pairs(self._dailyTaskList) do
-		local state = 0
-		state = value.taskStatus
-
-		if state == 1 then
-			return true
-		end
-	end
-
-	return false
-end
-
-function MiniGameActivity:hasChallengeRedPoint()
-	return self._curTimes == self:getBanZangAllTimes()
-end
-
-function MiniGameActivity:hasBanZangRedPoint()
-	if self:hasBanZangRewardRedPoint() then
-		return true
-	end
-
-	return self:hasChallengeRedPoint()
-end
-
-function MiniGameActivity:getBanZangMaximumShow()
-	return self:getActivityConfig().maximumShow
-end
-
 function MiniGameActivity:getRuleDesc()
 	return self:getActivityConfig().RuleDesc
+end
+
+function MiniGameActivity:getDailyGameTimes()
+	return self:getActivityConfig().dailyTimes
 end

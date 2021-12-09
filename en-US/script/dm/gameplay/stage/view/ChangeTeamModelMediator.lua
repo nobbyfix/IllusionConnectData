@@ -233,10 +233,6 @@ function ChangeTeamModelMediator:teamCellSetup(cell, data)
 		end
 	end
 
-	local lbText = cell:getChildByFullName("teamBtn.Text")
-
-	lbText:disableEffect(1)
-	lbText:setTextColor(cc.c3b(0, 0, 0))
 	cell:getChildByFullName("teamBtn"):addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended then
 			self:dispatch(Event:new(EVT_CHANGE_TEAM_BYMODE_SUCC, data))

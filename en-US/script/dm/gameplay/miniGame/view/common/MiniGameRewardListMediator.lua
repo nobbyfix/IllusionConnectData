@@ -208,10 +208,6 @@ function MiniGameRewardListMediator:refreshCell(cell, idx)
 	local getBtn = cell:getChildByName("btn_get")
 	local getImg = cell:getChildByName("Image_received")
 	local unFinishText = cell:getChildByName("unFinish")
-
-	unFinishText:disableEffect(1)
-	unFinishText:setTextColor(cc.c3b(0, 0, 0))
-
 	local status = taskData:getStatus()
 
 	getBtn:setVisible(status == TaskStatus.kFinishNotGet)

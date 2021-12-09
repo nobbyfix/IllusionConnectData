@@ -10460,6 +10460,45 @@
             "slot": "Hero_Proud_PNCao"
         }
     },
+    "StarSE_PSKe_3": {
+        "Desc": "StarSE_PSKe_3_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_PSKe_EX",
+            "before": "Hero_Unique_PSKe",
+            "slot": "Hero_Unique_PSKe"
+        }
+    },
+    "StarSE_PSKe_4": {
+        "Desc": "StarSE_PSKe_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_PSKe_EX",
+            "before": "Hero_PBattle_PSKe",
+            "slot": "Hero_PBattle_PSKe"
+        }
+    },
+    "StarSE_PSKe_5": {
+        "Desc": "StarSE_PSKe_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_PSKe_EX",
+            "before": "Hero_Proud_PSKe",
+            "slot": "Hero_Proud_PSKe"
+        }
+    },
     "StarSE_QBTe_4": {
         "Desc": "StarSE_QBTe_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -10588,6 +10627,45 @@
             "after": "Hero_Unique_SDTZi_Awaken",
             "before": "Hero_Unique_SDTZi_EX",
             "slot": "Hero_Unique_SDTZi"
+        }
+    },
+    "StarSE_SGBao_4": {
+        "Desc": "StarSE_SGBao_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SGBao_EX",
+            "before": "Hero_Unique_SGBao",
+            "slot": "Hero_Unique_SGBao"
+        }
+    },
+    "StarSE_SGBao_5": {
+        "Desc": "StarSE_SGBao_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SGBao_EX",
+            "before": "Hero_PBattle_SGBao",
+            "slot": "Hero_PBattle_SGBao"
+        }
+    },
+    "StarSE_SGBao_6": {
+        "Desc": "StarSE_SGBao_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_SGBao_EX",
+            "before": "Hero_Proud_SGBao",
+            "slot": "Hero_Proud_SGBao"
         }
     },
     "StarSE_SGHQShou_4": {

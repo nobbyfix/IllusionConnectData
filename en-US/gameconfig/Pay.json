@@ -665,6 +665,48 @@
         "Symbol": "$",
         "VIPExp": 68
     },
+    "Pay_BattlePass_20211219_128": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_128_Name",
+        "Pay_Id": 10855,
+        "Price": 18.99,
+        "ProductId": "com.superprism.illusion.gift040",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_BattlePass_20211219_60": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_60_Name",
+        "Pay_Id": 10856,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.gift041",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_BattlePass_20211219_68": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_20200914_68_Name",
+        "Pay_Id": 10854,
+        "Price": 9.99,
+        "ProductId": "com.superprism.illusion.gift039",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios"
+        ],
+        "Symbol": "$",
+        "VIPExp": 68
+    },
     "Pay_Mall_128": {
         "IsContinue": 0,
         "MapId": "",
@@ -1312,6 +1354,78 @@
         ],
         "Symbol": "$",
         "VIPExp": 648
+    },
+    "Pay_PackageShop_BQDSheGift_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_1_Name",
+        "Pay_Id": 10863,
+        "Price": 0.99,
+        "ProductId": "com.superprism.illusion.zk027",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_BQDSheGift_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_2_Name",
+        "Pay_Id": 10864,
+        "Price": 9.99,
+        "ProductId": "com.superprism.illusion.zk268",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_BQDSheGift_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_3_Name",
+        "Pay_Id": 10865,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk241",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_BQDSheGift_4": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_4_Name",
+        "Pay_Id": 10866,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk242",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
     },
     "Pay_PackageShop_FGaoGift_1": {
         "IsContinue": 0,
@@ -3066,6 +3180,60 @@
         "Pay_Id": 10850,
         "Price": 99.99,
         "ProductId": "com.superprism.illusion.zk225",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_TL_ChengZhang_46": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_CZLBao_1_Name",
+        "Pay_Id": 10874,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.zk195",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_TL_ChengZhang_47": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_CZLBao_2_Name",
+        "Pay_Id": 10875,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk250",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_ChengZhang_48": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_CZLBao_3_Name",
+        "Pay_Id": 10876,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk259",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios",
@@ -5542,6 +5710,60 @@
         "Pay_Id": 10833,
         "Price": 49.99,
         "ProductId": "com.superprism.illusion.zk121",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_URdraw_20211219_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_URdraw_20211219_1_Name",
+        "Pay_Id": 10851,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk097",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_URdraw_20211219_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_URdraw_20211219_2_Name",
+        "Pay_Id": 10852,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk107",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_URdraw_20211219_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_URdraw_20211219_3_Name",
+        "Pay_Id": 10853,
+        "Price": 49.99,
+        "ProductId": "com.superprism.illusion.zk122",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios",
@@ -10989,6 +11211,114 @@
         "Symbol": "$",
         "VIPExp": 648
     },
+    "Pay_PackageShop_TL_Week61_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_2_Name",
+        "Pay_Id": 10857,
+        "Price": 4.99,
+        "ProductId": "com.superprism.illusion.gift173",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_Week61_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_3_Name",
+        "Pay_Id": 10858,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.gift174",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_Week61_4": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_4_Name",
+        "Pay_Id": 10859,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.gift175",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_Week61_5": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_5_Name",
+        "Pay_Id": 10860,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.gift176",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_Week61_6": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_6_Name",
+        "Pay_Id": 10861,
+        "Price": 49.99,
+        "ProductId": "com.superprism.illusion.gift177",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 328
+    },
+    "Pay_PackageShop_TL_Week61_7": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Week29_7_Name",
+        "Pay_Id": 10862,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.gift178",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
     "Pay_PackageShop_TL_Weekend_1": {
         "IsContinue": 0,
         "MapId": "",
@@ -11716,6 +12046,60 @@
         "Pay_Id": 10130,
         "Price": 99.99,
         "ProductId": "com.superprism.illusion.jr010",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_TL_silentnight_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_silentnight_1_Name",
+        "Pay_Id": 10877,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.zk067",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_TL_silentnight_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_silentnight_2_Name",
+        "Pay_Id": 10878,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk108",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_silentnight_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_silentnight_3_Name",
+        "Pay_Id": 10879,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk137",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios",
@@ -12933,6 +13317,60 @@
         "Symbol": "$",
         "VIPExp": 648
     },
+    "Pay_PackageShop_UrEquip_56": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_UrEquip_7_Name",
+        "Pay_Id": 10871,
+        "Price": 4.99,
+        "ProductId": "com.superprism.illusion.zk057",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_UrEquip_57": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_UrEquip_8_Name",
+        "Pay_Id": 10872,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk098",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_UrEquip_58": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_UrEquip_9_Name",
+        "Pay_Id": 10873,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk138",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
     "Pay_PackageShop_UrEquip_6": {
         "IsContinue": 0,
         "MapId": "",
@@ -13066,6 +13504,78 @@
         "Pay_Id": 10801,
         "Price": 19.99,
         "ProductId": "com.superprism.illusion.zk246",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_XBKLDi_1Gift_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_1_Name",
+        "Pay_Id": 10867,
+        "Price": 0.99,
+        "ProductId": "com.superprism.illusion.zk028",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_XBKLDi_1Gift_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_2_Name",
+        "Pay_Id": 10868,
+        "Price": 9.99,
+        "ProductId": "com.superprism.illusion.zk270",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_XBKLDi_1Gift_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_3_Name",
+        "Pay_Id": 10869,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk243",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_XBKLDi_1Gift_4": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_FGaoGift_4_Name",
+        "Pay_Id": 10870,
+        "Price": 19.99,
+        "ProductId": "com.superprism.illusion.zk244",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios",
@@ -13318,6 +13828,60 @@
         "Pay_Id": 10830,
         "Price": 99.99,
         "ProductId": "com.superprism.illusion.zk293",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 648
+    },
+    "Pay_PackageShop_juese_20211221_1": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_juese_1_Name",
+        "Pay_Id": 10880,
+        "Price": 8.99,
+        "ProductId": "com.superprism.illusion.zk068",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_juese_20211221_2": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_juese_2_Name",
+        "Pay_Id": 10881,
+        "Price": 29.99,
+        "ProductId": "com.superprism.illusion.zk109",
+        "SDKSource": [
+            "wanmeiGlobal_android",
+            "wanmeiGlobal_ios",
+            "wanmeiGlobal_android_amazon",
+            "wanmeiGlobal_android_samsungapps",
+            "wanmeiGlobal_android_huaweiappgallery",
+            "wanmeiGlobal_android_apt"
+        ],
+        "Symbol": "$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_juese_20211221_3": {
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_juese_3_Name",
+        "Pay_Id": 10882,
+        "Price": 99.99,
+        "ProductId": "com.superprism.illusion.zk139",
         "SDKSource": [
             "wanmeiGlobal_android",
             "wanmeiGlobal_ios",

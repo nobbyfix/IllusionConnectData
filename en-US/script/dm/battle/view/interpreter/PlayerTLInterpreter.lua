@@ -180,6 +180,16 @@ function PlayerTLInterpreter:act_SyncERecovery(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_ShowGrayEnergyEffect(action, args)
+	if self._isMainPlayer then
+		local isShow = args or false
+
+		if self._battleUIMediator.showGrayEnergyEffect then
+			self._battleUIMediator:showGrayEnergyEffect(isShow)
+		end
+	end
+end
+
 function PlayerTLInterpreter:act_RemoveSCard(action, args)
 	self._battleUIMediator:removeCards()
 end

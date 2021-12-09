@@ -862,25 +862,9 @@ all.Skill_XXFSi_Passive_EX = {
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
 
-		_env.event = externs.event
-
-		assert(_env.event ~= nil, "External variable `event` is not provided.")
-
-		_env.prevHpPercent = externs.prevHpPercent
-
-		assert(_env.prevHpPercent ~= nil, "External variable `prevHpPercent` is not provided.")
-
-		_env.curHpPercent = externs.curHpPercent
-
-		assert(_env.curHpPercent ~= nil, "External variable `curHpPercent` is not provided.")
-
 		_env.hurt = externs.hurt
 
 		assert(_env.hurt ~= nil, "External variable `hurt` is not provided.")
-
-		_env.actor = externs.actor
-
-		assert(_env.actor ~= nil, "External variable `actor` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)

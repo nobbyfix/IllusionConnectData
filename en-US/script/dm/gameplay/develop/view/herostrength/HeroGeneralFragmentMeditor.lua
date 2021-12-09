@@ -97,9 +97,6 @@ function HeroGeneralFragmentMeditor:refreshData()
 end
 
 function HeroGeneralFragmentMeditor:refreshViewByDebrisChange()
-	self:refreshData()
-
-	self._curCount = 1
 	local rewards = {
 		self._getReward
 	}
@@ -110,15 +107,7 @@ function HeroGeneralFragmentMeditor:refreshViewByDebrisChange()
 	}, {
 		rewards = rewards
 	}))
-
-	if self._debrisItemNum <= 0 then
-		self:close()
-
-		return
-	end
-
-	self:refreshView()
-	self:refreshSlider()
+	self:close()
 end
 
 function HeroGeneralFragmentMeditor:getDebrisItemIdByQuality()
