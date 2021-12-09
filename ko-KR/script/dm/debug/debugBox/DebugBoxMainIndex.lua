@@ -319,7 +319,9 @@ DebugBoxMainIndex = {
 			{
 				"小游戏",
 				{
-					"投飞镖：设置关卡"
+					"投飞镖：设置关卡",
+					"增加小游戏次数",
+					"美食作战：设置初始跳台"
 				}
 			},
 			{
@@ -810,6 +812,14 @@ DebugBoxMainIndex = {
 			{
 				"投飞镖：设置关卡",
 				"ChangeDartsLevel"
+			},
+			{
+				"增加小游戏次数",
+				"addMiniGameTimes"
+			},
+			{
+				"美食作战：设置初始跳台",
+				"ChangeJumpStage"
 			},
 			{
 				"触发BOSS共斗",

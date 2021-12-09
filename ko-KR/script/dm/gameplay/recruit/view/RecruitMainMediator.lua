@@ -1512,6 +1512,17 @@ function RecruitMainMediator:autoBuy(costId, costCount, param)
 end
 
 function RecruitMainMediator:onClickPreview()
+	local type = self._recruitDataShow:getType()
+	local heroes = nil
+
+	if type == RecruitPoolType.kActivity then
+		local id = self._recruitDataShow:getId()
+		local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+		local activity = self._activitySystem:getActivityById(activityId)
+		local activityConfig = activity:getActivityConfig()
+		heroes = activityConfig.drawhero
+	end
+
 	local function callback(rewards)
 		local view = self:getInjector():getInstance("recruitHeroPreviewView")
 
@@ -1519,7 +1530,8 @@ function RecruitMainMediator:onClickPreview()
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
 			recruitPool = self._recruitDataShow,
-			rewards = rewards
+			rewards = rewards,
+			heroes = heroes
 		}))
 	end
 
@@ -1541,13 +1553,7 @@ end
 function RecruitMainMediator:onClickTip()
 	local type = self._recruitDataShow:getType()
 
-	if type == RecruitPoolType.kActivity then
-		local view = self:getInjector():getInstance("RecruitTipView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
-			info = self._recruitDataShow:getPoolInfo()
-		}))
-	elseif type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
+	if type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
 		local function callback(rewards)
 			local view = self:getInjector():getInstance("RecruitCommonPreviewView")
 
@@ -2065,7 +2071,7 @@ function RecruitMainMediator:refreshDiamondView()
 				cell:setVisible(true)
 
 				local heroConfig = ConfigReader:getRecordById("HeroBase", v.value)
-				local heroImg = IconFactory:createRoleIconSprite({
+				local heroImg = IconFactory:createRoleIconSpriteNew({
 					id = heroConfig.RoleModel
 				})
 

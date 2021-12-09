@@ -1117,6 +1117,19 @@
         "Type": "Activity",
         "TypeId": "CooperateBoss_Exchange_20211208"
     },
+    "ActivityBannerCooperateBoss_20211223": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "gongdou_img_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=CooperateBoss_Exchange_20211223",
+        "Sort": 5004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "CooperateBoss_Exchange_20211223"
+    },
     "ActivityBannerDeepSea": {
         "BannerTime": "",
         "Bubble": "",
@@ -2588,6 +2601,45 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20211125_4_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20211208_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_YXZChun.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_YXZChun_20211208",
+        "Sort": 3004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211208_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20211208_2_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SGHQShou.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SGHQShou_20211208",
+        "Sort": 3005,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211208_2_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20211208_3_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_LEMHou.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LEMHou_20211208",
+        "Sort": 3004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211208_3_Activity"
+    },
     "ActivityBanner_DrawCard_2UP_20210106_1_Activity": {
         "BannerTime": "",
         "Bubble": "",
@@ -3212,6 +3264,32 @@
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20211125_2_Activity"
     },
+    "ActivityBanner_DrawCard_2UP_20211208_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_WEDeBBLMa.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BBLMaWEDe_20211208",
+        "Sort": 3006,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20211208_1_Activity"
+    },
+    "ActivityBanner_DrawCard_2UP_20211208_2_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_XBKLDiLYXi.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_XBKLDiLYXi_20211208",
+        "Sort": 3007,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20211208_2_Activity"
+    },
     "ActivityBanner_KMLa_1": {
         "BannerTime": "",
         "Bubble": "",
@@ -3308,6 +3386,19 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "DrawCard_UR_2UP_20211202_Activity"
+    },
+    "ActivityBanner_UR_2UP_20211218": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_urbanner_2.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_UR_2UP_20211218",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_UR_2UP_20211218_Activity"
     },
     "ActivityBanner_YSLBin_1": {
         "BannerTime": "",
@@ -3417,6 +3508,19 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "Activity_Gashapon_20210910"
+    },
+    "Activity_Jump_20201212": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "Jump_txt_zjm_banner.png",
+        "Important": 0,
+        "Link": "view://JumpView&viewType=push&activityId=Activity_Jump",
+        "Sort": 9001,
+        "Switch": "fn_MiniGame_Jump",
+        "Type": "Activity",
+        "TypeId": "Activity_Jump"
     },
     "Carnival": {
         "BannerTime": "",

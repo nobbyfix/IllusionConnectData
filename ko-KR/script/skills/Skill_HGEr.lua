@@ -279,11 +279,8 @@ all.Skill_HGEr_Passive = {
 		passive1 = global["[duration]"](this, {
 			0
 		}, passive1)
-		passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_UNIQUE"
-		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_ACTION"
+			"UNIT_BEFORE_UNIQUE"
 		}, passive1)
 		local passive2 = __action(this, {
 			name = "passive2",
@@ -292,11 +289,8 @@ all.Skill_HGEr_Passive = {
 		passive2 = global["[duration]"](this, {
 			0
 		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_UNIQUE"
-		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_ACTION"
+			"UNIT_AFTER_UNIQUE"
 		}, passive2)
 		local passive3 = __action(this, {
 			name = "passive3",
@@ -306,7 +300,7 @@ all.Skill_HGEr_Passive = {
 			0
 		}, passive3)
 		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"UNIT_BEFORE_ACTION"
 		}, passive3)
 		local passive4 = __action(this, {
 			name = "passive4",
@@ -316,12 +310,93 @@ all.Skill_HGEr_Passive = {
 			0
 		}, passive4)
 		this.passive4 = global["[trigger_by]"](this, {
-			"SELF:ENTER"
+			"UNIT_AFTER_ACTION"
 		}, passive4)
+		local passive5 = __action(this, {
+			name = "passive5",
+			entry = prototype.passive5
+		})
+		passive5 = global["[duration]"](this, {
+			0
+		}, passive5)
+		this.passive5 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive5)
+		local passive6 = __action(this, {
+			name = "passive6",
+			entry = prototype.passive6
+		})
+		passive6 = global["[duration]"](this, {
+			0
+		}, passive6)
+		this.passive6 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive6)
 
 		return this
 	end,
 	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				local buff = global.SpecialNumericEffect(_env, "+HGEr_Passive_Uni_No_Crit", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HGEr_Passive_Uni_No_Crit"
+					}
+				}, {
+					buff
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -358,7 +433,7 @@ all.Skill_HGEr_Passive = {
 
 		return _env
 	end,
-	passive2 = function (_env, externs)
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -382,7 +457,7 @@ all.Skill_HGEr_Passive = {
 
 		return _env
 	end,
-	passive3 = function (_env, externs)
+	passive5 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -412,7 +487,7 @@ all.Skill_HGEr_Passive = {
 
 		return _env
 	end,
-	passive4 = function (_env, externs)
+	passive6 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -997,11 +1072,8 @@ all.Skill_HGEr_Passive_EX = {
 		passive1 = global["[duration]"](this, {
 			0
 		}, passive1)
-		passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_UNIQUE"
-		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_ACTION"
+			"UNIT_BEFORE_UNIQUE"
 		}, passive1)
 		local passive2 = __action(this, {
 			name = "passive2",
@@ -1010,11 +1082,8 @@ all.Skill_HGEr_Passive_EX = {
 		passive2 = global["[duration]"](this, {
 			0
 		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_UNIQUE"
-		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_ACTION"
+			"UNIT_AFTER_UNIQUE"
 		}, passive2)
 		local passive3 = __action(this, {
 			name = "passive3",
@@ -1024,7 +1093,7 @@ all.Skill_HGEr_Passive_EX = {
 			0
 		}, passive3)
 		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"UNIT_BEFORE_ACTION"
 		}, passive3)
 		local passive4 = __action(this, {
 			name = "passive4",
@@ -1034,12 +1103,93 @@ all.Skill_HGEr_Passive_EX = {
 			0
 		}, passive4)
 		this.passive4 = global["[trigger_by]"](this, {
-			"SELF:ENTER"
+			"UNIT_AFTER_ACTION"
 		}, passive4)
+		local passive5 = __action(this, {
+			name = "passive5",
+			entry = prototype.passive5
+		})
+		passive5 = global["[duration]"](this, {
+			0
+		}, passive5)
+		this.passive5 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive5)
+		local passive6 = __action(this, {
+			name = "passive6",
+			entry = prototype.passive6
+		})
+		passive6 = global["[duration]"](this, {
+			0
+		}, passive6)
+		this.passive6 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive6)
 
 		return this
 	end,
 	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				local buff = global.SpecialNumericEffect(_env, "+HGEr_Passive_Uni_No_Crit", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HGEr_Passive_Uni_No_Crit"
+					}
+				}, {
+					buff
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1076,7 +1226,7 @@ all.Skill_HGEr_Passive_EX = {
 
 		return _env
 	end,
-	passive2 = function (_env, externs)
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1100,7 +1250,7 @@ all.Skill_HGEr_Passive_EX = {
 
 		return _env
 	end,
-	passive3 = function (_env, externs)
+	passive5 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1130,7 +1280,7 @@ all.Skill_HGEr_Passive_EX = {
 
 		return _env
 	end,
-	passive4 = function (_env, externs)
+	passive6 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1194,11 +1344,8 @@ all.Skill_HGEr_Passive_Awaken = {
 		passive1 = global["[duration]"](this, {
 			0
 		}, passive1)
-		passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_UNIQUE"
-		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
-			"UNIT_BEFORE_ACTION"
+			"UNIT_BEFORE_UNIQUE"
 		}, passive1)
 		local passive2 = __action(this, {
 			name = "passive2",
@@ -1207,11 +1354,8 @@ all.Skill_HGEr_Passive_Awaken = {
 		passive2 = global["[duration]"](this, {
 			0
 		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_UNIQUE"
-		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
-			"UNIT_AFTER_ACTION"
+			"UNIT_AFTER_UNIQUE"
 		}, passive2)
 		local passive3 = __action(this, {
 			name = "passive3",
@@ -1221,7 +1365,7 @@ all.Skill_HGEr_Passive_Awaken = {
 			0
 		}, passive3)
 		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"UNIT_BEFORE_ACTION"
 		}, passive3)
 		local passive4 = __action(this, {
 			name = "passive4",
@@ -1231,12 +1375,93 @@ all.Skill_HGEr_Passive_Awaken = {
 			0
 		}, passive4)
 		this.passive4 = global["[trigger_by]"](this, {
-			"SELF:ENTER"
+			"UNIT_AFTER_ACTION"
 		}, passive4)
+		local passive5 = __action(this, {
+			name = "passive5",
+			entry = prototype.passive5
+		})
+		passive5 = global["[duration]"](this, {
+			0
+		}, passive5)
+		this.passive5 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive5)
+		local passive6 = __action(this, {
+			name = "passive6",
+			entry = prototype.passive6
+		})
+		passive6 = global["[duration]"](this, {
+			0
+		}, passive6)
+		this.passive6 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive6)
 
 		return this
 	end,
 	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				local buff = global.SpecialNumericEffect(_env, "+HGEr_Passive_Uni_No_Crit", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"HGEr_Passive_Uni_No_Crit"
+					}
+				}, {
+					buff
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) then
+				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1273,7 +1498,7 @@ all.Skill_HGEr_Passive_Awaken = {
 
 		return _env
 	end,
-	passive2 = function (_env, externs)
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1297,7 +1522,7 @@ all.Skill_HGEr_Passive_Awaken = {
 
 		return _env
 	end,
-	passive3 = function (_env, externs)
+	passive5 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1327,7 +1552,7 @@ all.Skill_HGEr_Passive_Awaken = {
 
 		return _env
 	end,
-	passive4 = function (_env, externs)
+	passive6 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]

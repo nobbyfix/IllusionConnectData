@@ -689,7 +689,7 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 then
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 or global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit")) > 0 then
 		attacker.critrate = 0
 	end
 
@@ -992,7 +992,7 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		end
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 then
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 or global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit")) > 0 then
 		attacker.critrate = 0
 	end
 
@@ -1040,6 +1040,12 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
 		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
 		damage.val = (1 + Factor * 0.05) * damage.val
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15120_2")) > 0 then
+		local CureFactor = global.SpecialPropGetter(_env, "weapon_15120_2")(_env, actor)
+
+		global.ApplyHPRecovery(_env, actor, damage.val * CureFactor)
 	end
 
 	return damage
@@ -1498,12 +1504,14 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		damage = global.SNGLSi_Damage_Share(_env, deers, damage, deer_ratio)
 	end
 
-	if global.SelectHeroPassiveCount(_env, actor, "Skill_CKFSJi_Passive") > 0 then
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local HealRateFactor = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
-		local heal = atk * HealRateFactor
+	local Skill_CKFSJi_Passive = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
 
-		global.ApplyHPRecovery_ResultCheck(_env, _env.actor, heal)
+	if Skill_CKFSJi_Passive and Skill_CKFSJi_Passive ~= 0 then
+		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+		local HealRateFactor = Skill_CKFSJi_Passive
+		local heal = global.EvalRecovery_FlagCheck(_env, actor, actor, HealRateFactor, 0)
+
+		global.ApplyHPRecovery_ResultCheck(_env, actor, actor, heal)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -1732,8 +1740,12 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		local singlecritsplitrate = global.SpecialPropGetter(_env, "singlecritsplitrate")(_env, actor)
 
 		if singlecritsplitrate and singlecritsplitrate ~= 0 then
+			local splitval = damage.val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damage * singlecritsplitrate)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, splitval * singlecritsplitrate)
+				end
 			end
 		end
 
@@ -1773,6 +1785,51 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 			}, {
 				buff
 			})
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15109_3")) > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Armor_15109_3_Count", {
+				"?Normal"
+			}, 1)
+			local RpFactor = global.SpecialPropGetter(_env, "Armor_15109_3")(_env, target)
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Armor_15109_3_Count")) < 3 then
+				global.ApplyRPRecovery(_env, target, RpFactor)
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Armor_15109_3_Count",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boot_15109_3")) > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Boot_15109_3_Count", {
+				"?Normal"
+			}, 1)
+			local HealRateFactor = global.SpecialPropGetter(_env, "Boot_15109_3")(_env, target)
+			local recovery = HealRateFactor * global.UnitPropGetter(_env, "maxHp")(_env, target)
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Boot_15109_3_Count")) < 3 and global.UnitPropGetter(_env, "hpRatio")(_env, target) < 0.7 then
+				global.ApplyHPRecovery(_env, target, recovery)
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Boot_15109_3_Count",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
 		end
 	end
 
@@ -2276,12 +2333,16 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
-	if result and result.crit then
+	if damage and damage.crit then
 		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
 		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			local splitval = damage.val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damage * aoecritsplitrate)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, splitval * aoecritsplitrate)
+				end
 			end
 		end
 
@@ -2321,6 +2382,51 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 			}, {
 				buff
 			})
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15109_3")) > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Armor_15109_3_Count", {
+				"?Normal"
+			}, 1)
+			local RpFactor = global.SpecialPropGetter(_env, "Armor_15109_3")(_env, target)
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Armor_15109_3_Count")) < 3 then
+				global.ApplyRPRecovery(_env, target, RpFactor)
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Armor_15109_3_Count",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boot_15109_3")) > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Boot_15109_3_Count", {
+				"?Normal"
+			}, 1)
+			local HealRateFactor = global.SpecialPropGetter(_env, "Boot_15109_3")(_env, target)
+			local recovery = HealRateFactor * global.UnitPropGetter(_env, "maxHp")(_env, target)
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Boot_15109_3_Count")) < 3 and global.UnitPropGetter(_env, "hpRatio")(_env, target) < 0.7 then
+				global.ApplyHPRecovery(_env, target, recovery)
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Boot_15109_3_Count",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
 		end
 	end
 
@@ -2641,12 +2747,16 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		damages[n] = global.SNGLSi_Damage_Share(_env, deers, damages[n], deer_ratio)
 	end
 
-	if global.SelectHeroPassiveCount(_env, actor, "Skill_CKFSJi_Passive") > 0 then
-		local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
-		local HealRateFactor = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
-		local heal = atk * HealRateFactor
+	if n == total then
+		local Skill_CKFSJi_Passive = global.SpecialPropGetter(_env, "Skill_CKFSJi_Passive")(_env, actor)
 
-		global.ApplyHPRecovery_ResultCheck(_env, _env.actor, heal)
+		if Skill_CKFSJi_Passive and Skill_CKFSJi_Passive ~= 0 then
+			local atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+			local HealRateFactor = Skill_CKFSJi_Passive
+			local heal = global.EvalRecovery_FlagCheck(_env, actor, actor, HealRateFactor, 0)
+
+			global.ApplyHPRecovery_ResultCheck(_env, actor, actor, heal)
+		end
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -2768,8 +2878,12 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		local singlecritsplitrate = global.SpecialPropGetter(_env, "singlecritsplitrate")(_env, actor)
 
 		if singlecritsplitrate and singlecritsplitrate ~= 0 then
+			local splitval = damages[n].val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damages[n] * singlecritsplitrate)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, splitval * singlecritsplitrate)
+				end
 			end
 		end
 
@@ -2924,6 +3038,51 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				}, {
 					buff
 				})
+			end
+
+			if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15109_3")) > 0 then
+				local buffeft1 = global.SpecialNumericEffect(_env, "+Armor_15109_3_Count", {
+					"?Normal"
+				}, 1)
+				local RpFactor = global.SpecialPropGetter(_env, "Armor_15109_3")(_env, target)
+
+				if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Armor_15109_3_Count")) < 3 then
+					global.ApplyRPRecovery(_env, target, RpFactor)
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Armor_15109_3_Count",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
+			end
+
+			if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boot_15109_3")) > 0 then
+				local buffeft1 = global.SpecialNumericEffect(_env, "+Boot_15109_3_Count", {
+					"?Normal"
+				}, 1)
+				local HealRateFactor = global.SpecialPropGetter(_env, "Boot_15109_3")(_env, target)
+				local recovery = HealRateFactor * global.UnitPropGetter(_env, "maxHp")(_env, target)
+
+				if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Boot_15109_3_Count")) < 3 and global.UnitPropGetter(_env, "hpRatio")(_env, target) < 0.7 then
+					global.ApplyHPRecovery(_env, target, recovery)
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Boot_15109_3_Count",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
 			end
 		end
 	end
@@ -3359,12 +3518,16 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
-	if result and result.crit then
+	if damages[n] and damages[n].crit then
 		local aoecritsplitrate = global.SpecialPropGetter(_env, "aoecritsplitrate")(_env, actor)
 
 		if aoecritsplitrate and aoecritsplitrate ~= 0 then
+			local splitval = damages[n].val
+
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, target))) do
-				global.ApplyHPDamage(_env, unit, damages[n] * aoecritsplitrate)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, splitval * aoecritsplitrate)
+				end
 			end
 		end
 
@@ -3540,6 +3703,51 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				}, {
 					buff
 				})
+			end
+
+			if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Armor_15109_3")) > 0 then
+				local buffeft1 = global.SpecialNumericEffect(_env, "+Armor_15109_3_Count", {
+					"?Normal"
+				}, 1)
+				local RpFactor = global.SpecialPropGetter(_env, "Armor_15109_3")(_env, target)
+
+				if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Armor_15109_3_Count")) < 3 then
+					global.ApplyRPRecovery(_env, target, RpFactor)
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Armor_15109_3_Count",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
+			end
+
+			if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Boot_15109_3")) > 0 then
+				local buffeft1 = global.SpecialNumericEffect(_env, "+Boot_15109_3_Count", {
+					"?Normal"
+				}, 1)
+				local HealRateFactor = global.SpecialPropGetter(_env, "Boot_15109_3")(_env, target)
+				local recovery = HealRateFactor * global.UnitPropGetter(_env, "maxHp")(_env, target)
+
+				if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED_ALL(_env, "Boot_15109_3_Count")) < 3 and global.UnitPropGetter(_env, "hpRatio")(_env, target) < 0.7 then
+					global.ApplyHPRecovery(_env, target, recovery)
+					global.ApplyBuff(_env, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Boot_15109_3_Count",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
 			end
 		end
 	end
@@ -4109,6 +4317,46 @@ function all.Revive_Check(_env, actor, hpRatio, anger, location, unit)
 	end
 
 	return reviveunit
+end
+
+function all.CellRowLocation(_env, cell)
+	local this = _env.this
+	local global = _env.global
+	local location = 0
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 1 or global.abs(_env, global.IdOfCell(_env, cell)) == 2 or global.abs(_env, global.IdOfCell(_env, cell)) == 3 then
+		location = 1
+	end
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 4 or global.abs(_env, global.IdOfCell(_env, cell)) == 5 or global.abs(_env, global.IdOfCell(_env, cell)) == 6 then
+		location = 2
+	end
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 7 or global.abs(_env, global.IdOfCell(_env, cell)) == 8 or global.abs(_env, global.IdOfCell(_env, cell)) == 9 then
+		location = 3
+	end
+
+	return location
+end
+
+function all.CellColLocation(_env, cell)
+	local this = _env.this
+	local global = _env.global
+	local location = 0
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 1 or global.abs(_env, global.IdOfCell(_env, cell)) == 4 or global.abs(_env, global.IdOfCell(_env, cell)) == 7 then
+		location = 1
+	end
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 2 or global.abs(_env, global.IdOfCell(_env, cell)) == 5 or global.abs(_env, global.IdOfCell(_env, cell)) == 8 then
+		location = 2
+	end
+
+	if global.abs(_env, global.IdOfCell(_env, cell)) == 3 or global.abs(_env, global.IdOfCell(_env, cell)) == 6 or global.abs(_env, global.IdOfCell(_env, cell)) == 9 then
+		location = 3
+	end
+
+	return location
 end
 
 return _M

@@ -461,6 +461,17 @@
         "UnlockDesc": "FEMSi_2_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_FEMSi_3": {
+        "HeadDesc": "Surface_FEMSi_wvt_Desc",
+        "HeadName": "FEMSi_3_HeadName",
+        "HeroMasterId": "FEMSi",
+        "IconPath": "asset/heros/xlte_wvt/battlepic_xlte_wvt.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_FEMSi_3",
+        "Type": 5,
+        "UnlockDesc": "FEMSi_3_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_FGao": {
         "HeadDesc": "HeroBase_Desc_FGao",
         "HeadName": "FGao_HeadName",
@@ -1363,6 +1374,17 @@
         "UnlockDesc": "PNCao_2_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_PSKe": {
+        "HeadDesc": "HeroBase_Desc_PSKe",
+        "HeadName": "PSKe_HeadName",
+        "HeroMasterId": "PSKe",
+        "IconPath": "asset/heros/hdie/battlepic_hdie.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "PSKe_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_QBTe": {
         "HeadDesc": "HeroBase_Desc_QBTe",
         "HeadName": "QBTe_HeadName",
@@ -1427,6 +1449,17 @@
         "SurfaceMasterId": "Surface_SDTZi_3",
         "Type": 5,
         "UnlockDesc": "SDTZi_3_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_SGBao": {
+        "HeadDesc": "HeroBase_Desc_SGBao",
+        "HeadName": "SGBao_HeadName",
+        "HeroMasterId": "SGBao",
+        "IconPath": "asset/heros/byu/battlepic_byu.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SGBao_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SGHQShou": {
@@ -1500,7 +1533,7 @@
         "HeadName": "SP_ALPo_HeadName",
         "HeroMasterId": "SP_ALPo",
         "IconPath": "asset/heros/SP_ALPo/battlepic_sp_ljya.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SP_ALPo_HeadUnlock",
@@ -1786,7 +1819,7 @@
         "HeadName": "XBKLDi_2_HeadName",
         "HeroMasterId": "XBKLDi",
         "IconPath": "asset/heros/yasong_christmas/battlepic_yasong_christmas.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_XBKLDi_2",
         "Type": 5,
         "UnlockDesc": "XBKLDi_2_HeadUnlock",

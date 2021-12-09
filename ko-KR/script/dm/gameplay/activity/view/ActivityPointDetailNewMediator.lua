@@ -91,6 +91,11 @@ function ActivityPointDetailNewMediator:glueFieldAndUi()
 
 	self._bg = self._main:getChildByName("Image_bg")
 	self._conditionPanel = self._rightPanel:getChildByFullName("Panel_condition")
+	self._infomationPanel = self._rightPanel:getChildByFullName("Panel_infomation")
+	self._infomationClone = self._main:getChildByFullName("Panel_3")
+
+	self._infomationClone:setVisible(false)
+
 	self._guideBtn = self._main:getChildByName("guildBtn")
 
 	self._guideBtn:setLocalZOrder(9999)
@@ -285,7 +290,7 @@ function ActivityPointDetailNewMediator:initAnim()
 	local starMc = mc:getChildByName("stardi")
 
 	starMc:removeAllChildren()
-	self._conditionPanel:changeParent(starMc):center(starMc:getContentSize()):offset(7, 18)
+	self._conditionPanel:changeParent(starMc):center(starMc:getContentSize()):offset(7, 40)
 
 	local teamMc = mc:getChildByFullName("team")
 
@@ -300,7 +305,7 @@ function ActivityPointDetailNewMediator:initAnim()
 
 	rewardMc:setLocalZOrder(9999)
 	self._dropPanel:changeParent(rewardMc)
-	self._dropPanel:setPosition(cc.p(-7, -25))
+	self._dropPanel:setPosition(cc.p(-7, -34))
 
 	local titleMc = mc:getChildByFullName("title")
 
@@ -322,6 +327,11 @@ function ActivityPointDetailNewMediator:initAnim()
 	local act = cc.Sequence:create(cc.DelayTime:create(0.4375), cc.FadeIn:create(0.3125))
 
 	self._challengeBtn:runAction(act:clone())
+
+	local originX, originY = self._infomationPanel:getPosition()
+
+	self._infomationPanel:setPositionX(originX + 400)
+	self._infomationPanel:runAction(cc.MoveTo:create(0.3, cc.p(originX, originY)))
 	mc:gotoAndPlay(1)
 end
 
@@ -454,6 +464,68 @@ function ActivityPointDetailNewMediator:setupView()
 			self:addContent(Strings:get(descs[i], {
 				fontName = "asset/font/CustomFont_FZYH_M.TTF"
 			}), listView)
+		end
+	end
+
+	local infomation = self._point:getBlockInformation()
+
+	self._infomationPanel:setVisible(next(infomation) ~= nil)
+
+	local size = next(infomation) ~= nil and cc.size(409, 46) or cc.size(409, 110)
+
+	listView:setContentSize(size)
+
+	if next(infomation) then
+		local panel1 = self._infomationPanel:getChildByName("Image_7")
+
+		panel1:setVisible(infomation.BossDetail.show == "1")
+
+		local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", infomation.BossDetail.BossModel, "RoleModel")
+		local rivalIcon = IconFactory:createRoleIconSpriteNew({
+			id = roleModelId
+		})
+
+		rivalIcon:setScale(0.3)
+		rivalIcon:addTo(panel1:getChildByName("Image_10")):posite(30, 24)
+
+		local function callFunc()
+			self:clickBoss(infomation.BossDetail.BossModel)
+		end
+
+		mapButtonHandlerClick(nil, panel1, {
+			clickAudio = "Se_Click_Select_1",
+			func = callFunc
+		})
+
+		local listView = self._infomationPanel:getChildByName("ListView")
+
+		listView:setScrollBarEnabled(false)
+		listView:setVisible(next(infomation.SpecialRule) ~= nil)
+		listView:removeAllChildren()
+
+		for i, v in ipairs(infomation.SpecialRule or {}) do
+			local clone = self._infomationClone:clone()
+
+			clone:setVisible(true)
+			listView:pushBackCustomItem(clone)
+
+			local config = ConfigReader:getRecordById("PicGuide", v)
+
+			clone:getChildByName("Text_title"):setString(Strings:get(config.Name))
+
+			local img = clone:getChildByName("Image_12")
+
+			img:ignoreContentAdaptWithSize(false)
+			img:loadTexture(config.Icon .. ".png", ccui.TextureResType.plistType)
+
+			local function callFunc()
+				self:clickRule(v)
+			end
+
+			mapButtonHandlerClick(nil, clone:getChildByName("Image_11"), {
+				clickAudio = "Se_Click_Select_1",
+				func = callFunc
+			})
 		end
 	end
 
@@ -865,6 +937,25 @@ function ActivityPointDetailNewMediator:onClickSpecialRule()
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
 		ruleList = descs
+	})
+
+	self:dispatch(event)
+end
+
+function ActivityPointDetailNewMediator:clickBoss(bossId)
+	local heroView = self:getInjector():getInstance("battleShowHeroView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, heroView, {
+		maskOpacity = 100
+	}, {
+		heroId = bossId
+	}, nil))
+end
+
+function ActivityPointDetailNewMediator:clickRule(ruleId)
+	local view = self:getInjector():getInstance("ActivityPointDetailRuleView")
+	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
+		ruleId = ruleId
 	})
 
 	self:dispatch(event)

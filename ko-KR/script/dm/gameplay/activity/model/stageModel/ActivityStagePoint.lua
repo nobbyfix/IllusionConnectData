@@ -293,3 +293,7 @@ end
 function ActivityStagePoint:getHeroAttrStarExtra()
 	return self._config.HeroAttrSatrExtra
 end
+
+function ActivityStagePoint:getBlockInformation()
+	return self._config.BlockInformation or {}
+end

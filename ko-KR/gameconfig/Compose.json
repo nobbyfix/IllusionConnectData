@@ -683,6 +683,42 @@
         },
         "Times": 1
     },
+    "CO_Decoration_15108_2": {
+        "ComposePosition": "Decoration",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "IfTrans": 1,
+        "Item1": {
+            "amount": 1,
+            "id": "CO_DecorationStone_2",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Decoration"
+        },
+        "Item5": "",
+        "Reward": "Decoration_15108_2",
+        "Show": {
+            "id": "Decoration_15108_2",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
     "CO_Shoes_15001": {
         "ComposePosition": "Shoes",
         "Currency": {
@@ -1255,6 +1291,42 @@
         "Reward": "Shoes_15108_2",
         "Show": {
             "id": "Shoes_15108_2",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Shoes_15109_3": {
+        "ComposePosition": "Shoes",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "IfTrans": 1,
+        "Item1": {
+            "amount": 1,
+            "id": "CO_ShoesStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Shoes"
+        },
+        "Item5": "",
+        "Reward": "Shoes_15109_3",
+        "Show": {
+            "id": "Shoes_15109_3",
             "type": "Equip"
         },
         "Times": 1
@@ -1975,6 +2047,42 @@
         "Reward": "Tops_15108_2",
         "Show": {
             "id": "Tops_15108_2",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Tops_15109_3": {
+        "ComposePosition": "Tops",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "IfTrans": 1,
+        "Item1": {
+            "amount": 1,
+            "id": "CO_TopsStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Tops"
+        },
+        "Item5": "",
+        "Reward": "Tops_15109_3",
+        "Show": {
+            "id": "Tops_15109_3",
             "type": "Equip"
         },
         "Times": 1
@@ -2911,6 +3019,42 @@
         "Reward": "Weapon_15117_2",
         "Show": {
             "id": "Weapon_15117_2",
+            "type": "Equip"
+        },
+        "Times": 1
+    },
+    "CO_Weapon_15118_3": {
+        "ComposePosition": "Weapon",
+        "Currency": {
+            "amount": 2000000,
+            "id": "IR_Gold",
+            "type": "Item"
+        },
+        "IfTrans": 1,
+        "Item1": {
+            "amount": 1,
+            "id": "CO_WeaponStone_3",
+            "type": "Item"
+        },
+        "Item2": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item3": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item4": {
+            "Quality": "14",
+            "amount": 1,
+            "type": "Weapon"
+        },
+        "Item5": "",
+        "Reward": "Weapon_15118_3",
+        "Show": {
+            "id": "Weapon_15118_3",
             "type": "Equip"
         },
         "Times": 1

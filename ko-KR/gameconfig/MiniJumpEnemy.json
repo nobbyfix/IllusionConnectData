@@ -1,0 +1,3608 @@
+{
+    "ClubJump1": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 1,
+        "PlatformDistance": [
+            100,
+            100
+        ],
+        "PlatformScale": [
+            1,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump10": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            100,
+            100
+        ],
+        "Order": 10,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1.5,
+            1.5
+        ],
+        "RewardId": "ClubJump_Reward_2",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.8,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump11": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 11,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump12": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            150,
+            150
+        ],
+        "Order": 12,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1.5,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.8,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump13": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 13,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump14": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 14,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump15": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            150,
+            150
+        ],
+        "Order": 15,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "ClubJump_Reward_4",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            1,
+            1
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump16": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 16,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump17": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 17,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump18": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 18,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump19": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            125,
+            175
+        ],
+        "Order": 19,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            1,
+            1.2
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump2": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 2,
+        "PlatformDistance": [
+            100,
+            150
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump20": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 20,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "ClubJump_Reward_1",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump21": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": [
+            150,
+            200
+        ],
+        "Order": 21,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            1,
+            1.2
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump22": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            125,
+            175
+        ],
+        "Order": 22,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0.8,
+            1
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump23": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 23,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump24": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 24,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.3,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 150,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.7,
+                "scale": 0.75,
+                "score": 200
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump25": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            125,
+            175
+        ],
+        "Order": 25,
+        "PlatformDistance": [
+            200,
+            250
+        ],
+        "PlatformScale": [
+            0.5,
+            0.8
+        ],
+        "RewardId": "ClubJump_Reward_5",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.8,
+            1
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump26": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 26,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump27": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 27,
+        "PlatformDistance": [
+            300,
+            350
+        ],
+        "PlatformScale": [
+            0.5,
+            0.8
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump28": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            150,
+            200
+        ],
+        "Order": 28,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.5,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump29": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            150,
+            200
+        ],
+        "Order": 29,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.5,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump3": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 3,
+        "PlatformDistance": [
+            100,
+            150
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump30": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            150,
+            200
+        ],
+        "Order": 30,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "ClubJump_Reward_4",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.5,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump31": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 31,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.5,
+            0.8
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump32": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 32,
+        "PlatformDistance": [
+            250,
+            300
+        ],
+        "PlatformScale": [
+            0.5,
+            0.8
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump33": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            200,
+            250
+        ],
+        "Order": 33,
+        "PlatformDistance": [
+            300,
+            350
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.5,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump34": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            200,
+            250
+        ],
+        "Order": 34,
+        "PlatformDistance": [
+            300,
+            350
+        ],
+        "PlatformScale": [
+            0.8,
+            1
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.5,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump35": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 35,
+        "PlatformDistance": [
+            300,
+            350
+        ],
+        "PlatformScale": [
+            0.5,
+            0.8
+        ],
+        "RewardId": "ClubJump_Reward_2",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump36": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            200,
+            250
+        ],
+        "Order": 36,
+        "PlatformDistance": [
+            350,
+            400
+        ],
+        "PlatformScale": [
+            0.8,
+            0.8
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            1.2,
+            1.2
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump37": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            250,
+            300
+        ],
+        "Order": 37,
+        "PlatformDistance": [
+            400,
+            450
+        ],
+        "PlatformScale": [
+            0.7,
+            0.7
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            1.0,
+            1.0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump38": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            300,
+            350
+        ],
+        "Order": 38,
+        "PlatformDistance": [
+            450,
+            500
+        ],
+        "PlatformScale": [
+            0.6,
+            0.6
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.8,
+            0.8
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump39": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            50,
+            200
+        ],
+        "Order": 39,
+        "PlatformDistance": [
+            500,
+            600
+        ],
+        "PlatformScale": [
+            0.5,
+            0.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0.3,
+            0.3
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump4": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            100,
+            100
+        ],
+        "Order": 4,
+        "PlatformDistance": [
+            125,
+            175
+        ],
+        "PlatformScale": [
+            1.5,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            1.2,
+            1.2
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump40": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 40,
+        "PlatformDistance": [
+            600,
+            700
+        ],
+        "PlatformScale": [
+            0.5,
+            0.5
+        ],
+        "RewardId": "ClubJump_Reward_3",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    200
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump5": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 5,
+        "PlatformDistance": [
+            100,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "ClubJump_Reward_1",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump6": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 6,
+        "PlatformDistance": [
+            100,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump7": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 2,
+        "MoveDistance": [
+            100,
+            100
+        ],
+        "Order": 7,
+        "PlatformDistance": [
+            150,
+            200
+        ],
+        "PlatformScale": [
+            1.5,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.4,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_3.png",
+                "position": 0.5,
+                "scale": 0.85,
+                "score": 300
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.6,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    125,
+                    125
+                ],
+                "moveTime": [
+                    1.25,
+                    1.25
+                ],
+                "moveType": 1,
+                "offsetY": 125,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            1,
+            1
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump8": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 8,
+        "PlatformDistance": [
+            100,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    },
+    "ClubJump9": {
+        "MinAwardLength": 0.2,
+        "MoveDirection": 0,
+        "MoveDistance": "",
+        "Order": 9,
+        "PlatformDistance": [
+            100,
+            200
+        ],
+        "PlatformScale": [
+            1,
+            1.5
+        ],
+        "RewardId": "",
+        "ScoreNum": [
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.3,
+                "scale": 0.5,
+                "score": 100
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_2.png",
+                "position": 0.5,
+                "scale": 0.75,
+                "score": 200
+            },
+            {
+                "moveDistance": [
+                    25,
+                    25
+                ],
+                "moveTime": [
+                    1,
+                    1
+                ],
+                "moveType": 1,
+                "offsetY": 50,
+                "pic": "Jump_ico_jl_1.png",
+                "position": 0.7,
+                "scale": 0.5,
+                "score": 100
+            }
+        ],
+        "Speed": [
+            0,
+            0
+        ],
+        "VariableX": 500,
+        "VariableY": 500,
+        "score": 100
+    }
+}

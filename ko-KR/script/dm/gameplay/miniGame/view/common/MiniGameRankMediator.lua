@@ -78,7 +78,7 @@ function MiniGameRankMediator:initData(data)
 	self._activityId = data.activityId
 	self._gameEvn = data.evn
 	self._rankNum = data.rankNum
-	self._rankType = RankType.kMiniGame
+	self._rankType = data.rankType
 end
 
 function MiniGameRankMediator:refreshData()
@@ -275,7 +275,7 @@ function MiniGameRankMediator:doRequestNextRank()
 			local rankStart = self._rankSystem:getRankCountByType(self._rankType) + 1
 			local rankEnd = rankStart + self._rankSystem:getRequestRankCountPerTime() - 1
 
-			self._miniGameSystem:requestActivityRankData(self._activityId, rankStart, rankEnd, function ()
+			self._miniGameSystem:requestActivityRankData(self._rankType, self._activityId, rankStart, rankEnd, function ()
 				self:refreshTableViewByServer()
 			end)
 		end

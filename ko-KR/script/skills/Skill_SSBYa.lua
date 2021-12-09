@@ -279,7 +279,9 @@ all.Skill_SSBYa_Unique = {
 					})
 				end
 			else
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, atk * this.HealFactor)
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, _env.ACTOR, this.HealFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, heal)
 
 				local buffeft = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -457,7 +459,9 @@ all.Skill_SSBYa_Proud_EX = {
 			if this.HpRatioFactor < hpRatio then
 				damage.val = damage.val * (1 + this.DamageFactor)
 			else
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, atk * this.HealFactor)
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, _env.ACTOR, this.HealFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, heal)
 
 				local buffeft = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -632,7 +636,9 @@ all.Skill_SSBYa_Unique_EX = {
 					})
 				end
 			else
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, atk * this.HealFactor)
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, _env.ACTOR, this.HealFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, heal)
 
 				local buffeft = global.NumericEffect(_env, "+defrate", {
 					"+Normal",

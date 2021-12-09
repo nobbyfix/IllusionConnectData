@@ -86,11 +86,6 @@ function ActivitySagaSupportScoreRewardMediator:initContent()
 		local actBtn = panel:getChildByName("actBtn")
 
 		actBtn:setSwallowTouches(false)
-
-		local lbText = actBtn:getChildByName("Text_str")
-
-		lbText:disableEffect(1)
-		lbText:setTextColor(cc.c3b(0, 0, 0))
 		self:updataCell(panel, self._data[i], i)
 	end
 end

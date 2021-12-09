@@ -1,5 +1,6 @@
 require("dm.gameplay.miniGame.MiniGameConfig")
 require("dm.gameplay.miniGame.controller.DartsSystem")
+require("dm.gameplay.miniGame.controller.JumpSystem")
 
 MiniGameSystem = class("MiniGameSystem", legs.Actor)
 
@@ -21,9 +22,6 @@ MiniGameSystem:has("_systemKeeper", {
 MiniGameSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
-MiniGameSystem:has("_clubSystem", {
-	is = "r"
-}):injectWith("ClubSystem")
 MiniGameSystem:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
@@ -33,14 +31,19 @@ MiniGameSystem:has("_rotation", {
 MiniGameSystem:has("_dartsSystem", {
 	is = "r"
 })
+MiniGameSystem:has("_jumpSystem", {
+	is = "r"
+})
 
-local miniGameStageFunc = {}
-local miniGameActivityFunc = {
-	[MiniGameType.kDarts] = function (sys, pointId)
-		sys:getDartsSystem():tryEnterByActivity(pointId)
-	end
-}
-local miniGameClubFunc = {}
+local miniGameActivityFunc = {}
+
+miniGameActivityFunc[MiniGameType.kDarts] = function (sys, pointId)
+	sys:getDartsSystem():tryEnterByActivity(pointId)
+end
+
+miniGameActivityFunc[MiniGameType.kJump] = function (sys, pointId)
+	sys:getJumpSystem():tryEnterByActivity(pointId)
+end
 
 function MiniGameSystem:inintRotation()
 	self._rotation = false
@@ -52,17 +55,15 @@ function MiniGameSystem:initialize()
 	self:initSystem()
 end
 
-function MiniGameSystem:syncDispatch()
-	self:dispatch(Event:new(EVT_CLUB_PUSHREDPOINT_SUCC))
-end
-
 function MiniGameSystem:userInject(injector)
 	injector:injectInto(self._rankSystem)
 	injector:injectInto(self._dartsSystem)
+	injector:injectInto(self._jumpSystem)
 end
 
 function MiniGameSystem:initSystem()
 	self._dartsSystem = DartsSystem:new(self)
+	self._jumpSystem = JumpSystem:new(self)
 end
 
 function MiniGameSystem:tryEnterByStage(pointId)
@@ -96,10 +97,17 @@ function MiniGameSystem:getActivityByGameType(gameType)
 	return nil
 end
 
-function MiniGameSystem:tryEnter()
-	local activity = self._activitySystem:getActivityByType(ActivityType.KMiniGame)
+function MiniGameSystem:tryEnter(data)
+	local activityId = data and data.activityId
 
-	self:tryEnterByActivity(activity:getId())
+	dump(data, "data____")
+
+	local activity = self._activitySystem:getActivityById(activityId)
+	activity = activity or self._activitySystem:getActivityByType(ActivityType.KMiniGame)
+
+	if activity and self._activitySystem:isActivityOpen(activity:getId()) then
+		self:tryEnterByActivity(activity:getId())
+	end
 end
 
 function MiniGameSystem:tryEnterByActivityType(gameType)
@@ -117,6 +125,8 @@ function MiniGameSystem:tryEnterByActivityType(gameType)
 end
 
 function MiniGameSystem:tryEnterByActivity(activityId)
+	dump(activityId, "activityId-___")
+
 	if GameConfigs.forbiddenMiniGame then
 		self:dispatch(ShowTipEvent({
 			tip = GameConfigs.forbiddenMiniGameTips
@@ -133,90 +143,21 @@ function MiniGameSystem:tryEnterByActivity(activityId)
 	end
 end
 
-function MiniGameSystem:tryEnterByClub(gameType)
-	local unlock, tips = self:isClubGameUnlock(gameType)
-
-	if not unlock then
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = tips
-		}))
-
-		return
-	end
-
-	local gameId = self:getGameByType(gameType):getId()
-
-	self:getClubGameInfo(gameId, function ()
-		if miniGameClubFunc[gameType] then
-			miniGameClubFunc[gameType](self)
-		end
-
-		snkAudio.play("Se_Click_Open_2")
-	end)
-end
-
 function MiniGameSystem:getActivityById(activityId)
 	return self._activitySystem:getActivityById(activityId)
 end
 
-function MiniGameSystem:getRankListOjById(activityId)
-	return self._rankSystem:getRank():getRankListByTypeAndSubId(RankType.kMiniGame, activityId)
+function MiniGameSystem:getRankListOjById(activityId, rankType)
+	return self._rankSystem:getRank():getRankListByTypeAndSubId(rankType, activityId)
 end
 
-function MiniGameSystem:getRankListById(activityId)
-	return self:getRankListOjById(activityId):getList()
+function MiniGameSystem:getRankListById(activityId, rankType)
+	return self:getRankListOjById(activityId, rankType):getList()
 end
 
-function MiniGameSystem:getClubMiniGameList()
-	return self._developSystem:getPlayer():getClubMiniGameList()
-end
-
-function MiniGameSystem:getGameByType(gameType)
-	return self:getClubMiniGameList():getGameByType(gameType)
-end
-
-function MiniGameSystem:getGameById(id)
-	return self:getClubMiniGameList():getGameById(id)
-end
-
-function MiniGameSystem:isClubGameUnlock(gameType)
-	local unLockId = self:getGameByType(gameType):getUnlockId()
-
-	return self._systemKeeper:isUnlock(unLockId)
-end
-
-function MiniGameSystem:getClubRankListOjById(gameType)
-	return self:getGameByType(gameType):getRankList()
-end
-
-function MiniGameSystem:tryEnterClubGameRank(gameType)
-	local gameId = self:getGameByType(gameType):getId()
-
-	self:requestClubGameRankData(gameId, 1, 20, function (response)
-		local view = self:getInjector():getInstance("MiniGameRankView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, {
-			evn = MiniGameEvn.kClub,
-			type = gameType
-		}, nil))
-	end)
-end
-
-function MiniGameSystem:synchronizeClubGamePlaneTask(data)
-	local clubGamePlaneData = self._planeWarSystem:getClubGamePlaneData()
-
-	if data and data.workingTasks and clubGamePlaneData then
-		clubGamePlaneData:getTaskList():synchronize(data.workingTasks)
-		self:dispatch(Event:new(EVT_CLUB_PUSHREDPOINT_SUCC))
-	end
-end
-
-function MiniGameSystem:requestActivityRankData(subId, rankStart, rankEnd, callFunc)
+function MiniGameSystem:requestActivityRankData(rankType, subId, rankStart, rankEnd, callFunc)
 	local data = {
-		type = RankType.kMiniGame,
+		type = rankType,
 		subId = subId,
 		rankStart = rankStart,
 		rankEnd = rankEnd
@@ -226,6 +167,8 @@ function MiniGameSystem:requestActivityRankData(subId, rankStart, rankEnd, callF
 		if callFunc then
 			callFunc(response)
 		end
+
+		self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 	end)
 end
 
@@ -244,6 +187,7 @@ function MiniGameSystem:requestActivityGameBegin(activityId, callFunc)
 			end
 
 			self:dispatch(Event:new(EVT_ACTIVITY_MINIGAME_BEGIN_SCUESS))
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
 	end)
 end
@@ -263,6 +207,7 @@ function MiniGameSystem:requestActivityGameBuyTimes(activityId, callFunc)
 			end
 
 			self:dispatch(Event:new(EVT_ACTIVITY_MINIGAME_BUYTIMES_SCUESS))
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
 	end)
 end
@@ -279,6 +224,7 @@ function MiniGameSystem:requestActivityGameResult(activityId, param, callFunc)
 			self:dispatch(Event:new(EVT_ACTIVITY_MINIGAME_RESULT_SCUESS, {
 				response = response
 			}))
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
 
 		if callFunc then
@@ -311,6 +257,7 @@ function MiniGameSystem:requestActivityGameGetReward(activityId, taskId, callFun
 			self:dispatch(Event:new(EVT_ACTIVITY_MINIGAME_GETREWARD_SCUESS, {
 				response = response.data.reward
 			}))
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
 	end)
 end
@@ -333,136 +280,7 @@ function MiniGameSystem:requestActivityGameGetCumulativeReward(activityId, taskI
 			self:dispatch(Event:new(EVT_ACTIVITY_MINIGAME_GETREWARD_SCUESS, {
 				response = response.data.reward
 			}))
-		end
-	end)
-end
-
-function MiniGameSystem:requestClubGameRankData(gameId, rankStart, rankEnd, callFunc)
-	rankStart = rankStart or 1
-	rankEnd = rankEnd or 20
-	local params = {
-		game = gameId,
-		start = rankStart,
-		["end"] = rankEnd
-	}
-
-	self._miniGameService:requestClubGameRankData(params, true, function (response)
-		self:getGameById(gameId):getRankList():synchronize(response.data)
-
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:requestClubGameStart(gameId, callFunc)
-	local params = {
-		game = gameId
-	}
-
-	self._miniGameService:requestClubGameStart(params, true, function (response)
-		if response.resCode == GS_SUCCESS then
-			self:dispatch(Event:new(EVT_CLUB_MINIGAME_BEGIN_SCUESS))
-		end
-
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:requestClubGameFinish(gameId, params, callFunc)
-	local params = {
-		game = gameId,
-		params = params
-	}
-
-	self._miniGameService:requestClubGameFinish(params, true, function (response)
-		if response.resCode == GS_SUCCESS then
-			if gameId == "ClubGame_Jump" then
-				local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
-
-				customDataSystem:setValue(PrefixType.kGlobal, "played_jump", true, true)
-			end
-
-			self:dispatch(Event:new(EVT_CLUB_MINIGAME_RESULT_SCUESS, {
-				response = response
-			}))
-		end
-
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:requestClubGameBuyTimes(gameId, callFunc)
-	local params = {
-		game = gameId
-	}
-
-	self._miniGameService:requestClubGameBuyTimes(params, true, function (response)
-		if response.resCode == GS_SUCCESS then
-			self:dispatch(Event:new(EVT_CLUB_MINIGAME_BUYTIMES_SCUESS))
-		end
-
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:requestClubGameCustom(gameId, params, callFunc)
-	local params = {
-		game = gameId,
-		params = params
-	}
-
-	self._miniGameService:requestClubGameCustom(params, true, function (response)
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:getClubGameInfo(gameId, callFunc)
-	local params = {
-		game = gameId
-	}
-
-	self._miniGameService:getClubGameInfo(params, true, function (response)
-		if response.resCode == GS_SUCCESS then
-			local gameData = self:getGameById(gameId)
-
-			if gameData then
-				gameData:synchronize(response.data)
-				self:dispatch(Event:new(EVT_CLUB_PUSHREDPOINT_SUCC))
-			end
-		end
-
-		if callFunc then
-			callFunc(response)
-		end
-	end)
-end
-
-function MiniGameSystem:getClubGameSweep(gameId, callFunc)
-	local params = {
-		game = gameId
-	}
-
-	self._miniGameService:getClubGameSweep(params, true, function (response)
-		if response.resCode == GS_SUCCESS then
-			local gameData = self:getGameById(gameId)
-
-			if gameData then
-				gameData:synchronize(response.data)
-				self:dispatch(Event:new(EVT_CLUB_MINIGAME_SWEEEP_SCUESS))
-			end
-
-			if callFunc then
-				callFunc(response)
-			end
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
 	end)
 end

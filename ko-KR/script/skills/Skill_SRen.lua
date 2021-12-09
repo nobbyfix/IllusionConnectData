@@ -693,7 +693,10 @@ all.Skill_SRen_Unique_Awaken = {
 
 				if _env.num > 1 then
 					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 2)
-					global.ApplyHPDamage(_env, unit, atk * 2)
+
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+						global.ApplyHPDamage(_env, unit, atk * 2)
+					end
 				end
 
 				if _env.num == 1 then
@@ -701,7 +704,10 @@ all.Skill_SRen_Unique_Awaken = {
 
 					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
 					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 1)
-					global.ApplyHPDamage(_env, unit, atk * (buffnum + 1))
+
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+						global.ApplyHPDamage(_env, unit, atk * (buffnum + 1))
+					end
 				end
 
 				if _env.num == 0 then
@@ -709,7 +715,7 @@ all.Skill_SRen_Unique_Awaken = {
 
 					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE"), 2)
 
-					if buffnum ~= 0 then
+					if buffnum ~= 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
 						global.ApplyHPDamage(_env, unit, atk * buffnum)
 					end
 				end

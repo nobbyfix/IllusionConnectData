@@ -223,6 +223,7 @@ function HeroShowOwnMediator:initNodes()
 	self._buttonPanel = self._mainPanel:getChildByFullName("buttonPanel")
 	self._surfaceBtn = self._buttonPanel:getChildByFullName("surfacebtn")
 	self._storyBtn = self._buttonPanel:getChildByFullName("storybtn")
+	self._bustBtn = self._buttonPanel:getChildByFullName("bustbtn")
 
 	self._buttonPanel:getChildByFullName("detailbtn.text"):setString(Strings:get("Hero_button_1"))
 	self._buttonPanel:getChildByFullName("surfacebtn.text"):setString(Strings:get("Hero_button_2"))
@@ -240,6 +241,8 @@ function HeroShowOwnMediator:initNodes()
 		redPoint:setVisible(false)
 	end
 
+	self._storyBtn:setVisible(false)
+	self._bustBtn:setPositionX(self._storyBtn:getPositionX())
 	self:setEffect()
 end
 

@@ -600,11 +600,30 @@ MiniGameRankRecord:has("_score", {
 function MiniGameRankRecord:initialize()
 	super.initialize(self)
 
-	self._rankType = RankType.kMiniGame
+	self._rankType = RankType.kDarts
 	self._score = 0
 end
 
 function MiniGameRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
+end
+
+MiniGameJumpRankRecord = class("MiniGameJumpRankRecord", BaseRankRecord, _M)
+
+MiniGameJumpRankRecord:has("_score", {
+	is = "r"
+})
+
+function MiniGameJumpRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.kJump
+	self._score = 0
+end
+
+function MiniGameJumpRankRecord:synchronize(data)
 	super.synchronize(self, data)
 
 	self._score = data.value or 0
