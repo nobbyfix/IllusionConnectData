@@ -1,0 +1,164 @@
+{
+    "ChessArena_Rank1": {
+        "RandomValue": 0,
+        "RankRange": [
+            1,
+            10
+        ],
+        "ResetType": 1,
+        "RobotId": [
+            "ChessArena_Robot31",
+            "ChessArena_Robot32",
+            "ChessArena_Robot33",
+            "ChessArena_Robot34",
+            "ChessArena_Robot35",
+            "ChessArena_Robot36"
+        ],
+        "Sort": 1,
+        "StepValue": 0
+    },
+    "ChessArena_Rank2": {
+        "RandomValue": 1,
+        "RankRange": [
+            11,
+            20
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot25",
+            "ChessArena_Robot26",
+            "ChessArena_Robot27",
+            "ChessArena_Robot28",
+            "ChessArena_Robot29",
+            "ChessArena_Robot30"
+        ],
+        "Sort": 2,
+        "StepValue": 3
+    },
+    "ChessArena_Rank3": {
+        "RandomValue": 2,
+        "RankRange": [
+            21,
+            50
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot19",
+            "ChessArena_Robot20",
+            "ChessArena_Robot21",
+            "ChessArena_Robot22",
+            "ChessArena_Robot23",
+            "ChessArena_Robot24"
+        ],
+        "Sort": 3,
+        "StepValue": 5
+    },
+    "ChessArena_Rank4": {
+        "RandomValue": 4,
+        "RankRange": [
+            51,
+            200
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot13",
+            "ChessArena_Robot14",
+            "ChessArena_Robot15",
+            "ChessArena_Robot16",
+            "ChessArena_Robot17",
+            "ChessArena_Robot18"
+        ],
+        "Sort": 4,
+        "StepValue": 10
+    },
+    "ChessArena_Rank5": {
+        "RandomValue": 10,
+        "RankRange": [
+            201,
+            500
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot13",
+            "ChessArena_Robot14",
+            "ChessArena_Robot15",
+            "ChessArena_Robot16",
+            "ChessArena_Robot17",
+            "ChessArena_Robot18"
+        ],
+        "Sort": 5,
+        "StepValue": 30
+    },
+    "ChessArena_Rank6": {
+        "RandomValue": 15,
+        "RankRange": [
+            501,
+            1000
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot13",
+            "ChessArena_Robot14",
+            "ChessArena_Robot15",
+            "ChessArena_Robot16",
+            "ChessArena_Robot17",
+            "ChessArena_Robot18"
+        ],
+        "Sort": 6,
+        "StepValue": 50
+    },
+    "ChessArena_Rank7": {
+        "RandomValue": 35,
+        "RankRange": [
+            1001,
+            2000
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot13",
+            "ChessArena_Robot14",
+            "ChessArena_Robot15",
+            "ChessArena_Robot16",
+            "ChessArena_Robot17",
+            "ChessArena_Robot18"
+        ],
+        "Sort": 7,
+        "StepValue": 100
+    },
+    "ChessArena_Rank8": {
+        "RandomValue": 50,
+        "RankRange": [
+            2001,
+            3500
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot7",
+            "ChessArena_Robot8",
+            "ChessArena_Robot9",
+            "ChessArena_Robot10",
+            "ChessArena_Robot11",
+            "ChessArena_Robot12"
+        ],
+        "Sort": 8,
+        "StepValue": 160
+    },
+    "ChessArena_Rank9": {
+        "RandomValue": 80,
+        "RankRange": [
+            3501,
+            6000
+        ],
+        "ResetType": 2,
+        "RobotId": [
+            "ChessArena_Robot1",
+            "ChessArena_Robot2",
+            "ChessArena_Robot3",
+            "ChessArena_Robot4",
+            "ChessArena_Robot5",
+            "ChessArena_Robot6"
+        ],
+        "Sort": 9,
+        "StepValue": 250
+    }
+}

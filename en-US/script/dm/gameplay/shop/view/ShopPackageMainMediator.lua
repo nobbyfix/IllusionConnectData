@@ -24,7 +24,6 @@ ShopPackageMainMediator:has("_systemKeeper", {
 
 local kNums = 3
 local kCellHeight = 503
-local kCellWidth = 700
 local kCellHeightTab = 60
 local ItemTag = {
 	Hot = {
@@ -126,46 +125,24 @@ function ShopPackageMainMediator:setData()
 end
 
 function ShopPackageMainMediator:initMember()
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
 	self._scrollBarBg = self:getView():getChildByFullName("scrollBarBg")
 	self._cellClone = self:getView():getChildByFullName("cellClone")
 
 	self._cellClone:setVisible(false)
 	self._cellClone:getChildByFullName("cell.rewardPanel"):setTouchEnabled(false)
 
-	self._scrollView = self:getView():getChildByFullName("base.scrollView")
+	self._scrollView = self:getView():getChildByFullName("scrollView")
 
-	self._scrollView:setScrollBarEnabled(true)
-	self._scrollView:setScrollBarAutoHideTime(9999)
-	self._scrollView:setScrollBarColor(cc.c3b(255, 255, 255))
-	self._scrollView:setScrollBarAutoHideEnabled(true)
-	self._scrollView:setScrollBarWidth(5)
-	self._scrollView:setScrollBarOpacity(255)
-	self._scrollView:setScrollBarPositionFromCorner(cc.p(19, 0))
+	self._scrollView:setScrollBarEnabled(false)
 
 	self._cellWidth = self._cellClone:getContentSize().width + 15
 	self._cellHeight = self._cellClone:getContentSize().height + 10
-	self._talkRole = self:getView():getChildByName("talkPanel")
-
-	self._talkRole:addClickEventListener(function (sender)
-		self:onClickTalkRole(sender)
-	end)
-	self._talkRole:getChildByName("Image_19"):setVisible(false)
-
-	self._rolePanel = self._talkRole:getChildByName("rolePanel")
-
-	self._rolePanel:setTouchEnabled(false)
-
-	self._shopSpine = ShopSpine:new()
-
-	self._shopSpine:addSpine(self._rolePanel)
-
-	self._talkText = self._talkRole:getChildByName("Text_talk")
-
-	self._talkText:setString("")
-
 	self._tabBg = self:getView():getChildByFullName("tabBg")
 
 	self._tabBg:setVisible(false)
+	self._tabBg:setContentSize(cc.size(winSize.width - 200, 46))
 
 	self._tabClone = self:getView():getChildByFullName("tabClone")
 
@@ -198,23 +175,25 @@ end
 function ShopPackageMainMediator:refreshView()
 	self:clearView(true)
 	self:setResetTimer()
-	self:setTalkView()
 	self:setMenuView()
 	self:setRefreshView()
 
+	local width = self._scrollView:getContentSize().width
+	local num1 = math.floor(width / self._cellWidth)
+	local num2 = math.ceil(#self._curShopItems / 2)
+	kNums = math.max(num1, num2)
 	local length = math.ceil(#self._curShopItems / kNums)
 	local viewHeight = self._scrollView:getContentSize().height
 	local allHeight = math.max(viewHeight, self._cellHeight * length)
 
-	self._scrollView:setInnerContainerSize(cc.size(kCellWidth, allHeight))
-	self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight - 5)))
+	self._scrollView:setInnerContainerSize(cc.size(kNums * self._cellWidth, allHeight))
 
 	self._cells = {}
 
 	for i = 1, length do
 		local layout = ccui.Layout:create()
 
-		layout:setContentSize(cc.size(kCellWidth, self._cellHeight))
+		layout:setContentSize(cc.size(kNums * self._cellWidth, self._cellHeight))
 		layout:addTo(self._scrollView)
 		layout:setTag(i)
 		layout:setAnchorPoint(cc.p(0, 1))
@@ -629,7 +608,7 @@ function ShopPackageMainMediator:runListAnim()
 					local starPosX = node:getPositionX()
 					local starPosY = node:getPositionY()
 
-					node:setPositionX(starPosX + 100)
+					node:setPositionX(starPosX + 20)
 
 					local time = (i - 1) * delayTime + (j - 1) * delayTime1
 					local delayAction = cc.DelayTime:create(time)
@@ -737,22 +716,6 @@ function ShopPackageMainMediator:setTimer(panel, data)
 
 		self._timer[data:getId()] = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 	end
-end
-
-function ShopPackageMainMediator:setTalkView()
-	self._showTalk = false
-
-	self:onClickTalkRole()
-end
-
-function ShopPackageMainMediator:onClickTalkRole(sender)
-	self._showTalk = not self._showTalk
-	local talkBg = self._talkRole:getChildByName("Image_20")
-
-	talkBg:setVisible(self._showTalk)
-	self._talkText:setVisible(self._showTalk)
-	self._talkText:setString(self._shopSystem:getShopTalkShow())
-	self:playAnimation(sender)
 end
 
 function ShopPackageMainMediator:playAnimation(sender)
@@ -873,7 +836,6 @@ function ShopPackageMainMediator:initRightTabController()
 	local viewWidth = self._scrollViewTab:getContentSize().width
 	local allWidth = math.max(viewWidth, self._cellWidthTab * length)
 
-	self._tabBg:setContentSize(cc.size(math.min(viewWidth, self._cellWidthTab * length) + 18, 46))
 	self._scrollViewTab:setInnerContainerSize(cc.size(allWidth, kCellHeightTab))
 	self._scrollViewTab:setInnerContainerPosition(cc.p(0, 2))
 

@@ -20,6 +20,9 @@
     "Master": {
         "Function": "return GenInfo(EnemyUnits(MASTER),Red)"
     },
+    "RANGE_Deng": {
+        "Function": "return AllCell()"
+    },
     "RANGE_LZHua": {
         "Function": "return HasBuff(\"RANGE_LZHua\")"
     },
@@ -165,6 +168,9 @@
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
     "Target_LCYShi": {
+        "Function": "return MainTarget()"
+    },
+    "Target_LDYu": {
         "Function": "return MainTarget()"
     },
     "Target_LDu": {

@@ -92,6 +92,14 @@ function ArenaSystem:checkEnabled(data)
 end
 
 function ArenaSystem:tryEnter(data)
+	if not CommonUtils.GetSwitch("fn_arena_normal") then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_ArenaClose")
+		}))
+
+		return
+	end
+
 	local unlock, tips = self:checkEnabled(data)
 
 	if not unlock then

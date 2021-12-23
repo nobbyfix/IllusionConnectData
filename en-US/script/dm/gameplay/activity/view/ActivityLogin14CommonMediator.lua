@@ -94,7 +94,6 @@ function ActivityLogin14CommonMediator:createTableView()
 	end
 
 	local function tableCellTouch(table, cell)
-		self:touchCell(cell:getIdx() + 1)
 	end
 
 	local function cellSizeForTable(table, idx)
@@ -226,6 +225,8 @@ function ActivityLogin14CommonMediator:updateCell(cell, index)
 	icon:setSwallowTouches(false)
 	icon:addTo(iconNode):center(iconNode:getContentSize())
 
+	cell.icon = icon
+
 	if status == ActivityTaskStatus.kGet then
 		icon:setColor(cc.c3b(120, 120, 120))
 
@@ -264,9 +265,22 @@ function ActivityLogin14CommonMediator:updateCell(cell, index)
 		rewardNameStr:setTextColor(cc.c3b(255, 255, 255))
 		rewardNameStr:enableOutline(cc.c3b(83, 72, 54), 2)
 	end
+
+	local touchPanel = cloneCell:getChildByName("touchPanel")
+
+	touchPanel:setSwallowTouches(false)
+	touchPanel:addClickEventListener(function ()
+		self:touchCell(index)
+	end)
 end
 
 function ActivityLogin14CommonMediator:touchCell(index)
+	local cell = self._tableView:cellAtIndex(index - 1)
+
+	if cell and cell.icon and cell.icon.isReturn then
+		return
+	end
+
 	local taskInfo = self._loginDayList[index]
 	local status = taskInfo:getStatus()
 

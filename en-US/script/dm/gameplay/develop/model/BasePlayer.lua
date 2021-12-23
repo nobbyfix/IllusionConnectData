@@ -84,6 +84,9 @@ BasePlayer:has("_playerStageArena", {
 BasePlayer:has("_stageArenafriends", {
 	is = "r"
 })
+BasePlayer:has("_chessArena", {
+	is = "r"
+})
 BasePlayer:has("_usedEmoji", {
 	is = "rw"
 })
@@ -117,6 +120,7 @@ function BasePlayer:initialize(config)
 	self._background = {}
 	self._playerStageArena = {}
 	self._stageArenafriends = {}
+	self._chessArena = {}
 	self._usedEmoji = {}
 	self._unlockedEmoji = {}
 	self._showHeroes = {}
@@ -264,6 +268,20 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 		end
 	end
 
+	if diffData.chessArena then
+		for k, v in pairs(diffData.chessArena) do
+			if k == "rewards" then
+				self._chessArena[k] = self._chessArena[k] or {}
+
+				for id, st in pairs(v) do
+					self._chessArena[k][id] = st
+				end
+			else
+				self._chessArena[k] = v
+			end
+		end
+	end
+
 	if diffData.usedEmoji then
 		self._usedEmoji = diffData.usedEmoji
 	end
@@ -280,6 +298,12 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 		for i, v in pairs(diffData.showHeroes) do
 			self._showHeroes[i + 1] = v
 		end
+	end
+end
+
+function BasePlayer:deleteNewArenaReward(data)
+	if data.rewards and self._chessArena then
+		self._chessArena.rewards = {}
 	end
 end
 

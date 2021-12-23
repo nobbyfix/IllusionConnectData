@@ -48,6 +48,9 @@ end
 function ShopCoopExchangeMediator:initView()
 	self._cloneCell = self:getView():getChildByFullName("cellClone")
 	self._listView = self:getView():getChildByFullName("main.scrollView")
+
+	self._listView:setScrollBarEnabled(false)
+
 	self._currencyBars = {
 		self:getView():getChildByFullName("main.currency1"),
 		self:getView():getChildByFullName("main.currency2"),
@@ -218,6 +221,9 @@ function ShopCoopExchangeMediator:createTableView()
 	local size = self._cloneCell:getContentSize()
 	local listSize = self._listView:getContentSize()
 	local tableView = cc.TableView:create(listSize)
+	local num1 = math.floor(listSize.width / size.width)
+	local num2 = math.ceil(#self._taskList / 2)
+	local kNums = math.max(num1, num2)
 
 	local function numberOfCells(view)
 		return math.ceil(#self._taskList / 4)
@@ -227,7 +233,7 @@ function ShopCoopExchangeMediator:createTableView()
 	end
 
 	local function cellSize(table, idx)
-		return listSize.width, size.height + 10
+		return listSize.width, size.height
 	end
 
 	local function cellAtIndex(table, idx)
@@ -344,6 +350,7 @@ function ShopCoopExchangeMediator:updataCell(cell, index)
 
 	local touchPanel = mainView:getChildByName("touchPanel")
 
+	touchPanel:setLocalZOrder(10)
 	touchPanel:setSwallowTouches(false)
 
 	local touchMoveTimes = 0
@@ -355,6 +362,10 @@ function ShopCoopExchangeMediator:updataCell(cell, index)
 		elseif eventType == ccui.TouchEventType.moved then
 			touchMoveTimes = touchMoveTimes + 1
 		elseif eventType == ccui.TouchEventType.ended and touchMoveTimes <= 10 then
+			if icon.isReturn then
+				return
+			end
+
 			local view = self:getInjector():getInstance("ShopCoopExchangeBuyView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
@@ -401,7 +412,9 @@ function ShopCoopExchangeMediator:updataCell(cell, index)
 								}))
 							end
 
-							outSelf:createTableView()
+							outSelf._taskList = self._activity:getCostSortExchangeList()
+
+							outSelf._tableView:reloadData()
 							outSelf:refreshTopCost()
 						else
 							outSelf:dismiss()

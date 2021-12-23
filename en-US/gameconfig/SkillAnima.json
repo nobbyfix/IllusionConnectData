@@ -23132,13 +23132,25 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_NFEr_27_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_NFEr_Hit_2",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 10
+                "f": 11
             },
             {
                 "evts": [
@@ -23172,13 +23184,25 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_NFEr_28_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_NFEr_Hit_3",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 22
+                "f": 24
             },
             {
                 "evts": [
@@ -25219,12 +25243,60 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt"
+                            "file": "Voice_SRen_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Whoosh_Water_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 4
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_Water_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 11
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
                         },
                         "e": "hit"
                     }
                 ],
-                "f": 1
+                "f": 16
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "final": 1
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 28
             }
         ]
     },
@@ -25234,12 +25306,55 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt"
+                            "file": "Se_Skill_Whoosh_Water_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    },
+                    {
+                        "d": {
+                            "file": "Voice_SRen_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_Water_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 15
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
                         },
                         "e": "hit"
                     }
                 ],
-                "f": 1
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "final": 1
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 36
             }
         ]
     },
@@ -25249,12 +25364,60 @@
                 "evts": [
                     {
                         "d": {
-                            "act": "hurt"
+                            "file": "Se_Skill_ALNa_Hit_Water",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_Hit_Water_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SRen_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
                         },
                         "e": "hit"
                     }
                 ],
-                "f": 1
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "final": 1
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 65
             }
         ]
     },
@@ -25424,11 +25587,28 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Se_Skill_ALNa_Hit_Water",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_Hit_Water_3",
                             "rate": 1
                         },
                         "e": "sound"
-                    },
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
                     {
                         "d": {
                             "file": "Voice_SRen_28",
@@ -35678,25 +35858,37 @@
                 "evts": [
                     {
                         "d": {
-                            "file": "Se_Skill_ALNa_Hit_Water",
+                            "file": "Se_Skill_HSheng_Whoosh_2",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 0
+                "f": 17
             },
             {
                 "evts": [
                     {
                         "d": {
-                            "file": "Voice_ALNa_28",
+                            "file": "Voice_HSheng_28",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 0
+                "f": 20
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_HSheng_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 39
             },
             {
                 "evts": [
@@ -35708,7 +35900,7 @@
                         "e": "hit"
                     }
                 ],
-                "f": 59
+                "f": 58
             }
         ]
     },
@@ -40658,6 +40850,54 @@
     },
     "hdie_skill3_1": {
         "events": []
+    },
+    "hdu_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "hdu_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "hdu_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
     },
     "hhji_vt_hhji_skill1": {
         "events": [
@@ -46401,13 +46641,25 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_NFEr_27_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_NFEr_Hit_2",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 10
+                "f": 11
             },
             {
                 "evts": [
@@ -46441,13 +46693,25 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_NFEr_28_Stretch",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 12
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_NFEr_Hit_3",
                             "rate": 1
                         },
                         "e": "sound"
                     }
                 ],
-                "f": 22
+                "f": 24
             },
             {
                 "evts": [

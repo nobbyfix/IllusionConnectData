@@ -5597,6 +5597,64 @@
         "Type": 3,
         "Unlook": 1
     },
+    "Surface_LDYu_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    68,
+                    1427
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    57,
+                    1250
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LDYu_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "LDYu",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_LDYu",
+        "Name": "Surface_LDYu_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 0
+    },
     "Surface_LDu_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11066,11 +11124,11 @@
             }
         ],
         "Desc": "Surface_XBKLDi_christmas_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_XBKLDi_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "Surface_47",
         "Hero": "XBKLDi",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_XBKLDi_christmas_LongDesc",
         "Model": "Model_XBKLDi_christmas",
         "Name": "Surface_XBKLDi_christmas_Name",
@@ -11078,10 +11136,10 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
-        "Unlook": 0
+        "Type": 2,
+        "Unlook": 1
     },
     "Surface_XDE_1": {
         "ActivityId": "",

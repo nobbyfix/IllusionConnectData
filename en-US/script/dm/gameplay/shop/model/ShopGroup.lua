@@ -101,6 +101,14 @@ function ShopGroup:syncShopGoods(data)
 		self._goodsMap[id]:syncGoods(id, v)
 		self._goodsMap[id]:setShopId(self._shopId)
 		self._goodsMap[id]:setCondition(self._conditionMap[id])
+
+		if self._shopConfig.Positions and self._shopConfig.Positions[v.index] and self._shopConfig.Positions[v.index].Scale then
+			self._goodsMap[id]:setScale(self._shopConfig.Positions[v.index].Scale)
+		end
+
+		if self._shopConfig.Positions and self._shopConfig.Positions[v.index] and self._shopConfig.Positions[v.index].Sort then
+			self._goodsMap[id]:setSort(self._shopConfig.Positions[v.index].Sort)
+		end
 	end
 
 	self:sortGoodsList()

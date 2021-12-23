@@ -250,6 +250,48 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Drama": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Drama_Map",
+                    "DramaS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_drama_1",
+        "Name": "ActivityBlock_Drama_Name",
+        "Num": 21,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Drama_1",
+                    "Memory_Act_Drama_2",
+                    "Memory_Act_Drama_3",
+                    "Memory_Act_Drama_4",
+                    "Memory_Act_Drama_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Drama_6",
+                    "Memory_Act_Drama_7",
+                    "Memory_Act_Drama_8",
+                    "Memory_Act_Drama_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Dusk": {
         "ActiviType": "",
         "Condition": [

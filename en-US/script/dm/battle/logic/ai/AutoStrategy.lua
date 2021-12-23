@@ -190,6 +190,30 @@ function BaseStrategy:doSkill(skillType, callback)
 	end
 end
 
+function BaseStrategy:getRealCardIndex(player, card)
+	local cardWindow = player:getCardWindow()
+
+	for i = 1, cardWindow:getWindowSize() do
+		local _card = cardWindow:getCardAtIndex(i)
+
+		if _card and _card:getId() == card:getId() then
+			return i
+		end
+	end
+
+	return nil
+end
+
+function BaseStrategy:checkNextCardIsRelocate(player)
+	if player:getCardState() == "hero" then
+		local realcardIndex = self:getRealCardIndex(player, self._nextCard)
+
+		if not realcardIndex then
+			self._nextCard = nil
+		end
+	end
+end
+
 function BaseStrategy:getAvailableSkill()
 	local player = self._team and self._team:getCurPlayer()
 	local master = player and player:getMasterUnit()

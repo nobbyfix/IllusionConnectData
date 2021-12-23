@@ -120,6 +120,40 @@
         "Shine": "",
         "Sicon": "IR_HD_BattlePass_Coin1"
     },
+    "IHF_HeroStone_SR": {
+        "Desc": "IHF_HeroStone_SR_Desc",
+        "LargeIcons": [
+            "IM_FHeroAll"
+        ],
+        "Licon": "IM_FHeroAll",
+        "Name": "IHF_HeroStone_SR_Name",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_silverheroall"
+    },
+    "IHF_HeroStone_SSR": {
+        "Desc": "IHF_HeroStone_SSR_Desc",
+        "LargeIcons": [
+            "IM_FHeroAll"
+        ],
+        "Licon": "IM_FHeroAll",
+        "Name": "IHF_HeroStone_SSR_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_heroall"
+    },
     "IM_BossJindan": {
         "Desc": "IM_BossJindan_FunctionDesc",
         "LargeIcons": [
@@ -727,7 +761,9 @@
             4
         ],
         "Resource": [
-            "IR_Arena_1"
+            "IR_Arena_1",
+            "IR_PetRace",
+            "IR_Arena_2"
         ],
         "Segmentation": [
             1
@@ -916,6 +952,23 @@
         ],
         "Shine": "",
         "Sicon": "icon_zuanshi"
+    },
+    "IR_DramaStamina": {
+        "Desc": "IR_DramaStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_drama_stamina_1"
+        ],
+        "Licon": "ico_m_drama_stamina_1",
+        "Name": "IR_DramaStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_drama_stamina_2"
     },
     "IR_DuskStamina": {
         "Desc": "IR_DuskStamina_FunctionDesc",
@@ -1401,21 +1454,23 @@
     "IR_Pve": {
         "Desc": "ResourcesIcon_IR_Pve_Desc",
         "LargeIcons": [
-            "icon_pve_1"
+            "ico_m_pvecoin_1"
         ],
-        "Licon": "icon_pve_1",
+        "Licon": "ico_m_pvecoin_1",
         "Name": "ResourcesIcon_IR_Pve_Name",
         "Quality": [
             4
         ],
         "Resource": [
+            "IR_Crusade",
+            "IR_Explore",
             "IR_Pve_1"
         ],
         "Segmentation": [
             1
         ],
         "Shine": "",
-        "Sicon": "icon_pve"
+        "Sicon": "ico_m_pvecoin_2"
     },
     "IR_RiddleStamina": {
         "Desc": "IR_RiddleStamina_FunctionDesc",
@@ -1731,6 +1786,23 @@
         "Sicon": "ico_m_memory_1"
     },
     "Memory_Activi_Puzzle_3": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activi_Puzzle_1_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_4": {
         "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
         "LargeIcons": [
             "ico_m_memory_1"

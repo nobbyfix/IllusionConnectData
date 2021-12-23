@@ -1675,6 +1675,26 @@
             "type": "limit"
         }
     },
+    "Surface_47": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "DrawCard_Id": 10100,
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_XBKLDi_2",
+        "TimeType": {
+            "end": "2021-12-29 05:00:00",
+            "start": "2021-12-24 05:00:00",
+            "type": "limit"
+        }
+    },
     "Surface_5": {
         "BackGroundImg": "sd_bg",
         "ClientCondition": "",

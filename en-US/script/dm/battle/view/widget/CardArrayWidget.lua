@@ -119,10 +119,10 @@ function CardArrayWidget:FlyCard(endCall)
 			actionCnt = actionCnt - 1
 
 			if actionCnt <= 0 then
-				self._flyingItemsArray[target] = nil
-
 				endCall()
 			end
+
+			self._flyingItemsArray[target] = nil
 
 			target:removeFromParent()
 		end)

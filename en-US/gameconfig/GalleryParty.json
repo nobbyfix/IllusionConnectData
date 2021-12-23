@@ -11,6 +11,7 @@
         "IncludeHero": [
             "SP_PNCao",
             "SP_ALPo",
+            "WLSTNCi",
             "DFQi",
             "HLMGen",
             "WTXXuan",
@@ -119,6 +120,7 @@
             "GYCZi",
             "LYXi",
             "XBKLDi",
+            "SSBYa",
             "HLDNan",
             "SNGLSi"
         ],
@@ -321,6 +323,7 @@
     },
     "SSR": {
         "IncludeHero": [
+            "WLSTNCi",
             "WEDe",
             "CZheng",
             "LDu",
@@ -390,7 +393,8 @@
             "XDE",
             "HLa",
             "YMJDe",
-            "SNGLSi"
+            "SNGLSi",
+            "SSBYa"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -536,9 +540,11 @@
     },
     "XD": {
         "IncludeHero": [
+            "WLSTNCi",
             "HGEr",
             "LSLTe",
             "LLan",
+            "SSBYa",
             "XBKLDi",
             "FGao",
             "KEDGong",

@@ -11285,6 +11285,271 @@
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_LCYShi"
     },
+    "LDYu": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.18,
+        "AwakePic": "",
+        "BaseAttack": 220.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 920.0,
+        "BaseQualityAttr": "SSR_10_Cure",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_LDYu",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AILDYu",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "LDYu_CVName",
+        "Cost": 15,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_LDYu",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Flags": [
+            "LDYu",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_LDYu",
+        "HeroStoryMap": "",
+        "HpFactor": 1.28,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_LDYu",
+        "KeyPassiveSkill": "Hero_PBattle_LDYu_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_LDYu",
+        "MasterRage": 180,
+        "MaxLevel": 300,
+        "MaxQuality": "SSR_50_Cure",
+        "MaxStar": 6,
+        "MaxStarEffect": "LDYu_6",
+        "Name": "HeroBase_Name_LDYu",
+        "NormalSkill": "Hero_Normal_LDYu",
+        "Party": "BSNCT",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_BiLei"
+                        ],
+                        [
+                            "Master_SenLing"
+                        ],
+                        [
+                            "Tower_1_Master3"
+                        ],
+                        [
+                            "Tower_1_Master5"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_LDYu",
+        "ProudSkill": "Hero_Proud_LDYu",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_LDYu",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_LDYu",
+        "Sex": 1,
+        "ShortDesc": "HeroBase_ShortDesc_LDYu",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_LDYu_01",
+            "Voice_LDYu_35",
+            "Voice_LDYu_40_1",
+            "Voice_LDYu_40_2",
+            "Voice_LDYu_40_3",
+            "Voice_LDYu_37",
+            "Voice_LDYu_38",
+            "Voice_LDYu_39",
+            "Voice_LDYu_47",
+            "Voice_LDYu_48",
+            "Voice_LDYu_50",
+            "Voice_LDYu_51",
+            "Voice_LDYu_52",
+            "Voice_LDYu_53",
+            "Voice_LDYu_54",
+            "Voice_LDYu_55",
+            "Voice_LDYu_56",
+            "Voice_LDYu_57",
+            "Voice_LDYu_60",
+            "Voice_LDYu_07",
+            "Voice_LDYu_08",
+            "Voice_LDYu_09",
+            "Voice_LDYu_58",
+            "Voice_LDYu_59",
+            "Voice_LDYu_10",
+            "Voice_LDYu_11",
+            "Voice_LDYu_14",
+            "Voice_LDYu_15",
+            "Voice_LDYu_16",
+            "Voice_LDYu_21",
+            "Voice_LDYu_17",
+            "Voice_LDYu_18",
+            "Voice_LDYu_34",
+            "Voice_LDYu_19",
+            "Voice_LDYu_63",
+            "Voice_LDYu_61",
+            "Voice_LDYu_25",
+            "Voice_LDYu_26",
+            "Voice_LDYu_27",
+            "Voice_LDYu_28",
+            "Voice_LDYu_29",
+            "Voice_LDYu_30",
+            "Voice_LDYu_31",
+            "Voice_LDYu_32"
+        ],
+        "Speed": 50,
+        "StarId": "LDYu_1",
+        "SurfaceList": [
+            "Surface_LDYu_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Cure",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_LDYu"
+    },
     "LDu": {
         "Absorption": 0.0,
         "Anger": {
@@ -21188,7 +21453,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.27,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SSBYa",
         "KeyPassiveSkill": "",
@@ -23554,7 +23819,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.83,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_WLSTNCi",
         "KeyPassiveSkill": "",
@@ -24471,7 +24736,8 @@
         "Speed": 50,
         "StarId": "XBKLDi_1",
         "SurfaceList": [
-            "Surface_XBKLDi_1"
+            "Surface_XBKLDi_1",
+            "Surface_XBKLDi_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",

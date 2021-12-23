@@ -1,0 +1,158 @@
+{
+    "ChessArena_Season1": {
+        "NextSeason": "ChessArena_Season2",
+        "SeasonSkill": [
+            "ArenaFixed_1",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season1_Name",
+        "Sort": 1,
+        "TimeFactor": {
+            "end": "02-01 05:00:00",
+            "start": "01-01 05:00:00"
+        }
+    },
+    "ChessArena_Season10": {
+        "NextSeason": "ChessArena_Season11",
+        "SeasonSkill": [
+            "ArenaFixed_11",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season10_Name",
+        "Sort": 10,
+        "TimeFactor": {
+            "end": "11-01 05:00:00",
+            "start": "10-01 05:00:00"
+        }
+    },
+    "ChessArena_Season11": {
+        "NextSeason": "ChessArena_Season12",
+        "SeasonSkill": [
+            "ArenaFixed_12",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season11_Name",
+        "Sort": 11,
+        "TimeFactor": {
+            "end": "12-01 05:00:00",
+            "start": "11-01 05:00:00"
+        }
+    },
+    "ChessArena_Season12": {
+        "NextSeason": "ChessArena_Season1",
+        "SeasonSkill": [
+            "ArenaFixed_14",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season12_Name",
+        "Sort": 12,
+        "TimeFactor": {
+            "end": "01-01 05:00:00",
+            "start": "12-01 05:00:00"
+        }
+    },
+    "ChessArena_Season2": {
+        "NextSeason": "ChessArena_Season3",
+        "SeasonSkill": [
+            "ArenaFixed_2",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season2_Name",
+        "Sort": 2,
+        "TimeFactor": {
+            "end": "03-01 05:00:00",
+            "start": "02-01 05:00:00"
+        }
+    },
+    "ChessArena_Season3": {
+        "NextSeason": "ChessArena_Season4",
+        "SeasonSkill": [
+            "ArenaFixed_3",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season3_Name",
+        "Sort": 3,
+        "TimeFactor": {
+            "end": "04-01 05:00:00",
+            "start": "03-01 05:00:00"
+        }
+    },
+    "ChessArena_Season4": {
+        "NextSeason": "ChessArena_Season5",
+        "SeasonSkill": [
+            "ArenaFixed_4",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season4_Name",
+        "Sort": 4,
+        "TimeFactor": {
+            "end": "05-01 05:00:00",
+            "start": "04-01 05:00:00"
+        }
+    },
+    "ChessArena_Season5": {
+        "NextSeason": "ChessArena_Season6",
+        "SeasonSkill": [
+            "ArenaFixed_5",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season5_Name",
+        "Sort": 5,
+        "TimeFactor": {
+            "end": "06-01 05:00:00",
+            "start": "05-01 05:00:00"
+        }
+    },
+    "ChessArena_Season6": {
+        "NextSeason": "ChessArena_Season7",
+        "SeasonSkill": [
+            "ArenaFixed_6",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season6_Name",
+        "Sort": 6,
+        "TimeFactor": {
+            "end": "07-01 05:00:00",
+            "start": "06-01 05:00:00"
+        }
+    },
+    "ChessArena_Season7": {
+        "NextSeason": "ChessArena_Season8",
+        "SeasonSkill": [
+            "ArenaFixed_7",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season7_Name",
+        "Sort": 7,
+        "TimeFactor": {
+            "end": "08-01 05:00:00",
+            "start": "07-01 05:00:00"
+        }
+    },
+    "ChessArena_Season8": {
+        "NextSeason": "ChessArena_Season9",
+        "SeasonSkill": [
+            "ArenaFixed_9",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season8_Name",
+        "Sort": 8,
+        "TimeFactor": {
+            "end": "09-01 05:00:00",
+            "start": "08-01 05:00:00"
+        }
+    },
+    "ChessArena_Season9": {
+        "NextSeason": "ChessArena_Season10",
+        "SeasonSkill": [
+            "ArenaFixed_10",
+            "ArenaTimeBuff"
+        ],
+        "SeasonTitle": "ChessArena_Season9_Name",
+        "Sort": 9,
+        "TimeFactor": {
+            "end": "10-01 05:00:00",
+            "start": "09-01 05:00:00"
+        }
+    }
+}

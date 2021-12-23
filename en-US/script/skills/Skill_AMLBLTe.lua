@@ -478,6 +478,24 @@ all.Skill_AMLBLTe_Passive = {
 				}, {
 					buff
 				})
+
+				local buffeft1 = global.SpecialNumericEffect(_env, "+AMLBLTe_Exist", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"AMLBLTe_Exist",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
 			end
 		end)
 
@@ -738,6 +756,7 @@ all.Skill_Cross_Buff_AMLBLTe = {
 				end
 
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_AMLBLTe_Passive"), 99)
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "AMLBLTe_Exist"), 99)
 			end
 		end)
 
@@ -1150,6 +1169,24 @@ all.Skill_AMLBLTe_Passive_EX = {
 					}
 				}, {
 					buff
+				})
+
+				local buffeft1 = global.SpecialNumericEffect(_env, "+AMLBLTe_Exist", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"AMLBLTe_Exist",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
 				})
 			end
 		end)

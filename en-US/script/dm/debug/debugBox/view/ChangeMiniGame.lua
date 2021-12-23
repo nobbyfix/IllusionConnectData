@@ -22,7 +22,7 @@ end
 addMiniGameTimes = class("addMiniGameTimes", DebugViewTemplate, _M)
 
 function addMiniGameTimes:initialize()
-	self._opType = 415
+	self._opType = 420
 	self._viewConfig = {
 		{
 			default = "Activity_Jump",

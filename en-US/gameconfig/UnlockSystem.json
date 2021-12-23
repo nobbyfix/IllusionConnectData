@@ -113,7 +113,7 @@
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
-        "Link": "view://arenaView&viewType=push",
+        "Link": "view://ArenaNewView&viewType=push",
         "LongDesc": "Unlock_Arena_System_Desc",
         "Name": "Unlock_Arena_System",
         "OutputDesc": "Unlock_Arena_System_OpDesc",
@@ -549,6 +549,29 @@
         "Tip": "Unlock_Chat_System_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Chat_System_UnlockDesc"
+    },
+    "ChessArena_System": {
+        "Condition": {
+            "STAGE": "M05S15"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "view://ArenaNewView&viewType=push",
+        "LongDesc": "Unlock_Arena_System_Desc",
+        "Name": "Unlock_Arena_System",
+        "OutputDesc": "Unlock_Arena_System_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Arena"
+        ],
+        "ShowCondition": {
+            "STAGE": "M04S02"
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Arena_System_UnlockDesc"
     },
     "ClubStage": {
         "Condition": {
@@ -1672,6 +1695,26 @@
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Arena_UnlockDesc"
     },
+    "Shop_Association_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_Association_Unlock_Desc",
+        "Name": "Shop_AssociationName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Club"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_Association_Unlock_Unlock_UnlockDesc"
+    },
     "Shop_Club": {
         "Condition": {
             "LEVEL": 999
@@ -1733,6 +1776,29 @@
         "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
+    },
+    "Shop_GoldPartner_Unlock": {
+        "Condition": {
+            "LEVEL": 1,
+            "UNLOCKTIME": "2021-09-13 05:00:00"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_GoldPartner_Unlock_Desc",
+        "Name": "Shop_GoldPartner_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IHF_HeroStone_SSR",
+            "IHF_HeroStone_SR"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1,
+            "UNLOCKTIME": "2021-09-13 05:00:00"
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_GoldPartner_Unlock_UnlockDesc"
     },
     "Shop_Groceries": {
         "Condition": {
@@ -1818,6 +1884,46 @@
         "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Mystery_UnlockDesc"
+    },
+    "Shop_PVE_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_PVE_Unlock_Desc",
+        "Name": "Shop_PVEName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Pve"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_PVE_Unlock_Unlock_UnlockDesc"
+    },
+    "Shop_PVP_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_PVP_Unlock_Desc",
+        "Name": "Shop_PVPName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Arena"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_PVP_Unlock_Unlock_UnlockDesc"
     },
     "Shop_Recommend": {
         "Condition": {

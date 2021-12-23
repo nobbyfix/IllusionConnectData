@@ -947,6 +947,50 @@ function BattleUnitManager:createTargetEnvironment(env)
 
 		return rets
 	end
+
+	function env.HasTrap(tag)
+		local battleField = self._battleContext:getObject("BattleField")
+		local cells = battleField:getCells()
+		local trapSystem = self._battleContext:getObject("TrapSystem")
+		local rets = {}
+
+		for k, v in pairs(cells) do
+			local _, cnt = trapSystem:selectBuffsOnTarget(v, MakeFilter(function (buff)
+				return buff:isMatched(tag)
+			end))
+
+			if cnt > 0 then
+				local id = v:getId()
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
+	end
+
+	function env.AllCell()
+		local battleField = self._battleContext:getObject("BattleField")
+		local cells = battleField:getCells()
+		local rets = {}
+
+		for k, v in pairs(cells) do
+			local id = v:getId()
+
+			if math.abs(id) ~= 108 then
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
+	end
 end
 
 function BattleUnitManager:addUnit(unit, dataModel)

@@ -17,8 +17,6 @@ function BattleDataHelper:getIntegralBattleData(data)
 	data.playerData.leadStageLevel = leadStageLevel_l
 	data.enemyData.leadStageLevel = leadStageLevel_r
 
-	dump(data, "datadsxskcndskcndskcd", 8)
-
 	return data
 end
 
