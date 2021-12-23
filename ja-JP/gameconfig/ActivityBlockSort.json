@@ -1040,6 +1040,448 @@
             "start": "2021-05-05 05:00:00"
         }
     },
+    "DramaSE01": {
+        "BlockPoint": [
+            "DramaSE01M",
+            "DramaSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS09M_Name",
+        "NextPoint": [
+            "DramaSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS02S01"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE02": {
+        "BlockPoint": [
+            "DramaSE02M",
+            "DramaSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS10M_Name",
+        "NextPoint": [
+            "DramaSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE03": {
+        "BlockPoint": [
+            "DramaSE03M",
+            "DramaSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS11M_Name",
+        "NextPoint": [
+            "DramaSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS02S02"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE04": {
+        "BlockPoint": [
+            "DramaSE04M",
+            "DramaSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS12M_Name",
+        "NextPoint": [
+            "DramaSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE05": {
+        "BlockPoint": [
+            "DramaSE05M",
+            "DramaSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS13M_Name",
+        "NextPoint": [
+            "DramaSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE06": {
+        "BlockPoint": [
+            "DramaSE06M",
+            "DramaSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS14M_Name",
+        "NextPoint": [
+            "DramaSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS02S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE07": {
+        "BlockPoint": [
+            "DramaSE07M",
+            "DramaSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS15M_Name",
+        "NextPoint": [
+            "DramaSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE08": {
+        "BlockPoint": [
+            "DramaSE08M",
+            "DramaSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS16M_Name",
+        "NextPoint": [
+            "DramaSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS02S04"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE09": {
+        "BlockPoint": [
+            "DramaSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS01H_Name",
+        "NextPoint": [
+            "DramaSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE10": {
+        "BlockPoint": [
+            "DramaSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS02H_Name",
+        "NextPoint": [
+            "DramaSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSE11": {
+        "BlockPoint": [
+            "DramaSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM02",
+        "Name": "BlockPoint_DramaS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-01-07 05:00:00"
+        }
+    },
+    "DramaSN01": {
+        "BlockPoint": [
+            "DramaSN01M",
+            "DramaSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS01M_Name",
+        "NextPoint": [
+            "DramaSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN02": {
+        "BlockPoint": [
+            "DramaSN02M",
+            "DramaSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS02M_Name",
+        "NextPoint": [
+            "DramaSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN03": {
+        "BlockPoint": [
+            "DramaSN03M",
+            "DramaSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS03M_Name",
+        "NextPoint": [
+            "DramaSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN04": {
+        "BlockPoint": [
+            "DramaSN04M",
+            "DramaSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS04M_Name",
+        "NextPoint": [
+            "DramaSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN05": {
+        "BlockPoint": [
+            "DramaSN05M",
+            "DramaSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS05M_Name",
+        "NextPoint": [
+            "DramaSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN06": {
+        "BlockPoint": [
+            "DramaSN06M",
+            "DramaSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS06M_Name",
+        "NextPoint": [
+            "DramaSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN07": {
+        "BlockPoint": [
+            "DramaSN07M",
+            "DramaSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS07M_Name",
+        "NextPoint": [
+            "DramaSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
+    "DramaSN08": {
+        "BlockPoint": [
+            "DramaSN08M",
+            "DramaSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "DramaM01",
+        "Name": "BlockPoint_DramaS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "DramaSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "DramaS01S05"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-01-01 05:00:00"
+        }
+    },
     "DuskSE01": {
         "BlockPoint": [
             "DuskSE01M",

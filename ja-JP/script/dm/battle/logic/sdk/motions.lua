@@ -205,3 +205,14 @@ function exports.PvpSpeedUp(env, arg1, arg2)
 		arg2 = arg2
 	})
 end
+
+function exports.ShowEnhanceUp(env, time, value)
+	env.global.RecordImmediately(env, kBRMainLine, "ShowEnhanceUp", {
+		arg1 = time,
+		arg2 = value
+	})
+end
+
+function exports.HideEnhanceUp(env)
+	env.global.RecordImmediately(env, kBRMainLine, "HideEnhanceUp")
+end

@@ -1939,6 +1939,90 @@
         "Type": "Arena",
         "WaitingTime": 1000
     },
+    "Loading_ChessArena001": {
+        "Background": {
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg"
+            ],
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "LoadingTips_ChessArena001"
+            ],
+            "quanzhong": [
+                1000
+            ]
+        },
+        "FirstLoading": 1,
+        "Type": "ChessArena",
+        "WaitingTime": 1000
+    },
+    "Loading_ChessArena002": {
+        "Background": {
+            "img": [
+                "bg_pve_cg_01.jpg",
+                "bg_pve_cg_02.jpg",
+                "bg_pve_cg_03.jpg",
+                "bg_pve_cg_04.jpg",
+                "bg_pve_cg_05.jpg",
+                "bg_pve_cg_06.jpg",
+                "bg_pve_cg_07.jpg",
+                "bg_pve_cg_08.jpg",
+                "bg_pve_cg_09.jpg",
+                "bg_pve_cg_10.jpg",
+                "bg_pve_cg_11.jpg"
+            ],
+            "quanzhong": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        },
+        "Content": {
+            "img": [
+                "LoadingTips_ChessArena001",
+                "LoadingTips_ChessArena002"
+            ],
+            "quanzhong": [
+                1000,
+                1000
+            ]
+        },
+        "FirstLoading": 0,
+        "Type": "ChessArena",
+        "WaitingTime": 1000
+    },
     "Loading_ClubBoss_1": {
         "Background": {
             "img": [

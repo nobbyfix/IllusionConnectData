@@ -89,6 +89,10 @@ end
 
 function ShopItem:setTouchHandler(callback)
 	self._touchPanel:addClickEventListener(function ()
+		if self._iconLayout.isReturn then
+			return
+		end
+
 		callback()
 	end)
 end

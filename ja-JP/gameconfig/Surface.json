@@ -5539,6 +5539,64 @@
         "Type": 4,
         "Unlook": 1
     },
+    "Surface_LDYu_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    68,
+                    1427
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    57,
+                    1250
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LDYu_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "LDYu",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_LDYu",
+        "Name": "Surface_LDYu_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_LDu_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -9565,6 +9623,64 @@
         "Sort": 1,
         "Type": 1,
         "Unlook": 1
+    },
+    "Surface_SP_SSQXin_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -29,
+                    1896
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    70,
+                    1652
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_SSQXin_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_SP_SSQXin_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "SP_SSQXin",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_SSQXin_Awake",
+        "Name": "Surface_SP_SSQXin_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 0
     },
     "Surface_SRen_1": {
         "ActivityId": "",

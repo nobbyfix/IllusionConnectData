@@ -785,6 +785,26 @@ function LoginMediator:buildLoadingTask()
 				leadStageSystem:requestGetSeasonInfo(nil, false)
 			end
 		end, 1)
+		DO_ACTION(function ()
+			local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+			local unlock, tips = systemKeeper:isUnlock("ChessArena_System")
+
+			if unlock then
+				local arenaSystem = self:getInjector():getInstance(ArenaNewSystem)
+
+				arenaSystem:requestGainChessArena(nil, false)
+			end
+		end, 1)
+		DO_ACTION(function ()
+			local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+			local unlock, tips = systemKeeper:isUnlock("ChessArena_System")
+
+			if unlock then
+				local arenaSystem = self:getInjector():getInstance(ArenaNewSystem)
+
+				arenaSystem:requestOfflineReport()
+			end
+		end, 1)
 		END()
 	end)
 

@@ -129,6 +129,107 @@ all.Skill_SYJi_Unique = {
 		return _env
 	end
 }
+all.Skill_SYJi_Unique_Drama = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				1,
+				0
+			}
+		end
+
+		this.damageRadio = externs.damageRadio
+
+		if this.damageRadio == nil then
+			this.damageRadio = 3
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		this.main = global["[duration]"](this, {
+			1500
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.selectCount = 0
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil) + {
+				-0.3,
+				0
+			}, 100, "skill2"))
+		end)
+		exec["@time"]({
+			600
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.print(_env, "-=光炮线")
+
+			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
+
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+				global.AssignRoles(_env, unit, "target")
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local result = global.ApplyRealDamage(_env, _env.ACTOR, unit, 2, 1, this.damageRadio, 0, 0, damage)
+			end
+		end)
+		exec["@time"]({
+			1433
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+			global.AddAnim(_env, {
+				loop = 1,
+				anim = "cisha_zhanshupai",
+				zOrder = "TopLayer",
+				pos = global.UnitPos(_env, _env.ACTOR)
+			})
+			global.RelocateExtraCard(_env, "hero", 15)
+			global.Kick(_env, _env.ACTOR)
+		end)
+
+		return _env
+	end
+}
 all.Skill_SYJi_Passive = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__

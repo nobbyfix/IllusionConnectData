@@ -113,6 +113,14 @@ function ArenaReportCell:refreshReportData(data)
 
 	local result = isAttacker and data:getAttackerWin()
 
+	if type and type == "NEWARENA" then
+		if self._mediator:getDevelopSystem():getRid() == attackerData:getId() then
+			result = data:getAttackerWin()
+		else
+			result = not data:getAttackerWin()
+		end
+	end
+
 	if result then
 		self._imgResult:getChildByName("text"):setString(Strings:get("Arena_Victory"))
 		self._imgResult:setGray(false)

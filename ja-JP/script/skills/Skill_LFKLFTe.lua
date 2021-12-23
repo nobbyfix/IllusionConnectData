@@ -755,6 +755,15 @@ all.DaGunPassive = {
 			})
 			global.DelayCall(_env, 1550, global.ResetDisplayZorder, _env.ACTOR)
 			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "DEBUFF"), 99)
+
+			if global.SpecialPropGetter(_env, "AMLBLTe_Exist")(_env, global.FriendField(_env)) == 0 then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Cross_Buff_AMLBLTe"), 99)
+			end
+
+			if global.SpecialPropGetter(_env, "XLDBLTe_Exist")(_env, global.FriendField(_env)) == 0 then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Cross_Buff_XLDBLTe"), 99)
+			end
+
 			global.DelayCall(_env, 1580, global.DispelBuff, _env.ACTOR, global.BUFF_MARKED(_env, "DAGUN_PREPARE"), 99)
 			global.DaGun(_env, _env.ACTOR)
 		end)

@@ -2120,6 +2120,11 @@ local modules = {
 							res = "asset/ui/ActivityPointDetailRule.csb",
 							name = "ActivityPointDetailRuleView",
 							mediator = "ActivityPointDetailRuleMediator"
+						},
+						{
+							res = "asset/ui/ActivityDramaMain.csb",
+							name = "ActivityDramaMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}
@@ -2197,6 +2202,73 @@ local modules = {
 							res = "asset/ui/ArenaNewSeason.csb",
 							name = "ArenaNewSeasonView",
 							mediator = "ArenaNewSeasonMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "newArena",
+				requires = {
+					"dm.gameplay.newArena.controller.ArenaNewSystem",
+					"dm.gameplay.newArena.service.ArenaNewService"
+				},
+				injections = {
+					singletons = {
+						"ArenaNewSystem"
+					},
+					classes = {
+						"ArenaNewService"
+					},
+					views = {
+						{
+							res = "asset/ui/NewArena.csb",
+							name = "ArenaNewView",
+							mediator = "ArenaNewMediator"
+						},
+						{
+							res = "asset/ui/NewArenaTeamList.csb",
+							name = "ArenaNewTeamListView",
+							mediator = "ArenaNewTeamListMediator"
+						},
+						{
+							res = "asset/ui/NewArenaTeam.csb",
+							name = "ArenaNewTeamView",
+							mediator = "ArenaNewTeamMediator"
+						},
+						{
+							res = "asset/ui/NewArenaReward.csb",
+							name = "ArenaNewRewardView",
+							mediator = "ArenaNewRewardMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRivalInfo.csb",
+							name = "ArenaNewRivalView",
+							mediator = "ArenaNewRivalMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRank.csb",
+							name = "ArenaNewRankView",
+							mediator = "ArenaNewRankMediator"
+						},
+						{
+							res = "asset/ui/NewArenaDefendTeam.csb",
+							name = "ArenaNewDefendTeamView",
+							mediator = "ArenaNewDefendTeamMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRecord.csb",
+							name = "ArenaNewRecordView",
+							mediator = "ArenaNewRecordMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "ArenaNewReportMainView",
+							mediator = "ArenaNewReportMainMediator"
+						},
+						{
+							res = "asset/ui/ArenaQuickBattle.csb",
+							name = "ArenaNewLoseView",
+							mediator = "ArenaNewLoseMediator"
 						}
 					}
 				}

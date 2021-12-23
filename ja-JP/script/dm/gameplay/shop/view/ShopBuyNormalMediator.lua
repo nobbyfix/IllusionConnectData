@@ -243,7 +243,7 @@ function ShopBuyNormalMediator:refreshIcon()
 			isWidget = true
 		})
 
-		icon:setScale(1.7)
+		icon:setScale(1.5)
 	end
 
 	icon:addTo(self._iconLayout):center(self._iconLayout:getContentSize())

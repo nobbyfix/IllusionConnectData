@@ -447,6 +447,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_DiamondReduce_Desc"
     },
+    "Condi_DramaExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DramaExchangeAchieve_Desc"
+    },
     "Condi_DrawCardTag": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",

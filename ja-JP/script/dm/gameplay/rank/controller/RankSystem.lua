@@ -46,6 +46,7 @@ RankType = {
 	kCombat = 1,
 	kCrusade = 30,
 	kHeroCombat = 3,
+	KNewAreana = 45,
 	kDarts = 42
 }
 RankClass = {
@@ -67,10 +68,12 @@ RankClass = {
 	[RankType.KRTPK] = RTPKRankRecord,
 	[RankType.KPetWorldScore] = PetWorldScoreRankRecord,
 	[RankType.KStageAreana] = StageAreanaRankRecord,
-	[RankType.kJump] = MiniGameJumpRankRecord
+	[RankType.kJump] = MiniGameJumpRankRecord,
+	[RankType.KNewAreana] = ArenaNewRankRecord
 }
 RankSwitch = {
-	[RankType.kClubBoss] = "fn_clubBoss"
+	[RankType.kClubBoss] = "fn_clubBoss",
+	[RankType.kArena] = "fn_arena_normal"
 }
 RankTopImage = {
 	"img_zlb_no1.png",
@@ -503,6 +506,10 @@ end
 
 function RankSystem:getLeadStageAreanaMaxRank()
 	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "StageArena_RankMax", "content")
+end
+
+function RankSystem:getNewAreanaMaxRank()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "ChessArena_Rank_Num", "content")
 end
 
 function RankSystem:getRequestRankCountPerTime()

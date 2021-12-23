@@ -33,6 +33,10 @@ function BattleSimulator:getBattleResult()
 	return self._battleResult
 end
 
+function BattleSimulator:setDelegate(delegate)
+	self._delegate = delegate
+end
+
 function BattleSimulator:getCurrentFrame()
 	return self._frameCounter
 end
@@ -94,6 +98,10 @@ function BattleSimulator:start(frameInterval)
 	end
 
 	self._autoScheduler:start(battleContext)
+
+	if self._delegate and self._delegate.battleStart then
+		self._delegate.battleStart(battleContext)
+	end
 end
 
 function BattleSimulator:tick(frameInterval)

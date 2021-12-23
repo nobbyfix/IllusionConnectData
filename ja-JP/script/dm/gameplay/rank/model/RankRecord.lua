@@ -572,6 +572,35 @@ function ArenaRankRecord:synchronize(data)
 	self._score = data.value or 0
 end
 
+ArenaNewRankRecord = class("ArenaNewRankRecord", BaseRankRecord, _M)
+
+ArenaNewRankRecord:has("_winCount", {
+	is = "r"
+})
+ArenaNewRankRecord:has("_rank", {
+	is = "r"
+})
+ArenaNewRankRecord:has("_headImg", {
+	is = "r"
+})
+
+function ArenaNewRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KNewAreana
+	self._winCount = 0
+end
+
+function ArenaNewRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._winCount = data.winCount or 0
+	self._rid = data.id
+	self._headId = data.headImg
+	self._headImg = data.headImg
+	self._rank = data.rank
+end
+
 CrusadeRankRecord = class("CrusadeRankRecord", BaseRankRecord, _M)
 
 CrusadeRankRecord:has("_point", {

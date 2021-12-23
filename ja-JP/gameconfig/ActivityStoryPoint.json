@@ -2691,6 +2691,231 @@
         ],
         "StoryLink": "eventstory_deepSea_08a"
     },
+    "DramaS01S01": {
+        "FirstReward": "DramaS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DramaM01",
+        "Name": "DramaS01S01_Name",
+        "NextStoryPoint": [
+            "DramaS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_drama_00a"
+    },
+    "DramaS01S02": {
+        "FirstReward": "DramaS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DramaM01",
+        "Name": "DramaS01S02_Name",
+        "NextStoryPoint": [
+            "DramaS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_drama_01a"
+    },
+    "DramaS01S03": {
+        "FirstReward": "DramaS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DramaM01",
+        "Name": "DramaS01S03_Name",
+        "NextStoryPoint": [
+            "DramaS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSN02"
+        ],
+        "PreStoryPoint": [
+            "DramaS01S02"
+        ],
+        "StoryLink": "eventstory_drama_02a"
+    },
+    "DramaS01S04": {
+        "FirstReward": "DramaS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DramaM01",
+        "Name": "DramaS01S04_Name",
+        "NextStoryPoint": [
+            "DramaS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSN05"
+        ],
+        "PreStoryPoint": [
+            "DramaS01S03"
+        ],
+        "StoryLink": "eventstory_drama_03a"
+    },
+    "DramaS01S05": {
+        "FirstReward": "DramaS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DramaM01",
+        "Name": "DramaS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSN07"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_drama_04a"
+    },
+    "DramaS02S01": {
+        "FirstReward": "DramaS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "DramaM02",
+        "Name": "DramaS02S01_Name",
+        "NextStoryPoint": [
+            "DramaS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_drama_05a"
+    },
+    "DramaS02S02": {
+        "FirstReward": "DramaS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DramaM02",
+        "Name": "DramaS02S02_Name",
+        "NextStoryPoint": [
+            "DramaS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSE02"
+        ],
+        "PreStoryPoint": [
+            "DramaS02S01"
+        ],
+        "StoryLink": "eventstory_drama_06a"
+    },
+    "DramaS02S03": {
+        "FirstReward": "DramaS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "DramaM02",
+        "Name": "DramaS02S03_Name",
+        "NextStoryPoint": [
+            "DramaS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSE05"
+        ],
+        "PreStoryPoint": [
+            "DramaS02S02"
+        ],
+        "StoryLink": "eventstory_drama_07a"
+    },
+    "DramaS02S04": {
+        "FirstReward": "DramaS01S09_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "DramaM02",
+        "Name": "DramaS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "DramaSE07"
+        ],
+        "PreStoryPoint": [
+            "DramaS02S03"
+        ],
+        "StoryLink": "eventstory_drama_08a"
+    },
     "DuskS01S01": {
         "FirstReward": "DuskS01S01_Reward",
         "Icon": "s_album_story_1",

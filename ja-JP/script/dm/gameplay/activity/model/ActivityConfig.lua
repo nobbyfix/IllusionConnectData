@@ -178,7 +178,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityRiddle] = "ActivityRiddleMainView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView",
 		[ActivityType_UI.KActivityDusk] = "ActivityDuskMainView",
-		[ActivityType_UI.KActivitySilentNight] = "ActivitySilentNightMainView"
+		[ActivityType_UI.KActivitySilentNight] = "ActivitySilentNightMainView",
+		[ActivityType_UI.KActivityDrama] = "ActivityDramaMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -209,7 +210,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityRiddle] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityDusk] = "ActivityMapNewView",
-		[ActivityType_UI.KActivitySilentNight] = "ActivityMapNewView"
+		[ActivityType_UI.KActivitySilentNight] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityDrama] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -245,7 +247,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityRiddle] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityDusk] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivitySilentNight] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivitySilentNight] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityDrama] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -371,6 +374,13 @@ ActivityLogin14Config = {
 	},
 	EightDays_DeepSea_Re = {
 		resFile = "asset/ui/ActivityDeepSeaLogin.csb"
+	},
+	EightDays_Drama = {
+		resFile = "asset/ui/ActivityDramaLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(145, 143, 198, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -535,6 +545,10 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivitySilentNight] = {
 			name = "fuben_shengdanzhuyefubenrukou",
 			position = cc.p(178, 120)
+		},
+		[ActivityType_UI.KActivityDrama] = {
+			name = "fubenrukou_gudianxijufuben",
+			position = cc.p(175, 140)
 		}
 	}
 }

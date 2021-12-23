@@ -3,6 +3,9 @@ ArenaVictoryMediator = class("ArenaVictoryMediator", DmPopupViewMediator, _M)
 ArenaVictoryMediator:has("_arenaSystem", {
 	is = "r"
 }):injectWith("ArenaSystem")
+ArenaVictoryMediator:has("_arenaNewSystem", {
+	is = "r"
+}):injectWith("ArenaNewSystem")
 ArenaVictoryMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
@@ -78,6 +81,7 @@ end
 
 function ArenaVictoryMediator:setupView(data)
 	self._data = data
+	self._isFromNewArena = data.isFromNewArena
 	self._replayType = self._data.replayType
 
 	if self._replayType == ArenaBattlePlayType.kNormal then
@@ -103,12 +107,6 @@ function ArenaVictoryMediator:setupView(data)
 	end
 
 	self:initWidgetInfo()
-
-	if self._replayType == ArenaBattlePlayType.kNormal then
-		self:initViewDataWithNormalReplay(self._data.resultData)
-	elseif self._replayType == ArenaBattlePlayType.kReport then
-		self:initViewDataWithReportReplay(self._data.resultData)
-	end
 end
 
 function ArenaVictoryMediator:initWidgetInfo()
@@ -124,139 +122,108 @@ function ArenaVictoryMediator:initWidgetInfo()
 	self._winnerRank = bg:getChildByFullName("node_1.action_node_1.winer_rank")
 	self._winerIconBg = bg:getChildByFullName("node_1.action_node_1.winer_icon_bg.icon_bg")
 	self._winnerRankRise = bg:getChildByFullName("node_1.action_node_1.rankRise")
-	local anim = cc.MovieClip:create("anim_jingjichangjiesuan")
+	local panelWin = bg:getChildByFullName("panel_win")
 
-	anim:addTo(self._animNode)
+	if self._isFromNewArena then
+		panelWin:setVisible(false)
+	end
+
+	local panelReward = bg:getChildByFullName("Node_rankUp")
+	local panelHero = bg:getChildByFullName("heroPanel")
+
+	panelReward:setVisible(false)
+	panelHero:setVisible(false)
+
+	local reward = self._data.rewards
+	local titleOffsetX = 0
+	local bgAnimOffsetY = 0
+	local bgAnim, titleAnim = nil
+	local title = bg:getChildByFullName("Text_24")
+	local rankPanel = bg:getChildByFullName("Panel_2")
+
+	if next(reward) then
+		bgAnimOffsetY = -10
+		titleOffsetX = 24
+		bgAnim = "anim_zuanshi_jingjichangjiesuan"
+		titleAnim = "zitizuanshi_FX_jingjichangjiesuan"
+
+		panelReward:setVisible(true)
+		title:setString(Strings:get("ClassArena_UI84"))
+		self:showRewards(reward)
+		title:setFontSize(38)
+	else
+		titleOffsetX = 50
+		bgAnimOffsetY = 2
+		bgAnim = "anim_jingjichangjiesuan"
+		titleAnim = "shengliz_jingjichangjiesuan"
+
+		panelHero:setVisible(true)
+		title:setString(Strings:get("ClassArena_UI85"))
+		rankPanel:setPosition(cc.p(514, 360))
+		self:showMVP()
+	end
+
+	local anim = cc.MovieClip:create(bgAnim)
+
+	anim:addTo(self._animNode):offset(0, bgAnimOffsetY)
 	anim:addEndCallback(function ()
 		anim:stop()
 	end)
 
-	self._iconPanel = anim:getChildByFullName("icon")
-	local winTitle = bg:getChildByFullName("node_1.action_node_1.winTitle")
-	local winAnim = cc.MovieClip:create("shengliz_fubenjiesuan")
+	local winTitle = bg:getChildByFullName("winTitle")
+	local winAnim = cc.MovieClip:create(titleAnim)
 
 	winAnim:addTo(winTitle)
 	winAnim:addEndCallback(function ()
 		winAnim:stop()
 	end)
+
+	local mc_title = winAnim:getChildByFullName("text_title")
+
+	title:changeParent(mc_title):center(mc_title:getContentSize()):offset(titleOffsetX, 0)
+
+	local curRank = bg:getChildByFullName("Panel_2.text_rank")
+	local rankAdd = bg:getChildByFullName("Panel_2.text_rank_0")
+
+	curRank:setString(self._data.resultData:getRank())
+	rankAdd:setString(self._data.resultData:getRankChange())
 	CommonUtils.runActionEffectByRootNode(bg, "ArenaVictoryEffect")
-
-	local action_node_4 = self._winnerRankRise:getChildByFullName("action_node_4")
-	local anim = cc.MovieClip:create("tisheng_jingjichangjiesuan")
-
-	anim:addTo(action_node_4)
-	anim:addEndCallback(function ()
-		anim:stop()
-	end)
 end
 
-function ArenaVictoryMediator:initViewDataWithNormalReplay(data)
-	local winnerData = {}
-	local defenderData = {}
-	local rankRaise = data.rankChange
+function ArenaVictoryMediator:showRewards(rewards)
+	local bg = self:getView():getChildByName("bg")
+	local nodeRank = bg:getChildByFullName("Node_rankUp")
+	local iconNum = nodeRank:getChildByFullName("text_rank_0")
+	local rankdesc2 = nodeRank:getChildByFullName("text_desc_0")
+	local itemNum = 0
 
-	if data.attackerWin then
-		winnerData = data.attacker
-		defenderData = data.defender
-	else
-		winnerData = data.defender
-		defenderData = data.attacker
-	end
-
-	self._winnerName:setString(winnerData.nickname)
-	self._winnerRank:setString(Strings:get("ARENA_RESULT_RANK") .. self._data.rank)
-	self:checkRankRaise(rankRaise)
-
-	local headIcon = IconFactory:createPlayerIcon({
-		clipType = 2,
-		id = winnerData.headImg,
-		size = cc.size(180, 180)
-	})
-
-	headIcon:setScale(0.51)
-	headIcon:addTo(self._iconPanel)
-
-	local saoguan = headIcon:getChildByName("awakenSao")
-
-	if saoguan then
-		saoguan:setVisible(false)
-	end
-
-	local rewards = self._data.rewards
-
-	self:showReward(rewards)
-	self:showMVP()
-end
-
-function ArenaVictoryMediator:initViewDataWithReportReplay(data)
-	local winnerData = {}
-	local defenderData = {}
-	local rankRaise = data:getRankChange()
-
-	if data:getAttackerWin() then
-		winnerData = data:getAttacker()
-		defenderData = data:getDefender()
-	else
-		winnerData = data:getDefender()
-		defenderData = data:getAttacker()
-	end
-
-	self._winnerName:setString(winnerData:getNickname())
-	self._winnerRank:setString(Strings:get("ARENA_RESULT_RANK") .. data:getRank())
-	self:checkRankRaise(rankRaise)
-
-	local headIcon = IconFactory:createPlayerIcon({
-		clipType = 2,
-		id = winnerData:getHeadImg(),
-		size = cc.size(180, 180)
-	})
-
-	headIcon:setScale(0.51)
-	headIcon:addTo(self._iconPanel)
-
-	local rewards = data:getReward()
-
-	self:showReward(rewards)
-	self:showMVP()
-end
-
-function ArenaVictoryMediator:showReward(rewards)
-	self._rewardNode:removeAllChildren()
-	self._listView:removeAllItems()
-
-	local showRewards = {}
-
-	for i = 1, #rewards do
-		if rewards[i].type ~= RewardType.kSpecialValue then
-			table.insert(showRewards, rewards[i])
+	for k, v in pairs(rewards or {}) do
+		if v.code == CurrencyIdKind.kDiamond then
+			itemNum = itemNum + v.amount
 		end
 	end
 
-	if #showRewards > 0 then
-		for i = 1, #showRewards do
-			local newPanel = ccui.Layout:create()
+	iconNum:setTextColor(GameStyle:getColor(3))
+	iconNum:setString(Strings:get("ClassArena_UI36", {
+		Num = itemNum
+	}))
+	rankdesc2:setString("")
 
-			newPanel:setAnchorPoint(cc.p(0, 0))
-			newPanel:setContentSize(cc.size(82, 85))
+	local curRank = self._data.resultData:getRank()
+	local nextReward = self._arenaNewSystem:getNextFirstReward(curRank)
 
-			local icon = IconFactory:createRewardIcon(showRewards[i])
+	if next(nextReward) ~= nil then
+		local f = Strings:get("ClassArena_UI37", {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_M,
+			Num1 = nextReward.nextRank,
+			Num2 = nextReward.rewardNum
+		})
+		local richText = ccui.RichText:createWithXML(f, {})
 
-			icon:setScale(0.64)
-			icon:addTo(newPanel):center(newPanel:getContentSize())
-
-			local delay = cc.DelayTime:create(0.8 + (i - 1) * 0.2)
-
-			icon:setScale(1)
-			icon:setOpacity(0)
-
-			local scale = cc.ScaleTo:create(0.2, 0.64)
-			local fadeIn = cc.FadeIn:create(0.2)
-			local spawn = cc.Spawn:create(scale, fadeIn)
-			local seq = cc.Sequence:create(delay, spawn)
-
-			icon:runAction(seq)
-			self._listView:pushBackCustomItem(newPanel)
-		end
+		richText:setAnchorPoint(rankdesc2:getAnchorPoint())
+		richText:setPosition(cc.p(0, 0))
+		richText:addTo(rankdesc2)
 	end
 end
 
@@ -352,22 +319,15 @@ function ArenaVictoryMediator:showMVP()
 	end
 end
 
-function ArenaVictoryMediator:checkRankRaise(raise)
-	if tonumber(raise) <= 0 then
-		self._winnerRankRise:setVisible(false)
-	else
-		self._winnerRankRise:setVisible(true)
-		self._winnerRankRise:getChildByName("text"):setString(Strings:get("RANK_UI13", {
-			num = raise
-		}))
-	end
-end
-
 function ArenaVictoryMediator:onClickReplay(sender, eventType, oppoRecord)
 	if self._replayType == ArenaBattlePlayType.kNormal then
 		self._arenaSystem:requestReportDetail(self._data.resultData.reportId)
 	elseif self._replayType == ArenaBattlePlayType.kReport then
-		self._arenaSystem:requestReportDetail(self._data.resultData:getId())
+		if self._isFromNewArena then
+			self._arenaNewSystem:requestReportDetail(self._data.resultData:getId())
+		else
+			self._arenaSystem:requestReportDetail(self._data.resultData:getId())
+		end
 	end
 end
 
@@ -380,11 +340,21 @@ function ArenaVictoryMediator:onClickExit(sender, eventType, oppoRecord)
 		}
 	elseif self._replayType == ArenaBattlePlayType.kReport then
 		data = {
-			viewName = self._arenaSystem:getShowViewAfterBattle()
+			viewName = self._isFromNewArena and self._arenaNewSystem:getShowViewAfterBattle() or self._arenaSystem:getShowViewAfterBattle()
 		}
 	end
 
+	local retData = self._data.retData
+
 	BattleLoader:popBattleView(self, data)
+
+	if self._isFromNewArena and retData.refreshRival then
+		self._arenaNewSystem:requestGainChessArena()
+
+		local dispatcher = DmGame:getInstance()
+
+		dispatcher:dispatch(ViewEvent:new(EVT_PUSH_VIEW, dispatcher:getInjector():getInstance(self._arenaNewSystem:getShowViewAfterBattle())))
+	end
 end
 
 function ArenaVictoryMediator:onClickShow()

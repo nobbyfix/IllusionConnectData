@@ -174,6 +174,10 @@ function BattleField:createCells()
 	return cells
 end
 
+function BattleField:getCells()
+	return self._cells
+end
+
 function BattleField:getCellById(cellId)
 	return self._cells[cellId]
 end

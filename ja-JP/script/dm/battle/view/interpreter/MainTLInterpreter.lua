@@ -196,6 +196,28 @@ function MainTLInterpreter:act_PvpSpeedUp(action, args)
 	self._battleUIMediator:pvpSpeedUp(arg1, arg2)
 end
 
+function MainTLInterpreter:act_ShowEnhanceUp(action, args)
+	local arg1 = tostring(args.arg1)
+	local arg2 = tostring(args.arg2)
+
+	if self._battleUIMediator.showNoticeEnhance then
+		self._battleUIMediator:showNoticeEnhance(arg1, arg2)
+	end
+end
+
+function MainTLInterpreter:act_HideEnhanceUp(action, args)
+	if self._battleUIMediator.hideNoticeEnhance then
+		self._battleUIMediator:hideNoticeEnhance()
+	end
+end
+
+function MainTLInterpreter:act_ShowMaster(action, args)
+	local enemy = args.enemy
+	local friend = args.friend
+
+	self._battleUIMediator:showMaster(friend, enemy)
+end
+
 function MainTLInterpreter:act_ShakeScreen(action, args)
 	local id = args.Id or 1
 	local duration = args.duration or 30

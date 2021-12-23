@@ -9,6 +9,9 @@ StageLosePopMediator:has("_systemKeeper", {
 StageLosePopMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+StageLosePopMediator:has("_arenaNewSystem", {
+	is = "r"
+}):injectWith("ArenaNewSystem")
 
 local kBtnHandlers = {
 	["content.btnStatistic"] = "onTouchStatistic",
@@ -18,8 +21,9 @@ local kBtnHandlers = {
 	["content.mSkillBtn"] = "onClickSkill"
 }
 local kViewType = {
-	kArena = "arena",
-	kCrusade = "crusade"
+	KArenaNew = "arenaNew",
+	kCrusade = "crusade",
+	kArena = "arena"
 }
 
 function StageLosePopMediator:initialize()
@@ -159,6 +163,8 @@ function StageLosePopMediator:initSvpRole()
 			team = developSystem:getSpTeamByType(StageTeamType.CRUSADE)
 		elseif self._data.viewType == kViewType.kArena then
 			team = developSystem:getSpTeamByType(StageTeamType.ARENA_ATK)
+		elseif self._data.viewType == kViewType.KArenaNew then
+			team = developSystem:getSpTeamByType(StageTeamType.CHESS_ARENA_ATK)
 		end
 
 		local mvpPoint = 0
@@ -322,6 +328,18 @@ function StageLosePopMediator:toStageView()
 		BattleLoader:popBattleView(self, {
 			viewName = "CrusadeMainView"
 		})
+	elseif self._data.popName and self._data.popName ~= "" then
+		BattleLoader:popBattleView(self, {
+			viewName = self._data.popName
+		})
+
+		if self._data.popName == "ArenaNewView" and self._data.refreshRival then
+			self._arenaNewSystem:requestGainChessArena()
+
+			local dispatcher = DmGame:getInstance()
+
+			dispatcher:dispatch(ViewEvent:new(EVT_PUSH_VIEW, dispatcher:getInjector():getInstance(self._data.popName)))
+		end
 	elseif self._data.SVPHeroId then
 		BattleLoader:popBattleView(self, {
 			viewName = "HeroStoryChapterView"

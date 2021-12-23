@@ -21,8 +21,7 @@ ShopMainMediator:has("_surfaceSystem", {
 local kNums = 4
 local kCellHeightTab = 50
 local kCellHeight = 495
-local kCellWidth = 934
-local kbackgroundPath = "asset/scene/sd_bg.jpg"
+local kbackgroundPath = "asset/scene/shop_img_zsbg.jpg"
 local kShopView = {
 	[ShopSpecialId.kShopMall] = "ShopRechargeView",
 	[ShopSpecialId.kShopPackage] = "ShopPackageMainView",
@@ -33,6 +32,10 @@ local kShopView = {
 	[ShopSpecialId.kShopSurfacePackage] = "ShopPackageMainView",
 	[ShopSpecialId.kShopTimeLimit] = "ShopPackageMainView",
 	[ShopSpecialId.KShopTimelimitedmall] = "ShopPackageMainView"
+}
+local kShopNormalType = {
+	Normal = "Normal",
+	GoldPartner = "GoldPartner"
 }
 
 function ShopMainMediator:initialize()
@@ -84,7 +87,6 @@ function ShopMainMediator:onRemove()
 end
 
 function ShopMainMediator:enterWithData(data)
-	dump(data, "data >>>>>>>>>>")
 	self:setupTopInfoWidget()
 	self:initMember()
 	self:initData(data)
@@ -271,7 +273,6 @@ function ShopMainMediator:initMember()
 	self._backgroundBG = self._mainPanel:getChildByFullName("backgroundBG")
 	self._leftTabPanel = self._view:getChildByName("leftTabPanel")
 	self._rightTabPanel = self._view:getChildByName("rightTabPanel")
-	self._scrollBarBg = self._mainPanel:getChildByFullName("scrollBarBg")
 	self._tabClone = self._view:getChildByFullName("tabClone")
 
 	self._tabClone:setVisible(false)
@@ -313,47 +314,99 @@ function ShopMainMediator:adjustView()
 
 	self._scrollViewTab:setScrollBarEnabled(false)
 
+	self._tabBg = self._rightTabPanel:getChildByName("tabBg")
+
+	self._tabBg:setContentSize(cc.size(winSize.width - 200, 46))
+
 	self._scrollView = self._mainPanel:getChildByFullName("scrollView")
 
-	self._scrollView:setScrollBarEnabled(true)
-	self._scrollView:setScrollBarAutoHideTime(9999)
-	self._scrollView:setScrollBarColor(cc.c3b(255, 255, 255))
-	self._scrollView:setScrollBarAutoHideEnabled(true)
-	self._scrollView:setScrollBarWidth(5)
-	self._scrollView:setScrollBarOpacity(255)
-	self._scrollView:setScrollBarPositionFromCorner(cc.p(21, 20))
+	self._scrollView:setScrollBarEnabled(false)
 
 	self._cellWidthTab = self._tabClone:getContentSize().width
-	self._cellWidthNormal = self._cellCloneNormal:getContentSize().width
-	self._cellHeightNormal = self._cellCloneNormal:getContentSize().height
-	self._cellHeightNormal = self._cellHeightNormal + 8
+	self._cellWidthNormal = self._cellCloneNormal:getContentSize().width + 13
+	self._cellHeightNormal = self._cellCloneNormal:getContentSize().height + 8
+	self._goldScrollView = self._mainPanel:getChildByFullName("goldScrollView")
+
+	self._goldScrollView:setScrollBarEnabled(false)
+
+	self._goldCell = self._view:getChildByFullName("goldCell")
 end
 
 function ShopMainMediator:refreshView()
-	self:setScrollView(true)
+	local shopType = ConfigReader:getDataByNameIdAndKey("Shop", self._shopId, "ShopType")
 
-	local length = math.ceil(#self._curShopItems / kNums)
+	if shopType and shopType == kShopNormalType.Normal then
+		self:setScrollView(true)
+		self._refreshDesc:setString(Strings:get("Shop_Next_Refresh"))
 
-	if self:getShopNormalId() == ShopSpecialId.kShopNormal then
-		local allHeight = math.max(kCellHeight, self._cellHeightNormal * length - 8)
+		local width = self._scrollView:getContentSize().width
+		local num1 = math.floor(width / self._cellWidthNormal)
+		local num2 = math.ceil(#self._curShopItems / 2)
+		kNums = math.max(num1, num2)
+		local length = math.ceil(#self._curShopItems / kNums)
 
-		self._scrollView:setInnerContainerSize(cc.size(kCellWidth, allHeight))
-		self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight)))
+		if self:getShopNormalId() == ShopSpecialId.kShopNormal then
+			local allHeight = math.max(kCellHeight, self._cellHeightNormal * length - 8)
 
-		for i = 1, length do
-			local layout = ccui.Layout:create()
+			self._scrollView:setInnerContainerSize(cc.size(kNums * self._cellWidthNormal, allHeight))
+			self._scrollView:setInnerContainerPosition(cc.p(0, -(allHeight - kCellHeight)))
 
-			layout:setContentSize(cc.size(kCellWidth, self._cellHeightNormal))
-			layout:addTo(self._scrollView)
-			layout:setTag(i)
-			layout:setAnchorPoint(cc.p(0, 1))
+			for i = 1, length do
+				local layout = ccui.Layout:create()
 
-			local h = allHeight - self._cellHeightNormal * (i - 1) + 8
+				layout:setContentSize(cc.size(kNums * self._cellWidthNormal, self._cellHeightNormal))
+				layout:addTo(self._scrollView)
+				layout:setTag(i)
+				layout:setAnchorPoint(cc.p(0, 1))
 
-			layout:setPosition(cc.p(0, h))
-			layout:setTouchEnabled(false)
-			self:createCell(layout, i)
+				local h = allHeight - self._cellHeightNormal * (i - 1) + 8
+
+				layout:setPosition(cc.p(0, h))
+				layout:setTouchEnabled(false)
+				self:createCell(layout, i)
+			end
 		end
+
+		self:runListAnim()
+
+		if self._curGoods then
+			self._scrollView:setInnerContainerPosition(cc.p(self._viewOffsetX, 0))
+
+			self._curGoods = nil
+			self._viewOffsetX = nil
+		end
+	elseif shopType and shopType == kShopNormalType.GoldPartner then
+		local winSize = cc.Director:getInstance():getWinSize()
+
+		self:setScrollView(false)
+
+		local len = #self._curShopItems
+
+		table.sort(self._curShopItems, function (a, b)
+			if a:getStock() <= 0 and b:getStock() > 0 then
+				return false
+			end
+
+			if a:getStock() > 0 and b:getStock() <= 0 then
+				return true
+			end
+
+			return a:getSort() < b:getSort()
+		end)
+		self._goldScrollView:setInnerContainerSize(cc.size(235 * len, 486))
+		self._goldScrollView:setInnerContainerPosition(cc.p(0, 0))
+		self._refreshDesc:setString(Strings:get("Shop_GoldPartner_FlashDes"))
+
+		for i = 1, len do
+			local cell = self._goldCell:clone()
+
+			cell:setVisible(true)
+			cell:addTo(self._goldScrollView)
+			cell:setPosition(cc.p(235 * (i - 1), 15))
+			self:createGoldCell(cell, self._curShopItems[i])
+		end
+
+		self:runGoldListAnim()
 	end
 
 	self._exchange_btn:setVisible(false)
@@ -362,8 +415,6 @@ function ShopMainMediator:refreshView()
 		self._exchange_btn:setVisible(true)
 		self:refreshExchangeRedpoint()
 	end
-
-	self:runListAnim()
 end
 
 function ShopMainMediator:resumeBackground()
@@ -384,11 +435,12 @@ function ShopMainMediator:createCell(cell, index)
 			local clonePanel = self._cellCloneNormal:clone()
 
 			clonePanel:setVisible(true)
+			clonePanel:setAnchorPoint(cc.p(0, 0))
 			item:setView(clonePanel, self)
 			cell:addChild(item:getView())
 			item:getView():setTag(i)
 
-			local x = (i - 1) * (self._cellWidthNormal + 13)
+			local x = (i - 1) * self._cellWidthNormal
 			local y = 0
 
 			item:getView():setPosition(x, y)
@@ -409,14 +461,121 @@ function ShopMainMediator:createCell(cell, index)
 	end
 end
 
+function ShopMainMediator:createGoldCell(cell, data)
+	local name = cell:getChildByFullName("heroName")
+
+	name:setString(data:getName())
+
+	local discount = cell:getChildByName("discount")
+	local discountNum = discount:getChildByName("num")
+	local totalMoney = cell:getChildByName("Text_12")
+	local lineImage = cell:getChildByName("lineImage")
+	local costOff = data:getCostOff()
+
+	if costOff ~= 1 then
+		discount:setVisible(true)
+		discountNum:setString(costOff * 10 .. Strings:get("SHOP_COST_OFF_TEXT10"))
+
+		local totalPrice = data:getPrice()
+
+		if costOff * 10 ~= 0 then
+			local originalPrice = data:getOriginalPrice()
+
+			if originalPrice then
+				totalPrice = originalPrice
+			else
+				totalPrice = math.ceil(totalPrice / costOff)
+			end
+		end
+
+		totalMoney:setString(totalPrice)
+		totalMoney:setVisible(true)
+		lineImage:setVisible(true)
+	else
+		discount:setVisible(false)
+		totalMoney:setString("")
+		totalMoney:setVisible(false)
+		lineImage:setVisible(false)
+	end
+
+	local moneyText = cell:getChildByName("prize")
+	local price = data:getPrice()
+
+	if price == 0 then
+		price = Strings:get("Recruit_Free") or price
+	end
+
+	moneyText:setString(price)
+
+	local moneyIcon = cell:getChildByName("moneyIcon")
+	local goldIcon = IconFactory:createPic({
+		id = data:getCostType()
+	})
+
+	goldIcon:addTo(moneyIcon):center(moneyIcon:getContentSize()):offset(0, -2)
+
+	local heroId = data:getItemConfig().TargetId.id
+	local detailBtn = cell:getChildByName("detailBtn")
+
+	detailBtn:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			local view = self:getInjector():getInstance("HeroInfoView")
+
+			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+				heroId = heroId
+			}))
+		end
+	end)
+
+	local scale = data:getScale()
+	local baseRole = cell:getChildByFullName("role")
+	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
+		useAnim = false,
+		frameId = "bustframe9",
+		id = roleModel
+	})
+
+	heroSprite:setScale(scale.Zoom)
+	heroSprite:addTo(baseRole):offset(scale.XOffst + 100, scale.YOffset + 300)
+
+	local tagImg = cell:getChildByFullName("tagImg")
+	local rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "Rareity")
+
+	tagImg:loadTexture(GameStyle:getHeroRarityImage(rarity), 1)
+
+	local touchPanel = cell:getChildByFullName("touchPanel")
+
+	touchPanel:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			self:onClickItem(data)
+		end
+	end)
+
+	local times1 = data:getStock()
+	local resetMode = data:getResetMode()
+	local exchangeLab = cell:getChildByName("exchangeLab")
+	local str = Strings:get("Shop_GoldPartner_BuyNum", {
+		fontSize = 22,
+		num = times1,
+		fontName = TTF_FONT_FZYH_R
+	})
+
+	exchangeLab:setString(str)
+
+	local mask = cell:getChildByFullName("mask")
+
+	if times1 <= 0 then
+		mask:setVisible(true)
+	else
+		mask:setVisible(false)
+	end
+end
+
 function ShopMainMediator:refreshShopData()
 	if not kShopView[self._shopId] then
 		self:refreshData()
-
-		local offsety = self._scrollView:getInnerContainerPosition().y
-
 		self:refreshView()
-		self._scrollView:setInnerContainerPosition(cc.p(0, offsety))
 	end
 end
 
@@ -728,7 +887,8 @@ function ShopMainMediator:setScrollView(status)
 	self:stopItemActions()
 	self._scrollView:removeAllChildren()
 	self._scrollView:setVisible(status)
-	self._scrollBarBg:setVisible(status)
+	self._goldScrollView:removeAllChildren()
+	self._goldScrollView:setVisible(not status)
 end
 
 function ShopMainMediator:resetView()
@@ -912,7 +1072,7 @@ function ShopMainMediator:refreshTime(shopId)
 	local hasResetTime = self._shopSystem:hasResetTime(shopId)
 	local maxTimes = shopGroup:getRefreshMaxTimes()
 
-	if cache.remainTime and hasResetTime and maxTimes ~= 0 then
+	if cache.remainTime and hasResetTime then
 		self._refreshPanel:setVisible(true)
 
 		if cache.remainTime >= 0 then
@@ -922,12 +1082,22 @@ function ShopMainMediator:refreshTime(shopId)
 			local strArr = string.split(str, ":")
 
 			if tonumber(strArr[1]) > 0 then
-				self._refreshTime:setString(strArr[1] .. Strings:get("TimeUtil_Day"))
+				self._refreshTime:setString(strArr[1] .. Strings:get("TimeUtil_Day") .. strArr[2] .. Strings:get("Shop_GoldPartner_TimeUtil_Hour"))
+			elseif tonumber(strArr[2]) > 0 then
+				self._refreshTime:setString(strArr[2] .. Strings:get("Shop_GoldPartner_TimeUtil_Hour"))
+			elseif tonumber(strArr[3]) > 0 then
+				self._refreshTime:setString(strArr[3] .. Strings:get("TimeUtil_Min") .. strArr[4] .. Strings:get("TimeUtil_Sec"))
 			else
-				self._refreshTime:setString(strArr[2] .. ":" .. strArr[3] .. ":" .. strArr[4])
+				self._refreshTime:setString(strArr[4] .. Strings:get("TimeUtil_Sec"))
 			end
 		else
 			self._refreshPanel:setVisible(false)
+		end
+
+		if maxTimes == 0 then
+			self._refreshPanel:getChildByName("refresh_btn"):setVisible(false)
+		else
+			self._refreshPanel:getChildByName("refresh_btn"):setVisible(true)
 		end
 	else
 		self._refreshPanel:setVisible(false)
@@ -974,6 +1144,9 @@ function ShopMainMediator:onClickItem(data)
 	end
 
 	self:showShopBuyViewNormal(data)
+
+	self._curGoods = data
+	self._viewOffsetX = self._scrollView:getInnerContainerPosition().x
 end
 
 function ShopMainMediator:onBackClicked()
@@ -1112,6 +1285,11 @@ end
 
 function ShopMainMediator:runListAnim()
 	local v = 4
+	local startCount = 1
+
+	if self._viewOffsetX then
+		startCount = math.ceil(-self._viewOffsetX / self._cellWidthNormal)
+	end
 
 	self._scrollView:setTouchEnabled(false)
 
@@ -1121,7 +1299,7 @@ function ShopMainMediator:runListAnim()
 		local child = allCells[i]
 
 		if child then
-			for j = 1, kNums do
+			for j = startCount, startCount + 5 do
 				local node = child:getChildByTag(j)
 
 				if node then
@@ -1133,13 +1311,15 @@ function ShopMainMediator:runListAnim()
 
 	local length = math.min(v, #allCells)
 	local delayTime = v / 30
-	local delayTime1 = kNums / 30
+	local delayTime1 = math.min(delayTime, kNums / 30)
 
 	for i = 1, v do
 		local child = allCells[i]
 
 		if child then
-			for j = 1, kNums do
+			local count = 1
+
+			for j = startCount, startCount + 5 do
 				local node = child:getChildByTag(j)
 
 				if node then
@@ -1148,7 +1328,7 @@ function ShopMainMediator:runListAnim()
 
 					node:setPositionX(starPosX + 100)
 
-					local time = (i - 1) * delayTime + (j - 1) * delayTime1
+					local time = (i - 1) * delayTime + (count - 1) * delayTime1
 					local delayAction = cc.DelayTime:create(time)
 					local callfunc = cc.CallFunc:create(function ()
 						local action1 = cc.MoveTo:create(0.1, cc.p(starPosX, starPosY))
@@ -1166,8 +1346,48 @@ function ShopMainMediator:runListAnim()
 					local seq = cc.Sequence:create(delayAction, callfunc, callfunc1)
 
 					self:getView():runAction(seq)
+
+					count = count + 1
 				end
 			end
+		end
+	end
+end
+
+function ShopMainMediator:runGoldListAnim()
+	self._goldScrollView:setTouchEnabled(false)
+
+	local allCells = self._goldScrollView:getChildren()
+	local length = #allCells
+	local delayTime = 0.05
+
+	for i = 1, length do
+		local child = allCells[i]
+
+		if child then
+			local starPosX = child:getPositionX()
+			local starPosY = child:getPositionY()
+
+			child:setPositionX(starPosX + 150)
+
+			local time = (i - 1) * delayTime
+			local delayAction = cc.DelayTime:create(time)
+			local callfunc = cc.CallFunc:create(function ()
+				local action1 = cc.MoveTo:create(0.1, cc.p(starPosX, starPosY))
+
+				child:stopAllActions()
+				child:runAction(action1)
+			end)
+			local callfunc1 = cc.CallFunc:create(function ()
+				child:setOpacity(255)
+
+				if length == i then
+					self._goldScrollView:setTouchEnabled(true)
+				end
+			end)
+			local seq = cc.Sequence:create(delayAction, callfunc, callfunc1)
+
+			self:getView():runAction(seq)
 		end
 	end
 end

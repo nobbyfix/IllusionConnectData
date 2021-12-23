@@ -825,6 +825,62 @@
         ],
         "Type": "NORMAL"
     },
+    "DramaM01": {
+        "BGM": "Mus_Story_Drama_Main",
+        "Background": "Drama_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DramaAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DramaSN01",
+            "DramaSN02",
+            "DramaSN03",
+            "DramaSN04",
+            "DramaSN05",
+            "DramaSN06",
+            "DramaSN07",
+            "DramaSN08"
+        ],
+        "SubStoryPoint": [
+            "DramaS01S01",
+            "DramaS01S02",
+            "DramaS01S03",
+            "DramaS01S04",
+            "DramaS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "DramaM02": {
+        "BGM": "Mus_Story_Drama_Farewell",
+        "Background": "Drama_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DramaAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DramaSE01",
+            "DramaSE02",
+            "DramaSE03",
+            "DramaSE04",
+            "DramaSE05",
+            "DramaSE06",
+            "DramaSE07",
+            "DramaSE08",
+            "DramaSE09",
+            "DramaSE10",
+            "DramaSE11"
+        ],
+        "SubStoryPoint": [
+            "DramaS02S01",
+            "DramaS02S02",
+            "DramaS02S03",
+            "DramaS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "DuskM01": {
         "BGM": "Mus_Story_Dusk_Main",
         "Background": "Dusk_Scene02",

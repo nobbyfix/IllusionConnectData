@@ -346,6 +346,11 @@ local kExtResponseMap = {
 		instanceName = "MiniGameSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("JumpView")
+	},
+	ArenaNewView = {
+		instanceName = "ArenaNewSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("ArenaNewView")
 	}
 }
 
