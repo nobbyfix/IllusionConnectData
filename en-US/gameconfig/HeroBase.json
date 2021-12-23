@@ -13124,7 +13124,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.0,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_LYSi",
         "KeyPassiveSkill": "",
@@ -13296,8 +13296,7 @@
         "Speed": 50,
         "StarId": "LYSi_1",
         "SurfaceList": [
-            "Surface_LYSi_1",
-            "Surface_LYSi_2"
+            "Surface_LYSi_1"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
