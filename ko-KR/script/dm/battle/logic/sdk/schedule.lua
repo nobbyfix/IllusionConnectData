@@ -52,3 +52,9 @@ function exports.LockTime(env, dur)
 
 	timingSystem:lockTime(dur)
 end
+
+function exports.GetbattleTime(env)
+	local timingSystem = env.global["$TimingSystem"]
+
+	return timingSystem:getCumulativeTime()
+end

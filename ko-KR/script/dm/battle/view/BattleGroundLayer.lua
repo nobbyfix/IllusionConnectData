@@ -443,7 +443,9 @@ function BattleGroundLayer:findNearbyEmptyForExtraCard(point, sender, touchArea)
 					rightDir = v.id < 0
 				end
 
-				return rightDir
+				if rightDir then
+					return true
+				end
 			end
 		end
 

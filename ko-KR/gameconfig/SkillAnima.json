@@ -40467,6 +40467,54 @@
     "hdie_skill3_1": {
         "events": []
     },
+    "hdu_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "hdu_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
+    "hdu_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
+    },
     "hhji_vt_hhji_skill1": {
         "events": [
             {

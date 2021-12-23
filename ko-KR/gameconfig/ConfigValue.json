@@ -381,6 +381,12 @@
             0.25
         ]
     },
+    "Arena_Passive": {
+        "clz": "string[]",
+        "content": [
+            "ArenaFixed_HurtRateUp"
+        ]
+    },
     "Arena_PlayerExtraA": {
         "clz": "double",
         "content": 1.05
@@ -616,7 +622,8 @@
             "actstage",
             "club_battle",
             "dream_battle",
-            "stagearena"
+            "stagearena",
+            "arena_new_challenge"
         ]
     },
     "BattleSpeed_Display": {
@@ -1549,6 +1556,280 @@
     "CheckIn_Mail": {
         "clz": "string",
         "content": "Mail_CheckInReward"
+    },
+    "ChessArena_Background": {
+        "clz": "string",
+        "content": "Battle_Scene_1"
+    },
+    "ChessArena_ChangeShowTime": {
+        "clz": "int",
+        "content": 24
+    },
+    "ChessArena_Mail_DayReward": {
+        "clz": "string",
+        "content": 1005
+    },
+    "ChessArena_Mail_Reward": {
+        "clz": "string",
+        "content": 1003
+    },
+    "ChessArena_Rank_Num": {
+        "clz": "int",
+        "content": 100
+    },
+    "ChessArena_RecordRank": {
+        "clz": "int",
+        "content": 50
+    },
+    "ChessArena_RobotAutograph": {
+        "clz": "string[]",
+        "content": [
+            "ClassArena_Autograph1",
+            "ClassArena_Autograph2",
+            "ClassArena_Autograph3",
+            "ClassArena_Autograph4",
+            "ClassArena_Autograph5",
+            "ClassArena_Autograph6",
+            "ClassArena_Autograph7",
+            "ClassArena_Autograph8",
+            "ClassArena_Autograph9",
+            "ClassArena_Autograph10"
+        ]
+    },
+    "ChessArena_Robot_Job_Deviation": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                1.1,
+                1,
+                0.81
+            ],
+            "Attack": [
+                1.2,
+                0.82,
+                0.71
+            ],
+            "Cure": [
+                1.06,
+                1,
+                1.18
+            ],
+            "Curse": [
+                1.05,
+                1,
+                1.04
+            ],
+            "Defense": [
+                0.75,
+                1.18,
+                1.41
+            ],
+            "Summon": [
+                1,
+                1,
+                1
+            ],
+            "Support": [
+                1.04,
+                1,
+                1.15
+            ]
+        }
+    },
+    "ChessArena_Robot_Quality_Deviation": {
+        "clz": "dict",
+        "content": {
+            "12": 0.8,
+            "13": 0.9,
+            "14": 1,
+            "15": 1
+        }
+    },
+    "ChessArena_StepValueRate": {
+        "clz": "int",
+        "content": 4
+    },
+    "ClassArena_ActivePlayer": {
+        "clz": "int",
+        "content": 3
+    },
+    "ClassArena_Autograph": {
+        "clz": "string[]",
+        "content": [
+            10,
+            5
+        ]
+    },
+    "ClassArena_BattleSave": {
+        "clz": "int",
+        "content": 10
+    },
+    "ClassArena_BuyTimesCost": {
+        "clz": "int",
+        "content": 50
+    },
+    "ClassArena_DefaultRank": {
+        "clz": "int",
+        "content": 6001
+    },
+    "ClassArena_GroupAmount": {
+        "clz": "int",
+        "content": -1
+    },
+    "ClassArena_MaxTimes": {
+        "clz": "int",
+        "content": 5
+    },
+    "ClassArena_Member": {
+        "clz": "string[]",
+        "content": [
+            1500,
+            6000
+        ]
+    },
+    "ClassArena_PlayerMatch": {
+        "clz": "int",
+        "content": 3
+    },
+    "ClassArena_Rank_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "RankRules_1",
+            "RankRules_2",
+            "RankRules_3"
+        ]
+    },
+    "ClassArena_ReadyTime": {
+        "clz": "int",
+        "content": 300
+    },
+    "ClassArena_ReloadCD": {
+        "clz": "int",
+        "content": 0.75
+    },
+    "ClassArena_Reset": {
+        "clz": "string",
+        "content": "ChessArena_ResetTime"
+    },
+    "ClassArena_Reward_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "ClassArenaRankRewardTranslate1",
+            "ClassArenaRankRewardTranslate2",
+            "ClassArenaRankRewardTranslate3",
+            "ClassArenaRankRewardTranslate4",
+            "ClassArenaRankRewardTranslate5"
+        ]
+    },
+    "ClassArena_RobotAmount": {
+        "clz": "int",
+        "content": 10
+    },
+    "ClassArena_RobotBox": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                "DFQi",
+                "HLMGen",
+                "WTXXuan",
+                "SSQXin",
+                "YLMGZhu",
+                "MGNa",
+                "XSMLi",
+                "SLMen",
+                "TLMi",
+                "BQDShe"
+            ],
+            "Attack": [
+                "YFZZhu",
+                "CZheng",
+                "GLin",
+                "YMHTPu",
+                "KTSJKe",
+                "DNTLuo",
+                "ZZBBWei",
+                "BBLMa",
+                "NXYYi",
+                "MKLJLuo",
+                "YSuo",
+                "TJHDe",
+                "KMLa"
+            ],
+            "Cure": [
+                "HLDNan",
+                "LFEr",
+                "MLYTLSha",
+                "KXuan",
+                "NDGEr",
+                "XLai",
+                "XBKLDi"
+            ],
+            "Curse": [
+                "ADHWShi",
+                "DDing",
+                "SDTZi",
+                "ALPo"
+            ],
+            "Defense": [
+                "ZTXCun",
+                "WEDe",
+                "JDCZhang",
+                "YKDMLai",
+                "YDZZong",
+                "JSTDing",
+                "LCYShi",
+                "YLSBai",
+                "LLan",
+                "BEr",
+                "DCJKang",
+                "BLTu"
+            ],
+            "Summon": [
+                "PNCao",
+                "LDu",
+                "JNLong",
+                "YBYa",
+                "SGHQShou",
+                "ATSheng",
+                "LYSi"
+            ],
+            "Support": [
+                "TPGZhu",
+                "ALSi",
+                "MTZMEShi",
+                "NFDDi",
+                "TTKMeng",
+                "FEMSi",
+                "HSheng",
+                "YXNMei"
+            ]
+        }
+    },
+    "ClassArena_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "ClassArena_TITLE1_Rule0",
+            "ClassArena_TITLE1_Rule1",
+            "ClassArena_TITLE1_Rule2",
+            "ClassArena_TITLE1_Rule3",
+            "ClassArena_TITLE1_Rule4",
+            "ClassArena_TITLE1_Rule5",
+            "ClassArena_TITLE1_Rule6",
+            "ClassArena_TITLE1_Rule7",
+            "ClassArena_TITLE1_Rule8",
+            "ClassArena_TITLE1_Rule9",
+            "ClassArena_TITLE1_Rule10",
+            "ClassArena_TITLE1_Rule11",
+            "ClassArena_TITLE1_Rule12"
+        ]
+    },
+    "ClassArena_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 5
+    },
+    "ClassArena_SystemUnlock": {
+        "clz": "string",
+        "content": "ChessArena_System"
     },
     "Clender_LongTime": {
         "clz": "int",
@@ -2562,7 +2843,7 @@
     },
     "DrawCard_Rebate_Limit": {
         "clz": "int",
-        "content": 2
+        "content": ""
     },
     "DrawCard_Resource": {
         "clz": "string",
@@ -5353,13 +5634,15 @@
         "content": [
             "ARENA",
             "RTPK",
-            "STAGE_ARENA"
+            "STAGE_ARENA",
+            "ChessArena"
         ]
     },
     "LeadStage_EffectiveTranslate": {
         "clz": "dict",
         "content": {
             "ARENA": "ARENA_TITLE",
+            "ChessArena": "ClassArena_Tital",
             "RTPK": "RTPK_SystemName",
             "STAGE_ARENA": "StageArena_SystemName"
         }
@@ -6559,13 +6842,12 @@
             "M05S07": "guide_Hero_Equip",
             "M05S09": "guide_Club",
             "M05S12": "guide_MasterEmblemAura",
-            "M05S15": "guide_ArenaChallengeRew",
             "M06S09": "guide_Achievement",
+            "M06S19": "guide_Tower",
             "S02S02": "guide_Village_Building_2",
             "S03S03": "guide_ChapterElite",
             "S04S03": "guide_Village_Building_8",
-            "S05S03": "guide_Explore",
-            "level30": "guide_StageArena"
+            "S05S03": "guide_Explore"
         }
     },
     "NewPlayerGuide_Text": {
@@ -7722,6 +8004,10 @@
             "Point_Skill_Text3"
         ]
     },
+    "Push_Translate": {
+        "clz": "array",
+        "content": ""
+    },
     "QualityDesc": {
         "clz": "dict",
         "content": {
@@ -7900,6 +8186,10 @@
     "RTPK_SameGame": {
         "clz": "int",
         "content": 3
+    },
+    "RTPK_SameGame_Top": {
+        "clz": "int",
+        "content": 8500
     },
     "RTPK_Scope": {
         "clz": "string[]",
@@ -8197,11 +8487,14 @@
         "clz": "string[]",
         "content": [
             "Shop_StageArena",
-            "Shop1",
-            "Shop6",
-            "Shop_Diamond",
+            "Shop_PVP",
+            "Shop_PVE",
+            "Shop_Association",
+            "Shop_GoldPartner",
             "Shop_URMap",
-            "Shop_Crystal"
+            "Shop_Crystal",
+            "Shop1",
+            "Shop_Diamond"
         ]
     },
     "Shop_Sort": {
@@ -8346,7 +8639,7 @@
         ]
     },
     "StageArena_Attenuation": {
-        "clz": "int[]",
+        "clz": "string[]",
         "content": [
             1,
             1,
@@ -9322,7 +9615,7 @@
     },
     "TansuoOneClickReward_Show": {
         "clz": "string",
-        "content": "IR_Equip14"
+        "content": "IR_Pve"
     },
     "Task_BubbleChange_Time": {
         "clz": "int",
@@ -9509,7 +9802,6 @@
             "XLDBLTe",
             "Mying",
             "LEMHou",
-            "WLSTNCi",
             "XDE",
             "Hla",
             "YMJDe",
@@ -9518,8 +9810,6 @@
             "SNGLSi",
             "HLDNan",
             "XXFSi",
-            "CKFSJi",
-            "SSBYa",
             "MDSi",
             "SGBao",
             "PSKe"

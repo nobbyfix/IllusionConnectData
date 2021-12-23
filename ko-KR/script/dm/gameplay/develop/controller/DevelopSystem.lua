@@ -469,6 +469,10 @@ function DevelopSystem:syncDeleteData(data)
 	if data and data.house then
 		self._dreamHouseSystem:delete(data.house)
 	end
+
+	if data and data.chessArena then
+		self:getPlayer():deleteNewArenaReward(data.chessArena)
+	end
 end
 
 function DevelopSystem:synCultivation(data)

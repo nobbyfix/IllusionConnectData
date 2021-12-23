@@ -1543,14 +1543,15 @@ function JumpMediator:getStageReward(stage)
 	local rewardAmount = reward.amount
 
 	if rewardType == CurrencyIdKind.kGold then
+		AudioEngine:getInstance():playEffect("Se_Effect_Eat_Coin")
 		self:writeGoldNum(rewardAmount)
 	elseif rewardType == CurrencyIdKind.kDiamond then
+		AudioEngine:getInstance():playEffect("Se_Effect_Eat_Diamond")
 		self:writeDiamondNum(rewardAmount)
 	else
+		AudioEngine:getInstance():playEffect("Se_Effect_Eat_Award")
 		self:writeHeropicNum(rewardAmount)
 	end
-
-	AudioEngine:getInstance():playEffect("Se_Effect_Eat_Bubble")
 
 	if not stage.flyreward then
 		return

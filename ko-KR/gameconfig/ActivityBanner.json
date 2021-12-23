@@ -1156,6 +1156,19 @@
         "Type": "Activity",
         "TypeId": "ActivityBlock_Detective"
     },
+    "ActivityBannerDrama": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drama_txt_zjm_banner.png",
+        "Important": "",
+        "Link": "view://ActivityBlockView&activityId=ActivityBlock_Drama",
+        "Sort": 3016,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Drama"
+    },
     "ActivityBannerDusk": {
         "BannerTime": "",
         "Bubble": "",
@@ -1586,6 +1599,19 @@
         "Switch": "fn_DrawCard_SP",
         "Type": "Activity",
         "TypeId": "DrawCard_SP_SSQXin_Activity"
+    },
+    "ActivityBanner_1UP_SSBYa": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SSBYa.png",
+        "Important": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SSBYa",
+        "Sort": 3014,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_SSBYa_Activity"
     },
     "ActivityBanner_1UP_ZuoHe02_1_Activity": {
         "BannerTime": "",
@@ -2640,6 +2666,32 @@
         "Type": "Activity",
         "TypeId": "DrawCard_1UP_20211208_3_Activity"
     },
+    "ActivityBanner_DrawCard_1UP_20211223_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SSBYa.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SSBYa_20211223",
+        "Sort": 3004,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211223_1_Activity"
+    },
+    "ActivityBanner_DrawCard_1UP_20211223_2_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_SLWan.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_SLWan_20211223",
+        "Sort": 3005,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_1UP_20211223_2_Activity"
+    },
     "ActivityBanner_DrawCard_2UP_20210106_1_Activity": {
         "BannerTime": "",
         "Bubble": "",
@@ -3290,6 +3342,19 @@
         "Type": "Activity",
         "TypeId": "DrawCard_2UP_20211208_2_Activity"
     },
+    "ActivityBanner_DrawCard_2UP_20211223_1_Activity": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_banner_NFErHSheng.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_NFErHSheng_20211223",
+        "Sort": 3006,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_2UP_20211223_1_Activity"
+    },
     "ActivityBanner_KMLa_1": {
         "BannerTime": "",
         "Bubble": "",
@@ -3400,6 +3465,19 @@
         "Type": "Activity",
         "TypeId": "DrawCard_UR_2UP_20211218_Activity"
     },
+    "ActivityBanner_UR_2UP_20211230": {
+        "BannerTime": "",
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drawcard_urbanner_2.png",
+        "Important": "",
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_UR_2UP_20211230",
+        "Sort": 999,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "DrawCard_UR_2UP_20211230_Activity"
+    },
     "ActivityBanner_YSLBin_1": {
         "BannerTime": "",
         "Bubble": "",
@@ -3431,6 +3509,25 @@
         "Switch": "",
         "Type": "Activity",
         "TypeId": "ActivityBlock_Animal_Exchange"
+    },
+    "ActivityExchangeBannerDrama": {
+        "BannerTime": {
+            "end": "2022-01-16 05:00:00",
+            "start": [
+                "2022-01-13 05:00:00",
+                "2022-01-16 05:00:00"
+            ]
+        },
+        "Bubble": "",
+        "EarlyShow": "",
+        "Icon": "",
+        "Img": "drama_txt_exchange_banner.png",
+        "Important": "",
+        "Link": "view://ShopCoopExchangeView&activityId=ActivityBlock_Drama_Exchange",
+        "Sort": 3018,
+        "Switch": "",
+        "Type": "Activity",
+        "TypeId": "ActivityBlock_Drama_Exchange"
     },
     "ActivityExchangeBannerDusk": {
         "BannerTime": {

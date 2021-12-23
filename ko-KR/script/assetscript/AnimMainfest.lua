@@ -2237,6 +2237,12 @@ local data = {
 		"asset/anim/global_xge_skill3_lz3.plist",
 		"asset/anim/global_xge_skill3_ci.plist"
 	},
+	["portrait_sp_xmlhui_awaken.skel"] = {
+		"asset/anim/portrait_sp_xmlhui_awaken2.plist",
+		"asset/anim/portrait_sp_xmlhui_awaken.plist",
+		"asset/anim/portrait_sp_xmlhui_awaken3.plist",
+		"asset/anim/portrait_sp_xmlhui_awaken1.plist"
+	},
 	["HLDNan.skel"] = {
 		"asset/anim/global_hldnan_sk3_pg.plist",
 		"asset/anim/yasong_christmas.plist",
@@ -2396,8 +2402,8 @@ local data = {
 		"asset/anim/portrait_dmse_holloween1.plist",
 		"asset/anim/portrait_dmse_holloween2.plist"
 	},
-	["portrait_hhui_pirate.skel"] = {
-		"asset/anim/portrait_hhui_pirate.plist"
+	["portrait_hdu.skel"] = {
+		"asset/anim/portrait_hdu.plist"
 	},
 	["portraitpic_TPGZhu_QPao.skel"] = {
 		"asset/anim/portraitpic_TPGZhu_QPao1.plist",
@@ -2662,6 +2668,27 @@ local data = {
 		"asset/anim/global_FuHun-skill4_1_1.plist",
 		"asset/anim/global_FuHun-skill3_5.plist",
 		"asset/anim/global_FuHun-skill1_1.plist"
+	},
+	["hdu.skel"] = {
+		"asset/anim/global_hdu_skill2_zx.plist",
+		"asset/anim/global_hdu_skill2_wq.plist",
+		"asset/anim/global_hdu_skill3_af.plist",
+		"asset/anim/global_hdu_skill2_sq.plist",
+		"asset/anim/hdu.plist",
+		"asset/anim/yasong_christmas.plist",
+		"asset/anim/global_hdu_skill1_bd.plist",
+		"asset/anim/global_hdu_skill2_wt.plist",
+		"asset/anim/global_hdu_skill3_an.plist",
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_hdu_skill3_mn.plist",
+		"asset/anim/global_hdu_skill3_cv.plist",
+		"asset/anim/spine_YFZZhu.plist",
+		"asset/anim/global_ruchang_dixian.plist",
+		"asset/anim/global_hdu_skill3_ui.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_ruchang_xialuo.plist",
+		"asset/anim/global_hdu_skill1_dg.plist",
+		"asset/anim/global_hdu_skill3_as.plist"
 	},
 	["portrait_bsu_ghost.skel"] = {
 		"asset/anim/portrait_bsu_ghost.plist"
@@ -6187,43 +6214,54 @@ local data = {
 		"asset/anim/global_ty_bj_0.plist"
 	},
 	["sp_xmlhui.skel"] = {
+		"asset/anim/global_xrc_dizuo.plist",
 		"asset/anim/global_sp_xmlhui_skill3_ks.plist",
 		"asset/anim/global_sp_xmlhui_skill3_ph.plist",
 		"asset/anim/sp_xmlhui.plist",
 		"asset/anim/global_sp_xmlhui_skill2_bd.plist",
 		"asset/anim/global_ruchang_xialuo.plist",
 		"asset/anim/global_sp_xmlhui_skill3_dl.plist",
+		"asset/anim/global_sp_xmlhui_awaken_hb.plist",
 		"asset/anim/global_sp_xmlhui_skill1_dg.plist",
 		"asset/anim/global_sp_xmlhui_skill3_cm.plist",
-		"asset/anim/global_sp_xmlhui_skill3_me02.plist",
 		"asset/anim/global_sp_xmlhui_skill3_da.plist",
+		"asset/anim/global_sp_xmlhui_awaken_yqb.plist",
 		"asset/anim/global_sp_xmlhui_skill3_me.plist",
 		"asset/anim/global_sp_xmlhui_skill2_dx.plist",
+		"asset/anim/yasong_christmas.plist",
 		"asset/anim/global_sp_xmlhui_skill1_pi.plist",
+		"asset/anim/global_sp_xmlhui_awaken_zhb.plist",
 		"asset/anim/global_sp_xmlhui_skill3_dd.plist",
 		"asset/anim/global_sp_xmlhui_skill2_ks.plist",
 		"asset/anim/global_sp_xmlhui_skill2_yh.plist",
 		"asset/anim/global_sp_xmlhui_skill1_lz.plist",
 		"asset/anim/global_sp_xmlhui_skill3_po.plist",
+		"asset/anim/global_sp_xmlhui_awaken_yl.plist",
 		"asset/anim/global_sp_xmlhui_skill2_qq.plist",
 		"asset/anim/global_sp_xmlhui_skill2_bq.plist",
-		"asset/anim/yasong_christmas.plist",
+		"asset/anim/global_xrc_xialuo_guang.plist",
 		"asset/anim/global_sp_xmlhui_skill3_sa.plist",
 		"asset/anim/global_sp_xmlhui_skill2_gy.plist",
 		"asset/anim/global_sp_xmlhui_skill1_sjadd.plist",
 		"asset/anim/global_sp_xmlhui_skill3_ti.plist",
+		"asset/anim/global_xrc_xialuo.plist",
 		"asset/anim/global_ruchang_beiguang.plist",
 		"asset/anim/global_sp_xmlhui_skill1_sjnor.plist",
 		"asset/anim/global_sp_xmlhui_skill3_px.plist",
 		"asset/anim/global_sp_xmlhui_skill3_hy.plist",
+		"asset/anim/global_sp_xmlhui_awaken_jd.plist",
+		"asset/anim/global_sp_xmlhui_skill3_ui.plist",
 		"asset/anim/global_sp_xmlhui_skill1_yanwu.plist",
 		"asset/anim/global_sp_xmlhui_skill1_dglz.plist",
 		"asset/anim/global_sp_xmlhui_skill1_dg2.plist",
+		"asset/anim/global_sp_xmlhui_awaken_ldg.plist",
 		"asset/anim/global_sp_xmlhui_skill3_fd.plist",
 		"asset/anim/global_ruchang_landian.plist",
 		"asset/anim/global_ruchang_dixian.plist",
 		"asset/anim/global_sp_xmlhui_skill1_dg3.plist",
-		"asset/anim/global_sp_xmlhui_skill3_ui.plist"
+		"asset/anim/global_sp_xmlhui_awaken_zqb.plist",
+		"asset/anim/global_sp_xmlhui_awaken_hg.plist",
+		"asset/anim/global_sp_xmlhui_awaken_yhb.plist"
 	},
 	["mirrorright.skel"] = {
 		"asset/anim/global_mirrorright_dse.plist",
@@ -6338,6 +6376,9 @@ local data = {
 	},
 	["portraitpic_DFQi.skel"] = {
 		"asset/anim/portraitpic_DFQi.plist"
+	},
+	["portrait_hhui_pirate.skel"] = {
+		"asset/anim/portrait_hhui_pirate.plist"
 	},
 	["YYing.skel"] = {
 		"asset/anim/global_YYing_SK3_xj.plist",

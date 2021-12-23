@@ -125,6 +125,12 @@ local timeLimitShopConfig = {
 		CellBuyImg = "jqtd_img_sdqjzl_jldi.png",
 		CellBuyEndImg = "jqtd_img_sdqjzl_jldih.png",
 		CellNameColor = cc.c4b(224, 193, 148, 89.25)
+	},
+	drama = {
+		CellBuyImg = "jqtd_img_ysmlzl_jldi.png",
+		CellBuyEndImg = "jqtd_img_ysmlzl_jldih.png",
+		CellNameOpacity = 255,
+		CellNameColor = cc.c4b(190, 177, 241, 255)
 	}
 }
 local btnHandlers = {
@@ -231,7 +237,11 @@ function TimeLimitShopActivityMediator:setupView()
 	end
 
 	if config and config.CellNameColor then
-		self._cellClone:getChildByFullName("cell.goods_name"):setColor(config.CellNameColor)
+		self._cellClone:getChildByFullName("cell.goods_name"):setTextColor(config.CellNameColor)
+	end
+
+	if config and config.CellNameOpacity then
+		self._cellClone:getChildByFullName("cell.goods_name"):setOpacity(config.CellNameOpacity)
 	end
 
 	self:enableTimeLimitShopTimer()

@@ -139,6 +139,16 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"新梦境技场",
+				{
+					"调整排名",
+					"调整最大排名",
+					"指定分组id添加真人",
+					"查询指定分组真人数",
+					"查询服务器分组数量"
+				}
+			},
+			{
 				"城建",
 				{
 					"清除队列"
@@ -886,8 +896,28 @@ DebugBoxMainIndex = {
 				"DebugClearStageArenaData"
 			},
 			{
+				"调整排名",
+				"DebugNewArenaSetUpRank"
+			},
+			{
+				"调整最大排名",
+				"DebugNewArenaSetUpMaxRank"
+			},
+			{
 				"清除服务器分组",
 				"DebugClearServerGroup"
+			},
+			{
+				"指定分组id添加真人",
+				"DebugNewArenaAddRole"
+			},
+			{
+				"查询指定分组真人数",
+				"DebugNewArenaCheckRoleNum"
+			},
+			{
+				"查询服务器分组数量",
+				"DebugNewArenaGroupNum"
 			},
 			{
 				"增加积分(可负)",
@@ -1102,6 +1132,7 @@ DebugBoxMainIndex = {
 			"CooperateBossTest",
 			"DebugShowBustAni",
 			"DebugAddLeadStageLevel",
+			"DebugNewArenaSetUpRank",
 			"DebugRTPKScore",
 			"ChangeTask"
 		}

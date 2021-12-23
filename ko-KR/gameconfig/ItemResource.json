@@ -139,6 +139,13 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Decoration_15109_3_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Shoes_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -405,6 +412,13 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Tops_15110_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "CO_Weapon_15001_Resource": {
         "Isturn": 0,
         "ResourceText": "URSourceTag_TimeLimit",
@@ -594,6 +608,20 @@
         "Text": "URMap_TimeLimit_Source_Des",
         "URL": ""
     },
+    "CO_Weapon_15119_1_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
+    "CO_Weapon_15120_2_Resource": {
+        "Isturn": 0,
+        "ResourceText": "URSourceTag_TimeLimit",
+        "ResourceType": 6,
+        "Text": "URMap_TimeLimit_Source_Des",
+        "URL": ""
+    },
     "IEQ_Decoration_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Map",
@@ -698,6 +726,13 @@
         "ResourceType": 3,
         "Text": "Source_Block",
         "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S17&enterPoint=true"
+    },
+    "IEQ_Decoration_7_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_BengHuai",
+        "ResourceType": 3,
+        "Text": "Source_Block",
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=18&chapterId=E18&pointId=E18S17&enterPoint=true"
     },
     "IEQ_Shoes_1": {
         "Isturn": 1,
@@ -804,6 +839,13 @@
         "Text": "Source_Block",
         "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S12&enterPoint=true"
     },
+    "IEQ_Shoes_7_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_BengHuai",
+        "ResourceType": 3,
+        "Text": "Source_Block",
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=18&chapterId=E18&pointId=E18S12&enterPoint=true"
+    },
     "IEQ_Top_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Map",
@@ -909,6 +951,13 @@
         "Text": "Source_Block",
         "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S08&enterPoint=true"
     },
+    "IEQ_Top_7_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_BengHuai",
+        "ResourceType": 3,
+        "Text": "Source_Block",
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=18&chapterId=E18&pointId=E18S08&enterPoint=true"
+    },
     "IEQ_Weapon_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Map",
@@ -1013,6 +1062,13 @@
         "ResourceType": 3,
         "Text": "Source_Block",
         "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=17&chapterId=E17&pointId=E17S04&enterPoint=true"
+    },
+    "IEQ_Weapon_7_1": {
+        "Isturn": 1,
+        "ResourceText": "Resource_BengHuai",
+        "ResourceType": 3,
+        "Text": "Source_Block",
+        "URL": "view://CommonStageChapterView&viewType=push&stageType=ELITE&chapterIndex=18&chapterId=E18&pointId=E18S04&enterPoint=true"
     },
     "IHF_ADHWShi_1": {
         "Isturn": 1,
@@ -1811,6 +1867,13 @@
         "ResourceType": 4,
         "Text": "Source_HeroStory",
         "URL": "view://HeroStoryEnterView&viewType=push&heroId=LCYShi&index=5"
+    },
+    "IHF_LDYu_1": {
+        "Isturn": 0,
+        "ResourceText": "Source_Activity",
+        "ResourceType": 0,
+        "Text": "Source_Activity",
+        "URL": ""
     },
     "IHF_LDu_1": {
         "Isturn": 1,
@@ -9123,9 +9186,23 @@
     "IR_Arena_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Arena",
-        "ResourceType": 6,
+        "ResourceType": "",
         "Text": "Source_Arena",
-        "URL": "view://arenaView&viewType=push"
+        "URL": "view://ArenaNewView&viewType=push"
+    },
+    "IR_Arena_2": {
+        "Isturn": 1,
+        "ResourceText": "Resource_Arena_2",
+        "ResourceType": "",
+        "Text": "Source_Arena_2",
+        "URL": "view://RTPKMainView"
+    },
+    "IR_Arena_3": {
+        "Isturn": 1,
+        "ResourceText": "Resource_Arena_3",
+        "ResourceType": "",
+        "Text": "Source_Arena_3",
+        "URL": "view://LeadStageArenaMainView&viewType=push"
     },
     "IR_BakingStamina": {
         "Isturn": 0,
@@ -9197,6 +9274,13 @@
         "Text": "Source_Diamond_1",
         "URL": "view://shopView&viewType=push&shopId=Shop_Mall"
     },
+    "IR_DramaStamina": {
+        "Isturn": 0,
+        "ResourceText": "Source_IR_DramaStamina",
+        "ResourceType": 0,
+        "Text": "Source_IR_DramaStamina_Desc",
+        "URL": ""
+    },
     "IR_DuskStamina": {
         "Isturn": 0,
         "ResourceText": "Source_IR_DuskStamina",
@@ -9259,6 +9343,13 @@
         "ResourceType": "",
         "Text": "",
         "URL": "view://shopView&viewType=push&shopId=Shop_Reset&packageId="
+    },
+    "IR_Explore": {
+        "Isturn": 1,
+        "ResourceText": "Resource_Explore",
+        "ResourceType": "",
+        "Text": "Source_Explore",
+        "URL": "view://ExploreView&viewType=push"
     },
     "IR_FemaleStamina": {
         "Isturn": 0,
@@ -9389,7 +9480,7 @@
     "IR_Pve_1": {
         "Isturn": 1,
         "ResourceText": "Resource_Pve_1",
-        "ResourceType": 6,
+        "ResourceType": "",
         "Text": "Source_Pve_1",
         "URL": "view://TowerView&viewType=push"
     },

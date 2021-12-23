@@ -223,6 +223,9 @@ local muiscCfg = {
 	},
 	JumpView = {
 		noAutoPlay = true
+	},
+	ActivityDramaMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

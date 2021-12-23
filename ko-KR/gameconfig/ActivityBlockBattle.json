@@ -13255,6 +13255,4414 @@
         ],
         "WipeExtraReward": ""
     },
+    "DramaSE01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaE02P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS09N_BlockDesc",
+        "EnemyCard": "CardDramaSE01E",
+        "EnemyMaster": "DramaE02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE01",
+        "Master": "",
+        "Name": "BlockPoint_DramaS09N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDu",
+        "PointPicture": "",
+        "PointReward": "DramaSE01E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaE02P01proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaM02P01proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS09M_BlockDesc",
+        "EnemyCard": "CardDramaSE01M",
+        "EnemyMaster": "DramaM02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_1",
+                "4": "Drama_Buff_Star4_2_1",
+                "5": "Drama_Buff_Star5_2_1",
+                "6": "Drama_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE01",
+        "Master": "",
+        "Name": "BlockPoint_DramaS09M_Name",
+        "NextPoint": [
+            "DramaSE02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDu",
+        "PointPicture": "",
+        "PointReward": "DramaSE01M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaM02P01proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE02E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaE02P02proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS10N_BlockDesc",
+        "EnemyCard": "CardDramaSE02E",
+        "EnemyMaster": "DramaE02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE02",
+        "Master": "",
+        "Name": "BlockPoint_DramaS10N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE02E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaE02P02proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE02M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaM02P02proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS10M_BlockDesc",
+        "EnemyCard": "CardDramaSE02M",
+        "EnemyMaster": "DramaM02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_2",
+                "4": "Drama_Buff_Star4_2_2",
+                "5": "Drama_Buff_Star5_2_2",
+                "6": "Drama_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE02",
+        "Master": "",
+        "Name": "BlockPoint_DramaS10M_Name",
+        "NextPoint": [
+            "DramaSE03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE02M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_4"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaM02P02proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS11N_BlockDesc",
+        "EnemyCard": "CardDramaSE03E",
+        "EnemyMaster": "DramaE02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE03",
+        "Master": "",
+        "Name": "BlockPoint_DramaS11N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSE03E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS11M_BlockDesc",
+        "EnemyCard": "CardDramaSE03M",
+        "EnemyMaster": "DramaM02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_3",
+                "4": "Drama_Buff_Star4_2_3",
+                "5": "Drama_Buff_Star5_2_3",
+                "6": "Drama_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE03",
+        "Master": "",
+        "Name": "BlockPoint_DramaS11M_Name",
+        "NextPoint": [
+            "DramaSE04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSE03M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS12N_BlockDesc",
+        "EnemyCard": "CardDramaSE04E",
+        "EnemyMaster": "DramaE02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE04",
+        "Master": "",
+        "Name": "BlockPoint_DramaS12N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSE04E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS12M_BlockDesc",
+        "EnemyCard": "CardDramaSE04M",
+        "EnemyMaster": "DramaM02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_4",
+                "4": "Drama_Buff_Star4_2_4",
+                "5": "Drama_Buff_Star5_2_4",
+                "6": "Drama_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE04",
+        "Master": "",
+        "Name": "BlockPoint_DramaS12M_Name",
+        "NextPoint": [
+            "DramaSE05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSE04M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS13N_BlockDesc",
+        "EnemyCard": "CardDramaSE05E",
+        "EnemyMaster": "DramaE02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE05",
+        "Master": "",
+        "Name": "BlockPoint_DramaS13N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE05E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS13M_BlockDesc",
+        "EnemyCard": "CardDramaSE05M",
+        "EnemyMaster": "DramaM02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_5",
+                "4": "Drama_Buff_Star4_2_5",
+                "5": "Drama_Buff_Star5_2_5",
+                "6": "Drama_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE05",
+        "Master": "",
+        "Name": "BlockPoint_DramaS13M_Name",
+        "NextPoint": [
+            "DramaSE06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE05M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE06E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS14N_BlockDesc",
+        "EnemyCard": "CardDramaSE06E",
+        "EnemyMaster": "DramaE02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE06",
+        "Master": "",
+        "Name": "BlockPoint_DramaS14N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSE06E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE06M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS14M_BlockDesc",
+        "EnemyCard": "CardDramaSE06M",
+        "EnemyMaster": "DramaM02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE06M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_6",
+                "4": "Drama_Buff_Star4_2_6",
+                "5": "Drama_Buff_Star5_2_6",
+                "6": "Drama_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE06",
+        "Master": "",
+        "Name": "BlockPoint_DramaS14M_Name",
+        "NextPoint": [
+            "DramaSE07M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSE06M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE06M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS15N_BlockDesc",
+        "EnemyCard": "CardDramaSE07E",
+        "EnemyMaster": "DramaE02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE07",
+        "Master": "",
+        "Name": "BlockPoint_DramaS15N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSE07E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS15M_BlockDesc",
+        "EnemyCard": "CardDramaSE07M",
+        "EnemyMaster": "DramaM02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_7",
+                "4": "Drama_Buff_Star4_2_7",
+                "5": "Drama_Buff_Star5_2_7",
+                "6": "Drama_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE07",
+        "Master": "",
+        "Name": "BlockPoint_DramaS15M_Name",
+        "NextPoint": [
+            "DramaSE08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSE07M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS16N_BlockDesc",
+        "EnemyCard": "CardDramaSE08E",
+        "EnemyMaster": "DramaE02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE08",
+        "Master": "",
+        "Name": "BlockPoint_DramaS16N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE08E_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSE08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSE08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS16M_BlockDesc",
+        "EnemyCard": "CardDramaSE08M",
+        "EnemyMaster": "DramaM02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSE08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_2_8",
+                "4": "Drama_Buff_Star4_2_8",
+                "5": "Drama_Buff_Star5_2_8",
+                "6": "Drama_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSE08",
+        "Master": "",
+        "Name": "BlockPoint_DramaS16M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSE08M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSE08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSH01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS01H_BlockDesc",
+        "EnemyCard": "CardDramaSH01M",
+        "EnemyMaster": "DramaH01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSH01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE09",
+        "Master": "",
+        "Name": "BlockPoint_DramaS01H_Name",
+        "NextPoint": [
+            "DramaSH02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSH01M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSH01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSH02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS02H_BlockDesc",
+        "EnemyCard": "CardDramaSH02M",
+        "EnemyMaster": "DramaH01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSH02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE10",
+        "Master": "",
+        "Name": "BlockPoint_DramaS02H_Name",
+        "NextPoint": [
+            "DramaSH03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSH02M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSH02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSH03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS03H_BlockDesc",
+        "EnemyCard": "CardDramaSH03M",
+        "EnemyMaster": "DramaH01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSH03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSE11",
+        "Master": "",
+        "Name": "BlockPoint_DramaS03H_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSH03M_PointReward",
+        "PointTime": {
+            "start": "2022-01-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSH03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN01E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS01N_BlockDesc",
+        "EnemyCard": "CardDramaSN01E",
+        "EnemyMaster": "DramaE01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN01",
+        "Master": "",
+        "Name": "BlockPoint_DramaS01N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSN01E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS01M_BlockDesc",
+        "EnemyCard": "CardDramaSN01M",
+        "EnemyMaster": "DramaM01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_1",
+                "4": "Drama_Buff_Star4_1_1",
+                "5": "Drama_Buff_Star5_1_1",
+                "6": "Drama_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN01",
+        "Master": "",
+        "Name": "BlockPoint_DramaS01M_Name",
+        "NextPoint": [
+            "DramaSN02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSN01M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS02N_BlockDesc",
+        "EnemyCard": "CardDramaSN02E",
+        "EnemyMaster": "DramaE01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN02",
+        "Master": "",
+        "Name": "BlockPoint_DramaS02N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSN02E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS02M_BlockDesc",
+        "EnemyCard": "CardDramaSN02M",
+        "EnemyMaster": "DramaM01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_2",
+                "4": "Drama_Buff_Star4_1_2",
+                "5": "Drama_Buff_Star5_1_2",
+                "6": "Drama_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN02",
+        "Master": "",
+        "Name": "BlockPoint_DramaS02M_Name",
+        "NextPoint": [
+            "DramaSN03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe_artist",
+        "PointPicture": "",
+        "PointReward": "DramaSN02M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN03E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaE01P03proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS03N_BlockDesc",
+        "EnemyCard": "CardDramaSN03E",
+        "EnemyMaster": "DramaE01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN03",
+        "Master": "",
+        "Name": "BlockPoint_DramaS03N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDu",
+        "PointPicture": "",
+        "PointReward": "DramaSN03E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaE01P03proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN03M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "DramaM01P03proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS03M_BlockDesc",
+        "EnemyCard": "CardDramaSN03M",
+        "EnemyMaster": "DramaM01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_3",
+                "4": "Drama_Buff_Star4_1_3",
+                "5": "Drama_Buff_Star5_1_3",
+                "6": "Drama_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN03",
+        "Master": "",
+        "Name": "BlockPoint_DramaS03M_Name",
+        "NextPoint": [
+            "DramaSN04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDu",
+        "PointPicture": "",
+        "PointReward": "DramaSN03M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "DramaM01P03proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS04N_BlockDesc",
+        "EnemyCard": "CardDramaSN04E",
+        "EnemyMaster": "DramaE01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN04",
+        "Master": "",
+        "Name": "BlockPoint_DramaS04N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN04E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS04M_BlockDesc",
+        "EnemyCard": "CardDramaSN04M",
+        "EnemyMaster": "DramaM01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_4",
+                "4": "Drama_Buff_Star4_1_4",
+                "5": "Drama_Buff_Star5_1_4",
+                "6": "Drama_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN04",
+        "Master": "",
+        "Name": "BlockPoint_DramaS04M_Name",
+        "NextPoint": [
+            "DramaSN05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN04M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS05N_BlockDesc",
+        "EnemyCard": "CardDramaSN05E",
+        "EnemyMaster": "DramaE01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN05",
+        "Master": "",
+        "Name": "BlockPoint_DramaS05N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSN05E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS05M_BlockDesc",
+        "EnemyCard": "CardDramaSN05M",
+        "EnemyMaster": "DramaM01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_5",
+                "4": "Drama_Buff_Star4_1_5",
+                "5": "Drama_Buff_Star5_1_5",
+                "6": "Drama_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN05",
+        "Master": "",
+        "Name": "BlockPoint_DramaS05M_Name",
+        "NextPoint": [
+            "DramaSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN06E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS06N_BlockDesc",
+        "EnemyCard": "CardDramaSN06E",
+        "EnemyMaster": "DramaE01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN06",
+        "Master": "",
+        "Name": "BlockPoint_DramaS06N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN06E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN06M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS06M_BlockDesc",
+        "EnemyCard": "CardDramaSN06M",
+        "EnemyMaster": "DramaM01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_6",
+                "4": "Drama_Buff_Star4_1_6",
+                "5": "Drama_Buff_Star5_1_6",
+                "6": "Drama_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN06",
+        "Master": "",
+        "Name": "BlockPoint_DramaS06M_Name",
+        "NextPoint": [
+            "DramaSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS07N_BlockDesc",
+        "EnemyCard": "CardDramaSN07E",
+        "EnemyMaster": "DramaE01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN07",
+        "Master": "",
+        "Name": "BlockPoint_DramaS07N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSN07E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS07M_BlockDesc",
+        "EnemyCard": "CardDramaSN07M",
+        "EnemyMaster": "DramaM01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_7",
+                "4": "Drama_Buff_Star4_1_7",
+                "5": "Drama_Buff_Star5_1_7",
+                "6": "Drama_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN07",
+        "Master": "",
+        "Name": "BlockPoint_DramaS07M_Name",
+        "NextPoint": [
+            "DramaSN08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointPicture": "",
+        "PointReward": "DramaSN07M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS08N_BlockDesc",
+        "EnemyCard": "CardDramaSN08E",
+        "EnemyMaster": "DramaE01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "DramaSN08",
+        "Master": "",
+        "Name": "BlockPoint_DramaS08N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN08E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "DramaSN08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "DramaSN08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Drama",
+            "",
+            ""
+        ],
+        "Background": "Drama_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Drama",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_DramaS08M_BlockDesc",
+        "EnemyCard": "CardDramaSN08M",
+        "EnemyMaster": "DramaM01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "DramaSN08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "CKFSJi": "Hero_ABlock_CKFSJi_Extra",
+            "SSBYa": "Hero_ABlock_SSBYa_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SSBYa": {
+                "3": "Drama_SSBYa_Buff_Star3",
+                "4": "Drama_SSBYa_Buff_Star4",
+                "5": "Drama_SSBYa_Buff_Star5",
+                "6": "Drama_SSBYa_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "CKFSJi": {
+                "3": "Drama_Buff_Star3_1_8",
+                "4": "Drama_Buff_Star4_1_8",
+                "5": "Drama_Buff_Star5_1_8",
+                "6": "Drama_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "SYJi_ToolCard_Drama",
+                "type": 1
+            },
+            {
+                "link": "TacticsCard_QHDeng",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Drama_ExchangeItem",
+        "Map": "DramaSN08",
+        "Master": "",
+        "Name": "BlockPoint_DramaS08M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SSBYa",
+        "PointPicture": "",
+        "PointReward": "DramaSN08M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "DramaSN08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Drama_Tittle_1",
+            "SpecialRule_Drama_Rule_1",
+            "SpecialRule_Drama_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCost": {
+            "IR_DramaStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "DuskSE01E": {
         "AiRules": "",
         "Assist": [

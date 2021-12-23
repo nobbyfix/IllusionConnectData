@@ -503,6 +503,24 @@ all.Skill_XLDBLTe_Passive = {
 				}, {
 					buff
 				})
+
+				local buffeft1 = global.SpecialNumericEffect(_env, "+XLDBLTe_Exist", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"XLDBLTe_Exist",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
 			end
 		end)
 
@@ -767,6 +785,7 @@ all.Skill_Cross_Buff_XLDBLTe = {
 				end
 
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_XLDBLTe_Passive"), 99)
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "XLDBLTe_Exist"), 99)
 			end
 		end)
 
@@ -1206,6 +1225,24 @@ all.Skill_XLDBLTe_Passive_EX = {
 					}
 				}, {
 					buff
+				})
+
+				local buffeft1 = global.SpecialNumericEffect(_env, "+XLDBLTe_Exist", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"XLDBLTe_Exist",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
 				})
 			end
 		end)

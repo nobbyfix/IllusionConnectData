@@ -27,7 +27,8 @@
             "SRen",
             "NFEr",
             "MYing",
-            "HLa"
+            "Hla",
+            "WLSTNCi"
         ],
         "Party": "Aoe",
         "PartyDesc": "Party_Aoe_Desc",
@@ -111,6 +112,8 @@
     },
     "Cure": {
         "IncludeHero": [
+            "CKFSJi",
+            "SSBYa",
             "LFEr",
             "MLYTLSha",
             "KXuan",
@@ -323,6 +326,7 @@
     },
     "SSR": {
         "IncludeHero": [
+            "WLSTNCi",
             "SNGLSi",
             "WEDe",
             "CZheng",
@@ -392,7 +396,9 @@
             "LEMHou",
             "XDE",
             "HLa",
-            "YMJDe"
+            "YMJDe",
+            "CKFSJi",
+            "SSBYa"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -499,6 +505,7 @@
     },
     "WNSXJ": {
         "IncludeHero": [
+            "CKFSJi",
             "ZTXChang",
             "CLMan",
             "FTLEShi",
@@ -539,6 +546,8 @@
     },
     "XD": {
         "IncludeHero": [
+            "SSBYa",
+            "WLSTNCi",
             "HGEr",
             "LSLTe",
             "LLan",

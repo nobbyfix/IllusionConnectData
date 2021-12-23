@@ -219,11 +219,28 @@ function BattleUIMediator:setupSubWidgets()
 	self._speedupBtn = self:autoManageObject(BattlePvpSpeedUpWidget:new(speedupBtn))
 
 	self._speedupBtn:hide()
+
+	local noticeEnhance = header:getChildByName("notice")
+	self._noticeEnhance = self:autoManageObject(BattleNoticeEnhanceWidget:new(noticeEnhance))
+
+	self._noticeEnhance:hide()
 end
 
 function BattleUIMediator:pvpSpeedUp(arg1, arg2)
 	if self._speedupBtn then
 		self._speedupBtn:active(arg1, arg2)
+	end
+end
+
+function BattleUIMediator:showNoticeEnhance(arg1, arg2)
+	if self._noticeEnhance then
+		self._noticeEnhance:active(arg1, arg2)
+	end
+end
+
+function BattleUIMediator:hideNoticeEnhance()
+	if self._noticeEnhance then
+		self._noticeEnhance:hide()
 	end
 end
 
@@ -248,6 +265,12 @@ function BattleUIMediator:willStartEnterTransition()
 
 	if self._speedupBtn then
 		local view = self._speedupBtn:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
+	end
+
+	if self._noticeEnhance then
+		local view = self._noticeEnhance:getView()
 
 		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
 	end
@@ -432,6 +455,13 @@ function BattleUIMediator:fade()
 		view:runAction(cc.FadeOut:create(duration))
 	end
 
+	if self._noticeEnhance then
+		local view = self._noticeEnhance:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
 	local waitTime = 10
 
 	performWithDelay(self:getView(), function ()
@@ -540,6 +570,13 @@ function BattleUIMediator:fade()
 
 		if self._speedupBtn then
 			local view = self._speedupBtn:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._noticeEnhance then
+			local view = self._noticeEnhance:getView()
 
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
@@ -1951,4 +1988,13 @@ end
 function BattleUIMediator:hidePassiveSkillTip()
 	self._passiveSkillTip:hide()
 	self:stopBulletTime()
+end
+
+function BattleUIMediator:showMaster(friend, enemy)
+	local bossView = self:getInjector():getInstance("MasterCutInView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+		friend = friend,
+		enemy = enemy
+	}, popupDelegate))
 end

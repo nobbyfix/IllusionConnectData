@@ -193,6 +193,7 @@ function HomeMediator:resumeWithData(data)
 	self:refreshRedPoint()
 	self:setComplexActivityEntry()
 	self:setActivityCalendar()
+	self:setNewArenaBtn()
 	self:randomBoardRoleAndBg()
 	self:showCoopTips()
 
@@ -343,6 +344,12 @@ function HomeMediator:willStartResumeTransition()
 
 	wonderfulAct:setOpacity(0)
 	wonderfulAct:setPositionY(wonderfulActPosY + 42.2)
+
+	local newarenaBtn = self._rightFuncLayout:getChildByName("newarenaBtn")
+	local newarenaBtnPosX, newarenaBtnPosY = newarenaBtn:getPosition()
+
+	newarenaBtn:setOpacity(0)
+	newarenaBtn:setPositionY(newarenaBtnPosY + 42.2)
 end
 
 function HomeMediator:didFinishResumeTransition()
@@ -469,6 +476,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_HEROES_SYNC_SHOW, self, self.refreshRedPoint)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_ACTIVITY_REFRESH, self, self.onBackFlowActivityRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MAIL_NEW, self, self.refreshActivityCalendarRedPoint)
+	self:mapEventListener(self:getEventDispatcher(), EVT_NEW_ARENA_OFFLINE_REPORT, self, self.setNewArenaBtn)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOMEVIEW_SETBORAD_MOVE, self, self.setShowHeroMoveViewVis)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.showCoopTips)
 end
@@ -595,6 +603,7 @@ function HomeMediator:reloadView()
 	self:checkExtraRedPoint()
 	self:setComplexActivityEntry()
 	self:setActivityCalendar()
+	self:setNewArenaBtn()
 end
 
 function HomeMediator:initHomeView()
@@ -640,6 +649,7 @@ function HomeMediator:initHomeView()
 	self:enableTimeLimitShopTimer()
 	self:setComplexActivityEntry()
 	self:setActivityCalendar()
+	self:setNewArenaBtn()
 end
 
 function HomeMediator:enableBuildingResourceTimer()
@@ -1056,6 +1066,11 @@ function HomeMediator:initAnim()
 	self._leftFuncLayout:setOpacity(0)
 	self._topFuncLayout:setOpacity(0)
 
+	local newarenaBtn = self._rightFuncLayout:getChildByName("newarenaBtn")
+
+	newarenaBtn:setOpacity(0)
+
+	local newarenaBtnPosX, newarenaBtnPosY = newarenaBtn:getPosition()
 	local wonderfulAct = self._rightFuncLayout:getChildByName("wonderfulAct")
 
 	wonderfulAct:setOpacity(0)
@@ -1069,6 +1084,7 @@ function HomeMediator:initAnim()
 		local nowWonderfulActPosY = wonderfulAct:getPositionY()
 
 		wonderfulAct:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveBy:create(0.21, cc.p(0, wonderfulActPosY - nowWonderfulActPosY))))
+		newarenaBtn:runAction(cc.Spawn:create(cc.FadeIn:create(0.21), cc.MoveTo:create(0.21, cc.p(newarenaBtnPosX, newarenaBtnPosY))))
 	end)
 
 	local playerNode = self:getView():getChildByName("playerNode")
@@ -1288,6 +1304,14 @@ function HomeMediator:initWidget()
 	local onArena1Btn = self._rightFuncLayout:getChildByFullName("mArena1Node")
 
 	wonderfulAct:setPosition(cc.p(onArena1Btn:getPositionX() - 150, onArena1Btn:getPositionY() - 20))
+
+	local newarenaBtn = self._rightFuncLayout:getChildByFullName("newarenaBtn")
+
+	AdjustUtils.adjustLayoutByType(newarenaBtn, AdjustUtils.kAdjustType.Right)
+
+	local onArena1Btn = self._rightFuncLayout:getChildByFullName("mArena1Node")
+
+	newarenaBtn:setPosition(cc.p(onArena1Btn:getPositionX() - 270, onArena1Btn:getPositionY()))
 
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
 
@@ -3909,6 +3933,15 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 58),
 			imgpos = cc.p(65, 50),
 			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivityDrama] = {
+			img = "drama_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "rukou_gudianxijufuben",
+			imgZorder = 2,
+			aimpos = cc.p(60, 60),
+			imgpos = cc.p(65, 25),
+			redpos = cc.p(115, 56)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -4126,6 +4159,37 @@ function HomeMediator:refreshActivityCalendarRedPoint()
 	end
 
 	self._activityBtnRedPoint:setVisible(self._activitySystem:isActivityCalendarRedpointShowAll())
+end
+
+function HomeMediator:setNewArenaBtn()
+	local newarenaBtn = self._rightFuncLayout:getChildByName("newarenaBtn")
+	local state = self._homeSystem:getNewArenaRecordVis()
+
+	if state > 0 then
+		if not newarenaBtn then
+			return
+		end
+
+		newarenaBtn:setVisible(true)
+		newarenaBtn:removeAllChildren()
+
+		local movieClip = cc.MovieClip:create("eff_rukou_mengjingjichangrukou")
+
+		movieClip:addTo(newarenaBtn):center(newarenaBtn:getContentSize())
+
+		local text = ccui.Text:create(Strings:get("ClassArena_UI38"), TTF_FONT_FZYH_M, 16)
+
+		text:getVirtualRenderer():setMaxLineWidth(380)
+		text:addTo(newarenaBtn)
+		text:setAnchorPoint(cc.p(0.5, 0.5))
+		text:setPosition(43, 22)
+		newarenaBtn:addClickEventListener(function ()
+			self._homeSystem:enterNewArenaRecord(state)
+			newarenaBtn:setVisible(false)
+		end)
+	else
+		newarenaBtn:setVisible(false)
+	end
 end
 
 function HomeMediator:showCoopTips(baseview)

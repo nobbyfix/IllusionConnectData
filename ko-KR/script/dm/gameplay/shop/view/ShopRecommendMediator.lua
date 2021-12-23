@@ -77,7 +77,13 @@ function ShopRecommendMediator:refreshData()
 end
 
 function ShopRecommendMediator:initMember()
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
 	self._rightTabPanel = self:getView():getChildByName("rightTabPanel")
+	self._tabBg = self:getView():getChildByFullName("rightTabPanel.tabBg")
+
+	self._tabBg:setContentSize(cc.size(winSize.width - 200, 46))
+
 	self._touchPanel = self:getView():getChildByName("touchPanel")
 	self._bgImage = self._touchPanel:getChildByName("Image_bg")
 

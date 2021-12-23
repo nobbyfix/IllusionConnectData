@@ -2248,5 +2248,281 @@ all.ArenaFixed_29 = {
 		return _env
 	end
 }
+all.ArenaFixed_HurtRateUp = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Time1 = externs.Time1
+
+		assert(this.Time1 ~= nil, "External variable `Time1` is not provided.")
+
+		this.Time2 = externs.Time2
+
+		assert(this.Time2 ~= nil, "External variable `Time2` is not provided.")
+
+		this.Time3 = externs.Time3
+
+		assert(this.Time3 ~= nil, "External variable `Time3` is not provided.")
+
+		this.HurtRateFactor1 = externs.HurtRateFactor1
+
+		assert(this.HurtRateFactor1 ~= nil, "External variable `HurtRateFactor1` is not provided.")
+
+		this.HurtRateFactor2 = externs.HurtRateFactor2
+
+		assert(this.HurtRateFactor2 ~= nil, "External variable `HurtRateFactor2` is not provided.")
+
+		this.HurtRateFactor3 = externs.HurtRateFactor3
+
+		assert(this.HurtRateFactor3 ~= nil, "External variable `HurtRateFactor3` is not provided.")
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[schedule_in_cycles]"](this, {
+			1000,
+			ending = 999000,
+			start = 1000,
+			priority = 0
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.print(_env, "initial_Time1==-=", this.Time1)
+			global.print(_env, "initial_Time2==-=", this.Time2)
+			global.print(_env, "initial_Time3==-=", this.Time3)
+
+			local Time = global.GetbattleTime(_env)
+			Time = global.ceil(_env, Time / 1000)
+
+			global.print(_env, "Time==-=", Time)
+			global.print(_env, "--------------------------------------------------==-=", Time)
+
+			if Time < this.Time1 then
+				global.ShowEnhanceUp(_env, this.Time1 - Time, this.HurtRateFactor1 * 100)
+			elseif Time == this.Time1 then
+				local buff = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor1)
+
+				for _, unit in global.__iter__(global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR))) do
+					if not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_1")) == 0 then
+						global.ApplyBuff(_env, unit, {
+							timing = 4,
+							display = "HurtRateUp",
+							group = "ArenaFixed_HurtRateUp",
+							limit = 1,
+							duration = this.Time2,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"ArenaFixed_HurtRateUp_1"
+							}
+						}, {
+							buff
+						})
+					end
+				end
+			elseif this.Time1 < Time and Time < this.Time2 + this.Time1 then
+				local Total_Time = this.Time2 + this.Time1
+
+				global.ShowEnhanceUp(_env, Total_Time - Time, this.HurtRateFactor2 * 100)
+			elseif Time == this.Time2 + this.Time1 then
+				local buff = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor2)
+
+				for _, unit in global.__iter__(global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR))) do
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "ArenaFixed_HurtRateUp_1"), 99)
+
+					if not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_2")) == 0 then
+						global.ApplyBuff(_env, unit, {
+							timing = 4,
+							display = "HurtRateUp",
+							group = "ArenaFixed_HurtRateUp",
+							limit = 1,
+							duration = this.Time3,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"ArenaFixed_HurtRateUp_2"
+							}
+						}, {
+							buff
+						})
+					end
+				end
+			elseif Time > this.Time2 + this.Time1 and Time < this.Time3 + this.Time2 + this.Time1 then
+				local Total_Time = this.Time3 + this.Time2 + this.Time1
+
+				global.ShowEnhanceUp(_env, Total_Time - Time, this.HurtRateFactor3 * 100)
+			elseif Time == this.Time3 + this.Time2 + this.Time1 then
+				local buff = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor3)
+
+				for _, unit in global.__iter__(global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR))) do
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "ArenaFixed_HurtRateUp_2"), 99)
+
+					if not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_3")) == 0 then
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							display = "HurtRateUp",
+							group = "ArenaFixed_HurtRateUp",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"ArenaFixed_HurtRateUp_3"
+							}
+						}, {
+							buff
+						})
+					end
+				end
+
+				global.HideEnhanceUp(_env)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local Time = global.GetbattleTime(_env)
+			Time = global.ceil(_env, Time / 1000)
+
+			if not global.MASTER(_env, _env.unit) then
+				if this.Time1 <= Time and Time < this.Time2 + this.Time1 then
+					if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_1")) == 0 then
+						local buff = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.HurtRateFactor1)
+
+						global.ApplyBuff(_env, _env.unit, {
+							timing = 4,
+							display = "HurtRateUp",
+							group = "ArenaFixed_HurtRateUp",
+							limit = 1,
+							duration = this.Time2,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"ArenaFixed_HurtRateUp_1"
+							}
+						}, {
+							buff
+						})
+					end
+				elseif Time >= this.Time2 + this.Time1 and Time < this.Time3 + this.Time2 + this.Time1 then
+					if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_2")) == 0 then
+						local buff = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.HurtRateFactor2)
+
+						global.ApplyBuff(_env, _env.unit, {
+							timing = 4,
+							display = "HurtRateUp",
+							group = "ArenaFixed_HurtRateUp",
+							limit = 1,
+							duration = this.Time3,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"ArenaFixed_HurtRateUp_2"
+							}
+						}, {
+							buff
+						})
+					end
+				elseif Time >= this.Time3 + this.Time2 + this.Time1 and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "ArenaFixed_HurtRateUp_3")) == 0 then
+					local buff = global.NumericEffect(_env, "+hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.HurtRateFactor3)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						display = "HurtRateUp",
+						group = "ArenaFixed_HurtRateUp",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"ArenaFixed_HurtRateUp_3"
+						}
+					}, {
+						buff
+					})
+				end
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

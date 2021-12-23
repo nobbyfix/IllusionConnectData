@@ -1594,14 +1594,10 @@ function BagSystem:setComposeTimes(composeTimes)
 end
 
 function BagSystem:setURCount(count)
-	dump(count, "========== BagSystem:setURCount   ")
-
 	self._uRCount = count
 end
 
 function BagSystem:setUREquipState(info)
-	dump(info, "========== BagSystem:setUREquipState   ")
-
 	if info.uRStatMap then
 		for k, v in pairs(info.uRStatMap) do
 			self._uREquipState.uRStatMap[k] = v

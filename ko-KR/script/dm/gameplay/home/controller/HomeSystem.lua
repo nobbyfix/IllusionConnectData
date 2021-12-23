@@ -84,6 +84,9 @@ HomeSystem:has("_stagePracticeSystem", {
 HomeSystem:has("_leadStageArenaSystem", {
 	is = "r"
 }):injectWith("LeadStageArenaSystem")
+HomeSystem:has("_arenaNewSystem", {
+	is = "r"
+}):injectWith("ArenaNewSystem")
 
 function HomeSystem:initialize()
 	super.initialize(self)
@@ -127,7 +130,7 @@ function HomeSystem:arenaRedPoint()
 		return false
 	end
 
-	return self._arenaSystem:checkAwardRed() or self._petRaceSystem:redPointShow() or self._cooperateSystem:redPointShow() or self._leadStageArenaSystem:checkShowRed()
+	return self._arenaSystem:checkAwardRed() or self._petRaceSystem:redPointShow() or self._cooperateSystem:redPointShow() or self._leadStageArenaSystem:checkShowRed() or self._arenaNewSystem:checkShowRed()
 end
 
 function HomeSystem:exploreRedPoint()
@@ -538,6 +541,14 @@ function HomeSystem:getHomeBackgroundList()
 	end)
 
 	return list
+end
+
+function HomeSystem:getNewArenaRecordVis()
+	return self._arenaNewSystem:getNewArenaRecordVis()
+end
+
+function HomeSystem:enterNewArenaRecord(state)
+	self._arenaNewSystem:enterNewArenaRecord(state)
 end
 
 function HomeSystem:getBordHeroPos(heroId)

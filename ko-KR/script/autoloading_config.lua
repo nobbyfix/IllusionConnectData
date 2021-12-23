@@ -641,6 +641,61 @@ local mappings = {
 		name = "PetRaceRuleMediator",
 		type = "@C"
 	},
+	ArenaNewRankMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRankMediator",
+		name = "ArenaNewRankMediator",
+		type = "@C"
+	},
+	ArenaNewDefendTeamMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewDefendTeamMediator",
+		name = "ArenaNewDefendTeamMediator",
+		type = "@C"
+	},
+	ArenaNewRewardMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRewardMediator",
+		name = "ArenaNewRewardMediator",
+		type = "@C"
+	},
+	ArenaNewTeamListMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewTeamListMediator",
+		name = "ArenaNewTeamListMediator",
+		type = "@C"
+	},
+	ArenaNewMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewMediator",
+		name = "ArenaNewMediator",
+		type = "@C"
+	},
+	ArenaNewReportMainMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewReportMainMediator",
+		name = "ArenaNewReportMainMediator",
+		type = "@C"
+	},
+	ArenaNewRivalMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRivalMediator",
+		name = "ArenaNewRivalMediator",
+		type = "@C"
+	},
+	ArenaNewLoseMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewLoseMediator",
+		name = "ArenaNewLoseMediator",
+		type = "@C"
+	},
+	ArenaNewRecordMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRecordMediator",
+		name = "ArenaNewRecordMediator",
+		type = "@C"
+	},
+	ArenaNewTeamMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewTeamMediator",
+		name = "ArenaNewTeamMediator",
+		type = "@C"
+	},
+	ArenaNewRankUpMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRankUpMediator",
+		name = "ArenaNewRankUpMediator",
+		type = "@C"
+	},
 	DiffCommand = {
 		url = "dm.gameplay.develop.controller.DiffCommand",
 		name = "DiffCommand",

@@ -394,8 +394,11 @@ function IconFactory:bindTouchHander(icon, handler, info, style)
 		end
 
 		if eventType == ccui.TouchEventType.began then
+			icon.isReturn = false
 			local delayAct = cc.DelayTime:create(style.delayTime or 0.1)
 			local judgeShowAct = cc.CallFunc:create(function ()
+				icon.isReturn = true
+
 				if handler.onBegan ~= nil then
 					handler:onBegan(icon)
 				end
@@ -423,6 +426,8 @@ function IconFactory:bindTouchHander(icon, handler, info, style)
 			if handler.onEnded ~= nil then
 				handler:onEnded(icon)
 			end
+
+			icon.isReturn = false
 		end
 	end)
 end
@@ -2077,6 +2082,10 @@ function IconFactory:createHeroLargeIcon(info, style)
 				_star:setScale(0.55)
 				_star:loadTexture(path, 1)
 			end
+		end
+
+		if style.hideStarBg then
+			starBg:loadTexture("toumingtu.png", 1)
 		end
 
 		if style.hideLevel then

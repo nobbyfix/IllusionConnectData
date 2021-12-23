@@ -19,7 +19,8 @@ function CreateBattleSession(args)
 		cooperateboss = CooperateBattleSession,
 		orrtpk = RTPVPBattleSession,
 		orrtpkrobot = RTPVPRobotBattleSession,
-		stageArena = StageArenaBattleSession
+		stageArena = StageArenaBattleSession,
+		chessArena = ArenaNewBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 

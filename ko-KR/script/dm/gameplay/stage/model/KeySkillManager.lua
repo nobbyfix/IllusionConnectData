@@ -495,8 +495,14 @@ function KeySkillManager:checkTagCondition(condition, targetIds, heroType)
 	if range == kActiveRange.kGroup then
 		checkIds = targetIds
 	elseif range == kActiveRange.kHold then
-		checkIds = self._ownHeroList
+		checkIds = {}
 		checkTeamIds = false
+
+		for i, v in pairs(self._ownHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				checkIds[#checkIds + 1] = v
+			end
+		end
 	end
 
 	local param = condition.param or {}
@@ -652,8 +658,6 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 		end
 
 		totalTargetHeroes = table.nums(heroesTemp)
-
-		dump(totalTargetHeroes, "totalTargetHeroes-_")
 
 		if totalTargetHeroes == 0 then
 			return false

@@ -77,19 +77,28 @@ function ActivityPuzzleGameMediator:setupView()
 	self:doAllPieceLogic()
 	self:refreshRedPoint()
 
+	local allIsReturn = false
 	local allLightButton = self._main:getChildByName("allLightButton")
 
 	allLightButton:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.began then
+			allIsReturn = false
 			local pos = sender:getTouchBeganPosition()
 			self._beginPos = {
 				x = pos.x,
 				y = pos.y
 			}
+			local delayAct = cc.DelayTime:create(0.1)
+			local judgeShowAct = cc.CallFunc:create(function ()
+				if self._activity:checkHasAllPieceRewardCanDoGian() == false then
+					allIsReturn = true
 
-			if self._activity:checkHasAllPieceRewardCanDoGian() == false then
-				self:showBoxTipView(1)
-			end
+					self:showBoxTipView(1)
+				end
+			end)
+			local seqAct = cc.Sequence:create(delayAct, judgeShowAct)
+
+			sender:runAction(seqAct)
 		elseif eventType == ccui.TouchEventType.moved then
 			local pos = sender:getTouchMovePosition()
 			local changeX = math.abs(pos.x - self._beginPos.x)
@@ -99,12 +108,16 @@ function ActivityPuzzleGameMediator:setupView()
 				self:removeBoxTipView()
 			end
 		elseif eventType == ccui.TouchEventType.ended then
-			if self._activity:checkHasAllPieceRewardCanDoGian() == true then
-				self._activitySystem:requestGetPuzzleReward(self._activity:getId(), 2, nil)
-			else
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("Puzzle_Error_2")
-				}))
+			sender:stopAllActions()
+
+			if not allIsReturn then
+				if self._activity:checkHasAllPieceRewardCanDoGian() == true then
+					self._activitySystem:requestGetPuzzleReward(self._activity:getId(), 2, nil)
+				else
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("Puzzle_Error_2")
+					}))
+				end
 			end
 
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
@@ -112,19 +125,28 @@ function ActivityPuzzleGameMediator:setupView()
 		end
 	end)
 
+	local oneIsReturn = false
 	local oneLightButton = self._main:getChildByName("oneLightButton")
 
 	oneLightButton:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.began then
+			oneIsReturn = false
 			local pos = sender:getTouchBeganPosition()
 			self._beginPos = {
 				x = pos.x,
 				y = pos.y
 			}
+			local delayAct = cc.DelayTime:create(0.1)
+			local judgeShowAct = cc.CallFunc:create(function ()
+				oneIsReturn = true
 
-			if self._activity:checkHasAllPieceRewardCanDoGian() == false then
-				self:showBoxTipView(2)
-			end
+				if self._activity:checkHasAllPieceRewardCanDoGian() == false then
+					self:showBoxTipView(2)
+				end
+			end)
+			local seqAct = cc.Sequence:create(delayAct, judgeShowAct)
+
+			sender:runAction(seqAct)
 		elseif eventType == ccui.TouchEventType.moved then
 			local pos = sender:getTouchMovePosition()
 			local changeX = math.abs(pos.x - self._beginPos.x)
@@ -134,12 +156,16 @@ function ActivityPuzzleGameMediator:setupView()
 				self:removeBoxTipView()
 			end
 		elseif eventType == ccui.TouchEventType.ended then
-			if self._activity:checkHasOnePieceRewardCanDoGian() == true then
-				self._activitySystem:requestGetPuzzleReward(self._activity:getId(), 1, nil)
-			else
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("Puzzle_Error_2")
-				}))
+			sender:stopAllActions()
+
+			if not oneIsReturn then
+				if self._activity:checkHasOnePieceRewardCanDoGian() == true then
+					self._activitySystem:requestGetPuzzleReward(self._activity:getId(), 1, nil)
+				else
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("Puzzle_Error_2")
+					}))
+				end
 			end
 
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
