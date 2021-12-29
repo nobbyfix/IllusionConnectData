@@ -27353,6 +27353,146 @@
         "Reward": "Merge_ChargeTask_20210310_7_Reward",
         "TaskIcon": ""
     },
+    "Merge_ChargeTask_20211230_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "1200"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_1_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_1_Name",
+        "OrderNum": 1,
+        "Reward": "Merge_ChargeTask_20210310_1_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "5900"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_2_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_2_Name",
+        "OrderNum": 2,
+        "Reward": "Merge_ChargeTask_20210310_2_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "11000"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_3_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_3_Name",
+        "OrderNum": 3,
+        "Reward": "Merge_ChargeTask_20210310_3_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "19000"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_4_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_4_Name",
+        "OrderNum": 4,
+        "Reward": "Merge_ChargeTask_20210310_4_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "37000"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_5_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_5_Name",
+        "OrderNum": 5,
+        "Reward": "Merge_ChargeTask_20210310_5_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "65000"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_6_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_6_Name",
+        "OrderNum": 6,
+        "Reward": "Merge_ChargeTask_20210310_6_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_ChargeTask_20211230_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_rechargeMoneyCount",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "119000"
+                ]
+            }
+        ],
+        "Desc": "Merge_ChargeTask_20210310_7_Desc",
+        "Destination": "view://shopView&viewType=push&shopId=Shop_Mall",
+        "ExtraReward": "",
+        "Name": "Merge_ChargeTask_20210310_7_Name",
+        "OrderNum": 7,
+        "Reward": "Merge_ChargeTask_20210310_7_Reward",
+        "TaskIcon": ""
+    },
     "Merge_ChargeTask_3": {
         "Condition": [
             {
@@ -27754,6 +27894,219 @@
         ],
         "Desc": "Merge_DailyTask_20210310_9_Desc",
         "Destination": "view://arenaView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_9_Name",
+        "OrderNum": 9,
+        "Reward": "Merge_DailyTask_20210310_9_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_1_Name",
+        "OrderNum": 1,
+        "Reward": "Merge_DailyTask_20210310_1_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_10_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_10_Name",
+        "OrderNum": 10,
+        "Reward": "Merge_DailyTask_20210310_10_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_11_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_11_Name",
+        "OrderNum": 11,
+        "Reward": "Merge_DailyTask_20210310_11_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_DrawCardTag",
+                "factor1": [
+                    20
+                ],
+                "params": [
+                    "1UP"
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_12_Desc",
+        "Destination": "view://RecruitView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_12_Name",
+        "OrderNum": 12,
+        "Reward": "Merge_DailyTask_20210310_12_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_2_Desc",
+        "Destination": "view://TowerView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_2_Name",
+        "OrderNum": 2,
+        "Reward": "Merge_DailyTask_20210310_2_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_3_Desc",
+        "Destination": "view://TowerView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_3_Name",
+        "OrderNum": 3,
+        "Reward": "Merge_DailyTask_20210310_3_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_4_Desc",
+        "Destination": "view://TowerView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_4_Name",
+        "OrderNum": 4,
+        "Reward": "Merge_DailyTask_20210310_4_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapTimes",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_5_Desc",
+        "Destination": "view://ExploreView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_5_Name",
+        "OrderNum": 5,
+        "Reward": "Merge_DailyTask_20210310_5_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_ExploreMapTimes",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_6_Desc",
+        "Destination": "view://ExploreView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_6_Name",
+        "OrderNum": 6,
+        "Reward": "Merge_DailyTask_20210310_6_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AttendArena",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_7_Desc",
+        "Destination": "view://ArenaNewView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_7_Name",
+        "OrderNum": 7,
+        "Reward": "Merge_DailyTask_20210310_7_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AttendArena",
+                "factor1": [
+                    20
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_8_Desc",
+        "Destination": "view://ArenaNewView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Merge_DailyTask_20210310_8_Name",
+        "OrderNum": 8,
+        "Reward": "Merge_DailyTask_20210310_8_Reward",
+        "TaskIcon": ""
+    },
+    "Merge_DailyTask_20211230_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_AttendArena",
+                "factor1": [
+                    40
+                ]
+            }
+        ],
+        "Desc": "Merge_DailyTask_20210310_9_Desc",
+        "Destination": "view://ArenaNewView&viewType=push",
         "ExtraReward": "",
         "Name": "Merge_DailyTask_20210310_9_Name",
         "OrderNum": 9,

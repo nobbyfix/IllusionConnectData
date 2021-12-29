@@ -38288,7 +38288,7 @@
             "LEVEL": 1
         },
         "Desc": "Merge_ChargeTask_20210310_Desc",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "hd_btn_tmxh",
         "Loop": "",
@@ -38305,6 +38305,56 @@
         "TimeFactor": {
             "end": 16,
             "start": 2
+        },
+        "Title": "Merge_ChargeTask_20210310_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
+        "Version": ""
+    },
+    "Merge_ChargeTask_20211230": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_TPGZhu",
+            "ModelPos": [
+                300,
+                160
+            ],
+            "ModelScale": 0.8,
+            "TaskTopUI": "hd_txt_cezs",
+            "task": [
+                "Merge_ChargeTask_20211230_1",
+                "Merge_ChargeTask_20211230_2",
+                "Merge_ChargeTask_20211230_3",
+                "Merge_ChargeTask_20211230_4",
+                "Merge_ChargeTask_20211230_5",
+                "Merge_ChargeTask_20211230_6",
+                "Merge_ChargeTask_20211230_7"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Merge_ChargeTask_20210310_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "Mail_Task_Activity_20210310",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-13 05:00:00",
+            "start": [
+                "2021-12-30 05:00:00",
+                "2022-01-13 05:00:00"
+            ]
         },
         "Title": "Merge_ChargeTask_20210310_Name",
         "Type": "TASK",
@@ -38398,7 +38448,7 @@
             "LEVEL": 1
         },
         "Desc": "Merge_DailyTask_20210310_Desc",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "hd_btn_tmxh",
         "Loop": "",
@@ -38415,6 +38465,61 @@
         "TimeFactor": {
             "end": 9,
             "start": 2
+        },
+        "Title": "Merge_DailyTask_20210310_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
+        "Version": ""
+    },
+    "Merge_DailyTask_20211230": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_TPGZhu",
+            "ModelPos": [
+                300,
+                160
+            ],
+            "ModelScale": 0.8,
+            "TaskTopUI": "hd_txt_hfkh",
+            "task": [
+                "Merge_DailyTask_20211230_1",
+                "Merge_DailyTask_20211230_2",
+                "Merge_DailyTask_20211230_3",
+                "Merge_DailyTask_20211230_4",
+                "Merge_DailyTask_20211230_5",
+                "Merge_DailyTask_20211230_6",
+                "Merge_DailyTask_20211230_7",
+                "Merge_DailyTask_20211230_8",
+                "Merge_DailyTask_20211230_9",
+                "Merge_DailyTask_20211230_10",
+                "Merge_DailyTask_20211230_11",
+                "Merge_DailyTask_20211230_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Merge_DailyTask_20210310_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "Mail_Task_Activity_20210310",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-06 05:00:00",
+            "start": [
+                "2021-12-30 05:00:00",
+                "2022-01-06 05:00:00"
+            ]
         },
         "Title": "Merge_DailyTask_20210310_Name",
         "Type": "TASK",
