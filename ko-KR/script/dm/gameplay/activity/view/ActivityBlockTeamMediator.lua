@@ -1366,9 +1366,8 @@ end
 function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 	local hasChange = self:hasChangeTeam()
 	local params = self:getSendData()
-	params.doActivityType = "101"
 
-	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, function (response)
+	local function callback1(response)
 		if checkDependInstance(self) then
 			if hasChange or self._hasForceChangeTeam then
 				self:dispatch(Event:new(EVT_ARENA_CHANGE_TEAM_SUCC))
@@ -1381,7 +1380,11 @@ function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 				callBack()
 			end
 		end
-	end)
+	end
+
+	params.doActivityType = "101"
+
+	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, callback1)
 end
 
 function ActivityBlockTeamMediator:onClickRule()

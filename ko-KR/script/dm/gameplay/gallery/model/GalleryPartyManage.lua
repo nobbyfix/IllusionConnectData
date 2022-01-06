@@ -97,6 +97,7 @@ end
 
 function GalleryPartyManage:initPartyMap()
 	local config = ConfigReader:getDataTable("GalleryParty")
+	local allHeroObj = nil
 
 	for id, partyConfig in pairs(config) do
 		local partyObj = GalleryParty:new(partyConfig.Party)
@@ -111,7 +112,15 @@ function GalleryPartyManage:initPartyMap()
 			self._partyArray[partyConfig.Type] = {}
 		end
 
-		self._partyArray[partyConfig.Type][#self._partyArray[partyConfig.Type] + 1] = partyObj
+		if partyConfig.Party == "AllHero" then
+			allHeroObj = partyObj
+		else
+			self._partyArray[partyConfig.Type][#self._partyArray[partyConfig.Type] + 1] = partyObj
+		end
+	end
+
+	for key, value in pairs(self._partyArray) do
+		value[#value + 1] = allHeroObj
 	end
 
 	for key, value in pairs(self._partyArray) do

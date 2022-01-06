@@ -136,6 +136,18 @@ function ActivityBlockMapActivity:hasRedPoint()
 	return false
 end
 
+function ActivityBlockMapActivity:hasRedPointByType(type)
+	for k, stageList in pairs(self._stagesMap) do
+		for k, stage in pairs(stageList) do
+			if stage and stage:getType() == type and stage:hasRedPoint() then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
 function ActivityBlockMapActivity:getStageByStageType(stageType)
 	local type = litStageType[stageType]
 	local stageMap = self._stagesMap[type]

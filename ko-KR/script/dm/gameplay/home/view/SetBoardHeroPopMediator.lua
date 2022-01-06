@@ -15,6 +15,37 @@ local kBtnHandlers = {
 	["main.randomBox.Panel_5"] = {
 		ignoreClickAudio = true,
 		func = "onClickRandom"
+	},
+	["main.screenBtn"] = {
+		ignoreClickAudio = true,
+		func = "onClickScreen"
+	}
+}
+local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Team_TypeOrder", "content")
+local partyList = {
+	GalleryPartyType.kWNSXJ,
+	GalleryPartyType.kXD,
+	GalleryPartyType.kBSNCT,
+	GalleryPartyType.kDWH,
+	GalleryPartyType.kMNJH,
+	GalleryPartyType.kSSZS,
+	GalleryPartyType.kUNKNOWN
+}
+local screenFunc = {
+	{
+		func = function (screenType, hero)
+			return hero:getRarity() == 16 - screenType
+		end
+	},
+	{
+		func = function (screenType, hero)
+			return hero:getType() == TargetOccupation[screenType]
+		end
+	},
+	{
+		func = function (screenType, hero)
+			return hero:getParty() == partyList[screenType]
+		end
 	}
 }
 
@@ -40,6 +71,7 @@ function SetBoardHeroPopMediator:enterWithData(data)
 	self._doubleClickTag = false
 	self._doubleClickRandom = false
 	self._setBoardHeroId = data.heroId
+	self._parentMediator = data.mediator
 	self._chooseIndex = 1
 	self._herosList = self._heroSystem:getOwnHeroIds()
 
@@ -169,23 +201,18 @@ function SetBoardHeroPopMediator:updateCell(cell, index)
 				local endPos = sender:getTouchEndPosition()
 
 				if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
-					if self._chooseIndex == i then
+					if self._herosList[i].id == self._setBoardHeroId then
 						return
 					end
 
 					self._setBoardHeroId = self._herosList[i].id
-					local cellIndex = math.ceil(self._chooseIndex / 3)
-					local cell = self._tableView:cellAtIndex(cellIndex - 1)
-
-					if cell then
-						local heroIcon = cell:getChildByName("main"):getChildByTag(self._chooseIndex)
-
-						heroIcon:getChildByName("selectImage"):setVisible(false)
-					end
-
-					self._chooseIndex = i
 
 					sender:getChildByName("selectImage"):setVisible(true)
+
+					local offsetY = self._tableView:getContentOffset().y
+
+					self._tableView:reloadData()
+					self._tableView:setContentOffset(cc.p(0, offsetY))
 					self:dispatch(Event:new(EVT_AFKGIFT_SET_SHOWHERO, {
 						heroId = self._setBoardHeroId
 					}))
@@ -272,4 +299,61 @@ function SetBoardHeroPopMediator:onRandomBoxChange(isRandom)
 
 	darkImage:setVisible(not isRandom)
 	lightImage:setVisible(isRandom)
+end
+
+function SetBoardHeroPopMediator:onClickScreen()
+	self:createScreenView()
+	self._screenWidget:getView():setVisible(true)
+	self._screenWidget:refreshView(self._screenType)
+end
+
+function SetBoardHeroPopMediator:createScreenView()
+	if self._screenWidget then
+		return
+	end
+
+	local function callBack(data)
+		self._screenType = data.screenType
+
+		self:updateHeroList()
+		self:sortHeroList()
+		self._tableView:reloadData()
+	end
+
+	self._screenWidget = BoardHeroScreenWidget:new({
+		mediator = self,
+		callBack = callBack
+	})
+	local pos = self._main:convertToWorldSpace(cc.p(-625, 0))
+	local pos1 = self._parentMediator:getView():convertToNodeSpace(pos)
+
+	self._screenWidget:getView():addTo(self._parentMediator:getView(), 100):setPosition(pos1)
+end
+
+function SetBoardHeroPopMediator:updateHeroList()
+	local heroList = self._heroSystem:getOwnHeroIds()
+	self._herosList = {}
+
+	for i, v in pairs(heroList) do
+		if self:chooseHero(v) then
+			self._herosList[#self._herosList + 1] = v
+		end
+	end
+end
+
+function SetBoardHeroPopMediator:chooseHero(hero)
+	local heroSystem = self:getDevelopSystem():getHeroSystem()
+	local markCount = 0
+
+	for k, v in pairs(self._screenType) do
+		if screenFunc[k].func(v, heroSystem:getHeroById(hero.id)) then
+			markCount = markCount + 1
+		end
+	end
+
+	if markCount == table.nums(self._screenType) then
+		return true
+	end
+
+	return false
 end

@@ -33,17 +33,18 @@ function ActivityStageFinishMediator:enterWithData(data)
 
 	self._data = data
 	self._activity = self._activitySystem:getActivityById(self._data.activityId)
-	self._model = self._activity:getSubActivityById(self._data.subActivityId)
-	local params = data.params
+	self._model = self._activity:getSubActivityById(self._data.subActivityId) or data.model
 
 	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		local params = data.params
 		self._pointId = params.pointId
 		self._point = self._model:getSubPointById(params.pointId)
 		self._notShowStar = true
 		self._showCondition = true
 	else
 		self._pointId = self._data.pointId
-		self._point = self._model:getPointById(self._pointId)
+		self._mapId = self._data.mapId
+		self._point = self._model:getPointById(self._pointId, self._mapId)
 	end
 
 	self._starNum = 0
@@ -327,7 +328,7 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 
 		local testReward = self._data.rewards
 
-		if testReward then
+		if testReward and self._data.rewards.itemRewards then
 			self._rewardPanel:setVisible(true)
 			showReward(self._data.rewards.itemRewards)
 		else
@@ -736,7 +737,7 @@ end
 
 function ActivityStageFinishMediator:showExpPanel()
 	self._state = 2
-	local point = self._model:getPointById(self._pointId)
+	local point = self._model:getPointById(self._data.pointId, self._mapId)
 
 	if not self._notShowStar then
 		local oldStarState = point:getOldStar()
@@ -1049,15 +1050,19 @@ function ActivityStageFinishMediator:showExpPanel()
 	self._herosAnim:addCallbackAtFrame(130, function ()
 		self._herosAnim:stop()
 
-		local n = #self._data.rewards.itemRewards
+		if self._data.rewards and self._data.rewards.itemRewards then
+			local n = #self._data.rewards.itemRewards
 
-		if self._data.rewards.firstRewards then
-			n = n + #self._data.rewards.firstRewards
+			if self._data.rewards.firstRewards then
+				n = n + #self._data.rewards.firstRewards
+			end
+
+			self._rewardPanel:setVisible(n > 0 and true or false)
+			showReward(self._data.rewards.itemRewards)
+			self:setPointStarCondition()
+		else
+			self._rewardPanel:setVisible(false)
 		end
-
-		self._rewardPanel:setVisible(n > 0 and true or false)
-		showReward(self._data.rewards.itemRewards)
-		self:setPointStarCondition()
 	end)
 	self._herosAnim:gotoAndPlay(90)
 end
@@ -1304,7 +1309,7 @@ end
 function ActivityStageFinishMediator:checkShowHiddenStory(pointId)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local storyAgent = storyDirector:getStoryAgent()
-	local pointInfo, pointType = self._model:getPointById(pointId)
+	local pointInfo, pointType = self._model:getPointById(pointId, self._mapId)
 	local stageType = self._activitySystem.curStageType
 	local map = self._model:getStageByStageType(stageType)
 

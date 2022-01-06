@@ -208,6 +208,13 @@ function ShopPackageMainMediator:refreshView()
 	if not self:urlEnter() then
 		self:runListAnim()
 	end
+
+	if self._curGoods then
+		self._scrollView:setInnerContainerPosition(cc.p(self._viewOffsetX, 0))
+
+		self._curGoods = nil
+		self._viewOffsetX = nil
+	end
 end
 
 function ShopPackageMainMediator:urlEnter()
@@ -541,6 +548,9 @@ function ShopPackageMainMediator:onClickItem(data)
 			shopId = ShopSpecialId.kShopPackage,
 			item = data
 		}))
+
+		self._curGoods = data
+		self._viewOffsetX = self._scrollView:getInnerContainerPosition().x
 	end
 end
 
@@ -574,6 +584,11 @@ end
 
 function ShopPackageMainMediator:runListAnim()
 	local v = 4
+	local startCount = 1
+
+	if self._viewOffsetX then
+		startCount = math.ceil(-self._viewOffsetX / self._cellWidth)
+	end
 
 	self._scrollView:setTouchEnabled(false)
 
@@ -583,7 +598,7 @@ function ShopPackageMainMediator:runListAnim()
 		local child = allCells[i]
 
 		if child then
-			for j = 1, kNums do
+			for j = startCount, startCount + 5 do
 				local node = child:getChildByTag(j)
 
 				if node then
@@ -595,13 +610,15 @@ function ShopPackageMainMediator:runListAnim()
 
 	local length = math.min(v, #allCells)
 	local delayTime = v / 30
-	local delayTime1 = kNums / 30
+	local delayTime1 = math.min(delayTime, kNums / 30)
 
 	for i = 1, v do
 		local child = allCells[i]
 
 		if child then
-			for j = 1, kNums do
+			local count = 1
+
+			for j = startCount, startCount + 5 do
 				local node = child:getChildByTag(j)
 
 				if node then
@@ -610,7 +627,7 @@ function ShopPackageMainMediator:runListAnim()
 
 					node:setPositionX(starPosX + 20)
 
-					local time = (i - 1) * delayTime + (j - 1) * delayTime1
+					local time = (i - 1) * delayTime + (count - 1) * delayTime1
 					local delayAction = cc.DelayTime:create(time)
 					local callfunc = cc.CallFunc:create(function ()
 						local action1 = cc.MoveTo:create(0.1, cc.p(starPosX, starPosY))
@@ -628,6 +645,8 @@ function ShopPackageMainMediator:runListAnim()
 					local seq = cc.Sequence:create(delayAction, callfunc, callfunc1)
 
 					self:getView():runAction(seq)
+
+					count = count + 1
 				end
 			end
 		end

@@ -117,6 +117,7 @@ end
 function SettingMediator:initData(data)
 	self._player = data.player
 	self._record = data.record
+	self._fromView = data.fromView or ""
 	self._playerGender = self._player.gender
 	self._playerArea = self._player.city
 	self._clubName = self._player.clubName
@@ -319,6 +320,10 @@ function SettingMediator:showSettingView()
 				stageArenaPanel:getChildByFullName("rank"):setString(stageArenaRank)
 			end
 		end
+	end
+
+	if not rtpkPanel:isVisible() and stageArenaPanel:isVisible() then
+		stageArenaPanel:setPositionX(rtpkPanel:getPositionX())
 	end
 
 	self._btnOkNode = self._main:getChildByFullName("btn_Ok")
@@ -786,6 +791,8 @@ function SettingMediator:onClickBtn(sender)
 		self:onAddShieldClicked()
 	elseif name == "removeShield" then
 		self:onRemoveShieldClicked()
+	elseif name == "agreeFriendApply" then
+		self:onAgreeFriendApplyClicked()
 	end
 end
 
@@ -816,7 +823,13 @@ function SettingMediator:setButtonStatus()
 	else
 		self:setButton(self._btnChatNode, Strings:get("SettingUI_05"), Strings:get("RANK_ADD_SHIELD_EN"), "addShield")
 		self:setButton(self._btnOkNode, Strings:get("RANK_CHAT"), Strings:get("UIFRIEND_EN_Faxiaoxi"), "sendMsg")
-		self:setButton(self._btnAddNode, Strings:get("RANK_ADD_FRIEND"), Strings:get("UIFRIEND_EN_Jiahaoyou"), "addFriend")
+		dump(self._fromView, "self._formView-_")
+
+		if self._fromView == "friendApply" then
+			self:setButton(self._btnAddNode, Strings:get("Friend_UI47"), Strings:get("UIFRIEND_EN_Jiahaoyou"), "agreeFriendApply")
+		else
+			self:setButton(self._btnAddNode, Strings:get("RANK_ADD_FRIEND"), Strings:get("UIFRIEND_EN_Jiahaoyou"), "addFriend")
+		end
 	end
 end
 
@@ -996,4 +1009,9 @@ function SettingMediator:requestBlockUser(shieldId, status)
 	} or {}
 
 	self._chatSystem:requestBlockUser(block, unblock, callback)
+end
+
+function SettingMediator:onAgreeFriendApplyClicked()
+	self._friendSystem:requestAgreeFriend(self._record:getRid())
+	self:close()
 end

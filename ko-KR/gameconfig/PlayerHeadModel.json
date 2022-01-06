@@ -131,6 +131,17 @@
         "UnlockDesc": "AMLBLTe_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_AMLYa": {
+        "HeadDesc": "HeroBase_Desc_AMLYa",
+        "HeadName": "AMLYa_HeadName",
+        "HeroMasterId": "AMLYa",
+        "IconPath": "asset/heros/AMLYa/battlepic_amlya.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "AMLYa_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_ATSheng": {
         "HeadDesc": "HeroBase_Desc_ATSheng",
         "HeadName": "ATSheng_HeadName",
@@ -571,6 +582,17 @@
         "UnlockDesc": "FTLEShi_4_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_GCZi": {
+        "HeadDesc": "HeroBase_Desc_GCZi",
+        "HeadName": "GCZi_HeadName",
+        "HeroMasterId": "GCZi",
+        "IconPath": "asset/heros/xhe/battlepic_xhe.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "GCZi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_GLin": {
         "HeadDesc": "HeroBase_Desc_GLin",
         "HeadName": "GLin_HeadName",
@@ -824,6 +846,17 @@
         "UnlockDesc": "KXuan_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_LAMu": {
+        "HeadDesc": "HeroBase_Desc_LAMu",
+        "HeadName": "LAMu_HeadName",
+        "HeroMasterId": "LAMu",
+        "IconPath": "asset/heros/LAMu/battlepic_lamu.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "LAMu_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_LCYShi": {
         "HeadDesc": "HeroBase_Desc_LCYShi",
         "HeadName": "LCYShi_HeadName",
@@ -866,6 +899,17 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LDu_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_LEIMu": {
+        "HeadDesc": "HeroBase_Desc_LEIMu",
+        "HeadName": "LEIMu_HeadName",
+        "HeroMasterId": "LEIMu",
+        "IconPath": "asset/heros/LEIMu/battlepic_leimu.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "LEIMu_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_LEMHou": {
@@ -1770,6 +1814,17 @@
         "UnlockDesc": "WEDe_2_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_WEDe_3": {
+        "HeadDesc": "Surface_WEDe_tarot_Desc",
+        "HeadName": "WEDe_3_HeadName",
+        "HeroMasterId": "WEDe",
+        "IconPath": "asset/heros/kmer_tarot/battlepic_kmer_tarot.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_WEDe_3",
+        "Type": 5,
+        "UnlockDesc": "WEDe_3_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_WLSTNCi": {
         "HeadDesc": "HeroBase_Desc_WLSTNCi",
         "HeadName": "WLSTNCi_HeadName",
@@ -2483,6 +2538,17 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_SDTZi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_SP_SSQXin": {
+        "HeadDesc": "HeroAwaken_SP_SSQXin_Desc",
+        "HeadName": "HeroAwaken_SP_SSQXin_1_Name",
+        "HeroMasterId": "SP_SSQXin",
+        "IconPath": "asset/heros/sp_xmlhui/battlepic_sp_xmlhui_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_SP_SSQXin",
         "Zoom": 1.0
     },
     "HeroAwaken_SRen": {

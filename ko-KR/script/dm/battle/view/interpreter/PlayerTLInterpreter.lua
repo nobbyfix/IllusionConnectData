@@ -371,9 +371,10 @@ end
 function PlayerTLInterpreter:act_TriggerBuff(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx
+		local anim = args.anim
 
 		if idx and self._battleUIMediator.adjustCardBuff then
-			self._battleUIMediator:adjustCardBuff(idx)
+			self._battleUIMediator:adjustCardBuff(idx, anim)
 		end
 	end
 end

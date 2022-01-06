@@ -56,3 +56,7 @@ end
 function GalleryParty:getPartyId()
 	return self._config.Party
 end
+
+function GalleryParty:getIcon()
+	return self._config.Icon
+end

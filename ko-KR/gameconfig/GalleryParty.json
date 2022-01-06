@@ -1,5 +1,9 @@
 {
     "AllHero": {
+        "Icon": [
+            "gallery_btn_normal_08_2",
+            "gallery_btn_normal_08_1"
+        ],
         "IncludeHero": [],
         "Party": "AllHero",
         "PartyDesc": "",
@@ -8,6 +12,11 @@
         "Type": 1
     },
     "Aoe": {
+        "Icon": [
+            "gallery_btn_zhiye_01_2",
+            "gallery_btn_zhiye_01_1",
+            "gallery_img_zy_fs"
+        ],
         "IncludeHero": [
             "SP_ALPo",
             "SP_PNCao",
@@ -27,8 +36,9 @@
             "SRen",
             "NFEr",
             "MYing",
-            "Hla",
-            "WLSTNCi"
+            "HLa",
+            "WLSTNCi",
+            "LAMu"
         ],
         "Party": "Aoe",
         "PartyDesc": "Party_Aoe_Desc",
@@ -37,6 +47,11 @@
         "Type": 2
     },
     "Attack": {
+        "Icon": [
+            "gallery_btn_zhiye_03_2",
+            "gallery_btn_zhiye_03_1",
+            "gallery_img_zy_gx"
+        ],
         "IncludeHero": [
             "SP_SSQXin",
             "YFZZhu",
@@ -62,7 +77,8 @@
             "WSLi",
             "LEMHou",
             "YMJDe",
-            "FLEr"
+            "FLEr",
+            "LEIMu"
         ],
         "Party": "Attack",
         "PartyDesc": "Party_Attack_Desc",
@@ -71,6 +87,11 @@
         "Type": 2
     },
     "BSNCT": {
+        "Icon": [
+            "gallery_btn_normal_03_2",
+            "gallery_btn_normal_03_1",
+            "gallery_img_sl_bsn"
+        ],
         "IncludeHero": [
             "SDTZi",
             "NFEr",
@@ -111,6 +132,11 @@
         "Type": 1
     },
     "Cure": {
+        "Icon": [
+            "gallery_btn_zhiye_05_2",
+            "gallery_btn_zhiye_05_1",
+            "gallery_img_zy_zy"
+        ],
         "IncludeHero": [
             "CKFSJi",
             "SSBYa",
@@ -123,7 +149,8 @@
             "LYXi",
             "XBKLDi",
             "SNGLSi",
-            "HLDNan"
+            "HLDNan",
+            "AMLYa"
         ],
         "Party": "Cure",
         "PartyDesc": "Party_Cure_Desc",
@@ -132,6 +159,11 @@
         "Type": 2
     },
     "Curse": {
+        "Icon": [
+            "gallery_btn_zhiye_07_2",
+            "gallery_btn_zhiye_07_1",
+            "gallery_img_zy_zz"
+        ],
         "IncludeHero": [
             "ADHWShi",
             "DDing",
@@ -150,6 +182,11 @@
         "Type": 2
     },
     "DWH": {
+        "Icon": [
+            "gallery_btn_normal_04_2w",
+            "gallery_btn_normal_04_1w",
+            "gallery_img_sl_dwh_w"
+        ],
         "IncludeHero": [
             "SP_SSQXin",
             "BBLMa",
@@ -191,6 +228,11 @@
         "Type": 1
     },
     "Defense": {
+        "Icon": [
+            "gallery_btn_zhiye_04_2",
+            "gallery_btn_zhiye_04_1",
+            "gallery_img_zy_sh"
+        ],
         "IncludeHero": [
             "ZTXCun",
             "WEDe",
@@ -217,6 +259,11 @@
         "Type": 2
     },
     "MNJH": {
+        "Icon": [
+            "gallery_btn_normal_05_2",
+            "gallery_btn_normal_05_1",
+            "gallery_img_sl_mnjh"
+        ],
         "IncludeHero": [
             "SP_ALPo",
             "SP_KTSJKe",
@@ -263,6 +310,10 @@
         "Type": 1
     },
     "R": {
+        "Icon": [
+            "gallery_btn_zizhi_04_2",
+            "gallery_btn_zizhi_04_1"
+        ],
         "IncludeHero": [
             "YKDMLai",
             "ADHWShi",
@@ -283,6 +334,10 @@
         "Type": 3
     },
     "SP": {
+        "Icon": [
+            "gallery_btn_zizhi_01_2",
+            "gallery_btn_zizhi_01_1"
+        ],
         "IncludeHero": [
             "SP_ALPo",
             "SP_KTSJKe",
@@ -296,6 +351,10 @@
         "Type": 3
     },
     "SR": {
+        "Icon": [
+            "gallery_btn_zizhi_03_2",
+            "gallery_btn_zizhi_03_1"
+        ],
         "IncludeHero": [
             "YFZZhu",
             "ZTXCun",
@@ -325,6 +384,10 @@
         "Type": 3
     },
     "SSR": {
+        "Icon": [
+            "gallery_btn_zizhi_02_2",
+            "gallery_btn_zizhi_02_1"
+        ],
         "IncludeHero": [
             "WLSTNCi",
             "SNGLSi",
@@ -398,7 +461,10 @@
             "HLa",
             "YMJDe",
             "CKFSJi",
-            "SSBYa"
+            "SSBYa",
+            "LEIMu",
+            "LAMu",
+            "AMLYa"
         ],
         "Party": "SSR",
         "PartyDesc": "Party_SSR_Desc",
@@ -407,6 +473,11 @@
         "Type": 3
     },
     "SSZS": {
+        "Icon": [
+            "gallery_btn_normal_06_2",
+            "gallery_btn_normal_06_1",
+            "gallery_img_sl_smzs"
+        ],
         "IncludeHero": [
             "SLMen",
             "FLYDe",
@@ -446,6 +517,11 @@
         "Type": 1
     },
     "Summon": {
+        "Icon": [
+            "gallery_btn_zhiye_06_2",
+            "gallery_btn_zhiye_06_1",
+            "gallery_img_zy_zh"
+        ],
         "IncludeHero": [
             "SP_KTSJKe",
             "PNCao",
@@ -467,6 +543,11 @@
         "Type": 2
     },
     "Support": {
+        "Icon": [
+            "gallery_btn_zhiye_02_2",
+            "gallery_btn_zhiye_02_1",
+            "gallery_img_zy_gm"
+        ],
         "IncludeHero": [
             "TPGZhu",
             "ALSi",
@@ -492,10 +573,18 @@
         "Type": 2
     },
     "UNKNOWN": {
+        "Icon": [
+            "gallery_btn_normal_07_2",
+            "gallery_btn_normal_07_1",
+            "gallery_img_sl_unknown"
+        ],
         "IncludeHero": [
             "LFKLFTe",
             "MLYDi",
-            "LEMHou"
+            "LEMHou",
+            "LEIMu",
+            "LAMu",
+            "AMLYa"
         ],
         "Party": "UNKNOWN",
         "PartyDesc": "PartyDesc_UNKNOWN",
@@ -504,6 +593,11 @@
         "Type": 1
     },
     "WNSXJ": {
+        "Icon": [
+            "gallery_btn_normal_01_2",
+            "gallery_btn_normal_01_1",
+            "gallery_img_sl_wnsxj"
+        ],
         "IncludeHero": [
             "CKFSJi",
             "ZTXChang",
@@ -545,6 +639,11 @@
         "Type": 1
     },
     "XD": {
+        "Icon": [
+            "gallery_btn_normal_02_2",
+            "gallery_btn_normal_02_1",
+            "gallery_img_sl_xd"
+        ],
         "IncludeHero": [
             "SSBYa",
             "WLSTNCi",

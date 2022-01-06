@@ -4,9 +4,6 @@ EVT_ACTIVITY_CLOSE = "EVT_ACTIVITY_CLOSE"
 EVT_ACTIVITY_REDPOINT_REFRESH = "EVT_ACTIVITY_REDPOINT_REFRESH"
 EVT_ACTIVITY_SAGA_SCORE = "EVT_ACTIVITY_SAGA_SCORE"
 DailyGift = "FreeStamina"
-
-require("dm.gameplay.activity.model.ActivityList")
-
 ActivitySystem = class("ActivitySystem", legs.Actor)
 
 ActivitySystem:has("_activityList", {
@@ -983,6 +980,16 @@ function ActivitySystem:hasRedPointForActivitySummer(activityId)
 	return true
 end
 
+function ActivitySystem:hasRedPointForActivityZero(activityId)
+	if not self:hasRedPointForActivity(activityId) then
+		local activity = self:getActivityById(activityId)
+
+		return activity:hasBigRewardRedPoint()
+	end
+
+	return true
+end
+
 function ActivitySystem:isActivityOpen(activityId, startTime)
 	local activity = self:getActivityById(activityId)
 
@@ -1871,6 +1878,27 @@ function ActivitySystem:enterBlockMap(activityId, blockActivityId, stageType, us
 
 		self:dispatch(event)
 	end
+end
+
+function ActivitySystem:enterSelecteZeroMap(activityId)
+	local function callback()
+		self:enterBlockMap(activityId)
+	end
+
+	local view = self:getInjector():getInstance("ActivityZeroSelectMapView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+		activityId = activityId
+	}))
+end
+
+function ActivitySystem:enterZeroShop(activityId)
+	local view = self:getInjector():getInstance("ActivityBlockZeroShopView")
+	local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		activityId = activityId
+	})
+
+	self:dispatch(event)
 end
 
 function ActivitySystem:enterBlockMonsterShopView(activityId)

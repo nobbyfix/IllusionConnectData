@@ -739,7 +739,7 @@ function FriendSystem:getHasApplyList()
 	return {}
 end
 
-function FriendSystem:showFriendPlayerInfoView(rid, record)
+function FriendSystem:showFriendPlayerInfoView(rid, record, fromView)
 	local settingSystem = self:getInjector():getInstance(SettingSystem)
 
 	settingSystem:requestPlayerInfo(rid, function (response)
@@ -750,7 +750,8 @@ function FriendSystem:showFriendPlayerInfoView(rid, record)
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
 			player = data,
-			record = record
+			record = record,
+			fromView = fromView
 		}))
 	end)
 end

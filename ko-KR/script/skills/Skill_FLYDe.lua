@@ -472,6 +472,29 @@ all.Skill_FLYDe_Passive = {
 					damage.val = damage.val + 1
 				end
 
+				if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+					local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+					if damage.val > hp + shield then
+						damage.val = 0
+						local buff = global.NumericEffect(_env, "+def", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"LEIMu_Passive_Done"
+							}
+						}, {
+							buff
+						})
+					end
+				end
+
 				damage.crit = nil
 				damage.block = nil
 
@@ -506,8 +529,31 @@ all.Skill_FLYDe_Passive = {
 				end
 			end
 
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
 			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
 				global.KillTarget(_env, unit)
+
+				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UR_EQUIPMENT"
+						}
+					}, {
+						killcount
+					}, 1)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+					end
+				end
 
 				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
 					global.AnimForTrgt(_env, unit, {
@@ -936,6 +982,29 @@ all.Skill_FLYDe_Passive_EX = {
 					damage.val = damage.val + 1
 				end
 
+				if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+					local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+					if damage.val > hp + shield then
+						damage.val = 0
+						local buff = global.NumericEffect(_env, "+def", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"LEIMu_Passive_Done"
+							}
+						}, {
+							buff
+						})
+					end
+				end
+
 				damage.crit = nil
 				damage.block = nil
 
@@ -970,8 +1039,31 @@ all.Skill_FLYDe_Passive_EX = {
 				end
 			end
 
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
 			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
 				global.KillTarget(_env, unit)
+
+				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UR_EQUIPMENT"
+						}
+					}, {
+						killcount
+					}, 1)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+					end
+				end
 
 				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
 					global.AnimForTrgt(_env, unit, {
@@ -1145,6 +1237,29 @@ all.Skill_FLYDe_Unique_BOSS = {
 
 				if DamageFactor - cost * DamageFloor == 1 then
 					damage.val = damage.val + 1
+				end
+
+				if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+					local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+					if damage.val > hp + shield then
+						damage.val = 0
+						local buff = global.NumericEffect(_env, "+def", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+
+						global.ApplyBuff(_env, unit, {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"LEIMu_Passive_Done"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 
 				damage.crit = nil
@@ -1426,8 +1541,32 @@ all.Skill_FLYDe_Passive_PV = {
 				end
 			end
 
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
 			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
 				global.KillTarget(_env, unit)
+
+				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UR_EQUIPMENT"
+						}
+					}, {
+						killcount
+					}, 1)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+					end
+				end
+
 				global.AnimForTrgt(_env, unit, {
 					loop = 1,
 					anim = "xge_bufftexiao",
@@ -1812,8 +1951,31 @@ all.Skill_FLYDe_Passive_Awaken = {
 				end
 			end
 
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
 			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
 				global.KillTarget(_env, unit)
+
+				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"UR_EQUIPMENT"
+						}
+					}, {
+						killcount
+					}, 1)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+					end
+				end
 
 				_env.count = _env.count + 1
 

@@ -2778,6 +2778,14 @@
             "DrawCardDiamond_TimesRewardRule3"
         ]
     },
+    "DrawCardEX_ReZero_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_ReZero_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCardEX_SinglePrice": {
         "clz": "int",
         "content": 400
@@ -2805,6 +2813,18 @@
                 400,
                 400
             ],
+            "IM_DiamondDrawEX_SAGA": [
+                400,
+                400
+            ],
+            "IM_DiamondDrawEX_Zuohe": [
+                400,
+                400
+            ],
+            "IM_DiamondDraw_ReZero": [
+                400,
+                400
+            ],
             "IM_DiamondDraw_UR": [
                 400,
                 400
@@ -2827,6 +2847,27 @@
                 "Recruit_UI_1",
                 "UITitle_EN_Zhaohuanzhizhengbuzu",
                 "Recruit_UI_3"
+            ],
+            "IM_DiamondDrawEX_SAGA": [
+                "RecruitAutoBuyCardSAGA",
+                "Recruit_UI_2",
+                "Zuohe_DrawCard_UI1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Zuohe_DrawCard_UI2"
+            ],
+            "IM_DiamondDrawEX_Zuohe": [
+                "RecruitAutoBuyCardExZuoHe",
+                "Recruit_UI_2",
+                "Zuohe_DrawCard_UI1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Zuohe_DrawCard_UI2"
+            ],
+            "IM_DiamondDraw_ReZero": [
+                "RecruitAutoBuyCardEx",
+                "Recruit_UI_5",
+                "Recruit_UI_4",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_6"
             ],
             "IM_DiamondDraw_UR": [
                 "RecruitAutoBuyCardUR",
@@ -4102,7 +4143,8 @@
             "BHTZi",
             "AMLBLTe",
             "XLDBLTe",
-            "SGBao"
+            "SGBao",
+            "GCZi"
         ]
     },
     "HeroStar_BoxNum": {
@@ -4660,7 +4702,14 @@
     },
     "Hero_Linkage": {
         "clz": "string[]",
-        "content": []
+        "content": [
+            "SYAi",
+            "GYCZi",
+            "YYing",
+            "AMLYa",
+            "LAMu",
+            "LEIMu"
+        ]
     },
     "Hero_Maxstar": {
         "clz": "int",
@@ -9812,7 +9861,8 @@
             "XXFSi",
             "MDSi",
             "SGBao",
-            "PSKe"
+            "PSKe",
+            "GCZi"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -10081,6 +10131,26 @@
         "clz": "dict",
         "content": {
             "Effect": "jian_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhen": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhefazhen",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhendazhao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhedazhaofazhen",
             "EffectPos": 5,
             "Loop": 1,
             "Priority": null,

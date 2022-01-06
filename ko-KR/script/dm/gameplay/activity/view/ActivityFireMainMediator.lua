@@ -120,39 +120,56 @@ function ActivityFireMainMediator:onRegister()
 
 	self._starAddImg:setVisible(false)
 
+	self._loginBtn = self._main:getChildByName("loginBtn")
+
+	if self._loginBtn then
+		self._teamBtn:setVisible(false)
+		self._loginBtn:setTouchEnabled(true)
+		self._loginBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self:onClickLogin()
+			end
+		end)
+	end
+
 	for i = 1, 3 do
 		local panel = self._stagePanel:getChildByFullName("Panel_" .. i)
-		local animName = "jiandan_yewangrukoueff"
-
-		if i == 2 then
-			animName = "kunnan_yewangrukoueff"
-		elseif i == 3 then
-			animName = "benghuai_yewangrukoueff"
-		end
-
-		local anim = cc.MovieClip:create(animName)
-
-		anim:setPosition(cc.p(190, 55))
-		anim:addTo(panel)
 
 		for j = 1, 3 do
 			local Text_name = panel:getChildByFullName("Text_name_" .. j)
-			local lineGradiantVec2 = {
-				{
-					ratio = 0.3,
-					color = cc.c4b(255, 252, 238, 255)
-				},
-				{
-					ratio = 0.7,
-					color = cc.c4b(255, 234, 177, 255)
-				}
-			}
 
-			Text_name:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-				x = 0,
-				y = -1
-			}))
+			if Text_name then
+				local lineGradiantVec2 = {
+					{
+						ratio = 0.3,
+						color = cc.c4b(255, 252, 238, 255)
+					},
+					{
+						ratio = 0.7,
+						color = cc.c4b(255, 234, 177, 255)
+					}
+				}
+
+				Text_name:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+					x = 0,
+					y = -1
+				}))
+			end
 		end
+	end
+
+	self._tipBtn = self:getView():getChildByName("tipBtn")
+	self._infoPanel = self._main:getChildByName("infoPanel")
+
+	if self._infoPanel then
+		self._tipBtn:setVisible(false)
+		self._infoPanel:setTouchEnabled(true)
+		self._infoPanel:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+				self:onClickRule()
+			end
+		end)
 	end
 end
 
@@ -213,6 +230,34 @@ function ActivityFireMainMediator:initStageName()
 
 	for i = 1, 3 do
 		local panel = self._stagePanel:getChildByFullName("Panel_" .. i)
+		local ui = self._activity:getUI()
+		local config = ActivityMainMapTitleConfig.anim[ui]
+
+		if config then
+			local animName = config[i]
+
+			if animName and not self["anim_" .. animName[1]] then
+				self["anim_" .. animName[1]] = cc.MovieClip:create(animName[1])
+
+				self["anim_" .. animName[1]]:setPosition(animName[2])
+				self["anim_" .. animName[1]]:addTo(panel)
+			end
+		else
+			local animName = "jiandan_yewangrukoueff"
+
+			if i == 2 then
+				animName = "kunnan_yewangrukoueff"
+			elseif i == 3 then
+				animName = "benghuai_yewangrukoueff"
+			end
+
+			if not self["anim_" .. animName] then
+				self["anim_" .. animName] = cc.MovieClip:create(animName)
+
+				self["anim_" .. animName]:setPosition(cc.p(190, 55))
+				self["anim_" .. animName]:addTo(panel)
+			end
+		end
 
 		if #KMapIds > 0 and self._blockActivity[KMapIds[1]] then
 			local map = self._blockActivity[KMapIds[1]]:getStageByStageType(stageType_index[i])
@@ -220,10 +265,12 @@ function ActivityFireMainMediator:initStageName()
 			for j = 1, 3 do
 				local Text_name = panel:getChildByFullName("Text_name_" .. j)
 
-				if j == 1 then
-					Text_name:setString(Strings:get(map:getConfig().MapName))
-				else
-					Text_name:setVisible(false)
+				if Text_name then
+					if j == 1 then
+						Text_name:setString(Strings:get(map:getConfig().MapName))
+					else
+						Text_name:setVisible(false)
+					end
 				end
 			end
 		end
@@ -267,6 +314,7 @@ function ActivityFireMainMediator:initData()
 	end
 
 	self._taskActivities = self._activity:getTaskActivities()
+	self._loginActivity = self._activity:getLoginActivities()
 	self._jumpActivity = self._activity:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
@@ -307,6 +355,26 @@ function ActivityFireMainMediator:initInfo()
 
 	local tipStr = self._activityConfig.SubActivityEndTip
 	self._endTip = {}
+
+	for index, mapId in pairs(KMapIds) do
+		for i = 1, 3 do
+			local touchPanel = self._stagePanel:getChildByFullName("Panel_" .. i .. ".touchPanel")
+			local redPoint = self._stagePanel:getChildByFullName("Panel_" .. i .. ".redPoint")
+			local tag = touchPanel:getTag()
+			local type = StageType.kNormal
+
+			if tag == 2 then
+				type = StageType.kElite
+			end
+
+			if tag == 3 then
+				type = StageType.kHard
+			end
+
+			redPoint:setVisible(self._blockActivity[mapId] and self._blockActivity[mapId]:hasRedPointByType(type))
+		end
+	end
+
 	local itemNode = self._addEffectPanel:getChildByName("itemNode")
 
 	itemNode:removeAllChildren()
@@ -414,6 +482,12 @@ function ActivityFireMainMediator:initInfo()
 	redPoint:setVisible(i)
 
 	for i = 1, 10 do
+	end
+
+	if self._loginBtn then
+		local redPoint = self._loginBtn:getChildByName("redPoint")
+
+		redPoint:setVisible(self._loginActivity and self._loginActivity:hasRedPoint())
 	end
 end
 
@@ -839,6 +913,25 @@ function ActivityFireMainMediator:onClickTeam()
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 	self._activitySystem:enterTeam(self._activityId, self._blockActivity[KMapIds[1]])
+end
+
+function ActivityFireMainMediator:onClickLogin()
+	local url = self._activityConfig.EightDaysUrl
+
+	if url then
+		local context = self:getInjector():instantiate(URLContext)
+		local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
+
+		if not entry then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Function_Not_Open")
+			}))
+		else
+			entry:response(context, params)
+		end
+
+		return
+	end
 end
 
 function ActivityFireMainMediator:onClickEgg()

@@ -94,6 +94,24 @@ function CardSystem:sortCardInPool(player, tag)
 	return result
 end
 
+function CardSystem:getHeroCardByIndex(player, index)
+	local cardsInWindow = player:getCardWindow():getCardArray()
+
+	if #cardsInWindow == 0 or cardsInWindow[1]:getType() ~= CARD_TYPE.kHeroCard then
+		return nil
+	end
+
+	for k, card in pairs(cardsInWindow) do
+		local cardIndex = card:getCardIndex()
+
+		if cardIndex and cardIndex == index then
+			return card
+		end
+	end
+
+	return nil
+end
+
 function CardSystem:getHeroCardsInWindow(player, cardfilter)
 	local cardsInWindow = player:getCardWindow():getCardArray()
 
@@ -549,13 +567,14 @@ end
 function CardSystem:cleanAllEnchants()
 end
 
-function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, workId)
+function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, anim, workId)
 	heroCard:addTriggerBuff(triggerBuff)
 
 	local idx = self:getCardIdx(player, heroCard)
 
 	self._processRecorder:recordObjectEvent(player:getId(), "TriggerBuff", {
-		idx = idx
+		idx = idx,
+		anim = anim
 	}, workId)
 end
 

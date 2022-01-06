@@ -1266,6 +1266,16 @@ local mappings = {
 		name = "EVT_ACTIVITY_CLOSE",
 		type = "@V"
 	},
+	EVT_ACTIVITY_ZERO_EXPORTPOINT = {
+		url = "dm.gameplay.activity.model.zero.ActivityZero",
+		name = "EVT_ACTIVITY_ZERO_EXPORTPOINT",
+		type = "@V"
+	},
+	ActivityZeroTaskAchievementMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroTaskAchievementMediator",
+		name = "ActivityZeroTaskAchievementMediator",
+		type = "@C"
+	},
 	RechargeActivityMediator = {
 		url = "dm.gameplay.activity.view.RechargeActivityMediator",
 		name = "RechargeActivityMediator",
@@ -1361,6 +1371,11 @@ local mappings = {
 		name = "ActivitySagaWinMediator",
 		type = "@C"
 	},
+	ActivityZeroTaskDailyMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroTaskDailyMediator",
+		name = "ActivityZeroTaskDailyMediator",
+		type = "@C"
+	},
 	ActivityTaskStageStarMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskStageStarMediator",
 		name = "ActivityTaskStageStarMediator",
@@ -1426,6 +1441,11 @@ local mappings = {
 		name = "ActivitySunflowerMainMediator",
 		type = "@C"
 	},
+	ActivityZeroMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMainMediator",
+		name = "ActivityZeroMainMediator",
+		type = "@C"
+	},
 	ActivityPuzzleGameMediator = {
 		url = "dm.gameplay.activity.view.ActivityPuzzleGameMediator",
 		name = "ActivityPuzzleGameMediator",
@@ -1449,6 +1469,11 @@ local mappings = {
 	ActivityBlockMonsterShopMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopMediator",
 		name = "ActivityBlockMonsterShopMediator",
+		type = "@C"
+	},
+	ActivityZeroPointDetailMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroPointDetailMediator",
+		name = "ActivityZeroPointDetailMediator",
 		type = "@C"
 	},
 	ActivityDrawCardFeedbackMediator = {
@@ -1536,6 +1561,11 @@ local mappings = {
 		name = "ActivitySagaSupportClubMediator",
 		type = "@C"
 	},
+	ActivityZeroMapMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMapMediator",
+		name = "ActivityZeroMapMediator",
+		type = "@C"
+	},
 	ActivityPointDetailNewMediator = {
 		url = "dm.gameplay.activity.view.ActivityPointDetailNewMediator",
 		name = "ActivityPointDetailNewMediator",
@@ -1559,6 +1589,11 @@ local mappings = {
 	ActivityReturnLetterRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivityReturnLetterRewardMediator",
 		name = "ActivityReturnLetterRewardMediator",
+		type = "@C"
+	},
+	ActivityZeroDiceStepMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroDiceStepMediator",
+		name = "ActivityZeroDiceStepMediator",
 		type = "@C"
 	},
 	RechargeTipMediator = {
@@ -1596,6 +1631,11 @@ local mappings = {
 		name = "ActivityReturnMediator",
 		type = "@C"
 	},
+	ActivityZeroSelectMapMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroSelecteMapMediator",
+		name = "ActivityZeroSelectMapMediator",
+		type = "@C"
+	},
 	ActivityStageFinishMediator = {
 		url = "dm.gameplay.activity.view.ActivityStageFinishMediator",
 		name = "ActivityStageFinishMediator",
@@ -1614,6 +1654,11 @@ local mappings = {
 	LoginActivityMediator = {
 		url = "dm.gameplay.activity.view.LoginActivityMediator",
 		name = "LoginActivityMediator",
+		type = "@C"
+	},
+	ActivityZeroMapUIMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMapUIMediator",
+		name = "ActivityZeroMapUIMediator",
 		type = "@C"
 	},
 	ActivityBlockTaskMediator = {
@@ -1681,6 +1726,11 @@ local mappings = {
 		name = "ReturnHeroChangeMediator",
 		type = "@C"
 	},
+	ActivityBlockZeroTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockZeroTaskMediator",
+		name = "ActivityBlockZeroTaskMediator",
+		type = "@C"
+	},
 	ActivityBlockMusicMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMusicMediator",
 		name = "ActivityBlockMusicMediator",
@@ -1699,6 +1749,11 @@ local mappings = {
 	MCBuySuccessMediator = {
 		url = "dm.gameplay.activity.view.MCBuySuccessMediator",
 		name = "MCBuySuccessMediator",
+		type = "@C"
+	},
+	ActivityBlockZeroShopMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockZeroShopMediator",
+		name = "ActivityBlockZeroShopMediator",
 		type = "@C"
 	},
 	ActivitySagaBatchUseSellMediator = {

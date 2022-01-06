@@ -6,6 +6,9 @@ GalleryPartnerNewMediator:has("_developSystem", {
 GalleryPartnerNewMediator:has("_gallerySystem", {
 	is = "r"
 }):injectWith("GallerySystem")
+GalleryPartnerNewMediator:has("_customDataSystem", {
+	is = "r"
+}):injectWith("CustomDataSystem")
 
 local kBtnHandlers = {
 	["main.rewardBtn"] = {
@@ -13,71 +16,7 @@ local kBtnHandlers = {
 		func = "onClickReward"
 	}
 }
-local TargetOccupation = {
-	"Attack",
-	"Defense",
-	"Cure",
-	"Aoe",
-	"Summon",
-	"Support",
-	"Curse"
-}
-local SortExtendFunc = {
-	{
-		func = function (sortExtendType, hero)
-			return hero.rareity == 17 - sortExtendType
-		end
-	},
-	{
-		func = function (sortExtendType, hero)
-			return hero.type == TargetOccupation[sortExtendType - 5]
-		end
-	}
-}
 local kNums = 4
-local KTabMax = 8
-local kImageParty = {
-	XD = {
-		"gallery_img_sl_xd.png",
-		"gallery_btn_normal_02_2.png",
-		"gallery_btn_normal_02_1.png"
-	},
-	MNJH = {
-		"gallery_img_sl_mnjh.png",
-		"gallery_btn_normal_05_2.png",
-		"gallery_btn_normal_05_1.png"
-	},
-	BSNCT = {
-		"gallery_img_sl_bsn.png",
-		"gallery_btn_normal_03_2.png",
-		"gallery_btn_normal_03_1.png"
-	},
-	DWH = {
-		"gallery_img_sl_dwh_w.png",
-		"gallery_btn_normal_04_2w.png",
-		"gallery_btn_normal_04_1w.png"
-	},
-	WNSXJ = {
-		"gallery_img_sl_wnsxj.png",
-		"gallery_btn_normal_01_2.png",
-		"gallery_btn_normal_01_1.png"
-	},
-	SSZS = {
-		"gallery_img_sl_smzs.png",
-		"gallery_btn_normal_06_2.png",
-		"gallery_btn_normal_06_1.png"
-	},
-	UNKNOWN = {
-		"gallery_img_sl_unknown.png",
-		"gallery_btn_normal_07_2.png",
-		"gallery_btn_normal_07_1.png"
-	},
-	AllHero = {
-		"",
-		"gallery_btn_normal_08_2.png",
-		"gallery_btn_normal_08_1.png"
-	}
-}
 local kRarityBg = {
 	nil,
 	nil,
@@ -95,9 +34,19 @@ local kRarityBg = {
 	"gallery_img_hblb_ssr.png",
 	"gallery_img_hblb_ur.png"
 }
-local KselectTab = {
-	KOccupation = 1,
-	Krareity = 2
+local changeType = {
+	{
+		index = 1,
+		titleStr = Strings:get("Force_Screen")
+	},
+	{
+		index = 2,
+		titleStr = Strings:get("HEROS_UI35")
+	},
+	{
+		index = 3,
+		titleStr = Strings:get("HEROS_UI30")
+	}
 }
 
 function GalleryPartnerNewMediator:initialize()
@@ -105,6 +54,7 @@ function GalleryPartnerNewMediator:initialize()
 end
 
 function GalleryPartnerNewMediator:dispose()
+	self._customDataSystem:setValue(PrefixType.kGlobal, "GalleryAlbumType", self._albumType)
 	super.dispose(self)
 end
 
@@ -153,6 +103,7 @@ function GalleryPartnerNewMediator:setupView(data)
 	self:initBottomView()
 	self:initView()
 	self:refreshView(true, true)
+	self:initChangePanel()
 end
 
 function GalleryPartnerNewMediator:refreshBySync()
@@ -187,10 +138,6 @@ function GalleryPartnerNewMediator:initWidgetInfo()
 
 	self._touchLayer:setVisible(false)
 
-	self._btnClone_1 = self:getView():getChildByFullName("btnClone_1")
-
-	self._btnClone_1:setVisible(false)
-
 	self._btnClone_2 = self:getView():getChildByFullName("btnClone_2")
 
 	self._btnClone_2:setVisible(false)
@@ -208,30 +155,19 @@ function GalleryPartnerNewMediator:initWidgetInfo()
 		self:onClickInfoBtn(sender, eventType, self._attrData)
 	end)
 
-	self._panelSelect = self._main:getChildByFullName("Panel_select")
-
-	self._panelSelect:setVisible(true)
-	self._panelSelect:getChildByFullName("Panel_4"):setVisible(false)
-	self._panelSelect:getChildByFullName("Image_9"):addClickEventListener(function ()
-		self:clickSelectMenu(true)
-	end)
-	self._panelSelect:getChildByFullName("Panel_4.Panel_touch"):addClickEventListener(function ()
-		self:clickSelectMenu(false)
-	end)
-
 	local director = cc.Director:getInstance()
 	local winSize = director:getWinSize()
 	self._posY_table = self._tableViewPanel:getPositionY()
+	self._selectPanel = self._main:getChildByName("Panel_select")
 end
 
 function GalleryPartnerNewMediator:initData(data)
-	self._albumType = 1
+	self._albumType = tonumber(self._customDataSystem:getValue(PrefixType.kGlobal, "GalleryAlbumType", 1))
 	self._tabType = data and data.tabType and data.tabType or 1
 	self._albumArray = self._gallerySystem:getPartyArray()
 	self._partyArray = self._albumArray[self._albumType]
 	self._curPartyData = self._partyArray[self._tabType]
 
-	self:showMenu()
 	self:doLogicForShowHeros()
 
 	self._tabCache = {}
@@ -241,6 +177,7 @@ function GalleryPartnerNewMediator:initData(data)
 		[self._albumType] = self._tabType
 	}
 	self._selectTab = false
+	self._tabMax = #self._partyArray
 end
 
 function GalleryPartnerNewMediator:initView()
@@ -287,36 +224,6 @@ function GalleryPartnerNewMediator:initView()
 	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
 	tableView:registerScriptHandler(tableCellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
 	tableView:setMaxBounceOffset(20)
-
-	self._selectCells = {}
-	local imgKind = self._panelSelect:getChildByFullName("Panel_4.Image_kind")
-
-	imgKind:removeAllChildren()
-
-	local kColoum = 5
-	local data = self._occupationInfo
-	local kRow = math.ceil(#data / kColoum)
-
-	for i = 1, kRow do
-		for j = 1, kColoum do
-			local info = data[j + (i - 1) * kColoum]
-
-			if info then
-				local cell = self._btnClone_1:clone()
-				cell.index = info.index
-
-				cell:getChildByFullName("Image_light"):setVisible(info.selectState)
-				cell:getChildByFullName("Image_dark"):setVisible(not info.selectState)
-				cell:getChildByFullName("name"):setString(info.name)
-				cell:setVisible(true)
-				cell:addTo(imgKind):posite(-30 + j * 84, 140 - (i - 1) * 52)
-				cell:getChildByFullName("touchPanel"):addClickEventListener(function ()
-					self:clickState(cell.index)
-				end)
-				table.insert(self._selectCells, cell)
-			end
-		end
-	end
 end
 
 function GalleryPartnerNewMediator:createTeamCell(cell, index)
@@ -423,25 +330,16 @@ function GalleryPartnerNewMediator:initBottomView()
 	local cellWidth = 70
 	local start_x = cellWidth / 2 - 10 + math.floor(#self._partyArray / 2) * -cellInterval + 20 + #self._partyArray % 2 * -55
 	local start_y = 0
-	local cloneBaseNode = self._btnClone_1
-
-	if self._albumType == 1 then
-		cloneBaseNode = self._btnClone_2
-		cellInterval = 74
-		cellWidth = 40
-		start_x = cellWidth / 2 - 22.5 + math.floor(#self._partyArray / 2) * -cellInterval + 45 + #self._partyArray % 2 * -65
-		start_y = 0
-	elseif self._albumType == 2 then
-		cellInterval = 88
-		cellWidth = 68
-		start_x = -20 + cellWidth / 2 - 10 + math.floor(#self._partyArray / 2) * -cellInterval + 20 + #self._partyArray % 2 * -54
-	end
-
+	local cloneBaseNode = self._btnClone_2
+	cellInterval = 74
+	cellWidth = 40
+	start_x = cellWidth / 2 - 22.5 + math.floor(#self._partyArray / 2) * -cellInterval + 45 + #self._partyArray % 2 * -65
+	start_y = 0
 	local cloneBaseNode1 = self:getView():getChildByFullName("btnClone_2_0")
 
 	for i = 1, #self._partyArray do
 		local data = self._partyArray[i]
-		local btn = i == KTabMax and cloneBaseNode1:clone() or cloneBaseNode:clone()
+		local btn = i == self._tabMax and cloneBaseNode1:clone() or cloneBaseNode:clone()
 
 		btn:setVisible(true)
 		btn:addTo(self._buttonNode):posite(0, start_y - (i - 1) * cellInterval)
@@ -453,11 +351,12 @@ function GalleryPartnerNewMediator:initBottomView()
 			self:onClickBottomTab(i)
 		end)
 
+		local icon = data:getIcon()
 		local darkImg = btn:getChildByFullName("Image_dark")
 		local lightImg = btn:getChildByFullName("Image_light")
 
-		lightImg:loadTexture(kImageParty[data:getPartyId()][2], ccui.TextureResType.plistType)
-		darkImg:loadTexture(kImageParty[data:getPartyId()][3], ccui.TextureResType.plistType)
+		lightImg:loadTexture(icon[1] .. ".png", ccui.TextureResType.plistType)
+		darkImg:loadTexture(icon[2] .. ".png", ccui.TextureResType.plistType)
 
 		if not self._bottomTabCache[i] then
 			self._bottomTabCache[i] = {
@@ -473,6 +372,7 @@ function GalleryPartnerNewMediator:refreshData(changeAlbumType)
 	if changeAlbumType then
 		self._albumArray = self._gallerySystem:getPartyArray()
 		self._partyArray = self._albumArray[self._albumType]
+		self._tabMax = #self._partyArray
 	end
 
 	self._curPartyData = self._partyArray[self._tabType] or self._partyArray[kNums - 1]
@@ -501,9 +401,10 @@ function GalleryPartnerNewMediator:refreshView(hideReload, changeAlbumType)
 	self._totalNum:setString("/" .. totalNum)
 	self._partyNode:removeAllChildren()
 
-	if kImageParty[self._curPartyData:getPartyId()] and kImageParty[self._curPartyData:getPartyId()][1] ~= "" then
-		local img = kImageParty[self._curPartyData:getPartyId()][1]
-		local img_party = ccui.ImageView:create(kImageParty[self._curPartyData:getPartyId()][1], ccui.TextureResType.plistType)
+	local icon = self._curPartyData:getIcon()
+
+	if icon[3] then
+		local img_party = ccui.ImageView:create(icon[3] .. ".png", ccui.TextureResType.plistType)
 
 		img_party:setAnchorPoint(cc.p(0.5, 0.5))
 		img_party:addTo(self._partyNode)
@@ -522,7 +423,7 @@ function GalleryPartnerNewMediator:refreshBottomView()
 		local data = self._partyArray[i]
 		local redPoint = self._bottomTabCache[i][3]
 
-		if i == KTabMax then
+		if i == self._tabMax then
 			local r = table.indexof(self._redPointTab, true)
 
 			redPoint:setVisible(r ~= nil)
@@ -592,86 +493,6 @@ function GalleryPartnerNewMediator:refreshRewardRedPoint()
 
 	self._rewardBtn:getChildByFullName("redMark"):setVisible(canReceive)
 	self._rewardBtn:setVisible(hasReward)
-end
-
-function GalleryPartnerNewMediator:clickSelectMenu(vis)
-	local panel = self._panelSelect:getChildByFullName("Panel_4")
-
-	panel:setVisible(vis)
-end
-
-function GalleryPartnerNewMediator:resetSelectMenu()
-	for i, v in ipairs(self._occupationInfo) do
-		v.selectState = false
-	end
-
-	for i, cell in ipairs(self._selectCells) do
-		cell.selectState = self._occupationInfo[i].selectState
-
-		cell:getChildByFullName("Image_light"):setVisible(cell.selectState)
-		cell:getChildByFullName("Image_dark"):setVisible(not cell.selectState)
-	end
-end
-
-function GalleryPartnerNewMediator:showMenu()
-	if not self._occupationInfo then
-		self._occupationInfo = {}
-		local index = 1
-		local info = {
-			name = Strings:get("bag_UI1"),
-			selectState = false,
-			index = index,
-			config = nil
-		}
-		self._occupationInfo[index] = info
-		index = index + 1
-
-		for i, v in ipairs(self._albumArray[3]) do
-			local info = {
-				name = v:getPartyId(),
-				selectState = false,
-				index = index,
-				config = v
-			}
-			self._occupationInfo[index] = info
-			index = index + 1
-		end
-
-		for i, v in ipairs(self._albumArray[2]) do
-			local info = {
-				name = Strings:get(GameStyle:getHeroOccupation(v:getPartyId())),
-				selectState = false,
-				index = index,
-				config = v
-			}
-			self._occupationInfo[index] = info
-			index = index + 1
-		end
-	end
-end
-
-function GalleryPartnerNewMediator:clickState(index)
-	local data = self._occupationInfo
-	data[index].selectState = not data[index].selectState
-
-	if index == 1 and data[index].selectState then
-		for i = 2, #self._occupationInfo do
-			self._occupationInfo[i].selectState = false
-		end
-	elseif index ~= 1 and data[index].selectState then
-		self._occupationInfo[1].selectState = false
-	end
-
-	for i, cell in ipairs(self._selectCells) do
-		cell.selectState = self._occupationInfo[i].selectState
-
-		cell:getChildByFullName("Image_light"):setVisible(cell.selectState)
-		cell:getChildByFullName("Image_dark"):setVisible(not cell.selectState)
-	end
-
-	self:doLogicForShowHeros()
-	self._heroView:stopScroll()
-	self._heroView:reloadData()
 end
 
 function GalleryPartnerNewMediator:onClickHeroIcon(sender, eventType, id)
@@ -753,7 +574,6 @@ function GalleryPartnerNewMediator:onClickBottomTab(index)
 
 	self._tabType = index
 
-	self:resetSelectMenu()
 	self:refreshData()
 	self:refreshView()
 end
@@ -827,7 +647,6 @@ function GalleryPartnerNewMediator:runStartAnim()
 	self._main:runAction(spawn)
 	self._tableViewPanel:setOpacity(0)
 	self._loveCount:setOpacity(0)
-	self._panelSelect:setOpacity(0)
 	self._tableViewPanel:setPosition(cc.p(550, self._posY_table + 30))
 
 	local delay = cc.DelayTime:create(0.4)
@@ -836,9 +655,6 @@ function GalleryPartnerNewMediator:runStartAnim()
 	local callback = cc.CallFunc:create(function ()
 		self._heroView:reloadData()
 		self._loveCount:fadeIn({
-			time = 0.2
-		})
-		self._panelSelect:fadeIn({
 			time = 0.2
 		})
 	end)
@@ -903,62 +719,86 @@ function GalleryPartnerNewMediator:doLogicForShowHeros()
 		self._showHeros[#self._showHeros + 1] = showHeroIds[i]
 	end
 
-	self._selectShowHeros = {}
-	local sub1 = {}
+	self._selectShowHeros = self._showHeros
+end
 
-	for i = 2, 5 do
-		if self._occupationInfo[i].selectState then
-			table.insert(sub1, self._occupationInfo[i].index)
-		end
-	end
+function GalleryPartnerNewMediator:initChangePanel()
+	local upPanel = self._selectPanel:getChildByName("Panel_up")
 
-	local sub2 = {}
+	upPanel:setVisible(false)
 
-	for i = 6, 12 do
-		if self._occupationInfo[i].selectState then
-			table.insert(sub2, self._occupationInfo[i].index)
-		end
-	end
+	self._selectButtons = {}
+	local count = 1
 
-	if self._occupationInfo[1].selectState then
-		self._selectShowHeros = self._showHeros
-	else
-		local retList = {}
+	for i = 1, 3 do
+		local typeData = changeType[i]
 
-		if next(sub1) then
-			for i, hero in pairs(self._showHeros) do
-				for i, sort in ipairs(sub1) do
-					local h = self._heroSystem:getHeroInfoById(hero)
+		if typeData.index ~= self._albumType then
+			local selectBtn = upPanel:getChildByName("select" .. count)
+			local nameText = selectBtn:getChildByName("Text_name")
 
-					if SortExtendFunc[1].func(sort, h) then
-						table.insert(retList, hero)
+			nameText:setString(typeData.titleStr)
 
-						break
-					end
-				end
+			selectBtn.typeData = typeData
+
+			local function callFunc()
+				upPanel:setVisible(false)
+
+				self._albumType = selectBtn.typeData.index
+				self._tabType = 1
+
+				self:refreshSelectView()
+				self:refreshData(true)
+				self:initBottomView()
+				self:refreshView()
 			end
 
-			self._selectShowHeros = retList
+			mapButtonHandlerClick(nil, selectBtn, {
+				func = callFunc
+			})
+
+			self._selectButtons[count] = selectBtn
+			count = count + 1
 		else
-			self._selectShowHeros = self._showHeros
-		end
+			local cueSelectBtn = self._selectPanel:getChildByName("currselect")
+			local nameText = cueSelectBtn:getChildByName("Text_name")
 
-		if next(sub2) then
-			local retList2 = {}
+			nameText:setString(typeData.titleStr)
 
-			for i, hero in pairs(self._selectShowHeros) do
-				for i, sort in ipairs(sub2) do
-					local h = self._heroSystem:getHeroInfoById(hero)
+			local function callFunc()
+				local show = not upPanel:isVisible()
 
-					if SortExtendFunc[2].func(sort, h) then
-						table.insert(retList2, hero)
-
-						break
-					end
-				end
+				upPanel:setVisible(show)
 			end
 
-			self._selectShowHeros = retList2
+			mapButtonHandlerClick(nil, cueSelectBtn, {
+				func = callFunc
+			})
+
+			self._selectButtons[3] = cueSelectBtn
+		end
+	end
+end
+
+function GalleryPartnerNewMediator:refreshSelectView()
+	local count = 1
+
+	for i = 1, 3 do
+		local typeData = changeType[i]
+
+		if typeData.index ~= self._albumType then
+			local button = self._selectButtons[count]
+			button.typeData = typeData
+			local nameText = button:getChildByName("Text_name")
+
+			nameText:setString(typeData.titleStr)
+
+			count = count + 1
+		else
+			local button = self._selectButtons[3]
+			local nameText = button:getChildByName("Text_name")
+
+			nameText:setString(typeData.titleStr)
 		end
 	end
 end

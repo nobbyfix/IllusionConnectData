@@ -317,6 +317,19 @@ function HeroSoundMediator:createCell(cell, index)
 	end
 end
 
+function HeroSoundMediator:getFontSizeForName(str)
+	local fontSize = 50
+	local width = 10000
+
+	repeat
+		local lvLabel = cc.Label:createWithTTF(str, CUSTOM_TTF_FONT_1, fontSize)
+		width = lvLabel:getContentSize().width
+		fontSize = fontSize - 2
+	until width <= 200 or fontSize < 2
+
+	return fontSize
+end
+
 function HeroSoundMediator:refreshHeroInfo()
 	self:refreshBg()
 	self._heroPanelAnim:gotoAndPlay(0)
@@ -358,6 +371,7 @@ function HeroSoundMediator:refreshHeroInfo()
 	end
 
 	self._name1:setString(name)
+	self._name1:setFontSize(self:getFontSizeForName(name))
 	GameStyle:setHeroNameByQuality(self._name1, self._heroData:getQuality())
 	self._nameBg:setScaleX((self._name1:getContentSize().width + 35) / self._nameBg:getContentSize().width)
 	self._rarityIcon:removeAllChildren()

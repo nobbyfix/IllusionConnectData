@@ -56,6 +56,9 @@
     "Target_AMLBLTe": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
+    "Target_AMLYa": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_ATSheng": {
         "Function": "return MainTarget()"
     },
@@ -119,6 +122,9 @@
     "Target_FTLEShi": {
         "Function": "return MainTarget()"
     },
+    "Target_GCZi": {
+        "Function": "return MainTarget()"
+    },
     "Target_GLin": {
         "Function": "return MainTarget()"
     },
@@ -164,6 +170,9 @@
     "Target_KXuan": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
     },
+    "Target_LAMu": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_LCYShi": {
         "Function": "return MainTarget()"
     },
@@ -172,6 +181,9 @@
     },
     "Target_LDu": {
         "Function": ""
+    },
+    "Target_LEIMu": {
+        "Function": "return MainTarget()"
     },
     "Target_LEMHou": {
         "Function": "return MainTarget()"

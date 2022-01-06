@@ -26,10 +26,10 @@ end
 function ActivityStageUnFinishMediator:enterWithData(data)
 	self._data = data
 	self._activity = self._activitySystem:getActivityById(self._data.activityId)
-	self._model = self._activity:getSubActivityById(self._data.subActivityId)
-	local params = data.params
+	self._model = self._activity:getSubActivityById(self._data.subActivityId) or data.model
 
 	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		local params = data.params
 		self._mapId = params.type
 		self._sortId = params.mapId
 		self._pointId = params.pointId
@@ -38,7 +38,8 @@ function ActivityStageUnFinishMediator:enterWithData(data)
 		self._notShowStar = true
 	else
 		self._pointId = self._data.pointId
-		self._point = self._model:getPointById(self._pointId)
+		self._mapId = self._data.mapId
+		self._point = self._model:getPointById(self._pointId, self._mapId)
 	end
 
 	AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Lose")

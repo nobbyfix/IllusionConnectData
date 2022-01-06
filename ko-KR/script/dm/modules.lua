@@ -466,7 +466,8 @@ local modules = {
 					"dm.gameplay.tabBtn.CompositeTabBtnWidget",
 					"dm.gameplay.home.controller.HomeSystem",
 					"dm.gameplay.home.view.home.Navigation",
-					"dm.gameplay.home.controller.AudioTimerSystem"
+					"dm.gameplay.home.controller.AudioTimerSystem",
+					"dm.gameplay.home.view.home.BoardHeroScreenWidget"
 				},
 				injections = {
 					singletons = {
@@ -1551,6 +1552,7 @@ local modules = {
 			{
 				name = "activity",
 				requires = {
+					"dm.gameplay.activity.model.ActivityList",
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
 					"dm.gameplay.activity.view.ActivityWidget",
@@ -2050,6 +2052,55 @@ local modules = {
 							mediator = "ActivityFireMainMediator"
 						},
 						{
+							res = "asset/ui/ActivityBlockZeroTask.csb",
+							name = "ActivityBlockZeroTaskView",
+							mediator = "ActivityBlockZeroTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskDaily.csb",
+							name = "ActivityZeroTaskDailyView",
+							mediator = "ActivityZeroTaskDailyMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskAchievement.csb",
+							name = "ActivityZeroTaskAchievementView",
+							mediator = "ActivityZeroTaskAchievementMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMain.csb",
+							name = "ActivityZeroMainView",
+							mediator = "ActivityZeroMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroSelectMap.csb",
+							name = "ActivityZeroSelectMapView",
+							mediator = "ActivityZeroSelectMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetail.csb",
+							name = "ActivityZeroPointDetailView",
+							mediator = "ActivityZeroPointDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMap.csb",
+							name = "ActivityZeroeMapView",
+							mediator = "ActivityZeroMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMapUI.csb",
+							name = "ActivityZeroMapUIView"
+						},
+						{
+							res = "asset/ui/ActivityBlockZeroShop.csb",
+							name = "ActivityBlockZeroShopView",
+							mediator = "ActivityBlockZeroShopMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroDiceStep.csb",
+							name = "ActivityZeroDiceStepView",
+							mediator = "ActivityZeroDiceStepMediator"
+						},
+						{
 							res = "asset/ui/ActivityFemaleMain.csb",
 							name = "ActivityFemaleMainView",
 							mediator = "ActivityCommonMainMediator"
@@ -2058,6 +2109,11 @@ local modules = {
 							res = "asset/ui/ActivityStoryBookMain.csb",
 							name = "ActivityStoryBookMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityReZeroMain.csb",
+							name = "ActivityReZeroMainView",
+							mediator = "ActivityFireMainMediator"
 						},
 						{
 							res = "asset/ui/ActivityDeepSeaMain.csb",
