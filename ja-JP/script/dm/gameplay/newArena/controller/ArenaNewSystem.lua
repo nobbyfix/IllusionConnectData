@@ -676,6 +676,10 @@ function ArenaNewSystem:enterBattleReoprt(battleData, reportData, refreshRival)
 
 	if selfRid == defenderId then
 		logicInfo.mainPlayerId = defenderId
+		local playerStagePassShow = battlePassiveSkill.playerStagePassShow
+		local enemyStagePassShow = battlePassiveSkill.enemyStagePassShow
+		battlePassiveSkill.playerStagePassShow = enemyStagePassShow
+		battlePassiveSkill.enemyStagePassShow = playerStagePassShow
 	else
 		logicInfo.mainPlayerId = challengerId
 	end
@@ -708,7 +712,7 @@ function ArenaNewSystem:enterBattleReoprt(battleData, reportData, refreshRival)
 
 			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, userData, outSelf))
 		else
-			local id = challengerId
+			local id = logicInfo.mainPlayerId
 			local loseData = {
 				battleStatist = battleData.statist.players,
 				resultData = reportData,

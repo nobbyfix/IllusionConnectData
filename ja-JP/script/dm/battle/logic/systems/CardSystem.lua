@@ -94,6 +94,24 @@ function CardSystem:sortCardInPool(player, tag)
 	return result
 end
 
+function CardSystem:getHeroCardByIndex(player, index)
+	local cardsInWindow = player:getCardWindow():getCardArray()
+
+	if #cardsInWindow == 0 or cardsInWindow[1]:getType() ~= CARD_TYPE.kHeroCard then
+		return nil
+	end
+
+	for k, card in pairs(cardsInWindow) do
+		local cardIndex = card:getCardIndex()
+
+		if cardIndex and cardIndex == index then
+			return card
+		end
+	end
+
+	return nil
+end
+
 function CardSystem:getHeroCardsInWindow(player, cardfilter)
 	local cardsInWindow = player:getCardWindow():getCardArray()
 

@@ -164,8 +164,8 @@ function ChangeHeadImgMediator:getData()
 					table.insert(activity, v)
 				elseif v.config.Type == KFrameType.FESTIVAL then
 					table.insert(festival, v)
-				elseif v.config.Type == KFrameType.RARE then
-					table.insert(rare, v)
+				elseif v.config.Type == KFrameType.Zodiac then
+					table.insert(zodiac, v)
 				elseif v.config.Type == KFrameType.LEADSTAGE then
 					table.insert(leadstage, v)
 				end
@@ -180,7 +180,7 @@ function ChangeHeadImgMediator:getData()
 				data,
 				activity,
 				festival,
-				rare,
+				zodiac,
 				leadstage
 			}
 		end

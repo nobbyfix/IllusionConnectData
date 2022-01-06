@@ -129,6 +129,16 @@ function exports.CardsInWindow(env, player, cardfilter)
 	return cardSystem:getHeroCardsInWindow(player, cardfilter)
 end
 
+function exports.CardAtWindowIndex(env, player, index)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:getHeroCardByIndex(player, index)
+end
+
 function exports.CardsInPool(env, player, cardfilter)
 	local cardSystem = env.global["$CardSystem"]
 
@@ -185,6 +195,16 @@ function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffect
 	local triggerBuff = TriggerBuff:new(buffConfig, buffEffects)
 
 	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, env["$id"])
+end
+
+function exports.DispelTiggerOnHeroCard(env, heroCard, tags)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:dispelTiggerOnHeroCard(heroCard, tags or {})
 end
 
 function exports.SelectCardBuffCount(env, heroCard, tag)

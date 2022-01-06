@@ -460,7 +460,8 @@ local modules = {
 					"dm.gameplay.tabBtn.CompositeTabBtnWidget",
 					"dm.gameplay.home.controller.HomeSystem",
 					"dm.gameplay.home.view.home.Navigation",
-					"dm.gameplay.home.controller.AudioTimerSystem"
+					"dm.gameplay.home.controller.AudioTimerSystem",
+					"dm.gameplay.home.view.home.BoardHeroScreenWidget"
 				},
 				injections = {
 					singletons = {

@@ -883,6 +883,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_ReZero": {
+        "Content": "Mail_EightDays_ReZero_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_ReZero_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_ReZero_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Riddle": {
         "Content": "Mail_EightDays_Riddle_Content",
         "ExpireAfterRead": 72000,
@@ -1686,6 +1699,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_RTPK_WinReward_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_ReZero_AchieveMentTask_Activity": {
+        "Content": "Mail_ReZero_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_ReZero_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_ReZero_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_ReZero_DailyTask_Activity": {
+        "Content": "Mail_ReZero_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_ReZero_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_ReZero_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

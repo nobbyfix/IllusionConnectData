@@ -1292,11 +1292,7 @@ function HeroShowOwnMediator:refreshName()
 	local qualityLevel = self._heroData:getQualityLevel() == 0 and "" or "+" .. self._heroData:getQualityLevel()
 
 	name:setString(nameString .. qualityLevel)
-
-	if name:getContentSize().width > 200 then
-		name:setFontSize(self:getFontSizeForName(nameString .. qualityLevel))
-	end
-
+	name:setFontSize(self:getFontSizeForName(nameString .. qualityLevel))
 	GameStyle:setHeroNameByQuality(name, self._heroData:getQuality(), 1)
 
 	local width = name:getContentSize().width
@@ -1340,7 +1336,7 @@ function HeroShowOwnMediator:refreshName()
 end
 
 function HeroShowOwnMediator:getFontSizeForName(str)
-	local fontSize = 48
+	local fontSize = 50
 	local width = 10000
 
 	repeat

@@ -2268,6 +2268,45 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15110_1": {
+        "ATK": "UR_Decoration_ATK_AH",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Decoration_15110_1_Desc",
+        "HP": "UR_Decoration_HP_AH",
+        "Icon": "ico_equip_txbwuaccess",
+        "Name": "Decoration_15110_1_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15110_1",
+        "Sort": 299052,
+        "StartEquipEndID": "Rareity15_DecorationStone1_8",
+        "StartEquipStarID": "Rareity15_DecorationStone1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -4036,6 +4075,89 @@
         "Sort": 299043,
         "StartEquipEndID": "Rareity15_Shoes3_8",
         "StartEquipStarID": "Rareity15_Shoes3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15110_1": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15110_1_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_sxtashoes",
+        "Name": "Shoes_15110_1_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15110_1",
+        "Sort": 299049,
+        "StartEquipEndID": "Rareity15_Shoes1_8",
+        "StartEquipStarID": "Rareity15_Shoes1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15111_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15111_2_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_mwzlvshoes",
+        "Name": "Shoes_15111_2_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15111_2",
+        "Sort": 299051,
+        "StartEquipEndID": "Rareity15_Shoes2_8",
+        "StartEquipStarID": "Rareity15_Shoes2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -9302,6 +9424,44 @@
         "Sort": 299046,
         "StartEquipEndID": "Rareity15_Weapon2_8",
         "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15121_3": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15121_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_gyqieweapon",
+        "Name": "Weapon_15121_3_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "ZTXChang"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15121_3",
+        "Sort": 299050,
+        "StartEquipEndID": "Rareity15_Weapon3_8",
+        "StartEquipStarID": "Rareity15_Weapon3_1",
         "URUPSkillLV": [
             30,
             40,

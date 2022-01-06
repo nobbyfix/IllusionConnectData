@@ -167,13 +167,13 @@ all.Skill_LDYu_Unique = {
 		this.HealRateFactor = externs.HealRateFactor
 
 		if this.HealRateFactor == nil then
-			this.HealRateFactor = 2.65
+			this.HealRateFactor = 1.6
 		end
 
 		this.SingleRateFactor = externs.SingleRateFactor
 
 		if this.SingleRateFactor == nil then
-			this.SingleRateFactor = 0.15
+			this.SingleRateFactor = 0.4
 		end
 
 		local main = __action(this, {
@@ -181,7 +181,7 @@ all.Skill_LDYu_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			2167
+			3167
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_LDYu"
@@ -208,7 +208,7 @@ all.Skill_LDYu_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.ACTOR)), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			global.RetainObject(_env, _env.TARGET)
 			global.GroundEft(_env, _env.ACTOR, "Ground_LDYu")
@@ -233,6 +233,12 @@ all.Skill_LDYu_Unique = {
 			local this = _env.this
 			local global = _env.global
 
+			if global.FriendMaster(_env) then
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, global.FriendMaster(_env), this.HealRateFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal)
+			end
+
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -252,33 +258,21 @@ all.Skill_LDYu_Unique = {
 				0.2
 			}))
 
+			local hp = global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local real_damage = hp * this.SingleRateFactor
+			real_damage = global.min(_env, real_damage, atk * 3)
+
+			global.ApplyHPDamage(_env, _env.ACTOR, real_damage)
+			global.DelayCall(_env, 700, global.ApplyHPDamage, _env.TARGET, real_damage)
+
 			for _, unit in global.__iter__(_env.units) do
 				local hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "CURSE")) > 0 or hpRatio == 1 then
-					local buffeft = global.NumericEffect(_env, "+singlerate", {
-						"+Normal",
-						"+Normal"
-					}, this.SingleRateFactor)
-
-					global.ApplyBuff(_env, unit, {
-						duration = 30,
-						group = "LDYu_Unique",
-						timing = 4,
-						limit = 1,
-						tags = {
-							"NUMERIC",
-							"BUFF",
-							"DISPELLABLE",
-							"STEALABLE"
-						}
-					}, {
-						buffeft
-					})
+					global.DelayCall(_env, 700, global.ApplyHPDamage, _env.TARGET, real_damage)
 				else
-					local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, unit, this.HealRateFactor, 0)
-
-					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
+					global.ApplyHPRecovery(_env, unit, real_damage, false)
 
 					local buffeft2 = global.NumericEffect(_env, "+defrate", {
 						"+Normal",
@@ -301,7 +295,7 @@ all.Skill_LDYu_Unique = {
 			end
 		end)
 		exec["@time"]({
-			2000
+			3000
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -437,7 +431,7 @@ all.Skill_LDYu_Passive_Key = {
 
 			global.ApplyBuff(_env, global.FriendField(_env), {
 				timing = 4,
-				duration = 15,
+				duration = 20,
 				tags = {
 					"STATUS",
 					"LDYu_Passive_Key"
@@ -642,13 +636,13 @@ all.Skill_LDYu_Unique_EX = {
 		this.HealRateFactor = externs.HealRateFactor
 
 		if this.HealRateFactor == nil then
-			this.HealRateFactor = 3.3
+			this.HealRateFactor = 2
 		end
 
 		this.SingleRateFactor = externs.SingleRateFactor
 
 		if this.SingleRateFactor == nil then
-			this.SingleRateFactor = 0.15
+			this.SingleRateFactor = 0.4
 		end
 
 		local main = __action(this, {
@@ -656,7 +650,7 @@ all.Skill_LDYu_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			2167
+			3167
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_LDYu"
@@ -683,7 +677,7 @@ all.Skill_LDYu_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS - global.ONESELF(_env, _env.ACTOR)), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			global.RetainObject(_env, _env.TARGET)
 			global.GroundEft(_env, _env.ACTOR, "Ground_LDYu")
@@ -708,6 +702,12 @@ all.Skill_LDYu_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
+			if global.FriendMaster(_env) then
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, global.FriendMaster(_env), this.HealRateFactor, 0)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal, true)
+			end
+
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
@@ -727,33 +727,21 @@ all.Skill_LDYu_Unique_EX = {
 				0.2
 			}))
 
+			local hp = global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local real_damage = hp * this.SingleRateFactor
+			real_damage = global.min(_env, real_damage, atk * 3)
+
+			global.ApplyHPDamage(_env, _env.ACTOR, real_damage)
+			global.DelayCall(_env, 700, global.ApplyHPDamage, _env.TARGET, real_damage)
+
 			for _, unit in global.__iter__(_env.units) do
 				local hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "CURSE")) > 0 or hpRatio == 1 then
-					local buffeft = global.NumericEffect(_env, "+singlerate", {
-						"+Normal",
-						"+Normal"
-					}, this.SingleRateFactor)
-
-					global.ApplyBuff(_env, unit, {
-						duration = 30,
-						group = "LDYu_Unique",
-						timing = 4,
-						limit = 1,
-						tags = {
-							"NUMERIC",
-							"BUFF",
-							"DISPELLABLE",
-							"STEALABLE"
-						}
-					}, {
-						buffeft
-					})
+					global.DelayCall(_env, 700, global.ApplyHPDamage, _env.TARGET, real_damage)
 				else
-					local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, unit, this.HealRateFactor, 0)
-
-					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
+					global.ApplyHPRecovery(_env, unit, real_damage, false)
 
 					local buffeft2 = global.NumericEffect(_env, "+defrate", {
 						"+Normal",
@@ -776,7 +764,7 @@ all.Skill_LDYu_Unique_EX = {
 			end
 		end)
 		exec["@time"]({
-			2000
+			3000
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global

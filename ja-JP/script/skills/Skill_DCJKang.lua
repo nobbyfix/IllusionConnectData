@@ -261,7 +261,7 @@ all.Skill_DCJKang_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			1700
+			3000
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_DCJKang"
@@ -303,7 +303,7 @@ all.Skill_DCJKang_Unique = {
 			}, 100, "skill3"))
 		end)
 		exec["@time"]({
-			1500
+			2367
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -354,7 +354,7 @@ all.Skill_DCJKang_Unique = {
 			end
 		end)
 		exec["@time"]({
-			1700
+			2800
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -391,7 +391,7 @@ all.Skill_DCJKang_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			1700
+			3000
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_DCJKang"
@@ -433,7 +433,7 @@ all.Skill_DCJKang_Unique_EX = {
 			}, 100, "skill3"))
 		end)
 		exec["@time"]({
-			1500
+			2367
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -503,7 +503,7 @@ all.Skill_DCJKang_Unique_EX = {
 			end
 		end)
 		exec["@time"]({
-			1700
+			2800
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global

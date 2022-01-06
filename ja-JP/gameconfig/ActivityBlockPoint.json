@@ -40465,6 +40465,3272 @@
         ],
         "WipeExtraReward": ""
     },
+    "Re0E01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 70400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S01",
+        "EnemyMaster": "Re002P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_9",
+                "4": "Re0_Buff_Star4_1_9",
+                "5": "Re0_Buff_Star5_1_9",
+                "6": "Re0_Buff_Star6_1_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S01_Name",
+        "NextPoint": [
+            "Re0E01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0M01S09_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 81400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S02",
+        "EnemyMaster": "Re002P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_10",
+                "4": "Re0_Buff_Star4_1_10",
+                "5": "Re0_Buff_Star5_1_10",
+                "6": "Re0_Buff_Star6_1_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S02_Name",
+        "NextPoint": [
+            "Re0E01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "Re0M01S10_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 88000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S03",
+        "EnemyMaster": "Re002P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_11",
+                "4": "Re0_Buff_Star4_1_11",
+                "5": "Re0_Buff_Star5_1_11",
+                "6": "Re0_Buff_Star6_1_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S03_Name",
+        "NextPoint": [
+            "Re0E01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSuo",
+        "PointPicture": "",
+        "PointReward": "Re0M01S11_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S04": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "YSuo",
+                "id": "Re002P04protectN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 195300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S04",
+        "EnemyMaster": "Re002P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_12",
+                "4": "Re0_Buff_Star4_1_12",
+                "5": "Re0_Buff_Star5_1_12",
+                "6": "Re0_Buff_Star6_1_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S04_Name",
+        "NextPoint": [
+            "Re0E01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointPicture": "",
+        "PointReward": "Re0M01S12_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re002P04protectN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 55600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S05",
+        "EnemyMaster": "Re002P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_1",
+                "4": "Re0_Buff_Star4_2_1",
+                "5": "Re0_Buff_Star5_2_1",
+                "6": "Re0_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S05_Name",
+        "NextPoint": [
+            "Re0E01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0E01S01_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 71800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S06",
+        "EnemyMaster": "Re002P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_2",
+                "4": "Re0_Buff_Star4_2_2",
+                "5": "Re0_Buff_Star5_2_2",
+                "6": "Re0_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S06_Name",
+        "NextPoint": [
+            "Re0E01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "Re0E01S02_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S07": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "MGNa",
+                "id": "Re002P07protectN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 98700,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S07",
+        "EnemyMaster": "Re002P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_3",
+                "4": "Re0_Buff_Star4_2_3",
+                "5": "Re0_Buff_Star5_2_3",
+                "6": "Re0_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S07_Name",
+        "NextPoint": [
+            "Re0E01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointPicture": "",
+        "PointReward": "Re0E01S03_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re002P07protectN06"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0E01S08": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "YSuo",
+                "id": "Re002P08protectN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_8",
+        "Banner": "pic_guanqia2_02_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroE01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 114900,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M02S08",
+        "EnemyMaster": "Re002P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_4",
+                "4": "Re0_Buff_Star4_2_4",
+                "5": "Re0_Buff_Star5_2_4",
+                "6": "Re0_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroE01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroE01S08_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0E01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointPicture": "",
+        "PointReward": "Re0E01S04_PointReward",
+        "PointTime": {
+            "start": "2022-01-20 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re002P08protectN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S01": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 141800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S01",
+        "EnemyMaster": "Re003P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_5",
+                "4": "Re0_Buff_Star4_2_5",
+                "5": "Re0_Buff_Star5_2_5",
+                "6": "Re0_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S01_Name",
+        "NextPoint": [
+            "Re0H01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0E01S05_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S02": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "LEIMu",
+                "id": "Re003P02U04protect",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 163400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S02",
+        "EnemyMaster": "Re003P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_6",
+                "4": "Re0_Buff_Star4_2_6",
+                "5": "Re0_Buff_Star5_2_6",
+                "6": "Re0_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S02_Name",
+        "NextPoint": [
+            "Re0H01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0E01S06_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re003P02U04protect"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S03": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "AMLYa",
+                "id": "Re003P03protectN09",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 199000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S03",
+        "EnemyMaster": "Re003P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_7",
+                "4": "Re0_Buff_Star4_2_7",
+                "5": "Re0_Buff_Star5_2_7",
+                "6": "Re0_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S03_Name",
+        "NextPoint": [
+            "Re0H01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0E01S07_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re003P03protectN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 226000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S04",
+        "EnemyMaster": "Re003P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_8",
+                "4": "Re0_Buff_Star4_2_8",
+                "5": "Re0_Buff_Star5_2_8",
+                "6": "Re0_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S04_Name",
+        "NextPoint": [
+            "Re0H01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0E01S08_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S05": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 247500,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S05",
+        "EnemyMaster": "Re003P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S09_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_9",
+                "4": "Re0_Buff_Star4_2_9",
+                "5": "Re0_Buff_Star5_2_9",
+                "6": "Re0_Buff_Star6_2_9"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S05_Name",
+        "NextPoint": [
+            "Re0H01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_PDLa",
+        "PointPicture": "",
+        "PointReward": "Re0E01S09_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S09_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S06": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 298200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S06",
+        "EnemyMaster": "Re003P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S10_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_10",
+                "4": "Re0_Buff_Star4_2_10",
+                "5": "Re0_Buff_Star5_2_10",
+                "6": "Re0_Buff_Star6_2_10"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S06_Name",
+        "NextPoint": [
+            "Re0H01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_LDu",
+        "PointPicture": "",
+        "PointReward": "Re0E01S10_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S10_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 464400,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S07",
+        "EnemyMaster": "Re003P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S11_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_11",
+                "4": "Re0_Buff_Star4_2_11",
+                "5": "Re0_Buff_Star5_2_11",
+                "6": "Re0_Buff_Star6_2_11"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S07_Name",
+        "NextPoint": [
+            "Re0H01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0E01S11_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S11_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0H01S08": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "MTZMEShi",
+                "id": "Re003P08protectN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "ReZero_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroH01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 756000,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M03S08",
+        "EnemyMaster": "Re003P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0E01S12_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_2_12",
+                "4": "Re0_Buff_Star4_2_12",
+                "5": "Re0_Buff_Star5_2_12",
+                "6": "Re0_Buff_Star6_2_12"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroH01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroH01S08_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0H01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0E01S12_PointReward",
+        "PointTime": {
+            "start": "2022-01-24 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0E01S12_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 12
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 12
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re003P08protectN06"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S01": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "AMLYa",
+                "id": "Re001P01protect",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S01_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 4100,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S01",
+        "EnemyMaster": "Re001P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S01_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_1",
+                "4": "Re0_Buff_Star4_1_1",
+                "5": "Re0_Buff_Star5_1_1",
+                "6": "Re0_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S01_Name",
+        "NextPoint": [
+            "Re0M01S02"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_CLMan",
+        "PointPicture": "",
+        "PointReward": "Re0M01S01_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S01_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re001P01protect"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S02": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S02_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 11600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S02",
+        "EnemyMaster": "Re001P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S02_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_2",
+                "4": "Re0_Buff_Star4_1_2",
+                "5": "Re0_Buff_Star5_1_2",
+                "6": "Re0_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S02_Name",
+        "NextPoint": [
+            "Re0M01S03"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S01"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSuo",
+        "PointPicture": "",
+        "PointReward": "Re0M01S02_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S02_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_1",
+            "SpecialRule_Re0_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S03": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S03_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 20200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S03",
+        "EnemyMaster": "Re001P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S03_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_3",
+                "4": "Re0_Buff_Star4_1_3",
+                "5": "Re0_Buff_Star5_1_3",
+                "6": "Re0_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S03_Name",
+        "NextPoint": [
+            "Re0M01S04"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S02"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0M01S03_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S03_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S04": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S04_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 27600,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S04",
+        "EnemyMaster": "Re001P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S04_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_4",
+                "4": "Re0_Buff_Star4_1_4",
+                "5": "Re0_Buff_Star5_1_4",
+                "6": "Re0_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S04_Name",
+        "NextPoint": [
+            "Re0M01S05"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S03"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0M01S04_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S04_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S05": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "LEIMu",
+                "id": "Re001P05protectN09",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S05_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 36200,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S05",
+        "EnemyMaster": "Re001P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S05_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_5",
+                "4": "Re0_Buff_Star4_1_5",
+                "5": "Re0_Buff_Star5_1_5",
+                "6": "Re0_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S05_Name",
+        "NextPoint": [
+            "Re0M01S06"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S04"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_JNLong",
+        "PointPicture": "",
+        "PointReward": "Re0M01S05_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S05_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re001P05protectN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S06": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "LAMu",
+                "id": "Re001P06protectN04",
+                "pos": 4
+            },
+            {
+                "forbidid": "LEIMu",
+                "id": "Re001P06protectN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S06_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 44300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S06",
+        "EnemyMaster": "Re001P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S06_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_6",
+                "4": "Re0_Buff_Star4_1_6",
+                "5": "Re0_Buff_Star5_1_6",
+                "6": "Re0_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S06_Name",
+        "NextPoint": [
+            "Re0M01S07"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S05"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointPicture": "",
+        "PointReward": "Re0M01S06_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S06_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re001P06protectN04"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "Re001P06protectN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            },
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S07": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S07_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 53800,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S07",
+        "EnemyMaster": "Re001P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S07_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_7",
+                "4": "Re0_Buff_Star4_1_7",
+                "5": "Re0_Buff_Star5_1_7",
+                "6": "Re0_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S07_Name",
+        "NextPoint": [
+            "Re0M01S08"
+        ],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S06"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSuo",
+        "PointPicture": "",
+        "PointReward": "Re0M01S07_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S07_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Re0_Tittle_1",
+            "SpecialRule_Re0_Rule_1",
+            "SpecialRule_Re0_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "Re0M01S08": {
+        "AiRules": "",
+        "Assist": [],
+        "BGM": [
+            "Mus_Battle_Rezero",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_Sp04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDesc": "BlockPoint_ReZeroM01S08_BlockDesc",
+        "BlockDetailAuto": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": [],
+        "CombatNeed": 169168,
+        "CombatValue": 62300,
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Re0",
+        "CrystalReward": 0,
+        "Element": "",
+        "EnemyCard": "CardRe0M01S08",
+        "EnemyMaster": "Re001P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "Re0M01S08_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "AMLYa": "Hero_ABlock_AMLYa_Extra",
+            "LAMu": "Hero_ABlock_LAMu_Extra",
+            "LEIMu": "Hero_ABlock_LEIMu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "AMLYa": {
+                "3": "Re0_AMLYa_Buff_Star3",
+                "4": "Re0_AMLYa_Buff_Star4",
+                "5": "Re0_AMLYa_Buff_Star5",
+                "6": "Re0_AMLYa_Buff_Star6"
+            },
+            "LAMu": {
+                "3": "Re0_LAMu_Buff_Star3",
+                "4": "Re0_LAMu_Buff_Star4",
+                "5": "Re0_LAMu_Buff_Star5",
+                "6": "Re0_LAMu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LEIMu": {
+                "3": "Re0_Buff_Star3_1_8",
+                "4": "Re0_Buff_Star4_1_8",
+                "5": "Re0_Buff_Star5_1_8",
+                "6": "Re0_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "HiddenStory": "",
+        "IsSweep": 1,
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_ReZero_ExchangeItem",
+        "Map": "ReZeroM01",
+        "Master": "",
+        "Name": "BlockPoint_ReZeroM01S08_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "Re0M01S07"
+        ],
+        "PlayerCard": "",
+        "PointBoard": "",
+        "PointHead": "Model_YLMGZhu",
+        "PointPicture": "",
+        "PointReward": "Re0M01S08_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ReslutBoard": "",
+        "ShowItem": "Re0M01S08_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "",
+        "StaminaBack": {
+            "IR_ReZeroStamina": 6
+        },
+        "StaminaCost": {
+            "IR_ReZeroStamina": 6
+        },
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "SnowflackE01": {
         "AiRules": "",
         "Assist": [],

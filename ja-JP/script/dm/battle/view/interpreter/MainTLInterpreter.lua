@@ -218,6 +218,18 @@ function MainTLInterpreter:act_ShowMaster(action, args)
 	self._battleUIMediator:showMaster(friend, enemy)
 end
 
+function MainTLInterpreter:act_ShowMasterArea(action, args)
+	local enemy = args.enemy
+	local friend = args.friend
+	local mainPlayerId = self._context:getValue("CurMainPlayerId")
+
+	if friend.id ~= mainPlayerId then
+		self._battleUIMediator:showMaster(enemy, friend)
+	else
+		self._battleUIMediator:showMaster(friend, enemy)
+	end
+end
+
 function MainTLInterpreter:act_ShakeScreen(action, args)
 	local id = args.Id or 1
 	local duration = args.duration or 30

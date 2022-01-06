@@ -3683,6 +3683,64 @@
         "Type": 2,
         "Unlook": 1
     },
+    "Surface_GCZi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -54,
+                    1686
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -75,
+                    1437
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_GCZi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "GCZi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_GCZi",
+        "Name": "Surface_GCZi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_GLin_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -6285,9 +6343,9 @@
             }
         ],
         "Desc": "Surface_LSLTe_artist_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_LSLTe_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_LSLTe_2",
         "Hero": "LSLTe",
         "Link": "",
         "LongDesc": "Surface_LSLTe_artist_LongDecs",
@@ -6297,10 +6355,10 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
-        "Unlook": 0
+        "Type": 2,
+        "Unlook": 1
     },
     "Surface_LYSi_1": {
         "ActivityId": "",
@@ -10783,6 +10841,64 @@
         "Sort": 2,
         "Type": 3,
         "Unlook": 1
+    },
+    "Surface_WEDe_3": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -129,
+                    2528
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -111,
+                    2283
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_WEDe_tarot_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_WEDe_3_GainShort",
+        "GoodsId": "",
+        "Hero": "WEDe",
+        "Link": "",
+        "LongDesc": "Surface_WEDe_tarot_LongDesc",
+        "Model": "Model_WEDe_tarot",
+        "Name": "Surface_WEDe_tarot_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
     },
     "Surface_WLSTNCi_1": {
         "ActivityId": "",

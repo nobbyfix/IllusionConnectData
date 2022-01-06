@@ -1280,6 +1280,81 @@
         ],
         "Type": "NORMAL"
     },
+    "ReZeroE01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene04",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAE01_Name",
+        "StarBoxReward": {
+            "15": "Re0E01BOX02",
+            "24": "Re0E01BOX03",
+            "6": "Re0E01BOX01"
+        },
+        "SubPoint": [
+            "Re0E01S01",
+            "Re0E01S02",
+            "Re0E01S03",
+            "Re0E01S04",
+            "Re0E01S05",
+            "Re0E01S06",
+            "Re0E01S07",
+            "Re0E01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "ELITE"
+    },
+    "ReZeroH01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAH01_Name",
+        "StarBoxReward": {
+            "15": "Re0H01BOX02",
+            "24": "Re0H01BOX03",
+            "6": "Re0H01BOX01"
+        },
+        "SubPoint": [
+            "Re0H01S01",
+            "Re0H01S02",
+            "Re0H01S03",
+            "Re0H01S04",
+            "Re0H01S05",
+            "Re0H01S06",
+            "Re0H01S07",
+            "Re0H01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "HARD"
+    },
+    "ReZeroM01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAM01_Name",
+        "StarBoxReward": {
+            "15": "Re0M01BOX02",
+            "24": "Re0M01BOX03",
+            "6": "Re0M01BOX01"
+        },
+        "SubPoint": [
+            "Re0M01S01",
+            "Re0M01S02",
+            "Re0M01S03",
+            "Re0M01S04",
+            "Re0M01S05",
+            "Re0M01S06",
+            "Re0M01S07",
+            "Re0M01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "NORMAL"
+    },
     "RiddleM01": {
         "BGM": "Mus_Story_Detective_2",
         "Background": "Riddle_Scene02",

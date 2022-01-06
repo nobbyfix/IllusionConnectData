@@ -336,6 +336,41 @@ function all.ApplyRPDamage_ResultCheck(_env, actor, target, damage)
 		damage = 0
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Boots_15110_1")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "boots_15110_1")(_env, actor)
+		local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+			"+Normal",
+			"+Normal"
+		}, HurtRateFactor)
+
+		global.ApplyBuff(_env, global.FriendField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"COUNT",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			global.count
+		})
+		global.ApplyBuff(_env, target, {
+			duration = 3,
+			group = "boots_15110_1_count",
+			timing = 1,
+			limit = 3,
+			tags = {
+				"HURTRATEDOWN",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"NUMERIC",
+				"DEBUFF"
+			}
+		}, {
+			buffeft1
+		})
+	end
+
 	global.ApplyRPDamage(_env, target, damage)
 
 	local buff_rpdown = global.SpecialNumericEffect(_env, "+rpdown", {
@@ -733,10 +768,10 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 	end
 
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
-		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
-		damage.val = (1 + Factor * 0.05) * damage.val
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15110_1")) > 0 then
+		local ShieldBreak = global.SpecialPropGetter(_env, "accesory_15110_1")(_env, actor)
+		local Shield = global.UnitPropGetter(_env, "shield")(_env, target)
+		damage.val = damage.val + ShieldBreak * Shield
 	end
 
 	return damage
@@ -1034,12 +1069,6 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2_efc")) > 0 then
 		global.DispelBuff(_env, actor, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
 		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15111_2_efc"), 99)
-	end
-
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15115_3")) > 0 then
-		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local Factor = global.floor(_env, damage.val / global.UnitPropGetter(_env, "maxHp")(_env, actor) / 0.2)
-		damage.val = (1 + Factor * 0.05) * damage.val
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15120_2")) > 0 then
@@ -3800,7 +3829,7 @@ function all.ApplyAOEHPMultiDamage_ResultCheck(_env, actor, target, delays, dama
 	return global.MultiDelayCall(_env, delays, global.ApplyAOEHPDamageN, target, damages, actor, lowerLimit)
 end
 
-function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
+function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch)
 	local this = _env.this
 	local global = _env.global
 	local extrapetshealrate = global.SpecialPropGetter(_env, "extrapetshealrate")(_env, actor)
@@ -3910,10 +3939,10 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal)
 		global.ApplyRPRecovery(_env, target, BeCuredRage)
 	end
 
-	return global.ApplyHPRecovery(_env, target, heal)
+	return global.ApplyHPRecovery(_env, target, heal, switch)
 end
 
-function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor)
+function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor, switch)
 	local this = _env.this
 	local global = _env.global
 
@@ -3994,7 +4023,7 @@ function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor)
 		end
 	end
 
-	return global.ApplyHPRecovery(_env, target, heals[n])
+	return global.ApplyHPRecovery(_env, target, heals[n], switch)
 end
 
 function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals)

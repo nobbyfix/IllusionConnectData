@@ -381,6 +381,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(145, 143, 198, 255)
 		}
+	},
+	EightDays_Terror_Re = {
+		resFile = "asset/ui/ActivityTerrorLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(130, 130, 130, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {

@@ -8471,6 +8471,45 @@
             "slot": "Hero_Proud_FTLEShi"
         }
     },
+    "StarSE_GCZi_4": {
+        "Desc": "StarSE_GCZi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_GCZi_EX",
+            "before": "Hero_Unique_GCZi",
+            "slot": "Hero_Unique_GCZi"
+        }
+    },
+    "StarSE_GCZi_5": {
+        "Desc": "StarSE_GCZi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_GCZi_EX",
+            "before": "Hero_PBattle_GCZi",
+            "slot": "Hero_PBattle_GCZi"
+        }
+    },
+    "StarSE_GCZi_6": {
+        "Desc": "StarSE_GCZi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_GCZi_EX",
+            "before": "Hero_Proud_GCZi",
+            "slot": "Hero_Proud_GCZi"
+        }
+    },
     "StarSE_GLin_2": {
         "Desc": "StarSE_GLin_2_Desc",
         "EffectType": "CHANGESKILL",
