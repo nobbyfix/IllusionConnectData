@@ -1389,6 +1389,73 @@
         "UI": "BattlePassShop",
         "Version": ""
     },
+    "ActivityBattlePassShop_20220119": {
+        "ActivityConfig": {
+            "ModelId": "Model_SDTZ_Shop",
+            "ResourcesBanner": [
+                "IGM_BP_HighPoint"
+            ],
+            "buy": [
+                "Voice_SDTZi_71_4"
+            ],
+            "exchange": [
+                "HighPointGood_20220119_1",
+                "HighPointGood_20220119_2",
+                "HighPointGood_20220119_3",
+                "HighPointGood_20220119_4",
+                "HighPointGood_20220119_5",
+                "HighPointGood_20220119_6",
+                "HighPointGood_20220119_7",
+                "HighPointGood_20220119_8",
+                "HighPointGood_20220119_9",
+                "HighPointGood_20220119_10",
+                "HighPointGood_20220119_11",
+                "HighPointGood_20220119_12"
+            ],
+            "in": [
+                "Voice_SDTZi_71_1"
+            ],
+            "position": [
+                10,
+                -300
+            ],
+            "sold_out": [
+                "Voice_SDTZi_71_2"
+            ],
+            "zoom": [
+                0.41
+            ]
+        },
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93004,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-02-13 05:00:00",
+            "start": [
+                "2022-01-19 05:00:00",
+                "2022-02-13 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "EXCHANGE",
+        "UI": "BattlePassShop",
+        "Version": ""
+    },
     "ActivityBattlePass_20200714": {
         "ActivityConfig": {
             "Activity": [
@@ -2233,6 +2300,41 @@
             "start": [
                 "2021-12-19 05:00:00",
                 "2022-01-13 05:00:00"
+            ]
+        },
+        "Title": "ActivityBattlePass_20200914_Name",
+        "Type": "BattlePass",
+        "UI": "BattlePass",
+        "Version": ""
+    },
+    "ActivityBattlePass_20220119": {
+        "ActivityConfig": {
+            "Activity": [],
+            "ActivityBattlePass": "ActivityBattlePass_20220119"
+        },
+        "ClientCondition": {
+            "REGISTER": 22
+        },
+        "Desc": "ActivityBattlePass_20200914_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "ActivityBattlePass_Mail",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 93003,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-02-13 05:00:00",
+            "start": [
+                "2022-01-19 05:00:00",
+                "2022-02-13 05:00:00"
             ]
         },
         "Title": "ActivityBattlePass_20200914_Name",
@@ -12612,6 +12714,456 @@
         "UI": "ACTIVITYBLOCKMAP",
         "Version": ""
     },
+    "ActivityBlock_ReZero": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_ReZero_Map",
+                "ActivityBlock_ReZero_DailyTask",
+                "ActivityBlock_ReZero_AchieveMentTask"
+            ],
+            "ActivityStaminaId": "IR_ReZeroStamina",
+            "Bmg": "scene_main_rezero_1",
+            "BonusHero": [
+                "AMLYa",
+                "LAMu",
+                "LEIMu"
+            ],
+            "ButtonIcon": "rezero_btn_zy_dh",
+            "ButtonText": "ActivityBlock_ReZero_Exchange",
+            "EightDaysUrl": "view://ActivityView&id=EightDays_ReZero",
+            "ExchangeUrl": "view://ShopCoopExchangeView&activityId=ActivityBlock_ReZero_Exchange",
+            "JumpActivityId": "ActivityBlock_ReZero_Exchange",
+            "LoginActivity": "EightDays_ReZero",
+            "ModelId": [
+                {
+                    "desc": "AB_ReZero_Model_Desc1",
+                    "model": "AMLYa",
+                    "type": "Hero",
+                    "url": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_AMLYa"
+                },
+                {
+                    "desc": "AB_ReZero_Model_Desc2",
+                    "model": "LAMu",
+                    "type": "Hero",
+                    "url": "view://ShopCoopExchangeView&activityId=ActivityBlock_ReZero_Exchange"
+                },
+                {
+                    "desc": "AB_ReZero_Model_Desc3",
+                    "model": "LEIMu",
+                    "type": "Hero",
+                    "url": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LEIMu"
+                }
+            ],
+            "RedPointRelatedActivity": [
+                "ActivityBlock_ReZero_Exchange",
+                "EightDays_ReZero"
+            ],
+            "ResourcesBanner": [
+                "IR_ReZeroStamina",
+                "IM_ReZero_ExchangeItem",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_ReZero_RuleDesc_1",
+                "ActivityTotal_ReZero_RuleDesc_2",
+                "ActivityTotal_ReZero_RuleDesc_3",
+                "ActivityTotal_ReZero_RuleDesc_4",
+                "ActivityTotal_ReZero_RuleDesc_5"
+            ],
+            "SubActivityEndTip": "SubActivity_ReZero_AB_1st",
+            "SubActivityPassPointTip": "SubActivity_ReZero_AB_3st",
+            "SubActivityStartTip": "SubActivity_ReZero_AB_2st",
+            "SubActivityTip": "SubActivity_ReZero_AB_4st",
+            "SubActivityTip1": "SubActivity_ReZero_AB_5st",
+            "bgm": "Mus_Story_Rezero"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1112,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_ReZero_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYREZERO",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "ShowProgress": 1,
+            "entitle": "HalloweenAchieveMentTask_entitle",
+            "task": [
+                "ReZero_AchieveMentTask_01",
+                "ReZero_AchieveMentTask_02",
+                "ReZero_AchieveMentTask_03",
+                "ReZero_AchieveMentTask_04",
+                "ReZero_AchieveMentTask_05",
+                "ReZero_AchieveMentTask_06",
+                "ReZero_AchieveMentTask_07",
+                "ReZero_AchieveMentTask_08",
+                "ReZero_AchieveMentTask_09",
+                "ReZero_AchieveMentTask_10",
+                "ReZero_AchieveMentTask_11",
+                "ReZero_AchieveMentTask_12",
+                "ReZero_AchieveMentTask_13",
+                "ReZero_AchieveMentTask_14",
+                "ReZero_AchieveMentTask_15"
+            ],
+            "titleImg": "rezero_txt_renwu_bg2"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_ReZero_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1115,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_ReZero_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "ModelId": "Model_QTQCi",
+            "ModelIdOffset": {
+                "pos": [
+                    200,
+                    185
+                ],
+                "scale": 0.7
+            },
+            "entitle": "ABDailyTask_ReZero_entitle",
+            "task": [
+                "ReZero_DailyTask_01",
+                "ReZero_DailyTask_02",
+                "ReZero_DailyTask_03",
+                "ReZero_DailyTask_04",
+                "ReZero_DailyTask_05",
+                "ReZero_DailyTask_06"
+            ],
+            "titleImg": "rezero_txt_renwu_bg1"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_ReZero_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_ReZero_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_Exchange": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "ActivityBlock_ReZero_Buble_1",
+                "ActivityBlock_ReZero_Buble_2",
+                "ActivityBlock_ReZero_Buble_3",
+                "ActivityBlock_ReZero_Buble_4",
+                "ActivityBlock_ReZero_Buble_5"
+            ],
+            "ModelId": "Model_LAMu",
+            "ModelIdOffset": {
+                "pos": [
+                    200,
+                    185
+                ],
+                "scale": 0.7
+            },
+            "ResourceBanner": [
+                "IM_ReZero_ExchangeItem"
+            ],
+            "exchange": [
+                "ActivityBlock_ReZero_Exchange_1",
+                "ActivityBlock_ReZero_Exchange_2",
+                "ActivityBlock_ReZero_Exchange_3",
+                "ActivityBlock_ReZero_Exchange_4",
+                "ActivityBlock_ReZero_Exchange_5",
+                "ActivityBlock_ReZero_Exchange_6",
+                "ActivityBlock_ReZero_Exchange_7",
+                "ActivityBlock_ReZero_Exchange_8",
+                "ActivityBlock_ReZero_Exchange_9",
+                "ActivityBlock_ReZero_Exchange_10",
+                "ActivityBlock_ReZero_Exchange_11",
+                "ActivityBlock_ReZero_Exchange_12",
+                "ActivityBlock_ReZero_Exchange_13",
+                "ActivityBlock_ReZero_Exchange_14",
+                "ActivityBlock_ReZero_Exchange_15",
+                "ActivityBlock_ReZero_Exchange_16"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_ReZero_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1121,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_ReZero_Exchange_Title",
+        "Type": "EXCHANGE",
+        "UI": "NewExchange",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "ReZero_Stamina_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1117,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "ReZero_Stamina_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1116,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "ReZero_Stamina_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1118,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ReZero_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Elite": [
+                    "ReZeroE01"
+                ],
+                "Hard": [
+                    "ReZeroH01"
+                ],
+                "Normal": [
+                    "ReZeroM01"
+                ]
+            },
+            "BonusHero": [
+                "AMLYa",
+                "LAMu",
+                "LEIMu"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_ReZero_RuleDesc_1",
+                "ABMap_ReZero_RuleDesc_2",
+                "ABMap_ReZero_RuleDesc_3",
+                "ABMap_ReZero_RuleDesc_4",
+                "ABMap_ReZero_RuleDesc_5",
+                "ABMap_ReZero_RuleDesc_6",
+                "ABMap_ReZero_RuleDesc_7",
+                "ABMap_ReZero_RuleDesc_8",
+                "ABMap_ReZero_RuleDesc_9",
+                "ABMap_ReZero_RuleDesc_10"
+            ],
+            "ButtonIcon": "rezero_btn_zy_rukou_0",
+            "ResourcesBanner": [
+                "IR_ReZeroStamina",
+                "IM_ReZero_ExchangeItem",
+                "IR_Diamond"
+            ],
+            "ShowReward": "ShowReward_ReZero_ABR"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1113,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_ReZero_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
     "ActivityBlock_Riddle": {
         "ActivityConfig": {
             "Activity": [
@@ -13089,6 +13641,60 @@
         "Title": "ActivityBlock_Riddle_Map_Name",
         "Type": "ActivityBlockMap_New",
         "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
+    "ActivityBlock_SDTZi_DailyTask": {
+        "ActivityConfig": {
+            "IsTimeClose": 1,
+            "ModelId": "Model_SDTZi",
+            "TaskTopUI": "hd_txt_czzl",
+            "pos": [
+                300,
+                160
+            ],
+            "task": [
+                "Activity_SDTZiTask_1",
+                "Activity_SDTZiTask_2",
+                "Activity_SDTZiTask_3",
+                "Activity_SDTZiTask_4",
+                "Activity_SDTZiTask_5",
+                "Activity_SDTZiTask_6",
+                "Activity_SDTZiTask_7",
+                "Activity_SDTZiTask_8",
+                "Activity_SDTZiTask_9",
+                "Activity_SDTZiTask_10",
+                "Activity_SDTZiTask_11",
+                "Activity_SDTZiTask_12"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_YBYaTask_DailyTask_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_tmxh",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "Mail_YBYa_DailyTask_Activity",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1114,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-14 05:00:00",
+            "start": [
+                "2022-01-07 05:00:00",
+                "2022-01-14 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_YBYaTask_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "TaskElite",
         "Version": ""
     },
     "ActivityBlock_SRen_DailyTask": {
@@ -19114,6 +19720,108 @@
         "UI": "MINI_DARTS",
         "Version": ""
     },
+    "Activity_Darts_220115": {
+        "ActivityConfig": {
+            "DailyTask": [
+                "Activity_Darts_DailyTask_01",
+                "Activity_Darts_DailyTask_02",
+                "Activity_Darts_DailyTask_03",
+                "Activity_Darts_DailyTask_04"
+            ],
+            "DartsScore": "100",
+            "MiniGameConfig": {
+                "point": [
+                    "Stage1",
+                    "Stage2",
+                    "Stage3",
+                    "Stage4",
+                    "Stage5",
+                    "Stage6",
+                    "Stage7",
+                    "Stage8",
+                    "Stage9",
+                    "Stage10",
+                    "Stage11",
+                    "Stage12",
+                    "Stage13",
+                    "Stage14",
+                    "Stage15"
+                ],
+                "type": "DARTS"
+            },
+            "NinjaAccelerateTime": 0.8,
+            "NinjaRevertGapTime": 1,
+            "RuleDesc": [
+                "Activity_Darts_UI_13",
+                "Activity_Darts_UI_14",
+                "Activity_Darts_UI_15",
+                "Activity_Darts_UI_29"
+            ],
+            "Task": [
+                "Activity_Darts_Task_01",
+                "Activity_Darts_Task_02",
+                "Activity_Darts_Task_03",
+                "Activity_Darts_Task_04",
+                "Activity_Darts_Task_05"
+            ],
+            "buyLimit": 3,
+            "buyTimesCost": {
+                "amount": [
+                    30,
+                    50,
+                    100
+                ],
+                "id": "IR_Diamond"
+            },
+            "dailyTimes": 3,
+            "eachBuyNum": 1,
+            "maxReward": [
+                {
+                    "amount": 110,
+                    "id": "IR_Diamond"
+                },
+                {
+                    "amount": 320000,
+                    "id": "IR_Gold"
+                },
+                {
+                    "amount": 8,
+                    "id": "IHF_YFZZhu"
+                }
+            ],
+            "maxTimes": 3,
+            "maximumShow": 200
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Activity_DartsDarts_NewOpen_31_36_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Darts",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 95008,
+        "ShowTab": 2,
+        "Tag": "NEW",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-19 05:00:00",
+            "start": [
+                "2022-01-15 05:00:00",
+                "2022-01-19 05:00:00"
+            ]
+        },
+        "Title": "Activity_Darts_Name",
+        "Type": "MINIGAME",
+        "UI": "MINI_DARTS",
+        "Version": ""
+    },
     "Activity_Gashapon_20200727": {
         "ActivityConfig": {
             "Gashapon": "Gashapon_1st_01",
@@ -19286,6 +19994,81 @@
         "Title": "Activity_Jump_Name",
         "Type": "MINIGAME",
         "UI": "MINI_JUMP",
+        "Version": ""
+    },
+    "Activity_Jump_20220109": {
+        "ActivityConfig": {
+            "DailyTask": [
+                "Activity_Jump_DailyTask_1",
+                "Activity_Jump_DailyTask_2",
+                "Activity_Jump_DailyTask_3",
+                "Activity_Jump_DailyTask_4"
+            ],
+            "JumpScore": "100",
+            "MiniGameConfig": {
+                "point": [
+                    "MiniJumpPoint1"
+                ],
+                "type": "JUMP"
+            },
+            "RuleDesc": [
+                "Activity_Jump_Rule_1",
+                "Activity_Jump_Rule_2",
+                "Activity_Jump_Rule_3"
+            ],
+            "Task": [
+                "Activity_Jump_Task_1",
+                "Activity_Jump_Task_2",
+                "Activity_Jump_Task_3",
+                "Activity_Jump_Task_4",
+                "Activity_Jump_Task_5"
+            ],
+            "dailyTimes": 3,
+            "maxReward": [
+                {
+                    "amount": 110,
+                    "id": "IR_Diamond"
+                },
+                {
+                    "amount": 320000,
+                    "id": "IR_Gold"
+                },
+                {
+                    "amount": 8,
+                    "id": "IHF_BQDShe"
+                }
+            ],
+            "maxTimes": 3,
+            "maximumShow": 200
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "Activity_Jump_NewOpen_31_36_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Jump",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 95009,
+        "ShowTab": 2,
+        "Tag": "NEW",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-13 05:00:00",
+            "start": [
+                "2022-01-09 05:00:00",
+                "2022-01-13 05:00:00"
+            ]
+        },
+        "Title": "Activity_Jump_Name",
+        "Type": "MINIGAME",
+        "UI": "MINI_Jump",
         "Version": ""
     },
     "Activity_Puzzle_211016": {
@@ -22653,6 +23436,127 @@
         "UI": "COOPERATEBOSS",
         "Version": ""
     },
+    "CooperateBoss_20220107": {
+        "ActivityConfig": {
+            "BossList": {
+                "CooperateBoss_SDTZi": 1
+            },
+            "ExchangeID": "CooperateBoss_Exchange_20220107",
+            "LV": [
+                "CooperateBoss_20220107_1",
+                "CooperateBoss_20220107_2",
+                "CooperateBoss_20220107_3",
+                "CooperateBoss_20220107_4",
+                "CooperateBoss_20220107_5",
+                "CooperateBoss_20220107_6",
+                "CooperateBoss_20220107_7",
+                "CooperateBoss_20220107_8",
+                "CooperateBoss_20220107_9",
+                "CooperateBoss_20220107_10",
+                "CooperateBoss_20220107_11",
+                "CooperateBoss_20220107_12",
+                "CooperateBoss_20220107_13",
+                "CooperateBoss_20220107_14",
+                "CooperateBoss_20220107_15",
+                "CooperateBoss_20220107_16",
+                "CooperateBoss_20220107_17",
+                "CooperateBoss_20220107_18",
+                "CooperateBoss_20220107_19",
+                "CooperateBoss_20220107_20",
+                "CooperateBoss_20220107_21",
+                "CooperateBoss_20220107_22",
+                "CooperateBoss_20220107_23",
+                "CooperateBoss_20220107_24",
+                "CooperateBoss_20220107_25",
+                "CooperateBoss_20220107_26",
+                "CooperateBoss_20220107_27",
+                "CooperateBoss_20220107_28",
+                "CooperateBoss_20220107_29",
+                "CooperateBoss_20220107_30",
+                "CooperateBoss_20220107_31",
+                "CooperateBoss_20220107_32",
+                "CooperateBoss_20220107_33",
+                "CooperateBoss_20220107_34",
+                "CooperateBoss_20220107_35",
+                "CooperateBoss_20220107_36",
+                "CooperateBoss_20220107_37",
+                "CooperateBoss_20220107_38",
+                "CooperateBoss_20220107_39",
+                "CooperateBoss_20220107_40",
+                "CooperateBoss_20220107_41",
+                "CooperateBoss_20220107_42",
+                "CooperateBoss_20220107_43",
+                "CooperateBoss_20220107_44",
+                "CooperateBoss_20220107_45",
+                "CooperateBoss_20220107_46",
+                "CooperateBoss_20220107_47",
+                "CooperateBoss_20220107_48",
+                "CooperateBoss_20220107_49",
+                "CooperateBoss_20220107_50",
+                "CooperateBoss_20220107_51",
+                "CooperateBoss_20220107_52",
+                "CooperateBoss_20220107_53",
+                "CooperateBoss_20220107_54",
+                "CooperateBoss_20220107_55",
+                "CooperateBoss_20220107_56",
+                "CooperateBoss_20220107_57",
+                "CooperateBoss_20220107_58",
+                "CooperateBoss_20220107_59",
+                "CooperateBoss_20220107_60",
+                "CooperateBoss_20220107_61",
+                "CooperateBoss_20220107_62",
+                "CooperateBoss_20220107_63",
+                "CooperateBoss_20220107_64",
+                "CooperateBoss_20220107_65",
+                "CooperateBoss_20220107_66",
+                "CooperateBoss_20220107_67",
+                "CooperateBoss_20220107_68",
+                "CooperateBoss_20220107_69",
+                "CooperateBoss_20220107_70"
+            ],
+            "Revelry": [
+                "IR_CooperateBoss_Revelry",
+                10
+            ],
+            "RevelryList": {
+                "CooperateBossMain_1": 7,
+                "CooperateBossMain_2": 1
+            },
+            "Tigger": [
+                "IR_CooperateBoss_Normal",
+                50
+            ],
+            "TiggerItem": "IR_CooperateBoss_Normal",
+            "TiggerItemAwaken": "IR_CooperateBoss_Awaken"
+        },
+        "ClientCondition": "",
+        "Desc": "COOPERATEBOSS_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_CooperateBoss",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 11,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE_TOP",
+        "TimeFactor": {
+            "end": "2022-01-15 05:00:00",
+            "start": [
+                "2022-01-07 05:00:00",
+                "2022-01-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "COOPERATEBOSS",
+        "UI": "COOPERATEBOSS",
+        "Version": ""
+    },
     "CooperateBoss_Exchange_20200109": {
         "ActivityConfig": {
             "BubleDesc": [
@@ -24029,6 +24933,65 @@
         "UI": "NewExchange",
         "Version": ""
     },
+    "CooperateBoss_Exchange_20220107": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "CooperateBoss_Exchange_BBD_1",
+                "CooperateBoss_Exchange_BBD_2",
+                "CooperateBoss_Exchange_BBD_3",
+                "CooperateBoss_Exchange_BBD_4",
+                "CooperateBoss_Exchange_BBD_5"
+            ],
+            "ModelId": "Model_SDTZi",
+            "ModelIdOffset": {
+                "pos": [
+                    200,
+                    125
+                ],
+                "scale": 0.8
+            },
+            "ResourceBanner": [
+                "IR_CooperateBoss"
+            ],
+            "exchange": [
+                "CooperateBoss_Exchange_20220107_1",
+                "CooperateBoss_Exchange_20220107_2",
+                "CooperateBoss_Exchange_20220107_3",
+                "CooperateBoss_Exchange_20220107_4",
+                "CooperateBoss_Exchange_20220107_5",
+                "CooperateBoss_Exchange_20220107_6",
+                "CooperateBoss_Exchange_20220107_7",
+                "CooperateBoss_Exchange_20220107_8"
+            ]
+        },
+        "ClientCondition": "",
+        "Desc": "CooperateBoss_Exchange_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1121,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-15 05:00:00",
+            "start": [
+                "2022-01-08 05:00:00",
+                "2022-01-15 05:00:00"
+            ]
+        },
+        "Title": "CooperateBoss_Exchange_Name",
+        "Type": "EXCHANGE",
+        "UI": "NewExchange",
+        "Version": ""
+    },
     "Day1Activity": {
         "ActivityConfig": {
             "img": "Carnival_bg_1",
@@ -24856,7 +25819,7 @@
             "drawhero": [
                 "CZheng",
                 "KTSJKe",
-                "LCYShi",
+                "SDTZi",
                 "MTZMEShi"
             ]
         },
@@ -25255,6 +26218,48 @@
             "start": [
                 "2021-09-08 05:00:00",
                 "2021-09-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_AMLYa_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_AMLYa",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_AMLYa",
+            "VANISH": 0,
+            "drawhero": [
+                "AMLYa",
+                "BEr",
+                "MTZMEShi",
+                "XSMLi"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-24 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-24 05:00:00"
             ]
         },
         "Title": "",
@@ -26123,6 +27128,48 @@
             "start": [
                 "2021-03-09 05:00:00",
                 "2021-03-17 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_1UP_LEIMu_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_LEIMu",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_LEIMu",
+            "VANISH": 0,
+            "drawhero": [
+                "LEIMu",
+                "BBLMa",
+                "SDTZi",
+                "KTSJKe"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-24 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-24 05:00:00"
             ]
         },
         "Title": "",
@@ -27300,6 +28347,48 @@
         "UI": "",
         "Version": ""
     },
+    "DrawCard_1UP_WSLi_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_1UP_WSLi",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_WSLi",
+            "VANISH": 0,
+            "drawhero": [
+                "WSLi",
+                "LCYShi",
+                "MGNa",
+                "YBYa"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-16 05:00:00",
+            "start": [
+                "2022-01-09 05:00:00",
+                "2022-01-16 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
     "DrawCard_1UP_XBKLDi_Activity": {
         "ActivityConfig": {
             "DRAW": "DrawCard_1UP_XBKLDi",
@@ -28021,6 +29110,86 @@
         "TimeFactor": {
             "end": 28,
             "start": 22
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_BQDSheYXNMei_20210106_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_BQDSheYXNMei_20210106",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_BQDSheYXNMei_20210106",
+            "VANISH": 0,
+            "drawhero": [
+                "BQDShe",
+                "YXNMei"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-16 05:00:00",
+            "start": [
+                "2022-01-09 05:00:00",
+                "2022-01-16 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_LSLTeYLSBai_20210106_2_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_LSLTeYLSBai_20210106",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_LSLTeYLSBai_20210106",
+            "VANISH": 0,
+            "drawhero": [
+                "LSLTe",
+                "YLSBai"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-24 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-24 05:00:00"
+            ]
         },
         "Title": "",
         "Type": "DRAWCARDOPEN",
@@ -31069,6 +32238,82 @@
         "UI": "SPDAILYTASK",
         "Version": ""
     },
+    "DrawCard_SP_SSQXin_20220109_Activity": {
+        "ActivityConfig": {
+            "Activity": [
+                "DrawCard_SP_SSQXin_20220109_Activity_Daily"
+            ],
+            "DRAW": "DrawCard_SP_SSQXin_20220109_Up",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_SP_SSQXin_20220109_Up",
+            "VANISH": 0,
+            "timereward": 0
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-16 05:00:00",
+            "start": [
+                "2022-01-07 05:00:00",
+                "2022-01-16 05:00:00"
+            ]
+        },
+        "Title": "DrawCard_SP_SSQXin_Activity_Name",
+        "Type": "DRAWCARDSP",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_SP_SSQXin_20220109_Activity_Daily": {
+        "ActivityConfig": {
+            "task": [
+                "DrawCard_SP_SSQXin_20220109_Activity_Task"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 105,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-10 05:00:00",
+            "start": [
+                "2022-01-07 05:00:00",
+                "2022-01-10 05:00:00"
+            ]
+        },
+        "Title": "DrawCard_SP_SSQXin_Activity_Daily_Name",
+        "Type": "TASK",
+        "UI": "SPDAILYTASK",
+        "Version": ""
+    },
     "DrawCard_SP_SSQXin_Activity": {
         "ActivityConfig": {
             "Activity": [
@@ -32764,6 +34009,60 @@
         "UI": "Login",
         "Version": ""
     },
+    "EightDays_20220108": {
+        "ActivityConfig": {
+            "ActivityDesc": "Login14_Desc",
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "showHero": "ALSi",
+            "specailDay": [
+                6,
+                8
+            ],
+            "task": [
+                "EightDays_20220108_1",
+                "EightDays_20220108_2",
+                "EightDays_20220108_3",
+                "EightDays_20220108_4",
+                "EightDays_20220108_5",
+                "EightDays_20220108_6",
+                "EightDays_20220108_7",
+                "EightDays_20220108_8"
+            ],
+            "title": [
+                "hd_bg_bt_5"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ljdl_bg",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-18 05:00:00",
+            "start": [
+                "2022-01-08 05:00:00",
+                "2022-01-18 05:00:00"
+            ]
+        },
+        "Title": "Login14_Title",
+        "Type": "TASK",
+        "UI": "Login",
+        "Version": ""
+    },
     "EightDays_Animal": {
         "ActivityConfig": {
             "GetRewardClose": 1,
@@ -33731,6 +35030,90 @@
         "Title": "EightDays_Snowflake_Name",
         "Type": "TASK",
         "UI": "EightLoginCommon",
+        "Version": ""
+    },
+    "EightDays_ReZero": {
+        "ActivityConfig": {
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "bmg": "rezero_img_14qd_ljdl",
+            "cellBgImg": [
+                "rezero_btn_14qd_ldj",
+                "rezero_btn_14qd_ld_j",
+                "rezero_btn_14qd_ld_wxz",
+                "rezero_btn_14qd_ld_xz",
+                "rezero_btn_14qd_ld_ylq"
+            ],
+            "cellTitleImg": "musicfestival_btn_14qd_ldi",
+            "descTxt": "Activity_ReZero_Supply_Tips",
+            "showHero": [
+                {
+                    "anim": "0",
+                    "modelId": "Model_LAMu",
+                    "pos": {
+                        "x": "250",
+                        "y": "190"
+                    },
+                    "scale": "0.85"
+                },
+                {
+                    "anim": "0",
+                    "modelId": "Model_LEIMu",
+                    "pos": {
+                        "x": "360",
+                        "y": "190"
+                    },
+                    "scale": "0.85"
+                }
+            ],
+            "specailDay": [
+                4,
+                7,
+                10
+            ],
+            "task": [
+                "ReZero_Login_01",
+                "ReZero_Login_02",
+                "ReZero_Login_03",
+                "ReZero_Login_04",
+                "ReZero_Login_05",
+                "ReZero_Login_06",
+                "ReZero_Login_07",
+                "ReZero_Login_08",
+                "ReZero_Login_09",
+                "ReZero_Login_10"
+            ],
+            "titleImg": "rezero_img_14qd_biaoti",
+            "titleTxt": "EightDays_ReZero_Name"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_Login_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "rezero_btn_14qd_anniu",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_EightDays_ReZero",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1120,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-28 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-28 05:00:00"
+            ]
+        },
+        "Title": "EightDays_ReZero_Name",
+        "Type": "TASK",
+        "UI": "Login14",
         "Version": ""
     },
     "EightDays_Riddle": {
@@ -35346,6 +36729,46 @@
             ]
         },
         "Title": "FestivalLimitPack_dusk_Name",
+        "Type": "TPURCHASE",
+        "UI": "FESTIVALPACKAGE",
+        "Version": ""
+    },
+    "FestivalPackage_rezero": {
+        "ActivityConfig": {
+            "PackType": "rezero",
+            "TimePurchaseId": [
+                "PackageShop_LimitPack_rezero_1",
+                "PackageShop_LimitPack_rezero_2",
+                "PackageShop_LimitPack_rezero_3"
+            ],
+            "UIBG": "jqtd_txt_bjmnzl_di"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 999,
+        "ShowTab": 0,
+        "Tag": "RECOMMEND",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-24 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-24 05:00:00"
+            ]
+        },
+        "Title": "FestivalLimitPack_rezero_Name",
         "Type": "TPURCHASE",
         "UI": "FESTIVALPACKAGE",
         "Version": ""
@@ -38384,6 +39807,122 @@
         "UI": "REWARDPOINTS",
         "Version": ""
     },
+    "Reward_Points_LEIMu": {
+        "ActivityConfig": {
+            "ActivityPic": "hd_bg_hkhb",
+            "Circulate": [
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                },
+                {
+                    "Reward_Points_LEIMu_13": 600
+                }
+            ],
+            "Delay": 691200,
+            "DrawCard": [
+                "DrawCard_1UP_LEIMu"
+            ],
+            "DrawCardActivity": [
+                "DrawCard_1UP_LEIMu_Activity"
+            ],
+            "RuleTranslate": [
+                "Dream_Feedback_RuleDesc_1",
+                "Dream_Feedback_RuleDesc_2",
+                "Dream_Feedback_RuleDesc_3"
+            ],
+            "TaskReward": [
+                {
+                    "Reward_Points_LEIMu_1": 100
+                },
+                {
+                    "Reward_Points_LEIMu_2": 200
+                },
+                {
+                    "Reward_Points_LEIMu_3": 300
+                },
+                {
+                    "Reward_Points_LEIMu_4": 400
+                },
+                {
+                    "Reward_Points_LEIMu_5": 500
+                },
+                {
+                    "Reward_Points_LEIMu_6": 600
+                },
+                {
+                    "Reward_Points_LEIMu_7": 700
+                },
+                {
+                    "Reward_Points_LEIMu_8": 800
+                },
+                {
+                    "Reward_Points_LEIMu_9": 900
+                },
+                {
+                    "Reward_Points_LEIMu_10": 1000
+                },
+                {
+                    "Reward_Points_LEIMu_11": 1100
+                },
+                {
+                    "Reward_Points_LEIMu_12": 1200
+                }
+            ],
+            "Transfor": {},
+            "WinPoint": 10
+        },
+        "ClientCondition": "",
+        "Desc": "Reward_Points_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_mjhk",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Reward_Points",
+        "Primary": 1,
+        "Reset": "",
+        "ServerCondition": "",
+        "ShowIndex": 11,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-24 05:00:00",
+            "start": [
+                "2022-01-16 05:00:00",
+                "2022-01-24 05:00:00"
+            ]
+        },
+        "Title": "Reward_Points_LEIMu_Name",
+        "Type": "REWARDPOINTS",
+        "UI": "REWARDPOINTS",
+        "Version": ""
+    },
     "Reward_Points_LEMHou": {
         "ActivityConfig": {
             "ActivityPic": "hd_bg_hkhb",
@@ -39080,6 +40619,122 @@
             ]
         },
         "Title": "Reward_Points_SSBYa_Name",
+        "Type": "REWARDPOINTS",
+        "UI": "REWARDPOINTS",
+        "Version": ""
+    },
+    "Reward_Points_WSLi": {
+        "ActivityConfig": {
+            "ActivityPic": "hd_bg_hkhb",
+            "Circulate": [
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                },
+                {
+                    "Reward_Points_WSLi_13": 600
+                }
+            ],
+            "Delay": 604800,
+            "DrawCard": [
+                "DrawCard_1UP_WSLi"
+            ],
+            "DrawCardActivity": [
+                "DrawCard_1UP_WSLi_Activity"
+            ],
+            "RuleTranslate": [
+                "Dream_Feedback_RuleDesc_1",
+                "Dream_Feedback_RuleDesc_2",
+                "Dream_Feedback_RuleDesc_3"
+            ],
+            "TaskReward": [
+                {
+                    "Reward_Points_WSLi_1": 100
+                },
+                {
+                    "Reward_Points_WSLi_2": 200
+                },
+                {
+                    "Reward_Points_WSLi_3": 300
+                },
+                {
+                    "Reward_Points_WSLi_4": 400
+                },
+                {
+                    "Reward_Points_WSLi_5": 500
+                },
+                {
+                    "Reward_Points_WSLi_6": 600
+                },
+                {
+                    "Reward_Points_WSLi_7": 700
+                },
+                {
+                    "Reward_Points_WSLi_8": 800
+                },
+                {
+                    "Reward_Points_WSLi_9": 900
+                },
+                {
+                    "Reward_Points_WSLi_10": 1000
+                },
+                {
+                    "Reward_Points_WSLi_11": 1100
+                },
+                {
+                    "Reward_Points_WSLi_12": 1200
+                }
+            ],
+            "Transfor": {},
+            "WinPoint": 10
+        },
+        "ClientCondition": "",
+        "Desc": "Reward_Points_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_mjhk",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Activity_Reward_Points",
+        "Primary": 1,
+        "Reset": "",
+        "ServerCondition": "",
+        "ShowIndex": 11,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-01-16 05:00:00",
+            "start": [
+                "2022-01-09 05:00:00",
+                "2022-01-16 05:00:00"
+            ]
+        },
+        "Title": "Reward_Points_WSLi_Name",
         "Type": "REWARDPOINTS",
         "UI": "REWARDPOINTS",
         "Version": ""

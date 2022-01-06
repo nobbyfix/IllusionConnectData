@@ -56,12 +56,7 @@ GameDefaultLanguage = GameLanguageType.CN
 GameDefaultSetLanguage = GameLanguageType.EN
 GameSupportLanguage = {
 	GameLanguageType.EN,
-	GameLanguageType.CN,
-	GameLanguageType.FR,
-	GameLanguageType.DE,
-	GameLanguageType.TH,
-	GameLanguageType.ES,
-	GameLanguageType.PT
+	GameLanguageType.CN
 }
 
 local function isSupportLanguage(language)
@@ -95,6 +90,10 @@ end
 function getCurrentLanguage()
 	local lang = cc.UserDefault:getInstance():getStringForKey("GAME_LOCAL_SETTING_LANGUAGE")
 
+	if lang ~= GameLanguageType.CN then
+		lang = GameLanguageType.EN
+	end
+
 	return lang
 end
 
@@ -105,6 +104,10 @@ function getCurrentLanguageForRes()
 end
 
 function setCurrentLanguage(lang)
+	if lang ~= GameLanguageType.CN then
+		lang = GameLanguageType.EN
+	end
+
 	cc.UserDefault:getInstance():setStringForKey("GAME_LOCAL_SETTING_LANGUAGE", lang)
 	cc.UserDefault:getInstance():setStringForKey("GAME_SETTING_LANGUAGE", lang)
 

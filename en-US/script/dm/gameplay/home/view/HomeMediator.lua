@@ -3870,6 +3870,14 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(50, 60),
 			imgpos = cc.p(40, 60)
 		},
+		[ActivityType_UI.kActivityZero] = {
+			animZorder = 2,
+			img = "knight_btn_zjm_rukou.png",
+			anim = "weiguang_qishiweiguang",
+			imgZorder = 1,
+			aimpos = cc.p(39, 39),
+			imgpos = cc.p(46, 35)
+		},
 		[ActivityType_UI.KActivityFemale] = {
 			animZorder = 1,
 			img = "female_btn_zjm_rukou.png",
@@ -3884,6 +3892,14 @@ function HomeMediator:setComplexActivityEntry()
 			anim = "zhu_beimouzhujiemianrukou",
 			imgZorder = 2,
 			aimpos = cc.p(39, 39),
+			imgpos = cc.p(46, 35)
+		},
+		[ActivityType_UI.kActivityReZero] = {
+			animZorder = 1,
+			img = "rezero_btn_zjm_rukou.png",
+			anim = "fukou_tubiao_clkaishieff",
+			imgZorder = 2,
+			aimpos = cc.p(45, 35),
 			imgpos = cc.p(46, 35)
 		},
 		[ActivityType_UI.KActivityDeepSea] = {

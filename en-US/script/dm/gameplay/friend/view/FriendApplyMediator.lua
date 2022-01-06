@@ -250,6 +250,21 @@ function FriendApplyMediator:refreshCell(cell, index)
 	mapButtonHandlerClick(nil, refuseBtn, {
 		func = refuseCallFunc
 	})
+
+	local function cellCallFunc(sender, eventType)
+		local beganPos = sender:getTouchBeganPosition()
+		local endPos = sender:getTouchEndPosition()
+
+		if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
+			self:getPushFriendInfo(friendData)
+		end
+	end
+
+	cell:setTouchEnabled(true)
+	cell:setSwallowTouches(false)
+	mapButtonHandlerClick(nil, cell, {
+		func = cellCallFunc
+	})
 end
 
 function FriendApplyMediator:onClickAllAgree(sender, eventType)
@@ -280,4 +295,47 @@ end
 
 function FriendApplyMediator:onClickFind(sender, eventType)
 	self._mediator:changeTabView(kFriendType.kFind)
+end
+
+function FriendApplyMediator:getPushFriendInfo(data)
+	if not data then
+		return
+	end
+
+	local friendSystem = self:getFriendSystem()
+
+	local function gotoView(response)
+		local record = BaseRankRecord:new()
+
+		record:synchronize({
+			headImage = data:getHeadId(),
+			headFrame = data:getHeadFrame(),
+			rid = data:getRid(),
+			level = data:getLevel(),
+			nickname = data:getNickName(),
+			vipLevel = data:getVipLevel(),
+			combat = data:getCombat(),
+			slogan = data:getSlogan(),
+			master = data:getMaster(),
+			heroes = data:getHeroes(),
+			clubName = data:getUnionName(),
+			online = data:getOnline() == ClubMemberOnLineState.kOnline,
+			lastOfflineTime = data:getLastOfflineTime(),
+			isFriend = response.isFriend,
+			block = response.block,
+			close = response.close,
+			gender = data:getGender(),
+			city = data:getCity(),
+			birthday = data:getBirthday(),
+			tags = data:getTags(),
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
+		})
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record, "friendApply")
+	end
+
+	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
+		gotoView(response)
+	end)
 end

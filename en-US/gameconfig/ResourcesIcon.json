@@ -307,6 +307,23 @@
         "Shine": "",
         "Sicon": "icon_zuanshiquanEX"
     },
+    "IM_DiamondDraw_ReZero": {
+        "Desc": "IM_DiamondDraw_ReZero_FunctionDesc",
+        "LargeIcons": [
+            "IM_DiamondDrawUnion_1"
+        ],
+        "Licon": "IM_DiamondDrawUnion_1",
+        "Name": "IM_DiamondDraw_ReZero_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_DiamondDrawUnion_2"
+    },
     "IM_DiamondDraw_UR": {
         "Desc": "IM_DiamondDraw_UR_FunctionDesc",
         "LargeIcons": [
@@ -763,7 +780,8 @@
         "Resource": [
             "IR_Arena_1",
             "IR_PetRace",
-            "IR_Arena_2"
+            "IR_Arena_2",
+            "IR_Arena_3"
         ],
         "Segmentation": [
             1
@@ -1471,6 +1489,23 @@
         ],
         "Shine": "",
         "Sicon": "ico_m_pvecoin_2"
+    },
+    "IR_ReZeroStamina": {
+        "Desc": "IR_ReZeroStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_rezero_stamina_1"
+        ],
+        "Licon": "ico_m_rezero_stamina_1",
+        "Name": "IR_ReZeroStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_rezero_stamina_2"
     },
     "IR_RiddleStamina": {
         "Desc": "IR_RiddleStamina_FunctionDesc",

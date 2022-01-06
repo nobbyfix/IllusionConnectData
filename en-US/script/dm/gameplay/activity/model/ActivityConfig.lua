@@ -23,6 +23,7 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.activity.model.zero.ActivityZero")
 require("dm.gameplay.activity.model.PuzzleGameActivity")
 require("dm.gameplay.cooperateBoss.model.CooperateBoss")
 require("dm.gameplay.activity.model.return.ActivityReturn")
@@ -91,6 +92,7 @@ ActivityModel = {
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
 	[ActivityType.KTPURCHASE] = ActivityTpurchase,
 	[ActivityType.KMiniGame] = MiniGameActivity,
+	[ActivityType.kActivityZero] = ActivityZero,
 	[ActivityType.KPuzzleGame] = PuzzleGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
 	[ActivityType.KLetter] = ActivityReturnLetter,
@@ -109,11 +111,12 @@ ActivityUI = {
 	Exchange = "ActivityExchangeView",
 	Login_Halloween = "LoginActivityWsjView",
 	Carnival = "CarnivalView",
-	Community = "CommunityActivityView",
+	ZERODAILYTASK = "ActivityZeroTaskDailyView",
 	Login_Detective = "LoginActivityView",
 	Login_Holiday = "LoginActivityView",
 	Login_Music = "LoginActivityView",
 	Login14 = "ActivityLogin14CommonView",
+	Community = "CommunityActivityView",
 	Task = "TaskActivityView",
 	FreeStamina = "FreeStaminaActivityView",
 	ABACHIEVEMENTTASK = "ActivityTaskAchievementView",
@@ -123,6 +126,7 @@ ActivityUI = {
 	Questionnaire = "QuestionActivityView",
 	ABDAILYTASK = "ActivityTaskDailyView",
 	ExtraRewardBoard = "ExtraRewardActivityView",
+	ZEROACHIEVEMENTTASK = "ActivityZeroTaskAchievementView",
 	[ActivityType.KEightLogin] = "eightDayLoginView",
 	[ActivityType.KEightLoginCommon] = "commonEightDayLoginView",
 	[ActivityType.KTASKMONTHCARD] = "ActivityTaskMonthCardView",
@@ -170,8 +174,10 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivityKnightMainView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySunflowerMainView",
 		[ActivityType_UI.KActivityFire] = "ActivityFireMainView",
+		[ActivityType_UI.kActivityZero] = "ActivityZeroMainView",
 		[ActivityType_UI.KActivityFemale] = "ActivityFemaleMainView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityStoryBookMainView",
+		[ActivityType_UI.kActivityReZero] = "ActivityReZeroMainView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityDeepSeaMainView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySummerReMainView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityFireWorksMainView",
@@ -202,8 +208,10 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivitySunflower] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFire] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityZero] = "ActivityZeroeMapView",
 		[ActivityType_UI.KActivityFemale] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivitySagaSupportMapView",
+		[ActivityType_UI.kActivityReZero] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivitySagaSupportMapView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityMapNewView",
@@ -238,10 +246,12 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityKnight] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySunflower] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFire] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityZero] = "ActivityBlockZeroTaskView",
 		[ActivityType_UI.KActivityFemale] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityDeepSea] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityStoryBook] = "ActivityBlockTaskView",
+		[ActivityType_UI.kActivityReZero] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySummerRe] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFireWorks] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityTerror] = "ActivityBlockTaskView",
@@ -311,6 +321,9 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 233, 133, 255)
 		}
+	},
+	EightDays_ReZero = {
+		resFile = "asset/ui/ActivityReZeroLogin14.csb"
 	},
 	EightDays_StoryBook = {
 		resFile = "asset/ui/ActivityStoryBookLogin14.csb",
@@ -547,6 +560,20 @@ ActivityMainMapTitleConfig = {
 		[ActivityType_UI.KActivityDrama] = {
 			name = "fubenrukou_gudianxijufuben",
 			position = cc.p(175, 140)
+		},
+		[ActivityType_UI.kActivityReZero] = {
+			{
+				"rukou_1_clkaishieff",
+				cc.p(109, 70)
+			},
+			{
+				"rukou_2_clkaishieff",
+				cc.p(109, 70)
+			},
+			{
+				"rukou_3_clkaishieff",
+				cc.p(78, 140)
+			}
 		}
 	}
 }

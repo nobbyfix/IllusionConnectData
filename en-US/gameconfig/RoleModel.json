@@ -1305,17 +1305,35 @@
         "Bust7": "Bust7_AMLYa",
         "Bust8": "Bust8_AMLYa",
         "Bust9": "Bust9_AMLYa",
-        "BustAwake": "",
+        "BustAwake": [
+            84,
+            -308
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            245,
+            -351
+        ],
+        "BustTemp2": [
+            245,
+            -369
+        ],
+        "BustTemp3": [
+            245,
+            -369
+        ],
+        "BustTemp4": [
+            245,
+            -369
+        ],
+        "BustTemp5": [
+            245,
+            -369
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_amlya",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "portrait_amlya",
         "HeadMain": "HeadMain_AMLYa",
         "Height": 200,
         "Hero": "AMLYa",
@@ -1324,8 +1342,8 @@
         "MasterHeadWide": "",
         "Model": "amlya",
         "Name": "HeroBase_Name_AMLYa",
-        "Path": "",
-        "PicType": "",
+        "Path": 2,
+        "PicType": 2,
         "Portrait": "Portraitpic_AMLYa",
         "SVPText": "SVPText_AMLYa",
         "SkillRange": "AllUnit_Word",
@@ -1357,8 +1375,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 0.7,
+        "bustZoom": 0.78
     },
     "Model_ATSheng": {
         "Animation": "AnTuSheng",
@@ -10821,7 +10839,7 @@
         "Model": "xlte_wvt",
         "Name": "HeroBase_Name_FEMSi",
         "Path": 2,
-        "PicType": 2,
+        "PicType": 3,
         "Portrait": "Portraitpic_FEMSi",
         "SVPText": "SVPText_FEMSi",
         "SkillRange": "AllUnit_Word",
@@ -12041,6 +12059,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.77,
         "bustZoom": 0.77
+    },
+    "Model_GCZi": {
+        "Animation": "xhe",
+        "BattlePosition": "HeroBase_BattlePosition_GCZi",
+        "BattleShow": "",
+        "Bust1": "Bust1_GCZi",
+        "Bust10": "Bust10_GCZi",
+        "Bust11": "Bust11_GCZi",
+        "Bust12": "Bust12_GCZi",
+        "Bust13": "Bust13_GCZi",
+        "Bust14": "Bust14_GCZi",
+        "Bust15": "Bust15_GCZi",
+        "Bust16": "",
+        "Bust2": "Bust2_GCZi",
+        "Bust3": "Bust3_GCZi",
+        "Bust4": "Bust4_GCZi",
+        "Bust5": "Bust5_GCZi",
+        "Bust6": "Bust6_GCZi",
+        "Bust7": "Bust7_GCZi",
+        "Bust8": "Bust8_GCZi",
+        "Bust9": "Bust9_GCZi",
+        "BustAwake": [
+            -79,
+            -393
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -63,
+            -658
+        ],
+        "BustTemp2": [
+            -53,
+            -658
+        ],
+        "BustTemp3": [
+            -53,
+            -658
+        ],
+        "BustTemp4": [
+            -53,
+            -658
+        ],
+        "BustTemp5": [
+            -53,
+            -658
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_xhe",
+        "DeathVoice": "",
+        "Filename": "portrait_xhe",
+        "HeadMain": "HeadMain_GCZi",
+        "Height": 200,
+        "Hero": "GCZi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_GCZi",
+        "MasterHeadWide": "",
+        "Model": "xhe",
+        "Name": "HeroBase_Name_GCZi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_GCZi",
+        "SVPText": "SVPText_GCZi",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "GCZi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_GCZi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_GCZi"
+        ],
+        "TruthBubble": [
+            "Truth_GCZi_1",
+            "Truth_GCZi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.52,
+        "bustZoom": 0.7
     },
     "Model_GJMYan": {
         "Animation": "",
@@ -15878,17 +15989,35 @@
         "Bust7": "Bust7_LAMu",
         "Bust8": "Bust8_LAMu",
         "Bust9": "Bust9_LAMu",
-        "BustAwake": "",
+        "BustAwake": [
+            169,
+            -237
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            347,
+            -205
+        ],
+        "BustTemp2": [
+            347,
+            -220
+        ],
+        "BustTemp3": [
+            347,
+            -220
+        ],
+        "BustTemp4": [
+            347,
+            -220
+        ],
+        "BustTemp5": [
+            347,
+            -220
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_lamu",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "portrait_lamu",
         "HeadMain": "HeadMain_LAMu",
         "Height": 200,
         "Hero": "LAMu",
@@ -15897,8 +16026,8 @@
         "MasterHeadWide": "",
         "Model": "lamu",
         "Name": "HeroBase_Name_LAMu",
-        "Path": "",
-        "PicType": "",
+        "Path": 2,
+        "PicType": 2,
         "Portrait": "Portraitpic_LAMu",
         "SVPText": "SVPText_LAMu",
         "SkillRange": "AllUnit_Word",
@@ -15930,8 +16059,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 0.72,
+        "bustZoom": 0.75
     },
     "Model_LCYShi": {
         "Animation": "LiChaYiShi",
@@ -16818,17 +16947,35 @@
         "Bust7": "Bust7_LEIMu",
         "Bust8": "Bust8_LEIMu",
         "Bust9": "Bust9_LEIMu",
-        "BustAwake": "",
+        "BustAwake": [
+            199,
+            -239
+        ],
         "BustAwake2": "",
-        "BustTemp1": "",
-        "BustTemp2": "",
-        "BustTemp3": "",
-        "BustTemp4": "",
-        "BustTemp5": "",
+        "BustTemp1": [
+            359,
+            -207
+        ],
+        "BustTemp2": [
+            359,
+            -222
+        ],
+        "BustTemp3": [
+            359,
+            -222
+        ],
+        "BustTemp4": [
+            359,
+            -222
+        ],
+        "BustTemp5": [
+            359,
+            -222
+        ],
         "CommonResource": "",
         "CutIn": "CutIn_leimu",
         "DeathVoice": "",
-        "Filename": "",
+        "Filename": "portrait_leimu",
         "HeadMain": "HeadMain_LEIMu",
         "Height": 200,
         "Hero": "LEIMu",
@@ -16837,8 +16984,8 @@
         "MasterHeadWide": "",
         "Model": "leimu",
         "Name": "HeroBase_Name_LEIMu",
-        "Path": "",
-        "PicType": "",
+        "Path": 2,
+        "PicType": 2,
         "Portrait": "Portraitpic_LEIMu",
         "SVPText": "SVPText_LEIMu",
         "SkillRange": "SingleUnit_Word",
@@ -16870,8 +17017,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": ""
+        "bustAwakeZoom": 0.72,
+        "bustZoom": 0.75
     },
     "Model_LEMHou": {
         "Animation": "kxyuan",
@@ -28057,6 +28204,183 @@
         "bustAwakeZoom": 0.76,
         "bustZoom": 0.82
     },
+    "Model_SP_SSQXin_Awake": {
+        "Animation": "sp_xmlhui",
+        "BattlePosition": "HeroBase_BattlePosition_SP_SSQXin",
+        "BattleShow": "",
+        "Bust1": "Bust1_SP_SSQXin_Awake",
+        "Bust10": "Bust10_SP_SSQXin_Awake",
+        "Bust11": "Bust11_SP_SSQXin_Awake",
+        "Bust12": "Bust12_SP_SSQXin_Awake",
+        "Bust13": "Bust13_SP_SSQXin_Awake",
+        "Bust14": "Bust14_SP_SSQXin_Awake",
+        "Bust15": "Bust15_SP_SSQXin_Awake",
+        "Bust16": "",
+        "Bust2": "Bust2_SP_SSQXin_Awake",
+        "Bust3": "Bust3_SP_SSQXin_Awake",
+        "Bust4": "Bust4_SP_SSQXin_Awake",
+        "Bust5": "Bust5_SP_SSQXin_Awake",
+        "Bust6": "Bust6_SP_SSQXin_Awake",
+        "Bust7": "Bust7_SP_SSQXin_Awake",
+        "Bust8": "Bust8_SP_SSQXin_Awake",
+        "Bust9": "Bust9_SP_SSQXin_Awake",
+        "BustAwake": [
+            -148,
+            -238
+        ],
+        "BustAwake2": [
+            97,
+            -176
+        ],
+        "BustTemp1": [
+            -539,
+            -717
+        ],
+        "BustTemp2": [
+            -539,
+            -717
+        ],
+        "BustTemp3": [
+            -539,
+            -717
+        ],
+        "BustTemp4": [
+            -539,
+            -717
+        ],
+        "BustTemp5": [
+            -539,
+            -717
+        ],
+        "CommonResource": "",
+        "CutIn": "Portraitpic_SP_SSQXin_Awake",
+        "DeathVoice": "",
+        "Filename": "portrait_sp_xmlhui_awaken",
+        "HeadMain": "HeadMain_SP_SSQXin_Awake",
+        "Height": 200,
+        "Hero": "SP_SSQXin",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_SP_SSQXin",
+        "MasterHeadWide": "",
+        "Model": "sp_xmlhui",
+        "Name": "HeroBase_Name_SP_SSQXin",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_SP_SSQXin_Awake",
+        "SVPText": "SVPText_SP_SSQXin",
+        "SkillRange": "ColUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "SP_SSQXin",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_SP_SSQXin",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_kezhi"
+        ],
+        "TruthBubble": [
+            "Truth_SP_SSQXin_1",
+            "Truth_SP_SSQXin_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.36,
+        "bustZoom": 0.65
+    },
+    "Model_SP_SSQXin_UnAwake": {
+        "Animation": "",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": [
+            -191,
+            -300
+        ],
+        "BustAwake2": [
+            55,
+            -239
+        ],
+        "BustTemp1": [
+            -615,
+            -829
+        ],
+        "BustTemp2": [
+            -615,
+            -829
+        ],
+        "BustTemp3": [
+            -615,
+            -829
+        ],
+        "BustTemp4": [
+            -615,
+            -829
+        ],
+        "BustTemp5": [
+            -615,
+            -830
+        ],
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "portrait_sp_xmlhui_awakelock",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "SP_SSQXin",
+        "HpTierCount": "",
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "sp_xmlhui",
+        "Name": "HeroBase_Name_SP_SSQXin",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_SP_SSQXin_UnAwake",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": "",
+        "SoundVoiceCondition": "",
+        "SoundVoiceText": "",
+        "Tag": "",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": "",
+        "Type": "",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.36,
+        "bustZoom": 0.65
+    },
     "Model_SP_SSQXin_single": {
         "Animation": "",
         "BattlePosition": "",
@@ -38889,6 +39213,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.92,
         "bustZoom": 1.06
+    },
+    "Model_WEDe_tarot": {
+        "Animation": "kmer_tarot",
+        "BattlePosition": "HeroBase_BattlePosition_WEDe",
+        "BattleShow": "",
+        "Bust1": "Bust1_WEDe_tarot",
+        "Bust10": "Bust10_WEDe_tarot",
+        "Bust11": "Bust11_WEDe_tarot",
+        "Bust12": "Bust12_WEDe_tarot",
+        "Bust13": "Bust13_WEDe_tarot",
+        "Bust14": "Bust14_WEDe_tarot",
+        "Bust15": "Bust15_WEDe_tarot",
+        "Bust16": "Bust16_WEDe_tarot",
+        "Bust2": "Bust2_WEDe_tarot",
+        "Bust3": "Bust3_WEDe_tarot",
+        "Bust4": "Bust4_WEDe_tarot",
+        "Bust5": "Bust5_WEDe_tarot",
+        "Bust6": "Bust6_WEDe_tarot",
+        "Bust7": "Bust7_WEDe_tarot",
+        "Bust8": "Bust8_WEDe_tarot",
+        "Bust9": "Bust9_WEDe_tarot",
+        "BustAwake": [
+            -263,
+            -732
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -378,
+            -1254
+        ],
+        "BustTemp2": [
+            -358,
+            -1273
+        ],
+        "BustTemp3": [
+            -374,
+            -1273
+        ],
+        "BustTemp4": [
+            -385,
+            -1273
+        ],
+        "BustTemp5": [
+            -385,
+            -1273
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_kmer_tarot",
+        "DeathVoice": "",
+        "Filename": "portrait_kmer_tarot",
+        "HeadMain": "HeadMain_WEDe_tarot",
+        "Height": 200,
+        "Hero": "WEDe",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_WEDe",
+        "MasterHeadWide": "",
+        "Model": "kmer_tarot",
+        "Name": "HeroBase_Name_WEDe",
+        "Path": 2,
+        "PicType": 3,
+        "Portrait": "Portraitpic_WEDe",
+        "SVPText": "SVPText_WEDe",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "WEDe",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_WEDe",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_fanshang"
+        ],
+        "TruthBubble": [
+            "Truth_WEDe_1",
+            "Truth_WEDe_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.48,
+        "bustZoom": 0.7
     },
     "Model_WJGZhu": {
         "Animation": "WoJuGongZhu",

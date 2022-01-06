@@ -1956,11 +1956,11 @@ function BattleUIMediator:flyBallToCard(role, idxInSlot)
 	end
 end
 
-function BattleUIMediator:adjustCardBuff(idxInSlot)
+function BattleUIMediator:adjustCardBuff(idxInSlot, anim)
 	local card = self._cardArray:getCardAtIndex(idxInSlot)
 
 	if card then
-		card:playAddBuffAnim()
+		card:playAddBuffAnim(anim)
 	end
 end
 

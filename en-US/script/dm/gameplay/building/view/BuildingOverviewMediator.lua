@@ -127,6 +127,7 @@ function BuildingOverviewMediator:setupView()
 	self._node_tip = self._mainPanel:getChildByFullName("Node_Tip")
 
 	self._node_tip:setVisible(false)
+	self._node_tip:getChildByFullName("Node_3.Image_94"):loadTexture("asset/items/IM_ExpUp1.png")
 
 	local buildListNode = self._mainPanel:getChildByFullName("Node_buildList")
 

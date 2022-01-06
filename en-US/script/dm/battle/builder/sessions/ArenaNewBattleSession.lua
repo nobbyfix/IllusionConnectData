@@ -33,6 +33,7 @@ function ArenaNewBattleSession:getBattleSimulator()
 	function delegate.battleStart(battleContext)
 		local friend = self._integralBattleData.playerData
 		local friend_ = {
+			id = friend.rid,
 			leadStageLevel = friend.leadStageLevel,
 			leadStageId = friend.leadStageId,
 			waves = {
@@ -45,6 +46,7 @@ function ArenaNewBattleSession:getBattleSimulator()
 		}
 		local enemy = self._integralBattleData.enemyData
 		local enemy_ = {
+			id = enemy.rid,
 			leadStageLevel = enemy.leadStageLevel,
 			leadStageId = enemy.leadStageId,
 			waves = {
@@ -58,7 +60,7 @@ function ArenaNewBattleSession:getBattleSimulator()
 		local processRecorder = battleContext:getObject("BattleRecorder")
 		local currentFrame = processRecorder:getCurrentFrame()
 
-		processRecorder:recordEventAtFrame(kBRMainLine, 40, "ShowMaster", {
+		processRecorder:recordEventAtFrame(kBRMainLine, 40, "ShowMasterArea", {
 			friend = friend_,
 			enemy = enemy_
 		})

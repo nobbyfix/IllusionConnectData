@@ -834,7 +834,13 @@ function BattleRoleObject:addBuff(args)
 				end, isFixPos, fixOrder[buffModel.Id])
 			end
 
-			local displayNode = addEffect(buffModel.Effect, buffModel.Invisible == 2 and "cover" or "front")
+			local addToLayer = buffModel.Invisible == 2 and "cover" or "front"
+
+			if buffModel.zOrder and buffModel.zOrder <= 0 then
+				addToLayer = "back"
+			end
+
+			local displayNode = addEffect(buffModel.Effect, addToLayer)
 
 			displayNode:setVisible(false)
 

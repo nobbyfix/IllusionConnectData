@@ -367,6 +367,12 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"从零活动",
+				{
+					"重置副本mapId"
+				}
+			},
+			{
 				"音频测试",
 				{
 					"战斗音频",
@@ -820,6 +826,10 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"重置副本mapId",
+				"ZeroMapReset"
+			},
+			{
 				"投飞镖：设置关卡",
 				"ChangeDartsLevel"
 			},
@@ -1134,7 +1144,8 @@ DebugBoxMainIndex = {
 			"DebugAddLeadStageLevel",
 			"DebugNewArenaSetUpRank",
 			"DebugRTPKScore",
-			"ChangeTask"
+			"ChangeTask",
+			"ZeroMapReset"
 		}
 
 		for k, v in pairs(requireNameMap) do

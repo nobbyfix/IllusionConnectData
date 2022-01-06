@@ -455,7 +455,8 @@ function BuildingAfkGiftMediator:onClickTab(name, tag)
 		local mediator = self:getMediatorMap():retrieveMediator(view)
 
 		mediator:enterWithData({
-			heroId = self._heroId
+			heroId = self._heroId,
+			mediator = self
 		})
 	elseif tag == 2 then
 		self._bustBtn:setVisible(true)

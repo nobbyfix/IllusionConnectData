@@ -129,6 +129,7 @@ function ActivityCommonMainMediator:onRegister()
 	self._starAddImg:setVisible(false)
 
 	if self._loginBtn then
+		self._teamBtn:setVisible(false)
 		self._loginBtn:setTouchEnabled(true)
 		self._loginBtn:addTouchEventListener(function (sender, eventType)
 			if eventType == ccui.TouchEventType.ended then
@@ -391,10 +392,6 @@ function ActivityCommonMainMediator:initInfo()
 
 	if self._activityConfig.ButtonText then
 		text:setString(Strings:get(self._activityConfig.ButtonText))
-	end
-
-	if self._activity:getUI() ~= ActivityType_UI.KActivityFemale then
-		self._teamBtn:setVisible(false)
 	end
 
 	local redPoint = self._teamBtn:getChildByName("redPoint")

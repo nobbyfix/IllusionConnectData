@@ -506,9 +506,28 @@ function RecruitMainMediator:onClickTab(name, tag)
 	local id = self._recruitData[tag]:getType()
 	local currencyInfoData = self._currencyInfos[id] or self._currencyInfo
 	local currencyInfo = {}
+	local costId = self._recruitData[tag]:getCouponId()
+	local tag = false
+	local goldIdx = 1
 
 	for i = #currencyInfoData, 1, -1 do
 		currencyInfo[#currencyInfoData - i + 1] = currencyInfoData[i]
+
+		if costId == currencyInfoData[i] then
+			tag = true
+		end
+
+		if currencyInfoData[i] == "IR_Gold" then
+			goldIdx = #currencyInfoData - i + 1
+		end
+	end
+
+	if not tag then
+		if #currencyInfo >= 4 then
+			currencyInfo[goldIdx] = costId
+		else
+			currencyInfo[#currencyInfo + 1] = costId
+		end
 	end
 
 	local config_ = {

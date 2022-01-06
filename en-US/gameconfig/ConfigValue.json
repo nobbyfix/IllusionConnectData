@@ -2693,6 +2693,14 @@
             "DrawCardDiamond_TimesRewardRule3"
         ]
     },
+    "DrawCardEX_ReZero_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_ReZero_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
     "DrawCardEX_SinglePrice": {
         "clz": "int",
         "content": 400
@@ -2736,6 +2744,10 @@
                 400,
                 400
             ],
+            "IM_DiamondDraw_ReZero": [
+                400,
+                400
+            ],
             "IM_DiamondDraw_UR": [
                 400,
                 400
@@ -2772,6 +2784,13 @@
                 "Zuohe_DrawCard_UI1",
                 "UITitle_EN_Zhaohuanzhizhengbuzu",
                 "Zuohe_DrawCard_UI2"
+            ],
+            "IM_DiamondDraw_ReZero": [
+                "RecruitAutoBuyCardEx",
+                "Recruit_UI_5",
+                "Recruit_UI_4",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_6"
             ],
             "IM_DiamondDraw_UR": [
                 "RecruitAutoBuyCardUR",
@@ -4045,7 +4064,8 @@
             "BHTZi",
             "AMLBLTe",
             "XLDBLTe",
-            "SGBao"
+            "SGBao",
+            "GCZi"
         ]
     },
     "HeroStar_BoxNum": {
@@ -9999,6 +10019,26 @@
         "clz": "dict",
         "content": {
             "Effect": "jian_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhen": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhefazhen",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhendazhao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhedazhaofazhen",
             "EffectPos": 5,
             "Loop": 1,
             "Priority": null,

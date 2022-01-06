@@ -45,6 +45,13 @@ local timeLimitShopConfig = {
 	storybook = {
 		TimeOutLineColor = cc.c4b(187, 1, 1, 255)
 	},
+	rezero = {
+		CellBuyEndImg = "jqtd_img_bjmnzl_jldih.png",
+		CellBuyImg = "jqtd_img_bjmnzl_jldi.png",
+		BG = "jqtd_txt_bjmnzl_di",
+		TimeOutLineColor = cc.c4b(84, 1, 187, 255),
+		CellNameColor = cc.c4b(160, 193, 247, 255)
+	},
 	xide = {
 		BG = "jqtd_txt_typl_di",
 		TimeOutLineColor = cc.c4b(186, 51, 20, 255)
@@ -101,6 +108,11 @@ local timeLimitShopConfig = {
 		CellBuyEndImg = "jqtd_img_ysmlzl_jldih.png",
 		CellNameOpacity = 255,
 		CellNameColor = cc.c4b(190, 177, 241, 255)
+	},
+	rezero = {
+		CellBuyImg = "jqtd_img_bjmnzl_jldi.png",
+		CellBuyEndImg = "jqtd_img_bjmnzl_jldih.png",
+		CellNameColor = cc.c4b(160, 193, 247, 255)
 	}
 }
 local btnHandlers = {

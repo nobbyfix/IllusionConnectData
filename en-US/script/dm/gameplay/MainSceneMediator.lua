@@ -59,6 +59,9 @@ local muiscCfg = {
 	ActivityFemaleMainView = {
 		noAutoPlay = true
 	},
+	ActivityReZeroMainView = {
+		noAutoPlay = true
+	},
 	ActivityStoryBookMainView = {
 		noAutoPlay = true
 	},

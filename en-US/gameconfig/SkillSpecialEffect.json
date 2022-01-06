@@ -8510,6 +8510,45 @@
             "slot": "Hero_Proud_FTLEShi"
         }
     },
+    "StarSE_GCZi_4": {
+        "Desc": "StarSE_GCZi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_GCZi_EX",
+            "before": "Hero_Unique_GCZi",
+            "slot": "Hero_Unique_GCZi"
+        }
+    },
+    "StarSE_GCZi_5": {
+        "Desc": "StarSE_GCZi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_GCZi_EX",
+            "before": "Hero_PBattle_GCZi",
+            "slot": "Hero_PBattle_GCZi"
+        }
+    },
+    "StarSE_GCZi_6": {
+        "Desc": "StarSE_GCZi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_GCZi_EX",
+            "before": "Hero_Proud_GCZi",
+            "slot": "Hero_Proud_GCZi"
+        }
+    },
     "StarSE_GLin_2": {
         "Desc": "StarSE_GLin_2_Desc",
         "EffectType": "CHANGESKILL",
@@ -11017,6 +11056,32 @@
             "after": "Hero_Proud_SP_SSQXin_EX",
             "before": "Hero_Proud_SP_SSQXin",
             "slot": "Hero_Proud_SP_SSQXin"
+        }
+    },
+    "StarSE_SP_SSQXin_Awake": {
+        "Desc": "StarSE_SP_SSQXin_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SP_SSQXin_Awaken",
+            "before": "Hero_PBattle_SP_SSQXin_EX",
+            "slot": "Hero_PBattle_SP_SSQXin"
+        }
+    },
+    "StarSE_SP_SSQXin_Awake_Show": {
+        "Desc": "",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": 1,
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SP_SSQXin_Awaken_Show",
+            "before": "Hero_Unique_SP_SSQXin_EX",
+            "slot": "Hero_Unique_SP_SSQXin"
         }
     },
     "StarSE_SRen_4": {
