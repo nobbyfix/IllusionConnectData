@@ -616,7 +616,16 @@ function ClubMapViewMediator:tryEnterClubBoss()
 		return
 	end
 
-	local function func()
+	local function func(response)
+		if self._clubSystem:getClubBoss():getIsRestState() then
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("Error_11466")
+			}))
+
+			return
+		end
+
 		local view = self:getInjector():getInstance("ClubBossView")
 		local data = {
 			viewType = ClubHallType.kBoss
