@@ -78,6 +78,9 @@ ClubBoss:has("_name", {
 ClubBoss:has("_monsterHpAddRate", {
 	is = "r"
 })
+ClubBoss:has("_isRestState", {
+	is = "rw"
+})
 
 function ClubBoss:initialize()
 	super.initialize(self)

@@ -89,6 +89,7 @@ function ClubBossMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH_HURTREWARD, self, self.onDoRefrshHurtReward)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_RESET_DONE, self, self.doReset)
 end
 
 function ClubBossMediator:enterWithData(data)
@@ -1942,13 +1943,23 @@ end
 function ClubBossMediator:doReset(event)
 	local data = event:getData()
 
-	if data and (data[ResetId.kClubBlockTimesReset] or data[ResetId.kClubBlockReset]) then
+	local function goHomeView()
 		if DisposableObject:isDisposed(self) then
 			return
 		end
 
 		self:stopTimer()
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+	end
+
+	if self._clubSystem:getClubBoss():getIsRestState() then
+		goHomeView()
+
+		return
+	end
+
+	if data and (data[ResetId.kClubBlockTimesReset] or data[ResetId.kClubBlockReset]) then
+		goHomeView()
 	end
 
 	return false

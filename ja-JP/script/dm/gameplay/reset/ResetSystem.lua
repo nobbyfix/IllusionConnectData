@@ -73,6 +73,7 @@ ResetId = {
 	kMapDailyRewardReset = "MapDailyRewardReset",
 	kCrystalStageReset = "BlockSp_Crystal",
 	kRecruitGoldFree = "DrawCard_GoldFree",
+	kClubDonationTimes = "Club_Donation_Times",
 	kMonthCard = "MonthCardReset",
 	kClubBlockReset = "ClubBlock_Reset",
 	kMonthSignIn = "CheckIn_Reset",
@@ -117,6 +118,7 @@ local DoResetMap = {
 	[ResetId.kBattlePass_ClubTask] = "ActivitySystem",
 	[ResetId.kBattlePass_DailyTask] = "ActivitySystem",
 	[ResetId.kRTPKReset] = "RTPKSystem",
+	[ResetId.kClubDonationTimes] = "ClubSystem",
 	[ResetId.kChessArenaReset] = "ArenaNewSystem"
 }
 

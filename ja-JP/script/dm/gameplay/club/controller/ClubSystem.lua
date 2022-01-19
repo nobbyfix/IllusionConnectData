@@ -1671,6 +1671,10 @@ function ClubSystem:doReset(resetId, value, data)
 		self._enterClubBossBattle = false
 		self._clubBossKilled = false
 	end
+
+	self:requestClubBossInfo(function ()
+		self:dispatch(Event:new(EVT_CLUBBOSS_RESET_DONE))
+	end)
 end
 
 function ClubSystem:setClubSnsInfo(url, key, func)
@@ -1795,6 +1799,16 @@ function ClubSystem:requestClubBossInfo(func, refresh, viewType)
 
 	clubService:requestClubBossInfo(data, true, function (response)
 		if response.resCode == GS_SUCCESS then
+			if response.data.ErrorCode and response.data.ErrorCode == 11466 then
+				self:getClubBoss(viewType):setIsRestState(true)
+				self:dispatch(Event:new(EVT_HOMEVIEW_REDPOINT_REF, {
+					showRedPoint = -1,
+					type = 4
+				}))
+			else
+				self:getClubBoss(viewType):setIsRestState(false)
+			end
+
 			local data = response.data
 
 			self:synchronizeClubBoss(data.boss, type, data.score)
@@ -2436,6 +2450,12 @@ function ClubSystem:hasHomeRedPoint()
 	local hasJoinClub = self:getHasJoinClub()
 
 	if hasJoinClub == false then
+		return false
+	end
+
+	local isRest = self:getClubBoss():getIsRestState()
+
+	if isRest then
 		return false
 	end
 
