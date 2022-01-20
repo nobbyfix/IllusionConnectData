@@ -449,7 +449,7 @@ all.Skill_SP_PNCao_Passive = {
 				local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
-					global.InheritCard(_env, card, RoleModel[num])
+					global.InheritCard(_env, card, RoleModel[num + 1])
 				end
 			end
 		end)
@@ -972,7 +972,7 @@ all.Skill_SP_PNCao_Passive_EX = {
 				local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
-					global.InheritCard(_env, card, RoleModel[num])
+					global.InheritCard(_env, card, RoleModel[num + 1])
 				end
 			end
 		end)

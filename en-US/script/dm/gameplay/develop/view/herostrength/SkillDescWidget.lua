@@ -39,7 +39,8 @@ function SkillDescWidget:initSubviews(view)
 	self._nextPanel = nextPanel
 end
 
-function SkillDescWidget:refreshInfo(skill, role, isMaster)
+function SkillDescWidget:refreshInfo(skill, role, isMaster, tipHeight)
+	self._maxHeight = tipHeight or 500
 	self._role = role
 	self._isMaster = isMaster
 	local infoNode = self._skillTipPanel:getChildByFullName("infoNode")
@@ -296,7 +297,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	height = height + 110
 
-	if KMaxHeight < height then
+	if self._maxHeight < height then
 		if not self._listView then
 			local listView = ccui.ListView:create()
 
@@ -305,7 +306,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 			self._listView = listView
 
-			self._listView:setContentSize(cc.size(432, KMaxHeight - 100))
+			self._listView:setContentSize(cc.size(432, self._maxHeight - 100))
 		end
 
 		local layout = ccui.Layout:create()
@@ -314,8 +315,8 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		desc:changeParent(layout):posite(0, 0)
 		self._listView:removeAllChildren()
 		self._listView:pushBackCustomItem(layout)
-		bg:setContentSize(cc.size(432, KMaxHeight))
-		infoNode:setPositionY(KMaxHeight - 90)
+		bg:setContentSize(cc.size(432, self._maxHeight))
+		infoNode:setPositionY(self._maxHeight - 90)
 	else
 		desc:changeParent(self._skillTipPanel):posite(13, 18)
 		bg:setContentSize(cc.size(432, height))

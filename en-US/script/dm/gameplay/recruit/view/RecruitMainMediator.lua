@@ -684,7 +684,7 @@ function RecruitMainMediator:onClickSkill(skill, heroData, skillDescPosX)
 		self._skillWidget:getView():addTo(self:getView()):posite(464, 200)
 	end
 
-	self._skillWidget:refreshInfo(skill, heroData)
+	self._skillWidget:refreshInfo(skill, heroData, false, 440)
 	self._skillWidget:show()
 	self._skillWidget:getView():setPositionX(skillDescPosX)
 end

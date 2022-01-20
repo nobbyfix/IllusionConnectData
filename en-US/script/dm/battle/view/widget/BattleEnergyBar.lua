@@ -82,6 +82,75 @@ function BattleEnergyBar:_setupEnergyLabel(view)
 	self._oldEnergy = 0
 end
 
+function BattleEnergyBar:setBarFraze(isFraze)
+	if isFraze then
+		if self._isPlayingFrazeAnim then
+			return
+		end
+
+		local bar_node = self:getView():getChildByFullName("bar_node")
+		local circleNode = self:getView():getChildByFullName("energy_circle")
+		local anim = cc.MovieClip:create("shuijingstart_shuijingtiaoman")
+
+		anim:addTo(bar_node:getParent())
+		anim:setPosition(bar_node:getPosition())
+		anim:offset(-5, 0)
+		anim:setName("FrazeAnimProgress")
+		anim:addCallbackAtFrame(15, function ()
+			anim:removeFromParent()
+
+			local anim = cc.MovieClip:create("shuijingloop_shuijingtiaoman")
+
+			anim:addTo(bar_node:getParent())
+			anim:setPosition(bar_node:getPosition())
+			anim:offset(-5, 0)
+			anim:setName("FrazeAnim")
+		end)
+
+		local anim = cc.MovieClip:create("yuanstart_shuijingtiaoman")
+
+		anim:addTo(circleNode:getParent())
+		anim:setPosition(circleNode:getPosition())
+		anim:setName("FrazeAnimProgress")
+		anim:offset(-5, 0)
+		anim:addCallbackAtFrame(15, function ()
+			anim:removeFromParent()
+
+			local anim = cc.MovieClip:create("yuanloop_shuijingtiaoman")
+
+			anim:addTo(circleNode:getParent())
+			anim:setPosition(circleNode:getPosition())
+			anim:offset(-5, 0)
+			anim:setName("FrazeAnim")
+		end)
+
+		self._isPlayingFrazeAnim = true
+
+		return
+	end
+
+	local bar_node = self:getView():getChildByFullName("bar_node"):getParent()
+	local circleNode = self:getView():getChildByFullName("energy_circle"):getParent()
+
+	if bar_node:getChildByName("FrazeAnimProgress") then
+		bar_node:getChildByName("FrazeAnimProgress"):removeFromParent()
+	end
+
+	if circleNode:getChildByName("FrazeAnimProgress") then
+		circleNode:getChildByName("FrazeAnimProgress"):removeFromParent()
+	end
+
+	if bar_node:getChildByName("FrazeAnim") then
+		bar_node:getChildByName("FrazeAnim"):removeFromParent()
+	end
+
+	if circleNode:getChildByName("FrazeAnim") then
+		circleNode:getChildByName("FrazeAnim"):removeFromParent()
+	end
+
+	self._isPlayingFrazeAnim = false
+end
+
 function BattleEnergyBar:setBarGray(isGray)
 	self:getView():getChildByFullName("bar_node"):setGray(isGray)
 

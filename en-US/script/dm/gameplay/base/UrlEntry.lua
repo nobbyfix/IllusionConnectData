@@ -342,6 +342,12 @@ local kExtResponseMap = {
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("JumpView")
 	},
+	FlyView = {
+		switch = "fn_MiniGame_Plane",
+		instanceName = "MiniGameSystem",
+		funcName = "tryEnter",
+		entry = ViewAreaEntry:new("FlyView")
+	},
 	ArenaNewView = {
 		instanceName = "ArenaNewSystem",
 		funcName = "tryEnter",
@@ -492,6 +498,8 @@ function UrlEntryManage.resolveUrlWithUserData(urlString)
 	local entry = mapping[page]
 
 	if not entry then
+		print(page)
+
 		local viewName = string.gsub(page, "view://", "")
 		entry = kExtResponseMap[viewName].entry
 	end

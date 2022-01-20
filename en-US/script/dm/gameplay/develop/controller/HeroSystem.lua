@@ -1045,10 +1045,11 @@ function HeroSystem:getTeamSpecialSound(targetId, ids)
 end
 
 StrengthenViewType = {
-	kStar = 3,
-	kSkill = 4,
 	kEquip = 5,
-	kEvolution = 2
+	kSkill = 4,
+	KTSoul = 7,
+	kEvolution = 2,
+	kStar = 3
 }
 local redPointFuncMap = {
 	[StrengthenViewType.kEvolution] = function (HeroSystem, heroId)
@@ -1062,6 +1063,9 @@ local redPointFuncMap = {
 	end,
 	[StrengthenViewType.kEquip] = function (HeroSystem, heroId)
 		return HeroSystem:hasRedPointByEquip(heroId)
+	end,
+	[StrengthenViewType.KTSoul] = function (HeroSystem, heroId)
+		return HeroSystem:hasRedPointByTSoul(heroId)
 	end
 }
 
@@ -1335,6 +1339,35 @@ function HeroSystem:hasRedPointByEquip(heroId)
 		if self:hasRedPointByEquipReplace(heroId, equipType) then
 			return true
 		end
+	end
+
+	return false
+end
+
+function HeroSystem:hasRedPointByTSoul(heroId)
+	local result, tip = nil
+	result, tip = self._systemKeeper:isUnlock("Projection")
+
+	if not result then
+		return false
+	end
+
+	local hero = self:getHeroById(heroId)
+
+	if not hero then
+		return false
+	end
+
+	local tSoulSystem = self._developSystem:getTSoulSystem()
+
+	if tSoulSystem:getRedPointForLevel(heroId) then
+		return true
+	end
+
+	local ret = tSoulSystem:getRedPointForRarity(heroId)
+
+	if table.indexof(ret, true) then
+		return true
 	end
 
 	return false

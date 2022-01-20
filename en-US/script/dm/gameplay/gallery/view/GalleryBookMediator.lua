@@ -211,6 +211,7 @@ function GalleryBookMediator:setupView()
 
 		anim:setPosition(v.pos)
 		anim:addTo(mc_bg)
+		anim:setLocalZOrder(20 - i)
 		anim:addCallbackAtFrame(31, function (cid, mc)
 			mc:stop()
 		end)

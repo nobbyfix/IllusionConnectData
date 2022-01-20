@@ -1,0 +1,842 @@
+{
+    "SuitAtk_1": {
+        "Name": "SuitAtk_1_Name",
+        "Part": [
+            "Gem1051",
+            "Gem1052",
+            "Gem1053"
+        ],
+        "Partattr": [
+            0.0225,
+            0.0225
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0225
+        ],
+        "Sort": 6,
+        "SuitDesc": {
+            "2": "SuitAtk_1_Desc_2",
+            "3": "SuitAtk_1_Desc_3",
+            "4": "SuitAtk_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_atk_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "Suitlevattr": [
+            "ATK_RATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitAtk_2": {
+        "Name": "SuitAtk_2_Name",
+        "Part": [
+            "Gem2043",
+            "Gem2051",
+            "Gem2052"
+        ],
+        "Partattr": [
+            0.04125,
+            0.04125
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.04125
+        ],
+        "Sort": 12,
+        "SuitDesc": {
+            "2": "SuitAtk_2_Desc_2",
+            "3": "SuitAtk_2_Desc_3",
+            "4": "SuitAtk_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_atk_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "Suitlevattr": [
+            "ATK_RATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitAtk_3": {
+        "Name": "SuitAtk_3_Name",
+        "Part": [
+            "Gem3051",
+            "Gem3052",
+            "Gem3053"
+        ],
+        "Partattr": [
+            0.06,
+            0.06
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.06
+        ],
+        "Sort": 18,
+        "SuitDesc": {
+            "2": "SuitAtk_3_Desc_2",
+            "3": "SuitAtk_3_Desc_3",
+            "4": "SuitAtk_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_atk_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "Suitlevattr": [
+            "ATK_RATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitAtk_4": {
+        "Name": "SuitAtk_4_Name",
+        "Part": [
+            "Gem4051",
+            "Gem4052",
+            "Gem4053"
+        ],
+        "Partattr": [
+            0.06,
+            0.075
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.075
+        ],
+        "Sort": 24,
+        "SuitDesc": {
+            "2": "SuitAtk_4_Desc_2",
+            "3": "SuitAtk_4_Desc_3",
+            "4": "SuitAtk_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_atk_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "Suitlevattr": [
+            "ATK_RATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitBlock_1": {
+        "Name": "SuitBlock_1_Name",
+        "Part": [
+            "Gem1011",
+            "Gem1012",
+            "Gem1013"
+        ],
+        "Partattr": [
+            0.009,
+            0.009
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.009
+        ],
+        "Sort": 2,
+        "SuitDesc": {
+            "2": "SuitBlock_1_Desc_2",
+            "3": "SuitBlock_1_Desc_3",
+            "4": "SuitBlock_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_block_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "BLOCKRATE",
+            "BLOCKSTRG"
+        ],
+        "Suitlevattr": [
+            "BLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitBlock_2": {
+        "Name": "SuitBlock_2_Name",
+        "Part": [
+            "Gem2011",
+            "Gem2012",
+            "Gem2013"
+        ],
+        "Partattr": [
+            0.0165,
+            0.0165
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0165
+        ],
+        "Sort": 8,
+        "SuitDesc": {
+            "2": "SuitBlock_2_Desc_2",
+            "3": "SuitBlock_2_Desc_3",
+            "4": "SuitBlock_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_block_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "BLOCKRATE",
+            "BLOCKSTRG"
+        ],
+        "Suitlevattr": [
+            "BLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitBlock_3": {
+        "Name": "SuitBlock_3_Name",
+        "Part": [
+            "Gem3011",
+            "Gem3012",
+            "Gem3013"
+        ],
+        "Partattr": [
+            0.024,
+            0.024
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.024
+        ],
+        "Sort": 14,
+        "SuitDesc": {
+            "2": "SuitBlock_3_Desc_2",
+            "3": "SuitBlock_3_Desc_3",
+            "4": "SuitBlock_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_block_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "BLOCKRATE",
+            "BLOCKSTRG"
+        ],
+        "Suitlevattr": [
+            "BLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitBlock_4": {
+        "Name": "SuitBlock_4_Name",
+        "Part": [
+            "Gem4011",
+            "Gem4012",
+            "Gem4013"
+        ],
+        "Partattr": [
+            0.024,
+            0.03
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.03
+        ],
+        "Sort": 20,
+        "SuitDesc": {
+            "2": "SuitBlock_4_Desc_2",
+            "3": "SuitBlock_4_Desc_3",
+            "4": "SuitBlock_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_block_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "BLOCKRATE",
+            "BLOCKSTRG"
+        ],
+        "Suitlevattr": [
+            "BLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitCri_1": {
+        "Name": "SuitCri_1_Name",
+        "Part": [
+            "Gem1001",
+            "Gem1002",
+            "Gem1003"
+        ],
+        "Partattr": [
+            0.0111,
+            0.0111
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0111
+        ],
+        "Sort": 1,
+        "SuitDesc": {
+            "2": "SuitCri_1_Desc_2",
+            "3": "SuitCri_1_Desc_3",
+            "4": "SuitCri_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_crit_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "CRITRATE",
+            "CRITSTRG"
+        ],
+        "Suitlevattr": [
+            "CRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitCri_2": {
+        "Name": "SuitCri_2_Name",
+        "Part": [
+            "Gem2001",
+            "Gem2002",
+            "Gem2003"
+        ],
+        "Partattr": [
+            0.02035,
+            0.02035
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.02035
+        ],
+        "Sort": 7,
+        "SuitDesc": {
+            "2": "SuitCri_2_Desc_2",
+            "3": "SuitCri_2_Desc_3",
+            "4": "SuitCri_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_crit_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "CRITRATE",
+            "CRITSTRG"
+        ],
+        "Suitlevattr": [
+            "CRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitCri_3": {
+        "Name": "SuitCri_3_Name",
+        "Part": [
+            "Gem3001",
+            "Gem3002",
+            "Gem3003"
+        ],
+        "Partattr": [
+            0.0296,
+            0.0296
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0296
+        ],
+        "Sort": 13,
+        "SuitDesc": {
+            "2": "SuitCri_3_Desc_2",
+            "3": "SuitCri_3_Desc_3",
+            "4": "SuitCri_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_crit_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "CRITRATE",
+            "CRITSTRG"
+        ],
+        "Suitlevattr": [
+            "CRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitCri_4": {
+        "Name": "SuitCri_4_Name",
+        "Part": [
+            "Gem4001",
+            "Gem4002",
+            "Gem4003"
+        ],
+        "Partattr": [
+            0.0296,
+            0.037
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.037
+        ],
+        "Sort": 19,
+        "SuitDesc": {
+            "2": "SuitCri_4_Desc_2",
+            "3": "SuitCri_4_Desc_3",
+            "4": "SuitCri_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_crit_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "CRITRATE",
+            "CRITSTRG"
+        ],
+        "Suitlevattr": [
+            "CRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitDef_1": {
+        "Name": "SuitDef_1_Name",
+        "Part": [
+            "Gem1021",
+            "Gem1022",
+            "Gem1023"
+        ],
+        "Partattr": [
+            0.009,
+            0.009
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.009
+        ],
+        "Sort": 3,
+        "SuitDesc": {
+            "2": "SuitDef_1_Desc_2",
+            "3": "SuitDef_1_Desc_3",
+            "4": "SuitDef_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_def_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "UNCRITRATE",
+            "UNHURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNCRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitDef_2": {
+        "Name": "SuitDef_2_Name",
+        "Part": [
+            "Gem2013",
+            "Gem2021",
+            "Gem2022"
+        ],
+        "Partattr": [
+            0.0165,
+            0.0165
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0165
+        ],
+        "Sort": 9,
+        "SuitDesc": {
+            "2": "SuitDef_2_Desc_2",
+            "3": "SuitDef_2_Desc_3",
+            "4": "SuitDef_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_def_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "UNCRITRATE",
+            "UNHURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNCRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitDef_3": {
+        "Name": "SuitDef_3_Name",
+        "Part": [
+            "Gem3021",
+            "Gem3022",
+            "Gem3023"
+        ],
+        "Partattr": [
+            0.024,
+            0.024
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.024
+        ],
+        "Sort": 15,
+        "SuitDesc": {
+            "2": "SuitDef_3_Desc_2",
+            "3": "SuitDef_3_Desc_3",
+            "4": "SuitDef_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_def_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "UNCRITRATE",
+            "UNHURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNCRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitDef_4": {
+        "Name": "SuitDef_4_Name",
+        "Part": [
+            "Gem4021",
+            "Gem4022",
+            "Gem4023"
+        ],
+        "Partattr": [
+            0.024,
+            0.03
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.03
+        ],
+        "Sort": 21,
+        "SuitDesc": {
+            "2": "SuitDef_4_Desc_2",
+            "3": "SuitDef_4_Desc_3",
+            "4": "SuitDef_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_def_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "UNCRITRATE",
+            "UNHURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNCRITRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitSpecial_1": {
+        "Name": "SuitSpecial_1_Name",
+        "Part": [
+            "Gem1041",
+            "Gem1042",
+            "Gem1043"
+        ],
+        "Partattr": [
+            0.009,
+            0.009
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.009
+        ],
+        "Sort": 5,
+        "SuitDesc": {
+            "2": "SuitSpecial_1_Desc_2",
+            "3": "SuitSpecial_1_Desc_3",
+            "4": "SuitSpecial_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_special_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "REFLECTION",
+            "ABSORPTION"
+        ],
+        "Suitlevattr": [
+            "REFLECTION"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitSpecial_2": {
+        "Name": "SuitSpecial_2_Name",
+        "Part": [
+            "Gem2033",
+            "Gem2041",
+            "Gem2042"
+        ],
+        "Partattr": [
+            0.0165,
+            0.0165
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0165
+        ],
+        "Sort": 11,
+        "SuitDesc": {
+            "2": "SuitSpecial_2_Desc_2",
+            "3": "SuitSpecial_2_Desc_3",
+            "4": "SuitSpecial_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_special_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "REFLECTION",
+            "ABSORPTION"
+        ],
+        "Suitlevattr": [
+            "REFLECTION"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitSpecial_3": {
+        "Name": "SuitSpecial_3_Name",
+        "Part": [
+            "Gem3041",
+            "Gem3042",
+            "Gem3043"
+        ],
+        "Partattr": [
+            0.024,
+            0.024
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.024
+        ],
+        "Sort": 17,
+        "SuitDesc": {
+            "2": "SuitSpecial_3_Desc_2",
+            "3": "SuitSpecial_3_Desc_3",
+            "4": "SuitSpecial_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_special_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "REFLECTION",
+            "ABSORPTION"
+        ],
+        "Suitlevattr": [
+            "REFLECTION"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitSpecial_4": {
+        "Name": "SuitSpecial_4_Name",
+        "Part": [
+            "Gem4041",
+            "Gem4042",
+            "Gem4043"
+        ],
+        "Partattr": [
+            0.024,
+            0.03
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.03
+        ],
+        "Sort": 23,
+        "SuitDesc": {
+            "2": "SuitSpecial_4_Desc_2",
+            "3": "SuitSpecial_4_Desc_3",
+            "4": "SuitSpecial_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_special_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "REFLECTION",
+            "ABSORPTION"
+        ],
+        "Suitlevattr": [
+            "REFLECTION"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitUnblock_1": {
+        "Name": "SuitUnblock_1_Name",
+        "Part": [
+            "Gem1031",
+            "Gem1032",
+            "Gem1033"
+        ],
+        "Partattr": [
+            0.009,
+            0.009
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.009
+        ],
+        "Sort": 4,
+        "SuitDesc": {
+            "2": "SuitUnblock_1_Desc_2",
+            "3": "SuitUnblock_1_Desc_3",
+            "4": "SuitUnblock_1_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_unblock_m",
+        "SuitRareity": 2,
+        "Suitattr": [
+            "UNBLOCKRATE",
+            "HURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNBLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitUnblock_2": {
+        "Name": "SuitUnblock_2_Name",
+        "Part": [
+            "Gem2023",
+            "Gem2031",
+            "Gem2032"
+        ],
+        "Partattr": [
+            0.0165,
+            0.0165
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.0165
+        ],
+        "Sort": 10,
+        "SuitDesc": {
+            "2": "SuitUnblock_2_Desc_2",
+            "3": "SuitUnblock_2_Desc_3",
+            "4": "SuitUnblock_2_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_unblock_m",
+        "SuitRareity": 3,
+        "Suitattr": [
+            "UNBLOCKRATE",
+            "HURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNBLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitUnblock_3": {
+        "Name": "SuitUnblock_3_Name",
+        "Part": [
+            "Gem3031",
+            "Gem3032",
+            "Gem3033"
+        ],
+        "Partattr": [
+            0.024,
+            0.024
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.024
+        ],
+        "Sort": 16,
+        "SuitDesc": {
+            "2": "SuitUnblock_3_Desc_2",
+            "3": "SuitUnblock_3_Desc_3",
+            "4": "SuitUnblock_3_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_unblock_m",
+        "SuitRareity": 4,
+        "Suitattr": [
+            "UNBLOCKRATE",
+            "HURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNBLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    },
+    "SuitUnblock_4": {
+        "Name": "SuitUnblock_4_Name",
+        "Part": [
+            "Gem4031",
+            "Gem4032",
+            "Gem4033"
+        ],
+        "Partattr": [
+            0.024,
+            0.03
+        ],
+        "Partcondition": [
+            2,
+            3
+        ],
+        "Partlevattr": [
+            0.03
+        ],
+        "Sort": 22,
+        "SuitDesc": {
+            "2": "SuitUnblock_4_Desc_2",
+            "3": "SuitUnblock_4_Desc_3",
+            "4": "SuitUnblock_4_Desc_4"
+        },
+        "SuitIcon": "ico_e_tsoul_unblock_m",
+        "SuitRareity": 5,
+        "Suitattr": [
+            "UNBLOCKRATE",
+            "HURTRATE"
+        ],
+        "Suitlevattr": [
+            "UNBLOCKRATE"
+        ],
+        "Suitlevpart": 3
+    }
+}

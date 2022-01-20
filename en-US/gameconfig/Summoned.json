@@ -609,6 +609,30 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedNian": {
+        "Cost": 18,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SummonedNian",
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 0,
+        "NormalSkill": "Skill_Summoned_LFKLFTe_Foot_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_LFKLFTe_TMing",
+        "Sex": 1,
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedNormal": {
         "Cost": 2,
         "CounterSkill": "",

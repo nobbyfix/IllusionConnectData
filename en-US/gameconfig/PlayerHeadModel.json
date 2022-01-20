@@ -1013,7 +1013,7 @@
         "HeadName": "LDYu_HeadName",
         "HeroMasterId": "LDYu",
         "IconPath": "asset/heros/hdu/battlepic_hdu.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LDYu_HeadUnlock",
@@ -1041,6 +1041,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LEIMu_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_LEIMu_2": {
+        "HeadDesc": "Surface_LEIMu_wedding_Desc",
+        "HeadMove": "",
+        "HeadName": "LEIMu_2_HeadName",
+        "HeroMasterId": "LEIMu",
+        "IconPath": "asset/heros/leimu_wedding/battlepic_leimu_wedding.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_LEIMu_2",
+        "Type": 5,
+        "UnlockDesc": "LEIMu_2_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_LEMHou": {

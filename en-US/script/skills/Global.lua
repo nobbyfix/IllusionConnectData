@@ -1482,6 +1482,34 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
+	end
+
 	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
 		"?Normal"
 	}, damage.val)
@@ -1746,6 +1774,32 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				}
 			}, {
 				buffeft1
+			})
+		end
+
+		if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15110_1_UnHurtCheck")) > 0 then
+			local UnHurtRateFactor = global.SpecialPropGetter(_env, "weapon_15110_1")(_env, actor)
+			local UnHurtRateDown = global.NumericEffect(_env, "-unhurtrate", {
+				"?Normal"
+			}, UnHurtRateFactor)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Weapon_15110_1_UnHurt_Limit",
+				duration = 3,
+				limit = 5,
+				tags = {
+					"NUMERIC",
+					"DEBUFF",
+					"UNHURTRATEDOWN",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT",
+					"EquipSkill_Weapon_15110_1_UnHurt"
+				}
+			}, {
+				UnHurtRateDown
 			})
 		end
 	end
@@ -2117,6 +2171,34 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		end
 	end
 
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
+	end
+
 	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
 		"?Normal"
 	}, damage.val)
@@ -2392,6 +2474,32 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				}
 			}, {
 				buffeft1
+			})
+		end
+
+		if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15110_1_UnHurtCheck")) > 0 then
+			local UnHurtRateFactor = global.SpecialPropGetter(_env, "weapon_15110_1")(_env, actor)
+			local UnHurtRateDown = global.NumericEffect(_env, "-unhurtrate", {
+				"?Normal"
+			}, UnHurtRateFactor)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Weapon_15110_1_UnHurt_Limit",
+				duration = 3,
+				limit = 5,
+				tags = {
+					"NUMERIC",
+					"DEBUFF",
+					"UNHURTRATEDOWN",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT",
+					"EquipSkill_Weapon_15110_1_UnHurt"
+				}
+			}, {
+				UnHurtRateDown
 			})
 		end
 	end
@@ -2785,6 +2893,34 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		end
 	end
 
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 and n == total then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
+	end
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
 	end
@@ -3106,6 +3242,32 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				}
 			}, {
 				buffeft1
+			})
+		end
+
+		if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15110_1_UnHurtCheck")) > 0 then
+			local UnHurtRateFactor = global.SpecialPropGetter(_env, "weapon_15110_1")(_env, actor)
+			local UnHurtRateDown = global.NumericEffect(_env, "-unhurtrate", {
+				"?Normal"
+			}, UnHurtRateFactor)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Weapon_15110_1_UnHurt_Limit",
+				duration = 3,
+				limit = 5,
+				tags = {
+					"NUMERIC",
+					"DEBUFF",
+					"UNHURTRATEDOWN",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT",
+					"EquipSkill_Weapon_15110_1_UnHurt"
+				}
+			}, {
+				UnHurtRateDown
 			})
 		end
 
@@ -3472,6 +3634,34 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 	end
 
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 and n == total then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
+	end
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
 	end
@@ -3794,6 +3984,32 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				}
 			}, {
 				buffeft1
+			})
+		end
+
+		if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15110_1_UnHurtCheck")) > 0 then
+			local UnHurtRateFactor = global.SpecialPropGetter(_env, "weapon_15110_1")(_env, actor)
+			local UnHurtRateDown = global.NumericEffect(_env, "-unhurtrate", {
+				"?Normal"
+			}, UnHurtRateFactor)
+
+			global.ApplyBuff(_env, target, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Weapon_15110_1_UnHurt_Limit",
+				duration = 3,
+				limit = 5,
+				tags = {
+					"NUMERIC",
+					"DEBUFF",
+					"UNHURTRATEDOWN",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT",
+					"EquipSkill_Weapon_15110_1_UnHurt"
+				}
+			}, {
+				UnHurtRateDown
 			})
 		end
 

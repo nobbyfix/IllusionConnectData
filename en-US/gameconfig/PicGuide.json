@@ -28,6 +28,35 @@
         ],
         "Text": "Marking_GuideInfo_1"
     },
+    "SpecialRule_GXiang": {
+        "ChangeInfo": 999,
+        "Icon": "ico_m_family_fzhou_2",
+        "InfoText": 1,
+        "Name": "SpecialRule_GXiang_Name",
+        "Pic": [
+            {
+                "Img": "img_SpecialRule_GXiang.png",
+                "LongText": "SpecialRule_FZhou_LongDesc",
+                "ShortText": "SpecialRule_FZhou_ShortDesc"
+            },
+            {
+                "Img": "img_SpecialRule_QGua.png",
+                "LongText": "SpecialRule_GXiang_LongDescQian",
+                "ShortText": "SpecialRule_GXiang_ShortDescQian"
+            },
+            {
+                "Img": "img_SpecialRule_LGua.png",
+                "LongText": "SpecialRule_GXiang_LongDescLi",
+                "ShortText": "SpecialRule_GXiang_ShortDescLi"
+            },
+            {
+                "Img": "img_SpecialRule_KGua.png",
+                "LongText": "SpecialRule_GXiang_LongDescKan",
+                "ShortText": "SpecialRule_GXiang_ShortDescKan"
+            }
+        ],
+        "Text": ""
+    },
     "SpecialRule_LZHua": {
         "ChangeInfo": 999,
         "Icon": "ico_m_animal_stamina_1",
@@ -48,6 +77,25 @@
                 "Img": "img_SpecialRule_LZHua_3",
                 "LongText": "SpecialRule_LZHua_LongDesc3",
                 "ShortText": "SpecialRule_LZHua_ShortDesc3"
+            }
+        ],
+        "Text": ""
+    },
+    "SpecialRule_NShou": {
+        "ChangeInfo": 999,
+        "Icon": "IR_HD_SnowflakeStamina",
+        "InfoText": 1,
+        "Name": "SpecialRule_NShou_Name",
+        "Pic": [
+            {
+                "Img": "img_SpecialRule_NShou_Skill1.png",
+                "LongText": "SpecialRule_NShou_LongDesc1",
+                "ShortText": "SpecialRule_NShou_ShortDesc1"
+            },
+            {
+                "Img": "img_SpecialRule_NShou_Skill2.png",
+                "LongText": "SpecialRule_NShou_LongDesc2",
+                "ShortText": "SpecialRule_NShou_ShortDesc2"
             }
         ],
         "Text": ""

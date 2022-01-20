@@ -23,6 +23,9 @@
     "RANGE_Deng": {
         "Function": "return AllCell()"
     },
+    "RANGE_GXiang": {
+        "Function": "return GenInfo(EnemyAll(),Green)"
+    },
     "RANGE_LZHua": {
         "Function": "return HasBuff(\"RANGE_LZHua\")"
     },

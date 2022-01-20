@@ -166,6 +166,29 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "Bag_TSoul": {
+        "Condition": {
+            "LEVEL": 60
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Bag_TSoul_Desc",
+        "Name": "Unlock_Bag_Tsoul",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 60
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Bag_TSoul_UnlockDesc"
+    },
     "BattlePass": {
         "Condition": {
             "LEVEL": 1
@@ -680,7 +703,7 @@
         "OutputDesc": "Unlock_Crusade_OpDesc",
         "ResourcesBanner": [
             "IR_Gold",
-            "IR_Crystal",
+            "IR_CrusadeStamina_Up",
             "IR_Diamond",
             "IR_Pve"
         ],
@@ -1585,6 +1608,29 @@
         "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
+    },
+    "Projection": {
+        "Condition": {
+            "LEVEL": 60
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Projection_Desc",
+        "Name": "Unlock_Projection",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 60
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Projection_UnlockDesc"
     },
     "QuickChallenge": {
         "Condition": {

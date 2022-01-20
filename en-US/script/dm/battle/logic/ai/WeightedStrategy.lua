@@ -167,7 +167,8 @@ function WeightedStrategy:calcWeight(card, side, player)
 		"UniqueRatio",
 		"Curse",
 		"Cost",
-		"CardForce"
+		"CardForce",
+		"ForcedWeight"
 	}
 	self._status = self:calcStatus(side, card)
 	local weight = 0
@@ -230,6 +231,7 @@ function WeightedStrategy:calcStatus(side, card)
 	result[6] = -1
 	local x = tonumber(cardAI.CardForce) or 0
 	result[7] = x > 0 and (x + 20) / x or 0
+	result[8] = 1
 
 	return result
 end

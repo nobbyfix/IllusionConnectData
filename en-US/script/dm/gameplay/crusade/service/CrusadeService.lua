@@ -43,3 +43,9 @@ function CrusadeService:listenCrusadeDiff(callback)
 		callback(response)
 	end)
 end
+
+function CrusadeService:requestResetCrusadePower(params, blockUI, callback)
+	local request = self:newRequest(13106, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

@@ -573,6 +573,54 @@ function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, own
 	return newUnit, detail
 end
 
+function FormationSystem:reviveByUnitSigleTon(actor, unit, hpRatio, anger, location, owner)
+	local player = owner or actor:getOwner()
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
+
+	if not cellId then
+		return false, "InvalidRevivePosition"
+	end
+
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
+	local unit = unit
+	local targetId = nil
+	local prefix = unit:getId() .. "_r"
+	local entityManager = self._entityManager
+	local index = 0
+
+	repeat
+		targetId = prefix .. index
+		index = index + 1
+	until entityManager:fetchEntity(targetId) == nil
+
+	local newUnit = entityManager:copyHeroUnit(unit, targetId, 1)
+
+	newUnit:setModelId(unit:getModelId())
+
+	local animation = nil
+	local angerComp = newUnit:getComponent("Anger")
+
+	angerComp:setAnger(anger)
+
+	local healthComp = newUnit:getComponent("Health")
+
+	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
+	newUnit:setIsSummoned(unit:isSummoned())
+	newUnit:setSummoner(unit:getSummoner())
+
+	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
+
+	if unit then
+		self._cemetery:untomb(unit)
+	end
+
+	return newUnit, detail
+end
+
 function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	local player = actor:getOwner()
 	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)

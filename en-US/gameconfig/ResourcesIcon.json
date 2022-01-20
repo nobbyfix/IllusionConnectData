@@ -1062,6 +1062,23 @@
         "Shine": "",
         "Sicon": "IR_Equip14_S"
     },
+    "IR_FamilyStamina": {
+        "Desc": "IR_FamilyStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_family_stamina_1"
+        ],
+        "Licon": "ico_m_family_stamina_1",
+        "Name": "IR_FamilyStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_family_stamina_2"
+    },
     "IR_FemaleStamina": {
         "Desc": "IR_FemaleStamina_FunctionDesc",
         "LargeIcons": [
@@ -1810,6 +1827,23 @@
         ],
         "Licon": "ico_m_memory_1",
         "Name": "Memory_Activi_Puzzle_1_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_220120": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activity_220120_Name",
         "Quality": [
             3
         ],

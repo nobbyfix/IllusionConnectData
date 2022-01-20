@@ -411,6 +411,26 @@ all.Skill_MLYTLSha_Passive = {
 					buffeft1
 				}, 1)
 			end
+
+			local AnaFlag = global.SpecialNumericEffect(_env, "+anaflagcheck", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "AnaFlagCheck",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"CHECK",
+					"AnaFlagCheck",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				AnaFlag
+			})
 		end)
 
 		return _env
@@ -1016,6 +1036,26 @@ all.Skill_MLYTLSha_Passive_EX = {
 					buffeft2
 				}, 1)
 			end
+
+			local AnaFlag = global.SpecialNumericEffect(_env, "+anaflagcheck", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "AnaFlagCheck",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"CHECK",
+					"AnaFlagCheck",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				AnaFlag
+			})
 		end)
 
 		return _env

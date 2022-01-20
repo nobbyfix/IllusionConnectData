@@ -4404,6 +4404,47 @@
         ],
         "zoom": 0.6
     },
+    "Shoes_15112_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15112_3_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Shoes_HP",
+        "HeroEquip_Id": 930086,
+        "Icon": "ico_equip_khuanshoes",
+        "Name": "Shoes_15112_3_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15112_3",
+        "Sort": 299055,
+        "StartEquipEndID": "Rareity15_Shoes3_8",
+        "StartEquipStarID": "Rareity15_Shoes3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "StarUp_1": {
         "ATK": "",
         "AttrEffect": "",
@@ -6679,6 +6720,47 @@
         "Sort": 299048,
         "StartEquipEndID": "Rareity15_Top1_8",
         "StartEquipStarID": "Rareity15_Top1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15111_2": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15111_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "UR_Top_HP",
+        "HeroEquip_Id": 930085,
+        "Icon": "ico_equip_sbnwzyancloth",
+        "Name": "Tops_15111_2_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Attack",
+            "Aoe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15111_2",
+        "Sort": 299054,
+        "StartEquipEndID": "Rareity15_Top2_8",
+        "StartEquipStarID": "Rareity15_Top2_1",
         "URUPSkillLV": [
             30,
             40,
@@ -10012,6 +10094,88 @@
         "Sort": 299050,
         "StartEquipEndID": "Rareity15_Weapon3_8",
         "StartEquipStarID": "Rareity15_Weapon3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15122_1": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15122_1_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": 930084,
+        "Icon": "ico_equip_sqqzhangweapon",
+        "Name": "Weapon_15122_1_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "SLMen",
+            "TLMi",
+            "WTXXuan"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15122_1",
+        "Sort": 299053,
+        "StartEquipEndID": "Rareity15_Weapon1_8",
+        "StartEquipStarID": "Rareity15_Weapon1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15123_2": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15123_2_Desc",
+        "ExclusiveHero": "",
+        "HP": "",
+        "HeroEquip_Id": 930087,
+        "Icon": "ico_equip_bmzxinweapon",
+        "Name": "Weapon_15123_2_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "BLTu"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15123_2",
+        "Sort": 299056,
+        "StartEquipEndID": "Rareity15_Weapon2_8",
+        "StartEquipStarID": "Rareity15_Weapon2_1",
         "URUPSkillLV": [
             30,
             40,

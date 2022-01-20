@@ -26,6 +26,7 @@ function EffectCenter:initialize(data)
 	self._timeEffects = {}
 	self._oldTimeEffects = {}
 	self._leadStageEffects = {}
+	self._tsoulEffects = {}
 end
 
 function EffectCenter:dispatch(event)
@@ -51,6 +52,7 @@ function EffectCenter:syncData(data)
 		self:setGalleryLegendAttrByType()
 		self:setTimeEffect()
 		self:setLeadStageEffect()
+		self:setTSOULAttrByType()
 		self._player:syncAttrEffect()
 	end
 end
@@ -64,6 +66,18 @@ function EffectCenter:delete(data)
 
 			if k == "Worldmap_Speed_Change" then
 				cc.UserDefault:getInstance():setStringForKey(UserDefaultKey.kExploreSpeedKey, "")
+			end
+		end
+	end
+
+	if data.managers.AttrEffectManager then
+		local effect = data.managers.AttrEffectManager.effects.ALL or {}
+
+		for heroId, eff in pairs(effect) do
+			for k, v in pairs(eff) do
+				if string.split(k, "-")[1] == "TSOUL" then
+					self._tsoulEffects[heroId] = {}
+				end
 			end
 		end
 	end
@@ -552,4 +566,36 @@ function EffectCenter:getLeadStageEffectsById(masterId)
 	end
 
 	return {}
+end
+
+function EffectCenter:setTSOULAttrByType()
+	if self._effCenterData.managers.AttrEffectManager then
+		local effect = self._effCenterData.managers.AttrEffectManager.effects.ALL
+
+		if not effect then
+			return
+		end
+
+		self._tsoulEffects = {}
+
+		for heroId, v in pairs(effect) do
+			for kk, vv in pairs(v) do
+				if string.split(kk, "-")[1] == "TSOUL" then
+					if not self._tsoulEffects[heroId] then
+						self._tsoulEffects[heroId] = {}
+					end
+
+					self._tsoulEffects[heroId] = vv.attrs
+				end
+			end
+		end
+	end
+end
+
+function EffectCenter:getTSOULEffectsById(heroId, type)
+	if self._tsoulEffects[heroId] then
+		return self._tsoulEffects[heroId][type] or 0
+	end
+
+	return 0
 end

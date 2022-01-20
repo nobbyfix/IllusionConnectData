@@ -504,6 +504,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_LDu": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_LDu",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "LDYu",
+                    "XLDBLTe"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "YXZChun",
+                    "YMJDe",
+                    "BBLMa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_LDu_Show",
+        "RoleModel": "Model_LDu",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_LFEr": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",
@@ -560,6 +591,37 @@
         "RewardRevelry": "",
         "RewardShow": "CooperateBossMain_MGNa_Show",
         "RoleModel": "Model_MGNa",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBoss_MLYTLSha": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_MLYTLSha",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "MLYDi",
+                    "MYing"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "LEIMu",
+                    "LAMu",
+                    "AMLYa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_MLYTLSha_Show",
+        "RoleModel": "Model_MLYTLSha",
         "StarsAttrEffect": "ExcellentHero_Stars",
         "Story": [],
         "TiggerAwaken": "",

@@ -5887,6 +5887,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_LEIMu_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -6,
+                    1011
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -73,
+                    843
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LEIMu_wedding_Desc",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
+        "GainShortDesc": "Surface_LEIMu_2_GainShort",
+        "GoodsId": "Surface_49",
+        "Hero": "LEIMu",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "LongDesc": "Surface_LEIMu_wedding_LongDecs",
+        "Model": "Model_LEIMu_wedding",
+        "Name": "Surface_LEIMu_wedding_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "SKIN": "",
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
+        "Unlook": 1
+    },
     "Surface_LEMHou_1": {
         "ActivityId": "",
         "AnimeList": "",

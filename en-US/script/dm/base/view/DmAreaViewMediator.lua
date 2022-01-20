@@ -19,3 +19,31 @@ function DmAreaViewMediator:adjustLayout(targetFrame)
 	end, false, true)
 	AdjustUtils.adjustLayoutUIByRootNode(self._view)
 end
+
+function DmAreaViewMediator:adaptBackground(node, targetWorldRect, anchorPt)
+	if not node then
+		return
+	end
+
+	local parent = node:getParent()
+	local visibleSize = cc.Director:getInstance():getVisibleSize()
+	local tmpTargetWorldRect = setmetatable({}, {
+		__index = targetWorldRect
+	})
+
+	if parent then
+		local worldToNodePoint = parent:convertToNodeSpace(cc.p(tmpTargetWorldRect.x or 0, tmpTargetWorldRect.y or 0))
+		tmpTargetWorldRect.x = worldToNodePoint.x
+		tmpTargetWorldRect.y = worldToNodePoint.y
+
+		if targetWorldRect and targetWorldRect.width and targetWorldRect.height then
+			tmpTargetWorldRect.width = targetWorldRect.width or visibleSize.width
+			tmpTargetWorldRect.height = targetWorldRect.height or visibleSize.height
+		else
+			tmpTargetWorldRect.width = visibleSize.width
+			tmpTargetWorldRect.height = visibleSize.height
+		end
+	end
+
+	node:coverRegion(tmpTargetWorldRect, anchorPt)
+end

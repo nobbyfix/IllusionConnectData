@@ -3512,5 +3512,346 @@ all.Activity_Christmas_Death = {
 		return _env
 	end
 }
+all.Activity_FZhou_GXiang = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.cellId = externs.cellId
+
+		if this.cellId == nil then
+			this.cellId = {
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9
+			}
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		this.RageSpdFactor = externs.RageSpdFactor
+
+		assert(this.RageSpdFactor ~= nil, "External variable `RageSpdFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.cells = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff = global.SpecialNumericEffect(_env, "+FZhou_Buff", {
+				"?Normal"
+			}, 1)
+			local FZhou_Kira = global.BuffTrap(_env, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"GXIANG"
+				}
+			}, {
+				buff
+			})
+			_env.cells = global.EnemyCells(_env, global.CELL_IN_POS(_env, this.cellId))
+
+			for _, cellid in global.__iter__(this.cellId) do
+				if global.EnemyMaster(_env) then
+					local cell = global.GetCellById(_env, cellid, global.GetSide(_env, global.EnemyMaster(_env)))
+
+					global.ApplyTrap(_env, cell, {
+						display = "Guaxiang",
+						duration = 99,
+						triggerLife = 99,
+						tags = {
+							"GXIANG"
+						}
+					}, {
+						FZhou_Kira
+					})
+				end
+			end
+
+			if global.EnemyMaster(_env) then
+				if global.SelectTrapCount(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 2, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 3, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 4, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 5, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 6, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 7, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 8, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 9, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 then
+					global.FZhou_Qian1(_env, this.HurtRateFactor)
+				elseif global.SelectTrapCount(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 2, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 3, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 4, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 5, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) == 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 6, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 7, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 8, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 9, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 then
+					global.FZhou_Li1(_env, this.RageSpdFactor)
+				elseif global.SelectTrapCount(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 2, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 3, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 4, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) == 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 5, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 6, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) == 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 7, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 8, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 and global.SelectTrapCount(_env, global.GetCellById(_env, 9, global.GetSide(_env, global.EnemyMaster(_env))), global.BUFF_MARKED(_env, "GXIANG")) > 0 then
+					global.FZhou_Kan1(_env)
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+
+function all.FZhou_Qian1(_env, HurtRateFactor)
+	local this = _env.this
+	local global = _env.global
+	local units = nil
+	units = global.EnemyUnits(_env)
+	local buffeft = global.NumericEffect(_env, "+hurtrate", {
+		"+Normal",
+		"+Normal"
+	}, HurtRateFactor)
+	local Qian_Passive = global.PassiveFunEffectBuff(_env, "FZhou_Qian_Passive", {
+		HurtRateFactor = HurtRateFactor
+	})
+	local buff = global.SpecialNumericEffect(_env, "+biaoxian", {
+		"?Normal"
+	}, 0)
+	local biaoxian = global.BuffTrap(_env, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"GXIANGBIAOXIAN"
+		}
+	}, {
+		buff
+	})
+
+	if global.EnemyMaster(_env) then
+		global.ApplyTrap(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), {
+			display = "Qian",
+			duration = 99,
+			triggerLife = 99,
+			tags = {
+				"GXIANGBIAOXIAN"
+			}
+		}, {
+			biaoxian
+		})
+		global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
+			duration = 99,
+			group = "FZhou_Li_Passive",
+			timing = 0,
+			limit = 1,
+			tags = {
+				"FZhou_Passive",
+				"FZhou_Qian",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"GXIANG_EFFECT"
+			}
+		}, {
+			Qian_Passive
+		}, 1, 0)
+
+		for _, unit in global.__iter__(units) do
+			global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+				timing = 0,
+				display = "HurtUp",
+				group = "FZhou_Qian",
+				duration = 99,
+				limit = 1,
+				tags = {
+					"FZhou_Qian",
+					"GXIANG_EFFECT",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft
+			}, 1, 0)
+		end
+	end
+end
+
+function all.FZhou_Li1(_env, RageSpdFactor)
+	local this = _env.this
+	local global = _env.global
+	local units = nil
+	units = global.EnemyUnits(_env)
+	local buffeft = global.RageGainEffect(_env, "+", {
+		"+Normal",
+		"+Normal"
+	}, RageSpdFactor)
+	local Li_Passive = global.PassiveFunEffectBuff(_env, "FZhou_Li_Passive", {
+		RageSpdFactor = RageSpdFactor
+	})
+	local buff = global.SpecialNumericEffect(_env, "+biaoxian", {
+		"?Normal"
+	}, 0)
+	local biaoxian = global.BuffTrap(_env, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"GXIANGBIAOXIAN"
+		}
+	}, {
+		buff
+	})
+
+	if global.EnemyMaster(_env) then
+		global.ApplyTrap(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), {
+			display = "Li",
+			duration = 99,
+			triggerLife = 99,
+			tags = {
+				"GXIANGBIAOXIAN"
+			}
+		}, {
+			biaoxian
+		})
+		global.ApplyBuff(_env, global.FriendMaster(_env), {
+			duration = 99,
+			group = "FZhou_Li_Passive",
+			timing = 0,
+			limit = 1,
+			tags = {
+				"FZhou_Passive",
+				"FZhou_Li",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			Li_Passive
+		})
+
+		for _, unit in global.__iter__(units) do
+			if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "AnaFlagCheck")) == 0 then
+				global.ApplyBuff(_env, unit, {
+					timing = 0,
+					display = "RageGainUp",
+					group = "ToolCard_FZhou_Li",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"FZhou_Li",
+						"GXIANG_EFFECT",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft
+				})
+			end
+		end
+	end
+end
+
+function all.FZhou_Kan1(_env)
+	local this = _env.this
+	local global = _env.global
+
+	for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+		global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF"), 99)
+	end
+
+	for _, unit in global.__iter__(global.FriendUnits(_env)) do
+		global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF"), 99)
+	end
+
+	local Kan_Passive = global.PassiveFunEffectBuff(_env, "FZhou_Kan_Passive")
+
+	global.ApplyBuff(_env, global.FriendMaster(_env), {
+		duration = 99,
+		group = "FZhou_Kan_Passive",
+		timing = 0,
+		limit = 1,
+		tags = {
+			"FZhou_Passive",
+			"FZhou_Kan",
+			"UNDISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		Kan_Passive
+	})
+
+	local buff = global.SpecialNumericEffect(_env, "+biaoxian", {
+		"?Normal"
+	}, 0)
+	local biaoxian1 = global.BuffTrap(_env, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"GXIANGBIAOXIAN"
+		}
+	}, {
+		buff
+	})
+
+	if global.EnemyMaster(_env) then
+		global.ApplyTrap(_env, global.GetCellById(_env, 1, global.GetSide(_env, global.EnemyMaster(_env))), {
+			display = "Kan",
+			duration = 99,
+			triggerLife = 99,
+			tags = {
+				"GXIANGBIAOXIAN"
+			}
+		}, {
+			biaoxian1
+		})
+	end
+
+	local biaoxian = global.SpecialNumericEffect(_env, "+fzhou_kan", {
+		"?Normal"
+	}, 1)
+
+	for _, unit in global.__iter__(global.FriendUnits(_env)) do
+		global.ApplyBuff(_env, unit, {
+			timing = 2,
+			display = "BuffWeaken",
+			group = "FZhou_Kan_Xuruo",
+			duration = 1,
+			limit = 99,
+			tags = {
+				"FZhou_Kan",
+				"GXIANG_EFFECT",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			biaoxian
+		})
+	end
+
+	for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+		global.ApplyBuff(_env, unit, {
+			timing = 2,
+			display = "Purify",
+			group = "FZhou_Kan_Jinghua",
+			duration = 1,
+			limit = 99,
+			tags = {
+				"FZhou_Kan",
+				"GXIANG_EFFECT",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			biaoxian
+		})
+	end
+end
 
 return _M

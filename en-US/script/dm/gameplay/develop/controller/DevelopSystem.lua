@@ -5,6 +5,7 @@ require("dm.gameplay.develop.controller.MasterSystem")
 require("dm.gameplay.develop.controller.EquipSystem")
 require("dm.gameplay.activity.controller.ActivitySystem")
 require("dm.gameplay.develop.controller.KernelSystem")
+require("dm.gameplay.tsoul.controller.TSoulSystem")
 
 DevelopSystem = class("DevelopSystem", legs.Actor)
 
@@ -36,6 +37,9 @@ DevelopSystem:has("_masterSystem", {
 	is = "r"
 })
 DevelopSystem:has("_equipSystem", {
+	is = "r"
+})
+DevelopSystem:has("_tSoulSystem", {
 	is = "r"
 })
 DevelopSystem:has("_gallerySystem", {
@@ -103,6 +107,7 @@ function DevelopSystem:initSystem()
 	self._masterSystem = MasterSystem:new(self)
 	self._equipSystem = EquipSystem:new(self)
 	self._kerenlSystem = KernelSystem:new(self)
+	self._tSoulSystem = TSoulSystem:new(self)
 end
 
 function DevelopSystem:userInject(injector)
@@ -111,6 +116,7 @@ function DevelopSystem:userInject(injector)
 	injector:injectInto(self._heroSystem)
 	injector:injectInto(self._masterSystem)
 	injector:injectInto(self._equipSystem)
+	injector:injectInto(self._tSoulSystem)
 	injector:injectInto(self._kerenlSystem)
 end
 
@@ -158,6 +164,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 
 	if data.equips then
 		self:getPlayer():getEquipList():synchronize(data.equips)
+	end
+
+	if data.tSouls then
+		self:getPlayer():getTSoulList():synchronize(data.tSouls)
 	end
 
 	if data.composeTimes then
@@ -444,6 +454,10 @@ function DevelopSystem:syncDeleteData(data)
 
 	if data and data.equips then
 		self:getPlayer():getEquipList():deleteEquip(data.equips)
+	end
+
+	if data and data.tSouls then
+		self:getPlayer():getTSoulList():deleteTSoul(data.tSouls)
 	end
 
 	if data and data.towerStages then

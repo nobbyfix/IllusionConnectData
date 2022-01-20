@@ -223,6 +223,12 @@ function IconTouchHandler:removeItemTipView()
 	if itemBuffTipView ~= nil then
 		itemBuffTipView:removeFromParent(true)
 	end
+
+	local tSoulTipView = self._parentViewMediator:getView():getChildByTag(TSoulTipsViewTag)
+
+	if tSoulTipView ~= nil then
+		tSoulTipView:removeFromParent(true)
+	end
 end
 
 function IconTouchHandler:onBegan(icon)
@@ -266,6 +272,9 @@ function IconTouchHandler:onBegan(icon)
 			itemTipView = mediator:getInjector():getInstance("ItemTipsView")
 			tipsViewTag = ItemTipsViewTag
 		end
+	elseif rewardType == RewardType.kTSoul then
+		itemTipView = mediator:getInjector():getInstance("TSoulTipView")
+		tipsViewTag = TSoulTipsViewTag
 	else
 		itemTipView = mediator:getInjector():getInstance("ItemTipsView")
 		tipsViewTag = ItemTipsViewTag
@@ -1084,6 +1093,12 @@ function IconFactory:createIcon(info, style)
 
 	if config and config.Id then
 		return IconFactory:createPlayerFrameIcon(info, style)
+	end
+
+	config = ConfigReader:getRecordById("Tsoul", tostring(id))
+
+	if config and config.Id then
+		return IconFactory:createTSoulIcon(info, style)
 	end
 
 	assert(false, "未找到对应id配置：" .. id)
@@ -5024,6 +5039,171 @@ function IconFactory:getSpMvpBattleEndMid(model)
 	end
 
 	return mid
+end
+
+function IconFactory:createTSoulPic(info, style)
+	assert(info and info.id, "Bad argument")
+
+	local config = ConfigReader:getRecordById("Tsoul", info.id)
+	local icon = nil
+
+	if config then
+		local iconName = config.Icon
+		local path = "asset/items/" .. iconName .. ".png"
+		icon = cc.Sprite:create(path)
+		local size = icon:getContentSize()
+
+		if size.width > 200 then
+			icon:setScale(0.42)
+		end
+	else
+		icon = cc.Sprite:create()
+	end
+
+	return icon
+end
+
+function IconFactory:createTSoulIcon(info, style)
+	style = style or {}
+	local itemId = info.id or info.itemId
+	local config = ConfigReader:getRecordById("Tsoul", tostring(itemId)) or {}
+	local quality = config.Rareity or 1
+	local rarity = config.Rareity or 1
+	local pos = config.Type or 1
+	local useNoEnough = true
+
+	if info.useNoEnough ~= nil then
+		useNoEnough = info.useNoEnough
+	end
+
+	local quaImgType = style and style.rectType and style.rectType or 1
+	local qualityImg = GameStyle:getItemQuaRectFile(quality, quaImgType)
+	local quaRectImg = IconFactory:createSprite(qualityImg)
+
+	if quaImgType == 2 then
+		quaRectImg:setScale(1.2)
+	end
+
+	local size = cc.size(110, 110)
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(size)
+
+	if not style.notShowQulity == true then
+		IconFactory:centerAddNode(node, quaRectImg)
+	end
+
+	local itemImg = self:createTSoulPic(info)
+
+	itemImg:setScale(0.6)
+	IconFactory:centerAddNode(node, itemImg)
+
+	if style and style.color then
+		itemImg:setColor(style.color)
+	end
+
+	local kLevelTag = "LevelLabel"
+
+	function node:setLevel(lvl)
+		local lvLabel = self:getChildByName(kLevelTag)
+
+		if not lvLabel then
+			local amountBg = cc.Sprite:create("asset/common/common_icon_sld.png")
+
+			amountBg:setAnchorPoint(cc.p(1, 1))
+			amountBg:setPosition(cc.p(size.width + 1, size.height))
+			amountBg:addTo(self)
+			amountBg:setName("AmountBg")
+
+			lvLabel = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 20)
+
+			lvLabel:enableOutline(cc.c4b(35, 15, 5, 255), 1)
+			lvLabel:setAnchorPoint(cc.p(1, 1))
+			lvLabel:setPosition(cc.p(size.width - 6, size.height))
+			node:addChild(lvLabel)
+			lvLabel:setName("kLevelTag")
+		end
+
+		lvLabel:setString(Strings:get("Strenghten_Text78", {
+			level = lvl
+		}))
+
+		local amountBg = self:getChildByName("AmountBg")
+		local width = amountBg:getContentSize().width
+		local scaleX = (lvLabel:getContentSize().width + 16) / width
+
+		amountBg:setScaleX(scaleX)
+	end
+
+	if info.level then
+		node:setLevel(info.level)
+	end
+
+	local kRarityName = "RarityImage"
+
+	function node:setRarity(rarity)
+		local imageFile = GameStyle:getEquipRarityImage(rarity)
+		local rarityImage = self:getChildByName(kRarityName)
+
+		if not rarityImage then
+			rarityImage = ccui.ImageView:create(imageFile)
+
+			rarityImage:addTo(node)
+			rarityImage:setName(kRarityName)
+			rarityImage:setAnchorPoint(cc.p(0, 1))
+			rarityImage:setPosition(cc.p(-10, size.height + 10))
+			rarityImage:setScale(0.7)
+			rarityImage:ignoreContentAdaptWithSize(true)
+		end
+
+		rarityImage:loadTexture(imageFile)
+	end
+
+	node:setRarity(rarity + 9)
+
+	local kLockName = "LockImage"
+
+	function node:setLock(lock)
+		local lockImage = self:getChildByName(kLockName)
+
+		if not lockImage then
+			lockImage = ccui.ImageView:create("yinghun_img_lock.png", ccui.TextureResType.plistType)
+
+			lockImage:addTo(node)
+			lockImage:setName(kLockName)
+			lockImage:setAnchorPoint(cc.p(0, 0))
+			lockImage:setPosition(cc.p(3, 24))
+			lockImage:setScale(0.9)
+		end
+
+		lockImage:setVisible(lock)
+	end
+
+	node:setLock(info.lock)
+
+	local kPosName = "PosImage"
+
+	function node:setPosImg(pos)
+		local imageFile = GameStyle:getTSoulPosImage(pos)
+		local posImage = self:getChildByName(kPosName)
+
+		if not posImage then
+			posImage = ccui.ImageView:create(imageFile)
+
+			posImage:addTo(node)
+			posImage:setName(kRarityName)
+			posImage:setAnchorPoint(cc.p(1, 0))
+			posImage:setPosition(cc.p(size.width + 6, -2))
+			posImage:setScale(0.7)
+			posImage:ignoreContentAdaptWithSize(true)
+		end
+
+		posImage:loadTexture(imageFile)
+	end
+
+	node:setPosImg(pos)
+
+	return node
 end
 
 IconFactory:initialize()
