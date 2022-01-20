@@ -3145,6 +3145,231 @@
         ],
         "StoryLink": "eventstory_dusk_08a"
     },
+    "FamilyS01S01": {
+        "FirstReward": "FamilyS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FamilyM01",
+        "Name": "FamilyS01S01_Name",
+        "NextStoryPoint": [
+            "FamilyS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_gohome_00"
+    },
+    "FamilyS01S02": {
+        "FirstReward": "FamilyS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FamilyM01",
+        "Name": "FamilyS01S02_Name",
+        "NextStoryPoint": [
+            "FamilyS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_gohome_01"
+    },
+    "FamilyS01S03": {
+        "FirstReward": "FamilyS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FamilyM01",
+        "Name": "FamilyS01S03_Name",
+        "NextStoryPoint": [
+            "FamilyS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySN02"
+        ],
+        "PreStoryPoint": [
+            "FamilyS01S02"
+        ],
+        "StoryLink": "eventstory_gohome_02"
+    },
+    "FamilyS01S04": {
+        "FirstReward": "FamilyS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FamilyM01",
+        "Name": "FamilyS01S04_Name",
+        "NextStoryPoint": [
+            "FamilyS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySN05"
+        ],
+        "PreStoryPoint": [
+            "FamilyS01S03"
+        ],
+        "StoryLink": "eventstory_gohome_03b"
+    },
+    "FamilyS01S05": {
+        "FirstReward": "FamilyS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FamilyM01",
+        "Name": "FamilyS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySN07"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_gohome_04"
+    },
+    "FamilyS02S01": {
+        "FirstReward": "FamilyS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FamilyM02",
+        "Name": "FamilyS02S01_Name",
+        "NextStoryPoint": [
+            "FamilyS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_gohome_05"
+    },
+    "FamilyS02S02": {
+        "FirstReward": "FamilyS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FamilyM02",
+        "Name": "FamilyS02S02_Name",
+        "NextStoryPoint": [
+            "FamilyS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySE02"
+        ],
+        "PreStoryPoint": [
+            "FamilyS02S01"
+        ],
+        "StoryLink": "eventstory_gohome_06"
+    },
+    "FamilyS02S03": {
+        "FirstReward": "FamilyS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FamilyM02",
+        "Name": "FamilyS02S03_Name",
+        "NextStoryPoint": [
+            "FamilyS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySE05"
+        ],
+        "PreStoryPoint": [
+            "FamilyS02S02"
+        ],
+        "StoryLink": "eventstory_gohome_07b"
+    },
+    "FamilyS02S04": {
+        "FirstReward": "FamilyS01S09_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FamilyM02",
+        "Name": "FamilyS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FamilySE08"
+        ],
+        "PreStoryPoint": [
+            "FamilyS02S03"
+        ],
+        "StoryLink": "eventstory_gohome_08"
+    },
     "FemaleS01E01": {
         "FirstReward": "FemaleS01E01_Reward",
         "Icon": "s_album_story_1",

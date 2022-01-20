@@ -9,7 +9,7 @@ function exports.GetSufaceIndex(env, target)
 		return target:getSurfaceIndex()
 	end
 
-	return 1
+	return 0
 end
 
 local function getTargetRoles(env, target, createIfNotExist)

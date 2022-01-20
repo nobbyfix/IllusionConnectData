@@ -256,6 +256,8 @@ all.Skill_CKFSJi_Unique = {
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				if global.PETS - global.SUMMONS(_env, unit) then
+					global.ResetBuffsLifespan(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_CKFSJi_Unique"))
+
 					local buffeft = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle", {
 						HealRateFactor = this.HealRateFactor,
 						Period = this.Period,
@@ -263,8 +265,10 @@ all.Skill_CKFSJi_Unique = {
 					})
 
 					global.ApplyBuff(_env, unit, {
-						timing = 4,
 						duration = 30,
+						group = "CKFSJi_Unique",
+						timing = 4,
+						limit = 1,
 						tags = {
 							"BUFF",
 							"Skill_CKFSJi_Unique",
@@ -277,6 +281,8 @@ all.Skill_CKFSJi_Unique = {
 				end
 
 				if global.MASTER(_env, unit) then
+					global.ResetBuffsLifespan(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_CKFSJi_Unique"))
+
 					local buffeft = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle", {
 						HealRateFactor = this.HealRateFactor,
 						Period = this.Period,
@@ -284,8 +290,10 @@ all.Skill_CKFSJi_Unique = {
 					})
 
 					global.ApplyBuff(_env, unit, {
-						timing = 4,
 						duration = 30,
+						group = "CKFSJi_Unique",
+						timing = 4,
+						limit = 1,
 						tags = {
 							"BUFF",
 							"Skill_CKFSJi_Unique",
@@ -294,6 +302,20 @@ all.Skill_CKFSJi_Unique = {
 						}
 					}, {
 						buffeft
+					})
+
+					local buffeft2 = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle_Switch")
+
+					global.ApplyBuff(_env, unit, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft2
 					})
 				end
 			end
@@ -316,7 +338,7 @@ all.Skill_CKFSJi_Unique = {
 			global.DispelBuffTrap(_env, cell[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
 			global.ApplyTrap(_env, cell[1], {
 				display = "Castle",
-				duration = 5,
+				duration = 99,
 				triggerLife = 99,
 				tags = {
 					"SleepingBeautyCastle"
@@ -476,25 +498,6 @@ all.Skill_SleepingBeautyCastle = {
 		this.passive2 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
 		}, passive2)
-		local passive3 = __action(this, {
-			name = "passive3",
-			entry = prototype.passive3
-		})
-		passive3 = global["[duration]"](this, {
-			0
-		}, passive3)
-		passive3 = global["[trigger_by]"](this, {
-			"SELF:BUFF_BROKED"
-		}, passive3)
-		passive3 = global["[trigger_by]"](this, {
-			"SELF:BUFF_CANCELED"
-		}, passive3)
-		passive3 = global["[trigger_by]"](this, {
-			"SELF:BUFF_STEALED"
-		}, passive3)
-		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:BUFF_ENDED"
-		}, passive3)
 
 		return this
 	end,
@@ -585,6 +588,36 @@ all.Skill_SleepingBeautyCastle = {
 		end)
 
 		return _env
+	end
+}
+all.Skill_SleepingBeautyCastle_Switch = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_BROKED"
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_CANCELED"
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_STEALED"
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:BUFF_ENDED"
+		}, passive3)
+
+		return this
 	end,
 	passive3 = function (_env, externs)
 		local this = _env.this
@@ -606,6 +639,10 @@ all.Skill_SleepingBeautyCastle = {
 			if global.BuffIsMatched(_env, _env.buff, "Skill_CKFSJi_Unique") then
 				for _, unit in global.__iter__(global.FriendUnits(_env)) do
 					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_CKFSJi_Unique"), 99)
+				end
+
+				for _, cell in global.__iter__(global.FriendCells(_env, global.CELL_IN_POS(_env, 5))) do
+					global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
 				end
 			end
 		end)
@@ -777,6 +814,8 @@ all.Skill_CKFSJi_Unique_EX = {
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				if global.PETS - global.SUMMONS(_env, unit) then
+					global.ResetBuffsLifespan(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_CKFSJi_Unique"))
+
 					local buffeft = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle", {
 						HealRateFactor = this.HealRateFactor,
 						Period = this.Period,
@@ -784,8 +823,10 @@ all.Skill_CKFSJi_Unique_EX = {
 					})
 
 					global.ApplyBuff(_env, unit, {
-						timing = 4,
 						duration = 30,
+						group = "CKFSJi_Unique",
+						timing = 4,
+						limit = 1,
 						tags = {
 							"BUFF",
 							"Skill_CKFSJi_Unique",
@@ -798,6 +839,8 @@ all.Skill_CKFSJi_Unique_EX = {
 				end
 
 				if global.MASTER(_env, unit) then
+					global.ResetBuffsLifespan(_env, unit, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_CKFSJi_Unique"))
+
 					local buffeft = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle", {
 						HealRateFactor = this.HealRateFactor,
 						Period = this.Period,
@@ -805,8 +848,10 @@ all.Skill_CKFSJi_Unique_EX = {
 					})
 
 					global.ApplyBuff(_env, unit, {
-						timing = 4,
 						duration = 30,
+						group = "CKFSJi_Unique",
+						timing = 4,
+						limit = 1,
 						tags = {
 							"BUFF",
 							"Skill_CKFSJi_Unique",
@@ -815,6 +860,20 @@ all.Skill_CKFSJi_Unique_EX = {
 						}
 					}, {
 						buffeft
+					})
+
+					local buffeft2 = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle_Switch")
+
+					global.ApplyBuff(_env, unit, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft2
 					})
 				end
 			end

@@ -52,16 +52,28 @@ function StageTeamMediator:onRegister()
 			func = bind1(self.onClickFight, self)
 		}
 	})
-	self._oneKeyWidget = self:bindWidget("main.info_bg.button_one_key_embattle", ThreeLevelViceButton, {
+	self._oneKeyWidget = self:bindWidget("main.button_one_key_embattle", ThreeLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_2",
 			func = bind1(self.onClickOneKeyEmbattle, self)
 		}
 	})
-	self._oneKeyWidget = self:bindWidget("main.info_bg.button_one_key_break", ThreeLevelMainButton, {
+	self._oneKeyWidget = self:bindWidget("main.button_one_key_break", ThreeLevelMainButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_2",
 			func = bind1(self.onClickOneKeyBreak, self)
+		}
+	})
+	self._oneKeyWidget = self:bindWidget("main.button_one_key_power", ThreeLevelMainButton, {
+		handler = {
+			clickAudio = "Se_Click_Common_2",
+			func = bind1(self.onClickPowerBtn, self)
+		}
+	})
+	self._oneKeyWidget = self:bindWidget("main.button_one_key_power_1", ThreeLevelMainButton, {
+		handler = {
+			clickAudio = "Se_Click_Common_2",
+			func = bind1(self.onClickPowerBtn, self)
 		}
 	})
 	self._heroSystem = self._developSystem:getHeroSystem()
@@ -336,10 +348,14 @@ function StageTeamMediator:initWidgetInfo()
 	self._spPanel:setVisible(false)
 
 	self._btnPanel = self._main:getChildByName("btnPanel")
-	self._teamBreakBtn = self._main:getChildByFullName("info_bg.button_one_key_break")
-	self._teamOneKeyBtn = self._main:getChildByFullName("info_bg.button_one_key_embattle")
+	self._teamBreakBtn = self._main:getChildByFullName("button_one_key_break")
+	self._teamOneKeyBtn = self._main:getChildByFullName("button_one_key_embattle")
+	self._powerBtn = self._main:getChildByFullName("button_one_key_power")
+	self._powerBtn1 = self._main:getChildByFullName("button_one_key_power_1")
 	self._costTouch = self._main:getChildByFullName("info_bg.costTouch")
 
+	self._powerBtn:setVisible(false)
+	self._powerBtn1:setVisible(false)
 	self._costTouch:addClickEventListener(function ()
 		self:createCostTip()
 	end)
@@ -421,6 +437,13 @@ function StageTeamMediator:initWidgetInfo()
 	end
 
 	self._pageTipPanel:setContentSize(cc.size(width, 50))
+
+	if self:isCrusadeStage() then
+		self:setPowerBtnVis()
+		self._teamBreakBtn:setPositionX(954)
+		self._teamOneKeyBtn:setPositionX(954)
+	end
+
 	self:setLabelEffect()
 	self:checkStageType()
 	self:ignoreSafeArea()
@@ -1898,4 +1921,72 @@ end
 
 function StageTeamMediator:onClickLimitTipsPanel()
 	self._limitTips:setVisible(false)
+end
+
+function StageTeamMediator:setPowerBtnVis()
+	self._powerBtn1:setVisible(next(self._limitHero) ~= nil)
+	self._powerBtn:setVisible(next(self._limitHero) == nil)
+end
+
+function StageTeamMediator:onClickPowerBtn()
+	if not next(self._limitHero) then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Crusade_Tips_Energy")
+		}))
+
+		return
+	end
+
+	local bagSystem = self._developSystem:getBagSystem()
+	local Crusade_Energy = ConfigReader:getRecordById("ConfigValue", "Crusade_Energy").content
+	local Crusade_Cost = ConfigReader:getRecordById("ConfigValue", "Crusade_CrusadeStamina_Up").content
+	local curPower = bagSystem:getItemCount(Crusade_Cost.item)
+	local freeNum = Crusade_Energy - self._crusadeSystem:getCrusade():getResetTimes()
+	local content = freeNum > 0 and Strings:get("Crusade_Energy_Free", {
+		num = Crusade_Energy
+	}) or Strings:get("Crusade_Energy_Pay")
+	local costText = freeNum > 0 and Strings:get("Crusade_Energy_Free_Button", {
+		num = freeNum .. "/" .. Crusade_Energy
+	}) or Crusade_Cost.num .. "/" .. curPower
+	local outSelf = self
+	local delegate = {}
+
+	local function func()
+		if freeNum <= 0 and curPower < Crusade_Cost.num then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Error_10223")
+			}))
+
+			return
+		end
+
+		self._crusadeSystem:requestResetCrusadePower(function ()
+			if checkDependInstance(self) then
+				self._limitHero = self._crusadeSystem:getCrusade():getLimitHero()
+
+				self:initData()
+				self:refreshPetNode()
+				self:refreshListView(true)
+				self:setPowerBtnVis()
+			end
+		end)
+	end
+
+	function delegate:willClose(popupMediator, data)
+		if data and data.response == "ok" then
+			func()
+		end
+	end
+
+	local data = {
+		title = Strings:get("Crusade_Energy_Button"),
+		content = content,
+		costText = costText,
+		isfree = freeNum > 0
+	}
+	local view = self:getInjector():getInstance("CrusadeAlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
 end

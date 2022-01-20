@@ -55,3 +55,26 @@ end
 function JumpSystem:isGetRewardLimit()
 	return self._jumpData:isGetRewardLimit()
 end
+
+function JumpSystem:getBuyCostItemId()
+	return self._jumpData:getBuyTimesCost().id
+end
+
+function JumpSystem:getCostBuyTimes(times)
+	local amount = self._jumpData:getBuyTimesCost().amount
+	local cost = amount[times] or amount[#amount]
+
+	return cost
+end
+
+function JumpSystem:getEachBuyNum()
+	return self._jumpData:getEachBuyNum()
+end
+
+function JumpSystem:getCostBuyMaxTimes()
+	return self._jumpData:getBuyLimit()
+end
+
+function JumpSystem:getCostAmountList()
+	return self._jumpData:getBuyTimesCost().amount
+end

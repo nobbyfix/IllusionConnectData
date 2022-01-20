@@ -47,11 +47,20 @@ all.Skill_LEIMu_Normal = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1,
-				0
-			}, 100, "skill1"))
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill1"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1,
+					0
+				}, 100, "skill1"))
+			end
+
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
@@ -117,11 +126,20 @@ all.Skill_LEIMu_Proud = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill2"))
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill2"))
+			end
+
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
@@ -203,19 +221,36 @@ all.Skill_LEIMu_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.HarmTargetView(_env, {
-				_env.TARGET
-			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill3_1"))
-			global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill3_2"))
+			if num == 1 then
+				global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.9, 80)
+				global.HarmTargetView(_env, {
+					_env.TARGET
+				})
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill3_1"))
+				global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill3_2"))
+			else
+				global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+				global.HarmTargetView(_env, {
+					_env.TARGET
+				})
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill3_1"))
+				global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.TARGET, "target")
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, _env.TARGET) * global.BACK_OF(_env, _env.TARGET, true) * global.COL_OF(_env, _env.TARGET))) do
@@ -269,10 +304,21 @@ all.Skill_LEIMu_Unique = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -320,10 +366,21 @@ all.Skill_LEIMu_Unique = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -373,10 +430,21 @@ all.Skill_LEIMu_Unique = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -426,10 +494,21 @@ all.Skill_LEIMu_Unique = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -697,11 +776,20 @@ all.Skill_LEIMu_Proud_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill2"))
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill2"))
+			end
+
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
@@ -806,19 +894,36 @@ all.Skill_LEIMu_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
-			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.HarmTargetView(_env, {
-				_env.TARGET
-			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill3_1"))
-			global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
-				0
-			}, 100, "skill3_2"))
+			if num == 1 then
+				global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.9, 80)
+				global.HarmTargetView(_env, {
+					_env.TARGET
+				})
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill3_1"))
+				global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.9,
+					0
+				}, 100, "skill3_2"))
+			else
+				global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+				global.HarmTargetView(_env, {
+					_env.TARGET
+				})
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill3_1"))
+				global.DelayCall(_env, 833, global.Perform, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.1,
+					0
+				}, 100, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.TARGET, "target")
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env, global.NEIGHBORS_OF(_env, _env.TARGET) * global.BACK_OF(_env, _env.TARGET, true) * global.COL_OF(_env, _env.TARGET))) do
@@ -872,10 +977,21 @@ all.Skill_LEIMu_Unique_EX = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -923,10 +1039,21 @@ all.Skill_LEIMu_Unique_EX = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -976,10 +1103,21 @@ all.Skill_LEIMu_Unique_EX = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
@@ -1029,10 +1167,21 @@ all.Skill_LEIMu_Unique_EX = {
 			global.HarmTargetView(_env, {
 				_env.target
 			})
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
-				-1.1,
-				0
-			}, 50, "skill3_2"))
+
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 1 then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.9,
+					0
+				}, 50, "skill3_2"))
+			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
+					-1.1,
+					0
+				}, 50, "skill3_2"))
+			end
+
 			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({

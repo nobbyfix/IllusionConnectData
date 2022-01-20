@@ -60,3 +60,7 @@ end
 function GalleryParty:getIcon()
 	return self._config.Icon
 end
+
+function GalleryParty:getType()
+	return self._config.Type
+end

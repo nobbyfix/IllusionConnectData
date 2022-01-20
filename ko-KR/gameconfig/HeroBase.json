@@ -7422,7 +7422,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.28,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_GCZi",
         "KeyPassiveSkill": "",
@@ -12095,7 +12095,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.28,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_LDYu",
         "KeyPassiveSkill": "Hero_PBattle_LDYu_Key",
@@ -12813,7 +12813,8 @@
         "Speed": 50,
         "StarId": "LEIMu_1",
         "SurfaceList": [
-            "Surface_LEIMu_1"
+            "Surface_LEIMu_1",
+            "Surface_LEIMu_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -14067,7 +14068,8 @@
         "Speed": 50,
         "StarId": "LSLTe_1",
         "SurfaceList": [
-            "Surface_LSLTe_1"
+            "Surface_LSLTe_1",
+            "Surface_LSLTe_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",

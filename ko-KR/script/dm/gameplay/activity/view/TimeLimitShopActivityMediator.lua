@@ -138,6 +138,12 @@ local timeLimitShopConfig = {
 		CellBuyEndImg = "jqtd_img_ysmlzl_jldih.png",
 		CellNameOpacity = 255,
 		CellNameColor = cc.c4b(190, 177, 241, 255)
+	},
+	family = {
+		CellBuyImg = "jqtd_img_ysxb_jldi.png",
+		CellBuyEndImg = "jqtd_img_ysxb_jldih.png",
+		CellNameOpacity = 255,
+		CellNameColor = cc.c4b(179, 192, 218, 255)
 	}
 }
 local btnHandlers = {

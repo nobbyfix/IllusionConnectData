@@ -43,6 +43,12 @@ function HeroList:synchronizeDelEquip(data)
 
 			hero:synchronizeDelEquip(v.heroEquip)
 		end
+
+		if v.tsoul then
+			local hero = self:getHeroById(heroId)
+
+			hero:synchronizeDelTsoul(v.tsoul)
+		end
 	end
 end
 

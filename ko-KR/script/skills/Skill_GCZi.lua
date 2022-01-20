@@ -361,7 +361,7 @@ all.Skill_GCZi_Unique = {
 				duration = 1,
 				triggerLife = 99,
 				tags = {
-					"GCZi_jianzhen"
+					"GCZi_Unique_jianzhen"
 				}
 			}, {
 				trap
@@ -373,7 +373,7 @@ all.Skill_GCZi_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.DispelBuffTrap(_env, global.GetCell(_env, _env.TARGET), global.BUFF_MARKED(_env, "GCZi_jianzhen"))
+			global.DispelBuffTrap(_env, global.GetCell(_env, _env.TARGET), global.BUFF_MARKED(_env, "GCZi_Unique_jianzhen"))
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
@@ -430,64 +430,125 @@ all.Skill_GCZi_Passive = {
 			local global = _env.global
 
 			if global.FriendMaster(_env) then
-				if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive")) == 0 and global.MARKED(_env, "GCZi")(_env, _env.ACTOR) then
-					local buff_trap = global.NumericEffect(_env, "+defrate", {
-						"+Normal",
-						"+Normal"
-					}, 0)
-					local trap = global.BuffTrap(_env, {
-						timing = 2,
-						duration = 1,
-						tags = {}
-					}, {
-						buff_trap
-					})
+				if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive")) == 0 and global.MARKED(_env, "GCZi")(_env, _env.ACTOR) and not global.MASTER(_env, _env.ACTOR) then
+					if global.MARKED(_env, "ENEMY")(_env, _env.ACTOR) then
+						local buff_trap = global.NumericEffect(_env, "+defrate", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+						local trap = global.BuffTrap(_env, {
+							timing = 2,
+							duration = 1,
+							tags = {}
+						}, {
+							buff_trap
+						})
 
-					for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
-						global.ApplyTrap(_env, cell, {
-							display = "Jianzhen",
-							duration = 99,
-							triggerLife = 99,
+						for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
+							global.ApplyTrap(_env, cell, {
+								display = "Jianzhen",
+								duration = 99,
+								triggerLife = 99,
+								tags = {
+									"GCZi_jianzhen_Activity"
+								}
+							}, {
+								trap
+							})
+						end
+
+						local buffeft = global.NumericEffect(_env, "+defrate", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							timing = 4,
+							duration = 30,
 							tags = {
-								"GCZi_jianzhen"
+								"STATUS",
+								"Skill_GCZi_Passive_Activity_time"
 							}
 						}, {
-							trap
+							buffeft
 						})
+
+						local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen_Activity")
+
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"STATUS",
+								"Skill_GCZi_Passive_Activity",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					else
+						local buff_trap = global.NumericEffect(_env, "+defrate", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+						local trap = global.BuffTrap(_env, {
+							timing = 2,
+							duration = 1,
+							tags = {}
+						}, {
+							buff_trap
+						})
+
+						for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
+							global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "GCZi_jianzhen"))
+							global.ApplyTrap(_env, cell, {
+								display = "Jianzhen",
+								duration = 99,
+								triggerLife = 99,
+								tags = {
+									"GCZi_jianzhen"
+								}
+							}, {
+								trap
+							})
+						end
+
+						local buffeft = global.NumericEffect(_env, "+defrate", {
+							"+Normal",
+							"+Normal"
+						}, 0)
+
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							timing = 4,
+							duration = 30,
+							tags = {
+								"STATUS",
+								"Skill_GCZi_Passive_time"
+							}
+						}, {
+							buffeft
+						})
+
+						if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive_Activity")) == 0 then
+							local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
+								CostFactor = this.CostFactor
+							})
+
+							global.ApplyBuff(_env, global.FriendMaster(_env), {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"STATUS",
+									"Skill_GCZi_Passive",
+									"UNDISPELLABLE",
+									"UNSTEALABLE"
+								}
+							}, {
+								buff
+							})
+						end
 					end
-
-					local buffeft = global.NumericEffect(_env, "+defrate", {
-						"+Normal",
-						"+Normal"
-					}, 0)
-
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						timing = 4,
-						duration = 30,
-						tags = {
-							"STATUS",
-							"Skill_GCZi_Passive_time"
-						}
-					}, {
-						buffeft
-					})
-
-					local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
-						CostFactor = this.CostFactor
-					})
-
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"Skill_GCZi_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
 				end
 			elseif global.MARKED(_env, "GCZi")(_env, _env.ACTOR) then
 				local buff_trap = global.NumericEffect(_env, "+defrate", {
@@ -575,6 +636,125 @@ all.Skill_GCZi_Passive = {
 				}, {
 					buffeft2
 				})
+			end
+
+			if global.MASTER(_env, _env.ACTOR) and global.MARKED(_env, "GCZi")(_env, _env.ACTOR) then
+				if global.MARKED(_env, "ENEMY")(_env, _env.ACTOR) then
+					local buff_trap = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+					local trap = global.BuffTrap(_env, {
+						timing = 2,
+						duration = 1,
+						tags = {}
+					}, {
+						buff_trap
+					})
+
+					for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
+						global.ApplyTrap(_env, cell, {
+							display = "Jianzhen",
+							duration = 99,
+							triggerLife = 99,
+							tags = {
+								"GCZi_jianzhen_Activity"
+							}
+						}, {
+							trap
+						})
+					end
+
+					local buffeft = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 4,
+						duration = 30,
+						tags = {
+							"STATUS",
+							"Skill_GCZi_Passive_Activity_time"
+						}
+					}, {
+						buffeft
+					})
+
+					local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen_Activity")
+
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"Skill_GCZi_Passive_Activity",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					})
+				else
+					local buff_trap = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+					local trap = global.BuffTrap(_env, {
+						timing = 2,
+						duration = 1,
+						tags = {}
+					}, {
+						buff_trap
+					})
+
+					for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
+						global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "GCZi_jianzhen"))
+						global.ApplyTrap(_env, cell, {
+							display = "Jianzhen",
+							duration = 99,
+							triggerLife = 99,
+							tags = {
+								"GCZi_jianzhen"
+							}
+						}, {
+							trap
+						})
+					end
+
+					local buffeft = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 4,
+						duration = 30,
+						tags = {
+							"STATUS",
+							"Skill_GCZi_Passive_time"
+						}
+					}, {
+						buffeft
+					})
+
+					local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
+						CostFactor = this.CostFactor
+					})
+
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"Skill_GCZi_Passive_Activity",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					})
+				end
 			end
 		end)
 
@@ -1098,7 +1278,7 @@ all.Skill_GCZi_Unique_EX = {
 				duration = 1,
 				triggerLife = 99,
 				tags = {
-					"GCZi_jianzhen"
+					"GCZi_Unique_jianzhen"
 				}
 			}, {
 				trap
@@ -1110,7 +1290,7 @@ all.Skill_GCZi_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.DispelBuffTrap(_env, global.GetCell(_env, _env.TARGET), global.BUFF_MARKED(_env, "GCZi_jianzhen"))
+			global.DispelBuffTrap(_env, global.GetCell(_env, _env.TARGET), global.BUFF_MARKED(_env, "GCZi_Unique_jianzhen"))
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
@@ -1224,6 +1404,7 @@ all.Skill_GCZi_Passive_EX = {
 					})
 
 					for _, cell in global.__iter__(global.FriendCells(_env, global.NEIGHBORS_CELL_OF(_env, global.GetCell(_env, _env.ACTOR)) - global.CELL_HAS_UNIT(_env, _env.ACTOR))) do
+						global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "GCZi_jianzhen"))
 						global.ApplyTrap(_env, cell, {
 							display = "Jianzhen",
 							duration = 99,
@@ -1262,22 +1443,24 @@ all.Skill_GCZi_Passive_EX = {
 						buffeft
 					})
 
-					local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
-						CostFactor = this.CostFactor
-					})
+					if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive_Activity")) == 0 then
+						local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
+							CostFactor = this.CostFactor
+						})
 
-					global.ApplyBuff(_env, global.FriendMaster(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"Skill_GCZi_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
+						global.ApplyBuff(_env, global.FriendMaster(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"STATUS",
+								"Skill_GCZi_Passive",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 			elseif global.MARKED(_env, "GCZi")(_env, _env.ACTOR) then
 				local buff_trap = global.NumericEffect(_env, "+defrate", {
@@ -1403,6 +1586,107 @@ all.Skill_GCZi_Passive_EX = {
 					local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, unit, this.HealRateFactor, 0)
 
 					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.GCZi_Passive_jianzhen_Activity = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"SELF:BUFF_BROKED"
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"SELF:BUFF_CANCELED"
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"SELF:BUFF_STEALED"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:BUFF_ENDED"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectTrapCount(_env, global.GetCell(_env, _env.unit), global.BUFF_MARKED(_env, "GCZi_jianzhen_Activity")) > 0 and not global.MARKED(_env, "GCZi")(_env, _env.unit) and global.PETS - global.SUMMONS(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				local setLoction = global.GetCellId(_env, _env.unit)
+				local units = global.ReviveByUnit(_env, _env.unit, 1, 1000, {
+					global.abs(_env, setLoction)
+				})
+
+				if units then
+					global.AddStatus(_env, units, "GCZi_Passive_Activity")
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.BuffIsMatched(_env, _env.buff, "Skill_GCZi_Passive_Activity_time") then
+				for _, cell in global.__iter__(global.FriendCells(_env)) do
+					global.DispelBuffTrap(_env, cell, global.BUFF_MARKED(_env, "GCZi_jianzhen_Activity"))
+				end
+
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "GCZi"))) do
+					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_GCZi_Passive_Activity_time"), 99)
 				end
 			end
 		end)

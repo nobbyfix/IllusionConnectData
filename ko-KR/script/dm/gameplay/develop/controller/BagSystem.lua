@@ -779,6 +779,15 @@ function BagSystem:getTabFilterMap()
 
 			return slot1
 		end,
+		[BagItemShowType.kTSoul] = function (item)
+			if item:getType() ~= ItemPages.kTsoul then
+				slot1 = false
+			else
+				slot1 = true
+			end
+
+			return slot1
+		end,
 		[BagItemShowType.kOther] = function (item)
 			if item:getType() ~= ItemPages.kOther then
 				slot1 = false
@@ -2011,28 +2020,35 @@ function BagSystem:getRedPointForShopExchange()
 end
 
 function BagSystem:updataURExhangeRedPoint(data)
+	local isRed = false
+	local ret = false
+
 	for k, v in pairs(data) do
 		local itemConfig = self:getItemConfig(k)
 
 		if itemConfig and itemConfig.Page == ItemPages.kCompose then
 			local entry = self:getEntryById(k)
-			local isRed = false
-
-			print(self:checkCanUseCompose(entry.item))
+			ret = true
 
 			if self:checkCanUseCompose(entry.item) then
 				if entry.count > 1 then
 					isRed = true
+
+					break
 				end
 			else
 				isRed = true
-			end
 
-			if isRed then
-				self:setURExchangeRedPoint(true)
+				break
 			end
 		end
 	end
+
+	if not ret then
+		return
+	end
+
+	self:setURExchangeRedPoint(isRed)
 end
 
 function BagSystem:getURExchangeRedPoint()
@@ -2045,4 +2061,42 @@ function BagSystem:setURExchangeRedPoint(status)
 	local playerId = self:getDevelopSystem():getPlayer():getRid()
 
 	cc.UserDefault:getInstance():setBoolForKey(playerId .. UserDefaultKey.KURExchangeRedPoint, status)
+end
+
+function BagSystem:isHasTSoulItem()
+	local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, UserDefaultKey.kBag_TSoul_Show, "0")
+	local value = tonumber(data)
+
+	if value > 0 then
+		return true
+	end
+
+	local function filterFunc(entry)
+		local item = entry.item
+
+		if item:getSubType() ~= ItemTypes.K_SOUL then
+			slot2 = false
+		else
+			slot2 = true
+		end
+
+		return slot2
+	end
+
+	local entryIds = self:getBag():getEntryIds(filterFunc)
+
+	if entryIds and #entryIds > 0 then
+		customDataSystem:setValue(PrefixType.kGlobal, UserDefaultKey.kBag_TSoul_Show, "100")
+	end
+
+	if entryIds then
+		if #entryIds <= 0 then
+			slot6 = false
+		else
+			slot6 = true
+		end
+	end
+
+	return slot6
 end

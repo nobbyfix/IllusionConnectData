@@ -162,6 +162,9 @@ Hero:has("_clone", {
 Hero:has("_lastDate", {
 	is = "rw"
 })
+Hero:has("_tsoul", {
+	is = "rw"
+})
 
 function Hero:initialize(heroId, player)
 	super.initialize(self)
@@ -219,6 +222,7 @@ function Hero:initialize(heroId, player)
 	self:initStarRewardsConfig()
 
 	self._lastDate = {}
+	self._tsoul = {}
 end
 
 function Hero:getConfig()
@@ -422,6 +426,13 @@ function Hero:synchronize(data)
 		self._surfaceId = data.surfaceId
 	end
 
+	if data.tsoul then
+		for k, v in pairs(data.tsoul) do
+			self._tsoul[k] = v
+			hasBaseAttrChange = true
+		end
+	end
+
 	self._attrs = data.attrs
 
 	self:clearAttrsFlag()
@@ -455,6 +466,24 @@ function Hero:synchronizeDelEquip(data)
 	for type, equip in pairs(data) do
 		if self._equipIds[type] then
 			self._equipIds[type] = nil
+		end
+	end
+
+	self:syncAttrEffect()
+end
+
+function Hero:synchronizeDelTsoul(data)
+	if not data then
+		return
+	end
+
+	if self._clone then
+		self._clone:synchronizeDelTsoul(data)
+	end
+
+	for type, tsoul in pairs(data) do
+		if self._tsoul[type] then
+			self._tsoul[type] = nil
 		end
 	end
 
@@ -737,9 +766,13 @@ end
 function Hero:getAddAttrByType(type)
 	self:createEquipSkillAttr()
 
-	local num = self:getGalleryAllAttrByType(type) + self:getAuraEffectById(type) + self:getEquipAttrByType(type) + self:getBuildComfortEffectById(type) + self:getTimeEffectById(type)
+	local num = self:getGalleryAllAttrByType(type) + self:getAuraEffectById(type) + self:getEquipAttrByType(type) + self:getBuildComfortEffectById(type) + self:getTimeEffectById(type) + self:getTSOULAttrByType(type)
 
 	return num
+end
+
+function Hero:getTSOULAttrByType(type)
+	return self._player:getEffectCenter():getTSOULEffectsById(self._id, type)
 end
 
 function Hero:checkHaveAwakenView()
@@ -1476,4 +1509,8 @@ function Hero:getStarIdByNum(num)
 	end
 
 	return baseStarId
+end
+
+function Hero:getTSoulIdByPos(pos)
+	return self._tsoul[tostring(pos)]
 end

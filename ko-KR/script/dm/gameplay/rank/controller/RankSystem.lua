@@ -32,6 +32,7 @@ RankType = {
 	kPetRace = 11,
 	KPetWorldScore = 25,
 	kJump = 44,
+	KPlane = 46,
 	kClubBoss = 41,
 	KRTPK = 26,
 	kExp = 6,
@@ -69,6 +70,7 @@ RankClass = {
 	[RankType.KPetWorldScore] = PetWorldScoreRankRecord,
 	[RankType.KStageAreana] = StageAreanaRankRecord,
 	[RankType.kJump] = MiniGameJumpRankRecord,
+	[RankType.KPlane] = MiniGamePlaneRankRecord,
 	[RankType.KNewAreana] = ArenaNewRankRecord
 }
 RankSwitch = {

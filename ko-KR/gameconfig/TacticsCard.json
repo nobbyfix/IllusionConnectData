@@ -83,6 +83,18 @@
         "Type": "green",
         "Weight": 1
     },
+    "TacticsCard_FZhou": {
+        "AutoWeight": "",
+        "CardRange": "RANGE_GXiang",
+        "Condition": {},
+        "Skill": "Skill_ToolCard_FZhou",
+        "SkillCost": 5,
+        "SkillPic": "battlepic_fzhou",
+        "TagPic": "TacticsCard_Fzhou",
+        "ToolCard": 1,
+        "Type": "yellow",
+        "Weight": 1
+    },
     "TacticsCard_Freeze_Multi": {
         "AutoWeight": "80",
         "CardRange": "Target_FLBDSi",

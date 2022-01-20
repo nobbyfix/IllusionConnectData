@@ -257,7 +257,7 @@ all.Skill_HLa_Unique = {
 			local enemy = global.EnemyUnits(_env)
 
 			if this.Num < #enemy then
-				local kill = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+				local kill = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 				if kill[1] then
 					global.AnimForTrgt(_env, kill[1], {
@@ -776,7 +776,7 @@ all.Skill_HLa_Unique_EX = {
 			local enemy = global.EnemyUnits(_env)
 
 			if this.Num < #enemy then
-				local kill = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+				local kill = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 				if kill[1] then
 					global.AnimForTrgt(_env, kill[1], {

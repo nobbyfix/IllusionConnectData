@@ -5,6 +5,7 @@ require("dm.gameplay.develop.model.bag.item.Equipment")
 require("dm.gameplay.develop.model.bag.item.Currency")
 require("dm.gameplay.develop.model.bag.item.MapItem")
 require("dm.gameplay.develop.model.bag.item.EquipItem")
+require("dm.gameplay.develop.model.bag.item.TsouItem")
 
 function IS_SERVER_DELETE_FLAG(value)
 	return value == "$nil"
@@ -396,6 +397,36 @@ end
 function Bag:delEquipList(data)
 	for key, v in pairs(data) do
 		local id = NEW_EQUIP_ID_HEAD .. key
+
+		if self._entryList[id] then
+			self._entryList[id] = nil
+		end
+	end
+end
+
+function Bag:synTSoulList(tsoulMap)
+	for key, itemData in pairs(tsoulMap) do
+		local id = key
+		local entry = self._entryList[id]
+
+		if entry == nil then
+			local item = TsouItem:new(id, itemData)
+
+			if item then
+				entry = newBagEntry(item, itemData.count or 1)
+				self._entryList[id] = entry
+			end
+		else
+			entry.item:synchronize(itemData)
+
+			entry.count = itemData.count or 1
+		end
+	end
+end
+
+function Bag:delTSoulList(data)
+	for key, v in pairs(data) do
+		local id = key
 
 		if self._entryList[id] then
 			self._entryList[id] = nil

@@ -42,6 +42,9 @@ HomeMediator:has("_dreamSystem", {
 HomeMediator:has("_cooperateSystem", {
 	is = "r"
 }):injectWith("CooperateBossSystem")
+HomeMediator:has("_planeWarSystem", {
+	is = "r"
+}):injectWith("PlaneWarSystem")
 
 local kBtnHandlers = {
 	unfoldMenuBtn = {
@@ -3957,6 +3960,15 @@ function HomeMediator:setComplexActivityEntry()
 			imgZorder = 2,
 			aimpos = cc.p(60, 60),
 			imgpos = cc.p(65, 25),
+			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivityFamily] = {
+			img = "family_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "rukou_huijiadeluzhuyefuben",
+			imgZorder = 2,
+			aimpos = cc.p(60, 55),
+			imgpos = cc.p(65, 55),
 			redpos = cc.p(115, 56)
 		}
 	}

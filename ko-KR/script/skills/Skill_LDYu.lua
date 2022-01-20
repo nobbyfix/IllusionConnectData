@@ -49,7 +49,7 @@ all.Skill_LDYu_Normal = {
 			local global = _env.global
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.7,
+				-1.1,
 				0
 			}, 100, "skill1"))
 			global.AssignRoles(_env, _env.TARGET, "target")
@@ -119,7 +119,7 @@ all.Skill_LDYu_Proud = {
 			local global = _env.global
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.4,
+				-1.1,
 				0
 			}, 100, "skill2"))
 			global.AssignRoles(_env, _env.TARGET, "target")
@@ -563,7 +563,7 @@ all.Skill_LDYu_Proud_EX = {
 			local global = _env.global
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.4,
+				-1.1,
 				0
 			}, 100, "skill2"))
 			global.AssignRoles(_env, _env.TARGET, "target")

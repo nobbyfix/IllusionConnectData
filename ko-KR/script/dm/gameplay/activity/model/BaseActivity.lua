@@ -232,6 +232,12 @@ function BaseActivity:getTimeStr1()
 	return timeInfo.start[1] .. "~" .. timeInfo["end"]
 end
 
+function BaseActivity:getTimeStr2()
+	local timeInfo = self:getLocalTimeFactor1()
+
+	return timeInfo.start[1] .. "\n" .. timeInfo["end"]
+end
+
 function BaseActivity:getBubleDesc()
 	return self._config.ActivityConfig.BubleDesc
 end

@@ -766,7 +766,7 @@ function ArenaNewSystem:enterBattleReoprt(battleData, reportData, refreshRival)
 
 			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, userData, outSelf))
 		else
-			local id = challengerId
+			local id = logicInfo.mainPlayerId
 			local loseData = {
 				battleStatist = battleData.statist.players,
 				resultData = reportData,

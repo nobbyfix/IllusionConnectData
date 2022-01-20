@@ -93,7 +93,10 @@ function ClubBossShowBattleResultMediator:refreshView()
 	local team = self._clubSystem:getClubBossTeamInfo()
 	self._clubBossInfo = self._developSystem:getPlayer():getClub():getClubBossInfo(viewType)
 	local model = nil
-	local currentBossPoint = self._clubBossInfo:getBossPointsByPonitId(team.pointId)
+
+	dump(team.pointId, "team.pointId >>>>>>")
+
+	local currentBossPoint = self._clubBossInfo:getBossPointsById(team.pointId)
 
 	if currentBossPoint then
 		local currentBlockConfig = currentBossPoint:getBlockConfig()

@@ -417,6 +417,13 @@ function ShopMainMediator:refreshView()
 
 	if self._shopId == "Shop_URMap" then
 		self._exchange_btn:setVisible(true)
+
+		if self._shopSystem:getRedPointForShopExchange() then
+			local data = self._bagSystem:getRepeatURItems()
+
+			self._bagSystem:setURExchangeRedPoint(next(data) ~= nil)
+		end
+
 		self:refreshExchangeRedpoint()
 	end
 end

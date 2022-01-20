@@ -239,6 +239,21 @@
         "Type": 2,
         "zOrder": 1.0
     },
+    "BuffWeaken": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "qusan_fengshenbenjizhitexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 5,
+        "zOrder": 1.0
+    },
     "Burning": {
         "Color": "",
         "DescWord": "",
@@ -854,6 +869,21 @@
         "Type": 0,
         "zOrder": 1.0
     },
+    "HurtUp": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "zengshang_fengshenbenjizhitexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 5,
+        "zOrder": 1.0
+    },
     "Immune": {
         "Color": "",
         "DescWord": "",
@@ -1214,6 +1244,21 @@
         "Type": 2,
         "zOrder": 1.0
     },
+    "Purify": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "jinghua_fengshenbenjizhitexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 5,
+        "zOrder": 1.0
+    },
     "RageDown": {
         "Color": "",
         "DescWord": "",
@@ -1227,6 +1272,21 @@
         "Tick": "",
         "TickPos": "",
         "Type": 2,
+        "zOrder": 1.0
+    },
+    "RageGainUp": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "nuhui_fengshenbenjizhitexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 5,
         "zOrder": 1.0
     },
     "Reflect": {

@@ -1482,6 +1482,34 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
+	end
+
 	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
 		"?Normal"
 	}, damage.val)
@@ -2115,6 +2143,34 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 
 			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
 		end
+	end
+
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
 	end
 
 	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
@@ -2783,6 +2839,34 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
 		end
+	end
+
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 and n == total then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
 	end
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
@@ -3470,6 +3554,34 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 
 			global.ApplyRPDamage_ResultCheck(_env, actor, target, DelRpValueFactor)
 		end
+	end
+
+	local hurt_Armor_15007 = global.SpecialPropGetter(_env, "hurt_Armor_15007")(_env, target)
+
+	if hurt_Armor_15007 and hurt_Armor_15007 ~= 0 and n == total then
+		global.ApplyEnergyDamage(_env, global.GetOwner(_env, actor), hurt_Armor_15007)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDISPELLABLE", "UNSTEALABLE", "UR_EQUIPMENT", "EquipSkill_Armor_15007", "HURTED"), 99)
+
+		local buff_count = global.SpecialNumericEffect(_env, "+count_Armor_15007", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, global.EnemyField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"NUMERIC",
+				"BUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE",
+				"UR_EQUIPMENT",
+				"count_Armor_15007",
+				"COUNT"
+			}
+		}, {
+			buff_count
+		})
 	end
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then

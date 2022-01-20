@@ -587,6 +587,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ExploreMapTimes_Desc"
     },
+    "Condi_FamilyExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Family_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FamilyExchangeAchieve_Desc"
+    },
     "Condi_FemaleExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1042,6 +1049,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Decs"
     },
+    "Condi_MiniGameDailyScore_Fly": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly.dailyTotalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
+    },
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1055,6 +1069,13 @@
         "ConditionType1": "player.activities.activityMap.?1.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
+    },
+    "Condi_MiniGameTotalScore_Fly": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly.TotalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",

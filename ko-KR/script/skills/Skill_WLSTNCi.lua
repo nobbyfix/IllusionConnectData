@@ -640,7 +640,7 @@ all.Skill_WLSTNCi_Passive = {
 					"Model_WLSTNCi_King"
 				}
 				local num = global.GetSufaceIndex(_env, _env.ACTOR)
-				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num + 1], true, true)
 				local buff = global.PassiveFunEffectBuff(_env, "Skill_WLSTNCi_Passive_For_King", {
 					Ex = 0,
 					AoeDeRateFactor = this.AoeDeRateFactor
@@ -1283,7 +1283,7 @@ all.Skill_WLSTNCi_Passive_EX = {
 					"Model_WLSTNCi_King"
 				}
 				local num = global.GetSufaceIndex(_env, _env.ACTOR)
-				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num + 1], true, true)
 				local buff = global.PassiveFunEffectBuff(_env, "Skill_WLSTNCi_Passive_For_King", {
 					Ex = 1,
 					AoeDeRateFactor = this.AoeDeRateFactor

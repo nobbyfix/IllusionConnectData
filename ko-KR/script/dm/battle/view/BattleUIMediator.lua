@@ -1474,6 +1474,12 @@ function BattleUIMediator:showGrayEnergyEffect(isShow)
 	end
 end
 
+function BattleUIMediator:showFrazeEnergyEffect(isShow)
+	if self._energyBar then
+		self._energyBar:setBarFraze(isShow)
+	end
+end
+
 function BattleUIMediator:showRecoveryEnergyAnim()
 	if self._energyBar then
 		self._energyBar:showRecoveryEnergyAnim()
