@@ -11,10 +11,6 @@ local kBtnHandlers = {
 	["main.allGetBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickAllGet"
-	},
-	["main.battleBtn"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickBattleBtn"
 	}
 }
 
@@ -47,6 +43,7 @@ function ClubBossShowAllBossMediator:enterWithData(data)
 
 	self:initData()
 	self:initNodes()
+	self:setupZhouMuList()
 	self:setupTopInfoWidget()
 	self:createTableView()
 	self:setOffSetToCurrentLevel()
@@ -89,9 +86,8 @@ end
 
 function ClubBossShowAllBossMediator:refreshData()
 	self._clubBossInfo = self._developSystem:getPlayer():getClub():getClubBossInfo(self._viewType)
-	self._currentBossPoints = self._clubBossInfo:getBossPointsByPonitId(self._clubBossInfo:getNowPoint())
 	self._allData = {}
-	self._allData = self._clubBossInfo:getShowAllBossList()
+	self._allData = self._clubBossInfo:getShowAllBossList(self._curRound)
 end
 
 function ClubBossShowAllBossMediator:refreshView()
@@ -108,9 +104,11 @@ end
 
 function ClubBossShowAllBossMediator:initData()
 	self._clubBossInfo = self._developSystem:getPlayer():getClub():getClubBossInfo(self._viewType)
-	self._currentBossPoints = self._clubBossInfo:getBossPointsByPonitId(self._clubBossInfo:getNowPoint())
+	self._roundInfo = self._clubBossInfo:getRoundInfo()
+	self._curRound = self._clubBossInfo:getCurRound()
+	self._curId = self._clubBossInfo:getNowPoint()
 	self._allData = {}
-	self._allData = self._clubBossInfo:getShowAllBossList()
+	self._allData = self._clubBossInfo:getShowAllBossList(self._curRound)
 end
 
 function ClubBossShowAllBossMediator:initNodes()
@@ -121,19 +119,17 @@ function ClubBossShowAllBossMediator:initNodes()
 
 	self._cellPanel:setVisible(false)
 
-	self._buffNode = self._mainPanel:getChildByFullName("buffNode")
-
-	self._buffNode:setVisible(false)
-
-	self._desNode = self._mainPanel:getChildByFullName("desNode")
-
-	self._desNode:setVisible(false)
-
 	self._allGetBtn = self._mainPanel:getChildByFullName("allGetBtn")
-	self._battleBtn = self._mainPanel:getChildByFullName("battleBtn")
+	self._zhoumuNumLab = self._mainPanel:getChildByFullName("zhoumuNode.num")
 
-	self._battleBtn:setVisible(false)
-	self._battleBtn:setTouchEnabled(false)
+	self._zhoumuNumLab:setString(Strings:get("ClubBoss_Turn3", {
+		Num = self._clubBossInfo:getCurRound()
+	}))
+
+	self._zhoumuList = self._mainPanel:getChildByFullName("listNode.list")
+	self._zhoumuCell = self._mainPanel:getChildByFullName("listNode.cell")
+	self._zhoumuTag = self._mainPanel:getChildByFullName("listNode.cur.tag")
+	self._zhoumuNum = self._mainPanel:getChildByFullName("listNode.cur.zhoumu")
 end
 
 function ClubBossShowAllBossMediator:setupTopInfoWidget()
@@ -152,21 +148,105 @@ function ClubBossShowAllBossMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ClubBossShowAllBossMediator:setupZhouMuList()
+	local function titleTouch()
+		self._zhoumuList:setVisible(not self._zhoumuList:isVisible())
+
+		if self._zhoumuList:isVisible() then
+			self._zhoumuTag:setRotation(180)
+		else
+			self._zhoumuTag:setRotation(0)
+		end
+	end
+
+	local function refreshList()
+		local items = self._zhoumuList:getItems()
+
+		for i = 1, #items do
+			local cell = items[i]
+			local choose = cell:getChildByFullName("choose")
+			local zhoumu = cell:getChildByFullName("zhoumu")
+
+			choose:setVisible(i == self._curRound)
+		end
+
+		self._zhoumuNum:setString(Strings:get("ClubBoss_Turn3", {
+			Num = self._curRound
+		}))
+	end
+
+	self._zhoumuNum:setString(Strings:get("ClubBoss_Turn3", {
+		Num = self._curRound
+	}))
+
+	if self._zhoumuList:isVisible() then
+		self._zhoumuTag:setRotation(180)
+	else
+		self._zhoumuTag:setRotation(0)
+	end
+
+	self._zhoumuList:removeAllChildren()
+	self._zhoumuList:setScrollBarEnabled(false)
+
+	local idx = 1
+
+	for _, _ in pairs(self._roundInfo) do
+		local data = self._roundInfo[tostring(idx)]
+		local cell = self._zhoumuCell:clone()
+
+		cell:setTag(idx)
+
+		local choose = cell:getChildByFullName("choose")
+		local zhoumu = cell:getChildByFullName("zhoumu")
+
+		cell:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				if sender:getTag() ~= self._curRound then
+					self._curRound = sender:getTag()
+
+					refreshList()
+					self:refreshData()
+					self:refreshView()
+				end
+
+				titleTouch()
+			end
+		end)
+		choose:setVisible(idx == self._curRound)
+		zhoumu:setString(Strings:get("ClubBoss_Turn3", {
+			Num = idx
+		}))
+		cell:setVisible(true)
+		self._zhoumuList:pushBackCustomItem(cell)
+
+		idx = idx + 1
+	end
+
+	self._zhoumuList:jumpToBottom()
+	self._mainPanel:getChildByFullName("listNode.cur"):addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			titleTouch()
+		end
+	end)
+end
+
 function ClubBossShowAllBossMediator:setOffSetToCurrentLevel()
 	local width = self._cellPanel:getContentSize().width
 	local currentPointNum = self._clubBossInfo:getNowPointNum()
+	local num = currentPointNum % 6
 
-	if currentPointNum > 3 then
-		self._tableView:setContentOffset(cc.p(-width * (currentPointNum - 3), 0))
+	if num == 0 then
+		num = 6
 	end
 
-	self._battleBtn:setVisible(false)
-	self._battleBtn:setTouchEnabled(false)
+	if num > 3 then
+		self._tableView:setContentOffset(cc.p(-width * (num - 3), 0))
+	end
 end
 
 function ClubBossShowAllBossMediator:createTableView()
 	local function cellSizeForTable(table, idx)
-		return 200, 520
+		return 230, 520
 	end
 
 	local function scrollViewDidScroll(table)
@@ -252,7 +332,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 	local tableConfig = data:getTableConfig()
 
 	if tableConfig ~= nil and tableConfig.ShowKillReward ~= nil then
-		local rewardStatus = self._clubBossInfo:checkHasGetHurtAward(data:getPointNum(), nil)
+		local rewardStatus = self._clubBossInfo:checkHasGetHurtAward(data:getId())
 		local rewards = ConfigReader:getRecordById("Reward", tableConfig.ShowKillReward).Content
 		local rewardData = rewards[1]
 		local IsRewardBox = self:checkIsRewardBox(rewardData)
@@ -270,7 +350,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 			boxPanel:addTouchEventListener(function (sender, eventType)
 				if eventType == ccui.TouchEventType.ended then
 					AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-					self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getPointId())
+					self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getId())
 				end
 			end)
 
@@ -322,57 +402,160 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 
 			boxPanel:setVisible(false)
 
-			local iconPanel = panel:getChildByFullName("iconNode.iconPanel")
+			if #rewards == 1 then
+				panel:getChildByFullName("iconNode_left"):setVisible(false)
+				panel:getChildByFullName("iconNode_right"):setVisible(false)
 
-			iconPanel:setTouchEnabled(true)
-			iconPanel:setSwallowTouches(false)
-			iconPanel:addTouchEventListener(function (sender, eventType)
-				if eventType == ccui.TouchEventType.ended then
-					AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-					self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getPointId())
+				local iconPanel = panel:getChildByFullName("iconNode.iconPanel")
+
+				iconPanel:setTouchEnabled(true)
+				iconPanel:setSwallowTouches(false)
+				iconPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.ended then
+						AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+						self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getId())
+					end
+				end)
+
+				local itmeNode = panel:getChildByFullName("iconNode.itemNode")
+				local icon = IconFactory:createRewardIcon(rewardData, {
+					isWidget = true
+				})
+
+				icon:addTo(itmeNode)
+				icon:setPosition(cc.p(35, 35))
+				icon:setScale(0.45)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+					needDelay = true
+				})
+
+				local darkPanel = panel:getChildByFullName("iconNode.darkPanel")
+
+				darkPanel:setVisible(false)
+
+				local darkImage = panel:getChildByFullName("iconNode.darkImage")
+
+				darkImage:setVisible(false)
+
+				local redPoint = panel:getChildByFullName("iconNode.redPoint")
+
+				redPoint:setVisible(false)
+
+				if rewardStatus == ClubBossHurtRewardStatus.kHadGet then
+					darkPanel:setVisible(true)
+					darkImage:setVisible(true)
 				end
-			end)
 
-			local itmeNode = panel:getChildByFullName("iconNode.itemNode")
-			local icon = IconFactory:createRewardIcon(rewardData, {
-				isWidget = true
-			})
+				if rewardStatus == ClubBossHurtRewardStatus.kCannotGetButTip then
+					darkPanel:setVisible(true)
+				end
 
-			icon:addTo(itmeNode)
-			icon:setPosition(cc.p(35, 35))
-			icon:setScale(0.5)
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
-				needDelay = true
-			})
+				if rewardStatus == ClubBossHurtRewardStatus.kCanGet then
+					redPoint:setVisible(true)
+				end
+			else
+				panel:getChildByFullName("iconNode"):setVisible(false)
 
-			local darkPanel = panel:getChildByFullName("iconNode.darkPanel")
+				local iconPanel = panel:getChildByFullName("iconNode_left.iconPanel")
 
-			darkPanel:setVisible(false)
+				iconPanel:setTouchEnabled(true)
+				iconPanel:setSwallowTouches(false)
+				iconPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.ended then
+						AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+						self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getId())
+					end
+				end)
 
-			local darkImage = panel:getChildByFullName("iconNode.darkImage")
+				local itmeNode = panel:getChildByFullName("iconNode_left.itemNode")
+				local icon = IconFactory:createRewardIcon(rewards[1], {
+					isWidget = true
+				})
 
-			darkImage:setVisible(false)
+				icon:addTo(itmeNode)
+				icon:setPosition(cc.p(26, 26))
+				icon:setScale(0.45)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[1], {
+					needDelay = true
+				})
 
-			local redPoint = panel:getChildByFullName("iconNode.redPoint")
+				local darkPanel = panel:getChildByFullName("iconNode_left.darkPanel")
 
-			redPoint:setVisible(false)
+				darkPanel:setVisible(false)
 
-			if rewardStatus == ClubBossHurtRewardStatus.kHadGet then
-				darkPanel:setVisible(true)
-				darkImage:setVisible(true)
-			end
+				local darkImage = panel:getChildByFullName("iconNode_left.darkImage")
 
-			if rewardStatus == ClubBossHurtRewardStatus.kCannotGetButTip then
-				darkPanel:setVisible(true)
-			end
+				darkImage:setVisible(false)
 
-			if rewardStatus == ClubBossHurtRewardStatus.kCanGet then
-				redPoint:setVisible(true)
+				local redPoint = panel:getChildByFullName("iconNode_left.redPoint")
+
+				redPoint:setVisible(false)
+
+				if rewardStatus == ClubBossHurtRewardStatus.kHadGet then
+					darkPanel:setVisible(true)
+					darkImage:setVisible(true)
+				end
+
+				if rewardStatus == ClubBossHurtRewardStatus.kCannotGetButTip then
+					darkPanel:setVisible(true)
+				end
+
+				if rewardStatus == ClubBossHurtRewardStatus.kCanGet then
+					redPoint:setVisible(true)
+				end
+
+				local iconPanel = panel:getChildByFullName("iconNode_right.iconPanel")
+
+				iconPanel:setTouchEnabled(true)
+				iconPanel:setSwallowTouches(false)
+				iconPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.ended then
+						AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+						self:onClickRewardPanel(sender, IsRewardBox, rewardStatus, data:getId())
+					end
+				end)
+
+				local itmeNode = panel:getChildByFullName("iconNode_right.itemNode")
+				local icon = IconFactory:createRewardIcon(rewards[2], {
+					isWidget = true
+				})
+
+				icon:addTo(itmeNode)
+				icon:setPosition(cc.p(26, 26))
+				icon:setScale(0.45)
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[2], {
+					needDelay = true
+				})
+
+				local darkPanel = panel:getChildByFullName("iconNode_right.darkPanel")
+
+				darkPanel:setVisible(false)
+
+				local darkImage = panel:getChildByFullName("iconNode_right.darkImage")
+
+				darkImage:setVisible(false)
+
+				local redPoint = panel:getChildByFullName("iconNode_right.redPoint")
+
+				redPoint:setVisible(false)
+
+				if rewardStatus == ClubBossHurtRewardStatus.kHadGet then
+					darkPanel:setVisible(true)
+					darkImage:setVisible(true)
+				end
+
+				if rewardStatus == ClubBossHurtRewardStatus.kCannotGetButTip then
+					darkPanel:setVisible(true)
+				end
+
+				if rewardStatus == ClubBossHurtRewardStatus.kCanGet then
+					redPoint:setVisible(true)
+				end
 			end
 		end
 	end
 
-	local pointNum = data:getPointNum()
+	local id = data:getId()
 	local pointType = data:getPointType()
 	local modelId = ""
 	local nameStr = ""
@@ -398,7 +581,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 			local heroImg, jsonPath = RoleFactory:createHeroAnimation(roleModel)
 
 			bossNode:addChild(heroImg)
-			heroImg:setPositionY(-65)
+			heroImg:setPositionY(-55)
 			heroImg:setScale(checknumber(ClubBoss_HeroModel))
 
 			if self._doEnterAction then
@@ -419,7 +602,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 		local currentBlockConfig = data:getBlockConfig()
 
 		if currentBlockConfig ~= nil then
-			if pointNum == self._clubBossInfo:getNowPointNum() then
+			if id == self._clubBossInfo:getNowPoint() then
 				local anim = cc.MovieClip:create("boss_shetuanzhanlipin")
 
 				anim:addTo(animNode, 1)
@@ -444,7 +627,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 						local modelSprite, jsonPath = RoleFactory:createHeroAnimation(currentBlockConfig.PointHead)
 
 						modelSprite:setScale(data:getZoom())
-						modelSprite:setPositionY(-80)
+						modelSprite:setPositionY(-75)
 						layout:addChild(modelSprite)
 						layout:setFlippedX(true)
 					end
@@ -495,13 +678,11 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 				end)
 			end
 
-			if currentBlockConfig.EnemyMaster ~= nil then
-				local EnemyMasterConfig = ConfigReader:getRecordById("EnemyMaster", currentBlockConfig.EnemyMaster)
+			dump()
 
-				if EnemyMasterConfig.Name then
-					nameStr = data:getPointName() .. "  " .. Strings:get(EnemyMasterConfig.Name)
-				end
-			end
+			nameStr = Strings:get("ClubBoss_UI2", {
+				Num = data:getPointNum()
+			})
 		end
 	end
 
@@ -514,30 +695,18 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 	local lightNode = panel:getChildByFullName("loadingNode.lightNode")
 	local animPanel = lightNode:getChildByTag(1):getChildByName("animPanel")
 
-	if pointNum == self._clubBossInfo:getNowPointNum() then
+	if id == self._clubBossInfo:getNowPoint() then
 		local anim = cc.MovieClip:create("dangqianwupin_shetuanzhanlipin")
 
 		anim:setPositionY(-80)
 		anim:addTo(animNode, 1)
 	end
 
-	if pointNum < self._clubBossInfo:getNowPointNum() then
+	if self._clubBossInfo:isBossPassed(id) == true then
 		local darkNode = panel:getChildByFullName("loadingNode.darkNode")
 
 		darkNode:setVisible(false)
-	end
-
-	if pointNum == self._clubBossInfo:getNowPointNum() then
-		local lightNode = panel:getChildByFullName("loadingNode.lightNode")
-
-		lightNode:getChildByTag(2):setVisible(false)
-
-		local darkNode = panel:getChildByFullName("loadingNode.darkNode")
-
-		darkNode:getChildByTag(1):setVisible(false)
-	end
-
-	if self._clubBossInfo:getNowPointNum() < pointNum then
+	else
 		local lightNode = panel:getChildByFullName("loadingNode.lightNode")
 
 		lightNode:setVisible(false)
@@ -545,6 +714,17 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 		local darkNode = panel:getChildByFullName("loadingNode.darkNode")
 
 		darkNode:setVisible(true)
+	end
+
+	if id == self._clubBossInfo:getNowPoint() then
+		local lightNode = panel:getChildByFullName("loadingNode.lightNode")
+
+		lightNode:setVisible(true)
+		lightNode:getChildByTag(2):setVisible(false)
+
+		local darkNode = panel:getChildByFullName("loadingNode.darkNode")
+
+		darkNode:getChildByTag(1):setVisible(true)
 	end
 end
 
@@ -606,7 +786,7 @@ function ClubBossShowAllBossMediator:onClickHeroPanel(sender, data)
 		return
 	end
 
-	if data:getPointId() == self._clubBossInfo:getNowPoint() then
+	if data:getId() == self._clubBossInfo:getNowPoint() then
 		self:dispatch(ShowTipEvent({
 			duration = 0.35,
 			tip = Strings:get("clubBoss_44")
@@ -649,14 +829,6 @@ function ClubBossShowAllBossMediator:refreshBackBtn()
 	local currentPointWidth = currentPointNum * width
 	local offsetX = self._tableView:getContentOffset().x
 	local tableViewWidth = self._tablePanel:getContentSize().width
-
-	if offsetX + currentPointWidth > 0 and offsetX + currentPointWidth < tableViewWidth + width then
-		self._battleBtn:setVisible(false)
-		self._battleBtn:setTouchEnabled(false)
-	else
-		self._battleBtn:setVisible(true)
-		self._battleBtn:setTouchEnabled(true)
-	end
 end
 
 function ClubBossShowAllBossMediator:runStartAction()

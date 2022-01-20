@@ -400,6 +400,10 @@ function GetRewardMediator:showOneIcon(index)
 	anim:addCallbackAtFrame(frame[index], function ()
 		if rewardData.type == RewardType.kHero then
 			self:showNewHeroView(rewardData.code, function ()
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
 				if index < self:getCurShowRewardCount() then
 					index = index + 1
 
@@ -416,6 +420,10 @@ function GetRewardMediator:showOneIcon(index)
 			end
 		elseif rewardData.type == RewardType.kItem and rewardData.heroId then
 			self:showNewHeroView(rewardData.heroId, function ()
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
 				if index < self:getCurShowRewardCount() then
 					index = index + 1
 

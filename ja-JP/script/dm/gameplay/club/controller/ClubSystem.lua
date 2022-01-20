@@ -471,6 +471,10 @@ function ClubSystem:requestClubInfo(callback)
 	end)
 end
 
+function ClubSystem:cleanClubBossData(type)
+	self:getClubBoss(type):cleanData()
+end
+
 function ClubSystem:syncClubInfo(data)
 	if data.myPosition then
 		self:getClubInfoOj():setPosition(data.myPosition)
@@ -622,9 +626,11 @@ function ClubSystem:quickJoinClub()
 					tip = Strings:get("Club_Text183")
 				}))
 			elseif response.data.join == 1 then
+				self:cleanClubBossData()
 				self:syncClubInfo(response.data)
 				self:agreeEnterClubTip(self:getName())
 				self:dispatch(Event:new(EVT_CLUB_ENTER_SUCC))
+				self:requestClubBossInfo(nil)
 			end
 		elseif response.resCode == 11427 then
 			self:dispatch(Event:new(EVT_CLUB_REFRESHCLUBINFO_SUCC))
@@ -644,9 +650,11 @@ function ClubSystem:createClub(clubName, headImg, func)
 
 	clubService:createClub(data, true, function (response)
 		if response.resCode == GS_SUCCESS then
+			self:cleanClubBossData()
 			self:syncClubInfo(response.data)
 			self:requestClubBattleData(nil, false)
 			self:requestOpenClubVillageData(nil, false)
+			self:requestClubBossInfo(nil)
 
 			if func then
 				func()
@@ -953,8 +961,10 @@ function ClubSystem:requestApplyEnterClub(clubId, rank, callback, enterClub)
 
 	clubService:requestApplyEnterClub(data, true, function (response)
 		if response.resCode == GS_SUCCESS then
+			self:cleanClubBossData()
 			self:syncClubInfo(response.data)
 			self:requestClubBattleData(nil, false)
+			self:requestClubBossInfo(nil)
 
 			if self:getHasJoinClub() then
 				self:agreeEnterClubTip(self:getName(), enterClub)
@@ -1667,9 +1677,14 @@ function ClubSystem:doReset(resetId, value, data)
 		self:dispatch(Event:new(EVT_CLUBDONATE_SUCC))
 	end
 
-	if (resetId == ResetId.kClubBlockTimesReset or resetId == ResetId.kClubBlockReset) and data then
+	if resetId == ResetId.kClubBlockTimesReset or resetId == ResetId.kClubBlockReset then
+		self:cleanClubBossData()
+
 		self._enterClubBossBattle = false
 		self._clubBossKilled = false
+		self._clubKillPoint = nil
+
+		self:requestClubBossInfo(nil, true, ClubHallType.kBoss)
 	end
 
 	self:requestClubBossInfo(function ()
@@ -1811,6 +1826,7 @@ function ClubSystem:requestClubBossInfo(func, refresh, viewType)
 
 			local data = response.data
 
+			self:cleanClubBossData()
 			self:synchronizeClubBoss(data.boss, type, data.score)
 
 			if func then
@@ -1936,10 +1952,23 @@ function ClubSystem:listenClubBossKilledCode(data)
 		end
 	else
 		self._clubBossKilled = true
+		self._clubKillPoint = data.pointNum
+		local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+		local topViewName = scene:getTopViewName()
+
+		if topViewName == "homeView" then
+			self:requestClubBossInfo(function ()
+				self:dispatch(Event:new(EVT_HOMEVIEW_REDPOINT_REF, {
+					showRedPoint = 1,
+					type = 4
+				}))
+			end, false, ClubHallType.kBoss)
+		end
 
 		if self._enterClubBossBattle == false then
 			self:dispatch(Event:new(EVT_CLUBBOSS_KILLED, {
-				viewType = ClubHallType.kBoss
+				viewType = ClubHallType.kBoss,
+				pointNum = data.pointNum
 			}))
 		end
 	end
@@ -1955,11 +1984,16 @@ function ClubSystem:getClubBossKilled(viewType)
 	return result
 end
 
+function ClubSystem:getClubKillPoint()
+	return self._clubKillPoint
+end
+
 function ClubSystem:clearClubBossKilled(viewType)
 	if viewType == ClubHallType.kActivityBoss then
 		self._activityClubBossKilled = false
 	else
 		self._clubBossKilled = false
+		self._clubKillPoint = nil
 	end
 end
 
@@ -2051,6 +2085,62 @@ function ClubSystem:requestFinishBossBattle(params, func)
 			end
 
 			if response.data then
+				if response.data.ErrorCode and response.data.ErrorCode == 11439 then
+					local delegate = {}
+					local outSelf = self
+
+					function delegate:willClose(popupMediator, data)
+						outSelf:clearEnterClubBossBattleMark()
+
+						local data = {}
+
+						if viewType == ClubHallType.kBoss then
+							data.goToBoss = true
+						end
+
+						if viewType == ClubHallType.kActivityBoss then
+							data.goToActivityBoss = true
+						end
+
+						outSelf:clearEnterClubBossBattleViewType()
+						BattleLoader:popBattleView(outSelf, data, "ClubView", data)
+					end
+
+					local team = outSelf:getClubBossTeamInfo()
+					local clubBossInfo = outSelf._developSystem:getPlayer():getClub():getClubBossInfo(viewType)
+					local currentBossPoint = clubBossInfo:getBossPointsById(team.pointId)
+					local tableConfig = currentBossPoint:getTableConfig()
+					local pointName = ""
+
+					if tableConfig ~= nil then
+						local currentBlockConfig = currentBossPoint:getBlockConfig()
+
+						if tableConfig.Name ~= nil then
+							pointName = currentBossPoint:getPointName()
+							pointName = pointName .. "   "
+						end
+
+						if currentBlockConfig.Name ~= nil then
+							pointName = pointName .. Strings:get(currentBlockConfig.Name)
+						end
+					end
+
+					local data = {
+						title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
+						content = Strings:get("ClubBoss_Tip2", {
+							Name = pointName
+						}),
+						sureBtn = {}
+					}
+					local view = outSelf:getInjector():getInstance("AlertView")
+
+					outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+					}, data, delegate))
+
+					return
+				end
+
 				self:recordKillReward(response.data)
 
 				local view = self:getInjector():getInstance("ClubBossShowBattleResultView")
@@ -2100,6 +2190,7 @@ function ClubSystem:enterBattle(params, viewType)
 	local enemyData = params.enemyData
 	local mapId = params.blockMapId
 	local pointId = params.blockPointId
+	local id = params.pointId
 	local randomSeed = params.logicSeed
 	local strategySeedA = params.strategySeedA
 	local strategySeedB = params.strategySeedB
@@ -2169,7 +2260,7 @@ function ClubSystem:enterBattle(params, viewType)
 	function battleDelegate:onLeavingBattle()
 		local realData = battleSession:getResultSummary()
 		local data = {
-			pointId = pointId,
+			pointId = id,
 			resultData = realData
 		}
 
@@ -2220,7 +2311,7 @@ function ClubSystem:enterBattle(params, viewType)
 	function battleDelegate:onBattleFinish(result)
 		local realData = battleSession:getResultSummary()
 		local data = {
-			pointId = pointId,
+			pointId = id,
 			resultData = realData
 		}
 
@@ -2255,7 +2346,7 @@ function ClubSystem:enterBattle(params, viewType)
 			}
 		}
 		local data = {
-			pointId = pointId,
+			pointId = id,
 			resultData = realData
 		}
 
@@ -2558,6 +2649,7 @@ function ClubSystem:listenForcedToLeaveClubCode(data)
 	self._forcedLeaveClub = true
 	self._enterClubBossBattle = false
 	self._clubBossKilled = false
+	self._clubKillPoint = nil
 
 	self:dispatch(Event:new(EVT_CLUB_FORCEDLEVEL))
 	self:dispatch(Event:new(EVT_CLUB_REFRESHCLUBINFO_SUCC))

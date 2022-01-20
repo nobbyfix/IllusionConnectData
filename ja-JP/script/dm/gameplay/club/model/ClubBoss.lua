@@ -39,7 +39,13 @@ ClubBoss:has("_passAll", {
 ClubBoss:has("_tips", {
 	is = "r"
 })
+ClubBoss:has("_curRound", {
+	is = "r"
+})
 ClubBoss:has("_score", {
+	is = "r"
+})
+ClubBoss:has("_roundInfo", {
 	is = "r"
 })
 ClubBoss:has("_bossFightTimes", {
@@ -90,11 +96,14 @@ function ClubBoss:initialize()
 	self._hurtTarget = 0
 	self._hurt = 0
 	self._nowPoint = ""
+	self._curRound = 1
 	self._nowPointNum = 1
 	self._hpRate = 0
 	self._passAll = false
 	self._allBossPoints = {}
 	self._tips = {}
+	self._passedPointMap = {}
+	self._roundInfo = {}
 	self._score = {}
 	self._bossFightTimes = 0
 	self._bossFightTimesUpdataTime = 0
@@ -107,6 +116,11 @@ function ClubBoss:initialize()
 	self._lastTeam = {}
 	self._lastFightTime = 0
 	self._name = Strings:get("clubBoss_TeamName")
+end
+
+function ClubBoss:cleanData()
+	self._passedPointMap = {}
+	self._roundInfo = {}
 end
 
 function ClubBoss:sync(data, scoreData)
@@ -126,39 +140,30 @@ function ClubBoss:sync(data, scoreData)
 		self._hurt = data.hurt
 	end
 
-	if data.nowPoint then
-		self._nowPoint = data.nowPoint
+	if data.nowPointId then
+		self._nowPoint = data.nowPointId
+		local ids = string.split(self._nowPoint, "_")
+		self._nowPointNum = (tonumber(ids[1]) - 1) * 6 + tonumber(ids[2])
 	end
 
-	if data.nowPointNum then
-		self._nowPointNum = data.nowPointNum
-	end
-
-	if data.hpRate then
-		self._hpRate = data.hpRate
+	if data.curRound then
+		self._curRound = data.curRound
 	end
 
 	if data.passAll ~= nil then
 		self._passAll = data.passAll
 	end
 
+	if data.hpRate then
+		self._hpRate = data.hpRate
+	end
+
 	if data.monsterHpAddRate then
 		self._monsterHpAddRate = data.monsterHpAddRate
 	end
 
-	if data.gates then
-		for index, dataValue in pairs(data.gates) do
-			local oneBossPoint = ClubBossPoint:new(index)
-
-			oneBossPoint:setClubBlockId(dataValue)
-			oneBossPoint:setMonsterHpAddRate(self._monsterHpAddRate)
-
-			self._allBossPoints[index] = oneBossPoint
-		end
-	end
-
-	if data.passed then
-		for index, dataValue in pairs(data.passed) do
+	if data.clubBossPointMap then
+		for index, dataValue in pairs(data.clubBossPointMap) do
 			if self._allBossPoints[index] == nil then
 				local oneBossPoint = ClubBossPoint:new(index)
 
@@ -169,6 +174,18 @@ function ClubBoss:sync(data, scoreData)
 			else
 				self._allBossPoints[index]:syncPassInfo(dataValue)
 			end
+		end
+	end
+
+	if data.roundInfo then
+		for k, v in pairs(data.roundInfo) do
+			self._roundInfo[k] = v
+		end
+	end
+
+	if data.passedPointMap then
+		for k, v in pairs(data.passedPointMap) do
+			self._passedPointMap[k] = v
 		end
 	end
 
@@ -221,12 +238,13 @@ function ClubBoss:syncBasicInfo(data)
 		end
 	end
 
-	if data.joinPoint then
-		self._joinPoint = data.joinPoint
+	if data.joinPointId and data.joinPointId ~= "" then
+		local ids = string.split(data.joinPointId, "_")
+		self._joinPoint = (tonumber(ids[1]) - 1) * 6 + tonumber(ids[2])
 	end
 
-	if data.getAwards then
-		self._hasGetAwards = data.getAwards
+	if data.getAwardsPointIdSet then
+		self._hasGetAwards = data.getAwardsPointIdSet
 	end
 
 	if data.tiredHero then
@@ -262,54 +280,82 @@ function ClubBoss:syncBasicInfo(data)
 	end
 end
 
-function ClubBoss:getShowAllBossList()
+function ClubBoss:isBossPassed(id)
+	if self._passedPointMap and self._passedPointMap[id] then
+		return true
+	end
+
+	return false
+end
+
+function ClubBoss:getShowAllBossList(round)
 	local result = {}
+	local bossIds = self._roundInfo[tostring(round)]
 
-	for index, dataValue in pairs(self._allBossPoints) do
-		local onePoint = self._allBossPoints[index]
-		local limit = self._nowPointNum + 3
-
-		if self._nowPointNum < 4 then
-			limit = 6
-		end
-
-		if onePoint:getPointNum() <= limit then
-			result[onePoint:getPointNum()] = onePoint
-		end
+	for i = 1, #bossIds do
+		local onePoint = self._allBossPoints[bossIds[i]]
+		result[onePoint:getPointNum()] = onePoint
 	end
 
 	return result
 end
 
-function ClubBoss:checkHasGetHurtAward(PointNum, PointId)
+function ClubBoss:checkHasGetHurtAward(id)
 	local result = ClubBossHurtRewardStatus.kCanGet
+	local ids = string.split(id, "_")
+	local pointNum = (tonumber(ids[1]) - 1) * 6 + tonumber(ids[2])
 
-	if PointNum < self._joinPoint then
+	if pointNum < self._joinPoint then
 		result = ClubBossHurtRewardStatus.kCannotGetButTip
 
 		return result
 	end
 
-	if self._nowPointNum < PointNum then
+	if self._nowPointNum < pointNum then
 		result = ClubBossHurtRewardStatus.kCanNotGet
 
 		return result
 	end
 
 	for k, onePonitNum in pairs(self._hasGetAwards) do
-		if PointNum == onePonitNum then
+		if id == onePonitNum then
 			result = ClubBossHurtRewardStatus.kHadGet
 		end
 	end
 
-	if PointNum == self._nowPointNum then
-		if self._passAll == true then
-			if result ~= ClubBossHurtRewardStatus.kHadGet then
-				result = ClubBossHurtRewardStatus.kCanGet
-			end
-		else
-			result = ClubBossHurtRewardStatus.kCanNotGet
+	if pointNum == self._nowPointNum then
+		result = ClubBossHurtRewardStatus.kCanNotGet
+	end
+
+	return result
+end
+
+function ClubBoss:checkHasGetHurtAwardByNum(pointNum)
+	local result = ClubBossHurtRewardStatus.kCanGet
+
+	if pointNum < self._joinPoint then
+		result = ClubBossHurtRewardStatus.kCannotGetButTip
+
+		return result
+	end
+
+	if self._nowPointNum < pointNum then
+		result = ClubBossHurtRewardStatus.kCanNotGet
+
+		return result
+	end
+
+	for k, onePonit in pairs(self._hasGetAwards) do
+		local ids = string.split(onePonit, "_")
+		local onePonitNum = (tonumber(ids[1]) - 1) * 6 + tonumber(ids[2])
+
+		if pointNum == onePonitNum then
+			result = ClubBossHurtRewardStatus.kHadGet
 		end
+	end
+
+	if pointNum == self._nowPointNum then
+		result = ClubBossHurtRewardStatus.kCanNotGet
 	end
 
 	return result
@@ -320,7 +366,7 @@ function ClubBoss:checkHasRewardCanGet()
 	local beganNum = self._joinPoint > 0 and self._joinPoint or 1
 
 	for pointNum = beganNum, self._nowPointNum do
-		if self:checkHasGetHurtAward(pointNum, nil) == ClubBossHurtRewardStatus.kCanGet then
+		if self:checkHasGetHurtAwardByNum(pointNum) == ClubBossHurtRewardStatus.kCanGet then
 			result = true
 
 			break
@@ -368,8 +414,18 @@ function ClubBoss:getAllBossPointsVector()
 	return allBossPointsVector
 end
 
+function ClubBoss:getBossPointsById(id)
+	return self._allBossPoints[id]
+end
+
 function ClubBoss:getBossPointsByPonitId(pointId)
-	return self._allBossPoints[pointId]
+	for k, v in pairs(self._allBossPoints) do
+		if v:getPointId() == pointId then
+			return v
+		end
+	end
+
+	return nil
 end
 
 function ClubBoss:getShowTVInfo()
@@ -404,6 +460,9 @@ end
 
 ClubBossPoint = class("ClubBossPoint", objectlua.Object, _M)
 
+ClubBossPoint:has("_id", {
+	is = "r"
+})
 ClubBossPoint:has("_pointId", {
 	is = "r"
 })
@@ -419,6 +478,12 @@ ClubBossPoint:has("_winName", {
 ClubBossPoint:has("_winShowId", {
 	is = "r"
 })
+ClubBossPoint:has("_round", {
+	is = "r"
+})
+ClubBossPoint:has("_num", {
+	is = "r"
+})
 ClubBossPoint:has("_tableConfig", {
 	is = "r"
 })
@@ -429,24 +494,19 @@ ClubBossPoint:has("_monsterHpAddRate", {
 	is = "r"
 })
 
-function ClubBossPoint:initialize(pointId)
+function ClubBossPoint:initialize(id)
 	super.initialize(self)
 
-	self._pointId = pointId
+	self._id = id
+	self._pointId = ""
+	self._blockId = ""
 	self._passTime = 0
 	self._winIde = ""
 	self._winName = ""
 	self._winShowId = ""
+	self._nextId = ""
 	self._tableConfig = {}
-	local config = ConfigReader:getRecordById("ClubBlockPoint", pointId)
-
-	if config ~= nil then
-		self._tableConfig = config
-	end
-end
-
-function ClubBossPoint:setClubBlockId(blockId)
-	self._blockId = blockId
+	self._addRate = 0
 end
 
 function ClubBossPoint:setMonsterHpAddRate(rate)
@@ -454,6 +514,23 @@ function ClubBossPoint:setMonsterHpAddRate(rate)
 end
 
 function ClubBossPoint:syncPassInfo(data)
+	if data.clubBlockPointId then
+		self._pointId = data.clubBlockPointId
+		local config = ConfigReader:getRecordById("ClubBlockPoint", self._pointId)
+
+		if config ~= nil then
+			self._tableConfig = config
+		end
+	end
+
+	if data.clubBattleId then
+		self._blockId = data.clubBattleId
+	end
+
+	if data.nextId then
+		self._nextId = data.nextId
+	end
+
 	if data.passTime then
 		self._passTime = data.passTime
 	end
@@ -469,6 +546,18 @@ function ClubBossPoint:syncPassInfo(data)
 	if data.winShowId then
 		self._winShowId = data.winShowId
 	end
+
+	if data.round then
+		self._round = data.round
+	end
+
+	if data.num then
+		self._num = data.num
+	end
+
+	if data.addRate then
+		self._addRate = data.addRate
+	end
 end
 
 function ClubBossPoint:getPointName()
@@ -482,13 +571,7 @@ function ClubBossPoint:getPointName()
 end
 
 function ClubBossPoint:getPointNum()
-	local result = 0
-
-	if self._tableConfig ~= nil and self._tableConfig.Num ~= nil then
-		result = self._tableConfig.Num
-	end
-
-	return result
+	return self._num
 end
 
 function ClubBossPoint:getPointType()
@@ -538,6 +621,10 @@ function ClubBossPoint:getBossHp()
 		if self._tableConfig.Num <= clubBossStandard then
 			hp = hp * (1 + self._monsterHpAddRate)
 		end
+	end
+
+	if self._addRate > 0 then
+		hp = hp * self._addRate
 	end
 
 	return hp

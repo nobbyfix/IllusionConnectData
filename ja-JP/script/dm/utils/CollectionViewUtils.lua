@@ -6,6 +6,7 @@ function CollectionViewUtils:initialize(data)
 	self._view = data.view
 	self._delegate = data.delegate
 	self._cellNumSize = data.cellNumSize or cc.size(0, 0)
+	self._cellData = data.cellData or {}
 	self._cellSize = data.cellSize
 	self._isReuse = data.isReuse
 	self._isSchedule = data.isSchedule
@@ -392,7 +393,7 @@ function CollectionViewUtils:checkUpdateCell(immediately)
 						col
 					})
 				else
-					local cell = self._delegate:cellAtIndex(self._view, row, col)
+					local cell = self._delegate:cellAtIndex(self._view, row, col, self)
 
 					cell:setAnchorPoint(0, 0)
 					cell:setVisible(true)
@@ -578,7 +579,7 @@ end
 
 function CollectionViewUtils:createCellByInfo(info, needCheck)
 	local index = info[1] * self._cellNumSize.width + info[2]
-	local cell = self._delegate:cellAtIndex(self._view, info[1], info[2])
+	local cell = self._delegate:cellAtIndex(self._view, info[1], info[2], self)
 
 	cell:setAnchorPoint(0, 0)
 	cell:setPosition(info[2] * self._cellSize.width, info[1] * self._cellSize.height)

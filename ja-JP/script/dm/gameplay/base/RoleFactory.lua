@@ -351,3 +351,40 @@ end
 function getAttrNameByType(type)
 	return Strings:get(attrName[type])
 end
+
+local attrTSoulShowOrder = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Attr_TimeSoul_ShowOrder", "content")
+
+function getTSoulAttNumber(attrData)
+	local atts = {}
+
+	for key, order in pairs(attrTSoulShowOrder) do
+		if attrName[key] then
+			if attrData[key] then
+				local attrNum = attrData[key]
+
+				if AttributeCategory:getAttNameAttend(key) ~= "" then
+					attrNum = attrNum * 100 .. "%"
+				end
+
+				atts[order] = {
+					num = attrNum,
+					icon = AttrTypeImage[key],
+					type = key,
+					attrName = getAttrNameByType(key)
+				}
+			else
+				atts[order] = {}
+			end
+		end
+	end
+
+	local ret = {}
+
+	for i, v in ipairs(atts) do
+		if v.num then
+			ret[#ret + 1] = v
+		end
+	end
+
+	return ret
+end

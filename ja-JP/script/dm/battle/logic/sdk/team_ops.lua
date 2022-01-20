@@ -171,6 +171,13 @@ function exports.ReviveByUnit(env, unit, hpRatio, anger, location, owner)
 	return formationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
 end
 
+function exports.ReviveByUnitSigleTon(env, unit, hpRatio, anger, location, owner)
+	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
+
+	return formationSystem:reviveByUnitSigleTon(actor, unit, hpRatio, anger, location, owner)
+end
+
 function exports.ReviveRandom(env, hpRatio, anger, location)
 	local formationSystem = env.global["$FormationSystem"]
 	local actor = env["$actor"]

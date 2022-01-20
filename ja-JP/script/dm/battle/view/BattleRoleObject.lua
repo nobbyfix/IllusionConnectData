@@ -7656,11 +7656,53 @@ end
 function BattleRoleObject:setRootVisible(isVisible)
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #0 1-6, warpins: 1 ---
+	--- BLOCK #0 1-2, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	slot1 = if isVisible then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 3-13, warpins: 1 ---
+	self._root.setVisible = cc.Node.setVisible
+
+	self._root:setVisible(isVisible)
+	--- END OF BLOCK #1 ---
+
+	UNCONDITIONAL JUMP; TARGET BLOCK #3
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 14-21, warpins: 1 ---
 	self._root:setVisible(isVisible)
 
+	function self._root.setVisible()
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #0 1-1, warpins: 1 ---
+		return
+		--- END OF BLOCK #0 ---
+
+
+
+	end
+
+	--- END OF BLOCK #2 ---
+
+	FLOW; TARGET BLOCK #3
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 22-22, warpins: 2 ---
 	return
-	--- END OF BLOCK #0 ---
+	--- END OF BLOCK #3 ---
 
 
 

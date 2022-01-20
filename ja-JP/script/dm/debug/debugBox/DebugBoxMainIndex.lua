@@ -128,6 +128,14 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"时魄",
+				{
+					"添加所有时魄",
+					"自定义时魄",
+					"时魄套装"
+				}
+			},
+			{
 				"源阶",
 				{
 					"增加源阶",
@@ -367,6 +375,12 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"从零活动",
+				{
+					"重置副本mapId"
+				}
+			},
+			{
 				"音频测试",
 				{
 					"战斗音频",
@@ -390,6 +404,18 @@ DebugBoxMainIndex = {
 			{
 				"加某款皮肤",
 				"AddSkin"
+			},
+			{
+				"添加所有时魄",
+				"AddAllTsouls"
+			},
+			{
+				"自定义时魄",
+				"AddCustomTsoul"
+			},
+			{
+				"时魄套装",
+				"AddSuitTsoul"
 			},
 			{
 				"钻石",
@@ -820,6 +846,10 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"重置副本mapId",
+				"ZeroMapReset"
+			},
+			{
 				"投飞镖：设置关卡",
 				"ChangeDartsLevel"
 			},
@@ -1043,6 +1073,7 @@ DebugBoxMainIndex = {
 		local requireNameMap = {
 			"AddGoodsDV",
 			"AddAllItems",
+			"AddAllTsouls",
 			"DiamondDV",
 			"ClearBagDV",
 			"ChangeCountDV",
@@ -1134,7 +1165,8 @@ DebugBoxMainIndex = {
 			"DebugAddLeadStageLevel",
 			"DebugNewArenaSetUpRank",
 			"DebugRTPKScore",
-			"ChangeTask"
+			"ChangeTask",
+			"ZeroMapReset"
 		}
 
 		for k, v in pairs(requireNameMap) do

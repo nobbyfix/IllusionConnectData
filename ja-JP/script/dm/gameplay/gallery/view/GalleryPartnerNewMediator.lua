@@ -712,7 +712,23 @@ function GalleryPartnerNewMediator:onClickInfoBtn(sender, eventType)
 end
 
 function GalleryPartnerNewMediator:doLogicForShowHeros()
+	local Hero_Album_Feminine = ConfigReader:getRecordById("ConfigValue", "Hero_Album_Feminine").content
 	self._showHeros = {}
+
+	if self._curPartyData:getType() == 3 then
+		for i, v in ipairs(Hero_Album_Feminine) do
+			local hero = self._heroSystem:getHeroById(v)
+
+			if hero then
+				local rerity = hero:getRarity()
+
+				if rerity == RareityStringToNumber[self._curPartyData:getPartyId()] then
+					self._showHeros[#self._showHeros + 1] = v
+				end
+			end
+		end
+	end
+
 	local showHeroIds = self._curPartyData:getHeroIds()
 
 	for i = 1, #showHeroIds do

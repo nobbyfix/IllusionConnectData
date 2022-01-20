@@ -185,7 +185,7 @@ function exports.ApplyEnchant(env, player, card, config, enchants)
 	return cardSystem:applyEnchantOnCard(player, card, enchantObject, groupConfig, env["$id"])
 end
 
-function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffects)
+function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffects, anim)
 	local cardSystem = env.global["$CardSystem"]
 
 	if cardSystem == nil then
@@ -194,7 +194,7 @@ function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffect
 
 	local triggerBuff = TriggerBuff:new(buffConfig, buffEffects)
 
-	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, env["$id"])
+	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, anim, env["$id"])
 end
 
 function exports.DispelTiggerOnHeroCard(env, heroCard, tags)

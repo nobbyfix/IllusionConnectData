@@ -615,6 +615,160 @@
             "start": "2022-01-01 10:00:00"
         }
     },
+    "RTPKSeason_13": {
+        "AllServerMinimum": "",
+        "AllServerNum": 30000,
+        "AllServerReward": [
+            "RTPK_Season13_SeriesALL_1",
+            "RTPK_Season13_SeriesALL_2",
+            "RTPK_Season13_SeriesALL_3",
+            "RTPK_Season13_SeriesALL_4",
+            "RTPK_Season13_SeriesALL_5",
+            "RTPK_Season13_SeriesALL_6",
+            "RTPK_Season13_SeriesALL_7",
+            "RTPK_Season13_SeriesALL_8",
+            "RTPK_Season13_SeriesALL_9",
+            "RTPK_Season13_SeriesALL_10",
+            "RTPK_Season13_SeriesALL_11",
+            "RTPK_Season13_SeriesALL_12",
+            "RTPK_Season13_SeriesALL_13",
+            "RTPK_Season13_SeriesALL_14",
+            "RTPK_Season13_SeriesALL_15",
+            "RTPK_Season13_SeriesALL_16",
+            "RTPK_Season13_SeriesALL_17"
+        ],
+        "AttrPercent": [
+            1,
+            1,
+            1.1
+        ],
+        "DailyWinReward": "",
+        "DailyWinRewardShow": "",
+        "Name": "RTPKSeason_13_Name",
+        "OneServerMinimum": "",
+        "OneServerNum": 10000,
+        "SeasonBackground": "RTPK_scene_ppcg_xxd",
+        "SeasonOrder": 13,
+        "SeasonRule": "RTPKSeason_13",
+        "SeasonShowModel": "LDYu",
+        "SeasonWinTask": [
+            {
+                "1": "RTPK_WinReward_1"
+            },
+            {
+                "2": "RTPK_WinReward_2"
+            },
+            {
+                "3": "RTPK_WinReward_3"
+            },
+            {
+                "5": "RTPK_WinReward_5"
+            },
+            {
+                "8": "RTPK_WinReward_8"
+            },
+            {
+                "10": "RTPK_WinReward_10"
+            },
+            {
+                "12": "RTPK_WinReward_12"
+            },
+            {
+                "15": "RTPK_WinReward_15"
+            },
+            {
+                "18": "RTPK_WinReward_18"
+            },
+            {
+                "20": "RTPK_WinReward_20"
+            },
+            {
+                "22": "RTPK_WinReward_22"
+            },
+            {
+                "25": "RTPK_WinReward_25"
+            },
+            {
+                "28": "RTPK_WinReward_28"
+            },
+            {
+                "30": "RTPK_WinReward_30"
+            },
+            {
+                "32": "RTPK_WinReward_32"
+            },
+            {
+                "35": "RTPK_WinReward_35"
+            },
+            {
+                "38": "RTPK_WinReward_38"
+            },
+            {
+                "40": "RTPK_WinReward_40"
+            },
+            {
+                "42": "RTPK_WinReward_42"
+            },
+            {
+                "45": "RTPK_WinReward_45"
+            },
+            {
+                "47": "RTPK_WinReward_47"
+            },
+            {
+                "50": "RTPK_WinReward_50"
+            },
+            {
+                "52": "RTPK_WinReward_52"
+            },
+            {
+                "55": "RTPK_WinReward_55"
+            },
+            {
+                "58": "RTPK_WinReward_58"
+            },
+            {
+                "60": "RTPK_WinReward_60"
+            },
+            {
+                "62": "RTPK_WinReward_62"
+            },
+            {
+                "65": "RTPK_WinReward_65"
+            },
+            {
+                "70": "RTPK_WinReward_70"
+            },
+            {
+                "75": "RTPK_WinReward_75"
+            },
+            {
+                "80": "RTPK_WinReward_80"
+            },
+            {
+                "85": "RTPK_WinReward_85"
+            },
+            {
+                "90": "RTPK_WinReward_90"
+            },
+            {
+                "100": "RTPK_WinReward_100"
+            },
+            {
+                "110": "RTPK_WinReward_110"
+            },
+            {
+                "120": "RTPK_WinReward_120"
+            }
+        ],
+        "SeasonWinTaskDes": "RTPK_WinReward_UI02",
+        "ServerReward": [],
+        "ShowTime": 86400,
+        "TimeFactor": {
+            "end": "2022-02-21 23:00:00",
+            "start": "2022-02-01 10:00:00"
+        }
+    },
     "RTPKSeason_2": {
         "AllServerMinimum": "",
         "AllServerNum": 30000,

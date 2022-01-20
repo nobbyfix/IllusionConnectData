@@ -190,6 +190,16 @@ function PlayerTLInterpreter:act_ShowGrayEnergyEffect(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_ShowFrazeEnergyEffect(action, args)
+	if self._isMainPlayer then
+		local isShow = args or false
+
+		if self._battleUIMediator.showFrazeEnergyEffect then
+			self._battleUIMediator:showFrazeEnergyEffect(isShow)
+		end
+	end
+end
+
 function PlayerTLInterpreter:act_RemoveSCard(action, args)
 	self._battleUIMediator:removeCards()
 end
@@ -371,9 +381,10 @@ end
 function PlayerTLInterpreter:act_TriggerBuff(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx
+		local anim = args.anim
 
 		if idx and self._battleUIMediator.adjustCardBuff then
-			self._battleUIMediator:adjustCardBuff(idx)
+			self._battleUIMediator:adjustCardBuff(idx, anim)
 		end
 	end
 end

@@ -968,7 +968,7 @@
         "HeadName": "LDYu_HeadName",
         "HeroMasterId": "LDYu",
         "IconPath": "asset/heros/hdu/battlepic_hdu.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LDYu_HeadUnlock",
@@ -2865,6 +2865,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_XHMao",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_XSMLi": {
+        "HeadDesc": "HeroAwaken_XSMLi_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_XSMLi_1_Name",
+        "HeroMasterId": "XSMLi",
+        "IconPath": "asset/heros/XSMLi/battlepic_nkla_awaken.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_XSMLi",
         "Zoom": 1.0
     },
     "HeroAwaken_YBYa": {

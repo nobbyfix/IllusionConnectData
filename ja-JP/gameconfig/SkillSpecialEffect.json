@@ -11773,6 +11773,19 @@
             "slot": "Hero_Proud_XSMLi"
         }
     },
+    "StarSE_XSMLi_Awake": {
+        "Desc": "StarSE_XSMLi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XSMLi_Awaken",
+            "before": "Hero_Unique_XSMLi_EX",
+            "slot": "Hero_Unique_XSMLi"
+        }
+    },
     "StarSE_XXFSi_4": {
         "Desc": "StarSE_XXFSi_4_Desc",
         "EffectType": "CHANGESKILL",

@@ -11723,6 +11723,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_XSMLi_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -218,
+                    1683
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -375,
+                    1536
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XSMLi_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_XSMLi_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "XSMLi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XSMLi_Awake",
+        "Name": "Surface_XSMLi_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 0
+    },
     "Surface_XXFSi_1": {
         "ActivityId": "",
         "AnimeList": "",

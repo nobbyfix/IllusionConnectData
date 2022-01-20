@@ -68,6 +68,9 @@ end
 
 function ShopCoopExchangeMediator:setupTopView()
 	local topInfoNode = self:getView():getChildByFullName("main.topInfo")
+
+	topInfoNode:setLocalZOrder(999)
+
 	local config = {
 		style = 1,
 		currencyInfo = {},

@@ -373,7 +373,7 @@ all.Skill_MDSi_Unique = {
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-				if not global.MASTER(_env, unit) then
+				if not global.MASTER(_env, unit) and not global.MARKED(_env, "SummonedNian")(_env, unit) then
 					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
 					local extra_damage = hp * this.DamageFactor
 
@@ -534,7 +534,7 @@ all.Skill_MDSi_Unique_EX = {
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
-				if not global.MASTER(_env, unit) then
+				if not global.MASTER(_env, unit) and not global.MARKED(_env, "SummonedNian")(_env, unit) then
 					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
 					local extra_damage = hp * this.DamageFactor
 

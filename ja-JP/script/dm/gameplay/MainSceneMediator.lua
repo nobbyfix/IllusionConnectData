@@ -59,6 +59,9 @@ local muiscCfg = {
 	ActivityFemaleMainView = {
 		noAutoPlay = true
 	},
+	ActivityReZeroMainView = {
+		noAutoPlay = true
+	},
 	ActivityStoryBookMainView = {
 		noAutoPlay = true
 	},
@@ -228,6 +231,12 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	ActivityDramaMainView = {
+		noAutoPlay = true
+	},
+	ActivityFamilyMainView = {
+		noAutoPlay = true
+	},
+	ActivityOrientMapView = {
 		noAutoPlay = true
 	}
 }

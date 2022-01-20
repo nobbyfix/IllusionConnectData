@@ -441,6 +441,7 @@ function BattleGroundCell:addTrap(param, isleft)
 
 	local priorityValue = trapModel.Priority or 0
 	local priorityGroup = trapModel.Type or "@Default"
+	local zOrder = trapModel.zOrder or 0
 	local groupMap = self._trapMap[priorityGroup] or {}
 	groupMap[display] = groupMap[display] or {}
 	self._trapMap[priorityGroup] = groupMap
@@ -454,7 +455,7 @@ function BattleGroundCell:addTrap(param, isleft)
 			trapValue.displayNodes = {}
 
 			local function addEffect(anim, layer)
-				return self:addActiveEffect(anim, trapValue.loopMode == 1, trapModel.EffectPos, layer, 1, function (cid, mc)
+				return self:addActiveEffect(anim, trapValue.loopMode == 1, trapModel.EffectPos, layer, tonumber(zOrder) + 1, function (cid, mc)
 					if trapValue.loopMode == 0 then
 						table.removevalues(trapValue.displayNodes, mc)
 						mc:removeFromParent()
@@ -503,13 +504,15 @@ function BattleGroundCell:removeTrap(param)
 	self:refreshTrapEffect()
 end
 
-function BattleGroundCell:addActiveEffect(mcFile, loop, offsetY, layer, zOrder, callback, isLeft)
+function BattleGroundCell:addActiveEffect(mcFile, loop, offset, layer, zOrder, callback, isLeft)
 	if not mcFile then
 		return
 	end
 
 	layer = layer or "front"
-	offsetY = offsetY or 0
+	offset = offset or {}
+	offsetY = offset[2] or 0
+	offsetX = offset[1] or 0
 	local anim = cc.MovieClip:create(mcFile, "BattleMCGroup")
 
 	assert(anim, "MovieClip :" .. mcFile .. " not exists!")
@@ -523,7 +526,7 @@ function BattleGroundCell:addActiveEffect(mcFile, loop, offsetY, layer, zOrder, 
 		end
 	end)
 
-	local point = cc.p(0, offsetY)
+	local point = cc.p(offsetX, offsetY)
 
 	anim:addTo(layer == "front" and self._trapNode or self._trapNode)
 	anim:setLocalZOrder(layer == "front" and zOrder or -zOrder)

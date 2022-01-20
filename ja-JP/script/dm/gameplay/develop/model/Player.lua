@@ -16,6 +16,7 @@ require("dm.gameplay.club.model.Club")
 require("dm.gameplay.explore.model.Explore")
 require("dm.gameplay.develop.model.hero.HeroBuilding")
 require("dm.gameplay.develop.model.master.MasterBuilding")
+require("dm.gameplay.tsoul.model.TSoulList")
 
 Player = class("Player", BasePlayer, _M)
 
@@ -67,6 +68,9 @@ Player:has("_heroBuildingModule", {
 Player:has("_masterBuildingModule", {
 	is = "rw"
 })
+Player:has("_tSoulList", {
+	is = "r"
+})
 
 function Player:initialize(player)
 	super.initialize(self)
@@ -96,6 +100,7 @@ function Player:initSys()
 	self._club = Club:new()
 	self._effectCenter = EffectCenter:new(self)
 	self._explore = Explore:new()
+	self._tSoulList = TSoulList:new(self)
 	self._heroBuildingModule = HeroBuilding:new(self)
 	self._masterBuildingModule = MasterBuilding:new(self)
 end

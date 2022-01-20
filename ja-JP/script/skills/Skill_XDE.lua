@@ -413,7 +413,7 @@ all.Skill_XDE_Passive = {
 					global.Sound(_env, "Se_Skill_XDE_Cat_Leave", 1)
 					global.Flee(_env, 1000, _env.ACTOR, true)
 				else
-					local units = global.RandomN(_env, this.Num, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")))
+					local units = global.RandomN(_env, this.Num, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD") - global.MARKED(_env, "SummonedNian")))
 
 					for _, unit in global.__iter__(units) do
 						global.Flee(_env, 1000, unit, true)
@@ -724,7 +724,7 @@ all.Skill_XDE_Passive_EX = {
 					global.Sound(_env, "Se_Skill_XDE_Cat_Leave", 1)
 					global.Flee(_env, 1000, _env.ACTOR, true)
 				else
-					local units = global.RandomN(_env, this.Num, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")))
+					local units = global.RandomN(_env, this.Num, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD") - global.MARKED(_env, "SummonedNian")))
 
 					for _, unit in global.__iter__(units) do
 						global.Flee(_env, 1000, unit, true)

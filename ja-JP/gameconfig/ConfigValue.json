@@ -496,6 +496,28 @@
             "UNHURTRATE": 12
         }
     },
+    "Attr_TimeSoul_ShowOrder": {
+        "clz": "dict",
+        "content": {
+            "ABSORPTION": 13,
+            "ATK": 1,
+            "ATK_RATE": 15,
+            "BLOCKRATE": 8,
+            "BLOCKSTRG": 10,
+            "CRITRATE": 5,
+            "CRITSTRG": 7,
+            "DEF": 3,
+            "DEF_RATE": 16,
+            "HP": 2,
+            "HP_RATE": 17,
+            "HURTRATE": 11,
+            "REFLECTION": 14,
+            "SPEED": 4,
+            "UNBLOCKRATE": 9,
+            "UNCRITRATE": 6,
+            "UNHURTRATE": 12
+        }
+    },
     "BattlePass_BuyLevelCost": {
         "clz": "int[]",
         "content": [
@@ -1782,6 +1804,14 @@
             "19"
         ]
     },
+    "ClubBoss_BossRatio": {
+        "clz": "double",
+        "content": 1.1
+    },
+    "ClubBoss_DailyMax": {
+        "clz": "int",
+        "content": 60
+    },
     "ClubBoss_DiffAttr": {
         "clz": "string[]",
         "content": [
@@ -1799,6 +1829,14 @@
     "ClubBoss_HeroModel": {
         "clz": "string",
         "content": 0.6
+    },
+    "ClubBoss_Mail": {
+        "clz": "string",
+        "content": "Mail_ClubBoss"
+    },
+    "ClubBoss_MaxPoint": {
+        "clz": "int",
+        "content": 6
     },
     "ClubBoss_RuleTranslate": {
         "clz": "string[]",
@@ -2429,6 +2467,13 @@
         "clz": "int",
         "content": 50
     },
+    "Crusade_CrusadeStamina_Up": {
+        "clz": "dict",
+        "content": {
+            "item": "IR_CrusadeStamina_Up",
+            "num": 1
+        }
+    },
     "Crusade_Dynamic_Difficlt_Floor": {
         "clz": "int",
         "content": 11
@@ -2436,6 +2481,10 @@
     "Crusade_Dynamic_Difficlt_Min_Value": {
         "clz": "double",
         "content": -0.3
+    },
+    "Crusade_Energy": {
+        "clz": "int",
+        "content": 5
     },
     "Crusade_Energy_Buff": {
         "clz": "array",
@@ -3594,6 +3643,25 @@
     "Gashapon_DailyTimes": {
         "clz": "int",
         "content": 1
+    },
+    "GemAddattr": {
+        "clz": "array",
+        "content": [
+            3,
+            6,
+            9,
+            12,
+            15
+        ]
+    },
+    "GemLev": {
+        "clz": "dict",
+        "content": {
+            "2": "Gem1_1",
+            "3": "Gem2_1",
+            "4": "Gem3_1",
+            "5": "Gem4_1"
+        }
     },
     "Gm_Max_Stronger": {
         "clz": "string[]",
@@ -8033,6 +8101,20 @@
         "clz": "string",
         "content": "https://sdk-file-download.efunjp.com/policy/common/ja_JP/privacypolicy.html"
     },
+    "Projection_Rules": {
+        "clz": "string[]",
+        "content": [
+            "TsoulRuleTitle1",
+            "TsoulRuleDesc1",
+            "TsoulRuleTitle2",
+            "TsoulRuleDesc2",
+            "TsoulRuleTitle3",
+            "TsoulRuleDesc3",
+            "TsoulRuleDesc2",
+            "TsoulRuleTitle4",
+            "TsoulRuleDesc4"
+        ]
+    },
     "Push_Translate": {
         "clz": "array",
         "content": ""
@@ -8530,7 +8612,6 @@
     "Shop_ShowSequence": {
         "clz": "string[]",
         "content": [
-            "Shop_StageArena",
             "Shop_PVP",
             "Shop_PVE",
             "Shop_Association",
@@ -10079,180 +10160,308 @@
         "clz": "dict",
         "content": {
             "Effect": "main_meikejineng",
-            "EffectPos": 230,
+            "EffectPos": [
+                0,
+                260
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Dun": {
         "clz": "dict",
         "content": {
             "Effect": "dun_bumengguanjizhitexiao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_EquipSkill_Shoes_15006": {
         "clz": "dict",
         "content": {
             "Effect": "shubiao_shubiaodian",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Freeze": {
         "clz": "dict",
         "content": {
             "Effect": "jihan_bufftexiao",
-            "EffectPos": 45,
+            "EffectPos": [
+                0,
+                45
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
+        }
+    },
+    "TrapModel_Guaxiang": {
+        "clz": "dict",
+        "content": {
+            "Effect": "jihuo_guaxiang",
+            "EffectPos": [
+                0,
+                5
+            ],
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1,
+            "zOrder": 3
         }
     },
     "TrapModel_Huo": {
         "clz": "dict",
         "content": {
             "Effect": "huo_bumengguanjizhitexiao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Jian": {
         "clz": "dict",
         "content": {
             "Effect": "jian_bumengguanjizhitexiao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Jianzhen": {
         "clz": "dict",
         "content": {
             "Effect": "main_xuanhefazhen",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Jianzhendazhao": {
         "clz": "dict",
         "content": {
             "Effect": "main_xuanhedazhaofazhen",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
+        }
+    },
+    "TrapModel_Kan": {
+        "clz": "dict",
+        "content": {
+            "Effect": "kangua_guaxiang",
+            "EffectPos": [
+                -130,
+                -72
+            ],
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1,
+            "zOrder": 1
+        }
+    },
+    "TrapModel_Li": {
+        "clz": "dict",
+        "content": {
+            "Effect": "ligua_guaxiang",
+            "EffectPos": [
+                -130,
+                -75
+            ],
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Light_cheng": {
         "clz": "dict",
         "content": {
             "Effect": "cheng_kongbubenchangjingtexiao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Light_lan": {
         "clz": "dict",
         "content": {
             "Effect": "lan_kongbubenchangjingtexiao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
+        }
+    },
+    "TrapModel_Qian": {
+        "clz": "dict",
+        "content": {
+            "Effect": "qiangua_guaxiang",
+            "EffectPos": [
+                -130,
+                -60
+            ],
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_Stage": {
         "clz": "dict",
         "content": {
             "Effect": "main_yinyuehe",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_ZFQi_1_1": {
         "clz": "dict",
         "content": {
             "Effect": "diceng_lansekeji",
-            "EffectPos": 40,
+            "EffectPos": [
+                0,
+                40
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_ZFQi_1_2": {
         "clz": "dict",
         "content": {
             "Effect": "dicengbianse_lansekeji",
-            "EffectPos": 40,
+            "EffectPos": [
+                0,
+                40
+            ],
             "Loop": 0,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_ZFQi_2_1": {
         "clz": "dict",
         "content": {
             "Effect": "shangceng_lansekeji",
-            "EffectPos": 40,
+            "EffectPos": [
+                0,
+                40
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_ZFQi_2_2": {
         "clz": "dict",
         "content": {
             "Effect": "shangcengbianse_lansekeji",
-            "EffectPos": 40,
+            "EffectPos": [
+                0,
+                40
+            ],
             "Loop": 0,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_cheng_yumao": {
         "clz": "dict",
         "content": {
             "Effect": "cheng_jianyumao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_fen_yumao": {
         "clz": "dict",
         "content": {
             "Effect": "fen_jianyumao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrapModel_fencheng_yumao": {
         "clz": "dict",
         "content": {
             "Effect": "fencheng_jianyumao",
-            "EffectPos": 5,
+            "EffectPos": [
+                0,
+                5
+            ],
             "Loop": 1,
             "Priority": null,
-            "Type": 1
+            "Type": 1,
+            "zOrder": 1
         }
     },
     "TrialSwitch": {
@@ -10265,6 +10474,86 @@
             "dreamchallenge",
             "crusade",
             "practice"
+        ]
+    },
+    "Tsoul_AttributeMaxNum": {
+        "clz": "dict",
+        "content": {
+            "1": 3,
+            "2": 3,
+            "3": 3,
+            "4": 3
+        }
+    },
+    "Tsoul_EXPDown": {
+        "clz": "dict",
+        "content": {
+            "2": 0.8,
+            "3": 0.8,
+            "4": 0.8,
+            "5": 0.8
+        }
+    },
+    "Tsoul_EXPGold": {
+        "clz": "int",
+        "content": 15
+    },
+    "Tsoul_Expitem_Exp": {
+        "clz": "dict",
+        "content": {
+            "Gem102": 2500,
+            "Gem103": 5000,
+            "Gem104": 7500
+        }
+    },
+    "Tsoul_LevelMax": {
+        "clz": "dict",
+        "content": {
+            "2": 15,
+            "3": 15,
+            "4": 15,
+            "5": 15
+        }
+    },
+    "Tsoul_Open": {
+        "clz": "array",
+        "content": [
+            20,
+            30,
+            40
+        ]
+    },
+    "Tsoul_RedPointLevel": {
+        "clz": "int",
+        "content": 100
+    },
+    "Tsoul_RuleText": {
+        "clz": "string[]",
+        "content": [
+            {
+                "Desc": [
+                    "TsoulRuleDesc1"
+                ],
+                "Title": "TsoulRuleTitle1"
+            },
+            {
+                "Desc": [
+                    "TsoulRuleDesc2"
+                ],
+                "Title": "TsoulRuleTitle2"
+            },
+            {
+                "Desc": [
+                    "TsoulRuleDesc3"
+                ],
+                "Title": "TsoulRuleTitle3"
+            },
+            {
+                "Desc": [
+                    "TsoulRuleDesc4"
+                ],
+                "Title": "TsoulRuleTitle4"
+            }
         ]
     },
     "TypeFlags": {

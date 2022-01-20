@@ -988,6 +988,62 @@
         ],
         "Type": "ELITE"
     },
+    "FamilyM01": {
+        "BGM": "Mus_Story_Family_Happy",
+        "Background": "Family_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FamilyAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FamilySN01",
+            "FamilySN02",
+            "FamilySN03",
+            "FamilySN04",
+            "FamilySN05",
+            "FamilySN06",
+            "FamilySN07",
+            "FamilySN08"
+        ],
+        "SubStoryPoint": [
+            "FamilyS01S01",
+            "FamilyS01S02",
+            "FamilyS01S03",
+            "FamilyS01S04",
+            "FamilyS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "FamilyM02": {
+        "BGM": "Mus_Story_Family_Aloof",
+        "Background": "Family_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FamilyAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FamilySE01",
+            "FamilySE02",
+            "FamilySE03",
+            "FamilySE04",
+            "FamilySE05",
+            "FamilySE06",
+            "FamilySE07",
+            "FamilySE08",
+            "FamilySE09",
+            "FamilySE10",
+            "FamilySE11"
+        ],
+        "SubStoryPoint": [
+            "FamilyS02S01",
+            "FamilyS02S02",
+            "FamilyS02S03",
+            "FamilyS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "FemaleE01": {
         "BGM": "Mus_Story_Girl_Main",
         "Background": "Female_Scene03",

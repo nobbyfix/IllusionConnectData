@@ -1549,6 +1549,7 @@ local modules = {
 			{
 				name = "activity",
 				requires = {
+					"dm.gameplay.activity.model.ActivityList",
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
 					"dm.gameplay.activity.view.ActivityWidget",
@@ -2048,6 +2049,55 @@ local modules = {
 							mediator = "ActivityFireMainMediator"
 						},
 						{
+							res = "asset/ui/ActivityBlockZeroTask.csb",
+							name = "ActivityBlockZeroTaskView",
+							mediator = "ActivityBlockZeroTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskDaily.csb",
+							name = "ActivityZeroTaskDailyView",
+							mediator = "ActivityZeroTaskDailyMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskAchievement.csb",
+							name = "ActivityZeroTaskAchievementView",
+							mediator = "ActivityZeroTaskAchievementMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMain.csb",
+							name = "ActivityZeroMainView",
+							mediator = "ActivityZeroMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroSelectMap.csb",
+							name = "ActivityZeroSelectMapView",
+							mediator = "ActivityZeroSelectMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetail.csb",
+							name = "ActivityZeroPointDetailView",
+							mediator = "ActivityZeroPointDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMap.csb",
+							name = "ActivityZeroeMapView",
+							mediator = "ActivityZeroMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMapUI.csb",
+							name = "ActivityZeroMapUIView"
+						},
+						{
+							res = "asset/ui/ActivityBlockZeroShop.csb",
+							name = "ActivityBlockZeroShopView",
+							mediator = "ActivityBlockZeroShopMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroDiceStep.csb",
+							name = "ActivityZeroDiceStepView",
+							mediator = "ActivityZeroDiceStepMediator"
+						},
+						{
 							res = "asset/ui/ActivityFemaleMain.csb",
 							name = "ActivityFemaleMainView",
 							mediator = "ActivityCommonMainMediator"
@@ -2056,6 +2106,11 @@ local modules = {
 							res = "asset/ui/ActivityStoryBookMain.csb",
 							name = "ActivityStoryBookMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityReZeroMain.csb",
+							name = "ActivityReZeroMainView",
+							mediator = "ActivityFireMainMediator"
 						},
 						{
 							res = "asset/ui/ActivityDeepSeaMain.csb",
@@ -2126,6 +2181,16 @@ local modules = {
 							res = "asset/ui/ActivityDramaMain.csb",
 							name = "ActivityDramaMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityOrientMain.csb",
+							name = "ActivityFamilyMainView",
+							mediator = "ActivityOrientMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityOrientMap.csb",
+							name = "ActivityOrientMapView",
+							mediator = "ActivityOrientMapMediator"
 						}
 					}
 				}
@@ -3870,6 +3935,11 @@ local modules = {
 							res = "asset/ui/CrusadeWorldRule.csb",
 							name = "CrusadeWorldRuleView",
 							mediator = "CrusadeWorldRuleMediator"
+						},
+						{
+							res = "asset/ui/CrusadeAlert.csb",
+							name = "CrusadeAlertView",
+							mediator = "CrusadeAlertMediator"
 						}
 					}
 				}
@@ -4186,6 +4256,96 @@ local modules = {
 							res = "asset/ui/Jump.csb",
 							name = "JumpView",
 							mediator = "JumpMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityLimitTip.csb",
+							name = "PlaneWarActivityLimitTipView",
+							mediator = "PlaneWarActivityLimitTipMediator"
+						},
+						{
+							res = "asset/ui/miniplaneWaringTip.csb",
+							name = "PlaneWarWarningView",
+							mediator = "PlaneWarWarningMediator"
+						},
+						{
+							res = "asset/ui/miniplaneStage.csb",
+							name = "PlaneWarStageView",
+							mediator = "PlaneWarStageMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivity.csb",
+							name = "PlaneWarActivityView",
+							mediator = "PlaneWarActivityMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivity.csb",
+							name = "PlaneWarClubView",
+							mediator = "PlaneWarClubMediator"
+						},
+						{
+							res = "asset/ui/miniplaneGame.csb",
+							name = "PlaneWarGameView",
+							mediator = "PlaneWarGameMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityResult.csb",
+							name = "PlaneWarActivityResultView",
+							mediator = "PlaneWarActivityResultMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityResult.csb",
+							name = "PlaneWarClubGameResultView",
+							mediator = "PlaneWarClubGameResultMediator"
+						},
+						{
+							res = "asset/ui/miniplaneStageWin.csb",
+							name = "PlaneWarStageWinView",
+							mediator = "PlaneWarStageWinMediator"
+						},
+						{
+							res = "asset/ui/miniplaneStagePasue.csb",
+							name = "PlaneWarStagePauseView",
+							mediator = "PlaneWarStagePauseMediator"
+						},
+						{
+							res = "asset/ui/miniplaneRule.csb",
+							name = "PlaneWarRuleTipView",
+							mediator = "PlaneWarRuleTipMediator"
+						},
+						{
+							res = "asset/ui/miniplaneStageBuyTimes.csb",
+							name = "PlaneWarStageBuyTimesView",
+							mediator = "PlaneWarResultBuyTimesMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityBuyTimes.csb",
+							name = "PlaneWarActivityBuyTimesView",
+							mediator = "PlaneWarActivityBuyTimesMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityBuyTimes.csb",
+							name = "ClubGameBuyTimesView",
+							mediator = "ClubGameBuyTimesMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityPasue.csb",
+							name = "PlaneWarActivityPauseView",
+							mediator = "PlaneWarActivityPauseMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityPasue.csb",
+							name = "PlaneWarClubGamePauseView",
+							mediator = "PlaneWarClubGamePauseMediator"
+						},
+						{
+							res = "asset/ui/miniplaneActivityRewards.csb",
+							name = "PlaneWarRewardListTipView",
+							mediator = "PlaneWarRewardListTipMediator"
+						},
+						{
+							res = "asset/ui/miniplaneClubRewards.csb",
+							name = "PlaneWarClubGameRewardsTipView",
+							mediator = "PlaneWarClubGameRewardsTipMediator"
 						}
 					}
 				}
@@ -4380,6 +4540,49 @@ local modules = {
 							res = "asset/ui/LeadStageArenaReward.csb",
 							name = "LeadStageArenaRewardView",
 							mediator = "LeadStageArenaRewardViewMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "TSoul",
+				requires = {
+					"dm.gameplay.tsoul.service.TSoulService"
+				},
+				injections = {
+					classes = {
+						"TSoulService"
+					},
+					views = {
+						{
+							res = "asset/ui/TSoulMain.csb",
+							name = "TSoulMainView",
+							mediator = "TSoulMainMediator"
+						},
+						{
+							res = "asset/ui/TSoulChange.csb",
+							name = "TSoulChangeView",
+							mediator = "TSoulChangeMediator"
+						},
+						{
+							res = "asset/ui/TSoulItemTip.csb",
+							name = "TSoulTipView",
+							mediator = "TSoulTipMediator"
+						},
+						{
+							res = "asset/ui/TSoulIntensify.csb",
+							name = "TSoulIntensifyView",
+							mediator = "TSoulIntensifyMediator"
+						},
+						{
+							res = "asset/ui/TSoulIntensifySucc.csb",
+							name = "TSoulIntensifySuccView",
+							mediator = "TSoulIntensifySuccMediator"
+						},
+						{
+							res = "asset/ui/TSoulSuit.csb",
+							name = "TSoulSuitView",
+							mediator = "TSoulSuitMediator"
 						}
 					}
 				}

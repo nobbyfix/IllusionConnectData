@@ -1,6 +1,7 @@
 require("dm.gameplay.miniGame.MiniGameConfig")
 require("dm.gameplay.miniGame.controller.DartsSystem")
 require("dm.gameplay.miniGame.controller.JumpSystem")
+require("dm.gameplay.miniGame.controller.PlaneWarSystem")
 
 MiniGameSystem = class("MiniGameSystem", legs.Actor)
 
@@ -34,6 +35,9 @@ MiniGameSystem:has("_dartsSystem", {
 MiniGameSystem:has("_jumpSystem", {
 	is = "r"
 })
+MiniGameSystem:has("_planeWarSystem", {
+	is = "r"
+})
 
 local miniGameActivityFunc = {}
 
@@ -43,6 +47,10 @@ end
 
 miniGameActivityFunc[MiniGameType.kJump] = function (sys, pointId)
 	sys:getJumpSystem():tryEnterByActivity(pointId)
+end
+
+miniGameActivityFunc[MiniGameType.kPlaneWar] = function (sys, pointId)
+	sys:getPlaneWarSystem():tryEnterByActivity(pointId)
 end
 
 function MiniGameSystem:inintRotation()
@@ -59,11 +67,13 @@ function MiniGameSystem:userInject(injector)
 	injector:injectInto(self._rankSystem)
 	injector:injectInto(self._dartsSystem)
 	injector:injectInto(self._jumpSystem)
+	injector:injectInto(self._planeWarSystem)
 end
 
 function MiniGameSystem:initSystem()
 	self._dartsSystem = DartsSystem:new(self)
 	self._jumpSystem = JumpSystem:new(self)
+	self._planeWarSystem = PlaneWarSystem:new(self)
 end
 
 function MiniGameSystem:tryEnterByStage(pointId)
@@ -125,8 +135,6 @@ function MiniGameSystem:tryEnterByActivityType(gameType)
 end
 
 function MiniGameSystem:tryEnterByActivity(activityId)
-	dump(activityId, "activityId-___")
-
 	if GameConfigs.forbiddenMiniGame then
 		self:dispatch(ShowTipEvent({
 			tip = GameConfigs.forbiddenMiniGameTips

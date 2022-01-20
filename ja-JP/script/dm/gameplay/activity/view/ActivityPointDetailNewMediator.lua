@@ -299,7 +299,7 @@ function ActivityPointDetailNewMediator:initAnim()
 	local descMc = mc:getChildByFullName("desc")
 
 	self._descPanel:changeParent(descMc)
-	self._descPanel:setPosition(cc.p(-205, 30))
+	self._descPanel:setPosition(cc.p(-205, 25))
 
 	local rewardMc = mc:getChildByFullName("rewardPanel")
 
@@ -477,30 +477,34 @@ function ActivityPointDetailNewMediator:setupView()
 
 	if next(infomation) then
 		local panel1 = self._infomationPanel:getChildByName("Image_7")
+		local panel2 = self._infomationPanel:getChildByName("Image_75")
 
 		panel1:setVisible(infomation.BossDetail.show == "1")
+		panel2:setVisible(infomation.BossDetail.show ~= "1")
 
-		local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", infomation.BossDetail.BossModel, "RoleModel")
-		local rivalIcon = IconFactory:createRoleIconSpriteNew({
-			id = roleModelId
-		})
+		if panel1:isVisible() then
+			local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", infomation.BossDetail.BossModel, "RoleModel")
+			local rivalIcon = IconFactory:createRoleIconSpriteNew({
+				id = roleModelId
+			})
 
-		rivalIcon:setScale(0.3)
-		rivalIcon:addTo(panel1:getChildByName("Image_10")):posite(30, 24)
+			rivalIcon:setScale(0.3)
+			rivalIcon:addTo(panel1:getChildByName("Image_10")):posite(30, 24)
 
-		local function callFunc()
-			self:clickBoss(infomation.BossDetail.BossModel)
+			local function callFunc()
+				self:clickBoss(infomation.BossDetail.BossModel)
+			end
+
+			mapButtonHandlerClick(nil, panel1, {
+				clickAudio = "Se_Click_Select_1",
+				func = callFunc
+			})
 		end
-
-		mapButtonHandlerClick(nil, panel1, {
-			clickAudio = "Se_Click_Select_1",
-			func = callFunc
-		})
 
 		local listView = self._infomationPanel:getChildByName("ListView")
 
 		listView:setScrollBarEnabled(false)
-		listView:setVisible(next(infomation.SpecialRule) ~= nil)
+		listView:setVisible(next(infomation.SpecialRule or {}) ~= nil)
 		listView:removeAllChildren()
 
 		for i, v in ipairs(infomation.SpecialRule or {}) do

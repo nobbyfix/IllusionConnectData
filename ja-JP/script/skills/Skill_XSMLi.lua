@@ -140,7 +140,7 @@ all.Skill_XSMLi_Proud = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS), ">", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			if _env.units and _env.units[1] then
 				for _, unit in global.__iter__(_env.units) do
@@ -285,7 +285,7 @@ all.Skill_XSMLi_Unique = {
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 
-			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hp")), 1, 2)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), ">", global.UnitPropGetter(_env, "hp")), 1, 2)
 
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
@@ -297,30 +297,10 @@ all.Skill_XSMLi_Unique = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
 
-			if _env.units[2] then
-				global.HarmTargetView(_env, _env.units)
-
-				for _, unit in global.__iter__(_env.units) do
-					global.AssignRoles(_env, unit, "target")
-				end
-			elseif _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					global.HarmTargetView(_env, _env.units)
-					global.AssignRoles(_env, unit, "target")
-				end
-
-				if global.EnemyMaster(_env) then
-					global.HarmTargetView(_env, {
-						global.EnemyMaster(_env)
-					})
-					global.AssignRoles(_env, global.EnemyMaster(_env), "target")
-				end
-			else
-				global.HarmTargetView(_env, {
-					_env.TARGET
-				})
-				global.AssignRoles(_env, _env.TARGET, "target")
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
 			end
 		end)
 		exec["@time"]({
@@ -329,101 +309,14 @@ all.Skill_XSMLi_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			if _env.units[2] then
-				for _, unit in global.__iter__(_env.units) do
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-					global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-				end
-			elseif _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-					global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-				end
-
-				if global.EnemyMaster(_env) then
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-					global.ApplyRPEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
-				end
-			else
+			for _, unit in global.__iter__(_env.units) do
 				local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 				local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
 					"+Normal",
 					"+Normal"
 				}, DeUnHurtRateFactor)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
 					timing = 0,
 					display = "UnHurtRateDown",
 					group = "Skill_XSMLi_Passive",
@@ -438,11 +331,11 @@ all.Skill_XSMLi_Unique = {
 				}, {
 					buffeft1
 				}, 1, 0)
-				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
-				global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
-				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({
@@ -568,7 +461,7 @@ all.Skill_XSMLi_Proud_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.SUMMONS), ">", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			if _env.units and _env.units[1] then
 				for _, unit in global.__iter__(_env.units) do
@@ -723,6 +616,7 @@ all.Skill_XSMLi_Unique_EX = {
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
 
 		_env.units = nil
+		_env.sums = nil
 
 		exec["@time"]({
 			0
@@ -732,7 +626,7 @@ all.Skill_XSMLi_Unique_EX = {
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 
-			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hp")), 1, 3)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), ">", global.UnitPropGetter(_env, "hp")), 1, 3)
 
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
@@ -744,42 +638,10 @@ all.Skill_XSMLi_Unique_EX = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
 
-			if _env.units[3] then
-				global.HarmTargetView(_env, _env.units)
-
-				for _, unit in global.__iter__(_env.units) do
-					global.AssignRoles(_env, unit, "target")
-				end
-			elseif _env.units[2] then
-				for _, unit in global.__iter__(_env.units) do
-					global.HarmTargetView(_env, _env.units)
-					global.AssignRoles(_env, unit, "target")
-				end
-
-				if global.EnemyMaster(_env) then
-					global.HarmTargetView(_env, {
-						global.EnemyMaster(_env)
-					})
-					global.AssignRoles(_env, global.EnemyMaster(_env), "target")
-				end
-			elseif _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					global.HarmTargetView(_env, _env.units)
-					global.AssignRoles(_env, unit, "target")
-				end
-
-				if global.EnemyMaster(_env) then
-					global.HarmTargetView(_env, {
-						global.EnemyMaster(_env)
-					})
-					global.AssignRoles(_env, global.EnemyMaster(_env), "target")
-				end
-			else
-				global.HarmTargetView(_env, {
-					_env.TARGET
-				})
-				global.AssignRoles(_env, _env.TARGET, "target")
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
 			end
 		end)
 		exec["@time"]({
@@ -788,159 +650,14 @@ all.Skill_XSMLi_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if _env.units[3] then
-				for _, unit in global.__iter__(_env.units) do
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-					global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-				end
-			elseif _env.units[2] then
-				for _, unit in global.__iter__(_env.units) do
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-					global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-				end
-
-				if global.EnemyMaster(_env) then
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-					global.ApplyRPEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
-				end
-			elseif _env.units[1] then
-				for _, unit in global.__iter__(_env.units) do
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-					global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-				end
-
-				if global.EnemyMaster(_env) then
-					local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, DeUnHurtRateFactor)
-
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
-						timing = 0,
-						display = "UnHurtRateDown",
-						group = "Skill_XSMLi_Passive",
-						duration = 99,
-						limit = 3,
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"UNHURTRATEDOWN",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft1
-					}, 1, 0)
-					global.ApplyStatusEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-					global.ApplyRPEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
-
-					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
-				end
-			else
+			for _, unit in global.__iter__(_env.units) do
 				local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 				local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
 					"+Normal",
 					"+Normal"
 				}, DeUnHurtRateFactor)
 
-				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
 					timing = 0,
 					display = "UnHurtRateDown",
 					group = "Skill_XSMLi_Passive",
@@ -955,11 +672,137 @@ all.Skill_XSMLi_Unique_EX = {
 				}, {
 					buffeft1
 				}, 1, 0)
-				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
-				global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
-				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			3167
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
+all.Skill_XSMLi_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3167
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_XSMLi"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_XSMLi_Skill3"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+		_env.sums = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), ">", global.UnitPropGetter(_env, "hp")), 1, 6)
+
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(_env.units) do
+				local DeUnHurtRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
+				local buffeft1 = global.NumericEffect(_env, "-unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, DeUnHurtRateFactor)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					display = "UnHurtRateDown",
+					group = "Skill_XSMLi_Passive",
+					duration = 99,
+					limit = 3,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"UNHURTRATEDOWN",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft1
+				}, 1, 0)
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				if global.UnitPropGetter(_env, "hpRatio")(_env, unit) > 0.5 then
+					damage.val = 1.3 * damage.val
+				end
+
+				local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
 		end)
 		exec["@time"]({

@@ -567,13 +567,14 @@ end
 function CardSystem:cleanAllEnchants()
 end
 
-function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, workId)
+function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, anim, workId)
 	heroCard:addTriggerBuff(triggerBuff)
 
 	local idx = self:getCardIdx(player, heroCard)
 
 	self._processRecorder:recordObjectEvent(player:getId(), "TriggerBuff", {
-		idx = idx
+		idx = idx,
+		anim = anim
 	}, workId)
 end
 

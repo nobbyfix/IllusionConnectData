@@ -1474,6 +1474,12 @@ function BattleUIMediator:showGrayEnergyEffect(isShow)
 	end
 end
 
+function BattleUIMediator:showFrazeEnergyEffect(isShow)
+	if self._energyBar then
+		self._energyBar:setBarFraze(isShow)
+	end
+end
+
 function BattleUIMediator:showRecoveryEnergyAnim()
 	if self._energyBar then
 		self._energyBar:showRecoveryEnergyAnim()
@@ -1956,11 +1962,11 @@ function BattleUIMediator:flyBallToCard(role, idxInSlot)
 	end
 end
 
-function BattleUIMediator:adjustCardBuff(idxInSlot)
+function BattleUIMediator:adjustCardBuff(idxInSlot, anim)
 	local card = self._cardArray:getCardAtIndex(idxInSlot)
 
 	if card then
-		card:playAddBuffAnim()
+		card:playAddBuffAnim(anim)
 	end
 end
 

@@ -37,7 +37,8 @@ function ActivityPointDetailRuleMediator:setupView()
 
 	local cellWidth = 420
 	local cellHeigth = 260
-	local tableView = cc.TableView:create(self._listView:getContentSize())
+	local tableViewWidth = #self._ruleConfig.Pic < 3 and (cellWidth + 26) * #self._ruleConfig.Pic or self._listView:getContentSize().width
+	local tableView = cc.TableView:create(cc.size(tableViewWidth, self._listView:getContentSize().height))
 
 	local function scrollViewDidScroll(view)
 	end
@@ -94,7 +95,7 @@ function ActivityPointDetailRuleMediator:updateCell(cell, index)
 	local img = layer:getChildByName("Image_46")
 
 	img:ignoreContentAdaptWithSize(false)
-	img:loadTexture("asset/ui/activity/" .. data.Img .. ".jpg", ccui.TextureResType.localType)
+	img:loadTexture("asset/ui/activity/" .. data.Img, ccui.TextureResType.localType)
 
 	local textDes = layer:getChildByName("Text_45")
 
@@ -122,7 +123,7 @@ function ActivityPointDetailRuleMediator:touchCell(index)
 	img:runAction(cc.ScaleTo:create(0.1, 1))
 	imgDi:runAction(cc.ScaleTo:create(0.1, 1))
 	img:ignoreContentAdaptWithSize(false)
-	img:loadTexture("asset/ui/activity/" .. data.Img .. ".jpg", ccui.TextureResType.localType)
+	img:loadTexture("asset/ui/activity/" .. data.Img, ccui.TextureResType.localType)
 
 	local textDes = self._touchPanel:getChildByName("Text_38")
 

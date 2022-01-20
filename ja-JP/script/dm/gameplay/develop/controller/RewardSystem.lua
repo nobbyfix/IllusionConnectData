@@ -25,6 +25,7 @@ RewardType = {
 	kDecorate = 20,
 	kItem = 2,
 	kBackground = 22,
+	kTSoul = 34,
 	kRTPKEmoji = 30,
 	kSurface = 7,
 	kStory = "STORY"
@@ -121,6 +122,12 @@ function RewardSystem.class:getName(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.EMJName)
+			end
+		elseif info.rewardType == RewardType.kTSoul then
+			local config = ConfigReader:getRecordById("Tsoul", id)
+
+			if config and config.Id then
+				return Strings:get(config.Name)
 			end
 		end
 	end
@@ -240,6 +247,12 @@ function RewardSystem.class:getQuality(rewardData)
 
 	if config and config.Id then
 		return config.Quality
+	end
+
+	config = ConfigReader:getRecordById("Tsoul", id)
+
+	if config and config.Id then
+		return config.Rareity
 	end
 end
 
@@ -409,6 +422,8 @@ function RewardSystem.class:parseInfo(rewardData)
 		info.desc = rewardData.desc
 		info.title = rewardData.title
 		info.icon = rewardData.icon
+	elseif intType == RewardType.kTSoul then
+		info.id = rewardData.code
 	else
 		info.id = rewardData.code
 	end
