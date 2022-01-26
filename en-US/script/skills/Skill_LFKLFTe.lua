@@ -764,6 +764,16 @@ all.DaGunPassive = {
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Cross_Buff_XLDBLTe"), 99)
 			end
 
+			local count_ystlu = 0
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "YSTLu"))) do
+				count_ystlu = count_ystlu + 1
+			end
+
+			if count_ystlu == 0 then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_YSTLu_Passive_Key"), 99)
+			end
+
 			global.DelayCall(_env, 1580, global.DispelBuff, _env.ACTOR, global.BUFF_MARKED(_env, "DAGUN_PREPARE"), 99)
 			global.DaGun(_env, _env.ACTOR)
 		end)
