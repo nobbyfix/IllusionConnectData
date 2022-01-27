@@ -333,10 +333,10 @@ all.Skill_CKFSJi_Unique = {
 			}, {
 				buff_trap
 			})
-			local cell = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
+			local cell1 = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
 
-			global.DispelBuffTrap(_env, cell[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
-			global.ApplyTrap(_env, cell[1], {
+			global.DispelBuffTrap(_env, cell1[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
+			global.ApplyTrap(_env, cell1[1], {
 				display = "Castle",
 				duration = 99,
 				triggerLife = 99,
@@ -517,8 +517,10 @@ all.Skill_SleepingBeautyCastle = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local cell = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
+			local count = global.SelectTrapCount(_env, cell[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
 
-			if _env.detail.eft and _env.detail.eft ~= 0 then
+			if _env.detail.eft and _env.detail.eft ~= 0 and count > 0 then
 				local LastHeal = global.SpecialPropGetter(_env, "Skill_Sustained_HPRecovery_Period_LastHeal")(_env, _env.ACTOR)
 				local Heal = _env.detail.eft * this.HealRateFactor
 				Heal = Heal + LastHeal
@@ -564,8 +566,10 @@ all.Skill_SleepingBeautyCastle = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local cell = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
+			local count = global.SelectTrapCount(_env, cell[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Skill_CKFSJi_Unique")) == 0 then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and count > 0 and global.PETS - global.SUMMONS(_env, _env.unit) and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Skill_CKFSJi_Unique")) == 0 then
 				local buffeft = global.PassiveFunEffectBuff(_env, "Skill_SleepingBeautyCastle", {
 					HealRateFactor = this.HealRateFactor,
 					Period = this.Period,
@@ -891,12 +895,12 @@ all.Skill_CKFSJi_Unique_EX = {
 			}, {
 				buff_trap
 			})
-			local cell = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
+			local cell1 = global.FriendCells(_env, global.CELL_IN_POS(_env, 5))
 
-			global.DispelBuffTrap(_env, cell[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
-			global.ApplyTrap(_env, cell[1], {
+			global.DispelBuffTrap(_env, cell1[1], global.BUFF_MARKED(_env, "SleepingBeautyCastle"))
+			global.ApplyTrap(_env, cell1[1], {
 				display = "Castle",
-				duration = 5,
+				duration = 99,
 				triggerLife = 99,
 				tags = {
 					"SleepingBeautyCastle"
