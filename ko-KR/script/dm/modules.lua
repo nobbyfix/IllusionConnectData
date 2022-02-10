@@ -842,6 +842,7 @@ local modules = {
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterNightCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterTenCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterElevenCell",
+					"dm.gameplay.stage.view.component.commonStageMap.ChapterTwelveCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteOneCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteTwoCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteThreeCell",
@@ -852,7 +853,8 @@ local modules = {
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteEightCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteNightCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteTenCell",
-					"dm.gameplay.stage.view.component.eliteStageMap.EliteElevenCell"
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteElevenCell",
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteTwelveCell"
 				},
 				injections = {
 					singletons = {
@@ -1022,6 +1024,10 @@ local modules = {
 							name = "ChapterElevenCell"
 						},
 						{
+							res = "asset/ui/BlockMapCell12.csb",
+							name = "ChapterTwelveCell"
+						},
+						{
 							res = "asset/ui/EliteMapCell1.csb",
 							name = "EliteOneCell"
 						},
@@ -1064,6 +1070,10 @@ local modules = {
 						{
 							res = "asset/ui/EliteMapCell11.csb",
 							name = "EliteElevenCell"
+						},
+						{
+							res = "asset/ui/EliteMapCell12.csb",
+							name = "EliteTwelveCell"
 						},
 						{
 							res = "asset/ui/StoryBlockTeam.csb",

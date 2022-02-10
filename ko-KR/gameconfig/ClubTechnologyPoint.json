@@ -17,10 +17,13 @@
             300000,
             360000,
             420000,
-            500000
+            500000,
+            580000,
+            660000,
+            740000
         ],
         "Icon": "Club_Contribute_1.png",
-        "MaxLevel": 15,
+        "MaxLevel": 18,
         "Name": "Club_Contribute_1_Name",
         "Unlock": {
             "ClubLevel": 1,
@@ -41,7 +44,10 @@
             15,
             16,
             18,
-            20
+            20,
+            20,
+            22,
+            22
         ],
         "Value2": [
             5000,
@@ -58,7 +64,10 @@
             7500,
             8000,
             8500,
-            9000
+            9000,
+            9500,
+            10000,
+            10500
         ],
         "Value3": []
     },
@@ -76,10 +85,11 @@
             80000,
             100000,
             120000,
-            150000
+            150000,
+            180000
         ],
         "Icon": "Club_Contribute_2.png",
-        "MaxLevel": 10,
+        "MaxLevel": 12,
         "Name": "Club_Contribute_2_Name",
         "Unlock": {
             "ClubLevel": 2,
@@ -96,7 +106,8 @@
             5,
             6,
             7,
-            7
+            7,
+            8
         ],
         "Value2": [],
         "Value3": []

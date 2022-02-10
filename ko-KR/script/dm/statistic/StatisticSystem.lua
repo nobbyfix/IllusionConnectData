@@ -118,7 +118,7 @@ function StatisticSystem:send(content)
 
 	content.version = app:getAssetsManager():getCurrentVersion()
 
-	if content.type == "loginflow" or content.type == "updateflow" or content.type == "guideflow" or content.type == "otherflow" then
+	if content.type == "loginflow" or content.type == "updateflow" or content.type == "guideflow" or content.type == "otherflow" or content.type == "loginchoose" or content.type == "loginpoint" then
 		content.step = StatisticPointConfig[content.point]
 	end
 

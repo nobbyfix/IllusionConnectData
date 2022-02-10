@@ -404,6 +404,9 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 249, 198, 255)
 		}
+	},
+	EightDays_Animal_Re = {
+		resFile = "asset/ui/ActivityAnimalLogin14.csb"
 	}
 }
 ActivityMainMapTitleConfig = {

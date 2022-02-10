@@ -566,6 +566,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_XHMao_Awake"
     },
+    "XSMLi": {
+        "AnimSound": "Se_Effect_Awakening_XSMLi",
+        "Animation": "nkla_Awaken",
+        "CutIn": [
+            -280,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_XSMLi_Awake",
+        "Name": "XSMLi_Awake_Name",
+        "NameDesc": "XSMLi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_XSMLi_UnAwake",
+        "Reward": "HeroAwaken_XSMLi",
+        "ShowHero": "XSMLi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "XSMLi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_XSMLi_Awake"
+    },
     "YBYa": {
         "AnimSound": "Se_Effect_Awakening_YBYa",
         "Animation": "hmyyue_Awaken",

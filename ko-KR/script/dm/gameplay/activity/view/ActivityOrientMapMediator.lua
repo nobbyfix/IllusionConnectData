@@ -865,6 +865,7 @@ function ActivityOrientMapMediator:onClickPointCell(pointId)
 end
 
 function ActivityOrientMapMediator:enterCommonPoint(pointId)
+	self._selectPointId = pointId
 	local delegate = {}
 	local outSelf = self
 	local data = {

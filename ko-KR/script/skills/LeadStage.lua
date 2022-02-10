@@ -47,7 +47,7 @@ all.LeadStage_Energy = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
 			end
 		end)
@@ -123,7 +123,7 @@ all.LeadStage_XueZhan_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local SummonedLengMo = global.Summon(_env, _env.ACTOR, "Summoned_LengMo", this.summonFactor, nil, {
 					2,
 					5,
@@ -217,7 +217,7 @@ all.LeadStage_LieSha_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.EnemyMaster(_env) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.EnemyMaster(_env) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.EnemyMaster(_env))
 				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
 				local damage = 0
@@ -289,7 +289,7 @@ all.LeadStage_BiLei_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -365,7 +365,7 @@ all.LeadStage_FuHun_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
@@ -431,7 +431,7 @@ all.LeadStage_SenLing_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buff = global.PassiveFunEffectBuff(_env, "LeadStage_SenLing_skill_For_Field", {
 					RecoveryFactor = this.RecoveryFactor,
 					Time = this.Time
@@ -641,7 +641,7 @@ all.LeadStage_LiMing_skill = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
 			end
 		end)

@@ -1991,6 +1991,32 @@ all.Skill_Condition_Shield = {
 				end
 			end
 
+			if this.AddShieldCondition == 1 and this.AddShieldTag then
+				local buff_count_player = global.SpecialNumericEffect(_env, "+death_num_condition_player", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				if global.MARKED(_env, this.AddShieldTag)(_env, _env.unit) and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"Condition_Shield",
+							"DEATH_NUM"
+						}
+					}, {
+						buff_count_player
+					})
+
+					local count = global.SpecialPropGetter(_env, "death_num_condition_player")(_env, _env.ACTOR)
+
+					if count == this.AddShieldFactor then
+						this.flag = global.Condition_Shield_Up(_env, _env.ACTOR, this.ShieldType, this.ShieldFactor)
+					end
+				end
+			end
+
 			if this.MoveShieldCondition == 1 and this.flag then
 				local buff_count_down = global.SpecialNumericEffect(_env, "+death_num_condition_down", {
 					"+Normal",
@@ -2979,8 +3005,7 @@ all.Activity_Create_Glass = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Activity_Create_Glass"
+							"UNSTEALABLE"
 						}
 					}, {
 						buff1,
@@ -3017,8 +3042,7 @@ all.Activity_Create_Glass = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Activity_Create_Glass"
+							"UNSTEALABLE"
 						}
 					}, {
 						buff1,
@@ -3108,8 +3132,7 @@ all.Activity_Create_Glass = {
 						"UNDISPELLABLE",
 						"STEALTH",
 						"UNSTEALABLE",
-						"Invisible_Immune",
-						"Activity_Create_Glass"
+						"Invisible_Immune"
 					}
 				}, {
 					buffeft1,
@@ -3206,8 +3229,7 @@ all.Activity_Create_Glass1 = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Activity_Create_Glass"
+							"UNSTEALABLE"
 						}
 					}, {
 						buff1,
@@ -3244,8 +3266,7 @@ all.Activity_Create_Glass1 = {
 						display = "",
 						tags = {
 							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Activity_Create_Glass"
+							"UNSTEALABLE"
 						}
 					}, {
 						buff1,
@@ -3337,8 +3358,7 @@ all.Activity_Create_Glass1 = {
 						"UNDISPELLABLE",
 						"STEALTH",
 						"UNSTEALABLE",
-						"Invisible_Immune",
-						"Activity_Create_Glass"
+						"Invisible_Immune"
 					}
 				}, {
 					buffeft1,

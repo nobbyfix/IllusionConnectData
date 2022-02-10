@@ -266,7 +266,7 @@ all.Skill_ZTXChang_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.PETS(_env, _env.TARGET) then
+			if global.PETS(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
 				local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
 				local defender = global.LoadUnit(_env, _env.TARGET, "ALL")
 				local OTKProb = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
@@ -471,7 +471,7 @@ all.Skill_ZTXChang_Unique_Awaken = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.PETS(_env, _env.TARGET) then
+			if global.PETS(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
 				local attacker = global.LoadUnit(_env, _env.ACTOR, "ALL")
 				local defender = global.LoadUnit(_env, _env.TARGET, "ALL")
 				local OTKProb = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)

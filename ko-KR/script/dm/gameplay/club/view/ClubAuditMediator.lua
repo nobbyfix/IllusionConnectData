@@ -276,15 +276,6 @@ function ClubAuditMediator:createCell(cell, idx)
 	cell:setTouchEnabled(true)
 	cell:setSwallowTouches(false)
 
-	local function cellCallFunc(sender, eventType)
-		self:onCellClicked(eventType, idx)
-	end
-
-	mapButtonHandlerClick(nil, cell, {
-		eventType = 4,
-		func = cellCallFunc
-	})
-
 	local data = self._auditList[idx]
 	local iconPanel = cell:getChildByFullName("iconpanel")
 

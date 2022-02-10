@@ -86,7 +86,7 @@
     "Condi_AnimalExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Animal_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Animal_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_AnimalExchangeAchieve_Desc"
     },
@@ -1059,7 +1059,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220210.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1080,7 +1080,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220210.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
