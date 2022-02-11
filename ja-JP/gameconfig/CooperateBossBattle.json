@@ -455,6 +455,25 @@
             }
         ]
     },
+    "CooperateBoss_XSMLi": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_XSMLi",
+        "Name": "HeroBase_Name_XSMLi",
+        "PointHead": "Model_XSMLi",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_YBYa": {
         "BGM": [
             "Mus_Battle_Whale",

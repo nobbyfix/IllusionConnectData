@@ -29,7 +29,8 @@ local kChapterMapSize = {
 	2185,
 	2287,
 	2300,
-	2181
+	2181,
+	2589
 }
 local kChapterOffSetL = {
 	1324,
@@ -51,8 +52,10 @@ local kChapterOffSetL = {
 	16200,
 	17900,
 	18600,
-	19300,
-	20500
+	19900,
+	20500,
+	22600,
+	24000
 }
 local kChapterOffSetR = {
 	-10,
@@ -74,8 +77,10 @@ local kChapterOffSetR = {
 	14218,
 	16000,
 	16800,
-	19300,
-	20500
+	18000,
+	18500,
+	20700,
+	21000
 }
 local isOnScroll = false
 local isClose = false
@@ -91,6 +96,7 @@ local kBtnHandlers = {
 StageMapUI = {
 	chapter9 = "ChapterNightCell",
 	chapter8 = "ChapterEightCell",
+	chapter12 = "ChapterTwelveCell",
 	chapter5 = "ChapterFiveCell",
 	chapter6 = "ChapterSixCell",
 	chapter3 = "ChapterThreeCell",
@@ -104,6 +110,7 @@ StageMapUI = {
 EliteStageMapUI = {
 	chapter9 = "EliteNightCell",
 	chapter8 = "EliteEightCell",
+	chapter12 = "EliteTwelveCell",
 	chapter5 = "EliteFiveCell",
 	chapter6 = "EliteSixCell",
 	chapter3 = "EliteThreeCell",

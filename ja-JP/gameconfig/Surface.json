@@ -3735,7 +3735,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -5649,7 +5649,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -9508,6 +9508,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_SP_DDing_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -118,
+                    1719
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -143,
+                    1480
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_DDing_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SP_DDing",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_DDing",
+        "Name": "Surface_SP_DDing_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_SP_KTSJKe_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11317,6 +11375,122 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_XDE_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    41,
+                    1516
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -30,
+                    1338
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XDE_vt_Desc",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_XDE_2_GainShort",
+        "GoodsId": "ShopSurface_Surface_XDE_2",
+        "Hero": "XDE",
+        "Link": "",
+        "LongDesc": "Surface_XDE_vt_LongDesc",
+        "Model": "Model_XDE_vt",
+        "Name": "Surface_XDE_vt_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "SKIN": "",
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
+        "Unlook": 1
+    },
+    "Surface_XDRLa_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -55,
+                    1174
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -69,
+                    974
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XDRLa_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "XDRLa",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XDRLa",
+        "Name": "Surface_XDRLa_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_XHMao_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11665,6 +11839,64 @@
         "Type": 3,
         "Unlook": 1
     },
+    "Surface_XSLuo_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -32,
+                    1454
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    1,
+                    1231
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XSLuo_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "XSLuo",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XSLuo",
+        "Name": "Surface_XSLuo_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_XSMLi_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11731,8 +11963,8 @@
                 "action": "touch2",
                 "part": "head",
                 "point": [
-                    -218,
-                    1683
+                    -38,
+                    1606
                 ],
                 "range": [
                     128,
@@ -11743,8 +11975,8 @@
                 "action": "touch1",
                 "part": "body",
                 "point": [
-                    -375,
-                    1536
+                    -189,
+                    1474
                 ],
                 "range": [
                     128,
@@ -11775,11 +12007,11 @@
         "NotGetUnlook": "",
         "Quality": 5,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 2,
         "Type": 5,
-        "Unlook": 0
+        "Unlook": 1
     },
     "Surface_XXFSi_1": {
         "ActivityId": "",

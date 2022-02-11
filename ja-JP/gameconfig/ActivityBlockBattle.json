@@ -40,16 +40,17 @@
         "FirstKillReward": "AnimalSE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -82,7 +83,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE01E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -99,10 +100,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -180,16 +181,17 @@
         "FirstKillReward": "AnimalSE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -218,7 +220,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE01",
         "Master": "",
         "Name": "BlockPoint_AnimalS09M_Name",
@@ -231,7 +233,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE01M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -248,10 +250,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -317,16 +319,17 @@
         "FirstKillReward": "AnimalSE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -354,7 +357,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE02E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -370,10 +373,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -440,16 +443,17 @@
         "FirstKillReward": "AnimalSE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -473,7 +477,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE02",
         "Master": "",
         "Name": "BlockPoint_AnimalS10M_Name",
@@ -486,7 +490,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE02M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -502,10 +506,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -571,16 +575,17 @@
         "FirstKillReward": "AnimalSE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -613,7 +618,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE03E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -630,10 +635,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -700,16 +705,17 @@
         "FirstKillReward": "AnimalSE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -738,7 +744,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE03",
         "Master": "",
         "Name": "BlockPoint_AnimalS11M_Name",
@@ -751,7 +757,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE03M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -768,10 +774,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -837,16 +843,17 @@
         "FirstKillReward": "AnimalSE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -874,7 +881,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE04E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -890,10 +897,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -960,16 +967,17 @@
         "FirstKillReward": "AnimalSE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -993,7 +1001,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE04",
         "Master": "",
         "Name": "BlockPoint_AnimalS12M_Name",
@@ -1006,7 +1014,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE04M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1022,10 +1030,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1091,16 +1099,17 @@
         "FirstKillReward": "AnimalSE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1133,7 +1142,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE05E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1151,10 +1160,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1227,16 +1236,17 @@
         "FirstKillReward": "AnimalSE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1265,7 +1275,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE05",
         "Master": "",
         "Name": "BlockPoint_AnimalS13M_Name",
@@ -1278,7 +1288,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE05M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1296,10 +1306,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1371,16 +1381,17 @@
         "FirstKillReward": "AnimalSE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1413,7 +1424,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE06E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1431,10 +1442,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1507,16 +1518,17 @@
         "FirstKillReward": "AnimalSE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1545,7 +1557,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE06",
         "Master": "",
         "Name": "BlockPoint_AnimalS14M_Name",
@@ -1558,7 +1570,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE06M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1576,10 +1588,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1651,16 +1663,17 @@
         "FirstKillReward": "AnimalSE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1693,7 +1706,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE07E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1711,10 +1724,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1787,16 +1800,17 @@
         "FirstKillReward": "AnimalSE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1825,7 +1839,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE07",
         "Master": "",
         "Name": "BlockPoint_AnimalS15M_Name",
@@ -1838,7 +1852,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE07M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1856,10 +1870,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -1931,16 +1945,17 @@
         "FirstKillReward": "AnimalSE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -1973,7 +1988,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE08E_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -1991,10 +2006,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2067,16 +2082,17 @@
         "FirstKillReward": "AnimalSE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2105,7 +2121,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSE08",
         "Master": "",
         "Name": "BlockPoint_AnimalS16M_Name",
@@ -2116,7 +2132,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSE08M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -2134,10 +2150,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2214,16 +2230,17 @@
         "FirstKillReward": "AnimalSH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2258,7 +2275,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSH01M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -2276,10 +2293,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2345,16 +2362,17 @@
         "FirstKillReward": "AnimalSH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2389,7 +2407,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSH02M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -2407,10 +2425,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2482,16 +2500,17 @@
         "FirstKillReward": "AnimalSH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2524,7 +2543,7 @@
         "PointPicture": "",
         "PointReward": "AnimalSH03M_PointReward",
         "PointTime": {
-            "start": "2021-10-07 05:00:00"
+            "start": "2022-02-21 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -2542,10 +2561,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 20
+            "IR_AnimalStamina_Re": 20
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2617,16 +2636,17 @@
         "FirstKillReward": "AnimalSN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2674,10 +2694,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2750,16 +2770,17 @@
         "FirstKillReward": "AnimalSN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2788,7 +2809,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN01",
         "Master": "",
         "Name": "BlockPoint_AnimalS01M_Name",
@@ -2816,10 +2837,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -2891,16 +2912,17 @@
         "FirstKillReward": "AnimalSN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -2948,10 +2970,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3024,16 +3046,17 @@
         "FirstKillReward": "AnimalSN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3062,7 +3085,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN02",
         "Master": "",
         "Name": "BlockPoint_AnimalS02M_Name",
@@ -3090,10 +3113,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3159,16 +3182,17 @@
         "FirstKillReward": "AnimalSN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3210,10 +3234,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3280,16 +3304,17 @@
         "FirstKillReward": "AnimalSN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3313,7 +3338,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN03",
         "Master": "",
         "Name": "BlockPoint_AnimalS03M_Name",
@@ -3340,10 +3365,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3409,16 +3434,17 @@
         "FirstKillReward": "AnimalSN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3460,10 +3486,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3530,16 +3556,17 @@
         "FirstKillReward": "AnimalSN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3563,7 +3590,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN04",
         "Master": "",
         "Name": "BlockPoint_AnimalS04M_Name",
@@ -3590,10 +3617,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3665,16 +3692,17 @@
         "FirstKillReward": "AnimalSN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3722,10 +3750,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3798,16 +3826,17 @@
         "FirstKillReward": "AnimalSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3836,7 +3865,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN05",
         "Master": "",
         "Name": "BlockPoint_AnimalS05M_Name",
@@ -3864,10 +3893,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -3939,16 +3968,17 @@
         "FirstKillReward": "AnimalSN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -3997,10 +4027,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -4073,16 +4103,17 @@
         "FirstKillReward": "AnimalSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -4111,7 +4142,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN06",
         "Master": "",
         "Name": "BlockPoint_AnimalS06M_Name",
@@ -4140,10 +4171,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -4215,16 +4246,17 @@
         "FirstKillReward": "AnimalSN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -4273,10 +4305,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -4349,16 +4381,17 @@
         "FirstKillReward": "AnimalSN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -4387,7 +4420,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN07",
         "Master": "",
         "Name": "BlockPoint_AnimalS07M_Name",
@@ -4416,10 +4449,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -4485,16 +4518,17 @@
         "FirstKillReward": "AnimalSN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -4543,10 +4577,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 12
+            "IR_AnimalStamina_Re": 12
         },
         "StaminaCostAgain": "",
         "StarCondition": [
@@ -4613,16 +4647,17 @@
         "FirstKillReward": "AnimalSN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
+            "GCZi": "Hero_ABlock_GCZi_Extra",
             "LEMHou": "Hero_ABlock_LEMHou_Extra",
             "XDE": "Hero_ABlock_XDE_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LEMHou": {
-                "3": "Animal_LEMHou_Buff_Star3",
-                "4": "Animal_LEMHou_Buff_Star4",
-                "5": "Animal_LEMHou_Buff_Star5",
-                "6": "Animal_LEMHou_Buff_Star6"
+            "GCZi": {
+                "3": "Animal_GCZi_Buff_Star3",
+                "4": "Animal_GCZi_Buff_Star4",
+                "5": "Animal_GCZi_Buff_Star5",
+                "6": "Animal_GCZi_Buff_Star5"
             },
             "XDE": {
                 "3": "Animal_XDE_Buff_Star3",
@@ -4651,7 +4686,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Animal_ExchangeItem",
+        "MainShowItem": "IM_Animal_ExchangeItem_Re",
         "Map": "AnimalSN08",
         "Master": "",
         "Name": "BlockPoint_AnimalS08M_Name",
@@ -4678,10 +4713,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_AnimalStamina": 6
+            "IR_AnimalStamina_Re": 6
         },
         "StaminaCostAgain": "",
         "StarCondition": [
