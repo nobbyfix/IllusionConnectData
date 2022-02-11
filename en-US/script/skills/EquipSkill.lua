@@ -1658,8 +1658,8 @@ all.EquipSkill_Weapon_15103_3 = {
 						local buff_taunt_2 = global.Taunt(_env)
 
 						global.ApplyBuff(_env, global.EnemyMaster(_env), {
-							timing = 0,
-							duration = 99,
+							timing = 4,
+							duration = 2,
 							tags = {
 								"NUMERIC",
 								"BUFF",
@@ -18929,6 +18929,20 @@ all.EquipSkill_Accesory_14019 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local count = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LDYu_Back_Count"))
+
+			if global.FriendMaster(_env) and count < 2 and global.MARKED(_env, "LDYu")(_env, _env.ACTOR) and global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Time")) > 0 then
+				return
+			end
+
+			if global.FriendMaster(_env) and not global.INSTATUS(_env, "Skill_BEr_Passive_Death_SecondTime")(_env, global.FriendMaster(_env)) and global.MARKED(_env, "BEr")(_env, _env.ACTOR) then
+				return
+			end
+
+			if global.SelectTrapCount(_env, global.GetCell(_env, _env.ACTOR), global.BUFF_MARKED(_env, "GCZi_jianzhen")) > 0 then
+				return
+			end
+
 			local BackRateFactor_now = global.SpecialPropGetter(_env, "Accesory_14019")(_env, global.FriendField(_env))
 			local times = global.SpecialPropGetter(_env, "EquipSkill_Accesory_14019_times")(_env, global.FriendField(_env))
 			BackRateFactor_now = BackRateFactor_now * 0.5^times

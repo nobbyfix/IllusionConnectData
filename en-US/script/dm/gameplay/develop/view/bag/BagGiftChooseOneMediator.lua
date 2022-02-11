@@ -252,6 +252,10 @@ function BagGiftChooseOneMediator:onClickUse(sender, eventType)
 
 	if self._minCount <= self._curCount and self._curCount <= self._maxCount then
 		local canUse = self._bagSystem:requestBoxChooseItem(self._entryId, self._curCount, self._curRewardId, function (data)
+			if not checkDependInstance(self) then
+				return
+			end
+
 			local rewards = data.reward
 
 			if rewards then

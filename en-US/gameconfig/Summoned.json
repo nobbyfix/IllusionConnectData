@@ -917,6 +917,130 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedSP_DDing": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SP_DDing"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_Normal_SP_DDing",
+        "PassiveSkill": [],
+        "ProudSkill": "Skill_Summoned_Proud_SP_DDing",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                10,
+                1000
+            ],
+            "a2": 50,
+            "a3": 0,
+            "a4": 15
+        },
+        "RoleModel": "Model_SP_DDing",
+        "Sex": 1,
+        "SkillRate": 0.15,
+        "SummonSurface": [],
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_Unique_SP_DDing|"
+    },
+    "SummonedSP_DDing_4": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SP_DDing"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_Normal_SP_DDing",
+        "PassiveSkill": [],
+        "ProudSkill": "Skill_Summoned_Proud_SP_DDing",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                10,
+                1000
+            ],
+            "a2": 50,
+            "a3": 0,
+            "a4": 15
+        },
+        "RoleModel": "Model_SP_DDing",
+        "Sex": 1,
+        "SkillRate": 0.15,
+        "SummonSurface": [],
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_Unique_SP_DDing_EX|"
+    },
+    "SummonedSP_DDing_5": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SP_DDing"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_Normal_SP_DDing",
+        "PassiveSkill": [],
+        "ProudSkill": "Skill_Summoned_Proud_SP_DDing",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                10,
+                1000
+            ],
+            "a2": 50,
+            "a3": 0,
+            "a4": 15
+        },
+        "RoleModel": "Model_SP_DDing",
+        "Sex": 1,
+        "SkillRate": 0.15,
+        "SummonSurface": [],
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_Unique_SP_DDing_EX|"
+    },
+    "SummonedSP_DDing_6": {
+        "Cost": 20,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED",
+            "SP_DDing"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_Normal_SP_DDing",
+        "PassiveSkill": [],
+        "ProudSkill": "Skill_Summoned_Proud_SP_DDing_EX",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                10,
+                1000
+            ],
+            "a2": 50,
+            "a3": 0,
+            "a4": 15
+        },
+        "RoleModel": "Model_SP_DDing",
+        "Sex": 1,
+        "SkillRate": 0.15,
+        "SummonSurface": [],
+        "Type": "Summoned",
+        "UniqueSkill": "Skill_Summoned_Unique_SP_DDing_EX|"
+    },
     "SummonedSP_KTSJKe": {
         "Cost": 2,
         "CounterSkill": "",

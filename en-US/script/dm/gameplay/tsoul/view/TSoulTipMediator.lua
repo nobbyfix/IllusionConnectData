@@ -96,7 +96,7 @@ function TSoulTipMediator:setUi(data)
 	imgLock:setVisible(false)
 	imgDi:loadTexture(KTSoulAttrBgName[KTSoulAttrBgState.KNormal], ccui.TextureResType.plistType)
 	img:loadTexture(AttrTypeImage[tsoulConfig.Baseattr], ccui.TextureResType.plistType)
-	text:setString(getAttrNameByType(tsoulConfig.Baseattr) .. " :   " .. tsoulConfig.Baseattrnum * (Tsoul_LevelMax[tostring(tsoulConfig.Rareity)] - 1))
+	text:setString(getAttrNameByType(tsoulConfig.Baseattr) .. " :   " .. tsoulConfig.Baseattrnum + tsoulConfig.Levelup * (Tsoul_LevelMax[tostring(tsoulConfig.Rareity)] - 1))
 
 	local nodeAdd = self._main:getChildByName("nodeSkill")
 	local listView = nodeAdd:getChildByFullName("listView")

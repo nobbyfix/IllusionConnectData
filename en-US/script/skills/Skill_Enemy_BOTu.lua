@@ -455,7 +455,7 @@ all.Skill_Enemy_SummonedBOtuA_Unique = {
 			local global = _env.global
 			local setLoction = nil
 
-			if _env.TARGET ~= global.EnemyMaster(_env) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if _env.TARGET ~= global.EnemyMaster(_env) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				setLoction = global.GetCell(_env, _env.TARGET)
 
 				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)

@@ -63,7 +63,60 @@ function ShopCoopExchangeMediator:initData(data)
 	self._activityId = data.activityId
 	self._activity = self._activitySystem:getActivityById(self._activityId)
 	self._activityConfig = self._activity:getActivityConfig()
-	self._taskList = self._activity:getCostSortExchangeList()
+	self._taskList = self:getCostSortExchangeList()
+end
+
+function ShopCoopExchangeMediator:getCostSortExchangeList()
+	local list = self._activity:getCostSortExchangeList()
+
+	table.sort(list, function (a, b)
+		if a.amount == 0 then
+			return false
+		end
+
+		if b.amount == 0 then
+			return true
+		end
+
+		local aOwn = self:isHasOwnItem(a)
+		local bOwn = self:isHasOwnItem(b)
+
+		if aOwn == 1 then
+			return false
+		end
+
+		if bOwn == 1 then
+			return true
+		end
+
+		local aCost = a.config.Cost[1].amount
+		local bCost = b.config.Cost[1].amount
+
+		if aCost == bCost then
+			return a.index < b.index
+		else
+			return bCost < aCost
+		end
+	end)
+
+	return list
+end
+
+function ShopCoopExchangeMediator:isHasOwnItem(data)
+	local own = 0
+	local config = data.config
+	local targetList = ConfigReader:getDataByNameIdAndKey("Reward", config.Target, "Content")
+
+	if targetList and targetList[1] and targetList[1].type == RewardType.kBackground then
+		local player = self._developSystem:getPlayer()
+		local background = player:getBackground()
+
+		if background[targetList[1].code] then
+			own = 1
+		end
+	end
+
+	return own
 end
 
 function ShopCoopExchangeMediator:setupTopView()
@@ -351,6 +404,18 @@ function ShopCoopExchangeMediator:updataCell(cell, index)
 		totalTime = times
 	}))
 
+	local own = self:isHasOwnItem(data)
+
+	maskView:getChildByName("Image_104"):loadTexture("sd_lb_sq.png", 1)
+
+	if own == 1 then
+		maskView:setVisible(true)
+
+		if haveAmount > 0 then
+			maskView:getChildByName("Image_104"):loadTexture("shop_img_yyy.png", 1)
+		end
+	end
+
 	local touchPanel = mainView:getChildByName("touchPanel")
 
 	touchPanel:setLocalZOrder(10)
@@ -358,7 +423,7 @@ function ShopCoopExchangeMediator:updataCell(cell, index)
 
 	local touchMoveTimes = 0
 
-	touchPanel:setTouchEnabled(haveAmount > 0)
+	touchPanel:setTouchEnabled(haveAmount > 0 and own == 0)
 	touchPanel:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.began then
 			touchMoveTimes = 0

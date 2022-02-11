@@ -287,6 +287,9 @@
     "Target_SP_ALPo": {
         "Function": "return MainTarget()"
     },
+    "Target_SP_DDing": {
+        "Function": "return GenInfo(EnemyAll(),Red)"
+    },
     "Target_SP_KTSJKe": {
         "Function": "return MainTarget()"
     },
@@ -341,6 +344,9 @@
     "Target_XDE": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_XDRLa": {
+        "Function": "return GenInfo(EnemyAll(),Red,true)"
+    },
     "Target_XHMao": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
@@ -349,6 +355,9 @@
     },
     "Target_XLai": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
+    },
+    "Target_XSLuo": {
+        "Function": "return MainTarget()"
     },
     "Target_XSMLi": {
         "Function": "return GenInfo(EnemyAll(),Red,true)"

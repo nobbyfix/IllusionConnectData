@@ -558,7 +558,7 @@ all.SectSkill_Master_LieSha_1 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buffeft = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
 					"+Normal"
@@ -623,7 +623,7 @@ all.SectSkill_Master_LieSha_2 = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 4)
 
 				for _, card in global.__iter__(cards) do
@@ -1176,7 +1176,7 @@ all.SectSkill_Master_BiLei_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.EnergyExFactor)
 			end
 		end)
@@ -2464,7 +2464,7 @@ all.SectSkill_Master_LiMing_1 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buff = global.PassiveFunEffectBuff(_env, "Skill_Sustained_RPRecovery", {
 					RateFactor = this.RpFactor
 				})
@@ -2627,7 +2627,7 @@ all.SectSkill_Master_LiMing_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
 				local buff = global.SpecialNumericEffect(_env, "+liming_atk", {
 					"?Normal"
@@ -2661,7 +2661,7 @@ all.SectSkill_Master_LiMing_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local atk = global.SpecialPropGetter(_env, "liming_atk")(_env, global.FriendField(_env))
 				local atk_pet = atk * this.AtkFactor
 				local buffeft1 = global.NumericEffect(_env, "+atk", {

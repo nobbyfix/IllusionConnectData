@@ -42,6 +42,7 @@ function PushSystem:listen()
 	self:listenFriendStateChanged()
 	self:listenRTPK()
 	self:listenHistoryRankChange()
+	self:listenPlayerDataChange()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -387,5 +388,10 @@ function PushSystem:listenHistoryRankChange()
 				end
 			end
 		end
+	end)
+end
+
+function PushSystem:listenPlayerDataChange()
+	self._pushService:listenPlayerDataChange(function (code, response)
 	end)
 end

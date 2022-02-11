@@ -367,7 +367,7 @@ all.Skill_YMJDe_Passive = {
 								end
 							end
 
-							if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target)) then
+							if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target) or global.MARKED(_env, "SP_DDing")(_env, target)) then
 								target = nil
 							end
 
@@ -793,7 +793,7 @@ all.Skill_YMJDe_Passive_EX = {
 								end
 							end
 
-							if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target)) then
+							if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target) or global.MARKED(_env, "SP_DDing")(_env, target)) then
 								target = nil
 							end
 
@@ -940,7 +940,7 @@ all.Skill_YMJDe_Passive_Activity = {
 							end
 						end
 
-						if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target)) then
+						if target and (global.MASTER(_env, target) or global.MARKED(_env, "DAGUN")(_env, target) or global.MARKED(_env, "SP_DDing")(_env, target)) then
 							target = nil
 						end
 

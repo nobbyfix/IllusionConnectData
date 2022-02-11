@@ -756,8 +756,16 @@
         ]
     },
     "GCZi": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,
@@ -2200,6 +2208,25 @@
             3.2
         ]
     },
+    "SP_DDing": {
+        "Reward": {},
+        "RewardNumShow": [],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "SP_KTSJKe": {
         "Reward": {
             "1": 100,
@@ -2686,6 +2713,25 @@
             3.2
         ]
     },
+    "XDRLa": {
+        "Reward": {},
+        "RewardNumShow": [],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
+        ]
+    },
     "XHMao": {
         "Reward": {
             "1": 100,
@@ -2765,6 +2811,25 @@
             1.04,
             0.3,
             4.4
+        ]
+    },
+    "XSLuo": {
+        "Reward": {},
+        "RewardNumShow": [],
+        "Tower_1_Weight": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "Tower_2_Weight": [
+            1.05,
+            0.3,
+            3.2
         ]
     },
     "XSMLi": {
