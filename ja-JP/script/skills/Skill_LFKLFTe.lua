@@ -400,7 +400,7 @@ all.Skill_LFKLFTe_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local master_maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
 				local buff_hp = global.SpecialNumericEffect(_env, "+Ini_Hp", {
 					"+Normal",
