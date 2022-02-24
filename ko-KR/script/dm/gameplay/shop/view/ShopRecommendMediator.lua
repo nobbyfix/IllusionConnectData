@@ -119,6 +119,10 @@ function ShopRecommendMediator:initMember()
 	self._fanxingPanel = self:getView():getChildByFullName("panel_fanxing")
 
 	self._fanxingPanel:setVisible(false)
+
+	self._surfacePanel = self:getView():getChildByFullName("Panel_surfaceShop")
+
+	self._surfacePanel:setVisible(false)
 	self:adjustView()
 end
 
@@ -146,6 +150,7 @@ function ShopRecommendMediator:refreshView()
 	self:getView():stopAllActions()
 	self:initRightTabController()
 	self._fanxingPanel:setVisible(false)
+	self._surfacePanel:setVisible(false)
 
 	local path = "asset/ui/shop/" .. self._data.BackGroundImg .. ".jpg" or "sd_tj_ggt.png"
 
@@ -199,6 +204,56 @@ function ShopRecommendMediator:refreshView()
 			moneyS:setString(price)
 			textNum:setString(activity:getTotalNumReward())
 			self:setTimer()
+		end
+	elseif pid == KMonthCardType.KSurfaceShop then
+		if self._shopSystem:getSurfaceShowInShopById(self._data.Config.Surface) then
+			self._surfacePanel:setVisible(true)
+
+			local panel_suface1 = self._surfacePanel:getChildByFullName("Node_surface1")
+			local panel_suface2 = self._surfacePanel:getChildByFullName("Node_surface2")
+			local sufaceIds = self._data.Config.Surface
+
+			panel_suface1:setVisible(#sufaceIds == 1)
+			panel_suface2:setVisible(#sufaceIds == 2)
+
+			local panel = #sufaceIds == 1 and panel_suface1 or panel_suface2
+
+			for i, v in ipairs(sufaceIds) do
+				local surfaceId = ConfigReader:getDataByNameIdAndKey("ShopSurface", v, "Surface")
+				local surfaceConfig = ConfigReader:getRecordById("Surface", surfaceId)
+				local name = panel:getChildByFullName("text_name" .. i)
+				local surfaceName = panel:getChildByFullName("text_name_surface" .. i)
+				local role = panel:getChildByFullName("Node_role" .. i)
+
+				role:removeAllChildren()
+				surfaceName:setString(Strings:get(surfaceConfig.Name))
+				surfaceName:getVirtualRenderer():setAdditionalKerning(6)
+
+				local n = self._shopSystem:getHeroNameAndModelByHeroId(surfaceConfig.Hero)
+
+				name:setString(n)
+
+				if #sufaceIds == 2 then
+					GameStyle:setCommonOutlineEffect(name, 38.25, 2)
+				end
+
+				local img = IconFactory:createRoleIconSpriteNew({
+					useAnim = true,
+					frameId = "bustframe9",
+					id = surfaceConfig.Model
+				})
+
+				role:setScale(self._data.Config.Scale[i] or 1)
+				img:addTo(role):posite(0, -100)
+			end
+
+			local timeNode = self._surfacePanel:getChildByFullName("timeNode")
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(self._data.TimeType.start)
+			local startLocalData = TimeUtil:localDate("%Y.%m.%d", remoteTime)
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(self._data.TimeType["end"])
+			local endLocalData = TimeUtil:localDate("%Y.%m.%d", remoteTime)
+
+			timeNode:getChildByFullName("time"):setString(startLocalData .. "-" .. endLocalData)
 		end
 	elseif self._bgImage.frameIcon then
 		self._bgImage.frameIcon:setVisible(false)

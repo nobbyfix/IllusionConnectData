@@ -934,6 +934,17 @@
         "UnlockDesc": "LEMHou_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_LEMHou_2": {
+        "HeadDesc": "Surface_LEMHou_vt_Desc",
+        "HeadName": "LEMHou_2_HeadName",
+        "HeroMasterId": "LEMHou",
+        "IconPath": "asset/heros/kxyuan_vt/battlepic_kxyuan_vt.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "Surface_LEMHou_2",
+        "Type": 5,
+        "UnlockDesc": "LEMHou_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_LFEr": {
         "HeadDesc": "HeroBase_Desc_LFEr",
         "HeadName": "LFEr_HeadName",
@@ -1610,7 +1621,7 @@
         "HeadName": "SP_DDing_HeadName",
         "HeroMasterId": "SP_DDing",
         "IconPath": "asset/heros/sp_bytsi/battlepic_sp_bytsi.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SP_DDing_HeadUnlock",
@@ -1647,6 +1658,17 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SP_SSQXin_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_SP_WTXXuan": {
+        "HeadDesc": "HeroBase_Desc_SP_WTXXuan",
+        "HeadName": "SP_WTXXuan_HeadName",
+        "HeroMasterId": "SP_WTXXuan",
+        "IconPath": "asset/heros/sp_mcqdai/battlepic_sp_mcqdai.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_WTXXuan_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SRen": {
@@ -1940,7 +1962,7 @@
         "HeadName": "XDRLa_HeadName",
         "HeroMasterId": "XDRLa",
         "IconPath": "asset/heros/pli/battlepic_pli.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "XDRLa_HeadUnlock",

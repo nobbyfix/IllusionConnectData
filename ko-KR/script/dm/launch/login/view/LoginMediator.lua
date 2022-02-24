@@ -54,6 +54,7 @@ function LoginMediator:enterWithData(data)
 	}
 
 	StatisticSystem:send(content)
+	dump(app.pkgConfig, "app.pkgConfig")
 end
 
 function LoginMediator:animOver()

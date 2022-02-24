@@ -482,6 +482,7 @@ function HomeMediator:createMapListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_NEW_ARENA_OFFLINE_REPORT, self, self.setNewArenaBtn)
 	self:mapEventListener(self:getEventDispatcher(), EVT_HOMEVIEW_SETBORAD_MOVE, self, self.setShowHeroMoveViewVis)
 	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.showCoopTips)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BLOCKLEVEL_CHANGE, self, self.reloadView)
 end
 
 function HomeMediator:onBackFlowActivityRefresh(event)
@@ -3970,6 +3971,16 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 55),
 			imgpos = cc.p(65, 55),
 			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivityMagic] = {
+			animZorder = 1,
+			commonAnim = "main_zhujiemiantongyonganniu",
+			anim = "main_wuzuizhiyuanniu",
+			imgZorder = 2,
+			img = "magic_btn_zjm_rukou.png",
+			aimpos = cc.p(60, 60),
+			imgpos = cc.p(65, 45),
+			redpos = cc.p(115, 56)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")
@@ -4020,6 +4031,15 @@ function HomeMediator:setComplexActivityEntry()
 
 		if cfg.anim then
 			local anim = cc.MovieClip:create(cfg.anim)
+
+			anim:gotoAndPlay(1)
+			anim:setPosition(cfg.aimpos)
+			anim:addTo(self._btns[ui])
+			anim:setLocalZOrder(cfg.animZorder or 2)
+		end
+
+		if cfg.commonAnim then
+			local anim = cc.MovieClip:create(cfg.commonAnim)
 
 			anim:gotoAndPlay(1)
 			anim:setPosition(cfg.aimpos)

@@ -609,6 +609,7 @@ function ActivityOrientMainMediator:onClickStage(sender)
 		self._main:changeParent(self:getView()):posite(initX, initY)
 		self._topInfoWidget:getView():changeParent(self:getView()):posite(initX2, initY2)
 		self._activitySystem:enterBlockMap(self._activityId, mapId)
+		self._transitionAnim:clearCallbacks()
 	end)
 end
 

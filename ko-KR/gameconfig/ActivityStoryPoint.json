@@ -3978,6 +3978,231 @@
         ],
         "StoryLink": "eventstory_knightlight_04a"
     },
+    "MagicS01S01": {
+        "FirstReward": "MagicS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "MagicM01",
+        "Name": "MagicS01S01_Name",
+        "NextStoryPoint": [
+            "MagicS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_magic_00"
+    },
+    "MagicS01S02": {
+        "FirstReward": "MagicS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "MagicM01",
+        "Name": "MagicS01S02_Name",
+        "NextStoryPoint": [
+            "MagicS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_magic_01"
+    },
+    "MagicS01S03": {
+        "FirstReward": "MagicS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "MagicM01",
+        "Name": "MagicS01S03_Name",
+        "NextStoryPoint": [
+            "MagicS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSN02"
+        ],
+        "PreStoryPoint": [
+            "MagicS01S02"
+        ],
+        "StoryLink": "eventstory_magic_02"
+    },
+    "MagicS01S04": {
+        "FirstReward": "MagicS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "MagicM01",
+        "Name": "MagicS01S04_Name",
+        "NextStoryPoint": [
+            "MagicS01S05"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSN05"
+        ],
+        "PreStoryPoint": [
+            "MagicS01S03"
+        ],
+        "StoryLink": "eventstory_magic_03_a"
+    },
+    "MagicS01S05": {
+        "FirstReward": "MagicS01S05_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "MagicM01",
+        "Name": "MagicS01S05_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSN07"
+        ],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_magic_04"
+    },
+    "MagicS02S01": {
+        "FirstReward": "MagicS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "MagicM02",
+        "Name": "MagicS02S01_Name",
+        "NextStoryPoint": [
+            "MagicS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_magic_05_a"
+    },
+    "MagicS02S02": {
+        "FirstReward": "MagicS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "MagicM02",
+        "Name": "MagicS02S02_Name",
+        "NextStoryPoint": [
+            "MagicS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSE02"
+        ],
+        "PreStoryPoint": [
+            "MagicS02S01"
+        ],
+        "StoryLink": "eventstory_magic_06"
+    },
+    "MagicS02S03": {
+        "FirstReward": "MagicS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "MagicM02",
+        "Name": "MagicS02S03_Name",
+        "NextStoryPoint": [
+            "MagicS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSE05"
+        ],
+        "PreStoryPoint": [
+            "MagicS02S02"
+        ],
+        "StoryLink": "eventstory_magic_07"
+    },
+    "MagicS02S04": {
+        "FirstReward": "MagicS01S09_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "MagicM02",
+        "Name": "MagicS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "MagicSE07"
+        ],
+        "PreStoryPoint": [
+            "MagicS02S03"
+        ],
+        "StoryLink": "eventstory_magic_08"
+    },
     "Re0S01E01": {
         "FirstReward": "Re0S01E01_Reward",
         "Icon": "s_album_story_1",

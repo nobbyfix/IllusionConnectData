@@ -24,7 +24,7 @@ function GetRewardMediator:onRegister()
 
 	self._iconPanel:setLocalZOrder(10)
 
-	self._kIconWidth = self._iconPanel:getContentSize().width / kMaxshowIconCount
+	self._kIconWidth = self._iconPanel:getContentSize().width / kMaxshowIconCount + 10
 end
 
 function GetRewardMediator:enterWithData(data)

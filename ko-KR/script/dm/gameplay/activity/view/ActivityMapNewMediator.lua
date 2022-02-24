@@ -848,6 +848,18 @@ function ActivityMapNewMediator:initStage()
 	self:updataStageBtnImg()
 	self._starAdditionPanel:setVisible(false)
 	self._hideUIBtn:setVisible(self._bgCanMove and map:isPass())
+
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+	local back_btn = self:getView():getChildByFullName("topinfo_node.back_btn")
+
+	storyDirector:setClickEnv("activityblock.back_btn", back_btn, function (sender, eventType)
+		self:dismiss()
+	end)
+	self:dispatch(Event:new(EVT_BLOCKLEVEL_CHANGE))
+	delayCallByTime(500, function ()
+		storyDirector:notifyWaiting("enter_activity_blcok_view")
+	end)
 end
 
 function ActivityMapNewMediator:storySort(tab)

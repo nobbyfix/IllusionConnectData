@@ -215,6 +215,7 @@ end
 function CardSystem:genNewHeroCard(player, cardInfo, appendix, iscreateInstance)
 	local entityManager = self._battleContext:getObject("EntityManager")
 	local cardsInWindow = player:getCardWindow()
+	local cardPool = player:getCardPool()
 	local info = {}
 
 	table.deepcopy(cardInfo, info)
@@ -227,7 +228,7 @@ function CardSystem:genNewHeroCard(player, cardInfo, appendix, iscreateInstance)
 		info.id = info.id .. index
 		info.hero.id = info.hero.id .. index
 		index = index + 1
-	until entityManager:fetchEntity(info.hero.id) == nil and cardsInWindow:getCardById(info.hero.id) == nil
+	until entityManager:fetchEntity(info.hero.id) == nil and cardsInWindow:getCardById(info.hero.id) == nil and cardPool:getCardById(info.hero.id) == nil
 
 	if iscreateInstance then
 		local card = HeroCard:new(info)

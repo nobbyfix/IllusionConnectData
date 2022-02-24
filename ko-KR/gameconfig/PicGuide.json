@@ -81,6 +81,30 @@
         ],
         "Text": ""
     },
+    "SpecialRule_Magic": {
+        "ChangeInfo": 999,
+        "Icon": "ico_m_tjdun_1",
+        "InfoText": 1,
+        "Name": "SpecialRule_Magic_Name",
+        "Pic": [
+            {
+                "Img": "img_SpecialRule_TJDun_1.png",
+                "LongText": "SpecialRule_Magic_LongDesc_TJDun_1",
+                "ShortText": "SpecialRule_Magic_ShortDesc_TJDun_1"
+            },
+            {
+                "Img": "img_SpecialRule_TJDun_2.png",
+                "LongText": "SpecialRule_Magic_LongDesc_TJDun_2",
+                "ShortText": "SpecialRule_Magic_ShortDesc_TJDun_2"
+            },
+            {
+                "Img": "img_SpecialRule_TJDun_3.png",
+                "LongText": "SpecialRule_Magic_LongDesc_TJDun_3",
+                "ShortText": "SpecialRule_Magic_ShortDesc_TJDun_3"
+            }
+        ],
+        "Text": ""
+    },
     "SpecialRule_NShou": {
         "ChangeInfo": 999,
         "Icon": "IR_HD_SnowflakeStamina",

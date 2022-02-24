@@ -23,6 +23,7 @@ function SettingModel:initialize()
 	self._weatherData = {}
 	self._timeScale = {}
 	self._autoBattle = {}
+	self._isSaveMusic = true
 end
 
 function SettingModel:isScreenRecordOn()
@@ -45,26 +46,36 @@ function SettingModel:setMusicOff(isOff)
 	cc.UserDefault:getInstance():setBoolForKey(UserDefaultKey.kMusicOffKey, isOff)
 end
 
+function SettingModel:setMusicVolumeSave(volume)
+	self._isSaveMusic = volume
+end
+
 function SettingModel:setMusicVolume(volume)
-	cc.UserDefault:getInstance():setStringForKey(UserDefaultKey.kMusicVolumeKey, tostring(volume))
+	if self._isSaveMusic then
+		cc.UserDefault:getInstance():setStringForKey(UserDefaultKey.kMusicVolumeKey, tostring(volume))
+	end
+
 	AudioEngine:getInstance():setMusicVolume(volume)
 end
 
 function SettingModel:getMusicVolume()
 	local volume = cc.UserDefault:getInstance():getStringForKey(UserDefaultKey.kMusicVolumeKey)
-	volume = volume == "" and SoundVolumeMax or tonumber(volume)
+	volume = volume == "" and 0 or tonumber(volume)
 
 	return volume
 end
 
 function SettingModel:setEffectVolume(volume)
-	cc.UserDefault:getInstance():setStringForKey(UserDefaultKey.kEffectVolumeKey, tostring(volume))
+	if self._isSaveMusic then
+		cc.UserDefault:getInstance():setStringForKey(UserDefaultKey.kEffectVolumeKey, tostring(volume))
+	end
+
 	AudioEngine:getInstance():setEffectsVolume(volume)
 end
 
 function SettingModel:getEffectVolume()
 	local volume = cc.UserDefault:getInstance():getStringForKey(UserDefaultKey.kEffectVolumeKey)
-	volume = volume == "" and SoundVolumeMax or tonumber(volume)
+	volume = volume == "" and 0 or tonumber(volume)
 
 	return volume
 end
@@ -76,7 +87,7 @@ end
 
 function SettingModel:getRoleEffectVolume()
 	local volume = cc.UserDefault:getInstance():getStringForKey(UserDefaultKey.kRoleEffectVolumeKey)
-	volume = volume == "" and SoundVolumeMax or tonumber(volume)
+	volume = volume == "" and 0 or tonumber(volume)
 
 	return volume
 end

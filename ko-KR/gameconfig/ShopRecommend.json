@@ -2,6 +2,7 @@
     "ShopRecommend_1": {
         "BackGroundImg": "sd_tj_bg_shouchong",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&packageId=PackageShop_1",
         "PackageId": [
@@ -19,6 +20,7 @@
     "ShopRecommend_2": {
         "BackGroundImg": "sd_tj_bg_yueka",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=MonthCard_1",
         "PackageId": [
@@ -36,6 +38,7 @@
     "ShopRecommend_3": {
         "BackGroundImg": "sd_tj_bg_yongjiuka",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_Monthcard&packageId=monthCardF",
         "PackageId": [
@@ -53,6 +56,7 @@
     "ShopRecommend_TL_CZheng": {
         "BackGroundImg": "sd_tj_bg_ydyw",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
@@ -75,6 +79,7 @@
     "ShopRecommend_TL_CZheng2": {
         "BackGroundImg": "sd_tj_bg_ydyw",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -99,6 +104,7 @@
     "ShopRecommend_TL_DCJKang": {
         "BackGroundImg": "sd_tj_bg_jidao",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -123,6 +129,7 @@
     "ShopRecommend_TL_LLan": {
         "BackGroundImg": "sd_tj_bg_xdzg",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
         "PackageId": [
@@ -150,6 +157,7 @@
                 31
             ]
         },
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -179,6 +187,7 @@
                 38
             ]
         },
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -203,6 +212,7 @@
     "ShopRecommend_TL_SLMen": {
         "BackGroundImg": "sd_tj_bg_miwu",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -227,6 +237,7 @@
     "ShopRecommend_TL_YXNMei": {
         "BackGroundImg": "sd_tj_bg_huakuidianxia",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
         "PackageId": [
@@ -251,6 +262,7 @@
     "ShopRecommend_fxzm": {
         "BackGroundImg": "sd_tj_bg_fxzm",
         "ClientCondition": "",
+        "Config": "",
         "Hide": 1,
         "Link": "view://ActivityView&id=ACT_StageStar",
         "PackageId": [
@@ -262,6 +274,34 @@
         "TabName": "ShopRecommend_fxzm_Name",
         "TimeType": {
             "type": "unlimit"
+        },
+        "Vanish": 1
+    },
+    "ShopRecommend_surface_20220225": {
+        "BackGroundImg": "sd_tjpf_bg_dr",
+        "ClientCondition": "",
+        "Config": {
+            "Scale": [
+                0.55
+            ],
+            "Surface": [
+                "ShopSurface_Surface_LEMHou_2"
+            ]
+        },
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "PackageId": [
+            "SurfaceShop"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 4,
+        "TabName": "ShopRecommend_surface_Name",
+        "TimeType": {
+            "amount": -1,
+            "end": "2022-03-02 05:00:00",
+            "start": "2022-02-25 05:00:00",
+            "type": "limit"
         },
         "Vanish": 1
     }

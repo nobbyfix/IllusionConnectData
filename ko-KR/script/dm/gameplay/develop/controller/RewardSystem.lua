@@ -127,7 +127,7 @@ function RewardSystem.class:getName(rewardData)
 			local config = ConfigReader:getRecordById("Tsoul", id)
 
 			if config and config.Id then
-				return Strings:get(config.Name)
+				return Strings:get(config.Name) .. "x" .. rewardData.amount
 			end
 		end
 	end

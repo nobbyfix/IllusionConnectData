@@ -1594,6 +1594,12 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		global.ApplyHPRecovery_ResultCheck(_env, actor, actor, heal)
 	end
 
+	local DoubleDamage = global.SpecialPropGetter(_env, "SP_WTXXuan_DoubleDamage")(_env, actor)
+
+	if DoubleDamage and DoubleDamage ~= 0 and global.MASTER(_env, target) then
+		damage.val = damage.val * 2
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -2939,6 +2945,12 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 			global.ApplyHPRecovery_ResultCheck(_env, actor, actor, heal)
 		end
+	end
+
+	local DoubleDamage = global.SpecialPropGetter(_env, "SP_WTXXuan_DoubleDamage")(_env, actor)
+
+	if DoubleDamage and DoubleDamage ~= 0 and global.MASTER(_env, target) then
+		global.damage.val = global.damage.val * 2
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)

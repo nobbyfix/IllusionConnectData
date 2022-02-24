@@ -902,6 +902,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_LoginTotal_Desc"
     },
+    "Condi_MagicExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Magic_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MagicExchangeAchieve_Desc"
+    },
     "Condi_MapAllDP": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1052,7 +1059,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220224.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1073,7 +1080,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220224.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },

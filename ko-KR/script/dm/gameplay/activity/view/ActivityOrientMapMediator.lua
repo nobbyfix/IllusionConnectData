@@ -1178,24 +1178,32 @@ function ActivityOrientMapMediator:showChangePartAnim(callback)
 	closeAnim:gotoAndStop(1)
 
 	for i, v in pairs(self._pointCells) do
-		v.anim:setVisible(false)
-		v.closeAnim:setVisible(true)
-		v.closeAnim:gotoAndPlay(1)
-		v.closeAnim:addCallbackAtFrame(10, function ()
-			closeAnim:gotoAndPlay(1)
-		end)
-		v.closeAnim:addEndCallback(function ()
-			v.closeAnim:setVisible(false)
-		end)
+		if v.anim then
+			v.anim:setVisible(false)
+		end
 
-		local nameNode = v.closeAnim:getChildByName("name")
+		if v.closeAnim then
+			v.closeAnim:setVisible(true)
+			v.closeAnim:gotoAndPlay(1)
+			v.closeAnim:addCallbackAtFrame(10, function ()
+				if i == 1 then
+					closeAnim:gotoAndPlay(1)
+				end
+			end)
+			v.closeAnim:addEndCallback(function ()
+				v.closeAnim:setVisible(false)
+				v.closeAnim:clearCallbacks()
+			end)
 
-		v.nameText:clone():addTo(nameNode):center(nameNode:getContentSize()):offset(-5, 1)
+			local nameNode = v.closeAnim:getChildByName("name")
 
-		local indexNode = v.closeAnim:getChildByName("index")
+			v.nameText:clone():addTo(nameNode):center(nameNode:getContentSize()):offset(-5, 1)
 
-		if indexNode and v.indexText then
-			v.indexText:clone():addTo(indexNode):center(indexNode:getContentSize())
+			local indexNode = v.closeAnim:getChildByName("index")
+
+			if indexNode and v.indexText then
+				v.indexText:clone():addTo(indexNode):center(indexNode:getContentSize())
+			end
 		end
 	end
 end

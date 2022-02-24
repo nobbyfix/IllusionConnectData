@@ -1,0 +1,75 @@
+{
+    "TR_BaoXiang": {
+        "Effect": [
+            "TR_BaoXiangReward"
+        ],
+        "Icon": "baoxiang_4_1",
+        "Type": "REWARD"
+    },
+    "TR_Diamond": {
+        "Effect": [
+            "TR_DiamondReward"
+        ],
+        "Icon": "icon_zuanshi",
+        "Type": "REWARD"
+    },
+    "TR_Dice": {
+        "Effect": [
+            1
+        ],
+        "Icon": "ico_m_dice",
+        "Type": "DICE"
+    },
+    "TR_FuDai": {
+        "Effect": [
+            "TR_BagReward"
+        ],
+        "Icon": "IM_FuDai",
+        "Type": "REWARD"
+    },
+    "TR_Girl": {
+        "Effect": [
+            "TR_GoldReward",
+            "TR_DiamondReward",
+            "TR_BagReward",
+            "TR_BaoXiangReward"
+        ],
+        "Icon": "TrialRoad_img_dige_5",
+        "Type": "GIRL"
+    },
+    "TR_Gold": {
+        "Effect": [
+            "TR_GoldReward"
+        ],
+        "Icon": "icon_jinbi",
+        "Type": "REWARD"
+    },
+    "TR_HaiSeWei": {
+        "Effect": [
+            1
+        ],
+        "Icon": "TrialRoad_img_dige_6",
+        "Type": "HAISEWEI"
+    },
+    "TR_Start": {
+        "Effect": [
+            1
+        ],
+        "Icon": "TrialRoad_img_dige_2",
+        "Type": "START"
+    },
+    "TR_Transfer_1": {
+        "Effect": [
+            "TR_Transfer_2"
+        ],
+        "Icon": "TrialRoad_img_dige_4",
+        "Type": "TRANSFER"
+    },
+    "TR_Transfer_2": {
+        "Effect": [
+            "TR_Transfer_1"
+        ],
+        "Icon": "TrialRoad_img_dige_4",
+        "Type": "TRANSFER"
+    }
+}

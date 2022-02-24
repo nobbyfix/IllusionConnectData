@@ -129,6 +129,10 @@ function SettingSystem:getMusicVolume()
 	return self:getSettingModel():getMusicVolume()
 end
 
+function SettingSystem:setMusicVolumeSave(isSave)
+	self:getSettingModel():setMusicVolumeSave(isSave)
+end
+
 function SettingSystem:setEffectVolume(volume)
 	self:getSettingModel():setEffectVolume(volume)
 end

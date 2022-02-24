@@ -551,6 +551,20 @@ function RecruitSystem:tryEnterActivityRecruit(data)
 		return
 	end
 
+	if data and data.activityId then
+		local activitySystem = self:getInjector():getInstance(ActivitySystem)
+
+		if not activitySystem:isActivityOpen(data.activityId) or activitySystem:isActivityOver(data.activityId) then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("DrewCard_Activity_Closed")
+			}))
+			AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+
+			return
+		end
+	end
+
 	AudioEngine:getInstance():playEffect("Se_Click_Story_Common", false)
 
 	local view = self:getInjector():getInstance("RecruitNewDrawCardView")

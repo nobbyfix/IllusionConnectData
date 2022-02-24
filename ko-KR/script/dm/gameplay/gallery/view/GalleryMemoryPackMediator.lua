@@ -158,6 +158,7 @@ function GalleryMemoryPackMediator:initData(data)
 	self._tableViewTitleIdx[4] = self._tableViewTitleIdx[3] + math.ceil(#self._showList[2] / ShowLineNum)
 	self._tableViewCell = {}
 	self._delegateCallback = data.callback
+	self._isScroll = true
 end
 
 function GalleryMemoryPackMediator:initInfoView()
@@ -191,9 +192,16 @@ function GalleryMemoryPackMediator:initLeftView()
 		titlePanel:getChildByFullName("title"):setString(Titles[i])
 		titlePanel:addTo(self._leftPanel)
 		titlePanel:addTouchEventListener(function (sender, eventType)
-			self._curSelectTitleIndex = i
+			if eventType == ccui.TouchEventType.began then
+				self._isScroll = false
+				self._curSelectTitleIndex = i
 
-			self:changePageView(true)
+				self:changePageView(true)
+			elseif eventType == ccui.TouchEventType.ended then
+				self._isScroll = true
+			elseif eventType == ccui.TouchEventType.canceled then
+				self._isScroll = true
+			end
 		end)
 		titlePanel:setPosition(cc.p(0, positionY - kLeftTitleDisY * (i - 1)))
 
@@ -241,7 +249,7 @@ function GalleryMemoryPackMediator:initView()
 				idx = #Titles or idx
 			end
 
-			if idx ~= self._curSelectTitleIndex then
+			if idx ~= self._curSelectTitleIndex and self._isScroll then
 				self._curSelectTitleIndex = idx
 
 				self:changePageView()

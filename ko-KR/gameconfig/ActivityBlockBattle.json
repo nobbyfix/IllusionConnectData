@@ -30995,6 +30995,4365 @@
         ],
         "WipeExtraReward": ""
     },
+    "MagicSE01E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE02P01proN06",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS09N_BlockDesc",
+        "EnemyCard": "CardMagicSE01E",
+        "EnemyMaster": "MagicE02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE01",
+        "Master": "MagicE02P01U02N08",
+        "Name": "BlockPoint_MagicS09N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE01E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE01M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM02P01proN06",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS09M_BlockDesc",
+        "EnemyCard": "CardMagicSE01M",
+        "EnemyMaster": "MagicM02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_1",
+                "4": "Magic_Buff_Star4_2_1",
+                "5": "Magic_Buff_Star5_2_1",
+                "6": "Magic_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE01",
+        "Master": "MagicM02P01U02N08",
+        "Name": "BlockPoint_MagicS09M_Name",
+        "NextPoint": [
+            "MagicSE02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE01M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": {
+            "enter": [
+                "eventstory_magic_05_b"
+            ],
+            "win": [
+                "eventstory_magic_05_c"
+            ]
+        },
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS10N_BlockDesc",
+        "EnemyCard": "CardMagicSE02E",
+        "EnemyMaster": "MagicE02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE02",
+        "Master": "",
+        "Name": "BlockPoint_MagicS10N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSE02E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS10M_BlockDesc",
+        "EnemyCard": "CardMagicSE02M",
+        "EnemyMaster": "MagicM02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_2",
+                "4": "Magic_Buff_Star4_2_2",
+                "5": "Magic_Buff_Star5_2_2",
+                "6": "Magic_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE02",
+        "Master": "",
+        "Name": "BlockPoint_MagicS10M_Name",
+        "NextPoint": [
+            "MagicSE03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSE02M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS11N_BlockDesc",
+        "EnemyCard": "CardMagicSE03E",
+        "EnemyMaster": "MagicE02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE03",
+        "Master": "",
+        "Name": "BlockPoint_MagicS11N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSE03E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS11M_BlockDesc",
+        "EnemyCard": "CardMagicSE03M",
+        "EnemyMaster": "MagicM02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_3",
+                "4": "Magic_Buff_Star4_2_3",
+                "5": "Magic_Buff_Star5_2_3",
+                "6": "Magic_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE03",
+        "Master": "",
+        "Name": "BlockPoint_MagicS11M_Name",
+        "NextPoint": [
+            "MagicSE04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSE03M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE04E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE02P04proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS12N_BlockDesc",
+        "EnemyCard": "CardMagicSE04E",
+        "EnemyMaster": "MagicE02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE04",
+        "Master": "",
+        "Name": "BlockPoint_MagicS12N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE04E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE04M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM02P04proN06",
+                "pos": 6
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS12M_BlockDesc",
+        "EnemyCard": "CardMagicSE04M",
+        "EnemyMaster": "MagicM02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_4",
+                "4": "Magic_Buff_Star4_2_4",
+                "5": "Magic_Buff_Star5_2_4",
+                "6": "Magic_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE04",
+        "Master": "",
+        "Name": "BlockPoint_MagicS12M_Name",
+        "NextPoint": [
+            "MagicSE05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE04M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS13N_BlockDesc",
+        "EnemyCard": "CardMagicSE05E",
+        "EnemyMaster": "MagicE02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE05",
+        "Master": "",
+        "Name": "BlockPoint_MagicS13N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSE05E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS13M_BlockDesc",
+        "EnemyCard": "CardMagicSE05M",
+        "EnemyMaster": "MagicM02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_5",
+                "4": "Magic_Buff_Star4_2_5",
+                "5": "Magic_Buff_Star5_2_5",
+                "6": "Magic_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE05",
+        "Master": "",
+        "Name": "BlockPoint_MagicS13M_Name",
+        "NextPoint": [
+            "MagicSE06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSE05M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE06E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE02P06proN07",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS14N_BlockDesc",
+        "EnemyCard": "CardMagicSE06E",
+        "EnemyMaster": "MagicE02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE06",
+        "Master": "",
+        "Name": "BlockPoint_MagicS14N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE06E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE06M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM02P06proN07",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS14M_BlockDesc",
+        "EnemyCard": "CardMagicSE06M",
+        "EnemyMaster": "MagicM02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE06M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_6",
+                "4": "Magic_Buff_Star4_2_6",
+                "5": "Magic_Buff_Star5_2_6",
+                "6": "Magic_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE06",
+        "Master": "",
+        "Name": "BlockPoint_MagicS14M_Name",
+        "NextPoint": [
+            "MagicSE07M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE06M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE06M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE07E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE02P07proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS15N_BlockDesc",
+        "EnemyCard": "CardMagicSE07E",
+        "EnemyMaster": "MagicE02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE07",
+        "Master": "",
+        "Name": "BlockPoint_MagicS15N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSE07E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE07M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM02P07proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS15M_BlockDesc",
+        "EnemyCard": "CardMagicSE07M",
+        "EnemyMaster": "MagicM02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_7",
+                "4": "Magic_Buff_Star4_2_7",
+                "5": "Magic_Buff_Star5_2_7",
+                "6": "Magic_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE07",
+        "Master": "",
+        "Name": "BlockPoint_MagicS15M_Name",
+        "NextPoint": [
+            "MagicSE08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSE07M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE08E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE02P08proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS16N_BlockDesc",
+        "EnemyCard": "CardMagicSE08E",
+        "EnemyMaster": "MagicE02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE08",
+        "Master": "",
+        "Name": "BlockPoint_MagicS16N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE08E_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSE08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSE08M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM02P08proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 2,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS16M_BlockDesc",
+        "EnemyCard": "CardMagicSE08M",
+        "EnemyMaster": "MagicM02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSE08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_2_8",
+                "4": "Magic_Buff_Star4_2_8",
+                "5": "Magic_Buff_Star5_2_8",
+                "6": "Magic_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSE08",
+        "Master": "",
+        "Name": "BlockPoint_MagicS16M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSE08M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSE08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSH01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS01H_BlockDesc",
+        "EnemyCard": "CardMagicSH01M",
+        "EnemyMaster": "MagicH01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSH01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE09",
+        "Master": "",
+        "Name": "BlockPoint_MagicS01H_Name",
+        "NextPoint": [
+            "MagicSH02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSH01M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSH01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSH02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS02H_BlockDesc",
+        "EnemyCard": "CardMagicSH02M",
+        "EnemyMaster": "MagicH01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSH02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE10",
+        "Master": "",
+        "Name": "BlockPoint_MagicS02H_Name",
+        "NextPoint": [
+            "MagicSH03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSH02M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSH02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSH03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS03H_BlockDesc",
+        "EnemyCard": "CardMagicSH03M",
+        "EnemyMaster": "MagicH01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSH03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSE11",
+        "Master": "",
+        "Name": "BlockPoint_MagicS03H_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSH03M_PointReward",
+        "PointTime": {
+            "start": "2022-03-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSH03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN01E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS01N_BlockDesc",
+        "EnemyCard": "CardMagicSN01E",
+        "EnemyMaster": "MagicE01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN01",
+        "Master": "",
+        "Name": "BlockPoint_MagicS01N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN01E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS01M_BlockDesc",
+        "EnemyCard": "CardMagicSN01M",
+        "EnemyMaster": "MagicM01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_1",
+                "4": "Magic_Buff_Star4_1_1",
+                "5": "Magic_Buff_Star5_1_1",
+                "6": "Magic_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN01",
+        "Master": "",
+        "Name": "BlockPoint_MagicS01M_Name",
+        "NextPoint": [
+            "MagicSN02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN01M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS02N_BlockDesc",
+        "EnemyCard": "CardMagicSN02E",
+        "EnemyMaster": "MagicE01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN02",
+        "Master": "",
+        "Name": "BlockPoint_MagicS02N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN02E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS02M_BlockDesc",
+        "EnemyCard": "CardMagicSN02M",
+        "EnemyMaster": "MagicM01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_2",
+                "4": "Magic_Buff_Star4_1_2",
+                "5": "Magic_Buff_Star5_1_2",
+                "6": "Magic_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN02",
+        "Master": "",
+        "Name": "BlockPoint_MagicS02M_Name",
+        "NextPoint": [
+            "MagicSN03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN02M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS03N_BlockDesc",
+        "EnemyCard": "CardMagicSN03E",
+        "EnemyMaster": "MagicE01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN03",
+        "Master": "",
+        "Name": "BlockPoint_MagicS03N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSN03E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS03M_BlockDesc",
+        "EnemyCard": "CardMagicSN03M",
+        "EnemyMaster": "MagicM01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_3",
+                "4": "Magic_Buff_Star4_1_3",
+                "5": "Magic_Buff_Star5_1_3",
+                "6": "Magic_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN03",
+        "Master": "",
+        "Name": "BlockPoint_MagicS03M_Name",
+        "NextPoint": [
+            "MagicSN04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSN03M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS04N_BlockDesc",
+        "EnemyCard": "CardMagicSN04E",
+        "EnemyMaster": "MagicE01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN04",
+        "Master": "",
+        "Name": "BlockPoint_MagicS04N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN04E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS04M_BlockDesc",
+        "EnemyCard": "CardMagicSN04M",
+        "EnemyMaster": "MagicM01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_4",
+                "4": "Magic_Buff_Star4_1_4",
+                "5": "Magic_Buff_Star5_1_4",
+                "6": "Magic_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN04",
+        "Master": "",
+        "Name": "BlockPoint_MagicS04M_Name",
+        "NextPoint": [
+            "MagicSN05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN04M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN05E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE01P05proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS05N_BlockDesc",
+        "EnemyCard": "CardMagicSN05E",
+        "EnemyMaster": "MagicE01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN05",
+        "Master": "",
+        "Name": "BlockPoint_MagicS05N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN05E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1",
+            "SpecialRule_Magic_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "MagicE01P05proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN05M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM01P05proN05",
+                "pos": 5
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS05M_BlockDesc",
+        "EnemyCard": "CardMagicSN05M",
+        "EnemyMaster": "MagicM01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_5",
+                "4": "Magic_Buff_Star4_1_5",
+                "5": "Magic_Buff_Star5_1_5",
+                "6": "Magic_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN05",
+        "Master": "",
+        "Name": "BlockPoint_MagicS05M_Name",
+        "NextPoint": [
+            "MagicSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointPicture": "",
+        "PointReward": "MagicSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1",
+            "SpecialRule_Magic_Rule_2"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "MagicM01P05proN05"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN06E": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicE01P06proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Magic_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS06N_BlockDesc",
+        "EnemyCard": "CardMagicSN06E",
+        "EnemyMaster": "MagicE01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN06",
+        "Master": "MagicE01P06U03N08",
+        "Name": "BlockPoint_MagicS06N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSN06E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1",
+            "SpecialRule_Magic_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "MagicE01P06proN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN06M": {
+        "AiRules": "",
+        "Assist": [
+            {
+                "forbidid": "SP_SSQXin",
+                "id": "MagicM01P06proN09",
+                "pos": 9
+            }
+        ],
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Magic_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS06M_BlockDesc",
+        "EnemyCard": "CardMagicSN06M",
+        "EnemyMaster": "MagicM01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_6",
+                "4": "Magic_Buff_Star4_1_6",
+                "5": "Magic_Buff_Star5_1_6",
+                "6": "Magic_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN06",
+        "Master": "MagicM01P06U03N08",
+        "Name": "BlockPoint_MagicS06M_Name",
+        "NextPoint": [
+            "MagicSN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SMSNv",
+        "PointPicture": "",
+        "PointReward": "MagicSN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1",
+            "SpecialRule_Magic_Rule_3"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": {
+            "enter": [
+                "eventstory_magic_03_b"
+            ],
+            "win": [
+                "eventstory_magic_03_c"
+            ]
+        },
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideA"
+            },
+            {
+                "factor": {
+                    "count": 1,
+                    "unitTag": "MagicM01P06proN09"
+                },
+                "type": "KeyUnitsDied",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS07N_BlockDesc",
+        "EnemyCard": "CardMagicSN07E",
+        "EnemyMaster": "MagicE01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN07",
+        "Master": "",
+        "Name": "BlockPoint_MagicS07N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN07E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS07M_BlockDesc",
+        "EnemyCard": "CardMagicSN07M",
+        "EnemyMaster": "MagicM01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_7",
+                "4": "Magic_Buff_Star4_1_7",
+                "5": "Magic_Buff_Star5_1_7",
+                "6": "Magic_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN07",
+        "Master": "",
+        "Name": "BlockPoint_MagicS07M_Name",
+        "NextPoint": [
+            "MagicSN08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN07M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS08N_BlockDesc",
+        "EnemyCard": "CardMagicSN08E",
+        "EnemyMaster": "MagicE01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "MagicSN08",
+        "Master": "",
+        "Name": "BlockPoint_MagicS08N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN08E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "MagicSN08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "MagicSN08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Magic",
+            "",
+            ""
+        ],
+        "Background": "Magic_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_Magic"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Magic",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_MagicS08M_BlockDesc",
+        "EnemyCard": "CardMagicSN08M",
+        "EnemyMaster": "MagicM01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "MagicSN08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_SP_DDing_Buff_Star3",
+                "4": "Magic_SP_DDing_Buff_Star4",
+                "5": "Magic_SP_DDing_Buff_Star5",
+                "6": "Magic_SP_DDing_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_DDing": {
+                "3": "Magic_Buff_Star3_1_8",
+                "4": "Magic_Buff_Star4_1_8",
+                "5": "Magic_Buff_Star5_1_8",
+                "6": "Magic_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Magic_ExchangeItem",
+        "Map": "MagicSN08",
+        "Master": "",
+        "Name": "BlockPoint_MagicS08M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_SP_DDing",
+        "PointPicture": "",
+        "PointReward": "MagicSN08M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "MagicSN08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Magic_Tittle_1",
+            "SpecialRule_Magic_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCost": {
+            "IR_MagicStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "RiddleSE01E": {
         "AiRules": "",
         "Assist": "",
