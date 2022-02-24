@@ -329,9 +329,6 @@ all.Skill_KTSJKe_Passive = {
 			_env.units = global.EnemyUnits(_env)
 
 			for _, unit in global.__iter__(_env.units) do
-				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-				global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
 				if global.MARKED(_env, "MAGE")(_env, unit) then
 					_env.DmgRate = this.DmgRateFactor + this.ExDmgRateFactor
 				else
@@ -664,9 +661,6 @@ all.Skill_KTSJKe_Passive_EX = {
 			_env.units = global.EnemyUnits(_env)
 
 			for _, unit in global.__iter__(_env.units) do
-				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
-				global.ApplyRPEffect(_env, _env.ACTOR, unit)
-
 				if global.MARKED(_env, "MAGE")(_env, unit) then
 					_env.DmgRate = this.DmgRateFactor + this.ExDmgRateFactor
 				else
