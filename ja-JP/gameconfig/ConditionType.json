@@ -888,6 +888,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_LoginTotal_Desc"
     },
+    "Condi_MagicExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Magic_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MagicExchangeAchieve_Desc"
+    },
     "Condi_MapAllDP": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1045,7 +1052,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220111.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220225.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1066,7 +1073,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220111.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220225.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },

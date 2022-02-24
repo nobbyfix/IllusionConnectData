@@ -1268,6 +1268,62 @@
         ],
         "Type": "NORMAL"
     },
+    "MagicM01": {
+        "BGM": "Mus_Story_Magic_Main",
+        "Background": "Magic_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MagicAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "MagicSN01",
+            "MagicSN02",
+            "MagicSN03",
+            "MagicSN04",
+            "MagicSN05",
+            "MagicSN06",
+            "MagicSN07",
+            "MagicSN08"
+        ],
+        "SubStoryPoint": [
+            "MagicS01S01",
+            "MagicS01S02",
+            "MagicS01S03",
+            "MagicS01S04",
+            "MagicS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "MagicM02": {
+        "BGM": "Mus_Story_Magic_Ave",
+        "Background": "Magic_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MagicAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "MagicSE01",
+            "MagicSE02",
+            "MagicSE03",
+            "MagicSE04",
+            "MagicSE05",
+            "MagicSE06",
+            "MagicSE07",
+            "MagicSE08",
+            "MagicSE09",
+            "MagicSE10",
+            "MagicSE11"
+        ],
+        "SubStoryPoint": [
+            "MagicS02S01",
+            "MagicS02S02",
+            "MagicS02S03",
+            "MagicS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "Purewhite_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "Bg_Copy_Snowflake_1",

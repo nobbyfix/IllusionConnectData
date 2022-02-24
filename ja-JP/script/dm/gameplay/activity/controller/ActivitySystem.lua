@@ -1379,6 +1379,8 @@ function ActivitySystem:getActivityCalendarList()
 				if config and config.Time and self:isActivityCalendarTimeType(config.Time) and config.Enable ~= 0 then
 					if v.EarlyShow and v.EarlyShow ~= "" then
 						closeDay = v.EarlyShow
+					else
+						closeDay = ConfigReader:getDataByNameIdAndKey("ConfigValue", "MainPage_PreviewDays", "content")
 					end
 
 					local _, _, y, m, d, hour, min, sec = string.find(config.TimeFactor.start[1], "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
@@ -1576,6 +1578,30 @@ function ActivitySystem:requestDoActivity2(activityId, param, callback)
 		end
 
 		self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
+	end)
+end
+
+function ActivitySystem:requestDoActivity3(activityId, param, callback)
+	if not self:getVersionCanBuy(activityId) then
+		return
+	end
+
+	local cjson = require("cjson.safe")
+	local params = {
+		activityId = activityId,
+		param = param
+	}
+
+	self._activityService:requestDoActivity(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:getActivityList():syncAloneActivity(activityId, response.data, params.param)
+
+			if callback then
+				callback(response)
+			end
+
+			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
+		end
 	end)
 end
 
@@ -2144,6 +2170,21 @@ function ActivitySystem:requestRecruitActivityReward(activityId, subActivityId, 
 	else
 		self:requestDoActivity(activityId, params, callbackFunc)
 	end
+end
+
+function ActivitySystem:tryEnterTrialRoadMainView(params)
+	local activity = self:getActivityById(params.activityId)
+
+	if not activity then
+		return
+	end
+
+	local view = self:getInjector():getInstance("ActivityTrialRoadView")
+	local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		activityId = params.activityId
+	})
+
+	self:dispatch(event)
 end
 
 function ActivitySystem:tryEnterActivityMailView()

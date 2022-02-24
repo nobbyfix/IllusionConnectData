@@ -12,6 +12,14 @@ function exports.GetSufaceIndex(env, target)
 	return 0
 end
 
+function exports.GetCardSufaceIndex(env, card)
+	if card and card:getType() == "hero" and card:getHeroData().surfaceIndex and card:getHeroData().surfaceIndex > 0 then
+		return card:getHeroData().surfaceIndex
+	end
+
+	return 0
+end
+
 local function getTargetRoles(env, target, createIfNotExist)
 	local rolesMap = env["$roles_map"]
 

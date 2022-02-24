@@ -32,6 +32,16 @@ function HeroCardPool:getCardArray()
 	return self._cardArray
 end
 
+function HeroCardPool:getCardById(heroId)
+	for k, v in pairs(self._cardArray) do
+		if v:getType() == CARD_TYPE.kHeroCard and v:getHeroData().id == heroId then
+			return true
+		end
+	end
+
+	return nil
+end
+
 function HeroCardPool:getTotalCount()
 	return self._cardArray ~= nil and #self._cardArray or 0
 end

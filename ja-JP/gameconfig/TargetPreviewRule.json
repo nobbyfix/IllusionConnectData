@@ -293,6 +293,9 @@
     "Target_SP_SSQXin": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_SP_WTXXuan": {
+        "Function": "0"
+    },
     "Target_SRen": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },

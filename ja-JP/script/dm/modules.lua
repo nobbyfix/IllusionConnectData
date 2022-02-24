@@ -2201,6 +2201,16 @@ local modules = {
 							res = "asset/ui/ActivityOrientMap.csb",
 							name = "ActivityOrientMapView",
 							mediator = "ActivityOrientMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityTrialRoad.csb",
+							name = "ActivityTrialRoadView",
+							mediator = "TrialRoadMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityMagicMain.csb",
+							name = "ActivityMagicMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

@@ -303,8 +303,8 @@ function TowerTeamMediator:createTeamCell(cell, index)
 
 	local detailBtn = node:getChildByFullName("detailBtn")
 
-	detailBtn:setVisible(false)
 	detailBtn:addClickEventListener(function ()
+		self:onClickHeroDetail(id)
 	end)
 end
 

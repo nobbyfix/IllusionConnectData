@@ -998,6 +998,18 @@
         "UnlockDesc": "LEMHou_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_LEMHou_2": {
+        "HeadDesc": "Surface_LEMHou_vt_Desc",
+        "HeadMove": "",
+        "HeadName": "LEMHou_2_HeadName",
+        "HeroMasterId": "LEMHou",
+        "IconPath": "asset/heros/kxyuan_vt/battlepic_kxyuan_vt.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "Surface_LEMHou_2",
+        "Type": 5,
+        "UnlockDesc": "LEMHou_2_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_LFEr": {
         "HeadDesc": "HeroBase_Desc_LFEr",
         "HeadMove": "",
@@ -1748,7 +1760,7 @@
         "HeadName": "SP_DDing_HeadName",
         "HeroMasterId": "SP_DDing",
         "IconPath": "asset/heros/sp_bytsi/battlepic_sp_bytsi.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SP_DDing_HeadUnlock",
@@ -1788,6 +1800,18 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SP_SSQXin_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_SP_WTXXuan": {
+        "HeadDesc": "HeroBase_Desc_SP_WTXXuan",
+        "HeadMove": "",
+        "HeadName": "SP_WTXXuan_HeadName",
+        "HeroMasterId": "SP_WTXXuan",
+        "IconPath": "asset/heros/sp_mcqdai/battlepic_sp_mcqdai.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_WTXXuan_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_SRen": {
@@ -2865,6 +2889,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_SDTZi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_SP_PNCao": {
+        "HeadDesc": "HeroAwaken_SP_PNCao_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_SP_PNCao_1_Name",
+        "HeroMasterId": "SP_PNCao",
+        "IconPath": "asset/heros/sp_hhji/battlepic_sp_hhji_awaken.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_SP_PNCao",
         "Zoom": 1.0
     },
     "HeroAwaken_SP_SSQXin": {

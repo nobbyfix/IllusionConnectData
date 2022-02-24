@@ -5829,6 +5829,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_LEMHou_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -62,
+                    1730
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -124,
+                    1550
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LEMHou_vt_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_LEMHou_2_GainShort",
+        "GoodsId": "",
+        "Hero": "LEMHou",
+        "Link": "",
+        "LongDesc": "Surface_LEMHou_vt_LongDesc",
+        "Model": "Model_LEMHou_vt",
+        "Name": "Surface_LEMHou_vt_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 3,
+        "Type": "",
+        "Unlook": 0
+    },
     "Surface_LFEr_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -9682,6 +9740,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_SP_PNCao_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    200,
+                    1306
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    202,
+                    1071
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_PNCao_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_SP_PNCao_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "SP_PNCao",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_PNCao_Awake",
+        "Name": "Surface_SP_PNCao_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 0
+    },
     "Surface_SP_SSQXin_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -9797,6 +9913,64 @@
         "Sort": 2,
         "Type": 5,
         "Unlook": 1
+    },
+    "Surface_SP_WTXXuan_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    31,
+                    1332
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -26,
+                    1146
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_WTXXuan_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SP_WTXXuan",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_WTXXuan",
+        "Name": "Surface_SP_WTXXuan_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 0
     },
     "Surface_SRen_1": {
         "ActivityId": "",

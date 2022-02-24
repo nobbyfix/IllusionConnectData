@@ -9,7 +9,10 @@ local acitons = {
 	elide = ElideAudio,
 	notElide = NotElideAudio,
 	block = BlockAudio,
-	volume = VolumeAudio
+	volume = VolumeAudio,
+	volumein = VolumeInAudio,
+	volumeout = VolumeOutAudio,
+	volumeoutstop = VolumeOutAudioStop
 }
 
 AudioNode:extendActionsForClass(acitons)
@@ -87,6 +90,97 @@ function AudioNode:volumeTo(type, volumebegin, volumeend, targetTimes)
 	self["timer" .. type] = LuaScheduler:getInstance():schedule(checkTimeFunc, 0.1, false)
 end
 
+function AudioNode:volumeInAudio(type, targetTimes, kind)
+	local settingModel = DmGame:getInstance()._injector:getInstance(SettingSystem):getSettingModel()
+	local volume = 0
+
+	if type == "music" then
+		volume = settingModel:getMusicVolume()
+	elseif type == "effect" then
+		volume = settingModel:getEffectVolume()
+	elseif type == "cveffect" then
+		volume = settingModel:getRoleEffectVolume()
+	end
+
+	dump(volume, " volume ")
+
+	if volume <= 0 then
+		return
+	end
+
+	local settingSystem = DmGame:getInstance()._injector:getInstance(SettingSystem)
+
+	settingSystem:setMusicVolumeSave(false)
+
+	local volumebegin = kind == "in" and 0 or volume
+	local volumeend = kind == "in" and volume or 0
+	local targetTimes = targetTimes
+	local dis = volumeend - volumebegin
+	local per = dis / targetTimes / 10
+	local curVolume = volumebegin
+	local times = os.time()
+
+	local function setVolume(volume)
+		if type == "music" then
+			AudioEngine:getInstance():setMusicVolume(volume, true)
+		elseif type == "effect" then
+			AudioEngine:getInstance():setEffectsVolume(volume, true)
+		elseif type == "cveffect" then
+			AudioEngine:getInstance():setCVEffectsVolume(volume, true)
+		end
+	end
+
+	if self["timervolume" .. type] then
+		self["timervolume" .. type]:stop()
+
+		self["timervolume" .. type] = nil
+	end
+
+	setVolume(volumebegin)
+
+	local function checkTimeFunc()
+		local function stop()
+			settingSystem:setMusicVolumeSave(true)
+
+			if self["timervolume" .. type] then
+				self["timervolume" .. type]:stop()
+
+				self["timervolume" .. type] = nil
+			end
+		end
+
+		if dis > 0 then
+			if volumeend <= curVolume then
+				stop()
+
+				return
+			end
+		elseif curVolume <= volumeend then
+			stop()
+
+			return
+		end
+
+		curVolume = curVolume + per
+
+		setVolume(curVolume)
+	end
+
+	self["timervolume" .. type] = LuaScheduler:getInstance():schedule(checkTimeFunc, 0.1, false)
+end
+
+function AudioNode:volumeOutAudioStop(type)
+	if self["timervolume" .. type] then
+		self["timervolume" .. type]:stop()
+
+		self["timervolume" .. type] = nil
+	end
+
+	local settingSystem = DmGame:getInstance()._injector:getInstance(SettingSystem)
+
+	settingSystem:setMusicVolumeSave(true)
+end
+
 SoundNode = class("SoundNode", AudioNode)
 
 register_stage_node("Sound", SoundNode)
@@ -154,11 +248,27 @@ function MusicNode:play(isLoop)
 		self:notElide()
 	end
 
-	local settingModel = DmGame:getInstance()._injector:getInstance(SettingSystem):getSettingModel()
-
-	AudioEngine:getInstance():setMusicVolume(settingModel:getMusicVolume())
-
 	local handle = AudioEngine:getInstance():playBackgroundMusic(self._fileName)
+
+	local function stopM()
+		if self._musicTimer then
+			self._musicTimer:stop()
+
+			self._musicTimer = nil
+		end
+	end
+
+	stopM()
+
+	local function checkTimeFunc()
+		stopM()
+
+		local settingModel = DmGame:getInstance()._injector:getInstance(SettingSystem):getSettingModel()
+
+		AudioEngine:getInstance():setMusicVolume(settingModel:getMusicVolume())
+	end
+
+	self._musicTimer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 
 	if isElide then
 		self:elide()
