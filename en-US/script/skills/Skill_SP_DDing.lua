@@ -419,7 +419,7 @@ all.Skill_SP_DDing_Passive_Key = {
 			entry = prototype.passive2
 		})
 		passive2 = global["[duration]"](this, {
-			0
+			1600
 		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -460,9 +460,9 @@ all.Skill_SP_DDing_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local master_maxhp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-				local buff_hp = global.SpecialNumericEffect(_env, "+Ini_Hp", {
+				local buff_hp = global.SpecialNumericEffect(_env, "+SP_DDing_Ini_Hp", {
 					"+Normal",
 					"+Normal"
 				}, master_maxhp)
@@ -519,7 +519,7 @@ all.Skill_SP_DDing_Passive_Key = {
 					global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Cross_Buff_XLDBLTe"), 99)
 				end
 
-				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SP_DDing_PREPARE"), 99)
+				global.DelayCall(_env, 1580, global.DispelBuff, _env.ACTOR, global.BUFF_MARKED(_env, "SP_DDing_PREPARE"), 99)
 
 				for _, unit in global.__iter__(global.FriendUnits(_env)) do
 					if global.INSTATUS(_env, "SummonedLFKLFTeLeftFoot")(_env, unit) then
@@ -549,7 +549,7 @@ all.Skill_SP_DDing_Passive_Key = {
 			local global = _env.global
 
 			if global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) and not global.MASTER(_env, _env.ACTOR) and global.FriendMaster(_env) then
-				local ini_maxhp = global.SpecialPropGetter(_env, "Ini_Hp")(_env, global.FriendMaster(_env))
+				local ini_maxhp = global.SpecialPropGetter(_env, "SP_DDing_Ini_Hp")(_env, global.FriendMaster(_env))
 				local master_maxhp = global.UnitPropGetter(_env, "maxHp")(_env, global.FriendMaster(_env))
 				local master_hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, global.FriendMaster(_env))
 				local deta_hp = global.max(_env, master_maxhp - ini_maxhp, 0)
@@ -596,7 +596,6 @@ all.Skill_SP_DDing_Passive_Key = {
 						buff_rp
 					})
 					global.MarkSummoned(_env, SummonedSP_DDing, false)
-					global.CloneBuff(_env, SummonedSP_DDing, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "BUFF"))
 				end
 			end
 		end)
