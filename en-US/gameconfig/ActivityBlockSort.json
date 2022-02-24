@@ -2561,6 +2561,448 @@
             "start": "2022-02-01 05:00:00"
         }
     },
+    "MagicSE01": {
+        "BlockPoint": [
+            "MagicSE01M",
+            "MagicSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS09M_Name",
+        "NextPoint": [
+            "MagicSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS02S01"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE02": {
+        "BlockPoint": [
+            "MagicSE02M",
+            "MagicSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS10M_Name",
+        "NextPoint": [
+            "MagicSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE03": {
+        "BlockPoint": [
+            "MagicSE03M",
+            "MagicSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS11M_Name",
+        "NextPoint": [
+            "MagicSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS02S02"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE04": {
+        "BlockPoint": [
+            "MagicSE04M",
+            "MagicSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS12M_Name",
+        "NextPoint": [
+            "MagicSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE05": {
+        "BlockPoint": [
+            "MagicSE05M",
+            "MagicSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS13M_Name",
+        "NextPoint": [
+            "MagicSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE06": {
+        "BlockPoint": [
+            "MagicSE06M",
+            "MagicSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS14M_Name",
+        "NextPoint": [
+            "MagicSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS02S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE07": {
+        "BlockPoint": [
+            "MagicSE07M",
+            "MagicSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS15M_Name",
+        "NextPoint": [
+            "MagicSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE08": {
+        "BlockPoint": [
+            "MagicSE08M",
+            "MagicSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS16M_Name",
+        "NextPoint": [
+            "MagicSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS02S04"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE09": {
+        "BlockPoint": [
+            "MagicSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS01H_Name",
+        "NextPoint": [
+            "MagicSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE10": {
+        "BlockPoint": [
+            "MagicSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS02H_Name",
+        "NextPoint": [
+            "MagicSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSE11": {
+        "BlockPoint": [
+            "MagicSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM02",
+        "Name": "BlockPoint_MagicS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-03-07 05:00:00"
+        }
+    },
+    "MagicSN01": {
+        "BlockPoint": [
+            "MagicSN01M",
+            "MagicSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS01M_Name",
+        "NextPoint": [
+            "MagicSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN02": {
+        "BlockPoint": [
+            "MagicSN02M",
+            "MagicSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS02M_Name",
+        "NextPoint": [
+            "MagicSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN03": {
+        "BlockPoint": [
+            "MagicSN03M",
+            "MagicSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS03M_Name",
+        "NextPoint": [
+            "MagicSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN04": {
+        "BlockPoint": [
+            "MagicSN04M",
+            "MagicSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS04M_Name",
+        "NextPoint": [
+            "MagicSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN05": {
+        "BlockPoint": [
+            "MagicSN05M",
+            "MagicSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS05M_Name",
+        "NextPoint": [
+            "MagicSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN06": {
+        "BlockPoint": [
+            "MagicSN06M",
+            "MagicSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS06M_Name",
+        "NextPoint": [
+            "MagicSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN07": {
+        "BlockPoint": [
+            "MagicSN07M",
+            "MagicSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS07M_Name",
+        "NextPoint": [
+            "MagicSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
+    "MagicSN08": {
+        "BlockPoint": [
+            "MagicSN08M",
+            "MagicSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "MagicM01",
+        "Name": "BlockPoint_MagicS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "MagicSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "MagicS01S05"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-03-01 05:00:00"
+        }
+    },
     "RiddleSE01": {
         "BlockPoint": [
             "RiddleSE01M",

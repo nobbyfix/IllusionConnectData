@@ -87,6 +87,16 @@ function HeroBaseShowView:refreshView(heroId, stopChange, isEquipView)
 	local qualityLevel = self._heroData:getQualityLevel() == 0 and "" or "+" .. self._heroData:getQualityLevel()
 
 	self._nameLabel:setString(nameString .. qualityLevel)
+	self._nameLabel:getVirtualRenderer():setAdditionalKerning(-2)
+
+	local strlen = utf8.len(nameString .. qualityLevel)
+
+	if strlen > 12 then
+		self._nameLabel:setFontSize(26)
+	else
+		self._nameLabel:setFontSize(30)
+	end
+
 	GameStyle:setHeroNameByQuality(self._nameLabel, self._heroData:getQuality())
 	self._costLabel:setString(self._heroData:getCost())
 	self._rarityIcon:loadTexture(GameStyle:getHeroRarityImage(self._heroData:getRarity()), 1)

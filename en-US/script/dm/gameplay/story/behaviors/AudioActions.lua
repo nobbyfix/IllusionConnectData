@@ -119,3 +119,39 @@ function VolumeAudio:start(args)
 
 	return BehaviorResult.Success
 end
+
+VolumeInAudio = class("VolumeInAudio", BaseAction)
+
+function VolumeInAudio:start(args)
+	local actor = self:getActor()
+
+	if actor and args and args.type and args.duration then
+		actor:volumeInAudio(args.type, args.duration, "in")
+	end
+
+	return BehaviorResult.Success
+end
+
+VolumeOutAudio = class("VolumeOutAudio", BaseAction)
+
+function VolumeOutAudio:start(args)
+	local actor = self:getActor()
+
+	if actor and args and args.type and args.duration then
+		actor:volumeInAudio(args.type, args.duration, "out")
+	end
+
+	return BehaviorResult.Success
+end
+
+VolumeOutAudioStop = class("VolumeOutAudioStop", BaseAction)
+
+function VolumeOutAudioStop:start(args)
+	local actor = self:getActor()
+
+	if actor and args and args.type then
+		actor:volumeOutAudioStop(args.type)
+	end
+
+	return BehaviorResult.Success
+end

@@ -1741,6 +1741,11 @@ local mappings = {
 		name = "ReturnShopActivityMediator",
 		type = "@C"
 	},
+	TrialRoadMainMediator = {
+		url = "dm.gameplay.activity.view.TrialRoadMainMediator",
+		name = "TrialRoadMainMediator",
+		type = "@C"
+	},
 	ActivityLoginLoverMediator = {
 		url = "dm.gameplay.activity.view.ActivityLoginLoverMediator",
 		name = "ActivityLoginLoverMediator",

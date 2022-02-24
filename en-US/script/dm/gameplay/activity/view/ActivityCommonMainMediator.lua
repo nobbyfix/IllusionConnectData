@@ -102,6 +102,7 @@ function ActivityCommonMainMediator:onRegister()
 	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BLOCKLEVEL_CHANGE, self, self.checkForceGuide)
 
 	self._main = self:getView():getChildByName("main")
 	self._imageBg = self._main:getChildByName("Imagebg")
@@ -273,6 +274,94 @@ function ActivityCommonMainMediator:initData()
 	self._jumpActivity = self._activity:getJumpActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
+
+	if self._activity and self._activity:getConfig().UI == "ACTIVITYMAGIC" then
+		local btnRoadWay = self:getView():getChildByFullName("main.btnRoadWay")
+
+		if btnRoadWay then
+			btnRoadWay:setVisible(self:checkRoadWayIsOpen())
+		end
+
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local guideAgent = storyDirector:getGuideAgent()
+		local btnRoadWay = btnRoadWay
+
+		storyDirector:setClickEnv("activityblock.btnRoadWay", btnRoadWay, function (sender, eventType)
+			local url = self._activityConfig.MiniGame
+			local param = {}
+
+			self:getEventDispatcher():dispatchEvent(Event:new(EVT_OPENURL, {
+				url = url,
+				extParams = param
+			}))
+		end)
+		delayCallByTime(500, function ()
+			storyDirector:notifyWaiting("enter_magic_view")
+		end)
+		btnRoadWay:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				local url = self._activityConfig.MiniGame
+				local param = {}
+
+				self:getEventDispatcher():dispatchEvent(Event:new(EVT_OPENURL, {
+					url = url,
+					extParams = param
+				}))
+			end
+		end)
+		btnRoadWay:setTouchEnabled(true)
+
+		if not btnRoadWay.redPoint then
+			local redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
+
+			redPoint:addTo(btnRoadWay):posite(100, 80):setScale(0.8)
+
+			btnRoadWay.redPoint = redPoint
+
+			redPoint:setVisible(true)
+		end
+
+		local trialroadActId = string.split(self._activityConfig.MiniGame, "=")[2]
+		local trialroadActivity = self._activitySystem:getActivityById(trialroadActId)
+
+		if trialroadActivity then
+			btnRoadWay.redPoint:setVisible(trialroadActivity:hasRedPoint())
+		end
+	end
+end
+
+function ActivityCommonMainMediator:checkForceGuide()
+	if self._activity and self._activity:getConfig().UI == "ACTIVITYMAGIC" and self:checkRoadWayIsOpen() then
+		local tscriptNames = "guide_RoadWay"
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local guideAgent = storyDirector:getGuideAgent()
+		local guideSaved = guideAgent:isSaved(tscriptNames)
+
+		if not guideAgent:isGuiding() and not guideSaved then
+			guideAgent:trigger(tscriptNames, nil, )
+		end
+	end
+end
+
+function ActivityCommonMainMediator:checkRoadWayIsOpen()
+	if self._activity and self._activity:getConfig().UI == "ACTIVITYMAGIC" then
+		local trialRoad_Unlock = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "TrialRoad_Unlock", "content")
+		local roadwayOpenActId = trialRoad_Unlock.Activity
+		local roadwayOpenMapId = trialRoad_Unlock.ActivityBlockMap
+		local roadwayOpenPoiId = trialRoad_Unlock.ActivityStoryPoint
+		local activity = self._activitySystem:getActivityById(roadwayOpenActId)
+		local model = activity:getBlockMapActivity(roadwayOpenMapId)
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local storyAgent = storyDirector:getStoryAgent()
+		local pointInfo, pointType = model:getPointById(roadwayOpenPoiId)
+		local map = model:getActivityMapById(roadwayOpenMapId)
+
+		if pointType == kStageTypeMap.StoryPoint then
+			return pointInfo:isPass()
+		end
+
+		return false
+	end
 end
 
 function ActivityCommonMainMediator:initView()
@@ -1087,7 +1176,7 @@ function ActivityCommonMainMediator:setStageView()
 		self._stageAnim:setPosition(anim.position)
 		self._stageAnim:addTo(self._stagePanel:getChildByName("button"))
 
-		if self._stagePanel:getChildByName("image") then
+		if self._stagePanel:getChildByName("image") and not anim.showDiImg then
 			self._stagePanel:getChildByName("image"):setVisible(false)
 		end
 

@@ -246,7 +246,7 @@ function TowerSystem:showMasterDetailsView(params)
 end
 
 function TowerSystem:showHeroDetailsView(heroId)
-	local view = self:getInjector():getInstance("TowerHeroShowDetailsView")
+	local view = self:getInjector():getInstance("HeroInfoView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		heroId = heroId

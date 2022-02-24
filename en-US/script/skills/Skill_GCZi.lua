@@ -249,8 +249,13 @@ all.Skill_GCZi_Unique = {
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
-			local warriorcount = global.SpecialPropGetter(_env, "warriorcount")(_env, global.FriendMaster(_env))
-			local healercount = global.SpecialPropGetter(_env, "healercount")(_env, global.FriendMaster(_env))
+			local warriorcount = 0
+			local healercount = 0
+
+			if global.FriendMaster(_env) then
+				warriorcount = global.SpecialPropGetter(_env, "warriorcount")(_env, global.FriendMaster(_env))
+				healercount = global.SpecialPropGetter(_env, "healercount")(_env, global.FriendMaster(_env))
+			end
 
 			if warriorcount >= 4 and healercount >= 4 and warriorcount and healercount then
 				for _, unit in global.__iter__(global.FriendUnits(_env, global.NEIGHBORS_OF(_env, _env.ACTOR))) do
@@ -826,7 +831,7 @@ all.GCZi_Passive_jianzhen = {
 
 			if global.SelectTrapCount(_env, global.GetCell(_env, _env.unit), global.BUFF_MARKED(_env, "GCZi_jianzhen")) > 0 and not global.MARKED(_env, "GCZi")(_env, _env.unit) and global.PETS - global.SUMMONS(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 				for i = 1, 4 do
-					if count < 2 and global.MARKED(_env, "LDYu")(_env, _env.unit) and global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Key")) > 0 then
+					if global.FriendMaster(_env) and count < 2 and global.MARKED(_env, "LDYu")(_env, _env.unit) and global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Time")) > 0 then
 						break
 					end
 
@@ -1166,8 +1171,13 @@ all.Skill_GCZi_Unique_EX = {
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
-			local warriorcount = global.SpecialPropGetter(_env, "warriorcount")(_env, global.FriendMaster(_env))
-			local healercount = global.SpecialPropGetter(_env, "healercount")(_env, global.FriendMaster(_env))
+			local warriorcount = 0
+			local healercount = 0
+
+			if global.FriendMaster(_env) then
+				warriorcount = global.SpecialPropGetter(_env, "warriorcount")(_env, global.FriendMaster(_env))
+				healercount = global.SpecialPropGetter(_env, "healercount")(_env, global.FriendMaster(_env))
+			end
 
 			if warriorcount >= 4 and healercount >= 4 and warriorcount and healercount then
 				for _, unit in global.__iter__(global.FriendUnits(_env, global.NEIGHBORS_OF(_env, _env.ACTOR))) do

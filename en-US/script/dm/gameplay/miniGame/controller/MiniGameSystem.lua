@@ -109,9 +109,6 @@ end
 
 function MiniGameSystem:tryEnter(data)
 	local activityId = data and data.activityId
-
-	dump(data, "data____")
-
 	local activity = self._activitySystem:getActivityById(activityId)
 	activity = activity or self._activitySystem:getActivityByType(ActivityType.KMiniGame)
 

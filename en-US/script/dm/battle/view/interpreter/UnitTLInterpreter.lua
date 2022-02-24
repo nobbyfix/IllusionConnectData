@@ -507,6 +507,14 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 			end
 		end
 
+		if not rareity then
+			local enemyInfo = ConfigReader:getRecordById("EnemyMaster", configId)
+
+			if enemyInfo then
+				rareity = enemyInfo.Rarity
+			end
+		end
+
 		if rareity == 15 then
 			effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , true)
 

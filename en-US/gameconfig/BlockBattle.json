@@ -842,6 +842,57 @@
         "WaitMode": 1,
         "WaitModeLimit": 1500
     },
+    "Activity_Magic_1": {
+        "BattleMode": 2,
+        "CombatAdjust": "Skill_CombatDominating",
+        "EnemyEnergyBase": {
+            "pattern": "COVER",
+            "value": 0
+        },
+        "EnemyFBReduction": "",
+        "EnemySpecialPassive": [],
+        "EnemySpecialPassiveParm": "",
+        "EnergyBase": "",
+        "Fight_StageEnergyMax": [
+            50,
+            30
+        ],
+        "FriendFBReduction": "",
+        "FriendSpecialPassive": [],
+        "FriendSpecialPassiveParm": "",
+        "HeroRageBase": "",
+        "HeroRageRules": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150,
+            "a4": 0
+        },
+        "MasterRageBase": "",
+        "MasterRageRules": {
+            "a1": [
+                10,
+                800
+            ],
+            "a2": 60,
+            "a3": 0,
+            "a4": 6
+        },
+        "SkipTime": 0,
+        "StageEnergy": [
+            [
+                {
+                    "EnemyEnergySpeed": 1,
+                    "EnergySpeed": 1,
+                    "duration": 90000
+                }
+            ]
+        ],
+        "WaitMode": 1,
+        "WaitModeLimit": 1500
+    },
     "Activity_MaxEnegy_1": {
         "BattleMode": 2,
         "CombatAdjust": "Skill_CombatDominating",

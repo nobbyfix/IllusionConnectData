@@ -235,6 +235,9 @@ local muiscCfg = {
 	},
 	ActivityOrientMapView = {
 		noAutoPlay = true
+	},
+	ActivityMagicMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

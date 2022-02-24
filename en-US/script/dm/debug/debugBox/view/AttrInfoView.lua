@@ -250,6 +250,7 @@ local rateResult = "a + b"
 
 function AttrInfoView:createAttr()
 	local attrFactor = self._singleRole:getAttrFactor()
+	HeroAttribute._cache_res = {}
 	local combat, attrData = self._singleRole:getCombat(self._evnType)
 	local str1 = self._isHero and "英雄" or "主角"
 	str1 = str1 .. ":" .. self._singleRole:getName() .. "         ID = " .. tostring(self._roleId) .. "          场景环境 = " .. tostring(self._evnType)

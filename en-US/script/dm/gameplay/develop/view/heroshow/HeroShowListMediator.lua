@@ -870,6 +870,13 @@ function HeroShowListMediator:initHeroInfo()
 	end
 
 	local length = utf8.len(nameString)
+
+	if length > 12 then
+		name:setFontSize(26)
+	else
+		name:setFontSize(30)
+	end
+
 	local Image_bg = self._heroNode:getChildByFullName("nameBg.Image_bg")
 	local size = name:getVirtualRendererSize()
 

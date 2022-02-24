@@ -336,6 +336,11 @@ local kExtResponseMap = {
 		funcName = "tryEnterActivityMailView",
 		entry = ViewAreaEntry:new("ActivityMailView")
 	},
+	ActivityTrialRoadView = {
+		instanceName = "ActivitySystem",
+		funcName = "tryEnterTrialRoadMainView",
+		entry = ViewAreaEntry:new("ActivityTrialRoadView")
+	},
 	JumpView = {
 		switch = "fn_MiniGame_Jump",
 		instanceName = "MiniGameSystem",

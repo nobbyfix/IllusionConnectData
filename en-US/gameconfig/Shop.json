@@ -383,13 +383,41 @@
         "Positions": [
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_Association_16"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_Association_17"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_Association_1"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_Association_2"
             },
@@ -413,13 +441,41 @@
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_Association_18"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_Association_19"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_Association_6"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_Association_7"
             },
@@ -484,7 +540,7 @@
         },
         "RsShow": "IR_Club",
         "ShopType": "Normal",
-        "Shop_Id": "",
+        "Shop_Id": 10012,
         "UnlockSystem": "Shop_Association_Unlock"
     },
     "Shop_Crystal": {
@@ -1084,7 +1140,7 @@
         },
         "RsShow": "IHF_HeroStone_SSR",
         "ShopType": "GoldPartner",
-        "Shop_Id": "",
+        "Shop_Id": 10013,
         "UnlockSystem": "Shop_GoldPartner_Unlock"
     },
     "Shop_PVE": {
@@ -1094,15 +1150,49 @@
         "Positions": [
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVE_17"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVE_18"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVE_1"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVE_2"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1
+                },
+                "ShopId": "Shop_PVE_16"
             },
             {
                 "Condition": {
@@ -1124,13 +1214,41 @@
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVE_19"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVE_20"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVE_6"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVE_7"
             },
@@ -1181,12 +1299,6 @@
                     "LEVEL": 1
                 },
                 "ShopId": "Shop_PVE_15"
-            },
-            {
-                "Condition": {
-                    "LEVEL": 1
-                },
-                "ShopId": "Shop_PVE_16"
             }
         ],
         "RefreshCurrency": "",
@@ -1194,14 +1306,14 @@
         "RefreshPrice": [
             100,
             200,
-            301
+            300
         ],
         "ResetSystem": {
             "resetMode": "NONE"
         },
         "RsShow": "IR_Pve",
         "ShopType": "Normal",
-        "Shop_Id": "",
+        "Shop_Id": 10011,
         "UnlockSystem": "Shop_PVE_Unlock"
     },
     "Shop_PVP": {
@@ -1211,19 +1323,67 @@
         "Positions": [
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVP_17"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVP_18"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVP_1"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVP_2"
             },
             {
                 "Condition": {
                     "LEVEL": 1
+                },
+                "ShopId": "Shop_PVP_16"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVP_21"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVP_3"
             },
@@ -1241,13 +1401,41 @@
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVP_19"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1646092800,
+                        1648771199
+                    ]
+                },
+                "ShopId": "Shop_PVP_20"
+            },
+            {
+                "Condition": {
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVP_6"
             },
             {
                 "Condition": {
-                    "LEVEL": 1
+                    "LEVEL": 1,
+                    "TIME": [
+                        1643673600,
+                        1646092799
+                    ]
                 },
                 "ShopId": "Shop_PVP_7"
             },
@@ -1312,7 +1500,7 @@
         },
         "RsShow": "IR_Arena",
         "ShopType": "Normal",
-        "Shop_Id": "",
+        "Shop_Id": 10010,
         "UnlockSystem": "Shop_PVP_Unlock"
     },
     "Shop_StageArena": {
@@ -1569,7 +1757,7 @@
         },
         "RsShow": "IR_URMapCoin",
         "ShopType": "Normal",
-        "Shop_Id": 10007,
+        "Shop_Id": 10009,
         "UnlockSystem": "Shop_URMap_Unlock"
     }
 }

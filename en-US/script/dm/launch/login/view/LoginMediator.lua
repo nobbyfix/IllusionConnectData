@@ -14,6 +14,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickReboot"
 	},
+	["main.btnPanel.bugFeedback"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickBugFeedback"
+	},
 	["main.PrivacyPanel.Layout.CheckBox"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onCheckBoxCilck"
@@ -73,6 +77,7 @@ function LoginMediator:enterWithData(data)
 	}
 
 	StatisticSystem:send(content)
+	dump(app.pkgConfig, "app.pkgConfig")
 end
 
 function LoginMediator:animOver()
@@ -169,6 +174,10 @@ function LoginMediator:initMainUI()
 
 	self._reloginBtn:setVisible(false)
 	self._reloginBtn:getChildByFullName("text"):enableOutline(cc.c4b(47, 47, 47, 204), 2)
+
+	self._bugFeedback = mainlayer:getChildByFullName("btnPanel.bugFeedback")
+
+	self._bugFeedback:setVisible(false)
 
 	local version = mainlayer:getChildByFullName("version")
 	local curVersion = app:getAssetsManager():getCurrentVersion()
@@ -383,6 +392,7 @@ function LoginMediator:loginSucc()
 	self:refreshServerPanel()
 	self._reloginBtn:setVisible(true)
 	self._announceBtn:setVisible(true)
+	self._bugFeedback:setVisible(true)
 
 	local serverNum = self:getGlobalServerNum()
 
@@ -917,6 +927,20 @@ end
 function LoginMediator:onClickReboot()
 	if SDKHelper and SDKHelper:isEnableSdk() then
 		SDKHelper:userCenterByPwrdView()
+	end
+end
+
+function LoginMediator:onClickBugFeedback()
+	local serverData = self._loginSystem:getCurServer()
+	local rid = self._loginSystem:getUid() or ""
+	local serverId = serverData and serverData:getSecId() or ""
+
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		SDKHelper:openAIHelpElva(tostring(rid), "", serverId)
+	else
+		local CSDHelper = require("sdk.CSDHelper")
+
+		cc.Application:getInstance():openURL(CSDHelper:getCSDUrl(rid))
 	end
 end
 

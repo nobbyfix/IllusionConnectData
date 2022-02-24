@@ -118129,6 +118129,2269 @@
         "DrawCard": "",
         "FirstFormation": ""
     },
+    "CardMagicSE01E": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE02P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE02P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE02P01U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE02P01U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE02P01U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P01U01N06"
+            ]
+        }
+    },
+    "CardMagicSE01M": {
+        "CardCollection": [],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM02P01U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM02P01U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM02P01U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM02P01U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM02P01U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P01U01N06"
+            ]
+        }
+    },
+    "CardMagicSE02E": {
+        "CardCollection": [
+            "MagicE02P02U02N01",
+            "MagicE02P02U02N02",
+            "MagicE02P02U02N03",
+            "MagicE02P02U02N04",
+            "MagicE02P02U02N05",
+            "MagicE02P02U03N01",
+            "MagicE02P02U03N02",
+            "MagicE02P02U03N04",
+            "MagicE02P02U03N05",
+            "MagicE02P02U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                10,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE02P02U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE02P02U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE02P02U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE02P02U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE02P02U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P02U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicE02P02U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE02P02U01N09"
+            ]
+        }
+    },
+    "CardMagicSE02M": {
+        "CardCollection": [
+            "MagicM02P02U02N01",
+            "MagicM02P02U02N02",
+            "MagicM02P02U02N03",
+            "MagicM02P02U02N04",
+            "MagicM02P02U02N05",
+            "MagicM02P02U03N01",
+            "MagicM02P02U03N02",
+            "MagicM02P02U03N04",
+            "MagicM02P02U03N05",
+            "MagicM02P02U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                10,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM02P02U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM02P02U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM02P02U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM02P02U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM02P02U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P02U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicM02P02U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM02P02U01N09"
+            ]
+        }
+    },
+    "CardMagicSE03E": {
+        "CardCollection": [
+            "MagicE02P03U02N02",
+            "MagicE02P03U02N05",
+            "MagicE02P03U02N07",
+            "MagicE02P03U02N09",
+            "MagicE02P03U03N01",
+            "MagicE02P03U03N02",
+            "MagicE02P03U03N03",
+            "MagicE02P03U03N04",
+            "MagicE02P03U03N05",
+            "MagicE02P03U03N06",
+            "MagicE02P03U03N07",
+            "MagicE02P03U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                12,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "12": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicE02P03U01N02"
+            ],
+            "4": [
+                "fixed",
+                "MagicE02P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE02P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P03U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicE02P03U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE02P03U01N09"
+            ]
+        }
+    },
+    "CardMagicSE03M": {
+        "CardCollection": [
+            "MagicM02P03U02N02",
+            "MagicM02P03U02N05",
+            "MagicM02P03U02N07",
+            "MagicM02P03U02N09",
+            "MagicM02P03U03N01",
+            "MagicM02P03U03N02",
+            "MagicM02P03U03N03",
+            "MagicM02P03U03N04",
+            "MagicM02P03U03N05",
+            "MagicM02P03U03N06",
+            "MagicM02P03U03N07",
+            "MagicM02P03U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                12,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "12": [
+                "library",
+                "3"
+            ],
+            "5": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicM02P03U01N02"
+            ],
+            "4": [
+                "fixed",
+                "MagicM02P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM02P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P03U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicM02P03U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM02P03U01N09"
+            ]
+        }
+    },
+    "CardMagicSE04E": {
+        "CardCollection": [
+            "MagicE02P04U02N01",
+            "MagicE02P04U02N04",
+            "MagicE02P04U02N05",
+            "MagicE02P04U02N06",
+            "MagicE02P04U02N09",
+            "MagicE02P04U03N02",
+            "MagicE02P04U03N04",
+            "MagicE02P04U03N05",
+            "MagicE02P04U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicE02P04U01N02"
+            ],
+            "7": [
+                "fixed",
+                "MagicE02P04U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE02P04U01N09"
+            ]
+        }
+    },
+    "CardMagicSE04M": {
+        "CardCollection": [
+            "MagicM02P04U02N01",
+            "MagicM02P04U02N04",
+            "MagicM02P04U02N05",
+            "MagicM02P04U02N06",
+            "MagicM02P04U02N09",
+            "MagicM02P04U03N02",
+            "MagicM02P04U03N05"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicM02P04U01N02"
+            ],
+            "7": [
+                "fixed",
+                "MagicM02P04U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM02P04U01N09"
+            ]
+        }
+    },
+    "CardMagicSE05E": {
+        "CardCollection": [
+            "MagicE02P05U02N02",
+            "MagicE02P05U02N04",
+            "MagicE02P05U02N06",
+            "MagicE02P05U02N07",
+            "MagicE02P05U03N04",
+            "MagicE02P05U03N05",
+            "MagicE02P05U03N06",
+            "MagicE02P05U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE02P05U01N01"
+            ],
+            "5": [
+                "fixed",
+                "MagicE02P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P05U01N06"
+            ]
+        }
+    },
+    "CardMagicSE05M": {
+        "CardCollection": [
+            "MagicM02P05U02N02",
+            "MagicM02P05U02N04",
+            "MagicM02P05U02N06",
+            "MagicM02P05U03N05",
+            "MagicM02P05U03N06",
+            "MagicM02P05U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM02P05U01N01"
+            ],
+            "5": [
+                "fixed",
+                "MagicM02P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P05U01N06"
+            ]
+        }
+    },
+    "CardMagicSE06E": {
+        "CardCollection": [
+            "MagicE02P06U02N03",
+            "MagicE02P06U02N04",
+            "MagicE02P06U02N05",
+            "MagicE02P06U02N06",
+            "MagicE02P06U03N01",
+            "MagicE02P06U03N02",
+            "MagicE02P06U03N03",
+            "MagicE02P06U03N05"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE02P06U01N01"
+            ],
+            "3": [
+                "fixed",
+                "MagicE02P06U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE02P06U01N04"
+            ],
+            "9": [
+                "fixed",
+                "MagicE02P06U01N09"
+            ]
+        }
+    },
+    "CardMagicSE06M": {
+        "CardCollection": [
+            "MagicM02P06U02N03",
+            "MagicM02P06U02N04",
+            "MagicM02P06U02N06",
+            "MagicM02P06U03N01",
+            "MagicM02P06U03N02",
+            "MagicM02P06U03N03"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "6": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM02P06U01N01"
+            ],
+            "3": [
+                "fixed",
+                "MagicM02P06U01N03"
+            ],
+            "9": [
+                "fixed",
+                "MagicM02P06U01N09"
+            ]
+        }
+    },
+    "CardMagicSE07E": {
+        "CardCollection": [
+            "MagicE02P07U02N01",
+            "MagicE02P07U02N02",
+            "MagicE02P07U02N03",
+            "MagicE02P07U02N04",
+            "MagicE02P07U02N05",
+            "MagicE02P07U02N06",
+            "MagicE02P07U02N07",
+            "MagicE02P07U03N02",
+            "MagicE02P07U03N03",
+            "MagicE02P07U03N04",
+            "MagicE02P07U03N05",
+            "MagicE02P07U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                8,
+                1
+            ],
+            "3": [
+                9,
+                12,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "12": [
+                "library",
+                "3"
+            ],
+            "8": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicE02P07U01N02"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P07U01N06"
+            ],
+            "9": [
+                "fixed",
+                "MagicE02P07U01N09"
+            ]
+        }
+    },
+    "CardMagicSE07M": {
+        "CardCollection": [
+            "MagicM02P07U02N01",
+            "MagicM02P07U02N02",
+            "MagicM02P07U02N03",
+            "MagicM02P07U02N04",
+            "MagicM02P07U02N05",
+            "MagicM02P07U02N06",
+            "MagicM02P07U02N07",
+            "MagicM02P07U03N02",
+            "MagicM02P07U03N03",
+            "MagicM02P07U03N05"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                8,
+                1
+            ],
+            "3": [
+                9,
+                10,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "3"
+            ],
+            "8": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicM02P07U01N02"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P07U01N06"
+            ],
+            "9": [
+                "fixed",
+                "MagicM02P07U01N09"
+            ]
+        }
+    },
+    "CardMagicSE08E": {
+        "CardCollection": [
+            "MagicE02P08U02N02",
+            "MagicE02P08U02N04",
+            "MagicE02P08U02N05",
+            "MagicE02P08U02N06",
+            "MagicE02P08U02N09",
+            "MagicE02P08U03N04",
+            "MagicE02P08U03N05",
+            "MagicE02P08U03N06",
+            "MagicE02P08U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE02P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE02P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE02P08U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE02P08U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE02P08U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE02P08U01N06"
+            ]
+        }
+    },
+    "CardMagicSE08M": {
+        "CardCollection": [
+            "MagicM02P08U02N02",
+            "MagicM02P08U02N04",
+            "MagicM02P08U02N06",
+            "MagicM02P08U02N09",
+            "MagicM02P08U03N04",
+            "MagicM02P08U03N06",
+            "MagicM02P08U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM02P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM02P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM02P08U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM02P08U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM02P08U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM02P08U01N06"
+            ]
+        }
+    },
+    "CardMagicSH01M": {
+        "CardCollection": [
+            "MagicH01P01U02N02",
+            "MagicH01P01U02N04",
+            "MagicH01P01U02N05",
+            "MagicH01P01U02N06",
+            "MagicH01P01U03N02",
+            "MagicH01P01U03N04",
+            "MagicH01P01U03N06",
+            "MagicH01P01U03N07",
+            "MagicH01P01U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicH01P01U01N02"
+            ],
+            "7": [
+                "fixed",
+                "MagicH01P01U01N07"
+            ]
+        }
+    },
+    "CardMagicSH02M": {
+        "CardCollection": [
+            "MagicH01P02U02N04",
+            "MagicH01P02U02N05",
+            "MagicH01P02U02N07",
+            "MagicH01P02U02N09",
+            "MagicH01P02U03N01",
+            "MagicH01P02U03N04",
+            "MagicH01P02U03N05"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                5,
+                1
+            ],
+            "3": [
+                6,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "5": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicH01P02U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicH01P02U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicH01P02U01N03"
+            ],
+            "5": [
+                "fixed",
+                "MagicH01P02U01N05"
+            ]
+        }
+    },
+    "CardMagicSH03M": {
+        "CardCollection": [
+            "MagicH01P03U02N04",
+            "MagicH01P03U02N05",
+            "MagicH01P03U02N06",
+            "MagicH01P03U02N07",
+            "MagicH01P03U02N09",
+            "MagicH01P03U03N01",
+            "MagicH01P03U03N03",
+            "MagicH01P03U03N05",
+            "MagicH01P03U03N07",
+            "MagicH01P03U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                10,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "10": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicH01P03U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicH01P03U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicH01P03U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicH01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicH01P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicH01P03U01N06"
+            ]
+        }
+    },
+    "CardMagicSN01E": {
+        "CardCollection": [
+            "MagicE01P01U02N04",
+            "MagicE01P01U02N05",
+            "MagicE01P01U02N06",
+            "MagicE01P01U03N01",
+            "MagicE01P01U03N02",
+            "MagicE01P01U03N03",
+            "MagicE01P01U03N07",
+            "MagicE01P01U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicE01P01U01N02"
+            ],
+            "7": [
+                "fixed",
+                "MagicE01P01U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE01P01U01N09"
+            ]
+        }
+    },
+    "CardMagicSN01M": {
+        "CardCollection": [
+            "MagicM01P01U02N04",
+            "MagicM01P01U02N05",
+            "MagicM01P01U02N06",
+            "MagicM01P01U03N01",
+            "MagicM01P01U03N02",
+            "MagicM01P01U03N03",
+            "MagicM01P01U03N07",
+            "MagicM01P01U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicM01P01U01N02"
+            ],
+            "7": [
+                "fixed",
+                "MagicM01P01U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM01P01U01N09"
+            ]
+        }
+    },
+    "CardMagicSN02E": {
+        "CardCollection": [
+            "MagicE01P02U02N05",
+            "MagicE01P02U02N07",
+            "MagicE01P02U02N09",
+            "MagicE01P02U03N01",
+            "MagicE01P02U03N02",
+            "MagicE01P02U03N03",
+            "MagicE01P02U03N04",
+            "MagicE01P02U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicE01P02U01N02"
+            ],
+            "4": [
+                "fixed",
+                "MagicE01P02U01N04"
+            ],
+            "6": [
+                "fixed",
+                "MagicE01P02U01N06"
+            ]
+        }
+    },
+    "CardMagicSN02M": {
+        "CardCollection": [
+            "MagicM01P02U02N05",
+            "MagicM01P02U02N07",
+            "MagicM01P02U02N09",
+            "MagicM01P02U03N01",
+            "MagicM01P02U03N02",
+            "MagicM01P02U03N03",
+            "MagicM01P02U03N04",
+            "MagicM01P02U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "2": [
+                "fixed",
+                "MagicM01P02U01N02"
+            ],
+            "4": [
+                "fixed",
+                "MagicM01P02U01N04"
+            ],
+            "6": [
+                "fixed",
+                "MagicM01P02U01N06"
+            ]
+        }
+    },
+    "CardMagicSN03E": {
+        "CardCollection": [
+            "MagicE01P03U02N01",
+            "MagicE01P03U02N02",
+            "MagicE01P03U02N03",
+            "MagicE01P03U02N04",
+            "MagicE01P03U02N05",
+            "MagicE01P03U02N06",
+            "MagicE01P03U03N01",
+            "MagicE01P03U03N02",
+            "MagicE01P03U03N03",
+            "MagicE01P03U03N04",
+            "MagicE01P03U03N05",
+            "MagicE01P03U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                7,
+                1
+            ],
+            "3": [
+                8,
+                12,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "12": [
+                "library",
+                "3"
+            ],
+            "7": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P03U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P03U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P03U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE01P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE01P03U01N06"
+            ]
+        }
+    },
+    "CardMagicSN03M": {
+        "CardCollection": [
+            "MagicM01P03U02N01",
+            "MagicM01P03U02N02",
+            "MagicM01P03U02N03",
+            "MagicM01P03U02N04",
+            "MagicM01P03U02N05",
+            "MagicM01P03U02N06",
+            "MagicM01P03U03N01",
+            "MagicM01P03U03N02",
+            "MagicM01P03U03N03",
+            "MagicM01P03U03N04",
+            "MagicM01P03U03N05",
+            "MagicM01P03U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                7,
+                1
+            ],
+            "3": [
+                8,
+                12,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "12": [
+                "library",
+                "3"
+            ],
+            "7": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P03U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P03U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P03U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM01P03U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM01P03U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM01P03U01N06"
+            ]
+        }
+    },
+    "CardMagicSN04E": {
+        "CardCollection": [
+            "MagicE01P04U02N04",
+            "MagicE01P04U02N05",
+            "MagicE01P04U02N06",
+            "MagicE01P04U02N07",
+            "MagicE01P04U02N09",
+            "MagicE01P04U03N01",
+            "MagicE01P04U03N02",
+            "MagicE01P04U03N03",
+            "MagicE01P04U03N04",
+            "MagicE01P04U03N05",
+            "MagicE01P04U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                11,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "11": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P04U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P04U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE01P04U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE01P04U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE01P04U01N06"
+            ]
+        }
+    },
+    "CardMagicSN04M": {
+        "CardCollection": [
+            "MagicM01P04U02N04",
+            "MagicM01P04U02N05",
+            "MagicM01P04U02N06",
+            "MagicM01P04U02N07",
+            "MagicM01P04U02N09",
+            "MagicM01P04U03N01",
+            "MagicM01P04U03N02",
+            "MagicM01P04U03N03",
+            "MagicM01P04U03N04",
+            "MagicM01P04U03N05",
+            "MagicM01P04U03N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                11,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "11": [
+                "library",
+                "3"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P04U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P04U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P04U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM01P04U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM01P04U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM01P04U01N06"
+            ]
+        }
+    },
+    "CardMagicSN05E": {
+        "CardCollection": [
+            "MagicE01P05U02N02",
+            "MagicE01P05U02N05",
+            "MagicE01P05U02N09",
+            "MagicE01P05U03N01",
+            "MagicE01P05U03N03",
+            "MagicE01P05U03N05",
+            "MagicE01P05U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                7,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P05U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P05U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P05U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE01P05U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicE01P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE01P05U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicE01P05U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE01P05U01N09"
+            ]
+        }
+    },
+    "CardMagicSN05M": {
+        "CardCollection": [
+            "MagicM01P05U02N02",
+            "MagicM01P05U02N05",
+            "MagicM01P05U03N01",
+            "MagicM01P05U03N03",
+            "MagicM01P05U03N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                5,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "5": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P05U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P05U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P05U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM01P05U01N04"
+            ],
+            "5": [
+                "fixed",
+                "MagicM01P05U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM01P05U01N06"
+            ],
+            "7": [
+                "fixed",
+                "MagicM01P05U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM01P05U01N09"
+            ]
+        }
+    },
+    "CardMagicSN06E": {
+        "CardCollection": [
+            "MagicE01P06U02N01",
+            "MagicE01P06U02N02",
+            "MagicE01P06U02N03",
+            "MagicE01P06U02N04",
+            "MagicE01P06U02N05",
+            "MagicE01P06U02N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P06U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P06U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P06U01N03"
+            ],
+            "5": [
+                "fixed",
+                "MagicE01P06U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicE01P06U01N06"
+            ],
+            "9": [
+                "fixed",
+                "MagicE01P06U01N09"
+            ]
+        }
+    },
+    "CardMagicSN06M": {
+        "CardCollection": [
+            "MagicM01P06U02N01",
+            "MagicM01P06U02N02",
+            "MagicM01P06U02N03",
+            "MagicM01P06U02N04",
+            "MagicM01P06U02N05",
+            "MagicM01P06U02N06"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "6": [
+                "library",
+                "2"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P06U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P06U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P06U01N03"
+            ],
+            "5": [
+                "fixed",
+                "MagicM01P06U01N05"
+            ],
+            "6": [
+                "fixed",
+                "MagicM01P06U01N06"
+            ],
+            "9": [
+                "fixed",
+                "MagicM01P06U01N09"
+            ]
+        }
+    },
+    "CardMagicSN07E": {
+        "CardCollection": [
+            "MagicE01P07U02N04",
+            "MagicE01P07U02N05",
+            "MagicE01P07U02N06",
+            "MagicE01P07U02N07",
+            "MagicE01P07U02N09",
+            "MagicE01P07U03N01",
+            "MagicE01P07U03N02",
+            "MagicE01P07U03N03",
+            "MagicE01P07U04N05",
+            "MagicE01P07U04N07",
+            "MagicE01P07U04N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                9,
+                1
+            ],
+            "4": [
+                10,
+                11,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "11": [
+                "library",
+                "4"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P07U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P07U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P07U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicE01P07U01N04"
+            ],
+            "9": [
+                "fixed",
+                "MagicE01P07U01N09"
+            ]
+        }
+    },
+    "CardMagicSN07M": {
+        "CardCollection": [
+            "MagicM01P07U02N04",
+            "MagicM01P07U02N05",
+            "MagicM01P07U02N06",
+            "MagicM01P07U02N07",
+            "MagicM01P07U02N09",
+            "MagicM01P07U03N01",
+            "MagicM01P07U03N02",
+            "MagicM01P07U03N03",
+            "MagicM01P07U04N05",
+            "MagicM01P07U04N07",
+            "MagicM01P07U04N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                6,
+                1
+            ],
+            "3": [
+                7,
+                9,
+                1
+            ],
+            "4": [
+                10,
+                11,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "11": [
+                "library",
+                "4"
+            ],
+            "6": [
+                "library",
+                "2"
+            ],
+            "9": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P07U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P07U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P07U01N03"
+            ],
+            "4": [
+                "fixed",
+                "MagicM01P07U01N04"
+            ],
+            "9": [
+                "fixed",
+                "MagicM01P07U01N09"
+            ]
+        }
+    },
+    "CardMagicSN08E": {
+        "CardCollection": [
+            "MagicE01P08U02N04",
+            "MagicE01P08U02N05",
+            "MagicE01P08U02N06",
+            "MagicE01P08U03N01",
+            "MagicE01P08U03N02",
+            "MagicE01P08U03N03",
+            "MagicE01P08U03N05",
+            "MagicE01P08U04N04",
+            "MagicE01P08U04N05",
+            "MagicE01P08U04N07",
+            "MagicE01P08U04N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                4,
+                1
+            ],
+            "3": [
+                5,
+                8,
+                1
+            ],
+            "4": [
+                9,
+                11,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "11": [
+                "library",
+                "4"
+            ],
+            "4": [
+                "library",
+                "2"
+            ],
+            "8": [
+                "library",
+                "3"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicE01P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicE01P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicE01P08U01N03"
+            ],
+            "7": [
+                "fixed",
+                "MagicE01P08U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicE01P08U01N09"
+            ]
+        }
+    },
+    "CardMagicSN08M": {
+        "CardCollection": [
+            "MagicM01P08U02N04",
+            "MagicM01P08U02N06",
+            "MagicM01P08U03N01",
+            "MagicM01P08U03N02",
+            "MagicM01P08U03N03",
+            "MagicM01P08U03N05",
+            "MagicM01P08U04N05",
+            "MagicM01P08U04N07",
+            "MagicM01P08U04N09"
+        ],
+        "CardLibrary": {
+            "1": [
+                1,
+                1,
+                1
+            ],
+            "2": [
+                2,
+                3,
+                1
+            ],
+            "3": [
+                4,
+                7,
+                1
+            ],
+            "4": [
+                8,
+                9,
+                1
+            ]
+        },
+        "DrawCard": {
+            "1": [
+                "library",
+                "1"
+            ],
+            "3": [
+                "library",
+                "2"
+            ],
+            "7": [
+                "library",
+                "3"
+            ],
+            "9": [
+                "library",
+                "4"
+            ]
+        },
+        "FirstFormation": {
+            "1": [
+                "fixed",
+                "MagicM01P08U01N01"
+            ],
+            "2": [
+                "fixed",
+                "MagicM01P08U01N02"
+            ],
+            "3": [
+                "fixed",
+                "MagicM01P08U01N03"
+            ],
+            "7": [
+                "fixed",
+                "MagicM01P08U01N07"
+            ],
+            "9": [
+                "fixed",
+                "MagicM01P08U01N09"
+            ]
+        }
+    },
     "CardMusicE01S01": {
         "CardCollection": [
             "AE08P01U02N03",

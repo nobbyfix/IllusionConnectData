@@ -53,10 +53,11 @@ ShopSystem:has("_activitySystem", {
 }):injectWith("ActivitySystem")
 
 KMonthCardType = {
-	KMonthCardForever = "monthCardF",
+	KSurfaceShop = "SurfaceShop",
+	KMonthCard = "MonthCard_1",
 	KMonthCardSubscribe = "MonthCard_SubScribe",
 	KCardFanxingZhi = "KCarfFanxingZhiMeng",
-	KMonthCard = "MonthCard_1"
+	KMonthCardForever = "monthCardF"
 }
 kShopResetType = {
 	KResetWeek = "Week",
@@ -324,7 +325,7 @@ function ShopSystem:enterShop(data)
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, entryData))
 	end
 
-	if entryData.shopId == ShopSpecialId.kShopSurface then
+	if entryData.shopId == ShopSpecialId.kShopSurface or entryData.shopId == ShopSpecialId.kShopRecommend then
 		self:requestGetSurfaceShop(callback)
 	elseif entryData.shopId == ShopSpecialId.kShopPackage or entryData.shopId == ShopSpecialId.kShopSurfacePackage or entryData.shopId == ShopSpecialId.kShopTimeLimit then
 		self:requestGetPackageShop(callback)
@@ -677,6 +678,20 @@ function ShopSystem:getShopSurfaceById(surfaceId)
 	end
 
 	return nil
+end
+
+function ShopSystem:getSurfaceShowInShopById(surfaceIds)
+	local list = self:getSurfaceList()
+
+	for i, v in ipairs(list) do
+		for i, sid in ipairs(surfaceIds) do
+			if v:getId() == sid and v:getStock() == 1 then
+				return true
+			end
+		end
+	end
+
+	return false
 end
 
 function ShopSystem:syncPackage(data)
@@ -1402,6 +1417,10 @@ function ShopSystem:getRecomendData()
 						end
 					end
 
+					if pid == KMonthCardType.KSurfaceShop and self:getSurfaceShowInShopById(info.Config.Surface) then
+						add = true
+					end
+
 					local package = self._packageList[pid]
 
 					if package then
@@ -1746,4 +1765,10 @@ end
 
 function ShopSystem:getRedPointForShopExchange()
 	return self._bagSystem:getRedPointForShopExchange()
+end
+
+function ShopSystem:getHeroNameAndModelByHeroId(heroId)
+	local info = self._heroSystem:getHeroInfoById(heroId)
+
+	return info.name, info.roleModel
 end

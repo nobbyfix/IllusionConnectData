@@ -34,5 +34,23 @@
         "Swtich": 1,
         "UnlockReward": "DH02_UnlockReward",
         "UnlockTime": "2021-11-10 05:00:00"
+    },
+    "DH03_Map": {
+        "HeroId": [
+            "BBLMa",
+            "ZZBBWei",
+            "KTSJKe"
+        ],
+        "Name": "DH03_MapDes",
+        "PointId": [
+            "DH03N01_Point",
+            "DH03N02_Point",
+            "DH03N03_Point"
+        ],
+        "RewardShow": "DH03_CoreRewardShow",
+        "SortNumber": 3,
+        "Swtich": 1,
+        "UnlockReward": "DH03_UnlockReward",
+        "UnlockTime": "2022-02-20 05:00:00"
     }
 }
