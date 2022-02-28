@@ -1659,7 +1659,7 @@ all.EquipSkill_Weapon_15103_3 = {
 
 						global.ApplyBuff(_env, global.EnemyMaster(_env), {
 							timing = 4,
-							duration = 0.1,
+							duration = 3,
 							tags = {
 								"NUMERIC",
 								"BUFF",
