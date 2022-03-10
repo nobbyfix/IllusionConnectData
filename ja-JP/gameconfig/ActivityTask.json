@@ -12160,6 +12160,222 @@
         "Reward": "Activity_SDTZiTask_9_Reward",
         "TaskIcon": ""
     },
+    "Activity_SP_PNCao_20220321Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "SP_PNCao"
+                ]
+            }
+        ],
+        "Desc": "Activity_SP_PNCao_20220321Task_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_SP_PNCao_20220321Task_1_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "SP_PNCao"
+                ]
+            }
+        ],
+        "Desc": "Activity_SP_PNCao_20220321Task_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_SP_PNCao_20220321Task_10_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "SP_PNCao"
+                ]
+            }
+        ],
+        "Desc": "Activity_SP_PNCao_20220321Task_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_SP_PNCao_20220321Task_11_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "SP_PNCao"
+                ]
+            }
+        ],
+        "Desc": "Activity_SP_PNCao_20220321Task_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_SP_PNCao_20220321Task_12_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_2_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_SP_PNCao_20220321Task_2_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_3_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_SP_PNCao_20220321Task_3_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_4_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_SP_PNCao_20220321Task_4_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_5_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_SP_PNCao_20220321Task_5_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_6_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_SP_PNCao_20220321Task_6_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_7_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_SP_PNCao_20220321Task_7_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_8_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_SP_PNCao_20220321Task_8_Reward",
+        "TaskIcon": ""
+    },
+    "Activity_SP_PNCao_20220321Task_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_busu_20210710Task_9_Name",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_busu_20210710Task_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_SP_PNCao_20220321Task_9_Reward",
+        "TaskIcon": ""
+    },
     "Activity_SP_SSQXin_20220109Task_1": {
         "Condition": [
             {
@@ -20438,6 +20654,23 @@
         "Reward": "DrawCard_SP_KTSJKe_Activity_Task_Reward",
         "TaskIcon": ""
     },
+    "DrawCard_SP_PNCao_20220310_Activity_Task": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "DrawCard_SP_PNCao_20220310_Activity_Task_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "DrawCard_SP_PNCao_20220310_Activity_Task_Name",
+        "OrderNum": 1,
+        "Reward": "DrawCard_SP_PNCao_20220310_Activity_Task_Reward",
+        "TaskIcon": ""
+    },
     "DrawCard_SP_PNCao_Activity_Task": {
         "Condition": [
             {
@@ -20497,7 +20730,7 @@
                     50
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -20517,7 +20750,7 @@
                     100
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -20537,7 +20770,7 @@
                     200
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -20557,7 +20790,7 @@
                     300
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -20577,7 +20810,7 @@
                     400
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -20682,8 +20915,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk",
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskM01",
                     "DuskSN05",
                     "DuskSN05M"
@@ -20706,8 +20939,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk",
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskM01",
                     "DuskSN08",
                     "DuskSN08M"
@@ -20730,8 +20963,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk",
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskM02",
                     "DuskSE04",
                     "DuskSE04M"
@@ -20754,8 +20987,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk",
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskM02",
                     "DuskSE07",
                     "DuskSE07M"
@@ -20778,8 +21011,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk",
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskM02",
                     "DuskSE08",
                     "DuskSE08M"
@@ -20802,7 +21035,7 @@
                     3
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20823,7 +21056,7 @@
                     6
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20844,7 +21077,7 @@
                     8
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20865,7 +21098,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20886,7 +21119,7 @@
                     12
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20907,7 +21140,7 @@
                     14
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20928,7 +21161,7 @@
                     16
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "ELITE"
                 ]
             }
@@ -20999,7 +21232,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map"
+                    "ActivityBlock_Dusk_Re_Map"
                 ]
             }
         ],
@@ -25198,6 +25431,142 @@
         "Name": "EightDays_8_Name",
         "OrderNum": 8,
         "Reward": "EightDays_20220308_8_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20220324_1_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20220324_2_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20220324_3_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20220324_4_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20220324_5_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20220324_6_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20220324_7_Reward",
+        "TaskIcon": ""
+    },
+    "EightDays_20220324_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20220324_8_Reward",
         "TaskIcon": ""
     },
     "EightDays_ZuoHe02_1": {

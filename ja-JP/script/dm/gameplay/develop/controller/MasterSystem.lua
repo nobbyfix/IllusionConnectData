@@ -1115,3 +1115,15 @@ function MasterSystem:getMasterLeadStatgeInfoById(leadStageId)
 
 	return nil
 end
+
+function MasterSystem:getMasterLeadStageHeadById(masterId, condition)
+	if condition.LeadStage then
+		local id, level = self:getMasterLeadStatgeLevel(masterId)
+
+		if level then
+			return condition.LeadStage <= level
+		end
+	end
+
+	return false
+end

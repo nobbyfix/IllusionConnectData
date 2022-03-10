@@ -363,7 +363,7 @@ function ArenaNewDefendTeamMediator:createCardsGroupName()
 
 	self._teamName = self._main:getChildByFullName("nameBg.teamName")
 
-	self._teamName:setString(self._curTeam:getName())
+	self._teamName:setString(Strings:get("ClassArena_UI29"))
 	self._main:getChildByFullName("nameBg.nameBtn"):setVisible(false)
 end
 

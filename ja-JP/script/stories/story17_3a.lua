@@ -536,7 +536,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -600,7 +600,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 			actor = __getnode__(_root, "JNLong"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
 				}
 			end
 		}),
@@ -669,7 +669,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -679,7 +679,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "ZTXChang"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -688,7 +688,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -697,7 +697,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "FTLEShi"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
@@ -705,7 +705,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -791,7 +791,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -815,14 +815,14 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 			actor = __getnode__(_root, "JNLong"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
 				}
 			end
 		}),
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -1004,7 +1004,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -1029,7 +1029,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "ZTXChang"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1038,7 +1038,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			}),
@@ -1047,7 +1047,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				actor = __getnode__(_root, "FTLEShi"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
+						duration = 0
 					}
 				end
 			})
@@ -1055,7 +1055,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -1092,7 +1092,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				sleep({
 					args = function (_ctx)
 						return {
-							duration = 0.15
+							duration = 0.2
 						}
 					end
 				}),
@@ -1194,7 +1194,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				sleep({
 					args = function (_ctx)
 						return {
-							duration = 0.15
+							duration = 0.2
 						}
 					end
 				}),
@@ -1307,7 +1307,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 				sleep({
 					args = function (_ctx)
 						return {
-							duration = 0.15
+							duration = 0.2
 						}
 					end
 				}),
@@ -1428,7 +1428,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 			actor = __getnode__(_root, "JNLong"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
 				}
 			end
 		}),
@@ -1730,14 +1730,14 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 			actor = __getnode__(_root, "BLTu"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
 				}
 			end
 		}),
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -2054,7 +2054,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.2
 				}
 			end
 		}),
@@ -2064,13 +2064,6 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 			args = function (_ctx)
 				return {
 					duration = 0.2
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 0.15
 				}
 			end
 		}),
@@ -2350,7 +2343,7 @@ function scene_story17_3a.actions.start_story17_3a(_root, args)
 		sleep({
 			args = function (_ctx)
 				return {
-					duration = 0.15
+					duration = 0.22
 				}
 			end
 		}),

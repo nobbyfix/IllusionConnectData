@@ -952,6 +952,12 @@ function SettingSystem:getShowHeadImgList()
 			else
 				data.unlock = 0
 			end
+		elseif value.Type == 6 then
+			if masterSystem:getMasterLeadStageHeadById(value.HeroMasterId, value.Condition) then
+				data.unlock = 1
+			else
+				data.unlock = 0
+			end
 		end
 
 		if data.unlock == 1 or value.IsHiddenHead == 0 then

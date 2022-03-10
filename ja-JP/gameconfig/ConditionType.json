@@ -499,7 +499,7 @@
     "Condi_DuskExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Dusk_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Dusk_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DuskExchangeAchieve_Desc"
     },
@@ -1045,7 +1045,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220312.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1066,7 +1066,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220312.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },

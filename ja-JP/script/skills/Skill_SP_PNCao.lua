@@ -224,7 +224,14 @@ all.Skill_SP_PNCao_Unique = {
 				global.RetainObject(_env, unit)
 			end
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 2 then
+				global.GroundEft(_env, _env.ACTOR, "Ground_SP_PNCao_yyu")
+			else
+				global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			end
+
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -444,11 +451,14 @@ all.Skill_SP_PNCao_Passive = {
 
 			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local RoleModel = {
-					"Model_SP_PNCao_NNuo"
+					"Model_SP_PNCao_NNuo",
+					"Model_SP_PNCao_NNuo_Awake",
+					"Model_SP_PNCao_NNuo_yyu"
 				}
-				local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
+					local num = global.GetCardSufaceIndex(_env, card)
+
 					global.InheritCard(_env, card, RoleModel[num + 1])
 				end
 			end
@@ -731,7 +741,14 @@ all.Skill_SP_PNCao_Unique_EX = {
 				global.RetainObject(_env, unit)
 			end
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 2 then
+				global.GroundEft(_env, _env.ACTOR, "Ground_SP_PNCao_yyu")
+			else
+				global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			end
+
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -967,11 +984,14 @@ all.Skill_SP_PNCao_Passive_EX = {
 
 			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local RoleModel = {
-					"Model_SP_PNCao_NNuo"
+					"Model_SP_PNCao_NNuo",
+					"Model_SP_PNCao_NNuo_Awake",
+					"Model_SP_PNCao_NNuo_yyu"
 				}
-				local num = global.GetSufaceIndex(_env, _env.ACTOR)
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
+					local num = global.GetCardSufaceIndex(_env, card)
+
 					global.InheritCard(_env, card, RoleModel[num + 1])
 				end
 			end
@@ -1097,7 +1117,14 @@ all.Skill_SP_PNCao_Unique_Awaken = {
 				global.RetainObject(_env, unit)
 			end
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			local num = global.GetSufaceIndex(_env, _env.ACTOR)
+
+			if num == 2 then
+				global.GroundEft(_env, _env.ACTOR, "Ground_SP_PNCao_yyu")
+			else
+				global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			end
+
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -1379,7 +1406,8 @@ all.Skill_SP_PNCao_Passive_Awaken = {
 			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local RoleModel = {
 					"Model_SP_PNCao_NNuo",
-					"Model_SP_PNCao_NNuo_Awake"
+					"Model_SP_PNCao_NNuo_Awake",
+					"Model_SP_PNCao_NNuo_yyu"
 				}
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
