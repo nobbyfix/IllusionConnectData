@@ -1171,7 +1171,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S01"
                 ]
             }
@@ -1195,7 +1195,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S02"
                 ]
             }
@@ -1219,7 +1219,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S03"
                 ]
             }
@@ -1243,7 +1243,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S04"
                 ]
             }
@@ -1267,7 +1267,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S05"
                 ]
             }
@@ -1291,7 +1291,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS02S01"
                 ]
             }
@@ -1315,7 +1315,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS02S02"
                 ]
             }
@@ -1339,7 +1339,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS02S03"
                 ]
             }
@@ -1363,7 +1363,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS02S04"
                 ]
             }
@@ -6284,6 +6284,87 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_STORY_57": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M20",
+                    "M20S10"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_20_1",
+        "Name": "BlockPoint_S20S01_Name",
+        "Num": 57,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story20_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_58": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M20",
+                    "M20S30"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_20_1",
+        "Name": "BlockPoint_S20S02_Name",
+        "Num": 58,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story20_2a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_59": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M20",
+                    "M20S50"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_20_1",
+        "Name": "BlockPoint_S20S03_Name",
+        "Num": 59,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story20_3a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_STORY_6": {
         "Condition": [
             {
@@ -6308,6 +6389,87 @@
         "Picture": "",
         "Screen": "",
         "StoryLink": "story03_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_60": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M21",
+                    "M21S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_21_1",
+        "Name": "BlockPoint_S21S01_Name",
+        "Num": 60,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story21_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_61": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M21",
+                    "M21S40"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_21_1",
+        "Name": "BlockPoint_S21S02_Name",
+        "Num": 61,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story21_2a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_62": {
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M21",
+                    "M21S60"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_21_1",
+        "Name": "BlockPoint_S21S03_Name",
+        "Num": 62,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "story21_3a",
         "Time": "",
         "Type": "STORY"
     },
@@ -7944,7 +8106,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_01",
         "Name": "BlockPoint_S01E01_Name",
-        "Num": 57,
+        "Num": 100,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory01_1a",
@@ -7971,7 +8133,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_09",
         "Name": "BlockPoint_S08E01_Name",
-        "Num": 66,
+        "Num": 109,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory08_1a",
@@ -7998,7 +8160,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_09",
         "Name": "BlockPoint_S09E01_Name",
-        "Num": 67,
+        "Num": 110,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory09_1a",
@@ -8025,7 +8187,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_11",
         "Name": "BlockPoint_S10E01_Name",
-        "Num": 68,
+        "Num": 111,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory10_1a",
@@ -8052,7 +8214,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_11",
         "Name": "BlockPoint_S11E01_Name",
-        "Num": 69,
+        "Num": 112,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory11_1a",
@@ -8079,7 +8241,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_13",
         "Name": "BlockPoint_S12E01_Name",
-        "Num": 70,
+        "Num": 113,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory12_1a",
@@ -8106,7 +8268,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_13",
         "Name": "BlockPoint_S13E01_Name",
-        "Num": 71,
+        "Num": 114,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory13_1a",
@@ -8133,7 +8295,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_15",
         "Name": "BlockPoint_S14E01_Name",
-        "Num": 72,
+        "Num": 115,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory14_1a",
@@ -8160,7 +8322,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_15",
         "Name": "BlockPoint_S15E01_Name",
-        "Num": 73,
+        "Num": 116,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory15_1a",
@@ -8187,10 +8349,37 @@
         "Englishname": "",
         "Listpicture": "s_main_img_17",
         "Name": "BlockPoint_S16E01_Name",
-        "Num": 74,
+        "Num": 117,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory16_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_HARD_19": {
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "E17",
+                    "E17S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_17",
+        "Name": "BlockPoint_S17E01_Name",
+        "Num": 118,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "elitestory17_1a",
         "Time": "",
         "Type": "STORY"
     },
@@ -8214,10 +8403,118 @@
         "Englishname": "",
         "Listpicture": "s_main_img_01",
         "Name": "BlockPoint_S01E02_Name",
-        "Num": 58,
+        "Num": 101,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory01_2a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_HARD_20": {
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "E18",
+                    "E18S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_19",
+        "Name": "BlockPoint_S18E01_Name",
+        "Num": 119,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "elitestory18_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_HARD_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "E19",
+                    "E19S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_19",
+        "Name": "BlockPoint_S19E01_Name",
+        "Num": 120,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "elitestory19_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_HARD_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "E20",
+                    "E20S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_20_2",
+        "Name": "BlockPoint_S20E01_Name",
+        "Num": 121,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "elitestory20_1a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_STORY_HARD_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_EliteStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "E21",
+                    "E21S20"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_main_img_21_2",
+        "Name": "BlockPoint_S21E01_Name",
+        "Num": 122,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "elitestory21_1a",
         "Time": "",
         "Type": "STORY"
     },
@@ -8241,7 +8538,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_03",
         "Name": "BlockPoint_S02E01_Name",
-        "Num": 59,
+        "Num": 102,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory02_1a",
@@ -8268,7 +8565,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_03",
         "Name": "BlockPoint_S03E01_Name",
-        "Num": 60,
+        "Num": 103,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory03_1a",
@@ -8295,7 +8592,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_03",
         "Name": "BlockPoint_S03E02_Name",
-        "Num": 61,
+        "Num": 104,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory03_2a",
@@ -8322,7 +8619,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_05",
         "Name": "BlockPoint_S04E01_Name",
-        "Num": 62,
+        "Num": 105,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory04_1a",
@@ -8349,7 +8646,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_05",
         "Name": "BlockPoint_S05E01_Name",
-        "Num": 63,
+        "Num": 106,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory05_1a",
@@ -8376,7 +8673,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_07",
         "Name": "BlockPoint_S06E01_Name",
-        "Num": 64,
+        "Num": 107,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory06_1a",
@@ -8403,7 +8700,7 @@
         "Englishname": "",
         "Listpicture": "s_main_img_07",
         "Name": "BlockPoint_S07E01_Name",
-        "Num": 65,
+        "Num": 108,
         "Picture": "",
         "Screen": "",
         "StoryLink": "elitestory07_1a",

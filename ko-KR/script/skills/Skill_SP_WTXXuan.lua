@@ -98,8 +98,6 @@ all.Skill_SP_WTXXuan_Normal = {
 						buffeft2
 					})
 				end
-
-				global.DiligentRound(_env, 100)
 			else
 				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 				global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
@@ -107,6 +105,16 @@ all.Skill_SP_WTXXuan_Normal = {
 				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			end
+		end)
+		exec["@time"]({
+			567
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SP_WTXXuan_Benti")(_env, _env.ACTOR) then
+				global.DiligentRound(_env, 100)
 			end
 		end)
 
@@ -183,6 +191,12 @@ all.Skill_SP_WTXXuan_Proud = {
 					buffeft3
 				})
 			end
+		end)
+		exec["@time"]({
+			1267
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 
 			global.DiligentRound(_env, 100)
 		end)
@@ -272,21 +286,15 @@ all.Skill_SP_WTXXuan_Unique = {
 					"Model_SP_WTXXuan_CBJun_4"
 				}
 				local num = global.Random(_env, 1, 4)
-				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+				local card = global.InheritCardByConfig(_env, {
+					cost = 3,
+					ignorePassive = true,
+					ignoreUnique = true,
+					card = _env.ACTOR,
+					modelId = RoleModel[num]
+				})
 
 				if card then
-					local cardvaluechange = global.CardCostEnchant(_env, "-", 14, 1)
-
-					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						tags = {
-							"CARDBUFF",
-							"SummonedCBJun",
-							"UNDISPELLABLE"
-						}
-					}, {
-						cardvaluechange
-					})
-
 					local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
 						HealRateFactor = 0
 					})
@@ -338,8 +346,6 @@ all.Skill_SP_WTXXuan_Unique = {
 				friend_num = friend_num + 1
 			end
 
-			global.DiligentRound(_env, 100)
-
 			if friend_num > 5 then
 				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_WTXXuan"))) do
 					local buffeft1 = global.NumericEffect(_env, "+atkrate", {
@@ -364,6 +370,14 @@ all.Skill_SP_WTXXuan_Unique = {
 					global.FlyBallEffect(_env, _env.ACTOR, card)
 				end
 			end
+		end)
+		exec["@time"]({
+			2700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.DiligentRound(_env, 100)
 		end)
 		exec["@time"]({
 			3000
@@ -421,21 +435,15 @@ all.Skill_SP_WTXXuan_Passive = {
 						"Model_SP_WTXXuan_CBJun_4"
 					}
 					local num = global.Random(_env, 1, 4)
-					local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+					local card = global.InheritCardByConfig(_env, {
+						cost = 3,
+						ignorePassive = true,
+						ignoreUnique = true,
+						card = _env.ACTOR,
+						modelId = RoleModel[num]
+					})
 
 					if card then
-						local cardvaluechange = global.CardCostEnchant(_env, "-", 14, 1)
-
-						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							tags = {
-								"CARDBUFF",
-								"SummonedCBJun",
-								"UNDISPELLABLE"
-							}
-						}, {
-							cardvaluechange
-						})
-
 						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
 							HealRateFactor = 0
 						})
@@ -447,6 +455,7 @@ all.Skill_SP_WTXXuan_Passive = {
 							limit = 1,
 							tags = {
 								"CARDBUFF",
+								"SummonedCBJun",
 								"SummonedCBJun_Passive",
 								"UNDISPELLABLE",
 								"UNSTEALABLE"
@@ -580,7 +589,7 @@ all.SummonedCBJun_Passive = {
 			entry = prototype.passive1
 		})
 		passive1 = global["[duration]"](this, {
-			0
+			200
 		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -662,6 +671,12 @@ all.SummonedCBJun_Passive = {
 
 				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal)
 			end
+		end)
+		exec["@time"]({
+			150
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 
 			global.DiligentRound(_env, 100)
 		end)

@@ -325,6 +325,7 @@ function ShopMainMediator:adjustView()
 	self._scrollView = self._mainPanel:getChildByFullName("scrollView")
 
 	self._scrollView:setScrollBarEnabled(false)
+	self._scrollView:setContentSize(cc.size(currentWidthNormalTab, self._scrollView:getContentSize().height))
 
 	self._cellWidthTab = self._tabClone:getContentSize().width
 	self._cellWidthNormal = self._cellCloneNormal:getContentSize().width + 13
@@ -332,6 +333,7 @@ function ShopMainMediator:adjustView()
 	self._goldScrollView = self._mainPanel:getChildByFullName("goldScrollView")
 
 	self._goldScrollView:setScrollBarEnabled(false)
+	self._goldScrollView:setContentSize(cc.size(currentWidthNormalTab, self._goldScrollView:getContentSize().height))
 
 	self._goldCell = self._view:getChildByFullName("goldCell")
 end

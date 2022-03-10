@@ -74,6 +74,9 @@
     "Target_BDPan": {
         "Function": "return MainTarget()"
     },
+    "Target_BDZSheng": {
+        "Function": "return MainTarget()"
+    },
     "Target_BEr": {
         "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
     },
@@ -105,6 +108,9 @@
         "Function": "return GenInfo(EnemyAll(),Red,true)"
     },
     "Target_DNTLuo": {
+        "Function": "return MainTarget()"
+    },
+    "Target_FCXJi": {
         "Function": "return MainTarget()"
     },
     "Target_FEMSi": {

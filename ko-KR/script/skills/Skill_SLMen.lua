@@ -729,5 +729,266 @@ all.Skill_SLMen_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_SLMen_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		this.RateFactor = externs.RateFactor
+
+		assert(this.RateFactor ~= nil, "External variable `RateFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3534
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_SLMen"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_SLMen_Skill3"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2000
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SpecialPropGetter(_env, "slmen_unicount")(_env, _env.ACTOR) == 0 then
+				local critrate = global.UnitPropGetter(_env, "critrate")(_env, _env.ACTOR)
+				local atkrate = global.floor(_env, critrate / 0.05) * 0.05
+				local buffatkrate = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, atkrate)
+				local buffcrit = global.NumericEffect(_env, "+critrate", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					display = "CritRateUp",
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"UNSTEALABLE",
+						"UNDISPELLABLE",
+						"SLMen_Crit2ATK"
+					}
+				}, {
+					buffcrit
+				})
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					display = "AtkUp",
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"UNSTEALABLE",
+						"UNDISPELLABLE",
+						"SLMen_Crit2ATK"
+					}
+				}, {
+					buffatkrate
+				})
+
+				local count = global.SpecialNumericEffect(_env, "+slmen_unicount", {
+					"?Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"COUNT",
+						"UNSTEALABLE",
+						"UNDISPELLABLE",
+						"SLMen_COUNT"
+					}
+				}, {
+					count
+				})
+			end
+
+			local SLMen_Passive = global.PassiveFunEffectBuff(_env, "SLMen_UniPassiveAwaken")
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"COUNT",
+					"UNSTEALABLE",
+					"UNDISPELLABLE",
+					"SLMen_COUNT"
+				}
+			}, {
+				SLMen_Passive
+			})
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				if global.UnitPropGetter(_env, "shield")(_env, unit) ~= 0 then
+					local buffunhurt = global.NumericEffect(_env, "-unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, 0.3)
+
+					global.ApplyBuff(_env, unit, {
+						timing = 1,
+						display = "UnHurtRateDown",
+						group = "SLMen_UnHurtRateDown",
+						duration = 3,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"DEBUFF",
+							"UNSTEALABLE",
+							"UNDISPELLABLE"
+						}
+					}, {
+						buffunhurt
+					})
+				end
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				if global.SUMMONS(_env, unit) then
+					damage.val = damage.val * this.RateFactor
+				end
+
+				local result = global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, unit, {
+					0,
+					300,
+					600,
+					900,
+					1200
+				}, global.SplitValue(_env, damage, {
+					0.2,
+					0.2,
+					0.2,
+					0.2,
+					0.2
+				}))
+			end
+		end)
+		exec["@time"]({
+			3534
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
+all.SLMen_UniPassiveAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:AFTER_UNIQUE"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "SLMen_Crit2ATK"), 99)
+		end)
+
+		return _env
+	end
+}
 
 return _M

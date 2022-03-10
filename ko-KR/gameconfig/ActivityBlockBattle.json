@@ -17735,8 +17735,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -17745,11 +17745,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -17786,10 +17786,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -17871,8 +17871,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -17881,17 +17881,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_1",
                 "4": "Dusk_Buff_Star4_2_1",
                 "5": "Dusk_Buff_Star5_2_1",
@@ -17903,7 +17903,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE01",
         "Master": "",
         "Name": "BlockPoint_DuskS09M_Name",
@@ -17931,10 +17931,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -18015,8 +18015,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18025,11 +18025,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -18063,10 +18063,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -18140,8 +18140,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18150,17 +18150,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_2",
                 "4": "Dusk_Buff_Star4_2_2",
                 "5": "Dusk_Buff_Star5_2_2",
@@ -18172,7 +18172,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE02",
         "Master": "",
         "Name": "BlockPoint_DuskS10M_Name",
@@ -18197,10 +18197,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -18267,8 +18267,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18277,11 +18277,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -18318,10 +18318,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -18389,8 +18389,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18399,17 +18399,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_3",
                 "4": "Dusk_Buff_Star4_2_3",
                 "5": "Dusk_Buff_Star5_2_3",
@@ -18421,7 +18421,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE03",
         "Master": "",
         "Name": "BlockPoint_DuskS11M_Name",
@@ -18449,10 +18449,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -18519,8 +18519,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18529,11 +18529,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -18567,10 +18567,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -18638,8 +18638,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18648,17 +18648,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_4",
                 "4": "Dusk_Buff_Star4_2_4",
                 "5": "Dusk_Buff_Star5_2_4",
@@ -18670,7 +18670,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE04",
         "Master": "",
         "Name": "BlockPoint_DuskS12M_Name",
@@ -18695,10 +18695,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -18765,8 +18765,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18775,11 +18775,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -18816,10 +18816,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -18887,8 +18887,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -18897,17 +18897,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_5",
                 "4": "Dusk_Buff_Star4_2_5",
                 "5": "Dusk_Buff_Star5_2_5",
@@ -18919,7 +18919,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE05",
         "Master": "",
         "Name": "BlockPoint_DuskS13M_Name",
@@ -18947,10 +18947,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -19017,8 +19017,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19027,11 +19027,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -19068,10 +19068,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -19139,8 +19139,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19149,17 +19149,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_6",
                 "4": "Dusk_Buff_Star4_2_6",
                 "5": "Dusk_Buff_Star5_2_6",
@@ -19171,7 +19171,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE06",
         "Master": "",
         "Name": "BlockPoint_DuskS14M_Name",
@@ -19199,10 +19199,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -19269,8 +19269,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19279,11 +19279,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -19321,10 +19321,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -19392,8 +19392,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19402,17 +19402,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_7",
                 "4": "Dusk_Buff_Star4_2_7",
                 "5": "Dusk_Buff_Star5_2_7",
@@ -19424,7 +19424,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE07",
         "Master": "",
         "Name": "BlockPoint_DuskS15M_Name",
@@ -19453,10 +19453,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -19523,8 +19523,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19533,11 +19533,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -19575,10 +19575,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -19646,8 +19646,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19656,17 +19656,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_2_8",
                 "4": "Dusk_Buff_Star4_2_8",
                 "5": "Dusk_Buff_Star5_2_8",
@@ -19678,7 +19678,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSE08",
         "Master": "",
         "Name": "BlockPoint_DuskS16M_Name",
@@ -19705,10 +19705,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -19775,8 +19775,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19785,11 +19785,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -19825,10 +19825,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -19895,8 +19895,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -19905,11 +19905,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -19945,10 +19945,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -20015,8 +20015,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20025,11 +20025,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -20067,10 +20067,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DuskStamina": 20
+            "IR_DuskStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -20148,8 +20148,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20158,11 +20158,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -20194,10 +20194,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -20276,8 +20276,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20286,17 +20286,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_1",
                 "4": "Dusk_Buff_Star4_1_1",
                 "5": "Dusk_Buff_Star5_1_1",
@@ -20308,7 +20308,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN01",
         "Master": "",
         "Name": "BlockPoint_DuskS01M_Name",
@@ -20331,10 +20331,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -20551,8 +20551,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20561,11 +20561,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -20600,10 +20600,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -20685,8 +20685,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20695,17 +20695,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_2",
                 "4": "Dusk_Buff_Star4_1_2",
                 "5": "Dusk_Buff_Star5_1_2",
@@ -20717,7 +20717,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN02",
         "Master": "",
         "Name": "BlockPoint_DuskS02M_Name",
@@ -20743,10 +20743,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -20827,8 +20827,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20837,11 +20837,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -20876,10 +20876,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -20961,8 +20961,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -20971,17 +20971,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_3",
                 "4": "Dusk_Buff_Star4_1_3",
                 "5": "Dusk_Buff_Star5_1_3",
@@ -20993,7 +20993,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN03",
         "Master": "",
         "Name": "BlockPoint_DuskS03M_Name",
@@ -21019,10 +21019,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -21103,8 +21103,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21113,11 +21113,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21152,10 +21152,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -21229,8 +21229,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21239,17 +21239,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_4",
                 "4": "Dusk_Buff_Star4_1_4",
                 "5": "Dusk_Buff_Star5_1_4",
@@ -21261,7 +21261,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN04",
         "Master": "",
         "Name": "BlockPoint_DuskS04M_Name",
@@ -21287,10 +21287,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -21357,8 +21357,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21367,11 +21367,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21407,10 +21407,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -21478,8 +21478,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21488,17 +21488,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_5",
                 "4": "Dusk_Buff_Star4_1_5",
                 "5": "Dusk_Buff_Star5_1_5",
@@ -21510,7 +21510,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN05",
         "Master": "",
         "Name": "BlockPoint_DuskS05M_Name",
@@ -21537,10 +21537,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -21613,8 +21613,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21623,11 +21623,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21662,10 +21662,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -21747,8 +21747,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21757,17 +21757,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_6",
                 "4": "Dusk_Buff_Star4_1_6",
                 "5": "Dusk_Buff_Star5_1_6",
@@ -21779,7 +21779,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN06",
         "Master": "",
         "Name": "BlockPoint_DuskS06M_Name",
@@ -21805,10 +21805,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -21883,8 +21883,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -21893,11 +21893,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -21932,10 +21932,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22003,8 +22003,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -22013,17 +22013,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_7",
                 "4": "Dusk_Buff_Star4_1_7",
                 "5": "Dusk_Buff_Star5_1_7",
@@ -22035,7 +22035,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN07",
         "Master": "",
         "Name": "BlockPoint_DuskS07M_Name",
@@ -22061,10 +22061,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -22131,8 +22131,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -22141,11 +22141,11 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -22180,10 +22180,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DuskStamina": 12
+            "IR_DuskStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -22251,8 +22251,8 @@
         "GoldReward": 0,
         "HeroAttrExtra": {
             "FLEr": "Hero_ABlock_FLEr_Extra",
-            "HLa": "Hero_ABlock_HLa_Extra",
-            "YMJDe": "Hero_ABlock_YMJDe_Extra"
+            "SP_PNCao": "Hero_ABlock_SP_PNCao_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -22261,17 +22261,17 @@
                 "4": "Dusk_FLEr_Buff_Star4",
                 "5": "Dusk_FLEr_Buff_Star5"
             },
-            "YMJDe": {
-                "3": "Dusk_YMJDe_Buff_Star3",
-                "4": "Dusk_YMJDe_Buff_Star4",
-                "5": "Dusk_YMJDe_Buff_Star5",
-                "6": "Dusk_YMJDe_Buff_Star6"
+            "XDRLa": {
+                "3": "Dusk_XDRLa_Buff_Star3",
+                "4": "Dusk_XDRLa_Buff_Star4",
+                "5": "Dusk_XDRLa_Buff_Star5",
+                "6": "Dusk_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "HLa": {
+            "SP_PNCao": {
                 "3": "Dusk_Buff_Star3_1_8",
                 "4": "Dusk_Buff_Star4_1_8",
                 "5": "Dusk_Buff_Star5_1_8",
@@ -22283,7 +22283,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Dusk_ExchangeItem",
+        "MainShowItem": "IM_Dusk_ExchangeItem_Re",
         "Map": "DuskSN08",
         "Master": "",
         "Name": "BlockPoint_DuskS08M_Name",
@@ -22307,10 +22307,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DuskStamina": 6
+            "IR_DuskStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [

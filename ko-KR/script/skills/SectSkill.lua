@@ -1506,7 +1506,7 @@ all.SectSkill_Master_FuHun_1 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
 					"+Normal",
 					"+Normal"
@@ -1650,7 +1650,7 @@ all.SectSkill_Master_FuHun_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				local buffeft1 = global.NumericEffect(_env, "+unhurtrate", {
 					"+Normal",
 					"+Normal"

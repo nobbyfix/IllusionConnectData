@@ -1001,14 +1001,14 @@
         "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_21",
         "BackgroundLength": 2272,
-        "ButtonIcon": "main_chapter_10.jpg",
+        "ButtonIcon": "main_chapter_11.jpg",
         "ContinueDiamonds": "",
         "HidePoint": [],
         "Icon": "asset/ui/chapter/zx_bg_zj_1.png",
         "IconDesc": "",
         "MapName": "BlockMap_E21_Name",
         "MapReward": "",
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenStar": 3280,
         "Order": 21,
         "StageEventPoint": [],
@@ -1040,7 +1040,9 @@
             "E21S20"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S21E01"
+        ],
         "Task": [],
         "Type": "ELITE",
         "URL": "",
@@ -2841,7 +2843,7 @@
     },
     "M21": {
         "BGM": "Mus_Story_Stage",
-        "Background": "Main_Img_00",
+        "Background": "Main_Img_21",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_11.jpg",
         "ContinueDiamonds": "",
@@ -2850,7 +2852,7 @@
         "IconDesc": "",
         "MapName": "BlockMap_M21_Name",
         "MapReward": "Test_BlockSp_Reward",
-        "OpenLevel": 99,
+        "OpenLevel": 1,
         "OpenStar": 3200,
         "Order": 21,
         "StageEventPoint": [],
@@ -2942,7 +2944,11 @@
             "M21S80"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S21S01",
+            "S21S02",
+            "S21S03"
+        ],
         "Task": [],
         "Type": "NORMAL",
         "URL": "",
