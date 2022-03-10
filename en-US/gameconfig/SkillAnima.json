@@ -40000,6 +40000,15 @@
             }
         ]
     },
+    "dwyhui_skill1": {
+        "events": []
+    },
+    "dwyhui_skill2": {
+        "events": []
+    },
+    "dwyhui_skill3": {
+        "events": []
+    },
     "dwzxi_uniform_skill1": {
         "events": [
             {
@@ -51677,6 +51686,298 @@
             }
         ]
     },
+    "sp_hhji_yyu_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "sp_hhji_yyu_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "sp_hhji_yyu_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Seawater_Flow_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 47
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 64
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 67
+            }
+        ]
+    },
+    "sp_hhji_yyu_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Seawater_Flow_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 64
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 67
+            }
+        ]
+    },
     "sp_hxi_nv_skill1": {
         "events": [
             {
@@ -53017,6 +53318,298 @@
             }
         ]
     },
+    "sp_nnuo_yyu_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 3
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
+    },
+    "sp_nnuo_yyu_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 2
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 30
+            }
+        ]
+    },
+    "sp_nnuo_yyu_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Seawater_Flow_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 47
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 64
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 67
+            }
+        ]
+    },
+    "sp_nnuo_yyu_skill4": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SP_PNCao_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Seawater_Flow_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 9
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SP_PNCao_YYu_Water_Hit_3",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 24
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 32
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 40
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 55
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 64
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 67
+            }
+        ]
+    },
     "sp_xmlhui_skill1": {
         "events": [
             {
@@ -53458,6 +54051,138 @@
                     }
                 ],
                 "f": 45
+            }
+        ]
+    },
+    "tyzhen_skill1": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDZSheng_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDZSheng_Broadsword_Stab",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 9
+            }
+        ]
+    },
+    "tyzhen_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDZSheng_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDZSheng_Broadsword_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 18
+            }
+        ]
+    },
+    "tyzhen_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_BDZSheng_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDZSheng_Broadsword_Whoosh",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_BDZSheng_Broadsword_Smash",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 23
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 32
             }
         ]
     },

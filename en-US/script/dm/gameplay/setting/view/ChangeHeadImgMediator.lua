@@ -122,7 +122,7 @@ function ChangeHeadImgMediator:getData()
 
 				if v.config.Type == 1 then
 					hero[#hero + 1] = v
-				elseif v.config.Type == 2 then
+				elseif v.config.Type == 2 or v.config.Type == 6 then
 					master[#master + 1] = v
 				elseif v.config.Type == 4 then
 					awaken[#awaken + 1] = v

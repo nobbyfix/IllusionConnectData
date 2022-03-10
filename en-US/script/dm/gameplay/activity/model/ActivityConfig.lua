@@ -388,6 +388,13 @@ ActivityLogin14Config = {
 			cc.c4b(202, 247, 252, 255)
 		}
 	},
+	EightDays_Dusk_Re = {
+		resFile = "asset/ui/ActivityDuskLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(202, 247, 252, 255)
+		}
+	},
 	EightDays_SilentNight = {
 		resFile = "asset/ui/ActivitySilentNightLogin14.csb",
 		textPattern = {

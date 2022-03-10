@@ -735,6 +735,82 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
 	end
 
+	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
+
+	if kuriboh[1] and global.MASTER(_env, target) then
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_Immune")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local buff = global.Immune(_env)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "Immune",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"IMMUNE",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_Immune")
+			end
+		end
+
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_UnHurtRate")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local unhurtrateup = global.SpecialPropGetter(_env, "FCXJi_UnHurtRate")(_env, target)
+				defender.unhurtrate = defender.unhurtrate + unhurtrateup
+				local buff = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, unhurtrateup)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "UnHurtRateUp",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"UNHURTRATEUP",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ANY(_env, "Skill_FCXJi_Passive"), 99)
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_UnHurtRate")
+			end
+		end
+	end
+
 	local damage = global.EvalSingleDamage(_env, attacker, defender, dmgFactor)
 
 	for i = 1, #Flags do
@@ -1036,6 +1112,82 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		local singleunhurtratedown = global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
 		attacker.defweaken = attacker.defweaken + singleweaken
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
+	end
+
+	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
+
+	if kuriboh[1] and global.MASTER(_env, target) then
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_Immune")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local buff = global.Immune(_env)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "Immune",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"IMMUNE",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_Immune")
+			end
+		end
+
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_UnHurtRate")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local unhurtrateup = global.SpecialPropGetter(_env, "FCXJi_UnHurtRate")(_env, target)
+				defender.unhurtrate = defender.unhurtrate + unhurtrateup
+				local buff = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, unhurtrateup)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "UnHurtRateUp",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"UNHURTRATEUP",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ANY(_env, "Skill_FCXJi_Passive"), 99)
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_UnHurtRate")
+			end
+		end
 	end
 
 	local damage = global.EvalAOEDamage(_env, attacker, defender, dmgFactor)
@@ -1808,6 +1960,65 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				UnHurtRateDown
 			})
 		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1")) > 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1_Count")) == 0 then
+			local ExSkillRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_exskill")(_env, target)
+			local HurtRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_hurtrate")(_env, target)
+			local buffeft1 = global.NumericEffect(_env, "-exskillrate", {
+				"+Normal",
+				"+Normal"
+			}, ExSkillRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "-hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, HurtRateFactor)
+			local count = global.SpecialNumericEffect(_env, "+boot_15116_1_count", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				duration = 2,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_Count",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				count
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "SkillRateDown",
+				group = "EquipSkill_Boots_15116_1_SkillRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_SkillRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Boots_15116_1_UnHurtRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_UnHurtRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft2
+			})
+		end
 	end
 
 	local extrapetshealrate = global.SpecialPropGetter(_env, "extrapetshealrate")(_env, actor)
@@ -2506,6 +2717,65 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				}
 			}, {
 				UnHurtRateDown
+			})
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1")) > 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1_Count")) == 0 then
+			local ExSkillRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_exskill")(_env, target)
+			local HurtRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_hurtrate")(_env, target)
+			local buffeft1 = global.NumericEffect(_env, "-exskillrate", {
+				"+Normal",
+				"+Normal"
+			}, ExSkillRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "-hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, HurtRateFactor)
+			local count = global.SpecialNumericEffect(_env, "+boot_15116_1_count", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				duration = 2,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_Count",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				count
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "SkillRateDown",
+				group = "EquipSkill_Boots_15116_1_SkillRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_SkillRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Boots_15116_1_UnHurtRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_UnHurtRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft2
 			})
 		end
 	end
@@ -3283,6 +3553,65 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			})
 		end
 
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1")) > 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1_Count")) == 0 then
+			local ExSkillRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_exskill")(_env, target)
+			local HurtRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_hurtrate")(_env, target)
+			local buffeft1 = global.NumericEffect(_env, "-exskillrate", {
+				"+Normal",
+				"+Normal"
+			}, ExSkillRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "-hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, HurtRateFactor)
+			local count = global.SpecialNumericEffect(_env, "+boot_15116_1_count", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				duration = 2,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_Count",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				count
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "SkillRateDown",
+				group = "EquipSkill_Boots_15116_1_SkillRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_SkillRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Boots_15116_1_UnHurtRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_UnHurtRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft2
+			})
+		end
+
 		if damages[n] and damages[n].block then
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
 			local blockrecoveryrate = global.SpecialPropGetter(_env, "blockrecoveryrate")(_env, target)
@@ -4022,6 +4351,65 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				}
 			}, {
 				UnHurtRateDown
+			})
+		end
+
+		if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1")) > 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Boots_15116_1_Count")) == 0 then
+			local ExSkillRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_exskill")(_env, target)
+			local HurtRateFactor = global.SpecialPropGetter(_env, "boots_15116_1_hurtrate")(_env, target)
+			local buffeft1 = global.NumericEffect(_env, "-exskillrate", {
+				"+Normal",
+				"+Normal"
+			}, ExSkillRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "-hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, HurtRateFactor)
+			local count = global.SpecialNumericEffect(_env, "+boot_15116_1_count", {
+				"?Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				duration = 2,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_Count",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				count
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "SkillRateDown",
+				group = "EquipSkill_Boots_15116_1_SkillRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_SkillRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+			global.ApplyBuff(_env, actor, {
+				timing = 1,
+				display = "UnHurtRateDown",
+				group = "EquipSkill_Boots_15116_1_UnHurtRateDown",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Boots_15116_1_UnHurtRateDown",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft2
 			})
 		end
 

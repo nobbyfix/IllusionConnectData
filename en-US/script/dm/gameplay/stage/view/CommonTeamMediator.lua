@@ -1035,6 +1035,7 @@ function CommonTeamMediator:runStartAction()
 					self._touchPanel:setVisible(false)
 				end
 
+				child:stopAllActions()
 				child:setOpacity(255)
 				child:setPosition(cc.p(94, 105))
 			end)
@@ -1095,6 +1096,10 @@ function CommonTeamMediator:runRemoveAction(id)
 				if i == length then
 					self._touchPanel:setVisible(false)
 				end
+
+				child:stopAllActions()
+				child:setOpacity(255)
+				child:setPosition(cc.p(94, 105))
 			end)
 			local seq = cc.Sequence:create(callfunc, delayAction, callfunc1)
 
@@ -1302,6 +1307,7 @@ function CommonTeamMediator:runInsertAction(id)
 					self._touchPanel:setVisible(false)
 				end
 
+				child:stopAllActions()
 				child:setOpacity(255)
 				child:setPosition(cc.p(94, 105))
 			end)

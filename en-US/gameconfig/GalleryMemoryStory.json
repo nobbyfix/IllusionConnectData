@@ -301,7 +301,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S01"
                 ]
             }
@@ -754,6 +754,50 @@
         ],
         "Type": "STORYLIST",
         "UnlockDesc": "BlockPoint_S01S01_Name",
+        "UnlockStory": ""
+    },
+    "Memory_STORYLIST_11": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_CommonStage",
+                "factor1": [
+                    1
+                ],
+                "factor2": [],
+                "factorSt1": [],
+                "factorSt2": [],
+                "params": [
+                    "M20",
+                    "M20S10"
+                ]
+            }
+        ],
+        "Listpicture": "s_main_img_20_1",
+        "Name": "Chapter20_Title",
+        "Num": 11,
+        "Story": [
+            {
+                "id": [
+                    "Memory_STORY_57",
+                    "Memory_STORY_58",
+                    "Memory_STORY_59",
+                    "Memory_STORY_60",
+                    "Memory_STORY_61",
+                    "Memory_STORY_62"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_STORY_HARD_22",
+                    "Memory_STORY_HARD_23"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "STORYLIST",
+        "UnlockDesc": "BlockPoint_S20S01_Name",
         "UnlockStory": ""
     },
     "Memory_STORYLIST_2": {
