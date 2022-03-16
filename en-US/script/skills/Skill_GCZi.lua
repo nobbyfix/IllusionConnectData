@@ -839,6 +839,10 @@ all.GCZi_Passive_jianzhen = {
 						break
 					end
 
+					if global.FriendMaster(_env) and global.SpecialPropGetter(_env, "byou" .. global.GetUnitCid(_env, _env.unit))(_env, global.FriendField(_env)) == 0 and global.SelectHeroPassiveCount(_env, _env.unit, "EquipSkill_Shoes_15113_1") > 0 then
+						break
+					end
+
 					local card_window = global.CardAtWindowIndex(_env, global.GetOwner(_env, _env.ACTOR), i)
 
 					if card_window == nil then
