@@ -3380,6 +3380,48 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 				buffeft1
 			})
 		end
+
+		local LLKe_Unique_Shield = global.SpecialPropGetter(_env, "Skill_LLKe_Unique_Shield")(_env, actor)
+
+		if LLKe_Unique_Shield and LLKe_Unique_Shield ~= 0 then
+			local buffeft1 = global.ShieldEffect(_env, LLKe_Unique_Shield)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 0,
+				duration = 99,
+				display = "Shield",
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"SHIELD",
+					"DISPELLABLE",
+					"STEALABLE"
+				}
+			}, {
+				buffeft1
+			})
+			global.DispelBuff(_env, actor, global.BUFF_MARKED_ALL(_env, "STATUS", "NUMERIC", "Skill_LLKe_Unique", "UNDISPELLABLE", "UNSTEALABLE"), 99)
+
+			local Energy = global.SpecialPropGetter(_env, "LLKe_Unique_Energy")(_env, global.FriendField(_env))
+
+			if Energy and Energy ~= 0 then
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyMaster(_env)))) do
+					local cardvaluechange = global.CardCostEnchant(_env, "+", Energy, 1)
+
+					global.ApplyEnchant(_env, global.GetOwner(_env, global.EnemyMaster(_env)), card, {
+						timing = 1,
+						duration = 1,
+						tags = {
+							"CARDBUFF",
+							"Skill_MTZMEShi_Passive",
+							"UNDISPELLABLE"
+						}
+					}, {
+						cardvaluechange
+					})
+				end
+			end
+		end
 	end
 
 	local singlesplitrate = global.SpecialPropGetter(_env, "singlesplitrate")(_env, actor)

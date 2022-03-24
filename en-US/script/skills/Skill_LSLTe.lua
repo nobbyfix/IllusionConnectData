@@ -290,6 +290,40 @@ all.Skill_LSLTe_Unique = {
 			})
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, _env.TARGET) and global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+				local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+				local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+				dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+				if global.MARKED(_env, "LEIMu")(_env, _env.TARGET) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+					if global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+						local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
+						local shield = global.UnitPropGetter(_env, "shield")(_env, _env.TARGET)
+
+						if dmg > hp + shield then
+							dmg = 0
+							local buff = global.NumericEffect(_env, "+def", {
+								"+Normal",
+								"+Normal"
+							}, 0)
+
+							global.ApplyBuff(_env, _env.TARGET, {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"LEIMu_Passive_Done"
+								}
+							}, {
+								buff
+							})
+						end
+					end
+				else
+					global.ApplyHPDamage(_env, _env.TARGET, dmg)
+				end
+			end
+
 			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -329,6 +363,40 @@ all.Skill_LSLTe_Unique = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+					local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+					if global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+						if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+							local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+							local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+							if dmg > hp + shield then
+								dmg = 0
+								local buff = global.NumericEffect(_env, "+def", {
+									"+Normal",
+									"+Normal"
+								}, 0)
+
+								global.ApplyBuff(_env, unit, {
+									timing = 0,
+									duration = 99,
+									tags = {
+										"LEIMu_Passive_Done"
+									}
+								}, {
+									buff
+								})
+							end
+						end
+					else
+						global.ApplyHPDamage(_env, unit, dmg)
+					end
+				end
+
 				global.Aien_Circle(_env, unit)
 			end
 		end)
@@ -387,6 +455,40 @@ all.Skill_LSLTe_Unique = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+					local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+					if global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+						if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+							local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+							local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+							if dmg > hp + shield then
+								dmg = 0
+								local buff = global.NumericEffect(_env, "+def", {
+									"+Normal",
+									"+Normal"
+								}, 0)
+
+								global.ApplyBuff(_env, unit, {
+									timing = 0,
+									duration = 99,
+									tags = {
+										"LEIMu_Passive_Done"
+									}
+								}, {
+									buff
+								})
+							end
+						end
+					else
+						global.ApplyHPDamage(_env, unit, dmg)
+					end
+				end
+
 				global.Aien_Circle(_env, unit)
 			end
 		end)
@@ -745,6 +847,40 @@ all.Skill_LSLTe_Unique_EX = {
 			})
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, _env.TARGET) and global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+				local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+				local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+				dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+				if global.MARKED(_env, "LEIMu")(_env, _env.TARGET) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+					if global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, _env.TARGET, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+						local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
+						local shield = global.UnitPropGetter(_env, "shield")(_env, _env.TARGET)
+
+						if dmg > hp + shield then
+							dmg = 0
+							local buff = global.NumericEffect(_env, "+def", {
+								"+Normal",
+								"+Normal"
+							}, 0)
+
+							global.ApplyBuff(_env, _env.TARGET, {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"LEIMu_Passive_Done"
+								}
+							}, {
+								buff
+							})
+						end
+					end
+				else
+					global.ApplyHPDamage(_env, _env.TARGET, dmg)
+				end
+			end
+
 			global.Aien_Circle(_env, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -795,6 +931,40 @@ all.Skill_LSLTe_Unique_EX = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+					local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+					if global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+						if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+							local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+							local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+							if dmg > hp + shield then
+								dmg = 0
+								local buff = global.NumericEffect(_env, "+def", {
+									"+Normal",
+									"+Normal"
+								}, 0)
+
+								global.ApplyBuff(_env, unit, {
+									timing = 0,
+									duration = 99,
+									tags = {
+										"LEIMu_Passive_Done"
+									}
+								}, {
+									buff
+								})
+							end
+						end
+					else
+						global.ApplyHPDamage(_env, unit, dmg)
+					end
+				end
+
 				global.Aien_Circle(_env, unit)
 			end
 		end)
@@ -858,6 +1028,40 @@ all.Skill_LSLTe_Unique_EX = {
 				})
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15129_2") > 0 and not global.MASTER(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) == 0 then
+					local MHDmgFactor = global.SpecialPropGetter(_env, "weapon_15129_2_flag")(_env, _env.ACTOR)
+					local dmg = MHDmgFactor * global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					dmg = global.min(_env, dmg, 0.8 * global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR))
+
+					if global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 then
+						if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+							local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+							local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+
+							if dmg > hp + shield then
+								dmg = 0
+								local buff = global.NumericEffect(_env, "+def", {
+									"+Normal",
+									"+Normal"
+								}, 0)
+
+								global.ApplyBuff(_env, unit, {
+									timing = 0,
+									duration = 99,
+									tags = {
+										"LEIMu_Passive_Done"
+									}
+								}, {
+									buff
+								})
+							end
+						end
+					else
+						global.ApplyHPDamage(_env, unit, dmg)
+					end
+				end
+
 				global.Aien_Circle(_env, unit)
 			end
 		end)

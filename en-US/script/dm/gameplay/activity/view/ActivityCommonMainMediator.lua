@@ -99,7 +99,6 @@ function ActivityCommonMainMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BLOCKLEVEL_CHANGE, self, self.checkForceGuide)
@@ -163,6 +162,17 @@ function ActivityCommonMainMediator:onRegister()
 			end
 		end)
 	end
+
+	self._miniGameBtn = self._main:getChildByFullName("btn_minigame")
+
+	if self._miniGameBtn then
+		self._miniGameBtn:setTouchEnabled(true)
+		self._miniGameBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self:onClickMiniGame()
+			end
+		end)
+	end
 end
 
 function ActivityCommonMainMediator:setTimerString(timeStr, timeTip, key)
@@ -186,27 +196,16 @@ end
 function ActivityCommonMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
+		style = 1,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
-		}
-	}
-	local injector = self:getInjector()
-	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
-
-	self._topInfoWidget:updateView(config)
-end
-
-function ActivityCommonMainMediator:updateInfoWidget()
-	if not self._topInfoWidget then
-		return
-	end
-
-	local config = {
-		style = 1,
+		},
 		currencyInfo = self._activity:getResourcesBanner(),
 		title = Strings:get(self._activity:getTitle())
 	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
 
 	self._topInfoWidget:updateView(config)
 end
@@ -223,8 +222,8 @@ function ActivityCommonMainMediator:enterWithData(data)
 		return
 	end
 
+	self:setupTopInfoWidget()
 	self:mapButtonHandlersClick(kBtnHandlers)
-	self:updateInfoWidget()
 
 	self._canChangeHero = true
 
@@ -560,8 +559,40 @@ function ActivityCommonMainMediator:initInfo()
 		end
 	end
 
+	if ui == ActivityType_UI.KActivitySamurai then
+		local titles = {
+			"title",
+			"title_0"
+		}
+
+		for i, v in ipairs(titles) do
+			local title = self._stagePanel:getChildByName(v)
+
+			if title then
+				title:setString("")
+			end
+		end
+
+		local title = self._stagePanel:getChildByName("title")
+
+		if title then
+			title:setAnchorPoint(0.5, 0.5)
+			title:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			title:setString(Strings:get("ActivityBlock_Samurai_Map_Name_1_1"))
+			title:setPositionX(200)
+		end
+	end
+
 	if self._voteBtn then
 		self._voteBtn:setVisible(self._activity:isVote())
+	end
+
+	if self._miniGameBtn then
+		local redPoint = self._miniGameBtn:getChildByName("redPoint")
+		local miniGameActivity = self._activitySystem:getActivityById(self._activityConfig.MiniGameActivity)
+
+		redPoint:setVisible(miniGameActivity:hasRedPoint())
+		self._miniGameBtn:getChildByName("Text_45"):setString(Strings:get(miniGameActivity:getTitle()))
 	end
 end
 
@@ -1193,9 +1224,25 @@ function ActivityCommonMainMediator:setStageView()
 		if anim.runAction then
 			anim.runAction(self._stageAnim)
 		end
+
+		if anim.bgAnim then
+			local bgAnim = cc.MovieClip:create(anim.bgAnim)
+
+			bgAnim:addTo(self._imageBg):setPosition(anim.bgAnimPos)
+		end
 	end
 end
 
 function ActivityCommonMainMediator:onClickVote()
 	self._activity:checkVote()
+end
+
+function ActivityCommonMainMediator:onClickMiniGame()
+	local url = self._activityConfig.MiniGameUrl
+	local param = {}
+
+	self:getEventDispatcher():dispatchEvent(Event:new(EVT_OPENURL, {
+		url = url,
+		extParams = param
+	}))
 end

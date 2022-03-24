@@ -15,19 +15,24 @@ local TabType = {
 local kTabImage = {
 	{
 		ASSET_LANG_COMMON .. "common_bg_all.png",
-		ASSET_LANG_COMMON .. "common_bg_all02.png"
+		ASSET_LANG_COMMON .. "common_bg_all02.png",
+		"all"
 	},
 	{
 		ASSET_LANG_COMMON .. "common_bg_SSR.png",
-		ASSET_LANG_COMMON .. "common_bg_SSR02.png"
+		ASSET_LANG_COMMON .. "common_bg_SSR02.png",
+		14
 	},
 	[4] = {
 		ASSET_LANG_COMMON .. "common_bg_R.png",
-		ASSET_LANG_COMMON .. "common_bg_R02.png"
+		ASSET_LANG_COMMON .. "common_bg_R02.png",
+		12,
+		4
 	},
 	[3] = {
 		ASSET_LANG_COMMON .. "common_bg_SR.png",
-		ASSET_LANG_COMMON .. "common_bg_SR02.png"
+		ASSET_LANG_COMMON .. "common_bg_SR02.png",
+		13
 	}
 }
 local kURTabImage = {
@@ -46,6 +51,33 @@ local kURTabImage = {
 	{
 		ASSET_LANG_COMMON .. "common_bg_SR.png",
 		ASSET_LANG_COMMON .. "common_bg_SR02.png"
+	}
+}
+local kSPTabImage = {
+	{
+		ASSET_LANG_COMMON .. "common_bg_all.png",
+		ASSET_LANG_COMMON .. "common_bg_all02.png",
+		"all"
+	},
+	{
+		ASSET_LANG_COMMON .. "common_bg_SP.png",
+		ASSET_LANG_COMMON .. "common_bg_SP02.png",
+		15
+	},
+	[5] = {
+		ASSET_LANG_COMMON .. "common_bg_R.png",
+		ASSET_LANG_COMMON .. "common_bg_R02.png",
+		12
+	},
+	[4] = {
+		ASSET_LANG_COMMON .. "common_bg_SR.png",
+		ASSET_LANG_COMMON .. "common_bg_SR02.png",
+		13
+	},
+	[3] = {
+		ASSET_LANG_COMMON .. "common_bg_SSR.png",
+		ASSET_LANG_COMMON .. "common_bg_SSR02.png",
+		14
 	}
 }
 
@@ -227,6 +259,7 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 	local equipRewards = {}
 	local itemRewards = {}
 	local urEquipRewards = {}
+	local tempHerosRewards = {}
 
 	if equipRewardConfig then
 		for i = 1, #equipRewardConfig do
@@ -245,6 +278,12 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 
 				if heroId then
 					heroUpList[#heroUpList + 1] = heroId
+					tempHerosRewards[#tempHerosRewards + 1] = {
+						amount = 1,
+						up = 1,
+						code = heroId,
+						type = RewardType.kHero
+					}
 				end
 			end
 		end
@@ -263,11 +302,29 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 					end
 
 					reward.index = i
-					herosRewards[#herosRewards + 1] = reward
+					tempHerosRewards[#tempHerosRewards + 1] = reward
 				end
 			elseif reward.type == 2 then
 				itemRewards[#itemRewards + 1] = reward
 			end
+		end
+	end
+
+	local function inList(list, data)
+		for i, v in pairs(list) do
+			if v.code == data.code then
+				return true
+			end
+		end
+	end
+
+	local index = 1
+
+	for i, v in pairs(tempHerosRewards) do
+		if not inList(herosRewards, v) then
+			v.index = index
+			herosRewards[#herosRewards + 1] = v
+			index = index + 1
 		end
 	end
 
@@ -301,8 +358,17 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 	table.sort(itemRewards, item_compare)
 
 	local function hero_compare(a, b)
+		local heroPrototype = self._heroSystem:getHeroProById(a.code)
+		local rareityA = heroPrototype:getConfig().Rareity
+		local heroPrototype = self._heroSystem:getHeroProById(b.code)
+		local rareityB = heroPrototype:getConfig().Rareity
+
 		if a.up == b.up then
-			return a.index < b.index
+			if rareityA == rareityB then
+				return a.index < b.index
+			else
+				return rareityB < rareityA
+			end
 		else
 			return b.up < a.up
 		end
@@ -343,14 +409,26 @@ function RecruitHeroPreviewMediator:setSelectView()
 			else
 				button:setVisible(false)
 			end
-		elseif i < 5 then
-			buttons[#buttons + 1] = button
-			local image = button:getChildByFullName("image")
-			local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
-
-			image:loadTexture(pic)
 		else
-			button:setVisible(false)
+			local tabConfig = kTabImage
+			local num = 4
+
+			if self._data.showSpHero then
+				tabConfig = kSPTabImage
+				num = 5
+			end
+
+			self._tabConfig = tabConfig
+
+			if i <= num then
+				buttons[#buttons + 1] = button
+				local image = button:getChildByFullName("image")
+				local pic = self._heroType == i and tabConfig[i][2] or tabConfig[i][1]
+
+				image:loadTexture(pic)
+			else
+				button:setVisible(false)
+			end
 		end
 	end
 
@@ -375,19 +453,21 @@ function RecruitHeroPreviewMediator:setHeroesView()
 	}
 	self._showHeros[1] = self._previewData[TabType.kHero]
 
+	local function setShowHero(data, rareity)
+		for k, v in pairs(self._tabConfig) do
+			if v[3] == rareity then
+				self._showHeros[k][#self._showHeros[k] + 1] = data
+			end
+		end
+	end
+
 	for i = 1, #self._previewData[TabType.kHero] do
 		local data = self._previewData[TabType.kHero][i]
 		local heroId = data.code
 		local heroPrototype = self._heroSystem:getHeroProById(heroId)
 		local rareity = heroPrototype:getConfig().Rareity
 
-		if rareity == 12 then
-			self._showHeros[4][#self._showHeros[4] + 1] = data
-		elseif rareity == 13 then
-			self._showHeros[3][#self._showHeros[3] + 1] = data
-		elseif rareity == 14 then
-			self._showHeros[2][#self._showHeros[2] + 1] = data
-		end
+		setShowHero(data, rareity)
 	end
 
 	local function cellSizeForTable(table, idx)
@@ -536,9 +616,11 @@ function RecruitHeroPreviewMediator:tabClickByIndex(button, eventType, index)
 			iamge:loadTexture(pic)
 		end
 	else
-		for i = 1, 4 do
+		local num = table.nums(self._tabConfig)
+
+		for i = 1, num do
 			local iamge = self._selectPanel:getChildByFullName("btn" .. i .. ".image")
-			local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
+			local pic = self._heroType == i and self._tabConfig[i][2] or self._tabConfig[i][1]
 
 			iamge:loadTexture(pic)
 		end

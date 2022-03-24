@@ -3445,6 +3445,448 @@
             "start": "2021-09-01 05:00:00"
         }
     },
+    "SamuraiSE01": {
+        "BlockPoint": [
+            "SamuraiSE01M",
+            "SamuraiSE01E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS09M_Name",
+        "NextPoint": [
+            "SamuraiSE02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS02S01"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE02": {
+        "BlockPoint": [
+            "SamuraiSE02M",
+            "SamuraiSE02E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS10M_Name",
+        "NextPoint": [
+            "SamuraiSE03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE03": {
+        "BlockPoint": [
+            "SamuraiSE03M",
+            "SamuraiSE03E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS11M_Name",
+        "NextPoint": [
+            "SamuraiSE04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE04": {
+        "BlockPoint": [
+            "SamuraiSE04M",
+            "SamuraiSE04E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS12M_Name",
+        "NextPoint": [
+            "SamuraiSE05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS02S02"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE05": {
+        "BlockPoint": [
+            "SamuraiSE05M",
+            "SamuraiSE05E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS13M_Name",
+        "NextPoint": [
+            "SamuraiSE06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE06": {
+        "BlockPoint": [
+            "SamuraiSE06M",
+            "SamuraiSE06E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS14M_Name",
+        "NextPoint": [
+            "SamuraiSE07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS02S03"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE07": {
+        "BlockPoint": [
+            "SamuraiSE07M",
+            "SamuraiSE07E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS15M_Name",
+        "NextPoint": [
+            "SamuraiSE08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE08": {
+        "BlockPoint": [
+            "SamuraiSE08M",
+            "SamuraiSE08E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS16M_Name",
+        "NextPoint": [
+            "SamuraiSE09"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS02S04"
+        ],
+        "ShowCondition": "",
+        "Type": "ELITE",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE09": {
+        "BlockPoint": [
+            "SamuraiSH01M"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS01H_Name",
+        "NextPoint": [
+            "SamuraiSE10"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE08"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE10": {
+        "BlockPoint": [
+            "SamuraiSH02M"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS02H_Name",
+        "NextPoint": [
+            "SamuraiSE11"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE09"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSE11": {
+        "BlockPoint": [
+            "SamuraiSH03M"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM02",
+        "Name": "BlockPoint_SamuraiS03H_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSE10"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "HARD",
+        "UnlockCondition": {
+            "start": "2022-04-07 05:00:00"
+        }
+    },
+    "SamuraiSN01": {
+        "BlockPoint": [
+            "SamuraiSN01M",
+            "SamuraiSN01E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS01M_Name",
+        "NextPoint": [
+            "SamuraiSN02"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS01S01"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN02": {
+        "BlockPoint": [
+            "SamuraiSN02M",
+            "SamuraiSN02E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS02M_Name",
+        "NextPoint": [
+            "SamuraiSN03"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN01"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN03": {
+        "BlockPoint": [
+            "SamuraiSN03M",
+            "SamuraiSN03E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS03M_Name",
+        "NextPoint": [
+            "SamuraiSN04"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN02"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN04": {
+        "BlockPoint": [
+            "SamuraiSN04M",
+            "SamuraiSN04E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS04M_Name",
+        "NextPoint": [
+            "SamuraiSN05"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN03"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS01S02"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN05": {
+        "BlockPoint": [
+            "SamuraiSN05M",
+            "SamuraiSN05E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS05M_Name",
+        "NextPoint": [
+            "SamuraiSN06"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN04"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN06": {
+        "BlockPoint": [
+            "SamuraiSN06M",
+            "SamuraiSN06E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS06M_Name",
+        "NextPoint": [
+            "SamuraiSN07"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN05"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS01S03"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN07": {
+        "BlockPoint": [
+            "SamuraiSN07M",
+            "SamuraiSN07E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS07M_Name",
+        "NextPoint": [
+            "SamuraiSN08"
+        ],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN06"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
+    "SamuraiSN08": {
+        "BlockPoint": [
+            "SamuraiSN08M",
+            "SamuraiSN08E"
+        ],
+        "HiddenStory": "",
+        "Map": "SamuraiM01",
+        "Name": "BlockPoint_SamuraiS08M_Name",
+        "NextPoint": [],
+        "OpenLevel": 1,
+        "OpenPoint": [
+            "SamuraiSN07"
+        ],
+        "PointType": "NORMAL",
+        "PreStoryPoint": [
+            "SamuraiS01S04"
+        ],
+        "ShowCondition": "",
+        "Type": "NORMAL",
+        "UnlockCondition": {
+            "start": "2022-04-01 05:00:00"
+        }
+    },
     "SilentNightSE01": {
         "BlockPoint": [
             "SilentNightSE01M",

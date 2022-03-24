@@ -757,14 +757,20 @@ function RecruitNewDrawCardMediator:onClickHeroInfo(heroId)
 end
 
 function RecruitNewDrawCardMediator:onClickPreview()
+	local heroes = nil
+	local activityConfig = self._recruitActivityShow:getActivityConfig()
+	heroes = activityConfig.drawhero
+
 	local function callback(rewards)
 		local view = self:getInjector():getInstance("recruitHeroPreviewView")
 
 		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
+			showSpHero = true,
 			recruitPool = self._recruitDataShow,
-			rewards = rewards
+			rewards = rewards,
+			heroes = heroes
 		}))
 	end
 
@@ -787,6 +793,10 @@ function RecruitNewDrawCardMediator:onClickTip()
 	if self._changingView then
 		return
 	end
+
+	self:onClickPreview()
+
+	return
 
 	local type = self._recruitDataShow:getType()
 

@@ -1416,6 +1416,11 @@ local mappings = {
 		name = "ActivityBlockSupportMediator",
 		type = "@C"
 	},
+	ActivityBentoMediator = {
+		url = "dm.gameplay.activity.view.ActivityBentoMediator",
+		name = "ActivityBentoMediator",
+		type = "@C"
+	},
 	ActivitySagaWinMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaWinMediator",
 		name = "ActivitySagaWinMediator",
@@ -1629,6 +1634,11 @@ local mappings = {
 	ActivityNpcRoleDetailMediator = {
 		url = "dm.gameplay.activity.view.ActivityNpcRoleDetailMediator",
 		name = "ActivityNpcRoleDetailMediator",
+		type = "@C"
+	},
+	ActivityBentoPopupMediator = {
+		url = "dm.gameplay.activity.view.ActivityBentoPopupMediator",
+		name = "ActivityBentoPopupMediator",
 		type = "@C"
 	},
 	ActivityBlockTeamMediator = {

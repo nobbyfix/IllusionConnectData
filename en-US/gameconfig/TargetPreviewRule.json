@@ -200,6 +200,9 @@
     "Target_LFKLFTe": {
         "Function": "return GenInfo(EnemyAll(),Red)"
     },
+    "Target_LLKe": {
+        "Function": "return MainTarget()"
+    },
     "Target_LLan": {
         "Function": ""
     },

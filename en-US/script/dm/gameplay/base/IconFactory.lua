@@ -3516,6 +3516,10 @@ function IconFactory:createItemPic(info, style)
 
 	local scale = 0.6
 
+	if style and style.showWidth then
+		scale = style.showWidth / icon:getContentSize().width
+	end
+
 	if style and style.ignoreScaleSize then
 		scale = 1
 	end

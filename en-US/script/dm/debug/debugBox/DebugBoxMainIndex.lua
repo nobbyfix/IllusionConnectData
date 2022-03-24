@@ -256,7 +256,8 @@ DebugBoxMainIndex = {
 			{
 				"活动",
 				{
-					"梦幻回馈"
+					"梦幻回馈",
+					"活动本重置"
 				}
 			},
 			{
@@ -993,6 +994,10 @@ DebugBoxMainIndex = {
 			{
 				"加头像框",
 				"AddHeadFrame"
+			},
+			{
+				"活动本重置",
+				"ActivityBlockReset"
 			},
 			{
 				"技能Args检查",
