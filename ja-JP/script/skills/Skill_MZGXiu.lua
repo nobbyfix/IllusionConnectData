@@ -236,6 +236,12 @@ all.Skill_MZGXiu_Unique = {
 			local this = _env.this
 			local global = _env.global
 
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15131_1") > 0 then
+				local Atk1 = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local Atk2 = global.UnitPropGetter(_env, "atk")(_env, _env.TARGET)
+				this.ProbRateFactor = this.ProbRateFactor + global.max(_env, 0, 0.05 * global.floor(_env, (Atk1 / Atk2 - 1) / 0.05))
+			end
+
 			if global.ProbTest(_env, this.ProbRateFactor) then
 				_env.flag = 1
 			end
@@ -695,6 +701,12 @@ all.Skill_MZGXiu_Unique_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Weapon_15131_1") > 0 then
+				local Atk1 = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local Atk2 = global.UnitPropGetter(_env, "atk")(_env, _env.TARGET)
+				this.ProbRateFactor = this.ProbRateFactor + global.max(_env, 0, 0.05 * global.floor(_env, Atk1 / Atk2 / 0.05))
+			end
 
 			if global.ProbTest(_env, this.ProbRateFactor) then
 				_env.flag = 1

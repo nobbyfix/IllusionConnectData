@@ -33,6 +33,7 @@ require("dm.gameplay.activity.model.ActivityBlockMapNewActivity")
 require("dm.gameplay.activity.model.ActivityDrawCardSp")
 require("dm.gameplay.activity.model.ActivityMail")
 require("dm.gameplay.activity.model.AthenaGoActivity")
+require("dm.gameplay.activity.model.BentoActivity")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -103,7 +104,8 @@ ActivityModel = {
 	[ActivityType.kDRAWCARDSP] = ActivityDrawCardSp,
 	[ActivityType.kDRAWCARDUR] = BoardActivity,
 	[ActivityType.KActivityMail] = ActivityMail,
-	[ActivityType.KActivityTrialRoad] = AthenaGoActivity
+	[ActivityType.KActivityTrialRoad] = AthenaGoActivity,
+	[ActivityType.KActivityBento] = BentoActivity
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -190,7 +192,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySilentNight] = "ActivitySilentNightMainView",
 		[ActivityType_UI.KActivityDrama] = "ActivityDramaMainView",
 		[ActivityType_UI.KActivityFamily] = "ActivityFamilyMainView",
-		[ActivityType_UI.KActivityMagic] = "ActivityMagicMainView"
+		[ActivityType_UI.KActivityMagic] = "ActivityMagicMainView",
+		[ActivityType_UI.KActivitySamurai] = "ActivitySamuraiMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -226,7 +229,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySilentNight] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityDrama] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityFamily] = "ActivityOrientMapView",
-		[ActivityType_UI.KActivityMagic] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityMagic] = "ActivityMapNewView",
+		[ActivityType_UI.KActivitySamurai] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -267,7 +271,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivitySilentNight] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityDrama] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFamily] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityMagic] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityMagic] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivitySamurai] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -434,6 +439,13 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 242, 184, 255)
 		}
+	},
+	EightDays_Samurai = {
+		resFile = "asset/ui/ActivitySamuraiLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 242, 184, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {
@@ -583,6 +595,28 @@ ActivityMainMapTitleConfig = {
 					color = cc.c4b(242, 208, 134, 255)
 				}
 			}
+		},
+		[ActivityType_UI.KActivitySamurai] = {
+			title = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(216, 253, 138, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 3570, 172, 255)
+				}
+			},
+			title_0 = {
+				{
+					ratio = 0.3,
+					color = cc.c4b(216, 253, 138, 255)
+				},
+				{
+					ratio = 0.7,
+					color = cc.c4b(255, 3570, 172, 255)
+				}
+			}
 		}
 	},
 	anim = {
@@ -653,6 +687,13 @@ ActivityMainMapTitleConfig = {
 			showDiImg = true,
 			name = "main_wuzuizhiyufubenrukou",
 			position = cc.p(-127, 56)
+		},
+		[ActivityType_UI.KActivitySamurai] = {
+			showDiImg = true,
+			name = "rukou_wujinxiarukou",
+			bgAnim = "main_wujinxiarukou",
+			position = cc.p(172, 141),
+			bgAnimPos = cc.p(695, 428)
 		}
 	}
 }

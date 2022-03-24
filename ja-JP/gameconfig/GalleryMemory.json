@@ -2639,6 +2639,198 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_Samurai_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS01S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_1",
+        "Name": "SamuraiS01S01_Name",
+        "Num": 990,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS01S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_1",
+        "Name": "SamuraiS01S02_Name",
+        "Num": 991,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS01S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_1",
+        "Name": "SamuraiS01S03_Name",
+        "Num": 992,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS01S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_1",
+        "Name": "SamuraiS01S04_Name",
+        "Num": 993,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS02S01"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_1",
+        "Name": "SamuraiS02S01_Name",
+        "Num": 994,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_05a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS02S02"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_2",
+        "Name": "SamuraiS02S02_Name",
+        "Num": 995,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_06a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS02S03"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_2",
+        "Name": "SamuraiS02S03_Name",
+        "Num": 996,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_07a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_Samurai_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS02S04"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "img_story_samurai_2",
+        "Name": "SamuraiS02S04_Name",
+        "Num": 997,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_samurai_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_SilentNight_1": {
         "Condition": [
             {
@@ -4169,6 +4361,19 @@
         "Name": "Memory_Activity_20220120_Name",
         "Num": 101,
         "Picture": "pintu_scene_pintu_2",
+        "Screen": "",
+        "StoryLink": "",
+        "Time": "",
+        "Type": "ACTIVI"
+    },
+    "Memory_Activi_Puzzle_20220329": {
+        "Condition": "",
+        "Desc": "Memory_Activity_20220329_Desc",
+        "Englishname": "",
+        "Listpicture": "pintu_img_3",
+        "Name": "Memory_Activity_20220329_Name",
+        "Num": 101,
+        "Picture": "pintu_scene_pintu_3",
         "Screen": "",
         "StoryLink": "",
         "Time": "",

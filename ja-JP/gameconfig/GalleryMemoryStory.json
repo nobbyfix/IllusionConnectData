@@ -636,6 +636,47 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Samurai": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Samurai_Map",
+                    "SamuraiS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_samurai_1",
+        "Name": "ActivityBlock_Samurai_Name",
+        "Num": 24,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Samurai_1",
+                    "Memory_Act_Samurai_2",
+                    "Memory_Act_Samurai_3",
+                    "Memory_Act_Samurai_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Samurai_5",
+                    "Memory_Act_Samurai_6",
+                    "Memory_Act_Samurai_7",
+                    "Memory_Act_Samurai_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_SilentNight": {
         "ActiviType": "",
         "Condition": [

@@ -18,7 +18,6 @@ function SetHeroShowMediator:initialize()
 end
 
 function SetHeroShowMediator:dispose()
-	self._selectImage:release()
 	super.dispose(self)
 end
 
@@ -40,29 +39,38 @@ function SetHeroShowMediator:onRegister()
 			height = 580
 		}
 	})
+	self:bindWidget("main.okbtn", OneLevelViceButton, {
+		handler = {
+			clickAudio = "Se_Click_Common_1",
+			func = bind1(self.onClickOk, self)
+		}
+	})
 end
 
 function SetHeroShowMediator:enterWithData(data)
-	self._chooseHeroId = data.selectId
-	self._index = data.index
-	self._selectImage = self:createSelectImage()
+	self._selectIds = table.copy(data.selectIds or {}, {})
 	self._kLayerTag = 999
 	self._main = self:getView():getChildByFullName("main")
 	self._cellClone = self._main:getChildByFullName("cellClone")
-	local list = self._heroSystem:getOwnHeroIds(true)
-	local myHeros = self._developSystem:getPlayer():getShowHeroes()
 
-	for i = #list, 1, -1 do
-		if table.indexof(myHeros, list[i].id) and list[i].id ~= self._chooseHeroId then
-			table.remove(list, i)
-		end
-	end
-
-	self._ownHeroList = list
-
+	self:initData()
 	self:setUpView()
 	self:setHeroesView()
 	self:tabClickByIndex(nil, , 1)
+end
+
+function SetHeroShowMediator:initData()
+	self._selectIdsTmp = table.copy(self._selectIds, {})
+	local list = self._heroSystem:getOwnHeroIds(true)
+	local ll = {}
+
+	for k, v in pairs(list) do
+		if not table.indexof(self._selectIds, v.id) then
+			table.insert(ll, v)
+		end
+	end
+
+	self._ownHeroList = ll
 end
 
 function SetHeroShowMediator:setUpView()
@@ -100,39 +108,22 @@ function SetHeroShowMediator:tabClickByIndex(button, eventType, index)
 		iamge:loadTexture(pic, ccui.TextureResType.plistType)
 	end
 
-	self._heroSystem:sortHeroes(self._ownHeroList, self._sortType, {
-		self._chooseHeroId
-	}, false)
+	self:initData()
+	self._heroSystem:sortHeroes(self._ownHeroList, self._sortType, {}, false)
+
+	local ids = {}
+
+	for i, v in ipairs(self._ownHeroList) do
+		table.insert(ids, v.id)
+	end
+
+	table.insertto(self._selectIdsTmp, ids)
 	self._heroView:reloadData()
-end
-
-function SetHeroShowMediator:createSelectImage()
-	local selectImage = ccui.ImageView:create("asset/common/yh_bd_selected.png")
-
-	selectImage:addTo(self:getView())
-	selectImage:setName("SelectImage")
-	selectImage:setVisible(false)
-	selectImage:retain()
-	selectImage:removeFromParent(false)
-
-	return selectImage
-end
-
-function SetHeroShowMediator:changeSelectImage(selectImage)
-	self._selectImage:setVisible(true)
-	self._selectImage:removeFromParent(false)
-	self._selectImage:addTo(selectImage):center(selectImage:getContentSize())
-end
-
-function SetHeroShowMediator:resetSelectImg()
-	self._selectImage:setVisible(false)
-	self._selectImage:removeFromParent(false)
-	self._selectImage:addTo(self:getView())
 end
 
 function SetHeroShowMediator:setHeroesView()
 	self._cellWidth = 997
-	self._cellHeight = 200
+	self._cellHeight = 136
 	local heroList = self._main:getChildByName("list_view")
 
 	local function scrollViewDidScroll(view)
@@ -144,7 +135,7 @@ function SetHeroShowMediator:setHeroesView()
 	end
 
 	local function numberOfCellsInTableView(table)
-		return math.ceil(#self._ownHeroList / 5)
+		return math.ceil(#self._selectIdsTmp / 6)
 	end
 
 	local function tableCellAtIndex(table, idx)
@@ -188,10 +179,11 @@ function SetHeroShowMediator:createHeroCell(cell, index)
 
 	layoutPanel:removeAllChildren()
 
-	for i = 1, 5 do
-		local heroData = self._ownHeroList[5 * (index - 1) + i]
+	for i = 1, 6 do
+		local heroId = self._selectIdsTmp[6 * (index - 1) + i]
 
-		if heroData then
+		if heroId then
+			local heroData = self._heroSystem:getHeroInfoById(heroId)
 			local heroIcon = layoutPanel:getChildByTag(i)
 
 			if not heroIcon then
@@ -200,7 +192,7 @@ function SetHeroShowMediator:createHeroCell(cell, index)
 				heroIcon:addTo(layoutPanel)
 				heroIcon:setTag(i)
 				heroIcon:setAnchorPoint(cc.p(0, 0))
-				heroIcon:setPosition(cc.p(20 + 195 * (i - 1), 0))
+				heroIcon:setPosition(cc.p(20 + 166 * (i - 1), 0))
 			end
 
 			heroIcon.id = heroData.id
@@ -395,13 +387,12 @@ function SetHeroShowMediator:createHeroCell(cell, index)
 
 			heroIcon.id = heroData.id
 
-			if heroData.id == self._chooseHeroId then
-				self:changeSelectImage(selectImage)
-
-				heroIcon.select = true
+			if table.indexof(self._selectIds, heroData.id) then
+				selectImage:setVisible(true)
+			else
+				selectImage:setVisible(false)
 			end
 
-			heroIcon:setScale(1)
 			heroIcon:setSwallowTouches(false)
 			heroIcon:addTouchEventListener(function (sender, eventType)
 				self:onClickHeroIcon(sender, eventType, heroData)
@@ -416,39 +407,48 @@ function SetHeroShowMediator:onClickHeroIcon(sender, eventType, heroData)
 	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
 		AudioEngine:getInstance():playEffect("Se_Click_Select_1", false)
 
-		if self._chooseHeroId == sender.id then
-			sender.select = not sender.select
+		local selectImage = sender:getChildByFullName("actionNode.selectImage")
+		local selectIndex = self:isSelect(sender.id)
 
-			if sender.select then
-				local selectImage = sender:getChildByFullName("actionNode.selectImage")
-
-				self:changeSelectImage(selectImage)
-			else
-				self._chooseHeroId = nil
-
-				self:resetSelectImg()
-			end
+		if selectIndex > 0 then
+			table.remove(self._selectIds, selectIndex)
+			selectImage:setVisible(false)
 		else
-			local selectImage = sender:getChildByFullName("actionNode.selectImage")
+			if #self._selectIds >= 4 then
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("tips_zhanshiuplie")
+				}))
 
-			self:changeSelectImage(selectImage)
+				return
+			end
 
-			self._chooseHeroId = sender.id
-			sender.select = true
+			self._selectIds[#self._selectIds + 1] = sender.id
+
+			selectImage:setVisible(true)
 		end
 	end
 end
 
+function SetHeroShowMediator:isSelect(id)
+	for i = 1, 4 do
+		if self._selectIds[i] and self._selectIds[i] == id then
+			return i
+		end
+	end
+
+	return -1
+end
+
 function SetHeroShowMediator:onClickClose(sender, eventType)
-	self:close({
-		selectId = self._chooseHeroId,
-		index = self._index
-	})
+	self:close({})
 end
 
 function SetHeroShowMediator:onTouchMaskLayer()
+	self:close({})
+end
+
+function SetHeroShowMediator:onClickOk()
 	self:close({
-		selectId = self._chooseHeroId,
-		index = self._index
+		ids = self._selectIds
 	})
 end

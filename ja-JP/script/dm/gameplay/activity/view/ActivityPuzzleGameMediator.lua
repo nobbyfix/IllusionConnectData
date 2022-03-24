@@ -366,13 +366,13 @@ function ActivityPuzzleGameMediator:doRoleAndWorldLogic()
 	local roleModel = "Model_" .. self._activity:getRoleModel()
 	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 2,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
 	heroSprite:addTo(self._roleNode)
-	heroSprite:setScale(0.6)
-	heroSprite:setPosition(cc.p(0, 0))
+	heroSprite:setScale(0.7)
+	heroSprite:setPosition(cc.p(40, 0))
 	self:setTalkView()
 end
 

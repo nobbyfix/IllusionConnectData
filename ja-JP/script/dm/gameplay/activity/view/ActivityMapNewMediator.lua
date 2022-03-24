@@ -1323,6 +1323,10 @@ function ActivityMapNewMediator:onClickStory()
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		type = GalleryMemoryType.STORY,
 		callback = function ()
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
 			self:refreshStoryBtnRedPoint()
 		end
 	}))
