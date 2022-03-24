@@ -689,14 +689,13 @@ function DreamHouseSystem:getPointStarDesc(cond)
 		elseif type == "occupationCount" then
 			local jobType = ""
 			local count = 0
-			local attrName = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_SkillAttrName", "content")
 
 			for k, v in pairs(value) do
 				jobType = k
 				count = v
 			end
 
-			local name = Strings:get(attrName[jobType])
+			local name = GameStyle:getHeroOccupation(jobType)
 
 			return Strings:get(starLang[type], {
 				num = name,

@@ -371,8 +371,8 @@ function ActivityPuzzleGameMediator:doRoleAndWorldLogic()
 	})
 
 	heroSprite:addTo(self._roleNode)
-	heroSprite:setScale(0.6)
-	heroSprite:setPosition(cc.p(0, 0))
+	heroSprite:setScale(0.7)
+	heroSprite:setPosition(cc.p(40, 0))
 	self:setTalkView()
 end
 

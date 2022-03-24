@@ -357,6 +357,11 @@ local kExtResponseMap = {
 		instanceName = "ArenaNewSystem",
 		funcName = "tryEnter",
 		entry = ViewAreaEntry:new("ArenaNewView")
+	},
+	ActivityBentoView = {
+		instanceName = "ActivitySystem",
+		funcName = "tryEnterBentoView",
+		entry = ViewAreaEntry:new("ActivityBentoView")
 	}
 }
 

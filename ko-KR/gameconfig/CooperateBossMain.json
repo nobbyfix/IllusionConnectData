@@ -349,6 +349,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_HGEr": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_HGEr",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SP_WTXXuan",
+                    "MYing"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "WSLi",
+                    "LEMHou",
+                    "HGEr"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_HGEr_Show",
+        "RoleModel": "Model_HGEr",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_HSheng": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

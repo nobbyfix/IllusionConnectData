@@ -1575,6 +1575,23 @@
         "Shine": "",
         "Sicon": "ico_m_riddle_stamina_2"
     },
+    "IR_SamuraiStamina": {
+        "Desc": "IR_SamuraiStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_samurai_stamina_1"
+        ],
+        "Licon": "ico_m_samurai_stamina_1",
+        "Name": "IR_SamuraiStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_samurai_stamina_2"
+    },
     "IR_SilentNightStamina": {
         "Desc": "IR_SilentNightStamina_FunctionDesc",
         "LargeIcons": [
@@ -1912,6 +1929,23 @@
         ],
         "Licon": "ico_m_memory_1",
         "Name": "Memory_Activity_220210_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_220329": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activity_220329_Name",
         "Quality": [
             3
         ],

@@ -1522,6 +1522,61 @@
         ],
         "Type": "ELITE"
     },
+    "SamuraiM01": {
+        "BGM": "Mus_Story_Samurai_Main_Loop",
+        "Background": "Samurai_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SamuraiAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": "",
+        "SubSort": [
+            "SamuraiSN01",
+            "SamuraiSN02",
+            "SamuraiSN03",
+            "SamuraiSN04",
+            "SamuraiSN05",
+            "SamuraiSN06",
+            "SamuraiSN07",
+            "SamuraiSN08"
+        ],
+        "SubStoryPoint": [
+            "SamuraiS01S01",
+            "SamuraiS01S02",
+            "SamuraiS01S03",
+            "SamuraiS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "SamuraiM02": {
+        "BGM": "Mus_Story_Samurai_Relieved",
+        "Background": "Samurai_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SamuraiAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": "",
+        "SubSort": [
+            "SamuraiSE01",
+            "SamuraiSE02",
+            "SamuraiSE03",
+            "SamuraiSE04",
+            "SamuraiSE05",
+            "SamuraiSE06",
+            "SamuraiSE07",
+            "SamuraiSE08",
+            "SamuraiSE09",
+            "SamuraiSE10",
+            "SamuraiSE11"
+        ],
+        "SubStoryPoint": [
+            "SamuraiS02S01",
+            "SamuraiS02S02",
+            "SamuraiS02S03",
+            "SamuraiS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "SilentNightM01": {
         "BGM": "Mus_Redwhite",
         "Background": "SilentNight_Scene02",

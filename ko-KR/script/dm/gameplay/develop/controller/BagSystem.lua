@@ -2100,3 +2100,21 @@ function BagSystem:isHasTSoulItem()
 
 	return slot6
 end
+
+function BagSystem:getEntryBySubType(subType)
+	local function filterFunc(entry)
+		local item = entry.item
+
+		if item:getSubType() ~= subType then
+			slot2 = false
+		else
+			slot2 = true
+		end
+
+		return slot2
+	end
+
+	local entryIds = self:getBag():getEntryIds(filterFunc)
+
+	return entryIds
+end

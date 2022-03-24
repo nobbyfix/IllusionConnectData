@@ -4526,6 +4526,210 @@
         ],
         "StoryLink": "eventstory_404_08a"
     },
+    "SamuraiS01S01": {
+        "FirstReward": "SamuraiS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SamuraiM01",
+        "Name": "SamuraiS01S01_Name",
+        "NextStoryPoint": [
+            "SamuraiS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_samurai_01a"
+    },
+    "SamuraiS01S02": {
+        "FirstReward": "SamuraiS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SamuraiM01",
+        "Name": "SamuraiS01S02_Name",
+        "NextStoryPoint": [
+            "SamuraiS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSN03"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS01S01"
+        ],
+        "StoryLink": "eventstory_samurai_02a"
+    },
+    "SamuraiS01S03": {
+        "FirstReward": "SamuraiS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SamuraiM01",
+        "Name": "SamuraiS01S03_Name",
+        "NextStoryPoint": [
+            "SamuraiS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSN05"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS01S02"
+        ],
+        "StoryLink": "eventstory_samurai_03a"
+    },
+    "SamuraiS01S04": {
+        "FirstReward": "SamuraiS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SamuraiM01",
+        "Name": "SamuraiS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSN07"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS01S03"
+        ],
+        "StoryLink": "eventstory_samurai_04a"
+    },
+    "SamuraiS02S01": {
+        "FirstReward": "SamuraiS01S06_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "SamuraiM02",
+        "Name": "SamuraiS02S01_Name",
+        "NextStoryPoint": [
+            "SamuraiS02S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_samurai_05a"
+    },
+    "SamuraiS02S02": {
+        "FirstReward": "SamuraiS01S07_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SamuraiM02",
+        "Name": "SamuraiS02S02_Name",
+        "NextStoryPoint": [
+            "SamuraiS02S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSE03"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS02S01"
+        ],
+        "StoryLink": "eventstory_samurai_06a"
+    },
+    "SamuraiS02S03": {
+        "FirstReward": "SamuraiS01S08_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "SamuraiM02",
+        "Name": "SamuraiS02S03_Name",
+        "NextStoryPoint": [
+            "SamuraiS02S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSE05"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS02S02"
+        ],
+        "StoryLink": "eventstory_samurai_07a"
+    },
+    "SamuraiS02S04": {
+        "FirstReward": "SamuraiS01S09_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "SamuraiM02",
+        "Name": "SamuraiS02S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "SamuraiSE07"
+        ],
+        "PreStoryPoint": [
+            "SamuraiS02S03"
+        ],
+        "StoryLink": "eventstory_samurai_08a"
+    },
     "SilentNightS01S01": {
         "FirstReward": "SilentNightS01S01_Reward",
         "Icon": "s_album_story_1",

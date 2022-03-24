@@ -257,6 +257,119 @@ function exports.TruthBubble(env, unit)
 	})
 end
 
+function exports.InheritCardByConfig(env, config)
+	local card = config.card
+	local modelId = config.modelId
+	local ignorePassive = config.ignorePassive
+	local ignoreUnique = config.ignoreUnique
+	local uniqueSkill = config.uniqueSkill
+	local cost = config.cost
+	local atk = config.atk
+	local def = config.def
+	local maxHp = config.maxHp
+
+	if card and (card._unitType or card:getType() == "hero") then
+		local player = env["$actor"]:getOwner()
+		local _cardInfo = card:getCardInfo()
+		local cardSystem = env.global["$CardSystem"]
+		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "c")
+
+		if cardInfo.hero and cardInfo.hero.skills then
+			for k, v in pairs(cardInfo.hero.skills.passive or {}) do
+				if ignorePassive or v.skillType and v.skillType == "Equip" then
+					cardInfo.hero.skills.passive[k] = nil
+				end
+			end
+
+			if cardInfo.hero.skills.unique then
+				if ignoreUnique then
+					cardInfo.hero.skills.unique = nil
+				end
+
+				if uniqueSkill then
+					cardInfo.hero.skills.unique.proto = uniqueSkill
+				end
+			end
+		end
+
+		local passives_new = {}
+		local passvies = {}
+
+		for k, v in pairs(cardInfo.hero.skills.passive) do
+			passvies[#passvies + 1] = v
+		end
+
+		table.deepcopy(passvies, passives_new)
+
+		cardInfo.hero.skills.passive = passives_new
+
+		if modelId then
+			cardInfo.hero.modelId = modelId
+		end
+
+		if cost then
+			cardInfo.cost = cost
+		end
+
+		if atk then
+			cardInfo.hero.atk = atk
+		end
+
+		if def then
+			cardInfo.hero.def = def
+		end
+
+		if maxHp then
+			cardInfo.hero.maxHp = maxHp
+		end
+
+		if player:getCardState() == "skill" then
+			for i = 1, 4 do
+				local card_ws = player:takeCardAtIndex(i)
+
+				if card_ws then
+					player:backCardToPool(card_ws)
+				end
+			end
+
+			player:setCardPool(player:getHeroCardPool())
+			player:setupCardWindowWithHeroCards()
+			env.global.RecordImmediately(env, player:getId(), "RemoveSCard")
+		end
+
+		local card = player:getCardPool():insertCardByInfo(cardInfo)
+
+		env.global.RecordImmediately(env, player:getId(), "BackToCard", {
+			type = "hero",
+			card = card and card:dumpInformation() or 0
+		})
+
+		for idx = 1, 4 do
+			if player:takeCardAtIndex(idx) == nil then
+				local newCard, nextCard = player:fillCardAtIndex(idx)
+
+				env.global.RecordImmediately(env, player:getId(), "Card", {
+					type = "hero",
+					idx = idx,
+					card = newCard and newCard:dumpInformation() or 0,
+					next = nextCard and nextCard:dumpInformation() or 0
+				})
+				env.global["$SkillSystem"]:activateGlobalTrigger("HERO_CARD_CHANGEED", {
+					player = player,
+					idx = idx,
+					newcard = newCard
+				})
+
+				return card
+			end
+		end
+
+		return card
+	end
+
+	return nil
+end
+
 function exports.InheritCard(env, card, modelId, ignorePassive, ignoreUnique)
 	if card and (card._unitType or card:getType() == "hero") then
 		local player = env["$actor"]:getOwner()

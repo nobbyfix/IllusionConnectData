@@ -142,5 +142,53 @@
             "DH03N03_StarReward2",
             "DH03N03_StarReward3"
         ]
+    },
+    "DH04N01_Point": {
+        "BeforePoint": "",
+        "BlockId": "DH04N01M01",
+        "Name": "DH4PointDes_Easy",
+        "NextPoint": "DH04N02_Point",
+        "StarNum": [
+            1,
+            2,
+            3
+        ],
+        "StarReward": [
+            "DH04N01_StarReward1",
+            "DH04N01_StarReward2",
+            "DH04N01_StarReward3"
+        ]
+    },
+    "DH04N02_Point": {
+        "BeforePoint": "DH04N01_Point",
+        "BlockId": "DH04N02M01",
+        "Name": "DH4PointDes_Mid",
+        "NextPoint": "DH04N03_Point",
+        "StarNum": [
+            4,
+            6,
+            8
+        ],
+        "StarReward": [
+            "DH04N02_StarReward1",
+            "DH04N02_StarReward2",
+            "DH04N02_StarReward3"
+        ]
+    },
+    "DH04N03_Point": {
+        "BeforePoint": "DH04N02_Point",
+        "BlockId": "DH04N03M01",
+        "Name": "DH4PointDes_Hard",
+        "NextPoint": "",
+        "StarNum": [
+            9,
+            12,
+            15
+        ],
+        "StarReward": [
+            "DH04N03_StarReward1",
+            "DH04N03_StarReward2",
+            "DH04N03_StarReward3"
+        ]
     }
 }

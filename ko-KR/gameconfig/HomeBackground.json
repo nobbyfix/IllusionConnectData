@@ -576,6 +576,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_Samurai": {
+        "BGM": "Mus_Story_Samurai_Main_Loop",
+        "BGPContraction": "anualshop_scene_main_samurai_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Samurai_Desc",
+            "img": "Activity_ExchangeBG_Samurai",
+            "name": "HomeBackground_Samurai_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Samurai_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Samurai_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Samurai",
+        "Unlook": 1
+    },
     "HomeBackground_SilentNight": {
         "BGM": "Mus_Story_SilentNight",
         "BGPContraction": "anualshop_scene_main_silentnight_preview",

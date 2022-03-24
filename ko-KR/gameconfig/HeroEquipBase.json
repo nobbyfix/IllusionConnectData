@@ -10126,5 +10126,119 @@
             100
         ],
         "zoom": 0.6
+    },
+    "Weapon_15129_2": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15129_2_Desc",
+        "HP": "",
+        "Icon": "ico_equip_tfaweapon",
+        "Name": "Weapon_15129_2_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "LSLTe"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15129_2",
+        "Sort": 299069,
+        "StartEquipEndID": "Rareity15_Weapon2_8",
+        "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15130_3": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15130_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_ydengweapon",
+        "Name": "Weapon_15130_3_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "Cure"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15130_3",
+        "Sort": 299070,
+        "StartEquipEndID": "Rareity15_Weapon3_8",
+        "StartEquipStarID": "Rareity15_Weapon3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15131_1": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15131_1_Desc",
+        "HP": "",
+        "Icon": "ico_equip_yghxiangweapon",
+        "Name": "Weapon_15131_1_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "MZGXiu"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15131_1",
+        "Sort": 299071,
+        "StartEquipEndID": "Rareity15_Weapon1_8",
+        "StartEquipStarID": "Rareity15_Weapon1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
     }
 }
