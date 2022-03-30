@@ -990,7 +990,7 @@ all.Skill_BQDShe_Unique_Awaken = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.RandomN(_env, 3, global.EnemyUnits(_env))
+			_env.units = global.RandomN(_env, 3, global.EnemyUnits(_env, -global.MARKED(_env, "SummonedNian")))
 
 			for _, unit in global.__iter__(_env.units) do
 				global.RetainObject(_env, unit)

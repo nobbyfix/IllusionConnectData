@@ -528,20 +528,13 @@ all.Skill_Enemy_SummonedBOtuA_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "-========判断")
-
 			_env.petsss = global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN"))
 
 			if _env.petsss[1] then
 				local units = global.RandomN(_env, 1, _env.petsss)
-
-				global.print(_env, "-========我好了", global.GetCellId(_env, units[1]))
-
 				_env.cellNumber = global.GetCell(_env, units[1])
 
 				global.Kick(_env, units[1])
-				global.print(_env, "-========再次确认", global.IdOfCell(_env, _env.cellNumber))
 
 				if global.FriendUnits(_env, global.MARKED(_env, "ToyRabbitA"))[1] then
 					global.SpawnByTransform(_env, global.GetOwner(_env, global.EnemyMaster(_env)), global.FriendUnits(_env, global.MARKED(_env, "ToyRabbitA"))[1], {
@@ -549,8 +542,6 @@ all.Skill_Enemy_SummonedBOtuA_Passive = {
 					}, true)
 				end
 			else
-				global.print(_env, "-========找空位")
-
 				local setLoction = global.RandomN(_env, 1, global.EnemyCells(_env, global.EMPTY_CELL(_env)))[1]
 
 				if global.FriendUnits(_env, global.MARKED(_env, "ToyRabbitA"))[1] and global.RandomN(_env, 1, global.EnemyCells(_env, global.EMPTY_CELL(_env)))[1] then

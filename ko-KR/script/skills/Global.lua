@@ -735,6 +735,82 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
 	end
 
+	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
+
+	if kuriboh[1] and global.MASTER(_env, target) then
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_Immune")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local buff = global.Immune(_env)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "Immune",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"IMMUNE",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_Immune")
+			end
+		end
+
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_UnHurtRate")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local unhurtrateup = global.SpecialPropGetter(_env, "FCXJi_UnHurtRate")(_env, target)
+				defender.unhurtrate = defender.unhurtrate + unhurtrateup
+				local buff = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, unhurtrateup)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "UnHurtRateUp",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"UNHURTRATEUP",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ANY(_env, "Skill_FCXJi_Passive"), 99)
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_UnHurtRate")
+			end
+		end
+	end
+
 	local damage = global.EvalSingleDamage(_env, attacker, defender, dmgFactor)
 
 	for i = 1, #Flags do
@@ -1036,6 +1112,82 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		local singleunhurtratedown = global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
 		attacker.defweaken = attacker.defweaken + singleweaken
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
+	end
+
+	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
+
+	if kuriboh[1] and global.MASTER(_env, target) then
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_Immune")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local buff = global.Immune(_env)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "Immune",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"IMMUNE",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_Immune")
+			end
+		end
+
+		if global.INSTATUS(_env, "Skill_FCXJi_Passive_UnHurtRate")(_env, target) then
+			local card = global.RecruitCard(_env, kuriboh[1], {
+				7,
+				9,
+				5,
+				4,
+				6,
+				2,
+				1,
+				3
+			}, 0, global.GetOwner(_env, target), true)
+
+			if card then
+				local unhurtrateup = global.SpecialPropGetter(_env, "FCXJi_UnHurtRate")(_env, target)
+				defender.unhurtrate = defender.unhurtrate + unhurtrateup
+				local buff = global.NumericEffect(_env, "+unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, unhurtrateup)
+
+				global.ApplyBuff(_env, target, {
+					timing = 4,
+					duration = 10,
+					display = "UnHurtRateUp",
+					tags = {
+						"STATUS",
+						"BUFF",
+						"UNHURTRATEUP",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				})
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ANY(_env, "Skill_FCXJi_Passive"), 99)
+				global.RemoveStatus(_env, target, "Skill_FCXJi_Passive_UnHurtRate")
+			end
+		end
 	end
 
 	local damage = global.EvalAOEDamage(_env, attacker, defender, dmgFactor)
