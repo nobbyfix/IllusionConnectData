@@ -207,7 +207,6 @@ all.Skill_BBLMa_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.print(_env, "-=标记层数为", global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15101_biaozhi")))
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
@@ -235,10 +234,8 @@ all.Skill_BBLMa_Unique = {
 
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
-			global.print(_env, "-=标记层数为", global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15101_biaozhi")))
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15101_biaozhi")) > 0 then
-				global.print(_env, "-=进入tag路线")
 				global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
 
 				this.ProbRateFactor1 = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15101_First")(_env, _env.ACTOR)

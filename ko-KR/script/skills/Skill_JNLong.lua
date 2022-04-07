@@ -768,7 +768,6 @@ all.Skill_JNLong_Unique_EX = {
 			global.RetainObject(_env, _env.TARGET)
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
-			global.print(_env, "本体攻击为：", selfAtk, ",本体防御为:", selfDef)
 		end)
 		exec["@time"]({
 			900
@@ -1105,7 +1104,6 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 			local global = _env.global
 
 			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
-			global.print(_env, "-----------------------------------------------------------技能改为了觉醒----------------------------------------------------------------------------")
 		end)
 		exec["@time"]({
 			500
@@ -1138,8 +1136,6 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 				}, {
 					buffeft1
 				})
-				global.print(_env, "幻影1号攻击为：", global.UnitPropGetter(_env, "atk")(_env, SummonedJNLong1))
-				global.print(_env, "幻影1号防御为：", global.UnitPropGetter(_env, "def")(_env, SummonedJNLong1))
 			end
 
 			local SummonedJNLong2 = global.Summon(_env, _env.ACTOR, "SummonedJNLong_Awaken", this.summonFactor, nil, {
@@ -1168,8 +1164,6 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 				}, {
 					buffeft1
 				})
-				global.print(_env, "幻影2号攻击为：", global.UnitPropGetter(_env, "atk")(_env, SummonedJNLong2))
-				global.print(_env, "幻影2号防御为：", global.UnitPropGetter(_env, "def")(_env, SummonedJNLong2))
 			end
 
 			local SummonedJNLong3 = global.Summon(_env, _env.ACTOR, "SummonedJNLong_Awaken", this.summonFactor, nil, {
@@ -1198,8 +1192,6 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 				}, {
 					buffeft1
 				})
-				global.print(_env, "幻影2号攻击为：", global.UnitPropGetter(_env, "atk")(_env, SummonedJNLong3))
-				global.print(_env, "幻影2号防御为：", global.UnitPropGetter(_env, "def")(_env, SummonedJNLong3))
 			end
 		end)
 

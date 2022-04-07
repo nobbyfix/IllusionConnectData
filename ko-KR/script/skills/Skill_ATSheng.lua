@@ -789,7 +789,12 @@ all.Skill_ATSheng_Queen_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local MyMaste = global.GetSummoner(_env, _env.ACTOR)
 			local HurtRateFactor = global.SpecialPropGetter(_env, "Skill_ATSheng_Passive_HurtRate")(_env, _env.ACTOR)
+
+			if HurtRateFactor == 0 then
+				HurtRateFactor = global.SpecialPropGetter(_env, "Skill_ATSheng_Passive_HurtRate")(_env, MyMaste)
+			end
 
 			if HurtRateFactor and HurtRateFactor ~= 0 then
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
@@ -843,6 +848,7 @@ all.Skill_ATSheng_Queen_Passive = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				local MyMaste = global.GetSummoner(_env, _env.ACTOR)
 				local HurtRateFactor = global.SpecialPropGetter(_env, "Skill_ATSheng_Passive_HurtRate")(_env, _env.ACTOR)
 
 				if HurtRateFactor and HurtRateFactor ~= 0 then

@@ -2012,45 +2012,43 @@ all.Skill_FLYDe_Passive_Awaken = {
 						})
 					end
 				end
+			end
 
-				local buff_atk = global.NumericEffect(_env, "+atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.AtkRate)
-				local buff_atk_3 = global.NumericEffect(_env, "+atkrate", {
-					"+Normal",
-					"+Normal"
-				}, this.AtkRate * 2)
+			local buff_atk = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, this.AtkRate)
+			local buff_atk_3 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, this.AtkRate * 2)
 
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				display = "AtkUp",
+				group = "Skill_FLYDe_Passive_Awaken",
+				duration = 99,
+				limit = 1,
+				tags = {
+					"Skill_FLYDe_Passive_Awaken"
+				}
+			}, {
+				buff_atk
+			})
+
+			if _env.count >= 4 then
 				global.ApplyBuff(_env, _env.ACTOR, {
 					timing = 0,
 					display = "AtkUp",
-					group = "Skill_FLYDe_Passive_Awaken",
+					group = "Skill_FLYDe_Passive_Awaken_3",
 					duration = 99,
 					limit = 1,
 					tags = {
 						"Skill_FLYDe_Passive_Awaken"
 					}
 				}, {
-					buff_atk
+					buff_atk_3
 				})
-				global.print(_env, "-=强化基本属性")
-
-				if _env.count >= 4 then
-					global.ApplyBuff(_env, _env.ACTOR, {
-						timing = 0,
-						display = "AtkUp",
-						group = "Skill_FLYDe_Passive_Awaken_3",
-						duration = 99,
-						limit = 1,
-						tags = {
-							"Skill_FLYDe_Passive_Awaken"
-						}
-					}, {
-						buff_atk_3
-					})
-					global.print(_env, "-=强化奖励属性")
-				end
 			end
 		end)
 

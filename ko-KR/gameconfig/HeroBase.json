@@ -21184,7 +21184,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.13,
-        "AwakePic": "",
+        "AwakePic": "portrait_ltnan_awaken",
         "BaseAttack": 248.0,
         "BaseDefence": 60.0,
         "BaseHp": 810.0,
@@ -21420,7 +21420,8 @@
         "StarId": "SLMen_1",
         "SurfaceList": [
             "Surface_SLMen_1",
-            "Surface_SLMen_2"
+            "Surface_SLMen_2",
+            "Surface_SLMen_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -26039,7 +26040,8 @@
         "StarId": "WEDe_1",
         "SurfaceList": [
             "Surface_WEDe_1",
-            "Surface_WEDe_2"
+            "Surface_WEDe_2",
+            "Surface_WEDe_3"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",

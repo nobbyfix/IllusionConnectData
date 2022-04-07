@@ -1436,6 +1436,16 @@ local modules = {
 							res = "asset/ui/RecruitMain_New.csb",
 							name = "RecruitNewDrawCardView",
 							mediator = "RecruitNewDrawCardMediator"
+						},
+						{
+							res = "asset/ui/RecruitMainTSoul.csb",
+							name = "RecruitNewTSDrawCardView",
+							mediator = "RecruitNewTSDrawCardMediator"
+						},
+						{
+							res = "asset/ui/RecruitResult.csb",
+							name = "RecruitTSResultView",
+							mediator = "RecruitTSResultMediator"
 						}
 					}
 				}

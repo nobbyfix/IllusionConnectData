@@ -832,8 +832,6 @@ all.Skill_MGNa_Unique_Awaken = {
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
 				if this.scount < 4 then
-					global.print(_env, "-=敌人少于4人，加伤害", this.AwakenFactor)
-
 					damage.val = damage.val * (1 + this.AwakenFactor)
 				end
 

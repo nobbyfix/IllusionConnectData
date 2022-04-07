@@ -238,7 +238,9 @@ all.Skill_LFEr_Unique = {
 				for _, Funit in global.__iter__(_env.friendunits) do
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, Funit)
 
-					global.ApplyHPRecovery(_env, Funit, maxHp)
+					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, Funit, {
+						val = maxHp
+					}, false, true)
 
 					local buffeft2 = global.NumericEffect(_env, "+defrate", {
 						"+Normal",
@@ -449,7 +451,7 @@ all.Skill_LFEr_Proud_EX = {
 			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, unit, this.HealRateFactor, 0)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal, false, true)
 
 				local buffeft2 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -565,7 +567,9 @@ all.Skill_LFEr_Unique_EX = {
 				for _, Funit in global.__iter__(_env.friendunits) do
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, Funit)
 
-					global.ApplyHPRecovery(_env, Funit, maxHp)
+					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, Funit, {
+						val = maxHp
+					}, false, true)
 
 					local buffeft2 = global.NumericEffect(_env, "+defrate", {
 						"+Normal",

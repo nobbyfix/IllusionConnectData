@@ -513,7 +513,7 @@
     "Condi_DramaExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DramaExchangeAchieve_Desc"
     },
@@ -1108,7 +1108,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220224.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220412.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1129,7 +1129,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220224.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220412.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },
