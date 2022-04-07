@@ -3037,7 +3037,7 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
-        "Unlook": 0
+        "Unlook": 1
     },
     "Surface_FEMSi_1": {
         "ActivityId": "",
@@ -3198,7 +3198,7 @@
         "Desc": "Surface_FEMSi_wvt_Desc",
         "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_FEMSi_3_GainShort",
-        "GoodsId": "Surface_49",
+        "GoodsId": "Surface_51",
         "Hero": "FEMSi",
         "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_FEMSi_wvt_LongDesc",
@@ -9736,7 +9736,7 @@
         "ShopID": "",
         "Sort": 2,
         "Type": 5,
-        "Unlook": 0
+        "Unlook": 1
     },
     "Surface_SLWan_1": {
         "ActivityId": "",
@@ -11521,11 +11521,11 @@
             }
         ],
         "Desc": "Surface_WEDe_tarot_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_WEDe_3_GainShort",
-        "GoodsId": "",
+        "GoodsId": "Surface_52",
         "Hero": "WEDe",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_WEDe_tarot_LongDesc",
         "Model": "Model_WEDe_tarot",
         "Name": "Surface_WEDe_tarot_Name",
@@ -11533,9 +11533,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_WLSTNCi_1": {

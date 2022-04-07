@@ -278,7 +278,6 @@ all.CrusadeNewBuffs_DEFReboundUp = {
 				}, {
 					buffeft1
 				})
-				global.print(_env, global.fanshang)
 			end
 		end)
 

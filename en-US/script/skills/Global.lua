@@ -1332,8 +1332,13 @@ function all.EvalRecovery_FlagCheck(_env, actor, target, healFactorRate, healFac
 	})
 	local LowerHp_HealExtra_RatioCheck = global.SpecialPropGetter(_env, "LowerHp_HealExtra_RatioCheck")(_env, actor)
 	local LowerHp_HealExtra_ExtraRate = global.SpecialPropGetter(_env, "LowerHp_HealExtra_ExtraRate")(_env, actor)
+	local EquipSkill_Weapon_15132_2 = global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15132_2")
 
-	if LowerHp_HealExtra_RatioCheck and LowerHp_HealExtra_RatioCheck ~= 0 and healee.hpRatio < LowerHp_HealExtra_RatioCheck then
+	if LowerHp_HealExtra_RatioCheck and LowerHp_HealExtra_RatioCheck ~= 0 and EquipSkill_Weapon_15132_2 == false then
+		if healee.hpRatio < LowerHp_HealExtra_RatioCheck then
+			heal = heal * (1 + LowerHp_HealExtra_ExtraRate)
+		end
+	elseif EquipSkill_Weapon_15132_2 then
 		heal = heal * (1 + LowerHp_HealExtra_ExtraRate)
 	end
 
@@ -1732,7 +1737,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15115_3") > 0 then
 		local NokoriHp = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local DmgUpFactor = global.floor(_env, NokoriHp / 0.2)
+		local DmgUpFactor = global.floor(_env, NokoriHp / 0.15)
 		local DmgUpEft = HurtRateFactor * DmgUpFactor
 		damage.val = damage.val * (1 + DmgUpEft)
 	end
@@ -2495,7 +2500,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15115_3") > 0 then
 		local NokoriHp = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local DmgUpFactor = global.floor(_env, NokoriHp / 0.2)
+		local DmgUpFactor = global.floor(_env, NokoriHp / 0.15)
 		local DmgUpEft = HurtRateFactor * DmgUpFactor
 		damage.val = damage.val * (1 + DmgUpEft)
 	end
@@ -3271,7 +3276,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15115_3") > 0 then
 		local NokoriHp = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local DmgUpFactor = global.floor(_env, NokoriHp / 0.2)
+		local DmgUpFactor = global.floor(_env, NokoriHp / 0.15)
 		local DmgUpEft = HurtRateFactor * DmgUpFactor
 		damages[n].val = damages[n].val * (1 + DmgUpEft)
 	end
@@ -4128,7 +4133,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15115_3") > 0 then
 		local NokoriHp = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local HurtRateFactor = global.SpecialPropGetter(_env, "weapon_15115_3")(_env, actor)
-		local DmgUpFactor = global.floor(_env, NokoriHp / 0.2)
+		local DmgUpFactor = global.floor(_env, NokoriHp / 0.15)
 		local DmgUpEft = HurtRateFactor * DmgUpFactor
 		damages[n].val = damages[n].val * (1 + DmgUpEft)
 	end
@@ -4615,9 +4620,10 @@ function all.ApplyAOEHPMultiDamage_ResultCheck(_env, actor, target, delays, dama
 	return global.MultiDelayCall(_env, delays, global.ApplyAOEHPDamageN, target, damages, actor, lowerLimit)
 end
 
-function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch)
+function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Unique)
 	local this = _env.this
 	local global = _env.global
+	Unique = Unique or false
 	local extrapetshealrate = global.SpecialPropGetter(_env, "extrapetshealrate")(_env, actor)
 
 	if extrapetshealrate and extrapetshealrate ~= 0 then
@@ -4723,6 +4729,62 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch)
 
 	if BeCuredRage and BeCuredRage ~= 0 then
 		global.ApplyRPRecovery(_env, target, BeCuredRage)
+	end
+
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15132_2") and Unique then
+		if global.GetUnitCid(_env, actor) == "LFEr" then
+			local LowerHp_HealExtra_ExtraRate = global.SpecialPropGetter(_env, "LowerHp_HealExtra_ExtraRate")(_env, actor)
+			heal.val = heal.val * (1 + LowerHp_HealExtra_ExtraRate)
+		end
+
+		if global.GetUnitCid(_env, actor) then
+			local nummax = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_nummax")(_env, actor)
+			local num = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_num" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env))
+			local MaximumLifeBonus = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_MaximumLifeBonus")(_env, actor)
+
+			if num < nummax then
+				local BuffMaxHp = global.MaxHpEffect(_env, heal.val * MaximumLifeBonus)
+
+				global.ApplyBuff_Buff(_env, actor, target, {
+					timing = 0,
+					display = "MaxHpUp",
+					group = "EquipSkill_Weapon_15132_2_maxhp",
+					duration = 999,
+					limit = 99,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"MAXHPUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					BuffMaxHp
+				}, 1, 0)
+
+				local buffeft_num = global.SpecialNumericEffect(_env, "+EquipSkill_Weapon_15132_2_num", {
+					"+Normal",
+					"+Normal"
+				}, num + 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					duration = 999,
+					group = "EquipSkill_Weapon_15132_2_num",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"EquipSkill_Weapon_15132_2_num"
+					}
+				}, {
+					buffeft_num
+				})
+			end
+		end
 	end
 
 	return global.ApplyHPRecovery(_env, target, heal, switch)

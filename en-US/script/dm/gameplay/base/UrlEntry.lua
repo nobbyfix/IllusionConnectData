@@ -319,6 +319,11 @@ local kExtResponseMap = {
 		funcName = "tryEnterActivityRecruit",
 		entry = ViewAreaEntry:new("RecruitNewDrawCardView")
 	},
+	RecruitNewTSDrawCardView = {
+		instanceName = "RecruitSystem",
+		funcName = "tryEnterActivityRecruitTS",
+		entry = ViewAreaEntry:new("RecruitNewTSDrawCardView")
+	},
 	ActivityTaskView = {
 		funcName = "complexActivityTaskTryEnter",
 		instanceName = "ActivitySystem",

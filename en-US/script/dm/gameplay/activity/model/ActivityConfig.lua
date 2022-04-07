@@ -105,6 +105,7 @@ ActivityModel = {
 	[ActivityType.kDRAWCARDUR] = BoardActivity,
 	[ActivityType.KActivityMail] = ActivityMail,
 	[ActivityType.KActivityTrialRoad] = AthenaGoActivity,
+	[ActivityType.kDRAWCARDTS] = BoardActivity,
 	[ActivityType.KActivityBento] = BentoActivity
 }
 ActivityUI = {
@@ -408,6 +409,13 @@ ActivityLogin14Config = {
 		}
 	},
 	EightDays_Drama = {
+		resFile = "asset/ui/ActivityDramaLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(145, 143, 198, 255)
+		}
+	},
+	EightDays_Drama_Re = {
 		resFile = "asset/ui/ActivityDramaLogin14.csb",
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),

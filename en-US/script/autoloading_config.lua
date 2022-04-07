@@ -366,6 +366,16 @@ local mappings = {
 		name = "RecruitRewardMediator",
 		type = "@C"
 	},
+	RecruitNewTSDrawCardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitNewTSDrawCardMediator",
+		name = "RecruitNewTSDrawCardMediator",
+		type = "@C"
+	},
+	RecruitTSResultMediator = {
+		url = "dm.gameplay.recruit.view.RecruitTSResultMediator",
+		name = "RecruitTSResultMediator",
+		type = "@C"
+	},
 	RecruitHeroPreviewMediator = {
 		url = "dm.gameplay.recruit.view.RecruitHeroPreviewMediator",
 		name = "RecruitHeroPreviewMediator",

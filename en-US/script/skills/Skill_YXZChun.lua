@@ -653,7 +653,14 @@ all.Skill_YXZChun_Tiger_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local MyMaster = global.GetSummoner(_env, _env.ACTOR)
 			local DamageFactor = global.SpecialPropGetter(_env, "TigerDamageRate")(_env, _env.ACTOR)
+
+			if DamageFactor == 0 then
+				DamageFactor = global.SpecialPropGetter(_env, "TigerDamageRate")(_env, MyMaster)
+			end
+
+			global.print(_env, DamageFactor, "DamageFactor======")
 
 			if global.FriendMaster(_env) then
 				if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_YXZChun_Passive_Key")) > 0 then

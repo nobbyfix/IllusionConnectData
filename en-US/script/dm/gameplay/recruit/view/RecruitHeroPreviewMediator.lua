@@ -7,6 +7,7 @@ RecruitHeroPreviewMediator:has("_developSystem", {
 local kBtnHandlers = {}
 local TabType = {
 	kHero = 1,
+	kTSoul = 6,
 	kDesc = 4,
 	kEquip = 2,
 	kUREquip = 5,
@@ -33,6 +34,10 @@ local kTabImage = {
 		ASSET_LANG_COMMON .. "common_bg_SR.png",
 		ASSET_LANG_COMMON .. "common_bg_SR02.png",
 		13
+	},
+	[5] = {
+		ASSET_LANG_COMMON .. "common_bg_n.png",
+		ASSET_LANG_COMMON .. "common_bg_n02.png"
 	}
 }
 local kURTabImage = {
@@ -94,6 +99,7 @@ function RecruitHeroPreviewMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	self._heroSystem = self._developSystem:getHeroSystem()
+	self._tSoulSystem = self._developSystem:getTSoulSystem()
 
 	self:glueFieldAndUi()
 end
@@ -132,6 +138,10 @@ function RecruitHeroPreviewMediator:glueFieldAndUi()
 	self._heroPanel = self._main:getChildByName("heroPanel")
 
 	self._heroPanel:setVisible(false)
+
+	self._tsoulPanel = self._main:getChildByName("tsoulPanel")
+
+	self._tsoulPanel:setVisible(false)
 
 	self._descPanel = self._main:getChildByName("descPanel")
 
@@ -236,6 +246,16 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 			TabType.kUREquip,
 			Strings:get("Draw_UR_EquipBtnName"),
 			Strings:get("UITitle_EN_Zhuangbei")
+		}
+		self._showTabNum = self._showTabNum + 1
+	end
+
+	if showRewards.Draw_TSBtnName then
+		self._tabType = TabType.kTSoul
+		self._showType[#self._showType + 1] = {
+			TabType.kTSoul,
+			Strings:get("Draw_TSBtnName"),
+			""
 		}
 		self._showTabNum = self._showTabNum + 1
 	end
@@ -381,7 +401,8 @@ function RecruitHeroPreviewMediator:buildPreviewData()
 		[TabType.kEquip] = equipRewards,
 		[TabType.kItem] = itemRewards,
 		[TabType.kDesc] = self._recruitPool:getRareDesc(),
-		[TabType.kUREquip] = urEquipRewards
+		[TabType.kUREquip] = urEquipRewards,
+		[TabType.kTSoul] = urEquipRewards
 	}
 	self._showType[#self._showType + 1] = {
 		TabType.kDesc,
@@ -409,6 +430,12 @@ function RecruitHeroPreviewMediator:setSelectView()
 			else
 				button:setVisible(false)
 			end
+		elseif self._tabType == TabType.kTSoul then
+			buttons[#buttons + 1] = button
+			local image = button:getChildByFullName("image")
+			local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
+
+			image:loadTexture(pic)
 		else
 			local tabConfig = kTabImage
 			local num = 4
@@ -615,6 +642,13 @@ function RecruitHeroPreviewMediator:tabClickByIndex(button, eventType, index)
 
 			iamge:loadTexture(pic)
 		end
+	elseif self._tabType == TabType.kTSoul then
+		for i = 1, 5 do
+			local iamge = self._selectPanel:getChildByFullName("btn" .. i .. ".image")
+			local pic = self._heroType == i and kTabImage[i][2] or kTabImage[i][1]
+
+			iamge:loadTexture(pic)
+		end
 	else
 		local num = table.nums(self._tabConfig)
 
@@ -632,6 +666,8 @@ function RecruitHeroPreviewMediator:tabClickByIndex(button, eventType, index)
 		self:updateEquipView()
 	elseif self._tabType == TabType.kUREquip then
 		self:updateEquipView()
+	elseif self._tabType == TabType.kTSoul then
+		self:setTsoulsView()
 	end
 end
 
@@ -667,6 +703,90 @@ function RecruitHeroPreviewMediator:setItemsView()
 					showAmount = false
 				})
 
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+					needDelay = true
+				})
+				icon:setAnchorPoint(cc.p(0.5, 0.5))
+				panel:addChild(icon)
+				icon:setPosition(cc.p(nameLabel:getPositionX(), 77))
+				layer:addChild(panel)
+				panel:setPosition(cc.p((index - 1) * self._itemCell:getContentSize().width, 0))
+			end
+		end
+	end
+end
+
+function RecruitHeroPreviewMediator:setTsoulsView()
+	self._tsoulList = self._tsoulPanel:getChildByFullName("tsoulList")
+
+	self._tsoulList:setScrollBarEnabled(false)
+	self._tsoulList:removeAllItems()
+	self._tsoulList:jumpToBottom()
+
+	local listViewSize = self._tsoulList:getContentSize()
+	local showData = {
+		{},
+		{},
+		{},
+		{},
+		{}
+	}
+	showData[1] = self._previewData[TabType.kTSoul]
+
+	for i = 1, #self._previewData[TabType.kTSoul] do
+		local data = self._previewData[TabType.kTSoul][i]
+		local tsoulId = data.code
+		local config = ConfigReader:getRecordById("Tsoul", tsoulId)
+		local rareity = nil
+
+		if config then
+			rareity = config.Rareity
+		else
+			config = ConfigReader:getRecordById("ItemConfig", tsoulId)
+			rareity = config.Quality
+		end
+
+		if rareity == 5 then
+			showData[2][#showData[2] + 1] = data
+		elseif rareity == 4 then
+			showData[3][#showData[3] + 1] = data
+		elseif rareity == 3 then
+			showData[4][#showData[4] + 1] = data
+		elseif rareity == 2 then
+			showData[5][#showData[5] + 1] = data
+		end
+	end
+
+	local num = math.ceil(#showData[self._heroType] / 6)
+
+	for i = 1, num do
+		local layer = ccui.Layout:create()
+
+		layer:setContentSize(cc.size(listViewSize.width, self._itemCell:getContentSize().height))
+		layer:removeAllChildren()
+		self._tsoulList:pushBackCustomItem(layer)
+
+		for index = 1, 6 do
+			local rewardData = showData[self._heroType][6 * (i - 1) + index]
+
+			if rewardData then
+				local panel = self._itemCell:clone()
+
+				panel:setVisible(true)
+
+				local nameLabel = panel:getChildByName("name")
+
+				nameLabel:setString(RewardSystem:getName(rewardData))
+				nameLabel:setTextColor(cc.c3b(255, 255, 255))
+				nameLabel:setLocalZOrder(10)
+				GameStyle:setQualityText(nameLabel, RewardSystem:getQuality(rewardData))
+
+				local icon = IconFactory:createRewardIcon(rewardData, {
+					isWidget = true,
+					showAmount = false
+				})
+
+				icon:setScale(0.7)
 				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
 					needDelay = true
 				})
@@ -862,7 +982,7 @@ function RecruitHeroPreviewMediator:setEquipView()
 
 	descText:setVisible(false)
 
-	if self._tabType == TabType.kUREquip then
+	if self._tabType == TabType.kUREquip or self._tabType == TabType.kTSoul then
 		return
 	end
 
@@ -968,7 +1088,7 @@ function RecruitHeroPreviewMediator:createEquipCell(cell, index, showList)
 end
 
 function RecruitHeroPreviewMediator:setUREquipView()
-	if self._tabType == TabType.kEquip then
+	if self._tabType == TabType.kEquip or self._tabType == TabType.kTSoul then
 		return
 	end
 
@@ -1055,8 +1175,9 @@ function RecruitHeroPreviewMediator:onClickTab(name, tag)
 	self._listView:setVisible(false)
 	self._equipPanel:setVisible(false)
 	self._heroPanel:setVisible(false)
+	self._tsoulPanel:setVisible(false)
 	self._descPanel:setVisible(false)
-	self._selectPanel:setVisible(self._tabType == TabType.kHero or self._tabType == TabType.kEquip or self._tabType == TabType.kUREquip)
+	self._selectPanel:setVisible(self._tabType == TabType.kHero or self._tabType == TabType.kEquip or self._tabType == TabType.kUREquip or self._tabType == TabType.kTSoul)
 
 	if self._heroView then
 		self._heroView:removeFromParent()
@@ -1080,6 +1201,9 @@ function RecruitHeroPreviewMediator:onClickTab(name, tag)
 		self._descPanel:setVisible(true)
 	elseif self._tabType == TabType.kUREquip then
 		self:updateUREquipView()
+	elseif self._tabType == TabType.kTSoul then
+		self._tsoulPanel:setVisible(true)
+		self:setTsoulsView()
 	end
 end
 

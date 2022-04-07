@@ -565,3 +565,23 @@ function RecruitSystem:tryEnterActivityRecruit(data)
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
 end
+
+function RecruitSystem:tryEnterActivityRecruitTS(data)
+	local unlock, tips, recruitId = self:checkEnabled(data)
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+
+		return
+	end
+
+	AudioEngine:getInstance():playEffect("Se_Click_Story_Common", false)
+
+	local view = self:getInjector():getInstance("RecruitNewTSDrawCardView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+end

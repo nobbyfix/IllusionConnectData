@@ -10598,16 +10598,22 @@
         "FirstKillReward": "DramaSE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -10629,7 +10635,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE01E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -10644,10 +10650,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -10728,22 +10734,28 @@
         "FirstKillReward": "DramaSE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_1",
                 "4": "Drama_Buff_Star4_2_1",
                 "5": "Drama_Buff_Star5_2_1",
@@ -10755,7 +10767,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE01",
         "Master": "",
         "Name": "BlockPoint_DramaS09M_Name",
@@ -10768,7 +10780,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE01M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -10783,10 +10795,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -10866,16 +10878,22 @@
         "FirstKillReward": "DramaSE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -10897,7 +10915,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE02E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -10912,10 +10930,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -10996,22 +11014,28 @@
         "FirstKillReward": "DramaSE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_2",
                 "4": "Drama_Buff_Star4_2_2",
                 "5": "Drama_Buff_Star5_2_2",
@@ -11023,7 +11047,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE02",
         "Master": "",
         "Name": "BlockPoint_DramaS10M_Name",
@@ -11036,7 +11060,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE02M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11051,10 +11075,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -11128,16 +11152,22 @@
         "FirstKillReward": "DramaSE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -11164,7 +11194,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE03E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11179,10 +11209,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -11249,22 +11279,28 @@
         "FirstKillReward": "DramaSE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_3",
                 "4": "Drama_Buff_Star4_2_3",
                 "5": "Drama_Buff_Star5_2_3",
@@ -11281,7 +11317,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE03",
         "Master": "",
         "Name": "BlockPoint_DramaS11M_Name",
@@ -11294,7 +11330,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE03M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11309,10 +11345,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -11378,16 +11414,22 @@
         "FirstKillReward": "DramaSE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -11414,7 +11456,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE04E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11429,10 +11471,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -11499,22 +11541,28 @@
         "FirstKillReward": "DramaSE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_4",
                 "4": "Drama_Buff_Star4_2_4",
                 "5": "Drama_Buff_Star5_2_4",
@@ -11531,7 +11579,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE04",
         "Master": "",
         "Name": "BlockPoint_DramaS12M_Name",
@@ -11544,7 +11592,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE04M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11559,10 +11607,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -11628,16 +11676,22 @@
         "FirstKillReward": "DramaSE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -11668,7 +11722,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE05E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11684,10 +11738,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -11754,22 +11808,28 @@
         "FirstKillReward": "DramaSE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_5",
                 "4": "Drama_Buff_Star4_2_5",
                 "5": "Drama_Buff_Star5_2_5",
@@ -11790,7 +11850,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE05",
         "Master": "",
         "Name": "BlockPoint_DramaS13M_Name",
@@ -11803,7 +11863,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE05M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11819,10 +11879,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -11888,16 +11948,22 @@
         "FirstKillReward": "DramaSE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -11928,7 +11994,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE06E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -11944,10 +12010,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -12014,22 +12080,28 @@
         "FirstKillReward": "DramaSE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_6",
                 "4": "Drama_Buff_Star4_2_6",
                 "5": "Drama_Buff_Star5_2_6",
@@ -12050,7 +12122,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE06",
         "Master": "",
         "Name": "BlockPoint_DramaS14M_Name",
@@ -12063,7 +12135,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE06M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12079,10 +12151,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -12148,16 +12220,22 @@
         "FirstKillReward": "DramaSE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -12188,7 +12266,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE07E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12204,10 +12282,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -12274,22 +12352,28 @@
         "FirstKillReward": "DramaSE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_7",
                 "4": "Drama_Buff_Star4_2_7",
                 "5": "Drama_Buff_Star5_2_7",
@@ -12310,7 +12394,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE07",
         "Master": "",
         "Name": "BlockPoint_DramaS15M_Name",
@@ -12323,7 +12407,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE07M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12339,10 +12423,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -12408,16 +12492,22 @@
         "FirstKillReward": "DramaSE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -12448,7 +12538,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE08E_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12464,10 +12554,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -12534,22 +12624,28 @@
         "FirstKillReward": "DramaSE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_2_8",
                 "4": "Drama_Buff_Star4_2_8",
                 "5": "Drama_Buff_Star5_2_8",
@@ -12570,7 +12666,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSE08",
         "Master": "",
         "Name": "BlockPoint_DramaS16M_Name",
@@ -12581,7 +12677,7 @@
         "PointPicture": "",
         "PointReward": "DramaSE08M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12597,10 +12693,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -12666,16 +12762,22 @@
         "FirstKillReward": "DramaSH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -12699,7 +12801,7 @@
         "PointPicture": "",
         "PointReward": "DramaSH01M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12711,10 +12813,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -12780,16 +12882,22 @@
         "FirstKillReward": "DramaSH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -12813,7 +12921,7 @@
         "PointPicture": "",
         "PointReward": "DramaSH02M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12825,10 +12933,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -12894,16 +13002,22 @@
         "FirstKillReward": "DramaSH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -12925,7 +13039,7 @@
         "PointPicture": "",
         "PointReward": "DramaSH03M_PointReward",
         "PointTime": {
-            "start": "2022-01-07 05:00:00"
+            "start": "2022-04-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -12937,10 +13051,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_DramaStamina": 20
+            "IR_DramaStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -13006,16 +13120,22 @@
         "FirstKillReward": "DramaSN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -13055,10 +13175,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -13125,22 +13245,28 @@
         "FirstKillReward": "DramaSN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_1",
                 "4": "Drama_Buff_Star4_1_1",
                 "5": "Drama_Buff_Star5_1_1",
@@ -13157,7 +13283,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN01",
         "Master": "",
         "Name": "BlockPoint_DramaS01M_Name",
@@ -13183,10 +13309,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -13252,16 +13378,22 @@
         "FirstKillReward": "DramaSN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -13301,10 +13433,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -13371,22 +13503,28 @@
         "FirstKillReward": "DramaSN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_2",
                 "4": "Drama_Buff_Star4_1_2",
                 "5": "Drama_Buff_Star5_1_2",
@@ -13403,7 +13541,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN02",
         "Master": "",
         "Name": "BlockPoint_DramaS02M_Name",
@@ -13429,10 +13567,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -13504,16 +13642,22 @@
         "FirstKillReward": "DramaSN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -13548,10 +13692,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -13632,22 +13776,28 @@
         "FirstKillReward": "DramaSN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_3",
                 "4": "Drama_Buff_Star4_1_3",
                 "5": "Drama_Buff_Star5_1_3",
@@ -13659,7 +13809,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN03",
         "Master": "",
         "Name": "BlockPoint_DramaS03M_Name",
@@ -13685,10 +13835,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -13762,16 +13912,22 @@
         "FirstKillReward": "DramaSN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -13811,10 +13967,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -13881,22 +14037,28 @@
         "FirstKillReward": "DramaSN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_4",
                 "4": "Drama_Buff_Star4_1_4",
                 "5": "Drama_Buff_Star5_1_4",
@@ -13913,7 +14075,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN04",
         "Master": "",
         "Name": "BlockPoint_DramaS04M_Name",
@@ -13939,10 +14101,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -14008,16 +14170,22 @@
         "FirstKillReward": "DramaSN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -14057,10 +14225,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -14127,22 +14295,28 @@
         "FirstKillReward": "DramaSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_5",
                 "4": "Drama_Buff_Star4_1_5",
                 "5": "Drama_Buff_Star5_1_5",
@@ -14159,7 +14333,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN05",
         "Master": "",
         "Name": "BlockPoint_DramaS05M_Name",
@@ -14185,10 +14359,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -14254,16 +14428,22 @@
         "FirstKillReward": "DramaSN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -14303,10 +14483,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -14373,22 +14553,28 @@
         "FirstKillReward": "DramaSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_6",
                 "4": "Drama_Buff_Star4_1_6",
                 "5": "Drama_Buff_Star5_1_6",
@@ -14405,7 +14591,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN06",
         "Master": "",
         "Name": "BlockPoint_DramaS06M_Name",
@@ -14431,10 +14617,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -14500,16 +14686,22 @@
         "FirstKillReward": "DramaSN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -14549,10 +14741,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -14619,22 +14811,28 @@
         "FirstKillReward": "DramaSN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_7",
                 "4": "Drama_Buff_Star4_1_7",
                 "5": "Drama_Buff_Star5_1_7",
@@ -14651,7 +14849,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN07",
         "Master": "",
         "Name": "BlockPoint_DramaS07M_Name",
@@ -14677,10 +14875,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -14746,16 +14944,22 @@
         "FirstKillReward": "DramaSN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -14800,10 +15004,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_DramaStamina": 12
+            "IR_DramaStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -14870,22 +15074,28 @@
         "FirstKillReward": "DramaSN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SSBYa": "Hero_ABlock_SSBYa_Extra",
-            "TJHDe": "Hero_ABlock_TJHDe_1_Extra"
+            "FCXJi": "Hero_ABlock_FCXJi_Extra",
+            "MYing": "Hero_ABlock_MYing_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SSBYa": {
-                "3": "Drama_SSBYa_Buff_Star3",
-                "4": "Drama_SSBYa_Buff_Star4",
-                "5": "Drama_SSBYa_Buff_Star5",
-                "6": "Drama_SSBYa_Buff_Star6"
+            "FCXJi": {
+                "3": "Drama_FCXJi_Buff_Star3",
+                "4": "Drama_FCXJi_Buff_Star4",
+                "5": "Drama_FCXJi_Buff_Star5",
+                "6": "Drama_FCXJi_Buff_Star6"
+            },
+            "MYing": {
+                "3": "Drama_MYing_Buff_Star3",
+                "4": "Drama_MYing_Buff_Star4",
+                "5": "Drama_MYing_Buff_Star5",
+                "6": "Drama_MYing_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TJHDe": {
+            "MYing": {
                 "3": "Drama_Buff_Star3_1_8",
                 "4": "Drama_Buff_Star4_1_8",
                 "5": "Drama_Buff_Star5_1_8",
@@ -14906,7 +15116,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Drama_ExchangeItem",
+        "MainShowItem": "IM_Drama_ExchangeItem_Re",
         "Map": "DramaSN08",
         "Master": "",
         "Name": "BlockPoint_DramaS08M_Name",
@@ -14931,10 +15141,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_DramaStamina": 6
+            "IR_DramaStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
