@@ -6137,7 +6137,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.15,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_FCXJi",
         "KeyPassiveSkill": "",
@@ -21372,7 +21372,8 @@
         "StarId": "SLMen_1",
         "SurfaceList": [
             "Surface_SLMen_1",
-            "Surface_SLMen_2"
+            "Surface_SLMen_2",
+            "Surface_SLMen_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -26119,7 +26120,8 @@
         "StarId": "WEDe_1",
         "SurfaceList": [
             "Surface_WEDe_1",
-            "Surface_WEDe_2"
+            "Surface_WEDe_2",
+            "Surface_WEDe_3"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",

@@ -869,7 +869,15 @@ function ActivityStageFinishMediator:showExpPanel()
 			end
 		end
 
-		local commonRewards = self._data.rewards.itemRewards
+		local commonRewards = {}
+		local itemRewards = self._data.rewards.itemRewards
+
+		for i, v in pairs(itemRewards) do
+			if v.amount > 0 then
+				commonRewards[#commonRewards + 1] = v
+			end
+		end
+
 		local extReward = self._data.rewards.heroExtraReward
 		local num = nil
 

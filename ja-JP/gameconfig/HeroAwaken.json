@@ -482,6 +482,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
     },
+    "SLMen": {
+        "AnimSound": "Se_Effect_Awakening_SLMen",
+        "Animation": "ltnan_Awaken",
+        "CutIn": [
+            50,
+            0,
+            0.5
+        ],
+        "ModelId": "Model_SLMen_Awake",
+        "Name": "SLMen_Awake_Name",
+        "NameDesc": "SLMen_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SLMen_UnAwake",
+        "Reward": "HeroAwaken_SLMen",
+        "ShowHero": "SLMen",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SLMen_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SLMen_Awake"
+    },
     "SP_PNCao": {
         "AnimSound": "Se_Effect_Awakening_PNCao_SP",
         "Animation": "sp_hhji_Awaken",

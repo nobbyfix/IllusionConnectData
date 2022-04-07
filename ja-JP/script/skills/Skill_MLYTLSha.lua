@@ -232,7 +232,7 @@ all.Skill_MLYTLSha_Unique = {
 			for _, friendunit in global.__iter__(_env.units) do
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal, false, true)
 
 				local buffeft2 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -764,7 +764,7 @@ all.Skill_MLYTLSha_Unique_EX = {
 			for _, friendunit in global.__iter__(_env.units) do
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal, false, true)
 
 				local buffeft2 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -877,7 +877,7 @@ all.Skill_MLYTLSha_Unique_Awaken = {
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
 				this.shieldValue = heal.val + global.UnitPropGetter(_env, "hp")(_env, friendunit) - global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal, false, true)
 
 				if this.shieldValue > 0 and global.SelectBuffCount(_env, friendunit, global.BUFF_MARKED(_env, "CURSE")) == 0 then
 					local buffeft1 = global.ShieldEffect(_env, global.min(_env, this.shieldValue, global.UnitPropGetter(_env, "maxHp")(_env, friendunit) * 0.3))

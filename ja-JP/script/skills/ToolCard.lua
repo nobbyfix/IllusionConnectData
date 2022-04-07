@@ -82,9 +82,6 @@ all.Skill_SYJi_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "-=光炮线")
-
 			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
 
 			global.HarmTargetView(_env, _env.units)
@@ -193,9 +190,6 @@ all.Skill_SYJi_Unique_Drama = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "-=光炮线")
-
 			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
 
 			global.HarmTargetView(_env, _env.units)

@@ -2035,7 +2035,6 @@ all.Skill_FLYDe_Passive_Awaken = {
 			}, {
 				buff_atk
 			})
-			global.print(_env, "-=强化基本属性")
 
 			if _env.count >= 4 then
 				global.ApplyBuff(_env, _env.ACTOR, {
@@ -2050,7 +2049,6 @@ all.Skill_FLYDe_Passive_Awaken = {
 				}, {
 					buff_atk_3
 				})
-				global.print(_env, "-=强化奖励属性")
 			end
 		end)
 

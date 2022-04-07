@@ -288,8 +288,6 @@ all.Skill_HSheng_Unique = {
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "HSheng_Unique")) == 0 then
 					local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
 
-					global.print(_env, "prob==============-=", prob)
-
 					if global.ProbTest(_env, prob) then
 						global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
 							timing = 2,

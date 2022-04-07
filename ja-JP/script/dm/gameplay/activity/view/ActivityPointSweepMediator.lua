@@ -397,34 +397,37 @@ function ActivityPointSweepMediator:refreshSweepItemView(index, rewards, itemVie
 			code = v.code,
 			type = v.type
 		}
-		local child = IconFactory:createRewardIcon(rewardInfo, {
-			isWidget = true
-		})
 
-		if child then
-			IconFactory:bindTouchHander(child, IconTouchHandler:new(self), rewardInfo, {
-				needDelay = true
+		if v.amount > 0 then
+			local child = IconFactory:createRewardIcon(rewardInfo, {
+				isWidget = true
 			})
-			child:setScaleNotCascade(scale)
 
-			local size = cc.size(child:getContentSize().width * scale, child:getContentSize().height * scale)
-			px = px + size.width / 2 + 3.5
+			if child then
+				IconFactory:bindTouchHander(child, IconTouchHandler:new(self), rewardInfo, {
+					needDelay = true
+				})
+				child:setScaleNotCascade(scale)
 
-			child:setPosition(cc.p(px, size.height / 2))
-			rewardLayout:addChild(child)
-			child:setOpacity(0)
-			child:setName("reward" .. i)
+				local size = cc.size(child:getContentSize().width * scale, child:getContentSize().height * scale)
+				px = px + size.width / 2 + 3.5
 
-			px = px + size.width / 2 + space
+				child:setPosition(cc.p(px, size.height / 2))
+				rewardLayout:addChild(child)
+				child:setOpacity(0)
+				child:setName("reward" .. i)
 
-			if v.isActivityExtra then
-				local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
+				px = px + size.width / 2 + space
 
-				markImg:addTo(child, 10000):posite(45, 95):setScale(1.2)
+				if v.isActivityExtra then
+					local markImg = ccui.ImageView:create("asset/common/shaungdan_img_xianshidiaoluojiaobiao.png")
 
-				local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+					markImg:addTo(child, 10000):posite(45, 95):setScale(1.2)
 
-				text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+					local text = ccui.Text:create(Strings:get("Newyear_Item_LimitedTimeDrop"), TTF_FONT_FZYH_M, 18)
+
+					text:addTo(markImg):center(markImg:getContentSize()):offset(-3, 3)
+				end
 			end
 		end
 	end

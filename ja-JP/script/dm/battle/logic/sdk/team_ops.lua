@@ -289,7 +289,9 @@ function exports.KillTarget(env, target)
 	})
 
 	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
 
+	target:setFoe(actor:getId())
 	formationSystem:excludeDyingUnit(target, workId)
 	env.global.RecordEffect(env, target:getId(), "KillTarget")
 end
