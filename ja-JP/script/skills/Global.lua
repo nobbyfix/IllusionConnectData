@@ -5183,9 +5183,18 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	local card = nil
 
 	if cond == "card" then
-		card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+		end
 	elseif cond == "window" then
-		if not global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) then
+		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+			local cardlocation = global.GetCardWindowIndex(_env, _env.unit)
+
+			if cardlocation == 0 then
+				cardlocation = global.Random(_env, 1, 4)
+			end
+
+			location = location or cardlocation
 			card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
 		end
 	end
