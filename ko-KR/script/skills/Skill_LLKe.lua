@@ -336,6 +336,7 @@ all.Skill_LLKe_Passive = {
 			this.ShieldRateFactor = 0.5
 		end
 
+		this.KICK_target = nil
 		local passive1 = __action(this, {
 			name = "passive1",
 			entry = prototype.passive1
@@ -346,6 +347,7 @@ all.Skill_LLKe_Passive = {
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:PRE_ENTER"
 		}, passive1)
+		this.att_list = {}
 		local passive2 = __action(this, {
 			name = "passive2",
 			entry = prototype.passive2
@@ -411,6 +413,7 @@ all.Skill_LLKe_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			this.KICK_target = global.GetCellId(_env, _env.unit)
 
 			if global.MASTER(_env, _env.ACTOR) and (global.MARKED(_env, "ASSASSIN")(_env, _env.unit) or global.MARKED(_env, "MAGE")(_env, _env.unit)) then
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_LLKe_Passive"), 99)
@@ -418,28 +421,10 @@ all.Skill_LLKe_Passive = {
 				local atk = this.AtkRateFactor * global.UnitPropGetter(_env, "atk")(_env, _env.unit)
 				local hp = global.UnitPropGetter(_env, "hp")(_env, _env.unit)
 				local shield = hp * this.ShieldRateFactor
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Passive_atk", {
-					"+Normal",
-					"+Normal"
-				}, atk)
-				local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Passive_shield", {
-					"+Normal",
-					"+Normal"
-				}, shield)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"NUMERIC",
-						"Skill_LLKe_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1,
-					buffeft2
-				}, 1, 0)
+				this.att_list = {
+					atk,
+					shield
+				}
 			end
 		end)
 
@@ -463,15 +448,14 @@ all.Skill_LLKe_Passive = {
 			local global = _env.global
 
 			if global.MASTER(_env, _env.ACTOR) and global.MARKED(_env, "LLKe")(_env, _env.unit) then
-				local atk = global.SpecialPropGetter(_env, "Skill_LLKe_Passive_atk")(_env, _env.ACTOR)
-				local shield = global.SpecialPropGetter(_env, "Skill_LLKe_Passive_shield")(_env, _env.ACTOR)
+				global.print(_env, "111111111111", this.KICK_target, global.GetCellId(_env, _env.unit))
 
-				if atk and shield and atk ~= 0 and shield ~= 0 then
+				if this.KICK_target == global.GetCellId(_env, _env.unit) then
 					local buff1 = global.NumericEffect(_env, "+atk", {
 						"+Normal",
 						"+Normal"
-					}, atk)
-					local buff2 = global.ShieldEffect(_env, shield)
+					}, this.att_list[1])
+					local buff2 = global.ShieldEffect(_env, this.att_list[2])
 
 					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 						timing = 0,
@@ -667,6 +651,13 @@ all.Skill_LLKe_Unique_EX = {
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_LLKe"
 		}, main)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive3)
 
 		return this
 	end,
@@ -794,24 +785,26 @@ all.Skill_LLKe_Unique_EX = {
 				enhance = 3
 			})
 
-			local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Unique_Shield", {
-				"+Normal",
-				"+Normal"
-			}, shield)
+			if shield and shield ~= 0 then
+				local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Unique_Shield", {
+					"+Normal",
+					"+Normal"
+				}, shield)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 0,
-				duration = 99,
-				tags = {
-					"STATUS",
-					"NUMERIC",
-					"Skill_LLKe_Unique",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft2
-			}, 1, 0)
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"Skill_LLKe_Unique",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
+				}, 1, 0)
+			end
 		end)
 		exec["@time"]({
 			3600
@@ -820,6 +813,55 @@ all.Skill_LLKe_Unique_EX = {
 			local global = _env.global
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.print(_env, global.GetUnitCid(_env, _env.unit), "cid=====")
+			global.print(_env, global.GetFriendField(_env, nil, "LLK_is_kill"), "LLK_is_kill====")
+			global.print(_env, global.GetFriendField(_env, nil, "BackToCard"), "BackToCard====")
+
+			if global.GetFriendField(_env, nil, "LLK_is_kill") == 1 and global.GetFriendField(_env, nil, "BackToCard") == 1 then
+				local Energy = global.SpecialPropGetter(_env, "LLKe_Unique_Energy")(_env, global.FriendField(_env)) or 4
+				local card = global.CardsInWindow(_env, global.GetOwner(_env, _env.unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, _env.unit)))
+
+				if card then
+					local cardvaluechange = global.CardCostEnchant(_env, "+", Energy, 1)
+
+					global.print(_env, Energy, "Energy======")
+					global.ApplyEnchant(_env, global.GetOwner(_env, global.EnemyMaster(_env)), card[1], {
+						timing = 1,
+						duration = 1,
+						tags = {
+							"CARDBUFF",
+							"Skill_MTZMEShi_Passive",
+							"UNDISPELLABLE"
+						}
+					}, {
+						cardvaluechange
+					})
+					global.SetFriendField(_env, nil, 0, "LLK_is_kill")
+					global.SetFriendField(_env, nil, 0, "BackToCard")
+					global.SetFriendField(_env, nil, 0, global.GetUnitCid(_env, _env.unit))
+				end
+			end
 		end)
 
 		return _env
@@ -1052,23 +1094,9 @@ all.LLKe_For_BackCard = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LLKe_BackCard_Check")) == 0 and global.EnemyMaster(_env) then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.GetSide(_env, _env.unit) and global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LLKe_BackCard_Check")) == 0 and global.EnemyMaster(_env) then
 				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyMaster(_env)))) do
 					if global.SelectEnhanceCount(_env, global.GetOwner(_env, global.EnemyMaster(_env)), card, global.BUFF_MARKED(_env, "Skill_LLKe_Unique")) == 0 then
-						local cardvaluechange = global.CardCostEnchant(_env, "+", global.SpecialPropGetter(_env, "LLKe_Unique_Energy")(_env, global.FriendField(_env)), 1)
-
-						global.ApplyEnchant(_env, global.GetOwner(_env, global.EnemyMaster(_env)), card, {
-							timing = 1,
-							duration = 1,
-							tags = {
-								"CARDBUFF",
-								"Skill_LLKe_Unique",
-								"UNDISPELLABLE"
-							}
-						}, {
-							cardvaluechange
-						})
-
 						local buff_check = global.SpecialNumericEffect(_env, "+LLKe_BackCard_Check", {
 							"+Normal",
 							"+Normal"

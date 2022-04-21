@@ -3990,6 +3990,15 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 60),
 			imgpos = cc.p(65, 45),
 			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivitySpring] = {
+			img = "spring_btn_zjm_rukou.png",
+			animZorder = 3,
+			anim = "xuehua_newyearshop",
+			imgZorder = 2,
+			aimpos = cc.p(60, 60),
+			imgpos = cc.p(65, 60),
+			redpos = cc.p(115, 60)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

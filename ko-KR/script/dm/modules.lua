@@ -2239,6 +2239,11 @@ local modules = {
 							res = "asset/ui/ActivityBentoPopup.csb",
 							name = "ActivityBentoPopupView",
 							mediator = "ActivityBentoPopupMediator"
+						},
+						{
+							res = "asset/ui/ActivitySpringMain.csb",
+							name = "ActivitySpringMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

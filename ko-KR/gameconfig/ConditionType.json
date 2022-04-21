@@ -1115,7 +1115,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220310.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220427.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1136,7 +1136,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220310.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220427.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1356,6 +1356,13 @@
         "ConditionType1": "player.spStages.?1.pointInfos.?2.progressInt",
         "ConditionType2": "",
         "EffectDesc": "Condi_SpStagePoint_Desc"
+    },
+    "Condi_SpringExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Spring_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SpringExchangeAchieve_Desc"
     },
     "Condi_StageStarSum": {
         "AchieveType1": "SIZESUM",

@@ -284,6 +284,25 @@
             }
         ]
     },
+    "CooperateBoss_LLan": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_LLan",
+        "Name": "HeroBase_Name_LLan",
+        "PointHead": "Model_LLan",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_LYXi": {
         "BGM": [
             "Mus_Battle_Whale",
