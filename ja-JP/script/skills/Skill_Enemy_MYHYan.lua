@@ -90,7 +90,9 @@ all.Skill_Enemy_MYHYan_Skill = {
 
 		this.DefRateFactor = externs.DefRateFactor
 
-		assert(this.DefRateFactor ~= nil, "External variable `DefRateFactor` is not provided.")
+		if this.DefRateFactor == nil then
+			this.DefRateFactor = global.DefRateFactor or 0.5
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -165,6 +167,49 @@ all.Skill_Enemy_MYHYan_Skill = {
 				0.4,
 				0.6
 			}))
+		end)
+		exec["@time"]({
+			1000
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local summonFactorHp = 0.5
+			local summonFactorAtk = 0.5
+			local summonFactorDef = 1
+			local summonFactor = {
+				summonFactorHp,
+				summonFactorAtk,
+				summonFactorDef
+			}
+
+			if global.IsSpring(_env, _env.ACTOR) then
+				global.print(_env, "召唤========")
+
+				local SummonedLDu1 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					1
+				})
+				local SummonedLDu2 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					2
+				})
+				local SummonedLDu3 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					3
+				})
+				local SummonedLDu4 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					4
+				})
+				local SummonedLDu5 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					5
+				})
+				local SummonedLDu6 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					6
+				})
+				local SummonedLDu7 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					7
+				})
+				local SummonedLDu9 = global.Summon(_env, _env.ACTOR, "SummonedMY", this.summonFactor, nil, {
+					9
+				})
+			end
 		end)
 		exec["@time"]({
 			1100

@@ -148,8 +148,12 @@ function ShopGroup:getGoodsList()
 
 		if time and next(time) then
 			local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
+			local startDate = TimeUtil:parseDateTime({}, time[1])
+			local startTs = TimeUtil:timeByRemoteDate(startDate)
+			local endDate = TimeUtil:parseDateTime({}, time[2])
+			local endTs = TimeUtil:timeByRemoteDate(endDate)
 
-			if time[1] <= curTime and curTime <= time[2] then
+			if startTs <= curTime and curTime <= endTs then
 				list[#list + 1] = goods
 			end
 		else

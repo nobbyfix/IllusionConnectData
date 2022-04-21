@@ -626,6 +626,31 @@
         "Tips": "Unlock_HomeBackground_SilentNight",
         "Unlook": 1
     },
+    "HomeBackground_Spring": {
+        "BGM": "Mus_Story_Spring_Main",
+        "BGPContraction": "anualshop_scene_main_spring_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Spring_Desc",
+            "img": "Activity_ExchangeBG_Spring",
+            "name": "HomeBackground_Spring_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Spring_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Spring_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Spring",
+        "Unlook": 1
+    },
     "HomeBackground_Storybook": {
         "BGM": "Mus_Main_Scene",
         "BGPContraction": "anualshop_scene_main_storybook_preview",

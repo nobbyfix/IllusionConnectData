@@ -284,36 +284,55 @@ all.Skill_SP_WTXXuan_Unique = {
 					"Model_SP_WTXXuan_CBJun_4"
 				}
 				local num = global.Random(_env, 1, 4)
-				local card = global.InheritCardByConfig(_env, {
-					cost = 3,
-					uniqueSkill = "Skill_SP_WTXXuan_Normal",
-					ignorePassive = true,
-					card = _env.ACTOR,
-					modelId = RoleModel[num]
-				})
 
-				if card then
-					local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-						HealRateFactor = 0
+				if global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
+					global.print(_env, global.GetUnitCid(_env, _env.ACTOR), "=====")
+
+					local card = global.InheritCardByConfig(_env, {
+						cost = 3,
+						uniqueSkill = "Skill_SP_WTXXuan_Normal",
+						ignorePassive = true,
+						card = _env.ACTOR,
+						modelId = RoleModel[num]
 					})
 
-					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						duration = 99,
-						group = "SummonedCBJun_Passive",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"CARDBUFF",
-							"SummonedCBJun_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
-					})
-					global.ClearCardFlags(_env, card, {
-						"SUMMONER"
-					})
+					if card then
+						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
+							HealRateFactor = 0
+						})
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							duration = 99,
+							group = "SummonedCBJun_Passive",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"SummonedCBJun_Passive",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+						global.ClearCardFlags(_env, card, {
+							"SUMMONER"
+						})
+					end
+				else
+					for i = 1, this.Quantity do
+						local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
+							1,
+							1,
+							1
+						}, nil, {
+							global.Random(_env, 1, 9)
+						})
+
+						if SummonedCBJun then
+							global.AddStatus(_env, SummonedCBJun, "SummonedCBJun")
+						end
+					end
 				end
 			end
 
@@ -941,36 +960,51 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 					"Model_SP_WTXXuan_CBJun_4"
 				}
 				local num = global.Random(_env, 1, 4)
-				local card = global.InheritCardByConfig(_env, {
-					cost = 3,
-					uniqueSkill = "Skill_SP_WTXXuan_Normal",
-					ignorePassive = true,
-					card = _env.ACTOR,
-					modelId = RoleModel[num]
-				})
 
-				if card then
-					local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-						HealRateFactor = 2.5
+				if global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
+					local card = global.InheritCardByConfig(_env, {
+						cost = 3,
+						uniqueSkill = "Skill_SP_WTXXuan_Normal",
+						ignorePassive = true,
+						card = _env.ACTOR,
+						modelId = RoleModel[num]
 					})
 
-					global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						duration = 99,
-						group = "SummonedCBJun_Passive",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"CARDBUFF",
-							"SummonedCBJun_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buff
+					if card then
+						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
+							HealRateFactor = 2.5
+						})
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							duration = 99,
+							group = "SummonedCBJun_Passive",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"SummonedCBJun_Passive",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+						global.ClearCardFlags(_env, card, {
+							"SUMMONER"
+						})
+					end
+				else
+					local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
+						1,
+						1,
+						1
+					}, nil, {
+						global.Random(_env, 1, 9)
 					})
-					global.ClearCardFlags(_env, card, {
-						"SUMMONER"
-					})
+
+					if SummonedCBJun then
+						global.AddStatus(_env, SummonedCBJun, "SummonedCBJun")
+					end
 				end
 			end
 
@@ -1003,7 +1037,7 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 
 			global.DiligentRound(_env, 100)
 
-			if friend_num > 5 then
+			if friend_num > 5 and global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
 				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_WTXXuan"))) do
 					local buffeft1 = global.NumericEffect(_env, "+atkrate", {
 						"+Normal",
@@ -1097,7 +1131,7 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "SummonedCBJun")) == 0 and not global.MASTER(_env, _env.ACTOR) then
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "SummonedCBJun")) == 0 and not global.MASTER(_env, _env.ACTOR) and global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
 				global.AddStatus(_env, _env.ACTOR, "SP_WTXXuan_Benti")
 
 				for _, unit in global.__iter__(global.FriendUnits(_env, global.SUMMONS)) do
@@ -1108,52 +1142,67 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 						"Model_SP_WTXXuan_CBJun_4"
 					}
 					local num = global.Random(_env, 1, 4)
-					local card = global.InheritCardByConfig(_env, {
-						cost = 3,
-						uniqueSkill = "Skill_SP_WTXXuan_Normal",
-						ignorePassive = true,
-						card = _env.ACTOR,
-						modelId = RoleModel[num]
-					})
 
-					if card then
-						local buffeft1 = global.NumericEffect(_env, "+atkrate", {
-							"+Normal",
-							"+Normal"
-						}, this.AtkRateFactor)
-
-						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							timing = 0,
-							duration = 99,
-							tags = {
-								"UNDISPELLABLE",
-								"UNSTEALABLE"
-							}
-						}, {
-							buffeft1
+					if global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
+						local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
+							1,
+							1,
+							1
+						}, nil, {
+							global.Random(_env, 1, 9)
 						})
 
-						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-							HealRateFactor = this.HealRateFactor
+						if SummonedCBJun then
+							global.AddStatus(_env, SummonedCBJun, "SummonedCBJun")
+						end
+					else
+						local card = global.InheritCardByConfig(_env, {
+							cost = 3,
+							uniqueSkill = "Skill_SP_WTXXuan_Normal",
+							ignorePassive = true,
+							card = _env.ACTOR,
+							modelId = RoleModel[num]
 						})
 
-						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							duration = 99,
-							group = "SummonedCBJun_Passive",
-							timing = 0,
-							limit = 1,
-							tags = {
-								"CARDBUFF",
-								"SummonedCBJun_Passive",
-								"UNDISPELLABLE",
-								"UNSTEALABLE"
-							}
-						}, {
-							buff
-						})
-						global.ClearCardFlags(_env, card, {
-							"SUMMONER"
-						})
+						if card then
+							local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+								"+Normal",
+								"+Normal"
+							}, this.AtkRateFactor)
+
+							global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"UNDISPELLABLE",
+									"UNSTEALABLE"
+								}
+							}, {
+								buffeft1
+							})
+
+							local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
+								HealRateFactor = this.HealRateFactor
+							})
+
+							global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+								duration = 99,
+								group = "SummonedCBJun_Passive",
+								timing = 0,
+								limit = 1,
+								tags = {
+									"CARDBUFF",
+									"SummonedCBJun_Passive",
+									"UNDISPELLABLE",
+									"UNSTEALABLE"
+								}
+							}, {
+								buff
+							})
+							global.ClearCardFlags(_env, card, {
+								"SUMMONER"
+							})
+						end
 					end
 				end
 			end
