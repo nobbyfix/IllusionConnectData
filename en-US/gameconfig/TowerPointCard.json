@@ -1450,8 +1450,16 @@
         ]
     },
     "LLKe": {
-        "Reward": {},
-        "RewardNumShow": [],
+        "Reward": {
+            "1": 100,
+            "2": 30,
+            "3": 10
+        },
+        "RewardNumShow": [
+            3,
+            2,
+            1
+        ],
         "Tower_1_Weight": [
             0,
             0,

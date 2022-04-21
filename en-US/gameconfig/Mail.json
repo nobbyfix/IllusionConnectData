@@ -233,6 +233,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Activity_Egg": {
+        "Content": "Mail_Activity_Egg_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Activity_Egg_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_Activity_Fly": {
         "Content": "Mail_Activity_Fly_Content",
         "ExpireAfterRead": 72000,
@@ -984,6 +997,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_EightDays_Snowflake_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Spring": {
+        "Content": "Mail_EightDays_Spring_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Spring_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Spring_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
@@ -2037,6 +2063,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_Snowflake_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Spring_AchieveMentTask_Activity": {
+        "Content": "Mail_Spring_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Spring_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Spring_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Spring_DailyTask_Activity": {
+        "Content": "Mail_Spring_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Spring_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Spring_DailyTask_Activity_Title",
         "TopStatus": 0,
         "Type": "USER"
     },

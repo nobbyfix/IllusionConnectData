@@ -2956,6 +2956,7 @@ end
 function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+	local is_summons = global.SUMMONS(_env, target)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local flag_ajyhou = 0
@@ -3306,6 +3307,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		global.damage.val = global.damage.val * 2
 	end
 
+	local LLK_is_kilss_cid = global.GetUnitCid(_env, target)
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -3435,7 +3437,12 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 			local Energy = global.SpecialPropGetter(_env, "LLKe_Unique_Energy")(_env, global.FriendField(_env))
 
-			if Energy and Energy ~= 0 then
+			if Energy and Energy ~= 0 and is_summons == false then
+				global.print(_env, "ggggggggggggggggg")
+				global.SetFriendField(_env, nil, 1, "LLK_is_kill")
+				global.SetFriendField(_env, nil, 1, LLK_is_kilss_cid)
+				global.print(_env, global.GetFriendField(_env, nil, LLK_is_kilss_cid), "asdasdasdasdsa====")
+
 				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyMaster(_env)))) do
 					local cardvaluechange = global.CardCostEnchant(_env, "+", Energy, 1)
 
@@ -5183,9 +5190,36 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	local card = nil
 
 	if cond == "card" then
-		card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) ~= 0 then
+			-- Nothing
+		else
+			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+
+			global.print(_env, global.GetFriendField(_env, nil, "LLK_is_kill", true), "LLK_is_kill111111")
+			global.print(_env, global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true), "LLK_is_kilss_cid11111")
+
+			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+				global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			end
+		end
 	elseif cond == "window" then
-		card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
+		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+			local cardlocation = global.GetCardWindowIndex(_env, unit)
+
+			if cardlocation == 0 then
+				cardlocation = global.Random(_env, 1, 4)
+			end
+
+			location = location or cardlocation
+			card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
+
+			global.print(_env, global.GetFriendField(_env, nil, "LLK_is_kill", true), "LLK_is_kill111111")
+			global.print(_env, global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true), "LLK_is_kilss_cid11111")
+
+			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+				global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			end
+		end
 	end
 
 	if card then
@@ -5257,6 +5291,248 @@ function all.CellColLocation(_env, cell)
 	end
 
 	return location
+end
+
+function all.IsEnemy(_env, unit)
+	local this = _env.this
+	local global = _env.global
+	local hero_list = {
+		"FTLEShi",
+		"DDing",
+		"KTSJKe",
+		"TPGZhu",
+		"ALSi",
+		"DNTLuo",
+		"ZZBBWei",
+		"YLMGZhu",
+		"YLSBai",
+		"BBLMa",
+		"MTZMEShi",
+		"LLan",
+		"MGNa",
+		"MLYTLSha",
+		"NFDDi",
+		"KXuan",
+		"YBYa",
+		"SDTZi",
+		"TTKMeng",
+		"SGHQShou",
+		"NXYYi",
+		"XSMLi",
+		"SLMen",
+		"NDGEr",
+		"ATSheng",
+		"MKLJLuo",
+		"ALPo",
+		"TLMi",
+		"XLai",
+		"YSuo",
+		"BEr",
+		"TJHDe",
+		"AJYHou",
+		"FEMSi",
+		"BDPan",
+		"HSheng",
+		"KMLa",
+		"LYSi",
+		"YSTLu",
+		"DCJKang",
+		"GYCZi",
+		"SYAi",
+		"YYing",
+		"BQDShe",
+		"AJTa",
+		"SRen",
+		"YXNMei",
+		"LYXi",
+		"BHTZi",
+		"YSLBin",
+		"HYe",
+		"PDLa",
+		"NFEr",
+		"BDFen",
+		"BLTu",
+		"PGNNi",
+		"QBTe",
+		"FLYDe",
+		"FGao",
+		"NCai",
+		"HGEr",
+		"KEDGong",
+		"XBKLDi",
+		"LSLTe",
+		"QTQCi",
+		"MZGXiu",
+		"SLWan",
+		"HSYZhai",
+		"TLSi",
+		"XHMao",
+		"FLBDSi",
+		"SP_PNCao",
+		"YXZChun",
+		"MZu",
+		"LFKLFTe",
+		"WSLi",
+		"SP_SSQXin",
+		"MYing",
+		"AMLBLTe",
+		"MLYDi",
+		"XLDBLTe",
+		"SP_KTSJKe",
+		"LEMHou",
+		"WLSTNCi",
+		"HLa",
+		"XDE",
+		"YMJDe",
+		"FLEr",
+		"SP_ALPo",
+		"SNGLSi",
+		"XXFSi",
+		"CKFSJi",
+		"MDSi",
+		"SSBYa",
+		"SGBao",
+		"PSKe",
+		"LDYu",
+		"GCZi",
+		"LEIMu",
+		"LAMu",
+		"AMLYa",
+		"XSLuo",
+		"SP_DDing",
+		"XDRLa",
+		"SP_WTXXuan",
+		"FCXJi",
+		"BDZSheng",
+		"LLKe"
+	}
+	local unit_cid = global.GetUnitCid(_env, unit)
+
+	for _, hero_name in global.__iter__(hero_list) do
+		if hero_name == unit_cid then
+			return false
+		end
+	end
+
+	return true
+end
+
+function all.SetFriendField(_env, actor, friendField_att, name, Friend)
+	local this = _env.this
+	local global = _env.global
+	local init_tag = {
+		"NUMERIC",
+		"BUFF",
+		"UNDISPELLABLE",
+		"UNSTEALABLE",
+		[#init_tag + 1] = name
+	}
+	local MyName = ""
+
+	if actor then
+		MyName = name .. global.GetUnitCid(_env, actor)
+	else
+		MyName = name
+	end
+
+	local MyFriend = global.FriendField(_env)
+
+	if Friend then
+		MyFriend = global.EnemyField(_env)
+	end
+
+	local storage = global.SpecialNumericEffect(_env, "+" .. MyName, {
+		"?Normal"
+	}, friendField_att)
+
+	global.ApplyBuff(_env, MyFriend, {
+		duration = 99,
+		timing = 0,
+		limit = 1,
+		tags = init_tag,
+		group = name
+	}, {
+		storage
+	})
+end
+
+function all.SetEnemyField(_env, friendField_att, name)
+	local this = _env.this
+	local global = _env.global
+	local init_tag = {
+		"NUMERIC",
+		"BUFF",
+		"UNDISPELLABLE",
+		"UNSTEALABLE",
+		[#init_tag + 1] = name
+	}
+	local storage = global.SpecialNumericEffect(_env, "+" .. name, {
+		"?Normal"
+	}, friendField_att)
+
+	global.ApplyBuff(_env, global.EnemyField(_env), {
+		duration = 99,
+		timing = 0,
+		limit = 1,
+		tags = init_tag,
+		group = name
+	}, {
+		storage
+	})
+end
+
+function all.IsSpring(_env, unit)
+	local this = _env.this
+	local global = _env.global
+	local Spring_enemy_list = {
+		"SpringM01P01U01N08",
+		"SpringM01P05U01N08",
+		"SpringE01P01U01N08",
+		"SpringE01P05U01N08",
+		"SpringE01P08U01N08",
+		"SpringM01P01U01N01",
+		"SpringM01P05U01N01",
+		"SpringE01P01U01N01",
+		"SpringE01P05U01N01",
+		"SpringE01P08U01N01"
+	}
+	local unit_cid = global.GetUnitCid(_env, unit)
+
+	global.print(_env, unit_cid, "unit_cid======")
+
+	for _, enemy_name in global.__iter__(Spring_enemy_list) do
+		if enemy_name == unit_cid then
+			return true
+		end
+	end
+
+	return false
+end
+
+function all.GetFriendField(_env, actor, name, Field)
+	local this = _env.this
+	local global = _env.global
+	local MyName = name
+
+	if actor then
+		MyName = name .. global.GetUnitCid(_env, actor)
+	end
+
+	local MyField = global.FriendField(_env)
+
+	if Field then
+		MyField = global.EnemyField(_env)
+	end
+
+	local SpecialProp = global.SpecialPropGetter(_env, MyName)(_env, MyField)
+
+	if SpecialProp == nil then
+		global.print(_env, name, "error 找不到这个名字存战场的属性")
+
+		SpecialProp = 0
+	end
+
+	return SpecialProp
 end
 
 return _M

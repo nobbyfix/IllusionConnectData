@@ -1531,6 +1531,11 @@ local mappings = {
 		name = "ActivityCommonMainMediator",
 		type = "@C"
 	},
+	ActivityEggTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityEggTaskMediator",
+		name = "ActivityEggTaskMediator",
+		type = "@C"
+	},
 	ActivityBlockMonsterShopMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopMediator",
 		name = "ActivityBlockMonsterShopMediator",
@@ -1619,6 +1624,11 @@ local mappings = {
 	ActivitySagaSupportScoreRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportScoreRewardMediator",
 		name = "ActivitySagaSupportScoreRewardMediator",
+		type = "@C"
+	},
+	ActivityDailyChargeMediator = {
+		url = "dm.gameplay.activity.view.ActivityDailyChargeMediator",
+		name = "ActivityDailyChargeMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportClubMediator = {

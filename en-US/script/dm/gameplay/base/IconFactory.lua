@@ -2071,10 +2071,17 @@ function IconFactory:createHeroLargeIcon(info, style)
 			nameLabel:setPositionX(0)
 
 			if getCurrentLanguage() ~= GameLanguageType.CN then
-				nameLabel:setPositionX(-25)
-				nameImage:setContentSize(cc.size(150, 45))
+				nameLabel:setPositionX(-40)
 			end
 
+			nameLabel:setTextAreaSize(cc.size(110, 30))
+
+			local virtualRenderer = nameLabel:getVirtualRenderer()
+
+			virtualRenderer:setOverflow(cc.LabelOverflow.NONE)
+			virtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+			nameLabel:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			nameLabel:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
 			qualityLevelLabel:setPositionX(nameLabel:getContentSize().width * (getCurrentLanguage() ~= GameLanguageType.CN and 1.7 or 1))
 			namePanel:setContentSize(cc.size(nameLabel:getContentSize().width + qualityLevelLabel:getContentSize().width, 30))
 		end

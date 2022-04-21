@@ -8939,6 +8939,19 @@
             "slot": "Hero_Proud_HSYZhai"
         }
     },
+    "StarSE_HSYZhai_Awake": {
+        "Desc": "StarSE_HSYZhai_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_HSYZhai_Awaken",
+            "before": "Hero_Unique_HSYZhai_EX",
+            "slot": "Hero_Unique_HSYZhai"
+        }
+    },
     "StarSE_HSheng_4": {
         "Desc": "StarSE_HSheng_4_Desc",
         "EffectType": "CHANGESKILL",

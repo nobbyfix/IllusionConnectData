@@ -1196,13 +1196,9 @@
             "fhj_cd_4",
             "fhj_cd_5"
         ],
-        "IsKeyReword": 1,
-        "KeyRewardShow": [
-            "ABE_1st_24_Reward_Core_1",
-            "ABE_1st_24_Reward_Core_2",
-            "ABE_1st_24_Reward_Core_3"
-        ],
-        "NextPoint": "ABE_1st_25",
+        "IsKeyReword": 0,
+        "KeyRewardShow": [],
+        "NextPoint": "ABE_1st_24",
         "NormalRewardShow": [
             "ABE_1st_24_Reward_Normal_1",
             "ABE_1st_24_Reward_Normal_2",
@@ -1218,9 +1214,12 @@
             "ABE_1st_24_Reward_Normal_12",
             "ABE_1st_24_Reward_Normal_13",
             "ABE_1st_24_Reward_Normal_14",
-            "ABE_1st_24_Reward_Normal_15"
+            "ABE_1st_24_Reward_Normal_15",
+            "ABE_1st_24_Reward_Normal_16",
+            "ABE_1st_24_Reward_Normal_17",
+            "ABE_1st_24_Reward_Normal_18"
         ],
-        "Order": 24,
+        "Order": 25,
         "Reward": "ABE_1st_24_Reward"
     },
     "ABE_1st_25": {

@@ -23,6 +23,7 @@ end
 function ActivityTaskCollectMediator:enterWithData(data)
 	self._activity = data.activity
 	self._parentMediator = data.parentMediator
+	self._activityConfig = self._activity:getActivityConfig()
 
 	self:setupView()
 end
@@ -128,59 +129,98 @@ function ActivityTaskCollectMediator:updataCell(cell, index)
 
 	local condition = data._config.Condition
 
-	for i = 1, #condition do
-		local heroId = condition[i].params[1]
-		local heroSystem = self._developSystem:getHeroSystem()
-		local has = heroSystem:hasHero(heroId)
-		local hero = heroSystem:getHeroById(heroId)
-		local needCount = heroSystem:getHeroComposeFragCount(heroId)
-		local hasCount = heroSystem:getHeroDebrisCount(heroId)
-		local reward = {
-			type = 3,
-			amount = 0,
-			code = condition[i].params[1]
-		}
-		local rewardIcon = IconFactory:createRewardIcon(reward, {
-			showAmount = false,
-			isWidget = true
-		})
+	if self._activityConfig.type and self._activityConfig.type == "surface" then
+		for i, v in pairs(condition) do
+			for index, code in pairs(v.factorStr1) do
+				local has = nil
+				local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+				local surface = surfaceSystem:getSurfaceById(code)
 
-		target:addChild(rewardIcon)
-		rewardIcon:setScaleNotCascade(0.6)
-		rewardIcon:setPositionX((i - 1) * 78)
-		rewardIcon:setAnchorPoint(0, 0)
+				if surface and surface:getUnlock() then
+					has = true
+				end
 
-		local color = has and cc.c3b(255, 255, 255) or cc.c3b(125, 125, 125)
+				local reward = {
+					type = 7,
+					amount = 0,
+					code = code
+				}
+				local rewardIcon = IconFactory:createRewardIcon(reward, {
+					showAmount = false,
+					isWidget = true
+				})
 
-		rewardIcon:setColor(color)
-		IconFactory:bindClickAction(rewardIcon, function ()
-			AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+				target:addChild(rewardIcon)
+				rewardIcon:setScaleNotCascade(0.6)
+				rewardIcon:setPositionX((index - 1) * 78)
+				rewardIcon:setAnchorPoint(0, 0)
 
-			if has then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("Activity_Collect_Acquaint", {
-						name = hero:getName()
-					})
-				}))
-			elseif hasCount < needCount then
-				local view = self:getInjector():getInstance("HeroShowNotOwnView")
+				local color = has and cc.c3b(255, 255, 255) or cc.c3b(125, 125, 125)
 
-				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-				}, {
-					showType = 1,
-					id = heroId
-				}))
-			else
-				local view = self:getInjector():getInstance("HeroShowListView")
-
-				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-					id = heroId
-				}))
+				rewardIcon:setColor(color)
+				IconFactory:bindTouchHander(rewardIcon, IconTouchHandler:new(self._parentMediator), reward, {
+					swallowTouches = true,
+					needDelay = true
+				})
 			end
-		end, {
-			runAction = false
-		})
+		end
+	else
+		for i = 1, #condition do
+			local needCount = 0
+			local hasCount = 0
+			local code = condition[i].params[1]
+			local heroSystem = self._developSystem:getHeroSystem()
+			local has = heroSystem:hasHero(code)
+			local hero = heroSystem:getHeroById(code)
+			needCount = heroSystem:getHeroComposeFragCount(code)
+			hasCount = heroSystem:getHeroDebrisCount(code)
+			local reward = {
+				type = 3,
+				amount = 0,
+				code = condition[i].params[1]
+			}
+			local rewardIcon = IconFactory:createRewardIcon(reward, {
+				showAmount = false,
+				isWidget = true
+			})
+
+			target:addChild(rewardIcon)
+			rewardIcon:setScaleNotCascade(0.6)
+			rewardIcon:setPositionX((i - 1) * 78)
+			rewardIcon:setAnchorPoint(0, 0)
+
+			local color = has and cc.c3b(255, 255, 255) or cc.c3b(125, 125, 125)
+
+			rewardIcon:setColor(color)
+			IconFactory:bindClickAction(rewardIcon, function ()
+				AudioEngine:getInstance():playEffect("Se_Click_Open_2", false)
+
+				if has then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("Activity_Collect_Acquaint", {
+							name = hero:getName()
+						})
+					}))
+				elseif hasCount < needCount then
+					local view = self:getInjector():getInstance("HeroShowNotOwnView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+					}, {
+						showType = 1,
+						id = code
+					}))
+				else
+					local view = self:getInjector():getInstance("HeroShowListView")
+
+					self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+						id = code
+					}))
+				end
+			end, {
+				runAction = false
+			})
+		end
 	end
 
 	local rewardPanel = mainView:getChildByName("reward")
@@ -233,6 +273,7 @@ function ActivityTaskCollectMediator:updataCell(cell, index)
 			end
 		end
 
+		actBtn:setGray(false)
 		actBtn:loadTexture("hd_btn_lq.png", ccui.TextureResType.plistType)
 		mapButtonHandlerClick(nil, actBtn, {
 			func = callFuncGo

@@ -55,7 +55,15 @@ end
 
 function ActivityEggRewardMediator:initData()
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
-	self._eggActivity = self._activityModel:getEggActivity()
+
+	if self._activityModel:getType() == ActivityType.KActivityBlock then
+		self._eggActivity = self._activityModel:getEggActivity()
+		self._isSubAct = true
+	else
+		self._eggActivity = self._activityModel
+		self._isSubAct = false
+	end
+
 	self._round = self._eggActivity:getNum()
 	self._rewards = self._eggActivity:getPreviewRewards()
 	self._tabNum = #self._rewards

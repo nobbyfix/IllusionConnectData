@@ -23,6 +23,10 @@ local kBtnHandlers = {
 	["bottomPanel.open5Btn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickOpen5Eggs"
+	},
+	["bottomPanel.taskBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickTask"
 	}
 }
 local maxOpenNum = 6
@@ -55,6 +59,7 @@ function ActivityBlockEggMediator:onRegister()
 	self._bagSystem = self._developSystem:getBagSystem()
 
 	self:mapButtonHandlersClick(kBtnHandlers)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.updateRefreshNum)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
 	self._touchPanel = self:getView():getChildByName("touchPanel")
@@ -91,6 +96,10 @@ function ActivityBlockEggMediator:onRegister()
 		x = 0,
 		y = -1
 	}))
+	self._bottomPanel:getChildByFullName("taskBtn.text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+		x = 0,
+		y = -1
+	}))
 end
 
 function ActivityBlockEggMediator:doReset()
@@ -102,10 +111,12 @@ function ActivityBlockEggMediator:doReset()
 		return
 	end
 
-	local activity = model:getEggActivity()
+	if model:getType() == ActivityType.KActivityBlock then
+		local activity = model:getEggActivity()
 
-	if not activity then
-		self:dismiss()
+		if not activity then
+			self:dismiss()
+		end
 	end
 end
 
@@ -155,7 +166,15 @@ function ActivityBlockEggMediator:initData(isInit)
 	end
 
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
-	self._eggActivity = self._activityModel:getEggActivity()
+
+	if self._activityModel:getType() == ActivityType.KActivityBlock then
+		self._eggActivity = self._activityModel:getEggActivity()
+		self._isSubAct = true
+	else
+		self._eggActivity = self._activityModel
+		self._isSubAct = false
+	end
+
 	self._eggModel = self._eggActivity:getEgg()
 	self._costData = self._eggModel:getCost()
 	self._bigRewards = self._eggModel:getEggBigRewards()
@@ -256,6 +275,12 @@ function ActivityBlockEggMediator:initView()
 	end
 
 	self:playBackgroundMusic()
+
+	local taskBtn = self._bottomPanel:getChildByName("taskBtn")
+
+	if taskBtn then
+		taskBtn:setVisible(self._eggActivity:getActivityConfig().TaskActivity ~= nil)
+	end
 end
 
 function ActivityBlockEggMediator:playBackgroundMusic()
@@ -728,7 +753,7 @@ function ActivityBlockEggMediator:onClickEgg(index)
 		}
 	}
 
-	self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+	local function callBack(response)
 		if checkDependInstance(self) then
 			local bigRewards = ConfigReader:getDataByNameIdAndKey("ActivityBlockEgg", eggId, "KeyRewardShow") or {}
 
@@ -743,7 +768,17 @@ function ActivityBlockEggMediator:onClickEgg(index)
 
 			self:onEggSucc(eggId, response)
 		end
-	end)
+	end
+
+	if self._isSubAct then
+		self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+			callBack(response)
+		end)
+	else
+		self._activitySystem:requestDoActivity(self._activityModel:getId(), param, function (response)
+			callBack(response)
+		end)
+	end
 end
 
 function ActivityBlockEggMediator:onClickOpen5Eggs()
@@ -783,7 +818,7 @@ function ActivityBlockEggMediator:onClickOpen5Eggs()
 		table.insert(param.index, eggIndex - 1)
 	end
 
-	self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+	local function callBack(response)
 		if checkDependInstance(self) then
 			local bigRewards = ConfigReader:getDataByNameIdAndKey("ActivityBlockEgg", eggId, "KeyRewardShow") or {}
 
@@ -804,7 +839,17 @@ function ActivityBlockEggMediator:onClickOpen5Eggs()
 
 			self:onEggSucc(eggId, response)
 		end
-	end)
+	end
+
+	if self._isSubAct then
+		self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+			callBack(response)
+		end)
+	else
+		self._activitySystem:requestDoActivity(self._activityModel:getId(), param, function (response)
+			callBack(response)
+		end)
+	end
 end
 
 function ActivityBlockEggMediator:onClickReward()
@@ -829,7 +874,7 @@ function ActivityBlockEggMediator:onClickRefresh()
 			doActivityType = "102"
 		}
 
-		self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+		local function callBack(response)
 			if checkDependInstance(self) then
 				self._canShowRefresh = true
 				self._autoRefreshing = false
@@ -840,7 +885,17 @@ function ActivityBlockEggMediator:onClickRefresh()
 				}))
 				self:refreshView()
 			end
-		end)
+		end
+
+		if self._isSubAct then
+			self._activitySystem:requestDoChildActivity(self._activityModel:getId(), self._eggActivity:getId(), param, function (response)
+				callBack(response)
+			end)
+		else
+			self._activitySystem:requestDoActivity(self._activityModel:getId(), param, function (response)
+				callBack(response)
+			end)
+		end
 	end
 
 	local outSelf = self
@@ -870,4 +925,16 @@ end
 
 function ActivityBlockEggMediator:onClickBack(sender, eventType)
 	self:dismiss()
+end
+
+function ActivityBlockEggMediator:onClickTask()
+	local id = self._eggActivity:getActivityConfig().TaskActivity
+
+	if id then
+		local view = self:getInjector():getInstance("ActivityEggTaskView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
+			activityId = id
+		}))
+	end
 end

@@ -1108,7 +1108,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220328.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220427.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1129,7 +1129,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220328.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220427.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },
@@ -1357,6 +1357,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SpStagePoint_Desc"
     },
+    "Condi_SpringExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Spring_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SpringExchangeAchieve_Desc"
+    },
     "Condi_StageStarSum": {
         "AchieveType1": "SIZESUM",
         "AchieveType2": "",
@@ -1378,6 +1385,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SumArenaScore_Desc"
     },
+    "Condi_SumCharge": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.dailyMoney",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SumCharge_Desc"
+    },
     "Condi_SummerChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1398,6 +1412,13 @@
         "ConditionType1": "player.bag.items.IM_Sunflower_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_SunflowerExchangeAchieve_Desc"
+    },
+    "Condi_SurfaceCollectSpecial": {
+        "AchieveType1": "CONTAIN",
+        "AchieveType2": "",
+        "ConditionType1": "player.unlockSurfaces",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SurfaceCollectSpecial_Desc"
     },
     "Condi_TargetResStageLevel": {
         "AchieveType1": "CUSTOM",

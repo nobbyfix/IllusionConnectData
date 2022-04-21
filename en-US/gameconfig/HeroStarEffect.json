@@ -6553,6 +6553,29 @@
         "StarUpFactor": 0,
         "Visible": 1
     },
+    "HSYZhai_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_HSYZhai_Awake"
+        ],
+        "HeroId": "HSYZhai",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_HSYZhai_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "Visible": 1
+    },
     "HSheng_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,

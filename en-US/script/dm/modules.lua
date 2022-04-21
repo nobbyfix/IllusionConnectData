@@ -2034,6 +2034,11 @@ local modules = {
 							mediator = "ActivitySunflowerMainMediator"
 						},
 						{
+							res = "asset/ui/ActivityDailyCharge.csb",
+							name = "ActivityDailyChargeView",
+							mediator = "ActivityDailyChargeMediator"
+						},
+						{
 							res = "asset/ui/ActivityReturn.csb",
 							name = "ActivityReturnView",
 							mediator = "ActivityReturnMediator"
@@ -2241,6 +2246,16 @@ local modules = {
 							res = "asset/ui/ActivityBentoPopup.csb",
 							name = "ActivityBentoPopupView",
 							mediator = "ActivityBentoPopupMediator"
+						},
+						{
+							res = "asset/ui/ActivitySpringMain.csb",
+							name = "ActivitySpringMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityEggTask.csb",
+							name = "ActivityEggTaskView",
+							mediator = "ActivityEggTaskMediator"
 						}
 					}
 				}

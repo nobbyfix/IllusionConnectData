@@ -805,6 +805,45 @@
         "UnlockDesc": "GYCZi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_Ghost_1": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_1",
+        "HeadMove": "",
+        "HeadName": "Ghost_1_HeadName",
+        "HeroMasterId": "3",
+        "IconPath": "asset/items/Head_HeroCollect_1.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_1_HeadUnlock",
+        "Zoom": 1.0
+    },
+    "Head_Ghost_2": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_2",
+        "HeadMove": "",
+        "HeadName": "Ghost_2_HeadName",
+        "HeroMasterId": "3",
+        "IconPath": "asset/items/Head_HeroCollect_2.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_2_HeadUnlock",
+        "Zoom": 1.0
+    },
+    "Head_Ghost_3": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_3",
+        "HeadMove": "",
+        "HeadName": "Ghost_3_HeadName",
+        "HeroMasterId": "3",
+        "IconPath": "asset/items/Head_HeroCollect_3.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_3_HeadUnlock",
+        "Zoom": 1.0
+    },
     "Head_HGEr": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_HGEr",
@@ -1241,7 +1280,7 @@
         "HeadName": "LLKe_HeadName",
         "HeroMasterId": "LLKe",
         "IconPath": "asset/heros/blsi/battlepic_blsi.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "LLKe_HeadUnlock",
@@ -1319,7 +1358,7 @@
         "HeadName": "LYSi_2_HeadName",
         "HeroMasterId": "LYSi",
         "IconPath": "asset/heros/LYSi_CDan/battlepic_LYSi_CDan.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_LYSi_2",
         "Type": 5,
         "UnlockDesc": "LYSi_2_HeadUnlock",
@@ -3193,6 +3232,19 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_HGEr",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_HSYZhai": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_HSYZhai_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_HSYZhai_1_Name",
+        "HeroMasterId": "HSYZhai",
+        "IconPath": "asset/heros/xcyao/battlepic_xcyao_awaken.png",
+        "IsHiddenHead": 1,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_HSYZhai",
         "Zoom": 1.0
     },
     "HeroAwaken_HSheng": {

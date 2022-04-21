@@ -37981,13 +37981,136 @@
         ]
     },
     "blsi_skill1": {
-        "events": []
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_LLKe_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LLKe_Electric_Saw_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 11
+            }
+        ]
     },
     "blsi_skill2": {
-        "events": []
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_LLKe_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LLKe_Electric_Saw_Cut_1",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 22
+            }
+        ]
     },
     "blsi_skill3": {
-        "events": []
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LLKe_Energy_Gather",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_LLKe_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 1
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_LLKe_Electric_Saw_Cut_2",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 28
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 50
+            }
+        ]
     },
     "bni_skill1": {
         "events": [
@@ -43258,6 +43381,18 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_SSBYa_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 6
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_SSBYa_Magic_Water_Hit",
                             "rate": 1
                         },
@@ -43286,6 +43421,18 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_SSBYa_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_SSBYa_Magic_Bottle_Drop",
                             "rate": 1
                         },
@@ -43310,6 +43457,18 @@
     },
     "kptwei_skill3": {
         "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SSBYa_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
             {
                 "evts": [
                     {
@@ -43350,6 +43509,18 @@
     },
     "kptwei_skill3_1": {
         "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_SSBYa_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
             {
                 "evts": [
                     {
