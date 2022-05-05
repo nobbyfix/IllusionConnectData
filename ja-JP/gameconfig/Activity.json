@@ -44853,6 +44853,47 @@
         "UI": "EightLoginCommon",
         "Version": ""
     },
+    "Exchange_XDHZDraw_1": {
+        "ActivityConfig": {
+            "BubleDesc": [
+                "Exchange_shenshoushixunDraw_Desc"
+            ],
+            "ModelId": "Model_XLai_AShen",
+            "TaskBgUI": "hd_bg_anlw",
+            "TaskTopUI": "hd_bt_zhdh",
+            "exchange": [
+                "Exchange_PveDraw_1",
+                "Exchange_AssociationDraw_2"
+            ]
+        },
+        "ClientCondition": "",
+        "Desc": "Exchange_shenshoushixunDraw_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_ywzz",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 93004,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-06-01 05:00:00",
+            "start": [
+                "2022-05-06 05:00:00",
+                "2022-06-01 05:00:00"
+            ]
+        },
+        "Title": "SHOP_Text_shenshoushixun_1",
+        "Type": "EXCHANGE",
+        "UI": "Exchange",
+        "Version": ""
+    },
     "Exchange_Zuohe02_Last": {
         "ActivityConfig": {
             "BubleDesc": [

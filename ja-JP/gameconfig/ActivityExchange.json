@@ -9678,6 +9678,19 @@
         "Times": 99999,
         "isRemind": ""
     },
+    "Exchange_AssociationDraw_2": {
+        "Cost": [
+            {
+                "amount": 1,
+                "code": "IR_Club",
+                "type": 2
+            }
+        ],
+        "Order": 2,
+        "Target": "Exchange_PvpDraw_Reward_2",
+        "Times": 40160,
+        "isRemind": 1
+    },
     "Exchange_NFDDi_20180901": {
         "Cost": [
             {
@@ -9689,6 +9702,19 @@
         "Order": "",
         "Target": "Exchange_NFDDi_20180901",
         "Times": 1,
+        "isRemind": 1
+    },
+    "Exchange_PveDraw_1": {
+        "Cost": [
+            {
+                "amount": 1,
+                "code": "IR_Pve",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Exchange_PvpDraw_Reward_1",
+        "Times": 40160,
         "isRemind": 1
     },
     "Exchange_Zuohe02_Last_1": {
