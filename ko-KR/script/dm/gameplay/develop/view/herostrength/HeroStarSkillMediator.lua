@@ -51,11 +51,21 @@ function HeroStarSkillMediator:initData(data)
 		local params = self._starAttrs[i]
 
 		if params.star then
+			local param = params.star
+
+			if params.star == 7 then
+				param = Strings:get("AWAKE_TITLE")
+			elseif params.star > 7 then
+				param = Strings:get("Hero_IA_UI_Effect_Desc", {
+					star = params.star - 7
+				})
+			end
+
 			table.insert(self._starAttrsTemp, {
 				attrType = "star",
 				star = params.star,
 				desc = Strings:get("Hero_Star_UI_Effect_Desc", {
-					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
+					star = param
 				})
 			})
 		end

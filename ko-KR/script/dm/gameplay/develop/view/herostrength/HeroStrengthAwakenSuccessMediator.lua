@@ -23,7 +23,6 @@ end
 function HeroStrengthAwakenSuccessMediator:enterWithData(data)
 	self:initData(data.heroId, data.oldStarId)
 	self:initNodes()
-	self:refreshAttrLab()
 	self:playVideo(data.close)
 end
 
@@ -43,38 +42,6 @@ function HeroStrengthAwakenSuccessMediator:initNodes()
 
 	self._awakeRoleNode:removeAllChildren()
 	masterIcon:addTo(self._awakeRoleNode):setPosition(0, 0)
-
-	self._awakeAreaRoleNode = self._main:getChildByName("role")
-	local heroId = self._heroData:getAwakenStarConfig().ShowHero
-	local model = IconFactory:getRoleModelByKey("HeroBase", heroId)
-
-	if not model or model == "" then
-		return
-	end
-
-	model = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Model")
-	local role = RoleFactory:createRoleAnimation(model)
-	self._roleSpine = role
-
-	role:setName("RoleAnim")
-	role:addTo(self._awakeAreaRoleNode):setScale(0.6):posite(70, 35)
-	role:registerSpineEventHandler(handler(self, self.spineCompleteHandler), sp.EventType.ANIMATION_COMPLETE)
-
-	self._awakeSkillNode = self._main:getChildByName("skill")
-	local specialEffect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", self._heroData:getStarId(), "SpecialEffect") or {}
-	local skillId = ConfigReader:getDataByNameIdAndKey("SkillSpecialEffect", specialEffect[1], "Parameter").after
-	local skillNode = IconFactory:createHeroSkillIcon({
-		id = skillId
-	}, {
-		hideLevel = true
-	})
-
-	skillNode:addTo(self._awakeSkillNode):setScale(0.8):posite(80, 75)
-
-	local lvLabel = cc.Label:createWithTTF("EX", TTF_FONT_FZYH_R, 24)
-
-	lvLabel:enableOutline(cc.c4b(0, 0, 0, 255), 1)
-	lvLabel:addTo(self._awakeSkillNode):posite(78, 55)
 end
 
 function HeroStrengthAwakenSuccessMediator:initData(heroId, oldStarId)
@@ -113,6 +80,38 @@ function HeroStrengthAwakenSuccessMediator:playVideo(close)
 end
 
 function HeroStrengthAwakenSuccessMediator:showResult()
+	self._awakeAreaRoleNode = self._main:getChildByName("role")
+	local heroId = self._heroData:getAwakenStarConfig().ShowHero
+	local model = IconFactory:getRoleModelByKey("HeroBase", heroId)
+
+	if not model or model == "" then
+		return
+	end
+
+	model = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Model")
+	local role = RoleFactory:createRoleAnimation(model)
+	self._roleSpine = role
+
+	role:setName("RoleAnim")
+	role:addTo(self._awakeAreaRoleNode):setScale(0.6):posite(70, 35)
+	role:registerSpineEventHandler(handler(self, self.spineCompleteHandler), sp.EventType.ANIMATION_COMPLETE)
+
+	self._awakeSkillNode = self._main:getChildByName("skill")
+	local specialEffect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", self._heroData:getStarId(), "SpecialEffect") or {}
+	local skillId = ConfigReader:getDataByNameIdAndKey("SkillSpecialEffect", specialEffect[1], "Parameter").after
+	local skillNode = IconFactory:createHeroSkillIcon({
+		id = skillId
+	}, {
+		hideLevel = true
+	})
+
+	skillNode:addTo(self._awakeSkillNode):setScale(0.8):posite(80, 75)
+
+	local lvLabel = cc.Label:createWithTTF("EX", TTF_FONT_FZYH_R, 24)
+
+	lvLabel:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+	lvLabel:addTo(self._awakeSkillNode):posite(78, 55)
+	self:refreshAttrLab()
 	self._main:getChildByName("Close"):addClickEventListener(function ()
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 		self:close()

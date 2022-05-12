@@ -792,6 +792,16 @@ local modules = {
 							res = "asset/ui/HeroShowTranlate.csb",
 							name = "HeroGeneralFragmentView",
 							mediator = "HeroGeneralFragmentMeditor"
+						},
+						{
+							res = "asset/ui/HeroIdentityAwake.csb",
+							name = "HeroIdentityAwakeView",
+							mediator = "HeroIdentityAwakeMediator"
+						},
+						{
+							res = "asset/ui/HeroIdentityAwakeSuccess.csb",
+							name = "HeroIdentityAwakeSuccessView",
+							mediator = "HeroIdentityAwakeSuccessMediator"
 						}
 					}
 				}
@@ -2032,6 +2042,11 @@ local modules = {
 							mediator = "ActivitySunflowerMainMediator"
 						},
 						{
+							res = "asset/ui/ActivityDailyCharge.csb",
+							name = "ActivityDailyChargeView",
+							mediator = "ActivityDailyChargeMediator"
+						},
+						{
 							res = "asset/ui/ActivityReturn.csb",
 							name = "ActivityReturnView",
 							mediator = "ActivityReturnMediator"
@@ -2244,6 +2259,11 @@ local modules = {
 							res = "asset/ui/ActivitySpringMain.csb",
 							name = "ActivitySpringMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityEggTask.csb",
+							name = "ActivityEggTaskView",
+							mediator = "ActivityEggTaskMediator"
 						}
 					}
 				}

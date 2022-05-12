@@ -1143,7 +1143,7 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 					}
 					local num = global.Random(_env, 1, 4)
 
-					if global.GetUnitCid(_env, _env.ACTOR) == "SP_WTXXuan" then
+					if global.GetUnitCid(_env, _env.ACTOR) ~= "SP_WTXXuan" then
 						local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
 							1,
 							1,

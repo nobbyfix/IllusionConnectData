@@ -565,6 +565,10 @@ all.Skill_LFEr_Unique_EX = {
 
 			if _env.friendunits[1] then
 				for _, Funit in global.__iter__(_env.friendunits) do
+					if global.IsAlive(_env, Funit) == false then
+						break
+					end
+
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, Funit)
 
 					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, Funit, {

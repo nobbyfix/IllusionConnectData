@@ -961,7 +961,8 @@ local kBgAnimAndImage = {
 	},
 	[GalleryPartyType.kWNSXJ] = {
 		"weinasi_weinasixianjing",
-		"asset/scene/party_bg_weinasi"
+		"asset/scene/party_bg_weinasi",
+		"asset/ui/gallery/party_icon_weinasi.png"
 	},
 	[GalleryPartyType.kSSZS] = {
 		"shebeijing_choukahuodeyinghun",

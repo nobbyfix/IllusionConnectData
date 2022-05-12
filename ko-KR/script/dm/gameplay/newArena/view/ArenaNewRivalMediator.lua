@@ -100,7 +100,8 @@ function ArenaNewRivalMediator:initTeamInfo()
 				rarity = tonumber(v[5]),
 				star = tonumber(v[3]),
 				awakenLevel = tonumber(v[7]),
-				level = tonumber(v[2])
+				level = tonumber(v[2]),
+				identityAwakenLevel = tonumber(v[8])
 			}
 			local petNode = IconFactory:createHeroLargeIcon(heroInfo, {
 				hideLevel = true,

@@ -401,7 +401,8 @@ function SettingMediator:showHeroList()
 					litterStar = heroData:getLittleStar(),
 					awakenLevel = heroData:getAwakenLevel(),
 					rarity = heroData:getRarity(),
-					level = heroData:getLevel()
+					level = heroData:getLevel(),
+					identityAwakenLevel = heroData:getIdentityAwakenLevel()
 				}
 
 				self:showHeroModel(showData, panel)
@@ -470,7 +471,8 @@ function SettingMediator:showHeroList()
 				litterStar = info.litterStar,
 				awakenLevel = info.awakenLevel,
 				rarity = info.rarity,
-				level = info.level
+				level = info.level,
+				identityAwakenLevel = info.identityAwakenLevel
 			}
 
 			self:showHeroModel(showData, panel)
@@ -538,6 +540,10 @@ function SettingMediator:showHeroModel(info, panel)
 
 		if info.awakenLevel > 0 then
 			path = "jx_img_star.png"
+		end
+
+		if i <= (info.identityAwakenLevel or 0) then
+			path = "yinghun_img_awake_star.png"
 		end
 
 		local star = cc.Sprite:createWithSpriteFrameName(path)
