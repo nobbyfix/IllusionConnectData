@@ -233,26 +233,7 @@ all.Skill_LLKe_Unique = {
 
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
 			local shield = maxHp * this.ShieldRateFactor
-			local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
-				"+Normal",
-				"+Normal"
-			}, this.DeBeCuredRateFactor)
 
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
-				timing = 4,
-				display = "LLKe_blood",
-				group = "Skill_LLKe_Unique",
-				duration = 20,
-				limit = 1,
-				tags = {
-					"STATUS",
-					"DEBUFF",
-					"BECUREDRATEDOWN",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1
-			}, 1, 0)
 			global.ShakeScreen(_env, {
 				Id = 4,
 				duration = 80,
@@ -285,6 +266,27 @@ all.Skill_LLKe_Unique = {
 				duration = 20,
 				enhance = 3
 			})
+
+			local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
+				"+Normal",
+				"+Normal"
+			}, this.DeBeCuredRateFactor)
+
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+				timing = 4,
+				display = "LLKe_blood",
+				group = "Skill_LLKe_Unique",
+				duration = 20,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"BECUREDRATEDOWN",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft1
+			}, 1, 0)
 
 			local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Unique_Shield", {
 				"+Normal",
@@ -495,11 +497,8 @@ all.Skill_LLKe_Passive_Key = {
 		passive = global["[duration]"](this, {
 			0
 		}, passive)
-		passive = global["[trigger_by]"](this, {
-			"SELF:BEFORE_UNIQUE"
-		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:BEFORE_ACTION"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -511,10 +510,6 @@ all.Skill_LLKe_Passive_Key = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.primTrgt = externs.primTrgt
-
-		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -522,8 +517,7 @@ all.Skill_LLKe_Passive_Key = {
 			local global = _env.global
 
 			if global.MARKED(_env, "LLKe")(_env, _env.ACTOR) then
-				global.DispelBuff(_env, _env.primTrgt, global.BUFF_MARKED_ALL(_env, "UNHURTRATEUP", "DISPELLABLE"), 99)
-				global.DispelBuff(_env, _env.primTrgt, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+				global.AddStatus(_env, _env.ACTOR, "LLKe_Key")
 			end
 		end)
 
@@ -604,7 +598,7 @@ all.Skill_LLKe_Proud_EX = {
 
 			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
 			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local extra_damage = global.max(_env, maxHp * this.MaxHpRateFactor, atk * 10)
+			local extra_damage = global.min(_env, maxHp * this.MaxHpRateFactor, atk * 10)
 
 			global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
 		end)
@@ -731,27 +725,6 @@ all.Skill_LLKe_Unique_EX = {
 				buff,
 				buff_num
 			})
-
-			local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
-				"+Normal",
-				"+Normal"
-			}, this.DeBeCuredRateFactor)
-
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
-				timing = 4,
-				display = "LLKe_blood",
-				group = "Skill_LLKe_Unique",
-				duration = 20,
-				limit = 1,
-				tags = {
-					"STATUS",
-					"DEBUFF",
-					"BECUREDRATEDOWN",
-					"DISPELLABLE"
-				}
-			}, {
-				buffeft1
-			}, 1, 0)
 			global.ShakeScreen(_env, {
 				Id = 4,
 				duration = 80,
@@ -784,6 +757,27 @@ all.Skill_LLKe_Unique_EX = {
 				duration = 20,
 				enhance = 3
 			})
+
+			local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
+				"+Normal",
+				"+Normal"
+			}, this.DeBeCuredRateFactor)
+
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+				timing = 4,
+				display = "LLKe_blood",
+				group = "Skill_LLKe_Unique",
+				duration = 20,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"BECUREDRATEDOWN",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft1
+			}, 1, 0)
 
 			if shield and shield ~= 0 then
 				local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_LLKe_Unique_Shield", {

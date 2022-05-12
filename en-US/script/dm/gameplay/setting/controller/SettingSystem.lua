@@ -978,6 +978,8 @@ function SettingSystem:getShowHeadImgList()
 			else
 				data.unlock = 0
 			end
+		elseif value.Type == 7 then
+			data.unlock = 1
 		end
 
 		if data.unlock == 1 or value.IsHiddenHead == 0 then

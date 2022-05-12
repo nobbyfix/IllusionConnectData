@@ -975,6 +975,10 @@ function ArenaNewTeamMediator:initTeamHero(node, info)
 			path = "jx_img_star.png"
 		end
 
+		if i <= info.identityAwakenLevel then
+			path = "yinghun_img_awake_star.png"
+		end
+
 		star:ignoreContentAdaptWithSize(true)
 		star:setScale(0.44)
 		star:loadTexture(path, 1)

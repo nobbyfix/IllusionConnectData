@@ -68,6 +68,7 @@ function HeroGeneralFragmentMeditor:enterWithData(data)
 
 	self._heroId = data.heroId
 	self._kind = data.kind
+	self._fromIdentityAwake = data.fromIdentityAwake
 	self._heroData = self._heroSystem:getHeroById(self._heroId)
 	self._heroPrototype = self._heroSystem:getHeroProById(self._heroId)
 	self._heroDebrisItemId = self._heroData:getFragId()
@@ -193,6 +194,11 @@ function HeroGeneralFragmentMeditor:refreshView()
 		}))
 	else
 		local costid = self._kind == 1 and self._heroData:getNextStarId() or self._heroData:getNextStarId(true)
+
+		if self._fromIdentityAwake then
+			costid = self._heroData:getNextIdentityStarId()
+		end
+
 		local endNum = self._heroPrototype:getStarCostFragByStar(costid)
 		local canHave = self._heroDebrisNum + self._debrisItemInfo.num * self._debrisItemNum
 		local nowNum = self._curCount * self._debrisItemInfo.num + self._heroDebrisNum
@@ -211,6 +217,10 @@ function HeroGeneralFragmentMeditor:refreshView()
 
 			local t = self._kind == 1 and "OmnipotentFrag_ShowTip02" or "OmnipotentFrag_ShowTip03"
 
+			if self._fromIdentityAwake then
+				t = "Hero_IA_UI_3"
+			end
+
 			self._countlabel:setString(Strings:get(t))
 		else
 			self._countlabel:setVisible(false)
@@ -219,6 +229,10 @@ function HeroGeneralFragmentMeditor:refreshView()
 			local itemConfig = self._bagSystem:getItemConfig(self._heroDebrisItemId)
 			local name = itemConfig and Strings:get(itemConfig.Name)
 			local t = self._kind == 1 and "OmnipotentFrag_ShowTip01" or "OmnipotentFrag_ShowTip05"
+
+			if self._fromIdentityAwake then
+				t = "Hero_IA_UI_4"
+			end
 
 			self._richText:setString(Strings:get(t, {
 				color = "#FF0000",

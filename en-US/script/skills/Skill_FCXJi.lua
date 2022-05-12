@@ -584,6 +584,8 @@ all.Skill_FCXJi_Unique_EX = {
 					timing = 0,
 					duration = 99,
 					tags = {
+						"BUFF",
+						"DISPELLABLE",
 						"NUMERIC",
 						"CARDBUFF",
 						"RAGESPEEDUP"
@@ -592,11 +594,15 @@ all.Skill_FCXJi_Unique_EX = {
 					buffeft1
 				})
 				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
-					duration = 99,
-					group = "Skill_FCXJi_Unique_EX",
 					timing = 0,
+					display = "Undead",
+					group = "Skill_FCXJi_Unique_EX",
+					duration = 99,
 					limit = 3,
 					tags = {
+						"UNDEAD",
+						"BUFF",
+						"DISPELLABLE",
 						"NUMERIC",
 						"CARDBUFF",
 						"DEATHIMMUNE"

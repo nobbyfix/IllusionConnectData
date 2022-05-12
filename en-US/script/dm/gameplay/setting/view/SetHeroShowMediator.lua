@@ -357,6 +357,11 @@ function SetHeroShowMediator:createHeroCell(cell, index)
 					zOrder = 100
 				end
 
+				if i <= (heroData.identityAwakenLevel or 0) then
+					path = "yinghun_img_awake_star.png"
+					zOrder = 100
+				end
+
 				local star = cc.Sprite:createWithSpriteFrameName(path)
 
 				star:addTo(starBg)

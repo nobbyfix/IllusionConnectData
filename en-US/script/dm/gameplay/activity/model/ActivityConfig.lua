@@ -458,6 +458,13 @@ ActivityLogin14Config = {
 			cc.c4b(232, 244, 254, 255),
 			cc.c4b(210, 226, 248, 255)
 		}
+	},
+	EightDays_Family_Re = {
+		resFile = "asset/ui/ActivityFamilyLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 249, 198, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {

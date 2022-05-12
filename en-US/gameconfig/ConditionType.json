@@ -639,7 +639,7 @@
     "Condi_FamilyExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Family_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Family_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_FamilyExchangeAchieve_Desc"
     },
@@ -1115,7 +1115,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220404.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220513.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1136,7 +1136,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220404.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220513.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },

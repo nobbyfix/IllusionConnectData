@@ -44,6 +44,7 @@ CurrencyIdKind = {
 	kActivityFemalePower = "IR_FemaleStamina",
 	kActivityAnimalRePower = "IR_AnimalStamina_Re",
 	kActivityDramaPower = "IR_DramaStamina",
+	kActivityFamilyRePower = "IR_FamilyStamina_Re",
 	kMazeInfinityGold = "IR_PansLabInfGOLD",
 	kAcitvityHalloweenRePower = "IR_HalloweenStamina_Re",
 	kTECH = "IR_TECH",
@@ -890,6 +891,15 @@ PowerConfigMap = {
 		func = "getPowerByCurrencyId",
 		configId = "AcitvitySpringStamina_Reset",
 		tips = "ACTIVITY_Spring_NOT_ENOUGH_1",
+		tableName = "Reset"
+	},
+	[CurrencyIdKind.kActivityFamilyRePower] = {
+		all = "Act_Family_Power_RecAll",
+		perMin = "Act_Family_Power_RecPerMin",
+		next = "Act_Family_Power_RecNext",
+		func = "getPowerByCurrencyId",
+		configId = "AcitvityFamilyStamina_Reset_Re",
+		tips = "ACTIVITY_Family_NOT_ENOUGH_1",
 		tableName = "Reset"
 	},
 	TEST = {

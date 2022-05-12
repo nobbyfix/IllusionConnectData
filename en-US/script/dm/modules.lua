@@ -786,6 +786,16 @@ local modules = {
 							res = "asset/ui/HeroShowTranlate.csb",
 							name = "HeroGeneralFragmentView",
 							mediator = "HeroGeneralFragmentMeditor"
+						},
+						{
+							res = "asset/ui/HeroIdentityAwake.csb",
+							name = "HeroIdentityAwakeView",
+							mediator = "HeroIdentityAwakeMediator"
+						},
+						{
+							res = "asset/ui/HeroIdentityAwakeSuccess.csb",
+							name = "HeroIdentityAwakeSuccessView",
+							mediator = "HeroIdentityAwakeSuccessMediator"
 						}
 					}
 				}

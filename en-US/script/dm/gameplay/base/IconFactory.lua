@@ -2113,6 +2113,10 @@ function IconFactory:createHeroLargeIcon(info, style)
 					path = "jx_img_star.png"
 				end
 
+				if i <= (info.identityAwakenLevel or 0) then
+					path = "yinghun_img_awake_star.png"
+				end
+
 				_star:setScale(0.55)
 				_star:loadTexture(path, 1)
 			end

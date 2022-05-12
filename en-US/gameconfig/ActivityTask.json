@@ -10381,6 +10381,234 @@
         "StoryDesc": "",
         "TaskIcon": ""
     },
+    "Activity_HSYZhaiTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_HSYZhaiTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_HSYZhaiTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_HSYZhaiTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_HSYZhaiTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_HSYZhaiTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_HSYZhaiTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_HSYZhaiTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_HSYZhaiTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_HSYZhaiTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_HSYZhaiTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_HSYZhaiTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_HSYZhaiTask_9_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
     "Activity_HShengTask_1": {
         "Condition": [
             {
@@ -27938,6 +28166,150 @@
         "StoryDesc": "",
         "TaskIcon": ""
     },
+    "EightDays_20220524_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20220524_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20220524_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20220524_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20220524_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20220524_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20220524_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20220524_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220524_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20220524_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
     "EightDays_Zuohe_1": {
         "Condition": [
             {
@@ -28090,7 +28462,7 @@
                     50
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28111,7 +28483,7 @@
                     100
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28132,7 +28504,7 @@
                     200
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28153,7 +28525,7 @@
                     300
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28174,7 +28546,7 @@
                     400
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28285,8 +28657,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM01",
                     "FamilySN05",
                     "FamilySN05M"
@@ -28310,8 +28682,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM01",
                     "FamilySN08",
                     "FamilySN08M"
@@ -28335,8 +28707,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE04",
                     "FamilySE04M"
@@ -28360,8 +28732,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE07",
                     "FamilySE07M"
@@ -28385,8 +28757,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE08",
                     "FamilySE08M"
@@ -28410,7 +28782,7 @@
                     3
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28432,7 +28804,7 @@
                     6
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28454,7 +28826,7 @@
                     8
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28476,7 +28848,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28498,7 +28870,7 @@
                     12
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28520,7 +28892,7 @@
                     14
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28542,7 +28914,7 @@
                     16
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28616,7 +28988,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],

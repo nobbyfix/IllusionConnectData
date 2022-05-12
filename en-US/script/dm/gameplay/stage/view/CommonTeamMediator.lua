@@ -505,6 +505,10 @@ function CommonTeamMediator:initHero(node, info)
 
 		if info.awakenLevel > 0 then
 			path = "jx_img_star.png"
+
+			if i <= info.identityAwakenLevel then
+				path = "yinghun_img_awake_star.png"
+			end
 		end
 
 		star:ignoreContentAdaptWithSize(true)
@@ -719,7 +723,8 @@ function CommonTeamMediator:getHeroInfoById(id)
 		littleStar = heroInfo:getLittleStar(),
 		combat = heroInfo:getCombat(),
 		maxStar = heroInfo:getMaxStar(),
-		awakenLevel = heroInfo:getAwakenStar()
+		awakenLevel = heroInfo:getAwakenStar(),
+		identityAwakenLevel = heroInfo:getIdentityAwakenLevel()
 	}
 
 	return heroData

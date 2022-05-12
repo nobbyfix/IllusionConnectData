@@ -724,6 +724,11 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		end
 	end
 
+	if global.INSTATUS(_env, "LLKe_Key")(_env, actor) then
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNHURTRATEUP", "DISPELLABLE"), 99)
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+	end
+
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 or global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit")) > 0 then
 		attacker.critrate = 0
 	end
@@ -1350,11 +1355,20 @@ function all.EvalRecovery_FlagCheck(_env, actor, target, healFactorRate, healFac
 	return heal
 end
 
-function all.ApplyBuff_Buff(_env, actor, target, config, buffEffects, ratefactor, limitfactor)
+function all.ApplyBuff_Buff(_env, actor, target, config, buffEffects, ratefactor, dispellable)
 	local this = _env.this
 	local global = _env.global
+	ratefactor = ratefactor or 1
 
 	if global.ProbTest(_env, ratefactor) then
+		if dispellable == 1 then
+			config.tags[#config.tags + 1] = "DISPELLABLE"
+			config.tags[#config.tags + 1] = "STEALABLE"
+		elseif dispellable == 0 then
+			config.tags[#config.tags + 1] = "UNDISPELLABLE"
+			config.tags[#config.tags + 1] = "UNSTEALABLE"
+		end
+
 		local result = global.ApplyBuff(_env, target, config, buffEffects)
 
 		if result then
@@ -1364,7 +1378,7 @@ function all.ApplyBuff_Buff(_env, actor, target, config, buffEffects, ratefactor
 	end
 end
 
-function all.ApplyBuff_Debuff(_env, actor, target, config, buffEffects, ratefactor, limitfactor)
+function all.ApplyBuff_Debuff(_env, actor, target, config, buffEffects, ratefactor)
 	local this = _env.this
 	local global = _env.global
 	local attacker = global.LoadUnit(_env, actor, "ATTACKER")

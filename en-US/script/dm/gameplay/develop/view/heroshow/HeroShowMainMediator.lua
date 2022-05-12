@@ -94,6 +94,12 @@ local kTabBtnData = {
 		viewName = "TSoulMainView",
 		tabName = Strings:get("TimeSoul_Button_Name"),
 		tabName1 = Strings:get("UITitle_EN_TSoul")
+	},
+	{
+		viewName = "HeroIdentityAwakeView",
+		unlockKey = "Hero_StarUp",
+		tabName = Strings:get("HEROS_UI5"),
+		tabName1 = Strings:get("UITitle_EN_Jingjie")
 	}
 }
 local kBtnHandlers = {
@@ -321,7 +327,7 @@ function HeroShowMainMediator:initTabBtn()
 		elseif i == 2 then
 			canShow = false
 			unlock = false
-		elseif i == 6 then
+		elseif i == 6 or i == 8 then
 			canShow = false
 			unlock = false
 			self._cacheViewsName[i] = viewName
@@ -405,7 +411,12 @@ function HeroShowMainMediator:resetViews(hideAnim)
 	local createNameType = self._tabType
 
 	if self._tabType == 3 and hasAwaken then
-		createNameType = 6
+		if heroData:heroAwaked() and heroData:canIdentityAwake() then
+			createNameType = 8
+		else
+			createNameType = 6
+		end
+
 		self._isClick = true
 
 		if self._cacheViews[createNameType] then
@@ -462,7 +473,7 @@ function HeroShowMainMediator:resetViews(hideAnim)
 		self._baseShowView:hideInfoBg(not isEquipView)
 	end
 
-	self._basePanel:setVisible(self._tabType > 1 and createNameType ~= 6 and createNameType ~= 7)
+	self._basePanel:setVisible(self._tabType > 1 and createNameType ~= 6 and createNameType ~= 7 and createNameType ~= 8)
 	self:refreshTabRedPoint()
 	self:refreshArrowState()
 	self:initTouchSlide()

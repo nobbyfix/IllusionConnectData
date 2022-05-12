@@ -121,3 +121,9 @@ function HeroService:requestHeroAwake(params, blockUI, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function HeroService:requestHeroIdentityAwake(params, blockUI, callback)
+	local request = self:newRequest(11021, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

@@ -906,6 +906,11 @@ local mappings = {
 		name = "HeroSoulUpMediator",
 		type = "@C"
 	},
+	HeroIdentityAwakeMediator = {
+		url = "dm.gameplay.develop.view.herostrength.HeroIdentityAwakeMediator",
+		name = "HeroIdentityAwakeMediator",
+		type = "@C"
+	},
 	HeroRelationMediator = {
 		url = "dm.gameplay.develop.view.herostrength.HeroRelationMediator",
 		name = "HeroRelationMediator",
@@ -994,6 +999,11 @@ local mappings = {
 	HeroGeneralFragmentMeditor = {
 		url = "dm.gameplay.develop.view.herostrength.HeroGeneralFragmentMeditor",
 		name = "HeroGeneralFragmentMeditor",
+		type = "@C"
+	},
+	HeroIdentityAwakeSuccessMediator = {
+		url = "dm.gameplay.develop.view.herostrength.HeroIdentityAwakeSuccessMediator",
+		name = "HeroIdentityAwakeSuccessMediator",
 		type = "@C"
 	},
 	HeroStarItemSelectMediator = {
