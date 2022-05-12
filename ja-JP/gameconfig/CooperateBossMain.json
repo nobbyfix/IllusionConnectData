@@ -380,6 +380,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_HSYZhai": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_HSYZhai",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "HSYZhai",
+                    "SP_KTSJKe"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "GCZi",
+                    "XSMLi",
+                    "SGBao"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_HSYZhai_Show",
+        "RoleModel": "Model_HSYZhai",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_HSheng": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

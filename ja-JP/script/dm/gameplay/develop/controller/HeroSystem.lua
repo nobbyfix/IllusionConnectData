@@ -1213,6 +1213,10 @@ function HeroSystem:hasRedPointByStar(heroId)
 		return true
 	end
 
+	if self:getHeroIdentityAwakeRedpoint(heroId) then
+		return true
+	end
+
 	local isMaxStar = hero:isMaxStar()
 
 	if isMaxStar then
@@ -1597,6 +1601,7 @@ function HeroSystem:getHeroShowIdsCache()
 			maxStar = hero:getMaxStar(),
 			fragId = hero._config and hero._config.ItemId,
 			awakenLevel = hero:getAwakenStar(),
+			identityAwakenLevel = hero:getIdentityAwakenLevel(),
 			flags = hero._config.Flags
 		}
 		local index = #list
@@ -1614,6 +1619,7 @@ function HeroSystem:getHeroShowIdsCache()
 			local heroConfig = heroPrototype:getConfig()
 			local model = IconFactory:getRoleModelByKey("HeroBase", id)
 			local data = {
+				identityAwakenLevel = 0,
 				littleStar = false,
 				awakenLevel = 0,
 				level = 1,
@@ -2670,6 +2676,38 @@ function HeroSystem:checkHaveAwaken(heroId)
 
 	if awakenStarConfig and awakenStarConfig.StarId then
 		return true
+	end
+
+	return false
+end
+
+function HeroSystem:requestHeroIdentityAwake(heroId, items, callFunc)
+	local info = {
+		heroId = heroId,
+		items = items
+	}
+	local heroService = self:getInjector():getInstance(HeroService)
+
+	heroService:requestHeroIdentityAwake(info, true, function (response)
+		if response.resCode == GS_SUCCESS and callFunc then
+			callFunc(response)
+		end
+	end)
+end
+
+function HeroSystem:getHeroIdentityAwakeRedpoint(heroId)
+	local heroData = self:getHeroById(heroId)
+	local heroPrototype = heroData:getHeroPrototype()
+
+	if heroData:heroAwaked() and heroData:canIdentityAwake() and heroData:getNextIdentityStarId() ~= "" then
+		local loveNeed = heroData:getIdentityAwakenNeedLove()
+		local hasloveLevel = heroData:getLoveLevel()
+		local hasDebrisNum = self:getHeroDebrisCount(heroId)
+		local needDebrisNum = heroPrototype:getStarCostFragByStar(heroData:getNextIdentityStarId())
+
+		if loveNeed <= hasloveLevel and needDebrisNum <= hasDebrisNum then
+			return true
+		end
 	end
 
 	return false

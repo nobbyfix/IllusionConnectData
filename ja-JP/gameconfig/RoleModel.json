@@ -14023,6 +14023,183 @@
         "bustAwakeZoom": 0.82,
         "bustZoom": 0.82
     },
+    "Model_HSYZhai_Awake": {
+        "Animation": "xcyao",
+        "BattlePosition": "HeroBase_BattlePosition_HSYZhai",
+        "BattleShow": "",
+        "Bust1": "Bust1_HSYZhai_Awake",
+        "Bust10": "Bust10_HSYZhai_Awake",
+        "Bust11": "Bust11_HSYZhai_Awake",
+        "Bust12": "Bust13_HSYZhai_Awake",
+        "Bust13": "Bust12_HSYZhai_Awake",
+        "Bust14": "Bust14_HSYZhai_Awake",
+        "Bust15": "Bust15_HSYZhai_Awake",
+        "Bust16": "",
+        "Bust2": "Bust2_HSYZhai_Awake",
+        "Bust3": "Bust3_HSYZhai_Awake",
+        "Bust4": "Bust4_HSYZhai_Awake",
+        "Bust5": "Bust5_HSYZhai_Awake",
+        "Bust6": "Bust6_HSYZhai_Awake",
+        "Bust7": "Bust7_HSYZhai_Awake",
+        "Bust8": "Bust8_HSYZhai_Awake",
+        "Bust9": "Bust9_HSYZhai_Awake",
+        "BustAwake": [
+            -198,
+            -228
+        ],
+        "BustAwake2": [
+            -23,
+            -188
+        ],
+        "BustTemp1": [
+            -376,
+            -540
+        ],
+        "BustTemp2": [
+            -368,
+            -543
+        ],
+        "BustTemp3": [
+            -368,
+            -543
+        ],
+        "BustTemp4": [
+            -368,
+            -543
+        ],
+        "BustTemp5": [
+            -368,
+            -543
+        ],
+        "CommonResource": "",
+        "CutIn": "Portraitpic_HSYZhai_Awake",
+        "DeathVoice": "",
+        "Filename": "portrait_xcyao_awaken",
+        "HeadMain": "HeadMain_HSYZhai_Awake",
+        "Height": 200,
+        "Hero": "HSYZhai",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_HSYZhai",
+        "MasterHeadWide": "",
+        "Model": "xcyao",
+        "Name": "HeroBase_Name_HSYZhai",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_HSYZhai_Awake",
+        "SVPText": "SVPText_HSYZhai",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "HSYZhai",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_HSYZhai",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "zhiyeTagPic_kezhi"
+        ],
+        "TruthBubble": [
+            "Truth_HSYZhai_1",
+            "Truth_HSYZhai_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.4,
+        "bustZoom": 0.68
+    },
+    "Model_HSYZhai_UnAwake": {
+        "Animation": "",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": [
+            -192,
+            -226
+        ],
+        "BustAwake2": [
+            -18,
+            -187
+        ],
+        "BustTemp1": [
+            -367,
+            -538
+        ],
+        "BustTemp2": [
+            -358,
+            -541
+        ],
+        "BustTemp3": [
+            -358,
+            -541
+        ],
+        "BustTemp4": [
+            -358,
+            -541
+        ],
+        "BustTemp5": [
+            -358,
+            -541
+        ],
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "portrait_xcyao_awakelock",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "HSYZhai",
+        "HpTierCount": "",
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "xcyao",
+        "Name": "HeroBase_Name_HSYZhai",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_HSYZhai_UnAwake",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": "",
+        "SoundVoiceCondition": "",
+        "SoundVoiceText": "",
+        "Tag": "",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": "",
+        "Type": "",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.4,
+        "bustZoom": 0.68
+    },
     "Model_HSYZhai_olympics": {
         "Animation": "xcy_olympics",
         "BattlePosition": "HeroBase_BattlePosition_HSYZhai",

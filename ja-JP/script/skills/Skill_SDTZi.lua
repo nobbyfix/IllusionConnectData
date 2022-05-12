@@ -621,5 +621,72 @@ all.Skill_SDTZi_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_SDTZi_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DeRageFactor = externs.DeRageFactor
+
+		assert(this.DeRageFactor ~= nil, "External variable `DeRageFactor` is not provided.")
+
+		this.MasterDeRageFactor = externs.MasterDeRageFactor
+
+		assert(this.MasterDeRageFactor ~= nil, "External variable `MasterDeRageFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
+				"?Normal"
+			}, this.DeRageFactor)
+			local buffeft2 = global.SpecialNumericEffect(_env, "+specialnum2", {
+				"?Normal"
+			}, this.MasterDeRageFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_SDTZi_Passive",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			})
+			global.SelfEX_Curse_OneStage_Reflex(_env, _env.ACTOR)
+		end)
+
+		return _env
+	end
+}
 
 return _M

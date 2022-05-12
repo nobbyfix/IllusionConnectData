@@ -1114,7 +1114,7 @@
         "HeadName": "LEMHou_2_HeadName",
         "HeroMasterId": "LEMHou",
         "IconPath": "asset/heros/kxyuan_vt/battlepic_kxyuan_vt.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_LEMHou_2",
         "Type": 5,
         "UnlockDesc": "LEMHou_2_HeadUnlock",
@@ -2035,7 +2035,7 @@
         "HeadName": "SGBao_HeadName",
         "HeroMasterId": "SGBao",
         "IconPath": "asset/heros/byu/battlepic_byu.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "SGBao_HeadUnlock",
@@ -3179,6 +3179,19 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_HGEr",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_HSYZhai": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_HSYZhai_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_HSYZhai_1_Name",
+        "HeroMasterId": "HSYZhai",
+        "IconPath": "asset/heros/xcyao/battlepic_xcyao_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_HSYZhai",
         "Zoom": 1.0
     },
     "HeroAwaken_HSheng": {

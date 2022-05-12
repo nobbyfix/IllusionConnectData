@@ -26691,15 +26691,16 @@
         "FirstKillReward": "FamilySE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -26726,7 +26727,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE01E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26738,10 +26739,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -26816,21 +26817,22 @@
         "FirstKillReward": "FamilySE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_1",
                 "4": "Family_Buff_Star4_2_1",
                 "5": "Family_Buff_Star5_2_1",
@@ -26847,7 +26849,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE01",
         "Master": "",
         "Name": "BlockPoint_FamilyS09M_Name",
@@ -26860,7 +26862,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE01M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26872,10 +26874,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -26949,15 +26951,16 @@
         "FirstKillReward": "FamilySE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -26984,7 +26987,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE02E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26999,10 +27002,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27077,21 +27080,22 @@
         "FirstKillReward": "FamilySE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_2",
                 "4": "Family_Buff_Star4_2_2",
                 "5": "Family_Buff_Star5_2_2",
@@ -27108,7 +27112,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE02",
         "Master": "",
         "Name": "BlockPoint_FamilyS10M_Name",
@@ -27121,7 +27125,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE02M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27136,10 +27140,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27212,15 +27216,16 @@
         "FirstKillReward": "FamilySE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27242,7 +27247,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE03E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27254,10 +27259,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27331,21 +27336,22 @@
         "FirstKillReward": "FamilySE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_3",
                 "4": "Family_Buff_Star4_2_3",
                 "5": "Family_Buff_Star5_2_3",
@@ -27357,7 +27363,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE03",
         "Master": "FamilyM02P03U04N08",
         "Name": "BlockPoint_FamilyS11M_Name",
@@ -27370,7 +27376,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE03M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27382,10 +27388,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27462,15 +27468,16 @@
         "FirstKillReward": "FamilySE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27492,7 +27499,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE04E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27504,10 +27511,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27581,21 +27588,22 @@
         "FirstKillReward": "FamilySE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_4",
                 "4": "Family_Buff_Star4_2_4",
                 "5": "Family_Buff_Star5_2_4",
@@ -27607,7 +27615,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE04",
         "Master": "",
         "Name": "BlockPoint_FamilyS12M_Name",
@@ -27620,7 +27628,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE04M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27632,10 +27640,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27709,15 +27717,16 @@
         "FirstKillReward": "FamilySE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27744,7 +27753,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE05E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27756,10 +27765,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27834,21 +27843,22 @@
         "FirstKillReward": "FamilySE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_5",
                 "4": "Family_Buff_Star4_2_5",
                 "5": "Family_Buff_Star5_2_5",
@@ -27865,7 +27875,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE05",
         "Master": "",
         "Name": "BlockPoint_FamilyS13M_Name",
@@ -27878,7 +27888,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE05M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27890,10 +27900,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27967,15 +27977,16 @@
         "FirstKillReward": "FamilySE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28002,7 +28013,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE06E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28014,10 +28025,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28092,21 +28103,22 @@
         "FirstKillReward": "FamilySE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_6",
                 "4": "Family_Buff_Star4_2_6",
                 "5": "Family_Buff_Star5_2_6",
@@ -28123,7 +28135,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE06",
         "Master": "",
         "Name": "BlockPoint_FamilyS14M_Name",
@@ -28136,7 +28148,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE06M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28148,10 +28160,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28224,15 +28236,16 @@
         "FirstKillReward": "FamilySE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28254,7 +28267,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE07E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28266,10 +28279,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28343,21 +28356,22 @@
         "FirstKillReward": "FamilySE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_7",
                 "4": "Family_Buff_Star4_2_7",
                 "5": "Family_Buff_Star5_2_7",
@@ -28369,7 +28383,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE07",
         "Master": "",
         "Name": "BlockPoint_FamilyS15M_Name",
@@ -28382,7 +28396,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE07M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28394,10 +28408,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28471,15 +28485,16 @@
         "FirstKillReward": "FamilySE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28506,7 +28521,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE08E_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28518,10 +28533,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28596,21 +28611,22 @@
         "FirstKillReward": "FamilySE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_2_8",
                 "4": "Family_Buff_Star4_2_8",
                 "5": "Family_Buff_Star5_2_8",
@@ -28627,7 +28643,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySE08",
         "Master": "",
         "Name": "BlockPoint_FamilyS16M_Name",
@@ -28638,7 +28654,7 @@
         "PointPicture": "",
         "PointReward": "FamilySE08M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28650,10 +28666,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28726,15 +28742,16 @@
         "FirstKillReward": "FamilySH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28758,7 +28775,7 @@
         "PointPicture": "",
         "PointReward": "FamilySH01M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28770,10 +28787,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28846,15 +28863,16 @@
         "FirstKillReward": "FamilySH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28878,7 +28896,7 @@
         "PointPicture": "",
         "PointReward": "FamilySH02M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28890,10 +28908,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28966,15 +28984,16 @@
         "FirstKillReward": "FamilySH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28996,7 +29015,7 @@
         "PointPicture": "",
         "PointReward": "FamilySH03M_PointReward",
         "PointTime": {
-            "start": "2022-02-07 05:00:00"
+            "start": "2022-05-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -29008,10 +29027,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 20
+            "IR_FamilyStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29085,15 +29104,16 @@
         "FirstKillReward": "FamilySN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29130,10 +29150,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29208,21 +29228,22 @@
         "FirstKillReward": "FamilySN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_1",
                 "4": "Family_Buff_Star4_1_1",
                 "5": "Family_Buff_Star5_1_1",
@@ -29239,7 +29260,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN01",
         "Master": "",
         "Name": "BlockPoint_FamilyS01M_Name",
@@ -29262,10 +29283,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29339,15 +29360,16 @@
         "FirstKillReward": "FamilySN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29384,10 +29406,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29462,21 +29484,22 @@
         "FirstKillReward": "FamilySN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_2",
                 "4": "Family_Buff_Star4_1_2",
                 "5": "Family_Buff_Star5_1_2",
@@ -29493,7 +29516,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN02",
         "Master": "",
         "Name": "BlockPoint_FamilyS02M_Name",
@@ -29516,10 +29539,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29592,15 +29615,16 @@
         "FirstKillReward": "FamilySN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29635,10 +29659,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29712,21 +29736,22 @@
         "FirstKillReward": "FamilySN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_3",
                 "4": "Family_Buff_Star4_1_3",
                 "5": "Family_Buff_Star5_1_3",
@@ -29738,7 +29763,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN03",
         "Master": "",
         "Name": "BlockPoint_FamilyS03M_Name",
@@ -29761,10 +29786,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29834,15 +29859,16 @@
         "FirstKillReward": "FamilySN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29874,10 +29900,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29944,21 +29970,22 @@
         "FirstKillReward": "FamilySN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_4",
                 "4": "Family_Buff_Star4_1_4",
                 "5": "Family_Buff_Star5_1_4",
@@ -29970,7 +29997,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN04",
         "Master": "",
         "Name": "BlockPoint_FamilyS04M_Name",
@@ -29993,10 +30020,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30070,15 +30097,16 @@
         "FirstKillReward": "FamilySN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30115,10 +30143,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30193,21 +30221,22 @@
         "FirstKillReward": "FamilySN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_5",
                 "4": "Family_Buff_Star4_1_5",
                 "5": "Family_Buff_Star5_1_5",
@@ -30224,7 +30253,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN05",
         "Master": "",
         "Name": "BlockPoint_FamilyS05M_Name",
@@ -30247,10 +30276,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30324,15 +30353,16 @@
         "FirstKillReward": "FamilySN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30369,10 +30399,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30447,21 +30477,22 @@
         "FirstKillReward": "FamilySN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_6",
                 "4": "Family_Buff_Star4_1_6",
                 "5": "Family_Buff_Star5_1_6",
@@ -30478,7 +30509,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN06",
         "Master": "",
         "Name": "BlockPoint_FamilyS06M_Name",
@@ -30501,10 +30532,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30578,15 +30609,16 @@
         "FirstKillReward": "FamilySN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30623,10 +30655,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30701,21 +30733,22 @@
         "FirstKillReward": "FamilySN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_7",
                 "4": "Family_Buff_Star4_1_7",
                 "5": "Family_Buff_Star5_1_7",
@@ -30732,7 +30765,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN07",
         "Master": "",
         "Name": "BlockPoint_FamilyS07M_Name",
@@ -30755,10 +30788,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30832,15 +30865,16 @@
         "FirstKillReward": "FamilySN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30877,10 +30911,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 12
+            "IR_FamilyStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30955,21 +30989,22 @@
         "FirstKillReward": "FamilySN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "LDYu": "Hero_ABlock_LDYu_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "LDYu": {
-                "3": "Family_LDYu_Buff_Star3",
-                "4": "Family_LDYu_Buff_Star4",
-                "5": "Family_LDYu_Buff_Star5",
-                "6": "Family_LDYu_Buff_Star6"
+            "GCZi": {
+                "3": "Family_GCZi_Buff_Star3",
+                "4": "Family_GCZi_Buff_Star4",
+                "5": "Family_GCZi_Buff_Star5",
+                "6": "Family_GCZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "LDYu": {
+            "SGBao": {
                 "3": "Family_Buff_Star3_1_8",
                 "4": "Family_Buff_Star4_1_8",
                 "5": "Family_Buff_Star5_1_8",
@@ -30986,7 +31021,7 @@
         ],
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Family_ExchangeItem",
+        "MainShowItem": "IM_Family_ExchangeItem_Re",
         "Map": "FamilySN08",
         "Master": "",
         "Name": "BlockPoint_FamilyS08M_Name",
@@ -31007,10 +31042,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FamilyStamina": 6
+            "IR_FamilyStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [

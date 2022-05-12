@@ -154,7 +154,11 @@ end
 function FunctionEntranceMediator:resumeWithData()
 	self:refreshRed()
 	self:refreshCooperateBoss()
-	self:refreshRTPKCell()
+
+	if CommonUtils.GetSwitch("fn_arena_rtpk") then
+		self:refreshRTPKCell()
+	end
+
 	self:refreshLeadStageAreanaCell()
 	self:refreshAreaNewCell()
 end

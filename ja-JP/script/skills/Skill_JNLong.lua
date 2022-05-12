@@ -316,7 +316,7 @@ all.Skill_JNLong_Passive_Death = {
 			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
 		end)
 		exec["@time"]({
-			500
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -329,6 +329,20 @@ all.Skill_JNLong_Passive_Death = {
 			local SummonedJNLong3 = global.Summon(_env, _env.ACTOR, "SummonedJNLong", this.summonFactor, nil, {
 				global.Random(_env, 2, 1, 3, 5, 4, 6, 7, 8, 9)
 			})
+
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+				if SummonedJNLong1 then
+					global.zhuomu(_env, SummonedJNLong1, _env.ACTOR)
+				end
+
+				if SummonedJNLong2 then
+					global.zhuomu(_env, SummonedJNLong2, _env.ACTOR)
+				end
+
+				if SummonedJNLong3 then
+					global.zhuomu(_env, SummonedJNLong3, _env.ACTOR)
+				end
+			end
 		end)
 
 		return _env
@@ -593,12 +607,18 @@ all.Skill_JNLong_Phantom_Passive = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
+		this.summonFactorHp = 0.5
+		this.summonFactorAtk = 1.2
+		this.summonFactorDef = 0.5
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
 		})
-		this.passive = global["[duration]"](this, {
+		passive = global["[duration]"](this, {
 			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -607,15 +627,68 @@ all.Skill_JNLong_Phantom_Passive = {
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
 
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectHeroPassiveCount(_env, global.GetSummoner(_env, _env.ACTOR), "EquipSkill_Boots_15108_2") > 0 then
+				global.AddStatus(_env, _env.ACTOR, "EquipSkill_Boots_15108_2")
+
+				local buff = global.PassiveFunEffectBuff(_env, "EquipSkill_Boots_15108_2_Passive", {
+					RateFactor = 0.8
+				})
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT"
+					}
+				}, {
+					buff
+				})
+			end
 		end)
 
 		return _env
 	end
 }
+
+function all.zhuomu(_env, unit, master)
+	local this = _env.this
+	local global = _env.global
+
+	global.AddStatus(_env, unit, "EquipSkill_Boots_15108_2")
+
+	local buff = global.PassiveFunEffectBuff(_env, "EquipSkill_Boots_15108_2_Passive", {
+		RateFactor = 0.8,
+		cid = global.GetUnitCid(_env, master)
+	})
+
+	global.ApplyBuff(_env, unit, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"NUMERIC",
+			"BUFF",
+			"UNDISPELLABLE",
+			"UNSTEALABLE",
+			"UR_EQUIPMENT"
+		}
+	}, {
+		buff
+	})
+end
+
 all.Skill_JNLong_Proud_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -902,6 +975,10 @@ all.Skill_JNLong_Passive_Death_EX = {
 			})
 
 			if SummonedJNLong1 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong1, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -929,6 +1006,10 @@ all.Skill_JNLong_Passive_Death_EX = {
 			})
 
 			if SummonedJNLong2 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong2, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -956,6 +1037,10 @@ all.Skill_JNLong_Passive_Death_EX = {
 			})
 
 			if SummonedJNLong3 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong3, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -1115,6 +1200,10 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 			})
 
 			if SummonedJNLong1 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong1, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -1143,6 +1232,10 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 			})
 
 			if SummonedJNLong2 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong2, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"
@@ -1171,6 +1264,10 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 			})
 
 			if SummonedJNLong3 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong3, _env.ACTOR)
+				end
+
 				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
 					"+Normal",
 					"+Normal"

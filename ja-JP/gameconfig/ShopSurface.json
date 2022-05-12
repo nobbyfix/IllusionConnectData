@@ -493,6 +493,25 @@
             "type": "limit"
         }
     },
+    "ShopSurface_Surface_LEMHou_2": {
+        "BackGroundImg": "sd_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2002,
+        "Surface": "Surface_LEMHou_2",
+        "TimeType": {
+            "end": "2022-05-30 05:00:00",
+            "start": "2022-05-25 05:00:00",
+            "type": "limit"
+        }
+    },
     "ShopSurface_Surface_LFEr_2": {
         "BackGroundImg": "sd_bg",
         "ClientCondition": "",

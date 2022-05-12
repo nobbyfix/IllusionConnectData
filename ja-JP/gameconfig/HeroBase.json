@@ -9758,7 +9758,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.32,
-        "AwakePic": "",
+        "AwakePic": "portrait_xcyao_awaken",
         "BaseAttack": 198.0,
         "BaseDefence": 54.0,
         "BaseHp": 604.0,
@@ -9972,7 +9972,8 @@
         "StarId": "HSYZhai_1",
         "SurfaceList": [
             "Surface_HSYZhai_1",
-            "Surface_HSYZhai_2"
+            "Surface_HSYZhai_2",
+            "Surface_HSYZhai_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -13235,7 +13236,8 @@
         "Speed": 50,
         "StarId": "LEMHou_1",
         "SurfaceList": [
-            "Surface_LEMHou_1"
+            "Surface_LEMHou_1",
+            "Surface_LEMHou_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -20640,7 +20642,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.73,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SGBao",
         "KeyPassiveSkill": "",
