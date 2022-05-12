@@ -4777,7 +4777,7 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 						"NUMERIC",
 						"BUFF",
 						"MAXHPUP",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE"
 					}
 				}, {
