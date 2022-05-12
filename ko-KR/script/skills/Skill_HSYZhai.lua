@@ -992,22 +992,32 @@ all.Skill_HSYZhai_Unique_Awaken = {
 					"+Normal",
 					"+Normal"
 				}, unhurtrate / 2)
+
+				global.ApplyBuff(_env, _env.target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"HSYZhai_Unique"
+					}
+				}, {
+					buff
+				})
 			else
 				local buff = global.NumericEffect(_env, "-unhurtrate", {
 					"+Normal",
 					"+Normal"
-				}, unhurtrate - unhurtrate)
-			end
+				}, unhurtrate)
 
-			global.ApplyBuff(_env, _env.target, {
-				timing = 1,
-				duration = 1,
-				tags = {
-					"HSYZhai_Unique"
-				}
-			}, {
-				global.buff
-			})
+				global.ApplyBuff(_env, _env.target, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"HSYZhai_Unique"
+					}
+				}, {
+					buff
+				})
+			end
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.target, this.dmgFactor)
 			local buffeft = global.NumericEffect(_env, "+defrate", {
