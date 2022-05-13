@@ -371,6 +371,16 @@ local mappings = {
 		name = "RecruitRewardMediator",
 		type = "@C"
 	},
+	RecruitNewTSDrawCardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitNewTSDrawCardMediator",
+		name = "RecruitNewTSDrawCardMediator",
+		type = "@C"
+	},
+	RecruitTSResultMediator = {
+		url = "dm.gameplay.recruit.view.RecruitTSResultMediator",
+		name = "RecruitTSResultMediator",
+		type = "@C"
+	},
 	RecruitHeroPreviewMediator = {
 		url = "dm.gameplay.recruit.view.RecruitHeroPreviewMediator",
 		name = "RecruitHeroPreviewMediator",
@@ -1411,6 +1421,11 @@ local mappings = {
 		name = "ActivityBlockSupportMediator",
 		type = "@C"
 	},
+	ActivityBentoMediator = {
+		url = "dm.gameplay.activity.view.ActivityBentoMediator",
+		name = "ActivityBentoMediator",
+		type = "@C"
+	},
 	ActivitySagaWinMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaWinMediator",
 		name = "ActivitySagaWinMediator",
@@ -1624,6 +1639,11 @@ local mappings = {
 	ActivityNpcRoleDetailMediator = {
 		url = "dm.gameplay.activity.view.ActivityNpcRoleDetailMediator",
 		name = "ActivityNpcRoleDetailMediator",
+		type = "@C"
+	},
+	ActivityBentoPopupMediator = {
+		url = "dm.gameplay.activity.view.ActivityBentoPopupMediator",
+		name = "ActivityBentoPopupMediator",
 		type = "@C"
 	},
 	ActivityBlockTeamMediator = {

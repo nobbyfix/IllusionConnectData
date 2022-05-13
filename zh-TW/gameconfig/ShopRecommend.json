@@ -272,5 +272,33 @@
             "type": "limit"
         },
         "Vanish": 1
+    },
+    "ShopRecommend_surface_20220418": {
+        "BackGroundImg": "sd_tjpf_bg_dr",
+        "ClientCondition": "",
+        "Config": {
+            "Scale": [
+                0.55
+            ],
+            "Surface": [
+                "ShopSurface_Surface_WEDe_3"
+            ]
+        },
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "PackageId": [
+            "SurfaceShop"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 4,
+        "TabName": "ShopRecommend_surface_Name",
+        "TimeType": {
+            "amount": -1,
+            "end": "2022-04-25 05:00:00",
+            "start": "2022-04-18 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
     }
 }

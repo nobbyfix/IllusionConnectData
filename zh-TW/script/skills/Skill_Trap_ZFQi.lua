@@ -76,11 +76,7 @@ all.Skill_Trap_ZFQi = {
 			})
 
 			for i = 1, 9 do
-				global.print(_env, "-==编号:", i)
-
 				if this.LocationSet[i] == 1 then
-					global.print(_env, "-==当前位置编号:", i)
-					global.print(_env, "-==GetCellById(i):", global.GetCellById(_env, i))
 					global.ApplyTrap(_env, global.GetCellById(_env, i), {
 						display = "ZFQi_1_1",
 						duration = 99,
@@ -126,7 +122,6 @@ all.Skill_Trap_ZFQi = {
 
 			if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "BOOST")) > 0 then
 				global.Sound(_env, "Se_Alert_Better_Egg", 1)
-				global.print(_env, "-=强化:")
 
 				local buff1 = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
@@ -325,8 +320,6 @@ all.Skill_BOSS_Notice = {
 			else
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "Skill_BOSS_Notice"), 99)
 			end
-
-			global.print(_env, "着色buff层数:", global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_BOSS_Notice")))
 		end)
 
 		return _env

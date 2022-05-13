@@ -26,6 +26,33 @@
         "SeasonSkillCondition": "",
         "StarsAttrEffect": ""
     },
+    "RTPKSeason_10": {
+        "AwakenAttrEffect": "",
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BattleBackground": "Battle_Scene_RTPK",
+        "BattleConfig": "BlockBattle_RTPK",
+        "ConfigLevelLimitID": "LevelLimit_RTPK",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHeroSkill_Attr_Small",
+                "Hero": [
+                    "SP_WTXXuan",
+                    "FCXJi",
+                    "MZGXiu",
+                    "SLWan",
+                    "HSheng"
+                ]
+            }
+        ],
+        "RuleDesc": "RTPKSeason_10_Desc",
+        "SeasonSkill": "",
+        "SeasonSkillCondition": "",
+        "StarsAttrEffect": ""
+    },
     "RTPKSeason_2": {
         "AwakenAttrEffect": "",
         "BGM": [

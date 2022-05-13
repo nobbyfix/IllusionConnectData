@@ -669,7 +669,6 @@ all.Skill_YBYa_Passive_Awaken = {
 					})
 					local cherkvalue = damage.val
 
-					global.print(_env, "-=黑木雅乐觉醒造成伤害:", cherkvalue)
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, enemy, damage)
 					global.AddAnim(_env, {
 						loop = 1,
@@ -901,6 +900,12 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 				for _, unit in global.__iter__(_env.units) do
 					local DmgRateFactor = global.SpecialPropGetter(_env, "Skill_YBYa_Passive")(_env, _env.ACTOR)
 
+					if DmgRateFactor == 0 then
+						local MyMaster = global.GetSummoner(_env, _env.ACTOR)
+						DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, MyMaster)
+					end
+
+					global.print(_env, DmgRateFactor, "DmgRateFactor=====")
 					global.ApplyStatusEffect(_env, _env.ACTOR, unit)
 					global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
@@ -911,7 +916,6 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 					})
 					local cherkvalue = damage.val
 
-					global.print(_env, "-=狐狸亡语自爆伤害：", cherkvalue)
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AddAnim(_env, {
 						loop = 1,
@@ -1169,7 +1173,6 @@ all.Skill_YBYa_Unique_EX = {
 			local global = _env.global
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
-			global.print(_env, "-=此时黑木雅乐身上tag数为", global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15008_biaozhi")))
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15008_biaozhi")) > 0 then
 				local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa_Qiannian", {

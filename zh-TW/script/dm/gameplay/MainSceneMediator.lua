@@ -241,6 +241,12 @@ local muiscCfg = {
 	},
 	ActivityMagicMainView = {
 		noAutoPlay = true
+	},
+	ActivitySamuraiMainView = {
+		noAutoPlay = true
+	},
+	ActivityBentoView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

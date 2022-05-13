@@ -428,25 +428,13 @@ function SettingMediator:showHeroList()
 				local outSelf = self
 				local delegate = {
 					willClose = function (self, popupMediator, data)
-						if myHeros[data.index] then
-							myHeros[data.index] = data.selectId
-						else
-							myHeros[#myHeros + 1] = data.selectId
+						if data.ids then
+							outSelf._settingSystem:changeShowHero(data.ids, function ()
+								if checkDependInstance(self) then
+									outSelf:showHeroList()
+								end
+							end)
 						end
-
-						local ret = {}
-
-						for i = 1, 4 do
-							if myHeros[i] then
-								table.insert(ret, myHeros[i])
-							end
-						end
-
-						outSelf._settingSystem:changeShowHero(ret, function ()
-							if checkDependInstance(self) then
-								outSelf:showHeroList()
-							end
-						end)
 					end
 				}
 				local view = self:getInjector():getInstance("SetHeroShowView")
@@ -454,8 +442,7 @@ function SettingMediator:showHeroList()
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 				}, {
-					index = i,
-					selectId = myHeros[i]
+					selectIds = myHeros
 				}, delegate))
 			end)
 		end

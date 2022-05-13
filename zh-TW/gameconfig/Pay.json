@@ -374,6 +374,51 @@
         "Symbol": "NT$",
         "VIPExp": 62
     },
+    "Pay_BattlePass_20220401_128": {
+        "ADSymbol": "TWD",
+        "Dollar": 18.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_128_Name",
+        "Price": 630.0,
+        "ProductId": "tw.mjlj.19usd.zcwf5",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_BattlePass_20220401_60": {
+        "ADSymbol": "TWD",
+        "Dollar": 8.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_60_Name",
+        "Price": 290.0,
+        "ProductId": "tw.mjlj.9usd.txz6",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 56
+    },
+    "Pay_BattlePass_20220401_68": {
+        "ADSymbol": "TWD",
+        "Dollar": 9.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_BattlePass_68_Name",
+        "Price": 330.0,
+        "ProductId": "tw.mjlj.10usd.txz4",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 62
+    },
     "Pay_BattlePass_60": {
         "ADSymbol": "TWD",
         "Dollar": 8.99,
@@ -1529,6 +1574,81 @@
         "Symbol": "NT$",
         "VIPExp": 198
     },
+    "Pay_PackageShop_20220327": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20220327_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxfl18",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_20220409": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_20220409_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxfl19",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_20220414_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "PackageShop_20220211_1_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.zylb005",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 188
+    },
+    "Pay_PackageShop_20220414_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "PackageShop_20210211_2_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.zylb006",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_PackageShop_20220414_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "PackageShop_20210211_3_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.50usd.zylb007",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
     "Pay_PackageShop_3": {
         "ADSymbol": "TWD",
         "Dollar": 4.98,
@@ -2249,6 +2369,66 @@
         "Symbol": "NT$",
         "VIPExp": 128
     },
+    "Pay_PackageShop_HShengGift_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 0.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_HShengGift_1_Name",
+        "Price": 33.0,
+        "ProductId": "tw.mjlj.1usd.hglb125",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_HShengGift_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_HShengGift_2_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.hglb126",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_HShengGift_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_HShengGift_3_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb127",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_HShengGift_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_HShengGift_4_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb128",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
     "Pay_PackageShop_JNLongGift_1": {
         "ADSymbol": "TWD",
         "Dollar": 0.99,
@@ -2744,6 +2924,66 @@
         "Symbol": "NT$",
         "VIPExp": 128
     },
+    "Pay_PackageShop_MYingGift_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 0.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MYingGift_1_Name",
+        "Price": 33.0,
+        "ProductId": "tw.mjlj.1usd.hglb137",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_MYingGift_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MYingGift_2_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.hglb138",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_MYingGift_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MYingGift_3_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb139",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_MYingGift_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MYingGift_4_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb140",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
     "Pay_PackageShop_MZGXiuGift_1": {
         "ADSymbol": "TWD",
         "Dollar": 0.99,
@@ -2797,6 +3037,66 @@
         "Name": "Pay_PackageShop_MZGXiuGift_4_Name",
         "Price": 670.0,
         "ProductId": "tw.mjlj.20usd.hglb72",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_MZuGift_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 0.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MZuGift_1_Name",
+        "Price": 33.0,
+        "ProductId": "tw.mjlj.1usd.hglb133",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_MZuGift_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MZuGift_2_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.hglb134",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_MZuGift_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MZuGift_3_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb135",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_MZuGift_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_MZuGift_4_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb136",
         "SDKSource": [
             "efuntw_ios",
             "efuntw_android"
@@ -3179,6 +3479,66 @@
         "Symbol": "NT$",
         "VIPExp": 128
     },
+    "Pay_PackageShop_SP_WTXXuanGift_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 0.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_SP_WTXXuanGift_1_Name",
+        "Price": 33.0,
+        "ProductId": "tw.mjlj.1usd.hglb129",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 6
+    },
+    "Pay_PackageShop_SP_WTXXuanGift_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_SP_WTXXuanGift_2_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.hglb130",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_SP_WTXXuanGift_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_SP_WTXXuanGift_3_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb131",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_SP_WTXXuanGift_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_SP_WTXXuanGift_4_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.hglb132",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
     "Pay_PackageShop_SRenGift_1": {
         "ADSymbol": "TWD",
         "Dollar": 0.99,
@@ -3298,6 +3658,51 @@
         ],
         "Symbol": "NT$",
         "VIPExp": 128
+    },
+    "Pay_PackageShop_Samurai_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 8.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Samurai_Limit_1_Name",
+        "Price": 290.0,
+        "ProductId": "tw.mjlj.9usd.pllb55",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_Samurai_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Samurai_Limit_2_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.pllb56",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_Samurai_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Samurai_Limit_3_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.pllb57",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
     },
     "Pay_PackageShop_TL_0726_Add": {
         "ADSymbol": "TWD",
@@ -6209,6 +6614,366 @@
         "Symbol": "NT$",
         "VIPExp": 628
     },
+    "Pay_PackageShop_TL_20220325_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.jxlb269",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_20220325_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.jxlb270",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_20220325_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_3_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb271",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220325_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_4_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb272",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220325_5": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_5_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.jxlb273",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_PackageShop_TL_20220325_6": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220325_6_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.jxlb274",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
+    "Pay_PackageShop_TL_20220401_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.jxlb275",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_20220401_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.jxlb276",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_20220401_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_3_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb277",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220401_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_4_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb278",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220401_5": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_5_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.jxlb279",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_PackageShop_TL_20220401_6": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220401_6_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.jxlb280",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
+    "Pay_PackageShop_TL_20220409_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.jxlb281",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_20220409_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.jxlb282",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_20220409_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_3_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb283",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220409_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_4_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb284",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220409_5": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_5_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.jxlb285",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_PackageShop_TL_20220409_6": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220409_6_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.jxlb286",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
+    "Pay_PackageShop_TL_20220416_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.jxlb287",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_TL_20220416_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.jxlb288",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_TL_20220416_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_3_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb289",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220416_4": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_4_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.jxlb290",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_20220416_5": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_5_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.jxlb291",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_PackageShop_TL_20220416_6": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_20220416_6_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.jxlb292",
+        "SDKSource": [
+            "efuntw_ios",
+            "efunTw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
     "Pay_PackageShop_TL_Animal_1": {
         "ADSymbol": "TWD",
         "Dollar": 8.99,
@@ -6307,6 +7072,51 @@
         "Name": "Pay_PackageShop_TL_Christmas_Limit_3_Name",
         "Price": 3290.0,
         "ProductId": "tw.mjlj.100usd.pllb33",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
+    "Pay_PackageShop_TL_Drama_0416_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 8.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Drama_Limit_1_Name",
+        "Price": 290.0,
+        "ProductId": "tw.mjlj.9usd.pllb58",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 60
+    },
+    "Pay_PackageShop_TL_Drama_0416_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Drama_Limit_2_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.pllb59",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_PackageShop_TL_Drama_0416_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_PackageShop_TL_Drama_Limit_3_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.pllb60",
         "SDKSource": [
             "efuntw_ios",
             "efuntw_android"
@@ -7979,6 +8789,96 @@
         "Symbol": "NT$",
         "VIPExp": 628
     },
+    "Pay_PackageShop_UrEquip_20220404_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220404_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.urzb65",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_UrEquip_20220404_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220404_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.urzb66",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_UrEquip_20220404_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220404_3_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.urzb67",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
+    "Pay_PackageShop_UrEquip_20220417_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 4.98,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220417_1_Name",
+        "Price": 170.0,
+        "ProductId": "tw.mjlj.5usd.urzb68",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 30
+    },
+    "Pay_PackageShop_UrEquip_20220417_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220417_2_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.urzb69",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_PackageShop_UrEquip_20220417_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 99.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrEquip_20220417_3_Name",
+        "Price": 3290.0,
+        "ProductId": "tw.mjlj.100usd.urzb70",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 628
+    },
     "Pay_PackageShop_UrEquip_211119_1": {
         "ADSymbol": "TWD",
         "Dollar": 4.98,
@@ -9577,6 +10477,96 @@
         "Name": "Pay_UrDraw_20220311_3_Name",
         "Price": 1690.0,
         "ProductId": "tw.mjlj.50usd.urck21",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_UrDraw_20220325_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220325_1_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.urck22",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_UrDraw_20220325_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220325_2_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.urck23",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_UrDraw_20220325_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220325_3_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.urck24",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 318
+    },
+    "Pay_UrDraw_20220407_1": {
+        "ADSymbol": "TWD",
+        "Dollar": 19.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220407_1_Name",
+        "Price": 670.0,
+        "ProductId": "tw.mjlj.20usd.urck25",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 128
+    },
+    "Pay_UrDraw_20220407_2": {
+        "ADSymbol": "TWD",
+        "Dollar": 29.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220407_2_Name",
+        "Price": 990.0,
+        "ProductId": "tw.mjlj.30usd.urck26",
+        "SDKSource": [
+            "efuntw_ios",
+            "efuntw_android"
+        ],
+        "Symbol": "NT$",
+        "VIPExp": 198
+    },
+    "Pay_UrDraw_20220407_3": {
+        "ADSymbol": "TWD",
+        "Dollar": 49.99,
+        "IsContinue": 0,
+        "MapId": "",
+        "Name": "Pay_UrDraw_20220407_3_Name",
+        "Price": 1690.0,
+        "ProductId": "tw.mjlj.50usd.urck27",
         "SDKSource": [
             "efuntw_ios",
             "efuntw_android"

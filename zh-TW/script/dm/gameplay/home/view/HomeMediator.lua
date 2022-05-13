@@ -3962,6 +3962,15 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 60),
 			imgpos = cc.p(65, 45),
 			redpos = cc.p(115, 56)
+		},
+		[ActivityType_UI.KActivitySamurai] = {
+			img = "samurai_btn_zjm_rukou.png",
+			animZorder = 1,
+			anim = "main_wujinxia",
+			imgZorder = 2,
+			aimpos = cc.p(60, 60),
+			imgpos = cc.p(65, 45),
+			redpos = cc.p(115, 56)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

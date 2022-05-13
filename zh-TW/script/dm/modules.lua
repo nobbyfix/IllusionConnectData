@@ -1433,6 +1433,16 @@ local modules = {
 							res = "asset/ui/RecruitMain_New.csb",
 							name = "RecruitNewDrawCardView",
 							mediator = "RecruitNewDrawCardMediator"
+						},
+						{
+							res = "asset/ui/RecruitMainTSoul.csb",
+							name = "RecruitNewTSDrawCardView",
+							mediator = "RecruitNewTSDrawCardMediator"
+						},
+						{
+							res = "asset/ui/RecruitResult.csb",
+							name = "RecruitTSResultView",
+							mediator = "RecruitTSResultMediator"
 						}
 					}
 				}
@@ -2211,6 +2221,21 @@ local modules = {
 							res = "asset/ui/ActivityMagicMain.csb",
 							name = "ActivityMagicMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivitySamuraiMain.csb",
+							name = "ActivitySamuraiMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityBento.csb",
+							name = "ActivityBentoView",
+							mediator = "ActivityBentoMediator"
+						},
+						{
+							res = "asset/ui/ActivityBentoPopup.csb",
+							name = "ActivityBentoPopupView",
+							mediator = "ActivityBentoPopupMediator"
 						}
 					}
 				}

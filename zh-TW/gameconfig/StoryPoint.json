@@ -2025,7 +2025,7 @@
         "FirstReward": "S20E01_Reward",
         "Icon": "s_album_story_1",
         "IsAuto": 1,
-        "IsHide": 1,
+        "IsHide": "",
         "Location": [
             -225,
             106
@@ -2168,8 +2168,12 @@
             "main_bg_xq_jqxw01.png"
         ],
         "PointPicture": "",
-        "PreBattlePoint": [],
-        "PreStoryPoint": [],
+        "PreBattlePoint": [
+            "M21S03"
+        ],
+        "PreStoryPoint": [
+            "S20S03"
+        ],
         "StoryLink": "story21_1a",
         "UnlockBubble": ""
     },
@@ -2192,7 +2196,9 @@
             "main_bg_xq_jqxw01.png"
         ],
         "PointPicture": "",
-        "PreBattlePoint": [],
+        "PreBattlePoint": [
+            "M21S07"
+        ],
         "PreStoryPoint": [
             "S21S01"
         ],
@@ -2210,43 +2216,19 @@
         ],
         "Map": "M21",
         "Name": "BlockPoint_S21S03_Name",
-        "NextStoryPoint": [
-            "S21S04"
-        ],
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ],
-        "PointPicture": "",
-        "PreBattlePoint": [],
-        "PreStoryPoint": [
-            "S21S02"
-        ],
-        "StoryLink": "story21_3a",
-        "UnlockBubble": ""
-    },
-    "S21S04": {
-        "FirstReward": "S21S04_Reward",
-        "Icon": "s_album_story_1",
-        "IsAuto": "",
-        "IsHide": "",
-        "Location": [
-            -70,
-            100
-        ],
-        "Map": "M21",
-        "Name": "BlockPoint_S21S04_Name",
         "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
         ],
         "PointPicture": "",
-        "PreBattlePoint": [],
-        "PreStoryPoint": [
-            "S21S03"
+        "PreBattlePoint": [
+            "M21S15"
         ],
-        "StoryLink": "story21_4a",
+        "PreStoryPoint": [
+            "S21S02"
+        ],
+        "StoryLink": "story21_3a",
         "UnlockBubble": ""
     }
 }

@@ -6415,6 +6415,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_LLKe_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    10,
+                    1682
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -104,
+                    1469
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_LLKe_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "LLKe",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_LLKe",
+        "Name": "Surface_LLKe_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_LLan_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -9681,6 +9739,64 @@
         "Type": 2,
         "Unlook": 1
     },
+    "Surface_SLMen_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -35,
+                    1737
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    21,
+                    1515
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SLMen_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_SLMen_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "SLMen",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SLMen_Awake",
+        "Name": "Surface_SLMen_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_SLWan_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11464,11 +11580,11 @@
             }
         ],
         "Desc": "Surface_WEDe_tarot_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_WEDe_3_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_WEDe_3",
         "Hero": "WEDe",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_WEDe_tarot_LongDesc",
         "Model": "Model_WEDe_tarot",
         "Name": "Surface_WEDe_tarot_Name",
@@ -11476,9 +11592,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_WLSTNCi_1": {

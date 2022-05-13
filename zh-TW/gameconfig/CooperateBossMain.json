@@ -256,6 +256,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_DCJKang_220327": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_DCJKang_220327",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SP_WTXXuan",
+                    "SLWan"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "HSheng",
+                    "DCJKang",
+                    "BBLMa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_DCJKang_Show",
+        "RoleModel": "Model_DCJKang",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_FGao": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",
@@ -653,6 +684,37 @@
         "RewardRevelry": "",
         "RewardShow": "CooperateBossMain_SDTZi_Show",
         "RoleModel": "Model_SDTZi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBoss_SLMen_20220408": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_SLMen_20220408",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "MZu",
+                    "PGNNi"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "MTZMEShi",
+                    "BHTZi",
+                    "NXYYi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_SLMen_Show",
+        "RoleModel": "Model_SLMen",
         "StarsAttrEffect": "ExcellentHero_Stars",
         "Story": [],
         "TiggerAwaken": "",

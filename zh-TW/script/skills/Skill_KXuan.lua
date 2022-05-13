@@ -224,7 +224,7 @@ all.Skill_KXuan_Unique = {
 			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 2)) do
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal, false, true)
 
 				local buffeft4 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
@@ -563,7 +563,7 @@ all.Skill_KXuan_Unique_EX = {
 			for _, friendunit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 2)) do
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
 
-				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal, false, true)
 
 				local buffeft4 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",

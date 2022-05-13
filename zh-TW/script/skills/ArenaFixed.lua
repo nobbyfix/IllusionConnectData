@@ -2317,16 +2317,8 @@ all.ArenaFixed_HurtRateUp = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "initial_Time1==-=", this.Time1)
-			global.print(_env, "initial_Time2==-=", this.Time2)
-			global.print(_env, "initial_Time3==-=", this.Time3)
-
 			local Time = global.GetbattleTime(_env)
 			Time = global.ceil(_env, Time / 1000)
-
-			global.print(_env, "Time==-=", Time)
-			global.print(_env, "--------------------------------------------------==-=", Time)
 
 			if Time < this.Time1 then
 				global.ShowEnhanceUp(_env, this.Time1 - Time, this.HurtRateFactor1 * 100)

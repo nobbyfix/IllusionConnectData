@@ -349,6 +349,12 @@ local data = {
 		"asset/anim/global_ty_bj_0.plist",
 		"asset/anim/ninja1.plist"
 	},
+	["portrait_ltnan_awaken.skel"] = {
+		"asset/anim/portrait_ltnan_awaken3.plist",
+		"asset/anim/portrait_ltnan_awaken1.plist",
+		"asset/anim/portrait_ltnan_awaken.plist",
+		"asset/anim/portrait_ltnan_awaken2.plist"
+	},
 	["portraitpic_DCJKang.skel"] = {
 		"asset/anim/global_dwy_lz.plist",
 		"asset/anim/global_dwy_sd3.plist",
@@ -1063,6 +1069,7 @@ local data = {
 		"asset/anim/ninja1.plist"
 	},
 	["kptwei.skel"] = {
+		"asset/anim/blsi.plist",
 		"asset/anim/global_kptwei_skill3_zi_lz.plist",
 		"asset/anim/kptwei.plist",
 		"asset/anim/global_kptwei_skill2_bj.plist",
@@ -2791,25 +2798,30 @@ local data = {
 		"asset/anim/global_yzchun_skill3_d1.plist"
 	},
 	["ltnan_animal.skel"] = {
-		"asset/anim/global_ltnan_awaken_skill2_shuizhu.plist",
-		"asset/anim/global_ltnan_awaken_skill3_suduxian.plist",
+		"asset/anim/global_xrc_dizuo.plist",
 		"asset/anim/global_ltnan_awaken_skill3_1_bo.plist",
-		"asset/anim/ltnan_animal.plist",
 		"asset/anim/global_ltnan_awaken_skill1_guang.plist",
-		"asset/anim/global_ltnan_awaken_skill3_waiguang.plist",
-		"asset/anim/global_ruchang_dixian.plist",
-		"asset/anim/global_ruchang_beiguang.plist",
 		"asset/anim/global_ltnan_awaken_skill1_shuizhu.plist",
 		"asset/anim/global_ltnan_awaken_skill1_qiu.plist",
-		"asset/anim/global_ltnan_awaken_skill3_bo.plist",
 		"asset/anim/spine_YFZZhu.plist",
-		"asset/anim/global_ltnan_awaken_skill3_ju.plist",
-		"asset/anim/global_ltnan_awaken_skill3_qipao.plist",
-		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_slmen_awaken_x.plist",
 		"asset/anim/global_ruchang_xialuo.plist",
 		"asset/anim/ninja1.plist",
+		"asset/anim/global_ltnan_awaken_skill2_shuizhu.plist",
+		"asset/anim/global_ltnan_awaken_skill3_waiguang.plist",
+		"asset/anim/global_ltnan_awaken_skill2_baoji.plist",
+		"asset/anim/global_ltnan_awaken_skill3_suduxian.plist",
+		"asset/anim/ltnan_animal.plist",
+		"asset/anim/global_xrc_xialuo_guang.plist",
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_xrc_xialuo.plist",
+		"asset/anim/global_ltnan_awaken_skill3_ju.plist",
 		"asset/anim/global_ltnan_awaken_skill3_boan.plist",
-		"asset/anim/global_ltnan_awaken_skill2_baoji.plist"
+		"asset/anim/global_slmen_awaken_sh.plist",
+		"asset/anim/global_ltnan_awaken_skill3_bo.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_ruchang_dixian.plist",
+		"asset/anim/global_ltnan_awaken_skill3_qipao.plist"
 	},
 	["DNTLuo_YDXGuang.skel"] = {
 		"asset/anim/global_DNTLuo_OXiang_skill3_gg.plist",
@@ -3276,6 +3288,35 @@ local data = {
 		"asset/anim/spine_qmi.plist",
 		"asset/anim/global_qmi_qr_skill1_gyb.plist"
 	},
+	["blsi.skel"] = {
+		"asset/anim/global_blsi_skl3_qg.plist",
+		"asset/anim/global_blsi_skl3_ha.plist",
+		"asset/anim/global_ruchang_xialuo.plist",
+		"asset/anim/global_blsi_skl3_fg.plist",
+		"asset/anim/ninja1.plist",
+		"asset/anim/global_blsi_skl3_bt.plist",
+		"asset/anim/global_blsi_skl3_za.plist",
+		"asset/anim/global_blsi_skl3_cm.plist",
+		"asset/anim/global_blsi_skl3_qq.plist",
+		"asset/anim/global_blsi_skl3_qv.plist",
+		"asset/anim/global_blsi_skl2_fx.plist",
+		"asset/anim/global_blsi_skl3_co.plist",
+		"asset/anim/global_blsi_skl3_qb.plist",
+		"asset/anim/global_blsi_skl3_qp.plist",
+		"asset/anim/global_blsi_skl1_dg.plist",
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_blsi-skill3.plist",
+		"asset/anim/global_blsi_skl3_gl.plist",
+		"asset/anim/global_blsi_skl2_wq.plist",
+		"asset/anim/global_blsi_skl3_tv.plist",
+		"asset/anim/global_blsi_skl2_fq.plist",
+		"asset/anim/blsi.plist",
+		"asset/anim/global_blsi_skl3_ss.plist",
+		"asset/anim/global_blsi_skl3_hg.plist",
+		"asset/anim/global_blsi_skl3_ca.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_ruchang_dixian.plist"
+	},
 	["portrait_sp_hhji_yyu.skel"] = {
 		"asset/anim/portrait_sp_hhji_yyu2.plist",
 		"asset/anim/portrait_sp_hhji_yyu.plist",
@@ -3682,7 +3723,6 @@ local data = {
 		"asset/anim/global_agnsi_skill3_xian.plist",
 		"asset/anim/global_agnsi_skill2_xl_add.plist",
 		"asset/anim/global_agnsi_skill3_bz_add.plist",
-		"asset/anim/kptwei.plist",
 		"asset/anim/global_agnsi_skill2_gq_nor.plist",
 		"asset/anim/global_agnsi_skill3_guang_nor.plist",
 		"asset/anim/global_agnsi_skill3_bd_add.plist",
@@ -3703,6 +3743,7 @@ local data = {
 		"asset/anim/global_ruchang_beiguang.plist",
 		"asset/anim/global_agnsi_skill1_glow_add.plist",
 		"asset/anim/global_agnsi_skill1_dg_nor.plist",
+		"asset/anim/blsi.plist",
 		"asset/anim/global_agnsi_skill2_ym_add.plist",
 		"asset/anim/global_agnsi_skill3_shu_add.plist",
 		"asset/anim/global_agnsi_skill3_xuli_add.plist",
@@ -5256,6 +5297,10 @@ local data = {
 		"asset/anim/global_ana_forest_skill2.plist",
 		"asset/anim/global_ana_forest_skill1_gy.plist"
 	},
+	["portrait_blsi.skel"] = {
+		"asset/anim/portrait_blsi1.plist",
+		"asset/anim/portrait_blsi.plist"
+	},
 	["portrait_slming_awaken.skel"] = {
 		"asset/anim/global_slming_awaken_lh.plist",
 		"asset/anim/portrait_slming_awaken.plist"
@@ -5859,13 +5904,13 @@ local data = {
 		"asset/anim/ninja1.plist",
 		"asset/anim/global_jian_skill2_tw.plist",
 		"asset/anim/global_jian_skill2_ks.plist",
-		"asset/anim/kptwei.plist",
 		"asset/anim/global_jian_skill3_ml.plist",
 		"asset/anim/global_ruchang_beiguang.plist",
 		"asset/anim/global_jian_skill2_xy.plist",
 		"asset/anim/global_jian_skill1_xz.plist",
 		"asset/anim/global_jian_skill2_io.plist",
 		"asset/anim/global_jian_skill2_xz.plist",
+		"asset/anim/blsi.plist",
 		"asset/anim/global_jian_skill3_qe.plist",
 		"asset/anim/global_jian_skill2_dl.plist",
 		"asset/anim/global_jian_skill3_qh.plist",
@@ -6206,7 +6251,6 @@ local data = {
 		"asset/anim/global_bni_skill3_xl.plist",
 		"asset/anim/global_bni_skill3_bknor.plist",
 		"asset/anim/global_ruchang_dixian.plist",
-		"asset/anim/kptwei.plist",
 		"asset/anim/global_bni_skill3_bkadd.plist",
 		"asset/anim/global_ruchang_beiguang.plist",
 		"asset/anim/global_bni_skill2_dm.plist",
@@ -6219,6 +6263,7 @@ local data = {
 		"asset/anim/global_bni_skill1_gy.plist",
 		"asset/anim/global_ruchang_xialuo.plist",
 		"asset/anim/global_bni_skill1_dm.plist",
+		"asset/anim/blsi.plist",
 		"asset/anim/ninja1.plist"
 	},
 	["an_dwhui_mermaid.skel"] = {
@@ -7806,10 +7851,15 @@ local data = {
 		"asset/anim/global_bolatu_skill2_juqi.plist"
 	},
 	["SLMen.skel"] = {
+		"asset/anim/global_xrc_dizuo.plist",
 		"asset/anim/spine_SLMen.plist",
+		"asset/anim/global_xrc_xialuo_guang.plist",
+		"asset/anim/global_slmen_awaken_sh.plist",
 		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_xrc_xialuo.plist",
 		"asset/anim/spine_YFZZhu.plist",
 		"asset/anim/global_ruchang_dixian.plist",
+		"asset/anim/global_slmen_awaken_x.plist",
 		"asset/anim/global_ruchang_landian.plist",
 		"asset/anim/global_ruchang_xialuo.plist",
 		"asset/anim/ninja1.plist"

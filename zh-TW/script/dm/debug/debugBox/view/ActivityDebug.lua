@@ -11,3 +11,10 @@ function DrawCardFeedback:initialize()
 		}
 	}
 end
+
+ActivityBlockReset = class("ActivityBlockReset", DebugViewTemplate, _M)
+
+function ActivityBlockReset:initialize()
+	self._opType = 425
+	self._viewConfig = {}
+end

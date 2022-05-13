@@ -88,7 +88,6 @@ all.Skill_SP_WTXXuan_Normal = {
 					global.ApplyBuff(_env, unit, {
 						timing = 2,
 						duration = 1,
-						display = "SP_WTXXuan_leaf",
 						tags = {
 							"UNDISPELLABLE",
 							"UNSTEALABLE"
@@ -180,7 +179,6 @@ all.Skill_SP_WTXXuan_Proud = {
 				global.ApplyBuff(_env, unit, {
 					timing = 2,
 					duration = 1,
-					display = "SP_WTXXuan_wind",
 					tags = {
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -256,7 +254,7 @@ all.Skill_SP_WTXXuan_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.GroundEft(_env, _env.ACTOR, "Ground_SP_WTXXuan")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -288,8 +286,8 @@ all.Skill_SP_WTXXuan_Unique = {
 				local num = global.Random(_env, 1, 4)
 				local card = global.InheritCardByConfig(_env, {
 					cost = 3,
+					uniqueSkill = "Skill_SP_WTXXuan_Normal",
 					ignorePassive = true,
-					ignoreUnique = true,
 					card = _env.ACTOR,
 					modelId = RoleModel[num]
 				})
@@ -424,6 +422,10 @@ all.Skill_SP_WTXXuan_Passive = {
 			local this = _env.this
 			local global = _env.global
 
+			if global.MASTER(_env, _env.ACTOR) then
+				global.AddStatus(_env, _env.ACTOR, "SP_WTXXuan_Benti")
+			end
+
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "CARDBUFF", "SummonedCBJun")) == 0 and not global.MASTER(_env, _env.ACTOR) then
 				global.AddStatus(_env, _env.ACTOR, "SP_WTXXuan_Benti")
 
@@ -437,8 +439,8 @@ all.Skill_SP_WTXXuan_Passive = {
 					local num = global.Random(_env, 1, 4)
 					local card = global.InheritCardByConfig(_env, {
 						cost = 3,
+						uniqueSkill = "Skill_SP_WTXXuan_Normal",
 						ignorePassive = true,
-						ignoreUnique = true,
 						card = _env.ACTOR,
 						modelId = RoleModel[num]
 					})
@@ -612,8 +614,18 @@ all.SummonedCBJun_Passive = {
 			0
 		}, passive3)
 		this.passive3 = global["[trigger_by]"](this, {
-			"SELF:BEFORE_ACTION"
+			"SELF:BEFORE_UNIQUE"
 		}, passive3)
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
+		})
+		passive4 = global["[duration]"](this, {
+			0
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_ACTION"
+		}, passive4)
 
 		return this
 	end,
@@ -629,19 +641,6 @@ all.SummonedCBJun_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft1 = global.Diligent(_env)
-
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				tags = {
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft1
-			})
-
 			local buffeft2 = global.RageGainEffect(_env, "-", {
 				"+Normal",
 				"+Normal"
@@ -662,7 +661,6 @@ all.SummonedCBJun_Passive = {
 				buffeft2,
 				buffeft3
 			})
-			global.ApplyRPDamage(_env, _env.ACTOR, 10000)
 			global.MarkSummoned(_env, _env.ACTOR, true)
 			global.AddStatus(_env, _env.ACTOR, "SP_WTXXuan_CBJun")
 
@@ -671,14 +669,6 @@ all.SummonedCBJun_Passive = {
 
 				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal)
 			end
-		end)
-		exec["@time"]({
-			150
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.DiligentRound(_env, 100)
 		end)
 
 		return _env
@@ -702,6 +692,45 @@ all.SummonedCBJun_Passive = {
 		return _env
 	end,
 	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SP_WTXXuan_CBJun")(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "SummonedCBJun_attack")) == 0 then
+				global.ApplyRealDamage(_env, _env.ACTOR, _env.primTrgt, 1, 1, 4)
+
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"SummonedCBJun_attack"
+					}
+				}, {
+					buffeft2
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive4 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -806,7 +835,6 @@ all.Skill_SP_WTXXuan_Proud_EX = {
 				global.ApplyBuff(_env, unit, {
 					timing = 2,
 					duration = 1,
-					display = "SP_WTXXuan_wind",
 					tags = {
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -883,7 +911,7 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.GroundEft(_env, _env.ACTOR, "Ground_SP_WTXXuan")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
 		end)
 		exec["@time"]({
@@ -913,21 +941,15 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 					"Model_SP_WTXXuan_CBJun_4"
 				}
 				local num = global.Random(_env, 1, 4)
-				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+				local card = global.InheritCardByConfig(_env, {
+					cost = 3,
+					uniqueSkill = "Skill_SP_WTXXuan_Normal",
+					ignorePassive = true,
+					card = _env.ACTOR,
+					modelId = RoleModel[num]
+				})
 
 				if card then
-					local cardvaluechange = global.CardCostEnchant(_env, "-", 14, 1)
-
-					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-						tags = {
-							"CARDBUFF",
-							"SummonedCBJun",
-							"UNDISPELLABLE"
-						}
-					}, {
-						cardvaluechange
-					})
-
 					local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
 						HealRateFactor = 2.5
 					})
@@ -1086,21 +1108,15 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 						"Model_SP_WTXXuan_CBJun_4"
 					}
 					local num = global.Random(_env, 1, 4)
-					local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num], true, true)
+					local card = global.InheritCardByConfig(_env, {
+						cost = 3,
+						uniqueSkill = "Skill_SP_WTXXuan_Normal",
+						ignorePassive = true,
+						card = _env.ACTOR,
+						modelId = RoleModel[num]
+					})
 
 					if card then
-						local cardvaluechange = global.CardCostEnchant(_env, "-", 14, 1)
-
-						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
-							tags = {
-								"CARDBUFF",
-								"SummonedCBJun",
-								"UNDISPELLABLE"
-							}
-						}, {
-							cardvaluechange
-						})
-
 						local buffeft1 = global.NumericEffect(_env, "+atkrate", {
 							"+Normal",
 							"+Normal"
@@ -1141,6 +1157,159 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 					end
 				end
 			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_SP_WTXXuan_Unique_Activity = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Quantity = externs.Quantity
+
+		if this.Quantity == nil then
+			this.Quantity = 2
+		end
+
+		this.AtkRateFactor = externs.AtkRateFactor
+
+		if this.AtkRateFactor == nil then
+			this.AtkRateFactor = 0.3
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3167
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"2#Hero_Unique_SP_WTXXuan"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "Ground_SP_WTXXuan")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+
+			_env.units = global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR))
+
+			global.HealTargetView(_env, _env.units)
+		end)
+		exec["@time"]({
+			2500
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for i = 1, this.Quantity do
+				local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
+					1,
+					1,
+					1
+				}, nil, {
+					global.Random(_env, 1, 9)
+				})
+
+				if SummonedCBJun then
+					global.AddStatus(_env, SummonedCBJun, "SummonedCBJun")
+				end
+			end
+
+			local friend_num = 0
+
+			for _, friendunit in global.__iter__(_env.units) do
+				local buffeft2 = global.RageGainEffect(_env, "-", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+				local buffeft3 = global.Diligent(_env)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, friendunit, {
+					timing = 2,
+					duration = 1,
+					display = "SP_WTXXuan_fire",
+					tags = {
+						"STATUS",
+						"DILIGENT",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2,
+					buffeft3
+				}, 1)
+
+				friend_num = friend_num + 1
+			end
+
+			global.DiligentRound(_env, 100)
+
+			if friend_num > 5 then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "CBJun"))) do
+					local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+						"+Normal",
+						"+Normal"
+					}, this.AtkRateFactor)
+
+					global.ApplyBuff(_env, unit, {
+						timing = 2,
+						duration = 99,
+						display = "SP_WTXXuan_fire",
+						tags = {
+							"STATUS",
+							"DILIGENT",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						global.buffeft2,
+						global.buffeft3
+					}, 1)
+				end
+			end
+		end)
+		exec["@time"]({
+			3000
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
 		return _env

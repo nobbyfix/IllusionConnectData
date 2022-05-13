@@ -63,9 +63,6 @@ all.Skill_Enemy_JGDeng_Unique = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "进入移动阶段")
-
 			local direction_next = global.Turn_FlameMonster_Next(_env, _env.ACTOR, global.SpecialPropGetter(_env, "location0408")(_env, _env.ACTOR))
 			local buff_up = global.SpecialNumericEffect(_env, "+location0408", {
 				"+Normal",
@@ -113,13 +110,9 @@ all.Skill_Enemy_JGDeng_Unique = {
 
 					local location_next = global.Location_FlameMonster_Next(_env, _env.ACTOR, global.SpecialPropGetter(_env, "location0408")(_env, _env.ACTOR))
 
-					if global.GetCellUnit(_env, location_next) then
-						global.print(_env, "目标格被占，此回合停止移动")
-					else
+					if not global.GetCellUnit(_env, location_next) then
 						global.transportExt(_env, _env.ACTOR, global.IdOfCell(_env, location_next), 200, 1)
 					end
-				else
-					global.print(_env, "目标格被占，此回合停止移动")
 				end
 			else
 				global.transportExt(_env, _env.ACTOR, global.IdOfCell(_env, location_next), 200, 1)
@@ -1048,8 +1041,6 @@ all.Skill_Enemy_JGDeng_Passive3 = {
 
 			if global.GetSide(_env, _env.unit) == -1 and global.IsMusician(_env, _env.unit) == 1 and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "BOSSTRANS")) == 0 then
 				for _, getunit in global.__iter__(global.AllUnits(_env, global.PETS)) do
-					global.print(_env, "-=身上的光照强度：", global.SelectTrapCount(_env, global.GetCell(_env, getunit), global.BUFF_MARKED_ALL(_env, "LIGHTON")))
-
 					if global.SelectTrapCount(_env, global.GetCell(_env, getunit), global.BUFF_MARKED_ALL(_env, "LIGHTON")) == 0 then
 						if global.MARKED(_env, "SYJi")(_env, getunit) then
 							-- Nothing

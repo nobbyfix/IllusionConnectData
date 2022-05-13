@@ -59,6 +59,7 @@ function scene_story05_3a:stage(args)
 						type = "Image",
 						image = "bg_story_scene_3_2.jpg",
 						layoutMode = 1,
+						zorder = 1,
 						id = "bg",
 						scale = 1,
 						anchorPoint = {
@@ -754,6 +755,15 @@ function scene_story05_3a.actions.start_story05_3a(_root, args)
 			end
 		}),
 		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "bg"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "PNCao_speak"),
 			args = function (_ctx)
@@ -772,22 +782,32 @@ function scene_story05_3a.actions.start_story05_3a(_root, args)
 			end
 		}),
 		act({
-			action = "repeatUpDownStart",
+			action = "rock",
 			actor = __getnode__(_root, "bg2"),
 			args = function (_ctx)
 				return {
-					height = 2,
-					duration = 0.1
+					freq = 3,
+					strength = 1
 				}
 			end
 		}),
 		act({
-			action = "repeatUpDownStart",
-			actor = __getnode__(_root, "PNCao_speak"),
+			action = "rock",
+			actor = __getnode__(_root, "bg2"),
 			args = function (_ctx)
 				return {
-					height = 2,
-					duration = 0.1
+					freq = 3,
+					strength = 1
+				}
+			end
+		}),
+		act({
+			action = "rock",
+			actor = __getnode__(_root, "bg2"),
+			args = function (_ctx)
+				return {
+					freq = 3,
+					strength = 1
 				}
 			end
 		}),
@@ -992,16 +1012,6 @@ function scene_story05_3a.actions.start_story05_3a(_root, args)
 				end
 			}),
 			act({
-				action = "repeatUpDownStart",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						height = 2,
-						duration = 0.1
-					}
-				end
-			}),
-			act({
 				action = "fadeIn",
 				actor = __getnode__(_root, "FTLEShi_speak"),
 				args = function (_ctx)
@@ -1103,16 +1113,6 @@ function scene_story05_3a.actions.start_story05_3a(_root, args)
 				args = function (_ctx)
 					return {
 						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "repeatUpDownStart",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						height = 2,
-						duration = 0.1
 					}
 				end
 			}),

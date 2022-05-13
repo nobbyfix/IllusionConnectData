@@ -112,7 +112,27 @@
             "storage": 5000
         }
     },
+    "AcitvityDeepSeaStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityDetectiveStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityDramaStamina_Re_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -202,6 +222,16 @@
             "storage": 5000
         }
     },
+    "AcitvityHalloweenStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityHolidayStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -273,6 +303,16 @@
         }
     },
     "AcitvityRiddleStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySamuraiStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -373,6 +413,26 @@
         }
     },
     "AcitvityZuoHeStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityZuoHeStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "ActivityFemaleStamina_Re_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,

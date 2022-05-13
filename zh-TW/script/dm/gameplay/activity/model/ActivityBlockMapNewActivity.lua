@@ -59,6 +59,12 @@ function ActivityBlockMapNewActivity:synchronize(data)
 	end
 end
 
+function ActivityBlockMapNewActivity:delete(data)
+	if data and data.stageInfos then
+		self._stagesMap = {}
+	end
+end
+
 function ActivityBlockMapNewActivity:syncStageInfo(data)
 	for id, map in pairs(data) do
 		if not self._stagesMap[id] then

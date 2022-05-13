@@ -118,6 +118,55 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_BakingExchangeAchieve_Desc"
     },
+    "Condi_Bento_Food_1": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_1.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_1_Desc"
+    },
+    "Condi_Bento_Food_2": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_2.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_2_Desc"
+    },
+    "Condi_Bento_Food_3": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_3.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_3_Desc"
+    },
+    "Condi_Bento_Food_4": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_4_Desc"
+    },
+    "Condi_Bento_Food_5": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_5.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_5_Desc"
+    },
+    "Condi_Bento_Food_6": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_6.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_6_Desc"
+    },
+    "Condi_Bento_Food_7": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_7.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_7_Desc"
+    },
     "Condi_BlockStarSum": {
         "AchieveType1": "SIZESUM",
         "AchieveType2": "",
@@ -450,7 +499,7 @@
     "Condi_DramaExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DramaExchangeAchieve_Desc"
     },
@@ -1052,7 +1101,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_3.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_4.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1073,7 +1122,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_3.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_4.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1258,6 +1307,13 @@
         "ConditionType1": "player.bag.items.IM_Riddle_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_RiddleExchangeAchieve_Desc"
+    },
+    "Condi_SamuraiExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Samurai_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SamuraiExchangeAchieve_Desc"
     },
     "Condi_SilentNightExchangeAchieve": {
         "AchieveType1": "INCREASE",

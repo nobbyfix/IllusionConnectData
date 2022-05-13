@@ -5246,7 +5246,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 0.73,
-        "AwakePic": "",
+        "AwakePic": "portrait_dwyu_awaken",
         "BaseAttack": 175.0,
         "BaseDefence": 66.0,
         "BaseHp": 984.0,
@@ -5488,7 +5488,8 @@
         "Speed": 50,
         "StarId": "DCJKang_1",
         "SurfaceList": [
-            "Surface_DCJKang_1"
+            "Surface_DCJKang_1",
+            "Surface_DCJKang_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -6047,8 +6048,7 @@
         "Speed": 50,
         "StarId": "DFQi_1",
         "SurfaceList": [
-            "Surface_DFQi_1",
-            "Surface_DFQi_2"
+            "Surface_DFQi_1"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -6392,7 +6392,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.15,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_FCXJi",
         "KeyPassiveSkill": "",
@@ -10310,7 +10310,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.15,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_HSheng",
         "KeyPassiveSkill": "",
@@ -10482,9 +10482,7 @@
         "Speed": 50,
         "StarId": "HSheng_1",
         "SurfaceList": [
-            "Surface_HSheng_1",
-            "Surface_HSheng_2",
-            "Surface_HSheng_3"
+            "Surface_HSheng_1"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -14285,7 +14283,6 @@
         "StarId": "LFEr_1",
         "SurfaceList": [
             "Surface_LFEr_1",
-            "Surface_LFEr_2",
             "Surface_LFEr_Awake"
         ],
         "TeamSpecialVoice": "",
@@ -14540,6 +14537,273 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_LFKLFTe"
+    },
+    "LLKe": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.27,
+        "AwakePic": "",
+        "BaseAttack": 237.0,
+        "BaseDefence": 54.0,
+        "BaseHp": 697.0,
+        "BaseQualityAttr": "SSR_10_Attack",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_LLKe",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AILLKe",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "LLKe_CVName",
+        "Cost": 16,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 0.82,
+        "Desc": "HeroBase_Desc_LLKe",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "LLKe",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_LLKe",
+        "HeroStoryMap": "",
+        "HpFactor": 0.73,
+        "HurtRate": 0.0,
+        "IfHidden": 0,
+        "InnerAttr": [],
+        "ItemId": "IHF_LLKe",
+        "KeyPassiveSkill": "Hero_PBattle_LLKe_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_LLKe",
+        "MasterRage": 192,
+        "MaxLevel": 300,
+        "MaxQuality": "SSR_50_Attack",
+        "MaxStar": 6,
+        "MaxStarEffect": "LLKe_6",
+        "Name": "HeroBase_Name_LLKe",
+        "NormalSkill": "Hero_Normal_LLKe",
+        "Party": "UNKNOWN",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_LieSha"
+                        ],
+                        [
+                            "Master_FuHun"
+                        ],
+                        [
+                            "Tower_1_Master2"
+                        ],
+                        [
+                            "Tower_1_Master4"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_LLKe",
+        "ProudSkill": "Hero_Proud_LLKe",
+        "Rareity": 14,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_LLKe",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_LLKe",
+        "Sex": 1,
+        "ShortDesc": "HeroBase_ShortDesc_LLKe",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_LLKe_01",
+            "Voice_LLKe_35",
+            "Voice_LLKe_40_1",
+            "Voice_LLKe_40_2",
+            "Voice_LLKe_40_3",
+            "Voice_LLKe_37",
+            "Voice_LLKe_38",
+            "Voice_LLKe_39",
+            "Voice_LLKe_47",
+            "Voice_LLKe_48",
+            "Voice_LLKe_50",
+            "Voice_LLKe_51",
+            "Voice_LLKe_52",
+            "Voice_LLKe_53",
+            "Voice_LLKe_54",
+            "Voice_LLKe_55",
+            "Voice_LLKe_56",
+            "Voice_LLKe_57",
+            "Voice_LLKe_60",
+            "Voice_LLKe_07",
+            "Voice_LLKe_08",
+            "Voice_LLKe_09",
+            "Voice_LLKe_58",
+            "Voice_LLKe_59",
+            "Voice_LLKe_10",
+            "Voice_LLKe_11",
+            "Voice_LLKe_14",
+            "Voice_LLKe_15",
+            "Voice_LLKe_16",
+            "Voice_LLKe_21",
+            "Voice_LLKe_17",
+            "Voice_LLKe_18",
+            "Voice_LLKe_34",
+            "Voice_LLKe_19",
+            "Voice_LLKe_63",
+            "Voice_LLKe_61",
+            "Voice_LLKe_25",
+            "Voice_LLKe_26",
+            "Voice_LLKe_27",
+            "Voice_LLKe_28",
+            "Voice_LLKe_29",
+            "Voice_LLKe_30",
+            "Voice_LLKe_31",
+            "Voice_LLKe_32"
+        ],
+        "Speed": 50,
+        "StarId": "LLKe_1",
+        "SurfaceList": [
+            "Surface_LLKe_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Attack",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_LLKe"
     },
     "LLan": {
         "Absorption": 0.0,
@@ -16406,8 +16670,7 @@
         "Speed": 50,
         "StarId": "MKLJLuo_1",
         "SurfaceList": [
-            "Surface_MKLJLuo_1",
-            "Surface_MKLJLuo_2"
+            "Surface_MKLJLuo_1"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -19336,7 +19599,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.0,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_PDLa",
         "KeyPassiveSkill": "",
@@ -19578,7 +19841,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.37,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_PGNNi",
         "KeyPassiveSkill": "Hero_PBattle_PGNNi_Key",
@@ -21623,7 +21886,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.13,
-        "AwakePic": "",
+        "AwakePic": "portrait_ltnan_awaken",
         "BaseAttack": 248.0,
         "BaseDefence": 60.0,
         "BaseHp": 810.0,
@@ -21874,7 +22137,8 @@
         "StarId": "SLMen_1",
         "SurfaceList": [
             "Surface_SLMen_1",
-            "Surface_SLMen_2"
+            "Surface_SLMen_2",
+            "Surface_SLMen_Awake"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -23703,7 +23967,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.0,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SP_WTXXuan",
         "KeyPassiveSkill": "Hero_PBattle_SP_WTXXuan_Key",
@@ -26617,7 +26881,8 @@
         "Speed": 50,
         "StarId": "WEDe_1",
         "SurfaceList": [
-            "Surface_WEDe_1"
+            "Surface_WEDe_1",
+            "Surface_WEDe_3"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",

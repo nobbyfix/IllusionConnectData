@@ -52,5 +52,23 @@
         "Swtich": 1,
         "UnlockReward": "DH03_UnlockReward",
         "UnlockTime": "2022-02-23 05:00:00"
+    },
+    "DH04_Map": {
+        "HeroId": [
+            "LCYShi",
+            "YLSBai",
+            "WEDe"
+        ],
+        "Name": "DH04_MapDes",
+        "PointId": [
+            "DH04N01_Point",
+            "DH04N02_Point",
+            "DH04N03_Point"
+        ],
+        "RewardShow": "DH04_CoreRewardShow",
+        "SortNumber": 4,
+        "Swtich": 1,
+        "UnlockReward": "DH04_UnlockReward",
+        "UnlockTime": "2022-04-06 05:00:00"
     }
 }

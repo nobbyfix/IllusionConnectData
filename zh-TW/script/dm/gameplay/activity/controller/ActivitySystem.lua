@@ -1507,6 +1507,12 @@ function ActivitySystem:checkActivityCalNewTagShow(activityId)
 	return false
 end
 
+function ActivitySystem:tryEnterBentoView(data)
+	local view = self:getInjector():getInstance("ActivityBentoView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+end
+
 function ActivitySystem:requestAllActicities(blockUI, callback)
 	blockUI = blockUI or true
 	local params = {}
