@@ -72,6 +72,9 @@ TowerHero:has("_player", {
 TowerHero:has("_awakenStar", {
 	is = "rw"
 })
+TowerHero:has("_identityAwakenLevel", {
+	is = "rw"
+})
 
 function TowerHero:initialize(id, player)
 	super.initialize(self)
@@ -97,6 +100,7 @@ function TowerHero:initialize(id, player)
 	self._allCompseHeros = 0
 	self._awakenStar = 0
 	self._party = 0
+	self._identityAwakenLevel = 0
 end
 
 function TowerHero:synchronize(data)
@@ -169,6 +173,10 @@ function TowerHero:synchronize(data)
 
 	if data.littleStar then
 		self._littleStar = data.littleStar
+	end
+
+	if data.identityAwakenLevel then
+		self._identityAwakenLevel = data.identityAwakenLevel
 	end
 
 	local heroSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem"):getHeroSystem()
