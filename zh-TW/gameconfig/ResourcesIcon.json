@@ -1024,6 +1024,23 @@
         "Shine": "",
         "Sicon": "ico_m_family_stamina_2"
     },
+    "IR_FamilyStamina_Re": {
+        "Desc": "IR_FamilyStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_family_stamina_1"
+        ],
+        "Licon": "ico_m_family_stamina_1",
+        "Name": "IR_FamilyStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_family_stamina_2"
+    },
     "IR_FemaleStamina": {
         "Desc": "IR_FemaleStamina_FunctionDesc",
         "LargeIcons": [
@@ -1519,6 +1536,23 @@
         ],
         "Shine": "",
         "Sicon": "IR_HD_SnowflakeStamina_small"
+    },
+    "IR_SpringStamina": {
+        "Desc": "IR_SpringStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_spring_stamina_1"
+        ],
+        "Licon": "IHG_Quality4_4",
+        "Name": "IR_SpringStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_spring_stamina_2"
     },
     "IR_StageArena": {
         "Desc": "StageArena_MainUI37",

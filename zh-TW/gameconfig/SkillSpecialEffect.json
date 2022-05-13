@@ -4747,6 +4747,68 @@
             ]
         }
     },
+    "IA_MLYTLSha_1": {
+        "Desc": "StarSE_MLYTLSha_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Skill_MLYTLSha_Unique_SelfAwaken",
+            "before": "Hero_Unique_MLYTLSha_Awaken",
+            "slot": "Hero_Unique_MLYTLSha"
+        }
+    },
+    "IA_MLYTLSha_2": {
+        "Desc": "StarSE_MLYTLSha_IA2_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {}
+    },
+    "IA_MLYTLSha_3": {
+        "Desc": "StarSE_MLYTLSha_IA3_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {}
+    },
+    "IA_SDTZi_1": {
+        "Desc": "StarSE_SDTZi_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Skill_SDTZi_Passive_SelfAwaken",
+            "before": "Hero_PBattle_SDTZi_EX",
+            "slot": "Hero_PBattle_SDTZi"
+        }
+    },
+    "IA_SDTZi_2": {
+        "Desc": "StarSE_SDTZi_IA2_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {}
+    },
+    "IA_SDTZi_3": {
+        "Desc": "StarSE_SDTZi_IA3_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {}
+    },
     "MainCity_CrystalStorage": {
         "Desc": "Building_Value",
         "EffectType": "PRODUCTION",
@@ -8939,6 +9001,19 @@
             "slot": "Hero_Proud_HSYZhai"
         }
     },
+    "StarSE_HSYZhai_Awake": {
+        "Desc": "StarSE_HSYZhai_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_HSYZhai_Awaken",
+            "before": "Hero_Unique_HSYZhai_EX",
+            "slot": "Hero_Unique_HSYZhai"
+        }
+    },
     "StarSE_HSheng_4": {
         "Desc": "StarSE_HSheng_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -8976,6 +9051,19 @@
             "after": "Hero_Proud_HSheng_EX",
             "before": "Hero_Proud_HSheng",
             "slot": "Hero_Proud_HSheng"
+        }
+    },
+    "StarSE_HSheng_Awake": {
+        "Desc": "StarSE_HSheng_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_HSheng_Awaken",
+            "before": "Hero_Unique_HSheng_EX",
+            "slot": "Hero_Unique_HSheng"
         }
     },
     "StarSE_JDCZhang_3": {

@@ -296,8 +296,12 @@ function exports.KillTarget(env, target)
 	env.global.RecordEffect(env, target:getId(), "KillTarget")
 end
 
-function exports.GetPlayerEnergy(env)
+function exports.GetPlayerEnergy(env, unit)
 	local player = env["$actor"]:getOwner()
+
+	if unit then
+		player = unit:getOwner()
+	end
 
 	return player:getEnergyReservoir():getEnergy()
 end

@@ -224,6 +224,10 @@ function HeroInfoMediator:initView()
 			path = "jx_img_star.png"
 		end
 
+		if i <= self._heroData:getIdentityAwakenLevel() then
+			path = "yinghun_img_awake_star.png"
+		end
+
 		local star = ccui.ImageView:create(path, 1)
 
 		star:addTo(node)

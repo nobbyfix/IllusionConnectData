@@ -7878,7 +7878,7 @@
                     2000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -7899,7 +7899,7 @@
                     5000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -7920,7 +7920,7 @@
                     8000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -7941,7 +7941,7 @@
                     12000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -8424,7 +8424,7 @@
                     10000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -8445,7 +8445,7 @@
                     20000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -8466,7 +8466,7 @@
                     40000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -8487,7 +8487,7 @@
                     60000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -8508,7 +8508,7 @@
                     80000
                 ],
                 "params": [
-                    "Activity_Darts_220328"
+                    "Activity_Darts_220513"
                 ]
             }
         ],
@@ -9919,6 +9919,462 @@
         "Name": "Activity_Fly_AchieveMentTask_5_Name",
         "OrderNum": 9,
         "Reward": "Activity_Fly_AchieveMentTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_HSYZhaiTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_HSYZhaiTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_HSYZhaiTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "HSYZhai"
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_HSYZhaiTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_HSYZhaiTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_HSYZhaiTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_HSYZhaiTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_HSYZhaiTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_HSYZhaiTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_HSYZhaiTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_HSYZhaiTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HSYZhaiTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_HSYZhaiTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_HSYZhaiTask_9_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "HSheng"
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_HShengTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "HSheng"
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_HShengTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "HSheng"
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_HShengTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "HSheng"
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_HShengTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_HShengTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_HShengTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_HShengTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_HShengTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_HShengTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_HShengTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_HShengTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_HShengTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_HShengTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_HShengTask_9_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },
@@ -14413,6 +14869,234 @@
         "Name": "Activity_YLMGZhu_20210505_Z_1Task_9_Name",
         "OrderNum": 9,
         "Reward": "Activity_YLMGZhu_20210505_Z_1Task_9_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_YSTLuTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_YSTLuTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_YSTLuTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "YSTLu"
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_YSTLuTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_YSTLuTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_YSTLuTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_YSTLuTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_YSTLuTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_YSTLuTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_YSTLuTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_YSTLuTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_YSTLuTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_YSTLuTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_YSTLuTask_9_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },
@@ -21723,6 +22407,24 @@
         "StoryDesc": "",
         "TaskIcon": ""
     },
+    "DrawCard_SP_KTSJKe_20220516_Activity_Task": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "DrawCard_SP_KTSJKe_Activity_Task_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "DrawCard_SP_KTSJKe_Activity_Task_Name",
+        "OrderNum": 1,
+        "Reward": "DrawCard_SP_KTSJKe_20220516_Activity_Task_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
     "DrawCard_SP_KTSJKe_Activity_Task": {
         "Condition": [
             {
@@ -27979,6 +28681,294 @@
         "StoryDesc": "",
         "TaskIcon": ""
     },
+    "EightDays_20220508_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20220508_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20220508_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20220508_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20220508_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20220508_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20220508_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20220508_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220508_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20220508_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20220520_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20220520_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20220520_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20220520_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20220520_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20220520_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20220520_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220520_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20220520_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
     "EightDays_ZuoHe02_1": {
         "Condition": [
             {
@@ -28275,7 +29265,7 @@
                     50
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28296,7 +29286,7 @@
                     100
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28317,7 +29307,7 @@
                     200
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28338,7 +29328,7 @@
                     300
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28359,7 +29349,7 @@
                     400
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -28470,8 +29460,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM01",
                     "FamilySN05",
                     "FamilySN05M"
@@ -28495,8 +29485,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM01",
                     "FamilySN08",
                     "FamilySN08M"
@@ -28520,8 +29510,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE04",
                     "FamilySE04M"
@@ -28545,8 +29535,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE07",
                     "FamilySE07M"
@@ -28570,8 +29560,8 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Family",
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Re",
+                    "ActivityBlock_Family_Map_Re",
                     "FamilyM02",
                     "FamilySE08",
                     "FamilySE08M"
@@ -28595,7 +29585,7 @@
                     3
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28617,7 +29607,7 @@
                     6
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28639,7 +29629,7 @@
                     8
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28661,7 +29651,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28683,7 +29673,7 @@
                     12
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28705,7 +29695,7 @@
                     14
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28727,7 +29717,7 @@
                     16
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map",
+                    "ActivityBlock_Family_Map_Re",
                     "ELITE"
                 ]
             }
@@ -28801,7 +29791,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_Family_Map"
+                    "ActivityBlock_Family_Map_Re"
                 ]
             }
         ],
@@ -39872,6 +40862,812 @@
         "Name": "ActivityBlock_Snowflake_Login_8_Name",
         "OrderNum": 8,
         "Reward": "Snowflake_Login_08_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    50
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Spring_AchieveMentTask_001_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    100
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Spring_AchieveMentTask_002_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    200
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Spring_AchieveMentTask_003_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    300
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Spring_AchieveMentTask_004_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    400
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Spring_AchieveMentTask_005_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SpringExchangeAchieve",
+                "factor1": [
+                    5000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Spring_AchieveMentTask_006_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SpringExchangeAchieve",
+                "factor1": [
+                    10000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Spring_AchieveMentTask_007_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SpringExchangeAchieve",
+                "factor1": [
+                    16000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Spring_AchieveMentTask_008_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SpringExchangeAchieve",
+                "factor1": [
+                    20000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Spring_AchieveMentTask_009_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_SpringExchangeAchieve",
+                "factor1": [
+                    25000
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Spring_AchieveMentTask_010_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Spring",
+                    "ActivityBlock_Spring_Map",
+                    "SpringM01",
+                    "SpringSN05",
+                    "SpringSN05M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Spring_AchieveMentTask_011_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Spring",
+                    "ActivityBlock_Spring_Map",
+                    "SpringM01",
+                    "SpringSN08",
+                    "SpringSN08M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Spring_AchieveMentTask_012_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Spring",
+                    "ActivityBlock_Spring_Map",
+                    "SpringM02",
+                    "SpringSE04",
+                    "SpringSE04M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "Spring_AchieveMentTask_013_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Spring",
+                    "ActivityBlock_Spring_Map",
+                    "SpringM02",
+                    "SpringSE07",
+                    "SpringSE07M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "Spring_AchieveMentTask_014_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Spring",
+                    "ActivityBlock_Spring_Map",
+                    "SpringM02",
+                    "SpringSE08",
+                    "SpringSE08M"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "Spring_AchieveMentTask_015_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    3
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_16_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_16_Name",
+        "OrderNum": 16,
+        "Reward": "Spring_AchieveMentTask_016_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_17": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_17_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_17_Name",
+        "OrderNum": 17,
+        "Reward": "Spring_AchieveMentTask_017_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_18": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    8
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_18_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_18_Name",
+        "OrderNum": 18,
+        "Reward": "Spring_AchieveMentTask_018_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_19": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_19_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_19_Name",
+        "OrderNum": 19,
+        "Reward": "Spring_AchieveMentTask_019_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_20": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    12
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_20_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_20_Name",
+        "OrderNum": 20,
+        "Reward": "Spring_AchieveMentTask_020_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_21": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    14
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_21_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_21_Name",
+        "OrderNum": 21,
+        "Reward": "Spring_AchieveMentTask_021_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_22": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block_Num",
+                "factor1": [
+                    16
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map",
+                    "ELITE"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_22_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_22_Name",
+        "OrderNum": 22,
+        "Reward": "Spring_AchieveMentTask_022_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_AchieveMentTask_23": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Spring_AchieveMentTask_01",
+                    "Spring_AchieveMentTask_02",
+                    "Spring_AchieveMentTask_03",
+                    "Spring_AchieveMentTask_04",
+                    "Spring_AchieveMentTask_05",
+                    "Spring_AchieveMentTask_06",
+                    "Spring_AchieveMentTask_07",
+                    "Spring_AchieveMentTask_08",
+                    "Spring_AchieveMentTask_09",
+                    "Spring_AchieveMentTask_10",
+                    "Spring_AchieveMentTask_11",
+                    "Spring_AchieveMentTask_12",
+                    "Spring_AchieveMentTask_13",
+                    "Spring_AchieveMentTask_14"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_AchieveMentTask_23_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_AchieveMentTask_23_Name",
+        "OrderNum": 23,
+        "Reward": "Spring_AchieveMentTask_023_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Login",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Spring_DailyTask_01_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_winNewActStage",
+                "factor1": [
+                    10
+                ],
+                "params": [
+                    "ActivityBlock_Spring_Map"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Spring_DailyTask_02_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TowerEnter",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Spring_DailyTask_03_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_BuyStamina",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Spring_DailyTask_04_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroGift",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Spring_DailyTask_05_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_DailyTask_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_FinishTask",
+                "factor1": [
+                    0
+                ],
+                "factorStr1": [
+                    "Spring_DailyTask_01",
+                    "Spring_DailyTask_02",
+                    "Spring_DailyTask_03",
+                    "Spring_DailyTask_04",
+                    "Spring_DailyTask_05"
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_Spring_DailyTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_DailyTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Spring_DailyTask_06_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_01": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_1_Name",
+        "OrderNum": 1,
+        "Reward": "Spring_Login_01_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_02": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_2_Name",
+        "OrderNum": 2,
+        "Reward": "Spring_Login_02_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_03": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_3_Name",
+        "OrderNum": 3,
+        "Reward": "Spring_Login_03_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_04": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_4_Name",
+        "OrderNum": 4,
+        "Reward": "Spring_Login_04_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_05": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_5_Name",
+        "OrderNum": 5,
+        "Reward": "Spring_Login_05_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_06": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_6_Name",
+        "OrderNum": 6,
+        "Reward": "Spring_Login_06_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_07": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_7_Name",
+        "OrderNum": 7,
+        "Reward": "Spring_Login_07_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_8_Name",
+        "OrderNum": 8,
+        "Reward": "Spring_Login_08_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_9_Name",
+        "OrderNum": 9,
+        "Reward": "Spring_Login_09_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Spring_Login_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_Spring_Login_10_Name",
+        "OrderNum": 10,
+        "Reward": "Spring_Login_10_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },

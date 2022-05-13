@@ -1269,7 +1269,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -3033,7 +3033,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -4438,6 +4438,64 @@
         "Type": 2,
         "Unlook": 1
     },
+    "Surface_HSYZhai_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -214,
+                    1685
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -311,
+                    1479
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_HSYZhai_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_HSYZhai_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "HSYZhai",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_HSYZhai_Awake",
+        "Name": "Surface_HSYZhai_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_HSheng_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -4595,11 +4653,11 @@
             }
         ],
         "Desc": "Surface_HSheng_vt_Decs",
-        "GainDesc": "Surface_HSheng_Baking_GainDesc",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_HSheng_3_GainShort",
         "GoodsId": "ShopSurface_Surface_HSheng_3",
         "Hero": "HSheng",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_HSheng_vt_LongDesc",
         "Model": "Model_HSheng_vt",
         "Name": "Surface_HSheng_vt_Name",
@@ -4610,6 +4668,64 @@
         "ShopID": "Shop_Surface",
         "Sort": 3,
         "Type": 3,
+        "Unlook": 1
+    },
+    "Surface_HSheng_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -10,
+                    1016
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    44,
+                    867
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_HSheng_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_HSheng_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "HSheng",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_HSheng_Awake",
+        "Name": "Surface_HSheng_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     },
     "Surface_JDCZhang_1": {
@@ -6161,11 +6277,11 @@
             }
         ],
         "Desc": "Surface_LEMHou_vt_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_LEMHou_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_LEMHou_2",
         "Hero": "LEMHou",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_LEMHou_vt_LongDesc",
         "Model": "Model_LEMHou_vt",
         "Name": "Surface_LEMHou_vt_Name",
@@ -6173,9 +6289,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_LFEr_1": {
@@ -6467,7 +6583,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -13759,38 +13875,56 @@
         "AnimeList": "",
         "ClickAction": [
             {
-                "action": "touch2",
-                "part": "head",
+                "action": "touch3",
                 "point": [
-                    -124,
-                    299
+                    -52,
+                    993
                 ],
                 "range": [
                     128,
                     128
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_41",
+                    "Voice_ZZBBWei_42",
+                    "Voice_ZZBBWei_43",
+                    "Voice_ZZBBWei_39"
                 ]
             },
             {
                 "action": "touch2",
-                "part": "body",
                 "point": [
-                    -76,
-                    235
+                    -42,
+                    901
                 ],
                 "range": [
                     128,
                     95
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_44",
+                    "Voice_ZZBBWei_45",
+                    "Voice_ZZBBWei_46",
+                    "Voice_ZZBBWei_39"
                 ]
             },
             {
-                "action": "touch1",
-                "part": "all",
+                "action": "touch2",
                 "point": [
                     "all"
                 ],
                 "range": [
                     0,
                     0
+                ],
+                "voice": [
+                    "Voice_ZZBBWei_47",
+                    "Voice_ZZBBWei_48",
+                    "Voice_ZZBBWei_07",
+                    "Voice_ZZBBWei_08",
+                    "Voice_ZZBBWei_09",
+                    "Voice_ZZBBWei_37",
+                    "Voice_ZZBBWei_39"
                 ]
             }
         ],

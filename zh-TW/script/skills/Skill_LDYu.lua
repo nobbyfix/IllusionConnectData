@@ -507,7 +507,7 @@ all.LDYu_Back = {
 					return
 				end
 
-				local card = global.BackToCard_ResultCheck(_env, _env.unit, "card")
+				local card = global.BackToCard_ResultCheck(_env, _env.unit, "window")
 
 				if card then
 					global.Kick(_env, _env.unit)

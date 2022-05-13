@@ -349,6 +349,68 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_HSYZhai_20220517": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_HSYZhai_20220517",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SP_KTSJKe",
+                    "GCZi"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "XSMLi",
+                    "BHTZi",
+                    "MZGXiu"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_HSYZhai_Show",
+        "RoleModel": "Model_HSYZhai",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBoss_HSheng_20220503": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_HSheng_20220503",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "LLKe",
+                    "FLYDe"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "YLMGZhu",
+                    "SNGLSi",
+                    "KTSJKe"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_HSheng_Show",
+        "RoleModel": "Model_HSheng",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_JNLong": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",
@@ -994,6 +1056,37 @@
         "RewardRevelry": "",
         "RewardShow": "CooperateBossMain_YLSBai_Show",
         "RoleModel": "Model_YLSBai",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
+    "CooperateBoss_YSTLu_20220421": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_YSTLu_20220421",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "TJHDe",
+                    "CKFSJi"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "MGNa",
+                    "JNLong",
+                    "XSMLi"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_YSTLu_Show",
+        "RoleModel": "Model_YSTLu",
         "StarsAttrEffect": "ExcellentHero_Stars",
         "Story": [],
         "TiggerAwaken": "",

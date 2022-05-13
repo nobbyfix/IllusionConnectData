@@ -132,6 +132,44 @@
             }
         ]
     },
+    "CooperateBoss_HSYZhai_20220517": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_HSYZhai_20220517",
+        "Name": "HeroBase_Name_HSYZhai",
+        "PointHead": "Model_HSYZhai",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_HSheng_20220503": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_HSheng_20220503",
+        "Name": "HeroBase_Name_HSheng",
+        "PointHead": "Model_HSheng",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_JNLong": {
         "BGM": [
             "Mus_Battle_Whale",
@@ -524,6 +562,25 @@
         "EnemyMaster": "CooperateBoss_YLSBai_211222",
         "Name": "HeroBase_Name_YLSBai",
         "PointHead": "Model_YLSBai",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_YSTLu_20220421": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_YSTLu_20220421",
+        "Name": "HeroBase_Name_YSTLu",
+        "PointHead": "Model_YSTLu",
         "VictoryConditions": [
             {
                 "type": "TimeOut",

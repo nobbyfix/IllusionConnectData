@@ -7,6 +7,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_BBLMa_Awake",
         "Name": "BBLMa_Awake_Name",
         "NameDesc": "BBLMa_Awake_Desc",
@@ -28,6 +29,7 @@
             0,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_BHTZi_Awake",
         "Name": "BHTZi_Awake_Name",
         "NameDesc": "BHTZi_Awake_Desc",
@@ -49,6 +51,7 @@
             0,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_BQDShe_Awake",
         "Name": "BQDShe_Awake_Name",
         "NameDesc": "BQDShe_Awake_Desc",
@@ -70,6 +73,7 @@
             -200,
             1.3
         ],
+        "IAId": "",
         "ModelId": "Model_CZheng_Awake",
         "Name": "CZheng_Awake_Name",
         "NameDesc": "CZheng_Awake_Desc",
@@ -91,6 +95,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_DCJKang_Awake",
         "Name": "DCJKang_Awake_Name",
         "NameDesc": "DCJKang_Awake_Desc",
@@ -112,6 +117,7 @@
             0,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_FGao_Awake",
         "Name": "FGao_Awake_Name",
         "NameDesc": "FGao_Awake_Desc",
@@ -133,6 +139,7 @@
             0,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_FLYDe_Awake",
         "Name": "FLYDe_Awake_Name",
         "NameDesc": "FLYDe_Awake_Desc",
@@ -154,6 +161,7 @@
             0,
             0.6
         ],
+        "IAId": "",
         "ModelId": "Model_HGEr_Awake",
         "Name": "HGEr_Awake_Name",
         "NameDesc": "HGEr_Awake_Desc",
@@ -167,6 +175,50 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_HGEr_Awake"
     },
+    "HSYZhai": {
+        "AnimSound": "Se_Effect_Awakening_HSYZhai",
+        "Animation": "xcyao_Awaken",
+        "CutIn": [
+            -150,
+            100,
+            0.7
+        ],
+        "IAId": "",
+        "ModelId": "Model_HSYZhai_Awake",
+        "Name": "HSYZhai_Awake_Name",
+        "NameDesc": "HSYZhai_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_HSYZhai_UnAwake",
+        "Reward": "HeroAwaken_HSYZhai",
+        "ShowHero": "HSYZhai",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "HSYZhai_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_HSYZhai_Awake"
+    },
+    "HSheng": {
+        "AnimSound": "Se_Effect_Awakening_HSheng",
+        "Animation": "alin_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_HSheng_Awake",
+        "Name": "HSheng_Awake_Name",
+        "NameDesc": "HSheng_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_HSheng_UnAwake",
+        "Reward": "HeroAwaken_HSheng",
+        "ShowHero": "HSheng",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "HSheng_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_HSheng_Awake"
+    },
     "JNLong": {
         "AnimSound": "Se_Effect_Awakening_JNLong",
         "Animation": "fldfa_Awaken",
@@ -175,6 +227,7 @@
             0,
             1.0
         ],
+        "IAId": "",
         "ModelId": "Model_JNLong_Awake",
         "Name": "JNLong_Awake_Name",
         "NameDesc": "JNLong_Awake_Desc",
@@ -196,6 +249,7 @@
             0,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_KMLa_Awake",
         "Name": "KMLa_Awake_Name",
         "NameDesc": "KMLa_Awake_Desc",
@@ -217,6 +271,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_KTSJKe_Awake",
         "Name": "KTSJKe_Awake_Name",
         "NameDesc": "KTSJKe_Awake_Desc",
@@ -238,6 +293,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_LCYShi_Awake",
         "Name": "LCYShi_Awake_Name",
         "NameDesc": "LCYShi_Awake_Desc",
@@ -259,6 +315,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_LDu_Awake",
         "Name": "LDu_Awake_Name",
         "NameDesc": "LDu_Awake_Desc",
@@ -280,6 +337,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_LFEr_Awake",
         "Name": "LFEr_Awake_Name",
         "NameDesc": "LFEr_Awake_Desc",
@@ -301,6 +359,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_LLan_Awake",
         "Name": "LLan_Awake_Name",
         "NameDesc": "LLan_Awake_Desc",
@@ -322,6 +381,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_LYXi_Awake",
         "Name": "LYXi_Awake_Name",
         "NameDesc": "LYXi_Awake_Desc",
@@ -343,6 +403,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_MGNa_Awake",
         "Name": "MGNa_Awake_Name",
         "NameDesc": "MGNa_Awake_Desc",
@@ -364,6 +425,7 @@
             0,
             1.3
         ],
+        "IAId": "MLYTLSha_IA_1",
         "ModelId": "Model_MLYTLSha_Awake",
         "Name": "MLYTLSha_Awake_Name",
         "NameDesc": "MLYTLSha_Awake_Desc",
@@ -385,6 +447,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_MTZMEShi_Awake",
         "Name": "MTZMEShi_Awake_Name",
         "NameDesc": "MTZMEShi_Awake_Desc",
@@ -406,6 +469,7 @@
             0,
             0.84
         ],
+        "IAId": "",
         "ModelId": "Model_MZGXiu_Awake",
         "Name": "MZGXiu_Awake_Name",
         "NameDesc": "MZGXiu_Awake_Desc",
@@ -427,6 +491,7 @@
             0,
             1.5
         ],
+        "IAId": "SDTZi_IA_1",
         "ModelId": "Model_SDTZi_Awake",
         "Name": "SDTZi_Awake_Name",
         "NameDesc": "SDTZi_Awake_Desc",
@@ -448,6 +513,7 @@
             0,
             0.5
         ],
+        "IAId": "",
         "ModelId": "Model_SLMen_Awake",
         "Name": "SLMen_Awake_Name",
         "NameDesc": "SLMen_Awake_Desc",
@@ -469,6 +535,7 @@
             200,
             1
         ],
+        "IAId": "",
         "ModelId": "Model_SRen_Awake",
         "Name": "SRen_Awake_Name",
         "NameDesc": "SRen_Awake_Desc",
@@ -490,6 +557,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_TPGZhu_Awake",
         "Name": "TPGZhu_Awake_Name",
         "NameDesc": "TPGZhu_Awake_Desc",
@@ -511,6 +579,7 @@
             0,
             0.6
         ],
+        "IAId": "",
         "ModelId": "Model_XHMao_Awake",
         "Name": "XHMao_Awake_Name",
         "NameDesc": "XHMao_Awake_Desc",
@@ -532,6 +601,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_XSMLi_Awake",
         "Name": "XSMLi_Awake_Name",
         "NameDesc": "XSMLi_Awake_Desc",
@@ -553,6 +623,7 @@
             0,
             1.1
         ],
+        "IAId": "",
         "ModelId": "Model_YBYa_Awake",
         "Name": "YBYa_Awake_Name",
         "NameDesc": "YBYa_Awake_Desc",
@@ -574,6 +645,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_YLMGZhu_Awake",
         "Name": "YLMGZhu_Awake_Name",
         "NameDesc": "YLMGZhu_Awake_Desc",
@@ -595,6 +667,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_YLSBai_Awake",
         "Name": "YLSBai_Awake_Name",
         "NameDesc": "YLSBai_Awake_Desc",
@@ -608,6 +681,24 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_YLSBai_Awake"
     },
+    "YSTLu": {
+        "AnimSound": "Se_Effect_Awakening_YSTLu",
+        "Animation": "ASTLSI_awken",
+        "CutIn": "",
+        "IAId": "",
+        "ModelId": "Model_YSTLu_Awake",
+        "Name": "YSTLu_Awake_Name",
+        "NameDesc": "YSTLu_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_YSTLu_UnAwake",
+        "Reward": "HeroAwaken_YSTLu",
+        "ShowHero": "YSTLu",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "YSTLu_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_YSTLu_Awake"
+    },
     "ZTXChang": {
         "AnimSound": "Se_Effect_Awakening_ZTXChang",
         "Animation": "cxxye_Awaken",
@@ -616,6 +707,7 @@
             0,
             0.7
         ],
+        "IAId": "",
         "ModelId": "Model_ZTXChang_Awake",
         "Name": "ZTXChang_Awake_Name",
         "NameDesc": "ZTXChang_Awake_Desc",
@@ -637,6 +729,7 @@
             0,
             1.5
         ],
+        "IAId": "",
         "ModelId": "Model_ZZBBWei_Awake",
         "Name": "ZZBBWei_Awake_Name",
         "NameDesc": "ZZBBWei_Awake_Desc",

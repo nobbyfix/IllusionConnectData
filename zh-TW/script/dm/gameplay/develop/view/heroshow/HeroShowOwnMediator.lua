@@ -1038,6 +1038,10 @@ function HeroShowOwnMediator:refreshStar()
 
 			if self._heroData:getAwakenStar() > 0 then
 				path = "jx_img_star.png"
+
+				if i <= self._heroData:getIdentityAwakenLevel() then
+					path = "yinghun_img_awake_star.png"
+				end
 			end
 
 			star:loadTexture(path, 1)
@@ -1451,6 +1455,10 @@ function HeroShowOwnMediator:runStartAnim()
 
 					if self._heroData:getAwakenStar() > 0 then
 						path = "jx_img_star.png"
+
+						if i <= self._heroData:getIdentityAwakenLevel() then
+							path = "yinghun_img_awake_star.png"
+						end
 					end
 
 					local star = ccui.ImageView:create(path, 1)

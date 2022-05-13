@@ -2134,16 +2134,6 @@ function scene_story03_2a.actions.start_story03_2a(_root, args)
 			end
 		}),
 		act({
-			action = "repeatUpDownStart",
-			actor = __getnode__(_root, "YKDMLai_speak"),
-			args = function (_ctx)
-				return {
-					height = 2,
-					duration = 0.1
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)

@@ -101,6 +101,10 @@ function SetHeroShowDetailMediator:setUpView()
 			path = "jx_img_star.png"
 		end
 
+		if i <= (self._curData.identityAwakenLevel or 0) then
+			path = "yinghun_img_awake_star.png"
+		end
+
 		local star = cc.Sprite:createWithSpriteFrameName(path)
 
 		star:addTo(starBg)

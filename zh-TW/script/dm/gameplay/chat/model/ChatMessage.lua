@@ -245,6 +245,10 @@ function SystemMessage:parseContent()
 			local condition = ConfigReader:getDataByNameIdAndKey("RankList", self._params.ranklist, "Condition")
 			env.ranklist = condition
 		end
+
+		if self._params.num then
+			env.num = self._params.num
+		end
 	end
 
 	local content = Strings:get(self._config.Words[1], env)

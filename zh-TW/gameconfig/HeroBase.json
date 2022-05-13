@@ -10013,7 +10013,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.32,
-        "AwakePic": "",
+        "AwakePic": "portrait_xcyao_awaken",
         "BaseAttack": 198.0,
         "BaseDefence": 54.0,
         "BaseHp": 604.0,
@@ -10227,7 +10227,8 @@
         "StarId": "HSYZhai_1",
         "SurfaceList": [
             "Surface_HSYZhai_1",
-            "Surface_HSYZhai_2"
+            "Surface_HSYZhai_2",
+            "Surface_HSYZhai_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -10256,7 +10257,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.04,
-        "AwakePic": "",
+        "AwakePic": "portrait_alin_awaken",
         "BaseAttack": 192.0,
         "BaseDefence": 60.0,
         "BaseHp": 821.0,
@@ -10482,7 +10483,9 @@
         "Speed": 50,
         "StarId": "HSheng_1",
         "SurfaceList": [
-            "Surface_HSheng_1"
+            "Surface_HSheng_1",
+            "Surface_HSheng_3",
+            "Surface_HSheng_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -14003,7 +14006,8 @@
         "Speed": 50,
         "StarId": "LEMHou_1",
         "SurfaceList": [
-            "Surface_LEMHou_1"
+            "Surface_LEMHou_1",
+            "Surface_LEMHou_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -14595,7 +14599,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.73,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_LLKe",
         "KeyPassiveSkill": "Hero_PBattle_LLKe_Key",
@@ -21405,7 +21409,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.73,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SGBao",
         "KeyPassiveSkill": "",
@@ -25309,7 +25313,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.71,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_TJHDe",
         "KeyPassiveSkill": "",
@@ -32594,7 +32598,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.1,
-        "AwakePic": "",
+        "AwakePic": "portrait_astlsi_awaken",
         "BaseAttack": 191.0,
         "BaseDefence": 60.0,
         "BaseHp": 770.0,
@@ -32837,7 +32841,8 @@
         "StarId": "YSTLu_1",
         "SurfaceList": [
             "Surface_YSTLu_1",
-            "Surface_YSTLu_2"
+            "Surface_YSTLu_2",
+            "Surface_YSTLu_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",

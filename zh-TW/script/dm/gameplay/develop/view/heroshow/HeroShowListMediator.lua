@@ -654,6 +654,11 @@ function HeroShowListMediator:createTeamCell(cell, index)
 					zOrder = 100
 				end
 
+				if i <= heroData.identityAwakenLevel then
+					path = "yinghun_img_awake_star.png"
+					zOrder = 100
+				end
+
 				local star = cc.Sprite:createWithSpriteFrameName(path)
 
 				star:addTo(starBg)

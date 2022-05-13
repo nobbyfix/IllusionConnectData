@@ -165,6 +165,9 @@ Hero:has("_lastDate", {
 Hero:has("_tsoul", {
 	is = "rw"
 })
+Hero:has("_identityAwakenLevel", {
+	is = "rw"
+})
 
 function Hero:initialize(heroId, player)
 	super.initialize(self)
@@ -223,6 +226,7 @@ function Hero:initialize(heroId, player)
 
 	self._lastDate = {}
 	self._tsoul = {}
+	self._identityAwakenLevel = 0
 end
 
 function Hero:getConfig()
@@ -299,17 +303,21 @@ function Hero:synchronize(data)
 		self._star = data.star
 	end
 
+	if data.identityAwakenLevel then
+		self._identityAwakenLevel = data.identityAwakenLevel
+	end
+
+	if data.awakenLevel and self._awakenStar ~= data.awakenLevel then
+		hasBaseAttrChange = true
+		self._awakenStar = data.awakenLevel
+	end
+
 	if data.starId and self._starId ~= data.starId then
 		hasBaseAttrChange = true
 		self._starId = data.starId
 
 		self:updateStarConfig()
 		self._starModule:synchronize(self._starId)
-	end
-
-	if data.awakenLevel and self._awakenStar ~= data.awakenLevel then
-		hasBaseAttrChange = true
-		self._awakenStar = data.awakenLevel
 	end
 
 	if data.littleStar ~= nil then
@@ -529,6 +537,16 @@ function Hero:updateStarRewards(starRewards)
 			break
 		end
 	end
+end
+
+function Hero:getStarBoxGetOver()
+	for k, reward in pairs(self._starRewards) do
+		if not reward:isGotReward() then
+			return false
+		end
+	end
+
+	return true
 end
 
 function Hero:updateSpeed()
@@ -1108,13 +1126,16 @@ function Hero:initStarAttrs()
 	local starId = self._config.StarId
 	local nextStarId = self._config.StarId
 	local checkAwaken = true
+	local checkIdentityAwake = true
+	local tmpStar = 0
 
 	while nextStarId ~= "" do
 		starId = nextStarId
 		local star = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "Star")
 
-		if not checkAwaken then
-			star = 7
+		if tmpStar ~= 0 then
+			tmpStar = tmpStar + 1
+			star = tmpStar
 		end
 
 		nextStarId = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NextId")
@@ -1122,6 +1143,12 @@ function Hero:initStarAttrs()
 		if nextStarId == "" and self:heroCanAwaken() and checkAwaken then
 			nextStarId = self._awakenStarId
 			checkAwaken = false
+			tmpStar = star
+		end
+
+		if nextStarId == "" and self:heroCanAwaken() and self:canIdentityAwake() and checkIdentityAwake then
+			nextStarId = self._awakenStarConfig.IAId
+			checkIdentityAwake = false
 		end
 
 		local isMiniStar = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "MiniStar") == 1
@@ -1251,6 +1278,32 @@ function Hero:getNextStarId(forAwaken)
 	return nextStarId
 end
 
+function Hero:getNextIdentityStarId()
+	if self._awakenStar > 0 and self._identityAwakenLevel == 0 then
+		return self._awakenStarConfig and self._awakenStarConfig.IAId or ""
+	elseif self._identityAwakenLevel > 0 then
+		return self._starConfig.NextId
+	end
+
+	return ""
+end
+
+function Hero:getIdentityAwakenNeedLove()
+	local starId = self:getNextIdentityStarId()
+
+	return ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NeedLove")
+end
+
+function Hero:getIdentityAwakenNeedItem()
+	local starId = self:getNextIdentityStarId()
+
+	return ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "UpNeedItem")
+end
+
+function Hero:canIdentityAwake()
+	return self._awakenStarConfig and self._awakenStarConfig.IAId ~= ""
+end
+
 function Hero:getNextIsMiniStar()
 	local starId = self:getNextStarId()
 	local miniStar = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "MiniStar")
@@ -1281,7 +1334,7 @@ function Hero:getStarStive()
 end
 
 function Hero:isMaxStar()
-	return self:getNextStarId() == ""
+	return self._star == self:getMaxStar()
 end
 
 function Hero:getConfigByStarId(starId)

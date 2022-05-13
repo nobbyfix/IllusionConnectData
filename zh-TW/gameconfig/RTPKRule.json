@@ -53,6 +53,60 @@
         "SeasonSkillCondition": "",
         "StarsAttrEffect": ""
     },
+    "RTPKSeason_11": {
+        "AwakenAttrEffect": "",
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BattleBackground": "Battle_Scene_RTPK",
+        "BattleConfig": "BlockBattle_RTPK",
+        "ConfigLevelLimitID": "LevelLimit_RTPK",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHeroSkill_Attr_Small",
+                "Hero": [
+                    "LLKe",
+                    "SGBao",
+                    "YLMGZhu",
+                    "SNGLSi",
+                    "HSheng"
+                ]
+            }
+        ],
+        "RuleDesc": "RTPKSeason_11_Desc",
+        "SeasonSkill": "",
+        "SeasonSkillCondition": "",
+        "StarsAttrEffect": ""
+    },
+    "RTPKSeason_12": {
+        "AwakenAttrEffect": "",
+        "BGM": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ],
+        "BattleBackground": "Battle_Scene_RTPK",
+        "BattleConfig": "BlockBattle_RTPK",
+        "ConfigLevelLimitID": "LevelLimit_RTPK",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHeroSkill_Attr_Small",
+                "Hero": [
+                    "XDRLa",
+                    "AMLBLTe",
+                    "BBLMa",
+                    "SDTZi",
+                    "MDSi"
+                ]
+            }
+        ],
+        "RuleDesc": "RTPKSeason_12_Desc",
+        "SeasonSkill": "",
+        "SeasonSkillCondition": "",
+        "StarsAttrEffect": ""
+    },
     "RTPKSeason_2": {
         "AwakenAttrEffect": "",
         "BGM": [

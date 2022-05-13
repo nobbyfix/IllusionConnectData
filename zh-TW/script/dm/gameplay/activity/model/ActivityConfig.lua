@@ -23,6 +23,7 @@ require("dm.gameplay.activity.model.MonsterShopActivity")
 require("dm.gameplay.activity.model.ActivityColorEggActivity")
 require("dm.gameplay.activity.model.ActivityTpurchase")
 require("dm.gameplay.activity.model.MiniGameActivity")
+require("dm.gameplay.activity.model.DailyChargeActivity")
 require("dm.gameplay.activity.model.zero.ActivityZero")
 require("dm.gameplay.activity.model.PuzzleGameActivity")
 require("dm.gameplay.cooperateBoss.model.CooperateBoss")
@@ -94,6 +95,7 @@ ActivityModel = {
 	[ActivityType.KMonsterShop] = MonsterShopActivity,
 	[ActivityType.KTPURCHASE] = ActivityTpurchase,
 	[ActivityType.KMiniGame] = MiniGameActivity,
+	[ActivityType.KDailyCharge] = DailyChargeActivity,
 	[ActivityType.kActivityZero] = ActivityZero,
 	[ActivityType.KPuzzleGame] = PuzzleGameActivity,
 	[ActivityType.KReturn] = ActivityReturn,
@@ -149,6 +151,7 @@ ActivityUI = {
 	[ActivityType.KDrawCardFeedbackActivity] = "ActivityDrawCardFeedbackView",
 	[ActivityType.KColourEgg] = "TaskActivityView",
 	[ActivityType.KMonsterShop] = "ActivityBlockMonsterShopView",
+	[ActivityType.KDailyCharge] = "ActivityDailyChargeView",
 	[ActivityType.KPuzzleGame] = "ActivityPuzzleGameView"
 }
 ActivityMark = {
@@ -194,7 +197,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDrama] = "ActivityDramaMainView",
 		[ActivityType_UI.KActivityFamily] = "ActivityFamilyMainView",
 		[ActivityType_UI.KActivityMagic] = "ActivityMagicMainView",
-		[ActivityType_UI.KActivitySamurai] = "ActivitySamuraiMainView"
+		[ActivityType_UI.KActivitySamurai] = "ActivitySamuraiMainView",
+		[ActivityType_UI.KActivitySpring] = "ActivitySpringMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -231,7 +235,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDrama] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityFamily] = "ActivityOrientMapView",
 		[ActivityType_UI.KActivityMagic] = "ActivityMapNewView",
-		[ActivityType_UI.KActivitySamurai] = "ActivityMapNewView"
+		[ActivityType_UI.KActivitySamurai] = "ActivityMapNewView",
+		[ActivityType_UI.KActivitySpring] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -273,7 +278,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityDrama] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityFamily] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityMagic] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivitySamurai] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivitySamurai] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivitySpring] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -436,6 +442,20 @@ ActivityLogin14Config = {
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 242, 184, 255)
+		}
+	},
+	EightDays_Spring = {
+		resFile = "asset/ui/ActivitySpringLogin14.csb",
+		textPattern = {
+			cc.c4b(232, 244, 254, 255),
+			cc.c4b(210, 226, 248, 255)
+		}
+	},
+	EightDays_Family_Re = {
+		resFile = "asset/ui/ActivityFamilyLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 249, 198, 255)
 		}
 	}
 }

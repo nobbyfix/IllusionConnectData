@@ -1689,5 +1689,30 @@
         "Words": [
             "Hero_Awaken"
         ]
+    },
+    "HeroIdentityAwake": {
+        "Channel": [
+            "CHAT-WORLD",
+            "CHAT-UNION"
+        ],
+        "Condition": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "ExpireTime": 600,
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_IDEAWAKEN",
+        "Words": [
+            "Hero_IdentityAwake"
+        ]
     }
 }

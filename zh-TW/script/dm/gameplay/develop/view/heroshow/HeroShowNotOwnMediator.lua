@@ -709,6 +709,11 @@ function HeroShowNotOwnMediator:refreshView(refrshHero)
 				zOrder = 100
 			end
 
+			if i <= hero:getIdentityAwakenLevel() then
+				path = "yinghun_img_awake_star.png"
+				zOrder = 100
+			end
+
 			local star = cc.Sprite:createWithSpriteFrameName(path)
 
 			star:addTo(self._starPanel)

@@ -9,6 +9,7 @@ function HeroStar:initialize(owner)
 
 	self._owner = owner
 	self._id = self._owner._config.StarId
+	self._heroId = self._owner._config.Id
 	self._curStarId = ""
 
 	if self._owner then
@@ -44,25 +45,70 @@ function HeroStar:getAttrEffects()
 	local effects = {}
 	local nextStarId = self._id
 
-	while nextStarId ~= self._curStarId do
-		local starId = nextStarId
-		nextStarId = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NextId")
+	if self._owner._identityAwakenLevel == 0 then
+		local nextStarId = self._id
 
-		if nextStarId == "" then
-			nextStarId = self._curStarId
+		while nextStarId ~= self._curStarId do
+			local starId = nextStarId
+			nextStarId = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NextId")
+
+			if nextStarId == "" then
+				nextStarId = self._curStarId
+			end
+
+			local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "Effect") or {}
+
+			for i = 1, #Effect do
+				effects[#effects + 1] = Effect[i]
+			end
 		end
 
-		local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "Effect") or {}
+		local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", self._curStarId, "Effect") or {}
 
 		for i = 1, #Effect do
 			effects[#effects + 1] = Effect[i]
 		end
-	end
+	elseif self._owner._identityAwakenLevel > 0 then
+		while true do
+			local starId = nextStarId
+			local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "Effect") or {}
 
-	local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", self._curStarId, "Effect") or {}
+			for i = 1, #Effect do
+				effects[#effects + 1] = Effect[i]
+			end
 
-	for i = 1, #Effect do
-		effects[#effects + 1] = Effect[i]
+			nextStarId = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NextId")
+
+			if nextStarId == "" then
+				break
+			end
+		end
+
+		if self._owner._awakenStar then
+			local aid = self._owner._awakenStarId
+			local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", aid, "Effect") or {}
+
+			for i = 1, #Effect do
+				effects[#effects + 1] = Effect[i]
+			end
+		end
+
+		local starId = self._owner._awakenStarConfig and self._owner._awakenStarConfig.IAId
+		local curIdentity = self._curStarId
+
+		while true do
+			local Effect = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "Effect") or {}
+
+			for i = 1, #Effect do
+				effects[#effects + 1] = Effect[i]
+			end
+
+			if starId == curIdentity then
+				break
+			end
+
+			starId = ConfigReader:getDataByNameIdAndKey("HeroStarEffect", starId, "NextId")
+		end
 	end
 
 	return effects

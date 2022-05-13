@@ -247,6 +247,9 @@ local muiscCfg = {
 	},
 	ActivityBentoView = {
 		noAutoPlay = true
+	},
+	ActivitySpringMainView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}
