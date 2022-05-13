@@ -1987,30 +1987,26 @@ all.EquipSkill_Weapon_15103_3 = {
 					end
 				end
 
-				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					if global.MASTER(_env, unit) then
-						if count == 0 then
-							global.AssignRoles(_env, unit, "target")
-						end
+				if count == 0 then
+					global.AssignRoles(_env, global.EnemyMaster(_env), "target")
 
-						local buff_taunt_2 = global.Taunt(_env)
+					local buff_taunt_2 = global.Taunt(_env)
 
-						global.ApplyBuff(_env, global.EnemyMaster(_env), {
-							timing = 4,
-							duration = 2,
-							tags = {
-								"NUMERIC",
-								"BUFF",
-								"TAUNT",
-								"UNDISPELLABLE",
-								"UNSTEALABLE",
-								"EquipSkill_Weapon_15103_3_Taunt"
-							}
-						}, {
-							buff_taunt_2
-						}, 1)
-						global.ApplyRPDamage(_env, global.EnemyMaster(_env), this.RageFactor)
-					end
+					global.ApplyBuff(_env, global.EnemyMaster(_env), {
+						timing = 4,
+						duration = 2,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"TAUNT",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"EquipSkill_Weapon_15103_3_Taunt"
+						}
+					}, {
+						buff_taunt_2
+					}, 1)
+					global.ApplyRPDamage(_env, global.EnemyMaster(_env), this.RageFactor)
 				end
 			end
 		end)

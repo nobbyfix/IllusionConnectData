@@ -1305,7 +1305,8 @@ function TowerTeamBattleMediator:getHeroInfoById(id)
 		baseId = heroInfo:getBaseId(),
 		maxStar = heroInfo:getMaxStar(),
 		expRatio = heroInfo:getExpRatio(),
-		awakenLevel = heroInfo:getAwakenStar()
+		awakenLevel = heroInfo:getAwakenStar(),
+		identityAwakenLevel = heroInfo:getIdentityAwakenLevel()
 	}
 
 	return heroData, heroInfo
