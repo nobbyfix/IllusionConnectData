@@ -18,7 +18,6 @@ function RTPKResultMediator:onRegister()
 	self._main = self:getView():getChildByName("main")
 	self._aniNode = self._main:getChildByName("animNode")
 	self._aniNodeUp = self._main:getChildByName("animNodeUp")
-	self._gradeText = self._main:getChildByName("Text_grade")
 	self._gradeUpImg = self._main:getChildByName("Image_gradeup")
 	self._tipsText = self._main:getChildByName("Text_tips")
 
@@ -37,22 +36,6 @@ function RTPKResultMediator:onRegister()
 	}
 
 	self._gradeUpImg:getChildByName("Text_1"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
-
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(255, 192, 93, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(255, 239, 129, 255)
-		}
-	}
-
-	self._gradeText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
 		x = 0,
 		y = -1
 	}))
@@ -75,11 +58,12 @@ function RTPKResultMediator:setupView(data)
 	local newScore = self._rtpk:getCurScore() + addScore
 	local curGradeData = self._rtpk:getCurGrade()
 	local newGradeData = self._rtpkSystem:getGradeConfigByScore(newScore)
+	local text = self._main:getChildByName("Text_3")
 
 	if win then
+		text:setString(Strings:get("RTPK_AddScore"))
 		AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Win")
 		self._main:setScaleY(0)
-		self._gradeText:setString(Strings:get(curGradeData.Name))
 
 		local scaleAct = cc.ScaleTo:create(0.16666666666666666, 1)
 		local fadeInAct = cc.FadeIn:create(0.16666666666666666)
@@ -95,29 +79,34 @@ function RTPKResultMediator:setupView(data)
 
 				local upAnim = cc.MovieClip:create("duanweitisheng_tiaozhanchenggongeff")
 
-				upAnim:addTo(self._aniNodeUp):offset(-10, -20)
+				upAnim:addTo(self._aniNodeUp):offset(0, -20)
 
 				for i = 1, 2 do
 					local oldIconNode = upAnim:getChildByName("oldicon" .. i)
-					local curGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id)
+					local curGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, {
+						useAnim = true
+					})
 
-					curGradeIcon:addTo(oldIconNode)
+					curGradeIcon:addTo(oldIconNode):offset(0, 20)
 				end
 
 				for i = 1, 4 do
 					local newIconNode = upAnim:getChildByName("newicon" .. i)
-					local newGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id)
+					local newGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, {
+						useAnim = true
+					})
 
-					newGradeIcon:addTo(newIconNode)
+					newGradeIcon:addTo(newIconNode):offset(0, 20)
 				end
 
 				upAnim:addCallbackAtFrame(30, function ()
-					self._gradeText:setString(Strings:get(newGradeData.Name))
 					upAnim:stop()
 				end)
 			else
 				local mc_nowGradeIcon = anim:getChildByName("mc_gradeIcon")
-				local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id)
+				local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id, {
+					useAnim = true
+				})
 
 				nowGradeIcon:addTo(mc_nowGradeIcon):offset(0, 20)
 			end
@@ -129,10 +118,8 @@ function RTPKResultMediator:setupView(data)
 
 		self._main:runAction(cc.Sequence:create(action, call))
 	else
+		text:setString(Strings:get("RTPK_EndGame_TextLose"))
 		AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Over")
-
-		local curGradeData = self._rtpk:getCurGrade()
-
 		self._main:setScaleY(0)
 
 		local scaleAct = cc.ScaleTo:create(0.16666666666666666, 1)
@@ -144,7 +131,9 @@ function RTPKResultMediator:setupView(data)
 			anim:addTo(self._aniNode):offset(0, -30)
 
 			local mc_nowGradeIcon = anim:getChildByName("mc_gradeIcon")
-			local nowGradeIcon = IconFactory:createRTPKGradeIcon(curGradeData.Id)
+			local nowGradeIcon = IconFactory:createRTPKGradeIcon(newGradeData.Id, {
+				useAnim = true
+			})
 
 			nowGradeIcon:addTo(mc_nowGradeIcon):offset(0, 20)
 			anim:addCallbackAtFrame(55, function ()
@@ -153,7 +142,6 @@ function RTPKResultMediator:setupView(data)
 		end)
 
 		self._main:runAction(cc.Sequence:create(action, call))
-		self._gradeText:setString(Strings:get(curGradeData.Name))
 	end
 
 	local addScoreText = self._main:getChildByName("Text_scoreadd")
@@ -166,6 +154,18 @@ function RTPKResultMediator:setupView(data)
 	else
 		addScoreText:setTextColor(cc.c3b(251, 74, 78))
 	end
+
+	addScoreText:setPositionX(568)
+
+	local isDouble = data.double
+
+	if isDouble then
+		addScoreText:setString("+" .. addScore .. Strings:get("RTPK_DoubleScore_UI02"))
+		addScoreText:setPositionX(589)
+		self._main:getChildByName("Text_3"):setFontSize(24)
+	end
+
+	self._main:getChildByName("Text_3"):setPositionX(addScoreText:getPositionX() - addScoreText:getContentSize().width - 5)
 
 	local scoreText = self._main:getChildByName("Text_score")
 	local isMaxGrade = self._rtpk:isMaxGrade(newGradeData.Id)

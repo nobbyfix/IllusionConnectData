@@ -165,6 +165,11 @@ function Chat:syncMessage(messageData, isOld)
 	return message
 end
 
+function Chat:delMessage(channelId)
+	self._privateChannelMap[channelId] = nil
+	self._channelMap[channelId] = nil
+end
+
 function Chat:getShieldSender(id)
 	local chatSystem = DmGame:getInstance()._injector:getInstance("ChatSystem")
 	local status = chatSystem:getBlockUserStatus(id)

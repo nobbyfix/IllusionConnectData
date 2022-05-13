@@ -1147,11 +1147,11 @@ function scene_eventstory_dreamtowersd_05a.actions.start_eventstory_dreamtowersd
 						modelId = "Model_NFEr",
 						id = "NFEr",
 						rotationX = 0,
-						scale = 0.8,
+						scale = 0.68,
 						zorder = 5,
 						position = {
 							x = 0,
-							y = -580,
+							y = -470,
 							refpt = {
 								x = -0.35,
 								y = 0
@@ -1175,8 +1175,8 @@ function scene_eventstory_dreamtowersd_05a.actions.start_eventstory_dreamtowersd
 									y = 0.5
 								},
 								position = {
-									x = -38.8,
-									y = 1324.4
+									x = -68.5,
+									y = 1369
 								}
 							}
 						}
@@ -1261,7 +1261,7 @@ function scene_eventstory_dreamtowersd_05a.actions.start_eventstory_dreamtowersd
 						duration = 0.6,
 						position = {
 							x = 0,
-							y = -580,
+							y = -470,
 							refpt = {
 								x = 0.8,
 								y = 0

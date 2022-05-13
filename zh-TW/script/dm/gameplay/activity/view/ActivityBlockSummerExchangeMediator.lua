@@ -280,7 +280,7 @@ function ActivityBlockSummerExchangeMediator:setInfo(clonePanel, itemData, itemI
 	goodsName:setString(name)
 	GameStyle:setQualityText(goodsName, RewardSystem:getQuality(rewardData), true)
 	curTime:setString("（" .. cruTimeNum)
-	maxTime:setString("/" .. maxTimeNum .. "）")
+	maxTime:setString("\\" .. maxTimeNum .. "）")
 	duihuanText:setPositionX(infoPanel:getContentSize().width / 2 - (duihuanText:getContentSize().width + curTime:getContentSize().width + maxTime:getContentSize().width) / 2 + 10)
 	curTime:setPositionX(duihuanText:getPositionX() + duihuanText:getContentSize().width - 30)
 	maxTime:setPositionX(curTime:getPositionX() + curTime:getContentSize().width)
@@ -348,7 +348,7 @@ function ActivityBlockSummerExchangeMediator:setTimeUi()
 		min = m,
 		sec = s
 	}
-	local startTime = TimeUtil:getTimeByDate(table)
+	local startTime = TimeUtil:timeByRemoteDate(table)
 	local _, _, y, mon, d, h, m, s = string.find(timeStamp.start[2], "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 	local table = {
 		year = y,
@@ -358,13 +358,13 @@ function ActivityBlockSummerExchangeMediator:setTimeUi()
 		min = m,
 		sec = s
 	}
-	local endTime = TimeUtil:getTimeByDate(table)
+	local endTime = TimeUtil:timeByRemoteDate(table)
 	local timeStartStr = ""
 	local timeEndStr = ""
 
 	if timeStamp then
-		timeStartStr = os.date("%Y.%m.%d", startTime)
-		timeEndStr = os.date("%Y.%m.%d", endTime)
+		timeStartStr = TimeUtil:localDate("%Y.%m.%d", startTime)
+		timeEndStr = TimeUtil:localDate("%Y.%m.%d", endTime)
 	end
 
 	self._time:setString(timeStartStr .. "-" .. timeEndStr)

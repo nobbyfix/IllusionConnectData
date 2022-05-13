@@ -97,16 +97,37 @@ end
 
 function GalleryPartyManage:initPartyMap()
 	local config = ConfigReader:getDataTable("GalleryParty")
+	local allHeroObj = nil
 
 	for id, partyConfig in pairs(config) do
 		local partyObj = GalleryParty:new(partyConfig.Party)
+
+		if self._partyMap == nil then
+			self._partyMap = {}
+		end
+
 		self._partyMap[partyConfig.Party] = partyObj
-		self._partyArray[#self._partyArray + 1] = partyObj
+
+		if self._partyArray[partyConfig.Type] == nil then
+			self._partyArray[partyConfig.Type] = {}
+		end
+
+		if partyConfig.Party == "AllHero" then
+			allHeroObj = partyObj
+		else
+			self._partyArray[partyConfig.Type][#self._partyArray[partyConfig.Type] + 1] = partyObj
+		end
 	end
 
-	table.sort(self._partyArray, function (a, b)
-		return a:getOrder() < b:getOrder()
-	end)
+	for key, value in pairs(self._partyArray) do
+		value[#value + 1] = allHeroObj
+	end
+
+	for key, value in pairs(self._partyArray) do
+		table.sort(value, function (a, b)
+			return a:getOrder() < b:getOrder()
+		end)
+	end
 end
 
 function GalleryPartyManage:initGalleryRewards()
@@ -114,10 +135,6 @@ function GalleryPartyManage:initGalleryRewards()
 	local partyMap = self:getPartyMap()
 
 	for partyType, value in pairs(partyMap) do
-		if not self._partyRewardMap[partyType] then
-			self._partyRewardMap[partyType] = {}
-		end
-
 		for i = 1, #value:getRewardIds() do
 			local rewardId = value:getRewardIds()[i]
 			local config = ConfigReader:getRecordById("GalleryPartyReward", rewardId)
@@ -138,6 +155,10 @@ function GalleryPartyManage:initGalleryRewards()
 				for index = 1, #config.Next do
 					self._nextPartyTasks[#self._nextPartyTasks + 1] = config.Next[index]
 				end
+			end
+
+			if not self._partyRewardMap[partyType] then
+				self._partyRewardMap[partyType] = {}
 			end
 
 			self._partyRewardMap[partyType][rewardId] = data
@@ -182,13 +203,17 @@ end
 function GalleryPartyManage:canRevieveReward(id)
 	local data = self._partyRewardMap[id]
 
+	if data == nil then
+		return false, false
+	end
+
 	for i, v in pairs(data) do
 		if v.status == TaskStatus.kFinishNotGet then
-			return true
+			return true, true
 		end
 	end
 
-	return false
+	return false, true
 end
 
 function GalleryPartyManage:getHeroInfos(heroId)
@@ -369,6 +394,10 @@ function GalleryPartyManage:syncMemoryData(data)
 	end
 
 	self:updateMemoryStoryByForce()
+
+	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+
+	developSystem:dispatch(Event:new(EVT_GET_NEW_STORY))
 end
 
 function GalleryPartyManage:insertMemory(type, id)
@@ -433,7 +462,11 @@ function GalleryPartyManage:getMemoryStoryValueByData(data)
 			for id, value in pairs(story.id) do
 				local memory = self._memoryTypeMap[GalleryMemoryType.STORY][value]
 
-				if memory:getCanshow() then
+				if DEBUG ~= 0 then
+					assert(memory, "memory not find in local database....id.." .. value)
+				end
+
+				if memory and memory:getCanshow() then
 					if memory:getUnlock() then
 						num = num + 1
 						totalNum = totalNum + 1

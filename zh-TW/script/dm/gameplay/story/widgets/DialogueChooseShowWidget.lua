@@ -145,7 +145,7 @@ function DialogueChooseShowWidget:updateView(data, onEnd, parentClass)
 			contentText:setPosition(cc.p(0, 0))
 			contentText:renderContent(0, 0, true)
 
-			local width = contentText:getContentSize().width
+			local width = math.min(contentText:getContentSize().width, AdjustUtils.winSize.width - 250)
 
 			contentText:renderContent(width, 0, true)
 
@@ -218,6 +218,10 @@ function DialogueChooseShowWidget:updateView(data, onEnd, parentClass)
 				end
 			end
 		end
+	end
+
+	if GameConfigs.autoStory then
+		self:onClickDialogue(1)
 	end
 end
 

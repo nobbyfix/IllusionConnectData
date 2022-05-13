@@ -133,11 +133,7 @@ function MasterAttribute:getBaseAttrNumByType(attrType, attrFactor, env)
 	local isAttrBaseType = AttributeCategory:isAttrBaseType(attrType)
 	local result = elementMap.a * (1 + elementMap.b) + elementMap.c
 
-	if env and env ~= GameEnvType.kAll then
-		return result * (1 + elementMap.d) + elementMap.f
-	end
-
-	return result
+	return result * (1 + elementMap.d) + elementMap.f
 end
 
 function MasterAttribute:getRateAttrNumByType(attrType, attrFactor, env)
@@ -158,7 +154,8 @@ MasterAttribute.masterCombatDesc = [[
 (攻击+防御+生命值*0.2)*
 (3+伤害率+免伤率+反弹率*0.6+吸血率*0.6)*
 (8+暴击率+抗暴率*0.7+暴击强度*0.4+格挡率+破击率*0.7+格挡强度*0.4)*
-(1+星级参数)*0.018+
+(1+星级参数)*
+0.018+
 (伤害率+免伤率+反弹率+吸血率)*800+
 (暴击率+抗暴率+暴击强度+格挡率+破击率+格挡强度)*400]]
 

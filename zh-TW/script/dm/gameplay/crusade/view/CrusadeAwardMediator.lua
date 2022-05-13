@@ -111,12 +111,17 @@ function CrusadeAwardMediator:addRankAwardPanel(cell, awardInfo)
 	local color = cc.c3b(255, 255, 255)
 
 	for i = 1, length do
-		local icon = IconFactory:createRewardIcon(rewards[i])
+		local icon = IconFactory:createRewardIcon(rewards[i], {
+			isWidget = true
+		})
 
 		icon:addTo(iconPanel)
 		icon:setScale(0.7)
 		icon:setPosition(cc.p(iconPanel:getContentSize().width / 2 + (i - 1) * 90, iconPanel:getContentSize().height / 2))
 		icon:setColor(color)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[i], {
+			needDelay = true
+		})
 	end
 
 	local iconFirst = panel:getChildByName("icon_first")
@@ -124,12 +129,17 @@ function CrusadeAwardMediator:addRankAwardPanel(cell, awardInfo)
 	local length = #rewardsFirst
 
 	for i = 1, length do
-		local icon = IconFactory:createRewardIcon(rewardsFirst[i])
+		local icon = IconFactory:createRewardIcon(rewardsFirst[i], {
+			isWidget = true
+		})
 
 		icon:addTo(iconFirst)
 		icon:setScale(0.7)
 		icon:setPosition(cc.p(iconFirst:getContentSize().width / 2 + (i - 1) * 90, iconFirst:getContentSize().height / 2))
 		icon:setColor(color)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardsFirst[i], {
+			needDelay = true
+		})
 	end
 end
 

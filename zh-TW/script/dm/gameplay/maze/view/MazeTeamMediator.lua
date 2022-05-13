@@ -29,6 +29,7 @@ function MazeTeamMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshListView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 end
 
 function MazeTeamMediator:enterWithData(data)
@@ -483,7 +484,7 @@ function MazeTeamMediator:onClickOnTeamPet(sender, eventType, oppoRecord, info)
 			replace:setPosition(0, 0)
 
 			info.id = info.roleModel
-			local img = IconFactory:createRoleIconSprite({
+			local img = IconFactory:createRoleIconSpriteNew({
 				iconType = 1,
 				id = info.roleModel
 			})
@@ -634,7 +635,7 @@ end
 
 function MazeTeamMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 	local heroPanel = node:getChildByName("hero")
 
 	heroPanel:removeAllChildren()
@@ -663,7 +664,7 @@ function MazeTeamMediator:initHero(node, info)
 
 	local level = node:getChildByName("level")
 
-	level:setString("Lv." .. info.level)
+	level:setString(Strings:get("Common_LV_Text") .. info.level)
 
 	local starBg = node:getChildByName("starBg")
 
@@ -1020,7 +1021,8 @@ function MazeTeamMediator:onClickChangeMaster(sender, eventType)
 			animation = PopViewAction:new(view)
 		}, {
 			masterId = self._curMasterId,
-			masterList = self._masterList
+			masterList = self._masterList,
+			sys = self._masterSystem
 		}, nil))
 	end
 end

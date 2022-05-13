@@ -57,10 +57,10 @@ function scene_mapstory_Japan_4_boss_03.actions.start_mapstory_Japan_4_boss_03(_
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -368,
+						y = -300,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -84,8 +84,8 @@ function scene_mapstory_Japan_4_boss_03.actions.start_mapstory_Japan_4_boss_03(_
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -150,10 +150,10 @@ function scene_mapstory_Japan_4_boss_03.actions.start_mapstory_Japan_4_boss_03(_
 					modelId = "Model_NXYYi",
 					id = "NXYYi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 1,
 					position = {
 						x = 0,
-						y = -390,
+						y = -330,
 						refpt = {
 							x = 0.3,
 							y = 0

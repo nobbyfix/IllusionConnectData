@@ -31,21 +31,37 @@ end
 
 function EightDayLoginMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
-	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_CLOSE, self, self.activityClose)
-end
-
-function EightDayLoginMediator:activityClose(event)
-	local data = event:getData()
 end
 
 function EightDayLoginMediator:loadData()
-	self._activityList = self._activity:getList()
+	self._activityList = self._activity._taskList
 
 	table.sort(self._activityList, function (a, b)
-		return a.day < b.day
+		local aNum = a._config.OrderNum
+		local bNum = b._config.OrderNum
+
+		return aNum < bNum
 	end)
 
-	self._loginDays = self._activity:getLoginDays()
+	local todayNum = #self._activityList
+
+	for i = 1, #self._activityList do
+		local taskInfo = self._activityList[i]
+		local status = taskInfo:getStatus()
+
+		if status == ActivityTaskStatus.kUnfinish then
+			todayNum = i - 1
+
+			break
+		end
+	end
+
+	for i = 1, #self._activityList do
+		local taskInfo = self._activityList[i]
+		taskInfo.day = i
+	end
+
+	self._loginDays = todayNum
 end
 
 function EightDayLoginMediator:enterWithData(data)
@@ -68,30 +84,38 @@ function EightDayLoginMediator:setupView()
 	self._cellPanel8 = self._main:getChildByName("Panel_cell_8")
 
 	self._cellPanel8:setVisible(false)
+
+	self._cellPanel4 = self._main:getChildByName("Panel_cell_4")
+
+	self._cellPanel4:setVisible(false)
 	self._main:getChildByFullName("Text_login_day_num"):setString(self._loginDays)
-
-	local heroPanel = self._main:getChildByFullName("heroPanel")
-
-	heroPanel:removeAllChildren()
-
-	local activityData = self._activityList[8]
-	local rewards = activityData.reward
-	local reward = rewards.Content[1]
-
-	if reward.type == 7 then
-		local config = ConfigReader:getRecordById("Surface", reward.code)
-		local img = IconFactory:createRoleIconSprite({
-			useAnim = true,
-			iconType = "Bust4",
-			id = config.Model
-		})
-
-		img:setScale(1.2)
-		img:addTo(heroPanel):offset(370, 20)
-	end
-
 	self:initEightDayCell()
+	self:checkDay4State()
 	self:mapEventListeners()
+end
+
+function EightDayLoginMediator:checkDay4State()
+	local heroPanel = self._main:getChildByFullName("heroPanel")
+	local activityData = self._activityList[4]
+	local state = activityData:getStatus()
+
+	if state == ActivityTaskStatus.kGet then
+		local titleImage = self._main:getChildByName("titleImage")
+		local actConfig = self._activity:getActivityConfig()
+		local imageName = actConfig.title[2]
+
+		titleImage:loadTexture(imageName .. ".png", ccui.TextureResType.plistType)
+
+		local imageBg = self._main:getChildByName("Image_1")
+		local bgName = actConfig.bg[2]
+
+		imageBg:loadTexture("asset/scene/" .. bgName .. ".jpg", ccui.TextureResType.localType)
+		heroPanel:getChildByName("hero1"):setVisible(false)
+		heroPanel:getChildByName("hero2"):setVisible(true)
+	else
+		heroPanel:getChildByName("hero1"):setVisible(true)
+		heroPanel:getChildByName("hero2"):setVisible(false)
+	end
 end
 
 function EightDayLoginMediator:initEightDayCell()
@@ -103,10 +127,14 @@ function EightDayLoginMediator:initEightDayCell()
 	for i = 1, #self._activityList do
 		local activityData = self._activityList[i]
 		local day = activityData.day
-		local cellClone = self._cellPanel:clone()
+		local cellClone = nil
 
 		if day == 8 then
 			cellClone = self._cellPanel8:clone()
+		elseif day == 4 then
+			cellClone = self._cellPanel4:clone()
+		else
+			cellClone = self._cellPanel:clone()
 		end
 
 		cellClone:setVisible(true)
@@ -130,8 +158,9 @@ function EightDayLoginMediator:initEightDayCell()
 		cellClone:setPosition(cc.p(start_x + (i - 1) * 140, posY))
 		cellClone:addTo(self._listPanel)
 
-		local rewardIcon = nil
-		local rewards = activityData.reward
+		local iconPanel = cellClone:getChildByName("Panel_reward")
+		local rewardId = activityData._config.Reward
+		local rewards = ConfigReader:getRecordById("Reward", rewardId)
 
 		if rewards then
 			local reward = rewards.Content[1]
@@ -139,44 +168,50 @@ function EightDayLoginMediator:initEightDayCell()
 			if reward then
 				local amount = reward.amount or 1
 
-				if reward.type == RewardType.kHero then
+				if reward.type == RewardType.kHero or reward.type == RewardType.kSurface then
 					amount = ""
 				end
 
-				local iconPanel = cellClone:getChildByName("Panel_reward")
-
 				iconPanel:removeAllChildren()
 
-				if iconPanel then
-					if day == 8 then
-						if reward.type == 7 then
-							local config = ConfigReader:getRecordById("Surface", reward.code)
-							local model = ConfigReader:requireRecordById("RoleModel", config.Model).Model
-							local node = RoleFactory:createRoleAnimation(model)
+				if day == 4 or day == 8 then
+					if reward.type == 7 then
+						local config = ConfigReader:getRecordById("Surface", reward.code)
+						local model = ConfigReader:requireRecordById("RoleModel", config.Model).Model
+						local node = RoleFactory:createRoleAnimation(model)
 
-							node:addTo(iconPanel):offset(60, 8)
-							node:setScale(0.77)
-						end
-					else
-						rewardIcon = IconFactory:createRewardIcon(reward, {
-							showAmount = false,
-							notShowQulity = true,
-							isWidget = true
+						node:addTo(iconPanel):offset(65, 5):setName("rewardInstance")
+						node:setScale(0.5)
+					end
+
+					if reward.type == 3 then
+						local config = ConfigReader:getRecordById("HeroBase", reward.code)
+						local model = ConfigReader:requireRecordById("RoleModel", config.RoleModel).Model
+						local node = RoleFactory:createRoleAnimation(model)
+
+						node:addTo(iconPanel):offset(77, 8):setName("rewardInstance")
+						node:setScale(-0.77, 0.77)
+					end
+				else
+					local rewardIcon = IconFactory:createRewardIcon(reward, {
+						showAmount = false,
+						notShowQulity = true,
+						isWidget = true
+					})
+
+					iconPanel:addChild(rewardIcon)
+					rewardIcon:setScale(0.6)
+					rewardIcon:center(iconPanel:getContentSize())
+					rewardIcon:setName("rewardInstance")
+
+					if self._parentMediator then
+						IconFactory:bindClickHander(iconPanel, IconTouchHandler:new(self._parentMediator), reward, {
+							touchDisappear = true
 						})
-
-						iconPanel:addChild(rewardIcon)
-						rewardIcon:setScale(0.6)
-						rewardIcon:center(iconPanel:getContentSize())
-
-						if self._parentMediator then
-							IconFactory:bindClickHander(iconPanel, IconTouchHandler:new(self._parentMediator), reward, {
-								touchDisappear = true
-							})
-						else
-							IconFactory:bindClickHander(iconPanel, IconTouchHandler:new(self), reward, {
-								touchDisappear = true
-							})
-						end
+					else
+						IconFactory:bindClickHander(iconPanel, IconTouchHandler:new(self), reward, {
+							touchDisappear = true
+						})
 					end
 				end
 
@@ -213,7 +248,7 @@ function EightDayLoginMediator:initEightDayCell()
 			cellClone:getChildByFullName("dayNum"):setString(Strings:get("Activity_Day", {
 				num = Strings:get(dayStr[day])
 			}))
-		elseif activityData.state == ActivityTaskStatus.kGet then
+		elseif activityData:getStatus() == ActivityTaskStatus.kGet then
 			state = 1
 
 			cellClone:getChildByFullName("dayNum"):setString(Strings:get("Activity_Received"))
@@ -222,8 +257,16 @@ function EightDayLoginMediator:initEightDayCell()
 
 			cellClone:getChildByFullName("image_bg_normal"):setColor(col)
 
-			if rewardIcon then
-				rewardIcon:setColor(col)
+			local rewardInstance = iconPanel:getChildByName("rewardInstance")
+
+			rewardInstance:setColor(col)
+
+			if day == 4 or day == 8 then
+				rewardInstance:stopAnimation()
+
+				if day == 8 then
+					cellClone:getChildByFullName("Image_2"):setColor(col)
+				end
 			end
 
 			if cellClone:getChildByFullName("reward_name_num") then
@@ -259,7 +302,7 @@ function EightDayLoginMediator:initEightDayCell()
 			if self._loginDays < day then
 				self:onClickTips(day)
 			else
-				self:onClickGet(day)
+				self:onClickGet(activityData:getId(), day)
 			end
 
 			if cellClone.effect then
@@ -293,6 +336,7 @@ function EightDayLoginMediator:onGetRewardCallback(response)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		maskOpacity = 0
 	}, {
+		needClick = false,
 		rewards = response,
 		callback = function ()
 			local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
@@ -306,17 +350,35 @@ function EightDayLoginMediator:onGetRewardCallback(response)
 	}))
 end
 
-function EightDayLoginMediator:onClickGet(day)
+function EightDayLoginMediator:onClickGet(taskId, day)
 	local activityId = self._activity:getId()
 	local param = {
 		doActivityType = 101,
-		targetDay = day
+		taskId = taskId
 	}
 
 	self._activitySystem:requestDoActivity(activityId, param, function (response)
-		self:dispatch(Event:new(EVT_CHARGETASK_FIN))
-		self:onGetRewardCallback(response)
-		self:refreshView()
+		if SDKHelper and SDKHelper:isEnableSdk() then
+			local developSystem = self:getInjector():getInstance(DevelopSystem)
+			local data = developSystem:getStatsInfo()
+
+			if day == 8 then
+				data.eventName = "8day_SSRreward"
+			else
+				data.eventName = day .. "day_reward"
+			end
+
+			SDKHelper:reportStatsData(data)
+		end
+
+		if checkDependInstance(self) then
+			self:onGetRewardCallback(response)
+			self:refreshView()
+
+			if day == 4 then
+				self:checkDay4State()
+			end
+		end
 	end)
 end
 

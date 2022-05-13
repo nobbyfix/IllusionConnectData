@@ -41,6 +41,33 @@ local muiscCfg = {
 	ActivityBlockMonsterShopView = {
 		noAutoPlay = true
 	},
+	ActivityBlockMusicView = {
+		noAutoPlay = true
+	},
+	ActivityBakingMainView = {
+		noAutoPlay = true
+	},
+	ActivitySunflowerMainView = {
+		noAutoPlay = true
+	},
+	ActivityCollapsedMainView = {
+		noAutoPlay = true
+	},
+	ActivityKnightMainView = {
+		noAutoPlay = true
+	},
+	ActivityFemaleMainView = {
+		noAutoPlay = true
+	},
+	ActivityReZeroMainView = {
+		noAutoPlay = true
+	},
+	ActivityStoryBookMainView = {
+		noAutoPlay = true
+	},
+	ActivitySummerReMainView = {
+		noAutoPlay = true
+	},
 	ActivityBlockDetectiveView = {
 		noAutoPlay = true
 	},
@@ -107,6 +134,24 @@ local muiscCfg = {
 	ClubBossBattleView = {
 		noAutoPlay = true
 	},
+	ClubView = {
+		noAutoPlay = true
+	},
+	ClubNewHallView = {
+		noAutoPlay = true
+	},
+	ClubNewTechnologyView = {
+		noAutoPlay = true
+	},
+	ClubResourcesBattleView = {
+		noAutoPlay = true
+	},
+	ClubBossView = {
+		noAutoPlay = true
+	},
+	RecruitView = {
+		noAutoPlay = true
+	},
 	DartsView = {
 		noAutoPlay = true
 	},
@@ -115,6 +160,9 @@ local muiscCfg = {
 	},
 	ActivitySupportHolidayView = {
 		id = "Mus_Redwhite"
+	},
+	ClubMainMapView = {
+		noAutoPlay = true
 	},
 	RTPKMainView = {
 		id = "Mus_Story_Danger_2"
@@ -126,6 +174,63 @@ local muiscCfg = {
 		noAutoPlay = true
 	},
 	rtpvpRobotBattle = {
+		noAutoPlay = true
+	},
+	ActivityFireMainView = {
+		noAutoPlay = true
+	},
+	MasterLeadStageDetailView = {
+		noAutoPlay = true
+	},
+	MasterMainView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaMainView = {
+		id = "Mus_Redwhite"
+	},
+	LeadStageArenaRivalView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaTeamListView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaTeamView = {
+		noAutoPlay = true
+	},
+	LeadStageArenaReportView = {
+		noAutoPlay = true
+	},
+	ShopCoopExchangeView = {
+		noAutoPlay = true
+	},
+	ActivityDeepSeaMainView = {
+		noAutoPlay = true
+	},
+	ActivityMapNewView = {
+		noAutoPlay = true
+	},
+	ActivityFireWorksMainView = {
+		noAutoPlay = true
+	},
+	ActivityTerrorMainView = {
+		noAutoPlay = true
+	},
+	ActivityRiddleMainView = {
+		noAutoPlay = true
+	},
+	ActivityAnimalMainView = {
+		noAutoPlay = true
+	},
+	ActivityDuskMainView = {
+		noAutoPlay = true
+	},
+	ActivitySilentNightMainView = {
+		noAutoPlay = true
+	},
+	JumpView = {
+		noAutoPlay = true
+	},
+	ActivityDramaMainView = {
 		noAutoPlay = true
 	}
 }
@@ -166,6 +271,10 @@ function MainSceneMediator:createHistory()
 end
 
 function MainSceneMediator:dispose()
+	if (DEBUG ~= 0 or app.pkgConfig.showDebugBox == 1) and self._debugBox then
+		self._debugBox:clearTime()
+	end
+
 	super.dispose(self)
 end
 
@@ -193,8 +302,20 @@ function MainSceneMediator:onRegister()
 		debugBoxLayer:setPosition(0, 0)
 		debugBoxLayer:setContentSize(cc.size(winFrame.width, winFrame.height))
 		debugBox:setupView(debugBoxLayer)
+
+		self._debugBox = debugBox
 	end
 
+	local function onKeyReleased(keyCode, event)
+		if keyCode == cc.KeyCode.KEY_BACK then
+			self:popTopView()
+		end
+	end
+
+	local listener = cc.EventListenerKeyboard:create()
+
+	listener:registerScriptHandler(onKeyReleased, cc.Handler.EVENT_KEYBOARD_RELEASED)
+	cc.Director:getInstance():getEventDispatcher():addEventListenerWithSceneGraphPriority(listener, self:getView())
 	self:mapEventListeners()
 end
 
@@ -287,7 +408,7 @@ function MainSceneMediator:appDidEnterBackground()
 	display.removeUnusedSpriteFrames()
 
 	if DEBUG == 2 then
-		print("打印纹理情况  ", cc.Director:getInstance():getTextureCache():getCachedTextureInfo())
+		-- Nothing
 	end
 
 	DataReader:cleanCache()
@@ -345,7 +466,7 @@ function MainSceneMediator:releaseViewMemory(isRemoveAll)
 	display.removeUnusedSpriteFrames()
 
 	if DEBUG == 2 then
-		print("打印纹理情况  ", cc.Director:getInstance():getTextureCache():getCachedTextureInfo())
+		-- Nothing
 	end
 
 	print("释放内存")
@@ -392,6 +513,40 @@ function MainSceneMediator:popView(popView, options, data)
 
 	if not self:getTopView() then
 		self:resumeViwFromHistory(data)
+	end
+end
+
+function MainSceneMediator:popTopView()
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+	local storyAgent = storyDirector:getStoryAgent()
+
+	if guideAgent:isGuiding() then
+		guideAgent:showExitGameTips()
+
+		return
+	end
+
+	if storyAgent:isGuiding() then
+		storyAgent:skip()
+
+		return
+	end
+
+	if self:getPopupViewCount() > 0 then
+		local popupView = self:getTopPopupView()
+
+		if popupView and popupView.mediator then
+			popupView.mediator:leaveWithData()
+
+			return
+		end
+	end
+
+	local view = self:getTopView()
+
+	if view and view.mediator then
+		view.mediator:leaveWithData()
 	end
 end
 

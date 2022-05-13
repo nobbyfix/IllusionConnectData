@@ -1,123 +1,6 @@
-local ItemsPosition1 = {
-	cc.p(350, 171)
-}
-local ItemsPosition2 = {
-	cc.p(38, 292),
-	cc.p(194, 292),
-	cc.p(350, 292),
-	cc.p(506, 292),
-	cc.p(662, 292),
-	cc.p(38, 110),
-	cc.p(194, 110),
-	cc.p(350, 110),
-	cc.p(506, 110),
-	cc.p(662, 110)
-}
-local ItemsPosition3 = {
-	cc.p(34, 316),
-	cc.p(192, 316),
-	cc.p(350, 316),
-	cc.p(508, 316),
-	cc.p(666, 316),
-	cc.p(34, 110),
-	cc.p(192, 110),
-	cc.p(350, 110),
-	cc.p(508, 110),
-	cc.p(666, 110)
-}
-local ItemsPosition4 = {
-	cc.p(-50, 292),
-	cc.p(150, 292),
-	cc.p(350, 292),
-	cc.p(550, 292),
-	cc.p(750, 292),
-	cc.p(-50, 30),
-	cc.p(150, 30),
-	cc.p(350, 30),
-	cc.p(550, 30),
-	cc.p(750, 30)
-}
-local ItemsPosition5 = {
-	cc.p(29, 305),
-	cc.p(194, 305),
-	cc.p(359, 305),
-	cc.p(524, 305),
-	cc.p(689, 305),
-	cc.p(29, 89),
-	cc.p(194, 89),
-	cc.p(359, 89),
-	cc.p(524, 89),
-	cc.p(689, 89)
-}
-local RecruitRewardType = {
-	kHero = 1,
-	kHeroConvert = 2,
-	kPieceOrItem = 3
-}
-ResultAnimOfRarity = {
-	[11] = {
-		224,
-		"ShowResult_224"
-	},
-	[12] = {
-		225,
-		"ShowResult_225"
-	},
-	[13] = {
-		295,
-		"ShowResult_295"
-	},
-	[14] = {
-		407,
-		"ShowResult_407"
-	}
-}
-local kRoleRarityAnim = {
-	[12] = {
-		"r_choukajieguokapai",
-		0.57,
-		"img_chouka_new_r.png"
-	},
-	[13] = {
-		"sr_choukajieguokapai",
-		0.627,
-		"img_chouka_new_sr.png"
-	},
-	[14] = {
-		"ssr_choukajieguokapai",
-		0.741,
-		"img_chouka_new_ssr.png"
-	}
-}
-local kRoleRarityNameBg = {
-	[12.0] = "asset/heroRect/heroRarity/img_chouka_front_r.png",
-	[13.0] = "asset/heroRect/heroRarity/img_chouka_front_sr.png",
-	[14.0] = "asset/heroRect/heroRarity/img_chouka_front_ssr.png"
-}
-local kItemScale = {
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	nil,
-	1,
-	1,
-	1.1,
-	1.3,
-	1.5
-}
-local kEquipRarityAnim = {
-	[12.0] = "r_zhuangbeishilian",
-	[14.0] = "ssrchuchang_zhuangbeishilian",
-	[13.0] = "sr_zhuangbeishilian",
-	[11.0] = "r_zhuangbeishilian"
-}
 local DrawCardStiveExReward = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_StiveExReward", "content")
+local DrawCard_SinglePrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content")
+local DrawCard_TenTimesPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content")
 
 function RecruitMainMediator:enterResultWithData(data)
 	self:getView():stopAllActions()
@@ -141,6 +24,19 @@ function RecruitMainMediator:initData(data)
 	self._realRecruitTimes = #self._rewards
 end
 
+function RecruitMainMediator:addShare()
+	local data = {
+		enterType = ShareEnterType.KRecruitTen,
+		node = self._resultMain,
+		preConfig = function ()
+		end,
+		endConfig = function ()
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+end
+
 function RecruitMainMediator:initResultView()
 	self._resultMain:removeAllChildren()
 	self._resultMain:setVisible(false)
@@ -149,7 +45,7 @@ function RecruitMainMediator:initResultView()
 	local cardType = self._recruitPool:getType()
 	local showBtnsPanel = true
 
-	if cardType == RecruitPoolType.kGold or cardType == RecruitPoolType.kPve or cardType == RecruitPoolType.kPvp or cardType == RecruitPoolType.kClub or cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	if cardType == RecruitPoolType.kGold or cardType == RecruitPoolType.kPve or cardType == RecruitPoolType.kPvp or cardType == RecruitPoolType.kClub or cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		local itemResult = cc.CSLoader:createNode("asset/ui/RecruitHeroResult.csb")
 
 		itemResult:addTo(self._resultMain):center(self._resultMain:getContentSize())
@@ -157,7 +53,7 @@ function RecruitMainMediator:initResultView()
 		self._itemResult = itemResult:getChildByFullName("diamondResult")
 
 		self._itemResult:setSwallowTouches(false)
-		self._itemResult:getChildByFullName("touchLayer"):setVisible(false)
+		self._itemResult:getChildByFullName("touchLayer"):setVisible(true)
 
 		self._bg = self._itemResult:getChildByFullName("bg")
 		self._cloneNode = self._itemResult:getChildByFullName("cloneNode")
@@ -166,6 +62,9 @@ function RecruitMainMediator:initResultView()
 
 		self._itemPanel = self._itemResult:getChildByFullName("itemPanel")
 		self._btnsPanel = self._itemResult:getChildByFullName("buttons_panel")
+
+		self._btnsPanel:setLocalZOrder(100)
+
 		local rebuyBtn = self._itemResult:getChildByFullName("buttons_panel.rebuy_btn")
 		local sureBtn = self._itemResult:getChildByFullName("buttons_panel.sure_btn")
 		self._rebuyBtn = self:bindWidget(rebuyBtn, OneLevelViceButton, {
@@ -249,7 +148,7 @@ function RecruitMainMediator:initResultView()
 		end
 	end
 
-	local hideAnim = (cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip) and self._realRecruitTimes == 1 or HIDE_RECRUIT_ANIM
+	local hideAnim = (cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip) and self._realRecruitTimes == 1 or HIDE_RECRUIT_ANIM
 
 	if not hideAnim then
 		self._soundId = AudioEngine:getInstance():playEffect("Se_Effect_Card", false)
@@ -293,6 +192,8 @@ function RecruitMainMediator:initResultView()
 
 	if hideAnim then
 		self._showResult()
+
+		self._showResult = nil
 	end
 end
 
@@ -306,7 +207,8 @@ function RecruitMainMediator:refreshBg(heroId)
 			GalleryPartyType.kMNJH,
 			GalleryPartyType.kDWH,
 			GalleryPartyType.kWNSXJ,
-			GalleryPartyType.kSSZS
+			GalleryPartyType.kSSZS,
+			GalleryPartyType.kUNKNOWN
 		}
 		local num = math.random(1, 6)
 		party = partys[num]
@@ -412,6 +314,7 @@ function RecruitMainMediator:showResultAnim(showBtnsPanel)
 
 		if not showBtnsPanel then
 			local callback = cc.CallFunc:create(function ()
+				self:addShare()
 			end)
 
 			self:getView():runAction(cc.Sequence:create(cc.DelayTime:create(0.8), callback))
@@ -461,7 +364,8 @@ function RecruitMainMediator:showOneAnim()
 				local itemConfig = ConfigReader:getRecordById("ItemConfig", itemId)
 				data = {
 					newHero = false,
-					heroId = itemConfig.TargetId.id
+					heroId = itemConfig.TargetId.id,
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -481,7 +385,7 @@ function RecruitMainMediator:showOneAnim()
 				self:refreshBg()
 			end
 		end
-	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		self._itemPanel = self._itemResult:getChildByFullName("itemPanel")
 
 		self._itemPanel:removeAllChildren()
@@ -511,7 +415,8 @@ function RecruitMainMediator:showOneAnim()
 				local itemConfig = ConfigReader:getRecordById("ItemConfig", itemId)
 				data = {
 					newHero = false,
-					heroId = itemConfig.TargetId.id
+					heroId = itemConfig.TargetId.id,
+					fragmentCount = rewardData.amount
 				}
 			elseif recruitRewardType == RecruitRewardType.kHero then
 				local itemId = rewardData.code
@@ -559,7 +464,8 @@ function RecruitMainMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -594,7 +500,7 @@ function RecruitMainMediator:showTenAnim()
 		end
 
 		self:refreshBg(heroId)
-	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip then
+	elseif cardType == RecruitPoolType.kEquip or cardType == RecruitPoolType.kActivityEquip or cardType == RecruitPoolType.kActivityUREquip then
 		self._itemPanel:removeAllChildren()
 		self._itemResult:setVisible(true)
 		self:setButtonAndDesc()
@@ -637,7 +543,8 @@ function RecruitMainMediator:showTenAnim()
 					data = {
 						newHero = false,
 						heroId = itemConfig.TargetId.id,
-						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity")
+						rarity = ConfigReader:getDataByNameIdAndKey("HeroBase", itemConfig.TargetId.id, "Rareity"),
+						fragmentCount = rewardData.amount
 					}
 				elseif recruitRewardType == RecruitRewardType.kHero then
 					local itemId = rewardData.code
@@ -747,17 +654,46 @@ function RecruitMainMediator:createRewardItem(reward, pos, scale)
 		})
 
 		icon:setContentSize(cc.size(110, 110))
-		icon:addTo(itemIconNode)
 		GameStyle:setQualityText(nameText, RewardSystem:getQuality(reward))
-		icon:setAnchorPoint(cc.p(0.5, 0.5))
-		icon:setPositionY(20)
+		icon:setAnchorPoint(cc.p(0.5, 0))
 
 		node.icon = icon
 		icon.ignoreMoveAction = true
+
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+			swallowTouches = true,
+			needDelay = true
+		})
+
+		if RewardSystem:checkIsComposeItem(reward) then
+			local iconNode = ccui.Widget:create()
+
+			iconNode:setContentSize(cc.size(110, 110))
+			iconNode:setScale(1.3)
+
+			local anim = cc.MovieClip:create(kEquipRarityAnim[15])
+
+			anim:addEndCallback(function ()
+				anim:stop()
+			end)
+			anim:addTo(iconNode, -1):center(iconNode:getContentSize())
+			anim:offset(9, -3)
+
+			local equipNode = anim:getChildByFullName("equipNode")
+			local iconNode1 = equipNode:getChildByFullName("icon")
+
+			icon:addTo(iconNode1):setPositionY(-55)
+			iconNode:addTo(itemIconNode)
+			iconNode:setAnchorPoint(cc.p(0.5, 0))
+			iconNode:setPositionY(0)
+		else
+			icon:addTo(itemIconNode)
+			icon:setPositionY(-40)
+		end
+
 		local scale = scale or 1
 
 		icon:setScale(scale)
-		nameText:setPositionY(-icon:getContentSize().height * scale / 2 - 1)
 
 		node.tag = "ITEM"
 
@@ -816,11 +752,9 @@ function RecruitMainMediator:createRewardHero(data, pos, adjustZoom, rewardData,
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
 	local roleAnim = anim:getChildByFullName("roleAnim")
 	local roleNode = roleAnim:getChildByFullName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = roleModel,
-		size = cc.size(245, 336)
+	local realImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = roleModel
 	})
 
 	realImage:addTo(roleNode)
@@ -970,7 +904,8 @@ function RecruitMainMediator:showNewHeroView(heroArr, animFrame)
 				heroId = id,
 				callback = callback,
 				newHero = newHero,
-				animFrame = animFrame
+				animFrame = animFrame,
+				fragmentCount = data.fragmentCount
 			}))
 		end
 	else
@@ -998,14 +933,18 @@ function RecruitMainMediator:setupCostView()
 		self._costText:setString(Strings:get("Recruit_Free"))
 		self._costText:setPositionX(0)
 	else
-		local text = "x" .. count
-
 		self._costIconNode:setVisible(true)
 
 		local costIcon = self._costIconNode:getChildByFullName("icon_img")
 
 		if costIcon then
 			costIcon:removeFromParent()
+		end
+
+		if costId == "IM_DiamondDraw" and not self._bagSystem:checkCostEnough(costId, 1) then
+			costId = CurrencyIdKind.kDiamond
+			local price = count == 1 and DrawCard_SinglePrice or DrawCard_TenTimesPrice
+			count = count * price
 		end
 
 		costIcon = IconFactory:createPic({
@@ -1017,7 +956,7 @@ function RecruitMainMediator:setupCostView()
 		costIcon:setScale(0.46)
 		costIcon:addTo(self._costIconNode):setName("icon_img")
 		self._costText:setPositionX(20)
-		self._costText:setString(text)
+		self._costText:setString("x" .. count)
 		self._costIconNode:setPositionX(-self._costText:getContentSize().width / 2 - 5)
 	end
 end
@@ -1094,7 +1033,7 @@ function RecruitMainMediator:onClickRebuy(sender, eventType)
 
 	if bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif costId == CurrencyIdKind.kDiamondDrawItem or costId == CurrencyIdKind.kDiamondDrawURItem then
 		self:buyCard(costId, costCount, param)
 	else
 		self._resultMain:removeAllChildren()

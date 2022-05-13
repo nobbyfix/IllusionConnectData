@@ -1,24 +1,41 @@
 loginTag = "/gsapi/game/login"
 vmsDefaultUrl = ""
 ServerMarkType = {
-	kClose = 4,
 	kRecommend = 2,
 	kHot = 3,
-	kNew = 1
+	kNew = 1,
+	kClose = 4,
+	kNone = 0
+}
+ServerMarkTagBgNames = {
+	[ServerMarkType.kNew] = "asset/common/common_bg_xin.png",
+	[ServerMarkType.kRecommend] = "asset/common/common_bg_tj.png",
+	[ServerMarkType.kHot] = "asset/common/common_bg_man.png",
+	[ServerMarkType.kClose] = "asset/common/common_bg_man.png"
+}
+ServerMarkTagStringNames = {
+	[ServerMarkType.kNew] = "LOGIN_UI24",
+	[ServerMarkType.kRecommend] = "LOGIN_UI25",
+	[ServerMarkType.kHot] = "LOGIN_UI26",
+	[ServerMarkType.kClose] = "LOGIN_UI23"
+}
+ServerMarkTagOutlineStyle = {
+	[ServerMarkType.kNew] = cc.c4b(29, 87, 21, 255),
+	[ServerMarkType.kRecommend] = cc.c4b(87, 63, 21, 255),
+	[ServerMarkType.kHot] = cc.c4b(87, 29, 21, 255),
+	[ServerMarkType.kClose] = cc.c4b(87, 29, 21, 255)
 }
 ServerState = {
-	kRed = 2,
 	kClose = 4,
-	kGray = 3,
-	kGreen = 0,
+	kNew = 2,
+	kMaintain = 3,
 	kNormal = 1
 }
 ServerStateImgNames = {
-	[ServerState.kGreen] = "denglu_img_02.png",
+	[ServerState.kNew] = "denglu_img_02.png",
 	[ServerState.kNormal] = "denglu_img_02.png",
-	[ServerState.kRed] = "denglu_img_03.png",
-	[ServerState.kGray] = "denglu_img_01.png",
-	[ServerState.kClose] = "denglu_img_03.png"
+	[ServerState.kMaintain] = "denglu_img_03.png",
+	[ServerState.kClose] = "denglu_img_01.png"
 }
 ServerInfo = class("ServerInfo")
 
@@ -44,7 +61,7 @@ ServerInfo:has("_markType", {
 	is = "rw"
 })
 ServerInfo:has("_state", {
-	is = "r"
+	is = "rw"
 })
 ServerInfo:has("_dailyLoginTimes", {
 	is = "rw"
@@ -97,6 +114,9 @@ ServerInfo:has("_regLimit", {
 ServerInfo:has("_isNewRecommend", {
 	is = "r"
 })
+ServerInfo:has("_tag", {
+	is = "r"
+})
 
 function ServerInfo:initialize()
 	super.initialize(self)
@@ -108,7 +128,7 @@ function ServerInfo:initialize()
 	self._registerFull = 0
 	self._onlineFull = 0
 	self._registerRecommend = 0
-	self._state = ServerState.kGreen
+	self._state = ServerState.kNormal
 	self._recommend = 0
 	self._nickName = ""
 	self._lastLoginTime = 0
@@ -117,6 +137,7 @@ function ServerInfo:initialize()
 	self._diamond = 0
 	self._regLimit = false
 	self._isNewRecommend = 0
+	self._tag = 0
 end
 
 function ServerInfo:sync(data)
@@ -153,13 +174,17 @@ function ServerInfo:sync(data)
 	end
 
 	if data.maintain and data.maintain == 1 then
-		self._state = ServerState.kGray
-	elseif data.registerFull then
-		self._state = data.registerFull
+		self._state = ServerState.kMaintain
+	elseif data.registerFull and data.registerFull == 2 then
+		self._state = ServerState.kClose
 	end
 
 	if data.recommend then
 		self._recommend = data.recommend
+	end
+
+	if data.recommend2 ~= nil then
+		self._recommend = data.recommend2
 	end
 
 	if data.logoutTs then
@@ -218,6 +243,14 @@ function ServerInfo:sync(data)
 		self._isNewRecommend = data.isNewRecommend
 	end
 
+	if data.tag then
+		self._tag = data.tag
+	end
+
+	if self:getTag() == ServerMarkType.kNew then
+		self._state = ServerState.kNew
+	end
+
 	if self:getRegLimit() then
 		self._state = ServerState.kClose
 	end
@@ -255,6 +288,9 @@ Login:has("_secNamesMap", {
 Login:has("_serverTime", {
 	is = "r"
 })
+Login:has("_sdkIdForAnnounce", {
+	is = "r"
+})
 
 TEST_SERVER = {
 	{
@@ -280,6 +316,7 @@ function Login:initialize()
 	self._secNamesMap = nil
 	self._serverTime = 0
 	self._serverIndexArr = {}
+	self._sdkIdForAnnounce = "dpstorm"
 end
 
 function Login:sync(data)
@@ -306,10 +343,18 @@ function Login:sync(data)
 		self._serverTime = data.time
 	end
 
+	if data and data.sdkData and data.sdkData.sdkId then
+		self._sdkIdForAnnounce = data.sdkData.sdkId
+	end
+
 	if secListData then
 		self._curServer = nil
 
 		table.sort(secListData, function (a, b)
+			if a.open_time == b.open_time then
+				return a.sec < b.sec
+			end
+
 			return a.open_time < b.open_time
 		end)
 
@@ -328,16 +373,15 @@ function Login:sync(data)
 				table.insert(self._serverIndexArr, serverIndex)
 			end
 
+			serverInfo:setMarkType(serverInfo:getTag())
+
 			local state = serverInfo:getState()
 
-			if state ~= ServerState.kGray and state ~= ServerState.kClose and (serverInfo:getRecommend() == 1 or index == #secListData and state ~= ServerState.kRed or index == #secListData - 1 and serverInfo:getRegisterRecommend() == 1) then
-				serverInfo:setMarkType(ServerMarkType.kRecommend)
-
+			if state ~= ServerState.kMaintain and state ~= ServerState.kClose and (serverInfo:getRecommend() == 1 or serverInfo:getTag() == ServerMarkType.kRecommend or serverInfo:getTag() == ServerMarkType.kNew or index == #secListData - 1 and serverInfo:getRegisterRecommend() == 1) then
 				self._recommendList[#self._recommendList + 1] = serverInfo
 			elseif serverInfo:getRegLimit() and not serverInfo:getHeadId() then
+				serverInfo:setState(ServerState.kClose)
 				serverInfo:setMarkType(ServerMarkType.kClose)
-			elseif state == ServerState.kRed then
-				serverInfo:setMarkType(ServerMarkType.kHot)
 			end
 		end
 

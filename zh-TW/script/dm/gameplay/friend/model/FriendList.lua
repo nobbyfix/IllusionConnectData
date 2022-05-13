@@ -1,8 +1,9 @@
 kFriendType = {
-	kRecent = 2,
 	kFind = 3,
 	kGame = 1,
-	kApply = 4
+	kApply = 4,
+	kBlack = 5,
+	kRecent = 2
 }
 
 require("dm.gameplay.friend.model.Friend")
@@ -25,6 +26,9 @@ FriendList:has("_recentData", {
 	is = "rw"
 })
 FriendList:has("_friendApplyCount", {
+	is = "rw"
+})
+FriendList:has("_addTimes", {
 	is = "rw"
 })
 
@@ -80,6 +84,10 @@ function FriendList:syncFriendInfo(data)
 	if data.sendTimes then
 		self._sendTimes = data.sendTimes.value
 	end
+
+	if data.addTimes then
+		self._addTimes = data.addTimes.value
+	end
 end
 
 function FriendList:getFriendByRid(friendType, rid)
@@ -96,12 +104,42 @@ function FriendList:getFriendList(friendType)
 	return self._friendListMap[friendType]
 end
 
+function FriendList:getOnlineFriendList(friendType)
+	local friends = {}
+
+	for i = 1, #self._friendListMap[friendType] do
+		local friendData = self._friendListMap[friendType][i]
+
+		if friendData:getOnline() ~= false then
+			if friendData:getOnline() ~= 0 then
+				table.insert(friends, friendData)
+			end
+		end
+	end
+
+	return friends
+end
+
 function FriendList:getFriendCount(friendType)
 	return self._friendCountMap[friendType]
 end
 
 function FriendList:getMaxFriendsCount()
 	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "Friend_MaxAmount", "content")
+end
+
+function FriendList:getMaxApplyFriendsCount()
+	local config = ConfigReader:getDataByNameIdAndKey("Reset", "Friend_add", "ResetSystem")
+
+	return config and config.setValue
+end
+
+function FriendList:getMaxFindFriendsCount()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "Friend_Apply_MaxAmount", "content")
+end
+
+function FriendList:getBlockFriendsCount()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "Blacklist_MaxAmount", "content")
 end
 
 function FriendList:updateFriendCount(friendType, changeCount)

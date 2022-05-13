@@ -45,9 +45,11 @@ function GuideText:setupView(data)
 
 	local textbg1 = view:getChildByName("textbg1")
 	local textbg2 = view:getChildByName("textbg2")
+	local textbg3 = view:getChildByName("textbg3")
 
 	textbg1:setVisible(false)
 	textbg2:setVisible(false)
+	textbg3:setVisible(false)
 
 	local fontHight = contentText:getContentSize().height
 
@@ -57,6 +59,18 @@ function GuideText:setupView(data)
 	else
 		textbg1:setVisible(true)
 		contentText:setPositionY(textbg1:getPositionY() - 18)
+	end
+
+	if fontHight > 80 then
+		textbg1:setVisible(false)
+		textbg2:setVisible(false)
+
+		local bgSize = textbg3:getContentSize()
+
+		textbg3:setContentSize(cc.size(bgSize.width, fontHight + 80))
+		textbg3:setVisible(true)
+		contentText:setAnchorPoint(cc.p(0, 1))
+		contentText:setPositionY(textbg3:getPositionY() + 15)
 	end
 
 	local dir = data.dir or SHOW_DIR.UP_L

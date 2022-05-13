@@ -84,8 +84,7 @@ function CarnivalMediator:activityClose(event)
 end
 
 function CarnivalMediator:enterWithData()
-	self._model = self._activitySystem:getActivityByType("Carnival")
-	self._actId = self._model:getId()
+	self._model = self._activitySystem:getActivityById("Carnival")
 
 	self:setupView()
 end
@@ -100,12 +99,8 @@ function CarnivalMediator:setupView()
 	self._score = self._main:getChildByName("score")
 	self._safeTouchPanel = view:getChildByName("safeTouchPanel")
 	local countdownNode = self._main:getChildByName("remainTime")
-	local countdownWidget = self:bindWidget(countdownNode, ActivityRemainTimeWidget)
-	local data = {
-		activityId = self._actId
-	}
 
-	countdownWidget:updateTime(data)
+	countdownNode:setVisible(false)
 
 	local rarityAnim = cc.MovieClip:create("ssr_yingxiongxuanze")
 
@@ -117,24 +112,6 @@ function CarnivalMediator:setupView()
 	self:refreshScoreInfo()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshState)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
-
-	if self._actId == "CarnivalEx" then
-		self._main:getChildByName("titlePanel"):setVisible(false)
-
-		local text = ccui.Text:create(Strings:get("Carnival_Title_Text3"), CUSTOM_TTF_FONT_1, 32)
-
-		text:setTextColor(cc.c3b(255, 251, 216))
-		text:enableOutline(cc.c3b(34, 34, 34), 2)
-		text:setAnchorPoint(cc.p(0, 0))
-		text:addTo(self._main)
-		text:setPosition(cc.p(472.5, 575))
-
-		local titleImage = self._main:getChildByName("Image_96")
-		local imageName = self._model:getActivityConfig().Title
-
-		titleImage:ignoreContentAdaptWithSize(true)
-		titleImage:loadTexture(imageName .. ".png", ccui.TextureResType.plistType)
-	end
 end
 
 function CarnivalMediator:initHeroPanel()
@@ -155,9 +132,9 @@ function CarnivalMediator:initHeroPanel()
 	talkPanel:setLocalZOrder(2)
 
 	local activityConfig = self._model:getConfig().ActivityConfig
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = activityConfig.ModelId
 	})
 	self._sharedSpine = spineani
@@ -494,11 +471,15 @@ function CarnivalMediator:initScorePanel()
 			if rewards then
 				local hideAnim = v.Shine and v.Shine == 0 or false
 				local rewardIcon = IconFactory:createRewardIcon(rewards[1], {
+					isWidget = true,
 					hideAnim = hideAnim
 				})
 
 				rewardIcon:setScaleNotCascade(0.45)
 				rewardIcon:addTo(iconBg):center(iconBg:getContentSize())
+				IconFactory:bindTouchHander(rewardIcon, IconTouchHandler:new(self), rewards[1], {
+					needDelay = true
+				})
 			end
 
 			iconBg.score = v.Num
@@ -513,7 +494,7 @@ function CarnivalMediator:initScorePanel()
 
 			mapButtonHandlerClick(nil, iconBg, {
 				func = callFunc
-			})
+			}, nil, true)
 
 			self._scoreWidget[#self._scoreWidget + 1] = widget
 			local isRewardReceived = self._model:isScoreRewardReceived(v.Num)
@@ -728,7 +709,7 @@ function CarnivalMediator:onClickGift(sender, reward)
 	local isRewardReceived = self._model:isScoreRewardReceived(sender.score)
 
 	if sender.score <= totalScore and isRewardReceived == false then
-		local activityId = self._actId
+		local activityId = "Carnival"
 		local param = {
 			doActivityType = 101,
 			targetNum = sender.score
@@ -824,7 +805,7 @@ function CarnivalMediator:onClickReceive(subActivityId, taskId)
 		taskId = taskId
 	}
 
-	self._activitySystem:requestDoChildActivity(self._actId, subActivityId, param, function (response)
+	self._activitySystem:requestDoChildActivity("Carnival", subActivityId, param, function (response)
 		if checkDependInstance(self) then
 			self:onGetTaskRewardCallback(response)
 		end
@@ -832,7 +813,7 @@ function CarnivalMediator:onClickReceive(subActivityId, taskId)
 end
 
 function CarnivalMediator:doReset()
-	local model = self._activitySystem:getActivityByType("Carnival")
+	local model = self._activitySystem:getActivityById("Carnival")
 
 	if not model then
 		self:dismiss()
@@ -866,14 +847,45 @@ function CarnivalMediator:onClickPlayStory()
 		local storyId = groupConfig.story
 		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 		local storyAgent = storyDirector:getStoryAgent()
+		local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 
-		storyAgent:play(storyId, nil, )
-	else
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:get("Carnival_Story_Unlock")
-		}))
+		local function endCallback()
+			local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
+			local customKey = self._model:getId() .. "_story"
+			local customData = customDataSystem:getValue(PrefixType.kGlobal, customKey)
+			local id_first = 0
+
+			if not customData then
+				id_first = 1
+			end
+
+			local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+			local statisticsData = storyAgent:getStoryStatisticsData(storyId)
+
+			StatisticSystem:send({
+				type = "plot_end",
+				op_type = "plot_activity",
+				point = "plot_end",
+				activityid = self._model:getTitle(),
+				plot_id = storyId,
+				plot_name = Strings:get(group:getDesc()),
+				id_first = id_first,
+				totaltime = endTs - startTs,
+				detail = statisticsData.detail,
+				amount = statisticsData.amount,
+				misc = statisticsData.misc
+			})
+		end
+
+		storyAgent:play(storyId, nil, endCallback)
+
+		return
 	end
+
+	self:dispatch(ShowTipEvent({
+		duration = 0.2,
+		tip = Strings:get("Carnival_Story_Unlock")
+	}))
 end
 
 function CarnivalMediator:onClickBack(sender, eventType)
@@ -890,7 +902,7 @@ function CarnivalMediator:getRewardIconAndAmount(rewardInfo, scale)
 			local config = ConfigReader:getRecordById("Surface", id)
 
 			if config and config.Id then
-				local icon = IconFactory:createRoleIconSprite({
+				local icon = IconFactory:createRoleIconSpriteNew({
 					id = config.Model
 				})
 

@@ -140,9 +140,11 @@ function FriendPvpWinMediator:setupView()
 	lostHeadIcon:addTo(self._loserIconBg):center(self._loserIconBg:getContentSize())
 
 	local winnerMasterId = winnerInfo.master[1]
-	local defMasterModel = ConfigReader:getDataByNameIdAndKey("MasterBase", winnerMasterId, "RoleModel")
+	local masterSystem = self._developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(winnerMasterId)
+	model = masterData:getModel()
 
-	self:createMvpHeros(defMasterModel)
+	self:createMvpHeros(model)
 end
 
 function FriendPvpWinMediator:createMvpHeros(defMasterModel)
@@ -204,6 +206,11 @@ function FriendPvpWinMediator:createMvpHeros(defMasterModel)
 		heroAnim:addTo(self._heroPanel)
 		heroAnim:setScale(0.75)
 		heroAnim:setPosition(pos[1][1])
+
+		if master[1].model == "Model_LFKLFTe_DGun" then
+			heroAnim:setScale(0.35)
+			heroAnim:offset(-270, 40)
+		end
 	else
 		local showHeroNum = math.min(#heroes, 5)
 

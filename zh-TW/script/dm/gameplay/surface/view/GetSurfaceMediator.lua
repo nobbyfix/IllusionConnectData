@@ -10,14 +10,14 @@ GetSurfaceMediator:has("_surfaceSystem", {
 local kHandlerBtn = {}
 local heroRect = "asset/heroRect/heroRarity/"
 local kHeroRarityBg1 = {
-	[15] = heroRect .. "hero_rarity_bg_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_sr.png",
 	[12] = heroRect .. "hero_rarity_bg_r.png",
 	[11] = heroRect .. "hero_rarity_bg_r.png"
 }
 local kHeroRarityBg2 = {
-	[15] = heroRect .. "hero_rarity_bg_1_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_1_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[12] = heroRect .. "hero_rarity_bg_1_r.png",
@@ -147,14 +147,13 @@ function GetSurfaceMediator:showResult(data)
 			end)
 
 			local roleNode = heroAnim:getChildByName("roleNode")
-			local realImage = IconFactory:createRoleIconSprite({
+			local realImage = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust6",
+				frameId = "bustframe9",
 				id = surface:getModel()
 			})
 
-			realImage:setAnchorPoint(0.5, 0.5)
-			realImage:addTo(roleNode)
+			realImage:addTo(roleNode):posite(100, 70)
 			heroAnim:addTo(heroNode)
 			heroAnim:setPosition(cc.p(-10, -123))
 		end
@@ -178,7 +177,9 @@ function GetSurfaceMediator:showResult(data)
 	local descNode = anim:getChildByName("descNode")
 
 	soundDesc:changeParent(descNode)
-	soundDesc:setPosition(cc.p(-180, 70))
+	soundDesc:setPosition(cc.p(-180, 56))
+	soundDesc:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+	soundDesc:setTextAreaSize(cc.size(385, 85))
 
 	local partyNode = anim:getChildByName("partyNode")
 

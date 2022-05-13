@@ -90,6 +90,7 @@ function BuildingInfoMediator:refreshView()
 	})
 
 	buildingDecorate:setBuildingInfo(self._roomId, self._buildingId, self._id)
+	buildingDecorate:setIsInRoom(false)
 	buildingDecorate:enterWithData()
 
 	local skinConfig = ConfigReader:getRecordById("VillageBuildingSurface", skinId)

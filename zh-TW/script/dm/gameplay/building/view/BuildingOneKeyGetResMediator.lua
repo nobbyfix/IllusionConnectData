@@ -119,6 +119,10 @@ function BuildingOneKeyGetResMediator:initCurrencyPos()
 		end
 	end
 
+	if not topView then
+		return
+	end
+
 	local parentView = topView:getChildByFullName("currencyinfo_node.currency_bar_4")
 	local targetNode = parentView:getChildByName("icon_node")
 	local goldPos = parentView:convertToWorldSpace(cc.p(targetNode:getPositionX(), targetNode:getPositionY()))
@@ -402,6 +406,13 @@ function BuildingOneKeyGetResMediator:setupTips()
 	local tips = ConfigReader:getDataByNameIdAndKey("ConfigValue", "OreCollectRule", "content")
 	local panelSize = self._tipsPanel:getContentSize()
 	local space = 18
+	local localLanguage = getCurrentLanguage()
+
+	if localLanguage ~= GameLanguageType.CN then
+		space = 5
+	end
+
+	local positionY = 18
 
 	for i = 1, #tips do
 		local str = Strings:get(tips[i])
@@ -413,6 +424,27 @@ function BuildingOneKeyGetResMediator:setupTips()
 		text:setAnchorPoint(cc.p(0, 1))
 
 		local prewText = self._tipsPanel:getChildByTag(i - 1)
+
+		if prewText then
+			local topPosY = prewText:getPositionY() - prewText:getContentSize().height
+
+			text:setPosition(cc.p(10, topPosY - space))
+		else
+			text:setPosition(cc.p(10, panelSize.height - 15))
+		end
+
+		positionY = positionY + text:getContentSize().height + 18
+	end
+
+	if panelSize.height < positionY then
+		panelSize.height = positionY
+
+		self._tipsPanel:setContentSize(panelSize)
+	end
+
+	for i = 1, #tips do
+		local prewText = self._tipsPanel:getChildByTag(i - 1)
+		local text = self._tipsPanel:getChildByTag(i)
 
 		if prewText then
 			local topPosY = prewText:getPositionY() - prewText:getContentSize().height
@@ -631,30 +663,32 @@ function BuildingOneKeyGetResMediator:onClickGetRes()
 			}, delegate))
 
 			for k, v in ipairs(rewards) do
-				local mcName = mcName[v.code]
+				local name = mcName[v.code]
 				local endPos = topCurrencyPos[v.code]
 
 				for i = 1, 10 do
-					local mc = cc.MovieClip:create(mcName)
+					local mc = cc.MovieClip:create(name)
 
-					mc:setScale(0.55)
-					mc:addTo(view, 10)
-					mc:setPosition(cc.p(568, 320))
+					if mc and endPos then
+						mc:setScale(0.55)
+						mc:addTo(view, 10)
+						mc:setPosition(cc.p(568, 320))
 
-					local random1 = math.random(40, 110)
-					local random2 = math.random(1, 2)
-					local randomTime = math.random(1, 100)
-					local dis = nil
+						local random1 = math.random(40, 110)
+						local random2 = math.random(1, 2)
+						local randomTime = math.random(1, 100)
+						local dis = nil
 
-					if random2 == 1 then
-						dis = random1
-					else
-						dis = -random1
+						if random2 == 1 then
+							dis = random1
+						else
+							dis = -random1
+						end
+
+						performWithDelay(mc, function ()
+							calcQuadraticAction(568, 320, dis, mc, 1, endPos.x, endPos.y)
+						end, randomTime / 100)
 					end
-
-					performWithDelay(mc, function ()
-						calcQuadraticAction(568, 320, dis, mc, 1, endPos.x, endPos.y)
-					end, randomTime / 100)
 				end
 			end
 		end, self._curCardCount)

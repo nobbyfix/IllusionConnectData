@@ -26,9 +26,21 @@ end
 function ActivityStageUnFinishMediator:enterWithData(data)
 	self._data = data
 	self._activity = self._activitySystem:getActivityById(self._data.activityId)
-	self._model = self._activity:getSubActivityById(self._data.subActivityId)
-	self._pointId = self._data.pointId
-	self._point = self._model:getPointById(self._pointId)
+	self._model = self._activity:getSubActivityById(self._data.subActivityId) or data.model
+
+	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		local params = data.params
+		self._mapId = params.type
+		self._sortId = params.mapId
+		self._pointId = params.pointId
+		self._sort = self._model:getPointById(self._sortId)
+		self._point = self._sort:getPointById(self._pointId)
+		self._notShowStar = true
+	else
+		self._pointId = self._data.pointId
+		self._mapId = self._data.mapId
+		self._point = self._model:getPointById(self._pointId, self._mapId)
+	end
 
 	AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Lose")
 	self:initWidget()
@@ -43,31 +55,67 @@ function ActivityStageUnFinishMediator:enterWithData(data)
 	end
 end
 
+function ActivityStageUnFinishMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityStageUnFinishMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
 function ActivityStageUnFinishMediator:checkResumeActionPoint()
 	local resumeNode = self:getView():getChildByFullName("content.resumePowerNode")
 
 	resumeNode:setOpacity(0)
+	resumeNode:setVisible(true)
 
-	local info = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", self._pointId, "StaminaBack")
+	local info = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._pointId, "StaminaBack")
+	local cost = ConfigReader:getDataByNameIdAndKey("ActivityBlockBattle", self._pointId, "StaminaCostAgain")
 
-	if info then
-		local countText = resumeNode:getChildByName("resume")
+	local function showBack(...)
+		if info then
+			resumeNode:setVisible(true)
 
-		for k, v in pairs(info) do
-			countText:setString("+" .. v)
-			countText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+			local countText = resumeNode:getChildByName("resume")
 
-			local icon = IconFactory:createPic({
-				id = k
-			})
+			for k, v in pairs(info) do
+				countText:setString("+" .. v)
+				countText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
-			icon:setScale(2)
-			icon:addTo(resumeNode, -1):setPosition(cc.p(750, 378))
+				local icon = IconFactory:createPic({
+					id = k
+				})
 
-			break
+				icon:setScale(2)
+				icon:addTo(resumeNode, -1):setPosition(cc.p(750, 378))
+
+				break
+			end
+
+			resumeNode:runAction(cc.Sequence:create(cc.DelayTime:create(0.25), cc.FadeIn:create(0.2)))
+		else
+			resumeNode:setVisible(false)
 		end
+	end
 
-		resumeNode:runAction(cc.Sequence:create(cc.DelayTime:create(0.25), cc.FadeIn:create(0.2)))
+	local pass = self._point:isPass()
+
+	if pass then
+		if cost == 1 then
+			showBack()
+		else
+			resumeNode:setVisible(false)
+		end
+	else
+		showBack()
 	end
 end
 
@@ -101,7 +149,7 @@ function ActivityStageUnFinishMediator:refreshView()
 
 	self:initSvpRole()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(-200, -200))
 	anim:gotoAndPlay(1)
 
 	local action1 = cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.1))
@@ -115,10 +163,19 @@ end
 
 function ActivityStageUnFinishMediator:initSvpRole()
 	local team = self._model:getTeam()
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
-	local svpSprite = IconFactory:createRoleIconSprite({
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
+
+	if self:getOwnMasterId(self._data.pointId) then
+		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
+	end
+
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -175,6 +232,10 @@ function ActivityStageUnFinishMediator:onClickEquip()
 	}
 
 	BattleLoader:popBattleView(self, data, view)
+end
+
+function ActivityStageUnFinishMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function ActivityStageUnFinishMediator:onTouchLayout(sender, eventType)

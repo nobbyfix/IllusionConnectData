@@ -54,6 +54,8 @@ function FightStatisticPopMediator:onRegister()
 	})
 
 	self._playerId = self:getInjector():getInstance("DevelopSystem"):getPlayer():getRid()
+
+	self:getView():getChildByFullName("tips"):setPositionX(560)
 end
 
 function FightStatisticPopMediator:enterWithData(data)
@@ -118,10 +120,13 @@ end
 
 function FightStatisticPopMediator:processData()
 	self._statistic = {}
+	self._statistic_map = {}
 	local summonId = {}
 	self._allDmg = 0
 	self._allReceiveDamage = 0
 	self._allCure = 0
+
+	dump(self._playData.unitSummary, "self._playData.unitSummary", 4)
 
 	for k, v in pairs(self._playData.unitSummary) do
 		for _, id in ipairs(v.summoned) do
@@ -131,6 +136,7 @@ function FightStatisticPopMediator:processData()
 
 	for k, v in pairs(self._playData.unitSummary) do
 		if not table.indexof(summonId, k) then
+			local uniqKey = v.cid .. v.model
 			local _tab = {
 				id = k,
 				dmg = v.damage or 0,
@@ -142,19 +148,36 @@ function FightStatisticPopMediator:processData()
 
 			for _, sumId in ipairs(v.summoned) do
 				local _data = self._playData.unitSummary[sumId]
-				local dmg = _data.damage or 0
-				local receiveDamage = _data.receiveDamage or 0
-				local cure = _data.cure or 0
-				_tab.dmg = _tab.dmg + dmg
-				_tab.receiveDamage = _tab.receiveDamage + receiveDamage
-				_tab.cure = _tab.cure + cure
+
+				if _data then
+					local dmg = _data.damage or 0
+					local receiveDamage = _data.receiveDamage or 0
+					local cure = _data.cure or 0
+					_tab.dmg = _tab.dmg + dmg
+					_tab.receiveDamage = _tab.receiveDamage + receiveDamage
+					_tab.cure = _tab.cure + cure
+				end
 			end
 
 			_tab.dmg = math.ceil(_tab.dmg)
 			_tab.receiveDamage = math.ceil(_tab.receiveDamage)
 			_tab.cure = math.ceil(_tab.cure)
-			self._statistic[#self._statistic + 1] = _tab
+
+			if self._statistic_map[uniqKey] then
+				self._statistic_map[uniqKey].liveTime = self._statistic_map[uniqKey].liveTime + _tab.liveTime
+				self._statistic_map[uniqKey].dmg = self._statistic_map[uniqKey].dmg + _tab.dmg
+				self._statistic_map[uniqKey].receiveDamage = self._statistic_map[uniqKey].receiveDamage + _tab.receiveDamage
+				self._statistic_map[uniqKey].cure = self._statistic_map[uniqKey].cure + _tab.cure
+			else
+				self._statistic_map[uniqKey] = _tab
+			end
+
+			self._statistic_map[uniqKey] = _tab
 		end
+	end
+
+	for k, v in pairs(self._statistic_map) do
+		self._statistic[#self._statistic + 1] = v
 	end
 
 	for k, v in ipairs(self._statistic) do
@@ -162,6 +185,8 @@ function FightStatisticPopMediator:processData()
 		self._allReceiveDamage = self._allReceiveDamage + v.receiveDamage
 		self._allCure = self._allCure + v.cure
 	end
+
+	dump(self._statistic, "self._statistic", 4)
 
 	self._sortType = sortType.dmage
 
@@ -352,30 +377,24 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 	rootPanel:setTouchEnabled(false)
 	rootPanel:setSwallowTouches(false)
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = _rawData.model
 	})
-	heroImg = IconFactory:addStencilForIcon(heroImg, 4, cc.size(102, 104), {
+
+	heroImg:setScale(0.5)
+
+	heroImg = IconFactory:addStencilForIcon(heroImg, 4, cc.size(104, 104), {
 		0,
-		-15
+		0
 	})
 
-	heroImg:setPosition(cc.p(63, 69))
+	heroImg:setPosition(cc.p(63, 68))
 	heroImg:setName("HeroIcon")
 	heroImg:addTo(rootPanel)
 
 	local rarity = _rawData.rarity
 
 	if rarity > 11 and rarity < 15 then
-		local rarityImg = ccui.ImageView:create()
-
-		rarityImg:setRotation(-7)
-		rarityImg:setScale(0.6)
-		rarityImg:setAnchorPoint(cc.p(0, 0.5))
-		rarityImg:setPosition(cc.p(9, 105))
-		rarityImg:addTo(rootPanel)
-		rarityImg:loadTexture(GameStyle:getHeroRarityImage(rarity), 1)
-
 		local quality = nil
 
 		if not _rawData.quality then
@@ -389,19 +408,6 @@ function FightStatisticPopMediator:createSmallIcon(heroId)
 
 		qualityBg:addTo(rootPanel, -1)
 		qualityBg:setPosition(cc.p(63, 69))
-
-		local costImg = ccui.ImageView:create(IconFactory.battleQuaIndexPath, 1)
-
-		costImg:setScale(0.4)
-		costImg:setPosition(cc.p(112, 100))
-		costImg:addTo(rootPanel)
-
-		local costLabel = cc.Label:createWithTTF(_rawData.cost, TTF_FONT_FZYH_M, 24)
-
-		costLabel:setTextColor(GameStyle:getColor(1))
-		costLabel:enableOutline(cc.c4b(20, 20, 20, 204), 2)
-		costLabel:setPosition(cc.p(111, 103))
-		costLabel:addTo(rootPanel)
 	else
 		local qualityBg = ccui.ImageView:create("asset/itemRect/common_pz_huang.png")
 

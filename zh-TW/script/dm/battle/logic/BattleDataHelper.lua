@@ -3,11 +3,19 @@ BattleDataHelper = BattleDataHelper or {}
 function BattleDataHelper:getIntegralBattleData(data)
 	local playerData = data.playerData
 	local enemyData = data.enemyData
+	local leadStageLevel_l = playerData.master.leadStageLevel
+	local leadStageLevel_r = enemyData.master.leadStageLevel
+	local leadStageId_l = playerData.master.leadStageId
+	local leadStageId_r = enemyData.master.leadStageId
 	data.playerData = BattleDataHelper:getIntegralPlayerData(playerData)
 	data.enemyData = BattleDataHelper:getIntegralPlayerData(enemyData, true)
 	local refreshCost = ConfigReader:getRecordById("ConfigValue", "TacticsCard_Reload").content
 	data.playerData.refreshCost = refreshCost
 	data.enemyData.refreshCost = refreshCost
+	data.playerData.leadStageId = leadStageId_l
+	data.enemyData.leadStageId = leadStageId_r
+	data.playerData.leadStageLevel = leadStageLevel_l
+	data.enemyData.leadStageLevel = leadStageLevel_r
 
 	return data
 end
@@ -56,7 +64,8 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 					masterRage = summonData.MasterRage,
 					flags = flags,
 					genre = summonData.Type,
-					extraSurFace = summonData.SummonSurface
+					extraSurFace = summonData.SummonSurface,
+					sex = summonData.Sex or 0
 				}
 				summon[#summon + 1] = summonInfo
 				summonInfo.skills = {}
@@ -80,12 +89,31 @@ function BattleDataHelper:fillSummonData(summon, skillData, protoFactory, summon
 				end
 
 				if summonData.UniqueSkill and summonData.UniqueSkill ~= "" then
-					summonInfo.skills.unique = {
-						skillId = summonData.UniqueSkill,
-						level = skillData.level
-					}
+					if string.find(summonData.UniqueSkill, "|") and string.find(summonData.UniqueSkill, "|") > 0 then
+						summonInfo.skills.unique = {}
+						local uniques = string.split(summonData.UniqueSkill, "|")
+						local index = 1
 
-					self:fillSkillData(summonInfo.skills.unique, protoFactory)
+						for k, v in pairs(uniques) do
+							if v and v ~= "" then
+								summonInfo.skills["master" .. index] = {
+									skillId = v,
+									level = skillData.level
+								}
+
+								self:fillSkillData(summonInfo.skills["master" .. index], protoFactory)
+							end
+
+							index = index + 1
+						end
+					else
+						summonInfo.skills.unique = {
+							skillId = summonData.UniqueSkill,
+							level = skillData.level
+						}
+
+						self:fillSkillData(summonInfo.skills.unique, protoFactory)
+					end
 				end
 
 				if summonData.DoubleSkill and summonData.DoubleSkill ~= "" then
@@ -171,6 +199,16 @@ function BattleDataHelper:getIntegralPlayerData(playerData, isEnemy)
 		playerData.cards = cards
 	end
 
+	local extraCards2 = playerData.extraCards2
+
+	if extraCards2 then
+		for idx, card in ipairs(extraCards2) do
+			extraCards2[idx] = self:fillCardData(card, playerData.rid, "c", idx, isEnemy, summon, summonMap)
+		end
+
+		playerData.extraCards2 = extraCards2
+	end
+
 	local heros = playerData.heros
 
 	if heros then
@@ -232,7 +270,37 @@ function BattleDataHelper:getIntegralPlayerData(playerData, isEnemy)
 		end
 	end
 
+	self:fillAttackEffect(playerData)
+
 	return playerData
+end
+
+function BattleDataHelper:fillAttackEffect(playerData)
+	local function attachAttckEffect(target)
+		local allkeys = ConfigReader:getKeysOfTable("Surface")
+
+		for k, v in pairs(allkeys) do
+			local model = ConfigReader:getDataByNameIdAndKey("Surface", v, "Model")
+
+			if model == target.modelId then
+				target.attackEffect = ConfigReader:getDataByNameIdAndKey("Surface", v, "AnimeList")
+			end
+		end
+	end
+
+	for k, v in pairs(playerData.waves or {}) do
+		if v.master then
+			attachAttckEffect(v.master)
+		end
+
+		for k, v in pairs(v.heros or {}) do
+			attachAttckEffect(v)
+		end
+	end
+
+	for k, v in pairs(playerData.cards or {}) do
+		attachAttckEffect(v.hero)
+	end
 end
 
 function BattleDataHelper:dealWithTransform(master, summon, summonMap)
@@ -285,6 +353,24 @@ function BattleDataHelper:dealWithSkills(skills, summon, summonMap)
 	end
 
 	local protoFactory = PrototypeFactory:getInstance()
+
+	for name, config in pairs(skills) do
+		if name == "passive" or name == "extrapasv" then
+			for i, cfg in ipairs(config) do
+				if type(cfg) == "userdata" then
+					config[i] = nil
+				end
+			end
+
+			local ret = {}
+
+			for k, v in pairs(config) do
+				ret[#ret + 1] = v
+			end
+
+			skills[name] = ret
+		end
+	end
 
 	for name, config in pairs(skills) do
 		if name == "passive" then
@@ -344,11 +430,33 @@ function BattleDataHelper:fillHeroData(hero, rid, waveStr, idx, isEnemy, summon,
 		else
 			hero.surfaceIndex = 0
 		end
+
+		hero.sex = self:getSex("EnemyHero", hero)
 	else
 		hero.surfaceIndex = self:getSufaceIndex("HeroBase", hero)
+		hero.sex = self:getSex("HeroBase", hero)
 	end
 
+	hero.sheilUplimit = self:getSheilUpLimit("Shield_UpLimit_Pets")
+
 	return hero
+end
+
+function BattleDataHelper:getSex(HeroTag, hero)
+	local sex = ConfigReader:getDataByNameIdAndKey(HeroTag, hero.cid, "Sex")
+	sex = sex or 0
+
+	return sex
+end
+
+function BattleDataHelper:getSheilUpLimit(ruleKey)
+	local sheilUp = ConfigReader:getDataByNameIdAndKey("ConfigValue", ruleKey, "content")
+
+	if sheilUp and sheilUp ~= "" then
+		return sheilUp
+	end
+
+	return nil
 end
 
 function BattleDataHelper:getSufaceIndex(HeroTag, hero)
@@ -414,6 +522,34 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		playerData.tactics = tactics
 	end
 
+	if master.extraTactics then
+		local tactics = {}
+		local protoFactory = PrototypeFactory:getInstance()
+
+		for idx, tactic in ipairs(master.extraTactics) do
+			local config = ConfigReader:getRecordById("TacticsCard", tactic)
+			local data = {
+				id = tactic,
+				targetType = config.Type,
+				skillPic = config.SkillPic,
+				cost = config.SkillCost,
+				skill = {
+					level = 1,
+					skillId = config.Skill
+				},
+				weight = config.Weight,
+				autoWeight = config.AutoWeight
+			}
+
+			self:fillSkillData(data.skill, protoFactory)
+			self:fillSummonData(summon, data.skill, protoFactory, summonMap)
+
+			tactics[#tactics + 1] = data
+		end
+
+		playerData.extraTactics = tactics
+	end
+
 	self:dealWithTransform(master, summon, summonMap)
 
 	if master.attrs then
@@ -438,9 +574,19 @@ function BattleDataHelper:fillMasterData(master, playerData, waveStr, isEnemy, s
 		else
 			master.surfaceIndex = 0
 		end
+
+		master.sex = self:getSex("EnemyMaster", master)
 	else
 		master.surfaceIndex = self:getSufaceIndex("MasterBase", master)
+		master.sex = self:getSex("MasterBase", master)
 	end
+
+	if master.leadStageId and master.leadStageId ~= "" then
+		local data = ConfigReader:getRecordById("MasterLeadStage", master.leadStageId)
+		master.modelId = data.ModelId
+	end
+
+	master.sheilUplimit = self:getSheilUpLimit("Shield_UpLimit_Master")
 end
 
 local function deepCopy(desc, src)
@@ -461,6 +607,87 @@ function BattleDataHelper:addExtraPasvSkill(unit, skill, enemyBuff)
 	local protoFactory = PrototypeFactory:getInstance()
 	unit.skills.extrapasv = unit.skills.extrapasv or {}
 	unit.skills.extrapasv[#unit.skills.extrapasv + 1] = self:fillSkillData(deepCopy({}, skill), protoFactory, enemyBuff)
+end
+
+function BattleDataHelper:getStagePassiveSkill(playerData)
+	local playerShow = {
+		showMasterSkill = true
+	}
+
+	if playerData then
+		local waves = playerData.waves or {}
+		local cards = playerData.cards or {}
+
+		for index, wave in ipairs(waves) do
+			local master = wave.master
+
+			if master then
+				local masterPassive = master.skills and master.skills.passive or {}
+				local masterBuffes = playerData.skillBuff and playerData.skillBuff or {}
+				local masterSkill = {}
+				local stageBuffes = {}
+
+				if master.leadStageId and master.leadStageId ~= "" then
+					local leaderStagePass = ConfigReader:getDataByNameIdAndKey("MasterLeadStage", master.leadStageId, "Skill")
+
+					if leaderStagePass and leaderStagePass.Skill then
+						for k, v in pairs(leaderStagePass.Skill) do
+							masterSkill[v] = k
+						end
+					end
+
+					if leaderStagePass and leaderStagePass.Attr then
+						for k, v in pairs(leaderStagePass.Attr) do
+							stageBuffes[v] = k
+						end
+					end
+				end
+
+				for k, v in pairs(masterBuffes) do
+					local buffId = k
+					local buffLv = v
+
+					if stageBuffes[buffId] then
+						playerShow[#playerShow + 1] = {
+							master = true,
+							id = buffId,
+							lv = buffLv,
+							index = #playerShow + 1
+						}
+					end
+				end
+
+				for k, v in pairs(masterPassive) do
+					local skillId = v.skillId
+					local skillLv = v.level
+					local showInbattle = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "ShowInBattle")
+					showInbattle = true
+
+					if showInbattle and masterSkill[skillId] then
+						playerShow[#playerShow + 1] = {
+							master = true,
+							id = skillId,
+							lv = skillLv,
+							index = masterSkill[skillId]
+						}
+					end
+				end
+			end
+
+			playerShow.leadStageLevel = master.leadStageLevel
+			playerShow.leadStageId = master.leadStageId
+		end
+	end
+
+	if not playerShow or not playerShow.leadStageLevel or playerShow.leadStageLevel <= 0 then
+		playerShow = nil
+	end
+
+	if not playerShow or not playerShow.leadStageId or playerShow.leadStageId == "" then
+		playerShow = nil
+	end
+
+	return playerShow
 end
 
 function BattleDataHelper:getPassiveSkill(playerData)
@@ -493,6 +720,7 @@ function BattleDataHelper:getPassiveSkill(playerData)
 					local skillId = v.skillId
 					local skillLv = v.level
 					local showInbattle = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "ShowInBattle")
+					showInbattle = true
 
 					if showInbattle and masterSkill[skillId] then
 						playerShow[#playerShow + 1] = {
@@ -707,6 +935,12 @@ function BattleDataHelper:fillEnemyCostData(data)
 	if heroCfg then
 		data.heroCost = heroCfg.Cost
 	else
+		local enemyCfg = ConfigReader:getRecordById("EnemyHero", data.id)
+
+		if enemyCfg then
+			data.enemyCost = enemyCfg.EnergyCost
+		end
+
 		data.heroCost = -1
 	end
 end

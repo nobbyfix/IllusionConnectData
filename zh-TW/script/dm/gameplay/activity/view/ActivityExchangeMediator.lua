@@ -47,8 +47,13 @@ function ActivityExchangeMediator:setupView()
 	self._cloneCell:setVisible(false)
 
 	self._taskList = self._activity:getSortExchangeList()
+	local endTime = ConfigReader:getDataByNameIdAndKey("Activity", "VTExtraNormal_20200412_0420", "TimeFactor")
+	local remoteTime = TimeUtil:formatStrToRemoteTImestamp(endTime["end"])
+	local localDate = TimeUtil:localDate("%Y-%m-%d  %H:%M:%S", remoteTime)
 
-	self._descPanel:setString(Strings:get(self._activity:getDesc()))
+	self._descPanel:setString(Strings:get(self._activity:getDesc(), {
+		time = localDate
+	}))
 	self._descPanel:getVirtualRenderer():setLineSpacing(2)
 
 	self._iconClone = self:getView():getChildByName("iconPanel")
@@ -65,14 +70,15 @@ function ActivityExchangeMediator:setupView()
 
 	local activityConfig = self._activity:getActivityConfig()
 	local heroPanel = self._main:getChildByName("heroPanel")
+	local modelId = activityConfig.ModelId
 
-	heroPanel:getChildByFullName("Image_33"):setVisible(not activityConfig.ModelId)
+	heroPanel:getChildByFullName("Image_33"):setVisible(not modelId)
 
-	if activityConfig.ModelId then
+	if modelId and modelId ~= "no" then
 		local roleModel = activityConfig.ModelId
-		local heroSprite = IconFactory:createRoleIconSprite({
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -84,6 +90,16 @@ function ActivityExchangeMediator:setupView()
 			heroSprite:setScale(0.8)
 			heroSprite:setPosition(cc.p(480, 160))
 		end
+
+		local param = activityConfig.ModelIdOffset
+
+		if param and param.scale then
+			heroSprite:setScale(param.scale)
+		end
+
+		if param and param.pos then
+			heroSprite:setPosition(cc.p(param.pos[1], param.pos[2]))
+		end
 	end
 
 	heroPanel:setTouchEnabled(true)
@@ -91,19 +107,41 @@ function ActivityExchangeMediator:setupView()
 		self:setBubleView(KBubleEnterStatus.ClickHero)
 	end)
 
-	local activityConfig = self._activity:getActivityConfig()
+	local topIcon = self._main:getChildByName("Image_9")
+	local taskTopUI = activityConfig.TaskTopUI
 
-	if activityConfig and activityConfig.TaskTopUI then
-		self._main:getChildByName("Image_9"):loadTexture(activityConfig.TaskTopUI .. ".png", ccui.TextureResType.plistType)
+	if taskTopUI then
+		topIcon:loadTexture(taskTopUI .. ".png", ccui.TextureResType.plistType)
+		topIcon:ignoreContentAdaptWithSize(true)
 	end
 
-	if activityConfig and activityConfig.TaskBgUI then
-		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. activityConfig.TaskBgUI .. ".jpg")
+	local taskTopUIPos = activityConfig.TaskTopUIPos
+
+	if taskTopUIPos and taskTopUIPos.x and taskTopUIPos.y then
+		topIcon:setPosition(cc.p(taskTopUIPos.x, taskTopUIPos.y))
+	end
+
+	local taskBgUI = activityConfig.TaskBgUI
+
+	if taskBgUI then
+		self._main:getChildByName("Image_18"):loadTexture("asset/scene/" .. taskBgUI .. ".jpg")
+	end
+
+	local taskCellBg = activityConfig.TaskCellBg
+
+	if taskCellBg then
+		self._cloneCell:getChildByName("Image_15"):loadTexture(taskCellBg .. ".png", ccui.TextureResType.plistType)
+	end
+
+	local taskCellArrow = activityConfig.TaskCellArrow
+
+	if taskCellArrow then
+		self._cloneCell:getChildByName("arrow"):loadTexture(taskCellArrow .. ".png", ccui.TextureResType.plistType)
 	end
 
 	self:createTableView()
 	self:setBubleView(KBubleEnterStatus.FirstEnter)
-	self:setTimer()
+	self:setTimer1()
 end
 
 function ActivityExchangeMediator:setBubleView(status)
@@ -360,12 +398,12 @@ end
 function ActivityExchangeMediator:clickTipPanel(data, view, click)
 	local rid = self._developSystem:getPlayer():getRid()
 	local key = "ActivityExchange_" .. self._activity:getId() .. "_" .. rid .. "_" .. data.index
+	local default = true
 
 	if data.config.isRemind == 0 then
-		-- Nothing
+		default = false
 	end
 
-	local default = true
 	local value = cc.UserDefault:getInstance():getBoolForKey(key, default)
 
 	if click then
@@ -444,4 +482,9 @@ function ActivityExchangeMediator:setTimer()
 
 		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 	end
+end
+
+function ActivityExchangeMediator:setTimer1()
+	self._refreshPanel:setVisible(true)
+	self._refreshTime:setString(self._activity:getTimeStr1())
 end

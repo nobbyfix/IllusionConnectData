@@ -221,6 +221,8 @@ function WaitingView:createWidget(type)
 		tipText:setColor(cc.c3b(255, 255, 255))
 		tipText:enableOutline(cc.c4b(0, 0, 0, 127), 1)
 		tipText:addTo(bg):center(bg:getContentSize()):offset(0, 0):setName("tip_text")
+		tipText:setOverflow(cc.LabelOverflow.SHRINK)
+		tipText:setDimensions(bg:getContentSize().width - 10, bg:getContentSize().height - 10)
 
 		self._tipText = tipText
 

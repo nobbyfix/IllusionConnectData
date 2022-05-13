@@ -142,12 +142,17 @@ function ActivityStageCommonCell:setCellState(selectPointId, id)
 	self._storyPointPanel:getChildByName("light"):setVisible(selectPointId == id)
 
 	if selectPointId == id then
-		local label = ccui.Text:create(self._getRewardStr, TTF_FONT_FZYH_R, 18)
+		if #self._rewards > 0 then
+			local label = ccui.Text:create(self._getRewardStr, TTF_FONT_FZYH_R, 18)
 
-		label:setTextColor(cc.c3b(255, 255, 255))
-		label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
-		label:setPosition(127, 8)
-		label:addTo(self._img)
+			label:setTextColor(cc.c3b(255, 255, 255))
+			label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+			label:setPosition(127, 8)
+			label:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			label:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+			label:getVirtualRenderer():setDimensions(100, 38)
+			label:addTo(self._img)
+		end
 
 		local rewardNodes = {}
 

@@ -39,16 +39,40 @@ end
 function BFieldTLInterpreter:act_AddTrap(action, args)
 	self:dealWithTrapEft(args.eft)
 
+	self._mainPlayerSide = self._context:getValue("IsTeamAView")
+	self._mainPlayerId = self._context:getValue("CurMainPlayerId")
+	local isLeft = true
 	local cellId = args.cellId
+	isLeft = (self._mainPlayerSide and cellId > 0 or not self._mainPlayerSide and cellId < 0) and true or false
+
+	if isLeft then
+		cellId = math.abs(cellId)
+	else
+		cellId = -math.abs(cellId)
+	end
+
 	local cell = self._battleGround:getCellById(cellId)
 
-	cell:addTrap(args)
+	cell:addTrap(args, isLeft)
 end
 
 function BFieldTLInterpreter:act_RmTrap(action, args)
 	self:dealWithTrapEft(args.eft)
 
 	local cellId = args.cellId
+
+	if self._mainPlayerSide and cellId > 0 or not self._mainPlayerSide and cellId < 0 then
+		isLeft = true
+	else
+		isLeft = false
+	end
+
+	if isLeft then
+		cellId = math.abs(cellId)
+	else
+		cellId = -math.abs(cellId)
+	end
+
 	local cell = self._battleGround:getCellById(cellId)
 
 	cell:removeTrap(args)

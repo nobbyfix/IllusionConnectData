@@ -1,6 +1,8 @@
 BattleShowQueue = class("BattleShowQueue", objectlua.Object, _M)
 local battleShowType = {
 	bossShow = "bossShow",
+	masterShow = "masterShow",
+	battleItem = "battleItem",
 	heroShow = "heroShow"
 }
 
@@ -21,6 +23,29 @@ function BattleShowQueue:addHeroShow(heroShow)
 	}
 
 	self:show()
+end
+
+function BattleShowQueue:addMasterShow(friend, enemy)
+	self._queue[#self._queue + 1] = {
+		friendMaster = friend,
+		enemyMaster = enemy,
+		showType = battleShowType.masterShow
+	}
+
+	self:show()
+end
+
+function BattleShowQueue:addBattleItemShow(data, handler)
+	if data.extraCards2 and #data.extraCards2 > 0 or data.extraTactics and #data.extraTactics > 0 then
+		self._queue[#self._queue + 1] = {
+			extraCards = data.extraCards2,
+			tactics = data.extraTactics,
+			handler = handler,
+			showType = battleShowType.battleItem
+		}
+
+		self:show()
+	end
 end
 
 function BattleShowQueue:addFirstBossShow()
@@ -67,6 +92,14 @@ function BattleShowQueue:show()
 				self._mainMediator:showHero(infoFirst.id)
 			elseif infoFirst.showType == battleShowType.bossShow then
 				self._mainMediator:showBossCome(infoFirst.paseSta)
+			elseif infoFirst.showType == battleShowType.masterShow then
+				self._mainMediator:showMaster(infoFirst.friendMaster, infoFirst.enemyMaster)
+			elseif infoFirst.showType == battleShowType.battleItem then
+				delayCallByTime(100, function ()
+					if not DisposableObject:isDisposed(self) then
+						self._mainMediator:showBattleItem(infoFirst)
+					end
+				end)
 			end
 		end
 	end

@@ -33,7 +33,15 @@ function PushSystem:listen()
 	self:listenClubBossKilledCode()
 	self:listenClubBossTVTipCode()
 	self:listenClubBossHurtCode()
+	self:listenClubBossBattleStartCode()
+	self:listenClubBossBattleEndCode()
+	self:listenCommonTipsCode()
+	self:listenClubHouseChange()
+	self:listenClubApplyAgreeEnd()
+	self:listenCooperateBoss()
+	self:listenFriendStateChanged()
 	self:listenRTPK()
+	self:listenHistoryRankChange()
 end
 
 function PushSystem:listenLoginByOthers()
@@ -97,6 +105,26 @@ function PushSystem:listenWelfareCode()
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Setting_Welfare_ERROR5")
 			}))
+		elseif status == 20001 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Setting_Welfare_ERROR_1")
+			}))
+		elseif status == 20002 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Setting_Welfare_ERROR_2")
+			}))
+		elseif status == 20005 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Setting_Welfare_ERROR_5")
+			}))
+		elseif status == 20008 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Setting_Welfare_ERROR_8")
+			}))
+		elseif status == 20009 then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Setting_Welfare_ERROR_9")
+			}))
 		elseif status == 20010 then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Setting_Welfare_ERROR10")
@@ -148,8 +176,6 @@ end
 
 function PushSystem:listenFriendCountChange()
 	self._pushService:listenFriendCountChange(function (response)
-		dump(response, "response-_________listenFriendCountChange")
-
 		local friendSystem = self:getInjector():getInstance(FriendSystem)
 
 		if response.type == 1 then
@@ -161,6 +187,7 @@ function PushSystem:listenFriendCountChange()
 			}))
 		end
 
+		self:dispatch(Event:new(EVT_COOPERATE_BOSS_FRIEND_CHANGE))
 		friendSystem._friendService:requestFriendsMainInfo({}, false)
 	end)
 end
@@ -226,8 +253,139 @@ function PushSystem:listenClubBossHurtCode()
 	end)
 end
 
+function PushSystem:listenClubBossBattleStartCode()
+	self._pushService:listenClubBossBattleStartCode(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubBossBattleStartCode(response)
+	end)
+end
+
+function PushSystem:listenClubBossBattleEndCode()
+	self._pushService:listenClubBossBattleEndCode(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubBossBattleEndCode(response)
+	end)
+end
+
+function PushSystem:listenCommonTipsCode()
+	self._pushService:listenCommonTipsCode(function (response)
+		if response and response.transCode then
+			self:dispatch(ShowTipEvent({
+				duration = 0.3,
+				tip = Strings:get(tostring(response.transCode))
+			}))
+		end
+	end)
+end
+
+function PushSystem:listenClubHouseChange()
+	self._pushService:listenClubHouseChange(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubHouseChange(response)
+	end)
+end
+
+function PushSystem:listenClubApplyAgreeEnd()
+	self._pushService:listenClubApplyAgreeEnd(function (response)
+		local clubSystem = self:getInjector():getInstance(ClubSystem)
+
+		clubSystem:listenClubApplyAgreeEnd(response)
+	end)
+end
+
+function PushSystem:listenCooperateBoss()
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_TRIGGER, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_INVITE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_AGREE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_REFUSE, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_BEGIN, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_BATTLE_OVER, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_ESCAPED, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_DEAD, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_ENTERROOM, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+	self._pushService:listenCooperateBoss(kCooperateBossListen.COOPERATE_BOSS_LEAVEROOM, function (code, response)
+		local cooperateBossSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		cooperateBossSystem:listenCooperateBoss(code, response)
+	end)
+end
+
+function PushSystem:listenFriendStateChanged()
+	self._pushService:listenFriendLogin(function (code, response)
+		self:dispatch(Event:new(EVT_FRIEND_LOGIN))
+	end)
+	self._pushService:listenFriendLogout(function (code, response)
+		self:dispatch(Event:new(EVT_FRIEND_LOGOUT))
+	end)
+end
+
 function PushSystem:listenRTPK()
 	local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
 
 	RTPKSystem:listen()
+end
+
+function PushSystem:listenHistoryRankChange()
+	self._pushService:listenHistoryRankChange(function (response)
+		if response and response.sceneType then
+			if response.sceneType == "rtpk" then
+				local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+				local unlock, tips = systemKeeper:isUnlock("RTPK")
+
+				if unlock then
+					local RTPKSystem = self:getInjector():getInstance(RTPKSystem)
+
+					RTPKSystem:requestRTPKInfo(nil, false)
+				end
+			elseif response.sceneType == "stage_arena" then
+				local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+				local unlock, tips = systemKeeper:isUnlock("StageArena")
+
+				if unlock then
+					local leadStageSystem = self:getInjector():getInstance(LeadStageArenaSystem)
+
+					leadStageSystem:requestGetSeasonInfo(nil, false)
+				end
+			end
+		end
+	end)
 end

@@ -20,6 +20,12 @@ GallerySystem:has("_dateOptions", {
 GallerySystem:has("_customDataSystem", {
 	is = "rw"
 }):injectWith("CustomDataSystem")
+GallerySystem:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
+GallerySystem:has("_curDate", {
+	is = "rw"
+})
 
 function GallerySystem:initialize()
 	super.initialize(self)
@@ -53,21 +59,15 @@ function GallerySystem:tryEnter(param)
 
 	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
-	local view = self:getInjector():getInstance("GalleryMainView")
+	local function callback()
+		local view = self:getInjector():getInstance("GalleryBookView")
 
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil))
-end
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil))
+	end
 
-function GallerySystem:showLegendRule()
-	local rules = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HerosLegendRule", "content")
-	local view = self:getInjector():getInstance("ArenaRuleView")
-	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		rule = rules
-	}, nil)
+	self._bagSystem = self._developSystem:getBagSystem()
 
-	self:dispatch(event)
+	self._bagSystem:mainInfoURSuite(callback)
 end
 
 function GallerySystem:getPartyArray()
@@ -539,6 +539,12 @@ function GallerySystem:checkIsShowRedPoint()
 		return true
 	end
 
+	self._bagSystem = self._developSystem:getBagSystem()
+
+	if self._bagSystem:getURMapRedPoint() then
+		return true
+	end
+
 	return false
 end
 
@@ -576,7 +582,7 @@ function GallerySystem:checkNewMemoryId(type, id)
 	end
 
 	if type == GalleryMemoryType.STORY then
-		return false
+		return self:getActivityStoryRedPoint(id)
 	end
 
 	local time = self:getLastViewTimeOfMemory(type)
@@ -604,7 +610,7 @@ function GallerySystem:checkNewMemoryByType(type)
 	end
 
 	if type == GalleryMemoryType.STORY then
-		return false
+		return self:getStoryPackRedPoint()
 	end
 
 	return false
@@ -710,9 +716,20 @@ function GallerySystem:checkCanGetHeroReward(partyId)
 
 	for key, v in pairs(partyMap) do
 		local heroIds = v:getHeroIds()
+		local specialHeroIds = self:getAlbumFeminineHeroForRareityString(v:getPartyId())
 
 		for i = 1, #heroIds do
 			local heroId = heroIds[i]
+			local hero = heroSystem:getHeroById(heroId)
+			local canGet = not heroRewards[heroId]
+
+			if hero and canGet then
+				return true
+			end
+		end
+
+		for i = 1, #specialHeroIds do
+			local heroId = specialHeroIds[i]
 			local hero = heroSystem:getHeroById(heroId)
 			local canGet = not heroRewards[heroId]
 
@@ -729,10 +746,21 @@ function GallerySystem:checkCanGetHeroRewardById(partyId)
 	local partyMap = self:getPartyMap()
 	local heroRewards = self:getHeroRewards()
 	local heroIds = partyMap[partyId]:getHeroIds()
+	local specialHeroIds = self:getAlbumFeminineHeroForRareityString(partyMap[partyId]:getPartyId())
 	local heroSystem = self._developSystem:getHeroSystem()
 
 	for i = 1, #heroIds do
 		local heroId = heroIds[i]
+		local canGet = not heroRewards[heroId]
+		local hero = heroSystem:getHeroById(heroId)
+
+		if hero and canGet then
+			return true
+		end
+	end
+
+	for i = 1, #specialHeroIds do
+		local heroId = specialHeroIds[i]
 		local canGet = not heroRewards[heroId]
 		local hero = heroSystem:getHeroById(heroId)
 
@@ -855,4 +883,182 @@ function GallerySystem:requestGalleryHeroReward(params, callback)
 			self:dispatch(Event:new(EVT_GALLERY_HEROREWARD_SUCC, response))
 		end
 	end)
+end
+
+function GallerySystem:getAlbumFeminineHeroForRareityString(Party)
+	local heroIds = {}
+	local party_Rareity = RareityStringToNumber[Party]
+
+	if party_Rareity then
+		local Hero_Album_Feminine = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Album_Feminine", "content")
+
+		for i = 1, #Hero_Album_Feminine do
+			local rareity = 12
+			local hero = self._developSystem:getHeroSystem():getHeroById(Hero_Album_Feminine[i])
+
+			if hero then
+				rareity = hero:getRarity()
+			end
+
+			if rareity == party_Rareity then
+				heroIds[#heroIds + 1] = Hero_Album_Feminine[i]
+			end
+		end
+	end
+
+	return heroIds
+end
+
+function GallerySystem:getStoryPackRedPoint()
+	return self:getStoryPackRedPointByType(GalleryMemoryPackType.ACTIVI)
+end
+
+function GallerySystem:getStoryPackRedPointByType(type)
+	if type == GalleryMemoryPackType.ACTIVI then
+		return self:checkActivityStoryRedPoint()
+	end
+
+	return false
+end
+
+function GallerySystem:checkActivityStoryRedPoint()
+	local list = self:getMemoriePacksByType(GalleryMemoryPackType.ACTIVI)
+
+	for index, value in pairs(list) do
+		if self:getActivityStoryPackRedPoint(value:getType(), value:getId()) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function GallerySystem:getActivityStoryPackRedPoint(type, packId)
+	local list1, list2 = self:getMemorieStorysById(type, packId)
+
+	for index, story in ipairs(list1) do
+		if self:getActivityStoryRedPoint(story:getId()) then
+			return true
+		end
+	end
+
+	for index, story in ipairs(list2) do
+		if self:getActivityStoryRedPoint(story:getId()) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function GallerySystem:getActivityStoryRedPoint(storyId)
+	return self:getActivityStorySaveStatus(storyId) > 0
+end
+
+function GallerySystem:getActivityStorySaveStatus(storyId)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return 0
+	end
+
+	return cc.UserDefault:getInstance():getIntegerForKey(self:getActivityStoryUserDefaultKey(storyId), 0)
+end
+
+function GallerySystem:setActivityStorySaveStatus(storyId, save)
+	if not storyId then
+		return
+	end
+
+	local userStr = self:getActivityStoryUserDefaultKey(storyId)
+
+	if save then
+		cc.UserDefault:getInstance():setIntegerForKey(userStr, self._gameServerAgent:remoteTimestamp())
+	else
+		cc.UserDefault:getInstance():setIntegerForKey(userStr, 0)
+	end
+end
+
+function GallerySystem:getActivityStoryUserDefaultKey(storyId)
+	local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+	local idStr = string.split(developSystem:getPlayer():getRid(), "_")
+
+	return "ACTIVITY_STORY_REDPOINT_" .. storyId .. idStr[1]
+end
+
+function GallerySystem:getStoryIdByStoryLink(link, pointId)
+	local data = ConfigReader:getDataTable("GalleryMemory")
+
+	for storyId, value in pairs(data) do
+		if value.StoryLink == link then
+			if pointId then
+				if value.Condition[1].params[2] == pointId then
+					return storyId
+				end
+			else
+				return storyId
+			end
+		end
+	end
+
+	return nil
+end
+
+function GallerySystem:isShowSkip()
+	local curDate = self:getCurDate()
+	local heroData = curDate.heroData
+	local storyOption = curDate.storyOption
+	local storyIndex = curDate.storyIndex
+	local lastDate1 = heroData:getLastDate()
+	local lastDate = lastDate1[tostring(storyIndex)] or {}
+
+	if #lastDate < #storyOption then
+		return false
+	end
+
+	local skip = true
+
+	for index, value in ipairs(storyOption) do
+		local v = lastDate[index]
+
+		if v.point ~= value[v.index] then
+			skip = false
+		end
+	end
+
+	return skip
+end
+
+function GallerySystem:getDateOptionsValue()
+	local options = self._dateOptions
+	local curDate = self:getCurDate()
+	local heroData = curDate.heroData
+	local storyOption = curDate.storyOption
+	local storyIndex = curDate.storyIndex
+	local lastDate1 = heroData:getLastDate()
+	local lastDate = lastDate1[tostring(storyIndex)] or {}
+	local opts = {}
+	local loves = 0
+
+	if #options >= #lastDate then
+		opts = options
+
+		for index, optionIndex in ipairs(options) do
+			if storyOption[index] and storyOption[index][optionIndex] then
+				loves = loves + storyOption[index][optionIndex]
+			end
+		end
+	else
+		for index, value in ipairs(lastDate) do
+			if options[index] then
+				opts[index] = options[index]
+				loves = loves + storyOption[index][opts[index]]
+			else
+				opts[index] = value.index
+				loves = loves + value.point
+			end
+		end
+	end
+
+	return opts, loves
 end

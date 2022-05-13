@@ -174,6 +174,9 @@ function PassShopMediator:createCell(cell, index)
 			})
 
 			icon:addTo(icon_layout, -1):center(icon_layout:getContentSize()):setScale(0.7)
+			IconFactory:bindTouchHander(icon_layout, IconTouchHandler:new(self), targetItem, {
+				needDelay = true
+			})
 
 			local nameText = cellpanel:getChildByName("goods_name")
 			local goods_num = cellpanel:getChildByName("goods_num")

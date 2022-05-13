@@ -82,28 +82,3 @@ function exports.ModifyDamage(env, damage, operator, factor)
 
 	return damage
 end
-
-function exports.isPVEBattle(env)
-	local battleSession = env.global["$BattleContext"]:getObject("BattleSession")
-
-	if battleSession and battleSession.getBattleType then
-		local battleType = battleSession:getBattleType()
-		local pveType = {
-			"tower",
-			"explore",
-			"heroStory",
-			"maze",
-			"mazeFinal",
-			"spStage",
-			"stage",
-			"practice",
-			"crusade"
-		}
-
-		if battleType and table.indexof(pveType, battleType) then
-			return true
-		end
-	end
-
-	return false
-end

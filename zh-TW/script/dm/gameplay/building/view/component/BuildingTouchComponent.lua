@@ -177,6 +177,11 @@ function BuildingTouchComponent:dealOnMultiTouchMoved(event)
 				local scrollPos = cc.p(pointNow.x - pointBegin.x + self._scrollViewPosition.x, pointNow.y - pointBegin.y + self._scrollViewPosition.y)
 
 				self._buildingMediator:setScrollViewPosition(scrollPos)
+
+				local decorateComponent = self._buildingMediator._decorateComponent
+
+				decorateComponent:showAllBuilding()
+				decorateComponent:showRoomHeroList()
 			end
 		end
 	end
@@ -378,21 +383,40 @@ function BuildingTouchComponent:refresBuildingOnMoved(buildingInfo, worldPosBegi
 	end
 end
 
-function BuildingTouchComponent:getClickOnHero(roomId, worldPos)
-	local function getAudioName(heroId)
-		local heroSystem = self._developSystem:getHeroSystem()
-		local maxSta = heroSystem:isLoveLevelMax(heroId)
-		local randomNum = math.random(2, 3)
+function BuildingTouchComponent:canCellPutHero(touchHeroInfo)
+	local hero = touchHeroInfo.hero
+	local posNow = hero._pos
+	local heroId = hero._heroId
+	local roomId = self._buildingSystem:getShowRoomId()
+	local room = self._buildingSystem:getRoom(roomId)
+	local building = room:getBuildingByPos(posNow)
 
-		if maxSta then
-			randomNum = math.random(2, 4)
+	local function canPutToBuild(id)
+		local building = room:getBuildingById(id)
+
+		if building and building:canPutHeroSta() then
+			local buildingUi = self._buildingMediator._decorateComponent:getBuilding(roomId, id)
+			local buildingId = building._configId
+			local config = self._buildingSystem:getBuildingConfig(buildingId)
+
+			if config.UseType and config.UseType ~= "" and buildingUi then
+				return true
+			end
 		end
 
-		local audioName = "Voice_" .. heroId .. "_0" .. randomNum
-
-		return audioName
+		return false
 	end
 
+	if building then
+		return canPutToBuild(building._id)
+	elseif room:getHeroIdByPos(heroId, posNow) then
+		return false
+	end
+
+	return true
+end
+
+function BuildingTouchComponent:getClickOnHero(roomId, worldPos)
 	local tiledMapComponent = self._buildingMediator._tiledMapComponent
 	local decorateComponent = self._buildingMediator._decorateComponent
 	local tiledPos = tiledMapComponent:getRoomTiledPos(roomId, worldPos)
@@ -426,7 +450,7 @@ function BuildingTouchComponent:getClickOnHero(roomId, worldPos)
 						AudioEngine:getInstance():stopEffect(self._heroPickUpEffect)
 					end
 
-					local audioName = getAudioName(heroId)
+					local audioName = "Voice_" .. heroId .. "_06"
 					self._heroPickUpEffect = AudioEngine:getInstance():playRoleEffect(audioName, false)
 
 					return info
@@ -450,12 +474,13 @@ function BuildingTouchComponent:getClickOnHero(roomId, worldPos)
 				}
 
 				buildHero:playLiftAction()
+				buildHero:showUnder(true)
 
 				if self._heroPickUpEffect then
 					AudioEngine:getInstance():stopEffect(self._heroPickUpEffect)
 				end
 
-				local audioName = getAudioName(buildHero._heroId)
+				local audioName = "Voice_" .. buildHero._heroId .. "_06"
 				self._heroPickUpEffect = AudioEngine:getInstance():playRoleEffect(audioName, false)
 
 				return info
@@ -483,6 +508,12 @@ function BuildingTouchComponent:refreshHeroOnMoved(worldPosBegin, worldPosEnd)
 			hero:setRoomPosition(posNow)
 
 			self._touchHeroInfo.movedSta = true
+
+			if self:canCellPutHero(self._touchHeroInfo) then
+				hero:showUnder(true)
+			else
+				hero:showUnder(false)
+			end
 		end
 	end
 end
@@ -510,6 +541,7 @@ function BuildingTouchComponent:refreshHeroOnEnd()
 				local heroPutNode = buildingUi._heroPutNode
 
 				hero:getView():changeParent(heroPutNode)
+				hero:resetHeightOffset()
 				hero:switchHeroSta(config.UseType)
 				hero:setBuildPosition(cc.p(buildingPos.x, buildingPos.y), offset)
 				hero:setHeroRotate(rotate)
@@ -545,4 +577,6 @@ function BuildingTouchComponent:refreshHeroOnEnd()
 		hero:setRoomPosition(hero._pos)
 		hero:resetAction()
 	end
+
+	hero:hideUnder()
 end

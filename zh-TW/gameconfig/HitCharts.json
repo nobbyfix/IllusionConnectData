@@ -6,8 +6,8 @@
         "Icon": "js_bd_img_j_mb",
         "Name": "HitCharts_Power",
         "TimeFactor": {
-            "end": "2020-10-16 11:00:00",
-            "start": "2020-10-13 12:00:00"
+            "end": "2030-10-16 11:00:00",
+            "start": "2030-10-13 12:00:00"
         },
         "UI": "POWER"
     },
@@ -18,56 +18,56 @@
         "Icon": "js_bd_img_jbicon",
         "Name": "HitCharts_Gold",
         "TimeFactor": {
-            "end": "2020-10-19 11:00:00",
-            "start": "2020-10-16 12:00:00"
+            "end": "2030-10-19 11:00:00",
+            "start": "2030-10-16 12:00:00"
         },
         "UI": "GOLD"
     },
     "ActivityHitCharts_3": {
-        "Desc_1": "HitCharts_Diamond_Desc_1",
-        "Desc_2": "HitCharts_Diamond_Desc_2",
+        "Desc_1": "HitCharts_Crusade_Desc_1",
+        "Desc_2": "HitCharts_Crusade_Desc_2",
         "HitChartsConfig": "HitChartsRank_3",
-        "Icon": "js_bd_img_j_zs",
-        "Name": "HitCharts_Diamond",
+        "Icon": "",
+        "Name": "HitCharts_Crusade",
         "TimeFactor": {
-            "end": "2020-10-23 11:00:00",
-            "start": "2020-10-20 12:00:00"
+            "end": "2030-10-22 11:00:00",
+            "start": "2030-10-19 12:00:00"
         },
-        "UI": "DIAMOND"
+        "UI": "CRUSADE"
     },
     "ActivityHitCharts_4": {
         "Desc_1": "HitCharts_Diamond_Desc_1",
         "Desc_2": "HitCharts_Diamond_Desc_2",
-        "HitChartsConfig": "HitChartsRank_3",
+        "HitChartsConfig": "HitChartsRank_4",
         "Icon": "js_bd_img_j_zs",
         "Name": "HitCharts_Diamond",
         "TimeFactor": {
-            "end": "2021-10-26 11:00:00",
-            "start": "2021-10-23 12:00:00"
+            "end": "2030-10-26 11:00:00",
+            "start": "2030-10-23 12:00:00"
         },
         "UI": "DIAMOND"
     },
     "ActivityHitCharts_5": {
-        "Desc_1": "HitCharts_Diamond_Desc_1",
-        "Desc_2": "HitCharts_Diamond_Desc_2",
-        "HitChartsConfig": "HitChartsRank_3",
-        "Icon": "js_bd_img_j_zs",
-        "Name": "HitCharts_Diamond",
+        "Desc_1": "HitCharts_Tower_Desc_1",
+        "Desc_2": "HitCharts_Tower_Desc_2",
+        "HitChartsConfig": "HitChartsRank_5",
+        "Icon": "",
+        "Name": "HitCharts_Tower",
         "TimeFactor": {
-            "end": "2021-10-29 11:00:00",
-            "start": "2021-10-26 12:00:00"
+            "end": "2030-10-29 11:00:00",
+            "start": "2030-10-26 12:00:00"
         },
-        "UI": "DIAMOND"
+        "UI": "TOWER"
     },
     "ActivityHitCharts_6": {
         "Desc_1": "HitCharts_Diamond_Desc_1",
         "Desc_2": "HitCharts_Diamond_Desc_2",
-        "HitChartsConfig": "HitChartsRank_3",
+        "HitChartsConfig": "HitChartsRank_6",
         "Icon": "js_bd_img_j_zs",
         "Name": "HitCharts_Diamond",
         "TimeFactor": {
-            "end": "2021-11-02 11:00:00",
-            "start": "2021-10-30 12:00:00"
+            "end": "2030-11-02 11:00:00",
+            "start": "2030-10-30 12:00:00"
         },
         "UI": "DIAMOND"
     }

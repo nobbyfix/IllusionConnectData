@@ -59,7 +59,7 @@ function DebugRTPKAddCount:initialize()
 		{
 			default = 1,
 			name = "code",
-			title = "1挑战2已挑战3连胜4连败 ",
+			title = "1挑战2已挑战3连胜4连败5累积胜场 ",
 			type = "Input"
 		},
 		{
@@ -133,6 +133,20 @@ function RTPKServerMatch:initialize()
 			default = 0,
 			name = "login",
 			title = "登录游戏总人数",
+			type = "Input"
+		}
+	}
+end
+
+RTPKMatchSwitch = class("RTPKMatchSwitch", DebugViewTemplate, _M)
+
+function RTPKMatchSwitch:initialize()
+	self._opType = 408
+	self._viewConfig = {
+		{
+			default = 0,
+			name = "code",
+			title = "1关闭0开启",
 			type = "Input"
 		}
 	}

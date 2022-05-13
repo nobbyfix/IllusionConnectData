@@ -105,7 +105,6 @@ function ShopSurfaceMediator:initMember()
 	self._limitPanel = self._rolePanel0:getChildByFullName("limitPanel")
 
 	self._limitPanel:setVisible(false)
-	self._limitPanel:getChildByFullName("text"):setLineSpacing(-9)
 
 	self._surfaceName = self._rolePanel0:getChildByFullName("surfaceName")
 	self._infoPanel = self._rolePanel1:getChildByFullName("infoPanel")
@@ -120,6 +119,9 @@ function ShopSurfaceMediator:initMember()
 	self._rarity = self._rolePanel1:getChildByFullName("rarity")
 
 	self._rarity:ignoreContentAdaptWithSize(true)
+	self._surfaceName:setString("")
+	self._name:setString("")
+	self._limitPanel:getChildByFullName("time"):setString("")
 
 	local iconLayout = self._cellClone:getChildByFullName("cell.icon_layout")
 	self._posY = iconLayout:getContentSize().height / 2
@@ -275,8 +277,8 @@ function ShopSurfaceMediator:refreshRolePanel()
 	self._roleNode:removeAllChildren()
 
 	local roleModel = self._curSurface:getModel()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -370,7 +372,7 @@ function ShopSurfaceMediator:setInfo(panel, data, index)
 	local times1 = data:getStock()
 
 	if times1 == 0 then
-		self:setMarkImg(panel:getParent(), Strings:get("shop_UI43"))
+		self:setMarkImg(panel, Strings:get("shop_UI43"))
 
 		color = cc.c3b(125, 125, 125)
 	end
@@ -382,11 +384,9 @@ function ShopSurfaceMediator:setInfo(panel, data, index)
 	nameText:setString(name)
 	iconLayout:removeAllChildren()
 
-	local heroImg = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = data:getModel(),
-		size = cc.size(245, 336)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = data:getModel()
 	})
 
 	heroImg:addTo(iconLayout):center(iconLayout:getContentSize())
@@ -522,11 +522,10 @@ function ShopSurfaceMediator:setMarkImg(panel, type)
 		image:addTo(panel):posite(62, 38)
 		image:setName("ImageMark")
 
-		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_R, 18)
+		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 18)
 
 		label:addTo(image):center(image:getContentSize())
 		label:setName("TipMark")
-		label:setColor(cc.c3b(255, 255, 255))
 	end
 
 	image:getChildByFullName("TipMark"):setString(type)

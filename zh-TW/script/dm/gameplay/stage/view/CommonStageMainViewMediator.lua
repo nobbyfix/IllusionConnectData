@@ -11,6 +11,12 @@ CommonStageMainViewMediator:has("_developSystem", {
 CommonStageMainViewMediator:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
+CommonStageMainViewMediator:has("_cooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
+CommonStageMainViewMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local kChapterMapSize = {
 	1620,
@@ -22,7 +28,8 @@ local kChapterMapSize = {
 	1700,
 	2185,
 	2287,
-	2300
+	2300,
+	2181
 }
 local kChapterOffSetL = {
 	1324,
@@ -38,12 +45,14 @@ local kChapterOffSetL = {
 	10317,
 	11400,
 	12140,
-	13390,
-	13445,
-	14400,
-	15100,
+	13290,
+	14045,
+	15500,
 	16200,
-	16600
+	17900,
+	18600,
+	19300,
+	20500
 }
 local kChapterOffSetR = {
 	-10,
@@ -61,13 +70,16 @@ local kChapterOffSetR = {
 	10240,
 	11711,
 	12118,
-	13118,
-	13818,
-	15000,
-	15600
+	13618,
+	14218,
+	16000,
+	16800,
+	19300,
+	20500
 }
 local isOnScroll = false
 local isClose = false
+local EVENT_REFRESH_COOPERATE_STATE = "EVENT_REFRESH_COOPERATE_STATE"
 local kBtnHandlers = {
 	leftBox = {
 		func = "onGoLeft"
@@ -82,6 +94,7 @@ StageMapUI = {
 	chapter5 = "ChapterFiveCell",
 	chapter6 = "ChapterSixCell",
 	chapter3 = "ChapterThreeCell",
+	chapter11 = "ChapterElevenCell",
 	chapter4 = "ChapterFourCell",
 	chapter1 = "ChapterOneCell",
 	chapter2 = "ChapterTwoCell",
@@ -94,6 +107,7 @@ EliteStageMapUI = {
 	chapter5 = "EliteFiveCell",
 	chapter6 = "EliteSixCell",
 	chapter3 = "EliteThreeCell",
+	chapter11 = "EliteElevenCell",
 	chapter4 = "EliteFourCell",
 	chapter1 = "EliteOneCell",
 	chapter2 = "EliteTwoCell",
@@ -118,10 +132,19 @@ function CommonStageMainViewMediator:initialize()
 end
 
 function CommonStageMainViewMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
 function CommonStageMainViewMediator:mapEventListeners()
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_REFRESH_INVITELIST, self, self.refreshInviteListView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_BOSS_INVITE, self, self.refreshInviteListView)
+	self:mapEventListener(self:getEventDispatcher(), EVENT_REFRESH_COOPERATE_STATE, self, self.setupCooperateBossShow)
 end
 
 function CommonStageMainViewMediator:onRegister()
@@ -135,6 +158,12 @@ function CommonStageMainViewMediator:onRegister()
 end
 
 function CommonStageMainViewMediator:onRemove()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.onRemove(self)
 end
 
@@ -179,6 +208,7 @@ function CommonStageMainViewMediator:enterWithData(data)
 	self:createTableView()
 	self:getChapterIndex(false, true)
 	self:initBottomSlider()
+	self:refreshInviteListView()
 
 	if data.chapterId then
 		local chapterIndex = self:getStageSystem():mapId2Index(data.chapterId, data.stageType)
@@ -187,6 +217,18 @@ function CommonStageMainViewMediator:enterWithData(data)
 	end
 
 	self:setupClickEnvs()
+end
+
+function CommonStageMainViewMediator:refreshInviteListView()
+	local state = self._cooperateBossSystem:getcooperateBossState()
+
+	if kCooperateBossState.kStart == state then
+		local function callback()
+			self:dispatch(Event:new(EVENT_REFRESH_COOPERATE_STATE))
+		end
+
+		self._cooperateBossSystem:requestGetInviteInfo(callback)
+	end
 end
 
 function CommonStageMainViewMediator:resumeWithData()
@@ -227,6 +269,7 @@ function CommonStageMainViewMediator:resumeWithData()
 	performWithDelay(self:getView(), function ()
 		bgPanel:removeFromParent(true)
 	end, 0.3)
+	self:setupCooperateBossShow()
 	self:setupClickEnvs()
 end
 
@@ -239,6 +282,10 @@ function CommonStageMainViewMediator:initWidget()
 
 	self._commonBg = self:getView():getChildByName("chapter_commonBg")
 	self._eliteBg = self:getView():getChildByName("chapter_eliteBg")
+
+	self._commonBg:getChildByFullName("Image_1"):loadTexture("asset/scene/main_img_zxxz02.jpg", ccui.TextureResType.localType)
+	self._eliteBg:getChildByFullName("image"):loadTexture("asset/scene/zx_jy_bg.jpg", ccui.TextureResType.localType)
+
 	self._eliteEffectPanel = self._main:getChildByName("eliteEffectPanel")
 
 	self._eliteEffectPanel:setLocalZOrder(999)
@@ -251,6 +298,11 @@ function CommonStageMainViewMediator:initWidget()
 	self._darkBtn = btnImg:getChildByName("type_dark")
 	self._leftBox = self:getView():getChildByName("leftBox")
 	self._rightBox = self:getView():getChildByName("rightBox")
+	self._coopreateBossPanel = self:getView():getChildByName("coopreateBossPanel")
+
+	self._coopreateBossPanel:setSwallowTouches(false)
+	self._coopreateBossPanel:setVisible(false)
+
 	local image = self._eliteBg:getChildByName("image")
 
 	image:setScaleX(self._winSize.width / 1228)
@@ -284,16 +336,6 @@ function CommonStageMainViewMediator:initWidget()
 	hideBtn:setSwallowTouches(false)
 
 	local function hideBtnFunc(sender)
-		sender:setTouchEnabled(false)
-		performWithDelay(self:getView(), function ()
-			local hideNode = self._bottomSlider:getChildByName("hideNode")
-			local bg = self._bottomSlider:getChildByName("bg")
-
-			hideNode:setVisible(false)
-			bg:setVisible(true)
-			sender:setTouchEnabled(true)
-			sender:setSwallowTouches(false)
-		end, 0.6)
 	end
 
 	mapButtonHandlerClick(nil, hideBtn, {
@@ -303,9 +345,46 @@ function CommonStageMainViewMediator:initWidget()
 
 	self._mainSlider = bottomSlider:getChildByFullName("hideNode.mainSlider")
 
+	self._mainSlider:setScale9Enabled(true)
+	self._mainSlider:setCapInsets(cc.rect(43, 2, 32, 2))
+	self._mainSlider:setCapInsetsBarRenderer(cc.rect(1, 1, 1, 1))
+
+	local hideNode = self._bottomSlider:getChildByName("hideNode")
+	local bg = self._bottomSlider:getChildByName("bg")
+
 	self._mainSlider:addEventListener(function (sender, eventType)
 		if eventType == ccui.SliderEventType.percentChanged then
+			hideNode:setVisible(true)
+			bg:setVisible(false)
+			hideNode:setOpacity(255)
+			self._mainSlider:stopAllActions()
+			self._mainSlider:runAction(cc.Sequence:create(cc.DelayTime:create(3), cc.CallFunc:create(function ()
+				hideNode:runAction(cc.Sequence:create(cc.FadeOut:create(0.5)))
+				bg:setVisible(true)
+				self._mainSlider:setTouchEnabled(true)
+			end)))
 			self:onSliderChanged()
+		end
+	end)
+	self._mainSlider:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.began then
+			self._mainSlider:stopAllActions()
+			hideNode:setOpacity(255)
+			self._mainSlider:runAction(cc.Sequence:create(cc.DelayTime:create(3), cc.CallFunc:create(function ()
+				hideNode:runAction(cc.Sequence:create(cc.FadeOut:create(0.5)))
+				bg:setVisible(true)
+				self._mainSlider:setTouchEnabled(true)
+			end)))
+		elseif eventType == ccui.TouchEventType.moved then
+			self._mainSlider:stopAllActions()
+			hideNode:setOpacity(255)
+			self._mainSlider:runAction(cc.Sequence:create(cc.DelayTime:create(3), cc.CallFunc:create(function ()
+				hideNode:runAction(cc.Sequence:create(cc.FadeOut:create(0.5)))
+				bg:setVisible(true)
+				self._mainSlider:setTouchEnabled(true)
+			end)))
+		elseif eventType == ccui.TouchEventType.ended then
+			-- Nothing
 		end
 	end)
 
@@ -465,16 +544,19 @@ function CommonStageMainViewMediator:refreshStageType()
 		darkText[i]:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 	end
 
+	darkText[1]:setPositionX(100)
+	lightText[1]:setPositionX(46)
+
 	if curStageType == StageType.kNormal then
 		self._lightBtn:getChildByName("redPoint"):setVisible(#self._tabElite > 0)
 		self._darkBtn:getChildByName("redPoint"):setVisible(#self._tabNormal > 0)
 		self._commonBg:setVisible(true)
 		self._eliteBg:setVisible(false)
 		self._eliteEffectPanel:setVisible(false)
-		lightText[1]:setString(Strings:get("Stage_Text3"))
-		lightText[2]:setString(Strings:get("Stage_Text4"))
-		darkText[1]:setString(Strings:get("Stage_Text1"))
-		darkText[2]:setString(Strings:get("Stage_Text2"))
+		lightText[1]:setString(Strings:get("Stage_Text3") .. Strings:get("Stage_Text4"))
+		lightText[2]:setString("")
+		darkText[1]:setString(Strings:get("Stage_Text1") .. Strings:get("Stage_Text2"))
+		darkText[2]:setString("")
 	elseif curStageType == StageType.kElite then
 		if self._asyncLoadTexture == false then
 			local pos = {
@@ -504,10 +586,10 @@ function CommonStageMainViewMediator:refreshStageType()
 
 		self._lightBtn:getChildByName("redPoint"):setVisible(#self._tabNormal > 0)
 		self._darkBtn:getChildByName("redPoint"):setVisible(#self._tabElite > 0)
-		lightText[1]:setString(Strings:get("Stage_Text1"))
-		lightText[2]:setString(Strings:get("Stage_Text2"))
-		darkText[1]:setString(Strings:get("Stage_Text3"))
-		darkText[2]:setString(Strings:get("Stage_Text4"))
+		lightText[1]:setString(Strings:get("Stage_Text1") .. Strings:get("Stage_Text2"))
+		lightText[2]:setString("")
+		darkText[1]:setString(Strings:get("Stage_Text3") .. Strings:get("Stage_Text4"))
+		darkText[2]:setString("")
 		self._commonBg:setVisible(false)
 		self._eliteBg:setVisible(true)
 		self._eliteEffectPanel:setVisible(true)
@@ -518,11 +600,16 @@ function CommonStageMainViewMediator:createTableView()
 	local tableView = cc.TableView:create(cc.size(self._winSize.width, self._winSize.height))
 	local hideNode = self._bottomSlider:getChildByName("hideNode")
 	local bg = self._bottomSlider:getChildByName("bg")
+	self._cellNumStageType = self._stageType
+	self._mapCount = self:getChapterIndex(true)
 
 	local function numberOfCells(view)
-		local mapCount = self:getChapterIndex(true)
+		if self._cellNumStageType ~= self._stageType then
+			self._mapCount = self:getChapterIndex(true)
+			self._cellNumStageType = self._stageType
+		end
 
-		return mapCount
+		return self._mapCount
 	end
 
 	local function cellTouched(table, cell)
@@ -579,15 +666,15 @@ function CommonStageMainViewMediator:createTableView()
 		local precess = offX / maxContainerOffX
 
 		self._mainSlider:setPercent(precess * 100)
-		self._mainSlider:setTouchEnabled(false)
+		self:setCurChapterIndex(precess)
 		hideNode:setVisible(true)
 		bg:setVisible(false)
 		self._mainSlider:stopAllActions()
-		self._mainSlider:runAction(cc.Sequence:create(cc.DelayTime:create(0.6), cc.CallFunc:create(function ()
-			hideNode:setVisible(false)
+		hideNode:setOpacity(255)
+		self._mainSlider:runAction(cc.Sequence:create(cc.DelayTime:create(3), cc.CallFunc:create(function ()
+			hideNode:runAction(cc.Sequence:create(cc.FadeOut:create(0.5)))
 			bg:setVisible(true)
 			self._mainSlider:setTouchEnabled(true)
-			self:setCurChapterIndex(precess)
 		end)))
 	end
 
@@ -885,4 +972,202 @@ function CommonStageMainViewMediator:setupClickEnvs()
 	end))
 
 	self:getView():runAction(sequence)
+end
+
+function CommonStageMainViewMediator:setupCooperateBossShow()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	local inviteList = self._coopreateBossPanel:getChildByFullName("inviteList")
+	local mineBoss = self._coopreateBossPanel:getChildByFullName("mineBoss")
+	local leaveTimeLab = self._coopreateBossPanel:getChildByFullName("timePanel.times")
+	local inviteBossShow = self._cooperateBossSystem:checkInviteBossShow()
+	local mineBossShow = self._cooperateBossSystem:checkMineDefaultBossShow()
+
+	self._coopreateBossPanel:setVisible(false)
+	self._coopreateBossPanel:setLocalZOrder(20000)
+
+	local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
+
+	if curTimes then
+		local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
+
+		if curTimes.value <= 0 then
+			leaveTimeLab:setTextColor(cc.c3b(255, 117, 117))
+		else
+			leaveTimeLab:setTextColor(cc.c3b(255, 255, 255))
+		end
+
+		leaveTimeLab:setString(tostring(curTimes.value) .. "/" .. tostring(resetData.max))
+	end
+
+	if inviteBossShow and mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		inviteList:setVisible(true)
+		mineBoss:setVisible(true)
+		mineBoss:setPositionY(-10)
+	elseif not inviteBossShow and mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		mineBoss:setPositionY(340)
+		inviteList:setVisible(false)
+		mineBoss:setVisible(true)
+	elseif inviteBossShow and not mineBossShow then
+		self._coopreateBossPanel:setVisible(true)
+		inviteList:setVisible(true)
+		mineBoss:setVisible(false)
+	end
+
+	if mineBossShow then
+		local bossIcon = mineBoss:getChildByFullName("IconPanel")
+		local bossNameText = mineBoss:getChildByFullName("Name")
+		local bossTimeText = mineBoss:getChildByFullName("Time")
+		local cooperateBoss = self._cooperateBossSystem:getCooperateBoss()
+
+		bossNameText:setString(Strings:get("CooperateBoss_Main_BossLevel", {
+			bossName = cooperateBoss:getRoleModelName(),
+			bossLevel = cooperateBoss:getBossLevel()
+		}))
+
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			id = cooperateBoss:getRoleModelId()
+		})
+
+		heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())
+		heroSprite:setScale(0.4)
+
+		local endTime = cooperateBoss:getBossEndTime()
+
+		local function checkTimeFunc()
+			remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+			local remainTime = endTime - remoteTimestamp
+
+			if remainTime < 0 then
+				mineBoss:setVisible(false)
+
+				if not inviteBossShow then
+					self._coopreateBossPanel:setVisible(false)
+				else
+					self._coopreateBossPanel:setVisible(true)
+				end
+
+				self._timer:stop()
+
+				self._timer = nil
+
+				return
+			end
+
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.hour > 0 then
+				bossTimeText:setString(string.format("%02d", timeTab.hour) .. ":" .. string.format("%02d", timeTab.min) .. ":" .. string.format("%02d", timeTab.sec))
+			else
+				bossTimeText:setString(string.format("%02d", timeTab.min) .. ":" .. string.format("%02d", timeTab.sec))
+			end
+		end
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+		checkTimeFunc()
+		bossIcon:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				self._cooperateBossSystem:enterCooperateBossInviteFriendView(cooperateBoss:getMineBoss().bossId)
+			end
+		end)
+	end
+
+	if inviteBossShow then
+		local cooperateBoss = self._cooperateBossSystem:getCooperateBoss()
+		local inviteInfo = cooperateBoss:getSortInvitedBossIdMap()
+
+		inviteList:removeAllChildren()
+		inviteList:setScrollBarEnabled(false)
+
+		local itemclone = self:getView():getChildByName("inviteBossCellClone")
+
+		itemclone:setVisible(false)
+
+		for i = 1, #inviteInfo do
+			local item = itemclone:clone()
+
+			item:setVisible(true)
+
+			local info = inviteInfo[i]
+			local bossIcon = item:getChildByFullName("invitePanel.role")
+			local bossNameText = item:getChildByFullName("invitePanel.nameDi.name")
+			local bossLvText = item:getChildByFullName("invitePanel.level.text")
+			local playerNameText = item:getChildByFullName("invitePanel.inviteDi.invite")
+			local bg = item:getChildByFullName("Bg")
+
+			playerNameText:setString(info.name)
+			bossNameText:setString(self._cooperateBossSystem:getBossName(info.confId))
+			bossLvText:setString("Lv." .. info.lv)
+
+			local pic, animName = self._cooperateBossSystem:getInviteBossTabImage(info.lv)
+
+			bg:loadTexture(pic, ccui.TextureResType.localType)
+
+			if animName and animName ~= "" then
+				local animNode = item:getChildByFullName("invitePanel")
+
+				animNode:removeChildByName("FrameFX")
+
+				local anim = cc.MovieClip:create(animName)
+
+				anim:addTo(animNode):center(animNode:getContentSize()):offset(0, 5)
+				anim:setName("FrameFX")
+			end
+
+			item:getChildByFullName("invitePanel.info"):setVisible(false)
+
+			local heroSprite = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe13_2",
+				id = cooperateBoss:getRoleModelId(info.confId)
+			})
+
+			heroSprite:addTo(bossIcon):center(bossIcon:getContentSize())
+			item:setTouchEnabled(true)
+
+			local touch = item:getChildByFullName("invitePanel")
+
+			touch:addTouchEventListener(function (sender, eventType)
+				if eventType == ccui.TouchEventType.ended then
+					local bossCreateTime = info.bossCreateTime
+					local bossLeaveTime = info.bossCreateTime + ConfigReader:getDataByNameIdAndKey("CooperateBossMain", info.confId, "Time")
+					local currentTIme = self._gameServerAgent:remoteTimestamp()
+
+					if bossLeaveTime - currentTIme <= 0 then
+						self:dispatch(ShowTipEvent({
+							duration = 0.35,
+							tip = Strings:get("CooperateBoss_AfterBattle_UI05")
+						}))
+						self:refreshInviteListView()
+
+						return
+					end
+
+					local data = {
+						confId = info.confId,
+						bossCreateTime = info.bossCreateTime,
+						bossLevel = info.lv,
+						name = info.name,
+						bossId = info.bossId
+					}
+
+					self._cooperateBossSystem:enterCooperateBossInvite(data)
+				end
+			end)
+			inviteList:pushBackCustomItem(item)
+		end
+	end
 end

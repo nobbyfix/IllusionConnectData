@@ -360,13 +360,13 @@ all.Skill_KXuan_Passive = {
 			local global = _env.global
 
 			if global.FriendMaster(_env) then
-				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 				if _env.units[1] then
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then
 						for _, friendunit in global.__iter__(_env.units) do
 							local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
-							local card = global.BackToCard(_env, friendunit)
+							local card = global.BackToCard_ResultCheck(_env, friendunit, "card")
 
 							if card then
 								global.Kick(_env, friendunit)
@@ -383,6 +383,7 @@ all.Skill_KXuan_Passive = {
 									global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
 										timing = 0,
 										duration = 99,
+										display = "MaxHpDown",
 										tags = {
 											"CARDBUFF",
 											"Skill_KXuan_Passive",
@@ -719,13 +720,13 @@ all.Skill_KXuan_Passive_EX = {
 			})
 
 			if global.FriendMaster(_env) then
-				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+				_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.ONESELF(_env, _env.ACTOR) - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 				if _env.units[1] then
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then
 						for _, friendunit in global.__iter__(_env.units) do
 							local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
-							local card = global.BackToCard(_env, friendunit)
+							local card = global.BackToCard_ResultCheck(_env, friendunit, "card")
 
 							if card then
 								global.Kick(_env, friendunit)
@@ -742,6 +743,7 @@ all.Skill_KXuan_Passive_EX = {
 									global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
 										timing = 0,
 										duration = 99,
+										display = "MaxHpDown",
 										tags = {
 											"CARDBUFF",
 											"Skill_KXuan_Passive",

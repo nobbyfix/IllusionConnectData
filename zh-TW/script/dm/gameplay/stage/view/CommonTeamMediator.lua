@@ -15,7 +15,7 @@ CommonTeamMediator:has("_buildingSystem", {
 
 local costType = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Init_Cost_Type", "content")
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -27,6 +27,10 @@ local kSortBtnHandlers = {
 	["main.my_pet_bg.sortPanel.screenBtn"] = {
 		clickAudio = "Se_Click_Fold_1",
 		func = "onClickScreen"
+	},
+	["main.my_pet_bg.sortPanel.setBtn"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickTeamSetBtn"
 	}
 }
 
@@ -44,11 +48,18 @@ end
 
 function CommonTeamMediator:onRegister()
 	self:mapButtonHandlersClick(kSortBtnHandlers)
+
+	self._presetTeamPetNum = 0
+	self._masterSystem = self._developSystem:getMasterSystem()
+	local setButton = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.setBtn")
+
+	setButton:setVisible(false)
 end
 
 function CommonTeamMediator:resumeWithData()
 	local preMaxTeamPetNum = self._maxTeamPetNum
 	self._maxTeamPetNum = self._stageSystem:getPlayerInit() + self._developSystem:getBuildingCardEffValue()
+	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum
 
 	self:initLockIcons(preMaxTeamPetNum)
 end
@@ -75,6 +86,29 @@ function CommonTeamMediator:setupTopInfoWidget()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
 
 	self._topInfoWidget:updateView(config)
+	self:setLeadStageInfo()
+end
+
+function CommonTeamMediator:setLeadStageInfo()
+	local node = self:getView():getChildByFullName("main.bg.node_leadStage")
+
+	if not node then
+		return
+	end
+
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(self._curMasterId)
+
+	if not id then
+		return
+	end
+
+	local icon = IconFactory:createLeadStageIconHor(id, lv)
+
+	if icon then
+		icon:addTo(node)
+	end
 end
 
 function CommonTeamMediator:leaveWithData()
@@ -165,7 +199,7 @@ function CommonTeamMediator:initLockIcons(preMaxTeamPetNum)
 		end
 	end
 
-	for i = self._maxTeamPetNum + 1, maxShowNum do
+	for i = self._maxTeamPetNum + 1 + self._presetTeamPetNum, maxShowNum do
 		local condition, buildId = nil
 		local type = ""
 		local showAnim = false
@@ -319,9 +353,51 @@ function CommonTeamMediator:onClickCost()
 	}, data, delegate))
 end
 
+function CommonTeamMediator:onClickInfo(eventType, fightTip, isDouble)
+	local fightInfoTip = fightTip and fightTip or self._fightInfoTip
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+
+	if not leadConfig then
+		return
+	end
+
+	if eventType == ccui.TouchEventType.began then
+		fightInfoTip:removeAllChildren()
+
+		local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+		local addPer = isDouble and leadConfig.LeadFightHero * effectRate or leadConfig.LeadFightHero
+		local config = ConfigReader:getRecordById("MasterBase", self._curMasterId)
+		local desc = Strings:get("LeadStage_TeamCombatInfo", {
+			fontSize = 20,
+			fontName = TTF_FONT_FZYH_M,
+			leader = Strings:get(config.Name),
+			stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
+			percent = math.ceil(addPer * 100) .. "%"
+		})
+		local richText = ccui.RichText:createWithXML(desc, {})
+
+		richText:setAnchorPoint(cc.p(0, 0))
+		richText:setPosition(cc.p(10, 10))
+		richText:addTo(fightInfoTip)
+		richText:renderContent(440, 0, true)
+
+		local size = richText:getContentSize()
+
+		fightInfoTip:setContentSize(460, size.height + 20)
+		fightInfoTip:setVisible(true)
+	elseif eventType == ccui.TouchEventType.moved then
+		-- Nothing
+	elseif eventType == ccui.TouchEventType.canceled then
+		fightInfoTip:setVisible(false)
+	elseif eventType == ccui.TouchEventType.ended then
+		fightInfoTip:setVisible(false)
+	end
+end
+
 function CommonTeamMediator:initHero(node, info)
-	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		id = info.roleModel
+	})
 
 	heroImg:setScale(0.68)
 
@@ -347,6 +423,10 @@ function CommonTeamMediator:initHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -443,6 +523,13 @@ function CommonTeamMediator:initHero(node, info)
 	namePanel:setContentSize(cc.size(name:getContentSize().width + qualityLevel:getContentSize().width, 30))
 	GameStyle:setHeroNameByQuality(name, info.quality)
 	GameStyle:setHeroNameByQuality(qualityLevel, info.quality)
+
+	local nameBg = node:getChildByFullName("nameBg")
+	local nameWidth = name:getContentSize().width + qualityLevel:getContentSize().width
+	local w = math.max(104, nameWidth + 25)
+
+	nameBg:setContentSize(cc.size(w, nameBg:getContentSize().height))
+	nameBg:setPositionX(namePanel:getPositionX())
 end
 
 function CommonTeamMediator:initTeamHero(node, info)
@@ -531,12 +618,14 @@ function CommonTeamMediator:checkMasterSkillActive()
 
 		local index = i <= 3 and i or i - 3
 		local posX = 20 + (index - 1) * 55
-		local posY = i <= 3 and 68 or 13
+		local posY = i <= 3 and 61 or 10
 
 		newSkillNode:setPosition(cc.p(posX, posY))
 
 		local conditions = skill:getActiveCondition()
-		local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		newSkillNode:setGray(not isActive)
 
@@ -707,6 +796,12 @@ function CommonTeamMediator:onClickChangeMaster()
 
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			outSelf:setLeadStageInfo()
+		end
+	}
 	local view = self:getInjector():getInstance("ChangeMasterView")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
@@ -715,8 +810,9 @@ function CommonTeamMediator:onClickChangeMaster()
 		masterId = self._curMasterId,
 		masterList = self._masterList,
 		recomandList = self._recomandMasterList or {},
-		forbidMasters = self._forbidMasters or {}
-	}, nil))
+		forbidMasters = self._forbidMasters or {},
+		sys = self._masterSystem
+	}, delegate))
 end
 
 function CommonTeamMediator:onClickOneKeyEmbattle()
@@ -1064,7 +1160,7 @@ function CommonTeamMediator:runRemovePetAction(id)
 		local id = child.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1256,7 +1352,7 @@ function CommonTeamMediator:runInsertPetAction(child, callback)
 		local id = child.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconScreateRoleIconSpriteNewprite(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1395,7 +1491,7 @@ function CommonTeamMediator:runInsertTeamAction(id)
 
 	local heroInfo = self:getHeroInfoById(id)
 	heroInfo.id = heroInfo.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 	heroImg:addTo(heroNode)
 	heroImg:setScale(0.68)
@@ -1453,4 +1549,38 @@ function CommonTeamMediator:runInsertTeamAction(id)
 			self._runInsertAction = false
 		end
 	end)
+end
+
+function CommonTeamMediator:showSetButton(show)
+	local setButton = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.setBtn")
+	local sortBtn = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.sortBtn")
+	local screenBtn = self:getView():getChildByFullName("main.my_pet_bg.sortPanel.screenBtn")
+	local initY = 144
+	local height = 85
+	local btnList = {
+		sortBtn,
+		screenBtn
+	}
+
+	if show then
+		setButton:setVisible(true)
+
+		initY = 160
+		height = 65
+		btnList[#btnList + 1] = setButton
+	else
+		setButton:setVisible(false)
+	end
+
+	for i, btn in pairs(btnList) do
+		btn:setPositionY(initY - (i - 1) * height)
+	end
+end
+
+function CommonTeamMediator:onClickTeamSetBtn()
+	local view = self:getInjector():getInstance("ChangeTeamModelView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}))
 end

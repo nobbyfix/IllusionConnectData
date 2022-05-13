@@ -60,7 +60,7 @@ end
 function ShopSurface:getStartMills()
 	local start = self:getTimeType().start
 	local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
-	local mills = TimeUtil:getTimeByDate({
+	local mills = TimeUtil:timeByRemoteDate({
 		year = y,
 		month = mon,
 		day = d,
@@ -83,7 +83,7 @@ function ShopSurface:getEndMills()
 		min = m,
 		sec = s
 	}
-	local mills = TimeUtil:getTimeByDate(table)
+	local mills = TimeUtil:timeByRemoteDate(table)
 
 	return mills
 end

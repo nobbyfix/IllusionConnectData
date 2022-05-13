@@ -6,6 +6,7 @@ EVT_BUY_MONTHCARD_SUCC = "EVT_BUY_MONTHCARD_SUCC"
 EVT_REFRESH_MONTHCARD = "EVT_REFRESH_MONTHCARD"
 EVT_CHARGETASK_FIN = "EVT_CHARGETASK_FIN"
 EVT_FefreshForeverCard = "EVT_FefreshForeverCard"
+EVT_BUY_ACTIVITY_PAY_SUCC = "EVT_BUY_ACTIVITY_PAY_SUCC"
 RechargeAndVipSystem = class("RechargeAndVipSystem", legs.Actor)
 
 RechargeAndVipSystem:has("_rechargeAndVipService", {
@@ -23,6 +24,8 @@ RechargeAndVipSystem:has("_vipRewardRedPoint", {
 
 function RechargeAndVipSystem:initialize()
 	super.initialize(self)
+
+	self._itemPurchaseStamp = {}
 end
 
 function RechargeAndVipSystem:syncVipCanGetRewards()
@@ -167,7 +170,7 @@ function RechargeAndVipSystem:getCanContinueBuy(monthCardId)
 	local data = self._rechargeAndVipModel:getMonthCardMap()[monthCardId]
 	local curTime = self._gameServerAgent:remoteTimeMillis()
 
-	if data._endTimes > curTime + data._time * data._renewalTimes then
+	if data._endTimes > curTime + data._time * data._renewalTimes * 86400000 then
 		return false
 	end
 
@@ -240,15 +243,34 @@ function RechargeAndVipSystem:getVipRule()
 	return rule
 end
 
+function RechargeAndVipSystem:checkPurchaseCD(goodsId)
+	local curTime = self._gameServerAgent:remoteTimestamp()
+	local cd = CommonUtils.GetPurchaseCD()
+
+	if cd > 0 then
+		if self._itemPurchaseStamp[goodsId] then
+			local remainTime = math.ceil(self._itemPurchaseStamp[goodsId] + cd - curTime)
+
+			if remainTime > 0 then
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("ShopPurchaseCDTip", {
+						num = remainTime
+					})
+				}))
+
+				return false
+			end
+		end
+
+		self._itemPurchaseStamp[goodsId] = curTime
+	end
+
+	return true
+end
+
 local perTime = 0
 
 function RechargeAndVipSystem:requestRechargeDiamonds(goodsId)
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
-
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -256,6 +278,11 @@ function RechargeAndVipSystem:requestRechargeDiamonds(goodsId)
 	end
 
 	perTime = curTime
+
+	if not self:checkPurchaseCD(goodsId) then
+		return
+	end
+
 	local params = {
 		mallId = goodsId
 	}
@@ -281,13 +308,7 @@ function RechargeAndVipSystem:requestBuyVipReward(vipLevel, callback)
 	end)
 end
 
-function RechargeAndVipSystem:requestPurchaseSubscribe(cardId, index)
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
-
+function RechargeAndVipSystem:requestPurchaseSubscribe(cardId, isRecover, index)
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -303,18 +324,12 @@ function RechargeAndVipSystem:requestPurchaseSubscribe(cardId, index)
 		if response.resCode == GS_SUCCESS then
 			local payOffSystem = self:getInjector():getInstance(PayOffSystem)
 
-			payOffSystem:payOffToSdk(response.data, 1)
+			payOffSystem:payOffToSdk(response.data, isRecover)
 		end
 	end)
 end
 
 function RechargeAndVipSystem:requestBuyMonthCard(cardId, index)
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
-
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -322,6 +337,11 @@ function RechargeAndVipSystem:requestBuyMonthCard(cardId, index)
 	end
 
 	perTime = curTime
+
+	if not self:checkPurchaseCD(cardId) then
+		return
+	end
+
 	local params = {
 		cardId = cardId
 	}
@@ -391,11 +411,9 @@ function RechargeAndVipSystem:requestGetAccRechargeReward(chargeNum, callback)
 end
 
 function RechargeAndVipSystem:requestBuyForeverCard(callback)
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
+	if not self:checkPurchaseCD("ForeverCard") then
+		return
+	end
 
 	local params = {}
 

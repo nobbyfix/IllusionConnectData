@@ -120,6 +120,40 @@
         "Shine": "",
         "Sicon": "IR_HD_BattlePass_Coin1"
     },
+    "IHF_HeroStone_SR": {
+        "Desc": "IHF_HeroStone_SR_Desc",
+        "LargeIcons": [
+            "IM_FHeroAll"
+        ],
+        "Licon": "IM_FHeroAll",
+        "Name": "IHF_HeroStone_SR_Name",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_silverheroall"
+    },
+    "IHF_HeroStone_SSR": {
+        "Desc": "IHF_HeroStone_SSR_Desc",
+        "LargeIcons": [
+            "IM_FHeroAll"
+        ],
+        "Licon": "IM_FHeroAll",
+        "Name": "IHF_HeroStone_SSR_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_heroall"
+    },
     "IM_BossJindan": {
         "Desc": "IM_BossJindan_FunctionDesc",
         "LargeIcons": [
@@ -272,6 +306,40 @@
         ],
         "Shine": "",
         "Sicon": "icon_zuanshiquanEX"
+    },
+    "IM_DiamondDraw_ReZero": {
+        "Desc": "IM_DiamondDraw_ReZero_FunctionDesc",
+        "LargeIcons": [
+            "IM_DiamondDrawUnion_1"
+        ],
+        "Licon": "IM_DiamondDrawUnion_1",
+        "Name": "IM_DiamondDraw_ReZero_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_DiamondDrawUnion_2"
+    },
+    "IM_DiamondDraw_UR": {
+        "Desc": "IM_DiamondDraw_UR_FunctionDesc",
+        "LargeIcons": [
+            "IM_DiamondDraw_UR_1"
+        ],
+        "Licon": "IM_DiamondDraw_UR_1",
+        "Name": "IM_DiamondDraw_UR_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_DiamondDraw_UR_2"
     },
     "IM_GoldDraw": {
         "Desc": "IM_GoldDraw_FunctionDesc",
@@ -426,13 +494,13 @@
         "Shine": "",
         "Sicon": "IR_HD_Snowflake_Achieve_small"
     },
-    "IM_Snowflake_Egg": {
-        "Desc": "IM_Snowflake_Egg_FunctionDesc",
+    "IM_Snowflake_Snowball": {
+        "Desc": "IM_Snowflake_Snowball_FunctionDesc",
         "LargeIcons": [
-            "IR_HD_Snowflake_Ice_Egg"
+            "Activity_snowflake_ico_m_snowball_1"
         ],
-        "Licon": "IR_HD_Snowflake_Ice_Egg",
-        "Name": "IM_Snowflake_Egg_Name",
+        "Licon": "Activity_snowflake_ico_m_snowball_1",
+        "Name": "IM_Snowflake_Snowball_Name",
         "Quality": [
             5
         ],
@@ -441,7 +509,24 @@
             1
         ],
         "Shine": "",
-        "Sicon": "IR_HD_Snowflake_Ice_Egg_small"
+        "Sicon": "Activity_snowflake_ico_m_snowball_2"
+    },
+    "IM_StageArena": {
+        "Desc": "StageArena_GoldName",
+        "LargeIcons": [
+            "ico_m_stagearenagold_1"
+        ],
+        "Licon": "ico_m_stagearenagold_1",
+        "Name": "StageArena_GoldName",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_stagearenagold_2"
     },
     "IM_SummerBossStamina": {
         "Desc": "IM_SummerBossStamina_FunctionDesc",
@@ -579,6 +664,23 @@
         "Shine": "",
         "Sicon": "icon_HD_Power"
     },
+    "IR_AnimalStamina": {
+        "Desc": "IR_AnimalStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_animal_stamina_1"
+        ],
+        "Licon": "ico_m_animal_stamina_1",
+        "Name": "IR_AnimalStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_animal_stamina_2"
+    },
     "IR_Arena": {
         "Desc": "ResourcesIcon_5_Desc",
         "LargeIcons": [
@@ -591,13 +693,33 @@
             4
         ],
         "Resource": [
-            "IR_Arena_1"
+            "IR_Arena_1",
+            "IR_PetRace",
+            "IR_Arena_2",
+            "IR_Arena_3"
         ],
         "Segmentation": [
             1
         ],
         "Shine": "",
         "Sicon": "icon_huizhang"
+    },
+    "IR_BakingStamina": {
+        "Desc": "IR_BakingStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_baking_stamina_1"
+        ],
+        "Licon": "ico_m_baking_stamina_1",
+        "Name": "IR_BakingStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_baking_stamina_2"
     },
     "IR_Club": {
         "Desc": "ResourcesIcon_8_Desc",
@@ -618,6 +740,40 @@
         "Shine": "",
         "Sicon": "icon_sthb"
     },
+    "IR_CollapsedStamina": {
+        "Desc": "IR_CollapsedStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_collapsed_stamina_1"
+        ],
+        "Licon": "ico_m_collapsed_stamina_1",
+        "Name": "IR_CollapsedStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_collapsed_stamina_2"
+    },
+    "IR_CooperateBoss": {
+        "Desc": "CooperateBoss_CoinName_FunDesc",
+        "LargeIcons": [
+            "ico_m_cooperateboss_1"
+        ],
+        "Licon": "ico_m_cooperateboss_1",
+        "Name": "CooperateBoss_CoinName",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_cooperateboss_2"
+    },
     "IR_Crystal": {
         "Desc": "ResourcesIcon_2_Desc",
         "LargeIcons": [
@@ -632,6 +788,7 @@
             2,
             3,
             4,
+            5,
             5
         ],
         "Resource": [
@@ -641,10 +798,34 @@
             1,
             10000,
             100000,
-            500000
+            500000,
+            1000000
+        ],
+        "Shine": [
+            0,
+            0,
+            0,
+            0,
+            1
+        ],
+        "Sicon": "icon_shuijing"
+    },
+    "IR_DeepSeaStamina": {
+        "Desc": "IR_DeepSeaStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_deepsea_stamina_1"
+        ],
+        "Licon": "ico_m_deepsea_stamina_1",
+        "Name": "IR_DeepSeaStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
         ],
         "Shine": "",
-        "Sicon": "icon_shuijing"
+        "Sicon": "ico_m_deepsea_stamina_2"
     },
     "IR_DetectiveStamina": {
         "Desc": "IR_DetectiveStamina_FunctionDesc",
@@ -687,6 +868,40 @@
         ],
         "Shine": "",
         "Sicon": "icon_zuanshi"
+    },
+    "IR_DramaStamina": {
+        "Desc": "IR_DramaStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_drama_stamina_1"
+        ],
+        "Licon": "ico_m_drama_stamina_1",
+        "Name": "IR_DramaStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_drama_stamina_2"
+    },
+    "IR_DuskStamina": {
+        "Desc": "IR_DuskStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_dusk_stamina_1"
+        ],
+        "Licon": "ico_m_dusk_stamina_1",
+        "Name": "IR_DuskStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_dusk_stamina_2"
     },
     "IR_Equip": {
         "Desc": "ResourcesIcon_7_Desc",
@@ -741,6 +956,57 @@
         "Shine": "",
         "Sicon": "IR_Equip14_S"
     },
+    "IR_FemaleStamina": {
+        "Desc": "IR_FemaleStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_female_stamina_1"
+        ],
+        "Licon": "ico_m_female_stamina_1",
+        "Name": "IR_FemaleStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_female_stamina_2"
+    },
+    "IR_FireStamina": {
+        "Desc": "IR_FireStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_fire_stamina_1"
+        ],
+        "Licon": "ico_m_fire_stamina_1",
+        "Name": "IR_FireStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_fire_stamina_2"
+    },
+    "IR_FireWorksStamina": {
+        "Desc": "IR_FireWorksStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_fireworks_stamina_1"
+        ],
+        "Licon": "ico_m_fireworks_stamina_1",
+        "Name": "IR_FireWorksStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_fireworks_stamina_2"
+    },
     "IR_Fragment": {
         "Desc": "IR_Fragment_FunctionDesc",
         "LargeIcons": [
@@ -789,6 +1055,7 @@
             2,
             3,
             4,
+            5,
             5
         ],
         "Resource": [
@@ -798,9 +1065,16 @@
             1,
             10000,
             100000,
-            500000
+            500000,
+            1000000
         ],
-        "Shine": "",
+        "Shine": [
+            0,
+            0,
+            0,
+            0,
+            1
+        ],
         "Sicon": "icon_jinbi"
     },
     "IR_HalloweenStamina": {
@@ -851,7 +1125,9 @@
         "Segmentation": [
             1
         ],
-        "Shine": 0,
+        "Shine": [
+            0
+        ],
         "Sicon": "IR_HeroStive_S"
     },
     "IR_HolidayStamina": {
@@ -891,6 +1167,23 @@
         "Shine": "",
         "Sicon": "icon_zhengbabi"
     },
+    "IR_KnightStamina": {
+        "Desc": "IR_KnightStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_knight_stamina_1"
+        ],
+        "Licon": "ico_m_knight_stamina_1",
+        "Name": "IR_KnightStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_knight_stamina_2"
+    },
     "IR_MapPower": {
         "Desc": "IR_MapPower_Desc",
         "LargeIcons": [
@@ -907,6 +1200,43 @@
         ],
         "Shine": "",
         "Sicon": "icon_tili"
+    },
+    "IR_MusicFestivalStamina": {
+        "Desc": "IR_MusicFestivalStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_musicticket_1"
+        ],
+        "Licon": "ico_m_musicticket_1",
+        "Name": "IR_MusicFestivalStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_musicticket_2"
+    },
+    "IR_NewArenaCoin": {
+        "Desc": "IR_NewArenaCoin_FunDesc",
+        "LargeIcons": [
+            "ico_m_arenabadge_1"
+        ],
+        "Licon": "ico_m_arenabadge_1",
+        "Name": "IR_NewArenaCoin_Name",
+        "Quality": [
+            4
+        ],
+        "Resource": [
+            "IR_NewArenaCoin",
+            "IR_NewArenaCoin_1"
+        ],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_arenabadge_2"
     },
     "IR_PansLab": {
         "Desc": "Source_IR_PansLab",
@@ -965,24 +1295,111 @@
         "Shine": "",
         "Sicon": "icon_tili"
     },
+    "IR_PurewhiteStamina": {
+        "Desc": "IR_SnowflakeStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_SnowflakeStamina"
+        ],
+        "Licon": "IR_HD_SnowflakeStamina",
+        "Name": "IR_SnowflakeStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_SnowflakeStamina_small"
+    },
     "IR_Pve": {
         "Desc": "ResourcesIcon_IR_Pve_Desc",
         "LargeIcons": [
-            "icon_pve_1"
+            "ico_m_pvecoin_1"
         ],
-        "Licon": "icon_pve_1",
+        "Licon": "ico_m_pvecoin_1",
         "Name": "ResourcesIcon_IR_Pve_Name",
         "Quality": [
             4
         ],
         "Resource": [
+            "IR_Crusade",
+            "IR_Explore",
             "IR_Pve_1"
         ],
         "Segmentation": [
             1
         ],
         "Shine": "",
-        "Sicon": "icon_pve"
+        "Sicon": "ico_m_pvecoin_2"
+    },
+    "IR_ReZeroStamina": {
+        "Desc": "IR_ReZeroStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_rezero_stamina_1"
+        ],
+        "Licon": "ico_m_rezero_stamina_1",
+        "Name": "IR_ReZeroStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_rezero_stamina_2"
+    },
+    "IR_RiddleStamina": {
+        "Desc": "IR_RiddleStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_riddle_stamina_1"
+        ],
+        "Licon": "ico_m_riddle_stamina_1",
+        "Name": "IR_RiddleStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_riddle_stamina_2"
+    },
+    "IR_RiddleStamina_Re": {
+        "Desc": "IR_RiddleStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_riddle_stamina_1"
+        ],
+        "Licon": "ico_m_riddle_stamina_1",
+        "Name": "IR_RiddleStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_riddle_stamina_2"
+    },
+    "IR_SilentNightStamina": {
+        "Desc": "IR_SilentNightStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_silentnight_stamina_1"
+        ],
+        "Licon": "ico_m_silentnight_stamina_1",
+        "Name": "IR_SilentNightStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_silentnight_stamina_2"
     },
     "IR_SnowflakeStamina": {
         "Desc": "IR_SnowflakeStamina_FunctionDesc",
@@ -1001,6 +1418,40 @@
         "Shine": "",
         "Sicon": "IR_HD_SnowflakeStamina_small"
     },
+    "IR_StageArena": {
+        "Desc": "StageArena_MainUI37",
+        "LargeIcons": [
+            "ico_m_stagearenajiu_1"
+        ],
+        "Licon": "ico_m_stagearenajiu_1",
+        "Name": "StageArena_MainUI36",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_stagearenajiu_2"
+    },
+    "IR_StoryBookStamina": {
+        "Desc": "IR_StoryBookStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_storybook_stamina_1"
+        ],
+        "Licon": "ico_m_storybook_stamina_1",
+        "Name": "IR_StoryBookStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_storybook_stamina_2"
+    },
     "IR_SummerAcitvityStamina": {
         "Desc": "IR_SummerAcitvityStamina_FunctionDesc",
         "LargeIcons": [
@@ -1017,6 +1468,40 @@
         ],
         "Shine": "",
         "Sicon": "IR_HD_SummerAcitvityStamina1"
+    },
+    "IR_SummerReStamina": {
+        "Desc": "IR_SummerAcitvityStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_SummerAcitvityStamina"
+        ],
+        "Licon": "IR_HD_SummerAcitvityStamina",
+        "Name": "IR_SummerReStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_SummerAcitvityStamina1"
+    },
+    "IR_SunflowerStamina": {
+        "Desc": "IR_SunflowerStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_sunflower_stamina_1"
+        ],
+        "Licon": "ico_m_sunflower_stamina_1",
+        "Name": "IR_SunflowerStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_sunflower_stamina_2"
     },
     "IR_Surface": {
         "Desc": "IR_Surface_FunctionDesc",
@@ -1054,6 +1539,23 @@
         "Shine": "",
         "Sicon": "icon_tili"
     },
+    "IR_TerrorStamina": {
+        "Desc": "IR_TerrorStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_terror_stamina_1"
+        ],
+        "Licon": "ico_m_terror_stamina_1",
+        "Name": "IR_TerrorStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_terror_stamina_2"
+    },
     "IR_Tower": {
         "Desc": "ResourcesIcon_6_Desc",
         "LargeIcons": [
@@ -1073,6 +1575,23 @@
         ],
         "Shine": "",
         "Sicon": "icon_pata1"
+    },
+    "IR_URMapCoin": {
+        "Desc": "IR_URMapCoin_FUNCTION_Desc",
+        "LargeIcons": [
+            "ico_m_URExchange_1"
+        ],
+        "Licon": "ico_m_URExchange_1",
+        "Name": "IR_URMapCoin",
+        "Quality": [
+            4
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_URExchange_2"
     },
     "IR_WuXiuHuiAcitvityStamina": {
         "Desc": "IR_WuXiuHuiAcitvityStamina_FunctionDesc",
@@ -1107,6 +1626,40 @@
         ],
         "Shine": "",
         "Sicon": "IR_HD_ZuoHeAcitvityStamina1"
+    },
+    "Memory_Activi_Puzzle_1": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activi_Puzzle_1_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
+    },
+    "Memory_Activi_Puzzle_4": {
+        "Desc": "Memory_Activi_Puzzle_1_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_memory_1"
+        ],
+        "Licon": "ico_m_memory_1",
+        "Name": "Memory_Activi_Puzzle_1_Name",
+        "Quality": [
+            3
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_memory_1"
     },
     "PlayerHeroExp": {
         "Desc": "ResourcesIcon_PlayerHeroExp_Desc",

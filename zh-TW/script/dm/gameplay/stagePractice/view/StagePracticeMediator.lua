@@ -449,6 +449,8 @@ function StagePracticeMediator:resumeWithData(viewData)
 	if self._tableView then
 		self:refreshCurCell()
 	end
+
+	self:showReward(self._curPointData:getId())
 end
 
 function StagePracticeMediator:resertcurPointIndex(userdata)
@@ -1162,8 +1164,8 @@ function StagePracticeMediator:updateBg(selectindex)
 	if isUseAnim then
 		local name = HeroSpriteConfig[selectindex].name
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", HeroSpriteConfig[selectindex].name)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = roleModel,
 			useAnim = isUseAnim
 		})

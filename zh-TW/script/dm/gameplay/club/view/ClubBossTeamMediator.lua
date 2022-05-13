@@ -26,7 +26,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -62,6 +62,7 @@ function ClubBossTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_KILLED, self, self.doBossKilledLogic)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -107,6 +108,9 @@ function ClubBossTeamMediator:onClickFight(sender, eventType)
 	local towerId = self._clubSystem:getCurTowerId(self._viewType)
 	local masterId = self._curMasterId
 	local heroIds = heros
+
+	AudioTimerSystem:playStartBattleVoice(self._curTeam)
+	AudioEngine:getInstance():playEffect("Se_Click_Battle", false)
 
 	if self:hasChangeTeam() then
 		self:sendUpdateTowerTeam()
@@ -159,7 +163,7 @@ function ClubBossTeamMediator:sendUpdateTowerTeam()
 				self._clubSystem:enterBattle(data, self._viewType)
 			end)
 		end
-	end, false, {
+	end, true, {
 		ignoreTip = true
 	})
 end
@@ -344,7 +348,7 @@ function ClubBossTeamMediator:showOneKeyHeros()
 
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, tbRecommandIds, false)
+	self._heroSystem:sortHeroes(self._orderPets, sortType, tbRecommandIds, false, nil)
 end
 
 function ClubBossTeamMediator:setupView()
@@ -375,6 +379,11 @@ function ClubBossTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._infoBtn = self:getView():getChildByFullName("infoBtn")
+	self._fightInfoTip = self:getView():getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
@@ -970,7 +979,7 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -992,7 +1001,12 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1056,6 +1070,8 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 
 	skillPanel:setVisible(not not skill)
 
+	local dicengEff, shangcengEff = nil
+
 	if skill then
 		skillPanel:setVisible(true)
 		skillPanel:setSwallowTouches(true)
@@ -1067,20 +1083,44 @@ function ClubBossTeamMediator:initTeamHero(node, info)
 			local skillType = skill:getType()
 			local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
 			local image = ccui.ImageView:create(icon1)
+			dicengEff = cc.MovieClip:create("diceng_jinengjihuo")
 
+			dicengEff:setAnchorPoint(0.5, 0.5)
+			dicengEff:setScale(0.38)
+			dicengEff:setVisible(false)
+
+			shangcengEff = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangcengEff:setAnchorPoint(0.5, 0.5)
+			shangcengEff:setScale(0.38)
+			shangcengEff:setVisible(false)
+			dicengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:addTo(skillPanel):center(skillPanel:getContentSize())
+			shangcengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		skillPanel:setGray(not isActive)
+
+		if dicengEff then
+			dicengEff:setVisible(isActive)
+		end
+
+		if shangcengEff then
+			shangcengEff:setVisible(isActive)
+		end
 	end
 end
 
 function ClubBossTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1089,6 +1129,10 @@ function ClubBossTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1109,6 +1153,10 @@ function ClubBossTeamMediator:refreshCombatAndCost()
 
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+	self._infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	self._infoBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickInfo(eventType)
+	end)
 end
 
 function ClubBossTeamMediator:changeMasterId(event)
@@ -1117,6 +1165,7 @@ function ClubBossTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function ClubBossTeamMediator:refreshMasterInfo()

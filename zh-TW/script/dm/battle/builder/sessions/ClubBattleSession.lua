@@ -130,9 +130,13 @@ function ClubBattleSession:getBattlePassiveSkill()
 		}
 	end
 
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill
@@ -140,7 +144,7 @@ end
 
 function ClubBattleSession:modifyEnemyMasterModel(enemyData)
 	if enemyData and enemyData.master then
-		enemyData.master.modelScale = 1.2
+		enemyData.master.modelScale = 1.4
 	end
 end
 

@@ -64,13 +64,17 @@ function ChapterSevenCell:initWidget()
 
 	AdjustUtils.adjustLayoutByType(Image2, AdjustUtils.kAdjustType.Bottom)
 
-	local text = self._textPanel:getChildByFullName("hideText.text1")
+	local localLanguage = getCurrentLanguage()
+	local Node_vertical = self._textPanel:getChildByFullName("hideText.Node_vertical")
+	local Node_horizontal = self._textPanel:getChildByFullName("hideText.Node_horizontal")
 
-	text:getVirtualRenderer():setDimensions(20, 0)
+	Node_vertical:setVisible(false)
+	Node_horizontal:setVisible(true)
 
-	local text = self._textPanel:getChildByFullName("hideText.text2")
+	local text2 = Node_horizontal:getChildByFullName("text2")
+	local Text_7 = Node_horizontal:getChildByFullName("Text_7")
 
-	text:getVirtualRenderer():setDimensions(20, 0)
+	Text_7:setPositionX(text2:getPositionX() + text2:getContentSize().width + 5)
 	self._textPanel:setSwallowTouches(false)
 
 	local function callFunc(sender, eventType)

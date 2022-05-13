@@ -30,6 +30,12 @@ function ActivityBlockFudaiMediator:initialize()
 end
 
 function ActivityBlockFudaiMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -94,10 +100,10 @@ function ActivityBlockFudaiMediator:initMember()
 	self._priceText = self._main:getChildByFullName("Panel_button.Text_price")
 	self._priceNowText = self._main:getChildByFullName("Panel_button.Text_price_now")
 	self._buyDesText = self._main:getChildByFullName("Panel_button.Text_buy_des")
-	self._lineImage = self._main:getChildByFullName("Panel_button.Image_xian")
 	self._panelRate = self._main:getChildByFullName("Panel_rate")
 	self._panelButton = self._main:getChildByFullName("Panel_button")
 	self._closeButton = self._main:getChildByFullName("Button_close")
+	self._priceDi = self._main:getChildByFullName("Panel_button.Image_zi_di")
 end
 
 function ActivityBlockFudaiMediator:initListView()
@@ -111,9 +117,9 @@ function ActivityBlockFudaiMediator:initListView()
 	self._listView:setContentSize(cc.size(340, 80))
 
 	local posX, posY = self._listView:getPosition()
-	local n = 3
+	local n = 4
 
-	for i = 1, n do
+	for i = 2, n do
 		if showdes[i] then
 			local panel = self._content:clone()
 
@@ -215,8 +221,9 @@ function ActivityBlockFudaiMediator:refreshButtonShow()
 	local symbol, price = payOffSystem:getPaySymbolAndPrice(self._packageShopConfig:getPayId())
 
 	self._priceNowText:setString(symbol .. " " .. price)
-	self._priceText:setString(symbol .. " " .. self._price)
+	self._priceText:setString("")
 	self._buyBtn:setGray(false)
+	self._priceDi:setVisible(false)
 
 	local state = self:getFudaiOpenState()
 
@@ -226,11 +233,11 @@ function ActivityBlockFudaiMediator:refreshButtonShow()
 		if not self._packageShop then
 			self._buyBtn:setGray(true)
 			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
-			self._lineImage:setVisible(false)
+			self._priceDi:setVisible(true)
 		elseif not self._packageShop:getCanBuy() then
 			self._buyBtn:setGray(true)
 			self._priceText:setString(Strings:get("NewYear_LuckyBag_UI11"))
-			self._lineImage:setVisible(false)
+			self._priceDi:setVisible(true)
 		end
 	else
 		self._buyBtn:setGray(true)
@@ -302,22 +309,10 @@ function ActivityBlockFudaiMediator:getRewards()
 end
 
 function ActivityBlockFudaiMediator:onCloseClicked(sender, eventType)
-	if self._timer then
-		self._timer:stop()
-
-		self._timer = nil
-	end
-
 	self:close()
 end
 
 function ActivityBlockFudaiMediator:onBuyClicked()
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
-
 	AudioEngine:getInstance():playEffect("Se_Click_Confirm", false)
 
 	local tips = ""
@@ -347,7 +342,8 @@ function ActivityBlockFudaiMediator:onBuyClicked()
 
 	local activityId = self._activityFudai:getId()
 	local param = {
-		doActivityType = 101
+		doActivityType = 101,
+		packageId = self._purchaseId
 	}
 
 	self._activitySystem:requestDoChildActivity(self._activity:getId(), activityId, param, function (response)

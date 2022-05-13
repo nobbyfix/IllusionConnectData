@@ -182,7 +182,7 @@ function ExploreStageMediator:initView()
 
 		name1:enableOutline(cc.c4b(35, 15, 5, 255), 1)
 		name1:setAnchorPoint(cc.p(0, 0.5))
-		name1:addTo(name_1):posite(-60, 10)
+		name1:addTo(name_1):posite(-60, 50)
 
 		local lineGradiantVec2 = {
 			{
@@ -204,20 +204,33 @@ function ExploreStageMediator:initView()
 
 		name2:enableOutline(cc.c4b(35, 15, 5, 255), 1)
 		name2:setAnchorPoint(cc.p(1, 0.5))
-		name2:addTo(name_2):posite(60, 6)
+		name2:addTo(name_2):posite(160, -80)
 		name2:setAdditionalKerning(-15)
 
 		local name3 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
 
 		name3:setAnchorPoint(cc.p(1, 0.5))
-		name3:addTo(name_3):posite(35, 3)
+		name3:addTo(name_3):posite(180, -80)
 		name3:setOpacity(90)
 
-		local name3 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
+		local name4 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
 
-		name3:setAnchorPoint(cc.p(1, 0.5))
-		name3:addTo(name_3):posite(55, 3)
-		name3:setOpacity(50)
+		name4:setAnchorPoint(cc.p(1, 0.5))
+		name4:addTo(name_3):posite(200, -80)
+		name4:setOpacity(50)
+		name1:setOverflow(cc.LabelOverflow.SHRINK)
+		name1:setDimensions(250, 90)
+		name2:setOverflow(cc.LabelOverflow.SHRINK)
+		name2:setDimensions(200, 160)
+		name3:setOverflow(cc.LabelOverflow.SHRINK)
+		name3:setDimensions(200, 160)
+		name4:setOverflow(cc.LabelOverflow.SHRINK)
+		name4:setDimensions(200, 160)
+
+		if language ~= GameLanguageType.CN then
+			name2:setLineSpacing(-30)
+			name2:setAdditionalKerning(-10)
+		end
 	end
 
 	local extraBgAnim = self._mainAnim:getChildByName("extraBgAnim")
@@ -314,6 +327,9 @@ function ExploreStageMediator:initPointView()
 			name:setAnchorPoint(cc.p(0, 0.5))
 			name:addTo(panel):posite(-175, 5)
 			name:setName("NameSprite")
+			name:setOverflow(cc.LabelOverflow.SHRINK)
+			name:setDimensions(130, 50)
+			name:setVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
 
 			local numPanel = self._mainAnim:getChildByName("num_" .. i)
 			local num = cc.Label:createWithTTF(i, CUSTOM_TTF_FONT_2, 100)
@@ -690,12 +706,29 @@ function ExploreStageMediator:initStoryPoint()
 		end
 
 		if not customData then
+			local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
 			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 			local storyAgent = storyDirector:getStoryAgent()
 
 			storyAgent:setSkipCheckSave(true)
 			storyAgent:trigger(storyLink, nil, function ()
 				callback()
+
+				local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+				local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+				StatisticSystem:send({
+					id_first = 1,
+					op_type = "plot_world_map",
+					type = "plot_end",
+					point = "plot_end",
+					plot_id = storyLink,
+					plot_name = self._mapTypeObj:getBeforeStoryName(),
+					totaltime = endTs - startTs,
+					detail = statisticsData.detail,
+					amount = statisticsData.amount,
+					misc = statisticsData.misc
+				})
 			end)
 			self._customDataSystem:setValue(PrefixType.kGlobal, customKey, "1")
 		else
@@ -721,7 +754,28 @@ function ExploreStageMediator:onClickStoryPoint()
 	local storyAgent = storyDirector:getStoryAgent()
 
 	storyAgent:setSkipCheckSave(true)
-	storyAgent:trigger(storyLink, nil)
+
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+
+	local function endCallback()
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+		StatisticSystem:send({
+			id_first = 0,
+			op_type = "plot_world_map",
+			type = "plot_end",
+			point = "plot_end",
+			plot_id = storyLink,
+			plot_name = self._mapTypeObj:getBeforeStoryName(),
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
+		})
+	end
+
+	storyAgent:trigger(storyLink, nil, endCallback)
 end
 
 function ExploreStageMediator:runStartAction()

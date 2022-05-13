@@ -1280,11 +1280,11 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_LFEr_25_SoundDesc",
+        "Bubble": "Voice_LCYShi_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P04",
         "EnemyMaster": "Crusade02P04U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_LCYShi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F11_1_Reward",
         "SpRuleBubble": "",
@@ -1424,11 +1424,11 @@
         "Background": "Battle_Scene_25",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_LFEr_25_SoundDesc",
+        "Bubble": "Voice_ZZBBWei_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P10",
         "EnemyMaster": "Crusade02P10U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_ZZBBWei",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F12_1_Reward",
         "SpRuleBubble": "",
@@ -1448,11 +1448,11 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_LFEr_25_SoundDesc",
+        "Bubble": "Voice_SLMen_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P11",
         "EnemyMaster": "Crusade02P11U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_SLMen",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F13_1_Reward",
         "SpRuleBubble": "",
@@ -1472,11 +1472,11 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_MLYTLSha_25_SoundDesc",
+        "Bubble": "Voice_CZheng_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P12",
         "EnemyMaster": "Crusade02P12U01N08",
-        "PointHead": "Model_MLYTLSha",
+        "PointHead": "Model_CZheng",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F13_1_Reward",
         "SpRuleBubble": "",
@@ -1496,11 +1496,11 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_LFEr_25_SoundDesc",
+        "Bubble": "Voice_YSTLu_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P13",
         "EnemyMaster": "Crusade02P13U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_YSTLu",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F13_1_Reward",
         "SpRuleBubble": "",
@@ -1736,11 +1736,11 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "Voice_LFEr_25_SoundDesc",
+        "Bubble": "Voice_XSMLi_25_SoundDesc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "CardCrusade02P23",
         "EnemyMaster": "Crusade02P23U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_XSMLi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F15_1_Reward",
         "SpRuleBubble": "",
@@ -1799,6 +1799,606 @@
             }
         ]
     },
+    "Crusade03P01": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_HLMGen_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P01",
+        "EnemyMaster": "Crusade03P01U01N08",
+        "PointHead": "Model_HLMGen",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F11_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P02": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_DFQi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P02",
+        "EnemyMaster": "Crusade03P02U01N08",
+        "PointHead": "Model_DFQi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F11_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P03": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_ALPo_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P03",
+        "EnemyMaster": "Crusade03P03U01N08",
+        "PointHead": "Model_ALPo",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F11_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P04": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_TLMi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P04",
+        "EnemyMaster": "Crusade03P04U01N08",
+        "PointHead": "Model_TLMi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F11_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P05": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_25",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_WTXXuan_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P05",
+        "EnemyMaster": "Crusade03P05U01N08",
+        "PointHead": "Model_WTXXuan",
+        "PointType": "BOSS",
+        "Reward": "CrusadePoint_F11_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P06": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_NFDDi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P06",
+        "EnemyMaster": "Crusade03P06U01N08",
+        "PointHead": "Model_NFDDi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F12_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P07": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_ADHWShi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P07",
+        "EnemyMaster": "Crusade03P07U01N08",
+        "PointHead": "Model_ADHWShi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F12_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P08": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_TTKMeng_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P08",
+        "EnemyMaster": "Crusade03P08U01N08",
+        "PointHead": "Model_TTKMeng",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F12_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P09": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_DFQi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P09",
+        "EnemyMaster": "Crusade03P09U01N08",
+        "PointHead": "Model_DFQi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F12_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P10": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_25",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_XSMLi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P10",
+        "EnemyMaster": "Crusade03P10U01N08",
+        "PointHead": "Model_XSMLi",
+        "PointType": "BOSS",
+        "Reward": "CrusadePoint_F12_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P11": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_DDing_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P11",
+        "EnemyMaster": "Crusade03P11U01N08",
+        "PointHead": "Model_DDing",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F13_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P12": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_ALPo_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P12",
+        "EnemyMaster": "Crusade03P12U01N08",
+        "PointHead": "Model_ALPo",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F13_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P13": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_SLMen_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P13",
+        "EnemyMaster": "Crusade03P13U01N08",
+        "PointHead": "Model_SLMen",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F13_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P14": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_JDCZhang_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P14",
+        "EnemyMaster": "Crusade03P14U01N08",
+        "PointHead": "Model_JDCZhang",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F13_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P15": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_25",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_TPGZhu_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P15",
+        "EnemyMaster": "Crusade03P15U01N08",
+        "PointHead": "Model_TPGZhu",
+        "PointType": "BOSS",
+        "Reward": "CrusadePoint_F13_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P16": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_CLMan_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P16",
+        "EnemyMaster": "Crusade03P16U01N08",
+        "PointHead": "Model_CLMan",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F14_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P17": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_HLMGen_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P17",
+        "EnemyMaster": "Crusade03P17U01N08",
+        "PointHead": "Model_HLMGen",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F14_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P18": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_CZheng_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P18",
+        "EnemyMaster": "Crusade03P18U01N08",
+        "PointHead": "Model_CZheng",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F14_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P19": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_NFDDi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P19",
+        "EnemyMaster": "Crusade03P19U01N08",
+        "PointHead": "Model_NFDDi",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F14_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P20": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_25",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_YLMGZhu_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P20",
+        "EnemyMaster": "Crusade03P20U01N08",
+        "PointHead": "Model_YLMGZhu",
+        "PointType": "BOSS",
+        "Reward": "CrusadePoint_F14_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P21": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_HLMGen_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P21",
+        "EnemyMaster": "Crusade03P21U01N08",
+        "PointHead": "Model_HLMGen",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F15_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P22": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_ZZBBWei_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P22",
+        "EnemyMaster": "Crusade03P22U01N08",
+        "PointHead": "Model_ZZBBWei",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F15_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P23": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_CZheng_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P23",
+        "EnemyMaster": "Crusade03P23U01N08",
+        "PointHead": "Model_CZheng",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F15_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P24": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_24",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_YSTLu_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P24",
+        "EnemyMaster": "Crusade03P24U01N08",
+        "PointHead": "Model_YSTLu",
+        "PointType": "NORMAL",
+        "Reward": "CrusadePoint_F15_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "Crusade03P25": {
+        "BGM": [
+            "Mus_Battle_Dongwenhui_Boss",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_25",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Voice_SDTZi_25_SoundDesc",
+        "Combat_Adjust_Rate": 1.0,
+        "EnemyCard": "CardCrusade03P25",
+        "EnemyMaster": "Crusade03P25U01N08",
+        "PointHead": "Model_SDTZi",
+        "PointType": "BOSS",
+        "Reward": "CrusadePoint_F15_1_Reward",
+        "SpRuleBubble": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CrusadePoint_F10_1": {
         "BGM": [
             "Mus_Battle_Dongwenhui",
@@ -1808,7 +2408,7 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 2,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F10_1_Card",
         "EnemyMaster": "F10P46U01N08",
@@ -1832,7 +2432,7 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F10_2_Card",
         "EnemyMaster": "F10P47U01N08",
@@ -1856,7 +2456,7 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 2,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F10_3_Card",
         "EnemyMaster": "F10P48U01N08",
@@ -1880,7 +2480,7 @@
         "Background": "Battle_Scene_24",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F10_4_Card",
         "EnemyMaster": "F10P49U01N08",
@@ -1904,7 +2504,7 @@
         "Background": "Battle_Scene_25",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F10_5_Card",
         "EnemyMaster": "F10P50U01N08",
@@ -1926,13 +2526,13 @@
             ""
         ],
         "Background": "Battle_Scene_5",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.5,
         "EnemyCard": "Crusade_F1_1_Card",
         "EnemyMaster": "F01P01U01N08",
-        "PointHead": "Model_DNTLuo",
+        "PointHead": "Model_ZZBBWei",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F1_1_Reward",
         "SpRuleBubble": "",
@@ -1950,13 +2550,13 @@
             ""
         ],
         "Background": "Battle_Scene_5",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.5,
         "EnemyCard": "Crusade_F1_2_Card",
         "EnemyMaster": "F01P02U01N08",
-        "PointHead": "Model_JSTDing",
+        "PointHead": "Model_YLSBai",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F1_2_Reward",
         "SpRuleBubble": "",
@@ -1974,13 +2574,13 @@
             ""
         ],
         "Background": "Battle_Scene_5",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.5,
         "EnemyCard": "Crusade_F1_3_Card",
         "EnemyMaster": "F01P03U01N08",
-        "PointHead": "Model_ALSi",
+        "PointHead": "Model_CLMan",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F1_3_Reward",
         "SpRuleBubble": "",
@@ -1998,13 +2598,13 @@
             ""
         ],
         "Background": "Battle_Scene_5",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.5,
         "EnemyCard": "Crusade_F1_4_Card",
         "EnemyMaster": "F01P04U01N08",
-        "PointHead": "Model_HLMGen",
+        "PointHead": "Model_TLMi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F1_4_Reward",
         "SpRuleBubble": "",
@@ -2022,13 +2622,13 @@
             ""
         ],
         "Background": "Battle_Scene_6",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.5,
         "EnemyCard": "Crusade_F1_5_Card",
         "EnemyMaster": "F01P05U01N08",
-        "PointHead": "Model_BBLMa",
+        "PointHead": "Model_KTSJKe",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F1_5_Reward",
         "SpRuleBubble": "",
@@ -2046,13 +2646,13 @@
             ""
         ],
         "Background": "Battle_Scene_7",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.55,
         "EnemyCard": "Crusade_F2_1_Card",
         "EnemyMaster": "F02P06U01N08",
-        "PointHead": "Model_LLan",
+        "PointHead": "Model_YBYa",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F2_1_Reward",
         "SpRuleBubble": "",
@@ -2070,13 +2670,13 @@
             ""
         ],
         "Background": "Battle_Scene_7",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.6,
         "EnemyCard": "Crusade_F2_2_Card",
         "EnemyMaster": "F02P07U01N08",
-        "PointHead": "Model_LDu",
+        "PointHead": "Model_BBLMa",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F2_2_Reward",
         "SpRuleBubble": "",
@@ -2094,13 +2694,13 @@
             ""
         ],
         "Background": "Battle_Scene_7",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.65,
         "EnemyCard": "Crusade_F2_3_Card",
         "EnemyMaster": "F02P08U01N08",
-        "PointHead": "Model_MGNa",
+        "PointHead": "Model_LDu",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F2_3_Reward",
         "SpRuleBubble": "",
@@ -2118,13 +2718,13 @@
             ""
         ],
         "Background": "Battle_Scene_7",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.7,
         "EnemyCard": "Crusade_F2_4_Card",
         "EnemyMaster": "F02P09U01N08",
-        "PointHead": "Model_XSMLi",
+        "PointHead": "Model_LFEr",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F2_4_Reward",
         "SpRuleBubble": "",
@@ -2142,13 +2742,13 @@
             ""
         ],
         "Background": "Battle_Scene_8",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.75,
         "EnemyCard": "Crusade_F2_5_Card",
         "EnemyMaster": "F02P10U01N08",
-        "PointHead": "Model_NDGEr",
+        "PointHead": "Model_ZZBBWei",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F2_5_Reward",
         "SpRuleBubble": "",
@@ -2166,13 +2766,13 @@
             ""
         ],
         "Background": "Battle_Scene_9",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.8,
         "EnemyCard": "Crusade_F3_1_Card",
         "EnemyMaster": "F03P11U01N08",
-        "PointHead": "Model_NDGEr",
+        "PointHead": "Model_CLMan",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F3_1_Reward",
         "SpRuleBubble": "",
@@ -2190,10 +2790,10 @@
             ""
         ],
         "Background": "Battle_Scene_9",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.85,
         "EnemyCard": "Crusade_F3_2_Card",
         "EnemyMaster": "F03P12U01N08",
         "PointHead": "Model_ZTXChang",
@@ -2214,13 +2814,13 @@
             ""
         ],
         "Background": "Battle_Scene_9",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.9,
         "EnemyCard": "Crusade_F3_3_Card",
         "EnemyMaster": "F03P13U01N08",
-        "PointHead": "Model_BBLMa",
+        "PointHead": "Model_LCYShi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F3_3_Reward",
         "SpRuleBubble": "",
@@ -2238,13 +2838,13 @@
             ""
         ],
         "Background": "Battle_Scene_9",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
-        "Combat_Adjust_Rate": 1.0,
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
+        "Combat_Adjust_Rate": 0.95,
         "EnemyCard": "Crusade_F3_4_Card",
         "EnemyMaster": "F03P14U01N08",
-        "PointHead": "Model_MLYTLSha",
+        "PointHead": "Model_TLMi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F3_4_Reward",
         "SpRuleBubble": "",
@@ -2262,13 +2862,13 @@
             ""
         ],
         "Background": "Battle_Scene_10",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F3_5_Card",
         "EnemyMaster": "F03P15U01N08",
-        "PointHead": "Model_LCYShi",
+        "PointHead": "Model_FTLEShi",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F3_5_Reward",
         "SpRuleBubble": "",
@@ -2286,13 +2886,13 @@
             ""
         ],
         "Background": "Battle_Scene_13",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F4_1_Card",
         "EnemyMaster": "F04P16U01N08",
-        "PointHead": "Model_TTKMeng",
+        "PointHead": "Model_ZZBBWei",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F4_1_Reward",
         "SpRuleBubble": "",
@@ -2310,13 +2910,13 @@
             ""
         ],
         "Background": "Battle_Scene_13",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F4_2_Card",
         "EnemyMaster": "F04P17U01N08",
-        "PointHead": "Model_BBLMa",
+        "PointHead": "Model_TPGZhu",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F4_2_Reward",
         "SpRuleBubble": "",
@@ -2334,13 +2934,13 @@
             ""
         ],
         "Background": "Battle_Scene_13",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F4_3_Card",
         "EnemyMaster": "F04P18U01N08",
-        "PointHead": "Model_ZTXChang",
+        "PointHead": "Model_ALPo",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F4_3_Reward",
         "SpRuleBubble": "",
@@ -2358,13 +2958,13 @@
             ""
         ],
         "Background": "Battle_Scene_13",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F4_4_Card",
         "EnemyMaster": "F04P19U01N08",
-        "PointHead": "Model_LLan",
+        "PointHead": "Model_MGNa",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F4_4_Reward",
         "SpRuleBubble": "",
@@ -2382,13 +2982,13 @@
             ""
         ],
         "Background": "Battle_Scene_14",
-        "BlockBattleConfig": "Crusade_1",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_2",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F4_5_Card",
         "EnemyMaster": "F04P20U01N08",
-        "PointHead": "Model_WEDe",
+        "PointHead": "Model_SLMen",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F4_5_Reward",
         "SpRuleBubble": "",
@@ -2406,13 +3006,13 @@
             ""
         ],
         "Background": "Battle_Scene_16",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F5_1_Card",
         "EnemyMaster": "F05P21U01N08",
-        "PointHead": "Model_LCYShi",
+        "PointHead": "Model_MKLJLuo",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F5_1_Reward",
         "SpRuleBubble": "",
@@ -2430,13 +3030,13 @@
             ""
         ],
         "Background": "Battle_Scene_16",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F5_2_Card",
         "EnemyMaster": "F05P22U01N08",
-        "PointHead": "Model_KXuan",
+        "PointHead": "Model_YSuo",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F5_2_Reward",
         "SpRuleBubble": "",
@@ -2454,13 +3054,13 @@
             ""
         ],
         "Background": "Battle_Scene_16",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F5_3_Card",
         "EnemyMaster": "F05P23U01N08",
-        "PointHead": "Model_BEr",
+        "PointHead": "Model_KTSJKe",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F5_3_Reward",
         "SpRuleBubble": "",
@@ -2478,13 +3078,13 @@
             ""
         ],
         "Background": "Battle_Scene_16",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F5_4_Card",
         "EnemyMaster": "F05P24U01N08",
-        "PointHead": "Model_XLai",
+        "PointHead": "Model_ZTXChang",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F5_4_Reward",
         "SpRuleBubble": "",
@@ -2502,13 +3102,13 @@
             ""
         ],
         "Background": "Battle_Scene_17",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F5_5_Card",
         "EnemyMaster": "F05P25U01N08",
-        "PointHead": "Model_TPGZhu",
+        "PointHead": "Model_BBLMa",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F5_5_Reward",
         "SpRuleBubble": "",
@@ -2526,13 +3126,13 @@
             ""
         ],
         "Background": "Battle_Scene_18",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F6_1_Card",
         "EnemyMaster": "F06P26U01N08",
-        "PointHead": "Model_WEDe",
+        "PointHead": "Model_DFQi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F6_1_Reward",
         "SpRuleBubble": "",
@@ -2550,13 +3150,13 @@
             ""
         ],
         "Background": "Battle_Scene_18",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F6_2_Card",
         "EnemyMaster": "F06P27U01N08",
-        "PointHead": "Model_SGHQShou",
+        "PointHead": "Model_ZZBBWei",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F6_2_Reward",
         "SpRuleBubble": "",
@@ -2574,13 +3174,13 @@
             ""
         ],
         "Background": "Battle_Scene_18",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F6_3_Card",
         "EnemyMaster": "F06P28U01N08",
-        "PointHead": "Model_DDing",
+        "PointHead": "Model_MGNa",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F6_3_Reward",
         "SpRuleBubble": "",
@@ -2598,13 +3198,13 @@
             ""
         ],
         "Background": "Battle_Scene_18",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F6_4_Card",
         "EnemyMaster": "F06P29U01N08",
-        "PointHead": "Model_MGNa",
+        "PointHead": "Model_CZheng",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F6_4_Reward",
         "SpRuleBubble": "",
@@ -2622,13 +3222,13 @@
             ""
         ],
         "Background": "Battle_Scene_19",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F6_5_Card",
         "EnemyMaster": "F06P30U01N08",
-        "PointHead": "Model_SDTZi",
+        "PointHead": "Model_BEr",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F6_5_Reward",
         "SpRuleBubble": "",
@@ -2646,13 +3246,13 @@
             ""
         ],
         "Background": "Battle_Scene_20",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F7_1_Card",
         "EnemyMaster": "F07P31U01N08",
-        "PointHead": "Model_LDu",
+        "PointHead": "Model_JNLong",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F7_1_Reward",
         "SpRuleBubble": "",
@@ -2670,13 +3270,13 @@
             ""
         ],
         "Background": "Battle_Scene_20",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F7_2_Card",
         "EnemyMaster": "F07P32U01N08",
-        "PointHead": "Model_NFDDi",
+        "PointHead": "Model_BBLMa",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F7_2_Reward",
         "SpRuleBubble": "",
@@ -2694,13 +3294,13 @@
             ""
         ],
         "Background": "Battle_Scene_20",
-        "BlockBattleConfig": "Normal",
-        "BossRound": 2,
-        "Bubble": "",
+        "BlockBattleConfig": "Crusade_Wait1_1",
+        "BossRound": 1,
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F7_3_Card",
         "EnemyMaster": "F07P33U01N08",
-        "PointHead": "Model_LFEr",
+        "PointHead": "Model_DFQi",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F7_3_Reward",
         "SpRuleBubble": "",
@@ -2718,13 +3318,13 @@
             ""
         ],
         "Background": "Battle_Scene_20",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F7_4_Card",
         "EnemyMaster": "F07P34U01N08",
-        "PointHead": "Model_KTSJKe",
+        "PointHead": "Model_LFEr",
         "PointType": "NORMAL",
         "Reward": "CrusadePoint_F7_4_Reward",
         "SpRuleBubble": "",
@@ -2742,13 +3342,13 @@
             ""
         ],
         "Background": "Battle_Scene_21",
-        "BlockBattleConfig": "Normal",
+        "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F7_5_Card",
         "EnemyMaster": "F07P35U01N08",
-        "PointHead": "Model_TPGZhu",
+        "PointHead": "Model_MGNa",
         "PointType": "BOSS",
         "Reward": "CrusadePoint_F7_5_Reward",
         "SpRuleBubble": "",
@@ -2768,7 +3368,7 @@
         "Background": "Battle_Scene_20",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F8_1_Card",
         "EnemyMaster": "F08P36U01N08",
@@ -2792,7 +3392,7 @@
         "Background": "Battle_Scene_20",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F8_2_Card",
         "EnemyMaster": "F08P37U01N08",
@@ -2816,7 +3416,7 @@
         "Background": "Battle_Scene_20",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F8_3_Card",
         "EnemyMaster": "F08P38U01N08",
@@ -2840,7 +3440,7 @@
         "Background": "Battle_Scene_20",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F8_4_Card",
         "EnemyMaster": "F08P39U01N08",
@@ -2864,7 +3464,7 @@
         "Background": "Battle_Scene_21",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F8_5_Card",
         "EnemyMaster": "F08P40U01N08",
@@ -2888,7 +3488,7 @@
         "Background": "Battle_Scene_22",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F9_1_Card",
         "EnemyMaster": "F09P41U01N08",
@@ -2912,7 +3512,7 @@
         "Background": "Battle_Scene_22",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F9_2_Card",
         "EnemyMaster": "F09P42U01N08",
@@ -2936,7 +3536,7 @@
         "Background": "Battle_Scene_22",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F9_3_Card",
         "EnemyMaster": "F09P43U01N08",
@@ -2960,7 +3560,7 @@
         "Background": "Battle_Scene_22",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F9_4_Card",
         "EnemyMaster": "F09P44U01N08",
@@ -2984,7 +3584,7 @@
         "Background": "Battle_Scene_23",
         "BlockBattleConfig": "Crusade_Wait1_1",
         "BossRound": 1,
-        "Bubble": "",
+        "Bubble": "Unlock_Crusade_Desc",
         "Combat_Adjust_Rate": 1.0,
         "EnemyCard": "Crusade_F9_5_Card",
         "EnemyMaster": "F09P45U01N08",

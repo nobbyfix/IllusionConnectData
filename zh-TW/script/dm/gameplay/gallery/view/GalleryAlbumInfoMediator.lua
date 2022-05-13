@@ -97,7 +97,7 @@ function GalleryAlbumInfoMediator:initView()
 
 	self._photoImg:loadTexture(bgFile .. icon)
 
-	local date = os.date("*t", self._photoData.photoTime)
+	local date = TimeUtil:localDate("*t", self._photoData.photoTime)
 	local month = date.month < 10 and "0" .. date.month or date.month
 	local day = date.day < 10 and "0" .. date.day or date.day
 	local min = date.min < 10 and "0" .. date.min or date.min
@@ -109,8 +109,8 @@ function GalleryAlbumInfoMediator:initView()
 	local heroes = self._photoData.heroes
 
 	for id, value in pairs(heroes) do
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = id
 		})
 

@@ -257,125 +257,12 @@ all.Skill_YBYa_Unique = {
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 
-			local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa then
-				global.AddStatus(_env, SummonedYBYa, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15008_biaozhi")) > 0 then
+				local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa_Qiannian", {
+					0,
+					2.5,
+					0
 				}, {
-					buffeft1
-				})
-			end
-
-			local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa1 then
-				global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa1, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				})
-			end
-
-			local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa2 then
-				global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa2, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				})
-			end
-
-			if global.INSTATUS(_env, "Skill_YBYa_Passive_Key")(_env, _env.ACTOR) then
-				local SummonedYBYa3 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -391,15 +278,15 @@ all.Skill_YBYa_Unique = {
 					9
 				})
 
-				if SummonedYBYa3 then
-					global.AddStatus(_env, SummonedYBYa3, "SummonedYBYa")
+				if SummonedYBYa then
+					global.AddStatus(_env, SummonedYBYa, "SummonedYBYa_Qiannian")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa3, {
+					global.ApplyBuff(_env, SummonedYBYa, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -414,7 +301,7 @@ all.Skill_YBYa_Unique = {
 					})
 				end
 
-				local SummonedYBYa4 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -430,15 +317,15 @@ all.Skill_YBYa_Unique = {
 					9
 				})
 
-				if SummonedYBYa4 then
-					global.AddStatus(_env, SummonedYBYa4, "SummonedYBYa")
+				if SummonedYBYa1 then
+					global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa4, {
+					global.ApplyBuff(_env, SummonedYBYa1, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -453,7 +340,7 @@ all.Skill_YBYa_Unique = {
 					})
 				end
 
-				local SummonedYBYa5 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -469,15 +356,54 @@ all.Skill_YBYa_Unique = {
 					9
 				})
 
-				if SummonedYBYa5 then
-					global.AddStatus(_env, SummonedYBYa5, "SummonedYBYa")
+				if SummonedYBYa2 then
+					global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa5, {
+					global.ApplyBuff(_env, SummonedYBYa2, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"Skill_YBYa_Passive",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
+			else
+				local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+					1,
+					0,
+					1
+				}, {
+					2,
+					1,
+					3,
+					5,
+					4,
+					6,
+					7,
+					8,
+					9
+				})
+
+				if SummonedYBYa then
+					global.AddStatus(_env, SummonedYBYa, "SummonedYBYa")
+
+					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
+					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
+						"?Normal"
+					}, DmgRateFactor)
+
+					global.ApplyBuff(_env, SummonedYBYa, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -492,7 +418,7 @@ all.Skill_YBYa_Unique = {
 					})
 				end
 
-				local SummonedYBYa6 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -508,15 +434,15 @@ all.Skill_YBYa_Unique = {
 					9
 				})
 
-				if SummonedYBYa6 then
-					global.AddStatus(_env, SummonedYBYa6, "SummonedYBYa")
+				if SummonedYBYa1 then
+					global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa6, {
+					global.ApplyBuff(_env, SummonedYBYa1, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -531,7 +457,7 @@ all.Skill_YBYa_Unique = {
 					})
 				end
 
-				local SummonedYBYa7 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -547,93 +473,15 @@ all.Skill_YBYa_Unique = {
 					9
 				})
 
-				if SummonedYBYa7 then
-					global.AddStatus(_env, SummonedYBYa7, "SummonedYBYa")
+				if SummonedYBYa2 then
+					global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa7, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"Skill_YBYa_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft1
-					})
-				end
-
-				local SummonedYBYa8 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-					1,
-					0,
-					1
-				}, {
-					2,
-					1,
-					3,
-					5,
-					4,
-					6,
-					7,
-					8,
-					9
-				})
-
-				if SummonedYBYa8 then
-					global.AddStatus(_env, SummonedYBYa8, "SummonedYBYa")
-
-					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-						"?Normal"
-					}, DmgRateFactor)
-
-					global.ApplyBuff(_env, SummonedYBYa8, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"Skill_YBYa_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft1
-					})
-				end
-
-				local SummonedYBYa9 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-					1,
-					0,
-					1
-				}, {
-					2,
-					1,
-					3,
-					5,
-					4,
-					6,
-					7,
-					8,
-					9
-				})
-
-				if SummonedYBYa9 then
-					global.AddStatus(_env, SummonedYBYa9, "SummonedYBYa")
-
-					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-						"?Normal"
-					}, DmgRateFactor)
-
-					global.ApplyBuff(_env, SummonedYBYa9, {
+					global.ApplyBuff(_env, SummonedYBYa2, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -706,6 +554,131 @@ all.Skill_YBYa_Passive = {
 			}, {
 				buffeft1
 			})
+		end)
+
+		return _env
+	end
+}
+all.Skill_YBYa_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DmgRateFactor = externs.DmgRateFactor
+
+		assert(this.DmgRateFactor ~= nil, "External variable `DmgRateFactor` is not provided.")
+
+		this.DmgFactor = externs.DmgFactor
+
+		assert(this.DmgFactor ~= nil, "External variable `DmgFactor` is not provided.")
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive2)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
+				"?Normal"
+			}, this.DmgRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, this.HurtRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_YBYa_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			})
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SUMMONS(_env, _env.unit) and _env.units[1] then
+				for _, enemy in global.__iter__(_env.units) do
+					local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, enemy, {
+						1,
+						this.DmgFactor,
+						0
+					})
+					local cherkvalue = damage.val
+
+					global.print(_env, "-=黑木雅乐觉醒造成伤害:", cherkvalue)
+					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, enemy, damage)
+					global.AddAnim(_env, {
+						loop = 1,
+						anim = "cisha_zhanshupai",
+						zOrder = "TopLayer",
+						pos = global.UnitPos(_env, enemy)
+					})
+				end
+			end
 		end)
 
 		return _env
@@ -890,7 +863,7 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			667
+			120
 		}, main)
 
 		return this
@@ -910,9 +883,6 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.Perform(_env, _env.ACTOR, global.Animation(_env, "die"))
-
 			_env.units = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
 			if _env.units[1] then
@@ -922,7 +892,7 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 			end
 		end)
 		exec["@time"]({
-			500
+			100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -939,7 +909,9 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 						DmgRateFactor,
 						0
 					})
+					local cherkvalue = damage.val
 
+					global.print(_env, "-=狐狸亡语自爆伤害：", cherkvalue)
 					global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 					global.AddAnim(_env, {
 						loop = 1,
@@ -949,14 +921,6 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 					})
 				end
 			end
-		end)
-		exec["@time"]({
-			660
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.Kick(_env, _env.ACTOR)
 		end)
 
 		return _env
@@ -1205,126 +1169,14 @@ all.Skill_YBYa_Unique_EX = {
 			local global = _env.global
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+			global.print(_env, "-=此时黑木雅乐身上tag数为", global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15008_biaozhi")))
 
-			local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa then
-				global.AddStatus(_env, SummonedYBYa, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15008_biaozhi")) > 0 then
+				local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa_Qiannian", {
+					0,
+					2.5,
+					0
 				}, {
-					buffeft1
-				})
-			end
-
-			local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa1 then
-				global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa1, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				})
-			end
-
-			local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-				1,
-				0,
-				1
-			}, {
-				2,
-				1,
-				3,
-				5,
-				4,
-				6,
-				7,
-				8,
-				9
-			})
-
-			if SummonedYBYa2 then
-				global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
-
-				local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-				local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-					"?Normal"
-				}, DmgRateFactor)
-
-				global.ApplyBuff(_env, SummonedYBYa2, {
-					timing = 0,
-					duration = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"Skill_YBYa_Passive",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					buffeft1
-				})
-			end
-
-			if global.INSTATUS(_env, "Skill_YBYa_Passive_Key")(_env, _env.ACTOR) then
-				local SummonedYBYa3 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -1340,15 +1192,15 @@ all.Skill_YBYa_Unique_EX = {
 					9
 				})
 
-				if SummonedYBYa3 then
-					global.AddStatus(_env, SummonedYBYa3, "SummonedYBYa")
+				if SummonedYBYa then
+					global.AddStatus(_env, SummonedYBYa, "SummonedYBYa_Qianian")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa3, {
+					global.ApplyBuff(_env, SummonedYBYa, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -1363,7 +1215,7 @@ all.Skill_YBYa_Unique_EX = {
 					})
 				end
 
-				local SummonedYBYa4 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -1379,15 +1231,15 @@ all.Skill_YBYa_Unique_EX = {
 					9
 				})
 
-				if SummonedYBYa4 then
-					global.AddStatus(_env, SummonedYBYa4, "SummonedYBYa")
+				if SummonedYBYa1 then
+					global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa4, {
+					global.ApplyBuff(_env, SummonedYBYa1, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -1402,7 +1254,7 @@ all.Skill_YBYa_Unique_EX = {
 					})
 				end
 
-				local SummonedYBYa5 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -1418,15 +1270,54 @@ all.Skill_YBYa_Unique_EX = {
 					9
 				})
 
-				if SummonedYBYa5 then
-					global.AddStatus(_env, SummonedYBYa5, "SummonedYBYa")
+				if SummonedYBYa2 then
+					global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa5, {
+					global.ApplyBuff(_env, SummonedYBYa2, {
+						timing = 0,
+						duration = 99,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"Skill_YBYa_Passive",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
+			else
+				local SummonedYBYa = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+					1,
+					0,
+					1
+				}, {
+					2,
+					1,
+					3,
+					5,
+					4,
+					6,
+					7,
+					8,
+					9
+				})
+
+				if SummonedYBYa then
+					global.AddStatus(_env, SummonedYBYa, "SummonedYBYa")
+
+					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
+					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
+						"?Normal"
+					}, DmgRateFactor)
+
+					global.ApplyBuff(_env, SummonedYBYa, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -1441,7 +1332,7 @@ all.Skill_YBYa_Unique_EX = {
 					})
 				end
 
-				local SummonedYBYa6 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa1 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -1457,15 +1348,15 @@ all.Skill_YBYa_Unique_EX = {
 					9
 				})
 
-				if SummonedYBYa6 then
-					global.AddStatus(_env, SummonedYBYa6, "SummonedYBYa")
+				if SummonedYBYa1 then
+					global.AddStatus(_env, SummonedYBYa1, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa6, {
+					global.ApplyBuff(_env, SummonedYBYa1, {
 						timing = 0,
 						duration = 99,
 						tags = {
@@ -1480,7 +1371,7 @@ all.Skill_YBYa_Unique_EX = {
 					})
 				end
 
-				local SummonedYBYa7 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
+				local SummonedYBYa2 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
 					1,
 					0,
 					1
@@ -1496,93 +1387,15 @@ all.Skill_YBYa_Unique_EX = {
 					9
 				})
 
-				if SummonedYBYa7 then
-					global.AddStatus(_env, SummonedYBYa7, "SummonedYBYa")
+				if SummonedYBYa2 then
+					global.AddStatus(_env, SummonedYBYa2, "SummonedYBYa")
 
 					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
 					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
 						"?Normal"
 					}, DmgRateFactor)
 
-					global.ApplyBuff(_env, SummonedYBYa7, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"Skill_YBYa_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft1
-					})
-				end
-
-				local SummonedYBYa8 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-					1,
-					0,
-					1
-				}, {
-					2,
-					1,
-					3,
-					5,
-					4,
-					6,
-					7,
-					8,
-					9
-				})
-
-				if SummonedYBYa8 then
-					global.AddStatus(_env, SummonedYBYa8, "SummonedYBYa")
-
-					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-						"?Normal"
-					}, DmgRateFactor)
-
-					global.ApplyBuff(_env, SummonedYBYa8, {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"Skill_YBYa_Passive",
-							"UNDISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft1
-					})
-				end
-
-				local SummonedYBYa9 = global.Summon(_env, _env.ACTOR, "SummonedYBYa", this.summonFactor, {
-					1,
-					0,
-					1
-				}, {
-					2,
-					1,
-					3,
-					5,
-					4,
-					6,
-					7,
-					8,
-					9
-				})
-
-				if SummonedYBYa9 then
-					global.AddStatus(_env, SummonedYBYa9, "SummonedYBYa")
-
-					local DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-					local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_YBYa_Passive", {
-						"?Normal"
-					}, DmgRateFactor)
-
-					global.ApplyBuff(_env, SummonedYBYa9, {
+					global.ApplyBuff(_env, SummonedYBYa2, {
 						timing = 0,
 						duration = 99,
 						tags = {

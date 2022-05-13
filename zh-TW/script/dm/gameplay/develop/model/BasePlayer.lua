@@ -69,6 +69,33 @@ BasePlayer:has("_curHeadFrame", {
 BasePlayer:has("_headFrames", {
 	is = "rw"
 })
+BasePlayer:has("_createTime", {
+	is = "rw"
+})
+BasePlayer:has("_maxCombat", {
+	is = "rw"
+})
+BasePlayer:has("_background", {
+	is = "rw"
+})
+BasePlayer:has("_playerStageArena", {
+	is = "rw"
+})
+BasePlayer:has("_stageArenafriends", {
+	is = "r"
+})
+BasePlayer:has("_chessArena", {
+	is = "r"
+})
+BasePlayer:has("_usedEmoji", {
+	is = "rw"
+})
+BasePlayer:has("_unlockedEmoji", {
+	is = "rw"
+})
+BasePlayer:has("_showHeroes", {
+	is = "rw"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -90,11 +117,22 @@ function BasePlayer:initialize(config)
 	self._cheatCount = 0
 	self._curHeadFrame = ""
 	self._headFrames = {}
+	self._background = {}
+	self._playerStageArena = {}
+	self._stageArenafriends = {}
+	self._chessArena = {}
+	self._usedEmoji = {}
+	self._unlockedEmoji = {}
+	self._showHeroes = {}
 end
 
 function BasePlayer:synchronizeInfoDiff(diffData)
 	if not diffData then
 		return
+	end
+
+	if diffData.createTime then
+		self:setCreateTime(diffData.createTime)
 	end
 
 	if diffData.level then
@@ -119,6 +157,10 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 
 	if diffData.heads and diffData.heads.currHead then
 		self:setHeadId(tostring(diffData.heads.currHead))
+	end
+
+	if diffData.maxData and diffData.maxData.combat then
+		self:setMaxCombat(tostring(diffData.maxData.combat))
 	end
 
 	if diffData.nickname then
@@ -201,10 +243,78 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 	if diffData.headFrames ~= nil then
 		self:setHeadFrames(diffData.headFrames)
 	end
+
+	if diffData.background ~= nil then
+		self:setBackground(diffData.background)
+	end
+
+	if diffData.playerStageArena then
+		for k, v in pairs(diffData.playerStageArena) do
+			self._playerStageArena[k] = v
+		end
+
+		if diffData.playerStageArena.friendsInfoMap then
+			self._stageArenafriends = {}
+			local index = 1
+
+			for i, v in pairs(diffData.playerStageArena.friendsInfoMap) do
+				local info = LeadStageArenaHeroInfo:new()
+
+				info:synchronize(v)
+
+				self._stageArenafriends[index] = info
+				index = index + 1
+			end
+		end
+	end
+
+	if diffData.chessArena then
+		for k, v in pairs(diffData.chessArena) do
+			if k == "rewards" then
+				self._chessArena[k] = self._chessArena[k] or {}
+
+				for id, st in pairs(v) do
+					self._chessArena[k][id] = st
+				end
+			else
+				self._chessArena[k] = v
+			end
+		end
+	end
+
+	if diffData.usedEmoji then
+		self._usedEmoji = diffData.usedEmoji
+	end
+
+	if diffData.unlockedEmoji then
+		for k, v in pairs(diffData.unlockedEmoji) do
+			self._unlockedEmoji[k] = v
+		end
+	end
+
+	if diffData.showHeroes then
+		self._showHeroes = {}
+
+		for i, v in pairs(diffData.showHeroes) do
+			self._showHeroes[i + 1] = v
+		end
+	end
+end
+
+function BasePlayer:deleteNewArenaReward(data)
+	if data.rewards and self._chessArena then
+		self._chessArena.rewards = {}
+	end
 end
 
 function BasePlayer:setHeadFrames(data)
 	for id, value in pairs(data) do
 		self._headFrames[id] = value
+	end
+end
+
+function BasePlayer:setBackground(data)
+	for id, value in pairs(data) do
+		self._background[value] = 1
 	end
 end

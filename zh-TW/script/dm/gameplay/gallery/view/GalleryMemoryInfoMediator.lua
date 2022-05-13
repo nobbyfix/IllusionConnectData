@@ -66,7 +66,6 @@ function GalleryMemoryInfoMediator:initWidgetInfo()
 
 	self:ignoreSafeArea()
 	self:setEffect()
-	self:setTouchPanel()
 	self:runBtnAnim()
 end
 
@@ -134,20 +133,54 @@ function GalleryMemoryInfoMediator:initView()
 	self._photoTitle:setString(self._memoryData:getTitle())
 	self._photoEnTitle:setString(self._memoryData:getENTitle())
 	self._photoDesc:setString(self._memoryData:getDesc())
+	self._photoDate:setFontName(TTF_FONT_FZYH_R)
+	self._photoDate:setFontSize(self._photoDesc:getFontSize())
+	self._photoDate:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 
-	local date = os.date("*t", self._memoryData:getDate())
-	local month = date.month < 10 and "0" .. date.month or date.month
-	local day = date.day < 10 and "0" .. date.day or date.day
-	local min = date.min < 10 and "0" .. date.min or date.min
-	local dateStr = date.year .. "/" .. month .. "/" .. day .. "  " .. date.hour .. ":" .. min
+	local date = TimeUtil:localDate("%Y/%m/%d", self._memoryData:getDate())
 
-	self._photoDate:setString(dateStr)
+	self._photoDate:setString(date)
 	self._photoEnTitle:setPositionX(self._photoTitle:getPositionX() + self._photoTitle:getContentSize().width + 2)
 	self._titleBg2:setPositionX(self._photoEnTitle:getPositionX() - 38)
 	self._titleBg2:setContentSize(cc.size(self._photoEnTitle:getContentSize().width + 76, 36))
 	self._titleBg1:setContentSize(cc.size(161 + self._photoTitle:getContentSize().width, 41))
 	self._leftBtn:setVisible(self._index ~= 1)
 	self._rightBtn:setVisible(self._index ~= #self._listData)
+	self:setTouchPanel()
+end
+
+function GalleryMemoryInfoMediator:addShare()
+	local data = {
+		enterType = ShareEnterType.KGallery,
+		node = self:getView(),
+		preConfig = function ()
+			self._topInfoNode:setVisible(false)
+			self._btnPanel:setVisible(false)
+		end,
+		endConfig = function ()
+			self._topInfoNode:setVisible(true)
+			self._btnPanel:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+end
+
+function GalleryMemoryInfoMediator:addShareTest()
+	local data = {
+		enterType = ShareEnterType.KGalleryTest,
+		node = self:getView(),
+		preConfig = function ()
+			self._topInfoNode:setVisible(false)
+			self._btnPanel:setVisible(false)
+		end,
+		endConfig = function ()
+			self._topInfoNode:setVisible(true)
+			self._btnPanel:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
 end
 
 function GalleryMemoryInfoMediator:onClickBack(sender, eventType)
@@ -173,6 +206,11 @@ function GalleryMemoryInfoMediator:setTouchPanel()
 		self._topInfoNode:setVisible(not clickTouchPanelStatus)
 		self._btnPanel:setVisible(not clickTouchPanelStatus)
 		touchPanel:getChildByFullName("photoImg"):loadTexture(self._memoryData:getPicture())
+		DmGame:getInstance()._injector:getInstance(ShareSystem):setShareVisible({
+			enterType = ShareEnterType.KGallery,
+			node = self:getView(),
+			status = not clickTouchPanelStatus
+		})
 	end
 
 	clickTouchPanelFunc()
@@ -195,7 +233,14 @@ function GalleryMemoryInfoMediator:runStartAnim()
 
 	local fade = cc.FadeOut:create(0.4)
 
-	maskImage:runAction(fade)
+	local function endFunc()
+		self:addShare()
+	end
+
+	local callFuncAct1 = cc.CallFunc:create(endFunc)
+	local action = cc.Sequence:create(fade, callFuncAct1)
+
+	maskImage:runAction(action)
 end
 
 function GalleryMemoryInfoMediator:setupTopInfoWidget()

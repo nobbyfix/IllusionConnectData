@@ -15,8 +15,9 @@ GalleryPartnerInfoMediator:has("_stageSystem", {
 
 local kBtnHandlers = {
 	["main.ruleBtn"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickRule"
+		ignoreClickAudio = true,
+		eventType = 4,
+		func = "onClickShowTips"
 	},
 	["main.bustbtn"] = {
 		clickAudio = "Se_Click_Common_2",
@@ -41,6 +42,10 @@ local kBtnHandlers = {
 	["tabBg.exploreBtn"] = {
 		clickAudio = "Se_Click_Tab_5",
 		func = "onClickExplore"
+	},
+	["tabBg.awakenBtn"] = {
+		clickAudio = "Se_Click_Tab_5",
+		func = "onClickAwaken"
 	}
 }
 local kGossipDescColor = {
@@ -157,6 +162,10 @@ function GalleryPartnerInfoMediator:initWidgetInfo()
 	self._bonusPanel:setVisible(false)
 
 	self._main = self:getView():getChildByFullName("main")
+	self._tipsPanel = self._main:getChildByFullName("tipsPanel")
+
+	self._tipsPanel:setVisible(false)
+
 	self._heroPanel = self._main:getChildByFullName("heroPanel")
 	self._pastRed = self._heroPanel:getChildByFullName("imageDi.redPoint")
 
@@ -181,20 +190,32 @@ function GalleryPartnerInfoMediator:initWidgetInfo()
 
 	self._exploreBtn:setVisible(false)
 
+	self._awakenBtn = self._tabBg:getChildByFullName("awakenBtn")
 	self._lockTip = self._tabBg:getChildByFullName("lockTip")
 
 	self._lockTip:setVisible(false)
+
+	self._linkImage = self._heroPanel:getChildByFullName("linkImage")
+
+	self._linkImage:setVisible(false)
 
 	self._bustbtn = self._main:getChildByFullName("bustbtn")
 	self._touchPanel = self:getView():getChildByFullName("touchPanel")
 
 	self._touchPanel:setTouchEnabled(true)
-	self._touchPanel:setSwallowTouches(false)
+	self._touchPanel:setSwallowTouches(true)
 	self._touchPanel:addClickEventListener(function ()
 		if self._bonusPanel:isVisible() then
 			self._bonusPanel:setVisible(false)
 		end
+
+		if self._tipsPanel:isVisible() then
+			self._tipsPanel:setVisible(false)
+		end
+
+		self._touchPanel:setVisible(false)
 	end)
+	self._touchPanel:setVisible(false)
 	CommonUtils.runActionEffect(self._leftBtn, "Node_1.leftBtn", "LeftRightArrowEffect", "anim1", true)
 	CommonUtils.runActionEffect(self._rightBtn, "Node_2.rightBtn", "LeftRightArrowEffect", "anim1", true)
 
@@ -241,6 +262,48 @@ function GalleryPartnerInfoMediator:initView()
 			self:onClickBonus(maxImage, self._attrData, true)
 		end
 	end)
+
+	local language = getCurrentLanguage()
+	local tips = self._gallerySystem:getGalleryRule()
+	local panelSize = self._tipsPanel:getContentSize()
+	local space = 18
+	local PositionY = 18
+
+	for i = 1, #tips do
+		local str = Strings:get(tips[i])
+		local text = ccui.Text:create(str, TTF_FONT_FZYH_M, 18)
+
+		if language ~= GameLanguageType.CN then
+			text:setLineSpacing(1)
+		else
+			text:setLineSpacing(space)
+		end
+
+		text:getVirtualRenderer():setMaxLineWidth(385)
+		text:addTo(self._tipsPanel):setTag(i)
+		text:setAnchorPoint(cc.p(0, 1))
+
+		PositionY = PositionY + text:getContentSize().height + 18
+	end
+
+	if panelSize.height < PositionY then
+		panelSize.height = PositionY
+
+		self._tipsPanel:setContentSize(panelSize)
+	end
+
+	for i = 1, #tips do
+		local prewText = self._tipsPanel:getChildByTag(i - 1)
+		local text = self._tipsPanel:getChildByTag(i)
+
+		if prewText then
+			local topPosY = prewText:getPositionY() - prewText:getContentSize().height
+
+			text:setPosition(cc.p(10, topPosY - space))
+		else
+			text:setPosition(cc.p(10, panelSize.height - 15))
+		end
+	end
 end
 
 function GalleryPartnerInfoMediator:refreshData()
@@ -302,6 +365,14 @@ function GalleryPartnerInfoMediator:refreshBtnState()
 	else
 		self:createLickTip(self._exploreBtn)
 	end
+
+	self._awakenBtn:removeChildByName("LockTip")
+
+	if self._heroSystem:checkHaveAwaken(self._heroId) == false then
+		self:createLickTip(self._awakenBtn)
+	else
+		self._awakenBtn:getChildByFullName("dark_1"):setOpacity(255)
+	end
 end
 
 function GalleryPartnerInfoMediator:createLickTip(node)
@@ -328,11 +399,7 @@ function GalleryPartnerInfoMediator:refreshInfo()
 		panel:getChildByName("desc"):setString(self._heroInfos["info" .. i][1])
 
 		local info = panel:getChildByName("info")
-		local render = info:getVirtualRenderer()
 
-		render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
-		render:setOverflow(cc.LabelOverflow.SHRINK)
-		render:setDimensions(165, 25)
 		info:setString(self._heroInfos["info" .. i][2])
 	end
 
@@ -350,6 +417,12 @@ function GalleryPartnerInfoMediator:refreshInfo()
 		self._namePanel:getChildByFullName("cvname"):setFontSize(22)
 	else
 		self._namePanel:getChildByFullName("cvname"):setFontSize(24)
+	end
+
+	if self._heroSystem:isLinkStageHero(self._heroId) then
+		self._linkImage:setVisible(true)
+	else
+		self._linkImage:setVisible(false)
 	end
 
 	local historyHero = ConfigReader:getDataByNameIdAndKey("GalleryHeroInfo", self._heroId, "HistoryHero")
@@ -374,15 +447,6 @@ function GalleryPartnerInfoMediator:refreshInfo()
 		panel:setPosition(cc.p(value[1], value[2] + 34))
 		panel:getChildByName("desc"):setString(Strings:get(desc))
 		panel:getChildByName("desc"):setColor(kGossipDescColor[value[3]])
-
-		local panelSize = panel:getContentSize()
-		local descSize = panel:getChildByName("desc"):getContentSize()
-
-		if panelSize.width < descSize.width + 15 then
-			panelSize.width = descSize.width + 15
-		end
-
-		panel:setContentSize(panelSize)
 
 		self._gossipArr[#self._gossipArr + 1] = panel
 	end
@@ -419,19 +483,15 @@ function GalleryPartnerInfoMediator:refreshInfo()
 	local heroIcon = nil
 
 	if hasHero then
-		heroIcon = IconFactory:createRoleIconSprite({
+		heroIcon = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust5",
-			stencil = 1,
-			id = roleModel,
-			size = cc.size(368, 446)
+			frameId = "bustframe4_8",
+			id = roleModel
 		})
 	else
-		heroIcon = IconFactory:createRoleIconSprite({
-			stencil = 1,
-			iconType = "Bust5",
-			id = roleModel,
-			size = cc.size(368, 446)
+		heroIcon = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe4_8",
+			id = roleModel
 		})
 	end
 
@@ -504,7 +564,7 @@ function GalleryPartnerInfoMediator:refreshLove()
 		fullBgEnd:setVisible(data.proportion == 1)
 
 		local heroNode = rewardTip:getChildByFullName("hero")
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = roleModel
 		})
 
@@ -688,17 +748,11 @@ function GalleryPartnerInfoMediator:onClickBack()
 	self:dismiss()
 end
 
-function GalleryPartnerInfoMediator:onClickRule()
-	local view = self:getInjector():getInstance("ArenaRuleView")
-	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		title1 = Strings:get("GALLERY_UI14"),
-		title2 = Strings:get("UITitle_EN_Haoganduguize"),
-		rule = self._gallerySystem:getGalleryRule()
-	}, nil)
-
-	self:dispatch(event)
+function GalleryPartnerInfoMediator:onClickShowTips(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self._tipsPanel:setVisible(true)
+		self._touchPanel:setVisible(true)
+	end
 end
 
 function GalleryPartnerInfoMediator:onClickGift()
@@ -732,6 +786,12 @@ function GalleryPartnerInfoMediator:onClickExplore()
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Item_PleaseWait")
 		}))
+	end
+end
+
+function GalleryPartnerInfoMediator:onClickAwaken()
+	if self._heroSystem:checkHaveAwaken(self._heroId) then
+		self._heroSystem:tryEnterAwakenShowView(self._heroId)
 	end
 end
 
@@ -853,6 +913,7 @@ function GalleryPartnerInfoMediator:onClickBonus(sender, data, showTitle)
 	self._bonusPanel:setPositionX(self._bonusPanel:getParent():convertToNodeSpace(targetPos).x)
 	self._bonusPanel:setVisible(true)
 	self:refreshInnerAttrPanel(data, showTitle)
+	self._touchPanel:setVisible(true)
 end
 
 function GalleryPartnerInfoMediator:onClickBust()

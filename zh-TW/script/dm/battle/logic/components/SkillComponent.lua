@@ -92,6 +92,40 @@ function SkillComponent:setupSkill(type, skill)
 	self._skills[type] = skill
 end
 
+function SkillComponent:addPassiveSkill(data)
+	local passiveSkills = self:getSkill(kBattlePassiveSkill)
+	local skill = BattleSkill:new(data)
+	passiveSkills = passiveSkills or {}
+
+	for k, v in pairs(passiveSkills) do
+		if v:getId() == skill:getId() then
+			return v, false
+		end
+	end
+
+	passiveSkills[#passiveSkills + 1] = skill
+
+	self:setupSkillList(kBattlePassiveSkill, passiveSkills)
+
+	return skill, true
+end
+
+function SkillComponent:removePassiveSkill(id)
+	local passiveSkills = self:getSkill(kBattlePassiveSkill)
+
+	for i, v in ipairs(passiveSkills) do
+		if v:getId() == id then
+			table.remove(passiveSkills, i)
+
+			break
+		end
+	end
+
+	self:setupSkillList(kBattlePassiveSkill, passiveSkills)
+
+	return skill
+end
+
 function SkillComponent:setupSkillList(type, skillList)
 	if skillList then
 		for i = 1, #skillList do
@@ -105,6 +139,10 @@ end
 
 function SkillComponent:getSkill(type)
 	return self._skills[type]
+end
+
+function SkillComponent:getSkills()
+	return self._skills
 end
 
 function SkillComponent:setUniqueSkillRoutine(routine)

@@ -121,6 +121,11 @@ function BuildingLoot:beCollectedOne(item, flyToPos, finalCallback)
 		local time = len / speed
 		local action1 = cc.MoveTo:create(time, cc.p(flyToPos.x, flyToPos.y))
 		local callbackFunc = cc.CallFunc:create(function ()
+			local dispatcher = DmGame:getInstance()
+
+			dispatcher:dispatch(Event:new(BUILDING_EVT_GETRES_SUCCESS, {
+				loopType = self._itemType
+			}))
 			anim:removeFromParent()
 
 			if finalCallback then

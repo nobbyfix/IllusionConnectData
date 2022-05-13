@@ -104,6 +104,28 @@ function HeroCardPool:insertCardByInfo(cardInfo)
 	return card
 end
 
+function HeroCardPool:repleaceCard(card, index)
+	self._cardArray[index] = card
+
+	return card
+end
+
+function HeroCardPool:insertCard(card, index)
+	if self._cardArray ~= nil then
+		if index then
+			if index > 0 then
+				table.insert(self._cardArray, index, card)
+			else
+				table.insert(self._cardArray, #self._cardArray + index, card)
+			end
+		else
+			table.insert(self._cardArray, card)
+		end
+	end
+
+	return card
+end
+
 SkillCardPool = class("SkillCardPool", HeroCardPool)
 
 function SkillCardPool:initWithData(arrdata)
@@ -137,6 +159,22 @@ local function shuffle(rand, arr, start, ending)
 	end
 end
 
+function SkillCardPool:insertCard(card, index)
+	if self._cardArray ~= nil then
+		if index then
+			if index > 0 then
+				table.insert(self._cardArray, index, card)
+			else
+				table.insert(self._cardArray, #self._cardArray + index, card)
+			end
+		else
+			table.insert(self._cardArray, card)
+		end
+	end
+
+	return card
+end
+
 function SkillCardPool:shuffle(rand)
 	if self._cardArray ~= nil then
 		shuffle(rand, self._cardArray)
@@ -149,5 +187,52 @@ function SkillCardPool:getRandomCard(rand)
 		local k = rand:random(1, n)
 
 		return self._cardArray[k]
+	end
+end
+
+ExtraCardPool = class("ExtraCardPool", HeroCardPool)
+
+function ExtraCardPool:setupCardArray(cards)
+	local cardArray = self._cardArray or {}
+	local len = #cards
+
+	for i = 1, len do
+		cardArray[#cardArray + i] = cards[len + 1 - i]
+	end
+
+	self._cardArray = cardArray
+end
+
+function ExtraCardPool:addHeroCard(arrdata)
+	local cards = {}
+
+	for i = 1, #arrdata do
+		local card = HeroCard:new(arrdata[i])
+		cards[i] = card
+	end
+
+	self:setupCardArray(cards)
+end
+
+function ExtraCardPool:addSkillCard(arrdata)
+	local cards = {}
+
+	for i = 1, #arrdata do
+		local widget = arrdata[i].weight
+
+		for j = 1, widget do
+			local card = SkillCard:new(arrdata[i])
+			cards[#cards + 1] = card
+		end
+	end
+
+	self:setupCardArray(cards)
+
+	return self
+end
+
+function ExtraCardPool:getCardAtIndex(index)
+	if self._cardArray ~= nil then
+		return self._cardArray[index]
 	end
 end

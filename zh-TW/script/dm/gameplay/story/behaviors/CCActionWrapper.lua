@@ -268,6 +268,19 @@ __global_actions.fadeOut = ACTION(function ()
 		return cc.Sequence:create(callFuncAct, fadeOutAct)
 	end)
 end)
+__global_actions.opacityTo = ACTION(function ()
+	return RunCocosAction:new(function (actor, args)
+		if actor then
+			local renderNode = actor:getRenderNode()
+
+			if renderNode and (args.valbegin or args.valbegin == 0) then
+				renderNode:setOpacity(args.valbegin)
+			end
+		end
+
+		return cc.FadeTo:create(args.duration, args.valend)
+	end)
+end)
 __global_actions.brightnessTo = ACTION(function ()
 	return RunCocosAction:new(function (actor, args)
 		return BrightnessTo:create(args.duration, args.brightness)

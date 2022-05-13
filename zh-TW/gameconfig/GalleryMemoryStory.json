@@ -1,6 +1,6 @@
 {
     "Memory_ACTIVILIST_1": {
-        "ActiviType": "",
+        "ActiviType": "TASK",
         "Condition": "",
         "Listpicture": "s_album_active_15",
         "Name": "Banner_Text4",
@@ -20,8 +20,17 @@
             }
         ],
         "Type": "ACTIVILIST",
-        "UnlockDesc": "",
-        "UnlockStory": ""
+        "UnlockDesc": "Day1Activity_Desc",
+        "UnlockStory": {
+            "Task": [
+                "Day1ActivityTask1",
+                "Day1ActivityTask2",
+                "Day1ActivityTask3",
+                "Day1ActivityTask4",
+                "Day1ActivityTask5",
+                "Day1ActivityTask6"
+            ]
+        }
     },
     "Memory_ACTIVILIST_2": {
         "ActiviType": "",
@@ -60,7 +69,7 @@
         "Condition": "",
         "Listpicture": "s_main_event_04",
         "Name": "ActivityBlock_ZuoHe_Support_Name",
-        "Num": 3,
+        "Num": 7,
         "Story": [
             {
                 "id": [
@@ -87,32 +96,469 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
-    "Memory_ACTIVILIST_4": {
+    "Memory_ACTIVILIST_6": {
         "ActiviType": "",
         "Condition": "",
-        "Listpicture": "s_main_event_05",
-        "Name": "ActivityBlock_Summer",
-        "Num": 4,
+        "Listpicture": "ybxrdxh_fb_Snowflake_bg_small",
+        "Name": "ActivityBlock_Snowflake_Name",
+        "Num": 3,
         "Story": [
             {
                 "id": [
-                    "Memory_STORY_ACTIVI_28",
-                    "Memory_STORY_ACTIVI_29",
-                    "Memory_STORY_ACTIVI_30",
-                    "Memory_STORY_ACTIVI_31",
-                    "Memory_STORY_ACTIVI_32"
+                    "Memory_STORY_ACTIVI_50",
+                    "Memory_STORY_ACTIVI_51",
+                    "Memory_STORY_ACTIVI_52",
+                    "Memory_STORY_ACTIVI_53"
                 ],
                 "type": "NORMAL"
             },
             {
                 "id": [
-                    "Memory_STORY_ACTIVI_33",
-                    "Memory_STORY_ACTIVI_34",
-                    "Memory_STORY_ACTIVI_35",
-                    "Memory_STORY_ACTIVI_36",
-                    "Memory_STORY_ACTIVI_37",
-                    "Memory_STORY_ACTIVI_38",
-                    "Memory_STORY_ACTIVI_39"
+                    "Memory_STORY_ACTIVI_54",
+                    "Memory_STORY_ACTIVI_55",
+                    "Memory_STORY_ACTIVI_56",
+                    "Memory_STORY_ACTIVI_57"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_ACTIVILIST_NewYear": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "memory_scene_stagechristmas",
+        "Name": "ActivityBlock_ANewYea_UI2",
+        "Num": 4,
+        "Story": [
+            {
+                "id": [
+                    "Memory_ANewYearS01S01",
+                    "Memory_ANewYearS01S02",
+                    "Memory_ANewYearS02S01",
+                    "Memory_ANewYearS02S02",
+                    "Memory_ANewYearS03S01",
+                    "Memory_ANewYearS03S02",
+                    "Memory_ANewYearS03S03",
+                    "Memory_ANewYearS03S04"
+                ],
+                "type": "NORMAL"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Animal": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Animal_Map",
+                    "AnimalS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_animal_1",
+        "Name": "ActivityBlock_Animal_Name",
+        "Num": 18,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Animal_1",
+                    "Memory_Act_Animal_2",
+                    "Memory_Act_Animal_3",
+                    "Memory_Act_Animal_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Animal_5",
+                    "Memory_Act_Animal_6",
+                    "Memory_Act_Animal_7",
+                    "Memory_Act_Animal_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_DeepSea": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_DeepSea",
+                    "ActivityBlock_DeepSea_Map",
+                    "DeepSeaM01",
+                    "DeepSeaS01",
+                    "DeepSeaS01M"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_deepsea_1",
+        "Name": "ActivityBlock_DeepSea_Name",
+        "Num": 9,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_DeepSea_1",
+                    "Memory_Act_DeepSea_2",
+                    "Memory_Act_DeepSea_3",
+                    "Memory_Act_DeepSea_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_DeepSea_5",
+                    "Memory_Act_DeepSea_6",
+                    "Memory_Act_DeepSea_7",
+                    "Memory_Act_DeepSea_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Drama": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Drama_Map",
+                    "DramaS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_drama_1",
+        "Name": "ActivityBlock_Drama_Name",
+        "Num": 21,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Drama_1",
+                    "Memory_Act_Drama_2",
+                    "Memory_Act_Drama_3",
+                    "Memory_Act_Drama_4",
+                    "Memory_Act_Drama_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Drama_6",
+                    "Memory_Act_Drama_7",
+                    "Memory_Act_Drama_8",
+                    "Memory_Act_Drama_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Dusk": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Dusk_Map",
+                    "DuskS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_dusk_1",
+        "Name": "ActivityBlock_Dusk_Name",
+        "Num": 19,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Dusk_1",
+                    "Memory_Act_Dusk_2",
+                    "Memory_Act_Dusk_3",
+                    "Memory_Act_Dusk_4",
+                    "Memory_Act_Dusk_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Dusk_6",
+                    "Memory_Act_Dusk_7",
+                    "Memory_Act_Dusk_8",
+                    "Memory_Act_Dusk_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Fire": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_fire_1",
+        "Name": "ActivityBlock_Fire_Name",
+        "Num": 8,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Fire_1",
+                    "Memory_Act_Fire_2",
+                    "Memory_Act_Fire_3",
+                    "Memory_Act_Fire_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Fire_5",
+                    "Memory_Act_Fire_6",
+                    "Memory_Act_Fire_7",
+                    "Memory_Act_Fire_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_FireWorks": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_FireWorks_Map",
+                    "FireWorksS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_fireworks_1",
+        "Name": "ActivityBlock_FireWorks_Name",
+        "Num": 16,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_FireWorks_1",
+                    "Memory_Act_FireWorks_2"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_FireWorks_3",
+                    "Memory_Act_FireWorks_4"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Musicfestival": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "img_story_musicfestival_1",
+        "Name": "ActivityBlock_MusicFestival_Name",
+        "Num": 6,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Musicfestival_1",
+                    "Memory_Act_Musicfestival_2",
+                    "Memory_Act_Musicfestival_3",
+                    "Memory_Act_Musicfestival_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Musicfestival_5",
+                    "Memory_Act_Musicfestival_6",
+                    "Memory_Act_Musicfestival_7",
+                    "Memory_Act_Musicfestival_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Riddle": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Riddle_Re_Map",
+                    "RiddleS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_riddle_1",
+        "Name": "ActivityBlock_Riddle_Name",
+        "Num": 17,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Riddle_1",
+                    "Memory_Act_Riddle_2",
+                    "Memory_Act_Riddle_3",
+                    "Memory_Act_Riddle_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Riddle_5",
+                    "Memory_Act_Riddle_6",
+                    "Memory_Act_Riddle_7",
+                    "Memory_Act_Riddle_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_SilentNight": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SilentNight_Map",
+                    "SilentNightS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_silentnight_3",
+        "Name": "ActivityBlock_SilentNight_Name",
+        "Num": 20,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_SilentNight_1",
+                    "Memory_Act_SilentNight_2",
+                    "Memory_Act_SilentNight_3",
+                    "Memory_Act_SilentNight_4",
+                    "Memory_Act_SilentNight_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_SilentNight_6",
+                    "Memory_Act_SilentNight_7",
+                    "Memory_Act_SilentNight_8",
+                    "Memory_Act_SilentNight_9"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Terror": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Terror_Map",
+                    "TerrorS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_terror_1",
+        "Name": "ActivityBlock_Terror_Name",
+        "Num": 15,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Terror_1",
+                    "Memory_Act_Terror_2",
+                    "Memory_Act_Terror_3",
+                    "Memory_Act_Terror_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Terror_5",
+                    "Memory_Act_Terror_6",
+                    "Memory_Act_Terror_7",
+                    "Memory_Act_Terror_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Detective_List": {
+        "ActiviType": "",
+        "Condition": "",
+        "Listpicture": "s_act_detective_1",
+        "Name": "ActivityBlock_Detective_Name",
+        "Num": 5,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Detective_1",
+                    "Memory_Detective_2"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Detective_3",
+                    "Memory_Detective_4"
                 ],
                 "type": "ELITE"
             }
@@ -174,7 +620,7 @@
                 "factorSt2": [],
                 "params": [
                     "M18",
-                    "M18S01"
+                    "M18S07"
                 ]
             }
         ],
@@ -307,7 +753,7 @@
                 "factorSt2": [],
                 "params": [
                     "M06",
-                    "M06S01"
+                    "M06S06"
                 ]
             }
         ],
@@ -351,7 +797,7 @@
                 "factorSt2": [],
                 "params": [
                     "M08",
-                    "M08S01"
+                    "M08S09"
                 ]
             }
         ],
@@ -364,11 +810,9 @@
                     "Memory_STORY_21",
                     "Memory_STORY_22",
                     "Memory_STORY_23",
-                    "Memory_STORY_23_1",
                     "Memory_STORY_24",
                     "Memory_STORY_25",
-                    "Memory_STORY_26",
-                    "Memory_STORY_26_1"
+                    "Memory_STORY_26"
                 ],
                 "type": "NORMAL"
             },
@@ -397,7 +841,7 @@
                 "factorSt2": [],
                 "params": [
                     "M10",
-                    "M10S01"
+                    "M10S10"
                 ]
             }
         ],
@@ -441,7 +885,7 @@
                 "factorSt2": [],
                 "params": [
                     "M12",
-                    "M12S01"
+                    "M12S09"
                 ]
             }
         ],
@@ -485,7 +929,7 @@
                 "factorSt2": [],
                 "params": [
                     "M14",
-                    "M14S02"
+                    "M14S08"
                 ]
             }
         ],
@@ -529,7 +973,7 @@
                 "factorSt2": [],
                 "params": [
                     "M16",
-                    "M16S03"
+                    "M16S08"
                 ]
             }
         ],

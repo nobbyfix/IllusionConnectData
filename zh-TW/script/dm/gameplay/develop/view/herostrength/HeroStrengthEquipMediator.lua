@@ -51,6 +51,10 @@ function HeroStrengthEquipMediator:dispose()
 		self._equipInfoView = nil
 	end
 
+	if self._soundId then
+		AudioEngine:getInstance():stopEffect(self._soundId)
+	end
+
 	super.dispose(self)
 end
 
@@ -116,11 +120,16 @@ function HeroStrengthEquipMediator:refreshView(hideAnim)
 	self:refreshEquip()
 end
 
-function HeroStrengthEquipMediator:refreshViewByLock()
+function HeroStrengthEquipMediator:refreshViewByLock(event)
 	if self._equipInfoView then
 		self._equipInfoView:refreshData()
 		self._equipInfoView:refreshLock()
-		self._equipInfoView:showLockTip()
+
+		local data = event:getData()
+
+		if data.viewtype == 1 then
+			self._equipInfoView:showLockTip()
+		end
 	end
 end
 
@@ -417,7 +426,7 @@ function HeroStrengthEquipMediator:createCanStarUpMark(parent)
 	image:addTo(parent):posite(280, 114)
 	image:setName("StarUpMark")
 
-	local str = cc.Label:createWithTTF("可突破", TTF_FONT_FZYH_M, 18)
+	local str = cc.Label:createWithTTF(Strings:get("heroshow_UI34"), TTF_FONT_FZYH_M, 18)
 
 	str:addTo(image):posite(38, 23)
 end
@@ -460,10 +469,13 @@ end
 
 function HeroStrengthEquipMediator:onClickEquip()
 	local equips = self._equipSystem:getOneKeyEquips()[self._heroId] or {}
+	local heroEquipIds = self._heroData:getEquipIds()
 	local heroEquips = {}
 
 	for i, equipId in pairs(equips) do
-		table.insert(heroEquips, equipId)
+		if heroEquipIds[i] ~= equipId then
+			table.insert(heroEquips, equipId)
+		end
 	end
 
 	if #heroEquips <= 0 then
@@ -483,7 +495,19 @@ function HeroStrengthEquipMediator:onClickEquip()
 		heroEquips = heroEquips
 	}
 
-	self._equipSystem:requestOneKeyEquipMounting(params)
+	self._equipSystem:requestOneKeyEquipMounting(params, function ()
+		local soundId = self:getWearEquipSoundId()
+
+		if soundId and soundId ~= "" then
+			if self._soundId then
+				AudioEngine:getInstance():stopEffect(self._soundId)
+			end
+
+			self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
+				self._soundId = nil
+			end)
+		end
+	end)
 end
 
 function HeroStrengthEquipMediator:onClickOneKeyStrengthen()
@@ -591,6 +615,7 @@ function HeroStrengthEquipMediator:onClickEquipLock()
 
 	if equipId then
 		local params = {
+			viewtype = 1,
 			equipId = equipId
 		}
 
@@ -775,4 +800,12 @@ function HeroStrengthEquipMediator:runNodeAction(node)
 
 		starUpMark:runAction(seq)
 	end
+end
+
+function HeroStrengthEquipMediator:getWearEquipSoundId()
+	local soundId = ""
+	local rarity = self._heroData:getRarity()
+	soundId = "Voice_" .. self._heroId .. GameStyle:getHeroRaritySound(rarity)
+
+	return soundId
 end

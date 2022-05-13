@@ -171,9 +171,10 @@ function PetRaceSystem:enterBattle(data, reportData, text_titleDes, round)
 		viewConfig = {
 			mainView = "battlePlayer",
 			opPanelRes = "asset/ui/BattleUILayer_PetRace.csb",
-			opPanelClazz = "PetRaceBattleUIMediator",
 			canChangeSpeedLevel = true,
+			opPanelClazz = "PetRaceBattleUIMediator",
 			battle_type = "PET_RACE",
+			battleSettingType = SettingBattleTypes.kPetRace,
 			bulletTimeEnabled = BattleLoader:getBulletSetting("BulletTime_PVP_KOF"),
 			bgm = BGM,
 			background = bgRes,
@@ -562,7 +563,7 @@ function PetRaceSystem:isRegistAviable()
 	return true
 end
 
-function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color)
+function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color, fixRoundPos)
 	if not baseNode then
 		return
 	end
@@ -585,6 +586,7 @@ function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color)
 
 	local roundDes = self:getDesRound(round)
 
+	labelRound:setContentSize(cc.size(136.53, 40))
 	labelRound:setString(roundDes)
 
 	local stateDes = self:getDesState(round, state)
@@ -596,6 +598,10 @@ function PetRaceSystem:updateTimeDes(baseNode, round, state, updateTime, color)
 	local timeStr = TimeUtil:formatTime(timeformateStr, time)
 
 	labelTime:setString(timeStr)
+
+	if fixRoundPos then
+		labelRound:setPositionX(labelTime:getPositionX() + labelTime:getContentSize().width + 20)
+	end
 end
 
 function PetRaceSystem:getDesRound(round)
@@ -755,7 +761,7 @@ function PetRaceSystem:createRoleIcon(data)
 		roleModel = ConfigReader:getDataByNameIdAndKey("Surface", data.surfaceId, "Model") or roleModel
 	end
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = roleModel
 	})
 
@@ -1149,6 +1155,10 @@ function PetRaceSystem:requestReportDetail(round, reportId, blockUI)
 end
 
 function PetRaceSystem:redPointShow()
+	if not CommonUtils.GetSwitch("fn_arena_pet_race") then
+		return false
+	end
+
 	local unlock = self._systemKeeper:isUnlock("KOF")
 
 	if unlock then

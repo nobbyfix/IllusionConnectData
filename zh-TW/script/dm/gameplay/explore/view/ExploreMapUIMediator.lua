@@ -132,9 +132,6 @@ function ExploreMapUIMediator:initView(pointId, parent)
 
 	self._hpMax = self._exploreSystem:getHpMax()
 	self._speedPanel = self._main:getChildByName("speed_panel")
-
-	self._speedPanel:setVisible(false)
-
 	self._speedLabel = self._speedPanel:getChildByName("label1")
 	self._speedLabel1 = self._speedPanel:getChildByName("label2")
 	self._speedBtn = self._speedPanel:getChildByName("speed_btn")
@@ -142,6 +139,29 @@ function ExploreMapUIMediator:initView(pointId, parent)
 	self._speedEffect = cc.MovieClip:create("zidongxunhuan_xitonganniu")
 
 	self._speedEffect:addTo(self._speedPanel):offset(25, 28)
+	self._speedPanel:setVisible(false)
+
+	local auto_enabledNode = self._autoBtn:getChildByFullName("label_node.auto_enabled")
+	local autoLabelEn = self._autoBtn:getChildByFullName("autoLabelEn")
+
+	auto_enabledNode:setVisible(true)
+	autoLabelEn:setVisible(false)
+	self._speedLabel:setVisible(true)
+	self._speedLabel1:setVisible(true)
+
+	self._speedLabel2 = self._speedPanel:getChildByName("label3")
+
+	self._speedLabel2:setVisible(false)
+
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		auto_enabledNode:setVisible(false)
+		autoLabelEn:setVisible(true)
+		self._speedLabel:setVisible(false)
+		self._speedLabel1:setVisible(false)
+		self._speedLabel2:setVisible(true)
+	end
 
 	local clickImg = self._taskPanel:getChildByFullName("progressMark")
 
@@ -825,6 +845,7 @@ function ExploreMapUIMediator:onClickAuto()
 end
 
 function ExploreMapUIMediator:onClickSpeed()
+	local battleAuto = self._exploreSystem:getAutoBattleStatus()
 	local canSweep = self._exploreSystem:getSpeedEffect()
 
 	if not canSweep then
@@ -840,6 +861,12 @@ function ExploreMapUIMediator:onClickSpeed()
 						tip = Strings:get("Function_Not_Open")
 					}))
 				else
+					if battleAuto then
+						self._exploreSystem:setAutoBattleStatus(not battleAuto)
+						self._parentMediator:stopAutoPlay()
+						self._autoBtn:removeChildByName("AnimEffect")
+					end
+
 					entry:response(context, params)
 				end
 			end
@@ -890,6 +917,10 @@ end
 function ExploreMapUIMediator:resetAuto()
 	self._exploreSystem:setAutoBattleStatus(false)
 	self._autoBtn:removeChildByName("AnimEffect")
+end
+
+function ExploreMapUIMediator:leaveWithData()
+	self:onClickBack()
 end
 
 function ExploreMapUIMediator:onClickBack()

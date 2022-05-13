@@ -68,10 +68,10 @@ function scene_mapstory_Egypt_2_boss_05.actions.start_mapstory_Egypt_2_boss_05(_
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -510,
+						y = -310,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -95,8 +95,8 @@ function scene_mapstory_Egypt_2_boss_05.actions.start_mapstory_Egypt_2_boss_05(_
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}

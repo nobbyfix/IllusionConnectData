@@ -7,12 +7,86 @@ ActivitySagaSupportMapMediator = class("ActivitySagaSupportMapMediator", DmAreaV
 ActivitySagaSupportMapMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
+ActivitySagaSupportMapMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
 
 local commonCellWidth = 420
 local unSelectCellHeight = 69
 local selectedCellHeight = 155
 local onScrollState = false
 local BaseChapterPath = "asset/scene/"
+local choiceBtnPos = {
+	{
+		z = 10,
+		x = -9,
+		y = 19
+	},
+	{
+		z = 20,
+		x = 25,
+		y = -40
+	},
+	{
+		z = 30,
+		x = 56,
+		y = 1
+	}
+}
+local lineGradiantVec = {
+	{
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(161, 182, 238, 255)
+		}
+	},
+	{
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(201, 161, 238, 255)
+		}
+	},
+	{
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(255, 153, 153, 255)
+		}
+	}
+}
+local stageType_index = {
+	[StageType.kNormal] = 1,
+	[StageType.kElite] = 2,
+	[StageType.kHard] = 3
+}
+local stageType_name = {
+	{
+		"STAGE_DIFFICULTY_NORMAL",
+		StageType.kNormal,
+		"Change_Fire_Normal_Tips"
+	},
+	{
+		"STAGE_DIFFICULTY_ELITE",
+		StageType.kElite,
+		"Change_Fire_Crazy_Tips"
+	},
+	{
+		"STAGE_DIFFICULTY_HARD",
+		StageType.kHard,
+		"Change_Fire_Hard_Tips"
+	}
+}
 local kBtnHandlers = {
 	["main.actionNode.btn_heroSystem"] = {
 		func = "onGotoHeroSystem"
@@ -88,8 +162,8 @@ function ActivitySagaSupportMapMediator:enterWithData(data)
 		return
 	end
 
-	self._uiId = self._activity:getUI()
-	self._model = self._activity:getBlockMapActivity()
+	self._blockActivityId = data.blockActivityId
+	self._model = self._activity:getBlockMapActivity(self._blockActivityId)
 
 	if not self._model then
 		self:tryEnterSupport()
@@ -99,6 +173,7 @@ function ActivitySagaSupportMapMediator:enterWithData(data)
 
 	self._data = data or {}
 	self._stageType = self._data.stageType or StageType.kNormal
+	self._useThreeChoice = self._data.useThreeChoice or false
 	self._mapId = self._model:getMapIdByStageType(self._stageType)
 
 	self:initWidget()
@@ -106,6 +181,7 @@ function ActivitySagaSupportMapMediator:enterWithData(data)
 	self:refreshStageType()
 	self:setChapterTitle()
 	self:initStage()
+	self:initThreeChoiceLogic()
 	self:createTableView()
 	self:setScrollPoint()
 	self:initRewardBox()
@@ -123,7 +199,7 @@ function ActivitySagaSupportMapMediator:tryEnterSupport()
 end
 
 function ActivitySagaSupportMapMediator:resumeWithData(data)
-	self._model = self._activity:getBlockMapActivity()
+	self._model = self._activity:getBlockMapActivity(self._blockActivityId)
 
 	if not self._model then
 		self:tryEnterSupport()
@@ -145,6 +221,8 @@ function ActivitySagaSupportMapMediator:resumeWithData(data)
 	end
 
 	self:initStage()
+	self:initThreeChoiceLogic()
+	self:initThreeChoiceLogic()
 	self._tableView:reloadData()
 	self:setScrollPoint()
 	self:refreshStarBoxPanel()
@@ -180,7 +258,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 
 			icon:addTo(self._stageRewardsPanel):setScale(0.5)
 
-			local x = 30 * (3 - length) + 68 * (i - 1)
+			local x = (i - 1) * 65 + 5
 
 			icon:setPositionX(x)
 
@@ -190,7 +268,7 @@ function ActivitySagaSupportMapMediator:setAdditionHero()
 		end
 	end
 
-	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 75 + 45, 70))
+	self._stageAdditionPanel:setContentSize(cc.size(#btns.blockParams.heroes * 65 + 65, 70))
 end
 
 function ActivitySagaSupportMapMediator:setChapterTitle()
@@ -268,14 +346,21 @@ function ActivitySagaSupportMapMediator:initWidget()
 	self._starBoxPanel = self:getView():getChildByName("star_panel")
 	self._stageTypeView = self:getView():getChildByFullName("main.stageType")
 	self._stageAdditionPanel = self:getView():getChildByFullName("main.stageAddition")
+	self._starAdditionPanel = self:getView():getChildByFullName("main.starAddPanel")
 	self._Image_2 = self:getView():getChildByFullName("main.Image_2")
 
 	if self._Image_2 then
 		self._Image_2:setVisible(false)
 	end
 
-	self._stageRewardsPanel = self:getView():getChildByFullName("main.stageAddition.stageRewards")
+	self._heroSystemBtn = self._main:getChildByFullName("actionNode.btn_heroSystem")
+	self._emBattleBtn = self._main:getChildByFullName("actionNode.btn_emBattle")
 	self._stageTypeBtn = self._main:getChildByFullName("actionNode.btn_stage")
+	self._choicePanel = self._main:getChildByFullName("actionNode.choicePanel")
+	self._heroSystemBtnX = self._heroSystemBtn:getPositionX()
+	self._emBattleBtnX = self._emBattleBtn:getPositionX()
+	self._stageTypeBtnX = self._stageTypeBtn:getPositionX()
+	self._stageRewardsPanel = self:getView():getChildByFullName("main.stageAddition.stageRewards")
 
 	for i = 1, 3 do
 		self._stageTypeBtn:getChildByName("Text" .. i):enableOutline(cc.c4b(0, 0, 0, 204), 1)
@@ -291,10 +376,40 @@ function ActivitySagaSupportMapMediator:initWidget()
 	self._stageAdditionPanel:addClickEventListener(function ()
 		self:onClickAditionButton()
 	end)
+	self._starAdditionPanel:addClickEventListener(function ()
+		self:onClickAditionButton()
+	end)
+
+	if self._useThreeChoice then
+		for i = 1, 3 do
+			local nameText = self._choicePanel:getChildByFullName("Panel_" .. i .. ".nameText")
+			local map = self._model:getStageByStageType(stageType_name[i][2])
+
+			nameText:setString(Strings:get(map:getConfig().MapName))
+			nameText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec[i], {
+				x = 0,
+				y = -1
+			}))
+
+			local touchPanel = self._choicePanel:getChildByFullName("Panel_" .. i .. ".touchPanel")
+
+			touchPanel:setTouchEnabled(true)
+			touchPanel:addTouchEventListener(function (sender, eventType)
+				if eventType == ccui.SliderEventType.percentChanged then
+					self:onClickThreeChangeStage(sender)
+				end
+			end)
+		end
+
+		local selectPane = self._choicePanel:getChildByFullName("Panel_4")
+
+		selectPane:setPosition(cc.p(choiceBtnPos[3].x, choiceBtnPos[3].y))
+		selectPane:setLocalZOrder(choiceBtnPos[3].z)
+	end
 end
 
 function ActivitySagaSupportMapMediator:updataStageBtnImg()
-	if self._activity then
+	if self._activity and self._useThreeChoice == false then
 		local imgName = nil
 
 		if stageBtnImg[self._activity:getUI()] then
@@ -307,15 +422,14 @@ function ActivitySagaSupportMapMediator:updataStageBtnImg()
 			self._stageTypeBtn:loadTextures(imgName, imgName, imgName, ccui.TextureResType.plistType)
 		end
 	end
+
+	self._stageTypeBtn:setVisible(self._model:getStageByStageType(StageType.kElite) and true or false)
+	self._heroSystemBtn:setPositionX(self._stageTypeBtn:isVisible() and self._heroSystemBtnX or self._heroSystemBtnX - 100)
+	self._emBattleBtn:setPositionX(self._stageTypeBtn:isVisible() and self._emBattleBtnX or self._emBattleBtnX - 100)
 end
 
 function ActivitySagaSupportMapMediator:refreshStageType()
-	local textMap = {
-		[StageType.kNormal] = "STAGE_DIFFICULTY_NORMAL",
-		[StageType.kElite] = "STAGE_DIFFICULTY_ELITE"
-	}
-
-	self._stageTypeView:setString(Strings:get(textMap[self._stageType]))
+	self._stageTypeView:setString(Strings:get(stageType_name[stageType_index[self._stageType]][1]))
 
 	self._activitySystem.curStageType = self._stageType
 end
@@ -386,6 +500,13 @@ function ActivitySagaSupportMapMediator:initStage()
 	end
 
 	self:updataStageBtnImg()
+	self._starAdditionPanel:setVisible(false)
+
+	local isHeroAttrSatrExtra = self._model:isHeroAttrStarExtra()
+
+	if isHeroAttrSatrExtra then
+		-- Nothing
+	end
 end
 
 function ActivitySagaSupportMapMediator:storySort(tab)
@@ -489,6 +610,10 @@ function ActivitySagaSupportMapMediator:createStoryPointNode(index, pointId)
 			cell:addTo(self:getView():getChildByName("main")):setPosition(568 + storyPointConfig.Location[1], 70 + (index - 1) * 50)
 		else
 			cell:addTo(self:getView():getChildByName("main")):setPosition(568 + storyPointConfig.Location[1], 350 - (index - 1) * 50)
+		end
+
+		if self._useThreeChoice then
+			cell:setPositionX(600 + storyPointConfig.Location[1])
 		end
 
 		cell:setName(pointId)
@@ -869,6 +994,26 @@ function ActivitySagaSupportMapMediator:onClickNextAction(index)
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 		if pointType == kStageTypeMap.point then
+			local openTime = pointInfo:getConfig().PointTime
+			local curTime = self._gameServerAgent:remoteTimestamp()
+
+			if openTime and openTime.start then
+				local startTime = TimeUtil:formatStrToRemoteTImestamp(openTime.start)
+
+				if curTime < startTime then
+					local date = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", startTime)
+
+					self:dispatch(ShowTipEvent({
+						duration = 0.2,
+						tip = Strings:get("Newyear_ActivityStage_OpenTimeTip", {
+							time = date
+						})
+					}))
+
+					return
+				end
+			end
+
 			self:enterCommonPoint(pointId)
 		elseif pointType == kStageTypeMap.StoryPoint then
 			self:onClickPlayStory(pointId)
@@ -890,11 +1035,18 @@ end
 function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local chapterInfo = self._model:getStageByStageType(self._stageType)
+	local chapterConfig = chapterInfo:getConfig()
+	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyAgent = storyDirector:getStoryAgent()
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			self._activitySystem:requestDoChildActivity(self._activity:getId(), self._model:getId(), {
 				doActivityType = 106,
 				pointId = pointId
@@ -925,13 +1077,31 @@ function ActivitySagaSupportMapMediator:onClickPlayStory(pointId, isCheck)
 				}, delegate))
 			end)
 		end
+
+		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
+
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+		StatisticSystem:send({
+			type = "plot_end",
+			op_type = "plot_activity",
+			point = "plot_end",
+			activityid = self._activity:getTitle(),
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
+		})
 	end
 
-	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
-
 	storyAgent:setSkipCheckSave(not isCheck)
-	storyAgent:trigger(storyLink, nil, endCallBack)
+	storyAgent:trigger(storyLink, function ()
+		AudioEngine:getInstance():stopBackgroundMusic()
+	end, endCallBack)
 end
 
 function ActivitySagaSupportMapMediator:refreshStoryPoint(pointId)
@@ -978,6 +1148,12 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 		tips = Strings:get("Change_Normal_Tips")
 	end
 
+	local lockTip = Strings:get("Activity_Stage_Type_Switch_Tips")
+
+	self:changeStagetype(toStageType, tips, lockTip)
+end
+
+function ActivitySagaSupportMapMediator:changeStagetype(toStageType, tips, lockTip)
 	local map = self._model:getStageByStageType(toStageType)
 	local mapPoints = map._index2Points
 	local firstPoint = mapPoints[1]
@@ -997,9 +1173,21 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 		local curTimeStemp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
 
 		if curTimeStemp < timeStemp then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(startTime.start)
+			local localDate = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", remoteTime)
+			local tip = Strings:get("EMap_TimeLimit_Tips", {
+				time = localDate
+			})
+
+			if toStageType == StageType.kHard then
+				tip = Strings:get("HMap_TimeLimit_Tips", {
+					time = localDate
+				})
+			end
+
 			self:dispatch(ShowTipEvent({
 				duration = 0.2,
-				tip = Strings:get("EMap_TimeLimit_Tips")
+				tip = tip
 			}))
 
 			return
@@ -1023,6 +1211,7 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 		self:refreshStageType()
 		self:setChapterTitle()
 		self:initStage()
+		self:initThreeChoiceLogic()
 		self._tableView:reloadData()
 		self:setScrollPoint()
 		self:refreshStarBoxPanel()
@@ -1033,7 +1222,7 @@ function ActivitySagaSupportMapMediator:onClickChangeStageStype()
 	else
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,
-			tip = Strings:get("Activity_Stage_Type_Switch_Tips")
+			tip = lockTip
 		}))
 	end
 end
@@ -1048,4 +1237,54 @@ function ActivitySagaSupportMapMediator:onClickAditionButton()
 	local rules = self._model:getActivityConfig().BonusHeroDesc
 
 	self._activitySystem:showActivityRules(rules)
+end
+
+function ActivitySagaSupportMapMediator:initThreeChoiceLogic()
+	if self._useThreeChoice == false then
+		self._choicePanel:setVisible(false)
+
+		return
+	end
+
+	self._heroSystemBtn:setPositionX(263)
+	self._emBattleBtn:setPositionX(386)
+	self._choicePanel:setVisible(true)
+	self._stageTypeBtn:setVisible(false)
+
+	local selectIndex = stageType_index[self._stageType]
+	local pos_index = 1
+
+	for i = 1, 3 do
+		local basePane = self._choicePanel:getChildByFullName("Panel_" .. i)
+
+		if selectIndex == i then
+			basePane:setVisible(false)
+		else
+			basePane:setVisible(true)
+			basePane:setPosition(cc.p(choiceBtnPos[pos_index].x, choiceBtnPos[pos_index].y))
+			basePane:setLocalZOrder(choiceBtnPos[pos_index].z)
+
+			pos_index = pos_index + 1
+		end
+	end
+
+	local selectNameText = self._choicePanel:getChildByFullName("Panel_4.nameText")
+	local map = self._model:getStageByStageType(self._stageType)
+
+	selectNameText:setString(Strings:get(map:getConfig().MapName))
+end
+
+function ActivitySagaSupportMapMediator:onClickThreeChangeStage(sender)
+	local tag = sender:getTag()
+	local selectIndex = stageType_index[self._stageType]
+
+	if selectIndex == tag then
+		return
+	end
+
+	local toStageType = stageType_name[tag][2]
+	local tips = Strings:get(stageType_name[tag][3])
+	local lockTip = Strings:get("ActivityBlock_UI_26")
+
+	self:changeStagetype(toStageType, tips, lockTip)
 end

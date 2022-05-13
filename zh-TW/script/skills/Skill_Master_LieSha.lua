@@ -103,7 +103,7 @@ all.Sk_Master_LieSha_Action1 = {
 			"1"
 		}, main)
 		this.main = global["[load]"](this, {
-			"Movie_LSha_Skill2"
+			"Movie_LSha_Skill3"
 		}, main)
 
 		return this
@@ -161,10 +161,10 @@ all.Sk_Master_LieSha_Action1 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, global.GetSide(_env, _env.TARGET), 0, 2) + {
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil) + {
 				-0.8,
 				0
-			}, 100, "skill2"))
+			}, 100, "skill3"))
 			global.HarmTargetView(_env, _env.units)
 
 			for _, unit in global.__iter__(_env.units) do
@@ -187,8 +187,8 @@ all.Sk_Master_LieSha_Action1 = {
 				}, this.DeDefRateFactor)
 
 				global.ApplyBuff(_env, unit, {
-					timing = 2,
-					duration = 3,
+					timing = 4,
+					duration = 45,
 					display = "DefDown",
 					tags = {
 						"NUMERIC",
@@ -362,7 +362,7 @@ all.Sk_Master_LieSha_Action2 = {
 			"1"
 		}, main)
 		this.main = global["[load]"](this, {
-			"Movie_LSha_Skill3"
+			"Movie_LSha_Skill2"
 		}, main)
 
 		return this
@@ -417,11 +417,18 @@ all.Sk_Master_LieSha_Action2 = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
 
 			if global.EnemyMaster(_env) then
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, global.EnemyMaster(_env)) + {
+					-1.8,
+					0
+				}, 100, "skill2"))
 				global.AssignRoles(_env, global.EnemyMaster(_env), "target")
 			else
+				global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+					-1.8,
+					0
+				}, 100, "skill2"))
 				global.AssignRoles(_env, _env.TARGET, "target")
 			end
 		end)
@@ -453,7 +460,7 @@ all.Sk_Master_LieSha_Action2 = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
 				global.ApplyRPEffect(_env, _env.ACTOR, global.EnemyMaster(_env))
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, global.EnemyMaster(_env), this.dmgFactor)
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, global.EnemyMaster(_env), damage)
 			else
@@ -478,7 +485,7 @@ all.Sk_Master_LieSha_Action2 = {
 				global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 				global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+				local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 			end
@@ -512,9 +519,9 @@ all.Sk_Master_LieSha_Action3 = {
 			}
 		end
 
-		this.AtkRateFactor = externs.AtkRateFactor
+		this.UnHurtRateFactor = externs.UnHurtRateFactor
 
-		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+		assert(this.UnHurtRateFactor ~= nil, "External variable `UnHurtRateFactor` is not provided.")
 
 		local main = __action(this, {
 			name = "main",
@@ -582,38 +589,28 @@ all.Sk_Master_LieSha_Action3 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnHurtRateFactor)
 
-			for _, friend in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS)) do
-				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
-				local buffeft1 = global.NumericEffect(_env, "+atk", {
-					"+Normal",
-					"+Normal"
-				}, attacker.atk * this.AtkRateFactor)
-				local buffeft2 = global.RageGainEffect(_env, "-", {
-					"+Normal",
-					"+Normal"
-				}, 1)
-				local buffeft3 = global.Diligent(_env)
-
-				global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
-					timing = 2,
-					duration = 1,
-					display = "AtkUp",
+			if global.EnemyMaster(_env) then
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
+					timing = 4,
+					display = "UnHurtRateDown",
+					group = "Sk_Master_LieSha_Action3",
+					duration = 30,
+					limit = 1,
 					tags = {
 						"NUMERIC",
-						"BUFF",
-						"ATKUP",
-						"UNDISPELLABLE",
-						"UNSTEALABLE"
+						"DEBUFF",
+						"UNHURTRATEDOWN",
+						"UNDISPELLABLE"
 					}
 				}, {
-					buffeft1,
-					buffeft2,
-					buffeft3
-				}, 1)
+					buffeft2
+				}, 1, 0)
 			end
-
-			global.DiligentRound(_env)
 		end)
 		exec["@time"]({
 			3167

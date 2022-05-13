@@ -10,6 +10,49 @@ end
 
 function LaunchSceneMediator:onRegister()
 	super.onRegister(self)
+
+	local function onKeyReleased(keyCode, event)
+		if keyCode == cc.KeyCode.KEY_BACK then
+			if self:getPopupViewCount() > 0 then
+				local popupView = self:getTopPopupView()
+
+				if popupView and popupView.mediator then
+					popupView.mediator:leaveWithData()
+
+					return
+				end
+			end
+
+			local data = {
+				noClose = true,
+				title = Strings:get("UPDATE_UI7"),
+				content = Strings:get("UI_TEXT_EXIT_GAME"),
+				sureBtn = {},
+				cancelBtn = {}
+			}
+			local outSelf = self
+			local delegate = {
+				willClose = function (self, popupMediator, data)
+					if data.response == "ok" then
+						performWithDelay(outSelf:getView(), function ()
+							cc.Director:getInstance():endToLua()
+						end, 0.1)
+					end
+				end
+			}
+			local view = self:getInjector():getInstance("AlertView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				isAreaIndependent = true,
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, delegate))
+		end
+	end
+
+	local listener = cc.EventListenerKeyboard:create()
+
+	listener:registerScriptHandler(onKeyReleased, cc.Handler.EVENT_KEYBOARD_RELEASED)
+	cc.Director:getInstance():getEventDispatcher():addEventListenerWithSceneGraphPriority(listener, self:getView())
 end
 
 function LaunchSceneMediator:onRemove()
@@ -21,9 +64,10 @@ function LaunchSceneMediator:switchLoginView()
 end
 
 function LaunchSceneMediator:checkUserState()
+	local injector = self:getInjector()
+
 	self:loadBaseRequires()
 
-	local injector = self:getInjector()
 	local loginView = injector:getInstance("loginView")
 
 	self:dispatch(ViewEvent:new(EVT_SWITCH_VIEW, loginView, {}))
@@ -85,21 +129,5 @@ function LaunchSceneMediator:initLogger()
 
 			DpsLogger:addLogger(category.name, category.level, appenders, category.pattern)
 		end
-	end
-end
-
-function LaunchSceneMediator:initAnim()
-	self._bgAnim = cc.MovieClip:create("zdh_xindenglu")
-
-	self._bgAnim:addTo(self:getView())
-	self._bgAnim:setPosition(cc.p(568, 320))
-	self._bgAnim:addCallbackAtFrame(90, function ()
-		self._bgAnim:gotoAndPlay(0)
-	end)
-end
-
-function LaunchSceneMediator:removeAnim()
-	if self._bgAnim then
-		self._bgAnim:removeFromParent()
 	end
 end

@@ -237,6 +237,7 @@ all.Skill_HLMGen_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -313,6 +314,7 @@ all.Skill_HLMGen_Passive = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_HLMGen_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -500,6 +502,7 @@ all.Skill_HLMGen_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -601,6 +604,7 @@ all.Skill_HLMGen_Passive_EX = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_HLMGen_Passive_EX2",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"

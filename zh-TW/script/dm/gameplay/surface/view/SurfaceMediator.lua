@@ -51,6 +51,7 @@ function SurfaceMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_SELECT_SUCC, self, self.refreshWithSelect)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_BUY_SUCC, self, self.refreshWithBuy)
+	self:mapEventListener(self:getEventDispatcher(), EVT_SURFACE_REFRESH_REDPOINT, self, self.refreshRedPoint)
 end
 
 function SurfaceMediator:enterWithData(data)
@@ -124,6 +125,10 @@ function SurfaceMediator:refreshWithBuy(event)
 
 	self:updateSurfaceNode()
 	self:updateBtnState()
+end
+
+function SurfaceMediator:refreshRedPoint()
+	self:updateSurfaceNode()
 end
 
 function SurfaceMediator:updateData()
@@ -281,11 +286,9 @@ function SurfaceMediator:createSurfaceNode()
 		heroPanel:removeAllChildren()
 
 		local roleModel = surface:getModel()
-		local img, jsonPath = IconFactory:createRoleIconSprite({
-			stencil = 1,
-			iconType = "Bust7",
-			id = roleModel,
-			size = cc.size(245, 336)
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe7_1",
+			id = roleModel
 		})
 
 		img:addTo(heroPanel):center(heroPanel:getContentSize())
@@ -300,7 +303,8 @@ function SurfaceMediator:createSurfaceNode()
 		unlockDesc:setVisible(not surface:getUnlock())
 		unlockDesc:getChildByFullName("text"):setString(surface:getUnlockShortDesc())
 
-		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock()
+		local inShop = self:checkIsInShopById(surface:getId())
+		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock() and inShop
 		local buyPanel = surfaceNode:getChildByFullName("buyPanel")
 
 		buyPanel:setVisible(canBuy)
@@ -316,6 +320,20 @@ function SurfaceMediator:createSurfaceNode()
 
 			anim:addTo(awakeAnim, 1):setPosition(-300, 50)
 		end
+
+		local redPoint = surfaceNode:getChildByFullName("RedPoint")
+
+		if not redPoint then
+			redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
+
+			redPoint:addTo(surfaceNode):posite(175, 280)
+			redPoint:setName("RedPoint")
+			redPoint:setVisible(false)
+		end
+
+		local isRed = self._surfaceSystem:getRedPointByHeroIdAndSur(self._roleId, surface:getId())
+
+		redPoint:setVisible(isRed)
 
 		self._cellNode[i] = surfaceNode
 		self._cellNode[i].position = {
@@ -362,7 +380,8 @@ function SurfaceMediator:updateSurfaceNode()
 		unlockDesc:setVisible(not surface:getUnlock())
 		unlockDesc:getChildByFullName("text"):setString(surface:getUnlockShortDesc())
 
-		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock()
+		local inShop = self:checkIsInShopById(surface:getId())
+		local canBuy = surface:getType() == SurfaceType.kShop and not surface:getUnlock() and inShop
 		local buyPanel = surfaceNode:getChildByFullName("buyPanel")
 
 		buyPanel:setVisible(canBuy)
@@ -370,6 +389,11 @@ function SurfaceMediator:updateSurfaceNode()
 		local usingPanel = surfaceNode:getChildByFullName("usingPanel")
 
 		usingPanel:setVisible(surfaceId == surface:getId())
+
+		local redPoint = surfaceNode:getChildByFullName("RedPoint")
+		local isRed = self._surfaceSystem:getRedPointByHeroIdAndSur(self._roleId, surface:getId())
+
+		redPoint:setVisible(isRed)
 	end
 end
 
@@ -377,8 +401,8 @@ function SurfaceMediator:updateSurfaceInfo()
 	self._roleNode:removeAllChildren()
 
 	local roleModel = self._curSurface:getModel()
-	local img, jsonPath = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -411,6 +435,7 @@ function SurfaceMediator:updateBtnState()
 
 	self._unlockPanel:setVisible(not unlock and not inShop)
 	self._unlockPanel:getChildByFullName("unlock1"):setString(self._curSurface:getUnlockDesc())
+	self._sureBtn:setVisible(false)
 
 	local costNode = self._sureBtn:getChildByFullName("costNode")
 
@@ -435,7 +460,7 @@ function SurfaceMediator:updateBtnState()
 		self._sureBtnWidget:setButtonName("", "")
 		self._sureBtn:setVisible(inShop)
 	elseif self._curSurface:getType() == SurfaceType.kActivity then
-		self._sureBtnWidget:setButtonName(Strings:get("SURFACE_UI6"), Strings:get("SURFACE_UI6"))
+		self._sureBtnWidget:setButtonName(Strings:get("SURFACE_UI6"), Strings:get("SURFACE_UI6_EN"))
 
 		local activityId = self._curSurface:getActivityId()
 		local hasActivity = not not self._activitySystem:getActivityById(activityId)
@@ -454,7 +479,9 @@ function SurfaceMediator:updateBtnState()
 
 		self._sureBtn:setVisible(showGoto)
 		self._unlockPanel:setVisible(not self._sureBtn:isVisible())
-	elseif self._curSurface:getType() ~= SurfaceType.kOther then
+	elseif self._curSurface:getType() == SurfaceType.kOther then
+		self._sureBtn:setVisible(false)
+	else
 		self._sureBtn:setVisible(false)
 	end
 end
@@ -487,6 +514,16 @@ function SurfaceMediator:createShopCost()
 		text:setPositionX(width1 + 30)
 		costNode:setContentSize(cc.size(width1 + width2 + 30, 50))
 	end
+end
+
+function SurfaceMediator:checkIsInShopById(surfaceId)
+	local shopSurface = self._shopSystem:getShopSurfaceById(surfaceId)
+
+	if shopSurface then
+		return true
+	end
+
+	return false
 end
 
 function SurfaceMediator:checkIsInShop()
@@ -540,7 +577,7 @@ function SurfaceMediator:onClickLeft()
 
 	self._surfaces = self._surfaceSystem:getSurfaceByTargetRole(self._roleId, self._surfaceType)
 
-	if #self._surfaces < 2 then
+	if #self._surfaces < 1 then
 		self:onClickBack()
 
 		return
@@ -582,7 +619,7 @@ function SurfaceMediator:onClickRight()
 
 	self._surfaces = self._surfaceSystem:getSurfaceByTargetRole(self._roleId, self._surfaceType)
 
-	if #self._surfaces < 2 then
+	if #self._surfaces < 1 then
 		self:onClickBack()
 
 		return
@@ -701,6 +738,8 @@ function SurfaceMediator:onTouch(event)
 		if self._isClickPoint then
 			return
 		end
+
+		dump(event, "onTouch : ")
 
 		local scrollPosX = self._scrollView:getInnerContainerPosition().x
 		local curIndex = math.floor(math.abs(scrollPosX) / self._cellWidth + 0.5) + 1

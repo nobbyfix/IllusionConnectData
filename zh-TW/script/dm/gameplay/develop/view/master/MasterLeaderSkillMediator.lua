@@ -9,10 +9,22 @@ MasterLeaderSkillMediator:has("_towerSystem", {
 
 local kHandlerBtn = {
 	["main.BG.btn_close"] = {
+		clickAudio = "Se_Click_Close_2",
 		func = "onCloseBtnClick"
 	},
 	["main.BG"] = {
+		clickAudio = "Se_Click_Close_2",
 		func = "onCloseBtnClick"
+	}
+}
+local kTabBtnsNames = {
+	{
+		"LeadStage_MainPage_Text01",
+		"LeadStage_SkillPage_EnText01"
+	},
+	{
+		"LeadStage_MainPage_Text02",
+		"LeadStage_SkillPage_EnText02"
 	}
 }
 
@@ -28,6 +40,7 @@ function MasterLeaderSkillMediator:onRegister()
 	super.onRegister(self)
 
 	self._masterSystem = self._developSystem:getMasterSystem()
+	self._heroSystem = self._developSystem:getHeroSystem()
 
 	self:mapButtonHandlersClick(kHandlerBtn)
 end
@@ -35,9 +48,54 @@ end
 function MasterLeaderSkillMediator:enterWithData(data)
 	self:initNode()
 	self:initData(data)
-	self:createSkillList()
+	self:initTab()
+	self:setListViewVisible()
+	self:refreshView()
 	self:createMasterStandRole()
 	self:setupClickEnvs()
+end
+
+function MasterLeaderSkillMediator:initTab()
+	local config = {}
+	local data = {}
+
+	for i = 1, #kTabBtnsNames do
+		data[#data + 1] = {
+			tabText = Strings:get(kTabBtnsNames[i][1]),
+			tabTextTranslate = Strings:get(kTabBtnsNames[i][2]),
+			tabImage = {
+				"asset/ui/mastercultivate/common_btn_fy3.png",
+				"asset/ui/mastercultivate/common_btn_fy4.png"
+			}
+		}
+
+		if self._ownSkills then
+			break
+		end
+	end
+
+	config.btnDatas = data
+
+	function config.onClickTab(name, tag)
+		self:onClickTab(name, tag)
+	end
+
+	local injector = self:getInjector()
+	local widget = TabBtnWidget:createWidgetNode2()
+	self._tabBtnWidget = self:autoManageObject(injector:injectInto(TabBtnWidget:new(widget)))
+
+	self._tabBtnWidget:adjustScrollViewSize(0, 180)
+	self._tabBtnWidget:initTabBtn(config, {
+		ignoreSound = true,
+		hideBtnAnim = true,
+		ignoreRedSelectState = true,
+		imageType = ccui.TextureResType.localType
+	})
+	self._tabBtnWidget:selectTabByTag(self._curTabIdx)
+
+	local view = self._tabBtnWidget:getMainView()
+
+	view:addTo(self._tabPanel):posite(0, 0)
 end
 
 function MasterLeaderSkillMediator:initNode()
@@ -47,10 +105,24 @@ function MasterLeaderSkillMediator:initNode()
 	self._skillList = self._mainPanel:getChildByFullName("infoList")
 	self._cloneSkill = self:getView():getChildByFullName("cellClone")
 	self._rolePanel = self._mainPanel:getChildByFullName("BG.role_panel")
+	self._tabPanel = self._mainPanel:getChildByFullName("tab_panel")
+	self._leadSkillClone = self:getView():getChildByFullName("cellClone_leadStage")
+	self._listView = self._mainPanel:getChildByFullName("ListView_1")
+	self._masterBg = self._mainPanel:getChildByFullName("BG.Image_bg1")
+	self._leasStageBg = self._mainPanel:getChildByFullName("BG.Image_bg_leadStage")
+
+	self._listView:setScrollBarEnabled(false)
+	self._listView:setSwallowTouches(false)
+	self._leadSkillClone:setVisible(false)
+
+	self._infoLab = self._mainPanel:getChildByName("info")
 end
 
 function MasterLeaderSkillMediator:initData(data)
+	self._curTabIdx = data.index and data.index or 1
 	self._towerMaster = data.towerMaster or false
+	self._ownSkills = data.ownSkills
+	self._ownMasterRoleModel = data.ownMasterRoleModel
 
 	if self._towerMaster then
 		self._master = data.master
@@ -71,6 +143,38 @@ function MasterLeaderSkillMediator:initData(data)
 	if self._active == nil then
 		self._active = {}
 	end
+
+	self._isFromDream = false
+
+	if data.isFromDream then
+		self._isFromDream = true
+	end
+end
+
+function MasterLeaderSkillMediator:setListViewVisible()
+	if self._towerMaster then
+		self._tabPanel:setVisible(false)
+
+		return
+	end
+
+	local skills = {}
+
+	if self._ownSkills then
+		skills = self._ownSkills
+	else
+		skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+	end
+
+	if #skills == 0 then
+		self._tabPanel:setVisible(false)
+	end
+end
+
+function MasterLeaderSkillMediator:onClickTab(name, tag)
+	self._curTabIdx = tag
+
+	self:refreshView()
 end
 
 function MasterLeaderSkillMediator:setupClickEnvs()
@@ -79,7 +183,28 @@ function MasterLeaderSkillMediator:setupClickEnvs()
 	end
 end
 
+function MasterLeaderSkillMediator:refreshView()
+	self._skillList:setVisible(self._curTabIdx == 1)
+	self._masterBg:setVisible(self._curTabIdx == 1)
+	self._listView:setVisible(self._curTabIdx == 2)
+	self._leasStageBg:setVisible(self._curTabIdx == 2)
+
+	if self._curTabIdx == 1 then
+		self:createSkillList()
+	else
+		self:createLeadStageSkillList()
+	end
+
+	self._infoLab:setVisible(self._isFromDream and self._curTabIdx == 1)
+end
+
 function MasterLeaderSkillMediator:createSkillList()
+	if self._tableView then
+		self._tableView:reloadData()
+
+		return
+	end
+
 	local function scrollViewDidScroll(table)
 		if table:isTouchMoved() then
 			-- Nothing
@@ -159,6 +284,8 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 
 	if self._towerMaster then
 		skills = self._master:getSkillList()
+	elseif self._ownSkills then
+		skills = self._ownSkills
 	else
 		skills = self._masterSystem:getMasterLeaderSkillList(self._masterId)
 	end
@@ -173,9 +300,13 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 
 	name:setString(skill:getName())
 	infoPanel:removeAllChildren()
+	infoPanel:setPositionX(150)
 
-	local isShowEff = isActive
-	local isShowGray = isActive or isActive == nil
+	local isShowEff = isActive or self._isFromDream and self._curTabIdx == 1
+	local isShowGray = isActive or isActive == nil or self._isFromDream and self._curTabIdx == 1
+
+	infoPanel:setLayoutType(ccui.LayoutType.VERTICAL)
+
 	local height = self:createSkillDescPanel(infoPanel, skill, isShowGray, starHeight)
 
 	self:createEffectDescPanel(infoPanel, skill, isShowGray, height)
@@ -221,14 +352,16 @@ function MasterLeaderSkillMediator:refreshSkillCell(cell, index, isActive)
 	iconNode:addChild(dicengEff)
 	iconNode:addChild(newSkillNode)
 	iconNode:addChild(shangcengEff)
+	iconNode:setTouchEnabled(false)
 end
 
-local listWidth = 520
+local listWidth = 540
 local SKILL_EFF_TAG = 1001
 local SKILL_DESC_TAG = 1000
 
 function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive, heightAdd)
 	local style = {
+		fontSize = 17,
 		fontName = TTF_FONT_FZYH_M
 	}
 	local desc = ConfigReader:getEffectDesc("Skill", skill:getMasterSkillDescKey(), skill:getId(), skill:getLevel(), style)
@@ -237,20 +370,24 @@ function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive,
 	if label == nil then
 		label = ccui.RichText:createWithXML(desc, {})
 
-		label:setAnchorPoint(0, 1)
 		label:addTo(layout)
 	else
 		label:setString(desc)
 	end
 
-	label:setVerticalSpace(8)
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		label:setVerticalSpace(1)
+	else
+		label:setVerticalSpace(8)
+	end
+
 	label:renderContent(listWidth, 0)
-	label:setAnchorPoint(cc.p(0, 1))
 
 	local height = label:getContentSize().height
 
 	layout:setContentSize(cc.size(listWidth, height))
-	label:setPosition(cc.p(0, heightAdd))
 	label:setTag(SKILL_DESC_TAG)
 
 	if isActive then
@@ -259,7 +396,7 @@ function MasterLeaderSkillMediator:createSkillDescPanel(layout, skill, isActive,
 		label:setColor(cc.c3b(195, 195, 195))
 	end
 
-	return layout
+	return height
 end
 
 function MasterLeaderSkillMediator:createEffectDescPanel(layout, skill, isActive, heightAdd)
@@ -271,20 +408,24 @@ function MasterLeaderSkillMediator:createEffectDescPanel(layout, skill, isActive
 	if label == nil then
 		label = ccui.RichText:createWithXML(desc, {})
 
-		label:setAnchorPoint(0, 1)
 		label:addTo(layout)
 	else
 		label:setString(desc)
 	end
 
-	label:setVerticalSpace(8)
-	label:renderContent(listWidth, 0)
-	label:setAnchorPoint(cc.p(0, 1))
+	local language = getCurrentLanguage()
 
-	local height = label:getContentSize().height
+	if language ~= GameLanguageType.CN then
+		label:setVerticalSpace(1)
+	else
+		label:setVerticalSpace(8)
+	end
+
+	label:renderContent(listWidth, 0)
+
+	local height = label:getContentSize().height + heightAdd
 
 	layout:setContentSize(cc.size(listWidth, height))
-	label:setPosition(cc.p(0, heightAdd))
 
 	if isActive then
 		label:setColor(cc.c3b(255, 255, 255))
@@ -292,25 +433,98 @@ function MasterLeaderSkillMediator:createEffectDescPanel(layout, skill, isActive
 		label:setColor(cc.c3b(195, 195, 195))
 	end
 
-	return layout
+	return height
 end
 
 function MasterLeaderSkillMediator:createMasterStandRole()
 	local info = {
-		stencil = 1,
-		iconType = "Bust1",
-		id = self._master:getModel(),
-		size = cc.size(202, 424)
+		frameId = "bustframe2_2",
+		id = self._ownMasterRoleModel or self._master:getModel()
 	}
 
 	self._rolePanel:removeAllChildren()
 
-	local rolePic = IconFactory:createRoleIconSprite(info)
+	local rolePic = IconFactory:createRoleIconSpriteNew(info)
 
 	if rolePic then
-		rolePic:addTo(self._rolePanel)
-		rolePic:setPosition(103, 217)
+		rolePic:addTo(self._rolePanel):center(self._rolePanel:getContentSize())
 	end
+end
+
+function MasterLeaderSkillMediator:createLeadStageSkillList()
+	self._listView:removeAllChildren()
+
+	local skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+
+	for i = 1, #skills do
+		local cell = self._leadSkillClone:clone()
+
+		cell:setVisible(true)
+		self:refreshLeadStageCell(cell, skills[i])
+		self._listView:pushBackCustomItem(cell)
+	end
+end
+
+function MasterLeaderSkillMediator:refreshLeadStageCell(cell, skillInfo)
+	local infoPanel = cell:getChildByName("info_panel")
+
+	infoPanel:removeAllChildren()
+
+	local name = cell:getChildByName("skill_name")
+	local iconPanel = cell:getChildByName("icon_node")
+	self._configPro = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
+	self._config = self._configPro:getConfig()
+	local skillType = self._config.Type
+	local skillIcon = IconFactory:createMasterLeadStageSkillIcon({
+		id = skillInfo.skillId
+	})
+
+	skillIcon:addTo(iconPanel):posite(10, 16)
+	skillIcon:setScale(0.7)
+
+	local skillAnimPanel = cell:getChildByFullName("skillAnim")
+	local skillPanel1 = skillAnimPanel:getChildByFullName("skillTypeIcon")
+	local skillPanel2 = skillAnimPanel:getChildByFullName("skillTypeBg")
+	local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
+	local skillTypeIcon = skillPanel1:getChildByFullName("icon")
+
+	skillTypeIcon:loadTexture(icon1)
+
+	local skillTypeBg = skillPanel2:getChildByFullName("bg")
+
+	skillTypeBg:loadTexture(icon2)
+	skillTypeBg:setCapInsets(cc.rect(4, 15, 6, 16))
+
+	local typeNameLabel = skillPanel2:getChildByFullName("skillType")
+
+	typeNameLabel:setString(self._heroSystem:getSkillTypeName(skillType))
+	typeNameLabel:setTextColor(GameStyle:getSkillTypeColor(skillType))
+
+	local width = typeNameLabel:getContentSize().width + 30
+
+	skillTypeBg:setContentSize(cc.size(width, 38))
+	skillAnimPanel:setContentSize(cc.size(width + 25, 46))
+	name:setString(Strings:get(self._config.Name))
+	name:setColor(cc.c3b(255, 165, 0))
+
+	local showText = nil
+
+	if skillInfo.kind == "Skill" then
+		showText = SkillPrototype:getSkillEffectDesc(skillInfo.skillId, skillInfo.level, {})
+	else
+		local skillProto = PrototypeFactory:getInstance():getSkillPrototype(skillInfo.skillId)
+		local style = {
+			fontName = TTF_FONT_FZYH_M
+		}
+		showText = SkillPrototype:getAttrEffectDesc(skillInfo.skillVId, skillInfo.level, style)
+	end
+
+	local label2 = ccui.RichText:createWithXML(showText, {})
+
+	label2:setVerticalSpace(1)
+	label2:renderContent(infoPanel:getContentSize().width, 0)
+	label2:setAnchorPoint(cc.p(0, 1))
+	label2:addTo(infoPanel):posite(0, 0)
 end
 
 function MasterLeaderSkillMediator:onCloseBtnClick()

@@ -45,24 +45,16 @@ function StagePracticeEnterMediator:onRegister()
 end
 
 function StagePracticeEnterMediator:enterWithData(data)
-	self:initData()
+	self:refreshData()
+	self:refreshView()
 	self:setupTopInfoWidget()
 	self:setupClickEnvs()
 	self:showAni()
 end
 
 function StagePracticeEnterMediator:didFinishResumeTransition()
-	self:resetRedPoint()
+	self:refreshView()
 	self:showAni()
-end
-
-function StagePracticeEnterMediator:resetRedPoint()
-	for i = 1, 3 do
-		local model = self:getView():getChildByFullName("model_" .. i)
-		local redpoint = model:getChildByFullName("redPoint")
-
-		redpoint:setVisible(false)
-	end
 end
 
 function StagePracticeEnterMediator:setupTopInfoWidget()
@@ -100,6 +92,8 @@ function StagePracticeEnterMediator:showAni()
 	local challengeBtnAnim = enterAnim:getChildByName("tiaozhan")
 	local combatBtnAnim = enterAnim:getChildByName("shizhan")
 
+	challengeBtnAnim:setOpacity(self._canShow[2] and challengeBtnAnim:getOpacity() or 0)
+	combatBtnAnim:setOpacity(self._canShow[3] and combatBtnAnim:getOpacity() or 0)
 	enterAnim:addCallbackAtFrame(13, function ()
 		practiceBtnAnim:gotoAndPlay(1)
 	end)
@@ -150,8 +144,42 @@ function StagePracticeEnterMediator:setRedPoint(index)
 	redPoint:setVisible(self._stagePracticeSystem:mapHasRedPoint(index))
 end
 
-function StagePracticeEnterMediator:initData()
+function StagePracticeEnterMediator:refreshData()
 	self._stagePractice = self._stagePracticeSystem:getStagePractice()
+
+	if not self._canShow then
+		self._canShow = {}
+	end
+
+	for i = 1, 3 do
+		self._canShow[i] = self._stagePracticeSystem:canShow(i)
+	end
+end
+
+function StagePracticeEnterMediator:refreshView()
+	for i = 1, 3 do
+		local model = self:getView():getChildByFullName("model_" .. i)
+		local redpoint = model:getChildByFullName("redPoint")
+
+		if redpoint then
+			redpoint:setVisible(false)
+		end
+
+		local touch = self:getView():getChildByFullName("touch_" .. i)
+
+		if i ~= 1 then
+			local canShow = self._canShow[i]
+
+			touch:setVisible(canShow)
+			touch:setTouchEnabled(canShow)
+			model:setVisible(canShow)
+		end
+	end
+end
+
+function StagePracticeEnterMediator:resumeWithData()
+	self:refreshData()
+	self:refreshView()
 end
 
 function StagePracticeEnterMediator:onClickBack()
@@ -159,17 +187,14 @@ function StagePracticeEnterMediator:onClickBack()
 end
 
 function StagePracticeEnterMediator:onClickEasy(sender)
-	print("简单", sender:getName())
 	self:enterPracticeMain(sender:getName())
 end
 
 function StagePracticeEnterMediator:onClickNormal(sender)
-	print("普通", sender:getName())
 	self:enterPracticeMain(sender:getName())
 end
 
 function StagePracticeEnterMediator:onClickHard(sender)
-	print("困难", sender:getName())
 	self:enterPracticeMain(sender:getName())
 end
 

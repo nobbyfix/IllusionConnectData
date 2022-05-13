@@ -91,6 +91,16 @@ function FightLosePopViewMediator:refreshView()
 	self._crystal:setString("0")
 end
 
+function FightLosePopViewMediator:leaveWithData()
+	if self._done then
+		return
+	end
+
+	self._done = true
+
+	self:toStageView()
+end
+
 function FightLosePopViewMediator:onTouchLayout(sender, eventType)
 	if eventType ~= ccui.TouchEventType.ended then
 		return

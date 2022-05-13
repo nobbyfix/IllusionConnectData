@@ -105,3 +105,75 @@ function PushService:listenClubBossHurtCode(callback)
 		end
 	end)
 end
+
+function PushService:listenClubBossBattleStartCode(callback)
+	self:addPushHandler(1303, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenClubBossBattleEndCode(callback)
+	self:addPushHandler(1304, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenCommonTipsCode(callback)
+	self:addPushHandler(1704, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenClubHouseChange(callback)
+	self:addPushHandler(1800, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenClubApplyAgreeEnd(callback)
+	self:addPushHandler(1305, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenCooperateBoss(code, callback)
+	self:addPushHandler(code, function (op, response)
+		if callback then
+			callback(code, response)
+		end
+	end)
+end
+
+function PushService:listenFriendLogin(callback)
+	self:addPushHandler(1110, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenFriendLogout(callback)
+	self:addPushHandler(1112, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function PushService:listenHistoryRankChange(callback)
+	self:addPushHandler(1150, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end

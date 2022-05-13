@@ -1101,7 +1101,7 @@ function TeamSystem:checkIsShowRedPoint()
 	return false
 end
 
-local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_TypeList", "content")
+local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Team_TypeOrder", "content")
 local heroShowSortList = {
 	Strings:get("HEROS_UI49"),
 	Strings:get("HEROS_UI31"),
@@ -1117,7 +1117,7 @@ local SortOrder = {
 local SortExtendFunc = {
 	{
 		func = function (sortExtendType, hero)
-			return hero:getRarity() == 15 - sortExtendType
+			return hero:getRarity() == 16 - sortExtendType
 		end
 	},
 	{
@@ -1295,6 +1295,7 @@ function TeamSystem:initExtendParam()
 	end
 
 	SortExtend[1] = {
+		"SP",
 		"SSR",
 		"SR",
 		"R"
@@ -1307,7 +1308,8 @@ function TeamSystem:initExtendParam()
 		GalleryPartyType.kBSNCT,
 		GalleryPartyType.kDWH,
 		GalleryPartyType.kMNJH,
-		GalleryPartyType.kSSZS
+		GalleryPartyType.kSSZS,
+		GalleryPartyType.kUNKNOWN
 	}
 
 	for i = 1, #TargetOccupation do
@@ -1362,7 +1364,9 @@ function TeamSystem:syncKeySkillCache()
 end
 
 function TeamSystem:checkIsKeySkillActive(conditions, targetIds, heroType)
-	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, heroType)
+	return self._keySkillManager:checkIsKeySkillActive(conditions, targetIds, {
+		heroType = heroType
+	})
 end
 
 function TeamSystem:hasStaminaBackEffect()

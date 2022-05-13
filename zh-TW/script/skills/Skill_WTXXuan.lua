@@ -358,6 +358,7 @@ all.Skill_WTXXuan_Passive = {
 					limit = 1,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_WTXXuan_Passive",
 						"HURTRATEUP",
 						"UNDISPELLABLE",
@@ -643,7 +644,7 @@ all.Skill_WTXXuan_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
-		_env.count = 0
+		_env.count = 1
 
 		exec["@time"]({
 			0
@@ -661,7 +662,7 @@ all.Skill_WTXXuan_Passive_EX = {
 					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
-					}, this.HurtRateFactor)
+					}, this.MageHurtRateFactor)
 
 					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
 						timing = 2,
@@ -682,7 +683,7 @@ all.Skill_WTXXuan_Passive_EX = {
 					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
-					}, this.MageHurtRateFactor)
+					}, this.HurtRateFactor)
 
 					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendMaster(_env), {
 						timing = 2,
@@ -715,6 +716,7 @@ all.Skill_WTXXuan_Passive_EX = {
 							limit = 1,
 							tags = {
 								"CARDBUFF",
+								"BUFF",
 								"Skill_WTXXuan_Passive",
 								"HURTRATEUP",
 								"UNDISPELLABLE",
@@ -736,6 +738,7 @@ all.Skill_WTXXuan_Passive_EX = {
 							limit = 1,
 							tags = {
 								"CARDBUFF",
+								"BUFF",
 								"Skill_WTXXuan_Passive",
 								"HURTRATEUP",
 								"UNDISPELLABLE",

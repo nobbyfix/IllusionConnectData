@@ -407,7 +407,7 @@ function BuildingOrcLvUpMediator:enableViceOrcView(buildData)
 		local lvStr = childCell:getChildByFullName("onGray.Lv")
 
 		lvStr:setVisible(true)
-		lvStr:setString("Lv" .. _ordersubOrcList[i].level)
+		lvStr:setString(Strings:get("Common_LV_Text_No_Point") .. _ordersubOrcList[i].level)
 
 		local selectImg = childCell:getChildByName("select")
 

@@ -329,8 +329,13 @@ function MonthSignInMediator:initAnim(surfaceReward)
 		rewardIcon:addTo(surface):setPosition(cc.p(0, -105))
 		rewardIcon:setScaleNotCascade(0.6)
 
-		local text = ccui.Text:create(Strings:get("CheckIn_Today_Greatest_Reward"), TTF_FONT_FZYH_M, 18)
+		local text = ccui.Text:create("", TTF_FONT_FZYH_M, 18)
 
+		text:ignoreContentAdaptWithSize(false)
+		text:setContentSize(cc.size(150, 30))
+		text:setString(Strings:get("CheckIn_Today_Greatest_Reward"))
+		text:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+		text:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
 		text:setTextColor(cc.c3b(255, 225, 186))
 		text:addTo(surface):setPosition(cc.p(-1, -168))
 		anim:removeFromParent()
@@ -427,6 +432,8 @@ function MonthSignInMediator:onTouchMainView(sender, eventType)
 
 					self:dealReward(response.data)
 				end
+			end, function (response)
+				self:close()
 			end)
 		end
 	elseif eventType == ccui.TouchEventType.ended and not self._onRequestCheckIn then
@@ -440,6 +447,8 @@ function MonthSignInMediator:onTouchMainView(sender, eventType)
 
 				self:dealReward(response.data)
 			end
+		end, function (response)
+			self:close()
 		end)
 	end
 end

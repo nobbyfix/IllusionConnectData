@@ -57,7 +57,7 @@ function scene_eventstory_BXJie_06a:stage(args)
 						name = "bg1",
 						pathType = "SCENE",
 						type = "Image",
-						image = "ybxrdxh_fb_Snowflake_bg.jpg",
+						image = "ybxrdxh_fb_bg2.jpg",
 						layoutMode = 1,
 						zorder = 4,
 						id = "bg1",
@@ -192,51 +192,51 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06a(_root, ar
 			action = "show",
 			actor = __getnode__(_root, "autoPlayButton")
 		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_LLan",
-					id = "LLan_speak",
-					rotationX = 0,
-					scale = 1.205,
-					zorder = 2,
-					position = {
-						x = 0,
-						y = -465,
-						refpt = {
-							x = 0.45,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "LLan_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "LLan/LLan_face_1.png",
-							scaleX = 1,
-							scaleY = 1,
-							layoutMode = 1,
-							zorder = 11,
-							visible = true,
-							id = "LLan_face",
-							anchorPoint = {
+		concurrent({
+			act({
+				action = "addPortrait",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						modelId = "Model_LLan",
+						id = "LLan_speak",
+						rotationX = 0,
+						scale = 0.72,
+						zorder = 2,
+						position = {
+							x = 0,
+							y = -390,
+							refpt = {
 								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -10,
-								y = 770
+								y = 0
+							}
+						},
+						children = {
+							{
+								resType = 0,
+								name = "LLan_face",
+								pathType = "STORY_FACE",
+								type = "Image",
+								image = "LLan/LLan_face_3.png",
+								scaleX = 1,
+								scaleY = 1,
+								layoutMode = 1,
+								zorder = 11,
+								visible = true,
+								id = "LLan_face",
+								anchorPoint = {
+									x = 0.5,
+									y = 0.5
+								},
+								position = {
+									x = -23.5,
+									y = 1095
+								}
 							}
 						}
 					}
-				}
-			end
-		}),
-		concurrent({
+				end
+			}),
 			act({
 				action = "updateNode",
 				actor = __getnode__(_root, "LLan_speak"),
@@ -247,50 +247,50 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06a(_root, ar
 				end
 			})
 		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_JNLong_Winter",
-					id = "Surface_JNLong_2_speak",
-					rotationX = 0,
-					scale = 0.6,
-					position = {
-						x = 0,
-						y = -300,
-						refpt = {
-							x = 0.55,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "Surface_JNLong_2_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "JNLong_Winter/JNLong_Winter_face_1.png",
-							scaleX = 1,
-							scaleY = 1,
-							layoutMode = 1,
-							zorder = 1,
-							visible = true,
-							id = "Surface_JNLong_2_face",
-							anchorPoint = {
-								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -35,
-								y = 1398
+		concurrent({
+			act({
+				action = "addPortrait",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						modelId = "Model_JNLong_Winter",
+						id = "Surface_JNLong_2_speak",
+						rotationX = 0,
+						scale = 0.7,
+						position = {
+							x = 0,
+							y = -480,
+							refpt = {
+								x = 0.53,
+								y = 0
+							}
+						},
+						children = {
+							{
+								resType = 0,
+								name = "Surface_JNLong_2_face",
+								pathType = "STORY_FACE",
+								type = "Image",
+								image = "JNLong_Winter/JNLong_Winter_face_3.png",
+								scaleX = 1,
+								scaleY = 1,
+								layoutMode = 1,
+								zorder = 1,
+								visible = true,
+								id = "Surface_JNLong_2_face",
+								anchorPoint = {
+									x = 0.5,
+									y = 0.5
+								},
+								position = {
+									x = -35,
+									y = 1398
+								}
 							}
 						}
 					}
-				}
-			end
-		}),
-		concurrent({
+				end
+			}),
 			act({
 				action = "updateNode",
 				actor = __getnode__(_root, "Surface_JNLong_2_speak"),
@@ -1019,6 +1019,10 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 			end
 		}),
 		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
 			action = "fadeOut",
 			actor = __getnode__(_root, "LLan_speak"),
 			args = function (_ctx)
@@ -1027,9 +1031,23 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 				}
 			end
 		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
 		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "Surface_JNLong_2_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		sleep({
 			args = function (_ctx)
 				return {
 					duration = 0.2
@@ -1069,6 +1087,10 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 			end
 		}),
 		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
 			action = "fadeOut",
 			actor = __getnode__(_root, "Surface_JNLong_2_speak"),
 			args = function (_ctx)
@@ -1077,9 +1099,23 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 				}
 			end
 		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
 		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "LLan_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		sleep({
 			args = function (_ctx)
 				return {
 					duration = 0.2
@@ -1119,6 +1155,10 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 			end
 		}),
 		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
 			action = "fadeOut",
 			actor = __getnode__(_root, "LLan_speak"),
 			args = function (_ctx)
@@ -1127,9 +1167,23 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 				}
 			end
 		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
 		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "Surface_JNLong_2_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		sleep({
 			args = function (_ctx)
 				return {
 					duration = 0.2
@@ -1213,40 +1267,6 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 			end
 		}),
 		act({
-			action = "updateNode",
-			actor = __getnode__(_root, "liqi_juqingtexiao"),
-			args = function (_ctx)
-				return {
-					zorder = 99
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "play",
-				actor = __getnode__(_root, "liqi_juqingtexiao")
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "liqi_juqingtexiao"),
-				args = function (_ctx)
-					return {
-						duration = 0.1,
-						position = {
-							refpt = {
-								x = 0.3,
-								y = 0.2
-							}
-						}
-					}
-				end
-			}),
-			act({
-				action = "play",
-				actor = __getnode__(_root, "Se_Story_Impact_2")
-			})
-		}),
-		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
@@ -1254,6 +1274,14 @@ function scene_eventstory_BXJie_06a.actions.start_eventstory_BXJie_06d(_root, ar
 					duration = 2
 				}
 			end
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "liqi_juqingtexiao")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "Se_Story_Impact_2")
 		}),
 		sleep({
 			args = function (_ctx)

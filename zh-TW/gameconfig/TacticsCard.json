@@ -1,6 +1,7 @@
 {
     "TacticsCard_Cure_Multi": {
         "AutoWeight": "40",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M05S08"
         },
@@ -8,11 +9,13 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_Cure_Multi",
         "TagPic": "TacticsCard_Cure_Multi",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
     "TacticsCard_Cure_Single": {
         "AutoWeight": "30",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M05S08"
         },
@@ -20,11 +23,13 @@
         "SkillCost": 10,
         "SkillPic": "TacticsCard_Cure_Single",
         "TagPic": "TacticsCard_Cure_Single",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
     "TacticsCard_Damage_Multi": {
         "AutoWeight": "100",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M04S08"
         },
@@ -32,11 +37,13 @@
         "SkillCost": 20,
         "SkillPic": "TacticsCard_Damage_Multi",
         "TagPic": "TacticsCard_Damage_Multi",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
     "TacticsCard_Damage_Single": {
         "AutoWeight": "90",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M04S08"
         },
@@ -44,11 +51,13 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Damage_Single",
         "TagPic": "TacticsCard_Damage_Single",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
     "TacticsCard_Dispel_Multi": {
         "AutoWeight": "20",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M05S08"
         },
@@ -56,11 +65,13 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_MasterTaunt",
         "TagPic": "TacticsCard_Dispel_Multi",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
     "TacticsCard_Dispel_Single": {
         "AutoWeight": "10",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M05S08"
         },
@@ -68,11 +79,13 @@
         "SkillCost": 8,
         "SkillPic": "TacticsCard_Dispel",
         "TagPic": "TacticsCard_Dispel_Single",
+        "ToolCard": "",
         "Type": "green",
         "Weight": 1
     },
     "TacticsCard_Freeze_Multi": {
         "AutoWeight": "80",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M04S08"
         },
@@ -80,11 +93,13 @@
         "SkillCost": 20,
         "SkillPic": "TacticsCard_Freeze_Multi",
         "TagPic": "TacticsCard_Freeze_Multi",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
     "TacticsCard_Freeze_Single": {
         "AutoWeight": "70",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M04S08"
         },
@@ -92,11 +107,13 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Freeze_Single",
         "TagPic": "TacticsCard_Freeze_Single",
+        "ToolCard": "",
         "Type": "red",
         "Weight": 1
     },
     "TacticsCard_HurtRateUp_Multi": {
         "AutoWeight": "40",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M03S03"
         },
@@ -104,11 +121,13 @@
         "SkillCost": 15,
         "SkillPic": "TacticsCard_HurtRateUp_Multi",
         "TagPic": "TacticsCard_HurtRateUp_Multi",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_HurtRateUp_Single": {
         "AutoWeight": "30",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M03S03"
         },
@@ -116,11 +135,37 @@
         "SkillCost": 8,
         "SkillPic": "TacticsCard_HurtRateUp_Single",
         "TagPic": "TacticsCard_HurtRateUp_Single",
+        "ToolCard": "",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_LZHua": {
+        "AutoWeight": "",
+        "CardRange": "RANGE_LZHua",
+        "Condition": {},
+        "Skill": "Skill_ToolCard_LZHua",
+        "SkillCost": 5,
+        "SkillPic": "battlepic_lzmdian",
+        "TagPic": "TacticsCard_LZHua",
+        "ToolCard": 1,
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_QHDeng": {
+        "AutoWeight": "",
+        "CardRange": "RANGE_Deng",
+        "Condition": {},
+        "Skill": "Skill_ToolCard_QHDeng",
+        "SkillCost": 8,
+        "SkillPic": "battlepic_light_on",
+        "TagPic": "TacticsCard_QHDeng",
+        "ToolCard": 1,
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_RageUp_Multi": {
         "AutoWeight": "60",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M03S03"
         },
@@ -128,11 +173,13 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_RageUp_Multi",
         "TagPic": "TacticsCard_RageUp_Multi",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_RageUp_Single": {
         "AutoWeight": "50",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M03S03"
         },
@@ -140,11 +187,13 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_RageUp_Single",
         "TagPic": "TacticsCard_RageUp_Single",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_Stealth": {
         "AutoWeight": "0",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M04S08"
         },
@@ -152,11 +201,13 @@
         "SkillCost": 12,
         "SkillPic": "TacticsCard_Stealth",
         "TagPic": "TacticsCard_Stealth",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_Summon": {
         "AutoWeight": "110",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M03S03"
         },
@@ -164,11 +215,13 @@
         "SkillCost": 15,
         "SkillPic": "TacticsCard_Summon",
         "TagPic": "TacticsCard_Summon",
+        "ToolCard": "",
         "Type": "yellow",
         "Weight": 1
     },
     "TacticsCard_Undead": {
         "AutoWeight": "120",
+        "CardRange": "Target_FLBDSi",
         "Condition": {
             "STAGE": "M05S08"
         },
@@ -176,6 +229,19 @@
         "SkillCost": 18,
         "SkillPic": "TacticsCard_Sacrifice",
         "TagPic": "TacticsCard_Undead",
+        "ToolCard": "",
+        "Type": "yellow",
+        "Weight": 1
+    },
+    "TacticsCard_Xji": {
+        "AutoWeight": "",
+        "CardRange": "RANGE_ZXJi",
+        "Condition": {},
+        "Skill": "ToolCard_XCZi2",
+        "SkillCost": 5,
+        "SkillPic": "battlepic_camera",
+        "TagPic": "TacticsCard_Camera",
+        "ToolCard": 1,
         "Type": "yellow",
         "Weight": 1
     }

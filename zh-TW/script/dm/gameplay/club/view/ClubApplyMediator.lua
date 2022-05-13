@@ -161,9 +161,9 @@ function ClubApplyMediator:refreshView()
 end
 
 function ClubApplyMediator:refreshNotHasView()
-	local rolePic = IconFactory:createRoleIconSprite({
+	local rolePic = IconFactory:createRoleIconSpriteNew({
 		id = "Model_MGNa",
-		iconType = 6
+		frameId = "bustframe9"
 	})
 
 	rolePic:setScale(0.7)
@@ -268,6 +268,11 @@ function ClubApplyMediator:initNodes()
 	local applaybtn = self._infoNode:getChildByFullName("applaybtn.button")
 
 	applaybtn:setContentSize(cc.size(364, 99))
+
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	self._infoNode:setPositionX(winSize.width - self._infoNode:getContentSize().width - (winSize.width - 1136) / 2)
+	self._notHasNode:setPositionX(winSize.width - self._infoNode:getContentSize().width - (winSize.width - 1136) / 2)
 end
 
 function ClubApplyMediator:createTableView()
@@ -749,11 +754,15 @@ function ClubApplyMediator:onClickQuickApplay(sender, eventType)
 end
 
 function ClubApplyMediator:onClickCreateClub(sender, eventType)
-	if self._developSystem:getPlayer():getLevel() < levelNeed.LEVEL then
+	local condition = {
+		STAGE = levelNeed.STAGE,
+		LEVEL = levelNeed.LEVEL
+	}
+	local isOpen, lockTip, unLockLevel = self._systemKeeper:isUnlockByCondition(condition)
+
+	if not isOpen then
 		self:dispatch(ShowTipEvent({
-			tip = Strings:get("Club_Text192", {
-				level = levelNeed.LEVEL
-			})
+			tip = lockTip
 		}))
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 
@@ -881,15 +890,12 @@ function ClubApplyMediator:onClickPlayerInfo(sender, eventType, idx)
 			gender = data:getPropGender(),
 			city = data:getPropCity(),
 			birthday = data:getPropBirthday(),
-			tags = data:getPropTags()
+			tags = data:getPropTags(),
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
 		})
-		self._friendSystem:requestFriendsMainInfo(function ()
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
-		end)
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getPropRid(), function (response)

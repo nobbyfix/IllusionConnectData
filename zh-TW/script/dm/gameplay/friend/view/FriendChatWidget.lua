@@ -23,6 +23,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickDetails"
 	},
+	["Chat_Panel.btn_delmsg"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickDelMsg"
+	},
 	["Chat_Panel.btn_add"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickAddFriends"
@@ -56,8 +60,9 @@ function FriendChatWidget:dispose()
 	super.dispose(self)
 end
 
-function FriendChatWidget:initView(parentMediator)
+function FriendChatWidget:initView(parentMediator, delegate)
 	self._parentMediator = parentMediator
+	self._delegate = delegate
 	self._parentMain = self._parentMediator:getView():getChildByName("main")
 	self._originPos = cc.p(self._parentMain:getPosition())
 	self._chat = self._chatSystem:getChat()
@@ -72,6 +77,10 @@ function FriendChatWidget:initView(parentMediator)
 	mapButtonHandlerClick(self, "Chat_Panel.btn_details", {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickDetails"
+	}, self._main)
+	mapButtonHandlerClick(self, "Chat_Panel.btn_delmsg", {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickDelMsg"
 	}, self._main)
 	mapButtonHandlerClick(self, "Chat_Panel.btn_add", {
 		clickAudio = "Se_Click_Common_2",
@@ -174,7 +183,12 @@ function FriendChatWidget:setupChatOperatorWidget()
 	end
 end
 
-function FriendChatWidget:updateView(data)
+function FriendChatWidget:updateView(data, curTabType)
+	if not data then
+		return
+	end
+
+	self._curTabType = curTabType
 	self._hasApplyList = self._friendSystem:getHasApplyList()
 	local channel = self:getCurChannel()
 
@@ -183,16 +197,24 @@ function FriendChatWidget:updateView(data)
 	local headBg = self._chatPanel:getChildByName("headimg")
 
 	headBg:removeAllChildren(true)
+	headBg:setTouchEnabled(true)
+	mapButtonHandlerClick(nil, headBg, {
+		func = function (sender, eventType)
+			self:onClickDetails()
+		end
+	})
 
-	local headicon = IconFactory:createPlayerIcon({
+	local headicon, oldIcon = IconFactory:createPlayerIcon({
 		clipType = 4,
-		frameStyle = 3,
+		headFrameScale = 0.4,
 		id = data:getHeadId(),
+		size = cc.size(84, 84),
 		headFrameId = data:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	headicon:addTo(headBg):center(headBg:getContentSize()):offset(2, 0)
-	headicon:setScale(0.78)
+	headicon:setScale(1)
 
 	local nameText = self._chatPanel:getChildByName("Text_name")
 
@@ -227,19 +249,17 @@ function FriendChatWidget:updateView(data)
 
 	local levelText = self._chatPanel:getChildByName("Text_level")
 
-	levelText:setString("Lv." .. data:getLevel())
+	levelText:setString(Strings:get("Common_LV_Text") .. data:getLevel())
 	levelText:setLocalZOrder(10)
 	levelText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 	local detailsBtn = self._chatPanel:getChildByName("btn_details")
+	local delmsgBtn = self._chatPanel:getChildByName("btn_delmsg")
+
+	detailsBtn:setVisible(self._)
+
 	local addBtn = self._chatPanel:getChildByName("btn_add")
-
-	addBtn:setVisible(data:getFamiliarity() == nil)
-
 	local delBtn = self._chatPanel:getChildByName("btn_del")
-
-	delBtn:setVisible(data:getFamiliarity() ~= nil)
-
 	local fightBtn = self._chatPanel:getChildByName("btn_fight")
 
 	if self._data ~= data then
@@ -248,20 +268,17 @@ function FriendChatWidget:updateView(data)
 		self:setupListView()
 	end
 
-	if addBtn:isVisible() and self._hasApplyList[data:getRid()] then
-		addBtn:setVisible(false)
-	end
+	detailsBtn:setVisible(false)
+	addBtn:setVisible(false)
+	delBtn:setVisible(false)
+
+	local isFriend = self._friendSystem:checkIsFriend(data:getRid())
+
+	delmsgBtn:setVisible(not isFriend)
 
 	local canShowFightBtn = self._friendSystem:getCanShowFightBtn()
 
-	if canShowFightBtn and delBtn:isVisible() and data:getOnline() == FriendOnLineState.kOnline then
-		fightBtn:setVisible(true)
-		detailsBtn:setPositionX(417)
-	else
-		fightBtn:setVisible(false)
-		detailsBtn:setPositionX(fightBtn:getPositionX())
-	end
-
+	fightBtn:setVisible(isFriend and canShowFightBtn)
 	self._chatOperatorWidget:resetEditBoxText()
 end
 
@@ -324,7 +341,7 @@ function FriendChatWidget:pushTimeText(message)
 
 	node:setAnchorPoint(cc.p(0, 0))
 
-	local date = os.date("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
+	local date = TimeUtil:localDate("%Y-%m-%d  %H:%M", message:getTime() * 0.001)
 	local timeText = ccui.Text:create(date, fontPath, 16)
 
 	timeText:setAnchorPoint(cc.p(0.5, 0))
@@ -411,15 +428,15 @@ function FriendChatWidget:onClickDetails(sender, eventType)
 			gender = self._data:getGender(),
 			city = self._data:getCity(),
 			birthday = self._data:getBirthday(),
-			tags = self._data:getTags()
+			tags = self._data:getTags(),
+			block = response.block,
+			leadStageId = self._data:getLeadStageId(),
+			leadStageLevel = self._data:getLeadStageLevel()
 		})
 
 		record.lastView = "friendChatView"
-		local view = self:getInjector():getInstance("PlayerInfoView")
 
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(self._data:getRid(), function (response)
@@ -440,7 +457,11 @@ function FriendChatWidget:onClickDelectFriends(sender, eventType)
 	local delegate = {
 		willClose = function (self, popupMediator, data)
 			if data.response == AlertResponse.kOK then
-				outSelf._friendSystem:requestDeleteFriend(outSelf._data:getRid())
+				outSelf._friendSystem:requestDeleteFriend(outSelf._data:getRid(), function ()
+					self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+						tip = Strings:get("Friend_Remove_Friend_Succ")
+					}))
+				end)
 			elseif data.response == AlertResponse.kCancel then
 				-- Nothing
 			end
@@ -459,6 +480,14 @@ function FriendChatWidget:onClickDelectFriends(sender, eventType)
 end
 
 function FriendChatWidget:onClickPvp()
+	if self._data:getOnline() ~= FriendOnLineState.kOnline then
+		self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+			tip = Strings:get("Friend_UnLine_FightTip")
+		}))
+
+		return
+	end
+
 	local friendPvpSystem = self:getInjector():getInstance(FriendPvpSystem)
 	local data = {
 		inviteFriend = true,
@@ -466,4 +495,10 @@ function FriendChatWidget:onClickPvp()
 	}
 
 	friendPvpSystem:tryEnter(data)
+end
+
+function FriendChatWidget:onClickDelMsg(sender, eventType)
+	local channelId = self:getChannelId(self._data:getRid(), self._player:getRid())
+
+	self._chatSystem:requestRemoveMessage(channelId, self._data:getRid())
 end

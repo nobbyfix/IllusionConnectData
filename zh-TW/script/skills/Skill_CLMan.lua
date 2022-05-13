@@ -404,9 +404,7 @@ all.Skill_CLMan_Proud_EX = {
 
 		this.CritRateFactor = externs.CritRateFactor
 
-		if this.CritRateFactor == nil then
-			this.CritRateFactor = 0.5
-		end
+		assert(this.CritRateFactor ~= nil, "External variable `CritRateFactor` is not provided.")
 
 		local main = __action(this, {
 			name = "main",

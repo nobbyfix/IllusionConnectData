@@ -5,6 +5,7 @@ require("dm.battle.view.widget.BattleBubbleWidget")
 
 local specId = ""
 local BuffColor = {
+	Negative = "Negative",
 	Red = {
 		o_r = 96
 	},
@@ -33,6 +34,12 @@ local BuffColor = {
 		saturation = -100,
 		o_r = 64,
 		o_b = 64
+	},
+	Translucent = {
+		a = 0.5
+	},
+	Invisible = {
+		a = 0
 	}
 }
 local kGravity = 14.700000000000001
@@ -88,6 +95,12 @@ BattleRoleObject:has("_equipHpWidget", {
 BattleRoleObject:has("_masterWidget", {
 	is = "rw"
 })
+BattleRoleObject:has("_actionTransform", {
+	is = "rw"
+})
+BattleRoleObject:has("_actionTransformRevise", {
+	is = "rw"
+})
 BattleRoleObject:has("_isTeamFlipped", {
 	is = "rwb"
 })
@@ -110,6 +123,9 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 	self._dataModel = dataModel
 	self._roleType = dataModel:getRoleType()
 	self._isLeftTeam = self:isLeft()
+	self._actionTransform = {}
+	self._actionTransformRevise = {}
+	self._actionLoopMap = {}
 
 	self:setupViewContext(viewContext)
 
@@ -127,6 +143,11 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 
 	self._modelScale = modelCfg.Zoom or 1
 	self._modelScale = self._modelScale * (dataModel:getModelScale() or 1)
+
+	if dataModel:getIsBattleField() then
+		self._modelScale = 1.5
+	end
+
 	self._root = cc.Node:create()
 
 	self._root:setLocalZOrder(math.abs(dataModel:getCellId()))
@@ -195,6 +216,10 @@ function BattleRoleObject:initialize(id, dataModel, viewContext)
 	self._iconContainer = cc.Node:create()
 
 	self._topBarContainer:addChild(self._iconContainer, 10)
+
+	self._rtpkBubbleNode = cc.Node:create()
+
+	self._rtpkBubbleNode:addTo(self._topBarContainer, 10):setName("rtpkBubbleNode")
 
 	local topBar = self:autoManageObject(BattleRoleTopBar:new(self._topBarContainer, nil, self._isLeftTeam, viewContext))
 
@@ -466,6 +491,10 @@ function BattleRoleObject:cancelThrown()
 end
 
 function BattleRoleObject:updateHpBarVisibility(isVisible, force)
+	if self._roleAnim and not self._roleAnim:isVisible() then
+		return
+	end
+
 	local hpShow = tonumber(self._context:getValue("ShowHpMode"))
 	local visibleSta = true
 
@@ -484,6 +513,10 @@ function BattleRoleObject:updateHpBarVisibility(isVisible, force)
 
 	self._topBar:setHpVisible(visibleSta)
 	self._iconContainer:setVisible(visibleSta)
+end
+
+function BattleRoleObject:updateFanBar(prgress)
+	self._topBar:updateFanProgress(prgress)
 end
 
 function BattleRoleObject:isHpBarVisible()
@@ -550,6 +583,7 @@ function BattleRoleObject:createHeroAnim()
 
 	self._roleAnim = roleAnim
 
+	self:watchAnimAction()
 	roleAnim:registerSpineEventHandler(handler(self, self.spineHandler), sp.EventType.ANIMATION_COMPLETE)
 	roleAnim:registerSpineEventHandler(handler(self, self.spineHandler), sp.EventType.ANIMATION_EVENT)
 
@@ -576,6 +610,23 @@ function BattleRoleObject:createHeroAnim()
 		self._professionalRestraintSupLab:setPosition(cc.p(0, self._topBarContainer:getPositionY() + kTopBarHeight + 20))
 	else
 		self._professionalRestraintSupLab:setPosition(cc.p(0, self._topBarContainer:getPositionY() + kTopBarHeight + 10))
+	end
+
+	if self._dataModel:getIsBattleField() then
+		self._modelScale = 1.5
+
+		roleAnim:setVisible(false)
+		self._topBarContainer:setVisible(false)
+		self._topBar:getView():setVisible(false)
+
+		function self._topBarContainer.setVisible()
+		end
+
+		function roleAnim.setVisible()
+		end
+
+		self._topBar:getView().setVisible = function ()
+		end
 	end
 
 	roleAnim:setScale(kRoleScale * self._modelScale)
@@ -759,7 +810,12 @@ function BattleRoleObject:addBuff(args)
 	self._buffMap[priorityGroup] = groupMap
 	local buffValue = groupMap[display]
 	buffValue.count = (buffValue.count or 0) + 1
-	local isFixPos = buffModel.Id == "Protecto"
+	local isFixPos = buffModel.Id == "Protecto" or buffModel.Id == "LeadStage_SenLing" or buffModel.Id == "LeadStage_SenLing_Start"
+	local fixOrder = {
+		Protecto = 1,
+		LeadStage_SenLing = 0,
+		LeadStage_SenLing_Start = 0
+	}
 
 	if buffValue.count <= 1 or buffValue.displayNodes == nil or #buffValue.displayNodes == 0 then
 		if buffModel.Effect and buffModel.Effect ~= "" then
@@ -767,10 +823,7 @@ function BattleRoleObject:addBuff(args)
 			buffValue.priority = priorityValue
 			buffValue.displayNodes = {}
 			local offsetX = buffModel.HorizontalPos
-
-			if offsetX and offsetX > 0 then
-				offsetX = self._isLeftTeam and offsetX or 0 - offsetX
-			end
+			offsetX = offsetX and (self._isLeftTeam and offsetX or 0 - offsetX)
 
 			local function addEffect(anim, layer)
 				return self:addActiveEffect(anim, buffValue.loopMode == 1, cc.p(offsetX or 0.5, buffModel.EffectPos), layer, 1, function (cid, mc)
@@ -778,10 +831,16 @@ function BattleRoleObject:addBuff(args)
 						table.removevalues(buffValue.displayNodes, mc)
 						mc:removeFromParent()
 					end
-				end, isFixPos)
+				end, isFixPos, fixOrder[buffModel.Id])
 			end
 
-			local displayNode = addEffect(buffModel.Effect, buffModel.Invisible == 2 and "cover" or "front")
+			local addToLayer = buffModel.Invisible == 2 and "cover" or "front"
+
+			if buffModel.zOrder and buffModel.zOrder <= 0 then
+				addToLayer = "back"
+			end
+
+			local displayNode = addEffect(buffModel.Effect, addToLayer)
 
 			displayNode:setVisible(false)
 
@@ -790,6 +849,7 @@ function BattleRoleObject:addBuff(args)
 
 		if buffModel.Color and buffModel.Color ~= "" then
 			buffValue.color = buffModel.Color
+			self._filmed = buffModel.Color == BuffColor.Negative
 
 			self:refreshColor()
 		end
@@ -831,6 +891,8 @@ function BattleRoleObject:removeBuff(args)
 			end
 		end
 	end
+
+	self._filmed = false
 
 	self:refreshColor()
 	self:refreshBuffEffect()
@@ -926,6 +988,12 @@ function BattleRoleObject:stackBuff(args)
 
 	if buffModel.Icon and buffModel.Icon ~= "" then
 		self._iconBar:stackBuff(args.buffId, args.dur, args.times)
+	end
+
+	local loopMode = buffModel.Loop
+
+	if not loopMode or loopMode ~= 1 then
+		self:addBuff(args)
 	end
 end
 
@@ -1023,12 +1091,16 @@ function BattleRoleObject:colorDye(args)
 end
 
 function BattleRoleObject:colorReset()
+	if self._hsvChange then
+		return
+	end
+
 	self._roleAnim:setSaturation(0)
 	self._roleAnim:setColorMatrix(self._baseColorMatrix)
 	self._roleAnim:setColorTransform(self._baseColorTrans)
 end
 
-function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback, isFixPos)
+function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, callback, isFixPos, FixZorder)
 	if not mcFile then
 		return
 	end
@@ -1061,9 +1133,6 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 
 	if isFixPos then
 		local w_p = anim:getParent():convertToWorldSpace(point)
-
-		anim:changeParent(self._battleGround:getGroundLayer())
-
 		local pos_h = self:getHomePlace()
 		local pos_r = {
 			x = pos_h.x + dot.x * 0.4,
@@ -1072,9 +1141,58 @@ function BattleRoleObject:addActiveEffect(mcFile, loop, dot, layer, zOrder, call
 
 		self._battleGround:setRelPosition(anim, pos_r, 100, 100)
 		anim:setScale(1)
+
+		if FixZorder and FixZorder <= 0 then
+			anim:changeParent(self._battleGround:getCellLayer())
+		else
+			anim:changeParent(self._battleGround:getGroundLayer())
+		end
 	end
 
 	return anim
+end
+
+function BattleRoleObject:watchAnimAction()
+	local function isDagunFinalAnim(animName)
+		return animName == "win" or animName == "win_2" or animName == "win_3" or animName == "win_4" or animName == "die_5" or animName == "die_6" or animName == "die_7" or animName == "die_8"
+	end
+
+	local function adjustWinOrLoseZorder(animName)
+		if isDagunFinalAnim(animName) and self._dataModel:getModelId() == "Model_LFKLFTe_DGun" then
+			self:setDisplayZorder(1000)
+		end
+	end
+
+	local playAnimation = self._roleAnim.playAnimation
+
+	function self._roleAnim.playAnimation(anim, frameIndex, animName, isloop)
+		if self._actionTransform[animName] then
+			animName = self._actionTransform[animName]
+		end
+
+		adjustWinOrLoseZorder(animName)
+
+		if self._actionLoopMap[animName] ~= nil then
+			isloop = self._actionLoopMap[animName]
+			local totalFrame = anim:getAnimationFrames(animName)
+
+			anim:playAnimationInFrameIndex(0, animName, totalFrame - 2, false)
+
+			return
+		end
+
+		playAnimation(anim, frameIndex, animName, isloop)
+	end
+
+	local setLocalZOrder = self:getView().setLocalZOrder
+
+	self:getView().setLocalZOrder = function (target, zorder)
+		if self._specialZorder then
+			return
+		end
+
+		setLocalZOrder(target, zorder)
+	end
 end
 
 function BattleRoleObject:addActiveNode(node, dot, layer, zOrder)
@@ -1383,7 +1501,7 @@ function BattleRoleObject:die()
 	self._liveState = LiveState.Remove
 	local fadeOut = cc.FadeOut:create(0.2)
 	local callback = cc.CallFunc:create(function ()
-		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 		self._node:removeFromParent()
 		self._unitManager:removeUnitById(self._id, self._dataModel:getCellId())
 	end)
@@ -1398,7 +1516,7 @@ function BattleRoleObject:remove()
 
 	self._liveState = LiveState.Remove
 
-	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 	delayCallByTime(0, function ()
 		self._unitManager:removeUnitById(self:getId(), self._dataModel:getCellId())
 	end)
@@ -1411,10 +1529,15 @@ function BattleRoleObject:kick()
 
 	self._liveState = LiveState.Remove
 
-	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL)
+	self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.NORMAL, self._dataModel)
 	self._unitManager:removeUnitById(self._id, self._dataModel:getCellId())
 
 	local fadeOut = cc.FadeOut:create(0.2)
+
+	if self._equipHpWidget then
+		self._equipHpWidget:refreshHp(self._id, 0)
+	end
+
 	local callback = cc.CallFunc:create(function ()
 		self._node:removeFromParent()
 
@@ -1502,9 +1625,24 @@ local skillList = {
 	"skill2",
 	"skill3",
 	"skill4",
+	"skill5",
 	"dieskill",
+	"skill1_1",
+	"skill1_2",
+	"skill1_3",
+	"skill1_4",
+	"skill1_5",
+	"skill3_1",
+	"skill3_2",
 	"skill3_3",
-	"skill2_2"
+	"skill3_4",
+	"skill2_1",
+	"skill2_2",
+	"skill2_3",
+	"skill2_4",
+	"skill5_1",
+	"skill5_2",
+	"skill5_3"
 }
 local normalList = {
 	"down",
@@ -1521,31 +1659,46 @@ local normalList = {
 	"burst"
 }
 local actMap = {
-	walk = "run",
-	skill2 = "skill2",
-	skill3 = "skill3",
-	down = "down",
-	skill1 = "skill1",
-	skill4 = "skill4",
-	run = "run",
-	getup = "getup",
-	dieskill = "dieskill",
-	fakedie = "die",
-	charge = "charge",
-	lockdie = "die",
-	attack = "skill1",
-	die2 = "die2",
-	squat = "squat",
-	skill3_3 = "skill3_3",
-	skill2_2 = "skill2_2",
 	debut = "stand",
+	skill2 = "skill2",
+	lockdie = "die",
+	fakedie = "die",
+	squat = "squat",
+	skill1_3 = "skill1_3",
+	skill1_4 = "skill1_4",
+	die2 = "die2",
+	skill3_3 = "skill3_3",
+	dieskill = "dieskill",
+	charge = "charge",
+	down = "down",
+	attack = "skill1",
+	skill3 = "skill3",
+	skill3_2 = "skill3_2",
+	run = "run",
+	skill2_3 = "skill2_3",
+	skill5_2 = "skill5_2",
 	stand = "stand",
-	die = "die",
+	skill3_1 = "skill3_1",
+	skill3_4 = "skill3_4",
 	win = "win",
 	hurt = "hurt1",
-	fail = "stand",
+	skill1 = "skill1",
 	hurt1 = "hurt1",
-	burst = "burst"
+	burst = "burst",
+	skill1_5 = "skill1_5",
+	skill2_1 = "skill2_1",
+	skill5_1 = "skill5_1",
+	getup = "getup",
+	skill4 = "skill4",
+	skill5_3 = "skill5_3",
+	skill5 = "skill5",
+	skill2_4 = "skill2_4",
+	die = "die",
+	walk = "run",
+	skill1_1 = "skill1_1",
+	fail = "stand",
+	skill1_2 = "skill1_2",
+	skill2_2 = "skill2_2"
 }
 
 local function startsWith(src, sub)
@@ -1615,7 +1768,7 @@ function BattleRoleObject:switchState(state, extra, always, callback)
 
 			anim:resumeAnimation()
 
-			if anim:hasAnimation("die") then
+			if anim:hasAnimation("die") and not self._finalHitDown then
 				anim:playAnimation(0, "die", false)
 
 				if self._context:getValue("FinalHit") == true and self._roleType == RoleType.Master then
@@ -1626,6 +1779,8 @@ function BattleRoleObject:switchState(state, extra, always, callback)
 					if not self:isLeft() then
 						mainMediator:showFinalTaskFinish(self)
 					end
+
+					self._finalHitDown = true
 				end
 
 				self:playSpecialSound("die")
@@ -1779,6 +1934,38 @@ function BattleRoleObject:parseSkillTimeline(actionName, specialEvts)
 			i = i + 1
 		end
 	end
+end
+
+function BattleRoleObject:switchAction(srcAnim, descAnim)
+	if self._roleAnim:hasAnimation(descAnim) then
+		if self._actionTransform[srcAnim] and self._actionTransform[srcAnim] == descAnim then
+			return
+		end
+
+		self._actionTransform[srcAnim] = descAnim
+		self._actionTransformRevise[descAnim] = srcAnim
+
+		for k, v in pairs(skillList) do
+			if v == descAnim then
+				self._roleAnim:removeUserEventForAnimation(srcAnim)
+				self:parseSkillTimeline(descAnim)
+
+				break
+			end
+		end
+	end
+end
+
+function BattleRoleObject:changeActionLoop(descAnim, isLoop)
+	if self._roleAnim:hasAnimation(descAnim) then
+		self._actionLoopMap = self._actionLoopMap or {}
+		self._actionLoopMap[descAnim] = isLoop
+	end
+end
+
+function BattleRoleObject:clearAllTransformAction()
+	self._actionTransform = {}
+	self._actionTransformRevise = {}
 end
 
 function BattleRoleObject:canChangeState(newState)
@@ -2766,6 +2953,186 @@ function BattleRoleObject:playWinOrLoseAnim(result)
 
 end
 
+function BattleRoleObject:isDieAnim(animName)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-2, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	if animName ~= "die" then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 3-4, warpins: 1 ---
+	--- END OF BLOCK #1 ---
+
+	if animName ~= "die_1" then
+	JUMP TO BLOCK #2
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 5-6, warpins: 1 ---
+	--- END OF BLOCK #2 ---
+
+	if animName ~= "die_5" then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 7-8, warpins: 1 ---
+	--- END OF BLOCK #3 ---
+
+	if animName ~= "die_6" then
+	JUMP TO BLOCK #4
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 9-10, warpins: 1 ---
+	--- END OF BLOCK #4 ---
+
+	if animName ~= "die_7" then
+	JUMP TO BLOCK #5
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #5 11-12, warpins: 1 ---
+	--- END OF BLOCK #5 ---
+
+	if animName ~= "die_8" then
+	JUMP TO BLOCK #6
+	else
+	JUMP TO BLOCK #7
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #6 13-14, warpins: 1 ---
+	slot2 = false
+	--- END OF BLOCK #6 ---
+
+	UNCONDITIONAL JUMP; TARGET BLOCK #8
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #7 15-15, warpins: 6 ---
+	slot2 = true
+
+	--- END OF BLOCK #7 ---
+
+	FLOW; TARGET BLOCK #8
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #8 16-16, warpins: 2 ---
+	return slot2
+	--- END OF BLOCK #8 ---
+
+
+
+end
+
+function BattleRoleObject:isDownAnim(animName)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-2, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	if animName ~= "down" then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #5
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 3-4, warpins: 1 ---
+	--- END OF BLOCK #1 ---
+
+	if animName ~= "down_2" then
+	JUMP TO BLOCK #2
+	else
+	JUMP TO BLOCK #5
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 5-6, warpins: 1 ---
+	--- END OF BLOCK #2 ---
+
+	if animName ~= "down_3" then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #5
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 7-8, warpins: 1 ---
+	--- END OF BLOCK #3 ---
+
+	if animName ~= "down_4" then
+	JUMP TO BLOCK #4
+	else
+	JUMP TO BLOCK #5
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 9-10, warpins: 1 ---
+	slot2 = false
+	--- END OF BLOCK #4 ---
+
+	UNCONDITIONAL JUMP; TARGET BLOCK #6
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #5 11-11, warpins: 4 ---
+	slot2 = true
+
+	--- END OF BLOCK #5 ---
+
+	FLOW; TARGET BLOCK #6
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #6 12-12, warpins: 2 ---
+	return slot2
+	--- END OF BLOCK #6 ---
+
+
+
+end
+
 function BattleRoleObject:spineHandler(event)
 
 	-- Decompilation error in this vicinity:
@@ -2819,10 +3186,11 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #4 18-20, warpins: 3 ---
+	--- BLOCK #4 18-23, warpins: 3 ---
 	--- END OF BLOCK #4 ---
 
-	if event.animation == "down" then
+	slot2 = if self:isDownAnim(event.animation)
+	 then
 	JUMP TO BLOCK #5
 	else
 	JUMP TO BLOCK #8
@@ -2831,7 +3199,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #5 21-25, warpins: 1 ---
+	--- BLOCK #5 24-28, warpins: 1 ---
 	--- END OF BLOCK #5 ---
 
 	slot2 = if self:isLive()
@@ -2844,7 +3212,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #6 26-31, warpins: 1 ---
+	--- BLOCK #6 29-34, warpins: 1 ---
 	self:switchState("getup")
 
 	return
@@ -2856,7 +3224,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #7 32-37, warpins: 1 ---
+	--- BLOCK #7 35-40, warpins: 1 ---
 	self._animEnded = true
 
 	self:tryDie()
@@ -2870,10 +3238,11 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #8 38-40, warpins: 3 ---
+	--- BLOCK #8 41-46, warpins: 3 ---
 	--- END OF BLOCK #8 ---
 
-	if event.animation == "die" then
+	slot2 = if self:isDieAnim(event.animation)
+	 then
 	JUMP TO BLOCK #9
 	else
 	JUMP TO BLOCK #13
@@ -2882,7 +3251,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #9 41-43, warpins: 1 ---
+	--- BLOCK #9 47-49, warpins: 1 ---
 	--- END OF BLOCK #9 ---
 
 	if self._state ~= "fakedie" then
@@ -2894,7 +3263,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #10 44-46, warpins: 1 ---
+	--- BLOCK #10 50-52, warpins: 1 ---
 	--- END OF BLOCK #10 ---
 
 	if self._state == "lockdie" then
@@ -2906,7 +3275,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #11 47-51, warpins: 2 ---
+	--- BLOCK #11 53-57, warpins: 2 ---
 	self._roleAnim:pauseAnimation()
 
 	return
@@ -2918,7 +3287,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #12 52-57, warpins: 2 ---
+	--- BLOCK #12 58-63, warpins: 2 ---
 	self._animEnded = true
 
 	self:tryDie()
@@ -2931,7 +3300,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #13 58-60, warpins: 2 ---
+	--- BLOCK #13 64-66, warpins: 2 ---
 	--- END OF BLOCK #13 ---
 
 	slot2 = if self._animLoop then
@@ -2943,7 +3312,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #14 61-64, warpins: 1 ---
+	--- BLOCK #14 67-70, warpins: 1 ---
 	--- END OF BLOCK #14 ---
 
 	if self._animLoop <= 0 then
@@ -2955,7 +3324,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #15 65-65, warpins: 2 ---
+	--- BLOCK #15 71-71, warpins: 2 ---
 	return
 
 	--- END OF BLOCK #15 ---
@@ -2965,7 +3334,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #16 66-72, warpins: 2 ---
+	--- BLOCK #16 72-78, warpins: 2 ---
 	self._animLoop = self._animLoop - 1
 	--- END OF BLOCK #16 ---
 
@@ -2978,7 +3347,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #17 73-82, warpins: 1 ---
+	--- BLOCK #17 79-88, warpins: 1 ---
 	local extra = {}
 	extra.loop = self._animLoop
 
@@ -2991,7 +3360,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #18 83-96, warpins: 1 ---
+	--- BLOCK #18 89-102, warpins: 1 ---
 	local frameCount = self._roleAnim:getAnimationFrames(event.animation)
 
 	self._roleAnim:goToFrameIndexAndPaused(0, frameCount - 1)
@@ -3006,7 +3375,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #19 97-99, warpins: 1 ---
+	--- BLOCK #19 103-105, warpins: 1 ---
 	self:actionEndCallback()
 
 	--- END OF BLOCK #19 ---
@@ -3016,7 +3385,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #20 100-100, warpins: 3 ---
+	--- BLOCK #20 106-106, warpins: 3 ---
 	return
 
 	--- END OF BLOCK #20 ---
@@ -3026,7 +3395,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #21 101-115, warpins: 2 ---
+	--- BLOCK #21 107-121, warpins: 2 ---
 	local handler = self:getContext():getValue("SpineHandler")
 	local eventData = event.eventData
 	local argsStr = eventData.stringValue
@@ -3043,7 +3412,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #22 116-123, warpins: 1 ---
+	--- BLOCK #22 122-129, warpins: 1 ---
 	DpsLogger:debug("battle", "Invalid events in '{}'", event.animation)
 
 	return
@@ -3055,7 +3424,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #23 124-143, warpins: 2 ---
+	--- BLOCK #23 130-149, warpins: 2 ---
 	local action = params.eventType
 	action = action:sub(1, 1):upper() .. action:sub(2)
 	local func = handler["spineHandler_" .. action]
@@ -3071,7 +3440,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #24 144-151, warpins: 1 ---
+	--- BLOCK #24 150-157, warpins: 1 ---
 	DpsLogger:debug("battle", "BattleRoleObject skipped spine handler '{}'", action)
 
 	return
@@ -3083,7 +3452,7 @@ function BattleRoleObject:spineHandler(event)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #25 152-158, warpins: 2 ---
+	--- BLOCK #25 158-164, warpins: 2 ---
 	func(handler, event, params, self)
 
 	return
@@ -3588,6 +3957,109 @@ function BattleRoleObject:emoteBubble(args)
 	bubble:setViewContext(self._context)
 
 	self._bubble = bubble
+
+	return
+	--- END OF BLOCK #4 ---
+
+
+
+end
+
+function BattleRoleObject:RtpkEmoji(args)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-3, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	slot2 = if self._rtpkbubble then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 4-9, warpins: 1 ---
+	self._rtpkbubble:removeView()
+
+	self._rtpkbubble = nil
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 10-39, warpins: 2 ---
+	local resFile = "asset/ui/EmojiTopTalkWidget.csb"
+	local node = cc.CSLoader:createNode(resFile)
+	local _rtpkbubble = BattleRTPKEmoteWidget:new(node, args, function (sender)
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #0 1-4, warpins: 1 ---
+		--- END OF BLOCK #0 ---
+
+		slot1 = if self._rtpkbubble then
+		JUMP TO BLOCK #1
+		else
+		JUMP TO BLOCK #2
+		end
+
+
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #1 5-12, warpins: 1 ---
+		self._rtpkbubble:removeView()
+
+		self._rtpkbubble = nil
+
+		--- END OF BLOCK #1 ---
+
+		FLOW; TARGET BLOCK #2
+
+
+
+		-- Decompilation error in this vicinity:
+		--- BLOCK #2 13-13, warpins: 2 ---
+		return
+		--- END OF BLOCK #2 ---
+
+
+
+	end)
+	local pos = cc.p(self:getModelWidth() / 2, self:getModelHeight() - 100)
+
+	--- END OF BLOCK #2 ---
+
+	slot6 = if not self:isLeft()
+	 then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #4
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 40-59, warpins: 1 ---
+	_rtpkbubble:getView():setScaleX(-1)
+
+	pos = cc.p(-self:getModelWidth() / 2, self:getModelHeight() - 100)
+
+	--- END OF BLOCK #3 ---
+
+	FLOW; TARGET BLOCK #4
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 60-81, warpins: 2 ---
+	_rtpkbubble:getView():setPosition(pos)
+	_rtpkbubble:getView():addTo(self._rtpkBubbleNode, 101)
+	_rtpkbubble:setViewContext(self._context)
+
+	self._rtpkbubble = _rtpkbubble
 
 	return
 	--- END OF BLOCK #4 ---
@@ -5506,6 +5978,36 @@ function BattleRoleObject:prepareSkillEffect(effectId, performAct, animation)
 
 end
 
+function BattleRoleObject:setDisplayZorder(order)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-9, warpins: 1 ---
+	self:getView():setLocalZOrder(order)
+
+	self._specialZorder = order
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
+function BattleRoleObject:resetDisplayZorder()
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-9, warpins: 1 ---
+	self._specialZorder = nil
+
+	self:setRelPosition(self:getRelPosition())
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
 function BattleRoleObject:startSkillEffect(effectId, performAct, animation)
 
 	-- Decompilation error in this vicinity:
@@ -7079,6 +7581,19 @@ function BattleRoleObject:resumeProfessionalRestraint()
 
 end
 
+function BattleRoleObject:modifyMaxHp(oldMax, MaxHp)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-7, warpins: 1 ---
+	self._topBar:setMaxHpValue(oldMax, MaxHp)
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
 function BattleRoleObject:getShowRpNum(num)
 
 	-- Decompilation error in this vicinity:
@@ -7133,6 +7648,189 @@ function BattleRoleObject:getShowRpNum(num)
 	--- BLOCK #4 17-17, warpins: 4 ---
 	return num
 	--- END OF BLOCK #4 ---
+
+
+
+end
+
+function BattleRoleObject:setRootVisible(isVisible)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-6, warpins: 1 ---
+	self._root:setVisible(isVisible)
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
+function BattleRoleObject:setRoleScale(scale)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-30, warpins: 1 ---
+	local baseScale = self._roleAnim:getScale()
+	local sequence = cc.Sequence:create(cc.EaseBackOut:create(cc.ScaleTo:create(0.15, baseScale * scale)))
+
+	self._roleAnim:runAction(sequence)
+
+	self._modelScale = self._modelScale * scale
+
+	return
+	--- END OF BLOCK #0 ---
+
+
+
+end
+
+function BattleRoleObject:setHSVColor(hue, contrast, brightness, saturation)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-8, warpins: 1 ---
+	print(hue, contrast, brightness, saturation)
+	--- END OF BLOCK #0 ---
+
+	if hue ~= 0 then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 9-15, warpins: 1 ---
+	self._roleAnim:setHue(hue)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 16-17, warpins: 2 ---
+	--- END OF BLOCK #2 ---
+
+	if contrast ~= 0 then
+	JUMP TO BLOCK #3
+	else
+	JUMP TO BLOCK #4
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #3 18-24, warpins: 1 ---
+	self._roleAnim:setContrast(contrast)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #3 ---
+
+	FLOW; TARGET BLOCK #4
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #4 25-26, warpins: 2 ---
+	--- END OF BLOCK #4 ---
+
+	if brightness ~= 0 then
+	JUMP TO BLOCK #5
+	else
+	JUMP TO BLOCK #6
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #5 27-33, warpins: 1 ---
+	self._roleAnim:setBrightness(brightness)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #5 ---
+
+	FLOW; TARGET BLOCK #6
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #6 34-35, warpins: 2 ---
+	--- END OF BLOCK #6 ---
+
+	if saturation ~= 0 then
+	JUMP TO BLOCK #7
+	else
+	JUMP TO BLOCK #8
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #7 36-42, warpins: 1 ---
+	self._roleAnim:setSaturation(saturation)
+
+	self._hsvChange = true
+
+	--- END OF BLOCK #7 ---
+
+	FLOW; TARGET BLOCK #8
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #8 43-43, warpins: 2 ---
+	return
+	--- END OF BLOCK #8 ---
+
+
+
+end
+
+function BattleRoleObject:showAtkAndDef(atk, def, hurtrate, unhurtrate)
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-3, warpins: 1 ---
+	--- END OF BLOCK #0 ---
+
+	slot5 = if not self._atkdefLabel then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 4-34, warpins: 1 ---
+	self._atkdefLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 15)
+
+	self._atkdefLabel:addTo(self:getView()):offset(2, 220)
+	self._atkdefLabel:setColor(cc.c3b(255, 0, 0))
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 35-71, warpins: 2 ---
+	self._atkdefLabel:setString("")
+
+	local desc = "atk:" .. atk .. "\n"
+	local desc = desc .. "def:" .. def .. "\n"
+	local desc = desc .. "hurtrate:" .. string.format("%0.2f", hurtrate) .. "\n"
+	local desc = desc .. "unhurtrate:" .. string.format("%0.2f", unhurtrate)
+
+	self._atkdefLabel:setString(desc)
+
+	return
+	--- END OF BLOCK #2 ---
 
 
 

@@ -60,7 +60,7 @@ local actionNode2Pos = {
 	cc.p(188, 64.5),
 	cc.p(64.15, 62.5)
 }
-local max = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_MapList", "content")
+local max = nil
 
 function CommonStageChapterDetailMediator:initialize()
 	super.initialize(self)
@@ -76,6 +76,7 @@ function CommonStageChapterDetailMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RETURN_VIEW, self, self.lastViewReturn)
+	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_QUICK_CROSS, self, self.refreshCurrentView)
 end
 
 local btns = nil
@@ -90,6 +91,13 @@ function CommonStageChapterDetailMediator:enterWithData(data)
 	self._data = data
 	self._chapterIndex = data.chapterIndex
 	self._stageType = data.stageType or StageType.kNormal
+
+	if self._stageType == StageType.kNormal then
+		max = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_MapList", "content")
+	else
+		max = ConfigReader:getDataByNameIdAndKey("ConfigValue", "EliteBlock_MapList", "content")
+	end
+
 	self._lastPointIndex = 0
 	local enterPoint = self._stageSystem:getEnterPoint()
 
@@ -332,7 +340,7 @@ function CommonStageChapterDetailMediator:setChapterTitle()
 	end
 end
 
-function CommonStageChapterDetailMediator:setScrollPoint()
+function CommonStageChapterDetailMediator:setScrollPoint(offY)
 	if #self._pointList < 5 then
 		self._pointSlider:setVisible(false)
 
@@ -343,10 +351,14 @@ function CommonStageChapterDetailMediator:setScrollPoint()
 		local curPointIndex = self._selectedPointIndex or 1
 
 		if curPointIndex > 5 then
-			local offset = unSelectCellHeight * (curPointIndex - 1)
-			local minOffset = self._tableView:minContainerOffset().y
+			if offY then
+				self._tableView:setContentOffset(cc.p(0, offY), false)
+			else
+				local offset = unSelectCellHeight * (curPointIndex - 1)
+				local minOffset = self._tableView:minContainerOffset().y
 
-			self._tableView:setContentOffset(cc.p(0, offset + minOffset), false)
+				self._tableView:setContentOffset(cc.p(0, offset + minOffset), false)
+			end
 		end
 	end
 end
@@ -661,9 +673,10 @@ function CommonStageChapterDetailMediator:onClickNextAction(index)
 		AudioEngine:getInstance():playEffect("Se_Click_Select_1", false)
 
 		self._selectedPointIndex = tag
+		local offY = self._tableView:getContentOffset().y
 
 		self._tableView:reloadData()
-		self:setScrollPoint()
+		self:setScrollPoint(offY)
 	else
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
@@ -1034,6 +1047,32 @@ function CommonStageChapterDetailMediator:checkUnlockNewChapter()
 	self._tipsWidget:setupView(self._chapterIndex, self._stageType)
 end
 
+function CommonStageChapterDetailMediator:refreshCurrentView()
+	if self._chapterIndex > #max then
+		return
+	end
+
+	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
+
+	if chapterInfo then
+		local unlock, tips = chapterInfo:isUnlock()
+
+		if unlock then
+			self._chapterIndex = self._chapterIndex + 1
+		end
+	end
+
+	local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)
+
+	self:refreshChapterView()
+
+	local top = self:getView():getChildByFullName("topinfo_node.currency_bar_2.starNode")
+	local topStar = top:getChildByName("count")
+	local stageManager = self._stageSystem._stageManager
+
+	topStar:setString(stageManager:getAllStageStar())
+end
+
 function CommonStageChapterDetailMediator:onClickLeft()
 	if self._chapterIndex == 1 then
 		return
@@ -1258,15 +1297,17 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local stageSystem = self:getStageSystem()
 	local chapterConfig = stageSystem:getMapConfigByIndex(self._chapterIndex, self._stageType)
+	local storyLink = ConfigReader:getDataByNameIdAndKey("StoryPoint", pointId, "StoryLink")
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyAgent = storyDirector:getStoryAgent()
 
 	local function endCallBack()
 		local storyPoint = stageSystem:getPointById(pointId)
-
-		if SDKHelper and SDKHelper:isEnableSdk() then
-			SDKHelper:adjustEventTracking(AdjustBattleEventList[pointId])
-		end
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			stageSystem:requestStoryPass(pointId, function (response)
 				local delegate = {}
 				local outSelf = self
@@ -1308,11 +1349,24 @@ function CommonStageChapterDetailMediator:onClickPlayStory(pointId)
 			end, true)
 		end
 
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+		StatisticSystem:send({
+			point = "plot_end",
+			type = "plot_end",
+			op_type = "plot_stage",
+			stagetype = self._stageType,
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
+		})
 		AudioEngine:getInstance():playBackgroundMusic(chapterConfig.BGM)
 	end
-
-	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("StoryPoint", pointId, "StoryLink")
 
 	storyAgent:setSkipCheckSave(true)
 
@@ -1341,17 +1395,77 @@ function CommonStageChapterDetailMediator:passChapterMc()
 
 		self._delayLvPop = false
 
-		if self._chapterIndex == 1 or self._chapterIndex == #max then
+		if self._chapterIndex == 1 then
 			return
 		end
 
-		local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
-		local unlock, tips = chapterInfo:isUnlock()
+		local function showNext()
+			if self._chapterIndex >= #max then
+				return
+			end
 
-		if unlock then
-			self._chapterIndex = self._chapterIndex + 1
+			local chapterNextInfo = self:getStageSystem():getMapByIndex(self._chapterIndex + 1, self._stageType)
+			local unlock, tips = chapterNextInfo:isUnlock()
 
-			self:refreshChapterView()
+			if unlock then
+				self._chapterIndex = self._chapterIndex + 1
+
+				self:refreshChapterView()
+			end
+		end
+
+		local chapterInfo = self:getStageSystem():getMapByIndex(self._chapterIndex, self._stageType)
+		local chapterConfig = self:getStageSystem():getMapConfigByIndex(self._chapterIndex, self._stageType)
+		local boxRewardList = self:getStageSystem():boxReardToTable(chapterConfig.StarBoxReward)
+		local boxIndex = #boxRewardList
+		local curStarNum = chapterInfo and chapterInfo:getCurrentStarCount() or 0
+		local chapterId = self:getStageSystem():index2MapId(self._chapterIndex, self._stageType)
+
+		local function receiveAward()
+			local function requestRewardSuc(data)
+				local stageSystem = self._stageSystem
+				local curChapterId = stageSystem:index2MapId(self._chapterIndex, self._stageType)
+
+				if chapterId == curChapterId then
+					local parent = self._starBoxPanel:getChildByFullName("bar_schedule.box_panel_3")
+					local redPoint = parent:getChildByName("red_point")
+
+					redPoint:setVisible(false)
+				end
+
+				local view = self:getInjector():getInstance("getRewardView")
+
+				stageSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data,
+					callback = showNext
+				}))
+			end
+
+			self:getStageSystem():requestStageStarsReward(chapterId, boxRewardList[boxIndex].starNum, function (data)
+				requestRewardSuc(data)
+			end)
+		end
+
+		if boxRewardList[boxIndex].starNum <= curStarNum and chapterInfo and chapterInfo:getMapBoxState(boxRewardList[boxIndex].starNum) == StageBoxState.kCanReceive then
+			local data = {
+				guide = true,
+				type = StageRewardType.kStarBox,
+				state = StageBoxState.kCanReceive,
+				rewardId = boxRewardList[boxIndex].rewardId,
+				callback = receiveAward,
+				closeback = showNext,
+				extra = {}
+			}
+			data.extra[1] = curStarNum
+			data.extra[2] = boxRewardList[boxIndex].starNum
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("StageShowRewardView"), {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, self))
+		else
+			showNext()
 		end
 	end)
 end

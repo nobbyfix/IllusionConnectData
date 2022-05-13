@@ -105,7 +105,7 @@ function MazeOptionTreasureBox:getDescByBoxId(id, lv)
 	end
 
 	local effectDesc = effectConfig.EffectDesc
-	local descValue = ConfigReader:getDataByNameIdAndKey("Translate", effectDesc, "Zh_CN")
+	local descValue = Strings:get(effectDesc)
 	local factorMap = ConfigReader:getRecordById("SkillAttrEffect", effectId)
 	local t = TextTemplate:new(descValue)
 	local funcMap = {

@@ -156,10 +156,10 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					modelId = "Model_YKDMLai",
 					id = "YKDMLai_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -248,
+						y = -290,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -183,8 +183,8 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 								y = 0.5
 							},
 							position = {
-								x = -2.2,
-								y = 682.5
+								x = 3.5,
+								y = 880
 							}
 						}
 					}
@@ -208,10 +208,10 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					modelId = "Model_XSMLi",
 					id = "XSMLi_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -360,
+						y = -480,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -235,8 +235,8 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 								y = 0.5
 							},
 							position = {
-								x = -182.3,
-								y = 791.6
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -260,10 +260,10 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					modelId = "Model_LCYShi",
 					id = "LCYShi_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					position = {
 						x = 0,
-						y = -317,
+						y = -380,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -287,8 +287,8 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 								y = 0.5
 							},
 							position = {
-								x = 48.5,
-								y = 746
+								x = 64.2,
+								y = 1144
 							}
 						}
 					}
@@ -875,7 +875,7 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -360,
+						y = -480,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -899,7 +899,7 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					duration = 0.2,
 					position = {
 						x = 0,
-						y = -360,
+						y = -480,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -1253,7 +1253,7 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -360,
+						y = -480,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -1304,7 +1304,7 @@ function scene_eventstory_DreamChallenge2_04a.actions.start_eventstory_DreamChal
 					duration = 0.3,
 					position = {
 						x = 0,
-						y = -360,
+						y = -480,
 						refpt = {
 							x = 0.5,
 							y = 0

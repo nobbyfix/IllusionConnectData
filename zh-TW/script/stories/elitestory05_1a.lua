@@ -194,11 +194,11 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 					modelId = "Model_PNCao",
 					id = "PNCao_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.7,
 					zorder = 15,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -215,14 +215,14 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 							zorder = 1100,
 							visible = true,
 							id = "PNCao_face",
-							scale = 0.98,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 635.5
+								x = -11.5,
+								y = 1097
 							}
 						}
 					}
@@ -497,7 +497,7 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 					duration = 0.15,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0.1
@@ -514,7 +514,7 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 					duration = 0.15,
 					position = {
 						x = 0,
-						y = -245,
+						y = -420,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -849,7 +849,7 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -245,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = -0.1
@@ -878,7 +878,7 @@ function scene_elitestory05_1a.actions.start_elitestory05_1a(_root, args)
 						duration = 0.15,
 						position = {
 							x = 0,
-							y = -245,
+							y = -420,
 							refpt = {
 								x = 0.5,
 								y = 0

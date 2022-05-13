@@ -94,6 +94,12 @@ function LoginActivity:getTitleDesc()
 	return actConfig and actConfig.title
 end
 
+function LoginActivity:getBGImageName()
+	local actConfig = self:getActivityConfig()
+
+	return actConfig and actConfig.bg
+end
+
 function LoginActivity:getRewards()
 	local actConfig = self:getActivityConfig()
 

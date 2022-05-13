@@ -269,6 +269,11 @@ function ClubBasicInfoMediator:initNodes()
 
 	self._managePanel:changeParent(topView)
 	self._managePanel:setLocalZOrder(10000)
+
+	local btn = self._leftNode:getChildByFullName("weixinbtn")
+	local text = self._leftNode:getChildByFullName("weixintitlelabel")
+
+	btn:setPositionX(text:getPositionX() + text:getContentSize().width + 40)
 end
 
 function ClubBasicInfoMediator:sortClubPlayerByType(type)
@@ -368,14 +373,24 @@ function ClubBasicInfoMediator:refreshInfoView()
 
 	proprieterLabel:setString(self._clubInfoOj:getProprieterName())
 
+	local proprietertitlelabel = self._leftNode:getChildByFullName("proprietertitlelabel")
+
+	proprieterLabel:setPositionX(proprietertitlelabel:getPositionX() + proprietertitlelabel:getContentSize().width + 12)
+
+	local levelTitleLabel = self._leftNode:getChildByFullName("leveltitlelabel")
 	local levelLabel = self._leftNode:getChildByFullName("levellabel")
 
 	levelLabel:setString(self._clubInfoOj:getLevel())
+	levelLabel:setPositionX(levelTitleLabel:getPositionX() + levelTitleLabel:getContentSize().width + 10)
 
 	local numLabel = self._leftNode:getChildByFullName("numlabel")
 	local numStr = self._clubInfoOj:getPlayerCount() .. "/" .. self._clubInfoOj:getMemberLimitCount()
 
 	numLabel:setString(numStr)
+
+	local ranktitlelabel = self._leftNode:getChildByFullName("ranktitlelabel")
+
+	numLabel:setPositionX(ranktitlelabel:getPositionX() + ranktitlelabel:getContentSize().width + 12)
 
 	local rankLabel = self._leftNode:getChildByFullName("ranklabel")
 
@@ -618,13 +633,15 @@ function ClubBasicInfoMediator:createCell(cell, idx)
 	iconPanel:removeAllChildren()
 	iconPanel:setTouchEnabled(false)
 
-	local icon = IconFactory:createPlayerIcon({
-		clipType = 4,
+	local icon, oldIcon = IconFactory:createPlayerIcon({
 		frameStyle = 2,
+		headFrameScale = 0.4,
 		id = data:getHeadId(),
+		size = cc.size(82, 82),
 		headFrameId = data:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	icon:addTo(iconPanel):center(iconPanel:getContentSize())
 	icon:setScale(0.8)
 
@@ -867,9 +884,25 @@ function ClubBasicInfoMediator:onClickChangeName(sender, eventType)
 end
 
 function ClubBasicInfoMediator:onClickWeiXin(sender, eventType)
-	self:dispatch(ShowTipEvent({
-		tip = Strings:get("Item_PleaseWait")
-	}))
+	if not CommonUtils.GetSwitch("fn_Club_SNS") then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Item_PleaseWait")
+		}))
+
+		return
+	end
+
+	local delegate = {}
+	local outSelf = self
+
+	function delegate:willClose(popupMediator, data)
+	end
+
+	local view = self:getInjector():getInstance("ClubSNSTipView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}, delegate))
 end
 
 function ClubBasicInfoMediator:onClickChangeIcon(sender, eventType)
@@ -951,7 +984,10 @@ function ClubBasicInfoMediator:sendMessageBtn(sender, eventType)
 			master = memberData:getMaster(),
 			clubName = clubName,
 			isFriend = response.isFriend,
-			close = response.isFriend == 1 and response.close or nil
+			close = response.isFriend == 1 and response.close or nil,
+			block = response.block,
+			leadStageId = memberData:getLeadStageId(),
+			leadStageLevel = memberData:getLeadStageLevel()
 		}
 
 		friendSystem:addRecentFriend(data)
@@ -1020,15 +1056,10 @@ function ClubBasicInfoMediator:infoBtn(sender, eventType)
 			gender = memberData:getGender(),
 			city = memberData:getCity(),
 			birthday = memberData:getBirthday(),
-			tags = memberData:getTags()
+			tags = memberData:getTags(),
+			block = response.block
 		})
-		self._friendSystem:requestFriendsMainInfo(function ()
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
-		end)
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(memberData:getRid(), function (response)

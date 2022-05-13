@@ -63,13 +63,13 @@ function TowerMasterShowDetailsMediator:initView()
 	self._mainPanel:setTouchEnabled(false)
 
 	self._roleNode = self._mainPanel:getChildByName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
+	local realImage = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust2",
+		frameId = "bustframe2_5",
 		id = self._master:getModel()
 	})
 
-	realImage:setPosition(cc.p(250, -200))
+	realImage:setPosition(cc.p(-350, -300))
 	self._roleNode:addChild(realImage)
 
 	self._image3 = self._mainPanel:getChildByName("image3")

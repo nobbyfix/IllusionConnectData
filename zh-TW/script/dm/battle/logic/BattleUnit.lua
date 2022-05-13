@@ -1,5 +1,6 @@
 BattleUnitType = {
 	kHero = 2,
+	kBattleField = 3,
 	kMaster = 1
 }
 BattleUnit = class("BattleUnit", BattleEntity, _M)
@@ -21,6 +22,16 @@ function BattleUnit.class:createMasterUnit(id)
 	local unit = BattleUnit:new(id)
 
 	unit:setUnitType(BattleUnitType.kMaster)
+	unit:setPresentMaster(true)
+	registBasicComponents(unit)
+
+	return unit
+end
+
+function BattleUnit.class:createBattleFieldUnit(id)
+	local unit = BattleUnit:new(id)
+
+	unit:setUnitType(BattleUnitType.kBattleField)
 	registBasicComponents(unit)
 
 	return unit
@@ -33,6 +44,10 @@ function BattleUnit.class:createHeroUnit(id)
 	registBasicComponents(unit)
 
 	return unit
+end
+
+function BattleUnit:setPresentMaster()
+	self._presentMaster = true
 end
 
 function BattleUnit:copyUnit(srcUnit, ratio)
@@ -55,6 +70,10 @@ function BattleUnit:copyRawData(srcUnit)
 	self._awakenLevel = srcUnit:getAwakenLevel()
 	self._modelScale = srcUnit:getModelScale()
 	self._heroCost = srcUnit:getHeroCost()
+	self._cid = srcUnit:getCid()
+	self._enemyCost = srcUnit:getEnemyCost()
+	self._attackEffect = srcUnit:getAttackEffect()
+	self._sex = srcUnit:getSex()
 end
 
 function BattleUnit:inheritUnit(srcUnit, info)
@@ -66,6 +85,7 @@ function BattleUnit:inheritUnit(srcUnit, info)
 	self._killAnger = info.killAnger
 	self._masterRage = info.masterRage
 	self._genre = info.genre
+	self._sex = info.sex
 	local components = self._components
 
 	for name, comp in pairs(components) do
@@ -114,6 +134,9 @@ BattleUnit:has("_star", {
 BattleUnit:has("_cost", {
 	is = "rw"
 })
+BattleUnit:has("_enemyCost", {
+	is = "rw"
+})
 BattleUnit:has("_masterRage", {
 	is = "rw"
 })
@@ -156,6 +179,15 @@ BattleUnit:has("_heroCost", {
 BattleUnit:has("_surfaceIndex", {
 	is = "rw"
 })
+BattleUnit:has("_attackEffect", {
+	is = "rw"
+})
+BattleUnit:has("_isBattleField", {
+	is = "rw"
+})
+BattleUnit:has("_sex", {
+	is = "rw"
+})
 
 function BattleUnit:initialize(id)
 	super.initialize(self, id)
@@ -185,6 +217,10 @@ function BattleUnit:initWithRawData(data)
 	self._modelScale = data.modelScale
 	self._heroCost = data.heroCost or -1
 	self._surfaceIndex = data.surfaceIndex or 0
+	self._attackEffect = data.attackEffect
+	self._isBattleField = data.isBattleField
+	self._enemyCost = data.enemyCost
+	self._sex = data.sex
 
 	super.initWithRawData(self, data)
 
@@ -264,6 +300,12 @@ function BattleUnit:hasFlag(flag)
 	return flagComp ~= nil and flagComp:hasFlag(flag)
 end
 
+function BattleUnit:hasStatus(status)
+	local flagComp = self:getComponent("Flag")
+
+	return flagComp ~= nil and flagComp:hasStatus(status)
+end
+
 function BattleUnit:isBoss()
 	if self._isBoss == nil then
 		self._isBoss = self:hasFlag("BOSS")
@@ -284,6 +326,9 @@ function BattleUnit:getFlagCheckers()
 		end,
 		["$MASTER"] = function (target)
 			return target:getUnitType() == BattleUnitType.kMaster
+		end,
+		["$FIELD"] = function (target)
+			return target:getUnitType() == BattleUnitType.kBattleField
 		end,
 		["$SUMMONED"] = function (target)
 			return target._isSummoned == true
@@ -314,8 +359,32 @@ function BattleUnit:getPosition()
 	return cell and cell:getPosition()
 end
 
+function BattleUnit:isBeRevive()
+	return self._isRevive or false
+end
+
+function BattleUnit:setBeRevive(isRevive)
+	self._isRevive = isRevive
+end
+
 function BattleUnit:canRevive()
 	return self._noRevive ~= true
+end
+
+function BattleUnit:forbidenRevive()
+	self._noRevive = true
+end
+
+function BattleUnit:forbidenUnearth()
+	self._noUnearth = true
+end
+
+function BattleUnit:enableUnearth()
+	self._noUnearth = false
+end
+
+function BattleUnit:canBeUnearth()
+	return self._noUnearth ~= true
 end
 
 function BattleUnit:getFSM()
@@ -330,6 +399,7 @@ function BattleUnit:dumpInformation()
 	local hpComp = self:getComponent("Health")
 	local angerComp = self:getComponent("Anger")
 	local posComp = self:getComponent("Position")
+	local flagComp = self:getComponent("Flag")
 	local cell = posComp:getCell()
 	local skills = nil
 	local unitType = self:getUnitType()
@@ -382,8 +452,20 @@ function BattleUnit:dumpInformation()
 		heroShow = self._heroShow,
 		isProcessingBoss = self._isProcessingBoss,
 		awakenLevel = self._awakenLevel,
-		modelScale = self._modelScale
+		modelScale = self._modelScale,
+		isSummoned = self._isSummoned,
+		side = self._side,
+		flags = flagComp:getFlags(),
+		isBattleField = self._isBattleField
 	}
+end
+
+function BattleUnit:isSummoned()
+	return self._isSummoned
+end
+
+function BattleUnit:setIsSummoned(isSummon)
+	self._isSummoned = isSummon
 end
 
 function BattleUnit:getFoe()

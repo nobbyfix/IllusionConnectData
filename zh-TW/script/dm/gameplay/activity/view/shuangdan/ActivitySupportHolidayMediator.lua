@@ -63,7 +63,7 @@ local supportUIConfig = {
 	{
 		supportRole = "shuandan_scene_yy_hjr.png",
 		name = "SingingCompetition_RankReward_UI01",
-		anmiBgImg = "shuandan_img_yy_hjrqd.png",
+		supportNameDi = "shuandan_img_yy_hjrqd.png",
 		supportAnimName = "red_baimengyingyuan",
 		bg = "asset/scene/shuandan_scene_yy_hj.jpg",
 		textPattern = {
@@ -79,7 +79,7 @@ local supportUIConfig = {
 	{
 		supportRole = "shuandan_img_yy_bmr.png",
 		name = "SingingCompetition_RankReward_UI02",
-		anmiBgImg = "shuandan_img_yy_bmrqd.png",
+		supportNameDi = "shuandan_img_yy_bmrqd.png",
 		supportAnimName = "white_baimengyingyuan",
 		bg = "asset/scene/shuandan_scene_yy_bm.jpg",
 		textPattern = {
@@ -129,7 +129,6 @@ function ActivitySupportHolidayMediator:onRegister()
 
 	self._addPanelPosX = self._addPanel:getPositionX()
 	self._addPanelPosY = self._addPanel:getPositionY()
-	self._animBgImg = self._mainPanel:getChildByFullName("Image_di")
 	local btns = {
 		"scoreBtn",
 		"rankBtn",
@@ -193,6 +192,16 @@ end
 
 function ActivitySupportHolidayMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
 	self._enterView = data.enterView or ActivitySupportViewEnter.Stage
 	self._heroId = data.heroId or nil
 
@@ -218,13 +227,11 @@ function ActivitySupportHolidayMediator:doReset()
 	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivitySupportHolidayMediator:playDanmaku()
@@ -313,12 +320,6 @@ function ActivitySupportHolidayMediator:playDanmaku()
 end
 
 function ActivitySupportHolidayMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-
-	if not self._activity then
-		return
-	end
-
 	self._config = self._activity:getActivityConfig()
 	self._periodsInfo = self._activity:getPeriodsInfo()
 	self._periodId = self._periodsInfo.periodId
@@ -363,10 +364,12 @@ function ActivitySupportHolidayMediator:updateMainView(index)
 	self._imageBg:loadTexture(uiConfig.bg)
 	self._stagePanel:setVisible(false)
 	self._mainPanel:setVisible(true)
-	self._animBgImg:loadTexture(uiConfig.anmiBgImg, ccui.TextureResType.plistType)
 
 	local data = self._curPeriod.data
 	local config = self._curPeriod.config
+
+	self._mainPanel:getChildByFullName("Image_di"):loadTexture(uiConfig.supportNameDi, 1)
+
 	local popularity = data.popularity
 
 	self._mainPanel:getChildByFullName("popularityValue"):setString(Strings:get("Activity_Saga_UI_9"))
@@ -929,8 +932,19 @@ function ActivitySupportHolidayMediator:onClickRule()
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
 	local rules = self._activity:getActivityConfig().RuleDesc
+	local timeFactor = self._activity:getConfig().TimeFactor
+	local start = TimeUtil:parseDateTime({}, timeFactor.start[1])
+	local startTs = TimeUtil:timeByRemoteDate(start)
+	local periodId = self._activity:getActivityConfig().ActivitySupportId[1]
+	local periodCfg = ConfigReader:getRecordById("ActivitySupport", periodId)
+	local startTime = startTs + periodCfg.PrepareTime
+	local endTime = startTs + periodCfg.PrepareTime + periodCfg.Time
+	local param = {
+		startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startTime),
+		endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endTime)
+	}
 
-	self._activitySystem:showActivityRules(rules)
+	self._activitySystem:showActivityRules(rules, nil, param)
 end
 
 function ActivitySupportHolidayMediator:onClickBack(sender, eventType)

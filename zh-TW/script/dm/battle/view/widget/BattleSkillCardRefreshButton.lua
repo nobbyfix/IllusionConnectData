@@ -29,7 +29,7 @@ function BattleSkillCardRefreshButton:setListener(listener)
 end
 
 function BattleSkillCardRefreshButton:show()
-	self:getView():setVisible(true)
+	self:getView():setVisible(false)
 end
 
 function BattleSkillCardRefreshButton:hide()

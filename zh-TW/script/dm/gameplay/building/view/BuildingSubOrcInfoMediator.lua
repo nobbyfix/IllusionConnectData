@@ -254,7 +254,7 @@ function BuildingSubOrcInfoMediator:updateCell(cell, index)
 				local id = self._ordersubOrcList[i].id
 				local info = self._subOrcList[id]
 
-				onGray:getChildByName("Lv"):setString("Lv" .. info.level)
+				onGray:getChildByName("Lv"):setString(Strings:get("Common_LV_Text_No_Point") .. info.level)
 
 				local imageName = ConfigReader:getDataByNameIdAndKey("VillageSubOre", info.levelConfigId, "Img")
 

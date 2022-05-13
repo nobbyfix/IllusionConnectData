@@ -42,7 +42,7 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 	local healthSystem = env.global["$HealthSystem"]
 	local actor = env["$actor"]
 	local workId = env["$id"]
-	local result = nil
+	local result, transforTarget = nil
 	local flagComp = target:getComponent("Flag")
 
 	if flagComp:hasStatus(kBELinked) and not flagComp:hasStatus(kBEImmune) then
@@ -58,7 +58,7 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 
 		for k, unit in ipairs(linkedUnits) do
 			if unit == target then
-				result = healthSystem:performHealthDamage(actor, target, splitDamage, lowerLimit, workId, notLastHit)
+				result, transforTarget = healthSystem:performHealthDamage(actor, target, splitDamage, lowerLimit, workId, notLastHit)
 			else
 				local _result = healthSystem:performHealthDamage(actor, unit, splitDamageVal, lowerLimit, workId, notLastHit)
 
@@ -77,10 +77,14 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 			end
 		end
 	else
-		result = healthSystem:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
+		result, transforTarget = healthSystem:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
 	end
 
 	if result then
+		if transforTarget then
+			target = transforTarget
+		end
+
 		addHurtInfo(env, target, result)
 
 		if result.deadly then
@@ -95,18 +99,27 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 		local rawDamage = result.raw or 0
 
 		if actor ~= nil and rawDamage > 0 then
-			local reflectResult = healthSystem:performReflection(actor, target, rawDamage, workId, notLastHit)
+			local reflectResult, transActor = healthSystem:performReflection(actor, target, rawDamage, workId, notLastHit)
 
 			if reflectResult then
 				addReflectInfo(env, target, reflectResult)
 
 				if reflectResult.deadly then
-					actor:setFoe(target:getId())
+					if transActor then
+						transActor:setFoe(target:getId())
 
-					local formationSystem = env.global["$FormationSystem"]
+						local formationSystem = env.global["$FormationSystem"]
 
-					formationSystem:excludeDyingUnit(actor, workId)
-					formationSystem:recordDying()
+						formationSystem:excludeDyingUnit(transActor, workId)
+						formationSystem:recordDying()
+					else
+						actor:setFoe(target:getId())
+
+						local formationSystem = env.global["$FormationSystem"]
+
+						formationSystem:excludeDyingUnit(actor, workId)
+						formationSystem:recordDying()
+					end
 				end
 			end
 
@@ -129,12 +142,12 @@ function exports.ApplyHPDamage(env, target, damage, lowerLimit, notLastHit)
 	return result
 end
 
-function exports.ApplyHPReduce(env, target, damage)
+function exports.ApplyHPReduce(env, target, damage, isFlyLabel)
 	local healthSystem = env.global["$HealthSystem"]
 	local actor = env["$actor"]
 	local workId = env["$id"]
 	local result = nil
-	result = healthSystem:performHealthReduce(target, damage, workId, actor)
+	result = healthSystem:performHealthReduce(target, damage, workId, actor, isFlyLabel)
 
 	return result
 end
@@ -170,13 +183,13 @@ function exports.ApplyHpRatio(env, target, hpRatio)
 	return result
 end
 
-function exports.ApplyHPRecovery(env, target, recovery)
+function exports.ApplyHPRecovery(env, target, recovery, notBeEffectByCurse)
 	local healthSystem = env.global["$HealthSystem"]
 	local workId = env["$id"]
 	local battleStatist = env.global["$Statist"]
 	local flagComp = target:getComponent("Flag")
 
-	if flagComp:hasStatus(kBECurse) then
+	if flagComp:hasStatus(kBECurse) and not notBeEffectByCurse then
 		local result = healthSystem:performHealthDamage(env["$actor"], target, recovery, 1, workId)
 
 		return result

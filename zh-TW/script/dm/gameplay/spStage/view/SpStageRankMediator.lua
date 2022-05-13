@@ -190,7 +190,7 @@ function SpStageRankMediator:updateCell(cell, index, rankRecord)
 	local damage = cell:getChildByName("damage")
 
 	name:setString(rankRecord:getNickName())
-	level:setString("Lv." .. rankRecord:getLevel())
+	level:setString(Strings:get("Common_LV_Text") .. rankRecord:getLevel())
 	damage:setString(rankRecord:getDamage())
 
 	local changeImg = cell:getChildByName("change")
@@ -270,13 +270,8 @@ function SpStageRankMediator:onClickCell(cell)
 	local friendSystem = self:getInjector():getInstance(FriendSystem)
 
 	local function gotoView(response)
-		self._friendSystem:requestFriendsMainInfo(function ()
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
-		end)
+		record:setIsFriend(response.isFriend)
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(record:getRid(), function (response)

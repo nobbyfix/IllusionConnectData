@@ -83,14 +83,16 @@ all.Sk_Master_FuHun_Action1 = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.8,
 				0
 			}
 		end
 
-		this.CritRateFactor = externs.CritRateFactor
+		this.ExDamageFactor = externs.ExDamageFactor
 
-		assert(this.CritRateFactor ~= nil, "External variable `CritRateFactor` is not provided.")
+		if this.ExDamageFactor == nil then
+			this.ExDamageFactor = 0.1
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -172,32 +174,14 @@ all.Sk_Master_FuHun_Action1 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buffeft1 = global.NumericEffect(_env, "+critrate", {
-				"+Normal",
-				"+Normal"
-			}, this.CritRateFactor)
-
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 2,
-				duration = 1,
-				display = "CritRateUp",
-				tags = {
-					"STATUS",
-					"NUMERIC",
-					"BUFF",
-					"CRITRATEUP",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft1
-			}, 1)
+			local num = #global.EnemyUnits(_env, global.PETS)
 
 			for _, enemyunit in global.__iter__(_env.units) do
 				global.ApplyStatusEffect(_env, _env.ACTOR, enemyunit)
 				global.ApplyRPEffect(_env, _env.ACTOR, enemyunit)
 
 				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, enemyunit, this.dmgFactor)
+				damage.val = damage.val * (1 + num * this.ExDamageFactor)
 
 				global.ApplyAOEHPMultiDamage_ResultCheck(_env, _env.ACTOR, enemyunit, {
 					0,
@@ -237,9 +221,11 @@ all.Sk_Master_FuHun_Action2 = {
 			}
 		end
 
-		this.HotRateFactor = externs.HotRateFactor
+		this.AOEDeRateFactor = externs.AOEDeRateFactor
 
-		assert(this.HotRateFactor ~= nil, "External variable `HotRateFactor` is not provided.")
+		if this.AOEDeRateFactor == nil then
+			this.AOEDeRateFactor = 0.2
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -303,48 +289,52 @@ all.Sk_Master_FuHun_Action2 = {
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
 		end)
 		exec["@time"]({
+			1700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft3 = global.NumericEffect(_env, "-aoederate", {
+				"+Normal",
+				"+Normal"
+			}, this.AOEDeRateFactor)
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 4,
+					duration = 15,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"AOEDERATEDOWN",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft3
+				}, 1)
+			end
+		end)
+		exec["@time"]({
 			2300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"))
-
 			local buffeft1 = global.Immune(_env)
 			local buffeft2 = global.ImmuneBuff(_env, global.BUFF_MARKED_ANY(_env, "DEBUFF"))
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 1,
-				duration = 2,
+				timing = 4,
+				duration = 15,
 				display = "Immune",
 				tags = {
 					"STATUS",
 					"BUFF",
 					"IMMUNE",
-					"UNDISPELLABLE",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
 				buffeft1,
 				buffeft2
-			}, 1)
-
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
-			local buffeft3 = global.HPPeriodRecover(_env, "HOT", maxHp * this.HotRateFactor)
-
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 1,
-				duration = 2,
-				display = "Hot",
-				tags = {
-					"STATUS",
-					"BUFF",
-					"HOT",
-					"UNDISPELLABLE",
-					"UNSTEALABLE"
-				}
-			}, {
-				buffeft3
 			}, 1)
 		end)
 		exec["@time"]({
@@ -371,18 +361,16 @@ all.Sk_Master_FuHun_Action3 = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				3.6,
+				2.8,
 				0
 			}
 		end
 
-		this.AOERateFactor = externs.AOERateFactor
+		this.KillHpRate = externs.KillHpRate
 
-		assert(this.AOERateFactor ~= nil, "External variable `AOERateFactor` is not provided.")
-
-		this.FreezeRateFactor = externs.FreezeRateFactor
-
-		assert(this.FreezeRateFactor ~= nil, "External variable `FreezeRateFactor` is not provided.")
+		if this.KillHpRate == nil then
+			this.KillHpRate = 0.1
+		end
 
 		local main = __action(this, {
 			name = "main",
@@ -464,31 +452,25 @@ all.Sk_Master_FuHun_Action3 = {
 
 			for _, unit in global.__iter__(_env.units) do
 				global.AssignRoles(_env, unit, "target")
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
 
-				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
-					"+Normal",
-					"+Normal"
-				}, this.AOERateFactor)
-				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
-				local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
-				local prob = global.EvalProb1(_env, attacker, defender, this.FreezeRateFactor, 0)
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
 
-				if global.ProbTest(_env, prob) then
-					local buffeft2 = global.Daze(_env)
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			2000
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
 
-					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
-						timing = 2,
-						duration = 1,
-						display = "Freeze",
-						tags = {
-							"STATUS",
-							"DEBUFF",
-							"FREEZE",
-							"DISPELLABLE"
-						}
-					}, {
-						buffeft2
-					}, 1, 0)
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.PETS)) do
+				local hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
+
+				if hpRatio <= this.KillHpRate then
+					global.KillTarget(_env, unit)
 				end
 			end
 		end)

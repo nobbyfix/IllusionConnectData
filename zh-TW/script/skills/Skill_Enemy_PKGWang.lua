@@ -146,6 +146,7 @@ all.Skill_Enemy_PKGWang_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"MUTE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

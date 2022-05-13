@@ -63,6 +63,7 @@ end
 function FriendListMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
+	self:mapEventListeners()
 	self:bindWidget("main.nofriends.btn_find", TwoLevelViceButton, {})
 	self:bindWidget("main.friends.btn_allsend", ThreeLevelMainButton, {
 		ignoreAddKerning = true
@@ -102,14 +103,13 @@ function FriendListMediator:userInject()
 end
 
 function FriendListMediator:setupView(data)
+	self._friendSystem:requestFriendsMainInfo()
 	self:initData(data)
 	self:initView()
-	self:mapEventListeners()
 	self:setChatWidget()
 	self:createTableView()
 	self:setFriendCount()
 	self:setDefaultChatWidget()
-	self:refreshView()
 end
 
 function FriendListMediator:initData(data)
@@ -151,10 +151,16 @@ function FriendListMediator:initView()
 	local textFriend = self._countPanel:getChildByFullName("Text_1")
 
 	textFriend:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	textFriend:setString(self._curTabType == kViewTabType.kFriend and Strings:get("Friend_UI12") or Strings:get("Friend_UI12_1"))
 
 	local textCount = self._countPanel:getChildByFullName("Text_count")
 
 	textCount:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	textCount:setPositionX(textFriend:getPositionX() + textFriend:getContentSize().width)
+	self._noFriendsPanel:setVisible(false)
+	self._friendsPanel:setVisible(false)
+	self._chatPanel:setVisible(false)
+	self._main:getChildByName("bg"):setVisible(false)
 end
 
 function FriendListMediator:mapEventListeners()
@@ -165,13 +171,14 @@ function FriendListMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHAT_SEND_MESSAGE_SUCC, self, self.onChatSendCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_DELECT_SUCC, self, self.onDelectFriendCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_ADD_SUCC, self, self.onApplySuccCallback)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHAT_REMOVE_MESSAGE_SUCC, self, self.onRemoveMessageCallback)
 end
 
 function FriendListMediator:setChatWidget()
 	local chatNode = self._chatPanel
 	local chatWidget = self:getInjector():injectInto(FriendChatWidget:new(chatNode))
 
-	chatWidget:initView(self._mediator)
+	chatWidget:initView(self._mediator, self)
 
 	self._chatWidget = chatWidget
 end
@@ -184,15 +191,29 @@ end
 
 function FriendListMediator:setFriendCount()
 	local countLabel1 = self._countPanel:getChildByFullName("Text_count")
-	local friendCount = self._friendModel:getFriendCount(kFriendType.kGame)
-	local maxCount = self._friendModel:getMaxFriendsCount()
 
-	countLabel1:setString(friendCount .. "/" .. maxCount)
+	if self._curTabType == kViewTabType.kRecent then
+		local recentCount = #self._list
+		local maxRecentCount = self._friendModel:getMaxRecentCount()
 
-	if friendCount == 0 then
-		self._countPanel:setVisible(false)
+		countLabel1:setString(recentCount .. "/" .. maxRecentCount)
+
+		if recentCount == 0 then
+			self._countPanel:setVisible(false)
+		else
+			self._countPanel:setVisible(true)
+		end
 	else
-		self._countPanel:setVisible(true)
+		local friendCount = self._friendModel:getFriendCount(kFriendType.kGame)
+		local maxCount = self._friendModel:getMaxFriendsCount()
+
+		countLabel1:setString(friendCount .. "/" .. maxCount)
+
+		if friendCount == 0 then
+			self._countPanel:setVisible(false)
+		else
+			self._countPanel:setVisible(true)
+		end
 	end
 end
 
@@ -205,7 +226,6 @@ function FriendListMediator:createTableView()
 		local offset = table:getContentOffset()
 
 		self._fadeImgUp:setVisible(table:minContainerOffset().y < offset.y)
-		self._fadeImgDown:setVisible(offset.y < table:maxContainerOffset().y)
 	end
 
 	local function scrollViewDidZoom(view)
@@ -279,15 +299,24 @@ function FriendListMediator:refreshFriendCell(cell, index)
 
 	headBg:removeAllChildren()
 
-	local headicon = IconFactory:createPlayerIcon({
+	local headicon, oldIcon = IconFactory:createPlayerIcon({
+		frameStyle = 2,
 		clipType = 4,
-		frameStyle = 3,
+		headFrameScale = 0.4,
 		id = friendData:getHeadId(),
+		size = cc.size(84, 84),
 		headFrameId = friendData:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	headicon:addTo(headBg):center(headBg:getContentSize())
 	headicon:setScale(0.8)
+	headBg:setTouchEnabled(true)
+	mapButtonHandlerClick(nil, headBg, {
+		func = function (sender, eventType)
+			self:onClickHead(friendData, sender)
+		end
+	})
 
 	local nameText = cell:getChildByName("Text_name")
 
@@ -295,7 +324,7 @@ function FriendListMediator:refreshFriendCell(cell, index)
 
 	local levelText = cell:getChildByName("Text_level")
 
-	levelText:setString("Lv." .. friendData:getLevel())
+	levelText:setString(Strings:get("Common_LV_Text") .. friendData:getLevel())
 	levelText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 	levelText:setLocalZOrder(10)
 
@@ -322,15 +351,28 @@ function FriendListMediator:refreshFriendCell(cell, index)
 	vipNode:setScale(0.778)
 	vipNode:setPosition(5, 68)
 
-	local sendBtn = cell:getChildByName("btn_send")
+	local receiveBtn = cell:getChildByName("btn_receive")
 
-	local function sendCallFunc(sender, eventType)
+	local function receiveCallFunc(sender, eventType)
 		if friendData:getCanReceive() then
 			self:onClickGet(friendData)
 
 			return
 		end
+	end
 
+	mapButtonHandlerClick(nil, receiveBtn, {
+		func = receiveCallFunc
+	})
+	receiveBtn:setVisible(friendData:getCanReceive())
+
+	if receiveBtn:isVisible() then
+		receiveBtn:setVisible(not self._hasSendList[friendData:getRid()])
+	end
+
+	local sendBtn = cell:getChildByName("btn_send")
+
+	local function sendCallFunc(sender, eventType)
 		if friendData:getCanSend() then
 			self:onClickSend(friendData)
 
@@ -341,9 +383,7 @@ function FriendListMediator:refreshFriendCell(cell, index)
 	mapButtonHandlerClick(nil, sendBtn, {
 		func = sendCallFunc
 	})
-	sendBtn:setVisible(friendData:getCanSend() or friendData:getCanReceive())
-	sendBtn:getChildByName("send_img"):setVisible(friendData:getCanSend())
-	sendBtn:getChildByName("receive_img"):setVisible(friendData:getCanReceive())
+	sendBtn:setVisible(friendData:getCanSend())
 
 	if sendBtn:isVisible() then
 		sendBtn:setVisible(not self._hasSendList[friendData:getRid()])
@@ -445,6 +485,8 @@ function FriendListMediator:doRequestNextRequest()
 end
 
 function FriendListMediator:refreshView(offset)
+	self._friendsPanel:setVisible(true)
+
 	if self._curTabType == kViewTabType.kFriend then
 		self:refreshFriendView(offset)
 	else
@@ -470,6 +512,8 @@ function FriendListMediator:refreshView(offset)
 	end
 
 	self:refreshNoFriendView()
+	self._fadeImgDown:setVisible(self._curTabType == kViewTabType.kFriend and not self._noFriendsPanel:isVisible())
+	self:setFriendCount()
 end
 
 function FriendListMediator:refreshFriendView(offset)
@@ -496,8 +540,6 @@ function FriendListMediator:refreshFriendView(offset)
 	if offset then
 		self._tableView:setContentOffset(offset)
 	end
-
-	self:setFriendCount()
 end
 
 function FriendListMediator:refreshRecentView(offset)
@@ -531,7 +573,7 @@ function FriendListMediator:refreshChatWidget()
 
 	if #self._list > 0 and self._chatFriend then
 		self._chatPanel:setVisible(true)
-		self._chatWidget:updateView(self._chatFriend)
+		self._chatWidget:updateView(self._chatFriend, self._curTabType)
 	end
 end
 
@@ -805,11 +847,13 @@ function FriendListMediator:onChatSendCallback()
 	local oldIndex = self._selectFriendIndex
 	local index = 1
 
-	for i = 1, #self._list do
-		local data = self._list[i]
+	if self._chatFriend then
+		for i = 1, #self._list do
+			local data = self._list[i]
 
-		if data:getRid() == self._chatFriend:getRid() then
-			index = i
+			if data:getRid() == self._chatFriend:getRid() then
+				index = i
+			end
 		end
 	end
 
@@ -844,12 +888,54 @@ function FriendListMediator:getTableViewOffset(index)
 end
 
 function FriendListMediator:onApplySuccCallback(event)
-	self:dispatch(ShowTipEvent({
-		tip = Strings:get("Friend_UI15")
-	}))
-
 	local data = event:getData().response
 
 	self._friendSystem:setHasApplyList(data.addFriends)
 	self._chatWidget:updateView(self._chatFriend)
+end
+
+function FriendListMediator:onClickHead(data, sender)
+	if not data then
+		return
+	end
+
+	local friendSystem = self:getFriendSystem()
+
+	local function gotoView(response)
+		local record = BaseRankRecord:new()
+
+		record:synchronize({
+			headImage = data:getHeadId(),
+			headFrame = data:getHeadFrame(),
+			rid = data:getRid(),
+			level = data:getLevel(),
+			nickname = data:getNickName(),
+			vipLevel = data:getVipLevel(),
+			combat = data:getCombat(),
+			slogan = data:getSlogan(),
+			master = data:getMaster(),
+			heroes = data:getHeroes(),
+			clubName = data:getUnionName(),
+			online = data:getOnline() == ClubMemberOnLineState.kOnline,
+			lastOfflineTime = data:getLastOfflineTime(),
+			isFriend = response.isFriend,
+			close = response.close,
+			gender = data:getGender(),
+			city = data:getCity(),
+			birthday = data:getBirthday(),
+			tags = data:getTags(),
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
+		})
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
+	end
+
+	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
+		gotoView(response)
+	end)
+end
+
+function FriendListMediator:onRemoveMessageCallback(data)
+	self:refreshView()
 end

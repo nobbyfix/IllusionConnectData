@@ -159,7 +159,7 @@ function MazeHeroBoxMediator:showHeroGetAni(response)
 	anim:addCallbackAtFrame(10, function ()
 		local title = anim:getChildByName("title")
 		local titleNode = title:getChildByName("node")
-		local image = cc.Sprite:create("asset/commonLang/rewordText.png")
+		local image = cc.Sprite:create(ASSET_LANG_COMMON .. "rewordText.png")
 
 		image:addTo(titleNode)
 		title:addCallbackAtFrame(12, function ()

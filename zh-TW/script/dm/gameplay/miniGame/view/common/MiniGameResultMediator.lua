@@ -83,14 +83,14 @@ function MiniGameResultMediator:createAnim(data)
 	title:addTo(winPanel)
 
 	local heroNode = anim:getChildByFullName("roleNode")
-	local heroIcon = IconFactory:createRoleIconSprite({
-		id = "Model_YFZZhu",
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9"
+		frameId = "bustframe17",
+		id = self._data.modelId
 	})
 
 	heroIcon:setScale(1.1)
-	heroIcon:setPosition(cc.p(50, -220))
+	heroIcon:setPosition(cc.p(-320, -300))
 	heroNode:addChild(heroIcon)
 
 	local curScore = self._mainPanel:getChildByFullName("Text_curScore")
@@ -121,6 +121,24 @@ function MiniGameResultMediator:createAnim(data)
 		y = -1
 	}))
 
+	local newRecordText = self._mainPanel:getChildByFullName("Text_new")
+	local lineGradiantVec1 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(255, 241, 91, 255)
+		}
+	}
+
+	newRecordText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
+	newRecordText:setVisible(self._data.isHightScore)
+
 	local timesText = self._mainPanel:getChildByFullName("Text_times")
 
 	timesText:setString(Strings:get("Activity_Darts_Residualtimes") .. self._data.todaytimes)
@@ -131,7 +149,7 @@ function MiniGameResultMediator:createAnim(data)
 	local listView = self._rewardPanel:getChildByFullName("mRewardList")
 
 	for k, v in pairs(self._data.rewards) do
-		if v.amount ~= 0 then
+		if v.amount > 0 then
 			local layout = ccui.Layout:create()
 
 			layout:setContentSize(cc.size(80, 80))
@@ -259,7 +277,7 @@ function MiniGameResultMediator:onClickAgain(sender, eventType)
 
 		if factor1 and factor2 then
 			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Activity_Darts_Times")
+				tip = Strings:get("Activity_Darts_Times_Out")
 			}))
 
 			return

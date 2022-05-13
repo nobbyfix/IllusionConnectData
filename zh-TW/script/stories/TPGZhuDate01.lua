@@ -66,6 +66,36 @@ end
 function scene_TPGZhuDate01.actions.start_TPGZhuDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -95,11 +125,11 @@ function scene_TPGZhuDate01.actions.start_TPGZhuDate01(_root, args)
 					modelId = "Model_TPGZhu",
 					id = "TPGZhu_speak",
 					rotationX = 0,
-					scale = 0.925,
+					scale = 0.85,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -140,
+						y = -100,
 						refpt = {
 							x = 0.525,
 							y = 0
@@ -123,8 +153,8 @@ function scene_TPGZhuDate01.actions.start_TPGZhuDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 10.4,
-								y = 581
+								x = 13.9,
+								y = 592.2
 							}
 						}
 					}

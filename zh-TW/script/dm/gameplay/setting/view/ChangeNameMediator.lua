@@ -32,7 +32,11 @@ function ChangeNameMediator:onRegister()
 
 	self._main = self:getView():getChildByName("main")
 	self._editBox = self._main:getChildByName("TextField")
+	local enableDice = CommonUtils.GetSwitch("fn_name_dice")
 
+	self._main:getChildByFullName("touchPanel"):setVisible(enableDice)
+	self._main:getChildByFullName("touchPanel"):setEnabled(enableDice)
+	self._main:getChildByFullName("btn_dice"):setVisible(enableDice)
 	self:mapEventListeners()
 end
 

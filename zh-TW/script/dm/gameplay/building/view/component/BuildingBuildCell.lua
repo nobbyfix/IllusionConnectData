@@ -30,6 +30,36 @@ function BuildingBuildCell:update(info)
 
 		self._text_name:setString(Strings:get(config.Name))
 		self._node_des:getChildByName("Text_name"):setString(Strings:get(config.Name))
+		self._text_name:setTextAreaSize(cc.size(0, 0))
+
+		local localLanguage = getCurrentLanguage()
+
+		if localLanguage ~= GameLanguageType.CN then
+			local Image1 = self._node_buy:getChildByName("Image_8")
+			local Image2 = self._node_des:getChildByName("Image_8")
+
+			if self._text_name:getContentSize().width > 130 then
+				self._text_name:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				self._text_name:setTextAreaSize(cc.size(130, 36))
+				self._node_des:getChildByName("Text_name"):getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				self._node_des:getChildByName("Text_name"):setTextAreaSize(cc.size(130, 36))
+
+				local txtsize = cc.size(150, Image1:getContentSize().height)
+
+				Image1:setContentSize(txtsize)
+				Image2:setContentSize(txtsize)
+			elseif self._text_name:getContentSize().width > 60 then
+				local txtsize = cc.size(self._text_name:getContentSize().width + 25, Image1:getContentSize().height)
+
+				Image1:setContentSize(txtsize)
+				Image2:setContentSize(txtsize)
+			else
+				local txtsize = cc.size(87, Image1:getContentSize().height)
+
+				Image1:setContentSize(txtsize)
+				Image2:setContentSize(txtsize)
+			end
+		end
 
 		local node_des = self._node_des:getChildByName("Node_des")
 		local text_des = self._node_des:getChildByName("Text_des")
@@ -55,6 +85,7 @@ function BuildingBuildCell:update(info)
 		local skinConfig = ConfigReader:getRecordById("VillageBuildingSurface", skinId)
 
 		self._buildingDecorate:refreshSkin(skinId)
+		self._buildingDecorate:updateOffsetX(self._id)
 		self._buildingDecorate:getView():setScale(skinConfig.PicScale[1])
 
 		local comfort = skinConfig.Comfort or 0
@@ -177,8 +208,20 @@ function BuildingBuildCell:update(info)
 		self._btnSetUp:setVisible(false)
 		self._text_ownDes:setVisible(true)
 	elseif self._showType == 2 then
-		local buildingData = self._buildingSystem:getBuildingData(self._roomId, self._id)
-		local config = ConfigReader:getRecordById("VillageDecorateBuilding", buildingData._configId)
+		local config = {}
+		local buildingData = {}
+		local show = true
+
+		if self._roomId == kStoreRoomName then
+			config = ConfigReader:getRecordById("VillageDecorateBuilding", self._id)
+			buildingData._levelConfigId = config.BuildingLevel
+			buildingData._configId = self._id
+			show = false
+		else
+			buildingData = self._buildingSystem:getBuildingData(self._roomId, self._id)
+			config = ConfigReader:getRecordById("VillageDecorateBuilding", buildingData._configId)
+		end
+
 		local buildingLevel = buildingData._levelConfigId
 		local configLevel = ConfigReader:getRecordById("VillageBuildingLevel", buildingLevel)
 
@@ -205,10 +248,35 @@ function BuildingBuildCell:update(info)
 			node_des:addChild(contentText)
 		end
 
+		local unlockDesc = self._node_buy:getChildByName("UnlockDesc")
+
+		if unlockDesc then
+			unlockDesc:removeFromParent()
+		end
+
+		if not show then
+			local roomName = ConfigReader:getDataByNameIdAndKey("VillageRoom", config.Room, "Name")
+			local nameString = Strings:get(roomName)
+			local desc = Strings:get("Building_Decorate_Room_Unlock", {
+				room = nameString
+			})
+			local contentText = cc.Label:createWithTTF(desc, TTF_FONT_FZYH_M, 18)
+
+			contentText:enableOutline(cc.c4b(83, 44, 38, 255), 2)
+			contentText:addTo(self._node_buy):setName("UnlockDesc")
+
+			local posX = self._btnSetUp:getPositionX()
+			local posY = self._btnSetUp:getPositionY()
+
+			contentText:setPositionX(posX)
+			contentText:setPositionY(posY)
+		end
+
 		local skinId = config.DefaultSurface
 		local skinConfig = ConfigReader:getRecordById("VillageBuildingSurface", skinId)
 
 		self._buildingDecorate:refreshSkin(skinId)
+		self._buildingDecorate:updateOffsetX(buildingData._configId)
 		self._buildingDecorate:getView():setScale(skinConfig.PicScale[1])
 
 		local comfort = skinConfig.Comfort or 0
@@ -217,7 +285,7 @@ function BuildingBuildCell:update(info)
 		self._text_comfort:setVisible(false)
 
 		if comfort > 0 then
-			self._text_comfort:setVisible(true)
+			self._text_comfort:setVisible(show)
 			self._text_comfort:setString(Strings:get("Building_UI_Relax") .. "+" .. comfort)
 		end
 
@@ -226,7 +294,7 @@ function BuildingBuildCell:update(info)
 		self._btnbuy:setVisible(false)
 		self._node_another:setVisible(false)
 		self._text_des:setVisible(false)
-		self._btnSetUp:setVisible(true)
+		self._btnSetUp:setVisible(show)
 		self._text_ownDes:setVisible(false)
 	end
 end
@@ -254,6 +322,7 @@ function BuildingBuildCell:intiView()
 	})
 
 	buildingDecorate:enterWithData()
+	buildingDecorate:setIsInRoom(false)
 
 	self._buildingDecorate = buildingDecorate
 	local btnInfo = self._node_buy:getChildByName("Button_info")
@@ -373,12 +442,14 @@ function BuildingBuildCell:checkBuildCurrency(costtype, costNum)
 
 		if costNum <= ownCount then
 			canbuild = true
-		else
-			self:dispatch(ShowTipEvent({
-				duration = 0.5,
-				tip = Strings:get("Error_1032")
-			}))
 		end
+	end
+
+	if not canbuild then
+		self:dispatch(ShowTipEvent({
+			duration = 0.5,
+			tip = Strings:get("Error_1032")
+		}))
 	end
 
 	return canbuild

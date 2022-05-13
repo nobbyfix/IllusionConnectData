@@ -238,7 +238,7 @@ function BagGiftChooseOneMediator:onClickUse(sender, eventType)
 		local canUse = self._bagSystem:requestBoxChooseItem(self._entryId, self._curCount, self._curRewardId, function (data)
 			local rewards = data.reward
 
-			if rewards then
+			if rewards and not DisposableObject:isDisposed(self) then
 				local view = self:getInjector():getInstance("getRewardView")
 
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {

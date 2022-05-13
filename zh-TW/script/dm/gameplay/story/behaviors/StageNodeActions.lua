@@ -472,7 +472,7 @@ function SkipButtonShow:start(args)
 	local actor = self:getActor()
 
 	if actor then
-		actor:show()
+		actor:show(args)
 	end
 
 	return BehaviorResult.Success
@@ -565,6 +565,38 @@ function AutoPlayButtonNodeShow:initialize()
 end
 
 function AutoPlayButtonNodeShow:start(args)
+	local actor = self:getActor()
+
+	if actor then
+		actor:show()
+	end
+
+	return BehaviorResult.Success
+end
+
+HideButtonNodeHide = class("HideButtonNodeHide", BaseAction)
+
+function HideButtonNodeHide:initialize()
+	super.initialize(self)
+end
+
+function HideButtonNodeHide:start(args)
+	local actor = self:getActor()
+
+	if actor then
+		actor:hide()
+	end
+
+	return BehaviorResult.Success
+end
+
+HideButtonNodeShow = class("HideButtonNodeShow", BaseAction)
+
+function HideButtonNodeShow:initialize()
+	super.initialize(self)
+end
+
+function HideButtonNodeShow:start(args)
 	local actor = self:getActor()
 
 	if actor then

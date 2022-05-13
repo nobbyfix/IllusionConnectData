@@ -73,3 +73,9 @@ function ShopService:requestGetSurfaceShop(params, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function ShopService:requestRechargeHistory(_, blockUI, callback)
+	local request = self:newRequest(10030, nil, callback)
+
+	self:sendRequest(request, blockUI)
+end

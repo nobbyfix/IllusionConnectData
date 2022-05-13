@@ -55,9 +55,21 @@ function FriendFindMediator:onRegister()
 	self._tipsText = self._main:getChildByFullName("Text_tips")
 
 	self._tipsText:setVisible(false)
-	self._main:getChildByName("Text_1"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._main:getChildByName("Text_count"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 	self._main:getChildByFullName("btn_refresh.Text_31"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+
+	self._titletxt1 = self._main:getChildByFullName("dataPanel.Text_1")
+	self._titlecount1 = self._main:getChildByFullName("dataPanel.Text_count")
+	self._titletxt2 = self._main:getChildByFullName("dataPanel.Text_2")
+	self._titlecount2 = self._main:getChildByFullName("dataPanel.Text_applycount")
+
+	self._titlecount1:setString("")
+	self._titlecount2:setString("")
+	self._titletxt1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titletxt2:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount2:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount1:setPositionX(self._titletxt1:getContentSize().width + self._titletxt1:getPositionX())
+	self._titlecount2:setPositionX(self._titletxt2:getContentSize().width + self._titletxt2:getPositionX())
 end
 
 function FriendFindMediator:userInject()
@@ -87,10 +99,6 @@ function FriendFindMediator:refreshView()
 	self._friendModel = self._friendSystem:getFriendModel()
 	local friendCount = self._friendModel:getFriendCount(kFriendType.kGame)
 	local maxCount = self._friendModel:getMaxFriendsCount()
-	local countText = self._main:getChildByName("Text_count")
-
-	countText:setString(friendCount .. "/" .. maxCount)
-
 	self._isFriendList = self._friendModel:getFriendList(kFriendType.kGame)
 	self._friendList = self._friendModel:getFriendList(kFriendType.kFind)
 
@@ -101,6 +109,13 @@ function FriendFindMediator:refreshView()
 	else
 		self._tipsText:setVisible(false)
 	end
+
+	self._titlecount1:setString(friendCount .. "/" .. maxCount)
+
+	local maxCount1 = self._friendModel:getMaxApplyFriendsCount()
+	local addTimes = self._friendModel:getAddTimes()
+
+	self._titlecount2:setString(maxCount1 - addTimes .. "/" .. maxCount1)
 end
 
 function FriendFindMediator:setTextField()
@@ -255,20 +270,23 @@ function FriendFindMediator:refreshCell(node, index)
 
 		headBg:removeAllChildren()
 
-		local headicon = IconFactory:createPlayerIcon({
+		local headicon, oldIcon = IconFactory:createPlayerIcon({
+			frameStyle = 2,
 			clipType = 4,
-			frameStyle = 3,
+			headFrameScale = 0.4,
 			id = friendData:getHeadId(),
+			size = cc.size(84, 84),
 			headFrameId = friendData:getHeadFrame()
 		})
 
+		oldIcon:setScale(0.4)
 		headicon:addTo(headBg):center(headBg:getContentSize())
-		headicon:setScale(0.75)
+		headicon:setScale(0.85)
 		cell:removeChildByTag(999)
 
 		local levelText = cell:getChildByName("Text_level")
 
-		levelText:setString("Lv." .. friendData:getLevel())
+		levelText:setString(Strings:get("Common_LV_Text") .. friendData:getLevel())
 		levelText:setLocalZOrder(10)
 		levelText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
@@ -341,18 +359,17 @@ function FriendFindMediator:getPushFriendInfo(data)
 			online = data:getOnline() == ClubMemberOnLineState.kOnline,
 			lastOfflineTime = data:getLastOfflineTime(),
 			isFriend = response.isFriend,
+			block = response.block,
 			close = response.close,
 			gender = data:getGender(),
 			city = data:getCity(),
 			birthday = data:getBirthday(),
-			tags = data:getTags()
+			tags = data:getTags(),
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
@@ -379,15 +396,16 @@ function FriendFindMediator:onApplySuccCallback(event)
 		if table.nums(self._hasApplyList) == #self._friendList or needRefresh then
 			self._friendSystem:requestRecommendList()
 		end
-
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("Friend_UI15")
-		}))
 	else
 		self:getEventDispatcher():dispatchEvent(ShowTipEvent({
 			tip = Strings:get("Add_All_Tips7")
 		}))
 	end
+
+	local maxCount1 = self._friendModel:getMaxApplyFriendsCount()
+	local addTimes = self._friendModel:getAddTimes()
+
+	self._titlecount2:setString(maxCount1 - addTimes .. "/" .. maxCount1)
 end
 
 function FriendFindMediator:onGetCommendSuccCallback()

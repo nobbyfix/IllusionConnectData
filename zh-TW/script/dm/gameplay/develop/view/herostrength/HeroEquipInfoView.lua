@@ -11,7 +11,7 @@ HeroEquipInfoView:has("_mediator", {
 })
 
 local componentPath = "asset/ui/HeroEquipInfo.csb"
-local kLockImage = {
+local lockImage = {
 	"yinghun_icon_unlock.png",
 	"yinghun_icon_lock.png"
 }
@@ -101,6 +101,7 @@ function HeroEquipInfoView:createView(info)
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("name"))
 	GameStyle:setCommonOutlineEffect(desc1:getChildByFullName("text"), 142.8)
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("text"), 142.8)
+	self._strengthenBtn:setVisible(CommonUtils.GetSwitch("fn_equip_strengthen"))
 end
 
 function HeroEquipInfoView:refreshEquipInfo(data)
@@ -122,7 +123,7 @@ end
 
 function HeroEquipInfoView:refreshLock()
 	local unlock = self._equipData:getUnlock()
-	local image = unlock and kLockImage[1] or kLockImage[2]
+	local image = unlock and lockImage[1] or lockImage[2]
 
 	self._lockBtn:getChildByFullName("image"):loadTexture(image, 1)
 end
@@ -146,6 +147,7 @@ function HeroEquipInfoView:refreshDesc()
 	local targetExp = self._equipData:getLevelNextExp()
 	local equipOccu = self._equipData:getOccupation()
 	local occupationDesc = self._equipData:getOccupationDesc()
+	local occupationType = self._equipData:getOccupationType()
 	local node = self._nodeDesc:getChildByFullName("node")
 
 	node:removeAllChildren()
@@ -187,14 +189,33 @@ function HeroEquipInfoView:refreshDesc()
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		for i = 1, #equipOccu do
-			local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-			local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-			image:setAnchorPoint(cc.p(0, 0.5))
-			image:setPosition(cc.p(34 * (i - 1), 0))
-			image:addTo(limitNode)
-			image:setScale(0.5)
+					image:setAnchorPoint(cc.p(0, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
+			end
 		end
 	end
 
@@ -208,6 +229,18 @@ function HeroEquipInfoView:refreshDesc()
 
 		redPoint:addTo(self._strengthenBtn):posite(48, 18):setScale(0.8)
 		redPoint:setName("RedPoint")
+	end
+
+	local hasRed_1 = self._heroSystem:hasRedPointByEquipReplace(self._heroId, self._equipType)
+	local redPoint_1 = self._changeBtn:getChildByName("RedPoint")
+
+	if redPoint_1 then
+		redPoint_1:setVisible(hasRed_1)
+	elseif hasRed_1 then
+		redPoint_1 = ccui.ImageView:create(IconFactory.redPointPath, 1)
+
+		redPoint_1:addTo(self._changeBtn):posite(48, 18):setScale(0.8)
+		redPoint_1:setName("RedPoint")
 	end
 end
 

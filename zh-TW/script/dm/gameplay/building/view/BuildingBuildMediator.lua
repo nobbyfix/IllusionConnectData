@@ -24,7 +24,7 @@ local kBtnHandlers = {
 		func = "onClickHideComfortTip"
 	}
 }
-local kTab_button_width = 140
+local kTab_button_width = 225
 
 function BuildingBuildMediator:initialize()
 	super.initialize(self)
@@ -89,10 +89,14 @@ function BuildingBuildMediator:setupView()
 	self._bg_bx:setVisible(true)
 
 	local node_money = self:getView():getChildByFullName("Node_money")
-	local node_name = self._mainPanel:getChildByFullName("node_name")
+	local bgNode = self._mainPanel:getChildByFullName("node_bg")
 
 	if self._showType == 1 then
-		bindWidget(self, node_name, PopupNormalTitle, {
+		bindWidget(self, bgNode, PopupNormalTabWidget, {
+			btnHandler = {
+				clickAudio = "Se_Click_Close_2",
+				func = bind1(self.onBackClicked, self)
+			},
 			title = Strings:get("Building_UI_Decorate1"),
 			title1 = Strings:get("UITitle_EN_Zhuangshi")
 		})
@@ -132,7 +136,11 @@ function BuildingBuildMediator:setupView()
 			end
 		end
 	elseif self._showType == 2 then
-		bindWidget(self, node_name, PopupNormalTitle, {
+		bindWidget(self, bgNode, PopupNormalTabWidget, {
+			btnHandler = {
+				clickAudio = "Se_Click_Close_2",
+				func = bind1(self.onBackClicked, self)
+			},
 			title = Strings:get("Building_UI_StoreRoom"),
 			title1 = Strings:get("UITitle_EN_Cangku")
 		})
@@ -149,7 +157,7 @@ function BuildingBuildMediator:createBuildTypeBtn()
 		local panelNew = self._tabBuildBtn:clone()
 
 		self._node_BuildBtn:addChild(panelNew)
-		panelNew:setPosition((k - 1) * kTab_button_width, 0)
+		panelNew:setPosition((k - 0.5) * kTab_button_width, 0)
 		panelNew:setName(v)
 
 		local name = v
@@ -206,7 +214,7 @@ function BuildingBuildMediator:refreshView()
 end
 
 function BuildingBuildMediator:createTabControl()
-	local roomIdList = self._buildingSystem:getSortRoomIdList("PutSort")
+	local roomIdList = self._buildingSystem:getSortRoomIdList("PutSort", self._showType)
 	self._tabBtnControl = roomIdList
 
 	for k, v in pairs(roomIdList) do
@@ -224,8 +232,8 @@ function BuildingBuildMediator:createTabControl()
 		local data = {}
 
 		for i = 1, #roomIdList do
-			local textdes = ConfigReader:getDataByNameIdAndKey("VillageRoom", roomIdList[i], "Name")
-			local textdes1 = ConfigReader:getDataByNameIdAndKey("VillageRoom", roomIdList[i], "ENName")
+			local textdes = ConfigReader:getDataByNameIdAndKey("VillageRoom", roomIdList[i], "Name") or "Room_Store_Name"
+			local textdes1 = ConfigReader:getDataByNameIdAndKey("VillageRoom", roomIdList[i], "ENName") or "UITitle_EN_Room_Store"
 			data[#data + 1] = {
 				tabText = Strings:get(textdes),
 				tabTextTranslate = Strings:get(textdes1)
@@ -393,6 +401,17 @@ end
 
 function BuildingBuildMediator:refreshComfort()
 	local node_comfort = self:getView():getChildByFullName("Node_comfort")
+
+	if self._roomId == kStoreRoomName then
+		node_comfort:setVisible(false)
+		self._mainPanel:getChildByFullName("Text"):setVisible(false)
+
+		self._roomId = "Room2"
+	else
+		node_comfort:setVisible(true)
+		self._mainPanel:getChildByFullName("Text"):setVisible(true)
+	end
+
 	local text_combat = node_comfort:getChildByFullName("Image_combat.Text_num")
 	local text_love = node_comfort:getChildByFullName("Image_love.Text_num")
 	local combat = self._buildingSystem:getRoomComfort(self._roomId)

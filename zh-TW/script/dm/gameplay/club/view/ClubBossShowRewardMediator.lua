@@ -142,9 +142,9 @@ function ClubBossShowRewardMediator:createCell(cell, data)
 		local headIcon = IconFactory:createPlayerIcon({
 			frameStyle = 3,
 			clipType = 1,
-			headFrameScale = 0.44,
+			headFrameScale = 0.4,
 			id = data.head,
-			size = cc.size(66, 66),
+			size = cc.size(82, 82),
 			headFrameId = data.headFrame
 		})
 
@@ -243,49 +243,8 @@ function ClubBossShowRewardMediator:onClickPlayerHead(data)
 		return
 	end
 
-	local memberData = self._clubSystem:getMemberRecordByRid(data.id)
-
-	if memberData then
-		local friendSystem = self:getInjector():getInstance(FriendSystem)
-		local clubInfoOj = self._clubSystem:getClubInfoOj()
-
-		local function gotoView(response)
-			local record = BaseRankRecord:new()
-
-			record:synchronize({
-				headImage = memberData:getHeadId(),
-				headFrame = memberData:getHeadFrame(),
-				rid = memberData:getRid(),
-				level = memberData:getLevel(),
-				nickname = memberData:getName(),
-				vipLevel = memberData:getVip(),
-				combat = memberData:getCombat(),
-				slogan = memberData:getSlogan(),
-				master = memberData:getMaster(),
-				heroes = memberData:getHeroes(),
-				clubName = clubInfoOj:getName(),
-				online = memberData:getIsOnline() == ClubMemberOnLineState.kOnline,
-				offlineTime = memberData:getLastOnlineTime(),
-				isFriend = response.isFriend,
-				close = response.close,
-				gender = memberData:getGender(),
-				city = memberData:getCity(),
-				birthday = memberData:getBirthday(),
-				tags = memberData:getTags()
-			})
-			friendSystem:requestFriendsMainInfo(function ()
-				local view = self:getInjector():getInstance("PlayerInfoView")
-
-				self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-				}, record))
-			end)
-		end
-
-		friendSystem:requestSimpleFriendInfo(memberData:getRid(), function (response)
-			gotoView(response)
-		end)
-	end
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+	self._clubSystem:showMemberPlayerInfoView(data.id)
 end
 
 function ClubBossShowRewardMediator:onCloseClicked(sender, eventType)

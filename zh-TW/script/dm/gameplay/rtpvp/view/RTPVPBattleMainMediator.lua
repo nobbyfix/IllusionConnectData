@@ -155,25 +155,36 @@ end
 
 function RTPVPBattleMainMediator:setupDevMode()
 	if GameConfigs.openDevWin then
-		local winBtn = ccui.Button:create("pic_kfz_sheng.png", "pic_kfz_sheng.png", "pic_kfz_sheng.png", ccui.TextureResType.plistType)
+		local winBtn = ccui.Text:create("PASS", TTF_FONT_FZYH_M, 40)
 		local viewFrame = self.targetFrame
 
+		winBtn:setTouchEnabled(true)
 		winBtn:setScale(0.95)
 		winBtn:addTo(self:getView())
 		winBtn:setAnchorPoint(1, 0.5)
 		winBtn:setPosition(viewFrame.width - viewFrame.x, 105)
-		winBtn:addTouchEventListener(function (sender, eventType)
-			if eventType == ccui.TouchEventType.ended then
-				self:finishBattle({
-					winner = self._delegate:getMainPlayerId()
-				})
-			end
+		winBtn:addClickEventListener(function (sender, eventType)
+			self:finishBattle({
+				winner = self._delegate:getMainPlayerId()
+			})
 		end)
 	end
 end
 
 function RTPVPBattleMainMediator:createSurrenderButton()
-	local surrenderBtn = ccui.Button:create("zd_zd_icon.png", "zd_zd_icon.png", "zd_zd_icon.png", ccui.TextureResType.plistType)
+	local surrenderBtn = ccui.Button:create("zhandou_btn_zd.png", "zhandou_btn_zd.png", "zhandou_btn_zd.png", ccui.TextureResType.plistType)
+	local text1 = ccui.Text:create(Strings:get("RTPK_Lose_UI02"), TTF_FONT_FZYH_M, 18)
+
+	text1:addTo(surrenderBtn):posite(16.5, 36)
+	text1:setTextColor(cc.c3b(21, 21, 13))
+	text1:enableOutline(cc.c4b(255, 255, 255, 153), 1)
+
+	local text2 = ccui.Text:create(Strings:get("RTPK_Lose_UI03"), TTF_FONT_FZYH_M, 18)
+
+	text2:addTo(surrenderBtn):posite(33.5, 22)
+	text2:setTextColor(cc.c3b(21, 21, 13))
+	text2:enableOutline(cc.c4b(255, 255, 255, 153), 1)
+
 	local ctrlButtons = self.battleUIMediator:getCtrlButtons()
 	local ctrlView = ctrlButtons:getView()
 
@@ -182,8 +193,26 @@ function RTPVPBattleMainMediator:createSurrenderButton()
 	surrenderBtn:setPosition(0, 30)
 	surrenderBtn:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended then
-			Bdump("surrender!!!!!")
-			self:surrender()
+			local outSelf = self
+			local delegate = {
+				willClose = function (self, popupMediator, data)
+					if data.response == AlertResponse.kOK then
+						outSelf:surrender()
+					end
+				end
+			}
+			local data = {
+				title = Strings:get("RTPK_Lose_UI01"),
+				title1 = Strings:get("UITitle_EN_Tishi"),
+				content = Strings:get("RTPK_Lose_UI04"),
+				sureBtn = {},
+				cancelBtn = {}
+			}
+			local view = self:getInjector():getInstance("AlertView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, delegate))
 		end
 	end)
 	surrenderBtn:setVisible(false)
@@ -226,6 +255,7 @@ function RTPVPBattleMainMediator:_battleResult(evt)
 	self._controller:displayToTheEnd()
 
 	if resultData and resultData.reason == "PLAYER_LEFT" then
+		self:pause()
 		self._delegate:onBattleFinished(self, resultData)
 
 		return

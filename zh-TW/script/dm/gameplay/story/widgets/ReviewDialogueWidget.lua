@@ -153,10 +153,15 @@ function ReviewDialogueWidget:updateView(dialogues)
 			panel:addTo(layout)
 			label:setAnchorPoint(cc.p(0.5, 0))
 			label:renderContent(label:getContentSize().width, 0, true)
-			label:setPosition(cc.p(descListView:getContentSize().width / 2 - 50, 15))
+			label:setPosition(cc.p(descListView:getContentSize().width / 2 - 55, 18))
+
+			if panel:getContentSize().width < label:getContentSize().width then
+				label:renderContent(panel:getContentSize().width - 10, 0, true)
+			end
+
 			layout:setContentSize(cc.size(descListView:getContentSize().width - 100, label:getContentSize().height + 30))
 			panel:setContentSize(cc.size(label:getContentSize().width + 40, label:getContentSize().height + 20))
-			panel:setPosition(cc.p(descListView:getContentSize().width / 2 - 50, 5))
+			panel:setPosition(cc.p(descListView:getContentSize().width / 2 - 60, 5))
 		elseif t == "N" or t == "P" then
 			label:setFontFace(CUSTOM_TTF_FONT_1)
 			label:setAnchorPoint(cc.p(0, 0))

@@ -58,7 +58,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "Camp_Lv2": {
         "BuildCondition": [
@@ -91,7 +91,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "Camp_Lv3": {
         "BuildCondition": [
@@ -124,7 +124,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 1200.0
+        "UpgradeTime": 1.0
     },
     "Camp_Lv4": {
         "BuildCondition": [
@@ -157,7 +157,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 2400.0
+        "UpgradeTime": 1.0
     },
     "Camp_Lv5": {
         "BuildCondition": [
@@ -256,7 +256,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "CardAcademy_Lv2": {
         "BuildCondition": [
@@ -289,7 +289,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "CardAcademy_Lv3": {
         "BuildCondition": [
@@ -322,7 +322,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 20.0
+        "UpgradeTime": 1.0
     },
     "CardAcademy_Lv4": {
         "BuildCondition": [
@@ -355,7 +355,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 1800.0
+        "UpgradeTime": 1.0
     },
     "CardAcademy_Lv5": {
         "BuildCondition": [
@@ -451,7 +451,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "CrystalOre_Normal_Lv10": {
         "BuildCondition": [
@@ -571,7 +571,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "CrystalOre_Normal_Lv3": {
         "BuildCondition": [
@@ -601,7 +601,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 60.0
+        "UpgradeTime": 1.0
     },
     "CrystalOre_Normal_Lv4": {
         "BuildCondition": [
@@ -631,7 +631,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 900.0
+        "UpgradeTime": 1.0
     },
     "CrystalOre_Normal_Lv5": {
         "BuildCondition": [
@@ -661,7 +661,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 1800.0
+        "UpgradeTime": 1.0
     },
     "CrystalOre_Normal_Lv6": {
         "BuildCondition": [
@@ -783,6 +783,374 @@
         "UpgradeCostAnother": "",
         "UpgradeTime": 32400.0
     },
+    "Decorate1_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate1",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate1"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate2_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate2",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate2"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate3_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate3",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate3"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate4_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate4",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate4"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate5_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate5",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate5"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate6_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate6",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate6"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate7_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate7",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate7"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate8_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate8",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate8"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate9_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate9",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate9"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_GameWith1_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_GameWith1",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith1"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_GameWith2_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_GameWith2",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith2"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_GameWith3_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_GameWith3",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_GameWith3"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_Niconico1_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_Niconico1",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_Niconico1"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_Niconico2_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_Niconico2",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_Niconico2"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_Niconico3_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_Niconico3",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_Niconico3"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
+    "Decorate_Niconico4_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 10,
+        "DecorateBuilding": "Decorate_Niconico4",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 1,
+                "type": "IM_Decorate_Niconico4"
+            }
+        ],
+        "UpgradeCostAnother": "",
+        "UpgradeTime": 0.0
+    },
     "Decorate_Tuwo_Lv1": {
         "BuildCondition": "",
         "Comfort": 10,
@@ -890,7 +1258,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "ExpOre_Normal_Lv10": {
         "BuildCondition": [
@@ -1010,7 +1378,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "ExpOre_Normal_Lv3": {
         "BuildCondition": [
@@ -1040,7 +1408,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 60.0
+        "UpgradeTime": 1.0
     },
     "ExpOre_Normal_Lv4": {
         "BuildCondition": [
@@ -1070,7 +1438,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 900.0
+        "UpgradeTime": 1.0
     },
     "ExpOre_Normal_Lv5": {
         "BuildCondition": [
@@ -1100,7 +1468,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 1800.0
+        "UpgradeTime": 1.0
     },
     "ExpOre_Normal_Lv6": {
         "BuildCondition": [
@@ -1250,7 +1618,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "GoldOre_Normal_Lv10": {
         "BuildCondition": [
@@ -1370,7 +1738,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "GoldOre_Normal_Lv3": {
         "BuildCondition": [
@@ -1400,7 +1768,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 60.0
+        "UpgradeTime": 1.0
     },
     "GoldOre_Normal_Lv4": {
         "BuildCondition": [
@@ -1430,7 +1798,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 900.0
+        "UpgradeTime": 1.0
     },
     "GoldOre_Normal_Lv5": {
         "BuildCondition": [
@@ -1460,7 +1828,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 1800.0
+        "UpgradeTime": 1.0
     },
     "GoldOre_Normal_Lv6": {
         "BuildCondition": [
@@ -1582,6 +1950,34 @@
         "UpgradeCostAnother": "",
         "UpgradeTime": 32400.0
     },
+    "KaiFuCake_Lv1": {
+        "BuildCondition": "",
+        "Comfort": 21,
+        "DecorateBuilding": "KaiFuCake",
+        "Factor1": [],
+        "FunctionText": "",
+        "Level": 1,
+        "NextBuilding": "",
+        "OtherCost": "",
+        "PreBuilding": [],
+        "ReturnFactor": 0.5,
+        "UnlockBuildingDesc": "",
+        "UpDesc": "",
+        "UpSurface": "",
+        "UpgradeCost": [
+            {
+                "amount": 210,
+                "type": "IR_DecorateCoin"
+            }
+        ],
+        "UpgradeCostAnother": [
+            {
+                "amount": 140,
+                "type": "IR_Diamond"
+            }
+        ],
+        "UpgradeTime": 0.0
+    },
     "KaiHeiFangZhuo_Lv1": {
         "BuildCondition": "",
         "Comfort": 27,
@@ -1669,7 +2065,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 10.0
+        "UpgradeTime": 1.0
     },
     "MainCity_Lv10": {
         "BuildCondition": [
@@ -1801,7 +2197,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 15.0
+        "UpgradeTime": 1.0
     },
     "MainCity_Lv3": {
         "BuildCondition": [
@@ -1834,7 +2230,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 20.0
+        "UpgradeTime": 1.0
     },
     "MainCity_Lv4": {
         "BuildCondition": [
@@ -1867,7 +2263,7 @@
             }
         ],
         "UpgradeCostAnother": "",
-        "UpgradeTime": 600.0
+        "UpgradeTime": 1.0
     },
     "MainCity_Lv5": {
         "BuildCondition": [

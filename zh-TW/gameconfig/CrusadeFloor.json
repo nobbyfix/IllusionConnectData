@@ -22,6 +22,8 @@
             29000,
             31000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F1_Name",
         "RandomBuff": "Crusade_New_Buff_1",
@@ -78,6 +80,8 @@
             183000,
             187000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F10_Name",
         "RandomBuff": "Crusade_New_Buff_10",
@@ -134,12 +138,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_11",
@@ -196,12 +212,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_7",
@@ -258,12 +286,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_8",
@@ -320,12 +360,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_1",
@@ -382,12 +434,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_14",
@@ -414,11 +478,11 @@
         ],
         "Reward": "CrusadeFloor_F11_Reward",
         "SubPoint": [
-            "Crusade02P01",
-            "Crusade02P02",
-            "Crusade02P03",
-            "Crusade02P04",
-            "Crusade02P05"
+            "Crusade03P01",
+            "Crusade03P02",
+            "Crusade03P03",
+            "Crusade03P04",
+            "Crusade03P05"
         ]
     },
     "CrusadeFloor_F11_6": {
@@ -444,12 +508,24 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
         "RandomBuff": "Crusade_New_Buff_10",
@@ -476,11 +552,11 @@
         ],
         "Reward": "CrusadeFloor_F11_Reward",
         "SubPoint": [
-            "Crusade02P06",
-            "Crusade02P07",
-            "Crusade02P08",
-            "Crusade02P09",
-            "Crusade02P10"
+            "Crusade02P01",
+            "Crusade02P02",
+            "Crusade02P03",
+            "Crusade02P04",
+            "Crusade02P05"
         ]
     },
     "CrusadeFloor_F11_7": {
@@ -506,95 +582,45 @@
             196000,
             198000
         ],
+        "Crusade_CombatValue": [
+            0.6,
+            0.8,
+            0.85,
+            1,
+            1.2
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
+            0.84,
+            1.12,
+            1.12,
+            1.4,
+            1.68
         ],
         "Name": "CrusadeFloor_F11_Name",
-        "RandomBuff": "Crusade_New_Buff_14",
+        "RandomBuff": "Crusade_New_Buff_2",
         "Rarity": 5,
         "RecommendHero": [
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MTZMEShi"
+                    "FLYDe"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MGNa"
+                    "MLYTLSha"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "ZZBBWei"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F11_Reward",
-        "SubPoint": [
-            "Crusade02P06",
-            "Crusade02P07",
-            "Crusade02P08",
-            "Crusade02P09",
-            "Crusade02P10"
-        ]
-    },
-    "CrusadeFloor_F11_8": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            16380,
-            16571,
-            16761,
-            16952,
-            17142
-        ],
-        "CombatNeed": [
-            172000,
-            174000,
-            176000,
-            178000,
-            180000
-        ],
-        "CombatValue": [
-            189000,
-            191000,
-            194000,
-            196000,
-            198000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
-        ],
-        "Name": "CrusadeFloor_F11_Name",
-        "RandomBuff": "Crusade_New_Buff_11",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BBLMa"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
+                    "HSYZhai"
                 ]
             }
         ],
@@ -605,68 +631,6 @@
             "Crusade02P03",
             "Crusade02P04",
             "Crusade02P05"
-        ]
-    },
-    "CrusadeFloor_F11_9": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            16380,
-            16571,
-            16761,
-            16952,
-            17142
-        ],
-        "CombatNeed": [
-            172000,
-            174000,
-            176000,
-            178000,
-            180000
-        ],
-        "CombatValue": [
-            189000,
-            191000,
-            194000,
-            196000,
-            198000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.102,
-            -0.093,
-            -0.084,
-            -0.075,
-            -0.067
-        ],
-        "Name": "CrusadeFloor_F11_Name",
-        "RandomBuff": "Crusade_New_Buff_11",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "NXYYi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F11_Reward",
-        "SubPoint": [
-            "Crusade03P01",
-            "Crusade03P02",
-            "Crusade03P03",
-            "Crusade03P04",
-            "Crusade03P05"
         ]
     },
     "CrusadeFloor_F12_1": {
@@ -692,12 +656,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_12",
@@ -754,12 +730,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_4",
@@ -816,12 +804,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_2",
@@ -878,12 +878,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_19",
@@ -940,12 +952,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_18",
@@ -972,11 +996,11 @@
         ],
         "Reward": "CrusadeFloor_F12_Reward",
         "SubPoint": [
-            "Crusade02P06",
-            "Crusade02P07",
-            "Crusade02P08",
-            "Crusade02P09",
-            "Crusade02P10"
+            "Crusade03P06",
+            "Crusade03P07",
+            "Crusade03P08",
+            "Crusade03P09",
+            "Crusade03P10"
         ]
     },
     "CrusadeFloor_F12_6": {
@@ -1002,12 +1026,24 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
         "RandomBuff": "Crusade_New_Buff_8",
@@ -1034,11 +1070,11 @@
         ],
         "Reward": "CrusadeFloor_F12_Reward",
         "SubPoint": [
-            "Crusade02P11",
-            "Crusade02P12",
-            "Crusade02P13",
-            "Crusade02P14",
-            "Crusade02P15"
+            "Crusade02P06",
+            "Crusade02P07",
+            "Crusade02P08",
+            "Crusade02P09",
+            "Crusade02P10"
         ]
     },
     "CrusadeFloor_F12_7": {
@@ -1064,95 +1100,45 @@
             209000,
             211000
         ],
+        "Crusade_CombatValue": [
+            0.9,
+            1,
+            1.1,
+            1.2,
+            1.4
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
+            1.26,
+            1.4,
+            1.54,
+            1.68,
+            1.96
         ],
         "Name": "CrusadeFloor_F12_Name",
-        "RandomBuff": "Crusade_New_Buff_21",
+        "RandomBuff": "Crusade_New_Buff_5",
         "Rarity": 5,
         "RecommendHero": [
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MTZMEShi"
+                    "FLYDe"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MGNa"
+                    "MLYTLSha"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "ZZBBWei"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F12_Reward",
-        "SubPoint": [
-            "Crusade02P11",
-            "Crusade02P12",
-            "Crusade02P13",
-            "Crusade02P14",
-            "Crusade02P15"
-        ]
-    },
-    "CrusadeFloor_F12_8": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            17371,
-            17600,
-            17828,
-            18057,
-            18285
-        ],
-        "CombatNeed": [
-            182400,
-            184800,
-            187200,
-            189600,
-            192000
-        ],
-        "CombatValue": [
-            201000,
-            203000,
-            206000,
-            209000,
-            211000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
-        ],
-        "Name": "CrusadeFloor_F12_Name",
-        "RandomBuff": "Crusade_New_Buff_12",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BBLMa"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
+                    "HSYZhai"
                 ]
             }
         ],
@@ -1163,68 +1149,6 @@
             "Crusade02P08",
             "Crusade02P09",
             "Crusade02P10"
-        ]
-    },
-    "CrusadeFloor_F12_9": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            17371,
-            17600,
-            17828,
-            18057,
-            18285
-        ],
-        "CombatNeed": [
-            182400,
-            184800,
-            187200,
-            189600,
-            192000
-        ],
-        "CombatValue": [
-            201000,
-            203000,
-            206000,
-            209000,
-            211000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.056,
-            -0.047,
-            -0.037,
-            -0.027,
-            -0.022
-        ],
-        "Name": "CrusadeFloor_F12_Name",
-        "RandomBuff": "Crusade_New_Buff_12",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "NXYYi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F12_Reward",
-        "SubPoint": [
-            "Crusade03P06",
-            "Crusade03P07",
-            "Crusade03P08",
-            "Crusade03P09",
-            "Crusade03P10"
         ]
     },
     "CrusadeFloor_F13_1": {
@@ -1250,12 +1174,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_13",
@@ -1312,12 +1248,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_21",
@@ -1374,12 +1322,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_11",
@@ -1436,12 +1396,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_3",
@@ -1498,12 +1470,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_4",
@@ -1530,11 +1514,11 @@
         ],
         "Reward": "CrusadeFloor_F13_Reward",
         "SubPoint": [
-            "Crusade02P11",
-            "Crusade02P12",
-            "Crusade02P13",
-            "Crusade02P14",
-            "Crusade02P15"
+            "Crusade03P11",
+            "Crusade03P12",
+            "Crusade03P13",
+            "Crusade03P14",
+            "Crusade03P15"
         ]
     },
     "CrusadeFloor_F13_6": {
@@ -1560,12 +1544,24 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
         "RandomBuff": "Crusade_New_Buff_9",
@@ -1592,11 +1588,11 @@
         ],
         "Reward": "CrusadeFloor_F13_Reward",
         "SubPoint": [
-            "Crusade02P16",
-            "Crusade02P17",
-            "Crusade02P18",
-            "Crusade02P19",
-            "Crusade02P20"
+            "Crusade02P11",
+            "Crusade02P12",
+            "Crusade02P13",
+            "Crusade02P14",
+            "Crusade02P15"
         ]
     },
     "CrusadeFloor_F13_7": {
@@ -1622,95 +1618,45 @@
             224000,
             227000
         ],
+        "Crusade_CombatValue": [
+            1.2,
+            1.3,
+            1.4,
+            1.5,
+            1.6
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
+            1.68,
+            1.82,
+            1.96,
+            2.1,
+            2.24
         ],
         "Name": "CrusadeFloor_F13_Name",
-        "RandomBuff": "Crusade_New_Buff_12",
+        "RandomBuff": "Crusade_New_Buff_6",
         "Rarity": 5,
         "RecommendHero": [
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MTZMEShi"
+                    "FLYDe"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MGNa"
+                    "MLYTLSha"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "ZZBBWei"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F13_Reward",
-        "SubPoint": [
-            "Crusade02P16",
-            "Crusade02P17",
-            "Crusade02P18",
-            "Crusade02P19",
-            "Crusade02P20"
-        ]
-    },
-    "CrusadeFloor_F13_8": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            18552,
-            18819,
-            19085,
-            19352,
-            19619
-        ],
-        "CombatNeed": [
-            194800,
-            197600,
-            200400,
-            203200,
-            206000
-        ],
-        "CombatValue": [
-            214000,
-            217000,
-            220000,
-            224000,
-            227000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
-        ],
-        "Name": "CrusadeFloor_F13_Name",
-        "RandomBuff": "Crusade_New_Buff_13",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BBLMa"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
+                    "HSYZhai"
                 ]
             }
         ],
@@ -1721,68 +1667,6 @@
             "Crusade02P13",
             "Crusade02P14",
             "Crusade02P15"
-        ]
-    },
-    "CrusadeFloor_F13_9": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            18552,
-            18819,
-            19085,
-            19352,
-            19619
-        ],
-        "CombatNeed": [
-            194800,
-            197600,
-            200400,
-            203200,
-            206000
-        ],
-        "CombatValue": [
-            214000,
-            217000,
-            220000,
-            224000,
-            227000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            -0.014,
-            -0.07,
-            0,
-            0.014,
-            0.027
-        ],
-        "Name": "CrusadeFloor_F13_Name",
-        "RandomBuff": "Crusade_New_Buff_13",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "NXYYi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "YSTLu"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BEr"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F13_Reward",
-        "SubPoint": [
-            "Crusade03P11",
-            "Crusade03P12",
-            "Crusade03P13",
-            "Crusade03P14",
-            "Crusade03P15"
         ]
     },
     "CrusadeFloor_F14_1": {
@@ -1808,12 +1692,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_14",
@@ -1870,12 +1766,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_16",
@@ -1932,12 +1840,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_14",
@@ -1994,12 +1914,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_2",
@@ -2056,12 +1988,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_15",
@@ -2088,11 +2032,11 @@
         ],
         "Reward": "CrusadeFloor_F14_Reward",
         "SubPoint": [
-            "Crusade02P16",
-            "Crusade02P17",
-            "Crusade02P18",
-            "Crusade02P19",
-            "Crusade02P20"
+            "Crusade03P16",
+            "Crusade03P17",
+            "Crusade03P18",
+            "Crusade03P19",
+            "Crusade03P20"
         ]
     },
     "CrusadeFloor_F14_6": {
@@ -2118,12 +2062,24 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
         "RandomBuff": "Crusade_New_Buff_16",
@@ -2180,33 +2136,45 @@
             241000,
             244000
         ],
+        "Crusade_CombatValue": [
+            1.35,
+            1.45,
+            1.55,
+            1.65,
+            1.75
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
+            1.89,
+            2.03,
+            2.17,
+            2.31,
+            2.45
         ],
         "Name": "CrusadeFloor_F14_Name",
-        "RandomBuff": "Crusade_New_Buff_20",
+        "RandomBuff": "Crusade_New_Buff_8",
         "Rarity": 5,
         "RecommendHero": [
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MTZMEShi"
+                    "FLYDe"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "KTSJKe"
+                    "MLYTLSha"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "JNLong"
+                    "HSYZhai"
                 ]
             }
         ],
@@ -2217,130 +2185,6 @@
             "Crusade02P18",
             "Crusade02P19",
             "Crusade02P20"
-        ]
-    },
-    "CrusadeFloor_F14_8": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            19923,
-            20228,
-            20533,
-            20838,
-            21142
-        ],
-        "CombatNeed": [
-            209200,
-            212400,
-            215600,
-            218800,
-            222000
-        ],
-        "CombatValue": [
-            230000,
-            234000,
-            237000,
-            241000,
-            244000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
-        ],
-        "Name": "CrusadeFloor_F14_Name",
-        "RandomBuff": "Crusade_New_Buff_14",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BBLMa"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "LCYShi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "MGNa"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F14_Reward",
-        "SubPoint": [
-            "Crusade02P16",
-            "Crusade02P17",
-            "Crusade02P18",
-            "Crusade02P19",
-            "Crusade02P20"
-        ]
-    },
-    "CrusadeFloor_F14_9": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            19923,
-            20228,
-            20533,
-            20838,
-            21142
-        ],
-        "CombatNeed": [
-            209200,
-            212400,
-            215600,
-            218800,
-            222000
-        ],
-        "CombatValue": [
-            230000,
-            234000,
-            237000,
-            241000,
-            244000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            0.042,
-            0.05,
-            0.058,
-            0.065,
-            0.072
-        ],
-        "Name": "CrusadeFloor_F14_Name",
-        "RandomBuff": "Crusade_New_Buff_14",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "ZZBBWei"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "LCYShi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "MGNa"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F14_Reward",
-        "SubPoint": [
-            "Crusade03P16",
-            "Crusade03P17",
-            "Crusade03P18",
-            "Crusade03P19",
-            "Crusade03P20"
         ]
     },
     "CrusadeFloor_F15_1": {
@@ -2366,12 +2210,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_15",
@@ -2428,12 +2284,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_9",
@@ -2490,12 +2358,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_10",
@@ -2552,12 +2432,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_6",
@@ -2614,12 +2506,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_5",
@@ -2646,11 +2550,11 @@
         ],
         "Reward": "CrusadeFloor_F15_Reward",
         "SubPoint": [
-            "Crusade02P21",
-            "Crusade02P22",
-            "Crusade02P23",
-            "Crusade02P24",
-            "Crusade02P25"
+            "Crusade03P21",
+            "Crusade03P22",
+            "Crusade03P23",
+            "Crusade03P24",
+            "Crusade03P25"
         ]
     },
     "CrusadeFloor_F15_6": {
@@ -2676,12 +2580,24 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
         "RandomBuff": "Crusade_New_Buff_14",
@@ -2738,33 +2654,45 @@
             260000,
             264000
         ],
+        "Crusade_CombatValue": [
+            1.4,
+            1.65,
+            1.8,
+            1.9,
+            2.1
+        ],
+        "Crusade_Dynamic_Attr": [
+            0.97,
+            0.1,
+            4.1
+        ],
         "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
+            1.96,
+            2.31,
+            2.52,
+            2.66,
+            2.94
         ],
         "Name": "CrusadeFloor_F15_Name",
-        "RandomBuff": "Crusade_New_Buff_11",
+        "RandomBuff": "Crusade_New_Buff_21",
         "Rarity": 5,
         "RecommendHero": [
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "MTZMEShi"
+                    "FLYDe"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "KTSJKe"
+                    "MLYTLSha"
                 ]
             },
             {
                 "Effect": "Crusade_ExcellentHero_SSR_Attr",
                 "Hero": [
-                    "JNLong"
+                    "HSYZhai"
                 ]
             }
         ],
@@ -2775,130 +2703,6 @@
             "Crusade02P23",
             "Crusade02P24",
             "Crusade02P25"
-        ]
-    },
-    "CrusadeFloor_F15_8": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            21485,
-            21828,
-            22171,
-            22514,
-            22857
-        ],
-        "CombatNeed": [
-            225600,
-            229200,
-            232800,
-            236400,
-            240000
-        ],
-        "CombatValue": [
-            248000,
-            252000,
-            256000,
-            260000,
-            264000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
-        ],
-        "Name": "CrusadeFloor_F15_Name",
-        "RandomBuff": "Crusade_New_Buff_15",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "BBLMa"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "LCYShi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "MGNa"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F15_Reward",
-        "SubPoint": [
-            "Crusade02P21",
-            "Crusade02P22",
-            "Crusade02P23",
-            "Crusade02P24",
-            "Crusade02P25"
-        ]
-    },
-    "CrusadeFloor_F15_9": {
-        "Background": "bg_mjyz2",
-        "Base_attr": [
-            21485,
-            21828,
-            22171,
-            22514,
-            22857
-        ],
-        "CombatNeed": [
-            225600,
-            229200,
-            232800,
-            236400,
-            240000
-        ],
-        "CombatValue": [
-            248000,
-            252000,
-            256000,
-            260000,
-            264000
-        ],
-        "Crusade_Dynamic_Difficlt_Ratio": [
-            0.083,
-            0.094,
-            0.105,
-            0.115,
-            0.125
-        ],
-        "Name": "CrusadeFloor_F15_Name",
-        "RandomBuff": "Crusade_New_Buff_15",
-        "Rarity": 5,
-        "RecommendHero": [
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "ZZBBWei"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "LCYShi"
-                ]
-            },
-            {
-                "Effect": "Crusade_ExcellentHero_SSR_Attr",
-                "Hero": [
-                    "MGNa"
-                ]
-            }
-        ],
-        "Reward": "CrusadeFloor_F15_Reward",
-        "SubPoint": [
-            "Crusade03P21",
-            "Crusade03P22",
-            "Crusade03P23",
-            "Crusade03P24",
-            "Crusade03P25"
         ]
     },
     "CrusadeFloor_F2": {
@@ -2924,6 +2728,8 @@
             42000,
             45000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F2_Name",
         "RandomBuff": "Crusade_New_Buff_2",
@@ -2980,6 +2786,8 @@
             59000,
             63000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F3_Name",
         "RandomBuff": "Crusade_New_Buff_3",
@@ -3036,6 +2844,8 @@
             79000,
             84000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F4_Name",
         "RandomBuff": "Crusade_New_Buff_4",
@@ -3092,6 +2902,8 @@
             103000,
             110000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F5_Name",
         "RandomBuff": "Crusade_New_Buff_5",
@@ -3112,7 +2924,7 @@
             {
                 "Effect": "Crusade_ExcellentHero_Attr",
                 "Hero": [
-                    "ATSheng"
+                    "SSQXin"
                 ]
             }
         ],
@@ -3148,6 +2960,8 @@
             120000,
             122000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F6_Name",
         "RandomBuff": "Crusade_New_Buff_6",
@@ -3204,6 +3018,8 @@
             133000,
             136000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F7_Name",
         "RandomBuff": "Crusade_New_Buff_7",
@@ -3218,7 +3034,7 @@
             {
                 "Effect": "Crusade_ExcellentHero_Attr",
                 "Hero": [
-                    "DFQi"
+                    "ZTXChang"
                 ]
             },
             {
@@ -3260,6 +3076,8 @@
             148000,
             151000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F8_Name",
         "RandomBuff": "Crusade_New_Buff_8",
@@ -3316,6 +3134,8 @@
             165000,
             168000
         ],
+        "Crusade_CombatValue": "",
+        "Crusade_Dynamic_Attr": "",
         "Crusade_Dynamic_Difficlt_Ratio": "",
         "Name": "CrusadeFloor_F9_Name",
         "RandomBuff": "Crusade_New_Buff_9",

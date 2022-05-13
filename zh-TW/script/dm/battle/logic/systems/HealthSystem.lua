@@ -139,9 +139,25 @@ function HealthSystem:performHealthDamage(actor, target, damage, lowerLimit, wor
 	end
 
 	local brokenShields = nil
+	local tranforHpComp = targetHpComp:getTrasforHpComp()
 
 	if targetHpComp:isImmune() then
 		result.immune = true
+	elseif tranforHpComp then
+		if dmgIsTable then
+			damage.val = damage.val * tranforHpComp.radio
+		else
+			damage = damage * tranforHpComp.radio
+		end
+
+		target = tranforHpComp.comp:getEntity()
+		local result = self:performHealthDamage(actor, target, damage, lowerLimit, workId, notLastHit)
+
+		if result then
+			local transforTarget = target
+
+			return result, transforTarget
+		end
 	else
 		local shieldResult = targetHpComp:consumeShield(dmgval)
 
@@ -224,7 +240,7 @@ function HealthSystem:performCheckDeadlyDamage(actor, target, damage)
 	end
 end
 
-function HealthSystem:performHealthReduce(target, damage, workId, actor)
+function HealthSystem:performHealthReduce(target, damage, workId, actor, isFlyLabel)
 	if self._damageDisabled then
 		return nil
 	end
@@ -292,6 +308,8 @@ function HealthSystem:performHealthReduce(target, damage, workId, actor)
 	end
 
 	if result and self._processRecorder then
+		result.isFlyLabel = isFlyLabel
+
 		self._processRecorder:recordObjectEvent(target:getId(), "HpReduce", result, workId)
 	end
 
@@ -301,7 +319,7 @@ function HealthSystem:performHealthReduce(target, damage, workId, actor)
 
 	local curHpRatio = targetHpComp:getHpRatio()
 
-	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+	if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) or curHpRatio <= 0 then
 		self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
 			how = "Reduce",
 			unit = target,
@@ -376,6 +394,7 @@ end
 function HealthSystem:performReflection(actor, target, rawDamage, workId)
 	local targetAttrComp = target:getComponent("Numeric")
 	local reflection = targetAttrComp and targetAttrComp:getAttrValue(kAttrReflection) or 0
+	local atkvalue = targetAttrComp and targetAttrComp:getAttrValue(kAttrAttack) or 0
 
 	if reflection <= 0 then
 		return nil
@@ -387,7 +406,17 @@ function HealthSystem:performReflection(actor, target, rawDamage, workId)
 		return nil
 	end
 
+	local tranforHpComp = actorHpComp:getTrasforHpComp()
+
+	if tranforHpComp then
+		transforActor = tranforHpComp.comp:getEntity()
+
+		return self:performReflection(transforActor, target, rawDamage, workId), transforActor
+	end
+
+	local reflection_UpLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Reflection_UpLimit", "content")
 	local reflectedValue = max(floor(rawDamage * reflection), 1)
+	local reflectedValue = min(reflectedValue, atkvalue * (reflection_UpLimit or 1))
 	local result = {
 		raw = reflectedValue
 	}

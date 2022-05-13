@@ -95,9 +95,9 @@ function RegularBattleLogic:setupStateTransitions(battleContext)
 	local timedOutState = RegularLogicState_Timedout:new("timedOut")
 	local diligentState = RegularLogicState_DiligentRound:new("diligentRound", 2000)
 
-	startState:setupContext(battleContext):addTransition("COMPLETED", waitingState):enableOperation("heroCard"):enableOperation("doskill")
-	waitingState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("TIMEDOUT", timedOutState):enableOperation("heroCard"):enableOperation("doskill")
-	actionSchedulerState:setupContext(battleContext):addTransition("NEXT_WAVE", nextWaveState):addTransition("BOUT_END", beforeNextBoutState):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState):addTransition("DILIGENT_ROUND", diligentState):enableOperation("heroCard"):enableOperation("skillCard"):enableOperation("doskill"):enableOperation("refreshSkillCard")
+	startState:setupContext(battleContext):addTransition("COMPLETED", waitingState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("doskill"):enableOperation("cancelskill"):enableOperation("checkMasterSkillState")
+	waitingState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("TIMEDOUT", timedOutState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("doskill"):enableOperation("cancelskill"):enableOperation("checkMasterSkillState")
+	actionSchedulerState:setupContext(battleContext):addTransition("NEXT_WAVE", nextWaveState):addTransition("BOUT_END", beforeNextBoutState):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState):addTransition("DILIGENT_ROUND", diligentState):enableOperation("heroCard"):enableOperation("emojiUsed"):enableOperation("skillCard"):enableOperation("doskill"):enableOperation("cancelskill"):enableOperation("refreshSkillCard"):enableOperation("checkMasterSkillState")
 	beforeNextBoutState:setupContext(battleContext):addTransition("NEXT_BOUT", nextBoutState):addTransition("TIMEDOUT", timedOutState)
 	nextWaveState:setupContext(battleContext):addTransition("COMPLETED", actionSchedulerState):addTransition("NEXT_BOUT", nextBoutState)
 	nextBoutState:setupContext(battleContext):addTransition("FINISHED", actionSchedulerState)
@@ -272,9 +272,41 @@ function RegularBattleLogic:setupInputHandlers()
 	self:setupInputHandler("heroCard", self.handle_HeroCard, true)
 	self:setupInputHandler("skillCard", self.handle_SkillCard, true)
 	self:setupInputHandler("doskill", self.handle_DoSkill, true)
+	self:setupInputHandler("cancelskill", self.handle_CancelSkill, true)
 	self:setupInputHandler("refreshSkillCard", self.handle_RefreshSkillCard, true)
+	self:setupInputHandler("checkMasterSkillState", self.handle_CheckMasterSkillState, true)
 	self:setupInputHandler("leave", self.handle_Leave)
 	self:setupInputHandler("Leave", self.handle_Leave)
+	self:setupInputHandler("emojiUsed", self.handle_EmojiUsed, true)
+end
+
+function RegularBattleLogic:handle_EmojiUsed(player, op, args)
+	if self._battleRecorder and player:getMasterUnit() then
+		self._battleRecorder:recordEvent(player:getMasterUnit():getId(), "Emoji", args)
+	end
+end
+
+function RegularBattleLogic:handle_CheckMasterSkillState(player, op, args)
+	if self._battleRecorder and player:getMasterUnit() then
+		local master = player:getMasterUnit()
+		local flagComp = master:getComponent("Flag")
+		local isForbid = false
+
+		if flagComp and flagComp:hasAnyStatus({
+			kBEDazed,
+			kBEMuted,
+			kBENumbed,
+			kBEFrozen
+		}) then
+			isForbid = true
+		end
+
+		if isForbid ~= master._forbidonSkillSt then
+			self._battleRecorder:recordEvent(kBRMainLine, "ForbidSkill", isForbid)
+
+			master._forbidonSkillSt = isForbid
+		end
+	end
 end
 
 function RegularBattleLogic:handle_HeroCard(player, op, args)
@@ -300,15 +332,17 @@ function RegularBattleLogic:handle_HeroCard(player, op, args)
 		return false, detail
 	end
 
-	local newCard, nextCard = player:fillCardAtIndex(idx)
+	if idx <= 4 then
+		local newCard, nextCard = player:fillCardAtIndex(idx)
 
-	if self._battleRecorder ~= nil then
-		self._battleRecorder:recordEvent(player:getId(), "Card", {
-			type = "hero",
-			idx = idx,
-			card = newCard and newCard:dumpInformation() or 0,
-			next = nextCard and nextCard:dumpInformation() or 0
-		})
+		if self._battleRecorder ~= nil then
+			self._battleRecorder:recordEvent(player:getId(), "Card", {
+				type = "hero",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0,
+				next = nextCard and nextCard:dumpInformation() or 0
+			})
+		end
 	end
 
 	if self._battleStatist ~= nil then
@@ -347,21 +381,23 @@ function RegularBattleLogic:handle_SkillCard(player, op, args)
 		return false, "cardIsLocked"
 	end
 
-	local ok, detail = card:usedByPlayer(player, self._battleContext)
+	local ok, detail = card:usedByPlayer(player, self._battleContext, nil, args)
 
 	if not ok then
 		return false, detail
 	end
 
-	local newCard, nextCard = player:fillCardAtIndex(idx)
+	if idx <= 4 then
+		local newCard, nextCard = player:fillCardAtIndex(idx)
 
-	if self._battleRecorder ~= nil then
-		self._battleRecorder:recordEvent(player:getId(), "Card", {
-			type = "skill",
-			idx = idx,
-			card = newCard and newCard:dumpInformation() or 0,
-			next = nextCard and nextCard:dumpInformation() or 0
-		})
+		if self._battleRecorder ~= nil then
+			self._battleRecorder:recordEvent(player:getId(), "Card", {
+				type = "skill",
+				idx = idx,
+				card = newCard and newCard:dumpInformation() or 0,
+				next = nextCard and nextCard:dumpInformation() or 0
+			})
+		end
 	end
 
 	if self._battleStatist ~= nil then
@@ -440,6 +476,36 @@ function RegularBattleLogic:handle_DoSkill(player, op, args)
 
 	if not ok then
 		return false, detail
+	end
+
+	self._commanded = true
+
+	return true, detail
+end
+
+function RegularBattleLogic:handle_CancelSkill(player, op, args)
+	if self._battleReferee:getResult() then
+		return false, "finish"
+	end
+
+	local master = player:getMasterUnit()
+
+	if not master then
+		return false, "noMaster"
+	end
+
+	local skillType = args.type
+
+	if skillType == nil then
+		return false, "skillNotSpecified"
+	end
+
+	local skill = master:getComponent("Skill")
+
+	if skill and skill:getUniqueSkillRoutine() then
+		skill:getUniqueSkillRoutine():cancel(self._battleContext)
+	else
+		return false, "noskill in process"
 	end
 
 	self._commanded = true

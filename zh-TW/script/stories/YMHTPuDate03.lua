@@ -80,6 +80,36 @@ end
 function scene_YMHTPuDate03.actions.start_YMHTPuDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -118,11 +148,11 @@ function scene_YMHTPuDate03.actions.start_YMHTPuDate03(_root, args)
 					modelId = "Model_YMHTPu",
 					id = "YMHTPu_speak",
 					rotationX = 0,
-					scale = 1.1,
+					scale = 0.7,
 					zorder = 2,
 					position = {
 						x = 100,
-						y = -400,
+						y = -485,
 						refpt = {
 							x = 0.45,
 							y = 0
@@ -146,8 +176,8 @@ function scene_YMHTPuDate03.actions.start_YMHTPuDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -2,
-								y = 755
+								x = -5,
+								y = 1258
 							}
 						}
 					}
@@ -1824,7 +1854,7 @@ function scene_YMHTPuDate03.actions.start_YMHTPuDate03p(_root, args)
 					duration = 1,
 					position = {
 						x = 100,
-						y = -400,
+						y = -485,
 						refpt = {
 							x = -0.5,
 							y = 0

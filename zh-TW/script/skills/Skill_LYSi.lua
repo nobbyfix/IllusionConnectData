@@ -825,7 +825,7 @@ all.Skill_LYSi_Hat_Passive_Death = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			760
+			667
 		}, main)
 
 		return this
@@ -845,9 +845,6 @@ all.Skill_LYSi_Hat_Passive_Death = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.Perform(_env, _env.ACTOR, global.Animation(_env, "die"))
-
 			_env.units = global.EnemyUnits(_env)
 
 			for _, unit in global.__iter__(_env.units) do
@@ -881,14 +878,6 @@ all.Skill_LYSi_Hat_Passive_Death = {
 
 				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 			end
-		end)
-		exec["@time"]({
-			750
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.Kick(_env, _env.ACTOR)
 		end)
 
 		return _env

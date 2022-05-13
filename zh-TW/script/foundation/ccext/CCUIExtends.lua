@@ -3,8 +3,15 @@ ccui.ClippingType = {
 	SCISSOR = 1,
 	STENCIL = 0
 }
+local MULTIP_LANGUAGE_PRE = "lang_"
 
 local function setTextAdditionalKerning(textWidget, value)
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		return
+	end
+
 	if textWidget.getVirtualRenderer ~= nil then
 		local label = textWidget:getVirtualRenderer()
 
@@ -57,7 +64,7 @@ local function disableUserCursor(textWidget)
 	textWidget:removeUserCursor()
 end
 
-function replaceTextFieldToEditBox(textWidget)
+function replaceTextFieldToEditBox(textWidget, notAdjustEditBox)
 	if not textWidget then
 		return nil
 	end
@@ -136,7 +143,10 @@ function replaceTextFieldToEditBox(textWidget)
 		return self._keyboardState
 	end
 
-	adjustEditBox(editBox)
+	if not notAdjustEditBox then
+		adjustEditBox(editBox)
+	end
+
 	editBox:unregisterScriptEditBoxHandler()
 	editBox:registerScriptEditBoxHandler(function (eventName, sender)
 		if eventName == "began" then
@@ -260,6 +270,21 @@ function ccui.RichText:renderContent(width, height, forceRebuild)
 	self:formatText()
 end
 
+function ajustRichTextCustomWidth(richText, maxWidth, forceRebuild)
+	if forceRebuild == nil then
+		forceRebuild = false
+	end
+
+	richText:rebuildElements(forceRebuild)
+	richText:formatText()
+
+	local _richW = richText:getContentSize().width
+
+	if maxWidth < _richW and _richW ~= 0 then
+		richText:setScale(maxWidth / _richW)
+	end
+end
+
 function setTextShadowOpacity(text, opacity)
 	opacity = opacity or 1
 
@@ -283,7 +308,187 @@ function setTextOutlineOpacity(text, opacity)
 	end
 end
 
+function ccui.Text:getAutoRenderWidth()
+	local _autoRenderSize = self:getAutoRenderSize()
+	local _contentSize = self:getContentSize()
+
+	if _contentSize.width < _autoRenderSize.width then
+		return _contentSize.width
+	end
+
+	return _autoRenderSize.width
+end
+
 ccui.Text.setShadowOpacity = setTextShadowOpacity
 cc.Label.setShadowOpacity = setTextShadowOpacity
 ccui.Text.setOutlineOpacity = setTextOutlineOpacity
 cc.Label.setOutlineOpacity = setTextOutlineOpacity
+
+local function adjustTextCustomSize(text)
+	if text:isIgnoreContentAdaptWithSize() or text:getString() == "" then
+		return
+	end
+
+	local virtualRenderer = text:getVirtualRenderer()
+
+	virtualRenderer:setOverflow(cc.LabelOverflow.NONE)
+	virtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		virtualRenderer:setLineSpacing(-3)
+	end
+end
+
+local function modifyTextFontSize(text)
+	if not text.__initFontSize then
+		text.__initFontSize = text:getFontSize()
+		local localLanguage = getCurrentLanguage()
+
+		if localLanguage == GameLanguageType.EN then
+			text.__initFontSize = text.__initFontSize - 2
+		end
+
+		text:setFontSize(text.__initFontSize)
+	end
+end
+
+local ccuiTextSetStringFunc = ccui.Text.setString
+
+function ccui.Text:setString(...)
+	ccuiTextSetStringFunc(self, ...)
+	adjustTextCustomSize(self)
+end
+
+local ccLabelCreateWithTTFFunc = cc.Label.createWithTTF
+
+function cc.Label:createWithTTF(text, fontName, fontSize, ...)
+	local localLanguage = getCurrentLanguage()
+
+	if fontName ~= nil and fontName ~= "" then
+		ontName = ORGetFont(localLanguage, fontName)
+	end
+
+	return ccLabelCreateWithTTFFunc(self, text, fontName, fontSize, ...)
+end
+
+local function modifyAssetLanguagePath(imgPath)
+	local isModify = false
+	local modify_path = imgPath
+	local sIdx, eIdx = string.find(imgPath, "asset/")
+
+	if sIdx ~= nil and eIdx ~= nil and not cc.FileUtils:getInstance():isFileExist(imgPath) then
+		local dir = string.split(imgPath, "/")
+		modify_path = string.gsub(modify_path, dir[2], MULTIP_LANGUAGE_PRE .. dir[2], 1)
+		isModify = true
+	end
+
+	return modify_path, isModify
+end
+
+function identifyLanguageFile(...)
+	local args = {
+		...
+	}
+	local filename = args[1]
+
+	if not filename then
+		return unpack(args)
+	end
+
+	local localLanguage = getCurrentLanguage()
+
+	if localLanguage == GameDefaultLanguage then
+		localLanguage = ""
+	end
+
+	if filename ~= nil then
+		local isModify = false
+		filename, isModify = modifyAssetLanguagePath(filename)
+
+		if isModify then
+			args[1] = filename
+		end
+	end
+
+	local st, ed = string.find(filename, MULTIP_LANGUAGE_PRE)
+
+	if st and localLanguage ~= "" then
+		local eidx = string.find(filename, "/", ed)
+		eidx = eidx or 0
+		local dirName = string.sub(filename, st, eidx - 1)
+		filename = string.gsub(filename, dirName, dirName .. "_" .. localLanguage)
+		args[1] = filename
+	end
+
+	return unpack(args)
+end
+
+local function reloadImageViewTexture(imageView)
+	imageView.__initIsIgnoreContentAdaptWithSize = imageView.__initIsIgnoreContentAdaptWithSize or imageView:isIgnoreContentAdaptWithSize()
+
+	imageView:ignoreContentAdaptWithSize(true)
+
+	local data = imageView:getRenderFile()
+	local file = identifyLanguageFile(data.file)
+
+	imageView:loadTexture(file, data.type)
+	imageView:ignoreContentAdaptWithSize(imageView.__initIsIgnoreContentAdaptWithSize)
+end
+
+local ccSpriteCreateFunc = cc.Sprite.create
+
+function cc.Sprite:create(...)
+	return ccSpriteCreateFunc(self, identifyLanguageFile(...))
+end
+
+local ccuiImageViewCreateFunc = ccui.ImageView.create
+
+function ccui.ImageView:create(...)
+	return ccuiImageViewCreateFunc(self, identifyLanguageFile(...))
+end
+
+local ccuiImageViewLoadTexture = ccui.ImageView.loadTexture
+
+function ccui.ImageView:loadTexture(...)
+	ccuiImageViewLoadTexture(self, identifyLanguageFile(...))
+end
+
+local function _checkCustomProperty(ui, styleData)
+	if tolua.type(ui) == "ccui.Text" then
+		local localLanguage = getCurrentLanguage()
+		local fontName = ui:getFontName()
+
+		if fontName ~= nil and fontName ~= "" then
+			local map2Font = ORGetFont(localLanguage, fontName)
+
+			ui:setFontName(map2Font)
+		end
+
+		adjustTextCustomSize(ui)
+	end
+end
+
+local function getCustomPropertyByRootNode(root)
+	local childs = root:getChildren()
+
+	for i = 1, #childs do
+		local subNode = childs[i]
+		local component = subNode:getComponent("ComExtensionData")
+		local styleData = component:getCustomProperty()
+
+		_checkCustomProperty(subNode, styleData)
+		getCustomPropertyByRootNode(subNode)
+	end
+
+	return root
+end
+
+local ccCSLoaderCreateNode = cc.CSLoader.createNode
+
+function cc.CSLoader:createNode(...)
+	local root = ccCSLoaderCreateNode(self, ...)
+
+	return getCustomPropertyByRootNode(root)
+end

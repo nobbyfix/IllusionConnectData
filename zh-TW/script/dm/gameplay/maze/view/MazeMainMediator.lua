@@ -461,12 +461,12 @@ function MazeMainMediator:updateMasterView()
 		name = "head",
 		id = ConfigReader:getDataByNameIdAndKey("EnemyMaster", master.id, "RoleModel")
 	}
-	local img = IconFactory:createRoleIconSprite(info)
+	local img = IconFactory:createRoleIconSpriteNew(info)
 	img = IconFactory:addStencilForIcon(img, 2, cc.size(100, 100))
 
 	img:setScale(1.2)
 	img:addTo(parentNode):center(parentNode:getContentSize()):offset(0, 7)
-	self._lv:setString("Lv." .. self._mazeSystem:getSelectMasterLv())
+	self._lv:setString(Strings:get("Common_LV_Text") .. self._mazeSystem:getSelectMasterLv())
 	self._cardNum:setString(self._mazeSystem:getCurHeroNum() .. "/10")
 
 	local curhp = self._mazeSystem:getMasterCurHp()
@@ -655,8 +655,7 @@ function MazeMainMediator:updateSuspectList()
 
 			local ids = ConfigReader:getDataByNameIdAndKey("PansLabSuspects", id, "Model")
 			local head = parentNode:getChildByFullName("head")
-			local img = IconFactory:createRoleIconSprite({
-				clipType = 3,
+			local img = IconFactory:createRoleIconSpriteNew({
 				id = ids
 			})
 

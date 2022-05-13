@@ -9,7 +9,9 @@ local opType = {
 	battleReportList = 14308,
 	lineUp = 14303,
 	robotSurrender = 14311,
-	pvpBattleFinish = 14310
+	pvpBattleFinish = 14310,
+	useEmoji = 10035,
+	getTotalWinReward = 14312
 }
 
 function RTPKService:initialize()
@@ -82,6 +84,18 @@ end
 
 function RTPKService:requestRobotBattleSurrender(params, callback, blockUI)
 	local request = self:newRequest(opType.robotSurrender, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function RTPKService:requestTotalWinReward(params, callback, blockUI)
+	local request = self:newRequest(opType.getTotalWinReward, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function RTPKService:requestUseEmoji(params, callback, blockUI)
+	local request = self:newRequest(opType.useEmoji, params, callback)
 
 	self:sendRequest(request, blockUI)
 end

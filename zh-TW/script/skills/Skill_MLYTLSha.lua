@@ -267,6 +267,55 @@ all.Skill_MLYTLSha_Unique = {
 		return _env
 	end
 }
+all.MLYTLSha_Kick = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "MLYTLSha")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, unit_one in global.__iter__(global.FriendUnits(_env)) do
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED_ANY(_env, "Skill_MLYTLSha_Passive", "Skill_MLYTLSha_Passive_Key", "Skill_MLYTLSha_Passive_Key2"), 99)
+				end
+
+				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MLYTLSha_Kick"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
 all.Skill_MLYTLSha_Passive = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -325,6 +374,17 @@ all.Skill_MLYTLSha_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "MLYTLSha_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MLYTLSha_Kick"
+				}
+			}, {
+				buff
+			})
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
@@ -476,7 +536,7 @@ all.Skill_MLYTLSha_Passive_Key = {
 			local global = _env.global
 			local x = global.FriendUnits(_env, global.MARKED(_env, "MLYTLSha"))
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and x[1] ~= nil then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "MLYTLSha")(_env, _env.ACTOR) and x[1] ~= nil then
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 					"+Normal",
 					"+Normal"
@@ -719,6 +779,122 @@ all.Skill_MLYTLSha_Unique_EX = {
 		return _env
 	end
 }
+all.Skill_MLYTLSha_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HealRateFactor = externs.HealRateFactor
+
+		assert(this.HealRateFactor ~= nil, "External variable `HealRateFactor` is not provided.")
+
+		this.RageFactor = externs.RageFactor
+
+		assert(this.RageFactor ~= nil, "External variable `RageFactor` is not provided.")
+
+		this.shieldValue = nil
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3170
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_MLYTLSha"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_MLYTLSha_Skill3"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+
+			_env.units = global.FriendUnits(_env)
+
+			global.HealTargetView(_env, _env.units)
+		end)
+		exec["@time"]({
+			2300
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, friendunit in global.__iter__(_env.units) do
+				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, friendunit, this.HealRateFactor, 0)
+				this.shieldValue = heal.val + global.UnitPropGetter(_env, "hp")(_env, friendunit) - global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, friendunit, heal)
+
+				if this.shieldValue > 0 and global.SelectBuffCount(_env, friendunit, global.BUFF_MARKED(_env, "CURSE")) == 0 then
+					local buffeft1 = global.ShieldEffect(_env, global.min(_env, this.shieldValue, global.UnitPropGetter(_env, "maxHp")(_env, friendunit) * 0.3))
+
+					global.ApplyBuff(_env, friendunit, {
+						timing = 0,
+						display = "Shield",
+						group = "Skill_MLYTLSha_Unique_Awaken",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"SHIELD",
+							"DISPELLABLE",
+							"STEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+				end
+			end
+
+			global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
+		end)
+		exec["@time"]({
+			3170
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 all.Skill_MLYTLSha_Passive_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -781,6 +957,17 @@ all.Skill_MLYTLSha_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "MLYTLSha_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MLYTLSha_Kick"
+				}
+			}, {
+				buff
+			})
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {

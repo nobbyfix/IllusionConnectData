@@ -141,9 +141,9 @@ function PlayerLevelUpTipMediator:createUI(info)
 	end
 
 	TextUnlockDes:setString(desStr)
-	image1:setScaleX((TextGrade:getContentSize().width + 10) / image1:getContentSize().width)
-	image2:setScaleX((TextCri:getContentSize().width + 10) / image2:getContentSize().width)
-	image3:setScaleX((TextSuck:getContentSize().width + 10) / image3:getContentSize().width)
+	image1:setScaleX((TextGrade:getAutoRenderWidth() + 10) / image1:getContentSize().width)
+	image2:setScaleX((TextCri:getAutoRenderWidth() + 10) / image2:getContentSize().width)
+	image3:setScaleX((TextSuck:getAutoRenderWidth() + 10) / image3:getContentSize().width)
 end
 
 function PlayerLevelUpTipMediator:getUnlockSystemDesc(info)
@@ -187,16 +187,32 @@ function PlayerLevelUpTipMediator:onClickOK(sender, eventType)
 		local guideNames, guideViewName = guideSystem:checkLevelUpGuide()
 
 		if #guideNames > 0 then
-			local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
-			local topViewName = scene:getTopViewName()
+			if guideAgent:isGuiding() then
+				guideAgent:setStoryEnd(function ()
+					delayCallByTime(0.016666666666666666, function ()
+						guideAgent:trigger(guideNames, nil, )
 
-			guideAgent:trigger(guideNames, nil, )
+						local dispatcher = DmGame:getInstance()
 
-			if topViewName == "homeView" then
-				self:close()
+						dispatcher:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+					end)
+				end)
+			else
+				guideAgent:trigger(guideNames, nil, )
+
+				local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+				local topViewName = scene:getTopViewName()
+				local topView = scene:getTopView()
+
+				if topViewName == "homeView" and topView then
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+					self:close()
+				else
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+				end
+
+				return
 			end
-
-			return
 		end
 
 		self:close()

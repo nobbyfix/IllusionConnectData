@@ -61,6 +61,36 @@ end
 function scene_TLMiDate03.actions.start_TLMiDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg1")
 		}),
@@ -90,11 +120,11 @@ function scene_TLMiDate03.actions.start_TLMiDate03(_root, args)
 					modelId = "Model_TLMi",
 					id = "TLMi_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.66,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -283,
+						y = -360,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -118,8 +148,8 @@ function scene_TLMiDate03.actions.start_TLMiDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 19.3,
-								y = 719.5
+								x = 34.5,
+								y = 1192
 							}
 						}
 					}

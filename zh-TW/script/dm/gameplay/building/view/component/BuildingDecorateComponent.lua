@@ -26,7 +26,7 @@ end
 function BuildingDecorateComponent:enterWithData(endCallback)
 	self._endCallback = endCallback
 
-	self:refreshBuildingList()
+	self:refreshBuildingList(true)
 	self:initBuildingDecorateQueue()
 end
 
@@ -61,7 +61,7 @@ end
 function BuildingDecorateComponent:createDecorate(buildingInfo)
 end
 
-function BuildingDecorateComponent:refreshBuildingList()
+function BuildingDecorateComponent:refreshBuildingList(isAllRoom)
 	local roomList = self._buildingSystem:getRoomList()
 	local scheduleList = {}
 	local roomId = self._buildingSystem:getShowRoomId() or ""
@@ -74,52 +74,48 @@ function BuildingDecorateComponent:refreshBuildingList()
 		end
 	end
 
-	for k, v in pairs(roomList) do
-		if roomId ~= k then
-			local list = self:refreshRoom(k, true)
+	if isAllRoom then
+		for k, v in pairs(roomList) do
+			if roomId ~= k then
+				local list = self:refreshRoom(k, true)
 
-			for kk, vv in pairs(list) do
-				scheduleList[#scheduleList + 1] = vv
+				for kk, vv in pairs(list) do
+					scheduleList[#scheduleList + 1] = vv
+				end
 			end
 		end
 	end
 
-	local prevTime = app.getTime()
-	local actionTag = math.floor(prevTime % 100000)
-
 	if #scheduleList > 0 then
-		local index = 1
-		local action = schedule(self:getView(), function ()
-			local function stepFunc()
-				if index > #scheduleList then
-					self:getView():stopActionByTag(actionTag)
+		local loop = cc.Node:create()
 
-					if self._endCallback then
-						self._endCallback()
+		self:getView():addChild(loop)
 
-						self._endCallback = nil
-					end
+		local step_index = 1
+		local stepFunc = nil
 
-					return false
+		function stepFunc()
+			if step_index > #scheduleList then
+				loop:stopAllActions()
+
+				if self._endCallback then
+					self._endCallback()
+
+					self._endCallback = nil
 				end
 
-				local building = scheduleList[index]
-				index = index + 1
-
-				if not DisposableObject:isDisposed(building) and building._view then
-					building:enterWithData()
-				end
-
-				return true
+				return
 			end
 
-			while stepFunc() and app.getTime() - prevTime < 0.03333333333333333 do
+			local building = scheduleList[step_index]
+			step_index = step_index + 1
+
+			if not DisposableObject:isDisposed(building) and building._view then
+				building:enterWithData()
 			end
+		end
 
-			prevTime = app.getTime()
-		end, 0)
-
-		action:setTag(actionTag)
+		loop:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.DelayTime:create(0.03333333333333333), cc.CallFunc:create(stepFunc))))
 
 		return
 	end
@@ -128,6 +124,14 @@ function BuildingDecorateComponent:refreshBuildingList()
 		self._endCallback()
 
 		self._endCallback = nil
+	end
+end
+
+function BuildingDecorateComponent:showAllBuilding()
+	for k, v in pairs(self._roomList) do
+		for __, build in pairs(v) do
+			build:show()
+		end
 	end
 end
 
@@ -435,13 +439,13 @@ function BuildingDecorateComponent:refreshBuildingLvInfo(roomId, id)
 	end
 end
 
-function BuildingDecorateComponent:refreshHeroList()
+function BuildingDecorateComponent:refreshHeroList(sync)
 	local roomList = self._buildingSystem:getRoomList()
 	local scheduleList = {}
 	local roomId = self._buildingSystem:getShowRoomId() or ""
 
 	if roomId and roomId ~= "" then
-		local list = self:refreshRoomHeroList(roomId, true)
+		local list = self:refreshRoomHeroList(roomId, not sync)
 
 		for k, v in pairs(list) do
 			scheduleList[#scheduleList + 1] = v
@@ -450,7 +454,7 @@ function BuildingDecorateComponent:refreshHeroList()
 
 	for k, v in pairs(roomList) do
 		if roomId ~= k then
-			local list = self:refreshRoomHeroList(k, true)
+			local list = self:refreshRoomHeroList(k, not sync)
 
 			for kk, vv in pairs(list) do
 				scheduleList[#scheduleList + 1] = vv
@@ -458,37 +462,37 @@ function BuildingDecorateComponent:refreshHeroList()
 		end
 	end
 
-	local prevTime = app.getTime()
-	local actionTag = math.floor(prevTime % 10000)
-
 	if #scheduleList > 0 then
-		local index = 1
-		local action = schedule(self:getView(), function ()
-			local function stepFunc()
-				if index > #scheduleList then
-					self:getView():stopActionByTag(actionTag)
+		local loop = cc.Node:create()
 
-					return false
-				end
+		self:getView():addChild(loop)
 
-				local buildHero = scheduleList[index]
-				index = index + 1
+		local step_index = 1
+		local stepFunc = nil
 
-				if not DisposableObject:isDisposed(buildHero) and buildHero._view then
-					buildHero:enterWithData()
-				end
+		function stepFunc()
+			if step_index > #scheduleList then
+				loop:stopAllActions()
 
-				return true
+				return
 			end
 
-			while stepFunc() and app.getTime() - prevTime < 0.03333333333333333 do
+			local building = scheduleList[step_index]
+			step_index = step_index + 1
+
+			if not DisposableObject:isDisposed(building) and building._view then
+				building:enterWithData()
 			end
+		end
 
-			prevTime = app.getTime()
-		end, 0)
-
-		action:setTag(actionTag)
+		loop:runAction(cc.RepeatForever:create(cc.Sequence:create(cc.DelayTime:create(0.03333333333333333), cc.CallFunc:create(stepFunc))))
 	end
+end
+
+function BuildingDecorateComponent:instantiateBuildingHero(node)
+	return self:getInjector():instantiate("BuildingHero", {
+		view = node
+	})
 end
 
 function BuildingDecorateComponent:refreshRoomHeroList(roomId, schedule)
@@ -501,9 +505,7 @@ function BuildingDecorateComponent:refreshRoomHeroList(roomId, schedule)
 	for k, v in pairs(heroList) do
 		if not self._roomHeroList[roomId][v] then
 			local node = cc.Node:create():addTo(view)
-			local buildingHero = self:getInjector():instantiate("BuildingHero", {
-				view = node
-			})
+			local buildingHero = self:instantiateBuildingHero(node)
 			node.__mediator = buildingHero
 
 			buildingHero:setHeroInfo(roomId, v, self._buildingMediator)
@@ -552,6 +554,18 @@ function BuildingDecorateComponent:hideRoomHeroList()
 	for k, v in pairs(self._roomHeroList) do
 		for kk, vv in pairs(v) do
 			vv:hide()
+		end
+	end
+end
+
+function BuildingDecorateComponent:hideOtherRoomHeroList(isFadeout)
+	local roomId = self._buildingSystem:getShowRoomId()
+
+	for k, v in pairs(self._roomHeroList) do
+		for kk, vv in pairs(v) do
+			if k ~= roomId then
+				vv:hide(isFadeout)
+			end
 		end
 	end
 end
@@ -650,6 +664,18 @@ function BuildingDecorateComponent:hideBuildResource()
 	for _, v in pairs(self._roomList) do
 		for __, build in pairs(v) do
 			build:hideResoure()
+		end
+	end
+end
+
+function BuildingDecorateComponent:hideOtherRoomBuilding(isFadeOut)
+	local roomId = self._buildingSystem:getShowRoomId()
+
+	for k, v in pairs(self._roomList) do
+		for __, build in pairs(v) do
+			if k ~= roomId then
+				build:hide(isFadeOut)
+			end
 		end
 	end
 end

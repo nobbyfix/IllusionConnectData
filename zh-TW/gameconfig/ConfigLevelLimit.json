@@ -1,5 +1,114 @@
 {
+    "LevelLimit_Animal": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_Baking": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Collapsed": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_DeepSea": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
     "LevelLimit_Detective": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Drama": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_Dusk": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_FWorks": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_Female": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Fire": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Knight": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Music": {
+        "EffectControl": 1,
+        "LeadATK": 15711,
+        "LeadDEF": 6276,
+        "LeadHP": 261864,
+        "LeadSPD": 128,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_MusicFestival": {
+        "EffectControl": 1,
         "LeadATK": 16745,
         "LeadDEF": 6054,
         "LeadHP": 329200,
@@ -8,22 +117,25 @@
         "StandardLv": 240
     },
     "LevelLimit_NYBlock": {
+        "EffectControl": 1,
         "LeadATK": 16745,
         "LeadDEF": 6054,
         "LeadHP": 329200,
         "LeadSPD": 223,
         "LowerStandardQuality": 43,
         "StandardLv": 240
-    },
-    "LevelLimit_NewYear": {
-        "LeadATK": "",
-        "LeadDEF": "",
-        "LeadHP": "",
-        "LeadSPD": "",
-        "LowerStandardQuality": 10,
-        "StandardLv": 200
     },
     "LevelLimit_RTPK": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 8355,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 300
+    },
+    "LevelLimit_Re0": {
+        "EffectControl": 1,
         "LeadATK": 16745,
         "LeadDEF": 6054,
         "LeadHP": 329200,
@@ -31,7 +143,89 @@
         "LowerStandardQuality": 43,
         "StandardLv": 240
     },
+    "LevelLimit_Riddle": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
     "LevelLimit_SD": {
+        "EffectControl": 1,
+        "LeadATK": 15711,
+        "LeadDEF": 6276,
+        "LeadHP": 261864,
+        "LeadSPD": 128,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_SilentNight": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_Snowflack": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_StageArena": {
+        "EffectControl": "",
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_StoryBook": {
+        "EffectControl": "",
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Summer": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Sunflower": {
+        "EffectControl": 1,
+        "LeadATK": 16745,
+        "LeadDEF": 6054,
+        "LeadHP": 329200,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 43,
+        "StandardLv": 240
+    },
+    "LevelLimit_Terror": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
+    "LevelLimit_TimeLimit_DC": {
+        "EffectControl": 1,
         "LeadATK": 15711,
         "LeadDEF": 6276,
         "LeadHP": 261864,

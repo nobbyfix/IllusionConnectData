@@ -43,6 +43,7 @@ function TaskAchieveMediator:onRegister()
 	self._tabPanel = self:getView():getChildByName("tabPanel")
 	self._totalProgress = self:getView():getChildByName("totalProgress")
 	self._totalLabel = self._totalProgress:getChildByName("num")
+	self._totalLabel1 = self._totalProgress:getChildByName("num_0")
 	self._totalLoadingBar = self._totalProgress:getChildByName("loadingBar")
 	self._clonePanel = self:getView():getChildByName("clonePanel")
 
@@ -51,38 +52,12 @@ function TaskAchieveMediator:onRegister()
 	self._tabClone = self:getView():getChildByName("tabClone")
 
 	self._tabClone:setVisible(false)
-	self._tabClone:getChildByFullName("dark_1.text1"):enableOutline(cc.c4b(3, 1, 4, 51), 1)
-	self._tabClone:getChildByFullName("dark_1.text1"):setColor(cc.c3b(110, 108, 108))
-	self._tabClone:getChildByFullName("dark_1.text1"):enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
-	self._tabClone:getChildByFullName("light_1.text1"):enableOutline(cc.c4b(3, 1, 4, 51), 1)
-	self._tabClone:getChildByFullName("light_1.text1"):setColor(cc.c3b(110, 108, 108))
-	self._tabClone:getChildByFullName("light_1.text1"):enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
 	self._tabClone:getChildByFullName("dark_1.progress.loadingBar"):setScale9Enabled(true)
-	self._tabClone:getChildByFullName("dark_1.progress.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
+	self._tabClone:getChildByFullName("dark_1.progress.loadingBar"):setCapInsets(cc.rect(60, 3, 1, 1))
 	self._clonePanel:getChildByFullName("unComplete.loadingBar"):setScale9Enabled(true)
-	self._clonePanel:getChildByFullName("unComplete.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
+	self._clonePanel:getChildByFullName("unComplete.loadingBar"):setCapInsets(cc.rect(60, 3, 1, 1))
 	self._totalLoadingBar:setScale9Enabled(true)
-	self._totalLoadingBar:setCapInsets(cc.rect(1, 1, 1, 1))
-
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.5,
-			color = cc.c4b(255, 255, 255, 255)
-		},
-		{
-			ratio = 1,
-			color = cc.c4b(129, 118, 113, 255)
-		}
-	}
-
-	self._totalProgress:getChildByFullName("text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
-	self._totalLabel:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
+	self._totalLoadingBar:setCapInsets(cc.rect(60, 3, 1, 1))
 end
 
 function TaskAchieveMediator:dispose()
@@ -111,6 +86,7 @@ function TaskAchieveMediator:setupView(parentMedi)
 
 	self._viewPanel:setContentSize(cc.size(width, 340))
 
+	self._parentMedi = parentMedi
 	self._tabType = 1
 	self._taskListModel = parentMedi:getTaskListModel()
 	self._taskSystem = parentMedi:getTaskSystem()
@@ -142,18 +118,16 @@ function TaskAchieveMediator:initTabController()
 			btn.redPoint = RedPoint:createDefaultNode()
 
 			btn.redPoint:setScale(0.8)
-			btn.redPoint:addTo(btn:getChildByFullName("dark_1")):posite(120, 102)
+			btn.redPoint:addTo(btn:getChildByFullName("dark_1")):posite(150, 30)
 			btn.redPoint:setLocalZOrder(99900)
 			btn:addTo(self._tabPanel)
-			btn:setPosition(kRightTabPos[5][i])
+			btn:setPosition(cc.p(159 * i - 30, -3))
 		end
 	end
 
 	self._tabController = TabController:new(self._tabBtns, function (name, tag)
 		self:onClickTab(name, tag)
-	end, {
-		showAnim = 2
-	})
+	end)
 
 	self._tabController:setInvalidButtons(self._invalidTabBtns)
 	self._tabController:selectTabByTag(self._tabType)
@@ -281,6 +255,7 @@ function TaskAchieveMediator:createCell(cell, idx)
 
 		rewardIcon:setAnchorPoint(cc.p(0.5, 0.5))
 		rewardIcon:addTo(iconPanel):center(iconPanel:getContentSize())
+		rewardIcon:setScale(0.8)
 		amount:setString(info.amount)
 
 		local width = amountBg:getContentSize().width
@@ -389,13 +364,20 @@ function TaskAchieveMediator:refreshNum()
 
 	local str = curAchievePoint .. "/" .. achievePoint
 
-	self._totalLabel:setString(str)
+	self._totalLabel:setString("/" .. achievePoint)
+	self._totalLabel1:setString(curAchievePoint)
 	self._totalLoadingBar:setPercent(curAchievePoint / achievePoint * 100)
 
 	local posX = self._totalLabel:getPositionX() - self._totalLabel:getContentSize().width
 
+	self._totalLabel1:setPositionX(posX)
+
+	local posX = self._totalLabel1:getPositionX() - self._totalLabel1:getContentSize().width
+
 	self._totalProgress:getChildByFullName("icon"):setPositionX(posX)
 	self._totalProgress:getChildByFullName("text"):setString(self._taskArr[self._tabType].name)
+
+	local posX = self._totalLabel:getPositionX() - self._totalLabel:getContentSize().width
 end
 
 function TaskAchieveMediator:showTalkAnim(index)
@@ -480,7 +462,13 @@ function TaskAchieveMediator:onClickCell(sender, eventType, data, idx)
 				taskId = data:getId()
 			}
 
-			self._taskSystem:requestAchievementReward(params)
+			self._taskSystem:requestAchievementReward(params, function ()
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
+				self._parentMedi:setOneKeyGray()
+			end)
 		end
 
 		self._isReturn = true
@@ -498,7 +486,7 @@ function TaskAchieveMediator:onClickTab(name, tag)
 		if self._tableView then
 			local allCells = self._tableView:getContainer():getChildren()
 
-			for i = 1, 4 do
+			for i = 1, 5 do
 				local child = allCells[i]
 
 				if child and child:getChildByTag(12138) then
@@ -540,7 +528,7 @@ function TaskAchieveMediator:runListAnim()
 
 	local allCells = self._tableView:getContainer():getChildren()
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(12138) then
@@ -552,7 +540,7 @@ function TaskAchieveMediator:runListAnim()
 	local length = math.min(4, #allCells)
 	local delayTime = 0.1
 
-	for i = 1, 4 do
+	for i = 1, 5 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(12138) then

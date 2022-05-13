@@ -9,6 +9,7 @@ local showRarityTipHero = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Her
 local GalleryPartyType = {
 	kBSNCT = "BSNCT",
 	kWNSXJ = "WNSXJ",
+	kUNKNOWN = "UNKNOWN",
 	kMNJH = "MNJH",
 	kDWH = "DWH",
 	kXD = "XD",
@@ -30,23 +31,24 @@ local kHeroRarityAnim = {
 	"r_choukahuodeyinghun",
 	"sr_choukahuodeyinghun",
 	"ssr_choukahuodeyinghun",
-	"ssr_choukahuodeyinghun"
+	"sp_urequipeff"
 }
 local kHeroRarityBg1 = {
-	[15] = heroRect .. "hero_rarity_bg_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_sr.png",
 	[12] = heroRect .. "hero_rarity_bg_r.png",
 	[11] = heroRect .. "hero_rarity_bg_r.png"
 }
 local kHeroRarityBg2 = {
-	[15] = heroRect .. "hero_rarity_bg_1_ssr.png",
+	[15] = heroRect .. "hero_rarity_bg_1_sp.png",
 	[14] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[13] = heroRect .. "hero_rarity_bg_1_ssr.png",
 	[12] = heroRect .. "hero_rarity_bg_1_r.png",
 	[11] = heroRect .. "hero_rarity_bg_1_r.png"
 }
 local kHeroRarityBgGuang = {
+	[15.0] = "ssrdonghuaguang_choukahuodeyinghun",
 	[13.0] = "srdonghuaguang_choukahuodeyinghun",
 	[14.0] = "ssrdonghuaguang_choukahuodeyinghun"
 }
@@ -81,10 +83,6 @@ function NewHeroMediator:enterWithData(data)
 
 	self._heroId = heroId
 
-	if SDKHelper and SDKHelper:isEnableSdk() then
-		SDKHelper:adjustEventTracking(AdjustNewHeroEventList[heroId])
-	end
-
 	if heroConfig.GainAnim == 1 then
 		local videoSprite = VideoSprite.create("video/hero/video_" .. heroId .. ".usm", function (sprite, eventName)
 			if eventName == "complete" then
@@ -98,6 +96,18 @@ function NewHeroMediator:enterWithData(data)
 	else
 		self:showResult(data)
 	end
+end
+
+function NewHeroMediator:addShare()
+	local data = {
+		enterType = ShareEnterType.KRecruitOneHero,
+		node = self:getView(),
+		preConfig = function ()
+		end,
+		endConfig = function ()
+		end
+	}
+	self._shareNode = DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
 end
 
 function NewHeroMediator:showResult(data)
@@ -206,6 +216,17 @@ function NewHeroMediator:showResult(data)
 	bgPanel:setScale(1.2)
 	bgPanel:runAction(cc.ScaleTo:create(0.2, 1))
 
+	if not newHero and data.fragmentCount then
+		local text = ccui.Text:create(Strings:get("DrawcardUI1", {
+			value = data.fragmentCount
+		}), TTF_FONT_FZYH_M, 18)
+
+		text:setAnchorPoint(cc.p(0.5, 0.5))
+		text:addTo(main):center(main:getContentSize()):offset(0, -280)
+		text:setOpacity(0)
+		text:runAction(cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.5)))
+	end
+
 	local anim = cc.MovieClip:create("zonghe_choukahuodeyinghun")
 
 	anim:addTo(main:getChildByName("animPanel"))
@@ -229,13 +250,13 @@ function NewHeroMediator:showResult(data)
 				end)
 
 				local function createRoleIcon(parent)
-					local realImage = IconFactory:createRoleIconSprite({
+					local realImage = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust6",
+						frameId = "bustframe6_5",
 						id = roleModel
 					})
 
-					realImage:addTo(parent):posite(0, -125)
+					realImage:addTo(parent):posite(-300, -250)
 				end
 
 				local roleNode = ssrdonghuaguang:getChildByFullName("roleNode")
@@ -255,6 +276,10 @@ function NewHeroMediator:showResult(data)
 				if roleNode2 then
 					createRoleIcon(roleNode2)
 				end
+
+				anim:addCallbackAtFrame(30, function ()
+					self:addShare()
+				end)
 			else
 				local heroAnim = cc.MovieClip:create("renwu_choukahuodeyinghun")
 
@@ -263,15 +288,18 @@ function NewHeroMediator:showResult(data)
 				end)
 
 				local roleNode = heroAnim:getChildByName("roleNode")
-				local realImage = IconFactory:createRoleIconSprite({
+				local realImage = IconFactory:createRoleIconSpriteNew({
 					useAnim = true,
-					iconType = "Bust6",
+					frameId = "bustframe6_5",
 					id = roleModel
 				})
 
 				realImage:addTo(roleNode)
 				heroAnim:addTo(heroNode)
-				heroAnim:setPosition(cc.p(-10, -123))
+				heroAnim:setPosition(cc.p(-300, -300))
+				anim:addCallbackAtFrame(20, function ()
+					self:addShare()
+				end)
 			end
 		end
 	end)
@@ -323,7 +351,9 @@ function NewHeroMediator:showResult(data)
 	local descNode = anim:getChildByName("descNode")
 
 	soundDesc:changeParent(descNode)
-	soundDesc:setPosition(cc.p(-180, 70))
+	soundDesc:setPosition(cc.p(-185, 56))
+	soundDesc:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+	soundDesc:setTextAreaSize(cc.size(385, 85))
 
 	local occuNode = anim:getChildByName("occuNode")
 	local occupationName, occupationImg = GameStyle:getHeroOccupation(heroConfig.Type)

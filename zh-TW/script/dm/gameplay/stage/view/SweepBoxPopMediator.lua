@@ -60,9 +60,56 @@ local buttonPosXTable2 = {
 	447,
 	704
 }
+local buttonPosXTable3 = {
+	575
+}
 
 function SweepBoxPopMediator:enterWithData(data)
-	if data.stageType == StageType.kElite then
+	if data.normalType then
+		local bottomText = self:getView():getChildByFullName("wipeTen.name1")
+
+		bottomText:setString(Strings:get("Ten"))
+
+		local contentTxt = self:getView():getChildByFullName("Text_1")
+
+		contentTxt:setString(Strings:get("Raid_PopUp_Text"))
+
+		local tenBtn = self:getView():getChildByFullName("wipeTen")
+		local oneBtn = self:getView():getChildByFullName("wipeOne")
+		local fightBtn = self:getView():getChildByFullName("fight")
+
+		fightBtn:setVisible(false)
+
+		if data.challengeTimes == 1 then
+			tenBtn:setVisible(false)
+			oneBtn:setPositionX(buttonPosXTable3[1])
+		else
+			tenBtn:setVisible(true)
+			oneBtn:setPositionX(buttonPosXTable2[1])
+			tenBtn:setPositionX(buttonPosXTable2[2])
+		end
+
+		local title1 = self:getView():getChildByFullName("sweepBox.title_node.Text_1")
+		local title2 = self:getView():getChildByFullName("sweepBox.title_node.Text_2")
+
+		title1:setString(Strings:get("Raid_PopUp_Title"))
+		title2:setString(Strings:get("Raid_PopUp_TitleEN"))
+
+		local posX = title1:getPositionX()
+		local width = title1:getAutoRenderSize().width
+
+		title2:setAnchorPoint(cc.p(0.5, 0.5))
+		title2:setPositionX(posX + width / 2)
+
+		if data.stageType == StageType.kElite then
+			local btnText = self:getView():getChildByFullName("wipeTen.name")
+			local changeTimes = data.challengeTimes
+
+			btnText:setString(Strings:get("Sweep_Set_Amount", {
+				num = changeTimes
+			}))
+		end
+	elseif data.stageType == StageType.kElite then
 		local btnText = self:getView():getChildByFullName("wipeTen.name")
 		local changeTimes = data.challengeTimes
 
@@ -85,6 +132,12 @@ function SweepBoxPopMediator:enterWithData(data)
 		local bottomText = self:getView():getChildByFullName("wipeTen.name1")
 
 		bottomText:setString(Strings:get("Ten"))
+	end
+
+	if data and data.desc then
+		local contentTxt = self:getView():getChildByFullName("Text_1")
+
+		contentTxt:setString(Strings:get(data.desc))
 	end
 end
 

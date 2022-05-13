@@ -21,6 +21,15 @@ FunctionEntranceMediator:has("_exploreSystem", {
 FunctionEntranceMediator:has("_rtpkSystem", {
 	is = "r"
 }):injectWith("RTPKSystem")
+FunctionEntranceMediator:has("_cooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
+FunctionEntranceMediator:has("_leadStageArenaSystem", {
+	is = "r"
+}):injectWith("LeadStageArenaSystem")
+FunctionEntranceMediator:has("_arenaNewSystem", {
+	is = "r"
+}):injectWith("ArenaNewSystem")
 FunctionEntranceMediator:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
@@ -28,22 +37,41 @@ FunctionEntranceMediator:has("_gameServerAgent", {
 local kFunctionData = {
 	{
 		cellNode = "arenaCell",
+		switchKey = "fn_arena_normal",
 		des = "BlockArena_ShowUI_Des"
 	},
 	{
 		cellNode = "petRaceCell",
+		switchKey = "fn_arena_pet_race",
 		des = "BlockPet_ShowUI_Des"
 	},
 	{
 		cellNode = "friendCell",
+		switchKey = "fn_arena_friend",
+		des = "BlockSP_ShowUI_Desc"
+	},
+	{
+		cellNode = "cooperateBossCell",
+		switchKey = "fn_arena_cooperate_boss",
 		des = "BlockSP_ShowUI_Desc"
 	},
 	{
 		cellNode = "rtpkCell",
 		switchKey = "fn_arena_rtpk",
 		des = "BlockSP_ShowUI_Desc"
+	},
+	{
+		cellNode = "leadStageAreaCell",
+		switchKey = "fn_arena_leadStage",
+		des = "BlockSP_ShowUI_Desc"
+	},
+	{
+		cellNode = "arenaNewCell",
+		switchKey = "fn_arena_new",
+		des = "BlockSP_ShowUI_Desc"
 	}
 }
+local EVENT_LOCAL_REFRESH_COOPERATE_STATE = "EVENT_LOCAL_REFRESH_COOPERATE_STATE"
 
 function FunctionEntranceMediator:initialize()
 	super.initialize(self)
@@ -58,11 +86,27 @@ function FunctionEntranceMediator:dispose()
 		self._rtpkTimer = nil
 	end
 
+	if self._stageArenaTimer then
+		self._stageArenaTimer:stop()
+
+		self._stageArenaTimer = nil
+	end
+
+	if self._aenaNewTimer then
+		self._aenaNewTimer:stop()
+
+		self._aenaNewTimer = nil
+	end
+
 	super.dispose(self)
 end
 
 function FunctionEntranceMediator:onRegister()
 	super.onRegister(self)
+	self:mapEventListener(self:getEventDispatcher(), EVENT_LOCAL_REFRESH_COOPERATE_STATE, self, self.refreshCooperateBossStateLab)
+	self:mapEventListener(self:getEventDispatcher(), EVT_LEADSTAGE_AEANA_SEASONINFO, self, self.refreshRed)
+	self:mapEventListener(self:getEventDispatcher(), EVT_NEW_ARENA_FRESH_RIVAL, self, self.refreshAreaNewCell)
+	self:mapEventListener(self:getEventDispatcher(), EVT_NEW_ARENA_MAIN_INFO, self, self.refreshAreaNewCell)
 end
 
 function FunctionEntranceMediator:setupTopInfoWidget(data)
@@ -87,6 +131,7 @@ function FunctionEntranceMediator:enterWithData(data)
 
 	self:setupView(data)
 	self:setupClickEnvs()
+	self:setLeadStageArenaData()
 
 	if CommonUtils.GetSwitch("fn_arena_rtpk") then
 		self._rtpkSystem:checkSeasonData(function ()
@@ -96,12 +141,22 @@ function FunctionEntranceMediator:enterWithData(data)
 
 			self:refreshRTPKCell()
 		end)
+
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local playerId = developSystem:getPlayer():getRid()
+		local key = playerId .. "rtpk_entertime"
+		local curTime = self._gameServerAgent:remoteTimestamp()
+
+		cc.UserDefault:getInstance():setIntegerForKey(key, curTime)
 	end
 end
 
 function FunctionEntranceMediator:resumeWithData()
 	self:refreshRed()
+	self:refreshCooperateBoss()
 	self:refreshRTPKCell()
+	self:refreshLeadStageAreanaCell()
+	self:refreshAreaNewCell()
 end
 
 function FunctionEntranceMediator:setupView(data)
@@ -109,18 +164,45 @@ function FunctionEntranceMediator:setupView(data)
 	self:initWidgetInfo(data)
 end
 
+function FunctionEntranceMediator:setLeadStageArenaData()
+	if CommonUtils.GetSwitch("fn_arena_leadStage") then
+		self._leadStageArenaSystem:checkSeasonData(function ()
+			if self._viewClose then
+				return
+			end
+
+			self:refreshLeadStageAreanaCell()
+
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+
+			storyDirector:notifyWaiting("enter_FunctionEntrance_StageArena_view")
+		end)
+	end
+
+	if CommonUtils.GetSwitch("fn_arena_new") then
+		self._arenaNewSystem:checkSeasonData(function ()
+			if self._viewClose then
+				return
+			end
+
+			self:refreshAreaNewCell()
+		end)
+	end
+end
+
 function FunctionEntranceMediator:initWidgetInfo(data)
 	self._main = self:getView():getChildByFullName("main")
 	self._arenaPanel = self._main:getChildByFullName("arenaPanel")
+	self._scrollView = self._main:getChildByFullName("scrollView")
+
+	self._scrollView:setScrollBarEnabled(false)
+	self._scrollView:removeAllChildren()
 
 	if not data then
 		return
 	end
 
-	self._showPanel = self._arenaPanel
-
-	self:refreshRed()
-
+	self._showPanel = self._scrollView
 	local action = cc.CSLoader:createTimeline("asset/ui/Athletics.csb")
 
 	action:clearFrameEventCallFunc()
@@ -137,7 +219,7 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 
 	jjAnim:setPosition(cc.p(0, 0))
 	animPanel:addChild(jjAnim)
-	jjAnim:addCallbackAtFrame(12, function ()
+	jjAnim:addCallbackAtFrame(15, function ()
 		jjAnim:stop()
 	end)
 
@@ -149,20 +231,133 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 
 	action:gotoFrameAndPlay(0, 30, false)
 
+	local index = 1
+	local startUpX = 240
+	local offsetUp = 330
+	local startDownpX = 410
+	local offsetDown = 350
+	local endX = 0
+
 	if CommonUtils.GetSwitch("fn_arena_normal") then
-		self:createArenaAnim()
+		local arenaCell = self:createArenaAnim()
+
+		arenaCell:addTo(self._scrollView)
+		arenaCell:setName(kFunctionData[1].cellNode)
+
+		local x = startUpX + (index - 1) * offsetUp
+		index = index + 1
+
+		arenaCell:setPosition(cc.p(x, 410))
+
+		endX = math.max(endX, x)
+	end
+
+	if CommonUtils.GetSwitch("fn_arena_new") and self._systemKeeper:canShow("ChessArena_System") then
+		local newArenaCell = self:creatAreaNewCellAnim()
+
+		newArenaCell:addTo(self._scrollView)
+		newArenaCell:setName(kFunctionData[7].cellNode)
+
+		local x = startUpX + (index - 1) * offsetUp
+		local y = 410
+		index = index + 1
+
+		newArenaCell:setPosition(cc.p(x, 410))
+		self:refreshAreaNewCell()
+
+		endX = math.max(endX, x)
 	end
 
 	if CommonUtils.GetSwitch("fn_arena_pet_race") then
-		self:createPetRaceAnim()
-	end
+		local petRaceCell = self:createPetRaceAnim()
 
-	if CommonUtils.GetSwitch("fn_arena_friend") then
-		self:createFriendAnim()
+		petRaceCell:addTo(self._scrollView)
+		petRaceCell:setName(kFunctionData[2].cellNode)
+
+		local x = startUpX + (index - 1) * offsetUp
+		local y = 410
+		index = index + 1
+
+		petRaceCell:setPosition(cc.p(x, 410))
+
+		endX = math.max(endX, x)
 	end
 
 	if CommonUtils.GetSwitch("fn_arena_rtpk") then
-		self:createRTPKAnim()
+		local rtpkCell = self:createRTPKAnim()
+
+		rtpkCell:addTo(self._scrollView)
+		rtpkCell:setName(kFunctionData[5].cellNode)
+
+		local x = startUpX + (index - 1) * offsetUp
+		local y = 410
+		index = index + 1
+
+		rtpkCell:setPosition(cc.p(x, 410))
+		self:refreshRTPKCell()
+
+		endX = math.max(endX, x)
+	end
+
+	index = 1
+
+	if CommonUtils.GetSwitch(kFunctionData[4].switchKey) then
+		if self._cooperateBossSystem:cooperateBossShow() then
+			local petRaceCell = self:createCooperateBossAnim()
+
+			petRaceCell:addTo(self._scrollView)
+			petRaceCell:setName(kFunctionData[4].cellNode)
+
+			local x = startDownpX + (index - 1) * offsetDown
+
+			petRaceCell:setPosition(cc.p(x, 165))
+
+			endX = math.max(endX, x)
+		end
+
+		index = index + 1
+	end
+
+	if CommonUtils.GetSwitch("fn_arena_leadStage") and self._systemKeeper:canShow("StageArena") then
+		local leadStageCell = self:creatLeadStageAnim()
+
+		leadStageCell:addTo(self._scrollView)
+		leadStageCell:setName(kFunctionData[6].cellNode)
+
+		local x = startDownpX + (index - 1) * offsetDown
+		index = index + 1
+
+		leadStageCell:setPosition(cc.p(x, 165))
+
+		endX = math.max(endX, x)
+
+		self:refreshLeadStageAreanaCell()
+	end
+
+	if CommonUtils.GetSwitch("fn_arena_friend") then
+		local petRaceCell = self:createFriendAnim()
+
+		petRaceCell:addTo(self._scrollView)
+		petRaceCell:setName(kFunctionData[3].cellNode)
+
+		local x = startDownpX + (index - 1) * offsetDown
+		index = index + 1
+
+		petRaceCell:setPosition(cc.p(x, 165))
+
+		endX = math.max(endX, x)
+	end
+
+	local size = self._scrollView:getContentSize()
+	local cellX = endX + 200 + AdjustUtils.getAdjustX()
+	local width = math.max(size.width, cellX)
+
+	self._scrollView:setInnerContainerSize(cc.size(width, size.height))
+
+	if cellX < width then
+		local offsetX = width - cellX
+
+		self._scrollView:offset(offsetX * 0.5 - 50, 0)
 	end
 
 	local function onFrameEvent(frame)
@@ -173,23 +368,38 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 		local str = frame:getEvent()
 
 		if str == "ArenaAnim" and CommonUtils.GetSwitch("fn_arena_normal") then
-			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):setVisible(true)
-			self._arenaPanel:getChildByFullName("arenaCell.ShowAnim"):gotoAndPlay(0)
+			self._showPanel:getChildByFullName("arenaCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("arenaCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "ArenaNewAnim" and CommonUtils.GetSwitch("fn_arena_new") then
+			self._showPanel:getChildByFullName("arenaNewCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("arenaNewCell.ShowAnim"):gotoAndPlay(0)
 		end
 
 		if str == "PetRaceAnim" and CommonUtils.GetSwitch("fn_arena_pet_race") then
-			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):setVisible(true)
-			self._arenaPanel:getChildByFullName("petRaceCell.ShowAnim"):gotoAndPlay(0)
+			self._showPanel:getChildByFullName("petRaceCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("petRaceCell.ShowAnim"):gotoAndPlay(0)
 		end
 
 		if str == "FriendAnim" and CommonUtils.GetSwitch("fn_arena_friend") then
-			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):setVisible(true)
-			self._arenaPanel:getChildByFullName("friendCell.ShowAnim"):gotoAndPlay(0)
+			self._showPanel:getChildByFullName("friendCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("friendCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "CooperateBossAnim" and CommonUtils.GetSwitch(kFunctionData[4].switchKey) and self._cooperateBossSystem:cooperateBossShow() then
+			self._showPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("cooperateBossCell.ShowAnim"):gotoAndPlay(0)
 		end
 
 		if str == "RTPKAnim" and CommonUtils.GetSwitch("fn_arena_rtpk") then
-			self._arenaPanel:getChildByFullName("rtpkCell.ShowAnim"):setVisible(true)
-			self._arenaPanel:getChildByFullName("rtpkCell.ShowAnim"):gotoAndPlay(0)
+			self._showPanel:getChildByFullName("rtpkCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("rtpkCell.ShowAnim"):gotoAndPlay(0)
+		end
+
+		if str == "LeadStageAnim" and CommonUtils.GetSwitch("fn_arena_leadStage") and self._systemKeeper:canShow("StageArena") then
+			self._showPanel:getChildByFullName("leadStageAreaCell.ShowAnim"):setVisible(true)
+			self._showPanel:getChildByFullName("leadStageAreaCell.ShowAnim"):gotoAndPlay(0)
 		end
 
 		if str == "redShow" then
@@ -202,7 +412,7 @@ function FunctionEntranceMediator:initWidgetInfo(data)
 end
 
 function FunctionEntranceMediator:createArenaAnim()
-	local arenaCell = self._arenaPanel:getChildByFullName("arenaCell")
+	local arenaCell = self._arenaPanel:getChildByFullName("arenaCell"):clone()
 
 	arenaCell:setVisible(true)
 
@@ -233,10 +443,12 @@ function FunctionEntranceMediator:createArenaAnim()
 
 		arenaCell.redPoint = redPoint
 	end
+
+	return arenaCell
 end
 
 function FunctionEntranceMediator:createPetRaceAnim()
-	local petRaceCell = self._arenaPanel:getChildByFullName("petRaceCell")
+	local petRaceCell = self._arenaPanel:getChildByFullName("petRaceCell"):clone()
 
 	petRaceCell:setVisible(true)
 
@@ -267,10 +479,12 @@ function FunctionEntranceMediator:createPetRaceAnim()
 
 		petRaceCell.redPoint = redPoint
 	end
+
+	return petRaceCell
 end
 
 function FunctionEntranceMediator:createFriendAnim()
-	local petRaceCell = self._arenaPanel:getChildByFullName("friendCell")
+	local petRaceCell = self._arenaPanel:getChildByFullName("friendCell"):clone()
 
 	petRaceCell:setVisible(true)
 
@@ -288,7 +502,7 @@ function FunctionEntranceMediator:createFriendAnim()
 	anim:addCallbackAtFrame(26, function ()
 		anim:stop()
 	end)
-	anim:setPosition(cc.p(146, 120))
+	anim:setPosition(cc.p(160, 120))
 	anim:setName("ShowAnim")
 	anim:setVisible(false)
 
@@ -301,10 +515,168 @@ function FunctionEntranceMediator:createFriendAnim()
 
 		petRaceCell.redPoint = redPoint
 	end
+
+	return petRaceCell
+end
+
+function FunctionEntranceMediator:createCooperateBossAnim()
+	local petRaceCell = self._arenaPanel:getChildByFullName("cooperateBossCell"):clone()
+
+	petRaceCell:setVisible(true)
+
+	local descLabel = petRaceCell:getChildByFullName("text"):clone()
+	local text1 = petRaceCell:getChildByFullName("text1"):clone()
+	local richText = ccui.RichText:createWithXML("", {})
+
+	richText:setAnchorPoint(text1:getAnchorPoint())
+	richText:setPosition(cc.p(text1:getPosition()))
+	richText:renderContent(200, 0, true)
+
+	self._cooperateBossStateLabel = richText
+	local timeLabel = petRaceCell:getChildByFullName("text2"):clone()
+
+	descLabel:setVisible(true)
+	timeLabel:setVisible(true)
+	self._cooperateBossStateLabel:setVisible(true)
+
+	local redPoint = petRaceCell:getChildByFullName("redPoint"):clone()
+
+	petRaceCell:removeAllChildren()
+
+	local state = self._cooperateBossSystem:getcooperateBossState()
+	local startTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getHotTime())
+	local endTime = TimeUtil:localDate("%Y.%m.%d", self._cooperateBossSystem:getCooperateBoss():getEndTime())
+
+	if kCooperateBossState.kPreHot == state then
+		self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI01", {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_R
+		}))
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI02", {
+			Start = startTime,
+			End = endTime
+		}))
+	elseif kCooperateBossState.kStart == state then
+		self._cooperateBossSystem:requestGetInviteInfo(function ()
+			if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+				return
+			end
+
+			local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
+			local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
+
+			if curTimes then
+				if curTimes.value <= 0 then
+					self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Red", {
+						fontSize = 18,
+						fontName = TTF_FONT_FZYH_R,
+						cur = curTimes.value,
+						total = resetData.max
+					}))
+				else
+					self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Orange", {
+						fontSize = 18,
+						fontName = TTF_FONT_FZYH_R,
+						cur = curTimes.value,
+						total = resetData.max
+					}))
+				end
+			end
+		end)
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
+			EndTime = endTime
+		}))
+	elseif kCooperateBossState.kEnd == state then
+		self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI02", {
+			fontSize = 18,
+			fontName = TTF_FONT_FZYH_R
+		}))
+		timeLabel:setString(Strings:get("CooperateBoss_Entry_UI04", {
+			EndTime = endTime
+		}))
+	end
+
+	local anim = cc.MovieClip:create("cooperateBossCell_jingjirukou")
+
+	anim:addTo(petRaceCell)
+	anim:addCallbackAtFrame(26, function ()
+		anim:stop()
+	end)
+	anim:setPosition(cc.p(146, 120))
+	anim:setName("ShowAnim")
+	anim:setVisible(false)
+
+	local descPanel = anim:getChildByFullName("descPanel")
+
+	if descPanel then
+		descPanel:removeAllChildren()
+		descLabel:addTo(descPanel):posite(-70, 5)
+		self._cooperateBossStateLabel:addTo(descPanel):posite(-13, 37)
+		self._cooperateBossStateLabel:setName("stateLabel")
+		timeLabel:addTo(descPanel):posite(0, -26)
+		redPoint:addTo(descPanel):posite(80, -10)
+
+		petRaceCell.redPoint = redPoint
+	end
+
+	return petRaceCell
+end
+
+function FunctionEntranceMediator:refreshCooperateBoss()
+	local cooperateBossCell = self._showPanel:getChildByFullName("cooperateBossCell")
+
+	if not cooperateBossCell then
+		return
+	end
+
+	local coopNode = self._showPanel:getChildByFullName("cooperateBossCell.ShowAnim")
+
+	if self._cooperateBossStateLabel and not DisposableObject:isDisposed(self._cooperateBossStateLabel) then
+		local state = self._cooperateBossSystem:getcooperateBossState()
+
+		if kCooperateBossState.kPreHot == state then
+			self._cooperateBossStateLabel:setString(Strings:get("Boss_Times_UI01", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R
+			}))
+		elseif kCooperateBossState.kStart == state then
+			self._cooperateBossSystem:requestGetInviteInfo(function ()
+				self:dispatch(Event:new(EVENT_LOCAL_REFRESH_COOPERATE_STATE))
+			end)
+		elseif kCooperateBossState.kEnd == state then
+			self._showPanel:getChildByFullName("cooperateBossCell.ShowAnim"):setVisible(false)
+			self._showPanel:getChildByFullName("cooperateBossCell.ShowAnim"):stop()
+		end
+	end
+end
+
+function FunctionEntranceMediator:refreshCooperateBossStateLab()
+	self._cooperateBossStateLabel:setVisible(true)
+
+	local resetData = DataReader:getDataByNameIdAndKey("Reset", "CooperateBoss", "ResetSystem")
+	local curTimes = self._cooperateBossSystem:getCooperateBoss():getBossFightTimes()
+
+	if curTimes then
+		if curTimes.value <= 0 then
+			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Red", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R,
+				cur = curTimes.value,
+				total = resetData.max
+			}))
+		else
+			self._cooperateBossStateLabel:setString(Strings:get("CooperateBoss_Times_Orange", {
+				fontSize = 18,
+				fontName = TTF_FONT_FZYH_R,
+				cur = curTimes.value,
+				total = resetData.max
+			}))
+		end
+	end
 end
 
 function FunctionEntranceMediator:createRTPKAnim()
-	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell"):clone()
 
 	rtpkCell:setVisible(true)
 
@@ -325,27 +697,42 @@ function FunctionEntranceMediator:createRTPKAnim()
 	anim:addCallbackAtFrame(21, function ()
 		anim:stop()
 	end)
-	anim:setPosition(cc.p(126, 120))
+	anim:setPosition(cc.p(160, 120))
 	anim:setName("ShowAnim")
 	anim:setVisible(false)
 
 	local descPanel = anim:getChildByFullName("descPanel")
 
 	if descPanel then
-		seasonLabel:addTo(descPanel):posite(-30, 10)
+		seasonLabel:addTo(descPanel):posite(0, 10)
+		seasonLabel:setFontSize(16)
 		timeLabel:addTo(descPanel):posite(0, -12)
-		redPoint:addTo(descPanel):posite(60, 15)
+		redPoint:addTo(descPanel, 5):posite(115, -20)
 
 		rtpkCell.redPoint = redPoint
 		rtpkCell.seasonLabel = seasonLabel
 		rtpkCell.timeLabel = timeLabel
+		local img = ccui.ImageView:create("RTPK_yq_rk.png", ccui.TextureResType.plistType)
+		local text = ccui.Text:create(Strings:get("RTPK_DoubleScore"), TTF_FONT_FZYH_R, 18)
+
+		text:addTo(img):center(img:getContentSize()):offset(-1, 4)
+		img:addTo(descPanel):posite(71, 20)
+
+		rtpkCell.doubleImg = img
+
+		rtpkCell.doubleImg:setVisible(false)
 	end
 
-	self:refreshRTPKCell()
+	return rtpkCell
 end
 
 function FunctionEntranceMediator:refreshRTPKCell()
-	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+	local rtpkCell = self._showPanel:getChildByFullName("rtpkCell")
+
+	if not rtpkCell or not rtpkCell:isVisible() then
+		return
+	end
+
 	local seasonLabel = rtpkCell.seasonLabel
 	local timeLabel = rtpkCell.timeLabel
 	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
@@ -365,7 +752,7 @@ function FunctionEntranceMediator:refreshRTPKCell()
 end
 
 function FunctionEntranceMediator:refreshRTPKTimer()
-	local rtpkCell = self._arenaPanel:getChildByFullName("rtpkCell")
+	local rtpkCell = self._showPanel:getChildByFullName("rtpkCell")
 	local seasonLabel = rtpkCell.seasonLabel
 	local timeLabel = rtpkCell.timeLabel
 	local rtpk = self._rtpkSystem:getRtpk()
@@ -388,10 +775,22 @@ function FunctionEntranceMediator:refreshRTPKTimer()
 				index = seasonConfig.SeasonOrder
 			}) .. Strings:get("RTPK_Main_SeasonText"))
 
-			local startTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getStartTime())
-			local endTime = TimeUtil:localDate("%Y.%m.%d", rtpk:getEndTime())
+			local param = self._rtpkSystem:formatMatchTimeParam()
 
-			timeLabel:setString(startTime .. "-" .. endTime)
+			timeLabel:setString(Strings:get("RTPK_OpenTime_Entry", param))
+
+			local isDouble = self._rtpkSystem:isDoubleScore()
+
+			if isDouble then
+				rtpkCell.doubleImg:setVisible(true)
+				rtpkCell.redPoint:setVisible(false)
+				seasonLabel:setAnchorPoint(cc.p(0, 0.5))
+				seasonLabel:setPositionX(-40)
+			else
+				rtpkCell.doubleImg:setVisible(false)
+				seasonLabel:setAnchorPoint(cc.p(0.5, 0.5))
+				seasonLabel:setPositionX(25)
+			end
 
 			local remainTime = math.max(rtpk:getCloseTime() - curTime, 0)
 
@@ -454,6 +853,316 @@ function FunctionEntranceMediator:refreshRTPKTimer()
 	update()
 end
 
+function FunctionEntranceMediator:creatLeadStageAnim()
+	local leadStageCell = self._arenaPanel:getChildByFullName("leadStageAreaCell"):clone()
+
+	leadStageCell:setVisible(true)
+
+	local redPoint = leadStageCell:getChildByFullName("redPoint"):clone()
+
+	redPoint:setVisible(false)
+
+	local seasonLabel = leadStageCell:getChildByFullName("text1"):clone()
+	local timeLabel = leadStageCell:getChildByFullName("text2"):clone()
+
+	seasonLabel:setVisible(true)
+	timeLabel:setVisible(true)
+	leadStageCell:removeAllChildren()
+
+	local anim = cc.MovieClip:create("zhu_buyeyourukouanniu")
+
+	anim:addTo(leadStageCell)
+	anim:addCallbackAtFrame(21, function ()
+		anim:stop()
+	end)
+	anim:setPosition(cc.p(50, 30))
+	anim:setName("ShowAnim")
+	anim:setVisible(false)
+
+	local descPanel = anim:getChildByFullName("descPanel")
+
+	if descPanel then
+		seasonLabel:addTo(descPanel):posite(-96, 10)
+		timeLabel:addTo(descPanel):posite(-96, -14)
+		redPoint:addTo(descPanel):posite(120, 35)
+
+		leadStageCell.redPoint = redPoint
+		leadStageCell.seasonLabel = seasonLabel
+		leadStageCell.timeLabel = timeLabel
+	end
+
+	return leadStageCell
+end
+
+function FunctionEntranceMediator:refreshLeadStageAreanaCell()
+	local stageArenaCell = self._showPanel:getChildByFullName("leadStageAreaCell")
+
+	if not stageArenaCell or not stageArenaCell:isVisible() then
+		return
+	end
+
+	local seasonLabel = stageArenaCell.seasonLabel
+	local timeLabel = stageArenaCell.timeLabel
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips, unLockLevel = systemKeeper:isUnlock("StageArena")
+
+	if not unlock then
+		local config = ConfigReader:getRecordById("UnlockSystem", "StageArena")
+		local condition = config.Condition
+
+		seasonLabel:setVisible(false)
+		timeLabel:setString(Strings:get("StageArena_Unlock_EntryText", {
+			uLevel = condition.LEVEL,
+			leaderNum = condition.LEADER
+		}))
+	else
+		self:refreshStageArenaTimer()
+	end
+end
+
+function FunctionEntranceMediator:refreshStageArenaTimer()
+	local stageArenaCell = self._showPanel:getChildByFullName("leadStageAreaCell")
+	local seasonLabel = stageArenaCell.seasonLabel
+	local timeLabel = stageArenaCell.timeLabel
+	local stageArena = self._leadStageArenaSystem:getLeadStageArena()
+
+	if self._stageArenaTimer then
+		self._stageArenaTimer:stop()
+
+		self._stageArenaTimer = nil
+	end
+
+	local function update()
+		local status = stageArena:getCurStatus()
+		local curTime = self._gameServerAgent:remoteTimestamp()
+
+		if status ~= LeadStageArenaState.KReset then
+			local seasonConfig = stageArena:getConfig()
+
+			seasonLabel:setVisible(true)
+			seasonLabel:setString(Strings:get("StageArena_Entry_Desc"))
+
+			local startTime = TimeUtil:localDate("%Y.%m.%d", stageArena:getStartTime())
+			local endTime = TimeUtil:localDate("%Y.%m.%d", stageArena:getEndTime())
+
+			timeLabel:setString(startTime .. "-" .. endTime)
+
+			local remainTime = math.max(stageArena:getCloseTime() - curTime, 0)
+
+			if remainTime == 0 then
+				self._leadStageArenaSystem:requestGetSeasonInfo(function ()
+					if self._viewClose then
+						return
+					end
+
+					self:refreshRed()
+				end, false)
+			end
+		else
+			seasonLabel:setVisible(false)
+
+			if self._leadStageArenaSystem:getSeasonNextCD() > 0 then
+				local str = ""
+				local remainTime = math.max(self._leadStageArenaSystem:getSeasonNextCD() - curTime, 0)
+				local fmtStr = "${d}:${HH}:${M}:${SS}"
+				local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+				local parts = string.split(timeStr, ":", nil, true)
+				local timeTab = {
+					day = tonumber(parts[1]),
+					hour = tonumber(parts[2]),
+					min = tonumber(parts[3]),
+					sec = tonumber(parts[4])
+				}
+
+				if timeTab.day > 0 then
+					str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour")
+				elseif timeTab.hour > 0 then
+					str = timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+				elseif timeTab.min > 0 then
+					str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+				else
+					str = timeTab.sec .. Strings:get("TimeUtil_Sec")
+				end
+
+				timeLabel:setString(Strings:get("RTPK_NewSeason_Countdown", {
+					time = str
+				}))
+
+				if remainTime == 0 then
+					self._leadStageArenaSystem:requestGetSeasonInfo(function ()
+						if self._viewClose then
+							return
+						end
+
+						self:refreshRed()
+					end, false)
+				end
+			else
+				timeLabel:setString(Strings:get("Function_Not_Open"))
+			end
+		end
+	end
+
+	self._stageArenaTimer = LuaScheduler:getInstance():schedule(update, 1, false)
+
+	update()
+end
+
+function FunctionEntranceMediator:creatAreaNewCellAnim()
+	local newArenaCell = self._arenaPanel:getChildByFullName("arenaNewCell"):clone()
+
+	newArenaCell:setVisible(true)
+
+	local redPoint = newArenaCell:getChildByFullName("redPoint"):clone()
+
+	redPoint:setVisible(false)
+
+	local seasonLabel = newArenaCell:getChildByFullName("text1"):clone()
+	local timeLabel = newArenaCell:getChildByFullName("text2"):clone()
+
+	seasonLabel:setVisible(true)
+	timeLabel:setVisible(true)
+	newArenaCell:removeAllChildren()
+
+	local anim = cc.MovieClip:create("mengjingjichangNEW_jingjirukou")
+
+	anim:addTo(newArenaCell)
+	anim:addCallbackAtFrame(21, function ()
+		anim:stop()
+	end)
+	anim:setPosition(cc.p(140, 130))
+	anim:setName("ShowAnim")
+	anim:setVisible(false)
+
+	local descPanel = anim:getChildByFullName("descPanel")
+
+	if descPanel then
+		seasonLabel:addTo(descPanel):posite(-58, 24)
+		timeLabel:addTo(descPanel):posite(-58, -14)
+		redPoint:addTo(descPanel):posite(80, 35)
+
+		newArenaCell.redPoint = redPoint
+		newArenaCell.seasonLabel = seasonLabel
+		newArenaCell.timeLabel = timeLabel
+	end
+
+	return newArenaCell
+end
+
+function FunctionEntranceMediator:refreshAreaNewCell()
+	local newArenaCell = self._showPanel:getChildByFullName("arenaNewCell")
+
+	if not newArenaCell or not newArenaCell:isVisible() then
+		return
+	end
+
+	self:refreshRed()
+
+	local seasonLabel = newArenaCell.seasonLabel
+	local timeLabel = newArenaCell.timeLabel
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips, unLockLevel = systemKeeper:isUnlock("ChessArena_System")
+
+	if not unlock then
+		seasonLabel:setVisible(false)
+		timeLabel:setString(tips)
+	else
+		self:refreshAreaNewTimer()
+	end
+end
+
+function FunctionEntranceMediator:refreshAreaNewTimer()
+	local newArenaCell = self._showPanel:getChildByFullName("arenaNewCell")
+	local seasonLabel = newArenaCell.seasonLabel
+	local timeLabel = newArenaCell.timeLabel
+	local newArena = self._arenaNewSystem:getArenaNew()
+
+	if self._aenaNewTimer then
+		self._aenaNewTimer:stop()
+
+		self._aenaNewTimer = nil
+	end
+
+	local function update()
+		local seasonData = self._arenaNewSystem:getSeasonData()
+
+		if seasonData then
+			seasonLabel:setVisible(true)
+			timeLabel:setVisible(true)
+			seasonLabel:setString(Strings:get(self._arenaNewSystem:getCurSeasonData().SeasonTitle))
+
+			local startTime = TimeUtil:localDate("%Y.%m.%d", self._arenaNewSystem:getStartTime())
+			local endTime = TimeUtil:localDate("%Y.%m.%d", self._arenaNewSystem:getEndTime())
+
+			timeLabel:setString(startTime .. "-" .. endTime)
+		else
+			local nextConfig = self._arenaNewSystem:getNextSeasonStartTime()
+
+			if nextConfig then
+				seasonLabel:setVisible(true)
+				timeLabel:setVisible(false)
+
+				local curTime = self._gameServerAgent:remoteTimestamp()
+				local year = TimeUtil:remoteDate("*t", curTime).year
+				local str = ""
+				local st = nextConfig.TimeFactor.start
+				st = year .. "-" .. st
+				local _, _, y, m, d, hour, min, sec = string.find(st, "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+				local timestamp = TimeUtil:timeByRemoteDate({
+					year = year,
+					month = m,
+					day = d,
+					hour = hour,
+					min = min,
+					sec = sec
+				})
+				local remainTime = timestamp - curTime
+				local fmtStr = "${d}:${HH}:${M}:${SS}"
+				local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+				local parts = string.split(timeStr, ":", nil, true)
+				local timeTab = {
+					day = tonumber(parts[1]),
+					hour = tonumber(parts[2]),
+					min = tonumber(parts[3]),
+					sec = tonumber(parts[4])
+				}
+
+				if timeTab.day > 0 then
+					str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour")
+				elseif timeTab.hour > 0 then
+					str = timeTab.hour .. Strings:get("RTPK_TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+				elseif timeTab.min > 0 then
+					str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+				else
+					str = timeTab.sec .. Strings:get("TimeUtil_Sec")
+				end
+
+				seasonLabel:setString(Strings:get("RTPK_NewSeason_Countdown", {
+					time = str
+				}))
+
+				if remainTime <= 0 and remainTime > -1 then
+					self._arenaNewSystem:checkSeasonData(function ()
+						if self._viewClose then
+							return
+						end
+
+						self:refreshRed()
+					end)
+				end
+			else
+				timeLabel:setVisible(true)
+				seasonLabel:setVisible(false)
+				timeLabel:setString(Strings:get("StageArena_EntryUI02"))
+			end
+		end
+	end
+
+	self._aenaNewTimer = LuaScheduler:getInstance():schedule(update, 1, false)
+
+	update()
+end
+
 function FunctionEntranceMediator:createRulePanel(parent, str)
 	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
 
@@ -481,7 +1190,7 @@ function FunctionEntranceMediator:refreshView()
 		local cellNode = data.cellNode
 		local panel = self._showPanel:getChildByFullName(cellNode)
 
-		if panel then
+		if panel and CommonUtils.GetSwitch(data.switchKey) then
 			panel:addClickEventListener(function ()
 				self:clickPanel(i)
 			end)
@@ -497,7 +1206,23 @@ function FunctionEntranceMediator:clickPanel(index)
 	elseif index == 3 then
 		self:enterFriendView()
 	elseif index == 4 then
+		if self._cooperateBossSystem:getcooperateBossState() == kCooperateBossState.kStart then
+			self:enterCooperateBoss()
+		elseif self._cooperateBossSystem:getcooperateBossState() == kCooperateBossState.kPreHot then
+			local startTime = TimeUtil:localDate("%m" .. Strings:get("Setting_UI_Month") .. "%d" .. Strings:get("Setting_UI_Day"), self._cooperateBossSystem:getCooperateBoss():getHotTime())
+
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("CooperateBoss_Entry_UI07", {
+					StartTime = startTime
+				})
+			}))
+		end
+	elseif index == 5 then
 		self:enterRTPKView()
+	elseif index == 6 then
+		self:enterLeadStageArenaView()
+	elseif index == 7 then
+		self:enterAreanaView()
 	end
 end
 
@@ -510,10 +1235,19 @@ function FunctionEntranceMediator:refreshRed()
 			return self._petRaceSystem:redPointShow()
 		end,
 		function ()
-			return self._stagePracticeSystem:checkAwardRed()
+			return CommonUtils.GetSwitch("fn_arena_friend") and self._stagePracticeSystem:checkAwardRed()
 		end,
 		function ()
-			return self._rtpkSystem:checkShowRed()
+			return self._cooperateBossSystem:redPointShow()
+		end,
+		function ()
+			return self._rtpkSystem:checkShowRed() and not self._rtpkSystem:isDoubleScore()
+		end,
+		function ()
+			return self._leadStageArenaSystem:checkShowRed()
+		end,
+		function ()
+			return self._arenaNewSystem:checkShowRed()
 		end
 	}
 
@@ -588,6 +1322,19 @@ function FunctionEntranceMediator:enterRTPKView()
 	self._rtpkSystem:tryEnter()
 end
 
+function FunctionEntranceMediator:enterCooperateBoss()
+	self._cooperateBossSystem:enterCooperateBoss()
+end
+
+function FunctionEntranceMediator:enterLeadStageArenaView()
+	self._leadStageArenaSystem:tryEnter()
+end
+
+function FunctionEntranceMediator:enterAreanaView()
+	AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+	self._arenaNewSystem:tryEnter()
+end
+
 function FunctionEntranceMediator:onClickBack(sender, eventType)
 	self._main:stopAllActions()
 	self:dismissWithOptions({
@@ -608,7 +1355,7 @@ function FunctionEntranceMediator:setupClickEnvs()
 			local cellNode = data.cellNode
 			local panel = self._showPanel:getChildByFullName(cellNode)
 
-			if panel then
+			if panel and CommonUtils.GetSwitch(data.switchKey) then
 				storyDirector:setClickEnv("functionEntrance.node_" .. i, panel, function (sender, eventType)
 					self:clickPanel(i)
 				end)

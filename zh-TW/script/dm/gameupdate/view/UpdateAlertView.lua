@@ -57,7 +57,7 @@ function UpdateAlertView:new()
 end
 
 function UpdateAlertView:initialize()
-	local resFile = "asset/ui/Alert.csb"
+	local resFile = "asset/ui/GameUpdateAlert.csb"
 	self._view = cc.CSLoader:createNode(resFile)
 
 	self:getMaskLayer()
@@ -107,20 +107,9 @@ function UpdateAlertView:enterWithData(data)
 end
 
 function UpdateAlertView:setUi(data)
-	local bgNode = self._main:getChildByFullName("bg")
-	local tempNode = bindUpdateWidget(self, bgNode, PopupUpdateWidget, {
-		btnHandler = {
-			func = not self._data.noClose and bind1(self.onCloseClicked, self) or nil
-		},
-		title = data.title,
-		title1 = data.title1 or ""
-	})
+	local title = self._main:getChildByName("Text_title")
 
-	tempNode:getView():getChildByFullName("btn_close"):setVisible(not self._data.noClose)
-
-	if not self._data.noClose then
-		-- Nothing
-	end
+	title:setString(data.title)
 
 	local desc = self._main:getChildByName("Text_desc1")
 
@@ -132,8 +121,8 @@ function UpdateAlertView:setUi(data)
 		label:rebuildElements(true)
 		label:formatText()
 
-		if label:getContentSize().width > 670 then
-			label:renderContent(670, 0)
+		if label:getContentSize().width > 650 then
+			label:renderContent(650, 0)
 		end
 
 		desc:setVisible(false)
@@ -172,9 +161,18 @@ function UpdateAlertView:setUi(data)
 		local cancelBtn = self:getView():getChildByFullName("main.btn_cancel")
 		local sureBtn = self:getView():getChildByFullName("main.btn_ok")
 
-		sureBtn:setPositionX(567)
-		cancelBtn:setPositionX(567)
+		sureBtn:setPositionX(453)
+		cancelBtn:setPositionX(453)
 	end
+
+	local panel = self:getView():getChildByFullName("main.Panel_2")
+
+	panel:setLocalZOrder(-3)
+
+	local xiaoye = sp.SkeletonAnimation:create("asset/anim/portraitpic_ZTXChang.skel")
+
+	xiaoye:addTo(self._main, -1):posite(1080, -460)
+	xiaoye:setScale(0.8)
 end
 
 function UpdateAlertView:onCancelClicked(sender, eventType)

@@ -24,6 +24,7 @@ function BuildingDecorate:initialize(view)
 	self:setupView()
 
 	self._createSta = false
+	self._isInRoom = true
 end
 
 function BuildingDecorate:dispose()
@@ -48,6 +49,10 @@ function BuildingDecorate:setBuildingInfo(roomId, buildingId, id)
 	self._centerNode:setPositionX(centerPos.x)
 end
 
+function BuildingDecorate:setIsInRoom(inRoom)
+	self._isInRoom = inRoom
+end
+
 function BuildingDecorate:setupView()
 	local view = self:getView()
 	self._rotateNode = cc.Node:create():addTo(view, buildingZorder.kSkin)
@@ -69,16 +74,32 @@ function BuildingDecorate:refreshView()
 	self:refreshSkin()
 end
 
-function BuildingDecorate:hide()
+function BuildingDecorate:hide(isFadeOut)
 	local view = self:getView()
 
 	view:setVisible(false)
+	view:setOpacity(255)
+
+	if isFadeOut then
+		view:setVisible(true)
+
+		local fadeOut = cc.FadeOut:create(KBUILDING_FADE_TIME)
+
+		view:runAction(fadeOut)
+	end
 end
 
-function BuildingDecorate:show()
+function BuildingDecorate:show(isFadeIn)
 	local view = self:getView()
 
 	view:setVisible(true)
+	view:setOpacity(255)
+
+	if isFadeIn then
+		local fadeIn = cc.FadeIn:create(KBUILDING_FADE_TIME)
+
+		view:runAction(fadeIn)
+	end
 end
 
 function BuildingDecorate:isVisible()
@@ -122,6 +143,8 @@ function BuildingDecorate:refreshSkin(skinId)
 			self._buildingImg:setPosition(cc.p(offset[1], offset[2]))
 		end
 
+		self:updateOffsetX(self._buildingId)
+
 		local imgHeight = self._buildingImg:getContentSize().height
 
 		self._resourceNode:setPosition(cc.p(0, imgHeight))
@@ -141,6 +164,32 @@ function BuildingDecorate:refreshSkin(skinId)
 			local shape = ccui.HittingPolygon:create(buildPolygonPosList)
 
 			self._buildingImg:setHittingShape(shape)
+
+			if GameConfigs.testBuildingSkin then
+				local drawNode = self._buildingImg:getChildByName("drawNode")
+
+				if drawNode then
+					drawNode:removeFromParent()
+				end
+
+				local drawNode = cc.DrawNode:create()
+
+				drawNode:drawPoly(buildPolygonPosList, #buildPolygonPosList, true, cc.c4f(0, 0, 1, 1))
+				self._buildingImg:addChild(drawNode)
+				drawNode:setName("drawNode")
+			end
+		end
+	end
+end
+
+function BuildingDecorate:updateOffsetX(buildingId)
+	local config = self._buildingSystem:getBuildingConfig(buildingId)
+
+	if config then
+		local space = config.Space
+
+		if space[1] ~= space[2] and not self._isInRoom then
+			self._buildingImg:setPositionX(self._buildingImg:getPositionX() + (space[2] - space[1]) * 40)
 		end
 	end
 end

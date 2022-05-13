@@ -153,10 +153,9 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 			local name = taskData:getName()
 			local config = taskData:getConfig()
 			local taskId = config.Id
-			local titleText1 = panel:getChildByName("title_1")
+			local titleText1 = panel:getChildByFullName("Panel_1.title_1")
 
 			titleText1:setString(Strings:get(name))
-			titleText1:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 
 			local taskValueList = taskData:getTaskValueList()
 			local descText = panel:getChildByName("desc")
@@ -187,11 +186,13 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 
 				mark:addTo(panel):posite(378, 53)
 				mark:setName("TodoMark")
+				mark:setVisible(true)
 			elseif taskStatus == TaskStatus.kFinishNotGet then
 				local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-				btnGet:addTo(panel):posite(378, 39)
+				btnGet:addTo(panel):posite(362, 48)
 				btnGet:setName("TodoMark")
+				btnGet:setVisible(true)
 
 				local function callFunc()
 					self:onClickGetReward(subActivityId, taskId)
@@ -204,8 +205,9 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 			elseif taskStatus == TaskStatus.kUnfinish then
 				local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-				btnGo:addTo(panel):posite(378, 39)
+				btnGo:addTo(panel):posite(362, 48)
 				btnGo:setName("TodoMark")
+				btnGo:setVisible(true)
 			end
 
 			local rewards = taskData:getReward().Content
@@ -255,7 +257,7 @@ function ActivityTaskDailyMediator:setBg(panel, titleImage)
 end
 
 function ActivityTaskDailyMediator:refreshTime(timeStr)
-	local time = self._activity:getTimeStr()
+	local time = self._activity:getTimeStr1()
 
 	timeStr:setString(Strings:get("ActivityBlock_UI_17", {
 		time = time

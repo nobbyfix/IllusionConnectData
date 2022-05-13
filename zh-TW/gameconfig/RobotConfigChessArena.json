@@ -1,0 +1,938 @@
+{
+    "ChessArena_Robot1": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 2,
+            "Support": 1
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot10": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 5000,
+        "RobotBattleBase": 50000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 2,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot11": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 5000,
+        "RobotBattleBase": 50000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 2,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot12": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 5000,
+        "RobotBattleBase": 50000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 2
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot13": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 5000,
+        "RobotBattleBase": 50000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 2,
+            "Support": 1
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot14": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 7500,
+        "RobotBattleBase": 80000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 2,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot15": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 7500,
+        "RobotBattleBase": 80000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 2,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot16": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 7500,
+        "RobotBattleBase": 80000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 2,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot17": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 7500,
+        "RobotBattleBase": 80000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 2,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot18": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 7500,
+        "RobotBattleBase": 80000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 8684,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 2
+        },
+        "RobotHeroDEF": 2779,
+        "RobotHeroHP": 29464,
+        "RobotHeroLv": 40,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot19": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 23860,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 4,
+            "Support": 1
+        },
+        "RobotHeroDEF": 7556,
+        "RobotHeroHP": 89848,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot2": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 2,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot20": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 23860,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 4,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 7556,
+        "RobotHeroHP": 89848,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot21": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 23860,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 4,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 7556,
+        "RobotHeroHP": 89848,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot22": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 23860,
+        "RobotHeroAmount": {
+            "Aoe": 4,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 7556,
+        "RobotHeroHP": 89848,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot23": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 23860,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 4,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 7556,
+        "RobotHeroHP": 89848,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot24": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 13477,
+        "RobotBattleBase": 134771,
+        "RobotGroup": 0,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 4
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot25": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 4,
+            "Support": 1
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_XueZhan_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot26": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 4,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_LieSha_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot27": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 4,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_BiLei_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot28": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 4,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_FuHun_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot29": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 4,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_SenLing_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot3": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 2,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot30": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 27892,
+        "RobotBattleBase": 278915,
+        "RobotGroup": 1,
+        "RobotHeroATK": 34021,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 4
+        },
+        "RobotHeroDEF": 9922,
+        "RobotHeroHP": 118899,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 4,
+        "RobotLeadStage": "LeadStage_LiMing_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot31": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 35332,
+        "RobotBattleBase": 353318,
+        "RobotGroup": 2,
+        "RobotHeroATK": 39486,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 4,
+            "Support": 1
+        },
+        "RobotHeroDEF": 11646,
+        "RobotHeroHP": 136780,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_XueZhan_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot32": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 44165,
+        "RobotBattleBase": 441648,
+        "RobotGroup": 2,
+        "RobotHeroATK": 49358,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 4,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 14557,
+        "RobotHeroHP": 170975,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_LieSha_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot33": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 58886,
+        "RobotBattleBase": 588863,
+        "RobotGroup": 2,
+        "RobotHeroATK": 65811,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 4,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 19410,
+        "RobotHeroHP": 227967,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_BiLei_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot34": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 88330,
+        "RobotBattleBase": 783295,
+        "RobotGroup": 2,
+        "RobotHeroATK": 98716,
+        "RobotHeroAmount": {
+            "Aoe": 4,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 29115,
+        "RobotHeroHP": 301950,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_FuHun_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot35": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 116659,
+        "RobotBattleBase": 966590,
+        "RobotGroup": 2,
+        "RobotHeroATK": 137432,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 4,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 41230,
+        "RobotHeroHP": 393900,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_SenLing_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot36": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 176659,
+        "RobotBattleBase": 1133180,
+        "RobotGroup": 2,
+        "RobotHeroATK": 197432,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 4
+        },
+        "RobotHeroDEF": 54230,
+        "RobotHeroHP": 583900,
+        "RobotHeroLv": 50,
+        "RobotHeroStar": 5,
+        "RobotLeadStage": "LeadStage_LiMing_001",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot4": {
+        "MasterIDBase": "Master_FuHun",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 2,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot5": {
+        "MasterIDBase": "Master_SenLing",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 2,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot6": {
+        "MasterIDBase": "Master_LiMing",
+        "RobotATKBase": 2000,
+        "RobotBattleBase": 20000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 2999,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 2
+        },
+        "RobotHeroDEF": 981,
+        "RobotHeroHP": 10032,
+        "RobotHeroLv": 20,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot7": {
+        "MasterIDBase": "Master_XueZhan",
+        "RobotATKBase": 3500,
+        "RobotBattleBase": 35000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 2,
+            "Support": 1
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot8": {
+        "MasterIDBase": "Master_LieSha",
+        "RobotATKBase": 3500,
+        "RobotBattleBase": 35000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 2,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 1,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    },
+    "ChessArena_Robot9": {
+        "MasterIDBase": "Master_BiLei",
+        "RobotATKBase": 3500,
+        "RobotBattleBase": 35000,
+        "RobotGroup": 0,
+        "RobotHeroATK": 5081,
+        "RobotHeroAmount": {
+            "Aoe": 1,
+            "Attack": 1,
+            "Cure": 1,
+            "Curse": 1,
+            "Defense": 2,
+            "Summon": 1,
+            "Support": 1
+        },
+        "RobotHeroDEF": 1623,
+        "RobotHeroHP": 17020,
+        "RobotHeroLv": 30,
+        "RobotHeroStar": 3,
+        "RobotLeadStage": "",
+        "RobotMasterBase": [
+            1,
+            0.26,
+            45
+        ]
+    }
+}

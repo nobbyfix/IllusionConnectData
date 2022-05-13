@@ -20,6 +20,10 @@ local kBtnHandlers = {
 	["mainpanel.reviewBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickAwakenReplaceBtn"
+	},
+	["mainpanel.costPanel.btn_translate"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onTranslateClicked"
 	}
 }
 local kHeroRarityAnim = {
@@ -45,8 +49,10 @@ local kBgAnimAndImage = {
 	[GalleryPartyType.kMNJH] = "asset/ui/gallery/party_icon_monv.png",
 	[GalleryPartyType.kDWH] = "asset/ui/gallery/party_icon_dongwenhui.png",
 	[GalleryPartyType.kWNSXJ] = "asset/ui/gallery/party_icon_weinasi.png",
-	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png"
+	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png",
+	[GalleryPartyType.kUNKNOWN] = "asset/ui/gallery/party_icon_unknown.png"
 }
+local Hero_GeneralFragmentLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_GeneralFragmentLimit", "content")
 local AWAKEN_STAR_ICON = "jx_img_star.png"
 
 function HeroStrengthAwakenMediator:initialize()
@@ -54,6 +60,7 @@ function HeroStrengthAwakenMediator:initialize()
 end
 
 function HeroStrengthAwakenMediator:dispose()
+	self._heroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
 	super.dispose(self)
 end
 
@@ -92,10 +99,40 @@ function HeroStrengthAwakenMediator:initNodes()
 	self._boxBtn = self._main:getChildByFullName("infoPanel.boxPanel.button")
 	self._boxBg = self._main:getChildByFullName("infoPanel.boxPanel.BG")
 	self._itemDi = self._main:getChildByFullName("costPanel.Bg2")
+	self._topinfo_node = self:getView():getChildByFullName("topinfo_node")
+
+	self._topinfo_node:setVisible(false)
+
+	self._translteBtn = self._costPanel:getChildByFullName("btn_translate")
+end
+
+function HeroStrengthAwakenMediator:enterWithData(data)
+	self:setupView(nil, data)
+
+	self._fromAlbum = data and data.fromAlbum and data.fromAlbum or false
+	self._heroId = data and data.heroId
+
+	if self._heroId ~= nil and self._fromAlbum then
+		self._heroSystem = self._developSystem:getHeroSystem()
+		self._heroData = self._heroSystem:getHeroById(self._heroId)
+
+		if self._heroData then
+			self._heroAwakeFinished = self._heroData:heroAwaked()
+
+			self._heroSystem:resetHeroStarUpItem()
+			self._heroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
+		end
+
+		self._topinfo_node:setVisible(true)
+		self:setupTopInfoWidget()
+		self:refreshViewWithHeroId()
+		self:runStartAction()
+	end
 end
 
 function HeroStrengthAwakenMediator:setupView(parent, data)
 	self._baseView = parent
+	self._fromAlbum = false
 	self._heroAwakeAvail = true
 	self._heroAwakeFinished = false
 	self._animRunning = false
@@ -235,6 +272,7 @@ function HeroStrengthAwakenMediator:refreshData(heroId)
 	self._heroAwakeFinished = self._heroData:heroAwaked()
 
 	self._heroSystem:resetHeroStarUpItem()
+	self._heroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
 end
 
 function HeroStrengthAwakenMediator:refreshAllView(hideAnim)
@@ -242,6 +280,42 @@ function HeroStrengthAwakenMediator:refreshAllView(hideAnim)
 	self:refreshAwakeBtn()
 	self:refreshAwakeRole()
 	self:refreshStarUpCostPanel()
+end
+
+function HeroStrengthAwakenMediator:refreshViewWithHeroId()
+	self._infoNode:setVisible(false)
+	self._infoPanel:getChildByFullName("combatNode"):setVisible(false)
+	self._infoPanel:getChildByFullName("boxPanel"):setVisible(false)
+	self._seekBtn:setVisible(false)
+	self._starNode:setVisible(false)
+	self._awakeBtn:setVisible(false)
+	self._awakeReplaceBtn:setVisible(false)
+	self._costPanel:setVisible(false)
+	self._awakedescNode1:setPositionX(150)
+	self._awakedescNodeDi1:setPositionX(180)
+
+	local awakenStarConfig = ConfigReader:getRecordById("HeroAwaken", self._heroId)
+
+	self._awakedescNode2:setString(Strings:get(awakenStarConfig.Name))
+	self._awakedescNode3:setString(Strings:get(awakenStarConfig.NameDesc))
+	self:refreshAwakeRoleWithHeroId()
+	self._main:getChildByFullName("infoPanel.BG"):setVisible(true)
+end
+
+function HeroStrengthAwakenMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
 end
 
 function HeroStrengthAwakenMediator:refreshInfoNode()
@@ -331,21 +405,25 @@ end
 
 function HeroStrengthAwakenMediator:refreshAwakeRole()
 	local roleModel = self._heroAwakeFinished and self._heroData:getAwakenStarConfig().ModelId or self._heroData:getAwakenStarConfig().Portrait
-	local animType = self._heroAwakeFinished and "Bust4" or "Portrait"
-	local masterIcon = IconFactory:createRoleIconSprite({
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = roleModel,
-		iconType = animType,
 		useAnim = self._heroAwakeFinished
 	})
 
 	self._awakeRoleNode:removeAllChildren()
-	masterIcon:addTo(self._awakeRoleNode):setPosition(0, 0)
+
+	local posY = self._heroAwakeFinished and 0 or -100
+
+	masterIcon:addTo(self._awakeRoleNode):setPosition(0, posY)
 	self._main:getChildByFullName("infoPanel.BG"):setVisible(self._heroAwakeFinished)
 	self._awakeAreaRoleNode:removeAllChildren()
 	self._awakeRoleNode:setPositionY(320)
 
-	if self._heroAwakeFinished then
-		self._awakeRoleNode:setPositionY(180)
+	if self._heroAwakeFinished or self._fromAlbum then
+		if self._heroAwakeFinished then
+			self._awakeRoleNode:setPositionY(180)
+		end
 
 		local heroId = self._heroData:getAwakenStarConfig().ShowHero
 		local model = IconFactory:getRoleModelByKey("HeroBase", heroId)
@@ -361,11 +439,75 @@ function HeroStrengthAwakenMediator:refreshAwakeRole()
 		role:setName("RoleAnim")
 		role:addTo(self._awakeAreaRoleNode):setScale(0.7):posite(80, 0)
 		role:registerSpineEventHandler(handler(self, self.spineCompleteHandler), sp.EventType.ANIMATION_COMPLETE)
+		self._awakeAreaRoleNode:setTouchEnabled(true)
+		self._awakeAreaRoleNode:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.ended then
+				local names = {
+					"skill1",
+					"skill2",
+					"skill3"
+				}
+				local num = math.random(1, 3)
+
+				self._roleSpine:playAnimation(0, names[num], true)
+			end
+		end)
 		self._awakedescNode1:setVisible(not self._heroAwakeFinished)
 		self._awakedescNode2:setPositionX(110)
 		self._awakedescNodeDi1:setVisible(not self._heroAwakeFinished)
 		self._awakedescNodeDi2:setPositionX(210)
 	end
+end
+
+function HeroStrengthAwakenMediator:refreshAwakeRoleWithHeroId()
+	if self._heroData then
+		self:refreshAwakeRole()
+
+		return
+	end
+
+	local awakenStarConfig = ConfigReader:getRecordById("HeroAwaken", self._heroId)
+	local roleModel = awakenStarConfig.Portrait
+	local animType = "Portrait"
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		useAnim = false,
+		id = roleModel,
+		iconType = animType
+	})
+
+	self._awakeRoleNode:removeAllChildren()
+	masterIcon:addTo(self._awakeRoleNode):setPosition(0, 0)
+	self._awakeAreaRoleNode:removeAllChildren()
+	self._awakeRoleNode:setPositionY(320)
+	self._awakeRoleNode:setPositionY(180)
+
+	local heroId = awakenStarConfig.ShowHero
+	local model = IconFactory:getRoleModelByKey("HeroBase", heroId)
+
+	if not model or model == "" then
+		return
+	end
+
+	model = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Model")
+	local role = RoleFactory:createRoleAnimation(model)
+	self._roleSpine = role
+
+	role:setName("RoleAnim")
+	role:addTo(self._awakeAreaRoleNode):setScale(0.7):posite(80, 0)
+	role:registerSpineEventHandler(handler(self, self.spineCompleteHandler), sp.EventType.ANIMATION_COMPLETE)
+	self._awakeAreaRoleNode:setTouchEnabled(true)
+	self._awakeAreaRoleNode:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			local names = {
+				"skill1",
+				"skill2",
+				"skill3"
+			}
+			local num = math.random(1, 3)
+
+			self._roleSpine:playAnimation(0, names[num], true)
+		end
+	end)
 end
 
 function HeroStrengthAwakenMediator:spineCompleteHandler(event)
@@ -466,6 +608,9 @@ function HeroStrengthAwakenMediator:refreshStarUpCostPanel()
 		local hasDebrisNum = self._heroSystem:getHeroDebrisCount(self._heroId)
 		local needDebrisNum = heroPrototype:getStarCostFragByStar(self._heroData:getNextStarId(true))
 		self._debrisEngouh = needDebrisNum <= hasDebrisNum
+
+		self._heroSystem:setAwakeHeroFragIdAndDebrisCostCount(self._heroId, needDebrisNum)
+
 		local icon = IconFactory:createIcon({
 			id = self._heroData:getFragId()
 		}, {
@@ -503,6 +648,18 @@ function HeroStrengthAwakenMediator:refreshStarUpCostPanel()
 				self:onClickItem()
 			end
 		end)
+
+		local canExchange = not table.indexof(Hero_GeneralFragmentLimit, self._heroId)
+
+		self._translteBtn:setVisible(canExchange)
+
+		local costNode1 = self._costPanel:getChildByFullName("costNode1")
+
+		if self._translteBtn:isVisible() then
+			costNode1:setPositionX(110)
+		else
+			costNode1:setPositionX(158)
+		end
 	end
 end
 
@@ -627,10 +784,63 @@ function HeroStrengthAwakenMediator:onClickStiveItem()
 end
 
 function HeroStrengthAwakenMediator:onClickLoveItem()
-	local view = self:getInjector():getInstance("GalleryDateView")
+	self._heroSystem:tryEnterDate(self._heroId, GalleryFuncName.kGift)
+end
 
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		type = "gift",
-		id = self._heroId
-	}))
+function HeroStrengthAwakenMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
+function HeroStrengthAwakenMediator:onTranslateClicked()
+	local data = self:getIsHaveFragmentFlag()
+	local bagSystem = self._developSystem:getBagSystem()
+	local hasFragmentNum = bagSystem:getItemCount(data.id)
+
+	if hasFragmentNum <= 0 then
+		local heroPrototype = self._heroData:getHeroPrototype()
+		local param = {
+			needNum = 0,
+			isNeed = true,
+			hasNum = 0,
+			hasWipeTip = true,
+			itemId = data.id
+		}
+		local view = self:getInjector():getInstance("sourceView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, param))
+
+		return
+	end
+
+	local debrisChangeTipView = self:getInjector():getInstance("HeroGeneralFragmentView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, debrisChangeTipView, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		kind = 2,
+		heroId = self._heroId
+	}, nil))
+end
+
+function HeroStrengthAwakenMediator:getIsHaveFragmentFlag()
+	local data = nil
+	local quality = self._heroData:getRarity()
+	local info = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_StarFragment", "content")
+
+	for k, v in pairs(info) do
+		if quality == tonumber(k) then
+			data = {
+				id = next(v),
+				num = v[next(v)]
+			}
+
+			break
+		end
+	end
+
+	assert(data, "no qualiy Hero_StarFragment ")
+
+	return data
 end

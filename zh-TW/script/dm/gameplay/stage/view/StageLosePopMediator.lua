@@ -9,6 +9,9 @@ StageLosePopMediator:has("_systemKeeper", {
 StageLosePopMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+StageLosePopMediator:has("_arenaNewSystem", {
+	is = "r"
+}):injectWith("ArenaNewSystem")
 
 local kBtnHandlers = {
 	["content.btnStatistic"] = "onTouchStatistic",
@@ -18,8 +21,9 @@ local kBtnHandlers = {
 	["content.mSkillBtn"] = "onClickSkill"
 }
 local kViewType = {
-	kArena = "arena",
-	kCrusade = "crusade"
+	KArenaNew = "arenaNew",
+	kCrusade = "crusade",
+	kArena = "arena"
 }
 
 function StageLosePopMediator:initialize()
@@ -108,7 +112,7 @@ function StageLosePopMediator:refreshView()
 	self:initSvpRole()
 	self:checkResumeActionPoint()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(-200, -200))
 	anim:gotoAndPlay(1)
 
 	local action1 = cc.Sequence:create(cc.DelayTime:create(0.1), cc.FadeIn:create(0.1))
@@ -118,6 +122,10 @@ function StageLosePopMediator:refreshView()
 	self._skillBtn:runAction(action1)
 	self._equipBtn:runAction(action2)
 	self._recruitBtn:runAction(action3)
+end
+
+function StageLosePopMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function StageLosePopMediator:onTouchLayout(sender, eventType)
@@ -141,7 +149,9 @@ function StageLosePopMediator:initSvpRole()
 			local player = developSystem:getPlayer()
 			local id = self._data.loseId or player:getRid()
 			playerBattleData = battleStatist[id]
-		else
+		end
+
+		if playerBattleData == nil then
 			playerBattleData = {
 				unitSummary = {}
 			}
@@ -153,10 +163,14 @@ function StageLosePopMediator:initSvpRole()
 			team = developSystem:getSpTeamByType(StageTeamType.CRUSADE)
 		elseif self._data.viewType == kViewType.kArena then
 			team = developSystem:getSpTeamByType(StageTeamType.ARENA_ATK)
+		elseif self._data.viewType == kViewType.KArenaNew then
+			team = developSystem:getSpTeamByType(StageTeamType.CHESS_ARENA_ATK)
 		end
 
 		local mvpPoint = 0
-		model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+		local masterSystem = developSystem:getMasterSystem()
+		local masterData = masterSystem:getMasterById(team:getMasterId())
+		model = masterData:getModel()
 
 		for k, v in pairs(playerBattleData.unitSummary) do
 			local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -183,9 +197,10 @@ function StageLosePopMediator:initSvpRole()
 		end
 	end
 
-	local svpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -313,6 +328,18 @@ function StageLosePopMediator:toStageView()
 		BattleLoader:popBattleView(self, {
 			viewName = "CrusadeMainView"
 		})
+	elseif self._data.popName and self._data.popName ~= "" then
+		BattleLoader:popBattleView(self, {
+			viewName = self._data.popName
+		})
+
+		if self._data.popName == "ArenaNewView" and self._data.refreshRival then
+			self._arenaNewSystem:requestGainChessArena()
+
+			local dispatcher = DmGame:getInstance()
+
+			dispatcher:dispatch(ViewEvent:new(EVT_PUSH_VIEW, dispatcher:getInjector():getInstance(self._data.popName)))
+		end
 	elseif self._data.SVPHeroId then
 		BattleLoader:popBattleView(self, {
 			viewName = "HeroStoryChapterView"

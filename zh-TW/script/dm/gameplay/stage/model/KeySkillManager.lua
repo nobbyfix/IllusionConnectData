@@ -12,14 +12,17 @@ kActiveHeroType = {
 	kAll = "all"
 }
 local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_TypeList", "content")
+local TargetMaseter = ConfigReader:getKeysOfTable("MasterBase")
+local TowerMaseter = ConfigReader:getKeysOfTable("TowerMaster")
 local TargetCost = {}
 local TargetCostUp = {}
 local TargetCostDown = {}
 local kActiveType = {
 	kTypevalue = "typevalue",
 	kAvgcost = "avgcost",
+	kPercent = "percent",
 	kTag = "tag",
-	kPercent = "percent"
+	kMaster = "master"
 }
 local kActiveRange = {
 	kGroup = "group",
@@ -96,7 +99,8 @@ end
 local TargetRarity = {
 	Rarity12 = 12,
 	Rarity14 = 14,
-	Rarity13 = 13
+	Rarity13 = 13,
+	Rarity15 = 15
 }
 
 function KeySkillManager:checkTargetRarity(hero, rarity)
@@ -185,6 +189,18 @@ function KeySkillManager:checkIsConditionReach(hero, tags)
 			end
 		elseif table.indexof(TargetOccupation, tag) then
 			reach = self:checkTargetOccupation(hero, tag)
+
+			if not reach then
+				return false
+			end
+		elseif table.indexof(TargetMaseter, tag) then
+			reach = self:checkTargetHero(hero, tag)
+
+			if not reach then
+				return false
+			end
+		elseif table.indexof(TowerMaseter, tag) then
+			reach = self:checkTargetHero(hero, tag)
 
 			if not reach then
 				return false
@@ -377,7 +393,7 @@ function KeySkillManager:syncKeySkillCache()
 	end
 end
 
-function KeySkillManager:checkIsKeySkillActive(conditions, targetIds, heroType)
+function KeySkillManager:checkIsKeySkillActive(conditions, targetIds, extra)
 	if not conditions then
 		return false
 	end
@@ -388,7 +404,7 @@ function KeySkillManager:checkIsKeySkillActive(conditions, targetIds, heroType)
 
 	for i = 1, #conditions do
 		local condition = conditions[i]
-		local reach = self:isConditionReach(condition, targetIds, heroType)
+		local reach = self:isConditionReach(condition, targetIds, extra.heroType, extra.masterId)
 
 		if reach then
 			return true
@@ -402,6 +418,9 @@ local typeFuncMap = {
 	[kActiveType.kTag] = function (KeySkillManager, condition, targetIds, heroType)
 		return KeySkillManager:checkTagCondition(condition, targetIds, heroType)
 	end,
+	[kActiveType.kMaster] = function (KeySkillManager, condition, targetIds, heroType, masterId)
+		return KeySkillManager:checkMasterCondition(condition, targetIds, heroType, masterId)
+	end,
 	[kActiveType.kAvgcost] = function (KeySkillManager, condition, targetIds, heroType)
 		return KeySkillManager:checkAvgCostCondition(condition, targetIds, heroType)
 	end,
@@ -413,11 +432,11 @@ local typeFuncMap = {
 	end
 }
 
-function KeySkillManager:isConditionReach(conditions, targetIds, heroType)
+function KeySkillManager:isConditionReach(conditions, targetIds, heroType, masterId)
 	for i = 1, #conditions do
 		local condition = conditions[i]
 		local type = condition.type
-		local reachTemp = typeFuncMap[type](self, condition, targetIds, heroType)
+		local reachTemp = typeFuncMap[type](self, condition, targetIds, heroType, masterId)
 
 		if not reachTemp then
 			return false
@@ -425,6 +444,46 @@ function KeySkillManager:isConditionReach(conditions, targetIds, heroType)
 	end
 
 	return true
+end
+
+function KeySkillManager:checkMasterCondition(condition, targetIds, heroType, masterId)
+	local masterSystem = self._developSystem:getMasterSystem()
+	local checkIds = {
+		masterId
+	}
+	local checkTeamIds = true
+	local range = condition.range
+	local param = condition.param or {}
+	local scope = condition.scope
+	local heroes = {}
+
+	for index = 1, #checkIds do
+		local heroId = checkTeamIds and checkIds[index] or checkIds[index].id
+		local hero = {
+			getId = function ()
+				return masterId
+			end
+		}
+		local active = false
+
+		for tagIndex = 1, #param do
+			local reachTemp = self:checkIsConditionReach(hero, param[tagIndex])
+
+			if reachTemp then
+				active = true
+
+				break
+			end
+		end
+
+		if active and not table.indexof(heroes, heroId) then
+			heroes[#heroes + 1] = heroId
+		end
+	end
+
+	local heroNum = #heroes
+
+	return scope[1] <= heroNum and heroNum <= scope[2]
 end
 
 function KeySkillManager:checkTagCondition(condition, targetIds, heroType)
@@ -436,8 +495,14 @@ function KeySkillManager:checkTagCondition(condition, targetIds, heroType)
 	if range == kActiveRange.kGroup then
 		checkIds = targetIds
 	elseif range == kActiveRange.kHold then
-		checkIds = self._ownHeroList
+		checkIds = {}
 		checkTeamIds = false
+
+		for i, v in pairs(self._ownHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				checkIds[#checkIds + 1] = v
+			end
+		end
 	end
 
 	local param = condition.param or {}
@@ -561,8 +626,20 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 	local totalHeroes, ownHeroesNum = nil
 
 	if #param == 0 then
-		ownHeroesNum = #self._ownHeroList
-		totalHeroes = #self._allHeroList
+		totalHeroes = 0
+		ownHeroesNum = 0
+
+		for i, v in pairs(self._ownHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				ownHeroesNum = ownHeroesNum + 1
+			end
+		end
+
+		for i, v in pairs(self._allHeroList) do
+			if not heroSystem:isLinkStageHero(v.id) then
+				totalHeroes = totalHeroes + 1
+			end
+		end
 	else
 		local heroesTemp = {}
 
@@ -571,6 +648,12 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 
 			for id, v in pairs(reachTemp) do
 				heroesTemp[id] = 1
+			end
+		end
+
+		for id, v in pairs(heroesTemp) do
+			if heroSystem:isLinkStageHero(id) then
+				heroesTemp[id] = nil
 			end
 		end
 
@@ -595,7 +678,7 @@ function KeySkillManager:checkPercentCondition(condition, targetIds, heroType)
 				end
 			end
 
-			if active and not table.indexof(heroes, heroId) then
+			if active and not table.indexof(heroes, heroId) and not heroSystem:isLinkStageHero(heroId) then
 				heroes[#heroes + 1] = heroId
 			end
 		end

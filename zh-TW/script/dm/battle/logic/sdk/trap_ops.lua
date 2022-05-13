@@ -28,7 +28,7 @@ _G.filterElements = filterElements
 
 function exports.EMPTY_CELL(env)
 	return MakeFilter(function (cell)
-		return cell:getResident() == nil
+		return cell:getResident() == nil and cell:isNormalStatus()
 	end)
 end
 
@@ -120,6 +120,21 @@ function exports.ONESELF_CELL(env, who)
 	end)
 end
 
+function exports.DIAGONAL_CELL_OF(env, who)
+	if not who then
+		return nil
+	end
+
+	local pos = who:getPosition()
+
+	return MakeFilter(function (cell)
+		local sqt_x = math.pow(pos.x - cell:getPosition().x, 2)
+		local sqt_y = math.pow(pos.y - cell:getPosition().y, 2)
+
+		return sqt_x - sqt_y == 0
+	end)
+end
+
 function exports.AllCells(env, filter)
 	local battleField = env.global["$BattleField"]
 	local cells = battleField:collectCells({}, 1)
@@ -156,6 +171,14 @@ end
 
 function exports.GetCell(env, unit)
 	return unit:getCell()
+end
+
+function exports.GetCellById(env, id, side)
+	return env.global["$BattleField"]:getCellById(id, side)
+end
+
+function exports.getCellBySideAndNo(env, side, no)
+	return env.global["$BattleField"]:getCellBySideAndNo(side, no)
 end
 
 function exports.GetCellId(env, unit)
@@ -296,21 +319,14 @@ function exports.AngerRecoverTrap(env, value)
 	return TrapEffect:new(config)
 end
 
-function exports.DispelBuffTrap(env, tagOrFilter)
-	local config = {
-		value = tagOrFilter,
-		onTrigger = function (battleContext, cell, unit, buffValue)
-			local buffSystem = battleContext:getObject("BuffSystem")
+function exports.DispelBuffTrap(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
 
-			if not buffSystem then
-				return nil
-			end
+	if not trapSystem then
+		return nil
+	end
 
-			local matchFunc = makeBuffMatchFunction(buffValue)
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
 
-			return buffSystem:dispelBuffsOnTarget(unit, matchFunc)
-		end
-	}
-
-	return TrapEffect:new(config)
+	return trapSystem:dispelBuffsOnTarget(cell, matchFunc)
 end

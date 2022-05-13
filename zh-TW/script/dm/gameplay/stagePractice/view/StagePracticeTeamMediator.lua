@@ -14,7 +14,7 @@ StagePracticeTeamMediator:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -40,6 +40,7 @@ function StagePracticeTeamMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshListView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	self._fightWidget = self:bindWidget("main.spStagePanel.fightBtn", OneLevelViceButton, {
 		handler = {
@@ -713,7 +714,7 @@ end
 
 function StagePracticeTeamMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -735,6 +736,10 @@ function StagePracticeTeamMediator:initHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -873,7 +878,7 @@ end
 function StagePracticeTeamMediator:initTeamHero(node, info)
 	info.heroBaseId = info.id
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -895,7 +900,12 @@ function StagePracticeTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1030,11 +1040,9 @@ function StagePracticeTeamMediator:refreshMasterInfo()
 	self._masterImage:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", self._curMasterId)
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(171.5, 274)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_3",
+		id = roleModel
 	})
 
 	sprite:setAnchorPoint(cc.p(0, 0))
@@ -1117,11 +1125,9 @@ function StagePracticeTeamMediator:refreshEnemyMasterInfo()
 	self._masterImage:removeAllChildren()
 
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", self._curMasterId)
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(560, 274)
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_3",
+		id = roleModel
 	})
 
 	sprite:setAnchorPoint(cc.p(0, 0))
@@ -1390,7 +1396,7 @@ function StagePracticeTeamMediator:runRemovePetAction(id)
 		local id = node.id
 		local heroInfo = self:getHeroInfoById(id)
 		heroInfo.id = heroInfo.roleModel
-		local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+		local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		heroImg:setScale(0.68)
 		heroImg:addTo(heroNode)
@@ -1536,7 +1542,7 @@ function StagePracticeTeamMediator:runInsertTeamAction(id)
 
 	local heroInfo = self:getHeroInfoById(id)
 	heroInfo.id = heroInfo.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(heroInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 	heroImg:addTo(heroNode)
 	heroImg:setScale(0.68)

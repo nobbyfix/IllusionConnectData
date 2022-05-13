@@ -55,9 +55,9 @@ function PetRaceOverEightCell:update(data, index)
 
 	self._title:setString(desStr)
 	self._text_name_l:setString(data.userName)
-	self._text_level_l:setString("Lv" .. data.userLevel)
+	self._text_level_l:setString(Strings:get("Common_LV_Text_No_Point") .. data.userLevel)
 	self._text_name_r:setString(rivalName)
-	self._text_level_r:setString("Lv" .. rivalLevel)
+	self._text_level_r:setString(Strings:get("Common_LV_Text_No_Point") .. rivalLevel)
 
 	local rivalNone = true
 	local text_nonePlayer_r = self:getView():getChildByFullName("Node_des.Text_nonePlayer_r")

@@ -62,11 +62,17 @@ function FriendApplyMediator:onRegister()
 	self._allRefuseBtn:setLocalZOrder(99)
 
 	self._selectIndex = 1
+	self._titletxt1 = self._main:getChildByFullName("dataPanel.Text_1")
+	self._titlecount1 = self._main:getChildByFullName("dataPanel.Text_count")
+	self._titletxt2 = self._main:getChildByFullName("dataPanel.Text_2")
+	self._titlecount2 = self._main:getChildByFullName("dataPanel.Text_applycount")
 
-	self._main:getChildByFullName("dataPanel.Text_1"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._main:getChildByFullName("dataPanel.Text_count"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._main:getChildByFullName("dataPanel.Text_2"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._main:getChildByFullName("dataPanel.Text_applycount"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titletxt1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titletxt2:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount2:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._titlecount1:setPositionX(self._titletxt1:getContentSize().width + self._titletxt1:getPositionX())
+	self._titlecount2:setPositionX(self._titletxt2:getContentSize().width + self._titletxt2:getPositionX())
 end
 
 function FriendApplyMediator:userInject()
@@ -99,14 +105,11 @@ function FriendApplyMediator:refreshView()
 	self._noApplyPanel:setVisible(#self._friendList == 0)
 	self._allAgreeBtn:setVisible(#self._friendList > 0)
 	self._allRefuseBtn:setVisible(#self._friendList > 0)
+	self._titlecount1:setString(friendCount .. "/" .. maxCount)
 
-	local friendCountText = self._main:getChildByFullName("dataPanel.Text_count")
+	local maxCount1 = self._friendModel:getMaxFindFriendsCount()
 
-	friendCountText:setString(friendCount .. "/" .. maxCount)
-
-	local applyCountText = self._main:getChildByFullName("dataPanel.Text_applycount")
-
-	applyCountText:setString(#self._friendList)
+	self._titlecount2:setString(#self._friendList .. "/" .. maxCount1)
 	self:dispatch(Event:new(EVT_REDPOINT_REFRESH))
 end
 
@@ -181,13 +184,16 @@ function FriendApplyMediator:refreshCell(cell, index)
 
 	headBg:removeAllChildren(true)
 
-	local headicon = IconFactory:createPlayerIcon({
+	local headicon, oldIcon = IconFactory:createPlayerIcon({
+		frameStyle = 2,
 		clipType = 4,
-		frameStyle = 3,
+		headFrameScale = 0.4,
 		id = friendData:getHeadId(),
+		size = cc.size(84, 84),
 		headFrameId = friendData:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	headicon:addTo(headBg):center(headBg:getContentSize())
 	headicon:setScale(0.75)
 
@@ -208,7 +214,7 @@ function FriendApplyMediator:refreshCell(cell, index)
 
 	local levelText = cell:getChildByName("Text_level")
 
-	levelText:setString("Lv." .. friendData:getLevel())
+	levelText:setString(Strings:get("Common_LV_Text") .. friendData:getLevel())
 	levelText:setLocalZOrder(10)
 	levelText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
@@ -235,6 +241,21 @@ function FriendApplyMediator:refreshCell(cell, index)
 	text2:setAdditionalKerning(8)
 	mapButtonHandlerClick(nil, refuseBtn, {
 		func = refuseCallFunc
+	})
+
+	local function cellCallFunc(sender, eventType)
+		local beganPos = sender:getTouchBeganPosition()
+		local endPos = sender:getTouchEndPosition()
+
+		if math.abs(beganPos.x - endPos.x) < 30 and math.abs(beganPos.y - endPos.y) < 30 then
+			self:getPushFriendInfo(friendData)
+		end
+	end
+
+	cell:setTouchEnabled(true)
+	cell:setSwallowTouches(false)
+	mapButtonHandlerClick(nil, cell, {
+		func = cellCallFunc
 	})
 end
 
@@ -266,4 +287,47 @@ end
 
 function FriendApplyMediator:onClickFind(sender, eventType)
 	self._mediator:changeTabView(kFriendType.kFind)
+end
+
+function FriendApplyMediator:getPushFriendInfo(data)
+	if not data then
+		return
+	end
+
+	local friendSystem = self:getFriendSystem()
+
+	local function gotoView(response)
+		local record = BaseRankRecord:new()
+
+		record:synchronize({
+			headImage = data:getHeadId(),
+			headFrame = data:getHeadFrame(),
+			rid = data:getRid(),
+			level = data:getLevel(),
+			nickname = data:getNickName(),
+			vipLevel = data:getVipLevel(),
+			combat = data:getCombat(),
+			slogan = data:getSlogan(),
+			master = data:getMaster(),
+			heroes = data:getHeroes(),
+			clubName = data:getUnionName(),
+			online = data:getOnline() == ClubMemberOnLineState.kOnline,
+			lastOfflineTime = data:getLastOfflineTime(),
+			isFriend = response.isFriend,
+			block = response.block,
+			close = response.close,
+			gender = data:getGender(),
+			city = data:getCity(),
+			birthday = data:getBirthday(),
+			tags = data:getTags(),
+			block = response.block,
+			leadStageId = data:getLeadStageId(),
+			leadStageLevel = data:getLeadStageLevel()
+		})
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record, "friendApply")
+	end
+
+	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
+		gotoView(response)
+	end)
 end

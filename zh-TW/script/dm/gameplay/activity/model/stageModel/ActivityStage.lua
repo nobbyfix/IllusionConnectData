@@ -18,6 +18,12 @@ ActivityStage:has("_config", {
 ActivityStage:has("_owner", {
 	is = "rw"
 })
+ActivityStage:has("_index2Points", {
+	is = "rw"
+})
+ActivityStage:has("_id2Points", {
+	is = "rw"
+})
 
 local StageBoxState = {
 	kCannotReceive = -1,
@@ -303,4 +309,16 @@ function ActivityStage:isPass()
 	else
 		return lastBattlePoint:isPass()
 	end
+end
+
+function ActivityStage:getStartTimestamp()
+	local config = ConfigReader:getRecordById("ActivityBlockPoint", self._config.SubPoint[1])
+	local timestamp = 0
+
+	if config.PointTime then
+		local startTime = config.PointTime.start
+		timestamp = TimeUtil:formatStrToRemoteTImestamp(startTime)
+	end
+
+	return timestamp
 end

@@ -1653,11 +1653,11 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					modelId = "Model_Story_SGHQShou01",
 					id = "SGHQShou1_speak",
 					rotationX = 0,
-					scale = 1.175,
+					scale = 0.62,
 					zorder = 6,
 					position = {
 						x = 0,
-						y = -265,
+						y = -320,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1680,8 +1680,8 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 28.5,
-								y = 515
+								x = 51.8,
+								y = 991
 							}
 						}
 					}
@@ -1716,11 +1716,11 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					modelId = "Model_WEDe",
 					id = "WEDe_speak",
 					rotationX = 0,
-					scale = 1.225,
+					scale = 0.65,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -1744,8 +1744,8 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 124,
-								y = 788
+								x = 190.5,
+								y = 1380
 							}
 						}
 					}
@@ -2060,11 +2060,11 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					modelId = "Model_LLan",
 					id = "LLan_speak",
 					rotationX = 0,
-					scale = 1.205,
+					scale = 0.72,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -465,
+						y = -390,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -2088,8 +2088,8 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -9,
-								y = 771
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -2149,10 +2149,10 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.575,
 							y = 0
@@ -2176,8 +2176,8 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -2265,7 +2265,7 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					duration = 0.5,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.9,
 							y = 0
@@ -2346,7 +2346,7 @@ function scene_story20_4a.actions.start_story20_4a(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 1.1,
 							y = 0

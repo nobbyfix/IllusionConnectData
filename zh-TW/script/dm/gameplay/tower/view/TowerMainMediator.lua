@@ -28,6 +28,10 @@ local kBtnHandlers = {
 	["left_panel.btn_recruit"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRecruit"
+	},
+	infoBtn = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickInfoBtn"
 	}
 }
 
@@ -40,6 +44,8 @@ function TowerMainMediator:dispose()
 end
 
 function TowerMainMediator:onRegister()
+	self._systemKeeper = self:getInjector():getInstance(SystemKeeper)
+
 	super.onRegister(self)
 	self:initData()
 	self:initView()
@@ -48,6 +54,7 @@ end
 function TowerMainMediator:enterWithData()
 	self:refreshData()
 	self:refreshView()
+	self:setupClickEnvs()
 end
 
 function TowerMainMediator:resumeWithData()
@@ -80,7 +87,6 @@ function TowerMainMediator:initView()
 	GameStyle:setCommonOutlineEffect(self._main:getChildByFullName("Text_desc1"))
 	GameStyle:setCommonOutlineEffect(self._main:getChildByFullName("Text_desc2"))
 	GameStyle:setCommonOutlineEffect(self._main:getChildByFullName("Text_desc3"))
-	GameStyle:setCommonOutlineEffect(self._main:getChildByFullName("Text_desc3"))
 	GameStyle:setCommonOutlineEffect(self._main:getChildByFullName("text_count"))
 
 	self._roleNode = self._main:getChildByName("roleNode")
@@ -90,6 +96,7 @@ function TowerMainMediator:initView()
 	self._recruitBtnText:setString(Strings:get("TowerRecruitText"))
 	self:addBeginMovieClipPanel()
 	self:setStyle()
+	self:getView():getChildByName("infoBtn"):setVisible(false)
 end
 
 function TowerMainMediator:setStyle()
@@ -286,9 +293,9 @@ function TowerMainMediator:setRoleNode()
 	local roleModel = self._selectBaseData.Model
 
 	if roleModel then
-		local img = IconFactory:createRoleIconSprite({
+		local img = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -329,14 +336,16 @@ end
 
 function TowerMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local currencyInfoWidget = self._systemKeeper:getResourceBannerIds("Unlock_Tower_All")
+	local currencyInfo = {}
+
+	for i = #currencyInfoWidget, 1, -1 do
+		currencyInfo[#currencyInfoWidget - i + 1] = currencyInfoWidget[i]
+	end
+
 	local config = {
 		style = 1,
-		currencyInfo = {
-			CurrencyIdKind.kDiamond,
-			CurrencyIdKind.kPower,
-			CurrencyIdKind.kCrystal,
-			CurrencyIdKind.kGold
-		},
+		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -360,7 +369,10 @@ function TowerMainMediator:onClickRule()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 
@@ -399,4 +411,22 @@ function TowerMainMediator:onClickRecruit(sender, eventType)
 	}
 
 	recruitSystem:tryEnter(data)
+end
+
+function TowerMainMediator:onClickInfoBtn(sender, eventType)
+	RuleFactory:showRules(self, nil, "Mirror_GuidePic")
+end
+
+function TowerMainMediator:setupClickEnvs()
+	local scriptNames = "guide_TowerPicGuide"
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+	local guideSaved = guideAgent:isSaved(scriptNames)
+
+	if not guideSaved then
+		RuleFactory:showRules(self, nil, "Mirror_GuidePic")
+		guideAgent:save(scriptNames)
+	end
+
+	storyDirector:notifyWaiting("enter_TowerMain_view")
 end

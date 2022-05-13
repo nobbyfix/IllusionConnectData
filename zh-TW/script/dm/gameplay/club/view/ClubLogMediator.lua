@@ -1,4 +1,4 @@
-ClubLogMediator = class("ClubLogMediator", DmAreaViewMediator, _M)
+ClubLogMediator = class("ClubLogMediator", DmPopupViewMediator, _M)
 
 ClubLogMediator:has("_developSystem", {
 	is = "r"
@@ -10,7 +10,12 @@ ClubLogMediator:has("_clubSystem", {
 	is = "r"
 }):injectWith("ClubSystem")
 
-local kBtnHandlers = {}
+local kBtnHandlers = {
+	["main.btn_close"] = {
+		clickAudio = "Se_Click_Close_2",
+		func = "onClickClose"
+	}
+}
 
 function ClubLogMediator:initialize()
 	super.initialize(self)
@@ -32,16 +37,23 @@ end
 
 function ClubLogMediator:onRegister()
 	super.onRegister(self)
+	self:mapButtonHandlersClick(kBtnHandlers)
 end
 
 function ClubLogMediator:enterWithData(data)
 	self:initNodes()
 	self:createData()
+	self:refreshView()
 end
 
 function ClubLogMediator:initNodes()
 	self._mainPanel = self:getView():getChildByFullName("main")
 	self._notHasLabel = self._mainPanel:getChildByFullName("nothaslabel")
+	self._listPanel = self._mainPanel:getChildByFullName("listPanel")
+
+	self._mainPanel:getChildByFullName("title_node.Text_1"):setString(Strings:get("Club_Text121"))
+	self._mainPanel:getChildByFullName("title_node.Text_2"):setString(Strings:get("UITitle_EN_Rizhi"))
+	self._notHasLabel:setTextColor(cc.c3b(208, 208, 208))
 end
 
 function ClubLogMediator:createData()
@@ -95,8 +107,8 @@ local minHeight = 32
 local titleHeight = 66
 
 function ClubLogMediator:createTableView()
-	local width = 880
-	local height = 30
+	local width = self._listPanel:getContentSize().width
+	local height = self._listPanel:getContentSize().width
 
 	local function scrollViewDidScroll(table)
 		if table:isTouchMoved() then
@@ -117,7 +129,7 @@ function ClubLogMediator:createTableView()
 			return 0, 0
 		end
 
-		local height = math.max(minHeight, descLabel:getContentSize().height - 2)
+		local height = math.max(minHeight, descLabel:getContentSize().height + 2)
 		local data = self._logList[idx + 1]
 		local dateStr = data:getDateStr()
 		local hasTitle = false
@@ -177,14 +189,14 @@ function ClubLogMediator:createTableView()
 		local middleHeight = mainLayout:getContentSize().height / 2
 		local timeLabel = cc.Label:createWithTTF("", TTF_FONT_FZYH_R, 18)
 
-		timeLabel:setTextColor(cc.c3b(35, 35, 35))
+		timeLabel:setTextColor(cc.c3b(208, 208, 208))
 		timeLabel:setString(data:getTimeStr())
 		timeLabel:setAnchorPoint(0, 1)
-		timeLabel:posite(22, realHeight - 2)
-		descLabel:posite(80, realHeight + 3)
+		timeLabel:posite(22, realHeight)
+		descLabel:setAnchorPoint(0, 0)
+		descLabel:posite(80, descLabel:getContentSize().height / 2 + 2)
 		timeLabel:addTo(node)
 		descLabel:addTo(node)
-		node:setPositionY(10)
 
 		if hasTitle then
 			local image = ccui.ImageView:create("st_bg_date.png", ccui.TextureResType.plistType)
@@ -214,10 +226,9 @@ function ClubLogMediator:createTableView()
 				y = -1
 			}))
 			dateLabel:enableOutline(cc.c4b(0, 0, 0, 255), 1)
-			node:setPositionY(descLabel:getContentSize().height - 20)
 		else
-			timeLabel:posite(22, realHeight - 5)
-			descLabel:setPositionY(realHeight)
+			timeLabel:posite(22, realHeight)
+			descLabel:setPositionY(descLabel:getContentSize().height / 2 + 2)
 		end
 
 		return cell
@@ -227,15 +238,14 @@ function ClubLogMediator:createTableView()
 		return self._logRecordListOj:getRecordCount()
 	end
 
-	local tableView = cc.TableView:create(cc.size(890, 482))
+	local tableView = cc.TableView:create(self._listPanel:getContentSize())
 
 	tableView:setTag(1234)
 	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
 	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
 	tableView:setAnchorPoint(0, 0)
-	tableView:setPosition(215, 78)
 	tableView:setDelegate()
-	self._mainPanel:addChild(tableView, 10)
+	self._listPanel:addChild(tableView, 10)
 	tableView:registerScriptHandler(numberOfCellsInTableView, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
 	tableView:registerScriptHandler(scrollViewDidScroll, cc.SCROLLVIEW_SCRIPT_SCROLL)
 	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
@@ -302,17 +312,10 @@ function ClubLogMediator:getRichText(idx)
 	local richTextStr = Strings:get(data:getLogConfigId(), config)
 	local descLabel = ccui.RichText:createWithXML(richTextStr, {})
 
-	descLabel:ignoreContentAdaptWithSize(true)
 	descLabel:rebuildElements()
 	descLabel:formatText()
-	descLabel:setAnchorPoint(cc.p(0, 1))
 	descLabel:renderContent()
-
-	local size = descLabel:getContentSize()
-
-	if size.width > 700 then
-		descLabel:renderContent(700, 0)
-	end
+	descLabel:setAnchorPoint(cc.p(0, 1))
 
 	return descLabel
 end
@@ -352,7 +355,7 @@ function ClubAuditMediator:getTableViewPosY()
 	return self._tableView:getContentOffset().y
 end
 
-function ClubLogMediator:onClickBack(sender, eventType)
-	self:dismiss()
+function ClubLogMediator:onClickClose(sender, eventType)
+	self:close()
 	cc.Director:getInstance():getOpenGLView():setIMEKeyboardState(false)
 end

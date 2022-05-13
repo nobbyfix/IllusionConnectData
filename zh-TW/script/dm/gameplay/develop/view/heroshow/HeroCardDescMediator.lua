@@ -218,7 +218,7 @@ function HeroCardDescMediator:getCellHeight(index)
 		local file = string.format("asset/heroRect/heroOccupation/%s.png", data.imageFile)
 		local image = ccui.ImageView:create(file)
 
-		image:addTo(cellPanel):setPosition(50, title:getPositionY())
+		image:addTo(cellPanel):setPosition(30, title:getPositionY())
 		image:setScale(0.5)
 		title:offset(40, 0)
 		desc:offset(40, 0)

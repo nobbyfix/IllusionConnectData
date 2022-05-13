@@ -39,39 +39,76 @@ function PlayerMessageWidget:dispose()
 	super.dispose(self)
 end
 
+function PlayerMessageWidget:isRichText(string)
+	local str = "<font"
+	local count = string:find(str)
+
+	if count ~= nil then
+		return true
+	else
+		return false
+	end
+end
+
 function PlayerMessageWidget:decorateView(message, senderInfo, parent)
+	dump(message, "message >>>>>>>>>>>")
+	dump(senderInfo, "senderInfo >>>>>>>>>>>")
+
 	self._message = message
 	self._parentMediator = parent
 	local contentRect = self._main:getChildByFullName("Text_panel.bubble.content_rect")
 	local content = message:getContent()
 	local contentText = self._main:getChildByFullName("content_text")
 
-	if contentText == nil then
-		contentText = ccui.RichText:createWithXML(content, {})
+	if self:isRichText(content) then
+		if contentText == nil then
+			contentText = ccui.RichText:createWithXML(content, {})
 
-		contentText:setTouchEnabled(true)
-		contentText:setSwallowTouches(false)
-		contentText:setWrapMode(1)
-		contentText:setAnchorPoint(contentRect:getAnchorPoint())
-		contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
-		contentText:setOpenUrlHandler(function (url)
-			openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
-		end)
-		contentText:setFontSize(18)
-		contentText:setFontColor("#343434")
+			contentText:setTouchEnabled(true)
+			contentText:setSwallowTouches(false)
+			contentText:setWrapMode(1)
+			contentText:setAnchorPoint(contentRect:getAnchorPoint())
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:setOpenUrlHandler(function (url)
+				openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
+			end)
+			contentText:setFontSize(18)
+			contentText:setFontColor("#343434")
+		else
+			contentText:setString(content)
+		end
+
+		contentText:renderContent()
+
+		local size = contentText:getContentSize()
+		local realWidth = math.min(size.width, kMaxPlayerContentWidth)
+
+		contentText:renderContent(realWidth, 0, true)
+
+		self._contentText = contentText
 	else
-		contentText:setString(content)
+		if contentText == nil then
+			contentText = cc.Label:createWithTTF(xmlUnescape(content), TTF_FONT_FZYH_R, 18)
+
+			contentText:setAnchorPoint(contentRect:getAnchorPoint())
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:setColor(cc.c3b(52, 52, 52))
+			contentText:setOverflow(cc.LabelOverflow.CLAMP)
+		else
+			contentText:setString(content)
+		end
+
+		local size = contentText:getContentSize()
+		local realWidth = math.min(size.width, kMaxPlayerContentWidth)
+
+		if kMaxPlayerContentWidth < size.width then
+			contentText:setDimensions(realWidth, 0)
+		end
+
+		self._contentText = contentText
 	end
 
-	contentText:renderContent()
-
-	local size = contentText:getContentSize()
-	local realWidth = math.min(size.width, kMaxPlayerContentWidth)
-
-	contentText:renderContent(realWidth, 0, true)
-
-	local realSize = contentText:getContentSize()
-	self._contentText = contentText
+	local realSize = self._contentText:getContentSize()
 	local bubble = self._main:getChildByFullName("Text_panel.bubble")
 	local setBubbleSizeX = kDefaultBubbleWidth < realSize.width + 28 and realSize.width + 28 or kDefaultBubbleWidth
 	local setBubbleSizeY = kDefaultBubbleHeight < realSize.height + 25 and realSize.height + 25 or kDefaultBubbleHeight
@@ -115,7 +152,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		local nameText = self._main:getChildByFullName("Text_panel.name_text")
 
 		nameText:setString(senderInfo.nickname or "")
-		nameText:setPositionY(setBubbleSizeY)
+		nameText:setPositionY(kDefaultBubbleHeight)
 		nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 		local vipNode = self._main:getChildByFullName("Text_panel.vipnode")
@@ -190,14 +227,12 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 				gender = senderInfo.gender,
 				city = senderInfo.city,
 				birthday = senderInfo.birthday,
-				tags = senderInfo.tags
+				tags = senderInfo.tags,
+				block = response.block,
+				leadStageId = senderInfo.leadStageId,
+				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)
@@ -205,66 +240,18 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 		end)
 	end
 
-	local function callFuncShield()
-		self:requestBlockUser(senderInfo.id)
-	end
-
-	local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
-	if developSystem:getPlayer():getRid() == senderInfo.id then
-		callFuncMsg()
-
-		return
-	end
-
-	local widget = HeadTipWidget:createWidgetNode()
-	self._headTipWidget = self:autoManageObject(self:getInjector():injectInto(HeadTipWidget:new(widget)))
-	local view = self._headTipWidget:getView()
-
-	view:setAnchorPoint(cc.p(0, 0))
-	view:addTo(self._parentMediator):center(self._parentMediator:getContentSize())
-	self._headTipWidget:enterWithData({
-		senderInfo = senderInfo,
-		sender = sender,
-		callFuncMsg = callFuncMsg,
-		callFuncShield = callFuncShield
-	})
-	self._headTipWidget:updateTitle(self._chatSystem:getBlockUserStatus(senderInfo.id))
-end
-
-function PlayerMessageWidget:requestBlockUser(shieldId)
-	local status = self._chatSystem:getBlockUserStatus(shieldId)
-
-	local function callback(data)
-		if data then
-			local tips = table.indexof(data, shieldId) and Strings:get("Chat_ShieldSuccess_Tips") or Strings:get("Chat_ShieldCancel_Tips")
-
-			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
-				duration = 0.35,
-				tip = tips
-			}))
-		end
-	end
-
-	if not status or not {} then
-		local block = {
-			shieldId
-		}
-	end
-
-	local unblock = status and {
-		shieldId
-	} or {}
-
-	self._chatSystem:requestBlockUser(block, unblock, callback)
+	callFuncMsg()
 end
 
 SystemMsgLabelType = {
 	kSelf = 2,
 	kSystem = 1,
 	kTeam = 3,
-	kWorld = 5,
-	kUnion = 4
+	kMogul = 6,
+	kFight = 8,
+	kEmperor = 7,
+	kUnion = 4,
+	kWorld = 5
 }
 SystemMsgLabelMap = {
 	[SystemMsgLabelType.kSystem] = {
@@ -301,6 +288,18 @@ SystemMsgLabelMap = {
 		text = Strings:get("Chat_Label_World"),
 		color = cc.c4b(188, 95, 247, 255),
 		titleColor = cc.c4b(190, 212, 238, 255)
+	},
+	[SystemMsgLabelType.kMogul] = {
+		text = Strings:get("Chat_Label_Mogul"),
+		titleColor = cc.c4b(255, 35, 149, 255)
+	},
+	[SystemMsgLabelType.kEmperor] = {
+		text = Strings:get("Chat_Label_Emperor"),
+		titleColor = cc.c4b(174, 0, 255, 255)
+	},
+	[SystemMsgLabelType.kFight] = {
+		text = Strings:get("Chat_Label_Fight"),
+		titleColor = cc.c4b(134, 194, 255, 255)
 	}
 }
 SystemMessageWidget = class("SystemMessageWidget", BaseWidget, _M)
@@ -327,6 +326,7 @@ function SystemMessageWidget:decorateView(message)
 		titleText:setString(titleStr)
 	end
 
+	local size = titleText:getContentSize()
 	local contentRect = self._main:getChildByFullName("content.content_rect")
 
 	contentRect:setString("")
@@ -345,7 +345,7 @@ function SystemMessageWidget:decorateView(message)
 		local pos = contentRect:getPosition()
 
 		contentText:setAnchorPoint(anchor)
-		contentText:setName("content_text"):posite(90, 20):addTo(contentRect:getParent())
+		contentText:setName("content_text"):posite(size.width + 30, 20):addTo(contentRect:getParent())
 		contentText:setOpenUrlHandler(function (url)
 			openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
 		end)
@@ -400,6 +400,8 @@ function PrivateMessageWidget:dispose()
 end
 
 function PrivateMessageWidget:decorateView(message, senderInfo, parent)
+	dump(message, "message >>>>>>>>>>")
+
 	self._message = message
 	self._senderInfo = senderInfo
 	self._parentMediator = parent
@@ -509,14 +511,12 @@ function PrivateMessageWidget:onClickHead(senderInfo, sender)
 				gender = senderInfo.gender,
 				city = senderInfo.city,
 				birthday = senderInfo.birthday,
-				tags = senderInfo.tags
+				tags = senderInfo.tags,
+				block = response.block,
+				leadStageId = senderInfo.leadStageId,
+				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)
@@ -524,58 +524,7 @@ function PrivateMessageWidget:onClickHead(senderInfo, sender)
 		end)
 	end
 
-	local function callFuncShield()
-		self:requestBlockUser(senderInfo.id)
-	end
-
-	local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
-	if developSystem:getPlayer():getRid() == senderInfo.id then
-		callFuncMsg()
-
-		return
-	end
-
-	local widget = HeadTipWidget:createWidgetNode()
-	self._headTipWidget = self:autoManageObject(self:getInjector():injectInto(HeadTipWidget:new(widget)))
-	local view = self._headTipWidget:getView()
-
-	view:setAnchorPoint(cc.p(0, 0))
-	view:addTo(self._parentMediator):center(self._parentMediator:getContentSize())
-	self._headTipWidget:enterWithData({
-		senderInfo = senderInfo,
-		sender = sender,
-		callFuncMsg = callFuncMsg,
-		callFuncShield = callFuncShield
-	})
-	self._headTipWidget:updateTitle(self._chatSystem:getBlockUserStatus(senderInfo.id))
-end
-
-function PrivateMessageWidget:requestBlockUser(shieldId)
-	local status = self._chatSystem:getBlockUserStatus(shieldId)
-
-	local function callback(data)
-		if data then
-			local tips = table.indexof(data, shieldId) and Strings:get("Chat_ShieldSuccess_Tips") or Strings:get("Chat_ShieldCancel_Tips")
-
-			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
-				duration = 0.35,
-				tip = tips
-			}))
-		end
-	end
-
-	if not status or not {} then
-		local block = {
-			shieldId
-		}
-	end
-
-	local unblock = status and {
-		shieldId
-	} or {}
-
-	self._chatSystem:requestBlockUser(block, unblock, callback)
+	callFuncMsg()
 end
 
 function PrivateMessageWidget:createEmotionView(message, senderInfo, parent)

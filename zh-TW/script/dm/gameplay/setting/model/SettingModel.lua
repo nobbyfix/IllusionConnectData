@@ -140,9 +140,12 @@ SettingBattleTypes = {
 	kActstage = "actstage_battle",
 	kSpStage_skill_3 = "sp_stage_skill_3",
 	kCrusade = "crusade_battle",
-	kClubStage = "club_battle",
+	kStageArena = "stageArena_battle",
 	kDreamStage = "dream_battle",
 	kExplore = "explore_battle",
+	kCooperateBoss = "copper_battle",
+	kClubStage = "club_battle",
+	kArenaNew = "arena_new_challenge",
 	kNormalStage = "normal_stage",
 	kPetRace = "hegemony_battle",
 	kHeroStory = "herostory_battle",
@@ -175,7 +178,10 @@ local BattleSettingSpeedKeys = {
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_speed",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_speed",
 	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_speed",
-	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed"
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed",
+	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_speed",
+	[SettingBattleTypes.kStageArena] = "stagearena_battle_setting_speed",
+	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_speed"
 }
 local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kNormalStage] = "normal_stage_setting_auto",
@@ -199,7 +205,10 @@ local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kCrusade] = "crusade_challenge_setting_auto",
 	[SettingBattleTypes.kActstage] = "actstage_battle_setting_auto",
 	[SettingBattleTypes.kClubStage] = "clubstage_battle_setting_auto",
-	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto"
+	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto",
+	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_auto",
+	[SettingBattleTypes.kStageArena] = "stagearena_battle_setting_auto",
+	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_auto"
 }
 
 function SettingModel:setHpShowSetting(hpshow)
@@ -276,4 +285,24 @@ end
 
 function SettingModel:getRoleDynamic()
 	return cc.UserDefault:getInstance():getBoolForKey("roleDynamic", true)
+end
+
+function SettingModel:getRoleAndBgRandom()
+	local result = false
+	local customDataSystem = DmGame:getInstance()._injector:getInstance(CustomDataSystem)
+	local data = customDataSystem:getValue(PrefixType.kGlobal, "roleAndBgRandom", false)
+
+	if data and data ~= "false" then
+		result = true
+	end
+
+	result = result and CommonUtils.GetSwitch("fn_board_random")
+
+	return result
+end
+
+function SettingModel:setRoleAndBgRandom(isRandom)
+	local customDataSystem = DmGame:getInstance()._injector:getInstance(CustomDataSystem)
+
+	customDataSystem:setValue(PrefixType.kGlobal, "roleAndBgRandom", isRandom)
 end

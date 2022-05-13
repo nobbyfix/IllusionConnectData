@@ -29,6 +29,14 @@ local kBtnHandlers = {
 		func = "onClickedMinBtn"
 	}
 }
+local rarityShopNormalBuyBgMap = {
+	"sd_tc_dj_bg.png",
+	"sd_tc_dj_bg_2.png",
+	"sd_tc_dj_bg_3.png",
+	"sd_tc_dj_bg_4.png",
+	"sd_tc_dj_bg_5.png",
+	"sd_tc_dj_bg_6.png"
+}
 
 function ShopBuyNormalMediator:initialize()
 	super.initialize(self)
@@ -77,18 +85,19 @@ end
 function ShopBuyNormalMediator:refreshData()
 	self._storage = self._itemData:getStorage()
 	self._maxNumber = self._itemData:getStock()
+	local costType = self._itemData:getCostType()
+	local maxMoney = self._bagSystem:getItemCount(costType)
+	local costPrice = self._itemData:getPrice()
+	local maxNum = math.floor(maxMoney / costPrice)
+
+	if maxNum <= 0 then
+		maxNum = 1
+	end
 
 	if self._storage == -1 then
-		local costType = self._itemData:getCostType()
-		local maxMoney = self._bagSystem:getItemCount(costType)
-		local costPrice = self._itemData:getPrice()
-		local maxNum = math.floor(maxMoney / costPrice)
-
-		if maxNum <= 0 then
-			maxNum = 1
-		end
-
 		self._maxNumber = maxNum
+	else
+		self._maxNumber = math.min(self._maxNumber, maxNum)
 	end
 
 	if self._maxNumber == 0 then
@@ -105,6 +114,7 @@ function ShopBuyNormalMediator:initMember()
 	self._view = self:getView()
 	local mainPanel = self._view:getChildByFullName("main")
 	self._iconLayout = mainPanel:getChildByFullName("icon_panel")
+	self._icon = mainPanel:getChildByFullName("icon")
 	self._sliderPanel = mainPanel:getChildByFullName("slider_panel")
 
 	self._sliderPanel:setTouchEnabled(true)
@@ -114,6 +124,7 @@ function ShopBuyNormalMediator:initMember()
 	self._moneyNode = self._sliderPanel:getChildByFullName("costNode")
 	self._nameText = mainPanel:getChildByFullName("name_text")
 	self._nameText_1 = mainPanel:getChildByFullName("name_text_1")
+	self._imageBg = mainPanel:getChildByFullName("ImageBg")
 	self._buyTitleText = self._buyTimesPanel:getChildByFullName("changetitlelabel")
 	self._numberPanel = mainPanel:getChildByFullName("number_panel")
 	self._numberText = self._numberPanel:getChildByFullName("item_count")
@@ -145,20 +156,19 @@ function ShopBuyNormalMediator:refreshBaseShowView()
 	self._nameText_1:setString(self._itemData:getName())
 
 	local descString = nil
+	local rarity = 11
 
 	if self._itemData:getEquipInfo() then
 		self._numberPanel:setVisible(false)
-		GameStyle:setRarityText(self._nameText, self._itemData:getEquipInfo().rarity, true)
-		GameStyle:setRarityText(self._nameText_1, self._itemData:getEquipInfo().rarity, true)
 
+		rarity = tonumber(self._itemData:getEquipInfo().rarity)
 		descString = Strings:get(self._itemData:getItemConfig().Desc)
 	else
-		GameStyle:setQualityText(self._nameText, self._itemData:getQuality(), true)
-		GameStyle:setQualityText(self._nameText_1, self._itemData:getQuality(), true)
-
+		rarity = tonumber(self._itemData:getQuality())
 		descString = Strings:get(self._itemData:getItemConfig().FunctionDesc)
 	end
 
+	self._imageBg:loadTexture(rarityShopNormalBuyBgMap[rarity], ccui.TextureResType.plistType)
 	self._descListView:removeAllChildren()
 	self._descListView:setScrollBarEnabled(false)
 
@@ -233,10 +243,45 @@ function ShopBuyNormalMediator:refreshIcon()
 			isWidget = true
 		})
 
-		icon:setScale(1.7)
+		icon:setScale(1.5)
 	end
 
 	icon:addTo(self._iconLayout):center(self._iconLayout:getContentSize())
+	self._icon:removeAllChildren()
+
+	local icon = nil
+	local info = self._itemData:getEquipInfo()
+
+	if info then
+		icon = IconFactory:createRewardEquipIcon(info, {
+			hideLevel = true,
+			showAmount = false,
+			notShowQulity = true,
+			isWidget = true
+		})
+	else
+		icon = IconFactory:createIcon({
+			id = self._itemData:getItemId(),
+			amount = self._itemData:getAmount()
+		}, {
+			hideLevel = true,
+			showAmount = false,
+			notShowQulity = false,
+			isWidget = true
+		})
+
+		icon:setScale(0.5)
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), {
+			code = self._itemData:getItemId(),
+			type = RewardType.kItem,
+			amount = self._itemData:getAmount()
+		}, {
+			swallowTouches = true,
+			needDelay = true
+		})
+	end
+
+	icon:addTo(self._icon):center(self._icon:getContentSize())
 end
 
 function ShopBuyNormalMediator:onClickedRightBtn()
@@ -336,7 +381,7 @@ function ShopBuyNormalMediator:refreshMoney()
 
 		self._price:setString(costPrice)
 		self._selectCount:setString(self._curNumber)
-		self._remainCount:setString(self._maxNumber)
+		self._remainCount:setString(self._itemData:getStock())
 		self._totalPrice:setString(costSum)
 		self._remainCount:setVisible(true)
 		self._buyTitleText:setVisible(true)

@@ -104,6 +104,30 @@ local modules = {
 				}
 			},
 			{
+				name = "share",
+				requires = {
+					"dm.gameplay.share.controller.ShareSystem",
+					"dm.gameplay.share.service.ShareService",
+					"dm.gameplay.share.model.Share"
+				},
+				injections = {
+					singletons = {
+						"ShareSystem",
+						"Share"
+					},
+					classes = {
+						"ShareService"
+					},
+					views = {
+						{
+							res = "asset/ui/Share.csb",
+							name = "ShareView",
+							mediator = "ShareMediator"
+						}
+					}
+				}
+			},
+			{
 				name = "login",
 				requires = {
 					"dm.launch.login.LoginService",
@@ -111,7 +135,8 @@ local modules = {
 					"dm.launch.login.model.Login",
 					"dm.launch.login.view.LoginMediator",
 					"dm.launch.login.view.LoginServerListMediator",
-					"dm.launch.login.view.ServerAnnounceMediator"
+					"dm.launch.login.view.ServerAnnounceMediator",
+					"dm.launch.login.view.ServerAnnounceMediatorNew"
 				},
 				injections = {
 					singletons = {
@@ -127,6 +152,11 @@ local modules = {
 							mediator = "LoginMediator"
 						},
 						{
+							res = "asset/ui/LoginQueue.csb",
+							name = "loginQueueView",
+							mediator = "LoginQueueMediator"
+						},
+						{
 							res = "asset/ui/LoginServerList.csb",
 							name = "LoginServerView",
 							mediator = "LoginServerListMediator"
@@ -135,6 +165,11 @@ local modules = {
 							res = "asset/ui/ServerAnnounce.csb",
 							name = "serverAnnounceView",
 							mediator = "ServerAnnounceMediator"
+						},
+						{
+							res = "asset/ui/ServerAnnounceNew.csb",
+							name = "serverAnnounceViewNew",
+							mediator = "ServerAnnounceMediatorNew"
 						}
 					}
 				}
@@ -228,6 +263,11 @@ local modules = {
 							mediator = "SettingDownloadMediator"
 						},
 						{
+							res = "asset/ui/DownloadRes.csb",
+							name = "DownloadPackageView",
+							mediator = "SettingDownloadPackageMediator"
+						},
+						{
 							res = "asset/ui/resourceDownland.csb",
 							name = "resourceDownloadPopView",
 							mediator = "ResourceDownloadMediator"
@@ -236,6 +276,31 @@ local modules = {
 							res = "asset/ui/setGameValue.csb",
 							name = "GameValueSetView",
 							mediator = "GameValueSetMediator"
+						},
+						{
+							res = "asset/ui/Alert.csb",
+							name = "DownloadAlertView",
+							mediator = "DownloadAlertMediator"
+						},
+						{
+							res = "asset/ui/SetAccountPopView.csb",
+							name = "SetAccountPopView",
+							mediator = "SetAccountPopMediator"
+						},
+						{
+							res = "asset/ui/SetAccountPopupView.csb",
+							name = "SetAccountPopupView",
+							mediator = "SetAccountPopupMediator"
+						},
+						{
+							res = "asset/ui/SetHeroShow.csb",
+							name = "SetHeroShowView",
+							mediator = "SetHeroShowMediator"
+						},
+						{
+							res = "asset/ui/SetHeroShowDetail.csb",
+							name = "SetHeroShowDetailView",
+							mediator = "SetHeroShowDetailMediator"
 						}
 					}
 				}
@@ -392,9 +457,16 @@ local modules = {
 					"dm.gameplay.home.view.home.PlayerInfoWidget",
 					"dm.gameplay.home.view.home.NetInfoWidget",
 					"dm.gameplay.tabBtn.PopTabBtnWidget",
-					"dm.gameplay.tabBtn.CompositeTabBtnWidget"
+					"dm.gameplay.tabBtn.CompositeTabBtnWidget",
+					"dm.gameplay.home.controller.HomeSystem",
+					"dm.gameplay.home.view.home.Navigation",
+					"dm.gameplay.home.controller.AudioTimerSystem",
+					"dm.gameplay.home.view.home.BoardHeroScreenWidget"
 				},
 				injections = {
+					singletons = {
+						"HomeSystem"
+					},
 					views = {
 						{
 							res = "asset/ui/MainScene.csb",
@@ -420,6 +492,26 @@ local modules = {
 							res = "asset/ui/HeroInteractionView.csb",
 							name = "HeroInteractionView",
 							mediator = "HeroInteractionViewMediator"
+						},
+						{
+							res = "asset/ui/DebugBustShow.csb",
+							name = "DebugBustShowView",
+							mediator = "DebugBustShowViewMediator"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustShowView2",
+							mediator = "DebugBustShowViewMediator2"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustShowView3",
+							mediator = "DebugBustShowViewMediator3"
+						},
+						{
+							res = "asset/ui/DebugBustShow2.csb",
+							name = "DebugBustUnAwake",
+							mediator = "DebugShowBustAniUnAwake"
 						}
 					}
 				}
@@ -462,6 +554,26 @@ local modules = {
 							res = "asset/ui/bagSelectMaterial.csb",
 							name = "BagSelectMaterialView",
 							mediator = "BagSelectMaterialMediator"
+						},
+						{
+							res = "asset/ui/bagURMap.csb",
+							name = "BagURMapView",
+							mediator = "BagURMapMediator"
+						},
+						{
+							res = "asset/ui/bagURMapDetail.csb",
+							name = "BagURMapViewDetailView",
+							mediator = "BagURMapViewDetailMediator"
+						},
+						{
+							res = "asset/ui/bagURMapReward.csb",
+							name = "BagURMapRewardView",
+							mediator = "BagURMapRewardMediator"
+						},
+						{
+							res = "asset/ui/HeroShowTranlate.csb",
+							name = "BagURExhangeView",
+							mediator = "BagURExhangeMeditor"
 						}
 					}
 				}
@@ -527,7 +639,8 @@ local modules = {
 					"dm.gameplay.develop.view.herostrength.RelationInfoWidget",
 					"dm.gameplay.develop.view.herostrength.RelationHeroWidget",
 					"dm.gameplay.develop.view.herostrength.SkillDescWidget",
-					"dm.gameplay.develop.view.herostrength.SkillTipWidget"
+					"dm.gameplay.develop.view.herostrength.SkillTipWidget",
+					"dm.gameplay.develop.view.herostrength.SkillMaxDescWidget"
 				},
 				injections = {
 					classes = {
@@ -668,6 +781,11 @@ local modules = {
 							res = "asset/ui/StrengthenAwakenSuccess.csb",
 							name = "HeroStrengthAwakenSuccessView",
 							mediator = "HeroStrengthAwakenSuccessMediator"
+						},
+						{
+							res = "asset/ui/HeroShowTranlate.csb",
+							name = "HeroGeneralFragmentView",
+							mediator = "HeroGeneralFragmentMeditor"
 						}
 					}
 				}
@@ -677,7 +795,8 @@ local modules = {
 				requires = {
 					"dm.gameplay.currency.CurrencySystem",
 					"dm.gameplay.currency.CurrencyService",
-					"dm.gameplay.currency.view.CurrencyInfoWidget"
+					"dm.gameplay.currency.view.CurrencyInfoWidget",
+					"dm.gameplay.currency.view.CostNodeWidget"
 				},
 				injections = {
 					singletons = {
@@ -716,6 +835,7 @@ local modules = {
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterEightCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterNightCell",
 					"dm.gameplay.stage.view.component.commonStageMap.ChapterTenCell",
+					"dm.gameplay.stage.view.component.commonStageMap.ChapterElevenCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteOneCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteTwoCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteThreeCell",
@@ -725,7 +845,8 @@ local modules = {
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteSevenCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteEightCell",
 					"dm.gameplay.stage.view.component.eliteStageMap.EliteNightCell",
-					"dm.gameplay.stage.view.component.eliteStageMap.EliteTenCell"
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteTenCell",
+					"dm.gameplay.stage.view.component.eliteStageMap.EliteElevenCell"
 				},
 				injections = {
 					singletons = {
@@ -744,6 +865,11 @@ local modules = {
 							res = "asset/ui/BlockTeam.csb",
 							name = "StageTeamView",
 							mediator = "StageTeamMediator"
+						},
+						{
+							res = "asset/ui/ChangeTeamModelView.csb",
+							name = "ChangeTeamModelView",
+							mediator = "ChangeTeamModelMediator"
 						},
 						{
 							res = "asset/ui/ChangeTeamMaster.csb",
@@ -886,6 +1012,10 @@ local modules = {
 							name = "ChapterTenCell"
 						},
 						{
+							res = "asset/ui/BlockMapCell11.csb",
+							name = "ChapterElevenCell"
+						},
+						{
 							res = "asset/ui/EliteMapCell1.csb",
 							name = "EliteOneCell"
 						},
@@ -926,6 +1056,10 @@ local modules = {
 							name = "EliteTenCell"
 						},
 						{
+							res = "asset/ui/EliteMapCell11.csb",
+							name = "EliteElevenCell"
+						},
+						{
 							res = "asset/ui/StoryBlockTeam.csb",
 							name = "StoryStageTeamView",
 							mediator = "StoryStageTeamMediator"
@@ -936,19 +1070,20 @@ local modules = {
 			{
 				name = "heroshow",
 				requires = {
-					"dm.gameplay.develop.view.herocomponent.SortHeroListComponent"
+					"dm.gameplay.develop.view.herocomponent.SortHeroListComponent",
+					"dm.gameplay.develop.view.herocomponent.SortHeroListNewComponent"
 				},
 				injections = {
 					views = {
 						{
-							res = "asset/ui/HeroShowDetails.csb",
+							res = "asset/ui/HeroShowDetailsNew.csb",
 							name = "HeroShowDetailsView",
 							mediator = "HeroShowDetailsMediator"
 						},
 						{
-							res = "asset/ui/HeroShowDetails.csb",
+							res = "asset/ui/HeroShowDetailsNew.csb",
 							name = "HeroInfoView",
-							mediator = "HeroInfoMediator"
+							mediator = "HeroShowDetailsMediator"
 						},
 						{
 							res = "asset/ui/HeroShowMain.csb",
@@ -992,7 +1127,9 @@ local modules = {
 				name = "master",
 				requires = {
 					"dm.gameplay.develop.service.MasterService",
-					"dm.gameplay.develop.view.master.MasterAttrShowTipWidget"
+					"dm.gameplay.develop.view.master.MasterAttrShowTipWidget",
+					"dm.gameplay.develop.view.master.MasterLeadStageSkillTip",
+					"dm.gameplay.develop.view.master.MasterLeadStageKuang"
 				},
 				injections = {
 					singletons = {
@@ -1058,6 +1195,26 @@ local modules = {
 							res = "asset/ui/MasterLeaderSkillTips.csb",
 							name = "MasterLeaderSkillView",
 							mediator = "MasterLeaderSkillMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStage.csb",
+							name = "MasterLeadStageView",
+							mediator = "MasterLeadStageMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStageDetail.csb",
+							name = "MasterLeadStageDetailView",
+							mediator = "MasterLeadStageDetailMediator"
+						},
+						{
+							res = "asset/ui/MasterCutIn.csb",
+							name = "MasterCutInView",
+							mediator = "MasterCutInMediator"
+						},
+						{
+							res = "asset/ui/MasterLeadStageAwake.csb",
+							name = "MasterLeadStageAwakeView",
+							mediator = "MasterLeadStageAwakeMediator"
 						}
 					}
 				}
@@ -1182,6 +1339,26 @@ local modules = {
 							res = "asset/ui/PlayerLevelUp.csb",
 							name = "PlayerLevelUpTipView",
 							mediator = "PlayerLevelUpTipMediator"
+						},
+						{
+							res = "asset/ui/NativeWebView.csb",
+							name = "NativeWebView",
+							mediator = "NativeWebViewMediator"
+						},
+						{
+							res = "asset/ui/ShowSomeWordTips.csb",
+							name = "ShowSomeWordTipsView",
+							mediator = "ShowSomeWordTipsMediator"
+						},
+						{
+							res = "asset/ui/GameIntroduce.csb",
+							name = "GameIntroduceView",
+							mediator = "GameIntroduceMediator"
+						},
+						{
+							res = "asset/ui/ComposeToEquipTips.csb",
+							name = "ComposeToEquipTipsView",
+							mediator = "ComposeToEquipTipsMediator"
 						}
 					}
 				}
@@ -1236,6 +1413,16 @@ local modules = {
 							res = "asset/ui/RecruitCommonPreview.csb",
 							name = "RecruitCommonPreviewView",
 							mediator = "RecruitCommonPreviewMediator"
+						},
+						{
+							res = "asset/ui/RecruitReward.csb",
+							name = "RecruitRewardView",
+							mediator = "RecruitRewardMediator"
+						},
+						{
+							res = "asset/ui/RecruitMain_New.csb",
+							name = "RecruitNewDrawCardView",
+							mediator = "RecruitNewDrawCardMediator"
 						}
 					}
 				}
@@ -1285,36 +1472,6 @@ local modules = {
 							res = "asset/ui/StagePracticeLose.csb",
 							name = "StagePracticeLoseView",
 							mediator = "StagePracticeLoseMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeResetTips.csb",
-							name = "StagePracticeResetTipsView",
-							mediator = "StagePracticeResetTipsMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeRank.csb",
-							name = "StagePracticeRankView",
-							mediator = "StagePracticeRankMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeMap.csb",
-							name = "StagePracticeView",
-							mediator = "StagePracticeMapMediator"
-						},
-						{
-							res = "asset/ui/StagePracticePoint.csb",
-							name = "StagePracticePointView",
-							mediator = "StagePracticePointMediator"
-						},
-						{
-							res = "asset/ui/StagePracticeHelpTip.csb",
-							name = "StagePracticeHelpTipView",
-							mediator = "StagePracticeHelpTipMediator"
-						},
-						{
-							res = "asset/ui/RewardBox.csb",
-							name = "StagePracticeBoxTipView",
-							mediator = "StagePracticeBoxTipMediator"
 						},
 						{
 							res = "asset/ui/StagePracticeComment.csb",
@@ -1392,6 +1549,7 @@ local modules = {
 			{
 				name = "activity",
 				requires = {
+					"dm.gameplay.activity.model.ActivityList",
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
 					"dm.gameplay.activity.view.ActivityWidget",
@@ -1409,11 +1567,6 @@ local modules = {
 							res = "asset/ui/EightDayLogin.csb",
 							name = "eightDayLoginView",
 							mediator = "EightDayLoginMediator"
-						},
-						{
-							res = "asset/ui/AccumulatedLogin.csb",
-							name = "accLoginView",
-							mediator = "AccumulatedLoginMediator"
 						},
 						{
 							res = "asset/ui/CommonEightDayLogin.csb",
@@ -1536,6 +1689,21 @@ local modules = {
 							mediator = "ActivityExchangeTipMediator"
 						},
 						{
+							res = "asset/ui/ActivityTaskStageStarNew.csb",
+							name = "ActivityTaskStageStarView",
+							mediator = "ActivityTaskStageStarMediator"
+						},
+						{
+							res = "asset/ui/ActivityFocusOn.csb",
+							name = "ActivityFocusOnView",
+							mediator = "ActivityFocusOnMediator"
+						},
+						{
+							res = "asset/ui/ActivityList.csb",
+							name = "ActivityListiew",
+							mediator = "ActivityListMediator"
+						},
+						{
 							res = "asset/ui/ActivityHeroCollect.csb",
 							name = "ActivityHeroCollectView",
 							mediator = "ActivityHeroCollectMediator"
@@ -1554,11 +1722,6 @@ local modules = {
 							res = "asset/ui/ActivityBlockEggs.csb",
 							name = "ActivityBlockEggView",
 							mediator = "ActivityBlockEggMediator"
-						},
-						{
-							res = "asset/ui/ActivityBlockGoldEgg.csb",
-							name = "ActivityBlockGoldEggView",
-							mediator = "ActivityBlockGoldEggMediator"
 						},
 						{
 							res = "asset/ui/ActivityEggsReward.csb",
@@ -1586,7 +1749,7 @@ local modules = {
 							mediator = "ActivityTaskAchievementMediator"
 						},
 						{
-							res = "asset/ui/BlockTeam.csb",
+							res = "asset/ui/ActivityBlockTeam.csb",
 							name = "ActivityBlockTeamView",
 							mediator = "ActivityBlockTeamMediator"
 						},
@@ -1679,6 +1842,11 @@ local modules = {
 							res = "asset/ui/RechargeTip.csb",
 							name = "RechargeTipView",
 							mediator = "RechargeTipMediator"
+						},
+						{
+							res = "asset/ui/ActivityDrawCardFeedback.csb",
+							name = "ActivityDrawCardFeedbackView",
+							mediator = "ActivityDrawCardFeedbackMediator"
 						},
 						{
 							res = "asset/ui/ActivityBlockSupportMainWxh.csb",
@@ -1781,9 +1949,238 @@ local modules = {
 							mediator = "ActivityBlockFudaiPreviewMeditor"
 						},
 						{
+							res = "asset/ui/ActivityPuzzleGame.csb",
+							name = "ActivityPuzzleGameView",
+							mediator = "ActivityPuzzleGameMediator"
+						},
+						{
+							res = "asset/ui/ActivityPuzzleGameTask.csb",
+							name = "ActivityPuzzleGameTaskView",
+							mediator = "ActivityPuzzleGameTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityFudaiPreview.csb",
+							name = "ActivityBlockFudaiPreview",
+							mediator = "ActivityBlockFudaiPreviewMeditor"
+						},
+						{
 							res = "asset/ui/ActivityBlockDetective.csb",
 							name = "ActivityBlockDetectiveView",
 							mediator = "ActivityBlockDectiveMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockMusic.csb",
+							name = "ActivityBlockMusicView",
+							mediator = "ActivityBlockMusicMediator"
+						},
+						{
+							res = "asset/ui/ActivityBakingMain.csb",
+							name = "ActivityBakingMainView",
+							mediator = "ActivityBakingMainMediator"
+						},
+						{
+							res = "asset/ui/TimeShopActivityFoolsday.csb",
+							name = "TimeShopActivityView",
+							mediator = "TimeLimitShopActivityMediator"
+						},
+						{
+							res = "asset/ui/ActivityLogin14Common.csb",
+							name = "ActivityLogin14CommonView",
+							mediator = "ActivityLogin14CommonMediator"
+						},
+						{
+							res = "asset/ui/ActivityCollapsedMain.csb",
+							name = "ActivityCollapsedMainView",
+							mediator = "ActivityCollapsedMainMediator"
+						},
+						{
+							res = "asset/ui/dreamChallengeBuffDetail.csb",
+							name = "ActivityNpcRoleDetailView",
+							mediator = "ActivityNpcRoleDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivityKnightMain.csb",
+							name = "ActivityKnightMainView",
+							mediator = "ActivityKnightMainMediator"
+						},
+						{
+							res = "asset/ui/ActivitySunflowerMain.csb",
+							name = "ActivitySunflowerMainView",
+							mediator = "ActivitySunflowerMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityReturn.csb",
+							name = "ActivityReturnView",
+							mediator = "ActivityReturnMediator"
+						},
+						{
+							res = "asset/ui/ActivityReturnLetter.csb",
+							name = "ActivityReturnLetterView",
+							mediator = "ActivityReturnLetterMediator"
+						},
+						{
+							res = "asset/ui/RewardBoxShow.csb",
+							name = "ActivityReturnLetterRewardView",
+							mediator = "ActivityReturnLetterRewardMediator"
+						},
+						{
+							res = "asset/ui/ReturnActivityLogin.csb",
+							name = "ReturnActivityLoginView",
+							mediator = "ReturnActivityLoginMediator"
+						},
+						{
+							res = "asset/ui/ReturnActivityTaskReached.csb",
+							name = "ReturnActivityTaskReachedView",
+							mediator = "ReturnActivityTaskReachedMediator"
+						},
+						{
+							res = "asset/ui/ReturnShopActivity.csb",
+							name = "ReturnShopActivityView",
+							mediator = "ReturnShopActivityMediator"
+						},
+						{
+							res = "asset/ui/ReturnHeroChange.csb",
+							name = "ReturnHeroChangeView",
+							mediator = "ReturnHeroChangeMediator"
+						},
+						{
+							res = "asset/ui/ActivityFireMain.csb",
+							name = "ActivityFireMainView",
+							mediator = "ActivityFireMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockZeroTask.csb",
+							name = "ActivityBlockZeroTaskView",
+							mediator = "ActivityBlockZeroTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskDaily.csb",
+							name = "ActivityZeroTaskDailyView",
+							mediator = "ActivityZeroTaskDailyMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroTaskAchievement.csb",
+							name = "ActivityZeroTaskAchievementView",
+							mediator = "ActivityZeroTaskAchievementMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMain.csb",
+							name = "ActivityZeroMainView",
+							mediator = "ActivityZeroMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroSelectMap.csb",
+							name = "ActivityZeroSelectMapView",
+							mediator = "ActivityZeroSelectMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetail.csb",
+							name = "ActivityZeroPointDetailView",
+							mediator = "ActivityZeroPointDetailMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMap.csb",
+							name = "ActivityZeroeMapView",
+							mediator = "ActivityZeroMapMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroMapUI.csb",
+							name = "ActivityZeroMapUIView"
+						},
+						{
+							res = "asset/ui/ActivityBlockZeroShop.csb",
+							name = "ActivityBlockZeroShopView",
+							mediator = "ActivityBlockZeroShopMediator"
+						},
+						{
+							res = "asset/ui/ActivityZeroDiceStep.csb",
+							name = "ActivityZeroDiceStepView",
+							mediator = "ActivityZeroDiceStepMediator"
+						},
+						{
+							res = "asset/ui/ActivityFemaleMain.csb",
+							name = "ActivityFemaleMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityStoryBookMain.csb",
+							name = "ActivityStoryBookMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityReZeroMain.csb",
+							name = "ActivityReZeroMainView",
+							mediator = "ActivityFireMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityDeepSeaMain.csb",
+							name = "ActivityDeepSeaMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityMapNew.csb",
+							name = "ActivityMapNewView",
+							mediator = "ActivityMapNewMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetail_New.csb",
+							name = "ActivityPointDetailNewView",
+							mediator = "ActivityPointDetailNewMediator"
+						},
+						{
+							res = "asset/ui/ActivitySummerReMain.csb",
+							name = "ActivitySummerReMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityFireWorksMain.csb",
+							name = "ActivityFireWorksMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityTerrorMain.csb",
+							name = "ActivityTerrorMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityRiddleMain.csb",
+							name = "ActivityRiddleMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityRiddleVote.csb",
+							name = "ActivityRiddleVoteView",
+							mediator = "ActivityRiddleVoteMediator"
+						},
+						{
+							res = "asset/ui/ActivityMail.csb",
+							name = "ActivityMailView",
+							mediator = "ActivityMailMediator"
+						},
+						{
+							res = "asset/ui/ActivityAnimalMain.csb",
+							name = "ActivityAnimalMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityDuskMain.csb",
+							name = "ActivityDuskMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivitySilentNightMain.csb",
+							name = "ActivitySilentNightMainView",
+							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityPointDetailRule.csb",
+							name = "ActivityPointDetailRuleView",
+							mediator = "ActivityPointDetailRuleMediator"
+						},
+						{
+							res = "asset/ui/ActivityDramaMain.csb",
+							name = "ActivityDramaMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}
@@ -1861,6 +2258,73 @@ local modules = {
 							res = "asset/ui/ArenaNewSeason.csb",
 							name = "ArenaNewSeasonView",
 							mediator = "ArenaNewSeasonMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "newArena",
+				requires = {
+					"dm.gameplay.newArena.controller.ArenaNewSystem",
+					"dm.gameplay.newArena.service.ArenaNewService"
+				},
+				injections = {
+					singletons = {
+						"ArenaNewSystem"
+					},
+					classes = {
+						"ArenaNewService"
+					},
+					views = {
+						{
+							res = "asset/ui/NewArena.csb",
+							name = "ArenaNewView",
+							mediator = "ArenaNewMediator"
+						},
+						{
+							res = "asset/ui/NewArenaTeamList.csb",
+							name = "ArenaNewTeamListView",
+							mediator = "ArenaNewTeamListMediator"
+						},
+						{
+							res = "asset/ui/NewArenaTeam.csb",
+							name = "ArenaNewTeamView",
+							mediator = "ArenaNewTeamMediator"
+						},
+						{
+							res = "asset/ui/NewArenaReward.csb",
+							name = "ArenaNewRewardView",
+							mediator = "ArenaNewRewardMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRivalInfo.csb",
+							name = "ArenaNewRivalView",
+							mediator = "ArenaNewRivalMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRank.csb",
+							name = "ArenaNewRankView",
+							mediator = "ArenaNewRankMediator"
+						},
+						{
+							res = "asset/ui/NewArenaDefendTeam.csb",
+							name = "ArenaNewDefendTeamView",
+							mediator = "ArenaNewDefendTeamMediator"
+						},
+						{
+							res = "asset/ui/NewArenaRecord.csb",
+							name = "ArenaNewRecordView",
+							mediator = "ArenaNewRecordMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "ArenaNewReportMainView",
+							mediator = "ArenaNewReportMainMediator"
+						},
+						{
+							res = "asset/ui/ArenaQuickBattle.csb",
+							name = "ArenaNewLoseView",
+							mediator = "ArenaNewLoseMediator"
 						}
 					}
 				}
@@ -2059,7 +2523,10 @@ local modules = {
 					"dm.gameplay.building.model.BaseBuilding",
 					"dm.gameplay.building.model.DecorateBuilding",
 					"dm.gameplay.building.model.ResourceBuilding",
-					"dm.gameplay.building.model.Room"
+					"dm.gameplay.building.model.Room",
+					"dm.gameplay.building.view.club.ClubBuildingTouchComponent",
+					"dm.gameplay.building.view.club.ClubBuildingDecorateComponent",
+					"dm.gameplay.building.view.club.ClubBuildingMainComponent"
 				},
 				injections = {
 					singletons = {
@@ -2074,6 +2541,11 @@ local modules = {
 							res = "asset/ui/BuildingView.csb",
 							name = "BuildingView",
 							mediator = "BuildingMediator"
+						},
+						{
+							res = "asset/ui/BuildingView.csb",
+							name = "ClubBuildingView",
+							mediator = "ClubBuildingMediator"
 						},
 						{
 							res = "asset/ui/BuildingOverviewUI.csb",
@@ -2317,7 +2789,9 @@ local modules = {
 				name = "club",
 				requires = {
 					"dm.gameplay.club.controller.ClubSystem",
-					"dm.gameplay.club.service.ClubService"
+					"dm.gameplay.club.service.ClubService",
+					"dm.gameplay.club.view.ClubInfoWidget",
+					"dm.gameplay.club.view.ClubMapButtonWidget"
 				},
 				injections = {
 					singletons = {
@@ -2361,11 +2835,6 @@ local modules = {
 							res = "asset/ui/clubBasicInfo.csb",
 							name = "ClubBasicInfoView",
 							mediator = "ClubBasicInfoMediator"
-						},
-						{
-							res = "asset/ui/clubAudit.csb",
-							name = "ClubAuditView",
-							mediator = "ClubAuditMediator"
 						},
 						{
 							res = "asset/ui/clubLog.csb",
@@ -2428,6 +2897,11 @@ local modules = {
 							mediator = "ClubTechnologyMediator"
 						},
 						{
+							res = "asset/ui/clubSNSTip.csb",
+							name = "ClubSNSTipView",
+							mediator = "ClubSNSTipMediator"
+						},
+						{
 							res = "asset/ui/ClubBoss.csb",
 							name = "ClubBossView",
 							mediator = "ClubBossMediator"
@@ -2466,6 +2940,41 @@ local modules = {
 							res = "asset/ui/ClubBossGainRewardTip.csb",
 							name = "ClubResourcesBattleGainRewardView",
 							mediator = "ClubResourcesBattleGainRewardMediator"
+						},
+						{
+							res = "asset/ui/ClubBossRecord.csb",
+							name = "ClubBossRecordView",
+							mediator = "ClubBossRecordMediator"
+						},
+						{
+							res = "asset/ui/clubNewHall.csb",
+							name = "ClubNewHallView",
+							mediator = "ClubNewHallMediator"
+						},
+						{
+							res = "asset/ui/clubNewDaily.csb",
+							name = "ClubDailyView",
+							mediator = "ClubLogMediator"
+						},
+						{
+							res = "asset/ui/clubNewAudit.csb",
+							name = "ClubAuditView",
+							mediator = "ClubAuditMediator"
+						},
+						{
+							res = "asset/ui/clubNewInfo.csb",
+							name = "ClubNewInfoView",
+							mediator = "ClubNewInfoMediator"
+						},
+						{
+							res = "asset/ui/clubNewTechnology.csb",
+							name = "ClubNewTechnologyView",
+							mediator = "ClubNewTechnologyMediator"
+						},
+						{
+							res = "asset/ui/ClubMapView.csb",
+							name = "ClubMainMapView",
+							mediator = "ClubMapViewMediator"
 						}
 					}
 				}
@@ -2579,6 +3088,11 @@ local modules = {
 							res = "asset/ui/FriendInfo.csb",
 							name = "FriendInfoPopView",
 							mediator = "FriendInfoPopMediator"
+						},
+						{
+							res = "asset/ui/FriendBlack.csb",
+							name = "FriendBlcakView",
+							mediator = "FriendBlackMediator"
 						}
 					}
 				}
@@ -2624,7 +3138,8 @@ local modules = {
 				name = "gallery",
 				requires = {
 					"dm.gameplay.gallery.controller.GallerySystem",
-					"dm.gameplay.gallery.service.GalleryService"
+					"dm.gameplay.gallery.service.GalleryService",
+					"dm.gameplay.gallery.view.GalleryGiftCellWidget"
 				},
 				injections = {
 					singletons = {
@@ -2718,6 +3233,26 @@ local modules = {
 							res = "asset/ui/GalleryLegendInfo.csb",
 							name = "GalleryLegendInfoView",
 							mediator = "GalleryLegendInfoMediator"
+						},
+						{
+							res = "asset/ui/GalleryBook.csb",
+							name = "GalleryBookView",
+							mediator = "GalleryBookMediator"
+						},
+						{
+							res = "asset/ui/GalleryPartnerNew.csb",
+							name = "GalleryPartnerNewView",
+							mediator = "GalleryPartnerNewMediator"
+						},
+						{
+							res = "asset/ui/GalleryPartnerInfoNew.csb",
+							name = "GalleryPartnerInfoNewView",
+							mediator = "GalleryPartnerInfoNewMediator"
+						},
+						{
+							res = "asset/ui/GalleryGiftWidget.csb",
+							name = "GalleryGiftCellView",
+							mediator = "GalleryGiftCellMediator"
 						}
 					}
 				}
@@ -2926,6 +3461,11 @@ local modules = {
 							mediator = "ShopSurfaceMediator"
 						},
 						{
+							res = "asset/ui/shopSurfaceNew.csb",
+							name = "ShopSurfaceNewView",
+							mediator = "ShopSurfaceNewMediator"
+						},
+						{
 							res = "asset/ui/shopPackageMain.csb",
 							name = "ShopResetView",
 							mediator = "ShopResetMediator"
@@ -2964,6 +3504,26 @@ local modules = {
 							res = "asset/ui/shopMonthCard.csb",
 							name = "ShopMonthCardView",
 							mediator = "ShopMonthCardMediator"
+						},
+						{
+							res = "asset/ui/shopHistory.csb",
+							name = "ShopHistoryView",
+							mediator = "ShopHistoryMediator"
+						},
+						{
+							res = "asset/ui/shopCoopExchange.csb",
+							name = "ShopCoopExchangeView",
+							mediator = "ShopCoopExchangeMediator"
+						},
+						{
+							res = "asset/ui/shopBuyUINormal.csb",
+							name = "ShopCoopExchangeBuyView",
+							mediator = "ShopCoopExchangeBuyMediator"
+						},
+						{
+							res = "asset/ui/shopURExchange.csb",
+							name = "ShopURExchangeView",
+							mediator = "ShopURExchangeMediator"
 						}
 					}
 				}
@@ -3170,6 +3730,11 @@ local modules = {
 							res = "asset/ui/Layer_exploreFinish.csb",
 							name = "ExploreFinishView",
 							mediator = "ExploreFinishMediator"
+						},
+						{
+							res = "asset/ui/BlockSweepLayer.csb",
+							name = "ExploreSweepView",
+							mediator = "ExploreSweepMediator"
 						}
 					}
 				}
@@ -3355,6 +3920,11 @@ local modules = {
 							res = "asset/ui/CrusadeSweepResult.csb",
 							name = "CrusadeSweepResultView",
 							mediator = "CrusadeSweepResultMediator"
+						},
+						{
+							res = "asset/ui/CrusadeWorldRule.csb",
+							name = "CrusadeWorldRuleView",
+							mediator = "CrusadeWorldRuleMediator"
 						}
 					}
 				}
@@ -3504,27 +4074,6 @@ local modules = {
 				}
 			},
 			{
-				name = "team",
-				requires = {
-					"dm.gameplay.team.controller.TeamSystem"
-				},
-				injections = {
-					singletons = {
-						"TeamSystem"
-					},
-					classes = {
-						"TeamService"
-					},
-					views = {
-						{
-							res = "asset/ui/MainTeamLayer.csb",
-							name = "MainTeamView",
-							mediator = "MainTeamMediator"
-						}
-					}
-				}
-			},
-			{
 				name = "dreamChallenge",
 				requires = {
 					"dm.gameplay.dreamChallenge.controller.DreamChallengeSystem",
@@ -3577,6 +4126,52 @@ local modules = {
 							res = "asset/ui/dreamChallengePass.csb",
 							name = "DreamChallengePassView",
 							mediator = "DreamChallengePassMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "dreamHouse",
+				requires = {
+					"dm.gameplay.dreamHouse.controller.DreamHouseSystem",
+					"dm.gameplay.dreamHouse.service.DreamHouseService",
+					"dm.gameplay.dreamHouse.model.DreamHouse",
+					"dm.gameplay.dreamHouse.model.DreamHousePoint",
+					"dm.gameplay.dreamHouse.model.DreamHouseMap"
+				},
+				injections = {
+					singletons = {
+						"DreamHouseSystem",
+						"DreamHouse"
+					},
+					classes = {
+						"DreamHouseService"
+					},
+					views = {
+						{
+							res = "asset/ui/dreamHouseMain.csb",
+							name = "DreamHouseMainView",
+							mediator = "DreamHouseMainMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseTeam.csb",
+							name = "DreamHouseTeamView",
+							mediator = "DreamHouseTeamMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseBattleEnd.csb",
+							name = "DreamHouseBattleEndView",
+							mediator = "DreamHouseBattleEndMediator"
+						},
+						{
+							res = "asset/ui/dreamHouseDetail.csb",
+							name = "DreamHouseDetailView",
+							mediator = "DreamHouseDetailMediator"
+						},
+						{
+							res = "asset/ui/dreamHousePass.csb",
+							name = "DreamHousePassView",
+							mediator = "DreamHousePassMediator"
 						}
 					}
 				}
@@ -3641,6 +4236,65 @@ local modules = {
 							res = "asset/ui/MiniGameResult.csb",
 							name = "MiniGameResultView",
 							mediator = "MiniGameResultMediator"
+						},
+						{
+							res = "asset/ui/Jump.csb",
+							name = "JumpView",
+							mediator = "JumpMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "cooperateBoss",
+				requires = {
+					"dm.gameplay.cooperateBoss.controller.CooperateBossSystem",
+					"dm.gameplay.cooperateBoss.model.CooperateBoss",
+					"dm.gameplay.cooperateBoss.service.CooperateBossService"
+				},
+				injections = {
+					singletons = {
+						"CooperateBossSystem",
+						"CooperateBoss"
+					},
+					classes = {
+						"CooperateBossService"
+					},
+					views = {
+						{
+							res = "asset/ui/CooperateBossMain.csb",
+							name = "CooperateBossMainView",
+							mediator = "CooperateBossMainMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossBattleEnd.csb",
+							name = "CooperateBossBattleEndView",
+							mediator = "CooperateBossBattleEndMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossFight.csb",
+							name = "CooperateBossFightView",
+							mediator = "CooperateBossFightMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossInvite.csb",
+							name = "CooperateBossInviteView",
+							mediator = "CooperateBossInviteMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossInviteFriend.csb",
+							name = "CooperateBossInviteFriendView",
+							mediator = "CooperateBossInviteFriendMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossBuyTime.csb",
+							name = "CooperateBossBuyTimeView",
+							mediator = "CooperateBossBuyTimeMediator"
+						},
+						{
+							res = "asset/ui/CooperateBossTeam.csb",
+							name = "CooperateBossTeamView",
+							mediator = "CooperateBossTeamMediator"
 						}
 					}
 				}
@@ -3703,6 +4357,84 @@ local modules = {
 							res = "asset/ui/RTPKNewSeason.csb",
 							name = "RTPKNewSeasonTipsView",
 							mediator = "RTPKNewSeasonTipsMediator"
+						},
+						{
+							res = "asset/ui/RTPKEmoji.csb",
+							name = "RTPKEmojiView",
+							mediator = "RTPKEmojiMediator"
+						}
+					}
+				}
+			},
+			{
+				name = "leadStageArena",
+				requires = {
+					"dm.gameplay.leadStageArena.controller.LeadStageArenaSystem",
+					"dm.gameplay.leadStageArena.service.LeadStageArenaService",
+					"dm.gameplay.leadStageArena.model.LeadStageArenaHero"
+				},
+				injections = {
+					singletons = {
+						"LeadStageArenaSystem"
+					},
+					classes = {
+						"LeadStageArenaService"
+					},
+					views = {
+						{
+							res = "asset/ui/LeadStageAreaMain.csb",
+							name = "LeadStageArenaMainView",
+							mediator = "LeadStageArenaMainMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaRank.csb",
+							name = "LeadStageArenaRankView",
+							mediator = "LeadStageArenaRankViewMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaPlayerInfo.csb",
+							name = "LeadStageArenaPlayerInfoView",
+							mediator = "LeadStageArenaPlayerInfoViewMediator"
+						},
+						{
+							res = "asset/ui/leadStageAreaLoading.csb",
+							name = "LeadStageArenaLoadingView",
+							mediator = "LeadStageArenaLoadingMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaRival.csb",
+							name = "LeadStageArenaRivalView",
+							mediator = "LeadStageArenaRivalMediator"
+						},
+						{
+							res = "asset/ui/StageAreaFreshRival.csb",
+							name = "LeadStageArenaFreshRivalView",
+							mediator = "LeadStageArenaFreshRivalMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaTeamList.csb",
+							name = "LeadStageArenaTeamListView",
+							mediator = "LeadStageArenaTeamListMediator"
+						},
+						{
+							res = "asset/ui/LeadStageAreaBattleFinish.csb",
+							name = "LeadStageAreaBattleFinishView",
+							mediator = "LeadStageAreaBattleFinishMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaTeam.csb",
+							name = "LeadStageArenaTeamView",
+							mediator = "LeadStageArenaTeamMediator"
+						},
+						{
+							res = "asset/ui/ArenaReportMain.csb",
+							name = "LeadStageArenaReportView",
+							mediator = "LeadStageArenaReportViewMediator"
+						},
+						{
+							res = "asset/ui/LeadStageArenaReward.csb",
+							name = "LeadStageArenaRewardView",
+							mediator = "LeadStageArenaRewardViewMediator"
 						}
 					}
 				}
@@ -3766,6 +4498,11 @@ local modules = {
 							node = "cc.Node",
 							name = "DreamBattleView",
 							mediator = "DreamBattleMainMediator"
+						},
+						{
+							node = "cc.Node",
+							name = "BattleItemShowView",
+							mediator = "BattleItemMediator"
 						}
 					}
 				}

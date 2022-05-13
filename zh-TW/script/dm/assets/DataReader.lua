@@ -33,9 +33,15 @@ end
 
 function DataReader:getDBTable(tableName)
 	if not self._DBTables[tableName] then
-		local dbTable = DBReader:getInstance():getTable(dbFilePath, tableName)
+		local dbTable, errorInfo = DBReader:getInstance():getTable(dbFilePath, tableName)
 
-		assert(dbTable, "no such db table:" .. tableName)
+		if not dbTable then
+			self:cleanCache()
+
+			dbTable, errorInfo = DBReader:getInstance(true):getTable(dbFilePath, tableName)
+		end
+
+		assert(dbTable, string.format("no such db table:%s,errorInfo:%s", tableName, tostring(errorInfo)))
 
 		local info = {
 			table = dbTable,

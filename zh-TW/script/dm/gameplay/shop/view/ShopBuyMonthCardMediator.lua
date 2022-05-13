@@ -195,7 +195,7 @@ function ShopBuyMonthCardMediator:refreshBuyStatus()
 	end
 end
 
-function ShopBuyMonthCardMediator:onClickedBuyBtn()
+function ShopBuyMonthCardMediator:onClickedBuyBtn(isRecover)
 	if not self._canBuy then
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 
@@ -207,7 +207,9 @@ function ShopBuyMonthCardMediator:onClickedBuyBtn()
 	local p = self._shopSystem:getPlatform()
 
 	if self._data._id == KMonthCardType.KMonthCardSubscribe and p == "ios" then
-		self._rechargeAndVipSystem:requestPurchaseSubscribe(self._data._id)
+		local isRecover = isRecover == KPayToSdkType.KRecover and isRecover or KPayToSdkType.KSubscribe
+
+		self._rechargeAndVipSystem:requestPurchaseSubscribe(self._data._id, isRecover)
 	else
 		self._rechargeAndVipSystem:requestBuyMonthCard(self._data._id)
 	end
@@ -249,36 +251,40 @@ function ShopBuyMonthCardMediator:refreshBuyStatusForSubscribe()
 			self._buyBtnText:setString(Strings:get("Subscribe_Already"))
 
 			self._canBuy = false
-		elseif self._data._endTimes == -1 then
-			self._noBuy:setVisible(true)
-			self._remainBuy:setVisible(false)
-			self._remainBuyDay:setVisible(false)
-			self._remainBuyDay1:setVisible(false)
-			self._buyBtnText:setString(Strings:get("shop_UI3"))
 		else
-			self._noBuy:setVisible(false)
-			self._remainBuy:setVisible(true)
-			self._remainBuyDay:setVisible(true)
-			self._remainBuyDay1:setVisible(true)
+			self._recoverBtn:setVisible(true)
 
-			local endTimes = self._data._endTimes
-			local lastTimes = self._data._lastRewardTimes
-
-			self._remainBuy:setString(Strings:get("Subscribe_Surplus"))
-
-			local remainDays = self._rechargeAndVipSystem:getRemainDays(self._data._id)
-
-			self._remainBuyDay:setString(tostring(remainDays))
-
-			if remainDays < self._data._dangerTime then
-				self._remainBuyDay:setColor(cc.c3b(255, 73, 73))
+			if self._data._endTimes == -1 then
+				self._noBuy:setVisible(true)
+				self._remainBuy:setVisible(false)
+				self._remainBuyDay:setVisible(false)
+				self._remainBuyDay1:setVisible(false)
+				self._buyBtnText:setString(Strings:get("shop_UI3"))
 			else
-				self._remainBuyDay:setColor(cc.c3b(91, 230, 255))
-			end
+				self._noBuy:setVisible(false)
+				self._remainBuy:setVisible(true)
+				self._remainBuyDay:setVisible(true)
+				self._remainBuyDay1:setVisible(true)
 
-			self._remainBuyDay1:setString(Strings:get("MonthCard_1_RemainTime_Text2"))
-			self._remainBuyDay1:setPositionX(self._remainBuyDay:getPositionX() + self._remainBuyDay:getContentSize().width)
-			self._buyBtnText:setString(Strings:get("shop_UI3"))
+				local endTimes = self._data._endTimes
+				local lastTimes = self._data._lastRewardTimes
+
+				self._remainBuy:setString(Strings:get("Subscribe_Surplus"))
+
+				local remainDays = self._rechargeAndVipSystem:getRemainDays(self._data._id)
+
+				self._remainBuyDay:setString(tostring(remainDays))
+
+				if remainDays < self._data._dangerTime then
+					self._remainBuyDay:setColor(cc.c3b(255, 73, 73))
+				else
+					self._remainBuyDay:setColor(cc.c3b(91, 230, 255))
+				end
+
+				self._remainBuyDay1:setString(Strings:get("MonthCard_1_RemainTime_Text2"))
+				self._remainBuyDay1:setPositionX(self._remainBuyDay:getPositionX() + self._remainBuyDay:getContentSize().width)
+				self._buyBtnText:setString(Strings:get("shop_UI3"))
+			end
 		end
 	elseif self._data._endTimes == -1 then
 		if not subscribeIsPurchased then

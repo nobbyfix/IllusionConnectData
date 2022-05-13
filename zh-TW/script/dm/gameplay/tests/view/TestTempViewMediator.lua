@@ -32,40 +32,29 @@ end
 
 function TestTempViewMediator:setupView()
 	self._des = self:getChildView("Panel_base.Text_des")
+	local text = Strings:get("Maincity_Benefit_Detail4", {
+		fontName = TTF_FONT_FZYH_M
+	})
+	local label = ccui.RichText:createWithXML(Strings:get("ActivityBlock_EightDays_Sign"), {
+		KEY_VERTICAL_SPACE = 10
+	})
 
-	self._des:setString("这里可以随便做一些临时的功能测试，不上传git")
-	self._des:setContentSize(cc.size(600, 400))
-	self._des:setAnchorPoint(0.5, 1)
+	self._des:addChild(label)
+	label:setPosition(cc.p(280, 0))
 
-	local fileUtils = cc.FileUtils:getInstance()
-	local savePath = fileUtils:getWritablePath() .. "/error.txt"
+	local anim = cc.MovieClip:create("jinru_zhuxianguanka_UIjiaohudongxiao")
 
-	if fileUtils:isFileExist(savePath) then
-		local file = io.open(savePath, "r")
+	anim:setPosition(cc.p(300, 300))
+	anim:addTo(self._view):offset(250, 0)
 
-		if not file then
-			self:dispatch(ShowTipEvent({
-				tip = "未找到相应的数据",
-				duration = 0.35
-			}))
+	local sp = cc.Sprite:create("asset/11111.jpg")
 
-			return
-		end
+	sp:setPosition(cc.p(300, 300))
+	sp:addTo(self._view):offset(250, 0)
+	sp:setSaturation(-50)
 
-		local dataStr = file:read("*a")
+	local a = sp:getColorMatrix()
 
-		if dataStr then
-			self._des:setString(dataStr)
-		else
-			self:dispatch(ShowTipEvent({
-				tip = "读取文件失败",
-				duration = 0.35
-			}))
-		end
-	else
-		self:dispatch(ShowTipEvent({
-			tip = "文件不存在",
-			duration = 0.35
-		}))
-	end
+	sp:setColorMatrix(a)
+	dump(a)
 end

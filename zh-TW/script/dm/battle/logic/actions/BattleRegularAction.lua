@@ -153,6 +153,7 @@ function DoActionState:enter(battleAction)
 		})
 
 		local skillExecutor = battleContext:getObject("SkillSystem"):getSkillExecutor()
+		local skillScheduler = battleContext:getObject("SkillSystem"):getSkillScheduler()
 		local args = {
 			ACTOR = actor,
 			TARGET = primTrgt
@@ -167,7 +168,23 @@ function DoActionState:enter(battleAction)
 
 		local skillSystem = battleContext:getObject("SkillSystem")
 
-		skillSystem:activateSpecificTrigger(actor, "BEFORE_ACTION")
+		skillSystem:activateSpecificTrigger(actor, "BEFORE_ACTION", {
+			primTrgt = primTrgt
+		})
+		skillSystem:activateGlobalTrigger("UNIT_BEFORE_ACTION", {
+			unit = actor,
+			primTrgt = primTrgt
+		})
+		skillScheduler:update(0)
+
+		local forbidReason = shouldForbidRegularAction(actor)
+
+		if forbidReason then
+			battleAction:changeState(NonActionState:new(forbidReason))
+
+			return
+		end
+
 		skillExecutor:runAction(skillAction, args, function (executor)
 			local angerSystem = battleContext:getObject("AngerSystem")
 

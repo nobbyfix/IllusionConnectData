@@ -103,6 +103,21 @@ function ClubAuditLimitTipMediator:enterWithData(data)
 
 		checkBox:setSelected(self._selectIndex == i)
 		checkBox:setVisible(true)
+
+		local textBg = self._mainPanel:getChildByFullName("textBg_" .. tostring(i))
+
+		textBg:setTouchEnabled(true)
+
+		local function callFunc(sender, eventType)
+			local selected = self._boxCheckCache[i]:isSelected()
+			local eventType = selected and ccui.CheckBoxEventType.unselected or ccui.CheckBoxEventType.selected
+
+			self:onCheckBoxClick(checkBox, eventType, i)
+		end
+
+		mapButtonHandlerClick(nil, textBg, {
+			func = callFunc
+		})
 	end
 
 	self:refreshLimitLabel()
@@ -130,32 +145,51 @@ function ClubAuditLimitTipMediator:checkString(str)
 end
 
 function ClubAuditLimitTipMediator:initTextFiled()
+	local levelMaxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Club_Set_MaxLevelNum", "content")
+	local combatMaxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Club_Set_MaxBattleNum", "content")
+	local levelLabel = self._mainPanel:getChildByFullName("levelnode.levellabel")
+	local combatLabel = self._mainPanel:getChildByFullName("combatnode.combatlabel")
 	self._levelChange = self._levelLimit
 
 	if self._levelTextFiled:getDescription() == "TextField" then
-		self._levelTextFiled:setString(self._levelLimit)
-		self._levelTextFiled:setMaxLength(self._maxLevel)
+		self._levelTextFiled:setString("")
+		self._levelTextFiled:setMaxLength(levelMaxLength)
 		self._levelTextFiled:setMaxLengthEnabled(true)
 	end
 
 	self._levelTextFiled:setLocalZOrder(99)
-	self._levelTextFiled:setVisible(false)
+	self._levelTextFiled:setVisible(true)
 
 	self._levelTextFiled = convertTextFieldToEditBox(self._levelTextFiled, nil, MaskWordType.CHAT)
 
 	self._levelTextFiled:setInputMode(cc.EDITBOX_INPUT_MODE_NUMERIC)
 	self._levelTextFiled:onEvent(function (eventName, sender)
 		if eventName == "began" then
-			-- Nothing
+			levelLabel:setString("")
 		elseif eventName == "ended" then
-			if self:checkString(self._levelChange) then
-				self._levelTextFiled:setText(self._levelLimit)
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("ClubLimitTipsText")
+			if type(tonumber(self._levelChange)) ~= "number" or self._levelChange == "" then
+				levelLabel:setString(self._levelLimit)
+				self._levelTextFiled:setText("")
+				self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					tip = Strings:get("Club_Limit_Tips_3")
 				}))
-			else
-				self._levelLimit = self._levelChange
+
+				return
 			end
+
+			self._levelLimit = math.modf(tonumber(self._levelChange))
+			self._levelLimit = math.max(0, self._levelLimit)
+
+			if self._maxLevel < self._levelLimit then
+				self._levelLimit = self._maxLevel
+
+				self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					tip = Strings:get("Club_Limit_Tips_1")
+				}))
+			end
+
+			self:refreshLimitLabel()
+			self._levelTextFiled:setText("")
 		elseif eventName == "return" then
 			-- Nothing
 		elseif eventName == "changed" then
@@ -176,29 +210,44 @@ function ClubAuditLimitTipMediator:initTextFiled()
 	self._combatChange = self._combatLimit
 
 	if self._combatTextFiled:getDescription() == "TextField" then
-		self._combatTextFiled:setString(self._levelLimit)
-		self._combatTextFiled:setMaxLength(self._maxLevel)
+		self._combatTextFiled:setString("")
+		self._combatTextFiled:setMaxLength(combatMaxLength)
 		self._combatTextFiled:setMaxLengthEnabled(true)
 	end
 
 	self._combatTextFiled:setLocalZOrder(99)
-	self._combatTextFiled:setVisible(false)
+	self._combatTextFiled:setVisible(true)
 
 	self._combatTextFiled = convertTextFieldToEditBox(self._combatTextFiled, nil, MaskWordType.CHAT)
 
 	self._combatTextFiled:setInputMode(cc.EDITBOX_INPUT_MODE_NUMERIC)
 	self._combatTextFiled:onEvent(function (eventName, sender)
 		if eventName == "began" then
-			-- Nothing
+			combatLabel:setString("")
 		elseif eventName == "ended" then
-			if self:checkString(self._combatChange) then
-				self._combatTextFiled:setText(self._combatLimit)
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("ClubLimitTipsText")
+			if type(tonumber(self._combatChange)) ~= "number" or self._combatChange == "" then
+				combatLabel:setString(self._combatLimit)
+				self._combatTextFiled:setText("")
+				self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					tip = Strings:get("Club_Limit_Tips_3")
 				}))
-			else
-				self._combatLimit = self._combatChange
+
+				return
 			end
+
+			self._combatLimit = math.modf(tonumber(self._combatChange))
+			self._combatLimit = math.max(0, self._combatLimit)
+
+			if self._maxCombat < self._combatLimit then
+				self._combatLimit = self._maxCombat
+
+				self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					tip = Strings:get("Club_Limit_Tips_2")
+				}))
+			end
+
+			self:refreshLimitLabel()
+			self._combatTextFiled:setText("")
 		elseif eventName == "return" then
 			-- Nothing
 		elseif eventName == "changed" then
@@ -316,6 +365,10 @@ function ClubAuditLimitTipMediator:onClickOK(sender, eventType)
 	end
 
 	self._clubSystem:setClubThreshold(limitType[self._selectIndex], self._levelLimit, self._combatLimit, function (resCode)
+		if DisposableObject:isDisposed(self) then
+			return
+		end
+
 		self:close()
 	end)
 end
@@ -325,83 +378,34 @@ function ClubAuditLimitTipMediator:onCloseClicked(sender, eventType)
 end
 
 function ClubAuditLimitTipMediator:onClickLevelAdd(sender, eventType)
-	if eventType == ccui.TouchEventType.began then
-		self._levelChange = 1
+	if eventType == ccui.TouchEventType.ended then
+		self._levelLimit = self._maxLevel
 
 		self:refreshLimitLabel()
-
-		self._changeFunc = self.checkLevelLimit
-
-		self:touchBegin(sender)
-	elseif eventType == ccui.TouchEventType.ended then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
-		dump(self._levelLimit, "_maxLevel______")
-		self:checkLevelLimit()
-		self:refreshLimitLabel()
-	elseif eventType == ccui.TouchEventType.canceled then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
 	end
 end
 
 function ClubAuditLimitTipMediator:onClickLevelMinus(sender, eventType)
-	if eventType == ccui.TouchEventType.began then
-		self._levelChange = -1
+	if eventType == ccui.TouchEventType.ended then
+		self._levelLimit = 0
 
 		self:refreshLimitLabel()
-
-		self._changeFunc = self.checkLevelLimit
-
-		self:touchBegin(sender)
-	elseif eventType == ccui.TouchEventType.ended then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
-		self:checkLevelLimit()
-		self:refreshLimitLabel()
-	elseif eventType == ccui.TouchEventType.canceled then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
 	end
 end
 
 function ClubAuditLimitTipMediator:onClickCombatAdd(sender, eventType)
-	if eventType == ccui.TouchEventType.began then
-		self._combatChange = 1000
+	if eventType == ccui.TouchEventType.ended then
+		self._combatLimit = self._maxCombat
 
 		self:refreshLimitLabel()
-
-		self._changeFunc = self.checkCombatLimit
-
-		self:touchBegin(sender)
-	elseif eventType == ccui.TouchEventType.ended then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
-		self:checkCombatLimit()
-		self:refreshLimitLabel()
-	elseif eventType == ccui.TouchEventType.canceled then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
 	end
 end
 
 function ClubAuditLimitTipMediator:onClickCombatMinus(sender, eventType)
-	if eventType == ccui.TouchEventType.began then
-		self._combatChange = -1000
+	if eventType == ccui.TouchEventType.ended then
+		self._combatLimit = 0
 
 		self:refreshLimitLabel()
-
-		self._changeFunc = self.checkCombatLimit
-
-		self:touchBegin(sender)
-	elseif eventType == ccui.TouchEventType.ended then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
-		self:checkCombatLimit()
-		self:refreshLimitLabel()
-	elseif eventType == ccui.TouchEventType.canceled then
-		self:closeSleepScheduler()
-		self:closeLongAddScheduler()
 	end
 end
 

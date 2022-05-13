@@ -90,10 +90,6 @@ function VersionChecker:vmsRequest(captainUrl, version, targetV, callBack)
 			callBack(xhr.status, data)
 		end
 
-		if SDKHelper and SDKHelper:isEnableSdk() then
-			SDKHelper:adjustEventTracking(AdjustEventList.ADJUST_REQUEST_GAME_VERSION_EVENT)
-		end
-
 		xhr:unregisterScriptHandler()
 	end
 

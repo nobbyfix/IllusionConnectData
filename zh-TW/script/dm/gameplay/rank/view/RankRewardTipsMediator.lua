@@ -83,7 +83,7 @@ function RankRewardTipsMediator:initContent()
 		panel:getChildByFullName("rank"):setString(tostring(i))
 		panel:getChildByFullName("title"):setString(data.nickname)
 
-		local tb = os.date("*t", data.time * 0.001)
+		local tb = TimeUtil:localDate("*t", data.time * 0.001)
 
 		panel:getChildByFullName("content"):setString(string.format("%d/%02d/%02d     %2d:%02d:%02d", tb.year, tb.month, tb.day, tb.hour, tb.min, tb.sec))
 	end
@@ -186,7 +186,7 @@ function RankRewardTipsMediator:updataCell(cell, data, index)
 	panel:getChildByFullName("rank"):setString(tostring(index))
 	panel:getChildByFullName("title"):setString(data.nickname)
 
-	local tb = os.date("*t", data.time * 0.001)
+	local tb = TimeUtil:localDate("*t", data.time * 0.001)
 
 	panel:getChildByFullName("content"):setString(string.format("%d/%02d/%02d     %2d:%02d:%02d", tb.year, tb.month, tb.day, tb.hour, tb.min, tb.sec))
 end

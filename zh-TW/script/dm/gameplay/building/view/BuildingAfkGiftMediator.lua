@@ -47,10 +47,6 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickDate"
 	},
-	["leftActionPanel.panel.btnPanel.btnDailyGift"] = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickDailyGift"
-	},
 	["leftActionPanel.panel.btnPanel.btnEvent"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickEvent"
@@ -58,6 +54,10 @@ local kBtnHandlers = {
 	bustbtn = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickBust"
+	},
+	movebtn = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickMove"
 	}
 }
 local kPanelType = {
@@ -126,6 +126,10 @@ function BuildingAfkGiftMediator:onRegister()
 	self._bustBtn = self:getView():getChildByFullName("bustbtn")
 
 	self._bustBtn:setVisible(false)
+
+	self._moveBtn = self:getView():getChildByFullName("movebtn")
+
+	self._moveBtn:setVisible(false)
 
 	self._sendBtn = self:bindWidget("leftActionPanel.giftPanel.sendBtn", OneLevelViceButton, {
 		handler = {
@@ -227,8 +231,8 @@ function BuildingAfkGiftMediator:setupTopInfoWidget()
 	topInfoNode:setLocalZOrder(999)
 
 	local infoConfig = {
-		CurrencyIdKind.kPower,
 		CurrencyIdKind.kDiamond,
+		CurrencyIdKind.kPower,
 		CurrencyIdKind.kCrystal,
 		CurrencyIdKind.kGold
 	}
@@ -344,6 +348,9 @@ function BuildingAfkGiftMediator:initWidgetInfo()
 	}
 	self._giftPanel = self._main:getChildByFullName("leftActionPanel.giftPanel")
 	self._dailyGiftBtn = self._main:getChildByFullName("leftActionPanel.panel.btnPanel.btnDailyGift")
+
+	self._dailyGiftBtn:setVisible(false)
+
 	self._tabClone = self:getView():getChildByName("tabClone")
 	self._rightActNode = self:getView():getChildByFullName("right_node")
 	local text = self._talkPanel:getChildByFullName("clipNode.text")
@@ -368,6 +375,7 @@ function BuildingAfkGiftMediator:initWidgetInfo()
 
 	if self._canSetBoardHero then
 		self._rightActNode:setVisible(true)
+		self._moveBtn:setVisible(true)
 		self:createTabController()
 	else
 		self._rightActNode:setVisible(false)
@@ -440,10 +448,11 @@ function BuildingAfkGiftMediator:onClickTab(name, tag)
 		local mediator = self:getMediatorMap():retrieveMediator(view)
 
 		mediator:enterWithData({
-			heroId = self._heroId
+			heroId = self._heroId,
+			mediator = self
 		})
 	elseif tag == 2 then
-		self._bustBtn:setVisible(false)
+		self._bustBtn:setVisible(true)
 
 		view = self:getInjector():getInstance("SetHomeBgPopView")
 
@@ -452,7 +461,9 @@ function BuildingAfkGiftMediator:onClickTab(name, tag)
 
 		local mediator = self:getMediatorMap():retrieveMediator(view)
 
-		mediator:enterWithData()
+		mediator:enterWithData({
+			setHomeBgId = self._bgImageId
+		})
 	end
 end
 
@@ -463,10 +474,11 @@ function BuildingAfkGiftMediator:setMainBg(event)
 		eventData = event:getData()
 	end
 
-	local bgImageId = nil
+	local bgImageId, needShowTips = nil
 
 	if eventData and eventData.bgId then
 		bgImageId = eventData.bgId
+		needShowTips = true
 	else
 		local settingSys = self:getInjector():getInstance(SettingSystem)
 		bgImageId = settingSys:getHomeBgId()
@@ -575,6 +587,16 @@ function BuildingAfkGiftMediator:setMainBg(event)
 			extraView:setScale(winSize.width / 1386)
 		end
 	end
+
+	local settingSystem = self:getInjector():getInstance(SettingSystem)
+	local isRandom = settingSystem:getSettingModel():getRoleAndBgRandom()
+	needShowTips = needShowTips and not isRandom
+
+	if needShowTips then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Tip_SetHomeBG_Suc")
+		}))
+	end
 end
 
 function BuildingAfkGiftMediator:setClimateScene(node)
@@ -607,8 +629,8 @@ function BuildingAfkGiftMediator:updateHero()
 	self._heroPanel:removeAllChildren()
 
 	self._sharedSpine = nil
-	local img, path, spineani, picInfo = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = self._heroData:getModel(),
 		useAnim = self._settingModel:getRoleDynamic()
 	})
@@ -666,27 +688,8 @@ function BuildingAfkGiftMediator:updateHero()
 					return
 				end
 
-				local soundTab = {}
-
-				for _, v in ipairs(_info.voice) do
-					local isUnlock = self:checkSoundUnlock(self._heroId, v)
-
-					if isUnlock and (self._lastClickSound ~= v or #soundTab == 0) then
-						soundTab[#soundTab + 1] = v
-					end
-				end
-
 				self._touchTimes = self._touchTimes + 1
-				local weighting = 1
-
-				if self._touchTimes > 5 and self._lastClickSound ~= "Voice_" .. self._heroId .. "_60" then
-					soundTab[#soundTab + 1] = "Voice_" .. self._heroId .. "_60"
-					weighting = 1.6
-				end
-
-				local randomCount = math.ceil(#soundTab * weighting)
-				local soundId = soundTab[math.random(1, randomCount)]
-				soundId = soundId or "Voice_" .. self._heroId .. "_60"
+				local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._heroId, _info.part, self._touchTimes)
 				local isExistStr = Strings:get(ConfigReader:getDataByNameIdAndKey("Sound", soundId, "CueName"))
 
 				if isExistStr and isExistStr ~= "Voice_Default" then
@@ -1038,6 +1041,15 @@ function BuildingAfkGiftMediator:changeHero(event)
 		self._heroId = heroId
 
 		self:updateData()
+
+		local settingSystem = self:getInjector():getInstance(SettingSystem)
+		local isRandom = settingSystem:getSettingModel():getRoleAndBgRandom()
+
+		if isRandom == false then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Home_ShowHero_Reset")
+			}))
+		end
 	end
 
 	if self._soundId then
@@ -1180,10 +1192,21 @@ function BuildingAfkGiftMediator:checkSoundUnlock(heroId, soundId)
 end
 
 function BuildingAfkGiftMediator:onClickBust()
+	if self._soundId then
+		AudioEngine:getInstance():stopEffect(self._soundId)
+
+		self._soundId = nil
+	end
+
 	local view = self:getInjector():getInstance("HeroShowHeroPicView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		id = self._heroId,
 		setHomeBgId = self._bgImageId
 	}))
+end
+
+function BuildingAfkGiftMediator:onClickMove()
+	self:dispatch(Event:new(EVT_HOMEVIEW_SETBORAD_MOVE))
+	self:onClickRemove()
 end

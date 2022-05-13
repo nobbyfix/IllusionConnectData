@@ -292,7 +292,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 
 				mc:addTo(animNode_zac)
 				mc:gotoAndStop(1)
-				mc:setScale(0.7)
+				mc:setScale(0.5)
 			end
 
 			if rewardStatus == ClubBossHurtRewardStatus.kCanGet then
@@ -304,7 +304,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 				local mc = cc.MovieClip:create("zaa_baoxiang")
 
 				mc:addTo(animNode_zac)
-				mc:setScale(0.7)
+				mc:setScale(0.5)
 				mc:gotoAndStop(1)
 			end
 
@@ -378,6 +378,11 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 	local nameStr = ""
 	local anim = nil
 	local animNode = panel:getChildByFullName("modelNode.animNode")
+	local nameBgBoss = panel:getChildByFullName("modelNode.nameBgBoss")
+	local nameBg = panel:getChildByFullName("modelNode.nameBg")
+
+	nameBg:setVisible(false)
+	nameBgBoss:setVisible(false)
 
 	if data:getPassTime() ~= nil and data:getPassTime() > 0 then
 		if data:getWinShowId() ~= nil then
@@ -385,6 +390,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 
 			anim:addTo(animNode, 1)
 			anim:setTag(12345)
+			nameBg:setVisible(true)
 
 			local bossNode = anim:getChildByName("bossNode")
 			local animNode = panel:getChildByFullName("modelNode.animNode")
@@ -424,6 +430,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 
 				titlePanelClone:setVisible(true)
 				titlePanelClone:addTo(titleNode)
+				nameBgBoss:setVisible(true)
 				anim:addCallbackAtFrame(6, function ()
 					local bossNode = anim:getChildByName("bossNode")
 
@@ -464,6 +471,8 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 					anim:gotoAndPlay(1)
 				end
 
+				nameBgBoss:setVisible(true)
+
 				local bossNode = anim:getChildByName("bossNode")
 
 				if currentBlockConfig.PointHead ~= nil then
@@ -497,7 +506,7 @@ function ClubBossShowAllBossMediator:createCell(cell, data)
 	end
 
 	if nameStr ~= "" then
-		local nameText = panel:getChildByFullName("modelNode.nameBg.nameText")
+		local nameText = panel:getChildByFullName("modelNode.nameText")
 
 		nameText:setString(nameStr)
 	end

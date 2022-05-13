@@ -75,6 +75,14 @@ local function drawOutline(sprite)
 	myDrawNode:addTo(sprite)
 end
 
+function BattleUIMediator:setBattleType(battleType)
+	self._battleType = battleType
+
+	if self._battleType ~= "rtpvp" then
+		self._speedupBtn:hide()
+	end
+end
+
 function BattleUIMediator:adjustLayout(targetFrame)
 	local view = self:getView()
 	local header = view:getChildByName("header")
@@ -88,6 +96,8 @@ function BattleUIMediator:adjustLayout(targetFrame)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("change"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("leftPassiveSkill"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("rightPassiveSkill"), AdjustUtils.kAdjustType.Right)
+	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("leftStageLevel"), AdjustUtils.kAdjustType.Left)
+	AdjustUtils.ignorSafeAreaRectForNode(header:getChildByName("rightStageLevel"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_left"), AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_right"), AdjustUtils.kAdjustType.Right + AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(view:getChildByName("edge_bottom"), AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
@@ -110,6 +120,8 @@ function BattleUIMediator:setupSubWidgets()
 	local header = view:getChildByName("header")
 	local timerNode = header:getChildByName("timer")
 	self._timerWidget = self:autoManageObject(BattleTimerWidget:new(timerNode))
+	local deadCountNode = header:getChildByName("deathcnt")
+	self._deadCountWidget = self:autoManageObject(BattleDeadCountWidget:new(deadCountNode))
 	local roundNode = header:getChildByFullName("round")
 	self._roundWidget = self:autoManageObject(RoundInfoWidget:new(roundNode))
 	local escapeNode = header:getChildByName("escape")
@@ -185,6 +197,51 @@ function BattleUIMediator:setupSubWidgets()
 	self._passiveSkillTip = self:autoManageObject(BattlePassiveSkillTip:new(passiveSkillTip))
 
 	self._passiveSkillTip:setListener(self)
+
+	local rtpkEmojiNode = header:getChildByName("emoji")
+	self._rtpkEmojiWidget = self:autoManageObject(BattleRTPKEmojiPanelWidget:new(rtpkEmojiNode))
+
+	self._rtpkEmojiWidget:setListener(self)
+
+	local leftStageLevel = header:getChildByName("leftStageLevel")
+	self._leftStageLevel = self:autoManageObject(LeadStagePassiveSkillWidget:new(leftStageLevel, true))
+
+	self._leftStageLevel:setListener(self)
+
+	local rightStageLevel = header:getChildByName("rightStageLevel")
+	self._rightStageLevel = self:autoManageObject(LeadStagePassiveSkillWidget:new(rightStageLevel))
+
+	self._rightStageLevel:setListener(self)
+	self._leftStageLevel:setVisible(false)
+	self._rightStageLevel:setVisible(false)
+
+	local speedupBtn = header:getChildByName("speedup")
+	self._speedupBtn = self:autoManageObject(BattlePvpSpeedUpWidget:new(speedupBtn))
+
+	self._speedupBtn:hide()
+
+	local noticeEnhance = header:getChildByName("notice")
+	self._noticeEnhance = self:autoManageObject(BattleNoticeEnhanceWidget:new(noticeEnhance))
+
+	self._noticeEnhance:hide()
+end
+
+function BattleUIMediator:pvpSpeedUp(arg1, arg2)
+	if self._speedupBtn then
+		self._speedupBtn:active(arg1, arg2)
+	end
+end
+
+function BattleUIMediator:showNoticeEnhance(arg1, arg2)
+	if self._noticeEnhance then
+		self._noticeEnhance:active(arg1, arg2)
+	end
+end
+
+function BattleUIMediator:hideNoticeEnhance()
+	if self._noticeEnhance then
+		self._noticeEnhance:hide()
+	end
 end
 
 function BattleUIMediator:willStartEnterTransition()
@@ -197,6 +254,31 @@ function BattleUIMediator:willStartEnterTransition()
 
 		view:offset(offset1.x, offset1.y)
 		view:runAction(cc.Sequence:create(cc.MoveBy:create(0.2, offset2), cc.MoveBy:create(0.1, offset3)))
+	end
+
+	if self._deadCountWidget then
+		local view = self._deadCountWidget:getView()
+
+		view:offset(offset1.x, offset1.y)
+		view:runAction(cc.Sequence:create(cc.MoveBy:create(0.2, offset2), cc.MoveBy:create(0.1, offset3)))
+	end
+
+	if self._speedupBtn then
+		local view = self._speedupBtn:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
+	end
+
+	if self._noticeEnhance then
+		local view = self._noticeEnhance:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
+	end
+
+	if self._rtpkEmojiWidget then
+		local view = self._rtpkEmojiWidget:getView()
+
+		view:runAction(cc.Sequence:create(cc.DelayTime:create(6), cc.FadeIn:create(0.1)))
 	end
 
 	if self._leftHeadWidget then
@@ -267,6 +349,13 @@ function BattleUIMediator:fade()
 		view:runAction(cc.FadeOut:create(duration))
 	end
 
+	if self._deadCountWidget then
+		local view = self._deadCountWidget:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
 	if self._leftHeadWidget then
 		local view = self._leftHeadWidget:getView()
 
@@ -330,6 +419,20 @@ function BattleUIMediator:fade()
 		view:runAction(cc.FadeOut:create(duration))
 	end
 
+	if self._leftStageLevel then
+		local view = self._leftStageLevel:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
+	if self._rightStageLevel then
+		local view = self._rightStageLevel:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
 	if self._changeWidget then
 		local view = self._changeWidget:getView()
 
@@ -339,6 +442,24 @@ function BattleUIMediator:fade()
 
 	if self._passiveSkillTip then
 		self._passiveSkillTip:hide()
+	end
+
+	if self._rtpkEmojiWidget then
+		-- Nothing
+	end
+
+	if self._speedupBtn then
+		local view = self._speedupBtn:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
+	end
+
+	if self._noticeEnhance then
+		local view = self._noticeEnhance:getView()
+
+		view:stopAllActions()
+		view:runAction(cc.FadeOut:create(duration))
 	end
 
 	local waitTime = 10
@@ -351,6 +472,13 @@ function BattleUIMediator:fade()
 
 		if self._timerWidget then
 			local view = self._timerWidget:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._deadCountWidget then
+			local view = self._deadCountWidget:getView()
 
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
@@ -425,6 +553,41 @@ function BattleUIMediator:fade()
 			view:stopAllActions()
 			view:runAction(cc.FadeIn:create(duration))
 		end
+
+		if self._leftStageLevel then
+			local view = self._leftStageLevel:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._rightStageLevel then
+			local view = self._rightStageLevel:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._speedupBtn then
+			local view = self._speedupBtn:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._noticeEnhance then
+			local view = self._noticeEnhance:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
+
+		if self._rtpkEmojiWidget then
+			local view = self._rtpkEmojiWidget:getView()
+
+			view:stopAllActions()
+			view:runAction(cc.FadeIn:create(duration))
+		end
 	end, waitTime)
 end
 
@@ -480,6 +643,14 @@ function BattleUIMediator:initWithContext(viewContext)
 	if self._rightPassiveSkill then
 		self._rightPassiveSkill:setTouchEnabled(false)
 	end
+
+	if self._leftStageLevel then
+		self._leftStageLevel:setTouchEnabled(false)
+	end
+
+	if self._rightStageLevel then
+		self._rightStageLevel:setTouchEnabled(false)
+	end
 end
 
 function BattleUIMediator:setupChatFlowWidget()
@@ -493,6 +664,8 @@ function BattleUIMediator:setupChatFlowWidget()
 	self:getInjector():injectInto(chatFlowWidget)
 
 	self._chatFlowWidget = chatFlowWidget
+
+	chatFLowNode:getChildByName("layout"):setTouchEnabled(false)
 end
 
 function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
@@ -628,12 +801,56 @@ function BattleUIMediator:setupViewConfig(viewConfig, isReplay)
 		self._rightPassiveSkill:init(viewConfig.passiveSkill.enemyShow)
 	end
 
+	if self._leftStageLevel and viewConfig.passiveSkill and viewConfig.passiveSkill.playerStagePassShow then
+		self._leftStageLevel:setVisible(true)
+		self._leftStageLevel:init(viewConfig.passiveSkill.playerStagePassShow)
+	end
+
+	if self._rightStageLevel and viewConfig.passiveSkill and viewConfig.passiveSkill.enemyStagePassShow then
+		self._rightStageLevel:setVisible(true)
+		self._rightStageLevel:init(viewConfig.passiveSkill.enemyStagePassShow)
+	end
+
 	if self._changeWidget and viewConfig.changeMaxNum then
 		self._changeWidget:init(viewConfig.changeMaxNum)
 	end
 
 	if self._chatFlowWidget and viewConfig.chatFlow then
 		self._chatFlowWidget:start(viewConfig.chatFlow)
+	end
+
+	if viewConfig.noHpFormat then
+		self._leftHeadWidget:setHpFormat(false)
+		self._rightHeadWidget:setHpFormat(false)
+	end
+
+	if viewConfig.isShowEmoji then
+		if self._rtpkEmojiWidget then
+			self._rtpkEmojiWidget:getView():setVisible(true)
+		end
+	elseif self._rtpkEmojiWidget then
+		self._rtpkEmojiWidget:getView():setVisible(false)
+	end
+
+	self._deadCountWidget:enabled(false)
+
+	self._deadCountCfg = self:getDeadCountVectorCfg()
+
+	if self._deadCountCfg then
+		self._deadCountWidget:setMaxNum(self._deadCountCfg.factor.count)
+		self._deadCountWidget:enabled(true)
+	end
+end
+
+function BattleUIMediator:getDeadCountVectorCfg()
+	if not self._mainMediator:getBattleConfig() then
+		return nil
+	end
+
+	for k, v in pairs(self._mainMediator:getBattleConfig().victoryCfg or {}) do
+		if v.type == "KillNum" then
+			return v
+		end
 	end
 end
 
@@ -681,7 +898,7 @@ function BattleUIMediator:dragBegan(cardArray, activeCard, touchPoint)
 		end)
 	end
 
-	self._battleGround:previewCellLocks()
+	self._activeCard = activeCard
 end
 
 function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
@@ -716,6 +933,110 @@ function BattleUIMediator:dragMoved(cardArray, activeCard, touchPoint)
 	end
 end
 
+function BattleUIMediator:dragExtraSkillBegan(cardArray, activeCard, touchPoint)
+	self._extraAreaTouch = nil
+	self._extraSkillParam = false
+	self._extraSkillZone = false
+
+	self:dragBegan(cardArray, activeCard, touchPoint)
+
+	local unitManager = self._viewContext:getValue("BattleUnitManager")
+	local result = unitManager:checkTargetPreview(activeCard:getCollesionRule(), -1)
+
+	self._battleGround:previewTargets(result, true)
+
+	self._extraAreaTouch = result
+end
+
+function BattleUIMediator:retsetAllCell(cellId)
+	for i = 1, 9 do
+		if cellId ~= i then
+			local targetCell = self._battleGround:getCellById(i)
+
+			targetCell:getDisplayNode():setScale(1)
+
+			local targetCell = self._battleGround:getCellById(0 - i)
+
+			targetCell:getDisplayNode():setScale(1)
+		end
+	end
+end
+
+function BattleUIMediator:dragExtraSkillMoved(cardArray, activeCard, touchPoint)
+	if self._battleGround then
+		local col, cellId, isLeft = self._battleGround:checkTouchCollision(activeCard, touchPoint, self._extraAreaTouch)
+
+		if col then
+			if cellId ~= activeCard.tmpCellId then
+				activeCard.tmpCellId = cellId
+				self._extraSkillParam = {
+					col,
+					cellId,
+					isLeft
+				}
+				local targetCell = self._battleGround:getCellById(isLeft and cellId or 0 - cellId)
+
+				targetCell:getDisplayNode():runAction(cc.ScaleTo:create(0.2, 1.2))
+			else
+				self:retsetAllCell(cellId)
+			end
+		else
+			self:retsetAllCell()
+
+			self._extraSkillParam = nil
+			activeCard.tmpCellId = nil
+		end
+	end
+end
+
+function BattleUIMediator:dragExtraSkillEnded(cardArray, activeCard, touchPoint)
+	if self._battleGround then
+		if self._viewContext == nil then
+			return
+		end
+
+		if self._battleGround == nil then
+			return
+		end
+
+		self._battleGround:resumePreviews()
+		self._battleGround:onHeroCardTouchEnded()
+		self:stopBulletTime()
+		self:hideHeroTip()
+		self._battleGround:resumeProfessionalRestraint()
+		self._battleGround:resumeCellLocks()
+		self:retsetAllCell()
+
+		while true do
+			if not self._extraSkillParam then
+				break
+			end
+
+			if self._viewContext:isBattleFinished() then
+				break
+			end
+
+			local cost = activeCard:getCost()
+
+			if not self._energyBar:isEnergyEnough(cost) then
+				break
+			end
+
+			self:applySkillCard(cardArray, activeCard, touchPoint, {
+				cellId = self._extraSkillParam[2],
+				isLeft = self._extraSkillParam[3]
+			})
+
+			return
+		end
+
+		activeCard:restoreNormalState(cc.p(0, 0))
+		self._battleGround:resumePreviews()
+
+		self._extraAreaTouch = nil
+	end
+end
+
 function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 	if self._viewContext == nil then
 		return
@@ -732,7 +1053,6 @@ function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 	self:stopBulletTime()
 	self:hideHeroTip()
 	self._battleGround:resumeProfessionalRestraint()
-	self._battleGround:resumeCellLocks()
 
 	while true do
 		local canPush, posIdx = self._battleGround:checkCanPushHero(activeCard, touchPoint)
@@ -758,6 +1078,16 @@ function BattleUIMediator:dragEnded(cardArray, activeCard, touchPoint)
 
 	self._battleGround:hideUnrealSpine()
 	activeCard:restoreNormalState(cc.p(0, 0))
+
+	self._activeCard = nil
+end
+
+function BattleUIMediator:usedCard(cardId)
+	if self._activeCard and self._activeCard:getCardId() == cardId then
+		self:dragCancelled()
+
+		self._activeCard = nil
+	end
 end
 
 function BattleUIMediator:dragCancelled()
@@ -771,7 +1101,7 @@ function BattleUIMediator:dragCancelled()
 		self._battleGround:hideUnrealSpine()
 	end
 
-	self._battleGround:resumeCellLocks()
+	self._activeCard = nil
 end
 
 function BattleUIMediator:startPut(cardArray, card)
@@ -852,6 +1182,14 @@ function BattleUIMediator:setTouchEnabled(touchEnable)
 		self._rightPassiveSkill:setTouchEnabled(touchEnable)
 	end
 
+	if self._leftStageLevel then
+		self._leftStageLevel:setTouchEnabled(touchEnable)
+	end
+
+	if self._rightStageLevel then
+		self._rightStageLevel:setTouchEnabled(touchEnable)
+	end
+
 	self._touchEnalbed = touchEnable
 end
 
@@ -869,6 +1207,15 @@ end
 
 function BattleUIMediator:isTouchEnabled()
 	return self._touchEnalbed
+end
+
+function BattleUIMediator:onEmojiSelect(emojiId)
+	local args = {
+		emojiId = emojiId
+	}
+
+	self._mainMediator:sendMessage("emojiUsed", args, function (isOK, reason)
+	end)
 end
 
 function BattleUIMediator:applyHeroCard(cardArray, card, targetPositionIndex)
@@ -924,16 +1271,16 @@ function BattleUIMediator:refreshSkillCard()
 	end)
 end
 
-function BattleUIMediator:applySkillCard(cardArray, card, touchPoint)
+function BattleUIMediator:applySkillCard(cardArray, card, touchPoint, extra)
 	if self._viewContext == nil then
 		return
 	end
 
 	card:setStatus("in-use")
 
-	local canRelease = self._battleGround:checkCanPushSkill(card, touchPoint)
+	local canRelease = self._battleGround:checkCanPushSkill(card, touchPoint, extra)
 
-	if not canRelease then
+	if not canRelease and not extra then
 		card:getView():setVisible(true)
 		card:setStatus("norm")
 		card:restoreNormalState(cc.p(0, 0))
@@ -943,7 +1290,8 @@ function BattleUIMediator:applySkillCard(cardArray, card, touchPoint)
 
 	local args = {
 		idx = card:getIndex(),
-		card = card:getCardId()
+		card = card:getCardId(),
+		extra = extra
 	}
 
 	card:getView():setVisible(false)
@@ -967,12 +1315,49 @@ function BattleUIMediator:applyMasterSkill(sender, skillType)
 	self._mainMediator:sendMessage("doskill", args, function (isOK, reason)
 		if not isOK then
 			cclog("warning", "use skill failure: %s", reason)
+
+			if reason == "AlreadyInProcess" then
+				self:cancelMasterSkill(sender, skillType)
+			end
+
 			sender:setSkillTouchEnabled(true)
 
 			return
 		else
 			sender:setSkillTouchEnabled(true)
 			sender:willExecute()
+		end
+	end)
+end
+
+function BattleUIMediator:checkSkillState(sender)
+	if self._viewContext == nil then
+		return
+	end
+
+	local mainPlayerController = self._viewContext:getValue("MainPlayerController")
+
+	if not mainPlayerController then
+		return
+	end
+
+	self._mainMediator:sendMessage("checkMasterSkillState", args, function (isOK, reason)
+	end)
+end
+
+function BattleUIMediator:cancelMasterSkill(sender, skillType)
+	local args = {
+		type = skillType
+	}
+
+	self._mainMediator:sendMessage("cancelskill", args, function (isOK, reason)
+		print(isOK, reason)
+
+		if not isOK then
+			sender:setSkillTouchEnabled(true)
+			cclog("warning", "cancel skill failure: %s", reason)
+		else
+			sender:setSkillTouchEnabled(true)
 		end
 	end)
 end
@@ -986,6 +1371,12 @@ end
 function BattleUIMediator:setTotalTime(time)
 	if time and self._timerWidget then
 		self._timerWidget:reset(time / 1000)
+	end
+end
+
+function BattleUIMediator:increaseDead(unit)
+	if self._deadCountCfg and self._deadCountWidget then
+		self._deadCountWidget:increaseDead()
 	end
 end
 
@@ -1028,6 +1419,14 @@ function BattleUIMediator:startNewPhase(phase, duration, elapsed, energySpeed, t
 		if self._rightPassiveSkill then
 			self._rightPassiveSkill:setTouchEnabled(true)
 		end
+
+		if self._leftStageLevel then
+			self._leftStageLevel:setTouchEnabled(true)
+		end
+
+		if self._rightStageLevel then
+			self._rightStageLevel:setTouchEnabled(true)
+		end
 	end
 
 	if phase == 5 then
@@ -1069,6 +1468,12 @@ function BattleUIMediator:syncEnergy(energy, remain, speed)
 	end
 end
 
+function BattleUIMediator:showGrayEnergyEffect(isShow)
+	if self._energyBar then
+		self._energyBar:setBarGray(isShow)
+	end
+end
+
 function BattleUIMediator:showRecoveryEnergyAnim()
 	if self._energyBar then
 		self._energyBar:showRecoveryEnergyAnim()
@@ -1088,6 +1493,10 @@ function BattleUIMediator:resumeEnergyIncreasing()
 end
 
 function BattleUIMediator:replaceCard(idxInSlot, card, next)
+	if idxInSlot > 4 then
+		return
+	end
+
 	self._cardArray:setCardAtIndex(idxInSlot, nil)
 
 	local timeScale = self._viewContext:getTimeScale()
@@ -1189,6 +1598,48 @@ function BattleUIMediator:updateCardArray(cards, remain, next)
 	self._cardArray:setRemainingCount(math.max(remain - 4, 0))
 end
 
+function BattleUIMediator:updateExtraCardArray(cards, remain)
+	cards = cards or {}
+	local timeScale = self._viewContext:getTimeScale()
+	local count = 0
+
+	for i = math.min(2, #cards), 1, -1 do
+		local cardInfo = cards[i]
+
+		if type(cardInfo) == "table" then
+			local cardWidget = cardInfo.type == "skill" and ExtraSkillCardWidget or ExtraHeroCardWidget
+			local view = cardWidget:createWidgetNode()
+			local card = cardWidget:new(view)
+
+			card:updateCardInfo(cardInfo)
+			self._cardArray:pushPreviewCard(card)
+
+			count = count + 1
+		end
+	end
+
+	for i = 1, count do
+		local delay = 0.3 * (i - 1) * timeScale
+
+		self._cardArray:putPreviewCardAtIndex(4 + i, delay, timeScale)
+	end
+end
+
+function BattleUIMediator:replaceExtraPreview(preview, index)
+	if preview and type(preview) == "table" then
+		local cardWidget = preview.type == "skill" and ExtraSkillCardWidget or ExtraHeroCardWidget
+		local view = cardWidget:createWidgetNode()
+		local card = cardWidget:new(view)
+
+		card:updateCardInfo(preview)
+		self._cardArray:pushPreviewCard(card)
+	end
+
+	local timeScale = self._viewContext:getTimeScale()
+
+	self._cardArray:putPreviewCardAtIndex(index, 0, timeScale)
+end
+
 function BattleUIMediator:removeCards()
 	self._cardArray:clearAll()
 end
@@ -1246,7 +1697,7 @@ function BattleUIMediator:createHeroTip()
 
 	anim:posite(568, 320)
 	anim:addTo(self:getView(), -1)
-	AdjustUtils.adjustLayoutByType(anim, AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom)
+	AdjustUtils.adjustLayoutByType(anim, AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Top)
 
 	self._heroTipWidget = BattleHeroTipWidget:new(viewNode)
 
@@ -1303,13 +1754,24 @@ function BattleUIMediator:showHeroTip(card, showType)
 		local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", info.model, "Bust15")
 
 		if rolePicId ~= nil and rolePicId ~= "" then
-			local portrait = IconFactory:createRoleIconSprite({
-				iconType = 17,
-				id = info.model
+			local mid = info.model
+			local configShow = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Bust_Inbattle_Show", "content") or {}
+
+			if table.indexof(configShow, info.model) then
+				local linkMid = ConfigReader:getDataByNameIdAndKey("RoleModel", info.model, "BattleShow")
+
+				if linkMid and linkMid ~= "" then
+					mid = linkMid
+				end
+			end
+
+			local portrait = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe15",
+				id = mid
 			})
 
 			portrait:addTo(self._heroTipAimPic)
-			portrait:offset(0, -10)
+			portrait:offset(200, -110)
 		end
 	elseif self._prevHeroShowType ~= showType then
 		if self._prevHeroShowType == 1 and showType == 2 then
@@ -1373,11 +1835,144 @@ function BattleUIMediator:adjustCardCost(idxInSlot, detail)
 	end
 end
 
-function BattleUIMediator:adjustCardBuff(idxInSlot)
+function BattleUIMediator:updateCardInfo(idxInSlot, detail)
 	local card = self._cardArray:getCardAtIndex(idxInSlot)
 
 	if card then
-		card:playAddBuffAnim()
+		card:updateCardInfo(detail)
+	end
+end
+
+function BattleUIMediator:updateCardWeight(idxInSlot, card, weight)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:updateCardWeight(weight)
+	end
+end
+
+function BattleUIMediator:maxCardWeight(idxInSlot)
+	for i = 1, 4 do
+		local card = self._cardArray:getCardAtIndex(i)
+
+		if card then
+			if i == idxInSlot then
+				card:maxCardWeight(1)
+			else
+				card:maxCardWeight(0)
+			end
+		end
+	end
+end
+
+function BattleUIMediator:updateCurrentBattleSt(status)
+	if not self._statusLabel then
+		self._statusLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 18)
+
+		self._statusLabel:addTo(self:getView()):offset(50, 200)
+		self._statusLabel:setColor(cc.c3b(0, 255, 0))
+	end
+
+	local keys = {
+		"FriendMasterHP",
+		"EnemyMasterHP",
+		"PaddingCard",
+		"UniqueRatio",
+		"Curse",
+		"Cost",
+		"CardForce"
+	}
+	local statues = ""
+
+	self._statusLabel:setString(statues)
+
+	for k, v in pairs(status) do
+		statues = statues .. string.format(keys[k] .. ":%.02f", v) .. "\n"
+	end
+
+	self._statusLabel:setString(statues)
+end
+
+function BattleUIMediator:flyBallToCard(role, idxInSlot)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		local posx, posy = role:getView():getPosition()
+		local pos_org_word = role:getView():getParent():convertToWorldSpace(cc.p(posx, posy + 80))
+		local posx, posy = card:getView():getPosition()
+		local pos_des_word = card:getView():getParent():convertToWorldSpace(cc.p(posx, posy + 15))
+		local rootNode = cc.Node:create()
+		local content = cc.Node:create()
+
+		content:addTo(rootNode)
+		content:center(rootNode:getContentSize())
+
+		local flyBall = cc.MovieClip:create("guangqiu_lindaguangquan", "BattleMCGroup")
+
+		flyBall:addTo(content)
+		flyBall:offset(110, -20)
+		content:setRotation(4)
+		flyBall:addCallbackAtFrame(45, function ()
+			flyBall:stop()
+		end)
+
+		local director = cc.Director:getInstance()
+		local pos_01 = cc.Node:create()
+
+		pos_01:setPosition(pos_org_word)
+		pos_01:addTo(director:getRunningScene())
+
+		local pos_02 = cc.Node:create()
+
+		pos_02:setPosition(pos_des_word)
+		pos_02:addTo(director:getRunningScene())
+		rootNode:addTo(pos_01)
+		rootNode:center(pos_01:getContentSize())
+
+		local position_01 = cc.p(pos_01:getPosition())
+		local position_02 = cc.p(pos_02:getPosition())
+		local radio = math.abs(position_02.x - position_01.x) / math.abs(position_02.y - position_01.y)
+		local direction = position_02.x - position_01.x < 0 and 1 or -1
+		local distance = math.sqrt(math.pow(math.abs(position_02.x - position_01.x), 2) + math.pow(math.abs(position_02.y - position_01.y), 2))
+		local distance = distance - 240
+
+		rootNode:setRotation(math.atan(radio * direction) * 180 / math.pi)
+
+		local delay01 = cc.DelayTime:create(0.3333333333333333)
+		local delay02 = cc.DelayTime:create(0.16666666666666666)
+		local sequence = cc.Sequence:create(delay01, cc.MoveTo:create(0.16666666666666666, cc.p(0, -distance)), cc.CallFunc:create(function ()
+			if not tolua.isnull(card:getView()) then
+				card:getView():runAction(cc.Sequence:create(cc.ScaleTo:create(0.08333333333333333, 1.12, 1.12), cc.ScaleTo:create(0.03333333333333333, 1, 1)))
+			end
+		end), delay02, cc.CallFunc:create(function ()
+			if not tolua.isnull(rootNode) then
+				rootNode:removeFromParent()
+				pos_01:removeFromParent()
+				pos_02:removeFromParent()
+			end
+		end))
+
+		content:runAction(sequence)
+	end
+end
+
+function BattleUIMediator:adjustCardBuff(idxInSlot, anim)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:playAddBuffAnim(anim)
+	end
+end
+
+function BattleUIMediator:forbidSkillChange(args)
+	if self._masterWidget then
+		self._masterWidget:forbidSkillChange(args)
+	end
+end
+
+function BattleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
+	if self._masterWidget then
+		self._masterWidget:StackSkill(skillId, stacknum, totalnum)
 	end
 end
 
@@ -1393,4 +1988,13 @@ end
 function BattleUIMediator:hidePassiveSkillTip()
 	self._passiveSkillTip:hide()
 	self:stopBulletTime()
+end
+
+function BattleUIMediator:showMaster(friend, enemy)
+	local bossView = self:getInjector():getInstance("MasterCutInView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+		friend = friend,
+		enemy = enemy
+	}, popupDelegate))
 end

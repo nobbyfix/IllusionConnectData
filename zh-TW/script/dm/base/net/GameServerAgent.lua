@@ -67,7 +67,9 @@ function GameServerAgent:connect(ip, port, callback)
 	self._connectedCallback = callback
 
 	if self:getClient().connect(ip, port, 5000) then
-		self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnect)
+		if self._waitingHandler then
+			self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnect)
+		end
 
 		return true
 	else
@@ -80,11 +82,15 @@ function GameServerAgent:onConnected(client, firstConnect)
 	self._isConnected = true
 	self._alreadyAutoRepairOnce = false
 
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnectSucc)
+	if self._waitingHandler then
+		self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnectSucc)
+	end
+
 	client.setHeartbeatInterval(15000)
 	client.setHeartbeatTimeout(1600000)
 	client.setReqRTOBounds(2000, 5000)
 	client.setReqTimeout(10000)
+	self:dispatch(Event:new(EVT_LOGIN_SUCC))
 
 	if firstConnect and self._connectedCallback then
 		self:_connectedCallback()
@@ -126,12 +132,15 @@ function GameServerAgent:onError(client, errCode, detail)
 	elseif errCode == rrcp.CONNECT_RESET then
 		self:onConnectReset(client, errCode, detail)
 	else
-		self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
-			REBOOT()
-		end, {
-			errCode = errCode,
-			detail = detail
-		})
+		if self._waitingHandler then
+			self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
+				REBOOT()
+			end, {
+				errCode = errCode,
+				detail = detail
+			})
+		end
+
 		self:sendNetErrorLog({
 			errCode = errCode,
 			detail = detail
@@ -153,20 +162,25 @@ function GameServerAgent:sendNetErrorLog(data)
 end
 
 function GameServerAgent:onConnectFailed(client, errCode, detail)
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnectErr, nil, {
-		errCode = errCode,
-		detail = detail
-	})
+	if self._waitingHandler then
+		self._waitingHandler:handleWaitingEvent(WaitingEvent.kConnectErr, nil, {
+			errCode = errCode,
+			detail = detail
+		})
+	end
 end
 
 function GameServerAgent:onServerClosed(client, errCode, detail)
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
-		self:dispose()
-		REBOOT()
-	end, {
-		errCode = errCode,
-		detail = detail
-	})
+	if self._waitingHandler then
+		self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
+			self:dispose()
+			REBOOT()
+		end, {
+			errCode = errCode,
+			detail = detail
+		})
+	end
+
 	self:sendNetErrorLog({
 		errCode = errCode,
 		detail = detail
@@ -174,13 +188,16 @@ function GameServerAgent:onServerClosed(client, errCode, detail)
 end
 
 function GameServerAgent:onConnectReset(client, errCode, detail)
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
-		self:dispose()
-		REBOOT()
-	end, {
-		errCode = errCode,
-		detail = detail
-	})
+	if self._waitingHandler then
+		self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
+			self:dispose()
+			REBOOT()
+		end, {
+			errCode = errCode,
+			detail = detail
+		})
+	end
+
 	self:sendNetErrorLog({
 		errCode = errCode,
 		detail = detail
@@ -191,29 +208,36 @@ function GameServerAgent:onInactive(client, errCode, detail)
 end
 
 function GameServerAgent:onConnectBroken(client, errCode, detail)
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kRepairableErr, function ()
-		client.repair(false)
-	end, {
-		errCode = errCode,
-		detail = detail
-	})
-end
-
-function GameServerAgent:onRepairFailed(client, errCode, detail)
-	if detail == neterrno.ETIMEDOUT or detail == neterrno.ENETUNREACH then
+	if self._waitingHandler then
 		self._waitingHandler:handleWaitingEvent(WaitingEvent.kRepairableErr, function ()
 			client.repair(false)
 		end, {
 			errCode = errCode,
 			detail = detail
 		})
+	end
+end
+
+function GameServerAgent:onRepairFailed(client, errCode, detail)
+	if detail == neterrno.ETIMEDOUT or detail == neterrno.ENETUNREACH then
+		if self._waitingHandler then
+			self._waitingHandler:handleWaitingEvent(WaitingEvent.kRepairableErr, function ()
+				client.repair(false)
+			end, {
+				errCode = errCode,
+				detail = detail
+			})
+		end
 	else
-		self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
-			REBOOT()
-		end, {
-			errCode = errCode,
-			detail = detail
-		})
+		if self._waitingHandler then
+			self._waitingHandler:handleWaitingEvent(WaitingEvent.kUnrepairableErr, function ()
+				REBOOT()
+			end, {
+				errCode = errCode,
+				detail = detail
+			})
+		end
+
 		self:sendNetErrorLog({
 			errCode = errCode,
 			detail = detail
@@ -222,12 +246,14 @@ function GameServerAgent:onRepairFailed(client, errCode, detail)
 end
 
 function GameServerAgent:onRequestTimeout(client, errCode, detail)
-	self._waitingHandler:handleWaitingEvent(WaitingEvent.kRepairableErr, function ()
-		client.repair(false)
-	end, {
-		errCode = errCode,
-		detail = detail
-	})
+	if self._waitingHandler then
+		self._waitingHandler:handleWaitingEvent(WaitingEvent.kRepairableErr, function ()
+			client.repair(false)
+		end, {
+			errCode = errCode,
+			detail = detail
+		})
+	end
 end
 
 function GameServerAgent:onRequested(client, reqid, method, params)
@@ -241,8 +267,14 @@ function GameServerAgent:onNotified(client, event, rawdata)
 	end
 end
 
+function GameServerAgent:onQueue(client, rawdata)
+	local queueData = json.decode(rawdata)
+
+	self:dispatch(Event:new(EVT_LOGIN_ONQUEUE, queueData))
+end
+
 function GameServerAgent:doRequest(request, blockUI)
-	if blockUI then
+	if blockUI and self._waitingHandler then
 		self._waitingHandler:handleWaitingEvent(WaitingEvent.kRequest)
 	end
 
@@ -254,7 +286,7 @@ function GameServerAgent:doRequest(request, blockUI)
 	end
 
 	local function tempCallBack(...)
-		if blockUI then
+		if blockUI and self._waitingHandler then
 			self._waitingHandler:handleWaitingEvent(WaitingEvent.kRequestSucc)
 		end
 

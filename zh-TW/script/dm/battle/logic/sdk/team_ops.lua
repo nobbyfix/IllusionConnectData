@@ -1,9 +1,9 @@
 local exports = SkillDevKit or {}
 
-local function excludeTarget(env, target)
+local function excludeTarget(env, target, joinReferee)
 	local formationSystem = env.global["$FormationSystem"]
 
-	if not formationSystem:expelUnit(target, env["$id"]) then
+	if not formationSystem:expelUnit(target, env["$id"], nil, joinReferee) then
 		return nil
 	end
 
@@ -18,10 +18,10 @@ local function excludeTarget(env, target)
 	return target
 end
 
-local function forceFleeTarget(env, target)
+local function forceFleeTarget(env, target, joinReferee)
 	local formationSystem = env.global["$FormationSystem"]
 
-	if not formationSystem:fleeUnit(target, env["$id"], true) then
+	if not formationSystem:fleeUnit(target, env["$id"], true, joinReferee) then
 		return nil
 	end
 
@@ -68,8 +68,8 @@ local function stopAffectedSkillActions(env, target)
 	end)
 end
 
-function exports.Flee(env, duration)
-	local target = env["$actor"]
+function exports.Flee(env, duration, target)
+	local target = target or env["$actor"]
 
 	if target == nil or target:isDying() then
 		return false
@@ -91,14 +91,14 @@ function exports.Flee(env, duration)
 	return true
 end
 
-function exports.ForceFlee(env, duration)
+function exports.ForceFlee(env, duration, joinReferee)
 	local target = env["$actor"]
 
 	if target == nil then
 		return false
 	end
 
-	local unit = forceFleeTarget(env, target)
+	local unit = forceFleeTarget(env, target, joinReferee)
 
 	if unit == nil then
 		return false
@@ -113,8 +113,8 @@ function exports.ForceFlee(env, duration)
 	return true
 end
 
-function exports.WontDie(env)
-	local target = env["$actor"]
+function exports.WontDie(env, target)
+	local target = target or env["$actor"]
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:wontDieUnit(target)
@@ -137,8 +137,15 @@ function exports.Expel(env, target, animation)
 	return true
 end
 
-function exports.Kick(env, target)
-	local unit = excludeTarget(env, target)
+function exports.ForceKick(env, target)
+	local formationSystem = env.global["$FormationSystem"]
+
+	return formationSystem:_kickUnit(target)
+end
+
+function exports.Kick(env, target, joinReferee)
+	joinReferee = joinReferee or false
+	local unit = excludeTarget(env, target, joinReferee)
 
 	if unit == nil then
 		return false
@@ -155,6 +162,13 @@ function exports.Revive(env, hpRatio, anger, location)
 	local actor = env["$actor"]
 
 	return formationSystem:revive(actor, hpRatio, anger, location)
+end
+
+function exports.ReviveByUnit(env, unit, hpRatio, anger, location, owner)
+	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
+
+	return formationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
 end
 
 function exports.ReviveRandom(env, hpRatio, anger, location)
@@ -181,11 +195,11 @@ function exports.Reborn(env, ratio)
 	end
 end
 
-function exports.RebornUnit(env, unit, ratio)
+function exports.RebornUnit(env, unit, ratio, anger, location)
 	if unit:isInStages(ULS_Dead) then
 		local formationSystem = env.global["$FormationSystem"]
 
-		formationSystem:rebornUnit(unit, ratio)
+		formationSystem:rebornUnit(unit, ratio, anger, location)
 	end
 end
 
@@ -205,11 +219,42 @@ function exports.Summon(env, source, summonId, summonFactor, summonExtra, locati
 	return formationSystem:summon(actor, source, summonId, factors, location)
 end
 
+function exports.SummonMaster(env, source, summonId, summonFactor, summonExtra, location, curHpRatio)
+	local formationSystem = env.global["$FormationSystem"]
+	local actor = env["$actor"]
+	local factors = {
+		hpRatio = summonFactor and summonFactor[1] or 1,
+		atkRatio = summonFactor and summonFactor[2] or 1,
+		defRatio = summonFactor and summonFactor[3] or 1,
+		hpEx = summonExtra and summonExtra[1] or 0,
+		atkEx = summonExtra and summonExtra[2] or 0,
+		defEx = summonExtra and summonExtra[3] or 0,
+		curHpRatio = curHpRatio or 1
+	}
+
+	return formationSystem:summonMaster(actor, source, summonId, factors, env["$id"])
+end
+
+function exports.SpawnByTransform(env, player, source, location, isMarkedSummon)
+	local formationSystem = env.global["$FormationSystem"]
+
+	return formationSystem:SpawnByTransform(player, source, location, isMarkedSummon)
+end
+
 function exports.SpawnAssist(env, assistId, player, cellId)
 	local actor = env["$actor"]
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:spawnAssist(actor, assistId, player, cellId)
+end
+
+function exports.MarkSummoned(env, unit, isMarkSummon)
+	if unit then
+		unit:setIsSummoned(isMarkSummon)
+		env.global.RecordImmediately(env, unit:getId(), "IsSummond", {
+			isSummoned = isMarkSummon
+		})
+	end
 end
 
 function exports.Suicide(env)
@@ -229,8 +274,21 @@ function exports.KillTarget(env, target)
 
 	target:setLifeStage(ULS_Dying)
 
+	local skillSystem = env.global["$SkillSystem"]
+
+	skillSystem:activateSpecificTrigger(target, "DYING")
+	skillSystem:activateGlobalTrigger("UNIT_DYING", {
+		unit = target
+	})
+
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:excludeDyingUnit(target, workId)
 	env.global.RecordEffect(env, target:getId(), "KillTarget")
+end
+
+function exports.GetPlayerEnergy(env)
+	local player = env["$actor"]:getOwner()
+
+	return player:getEnergyReservoir():getEnergy()
 end

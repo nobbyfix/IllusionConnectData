@@ -109,6 +109,7 @@ function BuildingLvUpSucMediator:startAnimation()
 
 		self:setupClickEnvs()
 	end)
+	anim:setPlaySpeed(2)
 
 	local cnText = anim:getChildByFullName("cnText")
 	local enText = anim:getChildByFullName("enText")

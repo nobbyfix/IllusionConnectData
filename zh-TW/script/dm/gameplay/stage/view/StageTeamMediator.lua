@@ -14,6 +14,9 @@ StageTeamMediator:has("_systemKeeper", {
 StageTeamMediator:has("_spStageSystem", {
 	is = "r"
 }):injectWith("SpStageSystem")
+StageTeamMediator:has("_crusadeSystem", {
+	is = "r"
+}):injectWith("CrusadeSystem")
 
 local costType = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Init_Cost_Type", "content")
 local kBtnHandlers = {
@@ -28,10 +31,13 @@ local kBtnHandlers = {
 	["main.right.button"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickCardsTurnRight"
+	},
+	limittips = {
+		func = "onClickLimitTipsPanel"
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -66,6 +72,8 @@ function StageTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CRUSADE_RESET_DIFF, self, self.resetCrusade)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -99,6 +107,7 @@ function StageTeamMediator:enterWithData(data)
 	self._stageId = data and data.stageId and data.stageId or ""
 	self._spData = data and data.data and data.data or {}
 	self._cardsExcept = self._spData.cardsExcept and self._spData.cardsExcept or {}
+	self._limitHero = data.limitHero or {}
 	self._curTabType = data and data.tabType and data.tabType or 1
 	self._masterList = self._masterSystem:getShowMasterList()
 	self._canChange = true
@@ -161,14 +170,27 @@ function StageTeamMediator:resumeWithData()
 	end
 
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
+
+	if self:isCrusadeStage() then
+		self._limitHero = self._crusadeSystem:getCrusade():getLimitHero()
+
+		self:initData()
+		self:refreshPetNode()
+		self:refreshListView()
+	end
 end
 
-function StageTeamMediator:initData()
+function StageTeamMediator:initData(team)
 	self._teamList = self._developSystem:getAllUnlockTeams()
-	self._curTeam = self._teamList[self._curTabType]
 
-	if self:isSpecialStage() then
-		self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._teamList[self._curTabType]
+
+		if self:isSpecialStage() then
+			self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+		end
 	end
 
 	self._curTeamId = self._curTeam:getId()
@@ -227,14 +249,25 @@ function StageTeamMediator:updateData()
 	table.copy(self._petList, {})
 end
 
+function StageTeamMediator:isLimitHero(heroId)
+	for i, v in pairs(self._limitHero) do
+		if v == heroId then
+			return true
+		end
+	end
+
+	return false
+end
+
 function StageTeamMediator:removeExceptHeros()
 	local heros = self._curTeam:getHeroes()
 	local showHeros = {}
 
 	for i = 1, #heros do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, heros[i])
+		local isLimit = self:isLimitHero(heros[i])
 
-		if not isExcept then
+		if not isExcept and not isLimit then
 			showHeros[#showHeros + 1] = heros[i]
 		end
 	end
@@ -249,8 +282,9 @@ function StageTeamMediator:showOneKeyHeros()
 
 	for i = 1, #orderPets do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, orderPets[i])
+		local isLimit = self:isLimitHero(orderPets[i])
 
-		if #self._orderPets < self._maxTeamPetNum and not isExcept then
+		if #self._orderPets < self._maxTeamPetNum and not isExcept and not isLimit then
 			self._orderPets[#self._orderPets + 1] = orderPets[i]
 		else
 			self._leavePets[#self._leavePets + 1] = orderPets[i]
@@ -265,6 +299,7 @@ function StageTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function StageTeamMediator:initWidgetInfo()
@@ -287,6 +322,11 @@ function StageTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._infoBtn = self._main:getChildByFullName("infoBtn")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
@@ -319,6 +359,11 @@ function StageTeamMediator:initWidgetInfo()
 
 	self._pageTipPanel:removeAllChildren()
 	self._pageTipPanel:setTouchEnabled(true)
+
+	self._limitTips = self:getView():getChildByName("limittips")
+
+	self._limitTips:setVisible(false)
+	self._limitTips:setLocalZOrder(999999)
 
 	local width = 0
 
@@ -383,7 +428,7 @@ end
 
 function StageTeamMediator:ignoreSafeArea()
 	AdjustUtils.ignorSafeAreaRectForNode(self._heroPanel, AdjustUtils.kAdjustType.Left)
-	AdjustUtils.ignorSafeAreaRectForNode(self._myPetPanel:getChildByName("sortPanel"), AdjustUtils.kAdjustType.Left)
+	AdjustUtils.addSafeAreaRectForNode(self._myPetPanel:getChildByName("sortPanel"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(self._main:getChildByFullName("btnPanel"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(self._spPanel:getChildByFullName("combatBg"), AdjustUtils.kAdjustType.Right)
 
@@ -398,10 +443,10 @@ function StageTeamMediator:ignoreSafeArea()
 end
 
 function StageTeamMediator:createTeamCell(cell, index)
-	local node = cell:getChildByTag(12138)
-	node = node:getChildByFullName("myPetClone")
+	local petNode = cell:getChildByTag(12138)
+	local node = petNode:getChildByFullName("myPetClone")
 
-	node:setVisible(false)
+	petNode:setVisible(false)
 
 	cell.id = nil
 
@@ -409,7 +454,7 @@ function StageTeamMediator:createTeamCell(cell, index)
 		return
 	end
 
-	node:setVisible(true)
+	petNode:setVisible(true)
 
 	local id = self._petListAll[index - 1]
 	node.id = id
@@ -429,14 +474,55 @@ function StageTeamMediator:createTeamCell(cell, index)
 	local recomandNode = node:getChildByName("recommond")
 
 	if recomandNode then
-		recomandNode:setVisible(self:checkIsRecommend(id))
+		local text = recomandNode:getChildByFullName("text")
+
+		text:setColor(cc.c3b(255, 255, 255))
+
+		if self._stageType == StageTeamType.CRUSADE then
+			local recommendData = self._crusadeSystem:checkIsRecommend(id, heroInfo)
+
+			recomandNode:setVisible(recommendData.isRecommend)
+			text:setString(recommendData.recommendDesc)
+
+			if recommendData.isMaxRecommend then
+				text:setColor(cc.c3b(255, 203, 63))
+			end
+		else
+			recomandNode:setVisible(self:checkIsRecommend(id))
+		end
 	end
 
 	local detailBtn = node:getChildByFullName("detailBtn")
 
 	detailBtn:addClickEventListener(function ()
-		self:onClickHeroDetail(id)
+		local attrAdds = {}
+
+		if self._stageType == StageTeamType.CRUSADE then
+			local recommendData = self._crusadeSystem:checkIsRecommend(id, heroInfo)
+			attrAdds = recommendData.attrAdds
+		elseif self:checkIsRecommend(id) then
+			attrAdds[#attrAdds + 1] = {}
+			attrAdds[#attrAdds].title = Strings:get("Team_Hero_Type_Title")
+			attrAdds[#attrAdds].desc = Strings:get(self:getHeroAttrInfo())
+			attrAdds[#attrAdds].type = StageAttrAddType.HERO_TYPE
+		end
+
+		self:onClickHeroDetail(id, attrAdds)
 	end)
+end
+
+function StageTeamMediator:getHeroAttrInfo()
+	if self:isSpStage() then
+		if SpStageResetId[self._stageId] then
+			local descs = ConfigReader:getDataByNameIdAndKey("BlockSp", self._stageId, "SpecialDesc")
+
+			return descs[2]
+		else
+			return ""
+		end
+	elseif self:isCrusadeStage() then
+		return self._spData.specialRule or ""
+	end
 end
 
 function StageTeamMediator:checkStageType()
@@ -446,9 +532,6 @@ function StageTeamMediator:checkStageType()
 		self._fightBtn:setVisible(true)
 
 		local spRuleLabel = self._spPanel:getChildByFullName("ruleLabel")
-
-		print(self._stageId)
-		dump(SpStageResetId)
 
 		if SpStageResetId[self._stageId] then
 			local descs = ConfigReader:getDataByNameIdAndKey("BlockSp", self._stageId, "SpecialDesc")
@@ -653,6 +736,10 @@ function StageTeamMediator:onClickCell(sender, eventType, index)
 	if eventType == ccui.TouchEventType.began then
 		self._isReturn = true
 		self._isOnTeam = false
+
+		if self:isLimitHero(sender.id) then
+			self._isOnTeam = true
+		end
 	elseif eventType == ccui.TouchEventType.moved then
 		local beganPos = sender:getTouchBeganPosition()
 		local movedPos = sender:getTouchMovePosition()
@@ -672,6 +759,14 @@ function StageTeamMediator:onClickCell(sender, eventType, index)
 	elseif eventType == ccui.TouchEventType.ended or eventType == ccui.TouchEventType.canceled then
 		sender:setVisible(true)
 		sender:setSwallowTouches(false)
+
+		if self:isLimitHero(sender.id) then
+			self._isDrag = false
+
+			self._limitTips:setVisible(true)
+
+			return
+		end
 
 		if self._guildCallback and not self._isDrag then
 			self._isOnTeam = true
@@ -889,8 +984,9 @@ function StageTeamMediator:removeTeamPet(index)
 	if cellId then
 		local idIndex = table.indexof(self._petList, cellId)
 		local selectCanceled = self:isSelectCanceledByDray(cellId, id)
+		local isLimit = self:isLimitHero(cellId)
 
-		if idIndex and not selectCanceled then
+		if idIndex and not selectCanceled and not isLimit then
 			table.remove(self._petList, idIndex)
 
 			self._teamPets[index] = cellId
@@ -947,7 +1043,7 @@ function StageTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, nil, , , self._stageType, self._limitHero)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}
@@ -1000,6 +1096,27 @@ function StageTeamMediator:initHero(node, info)
 	end
 
 	local skillPanel = node:getChildByName("skillPanel")
+	local recomandNode = node:getChildByName("recommond")
+
+	if recomandNode then
+		local text = recomandNode:getChildByFullName("text")
+
+		text:setColor(cc.c3b(255, 255, 255))
+
+		if self._stageType == StageTeamType.CRUSADE then
+			local recommendData = self._crusadeSystem:checkIsRecommend(heroId, info)
+
+			recomandNode:setVisible(recommendData.isRecommend)
+			text:setString(recommendData.recommendDesc)
+
+			if recommendData.isMaxRecommend then
+				text:setColor(cc.c3b(255, 203, 63))
+			end
+		else
+			recomandNode:setVisible(self:checkIsRecommend(heroId))
+		end
+	end
+
 	local skill = self._heroSystem:checkHasKeySkill(heroId)
 
 	skillPanel:setVisible(not not skill)
@@ -1020,6 +1137,20 @@ function StageTeamMediator:initHero(node, info)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
+		end
+	end
+
+	if self:isLimitHero(heroId) then
+		node:setColor(cc.c3b(80, 80, 80))
+
+		if node:getParent() and node:getParent():getChildByName("Text_limit") then
+			node:getParent():getChildByName("Text_limit"):setVisible(true)
+		end
+	else
+		node:setColor(cc.c3b(255, 255, 255))
+
+		if node:getParent() and node:getParent():getChildByName("Text_limit") then
+			node:getParent():getChildByName("Text_limit"):setVisible(false)
 		end
 	end
 end
@@ -1082,7 +1213,7 @@ function StageTeamMediator:initTeamHero(node, info)
 	super.initTeamHero(self, node, info)
 
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -1104,7 +1235,12 @@ function StageTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1179,7 +1315,9 @@ function StageTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		if dicengEff then
 			dicengEff:setVisible(isActive)
@@ -1195,11 +1333,31 @@ function StageTeamMediator:initTeamHero(node, info)
 	local recomandNode = node:getChildByName("recommond")
 
 	if recomandNode then
-		recomandNode:setVisible(self:checkIsRecommend(heroId))
+		local text = recomandNode:getChildByFullName("text")
+
+		text:setColor(cc.c3b(255, 255, 255))
+
+		if self._stageType == StageTeamType.CRUSADE then
+			local recommendData = self._crusadeSystem:checkIsRecommend(heroId, info)
+
+			recomandNode:setVisible(recommendData.isRecommend)
+			text:setString(recommendData.recommendDesc)
+
+			if recommendData.isMaxRecommend then
+				text:setColor(cc.c3b(255, 203, 63))
+			end
+		else
+			recomandNode:setVisible(self:checkIsRecommend(heroId))
+		end
+
+		recomandNode:setContentSize(text:getContentSize())
+		text:setPosition(cc.p(recomandNode:getContentSize().width / 2, recomandNode:getContentSize().height / 2 + 3))
 	end
 end
 
 function StageTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1208,6 +1366,10 @@ function StageTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1228,6 +1390,10 @@ function StageTeamMediator:refreshCombatAndCost()
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+	self._infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	self._infoBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickInfo(eventType)
+	end)
 end
 
 function StageTeamMediator:changeMasterId(event)
@@ -1236,6 +1402,7 @@ function StageTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function StageTeamMediator:refreshMasterInfo()
@@ -1272,6 +1439,10 @@ function StageTeamMediator:checkToExit(func, isIgnore, translateId)
 	local isCrusade = self:isCrusadeStage()
 
 	if #self._teamPets < 1 then
+		if isCrusade then
+			return true
+		end
+
 		self:dispatch(ShowTipEvent({
 			duration = 0.2,
 			tip = Strings:find("ARENA_TEMA_EMPTY")
@@ -1510,6 +1681,7 @@ function StageTeamMediator:checkTeamIsEmpty(teamId, currentType)
 		self._stageSystem:setSortExtand(0)
 		self:checkCardsTurnBtn()
 		self:refreshView()
+		self:setLeadStageInfo()
 	end
 
 	local team = self._teamList[currentType]
@@ -1581,6 +1753,7 @@ function StageTeamMediator:onClickFight(sender, eventType)
 	end
 
 	if self:isSpecialStage() then
+		AudioTimerSystem:playStartBattleVoice(self._curTeam)
 		self:sendSpChangeTeam(func, true)
 	end
 end
@@ -1698,4 +1871,23 @@ function StageTeamMediator:setupClickEnvs()
 	end))
 
 	self:getView():runAction(sequence)
+end
+
+function StageTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:refreshPetNode()
+
+	self._hasForceChangeTeam = true
+
+	if not self:isSpecialStage() then
+		self._editBox:setText(self._nowName)
+	end
+end
+
+function StageTeamMediator:onClickLimitTipsPanel()
+	self._limitTips:setVisible(false)
 end

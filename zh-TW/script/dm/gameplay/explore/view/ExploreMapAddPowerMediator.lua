@@ -123,6 +123,12 @@ function ExploreMapAddPowerMediator:initUseView()
 	descLabel:addTo(desc)
 	descLabel:setAnchorPoint(cc.p(0, 1))
 	descLabel:setPosition(cc.p(0, desc:getContentSize().height))
+
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		descLabel:setVerticalSpace(1)
+	end
 end
 
 function ExploreMapAddPowerMediator:initTeamList()
@@ -240,6 +246,7 @@ function ExploreMapAddPowerMediator:updateView()
 	descLabel:addTo(self._teamStatus)
 	descLabel:setAnchorPoint(cc.p(0, 0))
 	descLabel:setPosition(cc.p(0, 0))
+	ajustRichTextCustomWidth(descLabel, 685)
 end
 
 function ExploreMapAddPowerMediator:updateTeam()
@@ -410,6 +417,7 @@ function ExploreMapAddPowerMediator:onClickUse()
 end
 
 function ExploreMapAddPowerMediator:onClickBattle()
+	AudioTimerSystem:playStartBattleVoice(self._currentTeam)
 	AudioEngine:getInstance():playEffect("Se_Click_Battle", false)
 	self._exploreSystem:requestSetCurTeam(function ()
 	end, {

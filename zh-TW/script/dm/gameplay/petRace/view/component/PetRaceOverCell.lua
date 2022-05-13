@@ -42,6 +42,14 @@ function PetRaceOverCell:update(data, index)
 	self._title:setString(Strings:get("Petrace_Text_76"))
 	self._text_round:setString(string.format(Strings:get("Petrace_Text_1"), self._round))
 
+	local len1 = self._title:getContentSize().width
+	local len2 = self._text_round:getContentSize().width
+	local len = (len1 + len2) * 0.5
+	local posX = self._image_box_silver:getPositionX()
+
+	self._title:setPositionX(posX - len + len1)
+	self._text_round:setPositionX(posX + len - len2)
+
 	local rivalName = self._data.rivalName
 
 	if not rivalName or rivalName == "" then
@@ -55,9 +63,9 @@ function PetRaceOverCell:update(data, index)
 	end
 
 	self._text_name_l:setString(self._data.userName)
-	self._text_level_l:setString("Lv " .. self._data.userLevel)
+	self._text_level_l:setString(Strings:get("Common_LV_Text") .. self._data.userLevel)
 	self._text_name_r:setString(rivalName)
-	self._text_level_r:setString("Lv " .. rivalLevel)
+	self._text_level_r:setString(Strings:get("Common_LV_Text") .. rivalLevel)
 
 	local myEmbattle = self._data.myEmbattle[1] or {}
 	local rivalEmbattle = data.rivalEmbattle[1] or {}

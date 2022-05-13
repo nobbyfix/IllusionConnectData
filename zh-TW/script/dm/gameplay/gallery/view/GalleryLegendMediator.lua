@@ -9,8 +9,13 @@ GalleryLegendMediator:has("_gallerySystem", {
 
 local kBtnHandlers = {
 	descBtn = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickRule"
+		ignoreClickAudio = true,
+		eventType = 4,
+		func = "onClickShowTips"
+	},
+	PanelTouch_tip = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickHideTips"
 	}
 }
 
@@ -29,6 +34,33 @@ function GalleryLegendMediator:onRegister()
 	self._heroSystem = self._developSystem:getHeroSystem()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshBySync)
+end
+
+function GalleryLegendMediator:enterWithData(data)
+	self:setupTopInfoWidget()
+	self:setupView(data)
+	self:runStartAnim()
+end
+
+function GalleryLegendMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		title = Strings:get("Gallery_Legend_UI1"),
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function GalleryLegendMediator:onClickBack(sender, eventType)
+	self:dismiss()
 end
 
 function GalleryLegendMediator:setupView()
@@ -107,6 +139,38 @@ function GalleryLegendMediator:initView()
 	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
 	tableView:registerScriptHandler(tableCellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
 	tableView:setMaxBounceOffset(20)
+
+	self._tipsPanel = self._main:getChildByName("tipsPanel")
+
+	self._tipsPanel:setVisible(false)
+
+	self._tipsTouchPanel = self:getView():getChildByName("PanelTouch_tip")
+
+	self._tipsTouchPanel:setVisible(false)
+
+	local tips = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HerosLegendRule", "content")
+	local panelSize = self._tipsPanel:getContentSize()
+	local space = 18
+
+	for i = 1, #tips do
+		local str = Strings:get(tips[i])
+		local text = ccui.Text:create(str, TTF_FONT_FZYH_M, 18)
+
+		text:setLineSpacing(space)
+		text:getVirtualRenderer():setMaxLineWidth(380)
+		text:addTo(self._tipsPanel):setTag(i)
+		text:setAnchorPoint(cc.p(0, 1))
+
+		local prewText = self._tipsPanel:getChildByTag(i - 1)
+
+		if prewText then
+			local topPosY = prewText:getPositionY() - prewText:getContentSize().height
+
+			text:setPosition(cc.p(10, topPosY - space))
+		else
+			text:setPosition(cc.p(10, panelSize.height - 15))
+		end
+	end
 end
 
 function GalleryLegendMediator:createTeamCell(cell, index)
@@ -145,7 +209,7 @@ function GalleryLegendMediator:createTeamCell(cell, index)
 			has = true
 		end
 
-		local portrait, _, spineani = IconFactory:createRoleIconSprite({
+		local portrait, _, spineani = IconFactory:createRoleIconSpriteNew({
 			iconType = "Portrait",
 			id = model
 		})
@@ -246,8 +310,18 @@ function GalleryLegendMediator:onClickHeroIcon(sender, eventType, data)
 	end
 end
 
-function GalleryLegendMediator:onClickRule()
-	self._gallerySystem:showLegendRule()
+function GalleryLegendMediator:onClickShowTips(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self._tipsPanel:setVisible(true)
+		self._tipsTouchPanel:setVisible(true)
+	end
+end
+
+function GalleryLegendMediator:onClickHideTips(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self._tipsPanel:setVisible(false)
+		self._tipsTouchPanel:setVisible(false)
+	end
 end
 
 function GalleryLegendMediator:runStartAnim()
@@ -264,10 +338,10 @@ function GalleryLegendMediator:runStartAnim()
 
 	self._main:runAction(spawn)
 	self._tableViewPanel:setOpacity(0)
-	self._tableViewPanel:setPosition(cc.p(303, 80))
+	self._tableViewPanel:setPosition(cc.p(140, 80))
 
 	local delay = cc.DelayTime:create(0.2)
-	local moveto = cc.MoveTo:create(0.3, cc.p(303, 49))
+	local moveto = cc.MoveTo:create(0.3, cc.p(140, 49))
 	local fadeIn = cc.FadeIn:create(0.2)
 	local callback = cc.CallFunc:create(function ()
 		self._heroView:reloadData()

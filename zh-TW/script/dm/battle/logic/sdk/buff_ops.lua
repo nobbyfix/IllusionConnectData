@@ -72,6 +72,10 @@ function exports.ApplyBuff(env, target, config, buffEffects)
 		return nil
 	end
 
+	if not target then
+		return
+	end
+
 	if not target:isInStages(ULS_Normal, ULS_Newborn) then
 		return
 	end
@@ -220,7 +224,7 @@ function exports.CloneBuff(env, unit, target, tagOrFilter, maxCount)
 		end
 	end
 
-	return buffSystem:cloneBuffsOnTarget(actor, target, matchFunc, env["$id"])
+	return buffSystem:cloneBuffsOnTarget(unit, target, matchFunc, env["$id"])
 end
 
 function exports.SelectBuffs(env, target, tagOrFilter)
@@ -257,6 +261,21 @@ function exports.ResetBuffsLifespan(env, target, tagOrFilter)
 	return count
 end
 
+function exports.SelectTraps(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+
+	return trapSystem:selectBuffsOnTarget(cell, matchFunc)
+end
+
+function exports.SelectTrapCount(env, cell, tagOrFilter)
+	local trapSystem = env.global["$TrapSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+	local buffs, count = trapSystem:selectBuffsOnTarget(cell, matchFunc)
+
+	return count
+end
+
 function exports.LimitHpEffect(env, value)
 	return LimitHpEffect:new({
 		value = value
@@ -265,7 +284,7 @@ end
 
 function exports.MaxHpEffect(env, value)
 	return MaxHpEffect:new({
-		value = value
+		value = math.floor(value)
 	})
 end
 
@@ -311,6 +330,16 @@ function exports.DeathImmuneEffect(env, value, hpRecoverRatio)
 	})
 end
 
+function exports.PassiveFunEffectBuff(env, id, config)
+	local skillSystem = env.global["$SkillSystem"]
+
+	return PassiveFunEffect:new({
+		id = id,
+		config = config,
+		skillSystem = skillSystem
+	})
+end
+
 function exports.StatusEffect(env, status)
 	return StatusEffect:new({
 		status = status
@@ -353,6 +382,18 @@ function exports.ShieldEffect(env, value, upLimit)
 	})
 end
 
+function exports.ShieldRatioEffect(env, ratio)
+	return ShieldRatioEffect:new({
+		ratio = ratio
+	})
+end
+
+function exports.HPRecoverRatioEffect(env, ratio)
+	return HPRecoverRatioEffect:new({
+		ratio = ratio
+	})
+end
+
 function exports.Freeze(env)
 	return StatusEffect:new({
 		status = kBEFrozen
@@ -390,6 +431,10 @@ function exports.Curse(env)
 	return CurseEffect:new()
 end
 
+function exports.Offline(env)
+	return OfflineEffect:new()
+end
+
 function exports.Stealth(env, alpha)
 	return HolyHideEffect:new({
 		status = kBEStealth,
@@ -403,6 +448,20 @@ function exports.Diligent(env)
 	})
 end
 
+function exports.BuffIsMatched(env, buff, ...)
+	local tags = {
+		...
+	}
+
+	for k, v in pairs(tags) do
+		if buff:isMatched(v) then
+			return true
+		end
+	end
+
+	return false
+end
+
 function exports.ImmuneBuff(env, tagOrFilter)
 	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
 
@@ -413,6 +472,20 @@ function exports.ImmuneBuff(env, tagOrFilter)
 	end
 
 	return ImmuneBuffEffect:new({
+		filter = matchFunc
+	})
+end
+
+function exports.ImmuneTrapBuffEffect(env, tagOrFilter)
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+
+	if matchFunc == nil then
+		function matchFunc(buff)
+			return true
+		end
+	end
+
+	return ImmuneTrapBuffEffect:new({
 		filter = matchFunc
 	})
 end
@@ -435,6 +508,13 @@ function exports.RageGainEffect(env, name, itemname, value, uplimit)
 		itemname = itemname,
 		value = value,
 		uplimit = uplimit
+	})
+end
+
+function exports.DamageTransferEffect(env, trasforUnit, radio)
+	return DamageTransferEffect:new({
+		trasforUnit = trasforUnit,
+		radio = radio
 	})
 end
 

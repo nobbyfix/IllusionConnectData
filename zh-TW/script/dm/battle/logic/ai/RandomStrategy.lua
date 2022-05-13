@@ -58,11 +58,21 @@ function RandomStrategy:update(interval)
 		local cost = self._nextCard:getActualCost()
 		self._willCheckEnergy = false
 
-		if player:energyIsEnough(cost) then
-			local battleField = self._context:getObject("BattleField")
-			local cellNo = self:determineTargetCell(battleField, player:getSide())
+		self:checkNextCardIsRelocate(player)
 
-			if cellNo ~= nil then
+		if player:energyIsEnough(cost) then
+			if not self._nextCard._cardAI then
+				self._nextCard = nil
+
+				return
+			end
+
+			local battleField = self._context:getObject("BattleField")
+			local seatRules = self._nextCard:getSeatRules()
+			local cellNo = self:determineTargetCell(battleField, player:getSide(), seatRules)
+			local realcardIndex = self:getRealCardIndex(player, self._nextCard)
+
+			if cellNo ~= nil and realcardIndex then
 				self:spawnCard(self._cardIndex, cellNo, function (success, detail)
 					self._waitCD = 1000
 

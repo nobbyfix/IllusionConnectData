@@ -132,12 +132,10 @@ function ChangeTeamMediator:createMaster(cell, index)
 	layer:getChildByName("selected"):setVisible(self._curMasterId == data:getId())
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust1",
-		id = data:getModel(),
-		size = cc.size(155, 319)
+		frameId = "bustframe1",
+		id = data:getModel()
 	}
-	local rolePic = IconFactory:createRoleIconSprite(info)
+	local rolePic = IconFactory:createRoleIconSpriteNew(info)
 
 	if rolePic then
 		rolePic:addTo(layer)
@@ -151,6 +149,20 @@ function ChangeTeamMediator:createMaster(cell, index)
 		local color = data:getIsLock() and cc.c3b(195, 195, 195) or cc.c3b(255, 255, 255)
 
 		layer:setColor(color)
+	end
+
+	local node = cc.Node:create()
+
+	node:addTo(layer):posite(90, 80)
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getId())
+	local icon = IconFactory:createLeadStageIconVer(id, lv, {
+		needBg = 1
+	})
+
+	if icon then
+		icon:addTo(node)
 	end
 end
 

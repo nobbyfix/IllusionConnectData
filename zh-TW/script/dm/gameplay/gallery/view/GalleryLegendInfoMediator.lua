@@ -13,8 +13,13 @@ local kStateImage = {
 }
 local kBtnHandlers = {
 	descBtn = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickRule"
+		ignoreClickAudio = true,
+		eventType = 4,
+		func = "onClickShowTips"
+	},
+	PanelTouch_tip = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickHideTips"
 	}
 }
 
@@ -39,11 +44,46 @@ function GalleryLegendInfoMediator:enterWithData(data)
 	self:setupTopInfoWidget()
 	self:initData(data)
 	self:initWidgetInfo()
+	self:initTipsView()
 	self:initBaseView()
 	self:initHeroView()
 	self:initInfoView()
 	self:initCellHeight()
 	self:initTableView()
+end
+
+function GalleryLegendInfoMediator:initTipsView()
+	self._tipsPanel = self:getView():getChildByName("tipsPanel")
+
+	self._tipsPanel:setVisible(false)
+
+	self._tipsTouchPanel = self:getView():getChildByName("PanelTouch_tip")
+
+	self._tipsTouchPanel:setVisible(false)
+
+	local tips = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HerosLegendRule", "content")
+	local panelSize = self._tipsPanel:getContentSize()
+	local space = 18
+
+	for i = 1, #tips do
+		local str = Strings:get(tips[i])
+		local text = ccui.Text:create(str, TTF_FONT_FZYH_M, 18)
+
+		text:setLineSpacing(space)
+		text:getVirtualRenderer():setMaxLineWidth(380)
+		text:addTo(self._tipsPanel):setTag(i)
+		text:setAnchorPoint(cc.p(0, 1))
+
+		local prewText = self._tipsPanel:getChildByTag(i - 1)
+
+		if prewText then
+			local topPosY = prewText:getPositionY() - prewText:getContentSize().height
+
+			text:setPosition(cc.p(10, topPosY - space))
+		else
+			text:setPosition(cc.p(10, panelSize.height - 15))
+		end
+	end
 end
 
 function GalleryLegendInfoMediator:initWidgetInfo()
@@ -136,7 +176,7 @@ function GalleryLegendInfoMediator:initHeroView()
 			has = true
 		end
 
-		local portrait, _, spineani = IconFactory:createRoleIconSprite({
+		local portrait, _, spineani = IconFactory:createRoleIconSpriteNew({
 			iconType = "Portrait",
 			id = model
 		})
@@ -313,6 +353,7 @@ function GalleryLegendInfoMediator:createTeamCell(cell, index)
 
 	contentText:setAnchorPoint(cc.p(0, 0.5))
 	contentText:addTo(desc):posite(0, 0)
+	ajustRichTextCustomWidth(contentText, 250)
 
 	local attr = panel:getChildByFullName("attr")
 
@@ -366,8 +407,18 @@ function GalleryLegendInfoMediator:refreshBySync()
 	self:updateView()
 end
 
-function GalleryLegendInfoMediator:onClickRule()
-	self._gallerySystem:showLegendRule()
+function GalleryLegendInfoMediator:onClickShowTips(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self._tipsPanel:setVisible(true)
+		self._tipsTouchPanel:setVisible(true)
+	end
+end
+
+function GalleryLegendInfoMediator:onClickHideTips(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self._tipsPanel:setVisible(false)
+		self._tipsTouchPanel:setVisible(false)
+	end
 end
 
 function GalleryLegendInfoMediator:onClickBack()

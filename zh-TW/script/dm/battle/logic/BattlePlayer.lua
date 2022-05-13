@@ -20,13 +20,22 @@ BattlePlayer:has("_initiative", {
 	is = "rw"
 })
 BattlePlayer:has("_masterUnit", {
-	is = "r"
+	is = "rw"
 })
 BattlePlayer:has("_initialCellNo", {
 	is = "rw"
 })
+BattlePlayer:has("_initialBattleFeildCellNo", {
+	is = "rw"
+})
 BattlePlayer:has("_cardPool", {
-	is = "r"
+	is = "rw"
+})
+BattlePlayer:has("_extraCardPool", {
+	is = "rw"
+})
+BattlePlayer:has("_heroCardPool", {
+	is = "rw"
 })
 BattlePlayer:has("_cardWindow", {
 	is = "r"
@@ -49,8 +58,11 @@ function BattlePlayer:initialize(id)
 
 	self._id = id
 	self._initialCellNo = 8
+	self._initialBattleFeildCellNo = 108
 	self._energyReservoir = EnergyReservoir:new()
 	self._cardPool = HeroCardPool:new()
+	self._heroCardPool = self._cardPool
+	self._extraCardPool = ExtraCardPool:new()
 	self._cardWindow = BattleCardWindow:new()
 end
 
@@ -68,6 +80,18 @@ function BattlePlayer:initWithData(data)
 	self._tactics = data.tactics or {}
 	self._refreshCost = data.refreshCost
 	self._tacticsNeedWait = data.tacticsNeedWait
+
+	if data.extraCards2 and #data.extraCards2 > 0 then
+		self._extraCardPool:addHeroCard({
+			data.extraCards2[1]
+		})
+	end
+
+	if data.extraTactics and #data.extraTactics > 0 then
+		self._extraCardPool:addSkillCard({
+			data.extraTactics[1]
+		})
+	end
 
 	return self
 end
@@ -87,6 +111,7 @@ function BattlePlayer:start(battleContext)
 	self._battleStatist = battleContext:getObject("BattleStatist")
 
 	self:setupCardWindowWithHeroCards(battleContext:getObject("Randomizer"))
+	self:setupExtraCardWindowWithCards(battleContext:getObject("Randomizer"))
 	self._energyReservoir:start(battleContext)
 	self:recordNewPlayer(self._battleRecorder)
 
@@ -143,6 +168,15 @@ function BattlePlayer:embattle(waveIndex, anim, formationSystem, battleRecorder)
 		self._masterUnit = nil
 	end
 
+	if not self._BattleFieldUnit then
+		local battleFeildData = self:getBattleFieldData()
+		local animation = {
+			dur = 1000,
+			name = anim or "init"
+		}
+		self._BattleFieldUnit = formationSystem:SpawnUnit(self, battleFeildData, self:getInitialBattleFeildCellNo(), animation, false, true, {})
+	end
+
 	if herosData and next(herosData) ~= nil then
 		local heroUnits = {}
 
@@ -164,6 +198,56 @@ function BattlePlayer:embattle(waveIndex, anim, formationSystem, battleRecorder)
 	end
 end
 
+function BattlePlayer:getBattleFieldData()
+	local battleFeildData = {
+		absorption = 0,
+		effectstrg = 0,
+		skillrate = 0,
+		maxHp = 106818.8,
+		anger = 0,
+		surfaceIndex = 0,
+		defrate = 1,
+		cid = "Master_XueZhan",
+		combat = 15010,
+		unhurtrate = 0.01875,
+		critstrg = 0.05625,
+		atk = 8962.6,
+		defweaken = 0,
+		def = 2717.7,
+		star = 2,
+		level = 40,
+		blockrate = 0.0375,
+		configId = "Master_XueZhan",
+		undeadrate = 0,
+		hurtrate = 0.01875,
+		isBattleField = true,
+		curerate = 0,
+		uncritrate = 0.0375,
+		blockstrg = 0.05625,
+		speed = 295,
+		hp = 8888888888.0,
+		reflection = 0,
+		aoederate = 0.15,
+		atkrate = 1,
+		counterrate = 0,
+		critrate = 0.0875,
+		leadStageLevel = 0,
+		doublerate = 0,
+		unblockrate = 0.0375,
+		uneffectrate = 0,
+		effectrate = 0,
+		modelId = "Model_Master_XueZhan",
+		atkweaken = 0,
+		uid = "m-BattleField-108" .. self._id,
+		id = "f_BattleField-108" .. self._id,
+		flags = {
+			"FIELD"
+		}
+	}
+
+	return battleFeildData
+end
+
 function BattlePlayer:hasNextWave()
 	local waveData = self._waves[(self._waveIndex or 0) + 1]
 	local masterData = waveData and waveData.master
@@ -177,6 +261,48 @@ function BattlePlayer:hasNextWave()
 end
 
 function BattlePlayer:recordNewPlayer(battleRecorder)
+	if not battleRecorder then
+		return
+	end
+
+	local cards = {}
+	local cardWindow = self._cardWindow
+
+	for i = 1, cardWindow:getWindowSize() do
+		local card = cardWindow:getCardAtIndex(i)
+		cards[i] = card and card:dumpInformation() or 0
+	end
+
+	local extraCards = {}
+
+	for i = 1, cardWindow:getExtraWindowSize() do
+		local card = cardWindow:getExtraCardAtIndex(i)
+		extraCards[i] = card and card:dumpInformation() or 0
+	end
+
+	local nextCardInfo = nil
+
+	if self._nextCard then
+		nextCardInfo = self._nextCard:dumpInformation()
+	end
+
+	local playerId = self:getId()
+	local playerInfo = {
+		id = playerId,
+		side = self:getSide(),
+		master = masterId,
+		heros = heros,
+		energy = self._energyReservoir:getEnergy(),
+		cardPoolSize = self._cardPool:getTotalCount(),
+		cards = cards,
+		extraCards = extraCards,
+		nextCard = nextCardInfo
+	}
+
+	battleRecorder:recordMetaEvent(playerId, "NewPlayer", playerInfo, "BattlePlayer")
+end
+
+function BattlePlayer:updateCardArray()
 	if not battleRecorder then
 		return
 	end
@@ -208,6 +334,10 @@ function BattlePlayer:recordNewPlayer(battleRecorder)
 	}
 
 	battleRecorder:recordMetaEvent(playerId, "NewPlayer", playerInfo, "BattlePlayer")
+end
+
+function BattlePlayer:getNextCard()
+	return self._nextCard
 end
 
 function BattlePlayer:update(dt, battleContext)
@@ -308,6 +438,7 @@ function BattlePlayer:removeAssistInfo(assistId)
 end
 
 function BattlePlayer:setupCardWindowWithHeroCards(random)
+	self._cardState = nil
 	local cardPool = self._cardPool
 	local cardWindow = self._cardWindow
 
@@ -348,6 +479,18 @@ function BattlePlayer:setupCardWindowWithSkillCards(random)
 
 		return newCard, nextCard
 	end
+end
+
+function BattlePlayer:setupExtraCardWindowWithCards(random)
+	for idx = 1, self._cardWindow:getExtraWindowSize() do
+		self._cardWindow:setExtraCardAtIndex(idx, self._extraCardPool:getCardAtIndex(idx))
+	end
+end
+
+function BattlePlayer:fillExtraCardAtIndex(index)
+	self._cardWindow:setExtraCardAtIndex(index, self._extraCardPool:getCardAtIndex(index))
+
+	return self._extraCardPool:getCardAtIndex(index)
 end
 
 function BattlePlayer:checkCanFillSkillCards(battleContext)
@@ -431,7 +574,13 @@ function BattlePlayer:takeCardAtIndex(wndIdx, cardId)
 	local card = self._cardWindow:getCardAtIndex(wndIdx)
 
 	if card == nil then
-		return nil, "NoCard"
+		local extraCard = self._cardWindow:getExtraCardAtIndex(wndIdx - 4)
+
+		if not extraCard then
+			return nil, "NoCard"
+		end
+
+		card = extraCard
 	end
 
 	if cardId ~= nil and cardId ~= card:getId() then
@@ -587,6 +736,7 @@ function BattlePlayer:clearStatus(battleContext)
 				local trapSystem = battleContext:getObject("TrapSystem")
 
 				trapSystem:triggerTrap(unit)
+				formationSystem:clearOldResident(unit)
 			end
 		else
 			formationSystem:buryUnit(unit)
@@ -615,6 +765,16 @@ function BattlePlayer:kickAllUnits(battleContext)
 	if self._battleRecorder then
 		self._battleRecorder:recordEvent(self:getId(), "Kick")
 	end
+end
+
+function BattlePlayer:backCardToPool(card)
+	self._cardPool:insertCard(card)
+	self._cardWindow:removeCard(card)
+end
+
+function BattlePlayer:backCardToPoolAtIndex(card, index)
+	self._cardPool:insertCard(card, index)
+	self._cardWindow:removeCard(card)
 end
 
 function BattlePlayer:visitCardsInWindow(visitor)

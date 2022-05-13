@@ -78,6 +78,10 @@ end
 function TabController:refreshTabImagesVisible(button, isLight)
 	local indexTag = button.index
 
+	if not indexTag then
+		return
+	end
+
 	for index = 1, 2 do
 		local lightNode = button:getChildByName("light_" .. index)
 		local darkNode = button:getChildByName("dark_" .. index)
@@ -235,13 +239,11 @@ function TabController:_setupTabs()
 			elseif self._singleClickDelegate then
 				if eventType == ccui.TouchEventType.began then
 					if self._clickState == TabClickAnswerState.kBegan then
-						self:_dealTabImages(button, true)
 						self:_trySingleClick(button)
 					end
 				elseif eventType == ccui.TouchEventType.canceled then
 					self:_updateTabs()
 				elseif eventType == ccui.TouchEventType.ended and self._clickState == TabClickAnswerState.kEnd then
-					self:_dealTabImages(button, true)
 					self:_trySingleClick(button)
 				end
 			end
@@ -276,10 +278,11 @@ end
 function TabController:_trySingleClick(button)
 	assert(button ~= nil, "error:button=nil")
 
-	if self._singleClickDelegate then
-		self._singleClickDelegate(button:getName(), button:getTag())
+	if self._singleClickDelegate and self._singleClickDelegate(button:getName(), button:getTag()) == false then
+		return
 	end
 
+	self:_dealTabImages(button, true)
 	self:refreshSelectBtn(button)
 	self:playSound()
 end

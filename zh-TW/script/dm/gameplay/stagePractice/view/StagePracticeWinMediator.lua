@@ -55,10 +55,6 @@ function StagePracticeWinMediator:enterWithData(data)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 
 	storyDirector:notifyWaiting("enter_StagePracticeFightMediator")
-
-	if SDKHelper and SDKHelper:isEnableSdk() then
-		SDKHelper:adjustEventTracking(AdjustBattleEventList[self._data.pointId])
-	end
 end
 
 local starAnimPath = {
@@ -106,9 +102,10 @@ function StagePracticeWinMediator:showWinAni()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 	self._mvpSprite = mvpSprite
@@ -132,7 +129,7 @@ function StagePracticeWinMediator:showWinAni()
 	local titleText = anim:getChildByName("titleTexts")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(50, -100)
+	self._mvpSprite:setPosition(cc.p(-360, -200))
 	anim:addCallbackAtFrame(19, function ()
 		self._title:changeParent(titleText)
 		self._title:setLocalZOrder(-1)
@@ -275,6 +272,10 @@ function StagePracticeWinMediator:onClickBack(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		self:switchMainScene()
 	end
+end
+
+function StagePracticeWinMediator:leaveWithData()
+	self:onTouchLayout(nil, ccui.TouchEventType.ended)
 end
 
 function StagePracticeWinMediator:onTouchLayout(sender, eventType)

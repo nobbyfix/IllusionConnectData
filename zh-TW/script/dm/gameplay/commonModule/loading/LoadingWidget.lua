@@ -630,9 +630,7 @@ function CommonLoadingWidget:getLoadingData(type)
 	local d = nil
 
 	for k, v in pairs(lodinInfo) do
-		local fcount = tonumber(v.FirstLoading) or 0
-
-		if v.Type == type and fcount == count then
+		if v.Type == type and v.FirstLoading == count then
 			d = v
 
 			break

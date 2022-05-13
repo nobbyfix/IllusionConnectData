@@ -12,103 +12,6 @@
         ],
         "WeekDuration": 1
     },
-    "CrusadeWeek_W10": {
-        "EffectiveTime": [
-            "2020-11-02 05:00:00",
-            "2020-11-09 05:00:00"
-        ],
-        "NextWeek": "CrusadeWeek_W11",
-        "SubPoint": [
-            "CrusadeFloor_F1",
-            "CrusadeFloor_F2",
-            "CrusadeFloor_F3",
-            "CrusadeFloor_F4",
-            "CrusadeFloor_F5",
-            "CrusadeFloor_F6",
-            "CrusadeFloor_F7",
-            "CrusadeFloor_F8",
-            "CrusadeFloor_F9",
-            "CrusadeFloor_F10",
-            "CrusadeFloor_F11_8",
-            "CrusadeFloor_F12_8",
-            "CrusadeFloor_F13_8",
-            "CrusadeFloor_F14_8",
-            "CrusadeFloor_F15_8"
-        ],
-        "WeekDuration": 1
-    },
-    "CrusadeWeek_W11": {
-        "EffectiveTime": [
-            "2020-11-09 05:00:00",
-            "2020-11-16 05:00:00"
-        ],
-        "NextWeek": "CrusadeWeek_W12",
-        "SubPoint": [
-            "CrusadeFloor_F1",
-            "CrusadeFloor_F2",
-            "CrusadeFloor_F3",
-            "CrusadeFloor_F4",
-            "CrusadeFloor_F5",
-            "CrusadeFloor_F6",
-            "CrusadeFloor_F7",
-            "CrusadeFloor_F8",
-            "CrusadeFloor_F9",
-            "CrusadeFloor_F10",
-            "CrusadeFloor_F11_8",
-            "CrusadeFloor_F12_8",
-            "CrusadeFloor_F13_8",
-            "CrusadeFloor_F14_8",
-            "CrusadeFloor_F15_8"
-        ],
-        "WeekDuration": 1
-    },
-    "CrusadeWeek_W12": {
-        "EffectiveTime": [
-            "2020-11-16 05:00:00",
-            "2020-11-23 05:00:00"
-        ],
-        "NextWeek": "CrusadeWeek_W13",
-        "SubPoint": [
-            "CrusadeFloor_F1",
-            "CrusadeFloor_F2",
-            "CrusadeFloor_F3",
-            "CrusadeFloor_F4",
-            "CrusadeFloor_F5",
-            "CrusadeFloor_F6",
-            "CrusadeFloor_F7",
-            "CrusadeFloor_F8",
-            "CrusadeFloor_F9",
-            "CrusadeFloor_F10",
-            "CrusadeFloor_F11_8",
-            "CrusadeFloor_F12_8",
-            "CrusadeFloor_F13_8",
-            "CrusadeFloor_F14_8",
-            "CrusadeFloor_F15_8"
-        ],
-        "WeekDuration": 1
-    },
-    "CrusadeWeek_W13": {
-        "EffectiveTime": "",
-        "NextWeek": "CrusadeWeek_W13",
-        "SubPoint": [
-            "CrusadeFloor_F1",
-            "CrusadeFloor_F2",
-            "CrusadeFloor_F3",
-            "CrusadeFloor_F4",
-            "CrusadeFloor_F5",
-            "CrusadeFloor_F6",
-            "CrusadeFloor_F7",
-            "CrusadeFloor_F8",
-            "CrusadeFloor_F9",
-            "CrusadeFloor_F10",
-            "CrusadeFloor_F11_8",
-            "CrusadeFloor_F12_8",
-            "CrusadeFloor_F13_8",
-            "CrusadeFloor_F14_8",
-            "CrusadeFloor_F15_8"
-        ],
-        "WeekDuration": 1
-    },
     "CrusadeWeek_W2": {
         "EffectiveTime": "",
         "NextWeek": "CrusadeWeek_W3",
@@ -150,8 +53,8 @@
     },
     "CrusadeWeek_W4": {
         "EffectiveTime": [
-            "2020-08-24 05:00:00",
-            "2020-08-31 05:00:00"
+            "2020-09-28 05:00:00",
+            "2020-10-05 05:00:00"
         ],
         "NextWeek": "CrusadeWeek_W5",
         "SubPoint": [
@@ -175,8 +78,8 @@
     },
     "CrusadeWeek_W5": {
         "EffectiveTime": [
-            "2020-08-31 05:00:00",
-            "2020-09-07 05:00:00"
+            "2020-10-05 05:00:00",
+            "2020-10-12 05:00:00"
         ],
         "NextWeek": "CrusadeWeek_W6",
         "SubPoint": [
@@ -200,8 +103,8 @@
     },
     "CrusadeWeek_W6": {
         "EffectiveTime": [
-            "2020-09-07 05:00:00",
-            "2020-09-14 05:00:00"
+            "2020-10-12 05:00:00",
+            "2020-10-19 05:00:00"
         ],
         "NextWeek": "CrusadeWeek_W7",
         "SubPoint": [
@@ -225,8 +128,8 @@
     },
     "CrusadeWeek_W7": {
         "EffectiveTime": [
-            "2020-09-14 05:00:00",
-            "2020-09-21 05:00:00"
+            "2020-10-19 05:00:00",
+            "2020-10-26 05:00:00"
         ],
         "NextWeek": "CrusadeWeek_W8",
         "SubPoint": [
@@ -250,8 +153,8 @@
     },
     "CrusadeWeek_W8": {
         "EffectiveTime": [
-            "2020-09-21 05:00:00",
-            "2020-09-28 05:00:00"
+            "2020-10-26 05:00:00",
+            "2020-11-02 05:00:00"
         ],
         "NextWeek": "CrusadeWeek_W9",
         "SubPoint": [
@@ -274,11 +177,8 @@
         "WeekDuration": 1
     },
     "CrusadeWeek_W9": {
-        "EffectiveTime": [
-            "2020-09-28 05:00:00",
-            "2020-10-05 05:00:00"
-        ],
-        "NextWeek": "CrusadeWeek_W10",
+        "EffectiveTime": "",
+        "NextWeek": "CrusadeWeek_W9",
         "SubPoint": [
             "CrusadeFloor_F1",
             "CrusadeFloor_F2",

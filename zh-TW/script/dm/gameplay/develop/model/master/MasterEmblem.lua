@@ -60,7 +60,7 @@ function MasterEmblem:initialize(id, devsys)
 	self._config = ConfigReader:getRecordById("MasterEmblemBase", id)
 	self._islock = true
 	self._level = 0
-	self._name = ConfigReader:getDataByNameIdAndKey("Translate", self._config.Name, "Zh_CN")
+	self._name = Strings:get(self._config.Name)
 	self._quality = 1
 	self._attribute = {}
 end
@@ -114,7 +114,7 @@ function MasterEmblem:isCanLevelUp()
 end
 
 function MasterEmblem:checkLeveUpCost()
-	return self:getLevelCurrencyCost() < self._developSystem:getCrystal()
+	return self:getLevelCurrencyCost() <= self._developSystem:getCrystal()
 end
 
 function MasterEmblem:isCanUpQuality()
@@ -341,7 +341,7 @@ function MasterEmblem:getShowValue(k, value)
 	if AttributeCategory:getAttNameAttend(k) == "" then
 		return math.round(value)
 	else
-		return string.format("%.1f%%", value * 100)
+		return value * 100 - 0 .. "%"
 	end
 end
 
@@ -453,7 +453,7 @@ end
 function MasterEmblem:getAttrNameZh(enKey)
 	local namekeylist = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_SkillAttrName", "content")
 
-	return ConfigReader:getDataByNameIdAndKey("Translate", namekeylist[enKey], "Zh_CN")
+	return Strings:get(namekeylist[enKey])
 end
 
 function MasterEmblem:isEmblemMax()

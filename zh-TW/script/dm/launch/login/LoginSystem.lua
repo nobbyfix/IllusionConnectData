@@ -1,4 +1,7 @@
 EVT_LOGIN_REFRESH_SERVER = "EVT_LOGIN_REFRESH_SERVER"
+EVT_ANNOUNCE_REFRESH_SERVER = "EVT_ANNOUNCE_REFRESH_SERVER"
+EVT_PATFACE_REFRESH_SERVER = "EVT_PATFACE_REFRESH_SERVER"
+EVT_PV_REFRESH_SERVER = "EVT_PV_REFRESH_SERVER"
 EVT_REQUEST_LOGIN_SUCC = "EVT_REQUEST_LOGIN_SUCC"
 LoginSystem = class("LoginSystem", Facade, _M)
 
@@ -20,10 +23,25 @@ LoginSystem:has("_loginUrl", {
 LoginSystem:has("_playerRid", {
 	is = "rw"
 })
+LoginSystem:has("_patFaceSaveData", {
+	is = "rw"
+})
+LoginSystem:has("_announceSaveData", {
+	is = "rw"
+})
+LoginSystem:has("_language", {
+	is = "rw"
+})
+LoginSystem:has("_pvSaveData", {
+	is = "rw"
+})
 LoginSystem:has("_logoPvName", {
 	is = "rw"
 })
 LoginSystem:has("_logoSize", {
+	is = "rw"
+})
+LoginSystem:has("_isShowAnnounce", {
 	is = "rw"
 })
 
@@ -34,6 +52,11 @@ function LoginSystem:initialize()
 
 	self._login = Login:new()
 	self._loginUrl = nil
+	self._isShowAnnounce = true
+	self._announceSaveData = nil
+	self._patFaceSaveData = nil
+	self._language = "tw"
+	self._pvSaveData = nil
 end
 
 function LoginSystem:vmsRequest(url, version, callback)
@@ -98,9 +121,30 @@ function LoginSystem:requestLogin(url, info, callback)
 
 		if errorCode == 200 and responseData and responseData.status == 0 then
 			self._login:sync(responseData.data)
-			SDKHelper:setOpenId(responseData.data.openid or "")
+
+			if SDKHelper and SDKHelper:isEnableSdk() then
+				SDKHelper:setOpenId(responseData.data.openid or "")
+			end
+
+			self._user_type = responseData.data.user_type or 0
+
 			self:dispatch(Event:new(EVT_REQUEST_LOGIN_SUCC))
 		else
+			if SDKHelper and SDKHelper:isEnableSdk() then
+				info.did = tostring(info.did)
+				info.version = tostring(info.version)
+				info.baseversion = tostring(info.baseversion)
+				info.eventName = "LoginError"
+				info.serverName = ""
+				info.serverId = ""
+				info.roleId = ""
+				info.roleName = ""
+				info.roleLevel = ""
+				info.vip = ""
+
+				SDKHelper:reportLoginError(info)
+			end
+
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("LOGIN_UI9")
 			}))
@@ -133,6 +177,63 @@ function LoginSystem:iOSAccount(url, callback)
 	end)
 end
 
+function LoginSystem:getAnnounceData(data)
+	local params = {
+		sdkId = self._login:getSdkIdForAnnounce(),
+		language = self._language
+	}
+
+	self._loginService:getAnnounceData(self._loginUrl, params, true, function (errorCode, response)
+		local responseData = cjson.decode(response)
+		self._announceSaveData = responseData
+
+		self:dispatch(Event:new(EVT_ANNOUNCE_REFRESH_SERVER, {}))
+	end)
+end
+
+function LoginSystem:getPatFaceData(data)
+	local params = {
+		language = self._language,
+		isDeductTime = data.isDeductTime
+	}
+
+	self._loginService:getPatFaceData(params, false, function (response)
+		self:syncPatFaceData(response)
+		self:dispatch(Event:new(EVT_PATFACE_REFRESH_SERVER, {}))
+	end)
+end
+
+function LoginSystem:getPatFaceDataToSave(callback)
+	local params = {
+		isDeductTime = 1,
+		language = self._language
+	}
+
+	self._loginService:getPatFaceData(params, false, function (response)
+		self:syncPatFaceData(response)
+
+		if callback then
+			callback()
+		end
+	end)
+end
+
+function LoginSystem:getAnnounceDataToSave(callback)
+	local params = {
+		sdkId = self._login:getSdkIdForAnnounce(),
+		language = self._language
+	}
+
+	self._loginService:getAnnounceData(self._loginUrl, params, true, function (errorCode, response)
+		local responseData = cjson.decode(response)
+		self._announceSaveData = responseData
+
+		if callback then
+			callback()
+		end
+	end)
+end
+
 function LoginSystem:requestPlayerInfo(callback)
 	local developSystem = self:getInjector():getInstance(DevelopSystem)
 	local player = developSystem:getPlayer()
@@ -143,12 +244,15 @@ function LoginSystem:requestPlayerInfo(callback)
 		info = SDKHelper:getStatisticsBaseInfo()
 	end
 
+	info.user_type = self._user_type
 	local params = {
 		rid = playerRid,
 		token = self._login:getGameServerToken(),
 		baseInfo = info
 	}
+	local serverInfo = self:getCurServer()
 
+	developSystem:setServerInfo(serverInfo:getSecId(), serverInfo:getName(), serverInfo:getIp(), serverInfo:getPort())
 	self._loginService:requestPlayerInfo(params, true, function (response)
 		if response.resCode == GS_SUCCESS then
 			if response.data.extra then
@@ -159,26 +263,61 @@ function LoginSystem:requestPlayerInfo(callback)
 				if response.data.extra.serverOpenTime then
 					developSystem:setServerOpenTime(response.data.extra.serverOpenTime)
 				end
+
+				if response.data.extra.mergeTs then
+					developSystem:setServerMergeTime(response.data.extra.mergeTs)
+				end
+
+				if response.data.extra.timeZone then
+					local serverTimeZone = response.data.extra.timeZone / 1000 / 3600
+
+					developSystem:setTimeZone(serverTimeZone)
+				end
 			end
 
 			developSystem:syncPlayer(response.data.player)
 
-			if SDKHelper:isEnableSdk() then
-				local isnew = response.data.is_new
+			if SDKHelper and SDKHelper:isEnableSdk() then
+				local player = developSystem:getPlayer()
 
-				if isnew == 1 then
-					local developSystem = self:getInjector():getInstance(DevelopSystem)
-					local player = developSystem:getPlayer()
-					local serverInfo = self:getCurServer()
+				if device.platform == "ios" then
+					local idStr = string.split(player:getRid(), "_")
+					local userId_createrole = UserDefaultKey.KAttFriendlyPage_created_role .. idStr[1]
+					local userId_nextdaylogin = UserDefaultKey.KAttFriendlyPage_next_day_login .. idStr[1]
+					local curTime = self._gameServer:remoteTimestamp()
+					local isnew = response.data.is_new
+					local stamp = cc.UserDefault:getInstance():getIntegerForKey(userId_createrole, 0)
 
-					SDKHelper:reportCreate({
-						roleName = tostring(player:getNickName()),
-						roleId = tostring(player:getRid()),
-						roleLevel = tostring(player:getLevel()),
-						roleCombat = checkint(developSystem:getCombat()),
-						serverId = serverInfo:getSecId(),
-						serverName = serverInfo:getName()
-					})
+					if isnew == 1 and stamp == 0 then
+						SDKHelper:attFriendlyPage({
+							eventName = "createdRole"
+						})
+						cc.UserDefault:getInstance():setIntegerForKey(userId_createrole, curTime)
+					end
+
+					local stamp = cc.UserDefault:getInstance():getIntegerForKey(userId_nextdaylogin, 0)
+
+					if stamp == 0 then
+						local createTime = player:getCreateTime()
+						local tb = TimeUtil:remoteDate("*t", createTime)
+						local target = {
+							hour = 0,
+							min = 0,
+							sec = 1,
+							year = tb.year,
+							month = tb.month,
+							day = tb.day
+						}
+						local dayMil = TimeUtil:getTimeByDateForTargetTime(target)
+						local dis = curTime - dayMil
+
+						if dis > 86400 and dis < 172800 then
+							SDKHelper:attFriendlyPage({
+								eventName = "next_day_login"
+							})
+							cc.UserDefault:getInstance():setIntegerForKey(userId_nextdaylogin, curTime)
+						end
+					end
 				end
 			end
 
@@ -210,6 +349,10 @@ function LoginSystem:requestPlayerInfo(callback)
 				local monthSignInSystem = self:getInjector():getInstance(MonthSignInSystem)
 
 				monthSignInSystem:syncTodayReward()
+
+				local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+				surfaceSystem:initSurfaceCustomData()
 			else
 				local customDataSystem = self:getInjector():getInstance(CustomDataSystem)
 
@@ -346,4 +489,85 @@ function LoginSystem:getLimitTimeBg()
 			end
 		end
 	end
+end
+
+function LoginSystem:syncPatFaceData(response)
+	self._patFaceSaveData = {}
+	self._pvSaveData = {}
+
+	if response.data then
+		for i, v in pairs(response.data) do
+			if v.type == 1 then
+				self._patFaceSaveData[#self._patFaceSaveData + 1] = v
+			elseif v.type == 2 then
+				self._pvSaveData[#self._pvSaveData + 1] = v
+			end
+		end
+
+		self:downloadPVFile()
+	end
+end
+
+function LoginSystem:downloadPVFile()
+	local data = self:getPvSaveData()
+	local loadTaskTable = {}
+	local downloader = Downloader:getInstance()
+	local fileUtils = cc.FileUtils:getInstance()
+	local pvDir = fileUtils:getWritablePath() .. "PVDir"
+
+	if not fileUtils:isDirectoryExist(pvDir) then
+		fileUtils:createDirectory(pvDir)
+	end
+
+	for i, v in pairs(data) do
+		local function addTask(path)
+			local storagePath = pvDir .. "/" .. path
+
+			if fileUtils:isFileExist(storagePath) then
+				return
+			else
+				local params = {
+					urlPath = v.baseUrl .. path,
+					storagePath = storagePath
+				}
+				loadTaskTable[#loadTaskTable + 1] = params
+			end
+		end
+
+		local pvImgPath = v.mainbody.images[1]
+
+		addTask(pvImgPath)
+
+		local pvPath = v.pvvideo
+
+		addTask(pvPath)
+	end
+
+	for i, params in pairs(loadTaskTable) do
+		local storagePath = params.storagePath
+		local url = params.urlPath
+
+		local function onFileTaskSuccess(task)
+			if fileUtils:isFileExist(storagePath) then
+				self:dispatch(Event:new(EVT_PV_REFRESH_SERVER, {}))
+			end
+		end
+
+		local function onTaskError(task, errorCode, errorCodeInternal, errorStr)
+		end
+
+		local taskInfo = {
+			type = "file",
+			identifier = storagePath,
+			srcUrl = url,
+			storagePath = storagePath,
+			onTaskError = onTaskError,
+			onFileTaskSuccess = onFileTaskSuccess
+		}
+
+		downloader:addDownloadTask(taskInfo)
+	end
+end
+
+function LoginSystem:addDownloadTask()
 end

@@ -62,6 +62,11 @@ function TowerHeroShowDetailsMediator:enterWithData(data)
 	else
 		self._heroData = data.hero
 		self._heroId = self._heroData:getId()
+		local heroData = Hero:new(self._heroId, self._developSystem:getPlayer())
+
+		heroData:rCreateEffect()
+
+		self._heroData = heroData
 	end
 
 	self:initView()
@@ -92,13 +97,12 @@ function TowerHeroShowDetailsMediator:initView()
 	end)
 
 	self._roleNode = self._mainPanel:getChildByName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
+	local realImage = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = self._heroData:getModel()
 	})
 
-	realImage:setAnchorPoint(0.5, 0.5)
 	realImage:setPosition(cc.p(125, -155))
 	self._roleNode:addChild(realImage)
 

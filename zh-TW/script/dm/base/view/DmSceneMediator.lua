@@ -52,48 +52,26 @@ function DmSceneMediator:onRegister()
 		end
 	end
 
+	local leftImage = ccui.ImageView:create()
+
+	leftImage:loadTexture("asset/common/common_screen_bar.jpg", ccui.TextureResType.localType)
+	self:getView():addChild(leftImage)
+	leftImage:setPosition(cc.p(AdjustUtils.getFixOffsetX() - leftImage:getContentSize().width / 2, 320))
+
+	local winSize = cc.Director:getInstance():getWinSize()
+	local rightImage = ccui.ImageView:create()
+
+	rightImage:loadTexture("asset/common/common_screen_bar.jpg", ccui.TextureResType.localType)
+	rightImage:setFlippedX(true)
+	self:getView():addChild(rightImage)
+	rightImage:setPosition(cc.p(winSize.width + rightImage:getContentSize().width / 2 - AdjustUtils.getFixOffsetX(), 320))
+
 	local injector = self:getInjector()
 
 	injector:mapValue("BaseSceneMediator", self, "activeScene")
 	self._effectLayer:setPosition(self._offsetSize)
 	self._effectLayer:offset(CC_DESIGN_RESOLUTION.width * 0.5, CC_DESIGN_RESOLUTION.height * 0.5)
 	self:setupTouchEffectWidget()
-
-	local isShowAlertView = false
-
-	local function onKeyReleased(keyCode, event)
-		if keyCode == cc.KeyCode.KEY_BACK and not isShowAlertView then
-			local data = {
-				noClose = true,
-				title = Strings:get("UPDATE_UI7"),
-				content = Strings:get("UI_TEXT_EXIT_GAME"),
-				sureBtn = {},
-				cancelBtn = {}
-			}
-			local outSelf = self
-			local delegate = {
-				willClose = function (self, popupMediator, data)
-					if data.response == "ok" then
-						cc.Director:getInstance():endToLua()
-					end
-
-					isShowAlertView = false
-				end
-			}
-			local view = self:getInjector():getInstance("AlertView")
-			isShowAlertView = true
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				isAreaIndependent = true,
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, data, delegate))
-		end
-	end
-
-	local listener = cc.EventListenerKeyboard:create()
-
-	listener:registerScriptHandler(onKeyReleased, cc.Handler.EVENT_KEYBOARD_RELEASED)
-	cc.Director:getInstance():getEventDispatcher():addEventListenerWithSceneGraphPriority(listener, self:getView())
 end
 
 function DmSceneMediator:popView(popView, options, data)

@@ -22,7 +22,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -55,6 +55,7 @@ function TowerTeamMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 end
 
 function TowerTeamMediator:enterWithData(data)
@@ -183,12 +184,10 @@ function TowerTeamMediator:setMasterView()
 	end)
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust4",
-		id = self._masterData:getModel(),
-		size = cc.size(340.17, 337)
+		frameId = "bustframe4_3",
+		id = self._masterData:getModel()
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))
 	masterIcon:setPosition(cc.p(0, 0))
@@ -713,7 +712,7 @@ function TowerTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -735,7 +734,12 @@ function TowerTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -790,16 +794,38 @@ function TowerTeamMediator:initTeamHero(node, info)
 			local skillType = skill:getType()
 			local icon1, icon2 = self._heroSystem:getSkillTypeIcon(skillType)
 			local image = ccui.ImageView:create(icon1)
+			dicengEff = cc.MovieClip:create("diceng_jinengjihuo")
 
+			dicengEff:setAnchorPoint(0.5, 0.5)
+			dicengEff:setScale(0.38)
+			dicengEff:setVisible(false)
+
+			shangcengEff = cc.MovieClip:create("shangceng_jinengjihuo")
+
+			shangcengEff:setAnchorPoint(0.5, 0.5)
+			shangcengEff:setScale(0.38)
+			shangcengEff:setVisible(false)
+			dicengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:addTo(skillPanel):center(skillPanel:getContentSize())
+			shangcengEff:addTo(skillPanel):center(skillPanel:getContentSize()):offset(-1.5, -2)
 			image:setName("KeyMark")
 			image:setScale(0.85)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		skillPanel:setGray(not isActive)
+
+		if dicengEff then
+			dicengEff:setVisible(isActive)
+		end
+
+		if shangcengEff then
+			shangcengEff:setVisible(isActive)
+		end
 	end
 end
 
@@ -849,7 +875,9 @@ function TowerTeamMediator:checkMasterSkillActive()
 			newSkillNode:setPosition(cc.p(12 + 46 * (i - 1), 15))
 
 			local conditions = skill:getActiveCondition()
-			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets)
+			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+				masterId = self._curMasterId
+			})
 
 			newSkillNode:setGray(not isActive)
 
@@ -949,14 +977,17 @@ function TowerTeamMediator:onClickBack()
 	self:dismiss()
 end
 
-function TowerChooseRoleMediator:onClickRule()
+function TowerTeamMediator:onClickRule()
 	local Rule = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Tower_1_RuleText", "content")
 	local view = self:getInjector():getInstance("ExplorePointRule")
 
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 

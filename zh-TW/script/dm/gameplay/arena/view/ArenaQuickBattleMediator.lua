@@ -62,12 +62,6 @@ local posLose = {
 		cc.p(673, 30)
 	}
 }
-local kBtnHandlers = {
-	["main.resultLayout_0"] = {
-		clickAudio = "Se_Click_Common_1",
-		func = "onClickButtonExit"
-	}
-}
 
 function ArenaQuickBattleMediator:initialize()
 	super.initialize(self)
@@ -87,14 +81,8 @@ function ArenaQuickBattleMediator:onRegister()
 end
 
 function ArenaQuickBattleMediator:setViewUI()
-	self:mapButtonHandlersClick(kBtnHandlers)
-
 	self._main = self:getView():getChildByFullName("main")
 	self._animNode = self._main:getChildByFullName("animNode")
-	self._resultLayout = self._main:getChildByFullName("resultLayout_0")
-
-	self._resultLayout:setVisible(false)
-
 	self._winLayout = self._main:getChildByFullName("winLayout")
 
 	self._winLayout:setVisible(false)
@@ -335,7 +323,12 @@ function ArenaQuickBattleMediator:showRole(resetData, isWin)
 
 	local role = resetData.data.statist.players
 	local _winnerId = resetData.data.battleReport.attacker.id
-	local animName = isWin and RoleAnimType.kWin or "die"
+	local animName = isWin and RoleAnimType.kStand or "die"
+	local once = true
+
+	if isWin then
+		once = false
+	end
 
 	if role[_winnerId] then
 		local unitSummary = role[_winnerId].unitSummary
@@ -387,7 +380,7 @@ function ArenaQuickBattleMediator:showRole(resetData, isWin)
 		if #heroes == 0 then
 			if master[1] then
 				local heroAnim = RoleFactory:createHeroAnimation(master[1].model, animName, {
-					once = true
+					once = once
 				})
 
 				heroAnim:setAnchorPoint(cc.p(0.5, 0))
@@ -403,7 +396,7 @@ function ArenaQuickBattleMediator:showRole(resetData, isWin)
 
 			for i = 1, showHeroNum do
 				local heroAnim, jsonPath = RoleFactory:createHeroAnimation(heroes[i].model, animName, {
-					once = true
+					once = once
 				})
 
 				heroAnim:setAnchorPoint(cc.p(0.5, 0))

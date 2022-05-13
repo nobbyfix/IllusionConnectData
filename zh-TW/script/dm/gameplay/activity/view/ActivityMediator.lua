@@ -14,12 +14,7 @@ function ActivityMediator:initialize()
 end
 
 function ActivityMediator:dispose()
-	if self._checkCloseTimer then
-		self._checkCloseTimer:stop()
-
-		self._checkCloseTimer = nil
-	end
-
+	self:stopTimer()
 	super.dispose(self)
 end
 
@@ -48,8 +43,9 @@ function ActivityMediator:baseInitView()
 end
 
 function ActivityMediator:mapEventListeners()
-	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REFRESH, self, self.updateView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REFRESH, self, self.onActivityRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_REDPOINT_REFRESH, self, self.refreshRedPoint)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ACTIVITY_PAY_SUCC, self, self.updateTabController)
 end
 
 function ActivityMediator:resumeWithData(data)
@@ -58,7 +54,6 @@ end
 
 function ActivityMediator:enterWithData(data)
 	self:updateView(data)
-	self:scheduleForClose()
 	self:setupClickEnvs()
 end
 
@@ -70,14 +65,12 @@ function ActivityMediator:updateView(data)
 	end
 
 	self._tabBtnControl = {}
-	self._updateCloseActivity = {}
 	local tabBtnControl = {}
 	self._activityList, self._activities = self._activitySystem:getActivitiesInActivity()
 	self._curTabType = 1
 
 	for k, v in pairs(self._activityList) do
 		tabBtnControl[#tabBtnControl + 1] = v:getId()
-		self._updateCloseActivity[#self._updateCloseActivity + 1] = v
 	end
 
 	self._tabBtnControl = tabBtnControl
@@ -125,20 +118,39 @@ function ActivityMediator:updateTabController()
 		imageName = activity:getLeftBanner() .. ".png"
 		local btn = self._btnCell:clone()
 		btn.realTag = k
-		local name1Str = utf8.sub(textdes, 1, 2)
-		local name2Str = utf8.sub(textdes, 3, 4)
+		btn.activityId = activityId
 		local name1Text = btn:getChildByName("name1")
 		local name2Text = btn:getChildByName("name2")
+		local name3Text = btn:getChildByName("name3")
+		local len = string.len(textdes) / 3
 
-		name1Text:setString(name1Str)
-		name2Text:setString(name2Str)
-		btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
+		dump(len, "len")
+
+		if len <= 6 then
+			name3Text:setString(textdes)
+			name3Text:setVisible(true)
+			name1Text:setVisible(false)
+			name2Text:setVisible(false)
+		else
+			name3Text:setVisible(false)
+
+			local name1Str = utf8.sub(textdes, 1, 4)
+			local name2Str = utf8.sub(textdes, 5, len)
+
+			name1Text:setString(name1Str)
+			name2Text:setString(name2Str)
+		end
+
+		if imageName ~= ".png" then
+			btn:getChildByName("image"):loadTexture(imageName, ccui.TextureResType.plistType)
+		end
 
 		local node = RedPoint:createDefaultNode()
 		local redPoint = RedPoint:new(node, btn, redPointCal)
 		btn.redPoint = redPoint
 
 		node:setPosition(100, 100)
+		self:setTimeRemain(btn)
 
 		if self._curTabType == k then
 			btn:getChildByName("select"):setVisible(true)
@@ -153,7 +165,7 @@ function ActivityMediator:updateTabController()
 			name1Text:setTextColor(cc.c3b(255, 255, 255))
 			name2Text:setTextColor(cc.c3b(255, 255, 255))
 			btn:getChildByName("Image_2"):loadTexture("hd_btn_wxz_wd.png", ccui.TextureResType.plistType)
-			btn:setColor(cc.c3b(120, 120, 120))
+			btn:setColor(cc.c3b(255, 255, 255))
 		end
 
 		tabBtns[#tabBtns + 1] = btn
@@ -161,6 +173,7 @@ function ActivityMediator:updateTabController()
 		self._listView:pushBackCustomItem(btn)
 	end
 
+	self._tabBtns = tabBtns
 	self._tabController = TabController:new(tabBtns, nil, {
 		buttonClick = function (sender, eventType, selectTag)
 			self:onClickTab(sender, eventType, selectTag)
@@ -174,21 +187,130 @@ function ActivityMediator:updateTabController()
 	else
 		self._listView:jumpToPercentVertical(5)
 	end
+
+	self:setLocalZOrder()
+end
+
+function ActivityMediator:setLocalZOrder()
+	for k, v in pairs(self._tabBtns) do
+		local zo = self._curTabType == k and 999 or 999 - k
+
+		v:setLocalZOrder(zo)
+	end
+end
+
+function ActivityMediator:setTimeRemain(btn)
+	local timePanel = btn:getChildByName("Image_time")
+	local activityId = btn.activityId
+	local activity = self._activities[activityId]
+
+	if activity:getUI() == ActivityType.KTASKSTAGESTAR then
+		timePanel:setVisible(true)
+
+		local activity = self._activities[activityId]
+		local buy = activity:getPayStatus()
+		local deadline = activity:getDeadline()
+
+		if deadline or buy then
+			self:stopTimer()
+			timePanel:setVisible(false)
+		else
+			self:setTimer(activityId, timePanel)
+		end
+	else
+		timePanel:setVisible(false)
+	end
+end
+
+function ActivityMediator:setTimer(activityId, timePanel)
+	self:stopTimer()
+
+	local activity = self._activities[activityId]
+
+	if not activity then
+		timePanel:setVisible(false)
+
+		return
+	end
+
+	local activityConfig = activity:getActivityConfig()
+	local times = timePanel:getChildByFullName("times")
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local remoteTimestamp = gameServerAgent:remoteTimestamp()
+	local startTime = activity:getStartTime() / 1000
+	local buyDays = activityConfig.buyDays
+	local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+	if remoteTimestamp < endMills and not self._timer then
+		local function checkTimeFunc()
+			remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local endMills = startTime + tonumber(buyDays) * 24 * 60 * 60
+
+			if endMills <= remoteTimestamp then
+				self:stopTimer()
+				timePanel:setVisible(false)
+
+				return
+			end
+
+			local str = ""
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local remainTime = endMills - remoteTimestamp
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				day = tonumber(parts[1]),
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.day > 0 then
+				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+			elseif timeTab.hour > 0 then
+				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+			else
+				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			end
+
+			times:setString(str)
+		end
+
+		checkTimeFunc()
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	else
+		timePanel:setVisible(false)
+	end
+end
+
+function ActivityMediator:stopTimer()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function ActivityMediator:refreshRedPoint()
 end
 
 function ActivityMediator:onActivityRefresh()
-	local activityId = ""
+	local activityList = self._activitySystem:getActivitiesInActivity()
 
-	if self._tabBtnControl and self._curTabType then
-		activityId = self._tabBtnControl[self._curTabType]
+	if activityList and #activityList > 0 then
+		local activityId = ""
+
+		if self._tabBtnControl and self._curTabType then
+			activityId = self._tabBtnControl[self._curTabType]
+		end
+
+		self:updateView({
+			id = activityId
+		})
+	else
+		self:dismiss()
 	end
-
-	self:updateView({
-		id = activityId
-	})
 end
 
 function ActivityMediator:setupTopInfoWidget()
@@ -262,26 +384,6 @@ function ActivityMediator:removeContentView()
 	end
 end
 
-function ActivityMediator:scheduleForClose()
-	local function checkClose()
-		local activityList = self._activitySystem:getActivitiesInActivity()
-
-		if #activityList ~= #self._activityList then
-			self:onActivityRefresh()
-		else
-			local hasOverActivity = self._activitySystem:hasOverActivityInActivity(self._updateCloseActivity)
-
-			if hasOverActivity then
-				self:onActivityRefresh()
-			end
-		end
-	end
-
-	if self._checkCloseTimer == nil then
-		self._checkCloseTimer = LuaScheduler:getInstance():schedule(checkClose, 2, true)
-	end
-end
-
 function ActivityMediator:onClickClose(sender, eventType)
 	self:dismissWithOptions({
 		transition = ViewTransitionFactory:create(ViewTransitionType.kCommonAreaView)
@@ -290,6 +392,8 @@ end
 
 function ActivityMediator:onClickTab(sender, eventType, tag)
 	if eventType == ccui.TouchEventType.ended then
+		AudioEngine:getInstance():playEffect("Se_Click_Tab_1", false)
+
 		local realTag = sender.realTag
 
 		if realTag ~= self._curTabType then
@@ -300,7 +404,7 @@ function ActivityMediator:onClickTab(sender, eventType, tag)
 			oldBtn:getChildByName("name1"):setTextColor(cc.c3b(255, 255, 255))
 			oldBtn:getChildByName("name2"):setTextColor(cc.c3b(255, 255, 255))
 			oldBtn:getChildByName("Image_2"):loadTexture("hd_btn_wxz_wd.png", ccui.TextureResType.plistType)
-			oldBtn:setColor(cc.c3b(120, 120, 120))
+			oldBtn:setColor(cc.c3b(255, 255, 255))
 			sender:getChildByName("select"):setVisible(true)
 			sender:getChildByName("selectDi"):setVisible(true)
 			sender:getChildByName("name1"):setTextColor(cc.c3b(223, 255, 114))
@@ -316,6 +420,7 @@ function ActivityMediator:onClickTab(sender, eventType, tag)
 		self._curTabType = realTag
 
 		self:_onClickTab()
+		self:setLocalZOrder()
 	end
 end
 

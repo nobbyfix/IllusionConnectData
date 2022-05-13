@@ -12,6 +12,12 @@ function TabBtnWidget.class:createWidgetNode1()
 	return cc.CSLoader:createNode(resFile)
 end
 
+function TabBtnWidget.class:createWidgetNode2()
+	local resFile = "asset/ui/LeftTabBtnWidget2.csb"
+
+	return cc.CSLoader:createNode(resFile)
+end
+
 local maxLength = 4
 local kLine = {
 	[1.0] = "common_bg_line01.png",
@@ -228,15 +234,11 @@ function TabBtnWidget:refreshSelectBtn(selectTag)
 end
 
 function TabBtnWidget:_setTabNormalTextEffect(text)
-	text:enableOutline(cc.c4b(3, 1, 4, 51), 1)
 	text:setColor(cc.c3b(110, 108, 108))
-	text:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
 end
 
 function TabBtnWidget:_setTabPressTextEffect(text)
-	text:enableOutline(cc.c4b(3, 1, 4, 51), 1)
-	text:setColor(cc.c3b(101, 126, 32))
-	text:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
+	text:setColor(cc.c3b(156, 224, 3))
 end
 
 function TabBtnWidget:_bindBtnText(btn, config)
@@ -246,13 +248,16 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		"common_btn_fy1.png",
 		"common_btn_fy2.png"
 	}
-	local fontName = config.fontName or TTF_FONT_FZYH_M
-	local fontSize = config.fontSize or 30
-	local fontColor = config.fontColor or nil
-	local fontColorSel = config.fontColorSel or nil
+	local fontName = config.fontName or CUSTOM_TTF_FONT_1
+	local fontSize = config.fontSize or 28
+	local fontEnSize = config.fontEnSize or 16
+	local fontColor = config.fontColor or cc.c4b(255, 255, 255, 255)
+	local fontColorSel = config.fontColorSel or cc.c4b(62, 62, 62, 255)
 	local unEnableOutline = config.unEnableOutline
 	local textOffsetx = config.textOffsetx or 0
 	local textOffsety = config.textOffsety or 18
+	local textWidth = config.textWidth or self._cellWidth * 0.68
+	local textHeight = config.textHeight or self._cellHeight * 0.65
 	local noWrap = config.noWrap or false
 	local darkText = cc.Label:createWithTTF(tabText, fontName, fontSize)
 
@@ -263,7 +268,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	end
 
 	if not unEnableOutline then
-		darkText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+		-- Nothing
 	end
 
 	darkText:setOverflow(cc.LabelOverflow.SHRINK)
@@ -271,7 +276,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	if noWrap then
 		darkText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
 	else
-		darkText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+		darkText:setDimensions(textWidth, textHeight)
 	end
 
 	darkText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
@@ -285,7 +290,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	lightText:setAnchorPoint(0.5, 0.5)
 
 	if not unEnableOutline then
-		lightText:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+		-- Nothing
 	end
 
 	lightText:setOverflow(cc.LabelOverflow.SHRINK)
@@ -293,20 +298,22 @@ function TabBtnWidget:_bindBtnText(btn, config)
 	if noWrap then
 		lightText:setContentSize(self._cellWidth * 0.68, self._cellHeight * 0.65)
 	else
-		lightText:setDimensions(self._cellWidth * 0.68, self._cellHeight * 0.65)
+		lightText:setDimensions(textWidth, textHeight)
 	end
 
 	lightText:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
 
-	local darkTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, 16)
+	local darkTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, fontEnSize)
 
 	darkTextTranslate:setAnchorPoint(0.5, 0.5)
 	self:_setTabNormalTextEffect(darkTextTranslate)
 
-	local lightTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, 16)
+	local lightTextTranslate = cc.Label:createWithTTF(tabTextTranslate, TTF_FONT_FZYH_M, fontEnSize)
 
 	lightTextTranslate:setAnchorPoint(0.5, 0.5)
 	self:_setTabPressTextEffect(lightTextTranslate)
+	darkTextTranslate:setVisible(false)
+	lightTextTranslate:setVisible(false)
 
 	local btnNode = cc.Node:create()
 
@@ -329,8 +336,16 @@ function TabBtnWidget:_bindBtnText(btn, config)
 			lightImg = cc.Sprite:createWithSpriteFrameName(tabImage[2])
 		end
 
+		assert(lightImg ~= nil, "TabImage LightImg: " .. tabImage[2] .. " is nil")
 		lightImg:setAnchorPoint(0.5, 0.5)
 		lightImg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
+
+		if tabImage[3] then
+			local bg = cc.Sprite:create(tabImage[3])
+
+			bg:setAnchorPoint(0.5, 0.5)
+			bg:addTo(btnNode.lightNode):setScale(self._tabImageScale)
+		end
 	else
 		local anim = cc.MovieClip:create("chang_anniu")
 
@@ -373,6 +388,7 @@ function TabBtnWidget:_bindBtnText(btn, config)
 		darkImg = cc.Sprite:createWithSpriteFrameName(tabImage[1])
 	end
 
+	assert(darkImg ~= nil, "TabImage DarkImg: " .. tabImage[1] .. " is nil")
 	darkImg:setAnchorPoint(0.5, 0.5)
 	darkImg:addTo(btnNode.darkNode):setScale(self._tabImageScale)
 

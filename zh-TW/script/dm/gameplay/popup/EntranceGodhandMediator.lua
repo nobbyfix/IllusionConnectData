@@ -24,12 +24,12 @@ EntranceGodhandMediator:has("_towerSystem", {
 EntranceGodhandMediator:has("_crusadeSystem", {
 	is = "r"
 }):injectWith("CrusadeSystem")
-EntranceGodhandMediator:has("_activitySystem", {
-	is = "r"
-}):injectWith("ActivitySystem")
 EntranceGodhandMediator:has("_dreamChallengeSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+EntranceGodhandMediator:has("_dreamHouseSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
 
 local configValueKey = ConfigReader:getDataByNameIdAndKey("ConfigValue", "TrialSwitch", "content")
 local kCells = {
@@ -38,31 +38,43 @@ local kCells = {
 	kExplore = "explore",
 	kCrusade = "crusade",
 	kTower = "tower",
-	kPractice = "practice"
+	kPractice = "practice",
+	kDreamHouse = "dreamhouse"
 }
 local kFunctionData = {
 	[kCells.kPractice] = {
 		animName = "practiceCell_shilianrukou",
+		switchKey = "fn_train_practice",
 		des = Strings:get("Train_Desc"),
 		titleStr = Strings:get("TrialTitle_MYYJS")
 	},
 	[kCells.kSpStage] = {
 		animName = "spstageCell_shilianrukou",
+		switchKey = "fn_train_stage",
 		des = Strings:get("DailyTest_Desc"),
 		titleStr = Strings:get("TrialTitle_RCSL")
 	},
 	[kCells.kExplore] = {
 		animName = "exploreCell_shilianrukou",
+		switchKey = "fn_train_explore",
 		des = Strings:get("Explore_Desc"),
 		titleStr = Strings:get("TrialTitle_TS")
 	},
+	[kCells.kDreamHouse] = {
+		animName = "bumengguan_shilianrukou",
+		switchKey = "fn_train_dreamhouse",
+		des = Strings:get("DreamHouse_Desc"),
+		titleStr = Strings:get("DreamHouse_Main_UI04")
+	},
 	[kCells.kTower] = {
 		animName = "pataCell_shilianrukou",
+		switchKey = "fn_train_tower",
 		des = Strings:get("Tower_Desc"),
 		titleStr = Strings:get("TrialTitle_MJ")
 	},
 	[kCells.kCrusade] = {
 		animName = "crusadeCell_shilianrukou",
+		switchKey = "fn_train_crusade",
 		des = Strings:get("Crusade_UI16"),
 		titleStr = Strings:get("TrialTitle_MJYZ")
 	},
@@ -110,6 +122,7 @@ end
 
 function EntranceGodhandMediator:resumeWithData()
 	self:refreshRed()
+	self:refreshDreamActivityRulePanel()
 end
 
 function EntranceGodhandMediator:initWidgetInfo()
@@ -145,64 +158,70 @@ function EntranceGodhandMediator:initWidgetInfo()
 	animPanel:addChild(lightFlash)
 
 	local offsetX = 0
+	local idx = 0
 
 	for i = 1, #configValueKey do
 		local key = configValueKey[i]
-		local parentCell = self._cellClone:clone()
-
-		parentCell:setName(key)
-		parentCell:addTo(self._scrollView)
-
-		local x = 177 + (i - 1) * 264
-		local y = i % 2 == 0 and 406 or 327
-
-		parentCell:setPosition(cc.p(x, y))
-		parentCell:addClickEventListener(function ()
-			self:clickPanel(key)
-		end)
-
-		local redPoint = parentCell:getChildByFullName("redPoint"):clone()
-
-		parentCell:removeAllChildren()
-
 		local value = kFunctionData[key]
-		local anim = cc.MovieClip:create(value.animName)
 
-		anim:addTo(parentCell):center(parentCell:getContentSize()):offset(0, -30)
-		anim:addCallbackAtFrame(33, function ()
-			anim:stop()
-		end)
-		anim:setName("ShowAnim")
-		self:createRulePanel(anim, value.des)
-		self:createNamePanel(anim, value.titleStr)
-		redPoint:addTo(anim):posite(120, -25)
-		redPoint:setLocalZOrder(3)
+		if CommonUtils.GetSwitch(value.switchKey) then
+			idx = idx + 1
+			local parentCell = self._cellClone:clone()
 
-		parentCell.redPoint = redPoint
+			parentCell:setName(key)
+			parentCell:addTo(self._scrollView)
 
-		parentCell.redPoint:setOpacity(0)
-		parentCell.redPoint:fadeIn({
-			time = 0.2
-		})
+			local x = 177 + (idx - 1) * 264
+			local y = idx % 2 == 0 and 406 or 327
 
-		local extraMark = self._activitySystem:getExtraMarkByType(key)
+			parentCell:setPosition(cc.p(x, y))
+			parentCell:addClickEventListener(function ()
+				self:clickPanel(key)
+			end)
 
-		if extraMark then
-			local image = ccui.ImageView:create(extraMark)
+			local redPoint = parentCell:getChildByFullName("redPoint"):clone()
 
-			image:setName("ExtraMark")
-			image:addTo(parentCell):center(parentCell:getContentSize()):offset(0, -165)
+			parentCell:removeAllChildren()
+
+			local anim = cc.MovieClip:create(value.animName)
+
+			anim:addTo(parentCell):center(parentCell:getContentSize()):offset(0, -30)
+			anim:addCallbackAtFrame(33, function ()
+				anim:stop()
+			end)
+			anim:setName("ShowAnim")
+
+			if kCells.kDreamChallenge == key then
+				if self._dreamChallengeSystem:checkActivityDreamChallengeOpen() then
+					self:createDreamChallengeActivityRulePanel(anim)
+				else
+					self:createRulePanel(anim, value.des)
+				end
+			else
+				self:createRulePanel(anim, value.des)
+			end
+
+			self:createNamePanel(anim, value.titleStr)
+			redPoint:addTo(anim):posite(120, -25)
+			redPoint:setLocalZOrder(3)
+
+			parentCell.redPoint = redPoint
+
+			parentCell.redPoint:setOpacity(0)
+			parentCell.redPoint:fadeIn({
+				time = 0.2
+			})
+
+			local resShow = self:checkHasRed(key)
+
+			if redPoint then
+				redPoint:setVisible(resShow)
+			end
+
+			self:runNodeAction(parentCell, idx)
+
+			offsetX = x
 		end
-
-		local resShow = self:checkHasRed(key)
-
-		if redPoint then
-			redPoint:setVisible(resShow)
-		end
-
-		self:runNodeAction(parentCell, i)
-
-		offsetX = x
 	end
 
 	local size = self._scrollView:getContentSize()
@@ -230,31 +249,93 @@ function EntranceGodhandMediator:runNodeAction(parentCell, index)
 	parentCell:runAction(cc.Sequence:create(delay, callfunc, spawn, scaleTo2))
 end
 
-function EntranceGodhandMediator:createRulePanel(parent, str)
+function EntranceGodhandMediator:createRulePanel(parent, str, notAnim)
 	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
 
 	image:setAnchorPoint(cc.p(1, 0.5))
 	image:addTo(parent):posite(132, -13)
+	image:setName("rule")
 
 	local label = cc.Label:createWithTTF(str, TTF_FONT_FZYH_M, 19)
 
 	GameStyle:setCommonOutlineEffect(label, 255)
-	label:setAnchorPoint(cc.p(1, 0.5))
-	label:addTo(image):posite(242, 32)
-	image:setOpacity(0)
-	performWithDelay(self:getView(), function ()
-		image:fadeIn({
-			time = 0.2
-		})
-	end, 0.5)
+	label:addTo(image):posite(image:getContentSize().width / 2, 32)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(300, 85)
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		label:setLineSpacing(-5)
+	end
+
+	if not notAnim then
+		image:setOpacity(0)
+		performWithDelay(self:getView(), function ()
+			image:fadeIn({
+				time = 0.2
+			})
+		end, 0.5)
+	end
 
 	return image
+end
+
+function EntranceGodhandMediator:createDreamChallengeActivityRulePanel(parent, notAnim)
+	local image = ccui.ImageView:create("asset/common/sl_bg_msd.png")
+	local str = Strings:get("DreamChallenge_Entry_Tip02")
+
+	image:setAnchorPoint(cc.p(1, 0.5))
+	image:addTo(parent):posite(132, -13)
+	image:setName("rule")
+
+	local label = cc.Label:createWithTTF(str, TTF_FONT_FZYH_R, 26)
+
+	GameStyle:setCommonOutlineEffect(label, 255)
+	label:addTo(image):posite(image:getContentSize().width / 2, 40)
+	label:setTextColor(cc.c3b(255, 242, 155))
+	label:enableOutline(cc.c4b(3, 1, 4, 255), 1)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(300, 45)
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+
+	if not notAnim then
+		image:setOpacity(0)
+		performWithDelay(self:getView(), function ()
+			image:fadeIn({
+				time = 0.2
+			})
+		end, 0.5)
+	end
+
+	return image
+end
+
+function EntranceGodhandMediator:refreshDreamActivityRulePanel()
+	local dreamchallenge = self._scrollView:getChildByFullName("dreamchallenge")
+
+	if not dreamchallenge or DisposableObject:isDisposed(dreamchallenge) then
+		return
+	end
+
+	local anim = dreamchallenge:getChildByFullName("ShowAnim")
+
+	anim:removeChildByName("rule")
+
+	if self._dreamChallengeSystem:checkActivityDreamChallengeOpen() then
+		self:createDreamChallengeActivityRulePanel(anim, true)
+	else
+		self:createRulePanel(anim, kFunctionData[kCells.kDreamChallenge].des, true)
+	end
 end
 
 function EntranceGodhandMediator:createNamePanel(parent, str)
 	local nameNode = parent:getChildByFullName("nameNode")
 
 	if not nameNode then
+		dump(str, "createNamePanel >>>>>>")
+
 		return
 	end
 
@@ -263,6 +344,15 @@ function EntranceGodhandMediator:createNamePanel(parent, str)
 	GameStyle:setCommonOutlineEffect(label, 255)
 	label:setAnchorPoint(cc.p(0.5, 0.5))
 	label:addTo(nameNode):posite(0, 3)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(250, 85)
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+
+	local language = getCurrentLanguage()
+
+	if language ~= GameLanguageType.CN then
+		label:setLineSpacing(-10)
+	end
 end
 
 function EntranceGodhandMediator:clickPanel(index)
@@ -278,6 +368,8 @@ function EntranceGodhandMediator:clickPanel(index)
 		self:enterCrusadeView()
 	elseif index == kCells.kDreamChallenge then
 		self:enterDreamChallenge()
+	elseif index == kCells.kDreamHouse then
+		self:enterDreamHouse()
 	end
 end
 
@@ -292,17 +384,6 @@ function EntranceGodhandMediator:refreshRed()
 
 			if redPoint then
 				redPoint:setVisible(resShow)
-			end
-
-			panel:removeChildByName("ExtraMark")
-
-			local extraMark = self._activitySystem:getExtraMarkByType(key)
-
-			if extraMark then
-				local image = ccui.ImageView:create(extraMark)
-
-				image:setName("ExtraMark")
-				image:addTo(panel):center(panel:getContentSize()):offset(0, -165)
 			end
 		end
 	end
@@ -327,6 +408,9 @@ function EntranceGodhandMediator:checkHasRed(key)
 		end,
 		[kCells.kDreamChallenge] = function ()
 			return self._dreamChallengeSystem:checkIsShowRedPoint()
+		end,
+		[kCells.kDreamHouse] = function ()
+			return self._dreamHouseSystem:checkIsShowRedPoint()
 		end
 	}
 
@@ -417,6 +501,21 @@ end
 
 function EntranceGodhandMediator:enterDreamChallenge()
 	self._dreamChallengeSystem:tryEnter()
+end
+
+function EntranceGodhandMediator:enterDreamHouse()
+	local unlock, tips = self._dreamHouseSystem:checkEnabled()
+
+	if not unlock then
+		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+	else
+		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
+		self._dreamHouseSystem:tryEnter()
+	end
 end
 
 function EntranceGodhandMediator:onClickBack()

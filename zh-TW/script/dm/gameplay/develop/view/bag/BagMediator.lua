@@ -22,6 +22,10 @@ local kBtnHandlers = {
 	["mainpanel.detail_panel.frombtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickFrom"
+	},
+	["mainpanel.detail_panel.lockBtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickItemLock"
 	}
 }
 local kMinItemNum = 20
@@ -74,6 +78,29 @@ local kTabBtnsNames_model = {
 		ItemPages.kOther
 	}
 }
+local kEquipTabBtnsNames = {
+	{
+		"Equip_Sort_1",
+		EquipBagShowType.kAll
+	},
+	{
+		"Equip_Sort_2",
+		EquipBagShowType.kWeapon
+	},
+	{
+		"Equip_Sort_3",
+		EquipBagShowType.kTops
+	},
+	{
+		"Equip_Sort_4",
+		EquipBagShowType.kShoes
+	},
+	{
+		"Equip_Sort_5",
+		EquipBagShowType.kDecoration
+	}
+}
+local kTab_button_width = 110
 local kTabBtnsNames = {}
 
 function BagMediator:initialize()
@@ -104,15 +131,19 @@ function BagMediator:userInject()
 			index = index + 1
 		end
 	end
+
+	self._equipType = EquipBagShowType.kAll
+	self._onEquipTab = false
 end
 
 function BagMediator:onRegister()
 	super.onRegister(self)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ITEM_LOCK_SUCC, self, self.refreshViewByLock)
 
 	self._composeBtn = self:bindWidget("mainpanel.detail_panel.composebtn", TwoLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onUseClicked, self)
+			func = bind1(self.onComposeClicked, self)
 		}
 	})
 	self._sellbtn = self:bindWidget("mainpanel.detail_panel.sellbtn", TwoLevelViceButton, {
@@ -179,6 +210,8 @@ function BagMediator:enterWithData(data)
 	self:createTabController()
 	self:createItemsTableView()
 	self:selectTab(data)
+	self:createEquipTypeBtn()
+	self:refreshEquipTypeBtn()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.dealItemChange)
 	self:mapEventListener(self:getEventDispatcher(), EVT_SELL_ITEM_SUCC, self, self.dealItemChange)
 	self:mapEventListener(self:getEventDispatcher(), EVT_BAG_USE_RECHARGEITEM_SUCC, self, self.useRechargeItemSucc)
@@ -229,7 +262,13 @@ function BagMediator:getCurItems()
 		local isvislble = self._bagSystem:getItemIsVisible(entryId)
 
 		if entry and isvislble and filterFunc(entry.item) and (not kHideItemType[entry.item:getSubType()] or kHideItemType[entry.item:getSubType()] and entry.item:getSubType() == self._showItemType) then
-			self._curEntryIds[#self._curEntryIds + 1] = entryId
+			if self._onEquipTab then
+				if entry.item:getPosition() == self._equipType or self._equipType == EquipBagShowType.kAll then
+					self._curEntryIds[#self._curEntryIds + 1] = entryId
+				end
+			else
+				self._curEntryIds[#self._curEntryIds + 1] = entryId
+			end
 		end
 	end
 end
@@ -241,6 +280,8 @@ function BagMediator:assureItemsEnough()
 end
 
 function BagMediator:initNodes()
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
 	self._mainPanel = self:getView():getChildByFullName("mainpanel")
 	self._itemScroll = self._mainPanel:getChildByFullName("cellback")
 	self._notHasBackText = self._mainPanel:getChildByFullName("nothasbacktext")
@@ -257,11 +298,12 @@ function BagMediator:initNodes()
 
 	self._itemCellTop:setVisible(false)
 
-	self._indicator = self._itemNode:getChildByFullName("selectimg")
+	self._indicatorClone = self._itemNode:getChildByFullName("selectimg")
+	self._indicator = self._indicatorClone:clone()
+
+	self._indicator:addTo(self._itemNode)
+
 	local equipPanelUI = self._mainPanel:getChildByFullName("equipPanel")
-
-	AdjustUtils.ignorSafeAreaRectForNode(equipPanelUI, AdjustUtils.kAdjustType.Right)
-
 	local equipPanel = BagEquipPancel:new(self, equipPanelUI)
 
 	equipPanel:hide()
@@ -272,7 +314,15 @@ function BagMediator:initNodes()
 	self.URLevelLimit:setVisible(false)
 	self.URLevelLimit:setString("")
 
+	self._equipTabPanel = self._mainPanel:getChildByFullName("equipTabPanel")
+	self._node_BuildBtn = self._equipTabPanel:getChildByFullName("Node_buildBtn")
+	self._tabBuildBtn = self._equipTabPanel:getChildByFullName("Panel_tabBuildBtn")
+
+	self._tabBuildBtn:setVisible(false)
+
+	self._line_line = self._equipTabPanel:getChildByFullName("line_line")
 	local detailPanel = self._mainPanel:getChildByFullName("detail_panel")
+	self._lockBtn_compose = detailPanel:getChildByFullName("lockBtn")
 	local moneyIcon = detailPanel:getChildByFullName("sellpanel.goldimg")
 	local icon = IconFactory:createResourcePic({
 		id = CurrencyIdKind.kGold
@@ -281,9 +331,6 @@ function BagMediator:initNodes()
 	icon:addTo(moneyIcon)
 
 	self._detailPanel = detailPanel
-
-	AdjustUtils.ignorSafeAreaRectForNode(detailPanel, AdjustUtils.kAdjustType.Right)
-
 	local csFuncLabel = detailPanel:getChildByFullName("des1label")
 
 	csFuncLabel:setVisible(false)
@@ -354,6 +401,7 @@ function BagMediator:initNodes()
 			sellBtn = self._sellbtn,
 			composeBtn = self._composeBtn,
 			useBtn = self._usebtn,
+			lockBtn = self._lockBtn_compose,
 			fromBtn = detailPanel:getChildByFullName("frombtn")
 		}
 	}
@@ -374,6 +422,11 @@ function BagMediator:adjustView()
 	local scrollview = self._itemScroll:getChildByName("scrollview")
 
 	scrollview:setContentSize(cc.size(572, winSize.height - 63))
+
+	local tabPanel = self:getView():getChildByFullName("tab_panel")
+	local w = winSize.width - tabPanel:getContentSize().width - self._detailPanel:getContentSize().width / 2 - (winSize.width - self._detailPanel:getPositionX() - (winSize.width - 1136) / 2)
+
+	self._itemScroll:setPositionX(w / 2 + tabPanel:getPositionX() + tabPanel:getContentSize().width)
 end
 
 function BagMediator:createTabController()
@@ -386,6 +439,7 @@ function BagMediator:createTabController()
 
 	for i = 1, #kTabBtnsNames do
 		data[#data + 1] = {
+			textHeight = 50,
 			tabText = Strings:get(kTabBtnsNames[i][1]),
 			tabTextTranslate = Strings:get(kTabBtnsNames[i][2]),
 			redPointFunc = function ()
@@ -458,6 +512,7 @@ function BagMediator:refreshView()
 
 	if not hasItem then
 		self._notHasBackText:setVisible(true)
+		self._line_line:setContentSize(cc.size(3, 1200))
 		self._itemScroll:setVisible(false)
 		self._detailPanel:setVisible(false)
 		self._equipPanel:hide()
@@ -466,6 +521,7 @@ function BagMediator:refreshView()
 	end
 
 	self._notHasBackText:setVisible(false)
+	self._line_line:setContentSize(cc.size(3, 578))
 	self._itemScroll:setVisible(true)
 	self:updateRightPancel()
 end
@@ -550,12 +606,15 @@ function BagMediator:updateDetailButtons(notHasShow)
 		end
 
 		local item = entry.item
+		self._currentItem = item
 
 		buttons.sellBtn:setVisible(item:getSellNumber() > 0)
 		self:setButtonEnabled(buttons.sellBtn, item:getSellNumber() > 0)
 		buttons.useBtn:getButton():setGray(false)
 		buttons.useBtn:setVisible(false)
+		buttons.lockBtn:setVisible(false)
 		buttons.composeBtn:setVisible(false)
+		buttons.composeBtn:setButtonName(Strings:get("bag_UI21"), Strings:get("bag_UI21"))
 
 		local subType = item:getSubType()
 		local page = item:getType()
@@ -579,6 +638,7 @@ function BagMediator:updateDetailButtons(notHasShow)
 				buttons.useBtn:setButtonName(Strings:get(str), Strings:get(str1))
 			end
 		elseif subType == ItemTypes.K_COMPOSE then
+			buttons.sellBtn:setVisible(false)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI31"), Strings:get("UITitle_EN_ZueXi"))
 			buttons.useBtn:setVisible(true)
 			self:setButtonEnabled(buttons.useBtn, true)
@@ -586,6 +646,9 @@ function BagMediator:updateDetailButtons(notHasShow)
 			if self:checkCanUseCompose(item) == false then
 				buttons.useBtn:setButtonName(Strings:get("bag_Compose_UI_1"), Strings:get("bag_Compose_UI_1_EN"))
 			end
+
+			buttons.composeBtn:setVisible(true)
+			buttons.composeBtn:setButtonName(Strings:get("Shop_URMap_Button_Desc3"), Strings:get("Shop_URMap_Button_Desc3"))
 		elseif subType == ItemTypes.K_HERO_F then
 			buttons.useBtn:setVisible(true)
 			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
@@ -619,9 +682,12 @@ function BagMediator:updateDetailButtons(notHasShow)
 			else
 				buttons.useBtn:setVisible(false)
 			end
+		elseif subType == ItemTypes.K_HERO_STAR or subType == ItemTypes.K_MasterLeadStage then
+			buttons.useBtn:setVisible(true)
+			buttons.useBtn:setButtonName(Strings:get("bag_UI13"), Strings:get("UITitle_EN_Shiyong"))
+			self:setButtonEnabled(buttons.useBtn, true)
 		elseif page == ItemPages.kConsumable then
 			if item:getSubType() == ItemTypes.k_MAP_IN then
-				buttons.sellBtn:setVisible(false)
 				buttons.useBtn:setVisible(false)
 				buttons.composeBtn:setVisible(false)
 			else
@@ -642,6 +708,9 @@ function BagMediator:updateDetailButtons(notHasShow)
 			buttons.composeBtn:getView():setPositionX(278)
 		elseif buttons.sellBtn:isVisible() and not buttons.useBtn:isVisible() and not buttons.composeBtn:isVisible() then
 			buttons.sellBtn:getView():setPositionX(186)
+		elseif buttons.composeBtn:isVisible() and buttons.useBtn:isVisible() and not buttons.sellBtn:isVisible() then
+			buttons.composeBtn:getView():setPositionX(95)
+			buttons.useBtn:getView():setPositionX(278)
 		else
 			buttons.useBtn:getView():setPositionX(186)
 			buttons.composeBtn:getView():setPositionX(186)
@@ -649,6 +718,14 @@ function BagMediator:updateDetailButtons(notHasShow)
 
 		if item:isExistResource() and (item:getSubType() == ItemTypes.K_HERO_F or item:getSubType() == ItemTypes.K_MASTER_F or item:getSubType() == ItemTypes.K_HERO_QUALITY) then
 			buttons.fromBtn:setVisible(true)
+		end
+
+		buttons.lockBtn:setVisible(item:getCanLock())
+
+		if buttons.lockBtn:isVisible() then
+			local image = entry.unlock and kLockImage[2] or kLockImage[1]
+
+			buttons.lockBtn:getChildByName("image"):loadTexture(image)
 		end
 	end
 end
@@ -729,6 +806,16 @@ function BagMediator:updateDescLabel(detailArea, item)
 	end
 
 	local descScrollView = detailArea.descScrollView
+	local result, tipsCode = self._bagSystem:canUse({
+		item = item
+	})
+
+	if not result then
+		descScrollView:setContentSize(cc.size(descScrollView:getContentSize().width, 124))
+	else
+		descScrollView:setContentSize(cc.size(descScrollView:getContentSize().width, 144))
+	end
+
 	local size = descScrollView:getContentSize()
 	size.height = funcLabel:getContentSize().height + 10
 	size.height = size.height + descLabel:getContentSize().height + 10
@@ -839,6 +926,8 @@ function BagMediator:updateDetailBasicArea(notHasShow)
 			end
 		end
 
+		local csFuncLabel = self._detailPanel:getChildByFullName("des1label")
+		local size = csFuncLabel:getContentSize()
 		local result, tipsCode = self._bagSystem:canUse({
 			item = item
 		})
@@ -851,6 +940,9 @@ function BagMediator:updateDetailBasicArea(notHasShow)
 			self.URLevelLimit:setString(Strings:get("bag_UI36", {
 				level = limitLevel
 			}))
+			detailArea.descScrollView:setContentSize(cc.size(size.width, size.height - 20))
+		else
+			detailArea.descScrollView:setContentSize(size)
 		end
 
 		local icon = IconFactory:createPic({
@@ -896,9 +988,27 @@ function BagMediator:isEntryIdValid(entryId)
 	return entryId and entryId ~= kInvalidEntryId
 end
 
-function BagMediator:createItemsTableView()
+function BagMediator:createItemsTableView(reset)
 	local scrollview = self._itemScroll:getChildByName("scrollview")
 	local viewSize = scrollview:getContentSize()
+
+	if reset then
+		if self._onEquipTab then
+			viewSize = cc.size(viewSize.width, viewSize.height - 110)
+		end
+	elseif self._tableView then
+		return
+	end
+
+	if self._tableView then
+		self._tableView:removeFromParent(true)
+
+		self._tableView = nil
+		self._indicator = self._indicatorClone:clone()
+
+		self._indicator:addTo(self._itemNode)
+	end
+
 	local kFirstCellPos = cc.p(viewSize.width / 4 - 5, kCellHeight / 2 - 8)
 	local tableView = cc.TableView:create(viewSize)
 
@@ -1096,12 +1206,32 @@ function BagMediator:onClickBack(sender, eventType)
 end
 
 function BagMediator:onClickTab(name, tag)
+	print("-----self._curTabType--------" .. self._curTabType)
+	dump(kTabBtnsNames, "===-=-=-=kTabBtnsNames-=-=-=-=")
+
 	if kTabBtnsNames[self._curTabType][3] then
 		self._bagSystem:clearBagTabRedPointByType(kTabBtnsNames[self._curTabType][4])
 	end
 
+	local refreshTabelView = false
+	self._onEquipTab = false
+
+	if kTabBtnsNames[self._curTabType][4] == ItemPages.kEquip then
+		refreshTabelView = true
+	end
+
 	self._curTabType = tag
 
+	if kTabBtnsNames[self._curTabType][4] == ItemPages.kEquip then
+		refreshTabelView = true
+		self._onEquipTab = true
+
+		self:showEquipTypePanel(true)
+	else
+		self:showEquipTypePanel(false)
+	end
+
+	self:createItemsTableView(refreshTabelView)
 	self:updateTabArea()
 end
 
@@ -1117,6 +1247,14 @@ function BagMediator:onSellClicked(sender, eventType)
 	local entry = self._bagSystem:getEntryById(self._curEntryId)
 
 	if not entry then
+		return
+	end
+
+	if entry.item:getCanLock() and entry.unlock == false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Equip_Ur_Lock_1")
+		}))
+
 		return
 	end
 
@@ -1152,6 +1290,7 @@ function BagMediator:onSellClicked(sender, eventType)
 
 	if ItemQuality.kQuality4 <= item:getQuality() then
 		local data = {
+			isRich = true,
 			title = Strings:get("bag_UI17"),
 			title1 = Strings:get("bag_UI17"),
 			content = Strings:get("bag_UI20"),
@@ -1233,6 +1372,10 @@ function BagMediator:onUseClicked(sender, eventType)
 		self:useScroll(self._curEntryId)
 	elseif subType == ItemTypes.K_HERO_F then
 		self:useHeroPiece(self._curEntryId)
+	elseif subType == ItemTypes.K_HERO_STAR then
+		self:useMaterial(self._curEntryId)
+	elseif subType == ItemTypes.K_MasterLeadStage then
+		self:useMaterial(self._curEntryId)
 	elseif subType == ItemTypes.K_MASTER_F then
 		self:useMasterPiece(self._curEntryId)
 	elseif subType == ItemTypes.K_EQUIP_F then
@@ -1243,6 +1386,43 @@ function BagMediator:onUseClicked(sender, eventType)
 		self:useMaterial(self._curEntryId)
 	elseif pageType == ItemPages.kEquip then
 		self:useEquipItem(self._curEntryId)
+	end
+end
+
+function BagMediator:onComposeClicked(sender, eventType)
+	if not self:isEntryIdValid(self._curEntryId) then
+		return
+	end
+
+	local entry = self._bagSystem:getEntryById(self._curEntryId)
+
+	if not entry then
+		return
+	end
+
+	local item = entry.item
+	local pageType = item:getType()
+	local subType = item:getSubType()
+
+	if subType == ItemTypes.K_COMPOSE then
+		if self:checkCanUseCompose(item) and entry.count == 1 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.2,
+				tip = Strings:get("Shop_URMap_Untransform_Tips_Desc1")
+			}))
+
+			return
+		end
+
+		local ChangeTipView = self:getInjector():getInstance("BagURExhangeView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, ChangeTipView, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			sourceId = self._curEntryId
+		}, nil))
+	else
+		self:onUseClicked(sender, eventType)
 	end
 end
 
@@ -1650,7 +1830,7 @@ function BagMediator:readyUseGalleryItem()
 		return false
 	end
 
-	local view = self:getInjector():getInstance("GalleryMainView")
+	local view = self:getInjector():getInstance("GalleryPartnerNewView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil))
 end
@@ -1873,4 +2053,86 @@ function BagMediator:checkCanUseCompose(item)
 	end
 
 	return result
+end
+
+function BagMediator:createEquipTypeBtn()
+	for k, v in pairs(kEquipTabBtnsNames) do
+		local panelNew = self._tabBuildBtn:clone()
+
+		panelNew:setVisible(true)
+		self._node_BuildBtn:addChild(panelNew)
+		panelNew:setPosition((k - 1) * kTab_button_width, 0)
+		panelNew:setName(v[2])
+
+		local name = v[1]
+		local button = panelNew:getChildByFullName("Button")
+		local textName = panelNew:getChildByFullName("name")
+
+		textName:setString(Strings:get(v[1]))
+		button:addClickEventListener(function ()
+			self:onClickEquipType(v[2])
+		end)
+	end
+end
+
+function BagMediator:onClickEquipType(equipType)
+	if self._equipType ~= equipType then
+		self._equipType = equipType
+
+		self:refreshEquipTypeBtn()
+		self:refreshEquipByType()
+	end
+end
+
+function BagMediator:showEquipTypePanel(show)
+	self._equipTabPanel:setVisible(show)
+end
+
+function BagMediator:refreshEquipByType()
+	self:updateTabArea()
+end
+
+function BagMediator:refreshEquipTypeBtn()
+	local children = self._node_BuildBtn:getChildren()
+
+	for index = 1, #children do
+		local child = children[index]
+		local image1 = child:getChildByFullName("Image_1")
+		local image2 = child:getChildByFullName("Image_2")
+
+		image1:setVisible(true)
+		image2:setVisible(false)
+
+		if child:getName() == self._equipType then
+			image1:setVisible(false)
+			image2:setVisible(true)
+		end
+	end
+end
+
+function BagMediator:refreshViewByLock(event)
+	local data = event:getData()
+
+	if self._currentItem then
+		local entry = self._bagSystem:getEntryById(self._currentItem:getId())
+
+		if data.viewtype == 1 then
+			local tip = entry.unlock and Strings:get("Equip_Ur_Lock_4") or Strings:get("Equip_Ur_Lock_3")
+
+			self:dispatch(ShowTipEvent({
+				tip = tip
+			}))
+		end
+	end
+end
+
+function BagMediator:onClickItemLock()
+	if self._currentItem and self._currentItem:getCanLock() then
+		local params = {
+			viewtype = 1,
+			itemId = self._currentItem:getId()
+		}
+
+		self._bagSystem:requestItemLock(params)
+	end
 end

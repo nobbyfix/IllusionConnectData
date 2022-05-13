@@ -273,8 +273,8 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "Bust15")
 
 	if rolePicId ~= nil and rolePicId ~= "" then
-		local portrait = IconFactory:createRoleIconSprite({
-			iconType = "Bust15",
+		local portrait = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe16",
 			id = modelId
 		})
 
@@ -328,7 +328,8 @@ function ActivityBlockMonsterShopMediator:initLeftView()
 			self._bubbleIndex = 1 + self._bubbleIndex
 
 			self._bubbleText:setString(Strings:get(str, {
-				Num = rate
+				Num = rate,
+				time = TimeUtil:getSystemResetDate()
 			}))
 
 			local textSizeHeight = self._bubbleText:getContentSize().height
@@ -560,7 +561,13 @@ function ActivityBlockMonsterShopMediator:initRightView()
 				local infoPanel = panel:getChildByFullName("info_panel")
 				local infoText = infoPanel:getChildByFullName("duihuan_text")
 				local oldPrice = panel:getChildByFullName("old_price")
+
+				oldPrice:setVisible(false)
+
 				local costPanel = panel:getChildByFullName("cost")
+
+				costPanel:setVisible(false)
+
 				local costText = panel:getChildByFullName("cost.cost_text")
 				local moneyLayout = panel:getChildByFullName("money_layout")
 				local moneyIcon = moneyLayout:getChildByFullName("money_icon")
@@ -807,7 +814,13 @@ function ActivityBlockMonsterShopMediator:createCell(cell, index)
 			local infoPanel = panel:getChildByFullName("info_panel")
 			local infoText = infoPanel:getChildByFullName("duihuan_text")
 			local oldPrice = panel:getChildByFullName("old_price")
+
+			oldPrice:setVisible(false)
+
 			local costPanel = panel:getChildByFullName("cost")
+
+			costPanel:setVisible(false)
+
 			local costText = panel:getChildByFullName("cost.cost_text")
 			local moneyLayout = panel:getChildByFullName("money_layout")
 			local moneyIcon = moneyLayout:getChildByFullName("money_icon")
@@ -973,20 +986,20 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 		local config = infoData.config
 		local unlockDay = config.Day - 1
 		local costoffDays = config.Rate[1].day[2] or 0
-		local dateStart = os.date("*t", startTime)
-		dateStart.hour = 5
-		dateStart.day = dateStart.day + unlockDay + costoffDays
-		local time = TimeUtil:getTimeByDate(dateStart) - remoteTime
-		local remainTime = endTime - remoteTime
+		local unLockSec = unlockDay > 0 and unlockDay * 86400 or 0
+		local trueStartTime_Cell = startTime + unLockSec
+		local trueEndTime_Cell = trueStartTime_Cell + costoffDays * 86400
+		local trueRemainTime_Cell = trueEndTime_Cell - remoteTime
+		local activityRemoteTime = endTime - remoteTime
 		local str = ""
 
-		if remainTime > 0 and time > 0 and costoffDays > 0 then
-			if remainTime < time then
-				time = remainTime
+		if startTime < remoteTime and activityRemoteTime > 0 and trueRemainTime_Cell > 0 and costoffDays > 0 then
+			if activityRemoteTime < trueRemainTime_Cell then
+				trueRemainTime_Cell = activityRemoteTime
 			end
 
 			local fmtStr = "${d}:${H}:${M}:${S}"
-			local timeStr = TimeUtil:formatTime(fmtStr, time)
+			local timeStr = TimeUtil:formatTime(fmtStr, trueRemainTime_Cell)
 			local parts = string.split(timeStr, ":", nil, true)
 			local timeTab = {
 				day = tonumber(parts[1]),
@@ -999,8 +1012,10 @@ function ActivityBlockMonsterShopMediator:refreshOffcostRemainTime(remoteTime, s
 				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
 			elseif timeTab.hour > 0 then
 				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
-			else
+			elseif timeTab.min > 0 then
 				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			else
+				str = timeTab.sec .. Strings:get("TimeUtil_Sec")
 			end
 		end
 

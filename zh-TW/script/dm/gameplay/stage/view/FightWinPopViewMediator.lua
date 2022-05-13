@@ -250,6 +250,10 @@ function FightWinPopViewMediator:showExpPanel()
 	end
 end
 
+function FightWinPopViewMediator:leaveWithData()
+	self:onTouchLayout(nil, ccui.TouchEventType.ended)
+end
+
 function FightWinPopViewMediator:onTouchLayout(sender, eventType)
 	if eventType ~= ccui.TouchEventType.ended then
 		return

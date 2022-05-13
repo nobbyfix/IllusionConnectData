@@ -49,7 +49,7 @@ end
 function ArenaReportCell:refreshReportData(data)
 	local attackerData = data:getAttacker()
 	local defenseData = data:getDefender()
-	local type = data:getReprotType()
+	local type = data.getReprotType and data:getReprotType() or nil
 	local showData, showMyData = nil
 	local raise = data:getRankChange()
 	local isAttacker = nil
@@ -112,6 +112,14 @@ function ArenaReportCell:refreshReportData(data)
 	end
 
 	local result = isAttacker and data:getAttackerWin()
+
+	if type and type == "NEWARENA" then
+		if self._mediator:getDevelopSystem():getRid() == attackerData:getId() then
+			result = data:getAttackerWin()
+		else
+			result = not data:getAttackerWin()
+		end
+	end
 
 	if result then
 		self._imgResult:getChildByName("text"):setString(Strings:get("Arena_Victory"))

@@ -9,7 +9,7 @@ local kBtnHandlers = {
 	["content.btnStatistic"] = "onTouchStatistic"
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -110,7 +110,9 @@ function DreamChallengeBattleEndMediator:refreshView()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = developSystem:getSpTeamByType(StageTeamType.CRUSADE)
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -138,15 +140,16 @@ function DreamChallengeBattleEndMediator:refreshView()
 
 	if model then
 		local roleNode = anim:getChildByName("roleNode")
-		local mvpSprite = IconFactory:createRoleIconSprite({
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust9",
+			frameId = "bustframe17",
 			id = model
 		})
 
 		mvpSprite:addTo(roleNode)
 		mvpSprite:setScale(0.8)
-		mvpSprite:setPosition(cc.p(50, -100))
+		mvpSprite:setPosition(cc.p(-200, -200))
 
 		local roleId = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Hero")
 		local heroMvpText = ""
@@ -221,7 +224,7 @@ end
 
 function DreamChallengeBattleEndMediator:setHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -247,6 +250,10 @@ function DreamChallengeBattleEndMediator:setHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -335,7 +342,7 @@ function DreamChallengeBattleEndMediator:setHero(node, info)
 	local except = node:getChildByName("except")
 
 	node:getChildByName("help"):setVisible(true)
-	node:getChildByName("help"):loadTexture("asset/commonLang/kazu_bg_yuan.png")
+	node:getChildByName("help"):loadTexture("asset/common/kazu_bg_yuan.png")
 
 	if not info.isNpc then
 		local isShow = self._dreamSystem:checkHeroRecomand(self._dreamId, self._mapId, info.heroId)

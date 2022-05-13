@@ -11,6 +11,10 @@ end
 function PopupViewMediator:enterWithData(data)
 end
 
+function PopupViewMediator:leaveWithData(data)
+	self:close(data)
+end
+
 function PopupViewMediator:willStartEnterTransition(transition)
 end
 

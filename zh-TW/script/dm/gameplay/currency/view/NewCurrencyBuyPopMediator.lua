@@ -31,6 +31,11 @@ local clickEventMap = {
 		func = "onClickSendBuy"
 	}
 }
+local exchangeCardType = {
+	[CurrencyType.kGold] = "IM_VillageGoldOre_6",
+	[CurrencyType.kCrystal] = "IM_VillageCrystalOre_6",
+	[CurrencyType.kExp] = "IM_VillageExpOre_6"
+}
 
 function NewCurrencyBuyPopMediator:initialize()
 	super.initialize(self)
@@ -43,6 +48,7 @@ end
 function NewCurrencyBuyPopMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(clickEventMap)
+	self:mapEventListener(self:getEventDispatcher(), EVT_SELL_ITEM_SUCC, self, self.updateConsumablePanel)
 end
 
 function NewCurrencyBuyPopMediator:mapEventListeners()
@@ -64,6 +70,7 @@ end
 function NewCurrencyBuyPopMediator:setupView()
 	self._mainPanel = self:getView():getChildByFullName("main")
 	self._bonusAnim = self:getView():getChildByName("bonusAnim")
+	self._consumableItemPanel = self:getView():getChildByName("itemPanel")
 	local titleText = self._mainPanel:getChildByFullName("title")
 
 	titleText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
@@ -423,6 +430,8 @@ function NewCurrencyBuyPopMediator:refreshView()
 		costvalue:setVisible(true)
 		lockTip:setVisible(false)
 	end
+
+	self:updateConsumablePanel()
 end
 
 function NewCurrencyBuyPopMediator:onClickClose(sender, eventType)
@@ -504,7 +513,7 @@ function NewCurrencyBuyPopMediator:runBuyCrystalAnim(response)
 	local anim = self._bonusAnim:getChildByName("CrystalAnim")
 
 	if not anim then
-		anim = cc.MovieClip:create("jingsha_duihuanjingsha")
+		anim = cc.MovieClip:create("jinbidh_duihuanjingshi")
 
 		anim:setPosition(cc.p(0, 0))
 		self._bonusAnim:addChild(anim)
@@ -584,4 +593,55 @@ function NewCurrencyBuyPopMediator:runBuyGoldAnim(response)
 
 	anim:gotoAndPlay(0)
 	anim:setVisible(true)
+end
+
+function NewCurrencyBuyPopMediator:updateConsumablePanel()
+	local curId = exchangeCardType[self._buyType]
+	local entry = self._bagSystem:getEntryById(curId)
+
+	if entry then
+		local item = entry.item
+		local iconNode = self._consumableItemPanel:getChildByFullName("Node_icon")
+
+		iconNode:removeAllChildren()
+
+		local icon = IconFactory:createIcon({
+			id = item:getId(),
+			amount = entry.count
+		})
+		local scale = 0.6
+
+		icon:setScale(scale)
+
+		if icon.getAmountLabel then
+			local label = icon:getAmountLabel()
+
+			label:setScale(1 / scale)
+			label:enableOutline(cc.c4b(0, 0, 0, 255), 2)
+		end
+
+		icon:addTo(iconNode)
+		icon:center(iconNode:getContentSize())
+
+		local nameLabel = self._consumableItemPanel:getChildByFullName("Text_name")
+
+		nameLabel:setString(item:getName())
+
+		local button = self._consumableItemPanel:getChildByFullName("entry.button")
+
+		self._consumableItemPanel:getChildByFullName("entry.name"):setString(Strings:get("bag_UI13"))
+
+		local function callFunc()
+			self._bagSystem:tryUseActionPointItem(item:getId(), 1)
+		end
+
+		mapButtonHandlerClick(nil, button, {
+			func = callFunc
+		})
+		self._consumableItemPanel:setVisible(true)
+
+		return
+	end
+
+	self._consumableItemPanel:setVisible(false)
 end

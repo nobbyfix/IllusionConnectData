@@ -11,7 +11,6 @@ function PopupNormalTitle:dispose()
 end
 
 function PopupNormalTitle:setupView(data)
-	self._adjustTitleSize = data.adjustTitleSize or false
 	local view = self:getView()
 	self._titleText1 = view:getChildByFullName("Text_1")
 	self._titleText2 = view:getChildByFullName("Text_2")
@@ -24,16 +23,14 @@ function PopupNormalTitle:updateTitle(data)
 	if data.title then
 		self._titleText1:setString(data.title)
 
-		if self._adjustTitleSize then
-			local length = utf8.len(data.title)
+		if data.titleSize then
+			self._titleSize = data.titleSize
+			local virtualRenderer = self._titleText1:getVirtualRenderer()
 
-			if length <= 3 then
-				self._titleText1:setFontSize(60)
-				self._titleText1:setPositionY(self._titleText1PosY)
-			else
-				self._titleText1:setFontSize(45)
-				self._titleText1:setPositionY(self._titleText1PosY - 18)
-			end
+			self._titleText1:ignoreContentAdaptWithSize(false)
+			self._titleText1:setTextAreaSize(self._titleSize)
+			self._titleText1:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			virtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
 		end
 	end
 
@@ -41,7 +38,7 @@ function PopupNormalTitle:updateTitle(data)
 		self._titleText2:setString(data.title1)
 
 		local posX = self._titleText1:getPositionX()
-		local width = self._titleText1:getContentSize().width
+		local width = self._titleText1:getVirtualRenderer():getContentSize().width
 
 		self._titleText2:setAnchorPoint(cc.p(0.5, 0.5))
 		self._titleText2:setPositionX(posX + width / 2)

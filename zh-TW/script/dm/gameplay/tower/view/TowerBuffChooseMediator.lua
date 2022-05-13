@@ -174,6 +174,12 @@ function TowerBuffChooseMediator:onTeamClick()
 	self._towerSystem:showTowerTeamBattleView()
 end
 
+function TowerBuffChooseMediator:leaveWithData()
+	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
+		viewName = "TowerMainView"
+	}))
+end
+
 function TowerBuffChooseMediator:onClickBack()
 	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
 		viewName = "TowerMainView"
@@ -196,6 +202,9 @@ function TowerBuffChooseMediator:onBuffRuleClick()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end

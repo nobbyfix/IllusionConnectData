@@ -53,10 +53,16 @@ local kRoleRarityAnim = {
 		"ssr_choukajieguokapai",
 		0.78,
 		"img_chouka_new_ssr.png"
+	},
+	[15] = {
+		"sp_choukajieguokapai",
+		0.741,
+		"img_chouka_new_sp.png"
 	}
 }
 local kRoleRarityNameBg = {
 	[12.0] = "asset/heroRect/heroRarity/img_chouka_front_r.png",
+	[15.0] = "asset/heroRect/heroRarity/img_chouka_front_sp.png",
 	[13.0] = "asset/heroRect/heroRarity/img_chouka_front_sr.png",
 	[14.0] = "asset/heroRect/heroRarity/img_chouka_front_ssr.png"
 }
@@ -187,11 +193,9 @@ function TowerCardsChooseMediator:setupCardById(node, cardId)
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", cardId)
 	local roleAnim = anim:getChildByFullName("roleAnim")
 	local roleNode = roleAnim:getChildByFullName("roleNode")
-	local realImage = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust7",
-		id = roleModel,
-		size = cc.size(245, 336)
+	local realImage = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe7_1",
+		id = roleModel
 	})
 
 	realImage:addTo(roleNode)
@@ -257,6 +261,12 @@ function TowerCardsChooseMediator:onTeamClick()
 	self._towerSystem:showTowerTeamBattleView()
 end
 
+function TowerCardsChooseMediator:leaveWithData()
+	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
+		viewName = "TowerMainView"
+	}))
+end
+
 function TowerCardsChooseMediator:onClickBack()
 	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
 		viewName = "TowerMainView"
@@ -288,6 +298,9 @@ function TowerCardsChooseMediator:onCardsRuleClick()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end

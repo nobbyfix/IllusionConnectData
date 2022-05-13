@@ -225,11 +225,11 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -510,
+						y = -280,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -253,8 +253,8 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -325,11 +325,11 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 2,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = -0.3,
 							y = 0
@@ -353,8 +353,8 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -390,7 +390,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -295,
+							y = -250,
 							refpt = {
 								x = 0.3,
 								y = 0
@@ -407,7 +407,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 						duration = 0.3,
 						position = {
 							x = 0,
-							y = -510,
+							y = -280,
 							refpt = {
 								x = 0.7,
 								y = 0
@@ -557,7 +557,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0.1
@@ -574,7 +574,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -591,7 +591,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0.1
@@ -608,7 +608,7 @@ function scene_elitestory18_1a.actions.start_elitestory18_1a(_root, args)
 					duration = 0.1,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.3,
 							y = 0

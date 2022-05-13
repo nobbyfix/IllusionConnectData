@@ -33,9 +33,20 @@ function ActivityStageFinishMediator:enterWithData(data)
 
 	self._data = data
 	self._activity = self._activitySystem:getActivityById(self._data.activityId)
-	self._model = self._activity:getSubActivityById(self._data.subActivityId)
-	self._pointId = self._data.pointId
-	self._point = self._model:getPointById(self._pointId)
+	self._model = self._activity:getSubActivityById(self._data.subActivityId) or data.model
+
+	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		local params = data.params
+		self._pointId = params.pointId
+		self._point = self._model:getSubPointById(params.pointId)
+		self._notShowStar = true
+		self._showCondition = true
+	else
+		self._pointId = self._data.pointId
+		self._mapId = self._data.mapId
+		self._point = self._model:getPointById(self._pointId, self._mapId)
+	end
+
 	self._starNum = 0
 	self._stars = {}
 
@@ -98,6 +109,9 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 						x = 0,
 						y = -1
 					}))
+					firstRewardText:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+					firstRewardText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+					firstRewardText:getVirtualRenderer():setDimensions(100, 38)
 				end
 
 				layout:setContentSize(cc.size(100.5, 85))
@@ -143,6 +157,9 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 				local mcPanel = extMc:getChildByName("lastText")
 
 				secondRewardText:addTo(mcPanel):posite(-2, 1)
+				secondRewardText:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+				secondRewardText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				secondRewardText:getVirtualRenderer():setDimensions(100, 38)
 
 				if hasFirstRewards then
 					local imaLayout = ccui.Layout:create()
@@ -247,7 +264,9 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = self._model:getTeam()
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -273,9 +292,10 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -308,7 +328,7 @@ function ActivityStageFinishMediator:refreshHeroAndReward()
 
 		local testReward = self._data.rewards
 
-		if testReward then
+		if testReward and self._data.rewards.itemRewards then
 			self._rewardPanel:setVisible(true)
 			showReward(self._data.rewards.itemRewards)
 		else
@@ -378,6 +398,9 @@ function ActivityStageFinishMediator:initWidget()
 	self._wordPanel = self._main:getChildByName("word")
 	self._expPanel = self._main:getChildByFullName("Panel_exp")
 	self._state = 1
+	self._conditionPanel = self._main:getChildByFullName("condition")
+
+	self._conditionPanel:setVisible(false)
 end
 
 function ActivityStageFinishMediator:refreshView()
@@ -401,6 +424,11 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 
 	lvName:setVisible(false)
 
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local curLevel = developSystem:getPlayer():getLevel()
+
+	lvName:setString(curLevel)
+
 	local anim = nil
 
 	if self._point:isBoss() then
@@ -422,15 +450,7 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 		end)
 	else
 		anim = cc.MovieClip:create("stageshengli_fubenjiesuan")
-		local insertNode = anim:getChildByName("insertNode")
-		local winAnim = cc.MovieClip:create("shengliz_jingjijiesuan")
 
-		winAnim:addEndCallback(function ()
-			winAnim:stop()
-		end)
-		winAnim:addTo(insertNode)
-		winAnim:setScale(0.6)
-		winAnim:setPosition(cc.p(90, 110))
 		anim:addCallbackAtFrame(45, function ()
 			anim:stop()
 		end)
@@ -440,9 +460,25 @@ function ActivityStageFinishMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(-200, -200))
 	anim:addTo(bgPanel):center(bgPanel:getContentSize())
 	anim:gotoAndPlay(1)
+end
+
+function ActivityStageFinishMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityStageFinishMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
 end
 
 function ActivityStageFinishMediator:showHeroPanel()
@@ -455,7 +491,9 @@ function ActivityStageFinishMediator:showHeroPanel()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = self._model:getTeam()
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -481,9 +519,14 @@ function ActivityStageFinishMediator:showHeroPanel()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	if self:getOwnMasterId(self._data.pointId) then
+		model = self:getOwnMasterRoleModel(self:getOwnMasterId(self._data.pointId))
+	end
+
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -677,7 +720,7 @@ function ActivityStageFinishMediator:showHeroPanel()
 
 					local extraLevelPanel = v:getParent():getChildByTag(10):getChildByFullName("main.actionNode.level")
 
-					extraLevelPanel:setString("Lv." .. v.nextLevel)
+					extraLevelPanel:setString(Strings:get("Common_LV_Text") .. v.nextLevel)
 				end),
 				[#actions + 1] = cc.ProgressFromTo:create(0.3, 0, nextPercent),
 				[#actions + 1] = cc.CallFunc:create(function ()
@@ -694,45 +737,76 @@ end
 
 function ActivityStageFinishMediator:showExpPanel()
 	self._state = 2
-	local point = self._model:getPointById(self._data.pointId)
-	local oldStarState = point:getOldStar()
-	local starPanel = self._starPanel
-	local descs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_StarConditionDesc", "content")
-	local starCondition = point:getStarCondition()
+	local point = self._model:getPointById(self._data.pointId, self._mapId)
 
-	for i = 1, 3 do
-		local diamondNode = self._starPanel:getChildByFullName("star" .. i .. ".diamond")
+	if not self._notShowStar then
+		local oldStarState = point:getOldStar()
+		local starPanel = self._starPanel
+		local descs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Block_StarConditionDesc", "content")
+		local starCondition = point:getStarCondition()
 
-		if self._stars[i] then
-			if oldStarState[i] then
-				diamondNode:setColor(cc.c3b(127, 127, 127))
-				diamondNode:getChildByName("diamondNum"):setVisible(false)
-				diamondNode:getChildByName("onFinish"):setVisible(true)
+		for i = 1, 3 do
+			local diamondNode = self._starPanel:getChildByFullName("star" .. i .. ".diamond")
+
+			if self._stars[i] then
+				if oldStarState[i] then
+					diamondNode:setColor(cc.c3b(127, 127, 127))
+					diamondNode:getChildByName("diamondNum"):setVisible(false)
+					diamondNode:getChildByName("onFinish"):setVisible(true)
+				else
+					diamondNode:setColor(cc.c3b(255, 255, 255))
+					diamondNode:getChildByName("onFinish"):setVisible(true)
+
+					local diamondNum = diamondNode:getChildByName("diamondNum")
+
+					diamondNum:setVisible(true)
+					diamondNum:setString("+" .. starDiamondCount)
+				end
 			else
 				diamondNode:setColor(cc.c3b(255, 255, 255))
-				diamondNode:getChildByName("onFinish"):setVisible(true)
+				diamondNode:getChildByName("onFinish"):setVisible(false)
 
 				local diamondNum = diamondNode:getChildByName("diamondNum")
 
 				diamondNum:setVisible(true)
 				diamondNum:setString("+" .. starDiamondCount)
 			end
-		else
-			diamondNode:setColor(cc.c3b(255, 255, 255))
-			diamondNode:getChildByName("onFinish"):setVisible(false)
 
-			local diamondNum = diamondNode:getChildByName("diamondNum")
+			local star = starPanel:getChildByFullName("star" .. i)
+			local labelText = star:getChildByFullName("text")
 
-			diamondNum:setVisible(true)
-			diamondNum:setString("+" .. starDiamondCount)
+			labelText:setString(Strings:get(descs[starCondition[i].type], {
+				value = starCondition[i].value
+			}))
+		end
+	else
+		self._starPanel:setVisible(false)
+	end
+
+	if self._showCondition then
+		self._conditionPanel:setVisible(true)
+
+		local conditionkeeper = self:getInjector():getInstance(Conditionkeeper)
+		local conditions = self._point:getConfig().VictoryConditions
+		local desc = conditionkeeper:getVictoryConditionsDesc(conditions, {
+			assist = self._point:getAssist()
+		})
+		local descText = self._conditionPanel:getChildByName("Text_desc")
+
+		descText:setString("")
+
+		desc = string.gsub(desc, "${fontName}", "asset/font/CustomFont_FZYH_M.TTF")
+		local richdesc = descText:getParent():getChildByName("richdesc")
+
+		if not richdesc then
+			richdesc = ccui.RichText:createWithXML("", {})
+
+			richdesc:setAnchorPoint(cc.p(0, 1))
+			richdesc:renderContent(300, 0, true)
+			richdesc:addTo(descText:getParent()):posite(descText:getPosition()):setName("richdesc")
 		end
 
-		local star = starPanel:getChildByFullName("star" .. i)
-		local labelText = star:getChildByFullName("text")
-
-		labelText:setString(Strings:get(descs[starCondition[i].type], {
-			value = starCondition[i].value
-		}))
+		richdesc:setString(desc)
 	end
 
 	self:initRewardPanel()
@@ -775,6 +849,9 @@ function ActivityStageFinishMediator:showExpPanel()
 						x = 0,
 						y = -1
 					}))
+					firstRewardText:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+					firstRewardText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+					firstRewardText:getVirtualRenderer():setDimensions(100, 38)
 				end
 
 				layout:setContentSize(cc.size(100.5, 85))
@@ -820,6 +897,9 @@ function ActivityStageFinishMediator:showExpPanel()
 				local mcPanel = extMc:getChildByName("lastText")
 
 				secondRewardText:addTo(mcPanel):posite(-2, 1)
+				secondRewardText:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+				secondRewardText:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				secondRewardText:getVirtualRenderer():setDimensions(100, 38)
 
 				if hasFirstRewards then
 					local imaLayout = ccui.Layout:create()
@@ -904,7 +984,9 @@ function ActivityStageFinishMediator:showExpPanel()
 
 	local actOffSet = 680
 
-	self._starPanel:setVisible(true)
+	if not self._notShowStar then
+		self._starPanel:setVisible(true)
+	end
 
 	local _star1 = self._starPanel:getChildByFullName("star1")
 	local posX1, posY1 = _star1:getPosition()
@@ -932,6 +1014,14 @@ function ActivityStageFinishMediator:showExpPanel()
 	local posX5, posY5 = lvName:getPosition()
 
 	lvName:setPositionX(posX5 + actOffSet)
+
+	local condPosX, condPosY = self._conditionPanel:getPosition()
+
+	if self._showCondition then
+		self._conditionPanel:setVisible(true)
+		self._conditionPanel:setPositionX(condPosX + actOffSet)
+	end
+
 	self._herosAnim:addCallbackAtFrame(108, function ()
 		local easeBackOutAni = cc.EaseBackOut:create(cc.MoveTo:create(0.5, cc.p(posX1, posY1)))
 
@@ -939,6 +1029,7 @@ function ActivityStageFinishMediator:showExpPanel()
 		_star1:runAction(easeBackOutAni)
 		lv:runAction(cc.MoveTo:create(0.5, cc.p(posX4, posY4)))
 		lvName:runAction(cc.MoveTo:create(0.5, cc.p(posX5, posY5)))
+		self._conditionPanel:runAction(cc.MoveTo:create(0.5, cc.p(condPosX, condPosY)))
 	end)
 	self._herosAnim:addCallbackAtFrame(113, function ()
 		local easeBackOutAni = cc.EaseBackOut:create(cc.MoveTo:create(0.5, cc.p(posX2, posY2)))
@@ -954,9 +1045,20 @@ function ActivityStageFinishMediator:showExpPanel()
 	end)
 	self._herosAnim:addCallbackAtFrame(130, function ()
 		self._herosAnim:stop()
-		self._rewardPanel:setVisible(true)
-		showReward(self._data.rewards.itemRewards)
-		self:setPointStarCondition()
+
+		if self._data.rewards and self._data.rewards.itemRewards then
+			local n = #self._data.rewards.itemRewards
+
+			if self._data.rewards.firstRewards then
+				n = n + #self._data.rewards.firstRewards
+			end
+
+			self._rewardPanel:setVisible(n > 0 and true or false)
+			showReward(self._data.rewards.itemRewards)
+			self:setPointStarCondition()
+		else
+			self._rewardPanel:setVisible(false)
+		end
 	end)
 	self._herosAnim:gotoAndPlay(90)
 end
@@ -1114,8 +1216,12 @@ function ActivityStageFinishMediator:initRewardPanel()
 	end
 end
 
+function ActivityStageFinishMediator:leaveWithData()
+	self:onTouchLayout()
+end
+
 function ActivityStageFinishMediator:onTouchLayout(sender, eventType)
-	sender:setTouchEnabled(false)
+	self:getView():getChildByName("mTouchLayout"):setTouchEnabled(false)
 	self:checkHiddenStory()
 end
 
@@ -1199,7 +1305,7 @@ end
 function ActivityStageFinishMediator:checkShowHiddenStory(pointId)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local storyAgent = storyDirector:getStoryAgent()
-	local pointInfo, pointType = self._model:getPointById(pointId)
+	local pointInfo, pointType = self._model:getPointById(pointId, self._mapId)
 	local stageType = self._activitySystem.curStageType
 	local map = self._model:getStageByStageType(stageType)
 

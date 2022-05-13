@@ -25,6 +25,7 @@ function BaseStoryAgent:initialize()
 	self._dialogues = {}
 	self._isStatisticSta = false
 	self._currentStoryType = ""
+	self._onEnd = nil
 end
 
 function BaseStoryAgent:dispose()
@@ -109,6 +110,7 @@ function BaseStoryAgent:_runScript(scriptname, setEnv, onEnd)
 		return
 	end
 
+	self._curPlayCount = 0
 	local context = self:getInjector():instantiate(StoryContext)
 
 	context:initGeneralVariables()
@@ -131,6 +133,10 @@ function BaseStoryAgent:_runScript(scriptname, setEnv, onEnd)
 	end)
 
 	return script
+end
+
+function BaseStoryAgent:setStoryEnd(onEnd)
+	self._onEnd = onEnd
 end
 
 function BaseStoryAgent:checkSave(scriptnames)
@@ -169,6 +175,12 @@ function BaseStoryAgent:_endScriptList(onEnd)
 
 	if onEnd then
 		onEnd(script, context)
+	end
+
+	if self._onEnd then
+		self._onEnd()
+
+		self._onEnd = nil
 	end
 end
 
@@ -399,9 +411,73 @@ function BaseStoryAgent:getStoryType(fileNameStr)
 end
 
 function BaseStoryAgent:getStoryAudioPlay(fileNameStr)
+	if GameConfigs.autoStory then
+		return true
+	end
+
 	local isHasType, storyTypeStr = self:getStoryType(fileNameStr)
 
 	return cc.UserDefault:getInstance():getBoolForKey(storyTypeStr, false)
+end
+
+function BaseStoryAgent:calculateStoryTotalPlayCount(scriptName)
+	local hasBranch = 0
+	local allCount = 0
+	local path = "script/stories/" .. scriptName .. ".lua"
+	local content = io.readfile(path)
+
+	if not content then
+		path = "script/stories/" .. scriptName .. ".luac"
+		content = io.readfile(path)
+	end
+
+	if content then
+		local speakCount = 0
+
+		for i in string.gfind(content, "'speak'") do
+			speakCount = speakCount + 1
+		end
+
+		local printerCount = 0
+
+		for i in string.gfind(content, "'printerEffect'") do
+			printerCount = printerCount + 1
+		end
+
+		printerCount = printerCount * 0.5
+		local chooseCount = 0
+
+		for i in string.gfind(content, "'dialogueChoose'") do
+			chooseCount = chooseCount + 1
+		end
+
+		if chooseCount > 0 then
+			hasBranch = 1
+		end
+
+		local newsCount = 0
+
+		for i in string.gfind(content, "'newsNode'") do
+			newsCount = newsCount + 1
+		end
+
+		newsCount = newsCount * 0.5
+		allCount = speakCount + printerCount + chooseCount + newsCount
+	end
+
+	return allCount, hasBranch
+end
+
+function BaseStoryAgent:addStoryValidPlayCount()
+	self._curPlayCount = self._curPlayCount + 1
+end
+
+function BaseStoryAgent:getStoryStatisticsData(scriptname)
+	local data = {
+		amount = self._curPlayCount
+	}
+
+	return data
 end
 
 StoryAgent = class("StoryAgent", BaseStoryAgent)
@@ -412,6 +488,7 @@ function StoryAgent:initialize()
 	self._skipCheckSave = false
 	self._isAutoPlay = false
 	self._isAutoPlayOld = false
+	self._isHideUI = false
 end
 
 function StoryAgent:dispose()
@@ -428,6 +505,7 @@ function StoryAgent:trigger(scriptnames, setEnv, onEnd)
 	end
 
 	self._isAutoPlay = self:getStoryAudioPlay(scriptnames)
+	self._isHideUI = false
 
 	self:_trigger(scriptnames, setEnv, onEnd)
 end
@@ -603,6 +681,10 @@ function StoryAgent:isAutoPlayState()
 	return self._isAutoPlay
 end
 
+function StoryAgent:isGuiding()
+	return self._queuedExecutor:isStateMatched("busy")
+end
+
 function StoryAgent:setAutoPlayState(isAutoPlay, isPasue)
 	if isPasue then
 		if isAutoPlay and self._isAutoPlayOld then
@@ -639,6 +721,29 @@ function StoryAgent:setAutoPlayState(isAutoPlay, isPasue)
 			for i, v in ipairs(nodes) do
 				if v.updateAutoPlayState then
 					v:updateAutoPlayState(isAutoPlay)
+				end
+			end
+		end
+	end
+end
+
+function StoryAgent:isHideUIState()
+	return self._isHideUI
+end
+
+function StoryAgent:setHideUIState(isHide)
+	self._isHideUI = isHide
+	local ctx = self:getCurrentScriptCtx()
+
+	if ctx ~= nil then
+		local scene = ctx:getScene()
+
+		if scene then
+			local nodes = scene:getChildren()
+
+			for i, v in ipairs(nodes) do
+				if v.updateHideUIState then
+					v:updateHideUIState(isHide)
 				end
 			end
 		end
@@ -728,4 +833,28 @@ function GuideAgent:resetSaved(scriptname, callback)
 	customDataSystem:delValues(PrefixType.kGuide, {
 		scriptname
 	}, callback)
+end
+
+function GuideAgent:showExitGameTips()
+	local data = {
+		noClose = true,
+		title = Strings:get("UPDATE_UI7"),
+		content = Strings:get("UI_TEXT_EXIT_GAME"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				cc.Director:getInstance():endToLua()
+			end
+		end
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	DmGame:getInstance():dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		isAreaIndependent = true,
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
 end

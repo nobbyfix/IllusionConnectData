@@ -7,6 +7,7 @@ CommonStageSweepMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
 
+EVT_SWEEPPOWERCHANGE_SERVER = "EVT_SWEEPPOWERCHANGE_SERVER"
 local kBtnHandlers = {
 	["mMainPanel.mSweepBtn.button"] = {
 		func = "onSweepBtn"
@@ -43,6 +44,10 @@ function CommonStageSweepMediator:onRegister()
 		ignoreAddKerning = true
 	})
 	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ENERGRY_SUCC, self, self.buyEnergyCallback)
+	self:mapEventListener(self:getEventDispatcher(), EVT_SWEEPPOWERCHANGE_SERVER, self, self.setPowerView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_BUY_ENERGRY_SUCC, self, self.setPowerView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_RESETTIMES, self, self.setPowerView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_COOPERATE_CLOSE_SWEEP, self, self.closeViewByCooperateBoss)
 end
 
 function CommonStageSweepMediator:onRemove()
@@ -55,6 +60,7 @@ function CommonStageSweepMediator:enterWithData(data)
 	self._sweepData.extraReward = self._sweepData.extraReward or {}
 	self._needNum = data.needNum or 0
 	self._itemId = data.itemId
+	self._showCooperateBoss = false
 
 	self:initWidget()
 	self:refreshView()
@@ -139,6 +145,57 @@ function CommonStageSweepMediator:initWidget()
 	else
 		itemPanel:setVisible(false)
 	end
+
+	self:setPowerView()
+end
+
+function CommonStageSweepMediator:setPowerView()
+	local powerNode = self:getView():getChildByFullName("mMainPanel.powerNode")
+	local textNode = self:getView():getChildByFullName("mMainPanel.powerNode.text_bg.text")
+	local iconNode = self:getView():getChildByFullName("mMainPanel.powerNode.icon_node")
+
+	iconNode:removeAllChildren()
+
+	local level = self:getDevelopSystem():getPlayer():getLevel()
+	self._bagSystem = self:getDevelopSystem():getBagSystem()
+	local curPower, lastRecoverTime = self._bagSystem:getPower()
+	local powerLimit = self._bagSystem:getRecoveryPowerLimit(level)
+	local maxPowerLimit = self._bagSystem:getMaxPowerLimit()
+	local text = math.min(curPower, maxPowerLimit) .. "/" .. powerLimit
+
+	self:getView():getChildByFullName("mMainPanel.powerNode")
+	textNode:setString(text)
+
+	local goldIcon = IconFactory:createPic({
+		id = CurrencyIdKind.kGold
+	})
+	local goldSize = goldIcon:getContentSize()
+	local iconPic = IconFactory:createPic({
+		id = "IR_Power"
+	}, {
+		showWidth = goldSize.height
+	})
+
+	if iconPic then
+		iconPic:addTo(iconNode)
+	end
+
+	powerNode:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+			self:powerBuyCall()
+		end
+	end)
+end
+
+function CommonStageSweepMediator:powerBuyCall()
+	local view = self:getInjector():getInstance("CurrencyBuyPopView")
+
+	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		_currencyType = CurrencyType.kActionPoint
+	}, self))
 end
 
 function CommonStageSweepMediator:refreshView()
@@ -182,7 +239,7 @@ function CommonStageSweepMediator:refreshView()
 
 	local text = endView:getChildByFullName("content.content.Text")
 
-	if count < self._sweepData.param.wipeTimes and self._needNum <= hasItemNum then
+	if count < self._sweepData.param.wipeTimes and self._needNum <= hasItemNum and self._needNum ~= 0 then
 		text:setString(Strings:get("Sweep_Target_AllDone"))
 	end
 
@@ -254,6 +311,12 @@ function CommonStageSweepMediator:refreshView()
 
 						i = i + 1
 					else
+						if self._showCooperateBoss then
+							performWithDelay(self:getView(), function ()
+								self:close()
+							end, 0.1)
+						end
+
 						break
 					end
 				end
@@ -341,6 +404,7 @@ function CommonStageSweepMediator:refreshSweepItemView(index, rewards, itemView)
 	local goldLabel = itemView:getChildByFullName("content.mMidLayout.mGoldLabel")
 	local rewardLayout = itemView:getChildByFullName("content.mDownLayout")
 
+	rewardLayout:setScrollBarEnabled(false)
 	fightTimesLabel:setString(Strings:get("CUSTOM_FIGHT_TIMES", {
 		times = index
 	}))
@@ -466,11 +530,7 @@ function CommonStageSweepMediator:onSweepBtn(sender, type)
 	local cfg = self._stageSystem:getPointConfigById(self._sweepData.param.pointId)
 
 	if self:getDevelopSystem():getEnergy() < cfg.StaminaCost then
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:find("CUSTOM_ENERGY_NOT_ENOUGH")
-		}))
-		CurrencySystem:buyCurrencyByType(self, CurrencyType.kActionPoint)
+		self:powerBuyCall()
 
 		return
 	end
@@ -601,5 +661,19 @@ function CommonStageSweepMediator:onSpeedUpSweep()
 			mConfirmBtn:setPositionX(490)
 			self._sweepBtn:setVisible(false)
 		end
+
+		if self._showCooperateBoss then
+			performWithDelay(self:getView(), function ()
+				self:close()
+			end, 0.1)
+		end
 	end)))
+end
+
+function CommonStageSweepMediator:closeViewByCooperateBoss()
+	if DisposableObject:isDisposed(self) and DisposableObject:isDisposed(self:getView()) then
+		return
+	end
+
+	self._showCooperateBoss = true
 end

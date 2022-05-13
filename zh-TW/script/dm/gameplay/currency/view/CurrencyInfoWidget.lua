@@ -12,108 +12,97 @@ CurrencyBar:has("_eventDispatcher", {
 CurrencyBar:has("_shopSystem", {
 	is = "r"
 }):injectWith("ShopSystem")
+CurrencyBar:has("_leadStageArenaSystem", {
+	is = "r"
+}):injectWith("LeadStageArenaSystem")
 
-local kAddBtnFuncMap = {}
+local length = 4
+local kAddBtnFuncMap = {
+	[CurrencyIdKind.kGold] = function (self)
+		local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
 
-kAddBtnFuncMap[CurrencyIdKind.kGold] = function (self)
-	local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kGold
+		}, self))
+	end,
+	[CurrencyIdKind.kDiamond] = function (self)
+		self._shopSystem:tryEnter({
+			shopId = "Shop_Mall"
+		})
+	end,
+	[CurrencyIdKind.kPower] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kGold
-	}, self))
-end
+		local view = self:getInjector():getInstance("CurrencyBuyPopView")
 
-kAddBtnFuncMap[CurrencyIdKind.kDiamond] = function (self)
-	self._shopSystem:tryEnter({
-		shopId = "Shop_Mall"
-	})
-end
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kActionPoint
+		}, self))
+	end,
+	[CurrencyIdKind.kCrystal] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
-kAddBtnFuncMap[CurrencyIdKind.kPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
 
-	local view = self:getInjector():getInstance("CurrencyBuyPopView")
-
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kActionPoint
-	}, self))
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kCrystal] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-
-	local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
-
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		_currencyType = CurrencyType.kCrystal
-	}, self))
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnter({
-		shopId = "Shop_Diamond"
-	})
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kDiamondDrawExItem] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-	self._shopSystem:tryEnter({
-		shopId = ShopSpecialId.kShopTimeLimit
-	})
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kHonor] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kHonor)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kClub] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kClub)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kPve] = function (self)
-	CurrencySystem:showSource(self, CurrencyIdKind.kPve)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityStaminaPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvitySnowPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvitySummerPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityZuoHePower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityWxhPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kAcitvityHalloweenPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kActivityHolidayPower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
-kAddBtnFuncMap[CurrencyIdKind.kActivityDetectivePower] = function (self)
-	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
-end
-
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kCrystal
+		}, self))
+	end,
+	[CurrencyIdKind.kDiamondDrawItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			subid = "Shop_Package",
+			shopId = ShopSpecialId.KShopTimelimitedmall
+		})
+	end,
+	[CurrencyIdKind.kDiamondDrawExItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			subid = "Shop_TimeLimit",
+			shopId = ShopSpecialId.KShopTimelimitedmall
+		})
+	end,
+	[CurrencyIdKind.kDiamondDrawReZeroItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			shopId = ShopSpecialId.kShopPackage
+		})
+	end,
+	[CurrencyIdKind.kHonor] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kHonor)
+	end,
+	[CurrencyIdKind.kClub] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kClub)
+	end,
+	[CurrencyIdKind.kPve] = function (self)
+		CurrencySystem:showSource(self, CurrencyIdKind.kPve)
+	end,
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			subid = "Shop_TimeLimit",
+			shopId = ShopSpecialId.KShopTimelimitedmall
+		})
+	end,
+	[CurrencyIdKind.KMasterStage_Exp] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		CurrencySystem:showSource(self, CurrencyIdKind.KMasterStage_Exp)
+	end,
+	[CurrencyIdKind.kDiamondDrawURItem] = function (self)
+		AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+		self._shopSystem:tryEnter({
+			subid = "Shop_TimeLimit",
+			shopId = ShopSpecialId.KShopTimelimitedmall
+		})
+	end
+}
 local kAddImgMap = {
 	[CurrencyIdKind.kGold] = true,
 	[CurrencyIdKind.kPower] = true,
@@ -123,63 +112,11 @@ local kAddImgMap = {
 	[CurrencyIdKind.kClub] = true,
 	[CurrencyIdKind.kPve] = true,
 	[CurrencyIdKind.kDiamondDrawItem] = true,
-	[CurrencyIdKind.kDiamondDrawExItem] = true
-}
-local PowerConfigMap = {
-	[CurrencyIdKind.kPower] = {
-		all = "Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityStaminaPower] = {
-		all = "Act_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvitySnowPower] = {
-		all = "Act_Snowflake_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Snowflake_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityZuoHePower] = {
-		all = "Act_ZuoHe_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_ZuoHe_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityWxhPower] = {
-		all = "Act_Wxh_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Wxh_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvitySummerPower] = {
-		all = "Act_Summer_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Summer_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kAcitvityHalloweenPower] = {
-		all = "Act_Halloween_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Halloween_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kActivityHolidayPower] = {
-		all = "Act_NewYear_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_NewYear_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	},
-	[CurrencyIdKind.kActivityDetectivePower] = {
-		all = "Act_Detective_Power_RecAll",
-		configFunc = "getPowerResetByCurrencyId",
-		next = "Act_Detective_Power_RecNext",
-		func = "getPowerByCurrencyId"
-	}
+	[CurrencyIdKind.kDiamondDrawExItem] = true,
+	[CurrencyIdKind.kDiamondDrawExZuoHeItem] = true,
+	[CurrencyIdKind.KMasterStage_Exp] = true,
+	[CurrencyIdKind.kDiamondDrawReZeroItem] = true,
+	[CurrencyIdKind.kDiamondDrawURItem] = true
 }
 
 function CurrencyBar.class:createWidgetNode()
@@ -192,26 +129,6 @@ function CurrencyBar:initialize(view)
 	self._recoverCd = ConfigReader:getRecordById("Reset", "3").ResetSystem.cd
 
 	super.initialize(self, view)
-
-	local label = view:getChildByFullName("tips.Text_25"):getVirtualRenderer()
-
-	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
-	label:setOverflow(cc.LabelOverflow.SHRINK)
-	label:setDimensions(116, 26)
-
-	local label = view:getChildByFullName("tips.Text_27"):getVirtualRenderer()
-
-	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
-	label:setOverflow(cc.LabelOverflow.SHRINK)
-	label:setDimensions(116, 26)
-
-	local recoverText = view:getChildByFullName("tips.recoverText")
-	local label = recoverText:getVirtualRenderer()
-
-	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
-	label:setOverflow(cc.LabelOverflow.SHRINK)
-	label:setDimensions(185, 26)
-	recoverText:setPositionX(recoverText:getPositionX() + 86)
 end
 
 function CurrencyBar:userInject(injector)
@@ -250,14 +167,19 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 		})
 
 		if iconPic then
+			if currencyId == CurrencyIdKind.kStageArenaOldCoin then
+				local nameText = ccui.Text:create(Strings:get("StageArena_GoldName") .. ":", TTF_FONT_FZYH_M, 18)
+
+				nameText:addTo(iconNode):offset(-75, 0)
+			end
+
 			iconPic:addTo(iconNode)
 		end
 
-		self:updateText()
-
 		local addBtn = view:getChildByFullName("add_btn")
+		local resource = RewardSystem:getResource(currencyId)
 
-		if kAddBtnFuncMap[currencyId] and not addBtnDisable then
+		if (kAddBtnFuncMap[currencyId] or next(resource)) and not addBtnDisable then
 			addBtn:setVisible(true)
 			mapButtonHandlerClick(self, "add_btn", {
 				ignoreClickAudio = true,
@@ -272,13 +194,13 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 
 		local plusImage = view:getChildByName("Image_1")
 
-		if kAddImgMap[currencyId] then
+		if kAddImgMap[currencyId] or next(resource) then
 			plusImage:setVisible(true)
 		else
 			plusImage:setVisible(false)
 		end
 
-		if PowerConfigMap[currencyId] then
+		if PowerConfigMap[currencyId] and PowerConfigMap[currencyId].configId then
 			view:getChildByFullName("tips.Text_25"):setString(Strings:get(PowerConfigMap[currencyId].next))
 			view:getChildByFullName("tips.Text_27"):setString(Strings:get(PowerConfigMap[currencyId].all))
 			self._bagSystem:bindSchedulerOnView(self)
@@ -286,6 +208,8 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 			local tipsTouchPanel = addBtn:getChildByName("tipsTouchPanel")
 
 			if tipsTouchPanel == nil then
+				addBtn:setVisible(true)
+
 				local touchLayout = ccui.Layout:create()
 				local addBtnSize = addBtn:getContentSize()
 
@@ -299,6 +223,7 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 					local tipsPanel = view:getChildByName("tips")
 
 					tipsPanel:setVisible(true)
+					AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 				end
 
 				mapButtonHandlerClick(nil, touchLayout, {
@@ -314,6 +239,8 @@ function CurrencyBar:setCurrencyId(currencyId, addBtnDisable)
 			end
 		end
 	end
+
+	self:updateText()
 end
 
 function CurrencyBar:updateText()
@@ -367,14 +294,14 @@ function CurrencyBar:updateText()
 
 			str2:setString(allDoneTimeStr)
 		end
-	elseif PowerConfigMap[currencyId] then
+	elseif PowerConfigMap[currencyId] and PowerConfigMap[currencyId].configId then
 		local curPower, lastRecoverTime, powerLimit, powerRecoverCd = nil
-		local func = PowerConfigMap[currencyId].func or "getPowerByCurrencyId"
+		local func = PowerConfigMap[currencyId].func
 		local configFunc = PowerConfigMap[currencyId].configFunc or "getPowerResetByCurrencyId"
 		curPower, lastRecoverTime = self._bagSystem[func](self._bagSystem, currencyId)
 		local resetConfig = self._bagSystem[configFunc](self._bagSystem, currencyId)
 		powerLimit = resetConfig.limit or 3000
-		powerRecoverCd = resetConfig.limit or 100
+		powerRecoverCd = resetConfig.cd or 100
 		text = curPower .. "/" .. powerLimit
 		local tipPanel = view:getChildByFullName("tips")
 		local str1 = tipPanel:getChildByName("oneTimes")
@@ -408,6 +335,8 @@ function CurrencyBar:updateText()
 		end
 	elseif currencyId == CurrencyIdKind.kMazeInfinityGold then
 		text = self._bagSystem:getItemCount(currencyId)
+	elseif currencyId == CurrencyIdKind.kStageArenaOldCoin then
+		text = self._leadStageArenaSystem:getOldCoin()
 	else
 		text = self._bagSystem:getItemCount(currencyId)
 	end
@@ -421,7 +350,8 @@ function CurrencyBar:updateText()
 	end
 
 	local width = textNode:getContentSize().width + strNode:getContentSize().width
-	local addImgShow = kAddImgMap[currencyId]
+	local resource = RewardSystem:getResource(currencyId)
+	local addImgShow = kAddImgMap[currencyId] or next(resource)
 
 	if addImgShow then
 		if width < 93 then
@@ -446,6 +376,22 @@ function CurrencyBar:onClickAdd(sender, eventType)
 
 		if addBtnFunc then
 			addBtnFunc(self)
+		else
+			local resource = RewardSystem:getResource(currencyId)
+
+			if next(resource) then
+				local hasNum = self._bagSystem:getItemCount(currencyId)
+				local param = {
+					needNum = 0,
+					itemId = currencyId,
+					hasNum = hasNum
+				}
+				local view = self:getInjector():getInstance("sourceView")
+
+				self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+				}, param))
+			end
 		end
 	end
 end
@@ -642,12 +588,14 @@ function TopInfoWidget:updateView(config)
 		mapButtonHandlerClick(self, "back_btn", config.btnHandler)
 	end
 
+	self:hideTitle(false)
+
 	if config.title then
 		self:updateTitle(config.title)
 	elseif config.complexTitle then
 		self:updateComplexTitle(config.complexTitle)
 	else
-		self:hideTitle()
+		self:hideTitle(true)
 	end
 
 	local style = config.style or 2
@@ -721,7 +669,7 @@ function TopInfoWidget:updateView(config)
 
 	self:refreshView()
 
-	for i = 1, 3 do
+	for i = 1, length do
 		local _titleNode = self._titlePanel:getChildByName("titleNode" .. i)
 
 		_titleNode:setOpacity(kFontStyle[style])
@@ -752,6 +700,12 @@ function TopInfoWidget:updateView(config)
 	self._progressTimer = progressTimer
 
 	self:startAnim(style, stopAnim)
+
+	if not not config.hideLine then
+		self._progressTimer:setVisible(false)
+
+		stopAnim = true
+	end
 end
 
 function TopInfoWidget:startAnim(style, stopAnim)
@@ -775,7 +729,7 @@ function TopInfoWidget:startAnim(style, stopAnim)
 		self._mc:gotoAndStop(45)
 		self._progressTimer:setPercentage(100)
 	else
-		for i = 1, 3 do
+		for i = 1, length do
 			local _titleNode = self._titlePanel:getChildByName("titleNode" .. i)
 
 			_titleNode:setRotation(0)
@@ -837,6 +791,6 @@ function TopInfoWidget:updateComplexTitle(title)
 	end
 end
 
-function TopInfoWidget:hideTitle()
-	self._titlePanel:setVisible(false)
+function TopInfoWidget:hideTitle(status)
+	self._titlePanel:setVisible(not status)
 end

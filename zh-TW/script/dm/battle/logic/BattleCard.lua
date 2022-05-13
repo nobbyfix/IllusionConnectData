@@ -154,6 +154,12 @@ HeroCard:has("_heroData", {
 HeroCard:has("_cardAI", {
 	is = "r"
 })
+HeroCard:has("_seatRules", {
+	is = "rw"
+})
+HeroCard:has("_enterPauseTime", {
+	is = "rw"
+})
 
 function HeroCard:initWithData(data)
 	super.initWithData(self, data)
@@ -161,21 +167,54 @@ function HeroCard:initWithData(data)
 	self._heroData = data.hero
 	self._cardAI = data.cardAI
 	self._type = CARD_TYPE.kHeroCard
+	self._cardIndex = nil
 	self._triggerBuffs = {}
+	self._seatRules = data.seatRules or {}
+	self._enterPauseTime = data.enterPauseTime or nil
 
 	return self
+end
+
+function HeroCard:addSeatRule(rule, killOrKick)
+	self._seatRules[rule] = self._seatRules[rule] or {}
+
+	table.insert(self._seatRules[rule], 1, killOrKick)
+end
+
+function HeroCard:subSeatRule(rule, killOrKick)
+	if self._seatRules[rule] then
+		for k, v in pairs(self._seatRules[rule]) do
+			if v == killOrKick then
+				table.remove(self._seatRules[rule], k)
+
+				break
+			end
+		end
+
+		if not next(self._seatRules[rule]) then
+			self._seatRules[rule] = nil
+		end
+	end
 end
 
 function HeroCard:getType()
 	return "hero"
 end
 
-function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEvent)
+function HeroCard:setCardIndex(cardIndex)
+	self._cardIndex = cardIndex
+end
+
+function HeroCard:getCardIndex()
+	return self._cardIndex
+end
+
+function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEvent, rightNowSit)
 	local animation = {
 		name = "spawn"
 	}
 	local formationSystem = battleContext:getObject("FormationSystem")
-	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost())
+	local unit, detail = formationSystem:SpawnUnit(player, self._heroData, trgtCellNo, animation, not wontEvent, cost or self:getActualCost(), self._seatRules, rightNowSit)
 
 	if not unit then
 		return unit, detail
@@ -185,7 +224,10 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		id = self._id,
 		cost = self._rawCost,
 		cardAI = self._cardAI,
-		hero = self._heroData
+		hero = self._heroData,
+		cardIndex = self._cardIndex,
+		seatRules = self._seatRules,
+		enterPauseTime = self._enterPauseTime
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")
@@ -200,7 +242,29 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		buffSystem:recordEnterBuffs(unit, self._triggerBuffs)
 	end
 
-	return true
+	local battleRecorder = battleContext:getObject("BattleRecorder")
+
+	battleRecorder:recordEvent(player:getId(), "UseHeroCard", {
+		cardId = self:getId()
+	})
+
+	return true, unit
+end
+
+function HeroCard:getCardInfo()
+	local cardInfo = {
+		id = self._id,
+		cost = self._rawCost,
+		cardAI = self._cardAI,
+		hero = self._heroData,
+		cardIndex = self._cardIndex,
+		cardType = self._cardType
+	}
+	local info = {}
+
+	table.deepcopy(cardInfo, info)
+
+	return info
 end
 
 function HeroCard:dumpInformation()
@@ -221,6 +285,7 @@ function HeroCard:dumpInformation()
 		addHurtRate = data.addHurtRate
 	}
 	info.type = "hero"
+	info.seatRules = self._seatRules
 
 	if data and data.skills and data.skills.unique then
 		info.unique = data.skills.unique.id
@@ -244,8 +309,46 @@ function HeroCard:hasFlag(flag)
 	return false
 end
 
+function HeroCard:addFlags(flags)
+	local data = self:getHeroData()
+
+	for k, v in pairs(flags) do
+		data.flags[#data.flags + 1] = v
+	end
+
+	return true
+end
+
+function HeroCard:clearFlags(flags)
+	local data = self:getHeroData()
+
+	for k, v in pairs(flags) do
+		for k_, v_ in pairs(data.flags) do
+			if v == v_ then
+				table.remove(data.flags, k_)
+
+				break
+			end
+		end
+	end
+
+	return true
+end
+
 function HeroCard:addTriggerBuff(triggerBuff)
 	self._triggerBuffs[#self._triggerBuffs + 1] = triggerBuff
+end
+
+function HeroCard:getTriggerBuff()
+	return self._triggerBuffs
+end
+
+function HeroCard:removeTriggerBuff(buff)
+	for k, v in pairs(self._triggerBuffs) do
+		if v == buff then
+			table.remove(self._triggerBuffs, k)
+		end
+	end
 end
 
 function HeroCard:isGenre(genre)
@@ -273,19 +376,39 @@ function SkillCard:initWithData(data)
 	self._skillData = data.skill
 	self._skillPic = data.skillPic
 	self._autoWeight = data.autoWeight
+	self._targetCell = nil
 
 	return self
+end
+
+function SkillCard:getSkillInfo()
+	return {
+		id = self._id,
+		cost = self._rawCost,
+		skill = self._skillData,
+		skillPic = self._skillPic,
+		autoWeight = self._autoWeight,
+		cardType = self._cardType
+	}
 end
 
 function SkillCard:getType()
 	return "skill"
 end
 
+function SkillCard:getType()
+	return "skill"
+end
+
+function SkillCard:setTargetCell(cellId)
+	self._targetCell = cellId
+end
+
 local function isValidUnit(unit)
 	return not unit:isInStages(ULS_Dying, ULS_Dead, ULS_Kicked)
 end
 
-function SkillCard:usedByPlayer(player, battleContext, cost)
+function SkillCard:usedByPlayer(player, battleContext, cost, args)
 	local actor = player:getMasterUnit()
 
 	if not actor or not isValidUnit(actor) then
@@ -307,6 +430,10 @@ function SkillCard:usedByPlayer(player, battleContext, cost)
 		battleContext:getObject("ProcessRecorder"):recordObjectEvent(player:getId(), "SyncE", energyInfo)
 	end
 
+	for k, v in pairs(args.extra or {}) do
+		self._skillData.args[k] = v
+	end
+
 	local skill = BattleSkill:new(self._skillData)
 
 	skill:setType(kBattleCardSkill)
@@ -318,7 +445,11 @@ function SkillCard:usedByPlayer(player, battleContext, cost)
 
 	local actionScheduler = battleContext:getObject("ActionScheduler")
 
-	return actionScheduler:exertSpecificSkill(actor, skill)
+	if args.extra then
+		return actionScheduler:exertExtraSkill(actor, skill)
+	else
+		return actionScheduler:exertSpecificSkill(actor, skill)
+	end
 end
 
 function SkillCard:dumpInformation()

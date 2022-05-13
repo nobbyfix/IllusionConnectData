@@ -140,6 +140,7 @@ all.Skill_Enemy_MOGJu_Skill = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

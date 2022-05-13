@@ -55,7 +55,7 @@ function Navigation:updataTopNode()
 	self._topNodes[#self._topNodes + 1] = self._topLayout:getChildByFullName("mBagNode")
 	local mRankNode = self._topLayout:getChildByFullName("mRankNode")
 
-	if unlockSystem:canShow("Rank_Main") then
+	if CommonUtils.GetSwitch("fn_rank") and unlockSystem:canShow("Rank_Main") then
 		mRankNode:setVisible(true)
 
 		self._topNodes[#self._topNodes + 1] = mRankNode
@@ -63,16 +63,50 @@ function Navigation:updataTopNode()
 		mRankNode:setVisible(false)
 	end
 
+	local mChatNode = self._topLayout:getChildByFullName("mChatNode")
+
+	if unlockSystem:canShow("Chat_System") then
+		mChatNode:setVisible(true)
+
+		self._topNodes[#self._topNodes + 1] = mChatNode
+	else
+		mChatNode:setVisible(false)
+	end
+
 	local mDownNode = self._topLayout:getChildByFullName("mDownNode")
 	local canDownload = settingSystem:canDownloadPortrait() or settingSystem:canDownloadSoundCV()
 
 	if canDownload then
-		mRankNode:setVisible(true)
+		mDownNode:setVisible(true)
 
 		self._topNodes[#self._topNodes + 1] = mDownNode
 	else
-		mRankNode:setVisible(false)
+		mDownNode:setVisible(false)
 	end
+
+	self._topNodes[#self._topNodes + 1] = self._topLayout:getChildByFullName("mAnnounceNode")
+	local mPassNode = self._topLayout:getChildByFullName("mPassNode")
+
+	if CommonUtils.GetSwitch("fn_pass") then
+		mPassNode:setVisible(true)
+
+		local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
+
+		anim:addEndCallback(function (cid, mc)
+			anim:stop()
+		end)
+
+		local passMovie = mPassNode:getChildByFullName("mMovieClip")
+
+		passMovie:removeAllChildren()
+		anim:addTo(passMovie):center(passMovie:getContentSize()):offset(0, 10)
+
+		self._topNodes[#self._topNodes + 1] = mPassNode
+
+		return
+	end
+
+	mPassNode:setVisible(false)
 end
 
 function Navigation:openNavigation()
@@ -108,21 +142,33 @@ end
 function Navigation:openAction()
 	local basePosX, basePosY = self._topLayoutFoldBtn:getPosition()
 	basePosY = basePosY - 1
+	local btnNum = CommonUtils.GetSwitch("fn_pass") and #self._topNodes - 1 or #self._topNodes
 
-	for i = 1, #self._topNodes do
+	for i = 1, btnNum do
 		local node = self._topNodes[i]
 
 		node:setVisible(true)
+		node:getChildByFullName("mTouchLayer"):setTouchEnabled(false)
 
 		local action = nil
 
 		if i == 1 then
-			action = cc.Spawn:create(cc.MoveTo:create(0.1, cc.p(self._interval + basePosX, basePosY)), cc.FadeIn:create(0.1))
+			action = cc.Sequence:create(cc.Spawn:create(cc.MoveTo:create(0.1, cc.p(basePosX - self._interval, basePosY)), cc.FadeIn:create(0.1)), cc.CallFunc:create(function ()
+				node:getChildByFullName("mTouchLayer"):setTouchEnabled(true)
+			end))
 		else
-			action = cc.Spawn:create(cc.MoveTo:create(i * 0.1, cc.p(i * self._interval + basePosX, basePosY)), cc.Sequence:create(cc.DelayTime:create((i - 1) * 0.1), cc.FadeIn:create(0.1)))
+			action = cc.Spawn:create(cc.MoveTo:create(i * 0.1, cc.p(basePosX - i * self._interval, basePosY)), cc.Sequence:create(cc.DelayTime:create((i - 1) * 0.1), cc.FadeIn:create(0.1), cc.CallFunc:create(function ()
+				node:getChildByFullName("mTouchLayer"):setTouchEnabled(true)
+			end)))
 		end
 
+		node:stopAllActions()
 		node:runAction(action)
+	end
+
+	if CommonUtils.GetSwitch("fn_pass") then
+		self._topNodes[#self._topNodes]:stopAllActions()
+		self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - #self._topNodes * self._interval - 11, 31)))
 	end
 end
 
@@ -139,9 +185,13 @@ end
 function Navigation:closeAction()
 	local basePosX, basePosY = self._topLayoutFoldBtn:getPosition()
 	basePosY = basePosY - 1
+	local btnNum = CommonUtils.GetSwitch("fn_pass") and #self._topNodes - 1 or #self._topNodes
 
-	for i = 1, #self._topNodes do
+	for i = 1, btnNum do
 		local node = self._topNodes[i]
+
+		node:getChildByFullName("mTouchLayer"):setTouchEnabled(false)
+
 		local action = nil
 
 		if i == #self._topNodes then
@@ -150,7 +200,13 @@ function Navigation:closeAction()
 			action = cc.Sequence:create(cc.DelayTime:create((#self._topNodes - i) * 0.1), cc.Spawn:create(cc.MoveTo:create(i * 0.1, cc.p(basePosX, basePosY)), cc.FadeOut:create(0.1)), cc.Hide:create())
 		end
 
+		node:stopAllActions()
 		node:runAction(action)
+	end
+
+	if CommonUtils.GetSwitch("fn_pass") then
+		self._topNodes[#self._topNodes]:stopAllActions()
+		self._topNodes[#self._topNodes]:runAction(cc.MoveTo:create(#self._topNodes * 0.1, cc.p(basePosX - 66, 31)))
 	end
 end
 

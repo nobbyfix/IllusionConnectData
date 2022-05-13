@@ -312,13 +312,18 @@ function PassBuyMediator:createBtn(btn, data)
 	if priceNum < truePriceNum then
 		discountNode:setVisible(true)
 
-		local num = priceNum / truePriceNum * 10
-		num = string.format("%.1f", num)
+		local num = (truePriceNum - priceNum) / truePriceNum * 100
+		num = string.format("%.0f", num)
 
-		discountNode:getChildByName("num"):setString(num)
+		discountNode:getChildByName("num"):setString(Strings:get("Pass_UI12", {
+			num = num
+		}))
 		discountNode:getChildByName("price"):setString(priceTypeStr .. truePriceNum)
 		discountNode:getChildByName("price"):enableStrikethrough()
+		discountNode:getChildByName("text"):setVisible(false)
 	end
+
+	discountNode:setVisible(false)
 end
 
 function PassBuyMediator:onClickBuy(sender, eventType)

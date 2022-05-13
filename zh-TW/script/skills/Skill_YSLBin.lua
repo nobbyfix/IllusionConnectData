@@ -345,7 +345,7 @@ all.Skill_YSLBin_Passive = {
 			_env.max = _env.max * 0.8
 
 			if _env.unit then
-				global.ApplyRPDamage(_env, _env.unit, _env.max)
+				global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.unit, _env.max)
 			end
 
 			for _, unit2 in global.__iter__(global.FriendUnits(_env)) do
@@ -636,7 +636,7 @@ all.Skill_YSLBin_Passive_EX = {
 			end
 
 			if _env.unit then
-				global.ApplyRPDamage(_env, _env.unit, _env.max)
+				global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.unit, _env.max)
 			end
 
 			for _, unit2 in global.__iter__(global.FriendUnits(_env)) do

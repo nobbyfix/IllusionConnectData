@@ -17,11 +17,11 @@ function DebugViewParser:tryCreateView(id, viewObj)
 		return self._viewCache[id]:getView()
 	end
 
-	self.kViewWidth = 320
+	self.kViewWidth = 400
 	self.kCellHeight = 100
-	self.kSelectBoxWidth = 312
-	self.kSelectBoxHeight = 200
-	self.kSelectBoxCellWidth = 310
+	self.kSelectBoxWidth = 350
+	self.kSelectBoxHeight = 150
+	self.kSelectBoxCellWidth = 3350
 	self.kSelectBoxCellHeight = 30
 
 	if viewObj.getViewWidth then
@@ -56,7 +56,7 @@ function DebugViewParser:tryCreateView(id, viewObj)
 	btnOk:setName("btnOk")
 	btnOk:setScale(1.5)
 	scollViewRect:addChild(btnOk, 0)
-	btnOk:setPosition(self.kViewWidth + btnOk:getContentSize().width * btnOk:getScale() * 0.5, btnOk:getContentSize().height * btnOk:getScale() * 0.5)
+	btnOk:setPosition(self.kViewWidth, -btnOk:getContentSize().height)
 	btnOk:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended and viewObj.onClick then
 			local config = viewObj:getViewConfig()
@@ -98,7 +98,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 		scollerCell:setName("scollerCell")
 		scollerCell:setContentSize(cc.size(parent.kViewWidth, parent.kCellHeight))
 
-		local label = ccui.Text:create("--", TTF_FONT_FZYH_M, 28)
+		local label = ccui.Text:create("--", TTF_FONT_FZY3JW, 28)
 
 		label:setName("label")
 		label:setColor(cc.c3b(52, 65, 132))
@@ -136,7 +136,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 		bgPress:setAnchorPoint(cc.p(0, 0))
 		scollerCell:addChild(bgPress, 0)
 
-		local textField = ccui.TextField:create("input words here", TTF_FONT_FZYH_M, 30)
+		local textField = ccui.TextField:create("input words here", TTF_FONT_FZY3JW, 30)
 
 		textField:setAnchorPoint(cc.p(0, 0))
 		textField:setVisible(true)
@@ -145,6 +145,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 		scollerCell:addChild(textField, 1000)
 		textField:setPosition(10, parent.kCellHeight * 0.2)
 		textField:setName("textField")
+		textField:setSwallowTouches(false)
 
 		return scollerCell
 	end
@@ -202,48 +203,67 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 					name = data.title
 				end
 
+				label:setTextAreaSize(cc.size(330, 30))
 				label:setString(name)
+				label:getVirtualRenderer():setOverflow(cc.LabelOverflow.NONE)
+				label:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
 			end
 
 			if data.type == "Input" or data.type == "SelectBox" then
 				local textField = cell:getChildByName("textField")
 
 				if textField then
-					textField:setVisible(true)
-					textField:setTouchAreaEnabled(true)
-					textField:setTouchSize(cc.size(parent.kViewWidth - 10, parent.kCellHeight - 10))
+					textField:ignoreContentAdaptWithSize(false)
+					textField:setContentSize(cc.size(350, 40))
 
-					if textField:getString() == "input words here" and data.default then
-						textField:setString(data.default)
+					textField = convertTextFieldToEditBox(textField, true, MaskWordType.NAME)
+
+					textField:posite(10, 15)
+
+					if textField:getText() == "input words here" and data.default then
+						textField:setText(data.default)
 					end
 
+					local label = textField:getContentLabel()
+
+					label:setAnchorPoint(cc.p(0, 0.5))
+
+					local size = label:getContentSize()
+
+					label:setPositionX(size.width)
+
+					local placeLabel = textField:getPlaceholderLabel()
+
+					placeLabel:setAnchorPoint(cc.p(0, 0.5))
+
+					local size = placeLabel:getContentSize()
+
+					placeLabel:setPositionX(size.width)
+
 					if data.type == "Input" then
-						textField:addEventListener(function (sender, type)
-							data.mtext = sender:getString()
+						textField:onEvent(function (eventName, sender)
+							data.mtext = sender:getText()
 
-							if type == ccui.TextFiledEventType.attach_with_ime then
+							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
-
-								if data.mtext == tostring(data.default) then
-									sender:setString("")
-								end
-							elseif type == ccui.TextFiledEventType.detach_with_ime then
+								sender:setPlaceHolder("")
+							elseif eventName == "ended" then
 								if data.mtext == tostring(data.default) or data.mtext == "" then
-									sender:setString(data.default)
+									sender:setText(data.default)
 								end
-							elseif type == ccui.TextFiledEventType.insert_text then
+							elseif eventName == "return" then
 								-- Nothing
-							elseif type == ccui.TextFiledEventType.delete_backward then
+							elseif eventName == "changed" then
 								-- Nothing
 							end
 						end)
 					elseif data.type == "SelectBox" then
-						textField:addEventListener(function (sender, type)
-							data.mtext = sender:getString()
+						textField:onEvent(function (eventName, sender)
+							data.mtext = sender:getText()
 
-							if type == ccui.TextFiledEventType.attach_with_ime then
+							if eventName == "began" then
 								self:_tableCellTouchedImpl(table, cell)
-								sender:setString("")
+								sender:setPlaceHolder("")
 
 								if data._selectBoxShow ~= true then
 									data._selectBoxShow = true
@@ -251,11 +271,13 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 									createSelectBox(cell, data)
 									tableView:reloadData()
 								end
-							elseif type == ccui.TextFiledEventType.detach_with_ime then
+							elseif eventName == "ended" then
 								if data.mtext == tostring(data.default) or data.mtext == "" then
-									sender:setString(data.default)
+									sender:setText(data.default)
 								end
-							elseif type == ccui.TextFiledEventType.insert_text or type == ccui.TextFiledEventType.delete_backward then
+							elseif eventName == "return" then
+								-- Nothing
+							elseif eventName == "changed" then
 								cell.selectBox.config = data.selectHandler(data.mtext)
 
 								cell.selectBox.view:reloadData()
@@ -290,7 +312,7 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 					bg:setBackGroundImage(DebugBoxTool:getResPath("pic_dm_debug_tab_frame.png"))
 					bg:setBackGroundImageCapInsets(cc.rect(20, 40, 18, 18))
 
-					local text = ccui.Text:create("", TTF_FONT_FZYH_M, 18)
+					local text = ccui.Text:create("", TTF_FONT_FZY3JW, 18)
 
 					text:setName("selectBoxLabel")
 					text:setColor(cc.c3b(52, 65, 132))
@@ -316,11 +338,11 @@ function DebugViewParser:setupScrollerView(rootNode, scollViewRect, viewObj)
 					if str and type(str) == "table" then
 						data.mtext = str[1]
 
-						textField:setString(str[1])
+						textField:setText(str[1])
 					elseif str then
 						data.mtext = str
 
-						textField:setString(str)
+						textField:setText(str)
 					end
 
 					if data._selectBoxAutoHide and data._selectBoxShow == true then

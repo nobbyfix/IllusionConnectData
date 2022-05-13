@@ -32,6 +32,8 @@ function DebugBox:initialize()
 	self._viewParser = DebugViewParser:new()
 
 	self:initIndexData()
+
+	self._isShow = false
 end
 
 function table.capacity(t)
@@ -98,11 +100,12 @@ function DebugBox:setupView(parentLayer)
 
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
-	self._timeLabel = cc.Label:createWithTTF(str, TTF_FONT_FZYH_R, 20)
+	self._timeLabel = cc.Label:createWithTTF(str, TTF_FONT_FZY3JW, 20)
 
 	self._timeLabel:setTextColor(cc.c3b(255, 255, 0))
 	self._timeLabel:posite(31.5, 65)
 	debugBtn:addChild(self._timeLabel)
+	self:addShowLocalTime()
 
 	if self._timer == nil then
 		self._timer = LuaScheduler:getInstance():schedule(handler(self, self.refreshNetDelay), 0.2, false)
@@ -253,9 +256,15 @@ function DebugBox:show()
 			local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
 
 			scene:popTopView()
+		elseif self._isShow then
+			self:hide()
+
+			self._isShow = false
 		else
 			self._parentLayer:addChild(self:getDisplayNode())
 			self:getDisplayNode():setVisible(true)
+
+			self._isShow = true
 		end
 	end
 end
@@ -368,7 +377,7 @@ function DebugBox:setupScrollerView(rootNode, scollViewRect)
 
 		scollerCell:setContentSize(cc.size(parent.kScollerWidth, cellHeight))
 
-		local label = ccui.Text:create("--", TTF_FONT_FZYH_M, 30)
+		local label = ccui.Text:create("--", TTF_FONT_FZY3JW, 30)
 
 		label:setName("label")
 		DebugBoxTool:centerAddNode(scollerCell, label, 20, 1)
@@ -454,7 +463,7 @@ function DebugBox:setupRightScrollerView(rootNode, scollViewRect)
 
 		scollerCell:setContentSize(cc.size(parent.kScollerWidth, cellHeight))
 
-		local label = ccui.Text:create("--", TTF_FONT_FZYH_M, 30)
+		local label = ccui.Text:create("--", TTF_FONT_FZY3JW, 30)
 
 		label:setName("label")
 		DebugBoxTool:centerAddNode(scollerCell, label, 20, 1)
@@ -532,6 +541,11 @@ end
 
 function DebugBox:refreshNetDelay()
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+
+	if DisposableObject:isDisposed(gameServerAgent) then
+		return
+	end
+
 	local str = "网络延时：" .. tostring(gameServerAgent:getNetDelay()) .. " ms"
 
 	if self._timeLabel then
@@ -550,5 +564,25 @@ function DebugBox:clearTime()
 
 	if self._timeLabel then
 		self._timeLabel = nil
+	end
+end
+
+function DebugBox:addShowLocalTime()
+	if self._timeLabel and not DisposableObject:isDisposed(self._timeLabel) then
+		local label = ccui.Text:create("", TTF_FONT_FZYH_R, 20)
+
+		label:addTo(self._timeLabel):posite(70, -20)
+		label:setColor(cc.c3b(255, 0, 0))
+
+		local gameServerAgent = DmGame:getInstance()._injector:getInstance(GameServerAgent)
+
+		local function checkTimeFunc()
+			local remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local date = TimeUtil:localDate("%Y.%m.%d  %H:%M:%S", remoteTimestamp)
+
+			label:setString(date)
+		end
+
+		self._localShowTimer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
 	end
 end

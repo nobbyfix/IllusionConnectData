@@ -17,6 +17,9 @@ RankMediator:has("_crusadeSystem", {
 RankMediator:has("_gameServerAgent", {
 	is = "r"
 }):injectWith("GameServerAgent")
+RankMediator:has("_clubSystem", {
+	is = "r"
+}):injectWith("ClubSystem")
 
 local kBtnHandlers = {
 	["main.viewPanel.rewardPanel"] = {
@@ -35,7 +38,7 @@ local kRankCell = {
 	[RankType.kMap] = MapRankCell,
 	[RankType.kCrusade] = CrusadeRankCell,
 	[RankType.kArena] = ArenaRankCell,
-	[RankType.kPetRace] = PetRaceRankCell,
+	[RankType.KPetWorldScore] = PetRaceRankCell,
 	[RankType.kClubBoss] = ClubBossRankCell
 }
 local kTextTitle = {
@@ -51,11 +54,11 @@ local kTextTitle = {
 		title3 = Strings:get("RANK_UI4"),
 		title4 = Strings:get("RANK_UI6")
 	},
-	[RankType.kPetRace] = {
+	[RankType.KPetWorldScore] = {
 		title1 = Strings:get("RANK_UI2"),
 		title2 = Strings:get("RANK_UI3"),
-		title3 = Strings:get("Rank_Petrace_WinNum"),
-		title4 = Strings:get("Rank_Petrace_Score")
+		title3 = Strings:get("Petrace_Whole_Point"),
+		title4 = Strings:get("Petrace_World_Point")
 	},
 	[RankType.kClub] = {
 		title1 = Strings:get("RANK_UI2"),
@@ -115,7 +118,7 @@ function RankMediator:onRegister()
 	local bgNode = self:getView():getChildByFullName("main.bgNode")
 	local tempNode = bindWidget(self, bgNode, PopupNormalTabWidget, {
 		btnHandler = {
-			clickAudio = "Se_Click_Close_2",
+			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
 		},
 		title = Strings:get("RANK_TITLE"),
@@ -132,7 +135,7 @@ function RankMediator:onRegister()
 	titleText2:setString(Strings:get("UITitle_EN_Lianjiezherikan"))
 
 	local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local month = date.month >= 10 and date.month or "0" .. date.month
 	local day = date.day >= 10 and date.day or "0" .. date.day
 	local week = date.wday == 1 and 7 or date.wday - 1
@@ -146,6 +149,21 @@ function RankMediator:onRegister()
 		year = date.year,
 		week = GameStyle:intNumToWeekString(week)
 	}))
+
+	local titleText1_frame_w = titleText1:getContentSize().width
+	local titleText1_text_w = titleText1:getAutoRenderSize().width
+
+	print("getAutoRenderSize = " .. titleText1_text_w .. ", getTextAreaSize = " .. titleText1:getTextAreaSize().width)
+
+	if titleText1_frame_w < titleText1_text_w then
+		titleText1_text_w = titleText1_frame_w
+	end
+
+	local lineImage = self:getView():getChildByFullName("main.rankBg.main_bg_0")
+
+	lineImage:setPositionX(titleText1_text_w + 60)
+	dateText:setPositionX(titleText1_text_w + 70)
+	dateyear:setPositionX(titleText1_text_w + 70)
 end
 
 function RankMediator:enterWithData(data)
@@ -206,7 +224,9 @@ function RankMediator:setTopThreeInfo()
 
 				if data._surfaceId then
 					local roleModel = ConfigReader:getDataByNameIdAndKey("Surface", data._surfaceId, "Model")
-					heroAnim, jsonPath = RoleFactory:createHeroAnimation(roleModel)
+					local actionType = ConfigReader:getDataByNameIdAndKey("Surface", data._surfaceId, "Type")
+					local action = actionType == SurfaceType.kAwake and "stand1" or "stand"
+					heroAnim, jsonPath = RoleFactory:createHeroAnimation(roleModel, action)
 				else
 					heroAnim, jsonPath = RoleFactory:createHeroAnimation("Model_" .. data._board)
 				end
@@ -216,7 +236,7 @@ function RankMediator:setTopThreeInfo()
 				heroAnim:setScale(0.6)
 			end
 
-			if type == RankType.kPetRace or type == RankType.kSubPetRace then
+			if type == RankType.KPetWorldScore or type == RankType.kSubPetRace then
 				rankNumText = data:getScore()
 			end
 
@@ -276,7 +296,7 @@ function RankMediator:initWigetInfo()
 	myselfInfo:addClickEventListener(function ()
 		local type = self._allRankData[self._curTabType].AppID
 
-		if type == RankType.kPetRace then
+		if type == RankType.KPetWorldScore then
 			return
 		end
 
@@ -288,25 +308,21 @@ function RankMediator:initWigetInfo()
 
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
-		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
-			self._friendSystem:requestFriendsMainInfo(function ()
-				local view = self:getInjector():getInstance("PlayerInfoView")
+		local showView = false
 
-				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-					transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-				}, myselfData))
-			end)
+		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
+			showView = true
 		elseif myselfData:getRid() == "" then
 			self:dispatch(ShowTipEvent({
 				duration = 0.35,
 				tip = Strings:get("RelationText9")
 			}))
 		else
-			local view = self:getInjector():getInstance("PlayerInfoView")
+			showView = true
+		end
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, myselfData, nil))
+		if showView then
+			self._friendSystem:showFriendPlayerInfoView(myselfData:getRid(), myselfData)
 		end
 	end)
 	self._title1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
@@ -427,6 +443,8 @@ function RankMediator:createTableView()
 				local textData = self._crusadeSystem:getRankShowFloorData(tonumber(record:getPoint()))
 
 				cell.rankCell:refreshData(record, textData)
+			elseif type == RankType.KPetWorldScore then
+				cell.rankCell:refreshData(record)
 			else
 				cell.rankCell:refreshData(record)
 			end
@@ -464,20 +482,14 @@ function RankMediator:onClickRankCell(cell)
 	end
 
 	if type == RankType.kClub or type == RankType.kClubBoss then
-		local view = self:getInjector():getInstance("PlayerInfoView")
+		local clubId = record:getClubId()
 
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		self._clubSystem:requestClubDetailInfoData(clubId, {
 			remainLastView = true,
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record, nil))
-	elseif type ~= RankType.kPetRace then
-		self._friendSystem:requestFriendsMainInfo(function ()
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
-		end)
+		}, nil)
+	else
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 end
 

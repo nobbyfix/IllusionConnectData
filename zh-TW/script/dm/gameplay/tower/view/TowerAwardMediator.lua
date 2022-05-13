@@ -39,6 +39,8 @@ end
 function TowerAwardMediator:initContent()
 	self:getView():getChildByFullName("main.title_node.Text_1"):setString(Strings:get("Tower_Button_Reward"))
 	self:getView():getChildByFullName("main.title_node.Text_2"):setString(Strings:get("UITitle_EN_Jiangli"))
+	self:getView():getChildByFullName("main.button_rule"):setVisible(false)
+	self:getView():getChildByFullName("main.Text_191_0_0"):setVisible(false)
 
 	self._listView = self:getView():getChildByFullName("main.listview")
 	self._titlePanel = self:getView():getChildByFullName("main.title_panel")
@@ -180,6 +182,9 @@ function TowerAwardMediator:onClickRule()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end

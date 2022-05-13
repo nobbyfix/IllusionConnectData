@@ -778,10 +778,14 @@ function string.formatnumberthousands(num)
 	return formatted
 end
 
-function schedule(node, callback, delay)
+function schedule(node, callback, delay, tag)
 	local delay = cc.DelayTime:create(delay)
 	local sequence = cc.Sequence:create(delay, cc.CallFunc:create(callback))
 	local action = cc.RepeatForever:create(sequence)
+
+	if tag then
+		action:setTag(tag)
+	end
 
 	node:runAction(action)
 

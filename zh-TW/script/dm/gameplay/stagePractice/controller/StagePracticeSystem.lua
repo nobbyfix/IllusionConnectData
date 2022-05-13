@@ -16,6 +16,12 @@ StagePracticeSystem:has("_systemKeeper", {
 	is = "r"
 }):injectWith("SystemKeeper")
 
+kStagePracticeType = {
+	"Stage_Exercise",
+	"Stage_Challenge",
+	"Stage_Battle"
+}
+
 function StagePracticeSystem:initialize()
 	super.initialize(self)
 
@@ -836,8 +842,34 @@ function StagePracticeSystem:getPointConfigById(pointId)
 	return ConfigReader:getRecordById("StagePracticePoint", pointId)
 end
 
-function StagePracticeSystem:tryEnter()
-	local unlock, tips, unLockLevel = self._systemKeeper:isUnlock("Stage_Practice")
+function StagePracticeSystem:canShow(index)
+	local canShow = self._systemKeeper:canShow(kStagePracticeType[index])
+
+	return canShow
+end
+
+function StagePracticeSystem:checkEnabled(params)
+	local unlock, tips, unLockLevel = self._systemKeeper:isUnlock("BlockSp_All")
+
+	if not unlock then
+		return unlock, tips, unLockLevel
+	end
+
+	unlock, tips, unLockLevel = self._systemKeeper:isUnlock("Stage_Exercise")
+
+	if not unlock then
+		return unlock, tips, unLockLevel
+	end
+
+	if params and params.practiceType then
+		unlock, tips, unLockLevel = self._systemKeeper:isUnlock(kStagePracticeType[params.practiceType])
+	end
+
+	return unlock, tips, unLockLevel
+end
+
+function StagePracticeSystem:tryEnter(params)
+	local unlock, tips, unLockLevel = self:checkEnabled(params)
 
 	if unlock then
 		local view = self:getInjector():getInstance("StagePracticeEnterView")

@@ -91,3 +91,9 @@ function MasterService:requestBuyAuraItem(params, blockUI, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function MasterService:requestLeadStageUp(params, blockUI, callback)
+	local request = self:newRequest(11106, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

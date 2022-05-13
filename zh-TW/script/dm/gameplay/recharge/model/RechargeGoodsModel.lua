@@ -82,7 +82,7 @@ function RechargeGoodsModel:synchronizeModel(data)
 	self._getnumber = data.Getnumber or 0
 	self._firstbuynumber = data.Firstbuynumber or 0
 	self._giftnumber = data.Giftnumber or 0
-	self._iconAnim = data.Pic
+	self._iconAnim = data.Pic .. ".png"
 	self._bgType = data.Picture
 	self._giftnumber2 = data.Giftnumber2 or 0
 end
@@ -182,7 +182,7 @@ function MonthCardModel:initialize(id)
 	self._endTimes = -1
 	self._lastRewardTimes = -1
 	self._name = Strings:get(self._config.Name)
-	self._icon = self._config.Picture
+	self._icon = self._config.Picture .. ".png"
 	self._buyIcon = self._config.Title
 	self._desc = Strings:get(self._config.Desc)
 	self._sort = self._config.Sort

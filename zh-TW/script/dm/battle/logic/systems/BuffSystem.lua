@@ -63,10 +63,12 @@ function BuffSystem:updateTiming(target, timingMode)
 				local unit = targetAgent:getTargetObject()
 
 				self._skillSystem:activateSpecificTrigger(unit, "BUFF_ENDED", {
-					buff = buffObject
+					buff = buffObject,
+					unit = unit
 				})
 				self._skillSystem:activateGlobalTrigger("UNIT_BUFF_ENDED", {
-					buff = buffObject
+					buff = buffObject,
+					unit = unit
 				})
 			end
 		end
@@ -230,10 +232,12 @@ function BuffSystem:cancelBuffEffect(buffObject, workId, ignoreTriggerEvent)
 		local unit = canceledTarget:getTargetObject()
 
 		self._skillSystem:activateSpecificTrigger(unit, "BUFF_CANCELED", {
-			buff = buffObject
+			buff = buffObject,
+			unit = unit
 		})
 		self._skillSystem:activateGlobalTrigger("UNIT_BUFF_CANCELED", {
-			buff = buffObject
+			buff = buffObject,
+			unit = unit
 		})
 	end
 
@@ -260,10 +264,12 @@ function BuffSystem:brokeBuffEffect(buffObject, workId)
 	local unit = canceledTarget:getTargetObject()
 
 	self._skillSystem:activateSpecificTrigger(unit, "BUFF_BROKED", {
-		buff = buffObject
+		buff = buffObject,
+		unit = unit
 	})
 	self._skillSystem:activateGlobalTrigger("UNIT_BUFF_BROKED", {
-		buff = buffObject
+		buff = buffObject,
+		unit = unit
 	})
 
 	return canceledTarget:getTargetObject()
@@ -385,10 +391,12 @@ function BuffSystem:stealBuffsOnTarget(actor, target, condition, workId)
 			local unit = targetAgent:getTargetObject()
 
 			self._skillSystem:activateSpecificTrigger(unit, "BUFF_STEALED", {
-				buff = buffObject
+				buff = buffObject,
+				unit = unit
 			})
 			self._skillSystem:activateGlobalTrigger("UNIT_BUFF_STEALED", {
-				buff = buffObject
+				buff = buffObject,
+				unit = unit
 			})
 
 			total = total + 1
@@ -419,7 +427,15 @@ function BuffSystem:cloneBuffsOnTarget(actor, target, condition, workId)
 		local buffObject = buffs[i]
 		total = total + 1
 
-		self:applyBuffOnTarget(actor, buffObject:clone(), nil, workId)
+		if buffObject._groupId then
+			local buffObjs = buffObject:clone()
+
+			for k, v in pairs(buffObjs) do
+				self:applyBuffOnTarget(actor, v, nil, workId)
+			end
+		else
+			self:applyBuffOnTarget(actor, buffObject:clone(), nil, workId)
+		end
 	end
 
 	return total

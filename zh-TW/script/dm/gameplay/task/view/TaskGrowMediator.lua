@@ -529,7 +529,7 @@ function TaskGrowMediator:refreshCell(cell, index)
 		local condition = systemData.Condition
 
 		if condition.LEVEL then
-			conditionLabel:setString("Lv." .. condition.LEVEL)
+			conditionLabel:setString(Strings:get("Common_LV_Text") .. condition.LEVEL)
 		end
 
 		if condition.STAGE then

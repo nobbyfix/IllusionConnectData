@@ -308,7 +308,7 @@ function StagePracticeRankMediator:createCell(cell, tag)
 
 	local levelLabel = cell:getChildByFullName("levellabel")
 
-	levelLabel:setString("Lv." .. data:getLevel())
+	levelLabel:setString(Strings:get("Common_LV_Text") .. data:getLevel())
 
 	local nameLabel = cell:getChildByFullName("namelabel")
 

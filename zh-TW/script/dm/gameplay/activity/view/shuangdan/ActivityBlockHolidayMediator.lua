@@ -80,7 +80,7 @@ end
 
 function ActivityBlockHolidayMediator:onRegister()
 	super.onRegister(self)
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 end
 
 function ActivityBlockHolidayMediator:adjustLayout(targetFrame)
@@ -89,17 +89,29 @@ end
 
 function ActivityBlockHolidayMediator:enterWithData(data)
 	self._activityId = data.activityId
-	self._activity = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._endtipStr = Strings:get(self._activity:getActivityConfig().SubActivityEndTip)
 
 	self:mapEventListeners()
-	self:setupTopInfoWidget()
 	self:setupView()
 	self:refreshRedPoint()
 end
 
 function ActivityBlockHolidayMediator:resumeWithData(data)
 	super.resumeWithData(self, data)
+	self:doReset()
 end
 
 function ActivityBlockHolidayMediator:mapEventListeners()
@@ -111,9 +123,9 @@ end
 function ActivityBlockHolidayMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
 		return true
@@ -130,9 +142,6 @@ end
 function ActivityBlockHolidayMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = self._activity:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -140,6 +149,20 @@ function ActivityBlockHolidayMediator:setupTopInfoWidget()
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityBlockHolidayMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = self._activity:getResourcesBanner()
+	}
 
 	self._topInfoWidget:updateView(config)
 end
@@ -158,10 +181,8 @@ function ActivityBlockHolidayMediator:setupView()
 	self._scrollView:setInnerContainerPosition(cc.p(-130, 0))
 
 	local timeText = self._main:getChildByFullName("Image_title.Text_time")
-	local startData = TimeUtil:localDate("%Y.%m.%d", self._activity:getStartTime() * 0.001)
-	local endData = TimeUtil:localDate("%Y.%m.%d", self._activity:getEndTime() * 0.001)
 
-	timeText:setString(startData .. "-" .. endData)
+	timeText:setString(self._activity:getTimeStr())
 	self:initTimer()
 	self:addAnim()
 	self:addRole()
@@ -398,7 +419,7 @@ end
 function ActivityBlockHolidayMediator:initTimer()
 	local supportBtn = self._main:getChildByFullName("ScrollView.panel.btn_mjght")
 	local supportActivityId = self._activity:getActivityConfig().ActivitySupport
-	local supportActivity = self._activitySystem:getActivityById(supportActivityId)
+	local supportActivity = self._activitySystem:getActivityByComplexId(supportActivityId)
 	local remainLabel = supportBtn:getChildByName("Text_time")
 
 	if supportActivity then
@@ -517,7 +538,7 @@ function ActivityBlockHolidayMediator:refreshRedPoint()
 			local blockActivity = self._activity:getBlockMapActivity()
 
 			if blockActivity then
-				self._activitySystem:hasRedPointForActivity(blockActivity:getId())
+				return blockActivity:hasRedPoint()
 			end
 
 			return false
@@ -679,7 +700,7 @@ function ActivityBlockHolidayMediator:onClickDraw()
 	local drawId = nil
 
 	for i, id in pairs(drawCardList) do
-		local activity = self._activitySystem:getActivityById(id)
+		local activity = self._activitySystem:getActivityByComplexId(id)
 
 		if activity then
 			drawId = activity:getActivityConfig().DRAW
@@ -709,7 +730,7 @@ end
 
 function ActivityBlockHolidayMediator:onClickSign()
 	local loginId = self._activity:getActivityConfig().LoginActivity
-	local model = self._activitySystem:getActivityById(loginId)
+	local model = self._activitySystem:getActivityByComplexId(loginId)
 
 	if not model then
 		self:dispatch(ShowTipEvent({
@@ -729,7 +750,7 @@ end
 
 function ActivityBlockHolidayMediator:onClickSupport()
 	local supportActivityId = self._activity:getActivityConfig().ActivitySupport
-	local supportActivity = self._activitySystem:getActivityById(supportActivityId)
+	local supportActivity = self._activitySystem:getActivityByComplexId(supportActivityId)
 
 	if not supportActivity then
 		self:dispatch(ShowTipEvent({
@@ -751,7 +772,7 @@ function ActivityBlockHolidayMediator:onClickSupport()
 		}
 
 		self._activitySystem:requestDoActivity(supportActivityId, params, function (response)
-			self._activitySystem:getActivityById(supportActivityId):synchronizePeriodsInfo(response.data)
+			self._activitySystem:getActivityByComplexId(supportActivityId):synchronizePeriodsInfo(response.data)
 			self._activitySystem:enterSagaWinView(supportActivityId)
 		end)
 	else
@@ -820,6 +841,23 @@ function ActivityBlockHolidayMediator:onClickRule()
 	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
 
 	local rules = self._activity:getActivityConfig().RuleDesc
+	local supportActivityId = self._activity:getActivityConfig().ActivitySupport
+	local supportActivity = self._activitySystem:getActivityByComplexId(supportActivityId)
+	local param = nil
 
-	self._activitySystem:showActivityRules(rules)
+	if supportActivity then
+		local timeFactor = supportActivity:getConfig().TimeFactor
+		local start = TimeUtil:parseDateTime({}, timeFactor.start[1])
+		local startTs = TimeUtil:timeByRemoteDate(start)
+		local periodId = supportActivity:getActivityConfig().ActivitySupportId[1]
+		local periodCfg = ConfigReader:getRecordById("ActivitySupport", periodId)
+		local startTime = startTs + periodCfg.PrepareTime
+		local endTime = startTs + periodCfg.PrepareTime + periodCfg.Time
+		param = {
+			startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", startTime),
+			endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", endTime)
+		}
+	end
+
+	self._activitySystem:showActivityRules(rules, nil, param)
 end

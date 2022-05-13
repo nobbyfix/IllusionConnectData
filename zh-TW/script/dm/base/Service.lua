@@ -21,7 +21,10 @@ function Service:newRequest(opcode, params, callback)
 	local rid = loginSystem:getPlayerRid()
 	local cjson = require("cjson.safe")
 	local paramsData = cjson.encode(params)
-	paramsData = string.char(version, string.len(rid)) .. rid .. paramsData
+
+	if paramsData ~= nil then
+		paramsData = string.char(version, string.len(rid)) .. rid .. paramsData
+	end
 
 	if GAME_SHOW_NETDATA then
 		if GameConfigs.dpsLoggerEnable and GameConfigs.dpsLoggerConfig.userName then

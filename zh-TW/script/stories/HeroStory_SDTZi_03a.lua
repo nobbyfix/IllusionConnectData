@@ -157,7 +157,7 @@ function scene_HeroStory_SDTZi_03a.actions.start_HeroStory_SDTZi_03a(_root, args
 					modelId = "Model_Story_SDTZi",
 					id = "SDTZi_speak_Daily",
 					rotationX = 0,
-					scale = 1.02,
+					scale = 1,
 					position = {
 						x = 0,
 						y = -380,
@@ -318,10 +318,10 @@ function scene_HeroStory_SDTZi_03a.actions.start_HeroStory_SDTZi_03a(_root, args
 					modelId = "Model_SDTZi",
 					id = "SDTZi_speak",
 					rotationX = 0,
-					scale = 1.145,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -330,
+						y = -375,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -345,8 +345,8 @@ function scene_HeroStory_SDTZi_03a.actions.start_HeroStory_SDTZi_03a(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -79,
-								y = 679.8
+								x = -112,
+								y = 1026
 							}
 						}
 					}

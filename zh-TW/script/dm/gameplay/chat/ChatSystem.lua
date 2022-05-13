@@ -1,6 +1,8 @@
 EVT_CHAT_NEW_MESSAGE = "EVT_CHAT_NEW_MESSAGE"
 EVT_CHAT_NEW_PRIVATEMESSAGE = "EVT_CHAT_NEW_PRIVATEMESSAGE"
 EVT_CHAT_SEND_MESSAGE_SUCC = "EVT_CHAT_SEND_MESSAGE_SUCC"
+EVT_CHAT_REMOVE_MESSAGE_SUCC = "EVT_CHAT_REMOVE_MESSAGE_SUCC"
+EVT_CHAT_SHIELD_MESSAGE_SUCC = "EVT_CHAT_SHIELD_MESSAGE_SUCC"
 ChatSystem = class("ChatSystem", Facade, _M)
 
 ChatSystem:has("_service", {
@@ -18,12 +20,16 @@ ChatSystem:has("_isOnlyShowSelf", {
 ChatSystem:has("_shieldList", {
 	is = "rw"
 })
+ChatSystem:has("_shieldFriendList", {
+	is = "rw"
+})
 
 function ChatSystem:initialize()
 	super.initialize(self)
 
 	self._isOnlyShowSelf = false
 	self._shieldList = {}
+	self._shieldFriendList = {}
 
 	self:getEmotionData()
 end
@@ -65,6 +71,9 @@ function ChatSystem:updateActiveMember()
 	local activeMembers = self._chat:getActiveMembers()
 	local rid = player:getRid()
 	local clubSystem = self:getInjector():getInstance(ClubSystem)
+	local masterId = self:getDevelopSystem():getTeamByType(StageTeamType.STAGE_NORMAL):getMasterId()
+	local masterSystem = self:getDevelopSystem():getMasterSystem()
+	local id, level = masterSystem:getMasterLeadStatgeLevel(masterId)
 	local sender = {
 		id = rid,
 		nickname = player:getNickName(),
@@ -76,13 +85,15 @@ function ChatSystem:updateActiveMember()
 		clubName = clubSystem:getName(),
 		heroes = self:getHeroes(),
 		master = {
-			self:getDevelopSystem():getTeamByType(StageTeamType.STAGE_NORMAL):getMasterId()
+			masterId
 		},
 		gender = player:getGender(),
 		city = player:getCity(),
 		birthday = player:getBirthday(),
 		tags = player:getTags(),
-		headFrame = player:getCurHeadFrame()
+		headFrame = player:getCurHeadFrame(),
+		leadStageId = id,
+		leadStageLevel = level
 	}
 	activeMembers[rid] = sender
 end
@@ -250,18 +261,37 @@ function ChatSystem:requestBlockUser(block, unblock, callback)
 	self:getService():requestBlockUser(params, function (response)
 		if response.resCode == GS_SUCCESS then
 			if response.data then
-				self._shieldList = response.data
+				self._shieldList = response.data.blockList or {}
+				self._shieldFriendList = response.data.friendBlockList or {}
 			end
 
 			if callback then
 				callback(response.data)
 			end
+
+			self:dispatch(Event:new(EVT_CHAT_SHIELD_MESSAGE_SUCC, {
+				data = response.data
+			}))
 		end
 	end, true)
 end
 
+function ChatSystem:getShieldList()
+	local list = {}
+
+	for key, value in pairs(self._shieldList) do
+		list[#list + 1] = value
+	end
+
+	return list
+end
+
 function ChatSystem:getBlockUserStatus(senderId)
-	return table.indexof(self._shieldList, senderId) and true or false
+	return self._shieldList[senderId]
+end
+
+function ChatSystem:getBlockUserFriendStatus(senderId)
+	return table.indexof(self._shieldFriendList, senderId)
 end
 
 function ChatSystem:requestGetBlockList()
@@ -269,7 +299,8 @@ function ChatSystem:requestGetBlockList()
 
 	self:getService():requestGetBlockList(params, function (response)
 		if response.resCode == GS_SUCCESS and response.data then
-			self._shieldList = response.data
+			self._shieldList = response.data.blockList or {}
+			self._shieldFriendList = response.data.friendBlockList or {}
 		end
 	end, true)
 end
@@ -304,4 +335,25 @@ end
 
 function ChatSystem:getEmotionDataById(id)
 	return self._emotionData[id]
+end
+
+function ChatSystem:requestRemoveMessage(channelId, playerId, callback)
+	local params = {
+		friendRid = playerId
+	}
+
+	self:getService():requestRemoveMessage(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self._chat:delMessage(channelId)
+
+			if callback then
+				callback(response.data)
+			end
+
+			self:dispatch(Event:new(EVT_CHAT_REMOVE_MESSAGE_SUCC, {
+				channelId = channelId,
+				playerId = playerId
+			}))
+		end
+	end, true)
 end

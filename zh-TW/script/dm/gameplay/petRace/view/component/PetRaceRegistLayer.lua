@@ -65,6 +65,8 @@ function PetRaceRegistLayer:intiView()
 	local autobtn = node_regist:getChildByName("Node_autoBtn")
 	local text_autoRegist = node_regist:getChildByName("Text_autoRegist")
 
+	text_autoRegist:setTextAreaSize(cc.size(160, 58))
+
 	if not self._petRaceSystem:isAutoEnable() then
 		autobtn:setVisible(false)
 		text_autoRegist:setVisible(false)
@@ -221,6 +223,18 @@ function PetRaceRegistLayer:initSelectIndex()
 	local enterIndex = self._petRaceSystem:getPetRace():getEnterIndex()
 	local matchStatus = self:getMatchStatus()
 	local selectIndex = enterIndex ~= -1 and enterIndex + 1 or self._petRaceSystem:getPetRace():getCurIndex() + 1
+	local enableMatch = {}
+
+	for k, v in pairs(matchStatus) do
+		if v.status == kStatus.open then
+			enableMatch[#enableMatch + 1] = v
+		end
+	end
+
+	if #enableMatch > 0 then
+		local randomIndex = math.random(1, #enableMatch)
+		selectIndex = enableMatch[randomIndex].index
+	end
 
 	self._petRaceSystem:setSelectIndex(selectIndex)
 	self:updateStatus(matchStatus[selectIndex])
@@ -370,9 +384,14 @@ function PetRaceRegistLayer:getMatchStatus()
 	local state = self._petRaceSystem:getPetRace():getState()
 
 	for idx, num in pairs(enterList) do
+		local localDate = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+			hour = string.split(matchNumbers[idx], ":")[1],
+			min = string.split(matchNumbers[idx], ":")[2],
+			sec = string.split(matchNumbers[idx], ":")[3]
+		}))
 		ret[idx] = {
 			index = idx,
-			time = matchNumbers[idx],
+			time = localDate,
 			limit = limitNum,
 			curNum = num
 		}

@@ -24,6 +24,7 @@
             "ADetectiveE01S11",
             "ADetectiveE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ADetectiveS01S03",
             "ADetectiveS01S04"
@@ -55,6 +56,7 @@
             "ADetectiveM01S11",
             "ADetectiveM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ADetectiveS01S01",
             "ADetectiveS01S02"
@@ -86,6 +88,7 @@
             "AE01S11",
             "AE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AS01E01",
             "AS01E02",
@@ -118,6 +121,7 @@
             "AHalloweenM01S05",
             "AHalloweenM01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -145,6 +149,7 @@
             "AHalloweenM02S06",
             "AHalloweenM02S07"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -174,6 +179,7 @@
             "AHalloweenM03S07",
             "AHalloweenM03S08"
         ],
+        "SubSort": "",
         "SubStoryPoint": "",
         "Type": "NORMAL"
     },
@@ -202,12 +208,81 @@
             "AM01S11",
             "AM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AS01S01",
             "AS01S02",
             "AS01S03",
             "AS01S04",
             "AS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "AMusicFestivalE01": {
+        "BGM": "Mus_Story_MusicFestival_2",
+        "Background": "MusicFestival_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MusicFestivalAE01_Name",
+        "StarBoxReward": {
+            "10": "AMusicFestivalE01BOX01",
+            "20": "AMusicFestivalE01BOX02",
+            "30": "AMusicFestivalE01BOX03"
+        },
+        "SubPoint": [
+            "AMusicFestivalE01S01",
+            "AMusicFestivalE01S02",
+            "AMusicFestivalE01S03",
+            "AMusicFestivalE01S04",
+            "AMusicFestivalE01S05",
+            "AMusicFestivalE01S06",
+            "AMusicFestivalE01S07",
+            "AMusicFestivalE01S08",
+            "AMusicFestivalE01S09",
+            "AMusicFestivalE01S10",
+            "AMusicFestivalE01S11",
+            "AMusicFestivalE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "AMusicFestivalS01E01",
+            "AMusicFestivalS01E02",
+            "AMusicFestivalS01E03",
+            "AMusicFestivalS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "AMusicFestivalM01": {
+        "BGM": "Mus_Story_MusicFestival_2",
+        "Background": "MusicFestival_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MusicFestivalAM01_Name",
+        "StarBoxReward": {
+            "10": "AMusicFestivalM01BOX01",
+            "20": "AMusicFestivalM01BOX02",
+            "30": "AMusicFestivalM01BOX03"
+        },
+        "SubPoint": [
+            "AMusicFestivalM01S01",
+            "AMusicFestivalM01S02",
+            "AMusicFestivalM01S03",
+            "AMusicFestivalM01S04",
+            "AMusicFestivalM01S05",
+            "AMusicFestivalM01S06",
+            "AMusicFestivalM01S07",
+            "AMusicFestivalM01S08",
+            "AMusicFestivalM01S09",
+            "AMusicFestivalM01S10",
+            "AMusicFestivalM01S11",
+            "AMusicFestivalM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "AMusicFestivalS01S01",
+            "AMusicFestivalS01S02",
+            "AMusicFestivalS01S03",
+            "AMusicFestivalS01S04"
         ],
         "Type": "NORMAL"
     },
@@ -230,6 +305,7 @@
             "ANewYearM01S05",
             "ANewYearM01S06"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS01S01",
             "ANewYearS01S02"
@@ -256,6 +332,7 @@
             "ANewYearM02S06",
             "ANewYearM02S07"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS02S01",
             "ANewYearS02S02"
@@ -283,6 +360,7 @@
             "ANewYearM03S07",
             "ANewYearM03S08"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ANewYearS03S01",
             "ANewYearS03S02",
@@ -316,6 +394,7 @@
             "ASummerE01S11",
             "ASummerE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASummerS01E01",
             "ASummerS01E02",
@@ -349,6 +428,7 @@
             "ASummerM01S11",
             "ASummerM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASummerS01S01",
             "ASummerS01S02",
@@ -383,6 +463,7 @@
             "AWuXiuHuiE01S11",
             "AWuXiuHuiE01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AWuXiuHuiS01E01",
             "AWuXiuHuiS01E02",
@@ -416,6 +497,7 @@
             "AWuXiuHuiM01S11",
             "AWuXiuHuiM01S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AWuXiuHuiS01S01",
             "AWuXiuHuiS01S02",
@@ -450,6 +532,7 @@
             "AE02S11",
             "AE02S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AZuoHeS01E01",
             "AZuoHeS01E02",
@@ -460,7 +543,7 @@
         "Type": "ELITE"
     },
     "AZuoHeM01": {
-        "BGM": "Mus_Zuohe_1",
+        "BGM": "Mus_Story_Festival",
         "Background": "Main_Event_03",
         "BackgroundLength": 960,
         "ColourEgg": "",
@@ -484,6 +567,7 @@
             "AM02S11",
             "AM02S12"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "AZuoHeS01S01",
             "AZuoHeS01S02",
@@ -492,6 +576,895 @@
             "AZuoHeS01S05"
         ],
         "Type": "NORMAL"
+    },
+    "AnimalM01": {
+        "BGM": "Mus_Story_Animal_Main",
+        "Background": "Animal_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_AnimalAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "AnimalSN01",
+            "AnimalSN02",
+            "AnimalSN03",
+            "AnimalSN04",
+            "AnimalSN05",
+            "AnimalSN06",
+            "AnimalSN07",
+            "AnimalSN08"
+        ],
+        "SubStoryPoint": [
+            "AnimalS01S01",
+            "AnimalS01S02",
+            "AnimalS01S03",
+            "AnimalS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "AnimalM02": {
+        "BGM": "Mus_Story_Animal_Main",
+        "Background": "Animal_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_AnimalAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "AnimalSE01",
+            "AnimalSE02",
+            "AnimalSE03",
+            "AnimalSE04",
+            "AnimalSE05",
+            "AnimalSE06",
+            "AnimalSE07",
+            "AnimalSE08",
+            "AnimalSE09",
+            "AnimalSE10",
+            "AnimalSE11"
+        ],
+        "SubStoryPoint": [
+            "AnimalS02S01",
+            "AnimalS02S02",
+            "AnimalS02S03",
+            "AnimalS02S04"
+        ],
+        "Type": "ELITE"
+    },
+    "BakingE01": {
+        "BGM": "Mus_Story_Common_2",
+        "Background": "Baking_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_BakingAE01_Name",
+        "StarBoxReward": {
+            "10": "BakingE01BOX01",
+            "20": "BakingE01BOX02",
+            "30": "BakingE01BOX03"
+        },
+        "SubPoint": [
+            "BakingE01S01",
+            "BakingE01S02",
+            "BakingE01S03",
+            "BakingE01S04",
+            "BakingE01S05",
+            "BakingE01S06",
+            "BakingE01S07",
+            "BakingE01S08",
+            "BakingE01S09",
+            "BakingE01S10",
+            "BakingE01S11",
+            "BakingE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "ELITE"
+    },
+    "BakingM01": {
+        "BGM": "Mus_Story_Common_2",
+        "Background": "Baking_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_BakingAM01_Name",
+        "StarBoxReward": {
+            "10": "BakingM01BOX01",
+            "20": "BakingM01BOX02",
+            "30": "BakingM01BOX03"
+        },
+        "SubPoint": [
+            "BakingM01S01",
+            "BakingM01S02",
+            "BakingM01S03",
+            "BakingM01S04",
+            "BakingM01S05",
+            "BakingM01S06",
+            "BakingM01S07",
+            "BakingM01S08",
+            "BakingM01S09",
+            "BakingM01S10",
+            "BakingM01S11",
+            "BakingM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "BakingS01S01",
+            "BakingS01S02",
+            "BakingS01S03",
+            "BakingS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "CollapsedE01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAE01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedE01BOX01",
+            "20": "CollapsedE01BOX02",
+            "30": "CollapsedE01BOX03"
+        },
+        "SubPoint": [
+            "CollapsedE01S01",
+            "CollapsedE01S02",
+            "CollapsedE01S03",
+            "CollapsedE01S04",
+            "CollapsedE01S05",
+            "CollapsedE01S06",
+            "CollapsedE01S07",
+            "CollapsedE01S08",
+            "CollapsedE01S09",
+            "CollapsedE01S10",
+            "CollapsedE01S11",
+            "CollapsedE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "CollapsedS01E01",
+            "CollapsedS01E02",
+            "CollapsedS01E03"
+        ],
+        "Type": "ELITE"
+    },
+    "CollapsedM01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAM01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedM01BOX01",
+            "20": "CollapsedM01BOX02",
+            "30": "CollapsedM01BOX03"
+        },
+        "SubPoint": [
+            "CollapsedM01S01",
+            "CollapsedM01S02",
+            "CollapsedM01S03",
+            "CollapsedM01S04",
+            "CollapsedM01S05",
+            "CollapsedM01S06",
+            "CollapsedM01S07",
+            "CollapsedM01S08",
+            "CollapsedM01S09",
+            "CollapsedM01S10",
+            "CollapsedM01S11",
+            "CollapsedM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "CollapsedS01S01",
+            "CollapsedS01S02",
+            "CollapsedS01S03",
+            "CollapsedS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "CollapsedN01": {
+        "BGM": "Mus_Story_Collapsed",
+        "Background": "Collapsed_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_CollapsedAE01_Name",
+        "StarBoxReward": {
+            "10": "CollapsedN01BOX02",
+            "15": "CollapsedN01BOX03",
+            "5": "CollapsedN01BOX01"
+        },
+        "SubPoint": [
+            "CollapsedN01S01",
+            "CollapsedN01S02",
+            "CollapsedN01S03",
+            "CollapsedN01S04",
+            "CollapsedN01S05",
+            "CollapsedN01S06"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "CollapsedS01N01"
+        ],
+        "Type": "NORMAL"
+    },
+    "DeepSeaM01": {
+        "BGM": "Mus_Story_DeepSea_Main",
+        "Background": "DeepSea_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DeepSeaAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DeepSeaS01",
+            "DeepSeaS02",
+            "DeepSeaS03",
+            "DeepSeaS04",
+            "DeepSeaS05",
+            "DeepSeaS06",
+            "DeepSeaS07",
+            "DeepSeaS08",
+            "DeepSeaS09",
+            "DeepSeaS10",
+            "DeepSeaS11",
+            "DeepSeaS12",
+            "DeepSeaS13",
+            "DeepSeaS14",
+            "DeepSeaS15",
+            "DeepSeaS16"
+        ],
+        "SubStoryPoint": [
+            "DeepSeaS01S01",
+            "DeepSeaS01S02",
+            "DeepSeaS01S03",
+            "DeepSeaS01S04",
+            "DeepSeaS01S05",
+            "DeepSeaS01S06",
+            "DeepSeaS01S07",
+            "DeepSeaS01S08"
+        ],
+        "Type": "NORMAL"
+    },
+    "DramaM01": {
+        "BGM": "Mus_Story_Drama_Main",
+        "Background": "Drama_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DramaAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DramaSN01",
+            "DramaSN02",
+            "DramaSN03",
+            "DramaSN04",
+            "DramaSN05",
+            "DramaSN06",
+            "DramaSN07",
+            "DramaSN08"
+        ],
+        "SubStoryPoint": [
+            "DramaS01S01",
+            "DramaS01S02",
+            "DramaS01S03",
+            "DramaS01S04",
+            "DramaS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "DramaM02": {
+        "BGM": "Mus_Story_Drama_Farewell",
+        "Background": "Drama_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DramaAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DramaSE01",
+            "DramaSE02",
+            "DramaSE03",
+            "DramaSE04",
+            "DramaSE05",
+            "DramaSE06",
+            "DramaSE07",
+            "DramaSE08",
+            "DramaSE09",
+            "DramaSE10",
+            "DramaSE11"
+        ],
+        "SubStoryPoint": [
+            "DramaS02S01",
+            "DramaS02S02",
+            "DramaS02S03",
+            "DramaS02S04"
+        ],
+        "Type": "ELITE"
+    },
+    "DuskM01": {
+        "BGM": "Mus_Story_Dusk_Main",
+        "Background": "Dusk_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DuskAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DuskSN01",
+            "DuskSN02",
+            "DuskSN03",
+            "DuskSN04",
+            "DuskSN05",
+            "DuskSN06",
+            "DuskSN07",
+            "DuskSN08"
+        ],
+        "SubStoryPoint": [
+            "DuskS01S01",
+            "DuskS01S02",
+            "DuskS01S03",
+            "DuskS01S04",
+            "DuskS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "DuskM02": {
+        "BGM": "Mus_Story_Dusk_Farewell",
+        "Background": "Dusk_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_DuskAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "DuskSE01",
+            "DuskSE02",
+            "DuskSE03",
+            "DuskSE04",
+            "DuskSE05",
+            "DuskSE06",
+            "DuskSE07",
+            "DuskSE08",
+            "DuskSE09",
+            "DuskSE10",
+            "DuskSE11"
+        ],
+        "SubStoryPoint": [
+            "DuskS02S01",
+            "DuskS02S02",
+            "DuskS02S03",
+            "DuskS02S04"
+        ],
+        "Type": "ELITE"
+    },
+    "FWorksM01": {
+        "BGM": "Mus_Story_Fireworks_Main",
+        "Background": "FireWorks_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireWorksAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FWorksSN01",
+            "FWorksSN02",
+            "FWorksSN03",
+            "FWorksSN04",
+            "FWorksSN05",
+            "FWorksSN06",
+            "FWorksSN07",
+            "FWorksSN08"
+        ],
+        "SubStoryPoint": [
+            "FireWorksS01S01",
+            "FireWorksS01S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "FWorksM02": {
+        "BGM": "Mus_Story_Fireworks_Main",
+        "Background": "FireWorks_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireWorksAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "FWorksSE01",
+            "FWorksSE02",
+            "FWorksSE03",
+            "FWorksSE04",
+            "FWorksSE05",
+            "FWorksSE06",
+            "FWorksSE07",
+            "FWorksSE08",
+            "FWorksSE09",
+            "FWorksSE10",
+            "FWorksSE11"
+        ],
+        "SubStoryPoint": [
+            "FireWorksS01S03",
+            "FireWorksS01S04"
+        ],
+        "Type": "ELITE"
+    },
+    "FemaleE01": {
+        "BGM": "Mus_Story_Girl_Main",
+        "Background": "Female_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FemaleAE01_Name",
+        "StarBoxReward": {
+            "10": "FemaleE01BOX01",
+            "20": "FemaleE01BOX02",
+            "30": "FemaleE01BOX03"
+        },
+        "SubPoint": [
+            "FemaleE01S01",
+            "FemaleE01S02",
+            "FemaleE01S03",
+            "FemaleE01S04",
+            "FemaleE01S05",
+            "FemaleE01S06",
+            "FemaleE01S07",
+            "FemaleE01S08",
+            "FemaleE01S09",
+            "FemaleE01S10",
+            "FemaleE01S11",
+            "FemaleE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "FemaleS01E01",
+            "FemaleS01E02"
+        ],
+        "Type": "ELITE"
+    },
+    "FemaleM01": {
+        "BGM": "Mus_Story_Girl_Main",
+        "Background": "Female_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FemaleAM01_Name",
+        "StarBoxReward": {
+            "10": "FemaleM01BOX01",
+            "20": "FemaleM01BOX02",
+            "30": "FemaleM01BOX03"
+        },
+        "SubPoint": [
+            "FemaleM01S01",
+            "FemaleM01S02",
+            "FemaleM01S03",
+            "FemaleM01S04",
+            "FemaleM01S05",
+            "FemaleM01S06",
+            "FemaleM01S07",
+            "FemaleM01S08",
+            "FemaleM01S09",
+            "FemaleM01S10",
+            "FemaleM01S11",
+            "FemaleM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "FemaleS01S01",
+            "FemaleS01S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "FireE01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAE01_Name",
+        "StarBoxReward": {
+            "10": "FireE01BOX01",
+            "20": "FireE01BOX02",
+            "30": "FireE01BOX03"
+        },
+        "SubPoint": [
+            "FireE01S01",
+            "FireE01S02",
+            "FireE01S03",
+            "FireE01S04",
+            "FireE01S05",
+            "FireE01S06",
+            "FireE01S07",
+            "FireE01S08",
+            "FireE01S09",
+            "FireE01S10",
+            "FireE01S11",
+            "FireE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "FireS01E01",
+            "FireS01E02",
+            "FireS01E03"
+        ],
+        "Type": "ELITE"
+    },
+    "FireH01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAH01_Name",
+        "StarBoxReward": {
+            "10": "FireN01BOX02",
+            "15": "FireN01BOX03",
+            "5": "FireN01BOX01"
+        },
+        "SubPoint": [
+            "FireH01S01",
+            "FireH01S02",
+            "FireH01S03",
+            "FireH01S04",
+            "FireH01S05",
+            "FireH01S06"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "FireS01H01"
+        ],
+        "Type": "HARD"
+    },
+    "FireM01": {
+        "BGM": "Mus_Story_Yewang_Main",
+        "Background": "Fire_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_FireAM01_Name",
+        "StarBoxReward": {
+            "10": "FireM01BOX01",
+            "20": "FireM01BOX02",
+            "30": "FireM01BOX03"
+        },
+        "SubPoint": [
+            "FireM01S01",
+            "FireM01S02",
+            "FireM01S03",
+            "FireM01S04",
+            "FireM01S05",
+            "FireM01S06",
+            "FireM01S07",
+            "FireM01S08",
+            "FireM01S09",
+            "FireM01S10",
+            "FireM01S11",
+            "FireM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "FireS01S01",
+            "FireS01S02",
+            "FireS01S03",
+            "FireS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "KnightE01": {
+        "BGM": "Mus_Story_Knight_War",
+        "Background": "Knight_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_KnightAE01_Name",
+        "StarBoxReward": {
+            "10": "KnightE01BOX01",
+            "20": "KnightE01BOX02",
+            "30": "KnightE01BOX03"
+        },
+        "SubPoint": [
+            "KnightE01S01",
+            "KnightE01S02",
+            "KnightE01S03",
+            "KnightE01S04",
+            "KnightE01S05",
+            "KnightE01S06",
+            "KnightE01S07",
+            "KnightE01S08",
+            "KnightE01S09",
+            "KnightE01S10",
+            "KnightE01S11",
+            "KnightE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "KnightS01E01",
+            "KnightS01E02",
+            "KnightS01E03",
+            "KnightS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "KnightM01": {
+        "BGM": "Mus_Story_Knight_War",
+        "Background": "Knight_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_KnightAM01_Name",
+        "StarBoxReward": {
+            "10": "KnightM01BOX01",
+            "20": "KnightM01BOX02",
+            "30": "KnightM01BOX03"
+        },
+        "SubPoint": [
+            "KnightM01S01",
+            "KnightM01S02",
+            "KnightM01S03",
+            "KnightM01S04",
+            "KnightM01S05",
+            "KnightM01S06",
+            "KnightM01S07",
+            "KnightM01S08",
+            "KnightM01S09",
+            "KnightM01S10",
+            "KnightM01S11",
+            "KnightM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "KnightS01S01",
+            "KnightS01S02",
+            "KnightS01S03",
+            "KnightS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "Purewhite_Map_E01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_1",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_PurewhiteAE01_Name",
+        "StarBoxReward": {
+            "10": "Purewhite_StarBox04",
+            "20": "Purewhite_StarBox05",
+            "30": "Purewhite_StarBox06"
+        },
+        "SubPoint": [
+            "PurewhiteE01",
+            "PurewhiteE02",
+            "PurewhiteE03",
+            "PurewhiteE04",
+            "PurewhiteE05",
+            "PurewhiteE06",
+            "PurewhiteE07",
+            "PurewhiteE08",
+            "PurewhiteE09",
+            "PurewhiteE10",
+            "PurewhiteE11",
+            "PurewhiteE12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "APurewhiteS01E01",
+            "APurewhiteS01E02",
+            "APurewhiteS01E03",
+            "APurewhiteS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "Purewhite_Map_M01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "Bg_Copy_Snowflake_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_PurewhiteAM01_Name",
+        "StarBoxReward": {
+            "10": "Purewhite_StarBox01",
+            "20": "Purewhite_StarBox02",
+            "30": "Purewhite_StarBox03"
+        },
+        "SubPoint": [
+            "PurewhiteM01",
+            "PurewhiteM02",
+            "PurewhiteM03",
+            "PurewhiteM04",
+            "PurewhiteM05",
+            "PurewhiteM06",
+            "PurewhiteM07",
+            "PurewhiteM08",
+            "PurewhiteM09",
+            "PurewhiteM10",
+            "PurewhiteM11",
+            "PurewhiteM12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "APurewhiteS01S01",
+            "APurewhiteS01S02",
+            "APurewhiteS01S03",
+            "APurewhiteS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "ReZeroE01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene04",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAE01_Name",
+        "StarBoxReward": {
+            "15": "Re0E01BOX02",
+            "24": "Re0E01BOX03",
+            "6": "Re0E01BOX01"
+        },
+        "SubPoint": [
+            "Re0E01S01",
+            "Re0E01S02",
+            "Re0E01S03",
+            "Re0E01S04",
+            "Re0E01S05",
+            "Re0E01S06",
+            "Re0E01S07",
+            "Re0E01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "ELITE"
+    },
+    "ReZeroH01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAH01_Name",
+        "StarBoxReward": {
+            "15": "Re0H01BOX02",
+            "24": "Re0H01BOX03",
+            "6": "Re0H01BOX01"
+        },
+        "SubPoint": [
+            "Re0H01S01",
+            "Re0H01S02",
+            "Re0H01S03",
+            "Re0H01S04",
+            "Re0H01S05",
+            "Re0H01S06",
+            "Re0H01S07",
+            "Re0H01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "HARD"
+    },
+    "ReZeroM01": {
+        "BGM": "Mus_Story_Rezero",
+        "Background": "ReZero_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_ReZeroAM01_Name",
+        "StarBoxReward": {
+            "15": "Re0M01BOX02",
+            "24": "Re0M01BOX03",
+            "6": "Re0M01BOX01"
+        },
+        "SubPoint": [
+            "Re0M01S01",
+            "Re0M01S02",
+            "Re0M01S03",
+            "Re0M01S04",
+            "Re0M01S05",
+            "Re0M01S06",
+            "Re0M01S07",
+            "Re0M01S08"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [],
+        "Type": "NORMAL"
+    },
+    "RiddleM01": {
+        "BGM": "Mus_Story_Detective_2",
+        "Background": "Riddle_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_RiddleAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "RiddleSN01",
+            "RiddleSN02",
+            "RiddleSN03",
+            "RiddleSN04",
+            "RiddleSN05",
+            "RiddleSN06",
+            "RiddleSN07",
+            "RiddleSN08"
+        ],
+        "SubStoryPoint": [
+            "RiddleS01S01",
+            "RiddleS01S02",
+            "RiddleS01S03",
+            "RiddleS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "RiddleM02": {
+        "BGM": "Mus_Story_Detective_2",
+        "Background": "Riddle_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_RiddleAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "RiddleSE01",
+            "RiddleSE02",
+            "RiddleSE03",
+            "RiddleSE04",
+            "RiddleSE05",
+            "RiddleSE06",
+            "RiddleSE07",
+            "RiddleSE08",
+            "RiddleSE09",
+            "RiddleSE10",
+            "RiddleSE11"
+        ],
+        "SubStoryPoint": [
+            "RiddleS02S01",
+            "RiddleS02S02",
+            "RiddleS02S03",
+            "RiddleS02S04"
+        ],
+        "Type": "ELITE"
+    },
+    "SilentNightM01": {
+        "BGM": "Mus_Redwhite",
+        "Background": "SilentNight_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SilentNightAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "SilentNightSN01",
+            "SilentNightSN02",
+            "SilentNightSN03",
+            "SilentNightSN04",
+            "SilentNightSN05",
+            "SilentNightSN06",
+            "SilentNightSN07",
+            "SilentNightSN08"
+        ],
+        "SubStoryPoint": [
+            "SilentNightS01S01",
+            "SilentNightS01S02",
+            "SilentNightS01S03",
+            "SilentNightS01S04",
+            "SilentNightS01S06"
+        ],
+        "Type": "NORMAL"
+    },
+    "SilentNightM02": {
+        "BGM": "Mus_Story_Christmas",
+        "Background": "SilentNight_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SilentNightAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "SilentNightSE01",
+            "SilentNightSE02",
+            "SilentNightSE03",
+            "SilentNightSE04",
+            "SilentNightSE05",
+            "SilentNightSE06",
+            "SilentNightSE07",
+            "SilentNightSE08",
+            "SilentNightSE09",
+            "SilentNightSE10",
+            "SilentNightSE11"
+        ],
+        "SubStoryPoint": [
+            "SilentNightS02S01",
+            "SilentNightS02S02",
+            "SilentNightS02S03",
+            "SilentNightS02S04"
+        ],
+        "Type": "ELITE"
     },
     "Snowflack_Map_E01": {
         "BGM": "Mus_Story_Mystery_2",
@@ -516,6 +1489,7 @@
             "SnowflackE09",
             "SnowflackE10"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASnowflakeS01E01",
             "ASnowflakeS01E02",
@@ -547,11 +1521,251 @@
             "SnowflackM09",
             "SnowflackM10"
         ],
+        "SubSort": "",
         "SubStoryPoint": [
             "ASnowflakeS01S01",
             "ASnowflakeS01S02",
             "ASnowflakeS01S03",
             "ASnowflakeS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "StoryBookE01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "StoryBook_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_StoryBookAE01_Name",
+        "StarBoxReward": {
+            "10": "StoryBookE01BOX01",
+            "20": "StoryBookE01BOX02",
+            "30": "StoryBookE01BOX03"
+        },
+        "SubPoint": [
+            "StoryBookE01S01",
+            "StoryBookE01S02",
+            "StoryBookE01S03",
+            "StoryBookE01S04",
+            "StoryBookE01S05",
+            "StoryBookE01S06",
+            "StoryBookE01S07",
+            "StoryBookE01S08",
+            "StoryBookE01S09",
+            "StoryBookE01S10",
+            "StoryBookE01S11",
+            "StoryBookE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "StoryBookS01E01",
+            "StoryBookS01E02",
+            "StoryBookS01E03",
+            "StoryBookS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "StoryBookM01": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "StoryBook_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_StoryBookAM01_Name",
+        "StarBoxReward": {
+            "10": "StoryBookM01BOX01",
+            "20": "StoryBookM01BOX02",
+            "30": "StoryBookM01BOX03"
+        },
+        "SubPoint": [
+            "StoryBookM01S01",
+            "StoryBookM01S02",
+            "StoryBookM01S03",
+            "StoryBookM01S04",
+            "StoryBookM01S05",
+            "StoryBookM01S06",
+            "StoryBookM01S07",
+            "StoryBookM01S08",
+            "StoryBookM01S09",
+            "StoryBookM01S10",
+            "StoryBookM01S11",
+            "StoryBookM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "StoryBookS01S01",
+            "StoryBookS01S02",
+            "StoryBookS01S03",
+            "StoryBookS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "SummerE01": {
+        "BGM": "Mus_Story_Summer",
+        "Background": "Bg_story_scene_13_2",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SummerE01_Name",
+        "StarBoxReward": {
+            "10": "SummerE01BOX01",
+            "20": "SummerE01BOX02",
+            "30": "SummerE01BOX03"
+        },
+        "SubPoint": [
+            "SummerE01S01",
+            "SummerE01S02",
+            "SummerE01S03",
+            "SummerE01S04",
+            "SummerE01S05",
+            "SummerE01S06",
+            "SummerE01S07",
+            "SummerE01S08",
+            "SummerE01S09",
+            "SummerE01S10",
+            "SummerE01S11",
+            "SummerE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "SummerS01E01",
+            "SummerS01E02",
+            "SummerS01E03",
+            "SummerS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "SummerM01": {
+        "BGM": "Mus_Story_Summer",
+        "Background": "Bg_story_scene_13_1",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SummerM01_Name",
+        "StarBoxReward": {
+            "10": "SummerM01BOX01",
+            "20": "SummerM01BOX02",
+            "30": "SummerM01BOX03"
+        },
+        "SubPoint": [
+            "SummerM01S01",
+            "SummerM01S02",
+            "SummerM01S03",
+            "SummerM01S04",
+            "SummerM01S05",
+            "SummerM01S06",
+            "SummerM01S07",
+            "SummerM01S08",
+            "SummerM01S09",
+            "SummerM01S10",
+            "SummerM01S11",
+            "SummerM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "SummerS01S01",
+            "SummerS01S02",
+            "SummerS01S03",
+            "SummerS01S04",
+            "SummerS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "SunflowerE01": {
+        "BGM": "Mus_Story_VanGogh_Egypt",
+        "Background": "Sunflower_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SunflowerAE01_Name",
+        "StarBoxReward": {
+            "10": "SunflowerE01BOX01",
+            "20": "SunflowerE01BOX02",
+            "30": "SunflowerE01BOX03"
+        },
+        "SubPoint": [
+            "SunflowerE01S01",
+            "SunflowerE01S02",
+            "SunflowerE01S03",
+            "SunflowerE01S04",
+            "SunflowerE01S05",
+            "SunflowerE01S06",
+            "SunflowerE01S07",
+            "SunflowerE01S08",
+            "SunflowerE01S09",
+            "SunflowerE01S10",
+            "SunflowerE01S11",
+            "SunflowerE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "SunflowerS01S03",
+            "SunflowerS01S04"
+        ],
+        "Type": "ELITE"
+    },
+    "SunflowerM01": {
+        "BGM": "Mus_Story_VanGogh_Egypt",
+        "Background": "Sunflower_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SunflowerAM01_Name",
+        "StarBoxReward": {
+            "10": "SunflowerM01BOX01",
+            "20": "SunflowerM01BOX02",
+            "30": "SunflowerM01BOX03"
+        },
+        "SubPoint": [
+            "SunflowerM01S01",
+            "SunflowerM01S02",
+            "SunflowerM01S03",
+            "SunflowerM01S04",
+            "SunflowerM01S05",
+            "SunflowerM01S06",
+            "SunflowerM01S07",
+            "SunflowerM01S08",
+            "SunflowerM01S09",
+            "SunflowerM01S10",
+            "SunflowerM01S11",
+            "SunflowerM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "SunflowerS01S01",
+            "SunflowerS01S02"
+        ],
+        "Type": "NORMAL"
+    },
+    "TerrorM01": {
+        "BGM": "Mus_Story_Terror",
+        "Background": "Terror_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_TerrorAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "TerrorS01",
+            "TerrorS02",
+            "TerrorS03",
+            "TerrorS04",
+            "TerrorS05",
+            "TerrorS06",
+            "TerrorS07",
+            "TerrorS08",
+            "TerrorS09",
+            "TerrorS10",
+            "TerrorS11",
+            "TerrorS12",
+            "TerrorS13",
+            "TerrorS14",
+            "TerrorS15",
+            "TerrorS16"
+        ],
+        "SubStoryPoint": [
+            "TerrorS01S01",
+            "TerrorS01S02",
+            "TerrorS01S03",
+            "TerrorS01S04",
+            "TerrorS01S05",
+            "TerrorS01S06",
+            "TerrorS01S07",
+            "TerrorS01S08"
         ],
         "Type": "NORMAL"
     }

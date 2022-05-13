@@ -51,6 +51,18 @@ function ExitGameMediator:onClickExitGame(sender, eventType)
 
 	if SDKHelper and SDKHelper:isEnableSdk() then
 		SDKHelper:logOut()
+
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local player = developSystem:getPlayer()
+
+		SDKHelper:reportLogout({
+			roleName = tostring(player:getNickName()),
+			roleId = tostring(player:getRid()),
+			roleLevel = tostring(player:getLevel()),
+			roleCombat = checkint(player:getCombat()),
+			ip = tostring(developSystem:getServerIp()),
+			port = tostring(developSystem:getServerPort())
+		})
 	end
 
 	REBOOT("REBOOT_NOUPDATE")

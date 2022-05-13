@@ -46,6 +46,9 @@ end
 
 function ActivityFateEncountersMediator:initWidget()
 	self._main = self:getView():getChildByFullName("main")
+
+	self._main:getChildByFullName("interfaceView.infoBtn"):setPositionX(1000)
+
 	self._interface = self._main:getChildByFullName("interfaceView")
 	self._activityMainView = self._main:getChildByFullName("activityView")
 
@@ -102,7 +105,8 @@ function ActivityFateEncountersMediator:refreshViewOnChoose()
 	self._heroName:setString(Strings:get(nameStr))
 	self._roldNode:removeAllChildren()
 
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		iconType = 6,
 		id = self._curModleId
 	})
@@ -116,11 +120,9 @@ function ActivityFateEncountersMediator:initRoleCell(node, modelId)
 
 	heroPanel:removeAllChildren()
 
-	local heroIcon = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust5",
-		id = modelId,
-		size = cc.size(368, 446)
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_8",
+		id = modelId
 	})
 
 	heroIcon:setScale(0.6)
@@ -234,7 +236,7 @@ function ActivityFateEncountersMediator:refreshViewOnTask()
 		if mediator then
 			mediator:enterWithData({
 				activity = self._activity,
-				parentMediator = self
+				parentMediator = self._parentMediator
 			})
 		end
 	end

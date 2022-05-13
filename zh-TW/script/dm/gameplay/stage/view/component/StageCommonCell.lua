@@ -153,6 +153,9 @@ function StageCommonCell:setCellState(selectedIndex, index)
 		label:setTextColor(cc.c3b(255, 255, 255))
 		label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 		label:setPosition(127, 8)
+		label:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+		label:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+		label:getVirtualRenderer():setDimensions(100, 38)
 		label:addTo(self._img)
 
 		local rewardNodes = {}
@@ -167,6 +170,9 @@ function StageCommonCell:setCellState(selectedIndex, index)
 						showAmount = not self._isPassed
 					})
 
+					IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._mediator), reward, {
+						needDelay = true
+					})
 					icon:setAnchorPoint(cc.p(0.5, 0.5))
 					icon:setScale(0.8)
 					icon:setPosition(cc.p(149 + i * 51.7, -3))

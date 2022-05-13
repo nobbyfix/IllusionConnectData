@@ -8,7 +8,8 @@ local kBgAndImage = {
 	[GalleryPartyType.kMNJH] = "loading_img_mnjh.png",
 	[GalleryPartyType.kDWH] = "loading_img_dwh_new.png",
 	[GalleryPartyType.kWNSXJ] = "loading_img_vnsxj.png",
-	[GalleryPartyType.kSSZS] = "loading_img_smzs.png"
+	[GalleryPartyType.kSSZS] = "loading_img_smzs.png",
+	[GalleryPartyType.kUNKNOWN] = "loading_img_unknown.png"
 }
 local kBgAndImageOffset = {
 	[GalleryPartyType.kBSNCT] = 15,
@@ -16,7 +17,8 @@ local kBgAndImageOffset = {
 	[GalleryPartyType.kMNJH] = 0,
 	[GalleryPartyType.kDWH] = 12,
 	[GalleryPartyType.kWNSXJ] = 8,
-	[GalleryPartyType.kSSZS] = 0
+	[GalleryPartyType.kSSZS] = 0,
+	[GalleryPartyType.kUNKNOWN] = 0
 }
 
 function BattleHeroShowPopMediator:initialize()
@@ -53,6 +55,10 @@ function BattleHeroShowPopMediator:enterWithData(data)
 
 	self:getView():runAction(action1)
 	self:initView()
+end
+
+function BattleHeroShowPopMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function BattleHeroShowPopMediator:onTouchLayout(sender, eventType)
@@ -102,9 +108,9 @@ function BattleHeroShowPopMediator:initView()
 	self._enterHeroAudio = AudioEngine:getInstance():playEffect("Voice_" .. heroId .. "_25", false)
 	local heroConfig = ConfigReader:getRecordById("HeroBase", heroId)
 	local model = heroConfig.RoleModel
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = model
 	})
 	local infoNode = self:getView():getChildByFullName("content.infoNode.node")
@@ -163,6 +169,8 @@ end
 function BattleHeroShowPopMediator:initRoleInfo(node, config)
 	local heroShowIntro = config.HeroShowIntro
 	local desc = node:getChildByFullName("Desc")
+	local descPosX, descPosY = desc:getPosition()
+	descPosX = descPosX - 20
 
 	desc:setVisible(false)
 
@@ -172,10 +180,10 @@ function BattleHeroShowPopMediator:initRoleInfo(node, config)
 	}), {})
 
 	richText:setAnchorPoint(desc:getAnchorPoint())
-	richText:setPosition(cc.p(desc:getPosition()))
+	richText:setPosition(cc.p(descPosX, descPosY))
 	richText:addTo(desc:getParent())
 
-	local descWidth = desc:getContentSize().width
+	local descWidth = desc:getContentSize().width + 60
 
 	richText:renderContent(descWidth, 0)
 
@@ -195,10 +203,14 @@ function BattleHeroShowPopMediator:initGenderNode(node, config)
 	local genderName = node:getChildByFullName("genderName")
 	local genderIcon = node:getChildByFullName("genderIcon")
 	local genderDesc = node:getChildByFullName("genderDesc")
+	local genderDesc1 = node:getChildByFullName("genderDesc_1")
 	local name, image, imageType = GameStyle:getBatleHeroOccupation(config.Type)
 
 	genderName:setString(Strings:get(name))
 	genderIcon:loadTexture(image, imageType or ccui.TextureResType.localType)
 	genderDesc:setString(Strings:get(config.Position))
 	genderIcon:setPositionX(genderName:getPositionX() + genderName:getContentSize().width + 25)
+	genderDesc1:setAnchorPoint(cc.p(0, 0.5))
+	genderDesc1:setPositionX(genderDesc1:getPositionX() - 90)
+	genderDesc:setPositionX(genderDesc1:getPositionX() + genderDesc1:getContentSize().width + 2)
 end

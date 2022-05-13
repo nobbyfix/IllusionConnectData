@@ -20,6 +20,8 @@ function StagePracticeSpecialRuleMediator:onRegister()
 end
 
 function StagePracticeSpecialRuleMediator:enterWithData(data)
+	dump(data, "data >>>>>>")
+
 	self._ruleList = data.ruleList or {}
 	self._title = self._ruleList[1]
 
@@ -31,22 +33,35 @@ function StagePracticeSpecialRuleMediator:initContent()
 
 	title:setString(Strings:get(self._title))
 
-	for i = 2, 4 do
-		local textNode = self:getView():getChildByFullName("main.textNode" .. i)
+	local listView = self:getView():getChildByFullName("main.ListView_1")
+	local textLayer = self:getView():getChildByFullName("main.textLayer")
+	local textImg = self:getView():getChildByFullName("main.textImg")
+	local layer = textLayer:clone()
 
-		if self._ruleList[i] then
-			local richText = ccui.RichText:createWithXML(Strings:get(self._ruleList[i], {
-				fontName = TTF_FONT_FZYH_R
-			}), {})
+	layer:setAnchorPoint(cc.p(0, 1))
+	listView:setScrollBarEnabled(false)
 
-			richText:addTo(textNode)
-			richText:setAnchorPoint(cc.p(0, 1))
-			richText:setPosition(cc.p(18, 13))
-			richText:renderContent(372, 0, true)
-		else
-			textNode:setVisible(false)
-		end
+	local length = 0
+
+	for i = #self._ruleList, 2, -1 do
+		local img = textImg:clone()
+		local text = Strings:get(self._ruleList[i], {
+			fontName = TTF_FONT_FZYH_R
+		})
+		local richText = ccui.RichText:createWithXML(text, {})
+
+		richText:addTo(img)
+		richText:setAnchorPoint(cc.p(0, 1))
+		richText:setPosition(cc.p(42, 43))
+		richText:renderContent(372, 0, true)
+
+		length = length + richText:getContentSize().height + 10
+
+		img:addTo(layer):posite(-15, length)
 	end
+
+	layer:setContentSize(textLayer:getContentSize().width, length)
+	listView:pushBackCustomItem(layer)
 
 	local bublingText = self:getView():getChildByFullName("main.bubling.text")
 	local strs = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Point_Skill_Text", "content")

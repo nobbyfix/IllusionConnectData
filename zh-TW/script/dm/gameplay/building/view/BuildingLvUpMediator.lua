@@ -323,6 +323,7 @@ function BuildingLvUpMediator:refreshView()
 		text:setString(self._buildingSystem:getBuildingBuildCostBuf())
 		text_1:setString(Strings:get("Building_UI_Card"))
 		text:setString(self._stageSystem:getPlayerInit() + self._buildingSystem:getBuildingBuildCardBuf())
+		text:setPositionX(text_1:getPositionX() + text_1:getContentSize().width)
 
 		local resImage = nodeBase_1:getChildByFullName("Image")
 
@@ -358,6 +359,8 @@ function BuildingLvUpMediator:refreshView()
 
 		textDes_1:setString(Strings:get("Building_TotalBenefit"))
 		textDes_2:setString(Strings:get("Building_Storage"))
+		text_1:setPositionX(textDes_1:getPositionX() + textDes_1:getContentSize().width)
+		text_2:setPositionX(textDes_2:getPositionX() + textDes_2:getContentSize().width)
 	elseif buildingData._type == KBuildingType.kExpOre then
 		local resImage = nodeBase_1:getChildByFullName("Image")
 
@@ -387,6 +390,8 @@ function BuildingLvUpMediator:refreshView()
 
 		textDes_1:setString(Strings:get("Building_TotalBenefit"))
 		textDes_2:setString(Strings:get("Building_Storage"))
+		text_1:setPositionX(textDes_1:getPositionX() + textDes_1:getContentSize().width)
+		text_2:setPositionX(textDes_2:getPositionX() + textDes_2:getContentSize().width)
 	elseif buildingData._type == KBuildingType.kGoldOre then
 		local resImage = nodeBase_1:getChildByFullName("Image")
 
@@ -416,6 +421,8 @@ function BuildingLvUpMediator:refreshView()
 
 		textDes_1:setString(Strings:get("Building_TotalBenefit"))
 		textDes_2:setString(Strings:get("Building_Storage"))
+		text_1:setPositionX(textDes_1:getPositionX() + textDes_1:getContentSize().width)
+		text_2:setPositionX(textDes_2:getPositionX() + textDes_2:getContentSize().width)
 	elseif buildingData._type == KBuildingType.kCamp then
 		nodeBase_1:setVisible(true)
 
@@ -424,6 +431,7 @@ function BuildingLvUpMediator:refreshView()
 
 		text:setString(self._buildingSystem:getBuildingBuildCostBuf())
 		text_1:setString(Strings:get("Building_CostLimit"))
+		text:setPositionX(text_1:getPositionX() + text_1:getContentSize().width)
 
 		local resImage = nodeBase_1:getChildByFullName("Image")
 
@@ -456,7 +464,9 @@ function BuildingLvUpMediator:onClicklevelup(sender, eventType)
 	local upgradeCost = nextLvConfig.UpgradeCost
 
 	for k, v in pairs(upgradeCost) do
-		local canbuild = CurrencySystem:checkEnoughCurrency(self, v.type, v.amount)
+		local canbuild = CurrencySystem:checkEnoughCurrency(self, v.type, v.amount, {
+			tipType = "tip"
+		})
 
 		if not canbuild then
 			AudioEngine:getInstance():playEffect("Se_Alert_Error", false)

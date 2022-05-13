@@ -1,11 +1,13 @@
 StageType = {
 	kElite = "ELITE",
+	kHard = "HARD",
 	kNormal = "NORMAL"
 }
 kHeroStroy = "HEROSTORY"
 StageTypeNumToDesc = {
 	"NORMAL",
-	"ELITE"
+	"ELITE",
+	"HARD"
 }
 StageManager = class("StageManager", objectlua.Object, _M)
 

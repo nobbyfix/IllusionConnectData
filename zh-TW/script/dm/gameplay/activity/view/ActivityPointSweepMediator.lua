@@ -97,10 +97,6 @@ function ActivityPointSweepMediator:initWidget()
 		self._sweepLabel:setString(Strings:get("CUSTOM_SWEEP_AGAIN", {
 			times = 1
 		}))
-	elseif self._model:getStageTypeById(pointId) == StageType.kNormal then
-		self._sweepLabel:setString(Strings:get("CUSTOM_SWEEP_AGAIN", {
-			times = 10
-		}))
 	else
 		self._sweepLabel:setString(Strings:get("CUSTOM_SWEEP_AGAIN", {
 			times = 10
@@ -158,7 +154,19 @@ function ActivityPointSweepMediator:refreshView()
 	local hasItemNum = self:getDevelopSystem():getBagSystem():getItemCount(self._itemId)
 
 	for index, rewards in ipairs(self._sweepData.data.rewardList) do
+		local extrarewards = rewards.heroExtraReward
 		local allReward = table.deepcopy(rewards)
+
+		for k, v in pairs(extrarewards or {}) do
+			for _k, _v in pairs(allReward.itemRewards) do
+				if _v.id == v.id then
+					allReward.itemRewards[_k].amount = _v.amount + v.amount
+
+					break
+				end
+			end
+		end
+
 		local sweepLayout = ccui.Layout:create()
 		local itemView = cc.CSLoader:createNode("asset/ui/BlockSweepItemNode.csb")
 		local contentLayout = itemView:getChildByFullName("content")
@@ -478,10 +486,14 @@ end
 function ActivityPointSweepMediator:getSweepItemNum()
 	local num = 0
 
-	for k, v in pairs(self._sweepData.rewardItems) do
+	for k, v in pairs(self._sweepData.data.rewardList) do
 		for _, rewards in pairs(v) do
-			if rewards.code == self._itemId then
-				num = num + rewards.amount
+			if type(rewards) == "table" then
+				for _, reward in pairs(rewards) do
+					if reward.code == self._itemId then
+						num = num + reward.amount
+					end
+				end
 			end
 		end
 	end
@@ -490,7 +502,14 @@ function ActivityPointSweepMediator:getSweepItemNum()
 end
 
 function ActivityPointSweepMediator:checkTimesUp()
-	self._point = self._model:getPointById(self._sweepData.param.pointId)
+	if self._model:getType() == ActivityType.KActivityBlockMapNew then
+		self._point = self._model:getSubPointById(self._sweepData.param.pointId)
+		self._type = self._sweepData.param.type
+	else
+		self._pointId = self._sweepData.param.pointId
+		self._point = self._model:getPointById(self._pointId)
+		self._type = litTypeMap[self._model:getStageTypeById(self._pointId)]
+	end
 
 	return self:getMaxSwipCount() <= 0
 end
@@ -507,24 +526,14 @@ function ActivityPointSweepMediator:getMaxSwipCount()
 		break
 	end
 
-	if itemId == CurrencyIdKind.kAcitvityStaminaPower then
-		containPower = self._bagSystem:getAcitvityStaminaPower()
-	elseif itemId == CurrencyIdKind.kAcitvityZuoHePower then
-		containPower = self._bagSystem:getAcitvitySagaSupportPower()
-	elseif itemId == CurrencyIdKind.kAcitvitySnowPower then
-		containPower = self._bagSystem:getAcitvitySnowPower()
-	elseif itemId == CurrencyIdKind.kAcitvityWxhPower then
-		containPower = self._bagSystem:getAcitvityWxhSupportPower()
-	elseif itemId == "IM_BossJindan" then
-		containPower = self._bagSystem:getItemCount("IM_BossJindan")
-	elseif itemId == "IM_ZuoHeBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_ZuoHeBossStamina")
-	elseif itemId == "IM_WuXiuHuiBossStamina" then
-		containPower = self._bagSystem:getItemCount("IM_WuXiuHuiBossStamina")
-	elseif itemId == CurrencyIdKind.kActivityHolidayPower then
-		containPower = self._bagSystem:getActivityHolidayPower()
-	elseif itemId == CurrencyIdKind.kActivityDetectivePower then
-		containPower = self._bagSystem:getAcitvityDetectivePower()
+	local config = PowerConfigMap[itemId]
+
+	if not config and DEBUG ~= 0 then
+		config = PowerConfigMap.TEST
+	end
+
+	if config then
+		containPower = self._bagSystem[config.func](self._bagSystem, itemId)
 	end
 
 	return math.modf(containPower / cost)
@@ -546,7 +555,7 @@ function ActivityPointSweepMediator:onSweepBtn(sender, type)
 	self._comfirmBtn:setVisible(false)
 
 	local param = {
-		type = litTypeMap[self._model:getStageTypeById(self._sweepData.param.pointId)],
+		type = self._type,
 		doActivityType = 107,
 		mapId = self._sweepData.param.mapId,
 		pointId = self._sweepData.param.pointId

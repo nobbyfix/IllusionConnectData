@@ -23,8 +23,8 @@ function scene_story09_1a:stage(args)
 			y = 0
 		},
 		size = {
-			width = 1386,
-			height = 852
+			width = 1136,
+			height = 640
 		},
 		touchEvents = {
 			moved = "evt_bg_touch_moved",
@@ -34,12 +34,12 @@ function scene_story09_1a:stage(args)
 		children = {
 			{
 				resType = 0,
-				name = "hm",
+				name = "hm1",
 				pathType = "STORY_ROOT",
 				type = "Image",
 				image = "hm.png",
 				layoutMode = 1,
-				id = "hm",
+				id = "hm1",
 				scale = 1,
 				anchorPoint = {
 					x = 0.5,
@@ -54,35 +54,163 @@ function scene_story09_1a:stage(args)
 				children = {
 					{
 						resType = 0,
-						name = "bg",
+						name = "bg1",
 						pathType = "SCENE",
 						type = "Image",
-						image = "bg_story_cg_08_2.jpg",
+						image = "bg_story_EXscene_5_1.jpg",
 						layoutMode = 1,
-						zorder = 2,
-						id = "bg",
-						scale = 1.1,
+						zorder = 10,
+						id = "bg1",
+						scale = 1,
 						anchorPoint = {
-							x = 0,
-							y = 0
+							x = 0.5,
+							y = 0.5
 						},
 						position = {
 							refpt = {
-								x = 0,
-								y = 0
+								x = 0.5,
+								y = 0.5
+							}
+						}
+					},
+					{
+						resType = 0,
+						name = "bg2",
+						pathType = "SCENE",
+						type = "Image",
+						image = "bg_story_cg_08_3.jpg",
+						layoutMode = 1,
+						zorder = 8,
+						id = "bg2",
+						scale = 0.43,
+						anchorPoint = {
+							x = 0.5,
+							y = 0.5
+						},
+						position = {
+							refpt = {
+								x = 0.5,
+								y = 0.5
 							}
 						}
 					}
 				}
 			},
 			{
+				id = "startingSound_story",
+				fileName = "Se_Story_Chapter_8_9",
+				type = "Music"
+			},
+			{
+				id = "previously_story",
+				fileName = "Mus_Story_Intro_Chapter",
+				type = "Music"
+			},
+			{
+				id = "Mus_Story_Yehuo",
+				fileName = "Mus_Story_Yehuo",
+				type = "Music"
+			},
+			{
+				id = "Mus_Story_Yehuo_2",
+				fileName = "Mus_Story_Yehuo_2",
+				type = "Music"
+			},
+			{
+				id = "Mus_Story_Yehuo_Determine",
+				fileName = "Mus_Story_Yehuo_Determine",
+				type = "Music"
+			},
+			{
+				id = "Mus_Story_Yehuo_Normal",
+				fileName = "Mus_Story_Yehuo_Normal",
+				type = "Music"
+			},
+			{
+				id = "Mus_Story_Yewang_Main",
+				fileName = "Mus_Story_Yewang_Main",
+				type = "Music"
+			},
+			{
+				id = "yin_qiang",
+				fileName = "Se_Skill_Gun_2",
+				type = "Sound"
+			},
+			{
 				layoutMode = 1,
 				type = "MovieClip",
-				zorder = 115,
+				zorder = 1800,
 				visible = false,
-				id = "beiji_juqingtexiao",
-				scale = 1.05,
-				actionName = "beiji_juqingtexiao",
+				id = "xiao_zidan",
+				scale = 1.5,
+				actionName = "qiangpao_gongji_juqing",
+				anchorPoint = {
+					x = 0.5,
+					y = 0.5
+				},
+				position = {
+					refpt = {
+						x = 0.7,
+						y = 0.5
+					}
+				}
+			},
+			{
+				layoutMode = 1,
+				visible = false,
+				type = "VideoSprite",
+				zorder = 100,
+				videoName = "story_baozha",
+				id = "xiao_baozha",
+				scale = 1.5,
+				anchorPoint = {
+					x = 0.5,
+					y = 0.5
+				},
+				position = {
+					refpt = {
+						x = 0.5,
+						y = 0.5
+					}
+				}
+			},
+			{
+				layoutMode = 1,
+				name = "bg",
+				type = "ColorBackGround",
+				zorder = 100,
+				id = "colorBg",
+				scale = 1,
+				anchorPoint = {
+					x = 0,
+					y = 0
+				},
+				position = {
+					refpt = {
+						x = 0,
+						y = 0
+					}
+				},
+				touchEvents = {
+					moved = "evt_bg_touch_moved",
+					began = "evt_bg_touch_began",
+					ended = "evt_bg_touch_ended"
+				},
+				children = {}
+			},
+			{
+				id = "Se_Story_Katana",
+				fileName = "Se_Skill_Cut_5",
+				type = "Sound"
+			},
+			{
+				layoutMode = 1,
+				type = "MovieClip",
+				zorder = 1000,
+				visible = false,
+				id = "xiao_jian",
+				scale = 1.5,
+				actionName = "liqi_juqingtexiao",
 				anchorPoint = {
 					x = 0.5,
 					y = 0.5
@@ -97,9 +225,28 @@ function scene_story09_1a:stage(args)
 			{
 				layoutMode = 1,
 				type = "MovieClip",
-				zorder = 111,
+				zorder = 1000,
 				visible = false,
-				id = "liqi_juqingtexiao1",
+				id = "xiao_jian2",
+				scale = 1.5,
+				actionName = "liqi_juqingtexiao",
+				anchorPoint = {
+					x = 0.5,
+					y = 0.5
+				},
+				position = {
+					refpt = {
+						x = 0.5,
+						y = 0.5
+					}
+				}
+			},
+			{
+				layoutMode = 1,
+				type = "MovieClip",
+				zorder = 350,
+				visible = false,
+				id = "xiao_jian101",
 				scale = 1.05,
 				actionName = "liqi_juqingtexiao",
 				anchorPoint = {
@@ -115,12 +262,12 @@ function scene_story09_1a:stage(args)
 			},
 			{
 				layoutMode = 1,
+				type = "MovieClip",
+				zorder = 350,
 				visible = false,
-				type = "VideoSprite",
-				zorder = 111,
-				videoName = "story_qiangpao",
-				id = "EX_Hit_qiangpao",
-				scale = 1.5,
+				id = "xiao_jian102",
+				scale = 1.05,
+				actionName = "liqi_juqingtexiao",
 				anchorPoint = {
 					x = 0.5,
 					y = 0.5
@@ -135,12 +282,11 @@ function scene_story09_1a:stage(args)
 			{
 				layoutMode = 1,
 				type = "MovieClip",
-				zorder = 3,
-				displayType = "ui",
+				zorder = 340,
 				visible = false,
-				id = "panA",
+				id = "xiao_gedang",
 				scale = 1.05,
-				actionName = "zhuanchanga_juqingtexiao",
+				actionName = "beiji_juqingtexiao",
 				anchorPoint = {
 					x = 0.5,
 					y = 0.5
@@ -153,69 +299,14 @@ function scene_story09_1a:stage(args)
 				}
 			},
 			{
-				resType = 0,
-				name = "item_blacklens",
-				pathType = "STORY_ROOT",
-				type = "Image",
-				image = "jingpian02.png",
-				layoutMode = 1,
-				zorder = 50,
-				id = "item_blacklens",
-				scale = 1,
-				anchorPoint = {
-					x = 0.5,
-					y = 0.5
-				},
-				position = {
-					refpt = {
-						x = 0.5,
-						y = 0.6
-					}
-				}
-			},
-			{
-				id = "startingSound_story",
-				fileName = "Se_Story_Chapter_8_9",
-				type = "Music"
-			},
-			{
-				id = "previously_story",
-				fileName = "Mus_Story_Intro_Chapter",
-				type = "Music"
-			},
-			{
-				id = "Mus_Story_Danger",
-				fileName = "Mus_Story_Danger",
-				type = "Music"
-			},
-			{
-				id = "ZTXChangAttack_Sound",
-				fileName = "Se_Skill_Cut_4",
+				id = "yin_gedang",
+				fileName = "Se_Story_Block_1",
 				type = "Sound"
 			},
 			{
-				id = "ZTXChangSkill_Sound",
-				fileName = "Se_Skill_Sword_Chaos",
+				id = "Se_Story_Katana",
+				fileName = "Se_Skill_Cut_5",
 				type = "Sound"
-			},
-			{
-				id = "Se_Skill_Gun",
-				fileName = "Se_Skill_Gun",
-				type = "Sound"
-			},
-			{
-				id = "Se_Skill_Gun_2",
-				fileName = "Se_Skill_Gun_2",
-				type = "Sound"
-			},
-			{
-				id = "FTLEShiAttack_Sound",
-				fileName = "Se_Skill_Coffin_Hits",
-				type = "Sound"
-			},
-			{
-				id = "mask",
-				type = "Mask"
 			}
 		},
 		__actions__ = self.actions
@@ -224,6 +315,10 @@ end
 
 function scene_story09_1a.actions.start_story09_1a(_root, args)
 	return sequential({
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "backGround_main")
+		}),
 		concurrent({
 			act({
 				action = "show",
@@ -242,7 +337,12 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			}),
 			act({
 				action = "play",
-				actor = __getnode__(_root, "startingSound_story")
+				actor = __getnode__(_root, "startingSound_story"),
+				args = function (_ctx)
+					return {
+						isLoop = false
+					}
+				end
 			})
 		}),
 		act({
@@ -260,33 +360,6 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		}),
 		act({
 			action = "show",
-			actor = __getnode__(_root, "printerEffect"),
-			args = function (_ctx)
-				return {
-					heightSpace = 12,
-					content = {
-						"story09_1a_4",
-						"story09_1a_5",
-						"story09_1a_6",
-						"story09_1a_7",
-						"story09_1a_8",
-						"story09_1a_9",
-						"story09_1a_10",
-						"story09_1a_11",
-						"story09_1a_12"
-					},
-					waitTimes = {
-						7
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "printerEffect")
-		}),
-		act({
-			action = "show",
 			actor = __getnode__(_root, "skipButton")
 		}),
 		act({
@@ -298,8 +371,64 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "autoPlayButton")
 		}),
 		act({
+			action = "show",
+			actor = __getnode__(_root, "printerEffect"),
+			args = function (_ctx)
+				return {
+					bgShow = false,
+					center = 1,
+					content = {
+						"story09_1a_4",
+						"story09_1a_5",
+						"story09_1a_6",
+						"story09_1a_7",
+						"story09_1a_8",
+						"story09_1a_9",
+						"story09_1a_10",
+						"story09_1a_11",
+						"story09_1a_12"
+					},
+					durations = {
+						0.07,
+						0.07,
+						0.07,
+						0.07,
+						0.07,
+						0.07,
+						0.07,
+						0.07,
+						0.07
+					},
+					waitTimes = {
+						1,
+						1,
+						1,
+						1,
+						1,
+						1,
+						1,
+						1,
+						1.5
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "printerEffect")
+		}),
+		act({
 			action = "activateNode",
-			actor = __getnode__(_root, "bg")
+			actor = __getnode__(_root, "bg1")
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "bg2"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
 		}),
 		act({
 			action = "fadeOut",
@@ -312,7 +441,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		}),
 		act({
 			action = "play",
-			actor = __getnode__(_root, "Mus_Story_Danger"),
+			actor = __getnode__(_root, "Mus_Story_Yehuo_Normal"),
 			args = function (_ctx)
 				return {
 					isLoop = true
@@ -324,125 +453,16 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					modelId = "Model_Story_SGHQShou03",
-					id = "SGHQShou3_speak",
-					rotationX = 0,
-					scale = 1.23,
-					zorder = 1,
-					position = {
-						x = 0,
-						y = -330,
-						refpt = {
-							x = -0.3,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "SGHQShou03_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "SGHQShou/SGHQShou03_face_4.png",
-							layoutMode = 1,
-							zorder = 1100,
-							visible = true,
-							id = "SGHQShou03_face",
-							scale = 1,
-							anchorPoint = {
-								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = 33.6,
-								y = 681.5
-							}
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "SGHQShou3_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "SGHQShou3_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5
-					}
-				end
-			})
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -330,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_10",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou3_speak"
-					},
-					content = {
-						"story09_1a_13"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
 					modelId = "Model_Story_ZTXChang",
-					id = "ZTXChang_speak",
+					id = "ZTXChang",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
+					zorder = 5,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
-							x = 0.4,
+							x = 0.75,
 							y = 0
 						}
 					},
@@ -452,7 +472,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 							name = "ZTXChang_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "ZTXChang/ZTXChang_face_16.png",
+							image = "ZTXChang/ZTXChang_face_5.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -464,93 +484,20 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
 				}
 			end
 		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "orbitCamera",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						angleZ = 0,
-						time = 0,
-						deltaAngleZ = 180
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
 		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
+			action = "updateNode",
+			actor = __getnode__(_root, "ZTXChang"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_14"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_15"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
+					opacity = 0
 				}
 			end
 		}),
@@ -559,277 +506,62 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					modelId = "Model_Story_FTLEShi",
-					id = "FTLEShi_speak",
-					rotationX = 0,
-					scale = 1.025,
+					modelId = "Model_MZGXiu",
+					id = "MZGXiu",
+					rotationX = -1,
+					scale = 0.72,
+					zorder = 4.5,
 					position = {
 						x = 0,
-						y = -510,
+						y = -445,
 						refpt = {
-							x = 0.5,
+							x = 0.3,
 							y = 0
 						}
 					},
 					children = {
 						{
 							resType = 0,
-							name = "FTLEShi_face",
+							name = "cxgdie_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "FTLEShi/FTLEShi_face_9.png",
+							image = "cxgdie/face_cxgdie_6.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
 							zorder = 1100,
 							visible = true,
-							id = "FTLEShi_face",
+							id = "cxgdie_face",
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 1000
-							}
-						},
-						{
-							layoutMode = 1,
-							type = "MovieClip",
-							zorder = 1100,
-							visible = false,
-							id = "FTLEShi_hit",
-							scale = 1.5,
-							actionName = "mofa_gongji_juqing",
-							anchorPoint = {
-								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -35.5,
-								y = 750
+								x = 22.5,
+								y = 1245.5
 							}
 						}
 					}
 				}
 			end
 		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "orbitCamera",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						angleZ = 0,
-						time = 0,
-						deltaAngleZ = 180
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		sleep({
+		act({
+			action = "updateNode",
+			actor = __getnode__(_root, "MZGXiu"),
 			args = function (_ctx)
 				return {
-					duration = 0.8
+					opacity = 0
 				}
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "FTLEShi_face"),
+			action = "orbitCamera",
+			actor = __getnode__(_root, "MZGXiu"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "FTLEShi/FTLEShi_face_6.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_4",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"FTLEShi_speak"
-					},
-					content = {
-						"story09_1a_16"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "ZTXChang_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "ZTXChang/ZTXChang_face_13.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_17"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_18"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_19"
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "FTLEShi_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "FTLEShi/FTLEShi_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_4",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"FTLEShi_speak"
-					},
-					content = {
-						"story09_1a_20"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.3,
-					position = {
-						x = 0,
-						y = -510,
-						refpt = {
-							x = 0.75,
-							y = 0
-						}
-					}
+					angleZ = 0,
+					time = 0,
+					deltaAngleZ = 180
 				}
 			end
 		}),
@@ -839,14 +571,15 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			args = function (_ctx)
 				return {
 					modelId = "Model_Story_CLMan",
-					id = "CLMan_speak",
+					id = "CLMan",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
+					zorder = 15,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
-							x = 0.25,
+							x = 0.3,
 							y = 0
 						}
 					},
@@ -856,7 +589,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 							name = "CLMan_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "CLMan/CLMan_face_12.png",
+							image = "CLMan/CLMan_face_11.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -868,8 +601,8 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -879,7 +612,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		concurrent({
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "CLMan_speak"),
+				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
 						opacity = 0
@@ -888,7 +621,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			}),
 			act({
 				action = "orbitCamera",
-				actor = __getnode__(_root, "CLMan_speak"),
+				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
 						angleZ = 0,
@@ -896,1370 +629,47 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 						deltaAngleZ = 180
 					}
 				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
 			})
 		}),
 		act({
-			action = "speak",
+			action = "addPortrait",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_21"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_22"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_23"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_24"
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "scaleTo",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						scale = 1.18,
-						duration = 0.3
-					}
-				end
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.3,
-						position = {
-							x = 0,
-							y = -368,
-							refpt = {
-								x = 0.4,
-								y = -0.075
-							}
+					modelId = "Model_Story_FTLEShi",
+					id = "FTLEShi",
+					rotationX = 0,
+					scale = 0.6,
+					zorder = 5,
+					position = {
+						x = 0,
+						y = -280,
+						refpt = {
+							x = 0.75,
+							y = 0
 						}
-					}
-				end
-			})
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "item_blacklens"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "item_blacklens"),
-				args = function (_ctx)
-					return {
-						duration = 0.2,
-						position = {
-							x = 0.5,
-							y = 0.5,
-							refpt = {
+					},
+					children = {
+						{
+							resType = 0,
+							name = "FTLEShi_face",
+							pathType = "STORY_FACE",
+							type = "Image",
+							image = "FTLEShi/FTLEShi_face_1.png",
+							scaleX = 1,
+							scaleY = 1,
+							layoutMode = 1,
+							zorder = 1100,
+							visible = true,
+							id = "FTLEShi_face",
+							anchorPoint = {
 								x = 0.5,
 								y = 0.5
+							},
+							position = {
+								x = -41.5,
+								y = 1286.1
 							}
-						}
-					}
-				end
-			})
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "item_blacklens"),
-			args = function (_ctx)
-				return {
-					duration = 0.15,
-					position = {
-						x = 0.5,
-						y = 0.5,
-						refpt = {
-							x = 0.5,
-							y = 0.515
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "item_blacklens"),
-			args = function (_ctx)
-				return {
-					duration = 0.1,
-					position = {
-						x = 0.5,
-						y = 0.5,
-						refpt = {
-							x = 0.5,
-							y = 0.5
-						}
-					}
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "item_blacklens"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "scaleTo",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						scale = 1.08,
-						duration = 0
-					}
-				end
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "ZTXChang_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0,
-						position = {
-							x = 0,
-							y = -368,
-							refpt = {
-								x = 0.4,
-								y = 0
-							}
-						}
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_25"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_26"
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_27"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_28"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_29"
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			})
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_30"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_31"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_32"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_33"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_34"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_35"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_36"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_37"
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_38"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_4",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"FTLEShi_speak"
-					},
-					content = {
-						"story09_1a_39"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_40"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "ZTXChang_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "ZTXChang/ZTXChang_face_16.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_41"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_42"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"story09_1a_43"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_44"
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.3,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 1,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "flashScreen",
-			actor = __getnode__(_root, "mask"),
-			args = function (_ctx)
-				return {
-					arr = {
-						{
-							color = "#FFFFFF",
-							fadeout = 1,
-							alpha = 1,
-							duration = 1,
-							fadein = 1
-						}
-					}
-				}
-			end
-		}),
-		rockScreen({
-			args = function (_ctx)
-				return {
-					freq = 4,
-					strength = 3
-				}
-			end
-		}),
-		rockScreen({
-			args = function (_ctx)
-				return {
-					freq = 3,
-					strength = 2
-				}
-			end
-		}),
-		rockScreen({
-			args = function (_ctx)
-				return {
-					freq = 2,
-					strength = 1
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_5.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "rock",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					freq = 3,
-					strength = 2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_45"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_11.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_46"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_47"
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.3,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.8,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -510,
-						refpt = {
-							x = 0.25,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "orbitCamera",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					angleZ = 0,
-					time = 0,
-					deltaAngleZ = 180
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_4",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"FTLEShi_speak"
-					},
-					content = {
-						"story09_1a_48"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "FTLEShi_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
-					}
-				end
-			})
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "SGHQShou3_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "SGHQShou/SGHQShou03_face_5.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_10",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou3_speak"
-					},
-					content = {
-						"story09_1a_49"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_10",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou3_speak"
-					},
-					content = {
-						"story09_1a_50"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_5.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_5",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
-					content = {
-						"story09_1a_51"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "SGHQShou3_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "SGHQShou/SGHQShou03_face_2.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -330,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_10",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou3_speak"
-					},
-					content = {
-						"story09_1a_52"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "panA")
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "SGHQShou3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "panA")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0.3
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_CSZhe",
-					id = "Enemy_CSZhe_speak",
-					rotationX = 0,
-					scale = 1,
-					zorder = 15,
-					position = {
-						x = 0,
-						y = -330,
-						refpt = {
-							x = 0.15,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_CFZhe",
-					id = "Enemy_CFZhe_speak",
-					rotationX = 0,
-					scale = 1,
-					zorder = 16,
-					position = {
-						x = 0,
-						y = -360,
-						refpt = {
-							x = 0.85,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_XXZhe",
-					id = "Enemy_XXZhe_speak",
-					rotationX = 0,
-					scale = 1,
-					zorder = 14,
-					position = {
-						x = 0,
-						y = -390,
-						refpt = {
-							x = 0.6,
-							y = 0
 						}
 					}
 				}
@@ -2268,158 +678,13 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		concurrent({
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "Enemy_CSZhe_speak"),
+				actor = __getnode__(_root, "FTLEShi"),
 				args = function (_ctx)
 					return {
 						opacity = 0
 					}
 				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Enemy_CSZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "Enemy_CFZhe_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Enemy_CFZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
 			})
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "Se_Skill_Gun")
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "EX_Hit_qiangpao")
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "Enemy_CFZhe_speak"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 2
-					}
-				end
-			}),
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "Enemy_CSZhe_speak"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 2
-					}
-				end
-			})
-		}),
-		concurrent({
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "Enemy_CFZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5,
-						position = {
-							x = 0,
-							y = -360,
-							refpt = {
-								x = 0.85,
-								y = -1
-							}
-						}
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Enemy_CFZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "Enemy_CSZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5,
-						position = {
-							x = 0,
-							y = -390,
-							refpt = {
-								x = 0.15,
-								y = -1
-							}
-						}
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Enemy_CSZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
 		}),
 		act({
 			action = "addPortrait",
@@ -2427,15 +692,15 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			args = function (_ctx)
 				return {
 					modelId = "Model_Story_SGHQShou01",
-					id = "SGHQShou1_speak",
+					id = "luxi",
 					rotationX = 0,
-					scale = 1.175,
-					zorder = 6,
+					scale = 0.62,
+					zorder = 16,
 					position = {
 						x = 0,
-						y = -265,
+						y = -320,
 						refpt = {
-							x = -0.2,
+							x = 0.25,
 							y = 0
 						}
 					},
@@ -2456,8 +721,8 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 28.5,
-								y = 515
+								x = 51.8,
+								y = 991
 							}
 						}
 					}
@@ -2467,132 +732,10 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		concurrent({
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "SGHQShou1_speak"),
+				actor = __getnode__(_root, "luxi"),
 				args = function (_ctx)
 					return {
 						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "SGHQShou1_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "SGHQShou1_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -265,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_11",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou1_speak"
-					},
-					content = {
-						"story09_1a_53"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "SGHQShou1_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "Se_Skill_Gun_2")
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "EX_Hit_qiangpao")
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "rock",
-			actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-			args = function (_ctx)
-				return {
-					freq = 3,
-					strength = 2
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0,
-						position = {
-							x = 0,
-							y = -330,
-							refpt = {
-								x = 0.6,
-								y = -1
-							}
-						}
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Enemy_XXZhe_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.1
 					}
 				end
 			})
@@ -2603,15 +746,15 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			args = function (_ctx)
 				return {
 					modelId = "Model_Story_SGHQShou02",
-					id = "SGHQShou2_speak",
+					id = "beidi",
 					rotationX = 0,
-					scale = 1.3,
-					zorder = 2,
+					scale = 0.62,
+					zorder = 12,
 					position = {
 						x = 0,
-						y = -430,
+						y = -386,
 						refpt = {
-							x = 0.5,
+							x = 0.45,
 							y = 0
 						}
 					},
@@ -2621,7 +764,7 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 							name = "SGHQShou02_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "SGHQShou/SGHQShou02_face_3.png",
+							image = "SGHQShou/SGHQShou02_face_1.png",
 							layoutMode = 1,
 							zorder = 1100,
 							visible = true,
@@ -2632,8 +775,8 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = 33.6,
-								y = 674.8
+								x = 64,
+								y = 1324
 							}
 						}
 					}
@@ -2643,150 +786,71 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 		concurrent({
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "SGHQShou2_speak"),
+				actor = __getnode__(_root, "beidi"),
 				args = function (_ctx)
 					return {
 						opacity = 0
 					}
 				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "SGHQShou2_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0
-					}
-				end
 			})
 		}),
 		act({
-			action = "speak",
+			action = "addPortrait",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_12",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"SGHQShou2_speak"
+					modelId = "Model_Story_SGHQShou03",
+					id = "fannisha",
+					rotationX = 0,
+					scale = 0.62,
+					zorder = 11,
+					position = {
+						x = 0,
+						y = -307,
+						refpt = {
+							x = 0.65,
+							y = 0
+						}
 					},
-					content = {
-						"story09_1a_54"
-					},
-					durations = {
-						0.03
+					children = {
+						{
+							resType = 0,
+							name = "SGHQShou03_face",
+							pathType = "STORY_FACE",
+							type = "Image",
+							image = "SGHQShou/SGHQShou03_face_1.png",
+							layoutMode = 1,
+							zorder = 1100,
+							visible = true,
+							id = "SGHQShou03_face",
+							scale = 1,
+							anchorPoint = {
+								x = 0.5,
+								y = 0.5
+							},
+							position = {
+								x = 69,
+								y = 1322
+							}
+						}
 					}
 				}
 			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "panA")
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "SGHQShou2_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "panA")
 		}),
 		concurrent({
 			act({
-				action = "scaleTo",
-				actor = __getnode__(_root, "bg"),
+				action = "updateNode",
+				actor = __getnode__(_root, "fannisha"),
 				args = function (_ctx)
 					return {
-						scale = 1.05,
-						duration = 0
-					}
-				end
-			}),
-			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "bg"),
-				args = function (_ctx)
-					return {
-						duration = 0,
-						position = {
-							x = 0,
-							y = 0,
-							refpt = {
-								x = -0.05,
-								y = -0.05
-							}
-						}
+						opacity = 0
 					}
 				end
 			})
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_6.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
 			action = "fadeIn",
-			actor = __getnode__(_root, "CLMan_speak"),
+			actor = __getnode__(_root, "ZTXChang"),
 			args = function (_ctx)
 				return {
 					duration = 0.2
@@ -2798,40 +862,18 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_5",
+					name = "NS891213_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"CLMan_speak"
+						"ZTXChang"
 					},
 					content = {
-						"story09_1a_55"
+						"story09_1a_13"
 					},
 					durations = {
 						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_5.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"story09_1a_56"
 					}
 				}
 			end
@@ -2841,15 +883,15 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_5",
+					name = "NS891213_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"CLMan_speak"
+						"ZTXChang"
 					},
 					content = {
-						"story09_1a_57"
+						"story09_1a_14"
 					},
 					durations = {
 						0.03
@@ -2858,15 +900,32 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "CLMan_speak"),
+			action = "fadeIn",
+			actor = __getnode__(_root, "MZGXiu"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_22",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MZGXiu"
+					},
+					content = {
+						"story09_1a_15"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
@@ -2876,101 +935,312 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "ZTXChang/ZTXChang_face_15.png",
+					image = "ZTXChang/ZTXChang_face_12.png",
 					pathType = "STORY_FACE"
 				}
 			end
 		}),
 		act({
-			action = "brightnessTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					brightness = 0,
+					name = "NS891213_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_16"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_22",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MZGXiu"
+					},
+					content = {
+						"story09_1a_17"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "ZTXChang_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "ZTXChang/ZTXChang_face_7.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_18"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_22",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"MZGXiu"
+					},
+					content = {
+						"story09_1a_19"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_20"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "ZTXChang_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "ZTXChang/ZTXChang_face_12.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_21"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "ZTXChang"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "MZGXiu"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "beidi"),
+			args = function (_ctx)
+				return {
 					duration = 0
 				}
 			end
 		}),
 		act({
 			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			actor = __getnode__(_root, "ZTXChang"),
 			args = function (_ctx)
 				return {
 					duration = 0,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
-							x = 1.5,
-							y = 0.5
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 0.2,
+							x = 0.55,
 							y = 0
 						}
 					}
 				}
 			end
 		}),
-		rockScreen({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "bg1"),
 			args = function (_ctx)
 				return {
-					freq = 4,
-					strength = 2
+					resType = 0,
+					image = "bg_story_scene_5_3.jpg",
+					pathType = "SCENE"
 				}
 			end
 		}),
 		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			action = "show",
+			actor = __getnode__(_root, "printerEffect"),
 			args = function (_ctx)
 				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 0.2,
-							y = -1
-						}
+					bgShow = false,
+					center = 1,
+					content = {
+						"story09_1a_22",
+						"story09_1a_23",
+						"story09_1a_24"
+					},
+					durations = {
+						0.07,
+						0.07,
+						0.07
+					},
+					waitTimes = {
+						1,
+						1,
+						1.5
+					}
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					durations = 1
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "printerEffect")
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.5
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.5
+				}
+			end
+		}),
+		act({
+			action = "play",
+			actor = __getnode__(_root, "Mus_Story_Yehuo_2"),
+			args = function (_ctx)
+				return {
+					isloop = true
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_25"
+					},
+					durations = {
+						0.03
 					}
 				}
 			end
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
 			action = "fadeIn",
-			actor = __getnode__(_root, "CLMan_speak"),
+			actor = __getnode__(_root, "luxi"),
 			args = function (_ctx)
 				return {
 					duration = 0.2
@@ -2982,15 +1252,15 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_5",
+					name = "NS891213_dialog_speak_name_20",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"CLMan_speak"
+						"luxi"
 					},
 					content = {
-						"story09_1a_58"
+						"story09_1a_26"
 					},
 					durations = {
 						0.03
@@ -2999,11 +1269,457 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "CLMan_speak"),
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.45,
+							y = 0.5
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.65,
+							y = 0.3
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.35,
+							y = 0.43
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.4
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_27"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "fannisha"),
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_21",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"fannisha"
+					},
+					content = {
+						"story09_1a_28"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.45,
+							y = 0.5
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.65,
+							y = 0.3
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_zidan"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.35,
+							y = 0.43
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_qiang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_zidan"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.4
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "yin_qiang")
+			}),
+			act({
+				action = "stop",
+				actor = __getnode__(_root, "xiao_zidan")
+			}),
+			act({
+				action = "hide",
+				actor = __getnode__(_root, "xiao_zidan")
+			})
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "FTLEShi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "CLMan"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_29"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
@@ -3019,221 +1735,380 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -510,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_4",
+					name = "NS891213_dialog_speak_name_4",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"FTLEShi_speak"
+						"FTLEShi"
 					},
 					content = {
-						"story09_1a_59"
+						"story09_1a_30"
 					},
 					durations = {
 						0.03
 					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					brightness = -255,
-					modelId = "Model_Story_ZTXChang",
-					id = "ZTXChang_blackspeak",
-					rotationX = 0,
-					scale = 1.08,
-					zorder = 24,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 1.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "ZTXChang_blackspeak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "orbitCamera",
-				actor = __getnode__(_root, "ZTXChang_blackspeak"),
-				args = function (_ctx)
-					return {
-						angleZ = 0,
-						time = 0,
-						deltaAngleZ = 180
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "ZTXChang_blackspeak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_blackspeak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_blackspeak"),
-			args = function (_ctx)
-				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 0.4,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_blackspeak"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_226",
-					dialogImage = "jq_dialogue_bg_4.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_blackspeak"
-					},
-					content = {
-						"story09_1a_60"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_blackspeak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.2
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "dialog_speak_name_4",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"FTLEShi_speak"
-					},
-					content = {
-						"story09_1a_61"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "FTLEShi_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
 				}
 			end
 		}),
 		act({
 			action = "hide",
 			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					content = {
+						"story09_1a_31"
+					},
+					storyLove = {}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_32"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_33"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "FTLEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "FTLEShi/FTLEShi_face_8.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_34"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_35"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					content = {
+						"story09_1a_36"
+					},
+					storyLove = {}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "FTLEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "FTLEShi/FTLEShi_face_9.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_37"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "FTLEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "FTLEShi/FTLEShi_face_13.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_38"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "CLMan_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "CLMan/CLMan_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_39"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_40"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					content = {
+						"story09_1a_41"
+					},
+					storyLove = {
+						"NewStart_story0901_1"
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "play",
+			actor = __getnode__(_root, "xiao_baozha"),
+			args = function (_ctx)
+				return {
+					time = 1
+				}
+			end
+		}),
+		act({
+			action = "play",
+			actor = __getnode__(_root, "Se_Story_Flame_Roaring"),
+			args = function (_ctx)
+				return {
+					time = 1
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 1.5
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "FTLEShi"),
+				args = function (_ctx)
+					return {
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "CLMan"),
+				args = function (_ctx)
+					return {
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "changeTexture",
+				actor = __getnode__(_root, "CLMan_face"),
+				args = function (_ctx)
+					return {
+						resType = 0,
+						image = "CLMan/CLMan_face_12.png",
+						pathType = "STORY_FACE"
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "bg1"),
+				args = function (_ctx)
+					return {
+						duration = 0
+					}
+				end
+			})
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "bg1"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "bg_story_cg_08_3.jpg",
+					pathType = "SCENE"
+				}
+			end
 		}),
 		act({
 			action = "changeTexture",
@@ -3247,66 +2122,239 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "brightnessTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			action = "stop",
+			actor = __getnode__(_root, "xiao_baozha")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "Se_Story_Flame_Roaring")
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
-					brightness = 0,
-					duration = 0
+					duration = 0.5
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.5
 				}
 			end
 		}),
 		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					duration = 0,
-					position = {
-						x = 0,
-						y = -368,
-						refpt = {
-							x = 0.4,
-							y = -1
-						}
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_42"
+					},
+					durations = {
+						0.03
 					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_43"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.4
 				}
 			end
 		}),
 		act({
 			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			actor = __getnode__(_root, "bg1"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "bg1"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "bg_story_cg_09_1.jpg",
+					pathType = "SCENE"
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.4
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.5
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					content = {
+						"story09_1a_44"
+					},
+					storyLove = {}
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "FTLEShi"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "CLMan"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_45"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_46"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
 		concurrent({
 			act({
-				action = "moveTo",
-				actor = __getnode__(_root, "ZTXChang_speak"),
+				action = "fadeOut",
+				actor = __getnode__(_root, "FTLEShi"),
 				args = function (_ctx)
 					return {
-						duration = 1,
-						position = {
-							x = 0,
-							y = -368,
-							refpt = {
-								x = 0.4,
-								y = -0.1
-							}
-						}
+						duration = 0.2
 					}
 				end
 			}),
 			act({
-				action = "rock",
-				actor = __getnode__(_root, "ZTXChang_speak"),
+				action = "fadeOut",
+				actor = __getnode__(_root, "CLMan"),
 				args = function (_ctx)
 					return {
-						freq = 3,
-						strength = 2
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
 					}
 				end
 			})
@@ -3316,12 +2364,607 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_20",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_speak"
+						"luxi"
+					},
+					content = {
+						"story09_1a_47"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_48"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "SGHQShou03_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "SGHQShou/SGHQShou03_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "SGHQShou02_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "SGHQShou/SGHQShou02_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_49"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_24",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi",
+						"luxi",
+						"fannisha"
+					},
+					content = {
+						"story09_1a_50"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_51"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		rockScreen({
+			args = function (_ctx)
+				return {
+					freq = 3,
+					strength = 1
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_52"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_21",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"fannisha"
+					},
+					content = {
+						"story09_1a_53"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_54"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_55"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "dialogue")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					content = {
+						"story09_1a_56",
+						"story09_1a_57"
+					},
+					storyLove = {
+						"NewStart_story0901_2a",
+						"NewStart_story0901_2b"
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_58"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_59"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "CLMan"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "FTLEShi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "changeTexture",
+				actor = __getnode__(_root, "CLMan_face"),
+				args = function (_ctx)
+					return {
+						resType = 0,
+						image = "CLMan/CLMan_face_10.png",
+						pathType = "STORY_FACE"
+					}
+				end
+			}),
+			act({
+				action = "changeTexture",
+				actor = __getnode__(_root, "FTLEShi_face"),
+				args = function (_ctx)
+					return {
+						resType = 0,
+						image = "FTLEShi/FTLEShi_face_5.png",
+						pathType = "STORY_FACE"
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_3",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan"
+					},
+					content = {
+						"story09_1a_60"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"FTLEShi"
+					},
+					content = {
+						"story09_1a_61"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "CLMan"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "FTLEShi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
 					},
 					content = {
 						"story09_1a_62"
@@ -3333,27 +2976,323 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "ZTXChang_face"),
+			action = "moveTo",
+			actor = __getnode__(_root, "FTLEShi"),
 			args = function (_ctx)
 				return {
-					resType = 0,
-					image = "ZTXChang/ZTXChang_face_16.png",
-					pathType = "STORY_FACE"
+					duration = 0,
+					position = {
+						x = 0,
+						y = -280,
+						refpt = {
+							x = 0.5,
+							y = 0
+						}
+					}
 				}
 			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "ZTXChang"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_jian"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.3,
+							y = 0.2
+						}
+					}
+				}
+			end
+		}),
+		act({
+			action = "rotateBy",
+			actor = __getnode__(_root, "xiao_jian"),
+			args = function (_ctx)
+				return {
+					deltaAngle = -70,
+					duration = 0
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_jian")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "yin_jian")
+		}),
+		concurrent({
+			act({
+				action = "moveTo",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						duration = 0,
+						position = {
+							refpt = {
+								x = 0.5,
+								y = 0.9
+							}
+						}
+					}
+				end
+			}),
+			act({
+				action = "rotateBy",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						deltaAngle = 130,
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_jian")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "yin_jian")
+		}),
+		act({
+			action = "rotateBy",
+			actor = __getnode__(_root, "xiao_jian"),
+			args = function (_ctx)
+				return {
+					deltaAngle = -10,
+					duration = 0
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "moveTo",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						duration = 0,
+						position = {
+							refpt = {
+								x = 0.5,
+								y = 0.9
+							}
+						}
+					}
+				end
+			}),
+			act({
+				action = "rotateBy",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						deltaAngle = 30,
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_jian")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "yin_jian")
+		}),
+		concurrent({
+			act({
+				action = "moveTo",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						duration = 0,
+						position = {
+							refpt = {
+								x = 0.3,
+								y = 0.5
+							}
+						}
+					}
+				end
+			}),
+			act({
+				action = "rotateBy",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						deltaAngle = -90,
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		concurrent({
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.2
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_jian")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "yin_jian")
 		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_105",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_24",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_speak"
+						"beidi",
+						"luxi",
+						"fannisha"
 					},
 					content = {
 						"story09_1a_63"
@@ -3365,8 +3304,8 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
 					duration = 0.1
@@ -3374,11 +3313,173 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			end
 		}),
 		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "ZTXChang_blackspeak"),
+			action = "fadeOut",
+			actor = __getnode__(_root, "luxi"),
 			args = function (_ctx)
 				return {
-					duration = 1
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "beidi"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "fannisha"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "FTLEShi"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "colorBg"),
+			args = function (_ctx)
+				return {
+					bgColor = "#000000"
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0
+				}
+			end
+		}),
+		act({
+			action = "moveTo",
+			actor = __getnode__(_root, "xiao_jian"),
+			args = function (_ctx)
+				return {
+					duration = 0,
+					position = {
+						refpt = {
+							x = 0.3,
+							y = 0.1
+						}
+					}
+				}
+			end
+		}),
+		concurrent({
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_jian"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "yin_gedang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "xiao_gedang"),
+				args = function (_ctx)
+					return {
+						time = 1
+					}
+				end
+			})
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.3
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_jian")
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "xiao_gedang")
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "yin_gedang")
+		}),
+		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "hide",
+			actor = __getnode__(_root, "colorBg")
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.4
+				}
+			end
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 0.4
+				}
+			end
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "FTLEShi_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "FTLEShi/FTLEShi_face_4.png",
+					pathType = "STORY_FACE"
 				}
 			end
 		}),
@@ -3387,12 +3488,12 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_226",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_blackspeak"
+						"FTLEShi"
 					},
 					content = {
 						"story09_1a_64"
@@ -3408,12 +3509,12 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_226",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_4",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_blackspeak"
+						"FTLEShi"
 					},
 					content = {
 						"story09_1a_65"
@@ -3424,17 +3525,37 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 				}
 			end
 		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "FTLEShi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "ZTXChang"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			})
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_226",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_blackspeak"
+						"ZTXChang"
 					},
 					content = {
 						"story09_1a_66"
@@ -3450,12 +3571,12 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_226",
-					dialogImage = "jq_dialogue_bg_4.png",
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"ZTXChang_blackspeak"
+						"ZTXChang"
 					},
 					content = {
 						"story09_1a_67"
@@ -3466,45 +3587,155 @@ function scene_story09_1a.actions.start_story09_1a(_root, args)
 				}
 			end
 		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_23",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang"
+					},
+					content = {
+						"story09_1a_68"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
 		concurrent({
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
+			rockScreen({
 				args = function (_ctx)
 					return {
-						name = "dialog_speak_name_226",
-						dialogImage = "jq_dialogue_bg_4.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							"ZTXChang_blackspeak"
-						},
-						content = {
-							"story09_1a_68"
-						},
-						durations = {
-							0.03
-						}
+						freq = 5,
+						strength = 2
 					}
 				end
 			}),
 			act({
-				action = "rock",
-				actor = __getnode__(_root, "dialogue"),
+				action = "fadeOut",
+				actor = __getnode__(_root, "ZTXChang"),
 				args = function (_ctx)
 					return {
-						freq = 4,
-						strength = 2
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "luxi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "beidi"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "fannisha"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
 					}
 				end
 			})
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_69"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_19",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi"
+					},
+					content = {
+						"story09_1a_70"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "NS891213_dialog_speak_name_24",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"beidi",
+						"luxi",
+						"fannisha"
+					},
+					content = {
+						"story09_1a_71"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
 		}),
 		act({
 			action = "fadeIn",
 			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
-					duration = 3
+					duration = 1.5
+				}
+			end
+		}),
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "Mus_Story_Yehuo_2")
+		}),
+		sleep({
+			args = function (_ctx)
+				return {
+					duration = 1
 				}
 			end
 		})

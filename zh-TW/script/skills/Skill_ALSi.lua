@@ -349,6 +349,7 @@ all.Skill_ALSi_Passive = {
 					duration = 3,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_ALSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -675,6 +676,7 @@ all.Skill_ALSi_Passive_EX = {
 					duration = 3,
 					tags = {
 						"CARDBUFF",
+						"BUFF",
 						"Skill_ALSi_Passive",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -739,7 +741,7 @@ all.Skill_ALSi_Passive_Death = {
 			local defender = global.LoadUnit(_env, _env.TARGET, "DEFENDER")
 			local damage = global.EvalDamage(_env, attacker, defender, this.dmgFactor)
 
-			global.ApplyHPDamage(_env, _env.TARGET, damage)
+			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			local buffeft1 = global.Mute(_env)
 
@@ -751,6 +753,7 @@ all.Skill_ALSi_Passive_Death = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {

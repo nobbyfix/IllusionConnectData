@@ -23,7 +23,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -57,6 +57,7 @@ function DreamChallengeTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -145,7 +146,6 @@ function DreamChallengeTeamMediator:initData(data)
 		end
 	end
 
-	dump(self._forbidMasters, "self._forbidMasters >>>>>>>>>>> ")
 	table.sort(self._masterList, function (a, b)
 		local astate = kMasterState.Forbidden
 		local bstate = kMasterState.Forbidden
@@ -940,7 +940,7 @@ function DreamChallengeTeamMediator:initHero(node, info)
 			text:setString(Strings:get("clubBoss_46"))
 			text:setColor(cc.c3b(255, 203, 63))
 		else
-			text:setString(Strings:get("LOGIN_UI13"))
+			text:setString(Strings:get("LOGIN_UI_hint"))
 			text:setColor(cc.c3b(255, 255, 255))
 		end
 	end
@@ -1086,7 +1086,7 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -1108,7 +1108,12 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1197,7 +1202,9 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 				image:offset(0, -5)
 			end
 
-			local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+			local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+				masterId = self._curMasterId
+			})
 
 			skillPanel:setGray(not isActive)
 		end
@@ -1209,7 +1216,7 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 	local except_0 = node:getChildByName("except_0")
 	local help = node:getChildByName("help")
 
-	help:loadTexture("asset/commonLang/kazu_bg_yuan.png")
+	help:loadTexture("asset/common/kazu_bg_yuan.png")
 	help:setVisible(true)
 	textNumEffect:setVisible(false)
 	except_0:setVisible(false)
@@ -1229,6 +1236,8 @@ function DreamChallengeTeamMediator:initTeamHero(node, info)
 end
 
 function DreamChallengeTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1237,6 +1246,10 @@ function DreamChallengeTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1265,37 +1278,48 @@ function DreamChallengeTeamMediator:refreshCombatAndCost()
 	if fightId and fightId ~= "" then
 		self._combatInfoBtn:setVisible(true)
 		self._labelCombat:setString(Strings:get("SpPower_ShowName"))
+		self._combatInfoBtn:loadTextureNormal("asset/common/common_btn_xq.png")
+		self._combatInfoBtn:loadTexturePressed("asset/common/common_btn_xq.png")
 	end
 
-	self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.began then
-			self._fightInfoTip:removeAllChildren()
+	if self._combatInfoBtn:isVisible() then
+		self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			if eventType == ccui.TouchEventType.began then
+				self._fightInfoTip:removeAllChildren()
 
-			local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
-			local desc = Strings:get("SpPower_ShowDescTitle", {
-				fontSize = 20,
-				fontName = TTF_FONT_FZYH_M,
-				level = level
-			})
-			local richText = ccui.RichText:createWithXML(desc, {})
+				local level = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", fightId, "StandardLv")
+				local desc = Strings:get("SpPower_ShowDescTitle", {
+					fontSize = 20,
+					fontName = TTF_FONT_FZYH_M,
+					level = level
+				})
+				local richText = ccui.RichText:createWithXML(desc, {})
 
-			richText:setAnchorPoint(cc.p(0, 0))
-			richText:setPosition(cc.p(10, 10))
-			richText:addTo(self._fightInfoTip)
-			richText:renderContent(440, 0, true)
+				richText:setAnchorPoint(cc.p(0, 0))
+				richText:setPosition(cc.p(10, 10))
+				richText:addTo(self._fightInfoTip)
+				richText:renderContent(440, 0, true)
 
-			local size = richText:getContentSize()
+				local size = richText:getContentSize()
 
-			self._fightInfoTip:setContentSize(460, size.height + 20)
-			self._fightInfoTip:setVisible(true)
-		elseif eventType == ccui.TouchEventType.moved then
-			-- Nothing
-		elseif eventType == ccui.TouchEventType.canceled then
-			self._fightInfoTip:setVisible(false)
-		elseif eventType == ccui.TouchEventType.ended then
-			self._fightInfoTip:setVisible(false)
-		end
-	end)
+				self._fightInfoTip:setContentSize(460, size.height + 20)
+				self._fightInfoTip:setVisible(true)
+			elseif eventType == ccui.TouchEventType.moved then
+				-- Nothing
+			elseif eventType == ccui.TouchEventType.canceled then
+				self._fightInfoTip:setVisible(false)
+			elseif eventType == ccui.TouchEventType.ended then
+				self._fightInfoTip:setVisible(false)
+			end
+		end)
+	else
+		slot9 = self._combatInfoBtn
+
+		slot9:setVisible(leadConfig ~= nil and addPercent > 0)
+		self._combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			self:onClickInfo(eventType)
+		end)
+	end
 end
 
 function DreamChallengeTeamMediator:changeMasterId(event)
@@ -1304,6 +1328,7 @@ function DreamChallengeTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function DreamChallengeTeamMediator:refreshMasterInfo()

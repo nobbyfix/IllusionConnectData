@@ -58,6 +58,10 @@ function CrusadeBattleWinMediator:initWidget()
 
 	self._main = self:getView():getChildByName("content")
 	self._wordPanel = self._main:getChildByFullName("word")
+	local textlbl = self._main:getChildByFullName("Panel_reward.Image_bg.text")
+
+	textlbl:setString("")
+
 	self._winPanel = self._main:getChildByFullName("panel_win")
 end
 
@@ -91,7 +95,9 @@ function CrusadeBattleWinMediator:refreshView()
 	local playerBattleData = battleStatist[player:getRid()]
 	local team = developSystem:getSpTeamByType(StageTeamType.CRUSADE)
 	local mvpPoint = 0
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", team:getMasterId(), "RoleModel")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local model = masterData:getModel()
 
 	for k, v in pairs(playerBattleData.unitSummary) do
 		local roleType = ConfigReader:getDataByNameIdAndKey("RoleModel", v.model, "Type")
@@ -144,15 +150,16 @@ function CrusadeBattleWinMediator:refreshView()
 
 	if model then
 		local roleNode = anim:getChildByName("roleNode")
-		local mvpSprite = IconFactory:createRoleIconSprite({
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust9",
+			frameId = "bustframe17",
 			id = model
 		})
 
 		mvpSprite:addTo(roleNode)
 		mvpSprite:setScale(0.8)
-		mvpSprite:setPosition(cc.p(50, -100))
+		mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 
 		local roleId = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Hero")
 		local heroMvpText = ""

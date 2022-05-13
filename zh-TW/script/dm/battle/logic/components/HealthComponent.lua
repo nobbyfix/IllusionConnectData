@@ -1,6 +1,9 @@
 HealthComponent = class("HealthComponent", BaseComponent, _M)
 
 function HealthComponent:initialize()
+	self._shieldRatio = 1
+	self._hpRecoverRatio = 1
+
 	super.initialize(self)
 end
 
@@ -8,9 +11,21 @@ function HealthComponent:initWithRawData(data)
 	super.initWithRawData(self, data)
 
 	local ratio = data.ratio or 1
+	local sheilUplimit = data.sheilUplimit or 1
 
+	self:setSheilUpLimit(sheilUplimit)
 	self:setMaxHp(data.maxHp * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
 	self:setHp((data.hp or data.maxHp) * ratio * (GameConfigs and GameConfigs.healthMulti or 1))
+
+	self._orgMaxHp = self._maxHp
+end
+
+function HealthComponent:setSheilUpLimit(sheilUplimit)
+	self._sheilUplimit = sheilUplimit
+end
+
+function HealthComponent:getSheilUpLimit()
+	return self._sheilUplimit
 end
 
 function HealthComponent:setHp(val)
@@ -52,6 +67,10 @@ end
 
 function HealthComponent:getMaxHp()
 	return self._maxHp or 0
+end
+
+function HealthComponent:getOrgMaxHp()
+	return self._orgMaxHp or self._maxHp
 end
 
 function HealthComponent:getHpRatio()
@@ -106,10 +125,13 @@ function HealthComponent:applyDamage(value, lowerLimitValue)
 end
 
 function HealthComponent:applyRecovery(value)
+	value = math.floor(value * self:getHpRecoverRatio())
+
 	if value < 0 then
 		return nil
 	end
 
+	value = math.floor(value)
 	local hp0 = self:getHp()
 
 	self:setHp(hp0 + value)
@@ -151,6 +173,7 @@ function HealthComponent:copyComponent(srcComp, ratio)
 
 	self:setMaxHp(srcComp:getMaxHp() * hpRatio + hpEx)
 	self:setHp(self:getMaxHp() * curHpRatio)
+	self:setSheilUpLimit(srcComp:getSheilUpLimit())
 end
 
 function HealthComponent:getShield()
@@ -160,8 +183,10 @@ function HealthComponent:getShield()
 end
 
 function HealthComponent:addShield(shieldValue, upLimit, source)
+	shieldValue = shieldValue * self:getShieldRatio()
 	local newValue = self:getShield() + shieldValue
 	self._shield = upLimit and upLimit < newValue and upLimit or newValue
+	self._shield = self._sheilUplimit and self._shield > self._sheilUplimit * self._maxHp and self._sheilUplimit * self._maxHp or self._shield
 	self._shieldSources = self._shieldSources or {}
 
 	if source then
@@ -169,6 +194,22 @@ function HealthComponent:addShield(shieldValue, upLimit, source)
 	end
 
 	return self._shield
+end
+
+function HealthComponent:addShieldRatio(ratio)
+	self._shieldRatio = self:getShieldRatio() + ratio
+end
+
+function HealthComponent:addHpRecoverRatio(ratio)
+	self._hpRecoverRatio = self:getHpRecoverRatio() + ratio
+end
+
+function HealthComponent:getHpRecoverRatio()
+	return self._hpRecoverRatio or 1
+end
+
+function HealthComponent:getShieldRatio()
+	return self._shieldRatio or 1
 end
 
 function HealthComponent:cancelShield(source)
@@ -243,6 +284,27 @@ function HealthComponent:cancelImmune()
 	if self._immune <= 0 then
 		self._immune = nil
 	end
+end
+
+function HealthComponent:setTrasforHpComp(target, radio)
+	self._tansforHpComp = target
+	self._tansforHpRadio = radio
+end
+
+function HealthComponent:removeTrasforHpComp()
+	self._tansforHpComp = nil
+	self._tansforHpRadio = nil
+end
+
+function HealthComponent:getTrasforHpComp()
+	if self._tansforHpComp and self._tansforHpComp:getEntity() then
+		return {
+			comp = self._tansforHpComp,
+			radio = self._tansforHpRadio
+		}
+	end
+
+	return nil
 end
 
 function HealthComponent:addExtraLife(value, source)

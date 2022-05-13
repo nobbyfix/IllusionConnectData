@@ -467,6 +467,7 @@ end
 
 function BaseSceneMediator:initPopupLayer(rootView)
 	self._popupViewGroups = {}
+	self._popupViewLists = {}
 	self._popupLayer = cc.Node:create()
 
 	rootView:addChild(self._popupLayer, LayerZOrders.kPopupLayer)
@@ -488,12 +489,15 @@ end
 function BaseSceneMediator:didAddPopupView(popupView, popupGroup)
 	self._popupViewGroups[popupView] = popupGroup
 
+	table.insert(self._popupViewLists, popupView)
 	self:_updatePopupGroupVisibility()
 end
 
 function BaseSceneMediator:willRemovePopupView(popupView, popupGroup)
 	if popupGroup == self._popupViewGroups[popupView] then
 		self._popupViewGroups[popupView] = nil
+
+		table.removevalues(self._popupViewLists, popupView)
 	end
 
 	self:_updatePopupGroupVisibility()
@@ -580,6 +584,10 @@ function BaseSceneMediator:getPopupViewCount()
 	end
 
 	return result
+end
+
+function BaseSceneMediator:getTopPopupView()
+	return self._popupViewLists[#self._popupViewLists]
 end
 
 function BaseSceneMediator:initEffectLayer(rootView)

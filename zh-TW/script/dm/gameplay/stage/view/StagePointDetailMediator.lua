@@ -50,6 +50,7 @@ function StagePointDetailMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_RESETTIMES, self, self.refreshChallengeTimes)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.changeTeamSuc)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.onCompChanged)
 end
 
 function StagePointDetailMediator:enterWithData(data)
@@ -114,6 +115,14 @@ function StagePointDetailMediator:initAnim()
 		btnAnim:setPosition(cc.p(443.5, -83))
 		btnAnim:setOpacity(0)
 		btnAnim:runAction(cc.FadeIn:create(0.5))
+
+		self._challengeAnim = btnAnim
+		local act = cc.Sequence:create(cc.DelayTime:create(0.4375), cc.FadeIn:create(0.3125))
+
+		self._challengeBtn:runAction(act:clone())
+		self._challengeBtn:changeParent(self._challengeAnim)
+		self._challengeBtn:center(self._challengeAnim:getContentSize())
+		self:setUpQuickPass()
 	end)
 
 	for i = 1, 3 do
@@ -166,11 +175,204 @@ function StagePointDetailMediator:initAnim()
 
 	self._rolePanel:changeParent(heroRole)
 	self._challengeBtn:setOpacity(0)
-
-	local act = cc.Sequence:create(cc.DelayTime:create(0.4375), cc.FadeIn:create(0.3125))
-
-	self._challengeBtn:runAction(act:clone())
 	mc:gotoAndPlay(1)
+
+	self._mainAnim = mc
+end
+
+function StagePointDetailMediator:setUpQuickPass()
+	if not self._challengeAnim then
+		return
+	end
+
+	local isquickEnable = self._stageSystem:isPointQuickCrossEnabled(self._data.pointId)
+	local isCombatEnable = self._stageSystem:isPointQuickCombatEnabled(self._data.pointId)
+	local quickPassBtn = ccui.ImageView:create("gongdou_but_jujue.png", 1)
+	local quickPassIcon = ccui.ImageView:create("main_txt_btn_kstz.png", 1)
+	local quickPassLock = ccui.ImageView:create("img_common_lock.png", 1)
+
+	if self.quickPassBtn then
+		self.quickPassBtn:removeFromParent()
+
+		self.quickPassBtn = nil
+	end
+
+	if self._challengeAnimOrgState then
+		self._challengeAnim:setScale(self._challengeAnimOrgState.scale)
+		self._challengeAnim:setPosition(self._challengeAnimOrgState.position)
+	end
+
+	quickPassBtn:setTouchEnabled(true)
+	quickPassBtn:setScale(0.88)
+	quickPassBtn:addTo(self._mainAnim)
+	quickPassIcon:addTo(quickPassBtn)
+	quickPassLock:addTo(quickPassBtn)
+	quickPassLock:setPosition(115, 125)
+	quickPassIcon:center(quickPassBtn:getContentSize())
+	quickPassIcon:offset(0, 3)
+	quickPassIcon:setScale(1.2)
+	quickPassBtn:setPosition(cc.p(300, -83))
+	quickPassBtn:addClickEventListener(function (sender, eventType)
+		self:quickCrossPoint()
+	end)
+	quickPassBtn:setOpacity(0)
+
+	local act = cc.Sequence:create(cc.FadeIn:create(0.3125))
+
+	quickPassBtn:runAction(act:clone())
+
+	self.quickPassBtn = quickPassBtn
+	self._quickCrossEnable = false
+	self._quickCrossEnableErroMsg = ""
+	self._challengeAnimOrgState = {
+		scale = self._challengeAnim:getScale(),
+		position = cc.p(self._challengeAnim:getPosition())
+	}
+
+	local function adJustBtnPos()
+		self._challengeAnim:setScale(0.8)
+		quickPassBtn:setScale(0.8)
+		self._challengeAnim:offset(50, -50)
+		quickPassBtn:offset(80, 20)
+	end
+
+	if self._canwipeOnce then
+		adJustBtnPos()
+		quickPassIcon:loadTexture("main_txt_btn_sd.png", 1)
+		quickPassLock:setVisible(false)
+
+		return
+	end
+
+	local unlock, tips = self:getInjector():getInstance("SystemKeeper"):isUnlock("QuickChallenge")
+
+	if not unlock then
+		quickPassBtn:stopAllActions()
+		quickPassBtn:setVisible(false)
+
+		return
+	end
+
+	if not isquickEnable then
+		self._quickCrossEnableErroMsg = "Error_11196"
+
+		adJustBtnPos()
+		quickPassBtn:setGray(true)
+
+		return
+	end
+
+	if not isCombatEnable then
+		self._quickCrossEnableErroMsg = "Error_11197"
+
+		adJustBtnPos()
+		quickPassBtn:setGray(true)
+
+		return
+	end
+
+	adJustBtnPos()
+	quickPassLock:setVisible(false)
+
+	self._quickCrossEnable = true
+end
+
+function StagePointDetailMediator:checkCostEnergyEnble()
+	if self._bagSystem:getPower() < self._point:getCostEnergy() then
+		local view = self:getInjector():getInstance("CurrencyBuyPopView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			_currencyType = CurrencyType.kActionPoint
+		}, self))
+
+		return false
+	end
+
+	return true
+end
+
+function StagePointDetailMediator:quickCrossPoint()
+	if not self._quickCrossEnable then
+		if self._canwipeOnce then
+			if not self:checkCostEnergyEnble() then
+				return
+			end
+
+			if self._point:getType() == StageType.kElite and self._point:getChallengeTimes() == 0 then
+				self:dispatch(ShowTipEvent({
+					duration = 0.2,
+					tip = Strings:find("Time_UseingUp")
+				}))
+
+				return
+			end
+
+			self:showSweepBox()
+		else
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get(self._quickCrossEnableErroMsg)
+			}))
+		end
+
+		return
+	end
+
+	if not self:checkCostEnergyEnble() then
+		return
+	end
+
+	if self._enterBattle then
+		return
+	end
+
+	local data = self._data
+
+	if self._point:getType() == StageType.kElite and self._point:getChallengeTimes() == 0 then
+		local data = {
+			mapId = self._data.mapId,
+			pointId = self._data.pointId,
+			resetTimes = self._point:getResetTimes(),
+			resetCost = self._point:getResetCost()
+		}
+		local view = self:getInjector():getInstance("StageResetView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data))
+
+		return
+	end
+
+	AudioEngine:getInstance():playEffect("Se_Click_Battle", false)
+
+	self._enterBattle = true
+	local _teamType = self:getTeamByPointType()
+	local team = self._developSystem:getTeamByType(_teamType)
+
+	self._stageSystem:setBattleTeamInfo(team)
+
+	local anim = cc.MovieClip:create("dajia_zhujuedajia")
+
+	anim:addTo(self:getView()):center(self:getView():getContentSize())
+
+	local delay = cc.DelayTime:create(1)
+	local sequence = cc.Sequence:create(delay, cc.CallFunc:create(function ()
+		self._stageSystem:requestStageQuickCrossEnter({
+			pointId = self._data.pointId
+		}, function (rsdata)
+		end, true)
+		self:close()
+	end))
+
+	self:getView():runAction(sequence)
+end
+
+function StagePointDetailMediator:onCompChanged(data)
+	if not self._data.isPracticePoint then
+		self:setUpQuickPass()
+	end
 end
 
 function StagePointDetailMediator:initAnimWithPracticePoint()
@@ -201,6 +403,7 @@ function StagePointDetailMediator:initAnimWithPracticePoint()
 
 	btnAnim:getChildByName("delectPanel"):setVisible(false)
 
+	self._challengeAnim = btnAnim
 	local insertPanel = btnAnim:getChildByName("insertPanel")
 	local practiceMc = cc.MovieClip:create("zhuxianxunlian_zhuxianxunlian")
 
@@ -347,9 +550,9 @@ function StagePointDetailMediator:setupView()
 	self._rolePanel:removeAllChildren()
 
 	local pointHead = point:_getConfig().PointHead
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = pointHead
 	})
 
@@ -392,8 +595,7 @@ function StagePointDetailMediator:setupView()
 			})
 
 			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
-				needDelay = true,
-				showAmount = isFirst
+				needDelay = true
 			})
 
 			local iconPanel = ccui.Layout:create()
@@ -439,9 +641,9 @@ function StagePointDetailMediator:setupViewWithPracticePoint()
 
 	local pointHead = self._point:getShowHero()
 	local roleModel = ConfigReader:getDataByNameIdAndKey("HeroBase", pointHead, "RoleModel")
-	local heroSprite = IconFactory:createRoleIconSprite({
+	local heroSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
@@ -541,17 +743,17 @@ function StagePointDetailMediator:refreshTeamView()
 
 	self._teamPanel:getChildByName("teamName"):setString(team:getName())
 
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", team:getMasterId())
-	local masterIcon = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust5",
-		id = roleModel,
-		size = cc.size(446, 115)
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(team:getMasterId())
+	local roleModel = masterData:getModel()
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe4_4",
+		id = roleModel
 	})
 	local masterPanel = self._teamPanel:getChildByName("masterIcon")
 
 	masterPanel:removeAllChildren()
-	masterIcon:addTo(masterPanel):setPosition(220, 20)
+	masterIcon:addTo(masterPanel):center(masterPanel:getContentSize())
 
 	local teams = developSystem:getAllUnlockTeams()
 	local teamPanel = self._teamPanel:getChildByName("teamsPanel")
@@ -694,7 +896,9 @@ function StagePointDetailMediator:showSweepBox()
 		end
 	end
 
-	local data = {}
+	local data = {
+		normalType = 1
+	}
 
 	if self._point:getType() == StageType.kElite then
 		data.stageType = StageType.kElite
@@ -795,28 +999,15 @@ function StagePointDetailMediator:onClickWipeTimes()
 end
 
 function StagePointDetailMediator:onClickChallenge()
-	if self._bagSystem:getPower() < self._point:getCostEnergy() then
-		self:dispatch(ShowTipEvent({
-			duration = 0.2,
-			tip = Strings:find("CUSTOM_ENERGY_NOT_ENOUGH")
-		}))
-		CurrencySystem:buyCurrencyByType(self, CurrencyType.kActionPoint)
-
+	if not self._challengeAnim then
 		return
 	end
 
-	if self._canwipeOnce then
-		if self._point:getType() == StageType.kElite and self._point:getChallengeTimes() == 0 then
-			self:dispatch(ShowTipEvent({
-				duration = 0.2,
-				tip = Strings:find("Time_UseingUp")
-			}))
+	if not self:checkCostEnergyEnble() then
+		return
+	end
 
-			return
-		end
-
-		self:showSweepBox()
-	elseif self._data.isPracticePoint then
+	if self._data.isPracticePoint then
 		self:enterTimeEditView()
 	else
 		self:onChallenge()
@@ -846,6 +1037,7 @@ function StagePointDetailMediator:onChallenge()
 		return
 	end
 
+	AudioTimerSystem:playStartBattleVoice(self:getTeamByPointType())
 	AudioEngine:getInstance():playEffect("Se_Click_Battle", false)
 
 	self._enterBattle = true

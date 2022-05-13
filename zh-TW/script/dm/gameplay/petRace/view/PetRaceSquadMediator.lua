@@ -105,7 +105,7 @@ function PetRaceSquadMediator:initWigetInfo()
 		text_des:setString(Strings:get("Petrace_Text_21"))
 	end
 
-	text_level:setString("Lv." .. self._raceData.level)
+	text_level:setString(Strings:get("Common_LV_Text") .. self._raceData.level)
 	self:refreshView()
 	self:refreshTeamNode()
 	self:refreshTeamSelect()

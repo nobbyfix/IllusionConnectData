@@ -24,10 +24,6 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickSkip"
 	},
-	previewBtn = {
-		clickAudio = "Se_Click_Common_2",
-		func = "onClickPreview"
-	},
 	shopBtn = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickShop"
@@ -47,14 +43,85 @@ local kBtnHandlers = {
 	["moreNode.btn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickMore"
+	},
+	["rewardNode.btn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickReward"
+	},
+	["activityNode.btn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickActivity"
 	}
 }
-local DrawCard_SinglePrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content")
-local DrawCard_TenTimesPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content")
+local kTipBtnPosX = {
+	[RecruitPoolType.kDiamond] = 480
+}
+local kLeftTopNodePosX = {
+	[RecruitPoolType.kDiamond] = 360
+}
+local kLeftTopNodeText = {
+	[RecruitPoolType.kActivity] = "Recruit_Time_Left1",
+	[RecruitPoolType.kDiamond] = "Recruit_UI24",
+	[RecruitPoolType.kEquip] = "Recruit_UI24"
+}
+local kLeftTopNodeBgPic = {
+	[RecruitPoolType.kActivity] = "ck_xs_bg.png",
+	[RecruitPoolType.kDiamond] = "ck_bg_ckxq.png",
+	[RecruitPoolType.kEquip] = "ck_bg_ckxq.png"
+}
+local kLeftTopNodeFontSize = {
+	[RecruitPoolType.kActivity] = 28,
+	[RecruitPoolType.kDiamond] = 28,
+	[RecruitPoolType.kEquip] = 28
+}
 local actions = {
 	"skill3",
 	"skill2",
 	"skill1"
+}
+local descBgH = {
+	["1UP"] = {
+		28,
+		25.8,
+		25.8
+	},
+	["2UP"] = {
+		58,
+		30
+	}
+}
+local descBgW = {
+	["1UP"] = {
+		100,
+		100,
+		100
+	},
+	["2UP"] = {
+		60,
+		40
+	}
+}
+local descX = {
+	["1UP"] = {
+		20,
+		40,
+		60
+	},
+	["2UP"] = {
+		10,
+		-10
+	}
+}
+local descScale9 = {
+	["1UP"] = {
+		cc.rect(220, 18, 1, 1),
+		cc.rect(220, 18, 1, 1),
+		cc.rect(220, 18, 1, 1)
+	},
+	["2UP"] = {
+		cc.rect(110, 19, 1, 1),
+		cc.rect(89, 19, 1, 1)
+	}
 }
 
 function RecruitMainMediator:initialize()
@@ -100,6 +167,7 @@ function RecruitMainMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.onDiffRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.onResetRefresh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.updateResultView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
 
 	self._recruitBtn1 = self:getView():getChildByFullName("main.node1.recruitBtn1")
 	self._recruitBtn2 = self:getView():getChildByFullName("main.node2.recruitBtn2")
@@ -119,6 +187,7 @@ function RecruitMainMediator:enterWithData(data)
 	self:initViewData()
 	self:initView()
 
+	self._isFromClub = data and data.isFromClub or false
 	self._recruitIndex = 0
 	self._recruitId = data and data.recruitId or nil
 	self._curTabType = 1
@@ -173,6 +242,14 @@ function RecruitMainMediator:initView()
 
 	self._moreNode:setVisible(false)
 
+	self._activityNode = self:getView():getChildByFullName("activityNode")
+
+	self._activityNode:setVisible(false)
+
+	self._rewardNode = self:getView():getChildByFullName("rewardNode")
+
+	self._rewardNode:setVisible(false)
+
 	self._checkBtn = self:getView():getChildByFullName("checkBtn")
 
 	self._checkBtn:setVisible(false)
@@ -221,9 +298,15 @@ function RecruitMainMediator:initView()
 
 	self._resultMain:setVisible(false)
 
-	self._previewBtn = self:getView():getChildByFullName("previewBtn")
+	self._drawNode = self:getView():getChildByFullName("drawNum")
+	self._drawNum = self._drawNode:getChildByFullName("text")
+	self._urEquipNode = self._main:getChildByFullName("urequip")
 
-	self._previewBtn:setVisible(false)
+	self._urEquipNode:setVisible(false)
+
+	self._diamondNode = self._main:getChildByFullName("diamond")
+
+	self._diamondNode:setVisible(false)
 
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Skip"), TTF_FONT_FZYH_R, 24)
 
@@ -258,6 +341,14 @@ function RecruitMainMediator:initView()
 	}
 
 	self._moreNode:getChildByFullName("text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
+	self._activityNode:getChildByFullName("text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
+	self._rewardNode:getChildByFullName("text"):enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
 		x = 0,
 		y = -1
 	}))
@@ -319,11 +410,13 @@ function RecruitMainMediator:initTabController()
 	for i = 1, #self._recruitData do
 		local recruitData = self._recruitData[i]
 		local btnImage = recruitData:getPreview().btn
+		local previewType = recruitData:getPreview().type
 		local btnText = ""
+		local temp = nil
 		local type = recruitData:getType()
 
-		if type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp then
-			data[#data + 1] = {
+		if type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.ACTIVITYDRAW then
+			temp = {
 				textOffsety = -33,
 				fontSize = 12,
 				unEnableOutline = true,
@@ -338,7 +431,7 @@ function RecruitMainMediator:initTabController()
 				}
 			}
 		else
-			data[#data + 1] = {
+			temp = {
 				tabText = "",
 				tabTextTranslate = "",
 				tabImage = {
@@ -346,6 +439,28 @@ function RecruitMainMediator:initTabController()
 					"asset/ui/recruit/" .. btnImage .. "2.png"
 				}
 			}
+		end
+
+		if previewType and previewType ~= "diamond" then
+			temp.tabImage = {
+				"asset/ui/recruit/" .. btnImage .. "1.png",
+				"asset/ui/recruit/" .. btnImage .. "1.png",
+				"asset/ui/recruit/ck_btn_com_1.png"
+			}
+		end
+
+		if temp then
+			function temp.redPointFunc()
+				if self._recruitSystem:checkIsShowRedPointByPool(recruitData) then
+					return true
+				end
+
+				return false
+			end
+
+			temp.redPointPosx = 215
+			temp.redPointPosy = 78
+			data[#data + 1] = temp
 		end
 	end
 
@@ -391,9 +506,28 @@ function RecruitMainMediator:onClickTab(name, tag)
 	local id = self._recruitData[tag]:getType()
 	local currencyInfoData = self._currencyInfos[id] or self._currencyInfo
 	local currencyInfo = {}
+	local costId = self._recruitData[tag]:getCouponId()
+	local tag = false
+	local goldIdx = 1
 
 	for i = #currencyInfoData, 1, -1 do
 		currencyInfo[#currencyInfoData - i + 1] = currencyInfoData[i]
+
+		if costId == currencyInfoData[i] then
+			tag = true
+		end
+
+		if currencyInfoData[i] == "IR_Gold" then
+			goldIdx = #currencyInfoData - i + 1
+		end
+	end
+
+	if not tag then
+		if #currencyInfo >= 4 then
+			currencyInfo[goldIdx] = costId
+		else
+			currencyInfo[#currencyInfo + 1] = costId
+		end
 	end
 
 	local config_ = {
@@ -418,37 +552,8 @@ function RecruitMainMediator:getPoolTagByName(idStr)
 end
 
 function RecruitMainMediator:initViewData()
-	self._recruitManager = self._recruitSystem:getManager()
+	self._recruitData = self._recruitSystem:getShowRecruitPools()
 	self._recruitDataShow = {}
-	self._recruitData = {}
-	local recruitPools = self._recruitManager:getRecruitPools()
-
-	for id, recruitObj in pairs(recruitPools) do
-		if recruitObj then
-			local type = recruitObj:getType()
-			local unlockKey = recruitObj:getCondition()
-			local unlock = true
-
-			if unlockKey ~= "" then
-				unlock = self._systemKeeper:isUnlock(unlockKey)
-
-				if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp) then
-					unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-				end
-			elseif type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip then
-				unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-			end
-
-			if unlock then
-				self._recruitData[#self._recruitData + 1] = recruitObj
-			end
-		end
-	end
-
-	table.sort(self._recruitData, function (a, b)
-		return b:getRank() < a:getRank()
-	end)
-
 	self._recruitDataTemp = {}
 
 	for i = 1, #self._recruitData do
@@ -470,34 +575,7 @@ function RecruitMainMediator:updateData()
 		end
 	end
 
-	self._recruitData = {}
-	local recruitPools = self._recruitManager:getRecruitPools()
-
-	for id, recruitObj in pairs(recruitPools) do
-		if recruitObj then
-			local type = recruitObj:getType()
-			local unlockKey = recruitObj:getCondition()
-			local unlock = true
-
-			if unlockKey ~= "" then
-				unlock = self._systemKeeper:isUnlock(unlockKey)
-
-				if unlock and (type == RecruitPoolType.kClub or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp) then
-					unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-				end
-			elseif type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityEquip then
-				unlock = self._recruitSystem:getActivityIsOpen(recruitObj:getId())
-			end
-
-			if unlock then
-				self._recruitData[#self._recruitData + 1] = recruitObj
-			end
-		end
-	end
-
-	table.sort(self._recruitData, function (a, b)
-		return b:getRank() < a:getRank()
-	end)
+	self._recruitData = self._recruitSystem:getShowRecruitPools()
 
 	if self._recruitDataTemp then
 		if #self._recruitDataTemp ~= #self._recruitData then
@@ -603,7 +681,7 @@ function RecruitMainMediator:onClickSkill(skill, heroData, skillDescPosX)
 			mediator = self
 		})))
 
-		self._skillWidget:getView():addTo(self:getView()):posite(464, 240)
+		self._skillWidget:getView():addTo(self:getView()):posite(464, 200)
 	end
 
 	self._skillWidget:refreshInfo(skill, heroData)
@@ -633,7 +711,7 @@ function RecruitMainMediator:refreshHeroInfo()
 
 	local heroInfo = self._recruitDataShow:getRoleDetail()
 
-	if heroInfo then
+	if heroInfo and type ~= RecruitPoolType.kActivityUREquip then
 		local showhero = ""
 		local showACThero = ""
 		local showHeroId = ""
@@ -700,10 +778,47 @@ function RecruitMainMediator:refreshHeroInfo()
 	end
 end
 
+function RecruitMainMediator:refreshRewardNode()
+	self._rewardNode:setVisible(self._recruitDataShow:getRebateCanShow())
+
+	if not self._rewardNodeRedPoint then
+		self._rewardNodeRedPoint = RedPoint:createDefaultNode()
+
+		self._rewardNodeRedPoint:addTo(self._rewardNode):posite(93, 93)
+		self._rewardNodeRedPoint:setLocalZOrder(99)
+	end
+
+	self._rewardNodeRedPoint:setVisible(self._recruitSystem:checkIsShowRedPointByPool(self._recruitDataShow))
+end
+
 function RecruitMainMediator:refreshMoreNode()
 	self._linkStr = self._recruitDataShow:getLink()
 
 	self._moreNode:setVisible(self._linkStr ~= "")
+
+	local px = self._rewardNode:isVisible() and self._rewardNode:getPositionX() + 95 or self._rewardNode:getPositionX()
+
+	self._moreNode:setPositionX(px)
+end
+
+function RecruitMainMediator:refreshActivityNode()
+	local recruitId = self._recruitDataShow:getId()
+	local activity = self._activitySystem:getActivityByType(ActivityType.KDrawCardFeedbackActivity)
+
+	if activity then
+		if activity:checkRecruitIdIsInActivity(recruitId) then
+			self._activityNode:setVisible(true)
+		else
+			self._activityNode:setVisible(false)
+		end
+	else
+		self._activityNode:setVisible(false)
+	end
+
+	local st = self._rewardNode:isVisible() or self._moreNode:isVisible()
+	local px = st and self._rewardNode:getPositionX() + 95 or self._rewardNode:getPositionX()
+
+	self._activityNode:setPositionX(px)
 end
 
 function RecruitMainMediator:runNodeActions()
@@ -712,12 +827,16 @@ function RecruitMainMediator:runNodeActions()
 	recruitBg:removeAllChildren()
 	self._shopBtn:stopAllActions()
 	self._moreNode:stopAllActions()
+	self._rewardNode:stopAllActions()
+	self._activityNode:stopAllActions()
 	self._recruitBtn1:stopAllActions()
 	self._recruitBtn2:stopAllActions()
 	self._recruitBtn1:setTouchEnabled(false)
 	self._recruitBtn2:setTouchEnabled(false)
 	self._shopBtn:setOpacity(0)
 	self._moreNode:setOpacity(0)
+	self._rewardNode:setOpacity(0)
+	self._activityNode:setOpacity(0)
 	self._recruitBtn1:setOpacity(0)
 	self._recruitBtn2:setOpacity(0)
 
@@ -758,6 +877,12 @@ function RecruitMainMediator:runNodeActions()
 				time = 0.2
 			})
 			self._moreNode:fadeIn({
+				time = 0.2
+			})
+			self._rewardNode:fadeIn({
+				time = 0.2
+			})
+			self._activityNode:fadeIn({
 				time = 0.2
 			})
 		end
@@ -812,7 +937,19 @@ function RecruitMainMediator:runNodeActions()
 			local bg = ccui.ImageView:create("asset/scene/" .. bgName .. ".jpg")
 
 			bg:addTo(recruitBg):center(recruitBg:getContentSize())
-			bg:setScale(0.6666666666666666)
+
+			local size = bg:getContentSize()
+
+			if size.width > 1386 then
+				bg:setScale(0.6666666666666666)
+			end
+
+			local previewType = self._recruitDataShow:getPreview().type
+
+			if previewType == "diamond" then
+				bg:setOpacity(178.5)
+				bg:setFlippedX(true)
+			end
 		end
 	end
 end
@@ -845,11 +982,11 @@ function RecruitMainMediator:initCostNode(recruitCost, costNode, offCount)
 			largeIcon = true
 		})
 
-		costIcon:setScale(0.5)
+		costIcon:setScale(0.45)
 		costIcon:addTo(icon1):center(icon1:getContentSize())
 
 		if costId ~= "IM_DiamondDraw" and costId ~= "IM_DiamondDrawEX" then
-			icon1:setPositionY(10)
+			icon1:setPositionY(15)
 		end
 
 		icon1:setPositionX(name1:getPositionX() - name1:getContentSize().width / 2 - 2)
@@ -865,67 +1002,132 @@ function RecruitMainMediator:initCostNode(recruitCost, costNode, offCount)
 	end
 end
 
-function RecruitMainMediator:refreshLeftTime()
+function RecruitMainMediator:refreshLeftTopNode()
 	local id = self._recruitDataShow:getId()
 	local type = self._recruitDataShow:getType()
+	local previewType = self._recruitDataShow:getPreview().type
 
-	local function checkTimeFunc()
-		local type = self._recruitDataShow:getType()
-		local id = self._recruitDataShow:getId()
-		local nodeShow = type == RecruitPoolType.kActivity and id ~= RecruitNewPlayerPool
-		nodeShow = nodeShow or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub
+	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
+		if id == RecruitNewPlayerPool then
+			self._leftTimeNode:setVisible(false)
+			self._tipBtn:setVisible(false)
+		else
+			self._leftTimeNode:setVisible(true)
+			self._tipBtn:setVisible(true)
 
-		self._leftTimeNode:setVisible(nodeShow)
+			local bgpic = self._leftTimeNode:getChildByFullName("bgpic")
+			local text1 = self._leftTimeNode:getChildByFullName("text1")
 
-		if nodeShow then
-			local text = self._leftTimeNode:getChildByFullName("text")
-			local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+			bgpic:loadTexture(kLeftTopNodeBgPic[RecruitPoolType.kActivity], ccui.TextureResType.plistType)
+			bgpic:ignoreContentAdaptWithSize(true)
+			bgpic:setScale(0.66)
+			text1:setString(Strings:get(kLeftTopNodeText[RecruitPoolType.kActivity]))
+			text1:setFontSize(kLeftTopNodeFontSize[RecruitPoolType.kActivity])
 
-			if not unlock then
-				self._recruitSystem:tryEnter()
+			local function checkTimeFunc()
+				local type = self._recruitDataShow:getType()
+				local id = self._recruitDataShow:getId()
 
-				return
+				if (type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip) and id ~= RecruitNewPlayerPool then
+					local text = self._leftTimeNode:getChildByFullName("text")
+					local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+
+					if not unlock then
+						self._recruitSystem:tryEnter()
+
+						return
+					end
+
+					local activity = self._activitySystem:getActivityById(activityId)
+					local endTime = activity:getEndTime()
+					local remoteTimestamp = self:getInjector():getInstance("GameServerAgent"):remoteTimeMillis()
+					local remainTime = endTime - remoteTimestamp
+
+					if remainTime <= 0 then
+						self._leftTimeNode:setVisible(false)
+
+						return
+					end
+
+					local str = ""
+					local fmtStr = "${d}:${H}:${M}:${S}"
+					local timeStr = TimeUtil:formatTime(fmtStr, remainTime * 0.001)
+					local parts = string.split(timeStr, ":", nil, true)
+					local timeTab = {
+						day = tonumber(parts[1]),
+						hour = tonumber(parts[2]),
+						min = tonumber(parts[3]),
+						sec = tonumber(parts[4])
+					}
+
+					if timeTab.day > 0 then
+						str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+					elseif timeTab.hour > 0 then
+						str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+					else
+						str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+					end
+
+					text:setString(Strings:get("Recruit_Time_Left") .. str)
+				end
 			end
 
-			local activity = self._activitySystem:getActivityById(activityId)
-			local endTime = activity:getEndTime()
-			local remoteTimestamp = self:getInjector():getInstance("GameServerAgent"):remoteTimeMillis()
-			local remainTime = endTime - remoteTimestamp
+			if not self._timer then
+				self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 0.2, false)
 
-			if remainTime <= 0 then
-				self._leftTimeNode:setVisible(false)
-
-				return
+				checkTimeFunc()
 			end
-
-			local str = ""
-			local fmtStr = "${d}:${H}:${M}:${S}"
-			local timeStr = TimeUtil:formatTime(fmtStr, remainTime * 0.001)
-			local parts = string.split(timeStr, ":", nil, true)
-			local timeTab = {
-				day = tonumber(parts[1]),
-				hour = tonumber(parts[2]),
-				min = tonumber(parts[3]),
-				sec = tonumber(parts[4])
-			}
-
-			if timeTab.day > 0 then
-				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
-			elseif timeTab.hour > 0 then
-				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
-			else
-				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
-			end
-
-			text:setString(Strings:get("Recruit_Time_Left") .. str)
 		end
+	else
+		self._leftTimeNode:setVisible(true)
+		self._tipBtn:setVisible(true)
+
+		local bgpic = self._leftTimeNode:getChildByFullName("bgpic")
+		local text1 = self._leftTimeNode:getChildByFullName("text1")
+		local timeLeft = self._leftTimeNode:getChildByFullName("text")
+
+		bgpic:loadTexture(kLeftTopNodeBgPic[type] or kLeftTopNodeBgPic[RecruitPoolType.kEquip], ccui.TextureResType.plistType)
+		bgpic:ignoreContentAdaptWithSize(false)
+		bgpic:setScaleY(0.66)
+		bgpic:setScaleX(0.45)
+		timeLeft:setString("")
+		text1:setString(Strings:get(kLeftTopNodeText[type] or kLeftTopNodeText[RecruitPoolType.kEquip]))
+		text1:setFontSize(kLeftTopNodeFontSize[type] or kLeftTopNodeFontSize[RecruitPoolType.kEquip])
 	end
 
-	if not self._timer then
-		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 0.2, false)
+	local tabPanel = self:getView():getChildByFullName("tab_panel")
 
-		checkTimeFunc()
+	self._leftTimeNode:setPositionX(kLeftTopNodePosX[type] or tabPanel:getPositionX() + 220)
+
+	if type == RecruitPoolType.kEquip then
+		self._tipBtn:setPositionX(tabPanel:getPositionX() + 340)
+	else
+		self._tipBtn:setPositionX(kTipBtnPosX[type] or tabPanel:getPositionX() + 629)
 	end
+
+	self._drawNode:setVisible(id ~= RecruitNewPlayerPool)
+
+	if type == RecruitPoolType.kActivity or type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub or type == RecruitPoolType.kActivityUREquip then
+		self._drawNode:setPosition(cc.p(900, self._leftTimeNode:getPositionY() - 23))
+
+		if previewType == "diamond" then
+			self._drawNode:setPosition(cc.p(1020, self._leftTimeNode:getPositionY() - 23))
+		end
+	else
+		self._drawNode:setPosition(cc.p(self._leftTimeNode:getPositionX(), self._leftTimeNode:getPositionY() - 62))
+	end
+
+	local n = self._recruitSystem:getDrawTimeById(id)
+	n = n and n["1"] or 0
+	local str = Strings:get("RecruitHero_Times", {
+		num = n
+	})
+
+	self._drawNum:setString(str)
+
+	local imgbg = self._drawNode:getChildByFullName("Image_1")
+
+	imgbg:setContentSize(cc.size(self._drawNum:getAutoRenderSize().width + 100, imgbg:getContentSize().height))
 end
 
 function RecruitMainMediator:refreshMiddleTime()
@@ -1008,13 +1210,31 @@ function RecruitMainMediator:updateView()
 	local type = self._recruitDataShow:getType()
 
 	self._tipBtn:setVisible(type ~= RecruitPoolType.kDiamond and type ~= RecruitPoolType.kEquip and self._recruitDataShow:getId() ~= RecruitNewPlayerPool)
-	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity))
-	self._previewBtn:setVisible(type == RecruitPoolType.kDiamond or type == RecruitPoolType.kEquip)
+	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen() and (type == RecruitPoolType.kDiamond or type == RecruitPoolType.kActivity or type == RecruitPoolType.kActivityUREquip))
+
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if type == RecruitPoolType.kActivityUREquip then
+		self._main:getChildByFullName("node1"):setPositionY(85)
+		self._main:getChildByFullName("node2"):setPositionY(85)
+	elseif previewType == "diamond" then
+		self._main:getChildByFullName("node1"):setPositionY(65)
+		self._main:getChildByFullName("node2"):setPositionY(65)
+	else
+		self._main:getChildByFullName("node1"):setPositionY(97)
+		self._main:getChildByFullName("node2"):setPositionY(97)
+	end
+
 	self:refreshHeroInfo()
+	self:refreshRewardNode()
 	self:refreshMoreNode()
-	self:refreshLeftTime()
+	self:refreshActivityNode()
+	self:refreshLeftTopNode()
 	self:refreshMiddleTime()
+	self:refreshActivityUpView()
 	self:runNodeActions()
+	self:refreshUREQuipInfo()
+	self:refreshDiamondView()
 
 	local costNode1 = self._main:getChildByFullName("node1.recruitBtn1")
 	local costNode2 = self._main:getChildByFullName("node2.recruitBtn2")
@@ -1074,7 +1294,15 @@ function RecruitMainMediator:updateView()
 		self._recruitBtn2:setVisible(false)
 	end
 
-	if hasLeft ~= "" then
+	if previewType == "diamond" then
+		self:getView():getChildByFullName("main.node1.recruitBtn1"):loadTextures("lj_bbtl.png", "lj_bbtl.png", "lj_bbtl.png", 1)
+	else
+		self:getView():getChildByFullName("main.node1.recruitBtn1"):loadTextures("lj_bbt.png", "lj_bbt.png", "lj_bbt.png", 1)
+	end
+
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if hasLeft ~= "" and previewType ~= "diamond" then
 		self._leftCountNode:setVisible(true)
 		self._leftCountNode:getChildByFullName("text"):setString(hasLeft)
 
@@ -1120,6 +1348,15 @@ function RecruitMainMediator:onRecruitSucc(event)
 	data.recruitId = self._recruitDataShow:getId()
 	self._recruitManager = self._recruitSystem:getManager()
 	local recruitPool = self._recruitManager:getRecruitPoolById(data.recruitId)
+	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+	local guideAgent = storyDirector:getGuideAgent()
+
+	if guideAgent:isGuiding() and guideAgent:getCurrentScriptName() == "guide_chapterOne1_4" then
+		StatisticSystem:send({
+			point = "guide_main_recruit_12",
+			type = "loginpoint"
+		})
+	end
 
 	if recruitPool then
 		self:enterResultWithData(data)
@@ -1135,6 +1372,12 @@ function RecruitMainMediator:onClickBack()
 	self:dismissWithOptions({
 		transition = ViewTransitionFactory:create(ViewTransitionType.kCommonAreaView)
 	})
+end
+
+function RecruitMainMediator:onForcedLevel(event)
+	if self._isFromClub then
+		self:onClickBack()
+	end
 end
 
 function RecruitMainMediator:checkHasTimesLimit(recruitDataShow, realTimes)
@@ -1182,9 +1425,11 @@ function RecruitMainMediator:onRecruit1Clicked()
 		times = times
 	}
 
-	if self._bagSystem:checkCostEnough(costId, costCount) then
+	if self._bagSystem:checkCostEnough(costId, costCount, {
+		notShowTip = true
+	}) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif RecruitCurrencyStr.KUserDefault[costId] then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1219,7 +1464,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 
 	if self._bagSystem:checkCostEnough(costId, costCount) then
 		self._recruitSystem:requestRecruit(param)
-	elseif costId == CurrencyIdKind.kDiamondDrawItem then
+	elseif RecruitCurrencyStr.KUserDefault[costId] then
 		self:buyCard(costId, costCount, param)
 	else
 		self._bagSystem:checkCostEnough(costId, costCount, {
@@ -1229,7 +1474,7 @@ function RecruitMainMediator:onRecruit2Clicked()
 end
 
 function RecruitMainMediator:buyCard(costId, costCount, param)
-	if self._recruitSystem:getCanAutoBuy() then
+	if self._recruitSystem:getCanAutoBuy(costId) then
 		self:autoBuy(costId, costCount, param)
 
 		return
@@ -1249,7 +1494,7 @@ function RecruitMainMediator:buyCard(costId, costCount, param)
 end
 
 function RecruitMainMediator:autoBuy(costId, costCount, param)
-	local price = param.times == 1 and DrawCard_SinglePrice or DrawCard_TenTimesPrice
+	local price = param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[costId] or RecruitCurrencyStr.KBuyPrice.ten[costId]
 	local hasCount = self._bagSystem:getItemCount(costId)
 	local num = costCount - hasCount
 	local cost = num * price
@@ -1259,7 +1504,7 @@ function RecruitMainMediator:autoBuy(costId, costCount, param)
 	if not canBuy then
 		local data = {
 			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("Recruit_UI21"),
+			content = RecruitCurrencyStr.KGoToShop[costId],
 			sureBtn = {},
 			cancelBtn = {}
 		}
@@ -1286,25 +1531,48 @@ function RecruitMainMediator:autoBuy(costId, costCount, param)
 end
 
 function RecruitMainMediator:onClickPreview()
-	local view = self:getInjector():getInstance("recruitHeroPreviewView")
+	local type = self._recruitDataShow:getType()
+	local heroes = nil
 
-	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-	}, {
-		recruitPool = self._recruitDataShow
-	}))
+	if type == RecruitPoolType.kActivity then
+		local id = self._recruitDataShow:getId()
+		local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+		local activity = self._activitySystem:getActivityById(activityId)
+		local activityConfig = activity:getActivityConfig()
+		heroes = activityConfig.drawhero
+	end
+
+	local function callback(rewards)
+		local view = self:getInjector():getInstance("recruitHeroPreviewView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			recruitPool = self._recruitDataShow,
+			rewards = rewards,
+			heroes = heroes
+		}))
+	end
+
+	local showRewards = self._recruitDataShow:getShowRewards()
+	local key = next(showRewards)
+
+	if not key or key == "" then
+		return
+	end
+
+	local params = {
+		drawID = self._recruitDataShow:getId(),
+		key = key
+	}
+
+	self._recruitSystem:requestRewardPreview(params, callback)
 end
 
 function RecruitMainMediator:onClickTip()
 	local type = self._recruitDataShow:getType()
 
-	if type == RecruitPoolType.kActivity then
-		local view = self:getInjector():getInstance("RecruitTipView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
-			info = self._recruitDataShow:getPoolInfo()
-		}))
-	elseif type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
+	if type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub then
 		local function callback(rewards)
 			local view = self:getInjector():getInstance("RecruitCommonPreviewView")
 
@@ -1330,6 +1598,8 @@ function RecruitMainMediator:onClickTip()
 		}
 
 		self._recruitSystem:requestRewardPreview(params, callback)
+	else
+		self:onClickPreview()
 	end
 end
 
@@ -1368,6 +1638,24 @@ function RecruitMainMediator:onClickMore()
 	else
 		entry:response(context, params)
 	end
+end
+
+function RecruitMainMediator:onClickReward()
+	local view = self:getInjector():getInstance("RecruitRewardView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		recruitData = self._recruitDataShow
+	}, nil))
+end
+
+function RecruitMainMediator:onClickActivity()
+	local activity = self._activitySystem:getActivityByType(ActivityType.KDrawCardFeedbackActivity)
+
+	self._activitySystem:tryEnter({
+		id = activity:getId()
+	})
 end
 
 function RecruitMainMediator:onClickRoleNode()
@@ -1465,10 +1753,6 @@ function RecruitMainMediator:setupClickEnvs()
 		end))
 
 		self:getView():runAction(sequence)
-		StatisticSystem:send({
-			point = "guide_main_recruit_12",
-			type = "loginpoint"
-		})
 
 		local __onClickSkip = self.onClickSkip
 		local this = self
@@ -1500,4 +1784,428 @@ function RecruitMainMediator:setupResultClickEnvs()
 	end
 
 	storyDirector:notifyWaiting("enter_recruitHeroDiamondResul_view")
+end
+
+function RecruitMainMediator:refreshActivityUpView()
+	local up1 = self._main:getChildByName("Node_1Up")
+	local up2 = self._main:getChildByName("Node_2Up")
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if previewType ~= "1UP" and previewType ~= "2UP" then
+		up1:setVisible(false)
+		up2:setVisible(false)
+
+		return
+	end
+
+	local previewImg = self._recruitDataShow:getPreview().imgcolor
+
+	local function setName(node, rect, size)
+		local name = node:getChildByName("name")
+
+		name:setString("")
+		name:getParent():removeChildByName("richTextName")
+
+		local richTextName = ccui.RichText:createWithXML(self._recruitDataShow:getName(CUSTOM_TTF_FONT_1), {})
+
+		richTextName:setAnchorPoint(name:getAnchorPoint())
+		richTextName:setPosition(name:getPosition())
+		richTextName:addTo(name:getParent())
+		richTextName:renderContent(0, 0, true)
+		richTextName:setName("richTextName")
+
+		local namebg = node:getChildByName("namebg")
+
+		namebg:setScale9Enabled(true)
+
+		local color = string.split(previewImg[1], ",")
+
+		namebg:setColor(cc.c3b(color[1], color[2], color[3]))
+
+		if previewType == "1UP" then
+			namebg:setCapInsets(cc.rect(80, 10, 1, 1))
+			namebg:setContentSize(cc.size(richTextName:getContentSize().width + 60, 38))
+		else
+			namebg:setCapInsets(cc.rect(1, 1, 1, 1))
+			namebg:setContentSize(cc.size(node:getChildByName("name1"):getContentSize().width + 50, 63))
+		end
+	end
+
+	local function setRole(node)
+		local heroInfo = self._recruitDataShow:getRoleDetail()
+
+		for i = 1, #heroInfo do
+			local heroId = heroInfo[i].hero
+			local config = ConfigReader:getRecordById("HeroBase", tostring(heroId))
+			local roleNode = node:getChildByName("roleNode" .. i)
+			local rolenamebg = roleNode:getChildByName("rolenamebg")
+			local rolerarity = roleNode:getChildByName("rolerarity")
+			local rolename = roleNode:getChildByName("rolename")
+			local roletag = roleNode:getChildByName("roletag")
+
+			rolerarity:loadTexture(GameStyle:getHeroRarityImage(config.Rareity), ccui.TextureResType.plistType)
+			rolename:setString(Strings:get(config.Name))
+			roletag:setString(Strings:get(config.Position))
+			rolenamebg:setContentSize(cc.size(rolename:getContentSize().width + 50, 48))
+
+			if previewType == "1UP" then
+				rolerarity:setPositionX(rolename:getContentSize().width / 2)
+			else
+				rolerarity:setPositionX(-rolename:getContentSize().width / 2 + 10)
+			end
+		end
+	end
+
+	local function setDesc(node)
+		local poolDesc = self._recruitDataShow:getPoolDesc()
+
+		for index, trans in ipairs(poolDesc) do
+			local descbg = node:getChildByName("descbg" .. index)
+
+			if descbg then
+				if previewType == "2UP" and index == 2 then
+					local color = string.split(previewImg[3], ",")
+
+					descbg:setColor(cc.c3b(color[1], color[2], color[3]))
+				else
+					local color = string.split(previewImg[2], ",")
+
+					descbg:setColor(cc.c3b(color[1], color[2], color[3]))
+				end
+
+				descbg:getParent():removeChildByName("descRichText" .. index)
+
+				local desc = ccui.RichText:createWithXML(Strings:get(trans, {
+					fontName = CUSTOM_TTF_FONT_1
+				}), {})
+
+				desc:setAnchorPoint(descbg:getAnchorPoint())
+				desc:addTo(descbg:getParent())
+				desc:renderContent(0, 0, true)
+				desc:setPosition(cc.p(descbg:getPositionX() - descX[previewType][index], descbg:getPositionY() + 5))
+				desc:setName("descRichText" .. index)
+				descbg:setScale9Enabled(true)
+				descbg:setCapInsets(descScale9[previewType][index])
+
+				if previewType == "1UP" then
+					descbg:setContentSize(cc.size(desc:getContentSize().width + descBgW[previewType][index], descBgH[previewType][index]))
+				else
+					descbg:setContentSize(cc.size(desc:getContentSize().width + descBgW[previewType][index], descBgH[previewType][index]))
+				end
+			end
+		end
+	end
+
+	local node = nil
+
+	if previewType == "1UP" then
+		up1:setVisible(true)
+		up2:setVisible(false)
+
+		node = up1
+	else
+		up2:setVisible(true)
+		up1:setVisible(false)
+
+		node = up2
+	end
+
+	setName(node)
+	setRole(node)
+	setDesc(node)
+end
+
+function RecruitMainMediator:refreshUREQuipInfo()
+	local type = self._recruitDataShow:getType()
+	local nodeShow = type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub
+	local common_text_node = self._middleTimeNode:getChildByFullName("common_text")
+
+	common_text_node:removeAllChildren()
+	self._middleTimeNode:setVisible(nodeShow)
+
+	local titleText = self._urEquipNode:getChildByName("Text_title")
+
+	titleText:setString(self._recruitDataShow:getName())
+
+	local text = self._urEquipNode:getChildByName("Text_1")
+	local pos1 = self._leftTimeNode:convertToWorldSpace(cc.p(0, 0))
+	local pos2 = self._urEquipNode:convertToNodeSpace(pos1)
+
+	text:setPosition(cc.p(pos2.x + 7, pos2.y - 60))
+	titleText:setPositionY(pos2.y - 100)
+
+	local equipInfo = self._recruitDataShow:getRoleDetail()
+
+	if equipInfo and type == RecruitPoolType.kActivityUREquip then
+		self._urEquipNode:setVisible(true)
+
+		for i = 1, #equipInfo do
+			local equipId = equipInfo[i].equip
+			local equipNode = self._urEquipNode:getChildByName("equip" .. i)
+			local config = ConfigReader:getRecordById("Compose", equipId)
+			local iconPanel = equipNode:getChildByName("icon")
+
+			iconPanel:removeAllChildren()
+
+			local icon = IconFactory:createPic(config.Item1)
+
+			icon:addTo(iconPanel):center(iconPanel:getContentSize())
+			IconFactory:bindTouchHander(iconPanel, IconTouchHandler:new(self), {
+				type = config.Item1.type,
+				code = config.Item1.id,
+				amount = config.Item1.amount
+			}, {
+				swallowTouches = true,
+				needDelay = true
+			})
+
+			local info = {
+				amount = 1,
+				code = equipId,
+				type = RewardType.kItem
+			}
+			local btn = equipNode:getChildByName("checkBtn")
+
+			IconFactory:bindClickHander(btn, IconTouchHandler:new(self), info, {
+				touchDisappear = true,
+				swallowTouches = true
+			})
+
+			local nameText = equipNode:getChildByName("Text_name")
+
+			nameText:setString(RewardSystem:getName(info))
+
+			local iconNode = self._urEquipNode:getChildByName("icon" .. i)
+
+			iconNode:removeAllChildren()
+
+			local position = equipInfo[i].urposition
+			local iconImg = IconFactory:createPic({
+				id = equipInfo[i].showequip
+			}, {
+				isWidget = true
+			})
+
+			iconImg:addTo(iconNode):posite(position[1], position[2])
+			iconImg:setScale(1)
+		end
+
+		local desc = self._recruitDataShow:getUPDesc()
+
+		if self._urEquipNode:getChildByName("richDesc1") then
+			self._urEquipNode:removeChildByName("richDesc1")
+		end
+
+		if self._urEquipNode:getChildByName("richDesc2") then
+			self._urEquipNode:removeChildByName("richDesc2")
+		end
+
+		local rich1 = ccui.RichText:createWithXML(Strings:get(desc[1], {
+			fontName = TTF_FONT_FZYH_M
+		}), {})
+
+		rich1:setAnchorPoint(0, 0.5)
+		rich1:addTo(self._urEquipNode):posite(295, 230):setName("richDesc1")
+
+		local rich1 = ccui.RichText:createWithXML(Strings:get(desc[2], {
+			fontName = TTF_FONT_FZYH_M
+		}), {})
+
+		rich1:setAnchorPoint(0, 0.5)
+		rich1:addTo(self._urEquipNode):posite(430, 180):setName("richDesc2")
+	else
+		self._urEquipNode:setVisible(false)
+	end
+end
+
+function RecruitMainMediator:refreshDiamondView()
+	self._diamondNode:setVisible(false)
+
+	local previewType = self._recruitDataShow:getPreview().type
+
+	if previewType ~= "diamond" then
+		return
+	end
+
+	local type = self._recruitDataShow:getType()
+	local nodeShow = type == RecruitPoolType.kPve or type == RecruitPoolType.kPvp or type == RecruitPoolType.kClub
+	local common_text_node = self._middleTimeNode:getChildByFullName("common_text")
+
+	common_text_node:removeAllChildren()
+	self._middleTimeNode:setVisible(nodeShow)
+	self._diamondNode:setVisible(true)
+
+	local text1 = self._diamondNode:getChildByName("Text_title")
+	local text2 = self._diamondNode:getChildByName("Text_title2")
+
+	text1:enableShadow(cc.c4b(65, 63, 140, 71.4), cc.size(0, -6), 1)
+	text2:enableShadow(cc.c4b(65, 63, 140, 71.4), cc.size(0, -6), 1)
+
+	local id = self._recruitDataShow:getId()
+	local unlock, activityId = self._recruitSystem:getActivityIsOpen(id)
+	local activity = self._activitySystem:getActivityById(activityId)
+	local activityConfig = activity:getActivityConfig()
+	local bonusShow = activityConfig.BonusShow
+	local smallCell = self._diamondNode:getChildByName("Panel_small")
+
+	smallCell:setVisible(false)
+
+	local bigCell = self._diamondNode:getChildByName("Panel_big")
+
+	bigCell:setVisible(false)
+
+	local width = 0
+
+	if not self._diamondNode.hasInit then
+		self._diamondNode.bonusList = {}
+		self._diamondNode.hasInit = true
+
+		for i, v in pairs(bonusShow) do
+			local cell = nil
+
+			if v.type == "rareity" then
+				cell = smallCell:clone()
+
+				cell:setVisible(true)
+
+				local rareityImage = ccui.ImageView:create(GameStyle:getHeroRarityImage(tonumber(v.value)), 1)
+
+				rareityImage:setAnchorPoint(cc.p(0.5, 0.5))
+				rareityImage:addTo(cell):posite(35, 65):setScale(0.9)
+			elseif v.type == "hero" then
+				cell = bigCell:clone()
+
+				cell:setVisible(true)
+
+				local heroConfig = ConfigReader:getRecordById("HeroBase", v.value)
+				local heroImg = IconFactory:createRoleIconSpriteNew({
+					id = heroConfig.RoleModel
+				})
+
+				heroImg:addTo(cell):posite(67, 61):setScale(0.3)
+			elseif v.type == "item" then
+				cell = bigCell:clone()
+
+				cell:setVisible(true)
+
+				local itemPic = IconFactory:createPic({
+					id = v.value
+				})
+
+				itemPic:addTo(cell):posite(67, 60):setScale(0.5)
+			end
+
+			if cell then
+				cell:addTo(self._diamondNode):posite(250 + width, 129)
+
+				width = width + cell:getContentSize().width
+				local timesText = cell:getChildByName("Text_times")
+
+				timesText:setString(Strings:get("DiamondDrawDesc", {
+					num = i
+				}))
+
+				local color = i % 2 == 1 and cc.c3b(255, 210, 0) or cc.c3b(255, 255, 255)
+
+				timesText:setTextColor(color)
+				timesText:enableOutline(cc.c4b(104, 108, 179, 60), 1)
+
+				local descText = cell:getChildByName("Text_desc")
+
+				descText:setString(Strings:get(v.desc))
+
+				self._diamondNode.bonusList[#self._diamondNode.bonusList + 1] = cell
+			end
+		end
+
+		local heroNamePanel = self._diamondNode:getChildByName("heroNamePanel")
+
+		heroNamePanel:setVisible(false)
+
+		local heroInfo = self._recruitDataShow:getRoleDetail()
+
+		if heroInfo then
+			for i = 1, #heroInfo do
+				local heroData = heroInfo[i]
+				local heroId = heroData.hero
+
+				if heroId then
+					local config = ConfigReader:getRecordById("HeroBase", tostring(heroId))
+					local namePanel = heroNamePanel:clone()
+
+					namePanel:setVisible(true)
+					namePanel:addTo(self._diamondNode)
+					namePanel:setPosition(cc.p(heroData.detail[1], heroData.detail[2]))
+
+					local image_Name_Bg = namePanel:getChildByFullName("Image_109")
+					local node_Rareity = namePanel:getChildByFullName("node_Rareity")
+
+					node_Rareity:removeAllChildren()
+
+					local rareityImage = ccui.ImageView:create(GameStyle:getHeroRarityImage(config.Rareity), 1)
+
+					rareityImage:setAnchorPoint(cc.p(0.5, 0))
+					rareityImage:setScale(0.61)
+					rareityImage:addTo(node_Rareity)
+
+					local nameText = namePanel:getChildByFullName("Text_132")
+
+					nameText:enableShadow(cc.c4b(0, 0, 0, 90), cc.size(0, -3), 3)
+					nameText:setString(Strings:get(config.Name))
+
+					if config.Rareity == 15 then
+						local width_Name = cc.Label:createWithTTF(Strings:get(config.Name), CUSTOM_TTF_FONT_1, 40)
+
+						width_Name:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+
+						if width_Name:getContentSize().width > 150 then
+							image_Name_Bg:setScaleX(1.8)
+						end
+					end
+
+					local nicheText = namePanel:getChildByFullName("Text_131")
+
+					nicheText:setString(Strings:get(config.Position))
+
+					local Image_bg = namePanel:getChildByFullName("Image_bg")
+
+					Image_bg:setScaleX(nicheText:getContentSize().width / 156)
+
+					local path = self:getHeroImagePath(heroId)
+					local role = ccui.ImageView:create(path)
+
+					role:addTo(self._diamondNode, -1 - i)
+					role:setPosition(cc.p(heroData.heroposition[1], heroData.heroposition[2]))
+					role:setScale(heroData.scale)
+				end
+			end
+		end
+	end
+
+	local times = self._recruitSystem:getDrawTimeById(id)
+
+	if self._diamondNode.bonusList then
+		for i, cell in pairs(self._diamondNode.bonusList) do
+			local doneImg = cell:getChildByName("Image_done")
+
+			doneImg:setVisible(i <= times["10"])
+			doneImg:setLocalZOrder(100)
+		end
+	end
+end
+
+function RecruitMainMediator:getHeroImagePath(heroId)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("HeroBase", heroId, "RoleModel")
+	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "Bust4")
+	local modelID = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "Model")
+	local commonResource = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModel, "CommonResource")
+
+	if not commonResource or commonResource == "" then
+		commonResource = modelID
+	end
+
+	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+	local path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(picInfo.Path)], commonResource, picInfo.Filename)
+
+	return path
 end

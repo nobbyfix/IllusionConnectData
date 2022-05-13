@@ -95,7 +95,7 @@ function captureNode(startNode, scale, formate, imageName, imageFormate)
 
 	local rtx = cc.RenderTexture:create(size.width * scale, size.height * scale, formate or cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888)
 
-	rtx:begin()
+	rtx:beginWithClear(0, 0, 0, 0)
 	startNode:visit()
 	rtx:endToLua()
 
@@ -115,7 +115,7 @@ function captureNode(startNode, scale, formate, imageName, imageFormate)
 		end
 
 		rtx:saveToFile(saveFileName, imageFormate or cc.IMAGE_FORMAT_JPEG, imageFormate == cc.IMAGE_FORMAT_PNG)
-		print("存储图片", savePath .. "/" .. imageName)
+		print("save image fath:", savePath .. "/" .. imageName)
 	end
 
 	app.render()
@@ -124,6 +124,100 @@ function captureNode(startNode, scale, formate, imageName, imageFormate)
 	startNode:setScale(oldScale)
 
 	return sprite
+end
+
+function renderTexture(data)
+	local node = data.node
+	local fileName = data.fileName or nil
+	local size = data.size or node:getContentSize()
+	local rtx = cc.RenderTexture:create(size.width, size.height, data.formate or cc.TEXTURE2_D_PIXEL_FORMAT_RGB_A8888)
+
+	rtx:beginWithClear(0, 0, 0, 0)
+	node:visit()
+	rtx:endToLua()
+
+	local fileUtils = cc.FileUtils:getInstance()
+	local savePath = fileUtils:getWritablePath() .. "localStorage"
+	local saveFileName = "localStorage" .. "/" .. fileName
+	local savePathName = savePath .. "/" .. fileName
+
+	cc.Director:getInstance():getTextureCache():removeTextureForKey(savePathName)
+
+	if fileUtils:isFileExist(savePathName) then
+		fileUtils:removeFile(savePathName)
+	end
+
+	print(saveFileName, "renderTexture fath:")
+
+	if fileName then
+		if not fileUtils:isDirectoryExist(savePath) then
+			fileUtils:createDirectory(savePath)
+		end
+
+		local status = rtx:saveToFile(saveFileName, data.format or cc.IMAGE_FORMAT_JPEG, data.format == cc.IMAGE_FORMAT_PNG)
+
+		if status then
+			if data.callback then
+				data.callback(savePathName)
+			end
+		else
+			print("save image error ")
+		end
+	end
+end
+
+function captureNodeSystem(data)
+	local fileName = data.fileName or "temp.png"
+	local scale = data.scale or 1
+	local fileUtils = cc.FileUtils:getInstance()
+	local savePath = fileUtils:getWritablePath() .. "localStorage"
+	local saveFileName = savePath .. "/" .. fileName
+
+	cc.Director:getInstance():getTextureCache():removeTextureForKey(saveFileName)
+
+	if fileUtils:isFileExist(saveFileName) then
+		fileUtils:removeFile(saveFileName)
+	end
+
+	print(saveFileName, "captureNodeSystem path:")
+
+	local image = cc.utils:captureNode(data.node, scale)
+
+	if image and fileName then
+		if not fileUtils:isDirectoryExist(savePath) then
+			fileUtils:createDirectory(savePath)
+		end
+
+		local status = image:saveToFile(saveFileName)
+
+		if status then
+			if data.callback then
+				data.callback(savePath, saveFileName)
+			end
+		else
+			print("save image error ")
+		end
+	end
+end
+
+function captureScreen(data)
+	local fileName = data.fileName or "temp.png"
+	local fileUtils = cc.FileUtils:getInstance()
+	local savePath = fileUtils:getWritablePath()
+	local fileName = "localStorage" .. "/" .. fileName
+	local saveFileName = savePath .. "/" .. fileName
+
+	cc.Director:getInstance():getTextureCache():removeTextureForKey(saveFileName)
+	print(saveFileName, "captureScreen path:")
+	cc.utils:captureScreen(function (succeed, outputFile)
+		if succeed then
+			if data.callback then
+				data.callback(saveFileName)
+			end
+		else
+			print("captureScreen error")
+		end
+	end, fileName)
 end
 
 function convertToBlurSprite(sprite, blurRadius, sampleNum, scale, noDouble)
@@ -358,6 +452,8 @@ function getPathByType(type, name)
 		return "asset/story/" .. name
 	elseif type == "STORY_FACE" then
 		return "asset/story/face/" .. name
+	elseif type == "STORY_ALPHA" then
+		return "asset/sceneStory/" .. name
 	end
 
 	return name

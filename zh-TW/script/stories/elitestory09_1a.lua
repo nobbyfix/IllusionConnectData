@@ -264,11 +264,11 @@ function scene_elitestory09_1a.actions.start_elitestory09_1a(_root, args)
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak2",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 4,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
 							x = 0.6,
 							y = 0
@@ -292,8 +292,8 @@ function scene_elitestory09_1a.actions.start_elitestory09_1a(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}

@@ -11,6 +11,10 @@ end
 function AreaViewMediator:enterWithData(data)
 end
 
+function AreaViewMediator:leaveWithData(data)
+	self:dismiss(data)
+end
+
 function AreaViewMediator:willStartEnterTransition(transition)
 end
 

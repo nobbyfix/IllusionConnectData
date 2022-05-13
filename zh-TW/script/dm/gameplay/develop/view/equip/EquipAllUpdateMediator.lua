@@ -158,6 +158,23 @@ function EquipAllUpdateMediator:onRegister()
 
 	CommonUtils.runActionEffect(leftBtn, "Node_1.leftBtn", "LeftRightArrowEffect", "anim1", true)
 	CommonUtils.runActionEffect(rightBtn, "Node_2.rightBtn", "LeftRightArrowEffect", "anim1", true)
+
+	local desc = self._nodeSkill:getChildByFullName("desc")
+	local size = desc:getContentSize()
+	local x, y = desc:getPosition()
+	local descScrollView = ccui.ScrollView:create()
+
+	descScrollView:setTouchEnabled(true)
+	descScrollView:setBounceEnabled(true)
+	descScrollView:setDirection(ccui.ScrollViewDir.vertical)
+	descScrollView:setContentSize(size)
+	descScrollView:setPosition(cc.p(x, y))
+	descScrollView:setAnchorPoint(cc.p(0, 1))
+	self._nodeSkill:addChild(descScrollView, desc:getLocalZOrder())
+
+	self._descScrollView = descScrollView
+
+	desc:setVisible(false)
 end
 
 function EquipAllUpdateMediator:setupView(data)
@@ -231,6 +248,7 @@ function EquipAllUpdateMediator:refreshEquipBaseInfo()
 	local levelMax = self._equipData:getMaxLevel()
 	local equipOccu = self._equipData:getOccupation()
 	local occupationDesc = self._equipData:getOccupationDesc()
+	local occupationType = self._equipData:getOccupationType()
 	local node = self._nodeDesc:getChildByFullName("node")
 
 	node:removeAllChildren()
@@ -270,15 +288,32 @@ function EquipAllUpdateMediator:refreshEquipBaseInfo()
 	else
 		limitDesc:setVisible(false)
 
-		if equipOccu then
-			for i = 1, #equipOccu do
-				local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-				local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-				image:setAnchorPoint(cc.p(0.5, 0.5))
-				image:setPosition(cc.p(40 * (i - 1), 0))
-				image:setScale(0.5)
-				image:addTo(limitNode)
+					image:setAnchorPoint(cc.p(0.5, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0.5, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
 			end
 		end
 	end
@@ -327,10 +362,12 @@ function EquipAllUpdateMediator:refreshAttr()
 			local name = attrPanel:getChildByFullName("name")
 
 			name:setString(attrName)
+			name:setPositionX(30)
 
 			local image = attrPanel:getChildByFullName("image")
 
 			image:setVisible(true)
+			attrPanel:getChildByFullName("name"):setPositionX(28)
 
 			local attrText = attrPanel:getChildByFullName("text")
 
@@ -387,12 +424,12 @@ function EquipAllUpdateMediator:refreshSkill()
 		local skillName = self._nodeSkill:getChildByFullName("name")
 		local skillNameBg = self._nodeSkill:getChildByFullName("nameBg")
 		local skillLevel = self._nodeSkill:getChildByFullName("level")
-		local skillDesc = self._nodeSkill:getChildByFullName("desc")
+		local skillDesc = self._descScrollView
 
 		skillDesc:removeAllChildren()
 
 		local style = {
-			fontSize = 20
+			fontSize = 17
 		}
 		local name = skill:getName()
 		local level = skill:getLevel()
@@ -465,11 +502,10 @@ function EquipAllUpdateMediator:refreshSkill()
 			skillLevel:setVisible(false)
 			skillTip:setPositionX(skillNameBg:getPositionX() + skillNameBg:getContentSize().width + 10)
 		else
+			skillLevel:setVisible(true)
 			skillLevel:setPositionX(skillNameBg:getPositionX() + skillNameBg:getContentSize().width + 10)
 			skillTip:setPositionX(skillLevel:getPositionX() + skillLevel:getContentSize().width + 10)
 		end
-
-		skillDesc:setString("")
 
 		local width = skillDesc:getContentSize().width
 		local height = skillDesc:getContentSize().height
@@ -480,9 +516,23 @@ function EquipAllUpdateMediator:refreshSkill()
 		label:setPosition(cc.p(0, height))
 		label:addTo(skillDesc)
 
-		local posY = label:getContentSize().height > 30 and 58 or 51
+		local descScrollView = skillDesc
+		local size = skillDesc:getContentSize()
+		size.height = label:getContentSize().height
 
-		skillDesc:setPositionY(posY)
+		if descScrollView:getContentSize().height < size.height then
+			descScrollView:setTouchEnabled(true)
+		else
+			size = descScrollView:getContentSize()
+
+			descScrollView:setTouchEnabled(false)
+		end
+
+		descScrollView:setInnerContainerSize(size)
+
+		local offy = size.height
+
+		label:setPositionY(size.height)
 	else
 		self._nodeSkill:setVisible(false)
 	end
@@ -578,18 +628,74 @@ function EquipAllUpdateMediator:refreshItemCost()
 	cost:setTextColor(GameStyle:getColor(colorNum1))
 	costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-	local addImg = panel:getChildByFullName("addImg")
+	local addImg = panel:getChildByFullName("addImg.Image_1")
 
 	addImg:setVisible(not self._itemEnough)
 	iconpanel:setGray(not self._itemEnough)
 end
 
 function EquipAllUpdateMediator:refreshEquipCost()
+	local tipdesc = self._starPanel:getChildByFullName("tipdesc")
+
+	tipdesc:setString(Strings:get("Equip_lvup_tip"))
+	tipdesc:setVisible(false)
+
 	local needCostControl = self._equipData:getEquipNeedControl()
 
 	if needCostControl == 1 then
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
+
+		if self._equipData:getRarity() == 15 then
+			local pos = self._bagSystem:getComposePos(commonItemId)
+
+			if pos then
+				local imageName = composePosImage_icon[pos][1]
+				local equipCost = self._starPanel:getChildByFullName("equipCost")
+				local panel = equipCost:getChildByFullName("costBg")
+				local iconpanel = panel:getChildByFullName("iconpanel")
+
+				iconpanel:removeAllChildren()
+
+				local hasNum = self._equipSystem:getEquipStarUpItem().stiveNum
+				self._equipEnough = needNum <= hasNum
+
+				if self._equipEnough then
+					imageName = composePosImage_icon[pos][2]
+				end
+
+				local debrisIcon = ccui.ImageView:create(imageName, 1)
+
+				debrisIcon:addTo(iconpanel):center(iconpanel:getContentSize())
+
+				local colorNum1 = self._equipEnough and 1 or 7
+				local enoughImg = panel:getChildByFullName("bg.enoughImg")
+
+				enoughImg:setVisible(self._equipEnough)
+
+				local costPanel = panel:getChildByFullName("costPanel")
+
+				costPanel:setVisible(true)
+
+				local cost = costPanel:getChildByFullName("cost")
+				local costLimit = costPanel:getChildByFullName("costLimit")
+
+				cost:setString(hasNum)
+				costLimit:setString("/" .. needNum)
+				costLimit:setPositionX(cost:getContentSize().width)
+				costPanel:setContentSize(cc.size(cost:getContentSize().width + costLimit:getContentSize().width, 40))
+				cost:setTextColor(GameStyle:getColor(colorNum1))
+				costLimit:setTextColor(GameStyle:getColor(colorNum1))
+
+				local addImg = panel:getChildByFullName("addImg.Image_1")
+
+				addImg:setVisible(not self._equipEnough)
+				iconpanel:setGray(not self._equipEnough)
+				equipCost:setVisible(needNum > 0)
+
+				return
+			end
+		end
 
 		if needNum > 0 then
 			local equipCost = self._starPanel:getChildByFullName("equipCost")
@@ -628,7 +734,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 			cost:setTextColor(GameStyle:getColor(colorNum1))
 			costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-			local addImg = panel:getChildByFullName("addImg")
+			local addImg = panel:getChildByFullName("addImg.Image_1")
 
 			addImg:setVisible(not self._equipEnough)
 			iconpanel:setGray(not self._equipEnough)
@@ -667,7 +773,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)
@@ -727,6 +833,8 @@ function EquipAllUpdateMediator:refreshEquipCost()
 	needNum = self._equipData:getEquipStarExp()
 
 	if needNum > 0 then
+		tipdesc:setVisible(true)
+
 		local equipCost = self._starPanel:getChildByFullName("equipCost")
 		local panel = equipCost:getChildByFullName("costBg")
 		local iconpanel = panel:getChildByFullName("iconpanel")
@@ -738,6 +846,11 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		debrisIcon:addTo(iconpanel):center(iconpanel:getContentSize())
 
 		local hasNum = self._equipSystem:getEquipStarUpItem().stiveNum
+
+		if hasNum == 0 then
+			hasNum = self._equipData:getOverflowStarExp()
+		end
+
 		self._equipEnough = needNum <= hasNum
 		local colorNum1 = self._equipEnough and 1 or 7
 		local enoughImg = panel:getChildByFullName("bg.enoughImg")
@@ -758,7 +871,7 @@ function EquipAllUpdateMediator:refreshEquipCost()
 		cost:setTextColor(GameStyle:getColor(colorNum1))
 		costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-		local addImg = panel:getChildByFullName("addImg")
+		local addImg = panel:getChildByFullName("addImg.Image_1")
 
 		addImg:setVisible(not self._equipEnough)
 		iconpanel:setGray(not self._equipEnough)
@@ -811,8 +924,10 @@ function EquipAllUpdateMediator:refreshStar()
 	}))
 	desc1:getChildByName("text"):setPositionX(205)
 	desc1:getChildByName("extendText"):setVisible(false)
+	desc1:getChildByName("name"):setPositionX(10)
 	desc1:getChildByName("name"):setString(Strings:get("Equip_UI46"))
 	desc1:getChildByName("image"):setVisible(false)
+	desc1:getChildByName("name"):setPositionX(10)
 
 	local desc2 = self._nodeAttr:getChildByFullName("desc_2")
 
@@ -1217,7 +1332,7 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 
 	local needCostControl = self._equipData:getEquipNeedControl()
 
-	if needCostControl == 1 then
+	if needCostControl == 1 and self._equipData:getRarity() ~= 15 then
 		local commonItemId = self._equipData:getCommonItemId()
 		local needNum = self._equipData:getEquipItemNum()
 
@@ -1234,6 +1349,7 @@ function EquipAllUpdateMediator:onClickGrowUp(sender, eventType)
 		items = items
 	}
 
+	dump(param, "======= param")
 	self._equipSystem:requestEquipStarUp(param)
 end
 
@@ -1245,6 +1361,30 @@ function EquipAllUpdateMediator:onClickEquipItem()
 		local needNum = self._equipData:getEquipItemNum()
 
 		if needNum > 0 then
+			if self._equipData:getRarity() == 15 then
+				local pos = self._bagSystem:getComposePos(commonItemId)
+
+				if pos then
+					AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+					local view = self:getInjector():getInstance("EquipStarLevelView")
+
+					self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+						transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+					}, {
+						useCompose = true,
+						equipId = self._equipId,
+						needNum = needNum,
+						itemId = commonItemId,
+						callback = function ()
+							self:refreshEquipCost()
+						end
+					}, nil))
+				end
+
+				return
+			end
+
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 			local itemData = self._equipData:getStarItem()[1]

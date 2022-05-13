@@ -75,6 +75,39 @@ Friend:has("_city", {
 Friend:has("_tags", {
 	is = "rw"
 })
+Friend:has("_leadStageId", {
+	is = "rw"
+})
+Friend:has("_leadStageLevel", {
+	is = "rw"
+})
+Friend:has("_totalStar", {
+	is = "rw"
+})
+Friend:has("_totalHeroes", {
+	is = "rw"
+})
+Friend:has("_totalSurface", {
+	is = "rw"
+})
+Friend:has("_maxStageLevel", {
+	is = "rw"
+})
+Friend:has("_showHeroes", {
+	is = "rw"
+})
+Friend:has("_rtkpRank", {
+	is = "rw"
+})
+Friend:has("_rtpkScore", {
+	is = "rw"
+})
+Friend:has("_stageArenaRank", {
+	is = "rw"
+})
+Friend:has("_stageArenaScore", {
+	is = "rw"
+})
 Friend:has("_recommendDesc", {
 	is = "rw"
 })
@@ -98,6 +131,15 @@ function Friend:initialize()
 	self._heroes = {}
 	self._slogan = ""
 	self._headFrame = ""
+	self._totalStar = 0
+	self._totalHeroes = 0
+	self._totalSurface = 0
+	self._maxStageLevel = 0
+	self._showHeroes = {}
+	self._rtkpRank = 0
+	self._rtpkScore = 0
+	self._stageArenaRank = 0
+	self._stageArenaScore = 0
 end
 
 function Friend:synchronize(data)
@@ -211,6 +253,50 @@ function Friend:synchronize(data)
 
 	if data.tags then
 		self._tags = data.tags
+	end
+
+	if data.leadStageId then
+		self._leadStageId = data.leadStageId
+	end
+
+	if data.leadStageLevel then
+		self._leadStageLevel = data.leadStageLevel
+	end
+
+	if data.totalStar then
+		self._totalStar = data.totalStar
+	end
+
+	if data.totalHeroes then
+		self._totalHeroes = data.totalHeroes
+	end
+
+	if data.totalSurface then
+		self._totalSurface = data.totalSurface
+	end
+
+	if data.maxStageLevel then
+		self._maxStageLevel = data.maxStageLevel
+	end
+
+	if data.showHeroes then
+		self._showHeroes = data.showHeroes
+	end
+
+	if data.rtkpRank then
+		self._rtkpRank = data.rtkpRank
+	end
+
+	if data._rtpkScore then
+		self._rtpkScore = data._rtpkScore
+	end
+
+	if data.stageArenaRank then
+		self._stageArenaRank = data.stageArenaRank
+	end
+
+	if data.stageArenaScore then
+		self._stageArenaScore = data.stageArenaScore
 	end
 
 	self:setRecommendDesc()

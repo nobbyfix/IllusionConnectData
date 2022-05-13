@@ -53,6 +53,7 @@ function WeightedStrategy:start(battleContext)
 
 	self._context = battleContext
 	self._battleLogic = battleContext:getObject("BattleLogic")
+	self._processRecorder = battleContext:getObject("ProcessRecorder")
 	self._willCheckEnergy = true
 	self._cardIndex = nil
 	self._nextCard = nil
@@ -124,8 +125,15 @@ function WeightedStrategy:update(interval)
 
 		if player:energyIsEnough(cost) then
 			if player:getCardState() == "hero" then
+				if not self._nextCard._cardAI then
+					self._nextCard = nil
+
+					return
+				end
+
 				local battleField = self._context:getObject("BattleField")
-				local cellNo = self:determineTargetCell(battleField, player:getSide())
+				local seatRules = self._nextCard:getSeatRules()
+				local cellNo = self:determineTargetCell(battleField, player:getSide(), seatRules)
 
 				if cellNo ~= nil then
 					self:spawnCard(self._cardIndex, cellNo, function (success, detail)
@@ -151,25 +159,28 @@ function WeightedStrategy:update(interval)
 	end
 end
 
-function WeightedStrategy:calcWeight(card, side)
+function WeightedStrategy:calcWeight(card, side, player)
 	local statusNames = {
 		"FriendMasterHP",
-		"FriendMinHP",
-		"FriendAVRHP",
-		"FriendCount",
 		"EnemyMasterHP",
-		"EnemyMinHP",
-		"EnemyAVRHP",
-		"EnemyCount",
-		"Time",
-		"ForcedWeight"
+		"PaddingCard",
+		"UniqueRatio",
+		"Curse",
+		"Cost",
+		"CardForce"
 	}
-	local cardAI = card:getCardAI() or {}
-	self._status = self._status or self:calcStatus(side)
+	self._status = self:calcStatus(side, card)
 	local weight = 0
+	local cardAI = card:getCardAI() or {}
 
 	for index, name in ipairs(statusNames) do
 		weight = weight + (tonumber(cardAI[name]) or 0) * (self._status[index] or 1)
+	end
+
+	if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+		self._processRecorder:recordObjectEvent(player:getId(), "CurrentBattleSt", {
+			status = self._status
+		})
 	end
 
 	return weight
@@ -185,17 +196,40 @@ function WeightedStrategy:calcSkillWeight(card)
 	return weight
 end
 
-function WeightedStrategy:calcStatus(side)
+function WeightedStrategy:calcStatus(side, card)
+	local cardAI = card:getCardAI() or {}
 	local result = self:calcOneSideStatus(side)
 	local oppoResult = self:calcOneSideStatus(opposeBattleSide(side))
 
-	for i = 1, 4 do
-		result[i + 4] = oppoResult[i]
+	for i = 1, 1 do
+		result[i + 1] = oppoResult[i]
 	end
 
-	local battlelogic = self._context:getObject("BattleLogic")
-	result[9] = (120 - battlelogic:getBoutTime() / 1000) * 0.05
-	result[10] = 1
+	result[3] = 1
+	local battleField = self._context:getObject("BattleField")
+	local units = battleField:collectLivingUnits({}, opposeBattleSide(side))
+	local x = tonumber(cardAI.UniqueRatio) or 0
+	local y = #units
+	result[4] = x > 0 and 400 / (x / y + y / x) / x or 0
+	local units = battleField:collectLivingUnits({}, side)
+	local isMasterCurse = false
+
+	for k, v in pairs(units) do
+		if v:getUnitType() == BattleUnitType.kMaster then
+			local unitFlagComp = v:getComponent("Flag")
+
+			if unitFlagComp:hasStatus(kBECurse) then
+				isMasterCurse = true
+			end
+
+			break
+		end
+	end
+
+	result[5] = isMasterCurse and 1 or 0
+	result[6] = -1
+	local x = tonumber(cardAI.CardForce) or 0
+	result[7] = x > 0 and (x + 20) / x or 0
 
 	return result
 end
@@ -231,21 +265,13 @@ function WeightedStrategy:calcOneSideStatus(side)
 		totalHpPercent = totalHpPercent + hpRatio
 	end
 
-	if minHP <= 0.05 then
-		minHP = 0.05
+	if masterHp and masterHp >= 0.5 then
+		masterHp = 0
+	else
+		masterHp = 1
 	end
 
-	masterHp = masterHp and masterHp > 0.05 and masterHp or 0.05
-	local avrHp = totalHpPercent / #units
-
-	if avrHp <= 0.05 then
-		avrHp = 0.05
-	end
-
-	result[1] = 1 / masterHp
-	result[2] = 1 / minHP
-	result[3] = 1 / avrHp
-	result[4] = (heroCounts + 1) / 3 * 1.5
+	result[1] = masterHp
 
 	return result
 end
@@ -280,7 +306,7 @@ function WeightedStrategy:determineNextCard(player)
 			local weight = 0
 
 			if player:getCardState() == "hero" then
-				weight = self:calcWeight(card, side)
+				weight = self:calcWeight(card, side, player)
 			elseif player:getCardState() == "skill" then
 				weight = self:calcSkillWeight(card)
 			end
@@ -290,11 +316,26 @@ function WeightedStrategy:determineNextCard(player)
 				card,
 				weight
 			}
+
+			if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+				self._processRecorder:recordObjectEvent(player:getId(), "UpdateCardWeight", {
+					cardInfos = {
+						idx,
+						[3] = weight
+					}
+				})
+			end
 		end
 
 		table.sort(result, function (a, b)
 			return b[3] < a[3]
 		end)
+
+		if self._processRecorder and GameConfigs and GameConfigs.ShowAiWeightBox then
+			self._processRecorder:recordObjectEvent(player:getId(), "MaxCardWeight", {
+				cardInfos = result[1][1]
+			})
+		end
 
 		return result[1][1], result[1][2]
 	end
@@ -302,8 +343,38 @@ function WeightedStrategy:determineNextCard(player)
 	return nil, 
 end
 
-function WeightedStrategy:determineTargetCell(battleField, side)
+function WeightedStrategy:determineTargetCell(battleField, side, seatRules)
 	local emptyCells = battleField:collectEmtpyCells({}, side)
+	local residentCells = {}
+
+	if next(seatRules) then
+		local allCells = battleField:collectCells({}, side)
+
+		for k, v in pairs(allCells) do
+			local resident = v:getResident()
+			local canBeSit = false
+
+			if resident then
+				for rule, _ in pairs(seatRules) do
+					if rule == "SUMMONED" then
+						canBeSit = resident._isSummoned
+					else
+						local flagComp = resident:getComponent("Flag")
+						canBeSit = flagComp:hasFlag(rule)
+					end
+
+					if canBeSit then
+						break
+					end
+				end
+
+				if canBeSit then
+					residentCells[#residentCells + 1] = v
+				end
+			end
+		end
+	end
+
 	local count = #emptyCells
 
 	if count > 0 then
@@ -331,6 +402,35 @@ function WeightedStrategy:determineTargetCell(battleField, side)
 		local r = self._random:random(1, count)
 
 		return emptyCells[r]:getNumber()
+	end
+
+	local count = #residentCells
+
+	if count > 0 then
+		local cardAI = self._nextCard:getCardAI()
+		local PosArray = cardAI and cardAI.ForcedPosition
+
+		if PosArray then
+			local map = {}
+
+			for _, cell in ipairs(residentCells) do
+				map[math.abs(cell:getNumber())] = cell
+			end
+
+			for _, poses in ipairs(PosArray) do
+				local _poses = shuffle(self._random, deepCopy({}, poses))
+
+				for _, pos in ipairs(_poses) do
+					if map[pos] then
+						return map[pos]:getNumber()
+					end
+				end
+			end
+		end
+
+		local r = self._random:random(1, count)
+
+		return residentCells[r]:getNumber()
 	end
 
 	return nil

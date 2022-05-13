@@ -274,6 +274,7 @@ function ClubHallMediator:initNodes()
 	self._tabPanel = self._leftPanel:getChildByFullName("tab_panel")
 
 	AdjustUtils.adjustLayoutUIByRootNode(self._leftPanel)
+	AdjustUtils.adjustLayoutUIByRootNode(self._viewNode)
 
 	self._recruitBtn = self._leftPanel:getChildByFullName("btn_recruit")
 	self._recruitBtnText = self._leftPanel:getChildByFullName("btn_recruit.text")

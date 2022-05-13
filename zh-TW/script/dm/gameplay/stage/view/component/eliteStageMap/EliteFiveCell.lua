@@ -85,25 +85,17 @@ function EliteFiveCell:adjustUI()
 		func = callFunc
 	})
 
-	local text = self._textPanel:getChildByFullName("hideText.text1")
+	local localLanguage = getCurrentLanguage()
+	local Node_vertical = self._textPanel:getChildByFullName("hideText.Node_vertical")
+	local Node_horizontal = self._textPanel:getChildByFullName("hideText.Node_horizontal")
 
-	text:getVirtualRenderer():setDimensions(20, 0)
+	Node_vertical:setVisible(false)
+	Node_horizontal:setVisible(true)
 
-	text = self._textPanel:getChildByFullName("hideText.text2")
+	local text5 = Node_horizontal:getChildByFullName("text5")
+	local Text_16 = Node_horizontal:getChildByFullName("Text_16")
 
-	text:getVirtualRenderer():setDimensions(20, 0)
-
-	text = self._textPanel:getChildByFullName("hideText.text3")
-
-	text:getVirtualRenderer():setDimensions(20, 0)
-
-	text = self._textPanel:getChildByFullName("hideText.text4")
-
-	text:getVirtualRenderer():setDimensions(20, 0)
-
-	text = self._textPanel:getChildByFullName("hideText.text5")
-
-	text:getVirtualRenderer():setDimensions(20, 0)
+	Text_16:setPositionX(text5:getPositionX() + text5:getContentSize().width + 5)
 end
 
 function EliteFiveCell:initAnim()

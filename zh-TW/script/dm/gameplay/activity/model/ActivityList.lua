@@ -45,8 +45,8 @@ function ActivityList:syncAloneActivity(id, data)
 			activity = ActivityModel[config.Type]:new()
 			data.activityId = id
 
-			activity:synchronize(data)
 			activity:setActivitySystem(self._activitySystem)
+			activity:synchronize(data)
 
 			self._activityMap[id] = activity
 			self._activityIds[#self._activityIds + 1] = id
@@ -78,16 +78,6 @@ end
 function ActivityList:getActivityByType(actType)
 	for id, activity in pairs(self._activityMap) do
 		if activity:getType() == actType then
-			return activity
-		end
-	end
-
-	return nil
-end
-
-function ActivityList:getActivityByComplexId(complexId)
-	for id, activity in pairs(self._activityMap) do
-		if activity:getActivityComplexId() == complexId then
 			return activity
 		end
 	end

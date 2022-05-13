@@ -186,6 +186,10 @@ function BattleUnitManager:initialize()
 	self._ruleFuncs = {}
 end
 
+function BattleUnitManager:setBattleContext(battleContext)
+	self._battleContext = battleContext
+end
+
 function BattleUnitManager:dispose()
 	for k, unit in pairs(self._members) do
 		if unit then
@@ -913,6 +917,80 @@ function BattleUnitManager:createTargetEnvironment(env)
 			return boundary <= y and zone == rzone
 		end)
 	end
+
+	function env.HasBuff(tag)
+		local battleField = self._battleContext:getObject("BattleField")
+		local result = battleField:collectAllUnits({}, 1)
+		local result1 = battleField:collectAllUnits({}, -1)
+
+		for k, v in pairs(result1) do
+			result[#result + 1] = v
+		end
+
+		local rets = {}
+
+		for k, v in pairs(result) do
+			local buffSystem = self._battleContext:getObject("BuffSystem")
+			local _, cnt = buffSystem:selectBuffsOnTarget(v, MakeFilter(function (buff)
+				return buff:isMatched(tag)
+			end))
+
+			if cnt > 0 then
+				local id = v:getComponent("Position"):getCell():getId()
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
+	end
+
+	function env.HasTrap(tag)
+		local battleField = self._battleContext:getObject("BattleField")
+		local cells = battleField:getCells()
+		local trapSystem = self._battleContext:getObject("TrapSystem")
+		local rets = {}
+
+		for k, v in pairs(cells) do
+			local _, cnt = trapSystem:selectBuffsOnTarget(v, MakeFilter(function (buff)
+				return buff:isMatched(tag)
+			end))
+
+			if cnt > 0 then
+				local id = v:getId()
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
+	end
+
+	function env.AllCell()
+		local battleField = self._battleContext:getObject("BattleField")
+		local cells = battleField:getCells()
+		local rets = {}
+
+		for k, v in pairs(cells) do
+			local id = v:getId()
+
+			if math.abs(id) ~= 108 then
+				local ret = {
+					color = "Green",
+					id = id
+				}
+				rets[#rets + 1] = ret
+			end
+		end
+
+		return rets
+	end
 end
 
 function BattleUnitManager:addUnit(unit, dataModel)
@@ -966,6 +1044,22 @@ function BattleUnitManager:removeUnitById(id, cellId)
 		self._members[tostring(id)]:dispose()
 
 		self._members[tostring(id)] = nil
+	end
+
+	for k, v in pairs(self._leftTeam) do
+		if v._cellId ~= k and cellId == v._cellId then
+			cellId = k
+
+			break
+		end
+	end
+
+	for k, v in pairs(self._rightTeam) do
+		if 0 - v._cellId ~= k and cellId == v._cellId then
+			cellId = 0 - k
+
+			break
+		end
 	end
 
 	if cellId > 0 then

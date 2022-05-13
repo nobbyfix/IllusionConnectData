@@ -18,6 +18,9 @@ PlayerInfoWidget:has("_eventDispatcher", {
 PlayerInfoWidget:has("_passSystem", {
 	is = "r"
 }):injectWith("PassSystem")
+PlayerInfoWidget:has("_settingSystem", {
+	is = "r"
+}):injectWith("SettingSystem")
 
 function PlayerInfoWidget.class:createWidgetNode()
 	local resFile = "asset/ui/PlayerInfoWidget.csb"
@@ -69,8 +72,8 @@ function PlayerInfoWidget:initSubviews()
 	self._level = self._infoPanel:getChildByFullName("level_text")
 	self._vipLevel = self._infoPanel:getChildByFullName("vip_level")
 	self._headRectNode = self._infoPanel:getChildByFullName("head_icon")
-	self._passPanel = self._infoPanel:getChildByFullName("passPanel")
 
+	self._headRectNode:setContentSize(cc.size(88, 88))
 	self._headRectNode:setTouchEnabled(true)
 	self._headRectNode:addTouchEventListener(function (sender, eventType)
 		self:onClickHead(sender, eventType)
@@ -119,22 +122,6 @@ function PlayerInfoWidget:initSubviews()
 			self._progressTip:setVisible(false)
 		end
 	end)
-
-	if self._passPanel ~= nil and CommonUtils.GetSwitch("fn_pass") then
-		local anim = cc.MovieClip:create("m1_tongxingzhengrukou")
-
-		anim:addEndCallback(function (cid, mc)
-			anim:stop()
-		end)
-		anim:addTo(self._passPanel):center(self._passPanel:getContentSize())
-		self._passPanel:addTouchEventListener(function (sender, eventType)
-			if eventType == ccui.TouchEventType.began then
-				-- Nothing
-			elseif eventType == ccui.TouchEventType.ended then
-				self._passSystem:showMainPassView()
-			end
-		end)
-	end
 end
 
 function PlayerInfoWidget:setNetInfoNodePos(position)
@@ -206,17 +193,23 @@ end
 
 function PlayerInfoWidget:setHeadId(headId)
 	if self._headRectNode then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local player = developSystem:getPlayer()
 		local rectNode = self._headRectNode
 
 		rectNode:removeAllChildren(true)
 
-		local headIcon, oldIcon = IconFactory:createRactHeadImage({
-			id = headId,
-			size = cc.size(160, 58)
+		local headicon, oldIcon = IconFactory:createPlayerIcon({
+			clipType = 4,
+			id = player:getHeadId(),
+			size = cc.size(93, 94),
+			headFrameId = player:getCurHeadFrame()
 		})
 
-		oldIcon:offset(30, 0)
-		headIcon:addTo(rectNode):center(rectNode:getContentSize())
+		headicon:setScale(1.15)
+		oldIcon:setScale(0.5)
+		rectNode:setScale(0.7)
+		headicon:addTo(rectNode):center(rectNode:getContentSize())
 	end
 end
 
@@ -248,7 +241,7 @@ function PlayerInfoWidget:setMonthCardState()
 end
 
 function PlayerInfoWidget:setBatteryPower()
-	if device.platform ~= "mac" and device.platform ~= "windows" then
+	if device.platform ~= "mac" then
 		local percent = app.getDevice():getBatteryLevel()
 
 		if self._batteryPower then
@@ -281,30 +274,45 @@ function PlayerInfoWidget:setExpProgress()
 	local bg = self._progressTip:getChildByFullName("bg")
 	local exp1 = self._progressTip:getChildByFullName("exp1")
 	local exp2 = self._progressTip:getChildByFullName("exp2")
+	local text = self._progressTip:getChildByFullName("text1")
 
+	text:setAnchorPoint(1, 0.5)
+	text:setPositionX(exp1:getPositionX() - 5)
 	exp1:setString(currentExp)
 	exp2:setString("/" .. config.PlayerExp)
 
 	local exp1Width = exp1:getContentSize().width
 	local exp2Width = exp2:getContentSize().width
+	local textWidth = text:getContentSize().width
 
 	exp2:setPositionX(exp1:getPositionX() + exp1Width)
-	bg:setContentSize(cc.size(82 + exp1Width + exp2Width, 33))
+	bg:setContentSize(cc.size(20 + textWidth + exp1Width + exp2Width, 33))
+	bg:setPositionX(text:getPositionX() - textWidth - 5)
 end
 
 function PlayerInfoWidget:clock()
 	if self._timeText and self._timer == nil then
+		local isShowSemicolon = true
+
 		local function update()
 			local serverTime = self:getGameServer():remoteTimestamp()
 
-			self._timeText:setString(os.date("%H:%M", serverTime))
+			if isShowSemicolon then
+				self._timeText:setString(os.date("%H:%M", serverTime))
+			else
+				self._timeText:setString(os.date("%H:%M", serverTime))
+			end
+
+			isShowSemicolon = not isShowSemicolon
+
+			self._timeText:setString(TimeUtil:localDate("%H:%M", serverTime))
 
 			if self._registerTimerEvent then
 				self._timerCallFunc()
 			end
 		end
 
-		self._timer = LuaScheduler:getInstance():schedule(update, 1, true)
+		self._timer = LuaScheduler:getInstance():schedule(update, 2, true)
 	end
 end
 
@@ -344,11 +352,17 @@ function PlayerInfoWidget:updateView()
 	local team = developSystem:getTeamByType(StageTeamType.STAGE_NORMAL)
 	local heros = team:getHeroes()
 	local masterId = team:getMasterId()
+	local leadConfig = developSystem._masterSystem:getMasterCurLeadStageConfig(masterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 
 	for k, v in pairs(heros) do
 		local heroInfo = developSystem._heroSystem:getHeroById(v)
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = developSystem._masterSystem:getMasterById(masterId)
@@ -377,9 +391,9 @@ function PlayerInfoWidget:onClickHead(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
-		local view = self:getInjector():getInstance("settingView")
+		local player = self._developSystem:getPlayer()
 
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil))
+		self._settingSystem:tryEnter(player:getRid())
 	end
 end
 

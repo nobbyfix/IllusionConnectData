@@ -272,6 +272,7 @@ all.Skill_SSQXin_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -317,7 +318,7 @@ all.Skill_SSQXin_Passive = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -346,7 +347,8 @@ all.Skill_SSQXin_Passive = {
 					"STATUS",
 					"NUMERIC",
 					"Skill_SSQXin_Passive",
-					"UNDISPELLABLE",
+					"UNDEAD",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
@@ -577,6 +579,7 @@ all.Skill_SSQXin_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -626,7 +629,7 @@ all.Skill_SSQXin_Passive_EX = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -659,7 +662,8 @@ all.Skill_SSQXin_Passive_EX = {
 					"STATUS",
 					"NUMERIC",
 					"Skill_SSQXin_Passive_EX",
-					"UNDISPELLABLE",
+					"UNDEAD",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {

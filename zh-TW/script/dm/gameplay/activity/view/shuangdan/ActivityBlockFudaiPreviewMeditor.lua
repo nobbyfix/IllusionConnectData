@@ -120,6 +120,11 @@ function ActivityBlockFudaiPreviewMeditor:updataCell(panel, _data, index)
 	local probability = _data.rate or 0
 
 	panel:getChildByFullName("content1"):setString(probability * 100 .. "%")
+
+	if math.abs(probability + 1) <= 1e-06 then
+		panel:getChildByFullName("content1"):setString("")
+	end
+
 	panel:getChildByFullName("title"):setString(Strings:get(_data.des))
 	panel:getChildByFullName("content"):setString(Strings:get(_data.num))
 end

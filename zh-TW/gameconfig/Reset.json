@@ -62,7 +62,97 @@
             "setValue": 0
         }
     },
+    "AcitvityAnimalStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityBakingStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityCollapsedStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityDeepSeaStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityDetectiveStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityDramaStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityDuskStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFemaleStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFireStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFireWorksStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -92,6 +182,76 @@
             "storage": 5000
         }
     },
+    "AcitvityKnightStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityMusicFestivalStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityPurewhiteStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityReZeroStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityRiddleStamina_Re_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityRiddleStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySilentNightStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvitySnowflakeStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -112,7 +272,47 @@
             "storage": 5000
         }
     },
+    "AcitvityStoryBookStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySummerReStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvitySummerStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySunflowerStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityTerrorStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -478,6 +678,24 @@
             "setValue": 0
         }
     },
+    "ChessArena_ResetTime": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 5
+        }
+    },
     "ClubBlock_Reset": {
         "ResetSystem": {
             "resetDate": [
@@ -528,6 +746,24 @@
             "setValue": 5
         }
     },
+    "Club_HomeChange": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3
+        }
+    },
     "Club_MailTimes": {
         "ResetSystem": {
             "resetDate": [
@@ -558,6 +794,26 @@
             "setValue": 0
         }
     },
+    "CooperateBoss": {
+        "ResetSystem": {
+            "addValue": 10,
+            "max": 10,
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "DAY",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 10
+        }
+    },
     "Crusade_Energy_Recovery": {
         "ResetSystem": {
             "addValue": 1,
@@ -565,6 +821,24 @@
             "initial": 500,
             "resetMode": "CD",
             "storage": 500
+        }
+    },
+    "DailyBoardLimited": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 1
         }
     },
     "DailyLoginCount": {
@@ -861,6 +1135,25 @@
             "storage": 100
         }
     },
+    "Friend_add": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 30,
+            "storage": 30
+        }
+    },
     "GalleryDateTimes": {
         "ResetSystem": {
             "resetDate": [
@@ -1090,6 +1383,24 @@
             "setValue": 3
         }
     },
+    "RTPKDouble_Times": {
+        "ResetSystem": {
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "WEEK",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3
+        }
+    },
     "ShopReset_RefreshTime": {
         "ResetSystem": {
             "resetDate": [
@@ -1144,6 +1455,16 @@
             "setValue": 0
         }
     },
+    "StageArenaStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 10800,
+            "initial": 5,
+            "limit": 15,
+            "resetMode": "CD",
+            "storage": 15
+        }
+    },
     "Tower_1_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -1161,7 +1482,7 @@
             "resetTime": [
                 "05:00:00"
             ],
-            "setValue": 1,
+            "setValue": 3,
             "unlockId": "Unlock_Tower_1"
         }
     },

@@ -1,11 +1,14 @@
 local CARD_WINDOW_SIZE = 4
+local EXTRA_CARD_WINDOW_SIZE = 2
 BattleCardWindow = class("BattleCardWindow", objectlua.Object, _M)
 
 function BattleCardWindow:initialize()
 	super.initialize(self)
 
 	self._cardsCount = 0
+	self._extraCardsCount = 0
 	self._cards = {}
+	self._extraCards = {}
 end
 
 function BattleCardWindow:setCardAtIndex(index, card)
@@ -16,6 +19,10 @@ function BattleCardWindow:setCardAtIndex(index, card)
 	local oldCard = self._cards[index]
 	self._cards[index] = card
 
+	if card and card.setCardIndex then
+		card:setCardIndex(index)
+	end
+
 	if not oldCard and card then
 		self._cardsCount = self._cardsCount + 1
 	elseif oldCard and not card then
@@ -23,8 +30,41 @@ function BattleCardWindow:setCardAtIndex(index, card)
 	end
 end
 
+function BattleCardWindow:setExtraCardAtIndex(index, card)
+	if index < 1 or EXTRA_CARD_WINDOW_SIZE < index then
+		return nil
+	end
+
+	local oldCard = self._extraCards[index]
+	self._extraCards[index] = card
+
+	if card and card.setCardIndex then
+		card:setCardIndex(index)
+	end
+
+	if not oldCard and card then
+		self._extraCardsCount = self._extraCardsCount + 1
+	elseif oldCard and not card then
+		self._extraCardsCount = self._extraCardsCount - 1
+	end
+end
+
+function BattleCardWindow:getCardById(heroId)
+	for k, v in pairs(self._cards) do
+		if v:getType() == CARD_TYPE.kHeroCard and v:getHeroData().id == heroId then
+			return true
+		end
+	end
+
+	return nil
+end
+
 function BattleCardWindow:getCardAtIndex(index)
 	return self._cards[index]
+end
+
+function BattleCardWindow:getExtraCardAtIndex(index)
+	return self._extraCards[index]
 end
 
 function BattleCardWindow:getCardsCount()
@@ -33,6 +73,10 @@ end
 
 function BattleCardWindow:getWindowSize()
 	return CARD_WINDOW_SIZE
+end
+
+function BattleCardWindow:getExtraWindowSize()
+	return EXTRA_CARD_WINDOW_SIZE
 end
 
 function BattleCardWindow:isAllEmpty()
@@ -106,6 +150,17 @@ function BattleCardWindow:getCardArray()
 	end
 
 	return result, count
+end
+
+function BattleCardWindow:removeCard(card)
+	local cards = self._cards
+
+	for i = 1, CARD_WINDOW_SIZE do
+		if cards[i] == card then
+			cards[i] = nil
+			self._cardsCount = self._cardsCount - 1
+		end
+	end
 end
 
 function BattleCardWindow:getCardIndex(card)

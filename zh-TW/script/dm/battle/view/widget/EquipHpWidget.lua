@@ -60,10 +60,15 @@ function EquipHpWidget:addHeroHpInfo(id, cid, hp, maxHp)
 end
 
 function EquipHpWidget:addMasterHpInfo(id, hp, maxHp)
+	if self._hpInfo[self._preMaster] then
+		self._hpInfo[self._preMaster] = nil
+	end
+
 	self._hpInfo[id] = self._hpInfo[id] or {}
 	local info = self._hpInfo[id]
 	info.hp = hp
 	info.maxHp = maxHp or info.maxHp
+	self._preMaster = id
 end
 
 function EquipHpWidget:refreshLabel()

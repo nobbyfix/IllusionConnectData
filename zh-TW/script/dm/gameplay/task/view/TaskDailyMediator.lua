@@ -56,29 +56,13 @@ function TaskDailyMediator:onRegister()
 	self._cellPanel = self._main:getChildByName("cell")
 
 	self._cellPanel:setVisible(false)
-
-	local lineGradiantVec1 = {
-		{
-			ratio = 0.5,
-			color = cc.c4b(255, 255, 255, 255)
-		},
-		{
-			ratio = 1,
-			color = cc.c4b(129, 118, 113, 255)
-		}
-	}
-
-	self._livenessLabel:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
-		x = 0,
-		y = -1
-	}))
 	self._cloneNode:getChildByFullName("btn_get"):setSwallowTouches(false)
 	self._cloneNode:getChildByFullName("btn_go"):setSwallowTouches(false)
 
 	self._progrLoading = self._proPanel:getChildByFullName("loadingbar")
 
 	self._progrLoading:setScale9Enabled(true)
-	self._progrLoading:setCapInsets(cc.rect(1, 1, 1, 1))
+	self._progrLoading:setCapInsets(cc.rect(60, 3, 1, 1))
 	self._cellPanel:getChildByFullName("cell.loadingBar"):setScale9Enabled(true)
 	self._cellPanel:getChildByFullName("cell.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self._doneMark:getChildByFullName("text"):enableOutline(cc.c4b(244, 39, 39, 114.75), 1)
@@ -159,11 +143,11 @@ function TaskDailyMediator:refreshLiveness(hasAnim)
 
 	local percent = liveness / livenessList[#livenessList] * 100
 	local PercentMap = {
-		[40.0] = 13.5,
-		[160.0] = 77,
-		[80.0] = 35.5,
+		[40.0] = 20,
+		[160.0] = 80,
+		[80.0] = 40,
 		[200.0] = 100,
-		[120.0] = 55.5
+		[120.0] = 60
 	}
 
 	local function getPercent(recruitTimes)
@@ -205,41 +189,41 @@ function TaskDailyMediator:refreshLiveness(hasAnim)
 			local animName = boxRewardImg[i]
 
 			if liveness < livenessList[i] then
-				local image = ccui.ImageView:create("renwu_bg_bxd_1.png", 1)
+				local image = ccui.ImageView:create("rcrw_bx_di.png", 1)
 
 				image:addTo(box):posite(26, 29)
 
 				local child = ccui.ImageView:create(animName[1], 1)
 
 				child:addTo(box):posite(26, 29)
-				child:setScale(0.5)
+				child:setScale(0.65)
 			else
 				local boxStatusMap = self._taskListModel:getBoxStatusMap() or {}
 				local status = self._taskSystem:findValueByKey(boxStatusMap, tostring(livenessList[i]))
 
 				if status then
-					local image = ccui.ImageView:create("renwu_bg_bxd_1.png", 1)
+					local image = ccui.ImageView:create("rcrw_bx_di.png", 1)
 
 					image:addTo(box):posite(26, 29)
 
 					local child = ccui.ImageView:create(animName[1], 1)
 
 					child:addTo(box):posite(26, 29)
-					child:setScale(0.5)
+					child:setScale(0.65)
 
 					local doneMark = self._doneMark:clone()
 
-					doneMark:addTo(box):posite(26, 29)
+					doneMark:addTo(box):posite(30, 10)
 					doneMark:setVisible(true)
 				else
-					local image = ccui.ImageView:create("renwu_bg_bxd_2.png", 1)
+					local image = ccui.ImageView:create("rcrw_bx_di1.png", 1)
 
 					image:addTo(box):posite(26, 29)
 
 					local child = ccui.ImageView:create(animName[1], 1)
 
 					child:addTo(box):posite(26, 29)
-					child:setScale(0.5)
+					child:setScale(0.65)
 
 					local redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
 
@@ -324,29 +308,35 @@ function TaskDailyMediator:createCell(cell, index)
 			panel = panel:getChildByFullName("cell")
 			local taskStatus = taskData:getStatus()
 			local name = taskData:getName()
-			local nameLabel1 = ""
-			local nameLabel2 = ""
-			local length = utf8.len(name)
+			local localLanguage = getCurrentLanguage()
+			local titleText1 = panel:getChildByFullName("Panel_1.title_1")
+			local titleText2 = panel:getChildByFullName("Panel_1.title_2")
 
-			if length <= 4 then
-				nameLabel1 = name
+			if localLanguage ~= GameLanguageType.CN then
+				titleText1:setString(name)
+				titleText2:setVisible(false)
 			else
-				for j = 1, length do
-					local num = utf8.sub(name, j, j)
+				local nameLabel1 = ""
+				local nameLabel2 = ""
+				local length = utf8.len(name)
 
-					if j > length - 4 then
-						nameLabel2 = nameLabel2 .. num
-					else
-						nameLabel1 = nameLabel1 .. num
+				if length <= 4 then
+					nameLabel1 = name
+				else
+					for j = 1, length do
+						local num = utf8.sub(name, j, j)
+
+						if j > length - 4 then
+							nameLabel2 = nameLabel2 .. num
+						else
+							nameLabel1 = nameLabel1 .. num
+						end
 					end
 				end
+
+				titleText1:setString(nameLabel1)
+				titleText2:setString(nameLabel2)
 			end
-
-			local titleText1 = panel:getChildByName("title_1")
-			local titleText2 = panel:getChildByName("title_2")
-
-			titleText1:setString(nameLabel1)
-			titleText2:setString(nameLabel2)
 
 			local taskValueList = taskData:getTaskValueList()
 			local descText = panel:getChildByName("desc")
@@ -377,12 +367,12 @@ function TaskDailyMediator:createCell(cell, index)
 			if taskStatus == TaskStatus.kGet then
 				local mark = self._cloneNode:getChildByFullName("doneanim"):clone()
 
-				mark:addTo(panel):posite(378, 53)
+				mark:addTo(panel):posite(350, 43)
 				mark:setName("TodoMark")
 			elseif taskStatus == TaskStatus.kFinishNotGet then
 				local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-				btnGet:addTo(panel):posite(378, 39)
+				btnGet:addTo(panel):posite(348, 39)
 				btnGet:addClickEventListener(function ()
 					self:onClickGetReward(taskData)
 				end)
@@ -390,7 +380,7 @@ function TaskDailyMediator:createCell(cell, index)
 			elseif taskData:getDestUrl() ~= nil and taskData:getDestUrl() ~= "" and taskStatus == TaskStatus.kUnfinish then
 				local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-				btnGo:addTo(panel):posite(378, 39)
+				btnGo:addTo(panel):posite(348, 39)
 				btnGo:addClickEventListener(function ()
 					self:onClickGo(taskData)
 				end)
@@ -459,7 +449,13 @@ function TaskDailyMediator:onClickGetReward(data)
 	if data:getStatus() == TaskStatus.kFinishNotGet then
 		self._taskSystem:requestTaskReward({
 			taskId = data:getId()
-		})
+		}, function ()
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
+			self._parentMedi:setOneKeyGray()
+		end)
 	end
 end
 
@@ -483,9 +479,22 @@ function TaskDailyMediator:onClickGetBox(data)
 		local boxStatusMap = self._taskListModel:getBoxStatusMap() or {}
 
 		if not self._taskSystem:findValueByKey(boxStatusMap, data) then
+			local function tempFun()
+				if SDKHelper and SDKHelper:isEnableSdk() then
+					local developSystem = self:getInjector():getInstance(DevelopSystem)
+					local dataInfo = developSystem:getStatsInfo()
+
+					if tostring(data) == 200 then
+						dataInfo.eventName = "daily_clear1st"
+
+						SDKHelper:reportStatsData(dataInfo)
+					end
+				end
+			end
+
 			self._taskSystem:requestBoxReward({
 				type = data
-			})
+			}, tempFun)
 		else
 			info.hasGet = true
 

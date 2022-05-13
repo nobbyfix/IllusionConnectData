@@ -1,5 +1,5 @@
 SkillDescWidget = class("SkillDescWidget", BaseWidget, _M)
-local listWidth = 291
+local listWidth = 391
 
 function SkillDescWidget.class:createWidgetNode()
 	local resFile = "asset/ui/SkillDescWidget.csb"
@@ -23,6 +23,10 @@ end
 function SkillDescWidget:initSubviews(view)
 	self._view = view
 	self._skillTipPanel = self._view:getChildByName("skillTipPanel")
+	local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+
+	nextPanel:setVisible(false)
+
 	local skillTouchPanel = self._skillTipPanel:getChildByFullName("skillTouchPanel")
 
 	skillTouchPanel:setSwallowTouches(false)
@@ -151,6 +155,74 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	local descStr = {}
 	local height = 0
+	local height_bottom = 0
+
+	if self._isMaster ~= true then
+		self._starAttrs = self._role:getStarAttrs()
+		local nextPanel = self._skillTipPanel:getChildByName("nextPanel")
+		local titleStr = ""
+		local nextDes = ""
+		local check_star = 0
+
+		for i = 1, #self._starAttrs do
+			local params = self._starAttrs[i]
+
+			if params.star then
+				check_star = params.star
+				titleStr = Strings:get("Hero_Star_UI_Effect_Desc", {
+					star = params.star == 7 and Strings:get("AWAKE_TITLE") or params.star
+				})
+			end
+
+			if params.info and self._role:getStar() < check_star then
+				for index = 1, #params.info do
+					local value = params.info[index]
+
+					if value.isHide == 0 and value.beforeSkillId and value.beforeSkillId == skill:getSkillId() then
+						nextDes = value.desc
+
+						break
+					end
+				end
+			end
+
+			if nextDes ~= "" then
+				break
+			end
+		end
+
+		if titleStr ~= "" and nextDes ~= "" then
+			nextPanel:setVisible(true)
+
+			local Text_title = nextPanel:getChildByName("Text_title")
+			local Image_line_1 = nextPanel:getChildByName("Image_line_1")
+			local Image_line_2 = nextPanel:getChildByName("Image_line_2")
+
+			Text_title:setString(titleStr)
+
+			if Text_title:getContentSize().width > 400 then
+				Text_title:getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+				Text_title:getVirtualRenderer():setDimensions(400, 38)
+			end
+
+			Image_line_1:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
+			Image_line_2:setContentSize(cc.size(208 - Text_title:getContentSize().width / 2 - 5, 1.3))
+
+			local newPanel = self:createEffectDescPanel(nextDes)
+
+			newPanel:setAnchorPoint(cc.p(0, 0))
+			newPanel:addTo(desc)
+
+			height = height + newPanel:getContentSize().height
+			height = height + 50
+			height_bottom = height
+
+			nextPanel:setPositionY(height_bottom - 4.5)
+		else
+			nextPanel:setVisible(false)
+		end
+	end
+
 	local skillDesc = self._isMaster and skill:getMasterSkillDescKey() or skill:getDesc()
 
 	if skillDesc and skillDesc ~= "" then
@@ -206,9 +278,9 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 		local newPanel = descStr[i].newPanel
 
 		if i == #descStr then
-			newPanel:setPositionY(0)
+			newPanel:setPositionY(0 + height_bottom)
 		else
-			local posY = descStr[i + 1].height
+			local posY = descStr[i + 1].height + height_bottom
 
 			newPanel:setPositionY(posY)
 		end
@@ -216,7 +288,7 @@ function SkillDescWidget:refreshInfo(skill, role, isMaster)
 
 	height = height + 110
 
-	bg:setContentSize(cc.size(332, height))
+	bg:setContentSize(cc.size(432, height))
 	infoNode:setPositionY(height - 90)
 end
 

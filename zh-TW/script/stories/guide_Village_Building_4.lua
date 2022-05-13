@@ -289,6 +289,18 @@ function scene_guide_Village_Building_4.actions.action_guide_Village_Building_4(
 							}
 						end
 					}),
+					wait({
+						args = function (_ctx)
+							return {
+								complexityNum = 9,
+								type = "enter_building_main_view",
+								mask = {
+									touchMask = true,
+									opacity = 0
+								}
+							}
+						end
+					}),
 					click({
 						args = function (_ctx)
 							return {

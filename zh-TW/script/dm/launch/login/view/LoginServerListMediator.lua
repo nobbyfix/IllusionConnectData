@@ -49,9 +49,7 @@ function LoginServerListMediator:setupView()
 	self._recentPanel:getChildByFullName("text1"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
 	self._recentPanel:getChildByFullName("text2"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
 	self._infoNode:getChildByFullName("level"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
-	self._mainPanel:getChildByFullName("typePanel.text1"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
-	self._mainPanel:getChildByFullName("typePanel.text2"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
-	self._mainPanel:getChildByFullName("typePanel.text3"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
+	self:ajustServerStateUI()
 
 	local bgNode = self._mainPanel:getChildByFullName("bgNode")
 	local tempNode = bindWidget(self, bgNode, PopupNormalTabWidget, {
@@ -60,8 +58,31 @@ function LoginServerListMediator:setupView()
 			func = bind1(self.onClickBack, self)
 		},
 		title = Strings:get("LOGIN_UI12"),
-		title1 = Strings:get("LOGIN_UI18")
+		title1 = Strings:get("LOGIN_UI18"),
+		titleSize = cc.size(180, 80)
 	})
+end
+
+function LoginServerListMediator:ajustServerStateUI()
+	local crowdedTxt = self._mainPanel:getChildByFullName("typePanel.text1")
+	local crowdedIcon = self._mainPanel:getChildByFullName("typePanel.Image_46")
+
+	crowdedTxt:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
+
+	local goodTxt = self._mainPanel:getChildByFullName("typePanel.text2")
+	local goodIcon = self._mainPanel:getChildByFullName("typePanel.Image_46_0")
+
+	goodTxt:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
+
+	local maintenanceTxt = self._mainPanel:getChildByFullName("typePanel.text3")
+	local maintenanceIcon = self._mainPanel:getChildByFullName("typePanel.Image_46_1")
+
+	maintenanceTxt:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998))
+	maintenanceIcon:setPositionX(maintenanceTxt:getPositionX() - maintenanceTxt:getAutoRenderSize().width - 5)
+	goodTxt:setPositionX(maintenanceIcon:getPositionX() - 30)
+	goodIcon:setPositionX(goodTxt:getPositionX() - goodTxt:getAutoRenderSize().width - 5)
+	crowdedTxt:setPositionX(goodIcon:getPositionX() - 30)
+	crowdedIcon:setPositionX(crowdedTxt:getPositionX() - crowdedTxt:getAutoRenderSize().width - 5)
 end
 
 function LoginServerListMediator:initData()
@@ -285,31 +306,43 @@ function LoginServerListMediator:createServerCell(data)
 			panel:getChildByName("time"):setVisible(cellData:getLastLoginTime() ~= 0)
 
 			local remainTime = (self._serverTime - cellData:getLastLoginTime()) / 1000
-			local str = TimeUtil:formatTime("${d}:${HH}:${MM}:${SS}", remainTime)
-			local strArr = string.split(str, ":")
+			local timeStr = TimeUtil:formatTime("${d}:${HH}:${MM}:${SS}", remainTime)
 			local time = ""
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				day = tonumber(parts[1]),
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
 
-			if strArr[1] ~= "0" then
-				time = strArr[1] .. Strings:get("Arena_UI100")
-			elseif strArr[2] ~= "00" then
-				time = tonumber(strArr[2]) .. Strings:get("Arena_UI108")
-			elseif strArr[3] ~= "00" then
-				time = tonumber(strArr[3]) .. Strings:get("Arena_UI109")
+			if timeTab.day > 0 then
+				time = timeTab.day .. Strings:get("Arena_UI100")
+			elseif timeTab.hour > 0 then
+				time = timeTab.hour .. Strings:get("Arena_UI108")
+			else
+				time = timeTab.min .. Strings:get("Arena_UI109")
 			end
 
 			panel:getChildByName("time"):setString(time .. Strings:get("LOGIN_UI22"))
 
 			local markType = cellData:getMarkType()
+			local imageTag = panel:getChildByName("imageTag")
+			local imageTagText = imageTag:getChildByName("text")
 
-			if not markType then
-				panel:getChildByName("imageNew"):setVisible(false)
+			if not markType or markType == ServerMarkType.kNone then
+				imageTag:setVisible(false)
 			else
-				panel:getChildByName("imageNew"):setVisible(markType == ServerMarkType.kNew)
+				imageTag:loadTexture(ServerMarkTagBgNames[markType] or ServerMarkTagBgNames[ServerMarkType.kClose], UI_TEX_TYPE_LOCAL)
+				imageTagText:setString(Strings:get(ServerMarkTagStringNames[markType] or ServerMarkTagStringNames[ServerMarkType.kClose]))
+				imageTagText:enableOutline(ServerMarkTagOutlineStyle[markType] or ServerMarkTagOutlineStyle[ServerMarkType.kClose])
+				imageTag:setVisible(true)
 			end
 
 			local state = cellData:getState()
+			local imageState = panel:getChildByName("imageHot")
 
-			panel:getChildByName("imageHot"):loadTexture(ServerStateImgNames[state], 1)
+			imageState:loadTexture(ServerStateImgNames[state], 1)
 
 			local bgImage = panel:getChildByFullName("image1")
 			local bgLine = panel:getChildByFullName("line1")
@@ -318,7 +351,7 @@ function LoginServerListMediator:createServerCell(data)
 			local color = cc.c3b(0, 0, 0)
 			local color1 = cc.c3b(112, 112, 112)
 
-			if state == ServerState.kGray then
+			if state == ServerState.kMaintain then
 				imageFile = "common_bg_02di_1.png"
 				lineFile = "common_bg_02di_line.png"
 				color = cc.c3b(255, 255, 255)
@@ -346,19 +379,21 @@ function LoginServerListMediator:createServerCell(data)
 				node:addTo(playerNode):center(playerNode:getContentSize())
 
 				local iconNode = node:getChildByFullName("icon")
-				local icon = IconFactory:createPlayerIcon({
-					clipType = 4,
+				local icon, oldIcon = IconFactory:createPlayerIcon({
 					frameStyle = 1,
-					id = cellData:getHeadId()
+					clipType = 4,
+					id = cellData:getHeadId(),
+					size = cc.size(82, 82)
 				})
 
-				icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.7)
+				oldIcon:setScale(0.4)
+				icon:addTo(iconNode):center(iconNode:getContentSize()):setScale(0.8)
 				node:getChildByFullName("level"):setString(Strings:get("CUSTOM_FIGHT_LEVEL") .. cellData:getLevel())
 
 				local name = node:getChildByFullName("name")
 
 				name:setString(cellData:getNickName())
-				name:setTextColor(state == ServerState.kGray and cc.c3b(191, 191, 191) or cc.c3b(0, 0, 0))
+				name:setTextColor(state == ServerState.kMaintain and cc.c3b(191, 191, 191) or cc.c3b(0, 0, 0))
 			end
 		end
 	end

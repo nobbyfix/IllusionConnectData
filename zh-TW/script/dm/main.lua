@@ -6,6 +6,12 @@ if app.args.userData == "REBOOT_NOUPDATE" then
 	GameConfigs.noUpdate = true
 end
 
+if cc.Application:getInstance():getTargetPlatform() ~= 2 then
+	local pid = cc.UserDefault:getInstance():getStringForKey("playerRid")
+
+	dpsBugTracer.setUserId(pid or "")
+end
+
 if app.reboot then
 	local reboot = app.reboot
 	app.reboot = nil
@@ -36,9 +42,10 @@ if app.reboot then
 		if runingScene then
 			local sprite = cc.Sprite:create("asset/scene/denglu_bg_new.jpg")
 
-			sprite:setPosition(cc.p(52, 40))
-			sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-			runingScene:addChild(sprite)
+			if sprite then
+				sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
+				runingScene:addChild(sprite)
+			end
 		end
 
 		local param = {
@@ -59,9 +66,10 @@ if app.reboot then
 
 			local sprite = cc.Sprite:create("asset/scene/denglu_bg_new.jpg")
 
-			sprite:setPosition(cc.p(52, 40))
-			sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-			scene:addChild(sprite)
+			if sprite then
+				sprite:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
+				scene:addChild(sprite)
+			end
 		end
 
 		if runingScene then
@@ -75,6 +83,29 @@ if app.reboot then
 	end
 end
 
+function cleanWriteableCache()
+	local fileUtils = cc.FileUtils:getInstance()
+	local writablePath = fileUtils:getWritablePath()
+	local assetsDbPath = "assets.db"
+	local gameConfigDbPath = "gameConfig.db"
+	local extensionsDbPath = "extensions.db"
+	local assetsSourceDirPath = "release"
+	local patchDirPath = "patch"
+	local writeableDbPath = writablePath .. assetsDbPath
+	local writeableConfigDbPath = writablePath .. gameConfigDbPath
+	local writeableExtensionsDbPath = writablePath .. extensionsDbPath
+	local writeableSourceDirPath = writablePath .. assetsSourceDirPath
+	local writeablePatchDirPath = writablePath .. patchDirPath
+
+	fileUtils:removeFile(writeableDbPath)
+	fileUtils:removeFile(writeableExtensionsDbPath)
+	fileUtils:removeFile(writeableConfigDbPath)
+	fileUtils:removeDirectory(writeableSourceDirPath)
+	fileUtils:removeDirectory(writeablePatchDirPath)
+	app.getPatchManager():switchPatch(tostring(0))
+	REBOOT("cleanWriteableCache")
+end
+
 trycall(require, "cocos.init")
 trycall(require, "cocos.cocos2d.Cocos2d")
 trycall(require, "cocos.cocos2d.Cocos2dConstants")
@@ -82,110 +113,192 @@ trycall(require, "cocos.framework.display")
 trycall(function ()
 	PlatformHelper = require("sdk.PlatformHelper")
 end)
-trycall(require, "dm.init")
 
-UNZIP_ERRO_TYPE = {
-	FIRST_INSTALL_UNZIP_BASEDB = 1
-}
-UNZIP_ERRO_TYPE_CODE = {
-	EUnzipBadFile = 2,
-	EUnzipFileNotExist = 1,
-	EUnzipOutOfStorage = 3
-}
-UNZIP_ERRO_TYPE_MSG = {
+local unZipErrorMsg = {
 	"The decompression file does not exist！",
 	"The decompression file is damaged！",
 	"There is not enough disk space. Clean up the disk space and try again！"
 }
-DB_DAMAGE_BROKEN = "Data corruption, please reinstall the game, or clean the game storage data and try again!"
-DB_MERGE_SPACE_LIMIT = "There is not enough disk space,failed to install expansion pack. Clean up disk space and try again"
+local DB_ERROR_NO_DISK_SPACE = "There is not enough disk space. Clean up the disk space and try again！"
+local DB_ERROR_DATA_DAMAGE = "Data corruption, please reinstall the game, or clean the game storage data and try again!"
+local DB_ERROR_MERGE_FAILED = "Data file merge failed, please reboot game and try again!"
+local DB_MERGE_SPACE_LIMIT = "There is not enough disk space,failed to install expansion pack. Clean up disk space and try again"
 local fileUtils = cc.FileUtils:getInstance()
 local writablePath = fileUtils:getWritablePath()
+local destDBFilePath = writablePath .. "gameConfig.db"
+local backupDBPath = writablePath .. "gameConfig_backup.db"
+local updateDBPath = fileUtils:fullPathForFilename("gameUpdateConfig.db")
 
-function unZipErro(erroType, erroCode)
-	local msg = "unzip file fails"
-
-	local function callBack()
+function showError(errorMsg, callback)
+	callback = callback or function ()
+		REBOOT()
 	end
-
-	if erroType == UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB then
-		function callBack()
-			REBOOT()
-		end
-
-		msg = UNZIP_ERRO_TYPE_MSG[erroCode]
-	end
-
+	errorMsg = errorMsg or ""
 	local updateNoticPopup = require("dm.UpdateNoticPopup")
 
 	updateNoticPopup:alert({
-		msg = msg,
+		msg = errorMsg,
 		callBack = callBack
 	})
 end
 
-function tryOpenBaseDb(dbPath)
-	tryTable, errorinfo = DBReader:getInstance(true):getTable(dbPath, "Translate")
+function checkDBDamage(dbPath)
+	local table, errorinfo = DBReader:getInstance(true):getTable(dbPath, "Translate")
 
-	return tryTable ~= nil
+	return table == nil, errorinfo
 end
 
-function safeCopyDb(srcDb, descDb)
-	local ret = true
+function isPatchDB(dbPath)
+	local PATCH_FOLDER = "patch"
+	local n, p = string.find(dbPath, writablePath .. PATCH_FOLDER)
 
-	if not tryOpenBaseDb(srcDb) then
-		function callBack()
-			REBOOT()
-		end
+	return n ~= nil
+end
 
-		local updateNoticPopup = require("dm.UpdateNoticPopup")
-
-		updateNoticPopup:alert({
-			msg = DB_DAMAGE_BROKEN,
-			callBack = callBack
-		})
-
-		ret = false
-
-		print(srcDb .. "-------db 损坏")
-
-		local content = {
-			point = "dataset_db_origin_error",
-			type = "otherflow"
-		}
-
-		StatisticSystem:send(content)
+function copyDB(srcDB, dstDB)
+	if not fileUtils:isFileExist(srcDB) then
+		return false
 	end
 
-	app.copyFile(srcDb, descDb)
+	app.copyFile(srcDB, dstDB)
 
-	if fileUtils:isFileExist(descDb) then
-		if not tryOpenBaseDb(descDb) then
-			print(descDb .. "-------db copy 不完整")
-			unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
-
-			ret = false
-			local content = {
-				point = "dataset_db_tmp_error",
-				type = "otherflow"
-			}
-
-			StatisticSystem:send(content)
-		end
-	else
-		print(descDb .. "-------db copy 失败")
-		unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
-
-		ret = false
-		local content = {
-			point = "dataset_db_tmp_error",
-			type = "otherflow"
-		}
-
-		StatisticSystem:send(content)
+	if not fileUtils:isFileExist(dstDB) then
+		return false
 	end
 
-	return ret
+	if checkDBDamage(dstDB) then
+		fileUtils:removeFile(dstDB)
+
+		return false
+	end
+
+	return true
+end
+
+function mergeDB(originDB, updateDB)
+	local errorInfo = DBReader:getInstance(true):mergeDb(originDB, updateDB)
+
+	if #errorInfo == 0 then
+		return true
+	end
+
+	return false
+end
+
+function backupDB()
+	fileUtils:removeFile(backupDBPath)
+
+	return copyDB(destDBFilePath, backupDBPath)
+end
+
+function rollbackDB()
+	if fileUtils:isFileExist(backupDBPath) then
+		fileUtils:removeFile(destDBFilePath)
+		fileUtils:renameFile(backupDBPath, destDBFilePath)
+	end
+
+	return true
+end
+
+local UpdateDBCode = {
+	kBackupErr = 1,
+	kOk = 0,
+	kCopyTempDBErr = 2,
+	kMergeDBErr = 3
+}
+
+function updateDB()
+	if isPatchDB(updateDBPath) and not backupDB() then
+		return UpdateDBCode.kBackupErr
+	end
+
+	local tempUpdateDBPath = writablePath .. "gameConfig_temp.db"
+
+	fileUtils:removeFile(tempUpdateDBPath)
+
+	if not copyDB(destDBFilePath, tempUpdateDBPath) then
+		return UpdateDBCode.kCopyTempDBErr
+	end
+
+	if not mergeDB(tempUpdateDBPath, updateDBPath) then
+		fileUtils:removeFile(tempUpdateDBPath)
+
+		return UpdateDBCode.kMergeDBErr
+	end
+
+	fileUtils:removeFile(destDBFilePath)
+	fileUtils:renameFile(tempUpdateDBPath, destDBFilePath)
+	fileUtils:removeFile(updateDBPath)
+
+	return UpdateDBCode.kOk
+end
+
+function processConfigDBFile()
+	if GameConfigs and GameConfigs.noUpdate then
+		local isFileExistWritablePath = fileUtils:isFileExist(destDBFilePath)
+		local localPath = fileUtils:fullPathForFilename("gameConfig.db")
+		local isFileExistLocalPath = fileUtils:isFileExist(localPath)
+
+		if cc.Application:getInstance():getTargetPlatform() == 3 and not isFileExistWritablePath and isFileExistLocalPath then
+			app.copyFile(localPath, destDBFilePath)
+		end
+
+		return true
+	end
+
+	if not fileUtils:isFileExist(destDBFilePath) then
+		local writableDBZipPath = writablePath .. "gameConfig.db.zip"
+
+		fileUtils:removeFile(backupDBPath)
+		fileUtils:removeFile(writableDBZipPath)
+
+		local originDBZipPath = fileUtils:fullPathForFilename("gameConfig.db.zip")
+
+		app.copyFile(originDBZipPath, writableDBZipPath)
+
+		if not fileUtils:isFileExist(writableDBZipPath) then
+			showError(DB_ERROR_NO_DISK_SPACE)
+
+			return false
+		end
+
+		local unZipResult = app.unZipFileToDir(writableDBZipPath, writablePath)
+
+		fileUtils:removeFile(writableDBZipPath)
+
+		if unZipResult ~= 0 then
+			fileUtils:removeFile(destDBFilePath)
+			showError(unZipErrorMsg[unZipResult])
+
+			return false
+		end
+	end
+
+	if checkDBDamage(destDBFilePath) then
+		fileUtils:removeFile(destDBFilePath)
+		showError(DB_ERROR_DATA_DAMAGE)
+
+		return false
+	end
+
+	if fileUtils:isFileExist(updateDBPath) then
+		DBReader:getInstance(true)
+		rollbackDB()
+
+		local result = updateDB()
+
+		if result == UpdateDBCode.kCopyTempDBErr then
+			showError(DB_ERROR_NO_DISK_SPACE)
+
+			return false
+		elseif result == UpdateDBCode.kMergeDBErr then
+			showError(DB_ERROR_MERGE_FAILED)
+
+			return false
+		end
+	end
+
+	return true
 end
 
 function getFileSize(path)
@@ -203,170 +316,69 @@ function getFileSize(path)
 	return size
 end
 
-local destDBFilePath = writablePath .. "gameConfig.db"
-local PATCH_FOLDER = "patch"
+function deleteExploreResouce()
+	local fileList = require("asset.exploreMap.ExploreMap")
+	local Sql = ""
+	local fileUtils = cc.FileUtils:getInstance()
+	local writablePath = fileUtils:getWritablePath()
+	local allKeys = {}
 
-if not GameConfigs or not GameConfigs.noUpdate then
-	local updateDBPath = fileUtils:fullPathForFilename("gameUpdateConfig.db")
-
-	print("updateDBPath*********", updateDBPath)
-	print("destDBFilePath*********", destDBFilePath)
-
-	if not fileUtils:isFileExist(destDBFilePath) then
-		local srcDBFilePath = fileUtils:fullPathForFilename("gameConfig.db.zip")
-
-		print("srcDBFilePath*********", srcDBFilePath)
-
-		if fileUtils:isFileExist(srcDBFilePath) then
-			print("*********copy db to" .. destDBFilePath)
-
-			local writableDBZipPath = writablePath .. "gameConfig.db.zip"
-
-			for i = 1, 3 do
-				print("copyFile*********", srcDBFilePath, writableDBZipPath)
-				app.copyFile(srcDBFilePath, writableDBZipPath)
-
-				if fileUtils:isFileExist(writableDBZipPath) then
-					fileUtils:removeFile(destDBFilePath)
-					print("源文件大小---->>>>>" .. tostring(getFileSize(writableDBZipPath)))
-
-					local retcode = app.unZipFileToDir(writableDBZipPath, writablePath)
-
-					print("开始解压文件到", writablePath)
-					fileUtils:removeFile(writableDBZipPath)
-
-					local tryTable, errorinfo = nil
-
-					print("解压后文件大小---->>>>>" .. tostring(getFileSize(writablePath .. "gameConfig.db")))
-					print("解压结果----->>>>>>", retcode)
-
-					if retcode == 0 then
-						tryTable, errorinfo = DBReader:getInstance(true):getTable(destDBFilePath, "Translate")
-					else
-						fileUtils:removeFile(destDBFilePath)
-						unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
-
-						return
-					end
-
-					print("尝试读取数据库", tryTable)
-
-					if tryTable then
-						break
-					elseif i == 3 then
-						fileUtils:removeFile(destDBFilePath)
-						unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
-
-						return
-					end
-				elseif i == 3 then
-					fileUtils:removeFile(destDBFilePath)
-					unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
-
-					return
-				end
-
-				fileUtils:removeFile(writableDBZipPath)
-			end
-
-			print("*********copy over*********")
-		else
-			assert(false, "can not find db file:" .. srcDBFilePath)
-		end
-	else
-		print("*********config db existing*********")
-
-		if not tryOpenBaseDb(destDBFilePath) then
-			function callBack()
-				REBOOT()
-			end
-
-			local updateNoticPopup = require("dm.UpdateNoticPopup")
-
-			updateNoticPopup:alert({
-				msg = DB_DAMAGE_BROKEN,
-				callBack = callBack
-			})
-		end
+	for k, v in pairs(fileList) do
+		allKeys[#allKeys + 1] = "asset/exploreMap/" .. k .. ".lua"
 	end
 
-	print("updateDBPath*********", updateDBPath)
+	app.copyFile(writablePath .. "assets.db", writablePath .. "assets_temp.db")
 
-	if fileUtils:isFileExist(updateDBPath) then
-		print("start merge db")
-		DBReader:getInstance(true)
+	Sql = string.format("DELETE FROM assets WHERE logic IN('%s');", table.concat(allKeys, "', '"))
 
-		local tempUpdateDBPath = writablePath .. "gameConfig_temp.db"
-		local backupDBPath = writablePath .. "gameConfig_backup.db"
+	app.getAssetsManager():mergeDbBySQLString(writablePath .. "assets_temp.db", Sql)
+	fileUtils:renameFile(writablePath .. "assets_temp.db", writablePath .. "assets.db")
+	print("sub exploremap resouce!!!!")
+end
 
-		print("tempUpdateDBPath     " .. tempUpdateDBPath)
-		print("backupDBPath     " .. backupDBPath)
-		print(string.find(updateDBPath, writablePath .. PATCH_FOLDER))
+local target = cc.Application:getInstance():getTargetPlatform()
 
-		if string.find(updateDBPath, writablePath .. PATCH_FOLDER) then
-			if fileUtils:isFileExist(backupDBPath) then
-				fileUtils:removeFile(destDBFilePath)
+if target == cc.PLATFORM_OS_ANDROID then
+	local current_v = app.getAssetsManager():getCurrentVersion()
 
-				if not safeCopyDb(backupDBPath, destDBFilePath) then
-					return
+	print("android current_v" .. current_v)
+
+	if tonumber(current_v) > 8025 and tonumber(current_v) < 8325 then
+		print("android platform")
+
+		local LUA_EXCEPTION_FIXED = cc.UserDefault:getInstance():getBoolForKey("LUA_EXCEPTION_FIX", false)
+
+		print("android LUA_EXCEPTION_FIXED" .. tostring(LUA_EXCEPTION_FIXED))
+
+		if not LUA_EXCEPTION_FIXED then
+			cc.UserDefault:getInstance():setBoolForKey("LUA_EXCEPTION_FIX", true)
+			deleteExploreResouce()
+			require("dm.UpdateNoticPopup").new():alert({
+				title = "お知らせ",
+				okBtnDes = "確定",
+				msg = "「リソースが更新されました。ゲームを再起動してください。」",
+				callBack = function ()
+					print("exit game!!!")
+					cc.Director:getInstance():endToLua()
 				end
-
-				print("应用备份db")
-			else
-				print("备份db")
-
-				if not safeCopyDb(destDBFilePath, backupDBPath) then
-					fileUtils:removeFile(backupDBPath)
-
-					return
-				end
-			end
-		elseif fileUtils:isFileExist(backupDBPath) then
-			fileUtils:removeFile(destDBFilePath)
-			fileUtils:renameFile(backupDBPath, destDBFilePath)
-			print("应用备份db   backupDBPath")
-		end
-
-		local errorInfo = ""
-
-		for i = 1, 3 do
-			fileUtils:removeFile(tempUpdateDBPath)
-
-			if not safeCopyDb(destDBFilePath, tempUpdateDBPath) then
-				return
-			end
-
-			errorInfo = DBReader:getInstance(true):mergeDb(tempUpdateDBPath, updateDBPath)
-
-			if #errorInfo == 0 then
-				break
-			end
-		end
-
-		if #errorInfo > 0 then
-			unZipErro(UNZIP_ERRO_TYPE.FIRST_INSTALL_UNZIP_BASEDB, UNZIP_ERRO_TYPE_CODE.EUnzipOutOfStorage)
+			})
 
 			return
 		end
-
-		fileUtils:removeFile(destDBFilePath)
-		fileUtils:renameFile(tempUpdateDBPath, destDBFilePath)
-		fileUtils:removeFile(updateDBPath)
-		print("*********merge db over*********")
 	end
+end
 
+if not processConfigDBFile() then
+	return
+end
+
+if not GameConfigs or not GameConfigs.noUpdate then
 	require("dm.gameupdate.GameExtPackUpdater")
 	require("dm.gameupdate.GameExtPackUpdaterManager")
 	GameExtPackUpdater.initUpdateCfg()
-else
-	local isFileExistWritablePath = fileUtils:isFileExist(destDBFilePath)
-	local localPath = fileUtils:fullPathForFilename("gameConfig.db")
-	local isFileExistLocalPath = fileUtils:isFileExist(localPath)
-
-	if cc.Application:getInstance():getTargetPlatform() == 3 and not isFileExistWritablePath and isFileExistLocalPath then
-		app.copyFile(localPath, destDBFilePath)
-	end
 end
+
+trycall(require, "dm.init")
 
 if cc.Application:getInstance():getTargetPlatform() ~= 2 then
 	trycall(require, "sdk.SDKUtils")
@@ -374,13 +386,16 @@ end
 
 trycall(function ()
 	require("dm.assets.dmAudio")
-	dmAudio.startupWithAcfFile("sound/common/MengJingLianJie.acf")
+	dmAudio.startupWithAcfFile("sound/Sound_Basic/MengJingLianJie.acf")
 
-	if dmAudio and dmAudio.loadAcbFile then
+	local fileUtils = cc.FileUtils:getInstance()
+	local isFileExist = fileUtils:isFileExist("asset/sound/UI.acb")
+
+	if dmAudio and dmAudio.loadAcbFile and isFileExist then
 		dmAudio.loadAcbFile("common/UI")
 	end
 
-	if dmAudio and dmAudio.setAcbFileIsResident then
+	if dmAudio and dmAudio.setAcbFileIsResident and isFileExist then
 		dmAudio.setAcbFileIsResident("common/UI", true)
 	end
 end)
@@ -394,113 +409,6 @@ local function initLibs()
 	require("dm.EventsConfig")
 end
 
-local scene = nil
-
-local function playPV(callback)
-	local backgroundColor = cc.c4b(255, 255, 255, 255)
-	local currentScene = scene
-
-	if currentScene == nil then
-		currentScene = cc.Scene:create()
-		local director = cc.Director:getInstance()
-
-		director:replaceScene(currentScene)
-	end
-
-	require("cocos.cocos2d.Cocos2d")
-	require("dm.utils.VideoSprite")
-
-	local size = cc.Director:getInstance():getWinSize()
-	local touchLayer = ccui.Layout:create()
-
-	touchLayer:setTouchEnabled(true)
-	touchLayer:setAnchorPoint(cc.p(0.5, 0.5))
-	touchLayer:setContentSize(size)
-	touchLayer:setPosition(cc.p(size.width * 0.5, size.height * 0.5))
-
-	local maskLayer = cc.LayerColor:create(cc.c4b(0, 0, 0, 255), size.width, size.height)
-
-	currentScene:addChild(maskLayer, 999)
-
-	local videoSprite = VideoSprite.create("video/PV1.usm")
-
-	currentScene:addChild(videoSprite, 1000)
-	videoSprite:setPosition(cc.p(size.width * 0.5, size.height * 0.5))
-
-	local vSize = videoSprite:getContentSize()
-	local videoScale = math.min(size.width / vSize.width, size.height / vSize.height)
-
-	videoSprite:setScale(videoScale)
-	currentScene:addChild(touchLayer, 1001)
-
-	local skipBtn = ccui.Button:create("asset/common/ck_skip_btn.png", "asset/common/ck_skip_btn.png")
-	local title = cc.Label:createWithTTF("跳過", "asset/font/CustomFont_FZYH_R.TTF", 24)
-
-	title:enableOutline(cc.c4b(0, 0, 0, 204), 2)
-	title:addTo(skipBtn):offset(skipBtn:getContentSize().width * 0.5, skipBtn:getContentSize().height * 0.6)
-
-	local lineGradiantVec1 = {
-		{
-			ratio = 0.5,
-			color = cc.c4b(255, 255, 255, 255)
-		},
-		{
-			ratio = 1,
-			color = cc.c4b(225, 231, 252, 255)
-		}
-	}
-
-	title:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
-		x = 0,
-		y = -1
-	}))
-	skipBtn:setVisible(false)
-	skipBtn:setPosition(cc.p(size.width - skipBtn:getContentSize().width / 2, size.height - skipBtn:getContentSize().height / 2))
-	currentScene:addChild(skipBtn, 1002)
-
-	local function callFunc(sender, eventType)
-		currentScene:removeAllChildren()
-		callback()
-	end
-
-	videoSprite:setListener(function (sprite, eventType, eventTag)
-		if callFunc then
-			local eventName = nil
-
-			if eventType == 1 then
-				eventName = "complete"
-			else
-				eventName = eventMap[eventTag]
-			end
-
-			callFunc(videoSprite, eventName)
-		end
-	end)
-	skipBtn:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			callFunc(sender, eventType)
-		end
-	end)
-
-	local nowTouchTime = nil
-
-	touchLayer:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			skipBtn:setVisible(true)
-
-			if nowTouchTime then
-				local leaveTime = os.time() - nowTouchTime
-
-				if leaveTime < 1 then
-					callFunc()
-				end
-			end
-
-			nowTouchTime = os.time()
-		end
-	end)
-end
-
 local function startGame()
 	if DEBUG == 0 then
 		function _G.dump()
@@ -512,26 +420,78 @@ local function startGame()
 
 	initLibs()
 
-	local function launchScene()
-		local game = DmGame:new()
+	local game = DmGame:new()
 
-		game:startup()
-		game:switchToScene(GAME_STARTUP_SCENE or "launchScene")
-	end
-
-	if app.args.bootTimes == 1 then
-		playPV(launchScene)
-	else
-		launchScene()
-	end
+	game:startup()
+	game:switchToScene(GAME_STARTUP_SCENE or "launchScene")
 end
+
+local unzipScene, unzipView = nil
+
+local function unzipOBB(callback)
+	require("dm.gameupdate.GameUnzip")
+
+	local director = cc.Director:getInstance()
+	local gameUnzip = GameUnzip:new()
+
+	if gameUnzip:checkOBBFinish() then
+		callback()
+
+		return
+	end
+
+	local status, err = trycall(function ()
+		unzipScene = cc.Scene:create()
+
+		director:replaceScene(unzipScene)
+		require("dm.gameupdate.view.GameUnzipMediator")
+
+		unzipView = GameUnzipMediator:new()
+
+		unzipScene:addChild(unzipView:getView())
+
+		local winSize = director:getWinSize()
+
+		unzipView:getView():setPosition(winSize.width / 2 - CC_DESIGN_RESOLUTION.width / 2, winSize.height / 2 - CC_DESIGN_RESOLUTION.height / 2)
+		unzipView:enterWithData({
+			delegate = gameUnzip
+		})
+
+		return unzipView
+	end)
+
+	if not status then
+		unzipView = nil
+	end
+
+	gameUnzip:setCallback(function (event)
+		local data = event.data
+		local status, ret = nil
+
+		if unzipView and unzipView.refresh then
+			status, ret = trycall(function ()
+				unzipView:refresh(event)
+			end)
+		end
+	end)
+	gameUnzip:setFinishDelegate(callback)
+	gameUnzip:run()
+end
+
+local nextStepFun = nil
+local playVideoOver = true
+local scene, view = nil
 
 local function startUpdate()
 	require("dm.gameupdate.GameUpdater")
 
+	if not GameConfigs or not GameConfigs.noUnzipOBB then
+		require("dm.gameupdate.GameUnzip")
+		GameUnzip:checkOBBFinish()
+	end
+
 	local director = cc.Director:getInstance()
 	local gameUpdater = GameUpdater:new()
-	local view = nil
 	local status, err = trycall(function ()
 		scene = cc.Scene:create()
 
@@ -568,16 +528,40 @@ local function startUpdate()
 		local data = event.data
 
 		if event.type == "updateFinish" then
-			view = nil
+			function nextStepFun()
+				view = nil
 
-			REBOOT()
+				REBOOT()
+			end
+
+			if playVideoOver then
+				local func = nextStepFun
+				nextStepFun = nil
+
+				func()
+			end
 		elseif event.type == "noUpdate" then
 			if data ~= nil and data == true then
 				REBOOT()
 			else
-				view = nil
+				function nextStepFun()
+					view = nil
 
-				startGame()
+					if GameConfigs and GameConfigs.noUnzipOBB then
+						startGame()
+					else
+						unzipOBB(function ()
+							startGame()
+						end)
+					end
+				end
+
+				if playVideoOver then
+					local func = nextStepFun
+					nextStepFun = nil
+
+					func()
+				end
 			end
 		elseif event.type == "ensureUpdate" then
 			local netStatus = app.getDevice():getNetworkStatus()
@@ -608,7 +592,13 @@ end
 
 local function main()
 	if GameConfigs and GameConfigs.noUpdate then
-		startGame()
+		if GameConfigs and GameConfigs.noUnzipOBB then
+			startGame()
+		else
+			unzipOBB(function ()
+				startGame()
+			end)
+		end
 
 		return
 	end
@@ -644,6 +634,49 @@ local function showLogo()
 
 		return animTickEntry
 	end
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	local function showFuncVideo(currentScene, path, cb)
+		require("dm.utils.VideoSprite")
+
+		local video = VideoSprite.create(path, function (instance, eventName, index)
+			if eventName == "complete" then
+				instance:getPlayer():pause(true)
+				cb()
+			end
+		end)
+
+		video:addTo(currentScene)
+
+		scale = 1
+		videoSize = cc.size(winSize.width, winSize.height)
+		videoPos = cc.p(585, 447)
+
+		video:setContentSize(videoSize)
+		video:setPosition(winSize.width / 2, winSize.height / 2)
+	end
+
+	local function showFuncImage(currentScene, path, cb)
+		local logoImg = cc.Sprite:create(path)
+
+		logoImg:setOpacity(0)
+		logoImg:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
+		currentScene:addChild(logoImg)
+
+		local fadeInAct = cc.FadeIn:create(1)
+		local delayTimeAct = cc.DelayTime:create(1)
+
+		local function endFunc()
+			delayCallByTime(0, function ()
+				cb()
+			end)
+		end
+
+		local callFuncAct1 = cc.CallFunc:create(endFunc)
+		local action = cc.Sequence:create(fadeInAct, delayTimeAct, callFuncAct1)
+
+		logoImg:runAction(action)
+	end
 
 	local function showFunc(path, cb)
 		local backgroundColor = cc.c4b(255, 255, 255, 255)
@@ -661,32 +694,25 @@ local function showLogo()
 
 		currentScene:addChild(backgroundLayer)
 
-		local logoImg = cc.Sprite:create(path)
+		local suffix = string.sub(path, -3)
 
-		logoImg:setOpacity(0)
-		logoImg:setPosition(cc.p(winSize.width / 2, winSize.height / 2))
-		currentScene:addChild(logoImg)
-
-		local fadeInAct = cc.FadeIn:create(0.6)
-		local delayTimeAct = cc.DelayTime:create(0.6)
-
-		local function endFunc()
-			backgroundLayer:setVisible(false)
-			delayCallByTime(0, function ()
-				cb()
-			end)
+		if suffix == "usm" then
+			showFuncVideo(currentScene, path, cb)
+		else
+			showFuncImage(currentScene, path, cb)
 		end
-
-		local callFuncAct1 = cc.CallFunc:create(endFunc)
-		local action = cc.Sequence:create(fadeInAct, delayTimeAct, callFuncAct1)
-
-		logoImg:runAction(action)
 	end
 
-	local logoImgPath = "asset/scene/logo_tw.jpg"
+	local logoImgPath = "splash/sp_logo_bg.jpg"
+	local platform = cc.Application:getInstance():getTargetPlatform()
+	local isiOS = platform == 4 or platform == 5
 	local logoImgPath_def = "asset/scene/logo_def.jpg"
 
-	if cc.FileUtils:getInstance():isFileExist(logoImgPath) and device.platform ~= "ios" then
+	if not isiOS then
+		logoImgPath_def = "asset/scene/logo_def_android.jpg"
+	end
+
+	if cc.FileUtils:getInstance():isFileExist(logoImgPath) then
 		showFunc(logoImgPath, function ()
 			if cc.FileUtils:getInstance():isFileExist(logoImgPath_def) then
 				showFunc(logoImgPath_def, function ()

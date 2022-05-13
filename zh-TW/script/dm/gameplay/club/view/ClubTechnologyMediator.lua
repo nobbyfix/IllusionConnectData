@@ -134,7 +134,7 @@ function ClubTechnologyMediator:createCell(cell, idx, viewType)
 			local pointLevel = pointData:getLevel()
 
 			if pointLevel < pointData:getMaxLevel() then
-				levelLabel:setString("Lv." .. pointLevel)
+				levelLabel:setString(Strings:get("Common_LV_Text") .. pointLevel)
 				maxImgBg:setVisible(false)
 				nextEffectPanel:setVisible(true)
 				donateBtn:setVisible(true)
@@ -251,6 +251,9 @@ function ClubTechnologyMediator:createEffectDesc(panel, pointData, level)
 		end
 	end
 
+	local localLanguage = getCurrentLanguage()
+	local labelH = 0
+
 	for i = 1, #descIdList do
 		local fontSize = sizeMap[#descIdList]
 		local str = Strings:get(descIdList[i], {
@@ -260,12 +263,25 @@ function ClubTechnologyMediator:createEffectDesc(panel, pointData, level)
 		})
 		local descLabel = ccui.RichText:createWithXML(str, {})
 
-		descLabel:ignoreContentAdaptWithSize(true)
-		descLabel:rebuildElements()
-		descLabel:formatText()
-		descLabel:setAnchorPoint(cc.p(0, 0.5))
-		descLabel:renderContent()
-		descLabel:setPosition(10, 45 - (i - 1) * heightMap[#descIdList])
+		if localLanguage ~= GameLanguageType.CN then
+			descLabel:setAnchorPoint(cc.p(0, 1))
+			descLabel:setScale(0.9)
+			descLabel:setVerticalSpace(-1)
+			descLabel:ignoreContentAdaptWithSize(false)
+			descLabel:setContentSize(cc.size(descPanel:getContentSize().width * 1.05, 0))
+			descLabel:rebuildElements(true)
+			descLabel:formatText()
+			descLabel:setPosition(10, 65 - labelH)
+
+			labelH = descLabel:getContentSize().height * 0.9
+		else
+			descLabel:setScale(0.9)
+			descLabel:setAnchorPoint(cc.p(0, 0.5))
+			descLabel:ignoreContentAdaptWithSize(true)
+			descLabel:renderContent()
+			descLabel:setPosition(10, 45 - (i - 1) * heightMap[#descIdList])
+		end
+
 		descLabel:addTo(descPanel)
 	end
 end

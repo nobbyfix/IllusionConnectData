@@ -982,11 +982,17 @@ end
 function ActivityBlockMapWsjMediator:onClickPlayStory(pointId, isCheck)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 	local chapterInfo = self._model:getMapByIndex(self._mapIndex, self._stageType)
+	local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+	local storyAgent = storyDirector:getStoryAgent()
 
 	local function endCallBack()
 		local storyPoint = chapterInfo:getStoryPointById(pointId)
+		local isFirst = 0
 
 		if not storyPoint:isPass() then
+			isFirst = 1
+
 			self._activitySystem:requestDoChildActivity(self._activity:getId(), self._model:getId(), {
 				doActivityType = 106,
 				pointId = pointId
@@ -1018,10 +1024,24 @@ function ActivityBlockMapWsjMediator:onClickPlayStory(pointId, isCheck)
 				end
 			end)
 		end
-	end
 
-	local storyAgent = storyDirector:getStoryAgent()
-	local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+		local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+		StatisticSystem:send({
+			type = "plot_end",
+			op_type = "plot_activity",
+			point = "plot_end",
+			activityid = self._activity:getTitle(),
+			plot_id = storyLink,
+			plot_name = storyPoint:getName(),
+			id_first = isFirst,
+			totaltime = endTs - startTs,
+			detail = statisticsData.detail,
+			amount = statisticsData.amount,
+			misc = statisticsData.misc
+		})
+	end
 
 	storyAgent:setSkipCheckSave(not isCheck)
 	storyAgent:trigger(storyLink, nil, endCallBack)
@@ -1044,7 +1064,7 @@ function ActivityBlockMapWsjMediator:enterCommonPoint(pointId)
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if openTime and openTime.start then
-		local startTime = TimeUtil:formatStrToTImestamp(openTime.start)
+		local startTime = TimeUtil:formatStrToRemoteTImestamp(openTime.start)
 
 		if curTime < startTime then
 			local date = TimeUtil:localDate("%Y-%m-%d", startTime)

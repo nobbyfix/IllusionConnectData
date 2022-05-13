@@ -8,6 +8,10 @@ function BattleHeadHpWidget:dispose()
 	super.dispose(self)
 end
 
+function BattleHeadHpWidget:setIsFormat(isFormat)
+	self._isFormat = isFormat
+end
+
 local HpColor = {
 	Red = {
 		g = 0,
@@ -33,6 +37,25 @@ local HpTierMap = {
 	"zhandou_bar_03.png",
 	"zhandou_bar_04.png"
 }
+
+local function formatCount(count)
+	if count <= 99999 then
+		return tostring(math.floor(count)), false
+	else
+		local curLanage = getCurrentLanguage()
+
+		if curLanage == GameLanguageType.CN then
+			count = count - count % 1000
+			count = string.format("%.1f", count / 10000) .. "w"
+		else
+			count = count - count % 100
+			count = string.format("%.1f", count / 1000) .. "k"
+		end
+
+		return count, true
+	end
+end
+
 BattleHeadTierHpWidget = class("BattleHeadTierHpWidget", BattleHeadHpWidget, _M)
 
 BattleHeadTierHpWidget:has("_hpTierCount", {
@@ -52,6 +75,7 @@ function BattleHeadTierHpWidget:initialize(headView, isLeft)
 	super.initialize(self)
 	self:setIsLeft(isLeft)
 
+	self._isFormat = true
 	self._headView = headView
 	self._hpTierCount = 1
 	self._currentHpTier = 1
@@ -123,6 +147,11 @@ function BattleHeadTierHpWidget:_setupUI()
 	self._barPic3:loadTexture(HpTierMap[1], ccui.TextureResType.plistType)
 	self._barPic3:posite(hpbar:getPosition()):offset(0, -1):addTo(hpbar:getParent())
 	self._barPic3:setVisible(false)
+
+	self._hp_gray = self._content:getChildByFullName("hp_gray")
+
+	self._hp_gray:setVisible(false)
+	self._hp_gray:setScaleX(0)
 
 	self._hpbar4 = self:createHpBar(hpbar, "bxuetiaoc_xuetiao", 1)
 	self._hpbar3 = self:createHpBar(hpbar, "bxuetiaob_xuetiao", 100)
@@ -212,9 +241,16 @@ function BattleHeadTierHpWidget:createHpBarShine(parent)
 end
 
 function BattleHeadTierHpWidget:createHpBar(hpbar, clipName, toFrame)
-	local offsetHpX = self._isLeft and -2 or 2
-	local offsetHpY = 3
-	local hpBarNew = cc.MovieClip:create(clipName):posite(hpbar:getPosition()):offset(offsetHpX, offsetHpY):addTo(hpbar:getParent())
+	local offsetHpX = self._isLeft and 3 or -3
+	local offsetHpY = 0
+	local hpBarNew = nil
+	local wrapLayer = ccui.Layout:create()
+
+	wrapLayer:setAnchorPoint(cc.p(self._isLeft and 0 or 1, 0.5))
+	wrapLayer:setContentSize(hpbar:getContentSize())
+	wrapLayer:addTo(hpbar:getParent())
+
+	local hpBarNew = cc.MovieClip:create(clipName):center(wrapLayer:getContentSize()):offset(offsetHpX, offsetHpY):addTo(wrapLayer)
 
 	hpBarNew:setScaleX(hpbar:getScaleX())
 
@@ -225,7 +261,32 @@ function BattleHeadTierHpWidget:createHpBar(hpbar, clipName, toFrame)
 	return hpBarNew
 end
 
-function BattleHeadTierHpWidget:setHp(value, maxHp)
+function BattleHeadTierHpWidget:setMaxHpValue(orgMax, newMax)
+	local grayPercent = newMax / orgMax
+
+	if self._content:getChildByFullName("hpbar"):isVisible() then
+		self._hp_gray:setVisible(true)
+	else
+		return
+	end
+
+	local function grayAction(duration, value)
+		return cc.ScaleTo:create(duration, value, 1)
+	end
+
+	self._hpbar1:getParent():stopAllActions()
+	self._hpbar2:getParent():stopAllActions()
+	self._hpbar3:getParent():stopAllActions()
+	self._hpbar4:getParent():stopAllActions()
+	self._hp_gray:stopAllActions()
+	self._hp_gray:runAction(grayAction(0.2, 1 - grayPercent))
+	self._hpbar1:getParent():runAction(grayAction(0.2, grayPercent))
+	self._hpbar2:getParent():runAction(grayAction(0.2, grayPercent))
+	self._hpbar3:getParent():runAction(grayAction(0.2, grayPercent))
+	self._hpbar4:getParent():runAction(grayAction(0.2, grayPercent))
+end
+
+function BattleHeadTierHpWidget:setHp(value, maxHp, dataModel)
 	if maxHp then
 		self._maxHp = maxHp
 	end
@@ -443,18 +504,12 @@ function BattleHeadTierHpWidget:_updateHpLabel()
 	else
 		local percent = self._hp / math.max(self._maxHp, 1)
 
-		local function formatCount(count)
-			if count <= 99999 then
-				return tostring(math.floor(count)), false
-			else
-				count = count - count % 1000
-				count = string.format("%.1f", count / 10000) .. "w"
-
-				return count, true
-			end
+		if self._isFormat then
+			self._hpText:setString(formatCount(self._hp) .. "/" .. formatCount(self._maxHp))
+		else
+			self._hpText:setString(self._hp .. "/" .. self._maxHp)
 		end
 
-		self._hpText:setString(formatCount(self._hp) .. "/" .. formatCount(self._maxHp))
 		self._hpPercentText:setString(tostring(string.format("%.f%%", percent * 100)))
 	end
 end
@@ -593,9 +648,18 @@ function BattleHeadGradualHpWidget:_setupUI()
 	local content = self._headView:getChildByFullName("content")
 	self._content = content
 	local hpbar = content:getChildByFullName("hpbar.hpbar")
+	self._hpbar = hpbar
 	self._imgHp = content:getChildByName("img_hp")
 	self._hpText = content:getChildByFullName("text_hp")
+	self._hp_gray = content:getChildByFullName("hp_gray")
 
+	self._hp_gray:offset(9, 0)
+	self._hp_gray:setScaleX(0)
+
+	local graySize = self._hp_gray:getContentSize()
+	graySize.height = graySize.height - 2
+
+	self._hp_gray:setContentSize(graySize)
 	self._hpText:enableOutline(cc.c4b(20, 50, 10, 204), 2)
 
 	self._barbg = content:getChildByName("bar_bg")
@@ -670,20 +734,6 @@ function BattleHeadGradualHpWidget:createHpBarShine(parent)
 	return hpBarShine
 end
 
-function BattleHeadGradualHpWidget:createHpBar(hpbar, clipName, toFrame)
-	local offsetHpX = self._isLeft and -2 or 2
-	local offsetHpY = 3
-	local hpBarNew = cc.MovieClip:create(clipName):posite(hpbar:getPosition()):offset(offsetHpX, offsetHpY):addTo(hpbar:getParent())
-
-	hpBarNew:setScaleX(hpbar:getScaleX())
-
-	if toFrame then
-		hpBarNew:gotoAndStop(toFrame)
-	end
-
-	return hpBarNew
-end
-
 function BattleHeadGradualHpWidget:_createWaringEffect()
 	if not self._warningEffect then
 		local offsetX = 250
@@ -734,7 +784,45 @@ function BattleHeadGradualHpWidget:_reloadHpBarPic(prePercent, curPercent)
 	self._barPic2:loadTexture(loadTexture, ccui.TextureResType.plistType)
 end
 
-function BattleHeadGradualHpWidget:setHp(value, maxHp)
+function BattleHeadGradualHpWidget:createHpBar(hpbar, clipName, toFrame)
+	local offsetHpX = self._isLeft and 3 or -3
+	local offsetHpY = 0
+	local hpBarNew = nil
+	local wrapLayer = ccui.Layout:create()
+
+	wrapLayer:setAnchorPoint(cc.p(self._isLeft and 0 or 1, 0.5))
+	wrapLayer:setContentSize(hpbar:getContentSize())
+	wrapLayer:addTo(hpbar:getParent())
+
+	local hpBarNew = cc.MovieClip:create(clipName):center(wrapLayer:getContentSize()):offset(offsetHpX, offsetHpY):addTo(wrapLayer)
+
+	hpBarNew:setScaleX(hpbar:getScaleX())
+
+	if toFrame then
+		hpBarNew:gotoAndStop(toFrame)
+	end
+
+	return hpBarNew
+end
+
+function BattleHeadGradualHpWidget:setMaxHpValue(orgMax, newMax)
+	local grayPercent = newMax / orgMax
+
+	self._hp_gray:setVisible(true)
+
+	local function grayAction(duration, value)
+		return cc.ScaleTo:create(duration, value, 1)
+	end
+
+	self._hpbar1:getParent():stopAllActions()
+	self._hpbar2:getParent():stopAllActions()
+	self._hp_gray:stopAllActions()
+	self._hpbar1:getParent():runAction(grayAction(0.2, grayPercent))
+	self._hpbar2:getParent():runAction(grayAction(0.2, grayPercent))
+	self._hp_gray:runAction(grayAction(0.2, 1 - grayPercent))
+end
+
+function BattleHeadGradualHpWidget:setHp(value, maxHp, dataModel)
 	if maxHp then
 		self._maxHp = maxHp
 	end
@@ -855,18 +943,12 @@ end
 function BattleHeadGradualHpWidget:_updateHpLabel()
 	local percent = self._hp / math.max(self._maxHp, 1)
 
-	local function formatCount(count)
-		if count <= 99999 then
-			return tostring(math.floor(count)), false
-		else
-			count = count - count % 1000
-			count = string.format("%.1f", count / 10000) .. "w"
-
-			return count, true
-		end
+	if self._isFormat then
+		self._hpText:setString(formatCount(self._hp) .. "/" .. formatCount(self._maxHp))
+	else
+		self._hpText:setString(self._hp .. "/" .. self._maxHp)
 	end
 
-	self._hpText:setString(formatCount(self._hp) .. "/" .. formatCount(self._maxHp))
 	self._hpPercentText:setString(tostring(string.format("%.f%%", percent * 100)))
 end
 

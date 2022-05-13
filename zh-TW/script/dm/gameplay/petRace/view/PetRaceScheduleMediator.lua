@@ -88,13 +88,25 @@ function PetRaceScheduleMediator:setupView()
 	self._textOverDes = self._nodeTitleDes:getChildByFullName("Text_over_des")
 
 	self._textEmbattleDes:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._textEmbattleDes:setTextAreaSize(cc.size(240, 50))
 	self._textOverDes:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_victories_des"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_victories"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_des_1"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_score"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_des_2"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	self._panel_base:getChildByFullName("Node_titleDes.Text_rank"):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	self._textOverDes:setTextAreaSize(cc.size(230, 50))
+	self._textOverDes:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+	self._textOverDes:setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+
+	local victoriesDes = self._panel_base:getChildByFullName("Node_titleDes.Text_victories_des")
+	local text_victories = self._panel_base:getChildByFullName("Node_titleDes.Text_victories")
+	local text_des_1 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_1")
+	local text_des_2 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_2")
+	local text_score = self._panel_base:getChildByFullName("Node_titleDes.Text_score")
+	local text_rank = self._panel_base:getChildByFullName("Node_titleDes.Text_rank")
+
+	victoriesDes:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text_victories:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text_des_1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text_score:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text_des_2:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text_rank:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 	self._btnShout:setVisible(false)
 end
 
@@ -239,6 +251,16 @@ function PetRaceScheduleMediator:refreshMyRecord()
 	text_rank:setString(rankNum)
 	text_score:setString(scoreNum)
 	text_victories:setString(string.format(Strings:get("Petrace_Text_30"), winNum, fileNum))
+
+	local victoriesDes = self._panel_base:getChildByFullName("Node_titleDes.Text_victories_des")
+	local text_des_1 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_1")
+	local text_des_2 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_2")
+
+	text_rank:setPositionX(text_des_2:getPositionX() + text_des_2:getContentSize().width + 10)
+	victoriesDes:setPositionX(text_rank:getPositionX() + text_rank:getContentSize().width + 30)
+	text_victories:setPositionX(victoriesDes:getPositionX() + victoriesDes:getContentSize().width + 5)
+	text_des_1:setPositionX(text_victories:getPositionX() + text_victories:getAutoRenderSize().width + 30)
+	text_score:setPositionX(text_des_1:getPositionX() + text_des_1:getContentSize().width + 5)
 end
 
 function PetRaceScheduleMediator:updateCD()

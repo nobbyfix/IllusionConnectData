@@ -92,6 +92,14 @@ function ArenaSystem:checkEnabled(data)
 end
 
 function ArenaSystem:tryEnter(data)
+	if not CommonUtils.GetSwitch("fn_arena_normal") then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_ArenaClose")
+		}))
+
+		return
+	end
+
 	local unlock, tips = self:checkEnabled(data)
 
 	if not unlock then
@@ -108,6 +116,13 @@ function ArenaSystem:tryEnter(data)
 			local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {})
 
 			self:dispatch(event)
+
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local guideAgent = storyDirector:getGuideAgent()
+
+			if GameConfigs.closeGuide or not guideAgent:isGuiding() then
+				self:showNewseasonView()
+			end
 		end
 	end
 
@@ -125,6 +140,18 @@ function ArenaSystem:checkLeftCount(data)
 	local remainTimes = self._developSystem:getBagSystem():getItemCount(kArenaTimeCoin)
 
 	return remainTimes, Strings:get("Arena_LeftCount_NotEnough")
+end
+
+function ArenaSystem:showNewseasonView()
+	local isShow = self:isShowNewSeasonView()
+
+	if isShow then
+		local view = self:getInjector():getInstance("ArenaNewSeasonView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {}))
+	end
 end
 
 function ArenaSystem:_syncArenaModel(data)
@@ -188,8 +215,8 @@ end
 
 function ArenaSystem:getSeasonTime()
 	local seasonData = self:getSeasonData()
-	local startTime = os.date("%Y.%m.%d %H:%M", seasonData.start / 1000)
-	local endTime = os.date("%Y.%m.%d %H:%M", seasonData["end"] / 1000)
+	local startTime = TimeUtil:localDate("%Y.%m.%d %H:%M", seasonData.start / 1000)
+	local endTime = TimeUtil:localDate("%Y.%m.%d %H:%M", seasonData["end"] / 1000)
 
 	return startTime, endTime
 end
@@ -836,6 +863,27 @@ function ArenaSystem:enterBattleChallenge(rivalIndex, data)
 
 		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
 			paseSta = paseSta
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("MasterCutInView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+			friend = friend,
+			enemy = enemy
 		}, popupDelegate))
 
 		if pauseFunc then

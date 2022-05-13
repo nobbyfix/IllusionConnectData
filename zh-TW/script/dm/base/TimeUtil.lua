@@ -124,18 +124,9 @@ function TimeUtil:getTimeByDate(t)
 	return os.time(t)
 end
 
-REMOTE_UTC = 8
-
-function TimeUtil:calcLocalUTC()
-	local now = os.time()
-	local diffTime = os.difftime(now, os.time(os.date("!*t", now)))
-
-	return diffTime / 3600
-end
-
 function TimeUtil:getTimeByDateForTargetTimeInToday(t)
-	local localUTC = self:calcLocalUTC()
-	local diffTime = (localUTC - REMOTE_UTC) * 3600
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	local tb = os.date("*t", serverTimeMap)
 	tb.hour = t.hour
@@ -161,8 +152,8 @@ function TimeUtil:getTimeByDateForTargetTime(t)
 end
 
 function TimeUtil:getWeekDayDistance()
-	local localUTC = self:calcLocalUTC()
-	local diffTime = (localUTC - REMOTE_UTC) * 3600
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	local w = tonumber(os.date("%w", serverTimeMap))
 	w = w == 0 and 7 or w + 1
@@ -194,21 +185,6 @@ function TimeUtil:formatStrToTImestamp(str)
 	return timestamp
 end
 
-function TimeUtil:remoteDate(format, time)
-	format = format or "*t"
-	local localUTCDiff = self:calcLocalUTCDiff()
-	local diffTime = self:calcRemoteZoneDiff() - localUTCDiff
-	time = time + diffTime
-
-	return os.date(format, time)
-end
-
-function TimeUtil:localDate(format, time)
-	format = format or "*t"
-
-	return os.date(format, time)
-end
-
 function TimeUtil:formatStrToRemoteTImestamp(str)
 	local _, _, y, m, d, hour, min, sec = string.find(str, "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
 	local timestamp = self:timeByRemoteDate({
@@ -221,6 +197,16 @@ function TimeUtil:formatStrToRemoteTImestamp(str)
 	})
 
 	return timestamp
+end
+
+function TimeUtil:getYMDByTimestamp(time)
+	local tb = os.date("*t", time)
+
+	return {
+		year = tb.year,
+		month = tb.month,
+		day = tb.day
+	}
 end
 
 REMOTE_UTC_DIFF = 28800
@@ -252,7 +238,7 @@ function TimeUtil:timeByRemoteDate(date)
 
 		return os.time(date) + diffTime
 	else
-		return GameServerAgent:getInstance():remoteTimestamp()
+		return DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
 	end
 end
 
@@ -265,4 +251,68 @@ function TimeUtil:getSystemResetDate(format)
 	local dateFiveHour = self:localDate(format or "%H:%M", todayFiveHour + 86400)
 
 	return dateFiveHour
+end
+
+function TimeUtil:getLocalWeekByRemote(week)
+	local weeklocal = os.date("%w", os.time())
+	weeklocal = weeklocal == 0 and 7 or weeklocal + 1
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = localUTCDiff - self:calcRemoteZoneDiff()
+	local weekremote = os.date("%w", os.time() + diffTime)
+	weekremote = weekremote == 0 and 7 or weekremote + 1
+	local trueWeek = week + weekremote - weeklocal
+
+	if trueWeek <= 0 then
+		trueWeek = week + weekremote - weeklocal + 7
+	end
+
+	if trueWeek > 7 then
+		trueWeek = trueWeek - 7
+	end
+
+	return trueWeek
+end
+
+function TimeUtil:timeByLocalDate(date)
+	return os.time(date)
+end
+
+function TimeUtil:remoteDate(format, time)
+	format = format or "*t"
+	local localUTCDiff = self:calcLocalUTCDiff()
+	local diffTime = self:calcRemoteZoneDiff() - localUTCDiff
+	time = time + diffTime
+
+	return os.date(format, time)
+end
+
+function TimeUtil:localDate(format, time)
+	format = format or "*t"
+
+	return os.date(format, time)
+end
+
+function TimeUtil:formatTimeStr(remainTime)
+	local fmtStr = "${d}:${HH}:${M}:${SS}"
+	local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+	local parts = string.split(timeStr, ":", nil, true)
+	local timeTab = {
+		day = tonumber(parts[1]),
+		hour = tonumber(parts[2]),
+		min = tonumber(parts[3]),
+		sec = tonumber(parts[4])
+	}
+	local str = ""
+
+	if timeTab.day > 0 then
+		str = timeTab.day .. Strings:get("TimeUtil_Day")
+	elseif timeTab.hour > 0 then
+		str = timeTab.hour .. Strings:get("TimeUtil_Hour")
+	elseif timeTab.min > 0 then
+		str = timeTab.min .. Strings:get("TimeUtil_Min")
+	else
+		str = timeTab.sec .. Strings:get("TimeUtil_Sec")
+	end
+
+	return str
 end

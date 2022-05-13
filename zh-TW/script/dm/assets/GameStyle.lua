@@ -4,8 +4,10 @@ GameStyle = GameStyle or {}
 ItemTipsViewTag = 10009
 EquipTipsViewTag = 10010
 BuffTipsViewTag = 10011
+SomeWordTipsViewTag = 10012
 ItemBuffTipsViewTag = 10013
 ItemShowTipsViewTag = 10014
+ComposeToEquipTipsViewTag = 10015
 GameStyle.touchEffectZorder = 9999
 BuffTypeSet = {
 	NormalBlock = "NormalBlock",
@@ -47,6 +49,16 @@ Climate2MCName = {
 	Rain = "xiayu_xiayu",
 	Light = "jiguangtu_jiguang",
 	SnowS = "xiaxues_xiaxue"
+}
+ClimateSoundId = {
+	Sunshine = "_50",
+	Overcast = "_51",
+	RainS = "_52",
+	Mist = "_51",
+	Rain = "_52",
+	Cloudy = "_51",
+	Snow = "_51",
+	SnowS = "_51"
 }
 Climate2AudioEffect = {
 	Rain = "Se_Effect_Rain",
@@ -121,24 +133,7 @@ function GameStyle:getDefaultUnfoundFile()
 	return "asset/items/item_200001.png"
 end
 
-local rangeMap = {
-	Random4_Attack = "zhiye_wz04_red.png",
-	Col_Cure = "zhiye_wz03_green.png",
-	Row_Attack = "zhiye_wz03s_red.png",
-	Single_Attack = "zhiye_wz01_red.png",
-	Cross_Attack = "zhiye_wz05z_red.png",
-	X_Attack = "zhiye_wz05_red.png",
-	Cross_Cure = "zhiye_wz05z_green.png",
-	Col_Attack = "zhiye_wz03_red.png",
-	Row_Cure = "zhiye_wz03s_green.png",
-	All_Cure = "zhiye_wz09_green.png",
-	Single_Cure = "zhiye_wz01_green.png",
-	Random3_Attack = "zhiye_wz03l_red.png",
-	Card = "zhiye_wzkp_green.png",
-	X_Cure = "zhiye_wz05_green.png",
-	All_Attack = "zhiye_wz09_red.png",
-	Summon = "zhiye_wzzh_green.png"
-}
+local rangeMap = {}
 
 function GameStyle:setHeroAtkRangeImage(targetNode, type)
 	local image = rangeMap[type] or rangeMap.Single_Attack
@@ -337,11 +332,33 @@ local heroRarityArr = {
 	"yh_bg_r.png",
 	"yh_bg_sr.png",
 	"yh_bg_ssr.png",
-	"yh_bg_ssr.png"
+	"yh_bg_sp.png"
 }
 
 function GameStyle:getHeroRarityImage(rarity)
 	return heroRarityArr[rarity] or "yh_bg_n.png"
+end
+
+local heroRarityWearSound = {
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	nil,
+	"_25",
+	"_25",
+	"_64",
+	"_64",
+	"_64"
+}
+
+function GameStyle:getHeroRaritySound(rarity)
+	return heroRarityWearSound[tonumber(rarity)]
 end
 
 local heroRarityTextArr = {
@@ -471,8 +488,8 @@ local kHeroRarityBg = {
 		kHeroRarityBgFile .. "common_bd_ssr02.png"
 	},
 	[15] = {
-		kHeroRarityBgFile .. "common_bd_ssr01.png",
-		kHeroRarityBgFile .. "common_bd_ssr02.png"
+		kHeroRarityBgFile .. "common_bd_sp01.png",
+		kHeroRarityBgFile .. "common_bd_sp02.png"
 	}
 }
 
@@ -515,8 +532,7 @@ function GameStyle:getHeroNameColorByQuality(quality)
 end
 
 function GameStyle:setHeroNameByQuality(text, quality, width)
-	text:disableEffect(1)
-	text:setColor(self:getHeroNameColorByQuality(quality).color)
+	text:setTextColor(self:getHeroNameColorByQuality(quality).color)
 	text:enableOutline(self:getHeroNameColorByQuality(quality).outline, width or 1)
 end
 
@@ -557,13 +573,12 @@ function GameStyle:getEquipRarityRectFlashFile(rarity)
 	return EquipRarityRectFlash[tonumber(rarity)] or EquipRarityRectFlash[11]
 end
 
-local heroRect = "asset/commonLang/"
+local heroRect = ASSET_LANG_COMMON
 local equipRarityArr = {
 	[11] = heroRect .. "common_img_n.png",
 	[12] = heroRect .. "common_img_r.png",
 	[13] = heroRect .. "common_img_sr.png",
-	[14] = heroRect .. "common_img_ssr.png",
-	[15] = heroRect .. "common_img_ssr.png"
+	[14] = heroRect .. "common_img_ssr.png"
 }
 
 function GameStyle:getEquipRarityImage(rarity)
@@ -620,7 +635,8 @@ local itemQuaPatternPath = {
 	"common_pz_lan.png",
 	"common_pz_zi.png",
 	"common_pz_huang.png",
-	"common_pz_hong.png"
+	"common_pz_hong.png",
+	"common_pz_sp.png"
 }
 local kItemImgType = {
 	Pattern = 1,
@@ -777,6 +793,10 @@ local qualityTextColorMap = {
 		color = cc.c3b(255, 159, 48)
 	},
 	[ColorType.kRed] = {
+		outline = cc.c4b(0, 0, 0, 219.29999999999998),
+		color = cc.c3b(255, 76, 77)
+	},
+	[ColorType.kBlock] = {
 		outline = cc.c4b(0, 0, 0, 219.29999999999998),
 		color = cc.c3b(255, 76, 77)
 	}
@@ -954,6 +974,11 @@ local kBgAnimAndImage = {
 		"shebeijing_choukahuodeyinghun",
 		"asset/scene/party_bg_sszs",
 		"asset/ui/gallery/party_icon_she.png"
+	},
+	[GalleryPartyType.kUNKNOWN] = {
+		"unknown_choukahuodeyinghun",
+		"asset/scene/party_bg_unknown",
+		"asset/ui/gallery/party_icon_unknown.png"
 	}
 }
 
@@ -1002,4 +1027,47 @@ function GameStyle:getHeroPartyByHeroInfo(heroInfo)
 	end
 
 	return self:getHeroPartyBg(heroInfo:getParty())
+end
+
+kLockImage = {
+	"asset/common/common_icon_lock_new.png",
+	"asset/common/common_icon_unlock_new.png"
+}
+composePosImage = {
+	Weapon = "shengming_wuqi_hui.png",
+	Tops = "shengming_zhuangbei_hui.png",
+	Decoration = "shengming_shipin_hui.png",
+	Shoes = "shengming_xie_hui.png"
+}
+composePosImage_icon = {
+	Weapon = {
+		"icon_shengming_hui.png",
+		"icon_shengming.png"
+	},
+	Shoes = {
+		"icon_shengming_hui3.png",
+		"icon_shengming3.png"
+	},
+	Tops = {
+		"icon_shengming_hui2.png",
+		"icon_shengming2.png"
+	},
+	Decoration = {
+		"icon_shengming_hui4.png",
+		"icon_shengming4.png"
+	}
+}
+local leadStageColor = {
+	cc.c3b(153, 152, 179),
+	cc.c3b(68, 172, 68),
+	cc.c3b(236, 162, 28),
+	cc.c3b(56, 136, 247),
+	cc.c3b(193, 86, 217),
+	cc.c3b(228, 117, 67),
+	cc.c3b(229, 86, 105),
+	cc.c3b(49, 40, 171)
+}
+
+function GameStyle:getLeadStageColor(lv)
+	return leadStageColor[lv]
 end

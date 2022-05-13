@@ -23,6 +23,14 @@ function BattleHeadWidget:setIsLeft()
 	self._hpWidget:setIsLeft(true)
 end
 
+function BattleHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+	self._hpWidget:setMaxHpValue(orgMaxHp, maxHp)
+end
+
+function BattleHeadWidget:setHpFormat(isFormat)
+	self._hpWidget:setIsFormat(isFormat)
+end
+
 function BattleHeadWidget:_setupUI()
 	self._content = self:getView():getChildByFullName("content")
 	local mpbar = self._content:getChildByFullName("mpbar.mpbar")
@@ -70,15 +78,9 @@ function BattleHeadWidget:setMasterIcon(modelId)
 	stencil:setVisible(true)
 	stencil:setPositionY(0)
 
-	local img = IconFactory:createRoleIconSprite({
-		iconType = IconFactory.IconTypeIndex.Bust10,
-		id = modelId,
-		stencil = stencil,
-		offset = {
-			-2,
-			-14
-		},
-		stencilFlip = not self._isLeft
+	local img = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe10",
+		id = modelId
 	})
 
 	img:setScaleX(self._isLeft and 1 or -1)
@@ -125,7 +127,7 @@ function BattleHeadWidget:setListener(listener)
 end
 
 function BattleHeadWidget:setHp(value, maxHp)
-	self._hpWidget:setHp(value, maxHp)
+	self._hpWidget:setHp(value, maxHp, self._dataModel)
 end
 
 function BattleHeadWidget:setRp(value, maxRp)
@@ -262,14 +264,16 @@ function BattleHeadWidget:addCard(cardType)
 	self._cardText:setString(tostring(self._cardNum))
 end
 
-function BattleHeadWidget:updateHeadInfo(data)
+function BattleHeadWidget:updateHeadInfo(data, dataModel)
+	self._dataModel = dataModel
+
 	self._hpWidget:setMaxHp(data.maxHp)
 	self:setMasterIcon(data.modelId)
 	self._hpWidget:setPrevHpPercent(nil)
 
 	self._prevRpPercent = nil
 
-	self._hpWidget:setHp(data.hp)
+	self._hpWidget:setHp(data.hp, nil, self._dataModel)
 	self:setRp(data.mp, data.maxMp)
 end
 

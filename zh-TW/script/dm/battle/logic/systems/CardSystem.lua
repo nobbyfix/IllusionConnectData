@@ -40,6 +40,78 @@ function CardSystem:getHeroCards(player, cardfilter)
 	return result
 end
 
+function CardSystem:sortCardInPool(player, tag)
+	if player:getCardState() == "skill" then
+		return {}
+	end
+
+	local cardsInPool = player:getCardPool():getCardArray()
+	local result = {}
+
+	for _, card in ipairs(cardsInPool) do
+		local isMatched = false
+
+		for k, v in pairs(card:getTriggerBuff() or {}) do
+			local config = v:getBuffConfig()
+
+			for k_, v_ in pairs(config.tags) do
+				if tag == v_ then
+					isMatched = true
+
+					break
+				end
+			end
+
+			if isMatched then
+				break
+			end
+		end
+
+		if isMatched then
+			result[#result + 1] = {
+				marked = true,
+				card = card
+			}
+		else
+			result[#result + 1] = {
+				card = card
+			}
+		end
+	end
+
+	table.sort(result, function (a, b)
+		return a.marked and not b.marked
+	end)
+
+	local newArray = {}
+
+	for k, v in pairs(result) do
+		newArray[k] = v.card
+	end
+
+	player:getCardPool():setupCardArray(newArray)
+
+	return result
+end
+
+function CardSystem:getHeroCardByIndex(player, index)
+	local cardsInWindow = player:getCardWindow():getCardArray()
+
+	if #cardsInWindow == 0 or cardsInWindow[1]:getType() ~= CARD_TYPE.kHeroCard then
+		return nil
+	end
+
+	for k, card in pairs(cardsInWindow) do
+		local cardIndex = card:getCardIndex()
+
+		if cardIndex and cardIndex == index then
+			return card
+		end
+	end
+
+	return nil
+end
+
 function CardSystem:getHeroCardsInWindow(player, cardfilter)
 	local cardsInWindow = player:getCardWindow():getCardArray()
 
@@ -71,33 +143,105 @@ function CardSystem:getHeroCardsInPool(player, cardfilter)
 	return result
 end
 
+function CardSystem:getTiggerBuffCountOnHeroCard(card, tag)
+	local triggerBuffs = card:getTriggerBuff()
+	local count = 0
+
+	for k, v in pairs(triggerBuffs) do
+		local config = v:getBuffConfig()
+
+		for k_, v_ in pairs(config.tags) do
+			if tag == v_ then
+				count = count + 1
+			end
+		end
+	end
+
+	return count
+end
+
+function CardSystem:getPassiveCountOnHeroCard(card, skillId)
+	local count = 0
+	local heroData = card:getHeroData()
+
+	if heroData and heroData.skills then
+		for k, v in pairs(heroData.skills or {}) do
+			if table.getn(v) > 0 then
+				for k_, v_ in pairs(v or {}) do
+					if v_.skillId == skillId then
+						count = count + 1
+					end
+				end
+			elseif v.skillId == skillId then
+				count = count + 1
+			end
+		end
+	end
+
+	return count
+end
+
+function CardSystem:dispelTiggerOnHeroCard(card, tags)
+	local triggerBuffs = card:getTriggerBuff()
+
+	for k, v in pairs(triggerBuffs) do
+		local config = v:getBuffConfig()
+		local isMatched = false
+
+		for k_, v_ in pairs(config.tags) do
+			for k, tag_ in pairs(tags) do
+				if tag_ == v_ then
+					isMatched = true
+
+					break
+				end
+			end
+
+			if isMatched then
+				break
+			end
+		end
+
+		if isMatched then
+			card:removeTriggerBuff(v)
+		end
+	end
+end
+
 function CardSystem:getCardIdx(player, card)
 	return player:getCardWindow():getCardIndex(card)
 end
 
-function CardSystem:genNewHeroCard(cardInfo, appendix)
+function CardSystem:genNewHeroCard(player, cardInfo, appendix, iscreateInstance)
+	local entityManager = self._battleContext:getObject("EntityManager")
+	local cardsInWindow = player:getCardWindow()
 	local info = {}
 
 	table.deepcopy(cardInfo, info)
 
 	info.id = info.id .. appendix
 	info.hero.id = info.hero.id .. appendix
+	local index = 0
+
+	repeat
+		info.id = info.id .. index
+		info.hero.id = info.hero.id .. index
+		index = index + 1
+	until entityManager:fetchEntity(info.hero.id) == nil and cardsInWindow:getCardById(info.hero.id) == nil
+
+	if iscreateInstance then
+		local card = HeroCard:new(info)
+
+		return card
+	end
 
 	return info
 end
 
-function CardSystem:genNewSkillCard(actor, skillData)
-	local cardInfo = actor:getCardInfo()
+function CardSystem:genNewSkillCard(skillInfo)
+	local card = SkillCard:new(skillInfo)
 
-	if cardInfo then
-		return {
-			id = cardInfo.id,
-			cost = cardInfo.cost,
-			model = cardInfo.hero.modelId,
-			actor = actor,
-			skill = skillData
-		}
-	end
+	return card
 end
 
 function CardSystem:removeSkillCardForActor(actor)
@@ -134,6 +278,54 @@ function CardSystem:removeSkillCardForActor(actor)
 			end
 		end
 	end
+end
+
+function CardSystem:addHeroCardSeatRules(player, card, rules, killOrKick)
+	if card:getType() == "hero" then
+		for k, v in pairs(rules) do
+			card:addSeatRule(v, killOrKick[k])
+		end
+
+		local info = card:dumpInformation()
+		local idx = self:getCardIdx(player, card)
+
+		self._processRecorder:recordObjectEvent(player:getId(), "UpdateHeroCard", {
+			cardInfo = info,
+			idx = idx
+		})
+
+		return true
+	end
+
+	return false
+end
+
+function CardSystem:setEnterPauseTime(player, card, pauseTime)
+	if card:getType() == "hero" and card.setEnterPauseTime then
+		card:setEnterPauseTime(pauseTime)
+	end
+
+	return false
+end
+
+function CardSystem:clearHeroCardSeatRules(player, card, rules, killOrKick)
+	if card:getType() == "hero" then
+		for k, v in pairs(rules) do
+			card:subSeatRule(v, killOrKick[k])
+		end
+
+		local info = card:dumpInformation()
+		local idx = self:getCardIdx(player, card)
+
+		self._processRecorder:recordObjectEvent(player:getId(), "UpdateHeroCard", {
+			cardInfo = info,
+			idx = idx
+		})
+
+		return true
+	end
+
+	return false
 end
 
 function CardSystem:lockHeroCards(player, cardfilter)
@@ -211,6 +403,18 @@ end
 
 function CardSystem:sendTimingEvent(event, args)
 	self._timingEventDispatcher:dispatchEvent(event, args)
+end
+
+function CardSystem:selectEnchantOnTarget(player, card, condition)
+	local cardAgent = self:retrieveCardAgent(player, card, false)
+
+	print("selectEnchantOnTarget", player, card, condition, cardAgent)
+
+	if cardAgent == nil then
+		return {}, 0
+	end
+
+	return cardAgent:selectEnchantObjects(condition)
 end
 
 function CardSystem:applyEnchantOnCard(player, card, enchantObject, groupConfig, workId)
@@ -363,13 +567,14 @@ end
 function CardSystem:cleanAllEnchants()
 end
 
-function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, workId)
+function CardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, anim, workId)
 	heroCard:addTriggerBuff(triggerBuff)
 
 	local idx = self:getCardIdx(player, heroCard)
 
 	self._processRecorder:recordObjectEvent(player:getId(), "TriggerBuff", {
-		idx = idx
+		idx = idx,
+		anim = anim
 	}, workId)
 end
 

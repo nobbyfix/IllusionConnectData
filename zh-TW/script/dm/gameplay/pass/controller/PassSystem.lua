@@ -106,7 +106,6 @@ function PassSystem:initialize()
 	self._hasRemarkableStatus = 0
 	self._dailyResetTime = 0
 	self._weekResetTime = 0
-	self._buyLevelCost = ConfigReader:getRecordById("ConfigValue", "BattlePass_BuyLevelCost").content
 	self._levelUpExpCost = 1000
 	self._maxRewardLevel = 10
 	self._payConfig = {}
@@ -457,6 +456,8 @@ function PassSystem:isPassMaxLevel()
 end
 
 function PassSystem:getAllPriceByBuyCount(buyLevelCount)
+	self._buyLevelCost = ConfigReader:getRecordById("ConfigValue", "BattlePass_BuyLevelCost").content
+
 	if buyLevelCount < 1 then
 		return 0
 	end
@@ -692,6 +693,10 @@ function PassSystem:checkRedPointForHome()
 		return false
 	end
 
+	if CommonUtils.GetSwitch("fn_pass") == false then
+		return false
+	end
+
 	local result = false
 
 	if showPass then
@@ -842,12 +847,6 @@ function PassSystem:requestBuyLevel(count, callback)
 end
 
 function PassSystem:requestBuyGiftBag(buyType, callback)
-	self:dispatch(ShowTipEvent({
-		tip = "儲值服務已關閉"
-	}))
-
-	return
-
 	local activitySystem = self:getInjector():getInstance(ActivitySystem)
 	local activityId = self._currentActivityID
 	local param = {

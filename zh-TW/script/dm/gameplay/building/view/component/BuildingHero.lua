@@ -80,20 +80,43 @@ function BuildingHero:adjustLayout(targetFrame)
 end
 
 function BuildingHero:initHeroAnim()
-	local heroid = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
-	local modelid = ConfigReader:getDataByNameIdAndKey("RoleModel", heroid, "Model")
+	local modelid = IconFactory:getRoleModelByKey("HeroBase", self._heroId)
 	local hero = self._developSystem._heroSystem:getHeroById(self._heroId)
+	local isAwaken = false
 
 	if hero then
 		modelid = hero:getModel()
+		isAwaken = hero:getAwakenStar() > 0
 	end
 
-	local isAwaken = hero:getAwakenStar() > 0
+	local surfaceMap = self._buildingSystem:getHeroSufaceMap()
+
+	if surfaceMap[self._heroId] and not self._buildingSystem:isSelfBuilding() then
+		modelid = ConfigReader:getDataByNameIdAndKey("Surface", surfaceMap[self._heroId].surfaceId, "Model")
+
+		if modelid then
+			local pathPrefix = "asset/anim/"
+			local resId = ConfigReader:getDataByNameIdAndKey("RoleModel", modelid, "Model")
+			local jsonPath = pathPrefix .. resId .. ".skel"
+
+			if not cc.FileUtils:getInstance():isFileExist(jsonPath) then
+				local surfaceId = ConfigReader:requireDataByNameIdAndKey("HeroBase", self._heroId, "SurfaceList")[1]
+				modelid = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "Model")
+			end
+
+			if surfaceMap[self._heroId].awakenLevel then
+				isAwaken = surfaceMap[self._heroId].awakenLevel > 0
+			end
+		end
+	end
+
 	self._animNode = RoleFactory:createHeroAnimation(modelid, isAwaken and "stand1" or "stand")
 
 	self._animNode:setScale(self._scale)
 	self._baseNode:addChild(self._animNode, heroZorder.kSkin)
-	self._animNode:setPosition(cc.p(0, KBUILDING_Tiled_CELL_SIZE.height / 2))
+	self:resetHeightOffset()
+
+	self._rotateNode = cc.Node:create():addTo(self._baseNode, heroZorder.kUnder)
 end
 
 function BuildingHero:resetRandomPos()
@@ -255,26 +278,44 @@ function BuildingHero:heroMove()
 	self:switchHeroSta(KBuildingHeroActionSta.kIdel)
 end
 
-function BuildingHero:hide()
+function BuildingHero:hide(isFadeOut)
 	if self._currentState == KBuildingHeroActionSta.kMove or self._currentState == KBuildingHeroActionSta.kPray then
 		self:switchHeroSta(KBuildingHeroActionSta.kIdel)
 		self:setRoomPosition(self._pos)
 	end
 
+	self._baseNode:setOpacity(255)
 	self._baseNode:setVisible(false)
+
+	if isFadeOut then
+		self._baseNode:setVisible(true)
+
+		local fadeOut = cc.FadeOut:create(KBUILDING_FADE_TIME)
+
+		self._baseNode:runAction(fadeOut)
+	end
 end
 
-function BuildingHero:show()
+function BuildingHero:show(isFadeIn)
+	self._baseNode:setOpacity(255)
 	self._baseNode:setVisible(true)
 	self:updateHeroSta()
+
+	if isFadeIn then
+		local fadeIn = cc.FadeIn:create(KBUILDING_FADE_TIME)
+
+		self._baseNode:runAction(fadeIn)
+	end
 end
 
 function BuildingHero:playLiftAction()
 	self:switchHeroSta(KBuildingHeroActionSta.kLife)
+	self:showHeightOffset()
 end
 
 function BuildingHero:resetAction()
 	self:switchHeroSta(KBuildingHeroActionSta.kIdel)
+	self:resetHeightOffset()
 end
 
 function BuildingHero:getRandomPos()
@@ -288,8 +329,19 @@ end
 function BuildingHero:playAnimation(name)
 	self._currentState = name
 	local hero = self._developSystem._heroSystem:getHeroById(self._heroId)
+	local isAwaken = false
 
-	if hero:getAwakenStar() > 0 and name == KBuildingHeroActionSta.kIdel then
+	if hero and hero:getAwakenStar() > 0 then
+		isAwaken = true
+	end
+
+	local surfaceMap = self._buildingSystem:getHeroSufaceMap()
+
+	if surfaceMap[self._heroId] and not self._buildingSystem:isSelfBuilding() and surfaceMap[self._heroId].awakenLevel then
+		isAwaken = surfaceMap[self._heroId].awakenLevel > 0
+	end
+
+	if isAwaken and name == KBuildingHeroActionSta.kIdel then
 		name = "stand1"
 	end
 
@@ -537,4 +589,59 @@ function BuildingHero:initHeroMenuList()
 	hugbtn:addClickEventListener(function ()
 		self._buildingSystem:tryEnterAfkGift(self._heroId, 2)
 	end)
+end
+
+function BuildingHero:showHeightOffset()
+	self._animNode:setPositionY(80)
+end
+
+function BuildingHero:resetHeightOffset()
+	self._animNode:setPosition(cc.p(0, KBUILDING_Tiled_CELL_SIZE.height / 2))
+end
+
+function BuildingHero:showUnder(sta)
+	local underNode = self._rotateNode:getChildByName("Under")
+
+	if not underNode then
+		underNode = cc.Node:create()
+
+		underNode:setName("Under")
+		self._rotateNode:addChild(underNode, -1)
+
+		local size = cc.size(1, 1)
+		local greenUnder = BuildingMapBuildUnder:createGreen(size.width, size.height, KBUILDING_Tiled_CELL_SIZE)
+
+		greenUnder:addTo(underNode):setName("greenUnder")
+
+		local redUnder = BuildingMapBuildUnder:createRed(size.width, size.height, KBUILDING_Tiled_CELL_SIZE)
+
+		redUnder:addTo(underNode):setName("redUnder")
+	end
+
+	self:refreshUnder(sta)
+	underNode:setVisible(true)
+end
+
+function BuildingHero:refreshUnder(sta)
+	local underNode = self._rotateNode:getChildByName("Under")
+
+	if underNode then
+		local greenUnder = underNode:getChildByName("greenUnder")
+
+		if greenUnder then
+			greenUnder:setVisible(sta)
+		end
+
+		local redUnder = underNode:getChildByName("redUnder")
+
+		if redUnder then
+			redUnder:setVisible(not sta)
+		end
+	end
+end
+
+function BuildingHero:hideUnder()
+	if self._rotateNode:getChildByName("Under") then
+		self._rotateNode:getChildByName("Under"):setVisible(false)
+	end
 end

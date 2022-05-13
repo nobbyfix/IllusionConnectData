@@ -66,10 +66,10 @@ function scene_mapstory_Egypt_2_boss_03.actions.start_mapstory_Egypt_2_boss_03(_
 					modelId = "Model_YMHTPu",
 					id = "YMHTPu_speak",
 					rotationX = 0,
-					scale = 1.2,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -435,
+						y = -485,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -145,10 +145,10 @@ function scene_mapstory_Egypt_2_boss_03.actions.start_mapstory_Egypt_2_boss_03(_
 					modelId = "Model_TTKMeng",
 					id = "TTKMeng_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -172,8 +172,8 @@ function scene_mapstory_Egypt_2_boss_03.actions.start_mapstory_Egypt_2_boss_03(_
 								y = 0.5
 							},
 							position = {
-								x = 14,
-								y = 615.5
+								x = 20,
+								y = 991
 							}
 						}
 					}
@@ -259,10 +259,10 @@ function scene_mapstory_Egypt_2_boss_03.actions.start_mapstory_Egypt_2_boss_03(_
 					modelId = "Model_KXuan",
 					id = "KXuan_speak",
 					rotationX = 0,
-					scale = 1.175,
+					scale = 0.6,
 					position = {
 						x = 0,
-						y = -470,
+						y = -360,
 						refpt = {
 							x = 0.1,
 							y = 0
@@ -286,8 +286,8 @@ function scene_mapstory_Egypt_2_boss_03.actions.start_mapstory_Egypt_2_boss_03(_
 								y = 0.5
 							},
 							position = {
-								x = 130,
-								y = 797
+								x = 227,
+								y = 1331
 							}
 						}
 					}

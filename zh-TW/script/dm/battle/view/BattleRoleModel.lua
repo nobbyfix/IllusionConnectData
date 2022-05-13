@@ -165,6 +165,18 @@ BattleRoleModel:has("_modelScale", {
 BattleRoleModel:has("_configId", {
 	is = "rw"
 })
+BattleRoleModel:has("_isSummond", {
+	is = "rw"
+})
+BattleRoleModel:has("_side", {
+	is = "rw"
+})
+BattleRoleModel:has("_flags", {
+	is = "rw"
+})
+BattleRoleModel:has("_isBattleField", {
+	is = "rw"
+})
 
 function BattleRoleModel:initialize(context)
 	super.initialize(self)
@@ -187,6 +199,28 @@ end
 
 function BattleRoleModel:getModelConfig()
 	return self._modelConfig
+end
+
+function BattleRoleModel:hasFlag(flag)
+	for k, v in pairs(self._flags) do
+		if v == flag then
+			return true
+		end
+	end
+
+	return false
+end
+
+function BattleRoleModel:setMaxHp(maxHp)
+	if not self._orgMaxHp then
+		self._orgMaxHp = maxHp
+	end
+
+	self._maxHp = maxHp
+end
+
+function BattleRoleModel:getOrgMaxHp()
+	return self._orgMaxHp or self._maxHp
 end
 
 function BattleRoleModel:setHp(hp)
@@ -214,7 +248,8 @@ function BattleRoleModel:setRp(rp)
 end
 
 function BattleRoleModel:updateMaxHp(maxHp, hp)
-	self._maxHp = maxHp
+	self:setMaxHp(maxHp)
+
 	local last = self._hp or 0
 	self._hp = hp
 	local data = {

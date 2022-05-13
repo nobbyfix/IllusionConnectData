@@ -159,33 +159,42 @@ function RTPKBuffDetailMediator:createHeroInfoPanel(data)
 
 	name:setString(Strings:get("RTPK_BonusPopUp_Heros"))
 
-	for i, v in ipairs(data) do
-		local iconNode = self._heroClone:clone()
-		local attackText = iconNode:getChildByFullName("attackText")
-		local label = attackText:getVirtualRenderer()
+	local row = math.ceil(#data / 5)
 
-		label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
-		label:setOverflow(cc.LabelOverflow.SHRINK)
-		label:setDimensions(93, 22)
-		attackText:setString(data[i].desc)
+	self:setInfoCellBg(view, 100 * row + 70, 688)
 
-		if iconNode:getChildByFullName("iconHero") then
-			iconNode:getChildByFullName("iconHero"):removeFromParent()
+	for i = 1, row do
+		for j = 1, 5 do
+			local realIndex = j + (i - 1) * 5
+
+			if data[realIndex] then
+				local iconNode = self._heroClone:clone()
+				local attackText = iconNode:getChildByFullName("attackText")
+
+				attackText:setString(data[realIndex].desc)
+
+				if iconNode:getChildByFullName("iconHero") then
+					iconNode:getChildByFullName("iconHero"):removeFromParent()
+				end
+
+				local config = ConfigReader:getRecordById("HeroBase", data[realIndex].hero)
+				local heroImg = IconFactory:createRoleIconSpriteNew({
+					id = config.RoleModel
+				})
+
+				heroImg:addTo(iconNode):center(iconNode:getContentSize()):offset(0, 6)
+				heroImg:setName("iconHero")
+				heroImg:setScale(0.25)
+				view:addChild(iconNode)
+				iconNode:setPosition(cc.p(20 + (j - 1) * 132, 100 * row - (i - 1) * 100 - 70))
+				iconNode:getChildByName("Panel_7"):setLocalZOrder(5)
+
+				local text = iconNode:getChildByName("Text_1")
+
+				text:setLocalZOrder(15)
+			end
 		end
-
-		local config = ConfigReader:getRecordById("HeroBase", data[i].hero)
-		local heroImg = IconFactory:createRoleIconSprite({
-			id = config.RoleModel
-		})
-
-		heroImg:addTo(iconNode):center(iconNode:getContentSize()):offset(0, 6)
-		heroImg:setName("iconHero")
-		heroImg:setScale(0.25)
-		view:addChild(iconNode)
-		iconNode:setPosition(cc.p(20 + (i - 1) * 100, 30))
 	end
-
-	self:setInfoCellBg(view, 170, 688)
 
 	return view
 end

@@ -9,6 +9,9 @@ HeroSystem:has("_systemKeeper", {
 HeroSystem:has("_customDataSystem", {
 	is = "rw"
 }):injectWith("CustomDataSystem")
+HeroSystem:has("_crusadeSystem", {
+	is = "r"
+}):injectWith("CrusadeSystem")
 HeroSystem:has("_shareCDTime", {
 	is = "rw"
 })
@@ -39,6 +42,9 @@ HeroSystem:has("_heroStarUpItem", {
 HeroSystem:has("_selectData", {
 	is = "rw"
 })
+HeroSystem:has("_heroPicInfo", {
+	is = "rw"
+})
 
 function HeroSystem:initialize(developSystem)
 	super.initialize(self)
@@ -62,6 +68,7 @@ function HeroSystem:initialize(developSystem)
 	self._selectData = {
 		["14"] = "0",
 		["13"] = "1",
+		["15"] = "0",
 		canUseStive = "1",
 		canUseOwn = "0",
 		["12"] = "1"
@@ -90,6 +97,11 @@ function HeroSystem:initialize(developSystem)
 	end
 
 	self:initCombatToCostRate()
+end
+
+function HeroSystem:dispose()
+	self:stopTimers()
+	super.dispose(self)
 end
 
 function HeroSystem:initCombatToCostRate()
@@ -321,23 +333,107 @@ function HeroSystem:checkHeroCanComp(heroId)
 end
 
 function HeroSystem:getAllHeroConfigIds()
-	if not self._heroIds then
-		self._heroIds = {}
-		local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
+	if not self._heroTimeInfo then
+		self:initHeroTimeType()
+	end
 
-		for _, heroId in pairs(heroIdList) do
-			if heroId ~= "$" then
-				local config = ConfigReader:getRecordById("HeroBase", heroId)
-				local hero = self:getHeroById(heroId)
+	self._heroIds = {}
+	local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
 
-				if hero or config.IfHidden == 1 then
-					self._heroIds[#self._heroIds + 1] = heroId
-				end
+	for _, heroId in pairs(heroIdList) do
+		if heroId ~= "$" then
+			local config = ConfigReader:getRecordById("HeroBase", heroId)
+			local hero = self:getHeroById(heroId)
+
+			if hero or config.IfHidden == 1 and self._heroTimeInfo[heroId] == nil then
+				self._heroIds[#self._heroIds + 1] = heroId
 			end
 		end
 	end
 
 	return self._heroIds
+end
+
+function HeroSystem:initHeroTimeType()
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+
+	if not self._heroTimeInfo then
+		local curTime = gameServerAgent:remoteTimestamp()
+		self._heroTimeInfo = {}
+		local heroIdList = ConfigReader:getKeysOfTable("HeroBase")
+
+		for _, heroId in pairs(heroIdList) do
+			if heroId ~= "$" then
+				local config = ConfigReader:getRecordById("HeroBase", heroId)
+
+				if config.IfHidden == 1 then
+					local start = self:getTimeType(config)
+
+					if start then
+						local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+						local table = {
+							year = y,
+							month = mon,
+							day = d,
+							hour = h,
+							min = m,
+							sec = s
+						}
+						local mills = TimeUtil:timeByRemoteDate(table)
+
+						if curTime < mills then
+							self._heroTimeInfo[heroId] = mills
+						end
+					end
+				end
+			end
+		end
+	end
+
+	if next(self._heroTimeInfo) then
+		local function checkTimeFunc()
+			local ret = false
+
+			for k, v in pairs(self._heroTimeInfo) do
+				local curTime = gameServerAgent:remoteTimestamp()
+				local remainTime = curTime - v
+
+				if remainTime >= 0 then
+					self._heroTimeInfo[k] = nil
+					ret = true
+				end
+			end
+
+			if ret then
+				self:syncHeroShowIds()
+				self:dispatch(Event:new(EVT_HEROES_SYNC_SHOW))
+
+				if not next(self._heroTimeInfo) then
+					self:stopTimers()
+
+					return
+				end
+			end
+		end
+
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	end
+end
+
+function HeroSystem:getTimeType(config)
+	if config.TimeType and config.TimeType ~= "" then
+		return config.TimeType
+	end
+
+	return nil
+end
+
+function HeroSystem:stopTimers()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function HeroSystem:getNextLvlAddExp(heroId, level)
@@ -550,7 +646,7 @@ end
 function HeroSystem:checkHasKeySkill(heroId)
 	local hero = self:getHeroById(heroId)
 
-	if not hero:getPassiveCondition() then
+	if not hero or not hero:getPassiveCondition() then
 		return nil
 	end
 
@@ -1090,7 +1186,6 @@ function HeroSystem:hasRedPointByEvolution(heroId)
 end
 
 local kHeroStiveId = "IR_HeroStive"
-local HeroStar_StiveOut = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveOut", "content")
 local HeroStar_StiveChange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChange", "content")
 local HeroStar_StiveChangeSelf = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChangeSelf", "content")
 
@@ -1156,7 +1251,7 @@ function HeroSystem:hasRedPointByStar(heroId)
 			local itemId = value.fragId
 			local rarity = tostring(value.rareity)
 
-			if rarity == canUseRarity and not table.indexof(HeroStar_StiveOut, id) and heroId ~= id then
+			if rarity == canUseRarity and heroId ~= id then
 				local num = self._bagSystem:getItemCount(itemId)
 
 				if num > 0 then
@@ -1317,6 +1412,12 @@ function HeroSystem:getTeamHeroes()
 end
 
 function HeroSystem:hasRedPointInStrengthen(heroId, teamHeroes)
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+	if surfaceSystem:getRedPointByHeroId(heroId) then
+		return true
+	end
+
 	teamHeroes = teamHeroes or self:getTeamHeroes()
 
 	if not teamHeroes[heroId] then
@@ -1353,6 +1454,12 @@ function HeroSystem:checkIsShowRedPoint()
 		if self:hasRedPointInStrengthen(id) then
 			return true
 		end
+	end
+
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+
+	if surfaceSystem:checkIsShowRedPoint() then
+		return true
 	end
 
 	return false
@@ -1600,7 +1707,17 @@ function HeroSystem:sortOnTeamPets(idList)
 	end)
 end
 
-function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType)
+function HeroSystem:isLimitHero(list, heroId)
+	for i, v in pairs(list) do
+		if v == heroId then
+			return 1
+		end
+	end
+
+	return 0
+end
+
+function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType, limitList)
 	local func = type and HeroSortFuncs.SortFunc[type] or HeroSortFuncs.SortFunc[9]
 
 	if not checkInTeam then
@@ -1608,12 +1725,21 @@ function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, 
 			local aInfo = self:getHeroInfoById(a.id or a)
 			local bInfo = self:getHeroInfoById(b.id or b)
 
-			if a.showType == HeroShowType.kNotOwn then
+			if a.showType == HeroShowType.kNotOwn and b.showType == HeroShowType.kNotOwn then
 				local aHasNum = self:getHeroDebrisCount(a.id)
 				local bHasNum = self:getHeroDebrisCount(b.id)
 
 				if aHasNum ~= bHasNum then
 					return bHasNum < aHasNum
+				end
+			end
+
+			if limitList then
+				local aLimit = self:isLimitHero(limitList, a.id or a)
+				local bLimit = self:isLimitHero(limitList, b.id or b)
+
+				if aLimit ~= bLimit then
+					return aLimit < bLimit
 				end
 			end
 
@@ -1688,7 +1814,7 @@ function HeroSystem:setShowHeroType(type)
 	self._showHeroType = type
 end
 
-function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter)
+function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter, callback)
 	assert(self:hasHero(heroId), heroId .. " 英魂未获得")
 
 	if type == GalleryFuncName.kGift then
@@ -1738,12 +1864,17 @@ function HeroSystem:tryEnterDate(heroId, type, ignoreTip, ignoreEnter)
 
 			if not ignoreEnter then
 				if type == GalleryFuncName.kGift then
-					local view = self:getInjector():getInstance("GalleryDateView")
+					if callback then
+						callback()
+					else
+						local view = self:getInjector():getInstance("GalleryPartnerInfoNewView")
 
-					self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-						id = heroId,
-						type = type
-					}))
+						self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+							tabIndex = 2,
+							id = heroId,
+							type = type
+						}))
+					end
 				elseif type == GalleryFuncName.kDate then
 					local view = self:getInjector():getInstance("GalleryDateView")
 
@@ -2013,7 +2144,7 @@ function HeroSystem:getSoundUnlock(hero, sound)
 
 			if condition.Time then
 				local remoteTimestamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-				local year = os.date("*t", remoteTimestamp).year
+				local year = TimeUtil:remoteDate("*t", remoteTimestamp).year
 				local date = year .. "-" .. condition.Time
 				local duration = condition.duration * 60 * 60
 
@@ -2024,7 +2155,7 @@ function HeroSystem:getSoundUnlock(hero, sound)
 				end
 
 				local dateTemp = string.split(date, "-")
-				local startTime = os.time({
+				local startTime = TimeUtil:timeByRemoteDate({
 					year = tonumber(dateTemp[1]),
 					month = tonumber(dateTemp[2]),
 					day = tonumber(dateTemp[3]),
@@ -2458,4 +2589,55 @@ function HeroSystem:requestHeroAwake(heroId, items, callFunc)
 			callFunc(response)
 		end
 	end)
+end
+
+function HeroSystem:setAwakeHeroFragIdAndDebrisCostCount(heroID, count)
+	local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(heroID)
+	self._awakeHeroFragId = heroPrototype:getConfig().ItemId
+	self._awakeDebrisCostCount = count
+end
+
+function HeroSystem:getAwakeHeroFragIdAndDebrisCostCount()
+	if self._awakeDebrisCostCount and self._awakeHeroFragId then
+		return self._awakeHeroFragId, self._awakeDebrisCostCount
+	end
+
+	return "", 0
+end
+
+function HeroSystem:cleanAwakeHeroFragIdAndDebrisCostCount()
+	self._awakeDebrisCostCount = 0
+	self._awakeHeroFragId = ""
+end
+
+function HeroSystem:isLinkStageHero(heroId)
+	if self._linkHeroMap == nil then
+		self._linkHeroMap = {}
+		local Hero_Linkage = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_Linkage", "content")
+
+		for i = 1, #Hero_Linkage do
+			self._linkHeroMap[Hero_Linkage[i]] = 1
+		end
+	end
+
+	return self._linkHeroMap[heroId] and true or false
+end
+
+function HeroSystem:tryEnterAwakenShowView(heroId)
+	local view = self:getInjector():getInstance("HeroStrengthAwakenView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		fromAlbum = true,
+		heroId = heroId
+	}))
+end
+
+function HeroSystem:checkHaveAwaken(heroId)
+	local awakenStarConfig = ConfigReader:getRecordById("HeroAwaken", heroId)
+
+	if awakenStarConfig and awakenStarConfig.StarId then
+		return true
+	end
+
+	return false
 end

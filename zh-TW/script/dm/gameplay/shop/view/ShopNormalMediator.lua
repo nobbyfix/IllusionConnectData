@@ -613,7 +613,7 @@ end
 
 function ShopNormalMediator:refreshTimes(panel, data)
 	local _infoPanel = panel:getChildByFullName("info_panel")
-	local iconLayout = panel:getChildByFullName("icon_layout")
+	local _iconLayout = panel:getChildByFullName("icon_layout")
 	local _times = panel:getChildByFullName("info_panel.times")
 	local _times1 = panel:getChildByFullName("info_panel.times1")
 	local _duihuanText = panel:getChildByFullName("info_panel.duihuan_text")
@@ -843,7 +843,7 @@ function ShopNormalMediator:onClickItem(sender, eventType, data)
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
-			shopId = ShopSpecialId.kShopPackage,
+			shopId = ShopSpecialId.KShopTimelimitedmall,
 			item = data
 		}))
 	end

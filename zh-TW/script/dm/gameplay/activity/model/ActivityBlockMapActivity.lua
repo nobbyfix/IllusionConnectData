@@ -1,5 +1,6 @@
 require("dm.gameplay.activity.model.stageModel.ActivityStage")
 require("dm.gameplay.develop.model.team.Team")
+require("dm.gameplay.stage.model.StageManager")
 
 ActivityBlockMapActivity = class("ActivityBlockMapActivity", BaseActivity, _M)
 
@@ -11,8 +12,14 @@ ActivityBlockMapActivity:has("_storySet", {
 })
 
 local litStageType = {
+	HARD = "Hard",
 	NORMAL = "Normal",
 	ELITE = "Elite"
+}
+local cStageType = {
+	[litStageType.NORMAL] = StageType.kNormal,
+	[litStageType.ELITE] = StageType.kElite,
+	[litStageType.HARD] = StageType.kHard
 }
 
 function ActivityBlockMapActivity:initialize()
@@ -20,10 +27,13 @@ function ActivityBlockMapActivity:initialize()
 	self._storySet = {}
 	self._stagesMap[litStageType.NORMAL] = {}
 	self._stagesMap[litStageType.ELITE] = {}
+	self._stagesMap[litStageType.HARD] = {}
 	self._mapList = {
 		[litStageType.NORMAL] = {},
-		[litStageType.ELITE] = {}
+		[litStageType.ELITE] = {},
+		[litStageType.HARD] = {}
 	}
+	self._stagesMapIds = {}
 end
 
 function ActivityBlockMapActivity:synchronize(data)
@@ -57,11 +67,6 @@ function ActivityBlockMapActivity:synchronize(data)
 end
 
 function ActivityBlockMapActivity:syncStageInfo(data)
-	local cStageType = {
-		[litStageType.NORMAL] = StageType.kNormal,
-		[litStageType.ELITE] = StageType.kElite
-	}
-
 	for type, v in pairs(data) do
 		if not self._stagesMap[type] then
 			self._stagesMap[type] = {}
@@ -79,6 +84,7 @@ function ActivityBlockMapActivity:syncStageInfo(data)
 				self._stagesMap[type][id]:setOwner(self)
 
 				self._mapList[type][#self._mapList[type] + 1] = id
+				self._stagesMapIds[id] = self._stagesMap[type][id]
 			end
 
 			self._stagesMap[type][id]:sync(map)
@@ -130,6 +136,18 @@ function ActivityBlockMapActivity:hasRedPoint()
 	return false
 end
 
+function ActivityBlockMapActivity:hasRedPointByType(type)
+	for k, stageList in pairs(self._stagesMap) do
+		for k, stage in pairs(stageList) do
+			if stage and stage:getType() == type and stage:hasRedPoint() then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
 function ActivityBlockMapActivity:getStageByStageType(stageType)
 	local type = litStageType[stageType]
 	local stageMap = self._stagesMap[type]
@@ -155,6 +173,10 @@ function ActivityBlockMapActivity:getActivityMapById(mapId)
 end
 
 function ActivityBlockMapActivity:getPointById(pointId)
+	if not pointId then
+		return
+	end
+
 	local mapid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointId, "Map")
 	mapid = mapid or ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "Map")
 
@@ -171,6 +193,12 @@ function ActivityBlockMapActivity:getMapIdByStageType(stageType)
 	local stage = self:getStageByStageType(stageType)
 
 	return stage:getMapId()
+end
+
+function ActivityBlockMapActivity:getMapIdStartTimeByStageType(stageType)
+	local stage = self:getStageByStageType(stageType)
+
+	return stage:getStartTimestamp()
 end
 
 function ActivityBlockMapActivity:getStageTypeById(pointId)
@@ -196,4 +224,87 @@ function ActivityBlockMapActivity:getMapByIndex(index, stageType)
 	local index = tonumber(index)
 
 	return stageMap[self._mapList[type][index]]
+end
+
+function ActivityBlockMapActivity:getAssistEnemyInfo(enemyId)
+	local enemyInfo = ConfigReader:getRecordById("EnemyHero", enemyId)
+
+	if not enemyInfo then
+		return nil
+	end
+
+	local heroData = {
+		awakenLevel = 0,
+		isNpc = true,
+		id = enemyInfo.Id,
+		level = enemyInfo.Level,
+		star = enemyInfo.Star,
+		rareity = enemyInfo.Rarity,
+		name = Strings:get(enemyInfo.Name or "NPC"),
+		roleModel = enemyInfo.RoleModel,
+		type = enemyInfo.Type,
+		cost = enemyInfo.Cost,
+		combat = enemyInfo.Combat,
+		maxStar = HeroStarCountMax
+	}
+
+	return heroData
+end
+
+function ActivityBlockMapActivity:getAssistEnemyList(mapId)
+	local list = {}
+
+	for mapId, stage in ipairs(self._stagesMapIds) do
+		local points = stage:getIndex2Points()
+
+		for index, pointId in ipairs(points) do
+			local assistEnemy = self:getPointById(pointId):getAssistEnemy()
+
+			for i, enemyId in ipairs(assistEnemy) do
+				local enemyData = self:getAssistEnemyInfo(enemyId)
+
+				if enemyData then
+					list[#list + 1] = enemyData
+				end
+			end
+		end
+	end
+
+	return list
+end
+
+function ActivityBlockMapActivity:isHeroAttrStarExtra()
+	for k, stageList in pairs(self._stagesMap) do
+		for _, _stage in pairs(stageList) do
+			local points = _stage:getIndex2Points()
+
+			for _, point in ipairs(points) do
+				local heroAttrStarExtra = point:getHeroAttrStarExtra()
+
+				if heroAttrStarExtra then
+					return true
+				end
+			end
+		end
+	end
+
+	return false
+end
+
+function ActivityBlockMapActivity:isAllPointPass(stageType)
+	for mapId, stage in ipairs(self._stagesMapIds) do
+		local points = stage:getIndex2Points()
+
+		for index, pointId in ipairs(points) do
+			for _, point in ipairs(points) do
+				local isPass = point:isPass()
+
+				if not isPass then
+					return false
+				end
+			end
+		end
+	end
+
+	return true
 end

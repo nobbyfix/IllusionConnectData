@@ -10,19 +10,24 @@ function RewardSystem:userInject(injector)
 end
 
 RewardType = {
-	kKernel = 5,
-	kExp = 1,
-	kSpecialValue = 4,
-	kEquip = 6,
+	kHero = 3,
+	kGalleryMemory = 16,
 	kEquipExplore = 11,
+	kEquip = 6,
+	kExp = 1,
 	kRewardLink = 9,
 	kBuff = 17,
-	kItem = 2,
-	kHero = 3,
+	kSpecialValue = 4,
+	kInvalid = -1,
+	kKernel = 5,
 	kShow = 99,
+	kHeadFrame = 14,
+	kDecorate = 20,
+	kItem = 2,
+	kBackground = 22,
+	kRTPKEmoji = 30,
 	kSurface = 7,
-	kStory = "STORY",
-	kInvalid = -1
+	kStory = "STORY"
 }
 RewardRandomType = {
 	kOnce = "Once",
@@ -104,6 +109,18 @@ function RewardSystem.class:getName(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Name)
+			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", id)
+
+			if config and config.Id then
+				return Strings:get(config.Information.name)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", id)
+
+			if config and config.Id then
+				return Strings:get(config.EMJName)
 			end
 		end
 	end
@@ -248,7 +265,7 @@ function RewardSystem.class:getDesc(rewardData)
 			local config = ConfigReader:getRecordById("Surface", id)
 
 			if config and config.Id then
-				return Strings:get(config.Desc)
+				return Strings:get(config.LongDesc)
 			end
 		elseif info.rewardType == RewardType.kHero then
 			local config = ConfigReader:getRecordById("HeroBase", id)
@@ -261,6 +278,18 @@ function RewardSystem.class:getDesc(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Desc)
+			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", id)
+
+			if config and config.Id then
+				return Strings:get(config.Information.desc)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", id)
+
+			if config and config.Id then
+				return Strings:get(config.Log)
 			end
 		end
 	end
@@ -290,6 +319,20 @@ function RewardSystem.class:getDesc(rewardData)
 	end
 
 	return ""
+end
+
+function RewardSystem.class:getResource(id)
+	local config = ConfigReader:getRecordById("ResourcesIcon", id)
+
+	if config then
+		return config.Resource
+	end
+
+	config = ConfigReader:getRecordById("ItemConfig", id)
+
+	if config then
+		return config.Resource
+	end
 end
 
 function RewardSystem.class:parseInfo(rewardData)
@@ -429,4 +472,29 @@ function RewardSystem.class:getRewardsById(id, param)
 	end
 
 	return {}
+end
+
+function RewardSystem.class:checkIsComposeItem(info)
+	local result = false
+	local id = info.id
+
+	if info.code then
+		id = info.code
+	end
+
+	local rewardType = info.rewardType
+
+	if info.type then
+		rewardType = info.type
+	end
+
+	if rewardType == RewardType.kItem then
+		local config = ConfigReader:getRecordById("ItemConfig", tostring(id))
+
+		if config and config.Id and config.Type == ItemTypes.K_COMPOSE then
+			result = true
+		end
+	end
+
+	return result
 end

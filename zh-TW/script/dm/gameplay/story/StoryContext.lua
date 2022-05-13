@@ -195,6 +195,13 @@ function StoryContext:checkELITEChapterUnlockSta()
 	return guideSystem:checkELITEChapterUnlockSta()
 end
 
+function StoryContext:downloadRes()
+	local settingSystem = self:getInjector():getInstance("SettingSystem")
+	local downloading = settingSystem:downloadPackage()
+
+	return downloading
+end
+
 function StoryContext:showNewSystemUnlock(systemId, statisticPoint)
 	local key = "GUIDE_NEWSYSTEM_UNLOCK_" .. systemId
 
@@ -298,6 +305,18 @@ function StoryContext:checkStageTaskSta()
 	return guideSystem:check_guide_stageTask()
 end
 
+function StoryContext:checkStageArenaOpen()
+	local system = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return system:stageArenaOpen()
+end
+
+function StoryContext:checkStageArenaState()
+	local system = self:getInjector():getInstance(LeadStageArenaSystem)
+
+	return system:stageArenaState()
+end
+
 function StoryContext:checkVillageBuildingSta()
 	local GuideSystem = self:getInjector():getInstance(GuideSystem)
 
@@ -355,6 +374,24 @@ function StoryContext:isPlayNewUnlockChapter()
 end
 
 function StoryContext:playHomeVedioPV(strId)
+	local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+	local topViewName = scene:getTopViewName()
+	local topView = scene:getTopView()
+
+	if topViewName == "homeView" and topView then
+		local homeMediator = scene:getMediatorMap():retrieveMediator(topView)
+
+		if homeMediator then
+			homeMediator:playVedioSprite(Strings:get(strId))
+			StatisticSystem:send({
+				point = "guide_main_play_logo_pv",
+				type = "loginpoint"
+			})
+
+			return true
+		end
+	end
+
 	return false
 end
 

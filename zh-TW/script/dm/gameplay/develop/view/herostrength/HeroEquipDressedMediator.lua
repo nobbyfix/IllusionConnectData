@@ -136,6 +136,23 @@ function HeroEquipDressedMediator:initNodes()
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("name"))
 	GameStyle:setCommonOutlineEffect(desc1:getChildByFullName("text"), 142.8)
 	GameStyle:setCommonOutlineEffect(desc2:getChildByFullName("text"), 142.8)
+
+	local desc = self._nodeSkill:getChildByFullName("desc")
+	local size = desc:getContentSize()
+	local x, y = desc:getPosition()
+	local descScrollView = ccui.ScrollView:create()
+
+	descScrollView:setTouchEnabled(true)
+	descScrollView:setBounceEnabled(true)
+	descScrollView:setDirection(ccui.ScrollViewDir.vertical)
+	descScrollView:setContentSize(size)
+	descScrollView:setPosition(cc.p(x, y))
+	descScrollView:setAnchorPoint(cc.p(0, 1))
+	self._nodeSkill:addChild(descScrollView, desc:getLocalZOrder())
+
+	self._descScrollView = descScrollView
+
+	desc:setVisible(false)
 	self._equipListView:showTableCellAni()
 	self:refreshEquipInfo()
 end
@@ -149,9 +166,16 @@ end
 function HeroEquipDressedMediator:canReplace()
 	if self._heroData then
 		local type = self._heroData:getType()
+		local heroId = self._heroData:getId()
 		local typeRange = self._equipData:getOccupation()
+		local occupationType = self._equipData:getOccupationType()
+		local accord = false
 
-		if table.indexof(typeRange, type) then
+		if occupationType == nil or occupationType == 0 then
+			if table.indexof(typeRange, type) then
+				return true
+			end
+		elseif occupationType == 1 and table.indexof(typeRange, heroId) then
 			return true
 		end
 	end
@@ -202,6 +226,7 @@ function HeroEquipDressedMediator:refreshDesc()
 	local targetExp = self._equipData:getLevelNextExp()
 	local equipOccu = self._equipData:getOccupation()
 	local occupationDesc = self._equipData:getOccupationDesc()
+	local occupationType = self._equipData:getOccupationType()
 	local node = self._nodeDesc:getChildByFullName("node")
 
 	node:removeAllChildren()
@@ -244,14 +269,33 @@ function HeroEquipDressedMediator:refreshDesc()
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		for i = 1, #equipOccu do
-			local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-			local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-			image:setAnchorPoint(cc.p(0, 0.5))
-			image:setPosition(cc.p(37 * (i - 1) + 3, 0))
-			image:addTo(limitNode)
-			image:setScale(0.5)
+					image:setAnchorPoint(cc.p(0, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
+			end
 		end
 	end
 end
@@ -292,8 +336,8 @@ function HeroEquipDressedMediator:refreshSkill()
 	local skillNameBg = self._nodeSkill:getChildByFullName("nameBg")
 	local skillName = self._nodeSkill:getChildByFullName("name")
 	local skillLevel = self._nodeSkill:getChildByFullName("level")
-	local skillDesc = self._nodeSkill:getChildByFullName("desc")
 	local skillLock = self._nodeSkill:getChildByFullName("skillLock")
+	local skillDesc = self._descScrollView
 	local equipData = self._equipData
 	local isHaveSkill = equipData:isHaveSkill()
 
@@ -315,7 +359,6 @@ function HeroEquipDressedMediator:refreshSkill()
 		local width = skillDesc:getContentSize().width
 		local height = skillDesc:getContentSize().height
 
-		skillDesc:setString("")
 		skillDesc:removeAllChildren()
 
 		local desc = skillAttr:getSkillDesc()
@@ -351,6 +394,24 @@ function HeroEquipDressedMediator:refreshSkill()
 		label:setAnchorPoint(cc.p(0, 1))
 		label:addTo(skillDesc)
 		label:setPosition(cc.p(0, height))
+
+		local descScrollView = skillDesc
+		local size = skillDesc:getContentSize()
+		size.height = label:getContentSize().height
+
+		if descScrollView:getContentSize().height < size.height then
+			descScrollView:setTouchEnabled(true)
+		else
+			size = descScrollView:getContentSize()
+
+			descScrollView:setTouchEnabled(false)
+		end
+
+		descScrollView:setInnerContainerSize(size)
+
+		local offy = size.height
+
+		label:setPositionY(size.height)
 	end
 end
 
@@ -400,7 +461,6 @@ function HeroEquipDressedMediator:onClickEquipBtn()
 			return
 		end
 
-		AudioEngine:getInstance():playEffect("Se_Click_Wear", false)
 		self._equipSystem:requestEquipMounting(params)
 	else
 		AudioEngine:getInstance():playEffect("Se_Click_Takeoff", false)

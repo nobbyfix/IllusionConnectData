@@ -63,8 +63,9 @@ local kTabBtnData = {
 		tabName1 = Strings:get("UITitle_EN_Lianjie")
 	},
 	{
-		viewName = "HeroStrengthStarView",
 		unlockKey = "Hero_StarUp",
+		switchKey = "fn_hero_jingjie",
+		viewName = "HeroStrengthStarView",
 		tabName = Strings:get("HEROS_UI5"),
 		tabName1 = Strings:get("UITitle_EN_Jingjie")
 	},
@@ -75,8 +76,9 @@ local kTabBtnData = {
 		tabName1 = Strings:get("UITitle_EN_Jineng")
 	},
 	{
-		viewName = "HeroStrengthEquipView",
 		unlockKey = "Hero_Equip",
+		switchKey = "fn_hero_equip",
+		viewName = "HeroStrengthEquipView",
 		tabName = Strings:get("Equip_Text1"),
 		tabName1 = Strings:get("UITitle_EN_Zhuangbei")
 	},
@@ -318,6 +320,10 @@ function HeroShowMainMediator:initTabBtn()
 			self._cacheViewsName[i] = viewName
 		end
 
+		if data.switchKey and not CommonUtils.GetSwitch(data.switchKey) then
+			canShow = false
+		end
+
 		if canShow then
 			index = index + 1
 			local btn = self._tabClone:clone()
@@ -485,7 +491,7 @@ function HeroShowMainMediator:initTouchSlide()
 				self._dragType = self:checkTouchType(beganPos, movedPos)
 
 				if self._dragType == dragType.kDragNo then
-					view:onClickHelp()
+					-- Nothing
 				elseif self._dragType == dragType.kDragLeft then
 					self:onClickLeft()
 				elseif self._dragType == dragType.kDragRight then
@@ -730,10 +736,6 @@ function HeroShowMainMediator:setupClickEnvs()
 			local equipBtn = mediator._equipBtn
 
 			storyDirector:setClickEnv("heroShowMain.equipBtn", equipBtn, function (sender, eventType)
-				if SDKHelper and SDKHelper:isEnableSdk() then
-					SDKHelper:adjustEventTracking(AdjustEventList.ADJUST_TOUCH_EQUIP_ONECE_EVENT)
-				end
-
 				mediator:onClickEquip()
 				storyDirector:notifyWaiting("click_heroShowMain_equipBtn")
 			end)

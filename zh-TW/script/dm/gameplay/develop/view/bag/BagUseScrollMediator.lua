@@ -59,6 +59,7 @@ function BagUseScrollMediator:onRegister()
 end
 
 function BagUseScrollMediator:enterWithData(data)
+	self._canClickBtn = true
 	self._curEntryId = data.curEntryId
 	self._curEntryIds = data.curEntryIds
 
@@ -169,58 +170,42 @@ function BagUseScrollMediator:setMaterialView()
 
 				if layout.curMaterial.id then
 					local index = i
-					local isEnough, haveLbl, needNum = self:addIcon(layout.curMaterial, layout, true)
-					self._tabEnoughHttp["Item" .. i] = {}
-					self._tabEnoughHttp["Item" .. i].id = {
-						layout.curMaterial.id
-					}
-					self._tabEnoughHttp["Item" .. i].isEnough = isEnough
+					local layoutNull = self.listCellClone_Null:clone()
+					local materialImage = layoutNull:getChildByFullName("materialImage")
+					local pos = self._bagSystem:getComposePos(layout.curMaterial.id)
 
-					if haveLbl < needNum and layout.curMaterial.type == "Item" then
-						if haveLbl == 0 then
-							local color = cc.c3b(150, 150, 150)
+					materialImage:setVisible(true)
+					materialImage:loadTexture(composePosImage[pos], ccui.TextureResType.plistType)
 
-							layout:getChildByFullName("IconNode"):setColor(color)
-							layout:getChildByFullName("Image_100"):setColor(color)
-							layout:getChildByFullName("needNum"):setColor(color)
-							layout:getChildByFullName("haveNum"):setColor(cc.c3b(200, 0, 0))
+					layoutNull.curMaterial = layout.curMaterial
+					layout = layoutNull
 
-							local addAnim_kuang = self:getKuangAnim()
+					self:refreshNullMaterialPanel(layout, i)
+					table.insert(self._layoutTab, layout)
 
-							addAnim_kuang:setName("addAnim_kuang")
-							addAnim_kuang:addTo(layout):center(layout:getContentSize())
+					local index = i
 
-							local addAnim_jiahao = self:getJiaHaoAnim()
+					layout:addTouchEventListener(function (sender, eventType)
+						if eventType == ccui.TouchEventType.began then
+							self.isDelay = false
+							local delayAct = cc.DelayTime:create(0.2)
+							local judgeShowAct = cc.CallFunc:create(function ()
+								self.isDelay = true
+							end)
+							local seqAct = cc.Sequence:create(delayAct, judgeShowAct)
 
-							addAnim_jiahao:setName("addAnim_jiahao")
-							addAnim_jiahao:addTo(layout):center(layout:getContentSize())
-						end
-
-						layout:addTouchEventListener(function (sender, eventType)
-							if eventType == ccui.TouchEventType.began then
-								self.isDelay = false
-								local delayAct = cc.DelayTime:create(0.2)
-								local judgeShowAct = cc.CallFunc:create(function ()
-									self.isDelay = true
-								end)
-								local seqAct = cc.Sequence:create(delayAct, judgeShowAct)
-
-								sender:runAction(seqAct)
-							elseif eventType == ccui.TouchEventType.moved then
-								-- Nothing
-							elseif eventType == ccui.TouchEventType.ended then
-								if self.isDelay then
-									return
-								end
-
-								AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
-
-								local view = self:getInjector():getInstance("NewCurrencyBuyPopView")
-
-								self:showSourcePath(layout.curMaterial.id, haveLbl, needNum, layout, index)
+							sender:runAction(seqAct)
+						elseif eventType == ccui.TouchEventType.moved then
+							-- Nothing
+						elseif eventType == ccui.TouchEventType.ended then
+							if self.isDelay then
+								return
 							end
-						end)
-					end
+
+							AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+							self:onSelectMaterial(sender, index)
+						end
+					end)
 				else
 					local layoutNull = self.listCellClone_Null:clone()
 					local materialImage = layoutNull:getChildByFullName("materialImage")
@@ -305,6 +290,7 @@ function BagUseScrollMediator:setMaterialView()
 		largeIcon = true
 	})
 
+	icon:setScale(0.5)
 	icon:addTo(self.targetPanel):center(self.targetPanel:getContentSize())
 	self:addEquipStar()
 	self.targetName:setString(Strings:get(config.Name))
@@ -376,11 +362,21 @@ function BagUseScrollMediator:refreshNullMaterialPanel(layout, index, _data)
 		addAnim_jiahao:addTo(jiahaoLayer):center(jiahaoLayer:getContentSize())
 	end
 
-	self._tabEnoughHttp["Item" .. index] = self._tabEnoughHttp["Item" .. index] and self._tabEnoughHttp["Item" .. index] or {}
-	self._tabEnoughHttp["Item" .. index].id = _data and {
-		_data.uuId
-	} or {}
-	self._tabEnoughHttp["Item" .. index].isEnough = _data and _data.isEnough or false
+	if _data and _data.useItem then
+		self._tabEnoughHttp["Item" .. index] = self._tabEnoughHttp["Item" .. index] and self._tabEnoughHttp["Item" .. index] or {}
+		self._tabEnoughHttp["Item" .. index].id = _data and {
+			{
+				[_data.id] = 1
+			}
+		} or {}
+		self._tabEnoughHttp["Item" .. index].isEnough = _data and _data.isEnough or false
+	else
+		self._tabEnoughHttp["Item" .. index] = self._tabEnoughHttp["Item" .. index] and self._tabEnoughHttp["Item" .. index] or {}
+		self._tabEnoughHttp["Item" .. index].id = _data and {
+			_data.uuId
+		} or {}
+		self._tabEnoughHttp["Item" .. index].isEnough = _data and _data.isEnough or false
+	end
 
 	if _data then
 		local selectPanel = layout:getChildByFullName("selectPanel")
@@ -413,19 +409,39 @@ function BagUseScrollMediator:refreshNullMaterialPanel(layout, index, _data)
 	numBg:setVisible(false)
 	haveNum:setString("")
 	needNum:setString("")
+
+	if _data and _data.useItem then
+		numBg:setVisible(true)
+		haveNum:setString("1")
+		needNum:setString("/" .. layout.curMaterial.amount)
+	end
 end
 
-function BagUseScrollMediator:updataSelectMaterial(sender, index, _data, _selectEquipId, _selectEquipUUId)
-	local data = {
-		isEnough = true,
-		type = "Equip",
-		amount = 1,
-		id = _selectEquipId,
-		uuId = _selectEquipUUId
-	}
-	local key = _selectEquipId .. "_" .. _selectEquipUUId
+function BagUseScrollMediator:updataSelectMaterial(sender, index, _data, _selectEquipId, _selectEquipUUId, _selectItemId)
+	local data = {}
 
-	self._equipSystem:addComposeUsedEquips(index, key)
+	if _selectItemId == nil then
+		data = {
+			isEnough = true,
+			type = "Equip",
+			useItem = false,
+			amount = 1,
+			id = _selectEquipId,
+			uuId = _selectEquipUUId
+		}
+		local key = _selectEquipId .. "_" .. _selectEquipUUId
+
+		self._equipSystem:addComposeUsedEquips(index, key)
+	else
+		data = {
+			isEnough = true,
+			type = "Item",
+			useItem = true,
+			amount = 1,
+			id = _selectItemId
+		}
+	end
+
 	self:refreshNullMaterialPanel(sender, index, data)
 	self:refreshRedPoint(sender)
 end
@@ -520,14 +536,16 @@ function BagUseScrollMediator:showSourcePath(itemId, hasNum, needNumLbl, layout,
 end
 
 function BagUseScrollMediator:onSelectMaterial(sender, index)
-	local function callBack(_data, _selectEquipId, _selectEquipUUId)
-		self:updataSelectMaterial(sender, index, _data, _selectEquipId, _selectEquipUUId)
+	local function callBack(_data, _selectEquipId, _selectEquipUUId, _selectItemId)
+		self:updataSelectMaterial(sender, index, _data, _selectEquipId, _selectEquipUUId, _selectItemId)
 	end
 
 	local param = {
 		curMaterial = sender.curMaterial,
 		callBack = callBack,
-		index = index
+		index = index,
+		useComposeItem = index == 1,
+		curComposeId = self._curEntryId
 	}
 	local view = self:getInjector():getInstance("BagSelectMaterialView")
 
@@ -563,13 +581,26 @@ function BagUseScrollMediator:addIcon(_data, _parentNode, isMaterial)
 
 	if not numBg then
 		icon:setVisible(false)
-		IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
-			needDelay = true
-		})
+
+		if _data.type == "Equip" then
+			IconFactory:bindClickHander(_parentNode, IconTouchHandler:new(self), data, {
+				touchDisappear = true,
+				swallowTouches = true
+			})
+		else
+			IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
+				needDelay = true
+			})
+		end
 
 		return
+	elseif _data.type == "Equip" then
+		IconFactory:bindClickHander(_parentNode, IconTouchHandler:new(self), data, {
+			touchDisappear = true,
+			swallowTouches = true
+		})
 	else
-		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), data, {
+		IconFactory:bindTouchHander(_parentNode, IconTouchHandler:new(self), data, {
 			needDelay = true
 		})
 	end
@@ -806,6 +837,12 @@ function BagUseScrollMediator:onUseClicked()
 
 		self._bagSystem:requestScrollCompose(data, callback)
 	end
+
+	if not self._canClickBtn then
+		return
+	end
+
+	self._canClickBtn = false
 
 	self:shwoHeChenAnim(#self.materialTab, callBackSucc)
 end

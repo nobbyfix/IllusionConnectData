@@ -28,6 +28,9 @@ function TowerBattleWinMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	local btn = self:getView():getChildByFullName("content.btnStatistic")
+
+	self:getView():getChildByFullName("common_btn_info_1"):setVisible(false)
+
 	local unlockSystem = self:getInjector():getInstance(SystemKeeper)
 
 	if not unlockSystem:isUnlock("DataStatistics") then
@@ -84,6 +87,11 @@ function TowerBattleWinMediator:showHeroPanelAnim()
 				local mcPanel = extMc:getChildByName("lastText")
 
 				secondRewardText:addTo(mcPanel):posite(-2, 1)
+				secondRewardText:ignoreContentAdaptWithSize(false)
+				secondRewardText:setContentSize(cc.size(107, 28))
+				secondRewardText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+				secondRewardText:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
+				secondRewardText:setString(Strings:get("BLOCKSP_UI21"))
 			end
 
 			layout:setContentSize(cc.size(100.5, 85))
@@ -124,21 +132,11 @@ function TowerBattleWinMediator:showHeroPanelAnim()
 	self._rewardPanel:setVisible(false)
 
 	local anim = cc.MovieClip:create("stageshengli_fubenjiesuan")
-	local insertNode = anim:getChildByName("insertNode")
-	local winAnim = cc.MovieClip:create("shengliz_jingjijiesuan")
-
-	winAnim:addEndCallback(function ()
-		winAnim:stop()
-	end)
-	winAnim:addTo(insertNode)
-	winAnim:setScale(0.6)
-	winAnim:setPosition(cc.p(90, 110))
-
 	local bgPanel = self._main:getChildByName("heroAndBgPanel")
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 	anim:addCallbackAtFrame(45, function ()
 		anim:stop()
 
@@ -202,9 +200,10 @@ function TowerBattleWinMediator:showHeroPanel()
 		end
 	end
 
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -233,6 +232,10 @@ function TowerBattleWinMediator:showHeroPanel()
 	end
 
 	self:showHeroPanelAnim()
+end
+
+function TowerBattleWinMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function TowerBattleWinMediator:onTouchLayout(sender, eventType)

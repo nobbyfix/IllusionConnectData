@@ -141,6 +141,7 @@ all.Skill_Enemy_YLMNYi_Proud = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -155,6 +156,7 @@ all.Skill_Enemy_YLMNYi_Proud = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -253,6 +255,7 @@ all.Skill_Enemy_YLMNYi_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -267,6 +270,7 @@ all.Skill_Enemy_YLMNYi_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -281,6 +285,7 @@ all.Skill_Enemy_YLMNYi_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -295,6 +300,7 @@ all.Skill_Enemy_YLMNYi_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -309,6 +315,7 @@ all.Skill_Enemy_YLMNYi_Skill = {
 						"STATUS",
 						"DEBUFF",
 						"POISON",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

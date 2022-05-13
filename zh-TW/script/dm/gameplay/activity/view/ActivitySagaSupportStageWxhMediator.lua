@@ -99,7 +99,7 @@ end
 
 function ActivitySagaSupportStageWxhMediator:onRegister()
 	super.onRegister(self)
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_SAGA_SCORE, self, self.updateRedPoint)
 
@@ -171,16 +171,9 @@ end
 function ActivitySagaSupportStageWxhMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		currencyInfo = self._activity:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
-		},
-		complexTitle = {
-			{
-				str = Strings:get("Activity_Saga_UI_35_wxh")
-			}
 		}
 	}
 	local injector = self:getInjector()
@@ -189,13 +182,43 @@ function ActivitySagaSupportStageWxhMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ActivitySagaSupportStageWxhMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		style = 1,
+		currencyInfo = self._activity:getResourcesBanner(),
+		complexTitle = {
+			{
+				str = Strings:get("Activity_Saga_UI_35_wxh")
+			}
+		}
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivitySagaSupportStageWxhMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._enterView = data.enterView or ActivitySupportViewEnter.Stage
 	self._heroId = data.heroId or nil
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 	self:updateRedPoint()
 	self:showChat()
@@ -212,27 +235,19 @@ end
 function ActivitySagaSupportStageWxhMediator:doReset()
 	self:disposeView()
 
-	self._activity = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivitySagaSupportStageWxhMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-
-	if not self._activity then
-		return
-	end
-
 	self._config = self._activity:getActivityConfig()
 	self._periodsInfo = self._activity:getPeriodsInfo()
 	self._periodId = self._periodsInfo.periodId
@@ -282,9 +297,9 @@ function ActivitySagaSupportStageWxhMediator:updateMainView()
 
 	local hd = self._activity:getHeroDataById(self._heroId)
 	local modelId = hd.ModelId
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = modelId
 	})
 
@@ -322,7 +337,7 @@ function ActivitySagaSupportStageWxhMediator:updateMainView()
 
 	itemAddClone:setVisible(false)
 
-	local items = ActivitySupportItems[self._activityId]
+	local items = self._activity:getSupportItems()
 
 	for i = 1, #items do
 		local rewardData = {
@@ -421,9 +436,9 @@ function ActivitySagaSupportStageWxhMediator:updateStageView()
 
 		local hd = self._activity:getHeroDataById(heroId)
 		local modelId = hd.ModelId
-		local img, jsonPath = IconFactory:createRoleIconSprite({
+		local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = modelId
 		})
 

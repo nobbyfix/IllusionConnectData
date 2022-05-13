@@ -25,6 +25,10 @@ function BattleCardWidget:dispose()
 	super.dispose(self)
 end
 
+function BattleCardWidget:isExtraCard()
+	return false
+end
+
 function BattleCardWidget:initSubviews(view)
 	local cardNode = view:getChildByFullName("card_node")
 	self._cardNode = cardNode
@@ -33,6 +37,15 @@ function BattleCardWidget:initSubviews(view)
 	self._lblCost = cardNode:getChildByFullName("energy_lab")
 	self._iconImageNode = cardNode:getChildByFullName("icon_rect.icon_region")
 	self._viewSize = self._iconImageNode:getContentSize()
+
+	self:createMaskNode()
+
+	self._energyIsEnough = true
+
+	self:addCardAnim()
+end
+
+function BattleCardWidget:createMaskNode()
 	local barImgPath = "asset/common/pic_mengban_sms.png"
 	local barImage = cc.Sprite:create(barImgPath)
 	local cardMaskNode = cc.ProgressTimer:create(barImage)
@@ -44,12 +57,9 @@ function BattleCardWidget:initSubviews(view)
 	cardMaskNode:setMidpoint(cc.p(0.5, 0.5))
 	cardMaskNode:offset(0, 5)
 	cardMaskNode:setVisible(false)
-	cardNode:addChild(cardMaskNode, 100)
+	self._cardNode:addChild(cardMaskNode, 100)
 
 	self._cardMaskNode = cardMaskNode
-	self._energyIsEnough = true
-
-	self:addCardAnim()
 end
 
 function BattleCardWidget:hitTest(globalPoint)
@@ -127,11 +137,32 @@ function BattleCardWidget:adjustCost(detail)
 		mc:stop()
 	end)
 	anim:play()
+
+	self._costAnim = anim
 end
 
 function BattleCardWidget:playAddBuffAnim()
 	if self._animBuffEffect then
 		self._animBuffEffect:gotoAndPlay(1)
+	end
+end
+
+function BattleCardWidget:updateCardWeight(weight)
+	if not self._weightLabel then
+		self._weightLabel = cc.Label:createWithTTF(weight, TTF_FONT_FZYH_M, 23)
+
+		self._weightLabel:addTo(self:getView()):offset(0, 80)
+		self._weightLabel:setColor(cc.c3b(0, 255, 0))
+	end
+
+	self._weightLabel:setString(string.format("%0.2f", weight))
+end
+
+function BattleCardWidget:maxCardWeight(isMax)
+	if isMax > 0 then
+		self._weightLabel:setScale(1.4)
+	else
+		self._weightLabel:setScale(1)
 	end
 end
 
@@ -151,6 +182,8 @@ function BattleCardWidget:reloadIconImage(imagePath)
 	if self._iconImageNode then
 		self._iconImageNode:loadTexture(imagePath)
 	end
+
+	self._iconRes = imagePath
 end
 
 function BattleCardWidget:updateCardInfo(info)
@@ -158,6 +191,7 @@ function BattleCardWidget:updateCardInfo(info)
 	self._cardId = info.id
 
 	self:adjustCost(info)
+	self:refreshCardAnim()
 end
 
 function BattleCardWidget:freshEnergyStatus(energy, remain)
@@ -213,9 +247,10 @@ function BattleCardWidget:freshEnergyStatus(energy, remain)
 	self:refreshCardAnim()
 end
 
-function BattleCardWidget:freshEnergyAnim(energy, remain)
+function BattleCardWidget:freshEnergyAnim(energy, remain, anim)
 	remain = remain or 0
 	energy = energy or 0
+	animname = anim or "shoupaitishi"
 
 	if energy <= 20 then
 		if self._cardNode:getChildByFullName("huanraoAnim") then
@@ -225,7 +260,7 @@ function BattleCardWidget:freshEnergyAnim(energy, remain)
 		local anim = self._cardNode:getChildByFullName("huanraoAnim")
 
 		if not anim then
-			anim = cc.MovieClip:create("huanrao_shoupaitishi", "BattleMCGroup")
+			anim = cc.MovieClip:create("huanrao_" .. animname, "BattleMCGroup")
 
 			anim:addTo(self._cardNode):setName("huanraoAnim")
 			anim:setPosition(cc.p(0, -35))
@@ -311,9 +346,10 @@ end
 function BattleCardWidget:visitCard()
 end
 
-function BattleCardWidget:addCardAnim()
+function BattleCardWidget:addCardAnim(anim)
 	local view = self:getView()
-	local animEffect = cc.MovieClip:create("guang_shoupaitishi", "BattleMCGroup")
+	local anim = anim or "shoupaitishi"
+	local animEffect = cc.MovieClip:create("guang_" .. anim, "BattleMCGroup")
 
 	animEffect:addTo(view, 1)
 	animEffect:setPosition(cc.p(1, -24))
@@ -324,7 +360,7 @@ function BattleCardWidget:addCardAnim()
 	animEffect:gotoAndStop(1)
 
 	self._cardEffectAnim = animEffect
-	local animCard = cc.MovieClip:create("kapaipai_shoupaitishi", "BattleMCGroup")
+	local animCard = cc.MovieClip:create("kapaipai_" .. anim, "BattleMCGroup")
 
 	animCard:addTo(view, 1):center(view:getContentSize())
 	animCard:addEndCallback(function (fid, mc)
@@ -334,7 +370,7 @@ function BattleCardWidget:addCardAnim()
 	animCard:gotoAndStop(1)
 
 	self._cardAnim = animCard
-	local animBuffEffect = cc.MovieClip:create("xunhuan_shoupaitishi", "BattleMCGroup")
+	local animBuffEffect = cc.MovieClip:create("xunhuan_" .. anim, "BattleMCGroup")
 
 	animBuffEffect:addTo(view, 1)
 	animBuffEffect:setPosition(cc.p(0, -24))
@@ -353,6 +389,9 @@ function BattleCardWidget:addCardAnim()
 
 	self._cardNode:changeParent(cardNode)
 	self._cardNode:setPosition(cc.p(3, 35))
+
+	self._animBuffEffect = animBuffEffect
+
 	self:hideCardAnim()
 end
 
@@ -442,32 +481,7 @@ end
 function HeroCardWidget:setRarity(rarity)
 end
 
-local rangeMap = {
-	Single_Cure = "zhiye_wz01_green.png",
-	Col_Cure = "zhiye_wz03_green.png",
-	X_Attack = "zhiye_wz05_red.png",
-	Single_Attack = "zhiye_wz01_red.png",
-	Card = "zhiye_wzkp_green.png",
-	Random4_Attack = "zhiye_wz04w_red.png",
-	Row_Attack = "zhiye_wz03s_red.png",
-	AllUnit_Word = "zhiye_qt.png",
-	Row_Cure = "zhiye_wz03s_green.png",
-	SingleUnit_Word = "zhiye_dt.png",
-	Single_Atk_Double_Cure = "zhiye_wz03_rg.png",
-	Random3_Attack = "zhiye_wz03w_red.png",
-	CrossUnit_Word = "zhiye_sz.png",
-	ColUnit_Word = "zhiye_zl.png",
-	Summon = "zhiye_wzzh_green.png",
-	RowUnit_Word = "zhiye_zp.png",
-	RandomUnit_Word = "zhiye_fw.png",
-	Cross_Attack = "zhiye_wz05z_red.png",
-	Col_Attack = "zhiye_wz03_red.png",
-	Random1_Attack = "zhiye_wz00w_red.png",
-	All_Cure = "zhiye_wz09_green.png",
-	Cross_Cure = "zhiye_wz05z_green.png",
-	X_Cure = "zhiye_wz05_green.png",
-	All_Attack = "zhiye_wz09_red.png"
-}
+local rangeMap = {}
 
 function HeroCardWidget:setHeroModel(heroInfo)
 	local modelId = heroInfo.model
@@ -483,7 +497,6 @@ function HeroCardWidget:setHeroModel(heroInfo)
 
 	local genre = heroInfo.genre
 	local range = ConfigReader:getDataByNameIdAndKey("RoleModel", modelId, "SkillRange")
-	range = range and rangeMap[range]
 
 	if genre and genre ~= "" then
 		local _, genrePic, imageType = GameStyle:getBatleHeroOccupation(genre)
@@ -494,8 +507,10 @@ function HeroCardWidget:setHeroModel(heroInfo)
 		self._genrePic:setVisible(false)
 	end
 
-	if range then
-		self._rangePic:loadTexture(range, ccui.TextureResType.plistType)
+	if range and range ~= "" then
+		local tag = self._rangePic:getChildByName("tag")
+
+		tag:setString(Strings:get(range))
 		self._rangePic:setVisible(true)
 	else
 		self._rangePic:setVisible(false)
@@ -519,11 +534,11 @@ function HeroCardWidget:setHeroModel(heroInfo)
 	end
 
 	for i = 1, #tagPicArray do
-		local picName = tagPicArray[i] .. ".png"
-		local pic = ccui.ImageView:create(picName, ccui.TextureResType.plistType)
+		local pic = self._rangePic:clone()
 
-		pic:setScale(0.39)
-		pic:addTo(self._tagNode):posite(0, (i - 1) * 22)
+		pic:setVisible(true)
+		pic:getChildByName("tag"):setString(Strings:get(tagPicArray[i]))
+		pic:addTo(self._tagNode):posite(0, (i - 1) * 22 - 3)
 	end
 end
 
@@ -560,6 +575,93 @@ function HeroCardWidget:setDamageAdd(str)
 	if self._damageAddLabel then
 		self._damageAddLabel:setString(str or "")
 	end
+end
+
+ExtraHeroCardWidget = class("ExtraHeroCardWidget", HeroCardWidget, _M)
+
+function ExtraHeroCardWidget:addCardAnim()
+	local view = self:getView()
+	local animEffect = cc.MovieClip:create("guang_jinengpaitishi", "BattleMCGroup")
+
+	animEffect:addTo(view, 1)
+	animEffect:setPosition(cc.p(1, -24))
+	animEffect:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(1)
+	end)
+	animEffect:gotoAndStop(1)
+
+	self._cardEffectAnim = animEffect
+	local animCard = cc.MovieClip:create("kapaipai_jinengpaitishi", "BattleMCGroup")
+
+	animCard:addTo(view, 1):center(view:getContentSize())
+	animCard:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(1)
+	end)
+	animCard:gotoAndStop(1)
+
+	self._cardAnim = animCard
+	local animBuffEffect = cc.MovieClip:create("xunhuan_jinengpaitishi", "BattleMCGroup")
+
+	animBuffEffect:addTo(view, 1)
+	animBuffEffect:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(18)
+	end)
+	animBuffEffect:gotoAndStop(1)
+
+	self._animBuffEffect = animBuffEffect
+	local node = animCard:getChildByFullName("node")
+	local root = cc.Node:create()
+
+	node:addChild(root)
+	root:offset(2, 39.6)
+	animBuffEffect:changeParent(root)
+
+	local cardNode = animBuffEffect:getChildByFullName("card")
+
+	self._cardNode:changeParent(cardNode)
+	self:hideCardAnim()
+	self._cardNode:getChildByName("card_bg"):setVisible(false)
+
+	local icon = animBuffEffect:getChildByFullName("card.icon.icon")
+
+	self._iconImageNode:changeParent(icon)
+	self._iconImageNode:center(icon:getContentSize())
+end
+
+function ExtraHeroCardWidget:freshEnergyAnim(energy, remain)
+	super.freshEnergyAnim(self, energy, remain, "jinengpaitishi")
+end
+
+function ExtraHeroCardWidget:isExtraCard()
+	return true
+end
+
+function ExtraHeroCardWidget:setHeroModel(heroInfo)
+	super.setHeroModel(self, heroInfo)
+	self._rangePic:setVisible(false)
+end
+
+function ExtraHeroCardWidget:getRes()
+	return self._iconRes
+end
+
+function ExtraHeroCardWidget:createMaskNode()
+	local barImgPath = "asset/common/pic_mengban_sms2.png"
+	local barImage = cc.Sprite:create(barImgPath)
+	local cardMaskNode = cc.ProgressTimer:create(barImage)
+
+	cardMaskNode:setType(0)
+	cardMaskNode:setScaleX(-0.95)
+	cardMaskNode:setScaleY(0.95)
+	cardMaskNode:setAnchorPoint(cc.p(0.5, 0.5))
+	cardMaskNode:setMidpoint(cc.p(0.5, 0.5))
+	cardMaskNode:setVisible(false)
+	self._cardNode:addChild(cardMaskNode, 100)
+
+	self._cardMaskNode = cardMaskNode
 end
 
 SkillCardWidget = class("SkillCardWidget", BattleCardWidget, _M)
@@ -618,10 +720,200 @@ function SkillCardWidget:updateCardInfo(info)
 		local tagPic = config.TagPic
 
 		if tagPic then
-			self._rangePic:loadTexture(tagPic .. ".png", ccui.TextureResType.plistType)
+			local tag = self._rangePic:getChildByName("tag")
+
+			tag:setString(Strings:get(tagPic))
 			self._rangePic:setVisible(true)
 		else
 			self._rangePic:setVisible(false)
 		end
+	end
+end
+
+ExtraSkillCardWidget = class("ExtraSkillCardWidget", BattleCardWidget, _M)
+
+ExtraSkillCardWidget:has("_skillId", {
+	is = "r"
+})
+ExtraSkillCardWidget:has("_skillLevel", {
+	is = "r"
+})
+
+function ExtraSkillCardWidget.class:createWidgetNode()
+	local resFile = "asset/ui/SkillCardBattleWidget.csb"
+
+	return cc.CSLoader:createNode(resFile)
+end
+
+function ExtraSkillCardWidget:initSubviews(view)
+	super.initSubviews(self, view)
+
+	self._genrePic = self._cardNode:getChildByFullName("genre")
+	self._skillImage1 = self._cardNode:getChildByFullName("Image")
+	self._bgImageNode = self._cardNode:getChildByFullName("card_bg")
+	self._rangePic = self._cardNode:getChildByFullName("range")
+
+	self._rangePic:setVisible(false)
+end
+
+function ExtraSkillCardWidget:getType()
+	return "skill"
+end
+
+function ExtraSkillCardWidget:isExtraCard()
+	return true
+end
+
+function ExtraSkillCardWidget:setPreviewMod()
+end
+
+function ExtraSkillCardWidget:setNormalMod()
+end
+
+function ExtraSkillCardWidget:createMaskNode()
+	local barImgPath = "asset/common/pic_mengban_sms2.png"
+	local barImage = cc.Sprite:create(barImgPath)
+	local cardMaskNode = cc.ProgressTimer:create(barImage)
+
+	cardMaskNode:setType(0)
+	cardMaskNode:setScaleX(-0.95)
+	cardMaskNode:setScaleY(0.95)
+	cardMaskNode:setAnchorPoint(cc.p(0.5, 0.5))
+	cardMaskNode:setMidpoint(cc.p(0.5, 0.5))
+	cardMaskNode:setVisible(false)
+	self._cardNode:addChild(cardMaskNode, 100)
+
+	self._cardMaskNode = cardMaskNode
+end
+
+function ExtraSkillCardWidget:addCardAnim()
+	local view = self:getView()
+	local animEffect = cc.MovieClip:create("guang_jinengpaitishi", "BattleMCGroup")
+
+	animEffect:addTo(view, 1)
+	animEffect:setPosition(cc.p(1, -24))
+	animEffect:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(1)
+	end)
+	animEffect:gotoAndStop(1)
+
+	self._cardEffectAnim = animEffect
+	local animCard = cc.MovieClip:create("kapaipai_jinengpaitishi", "BattleMCGroup")
+
+	animCard:addTo(view, 1):center(view:getContentSize())
+	animCard:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(1)
+	end)
+	animCard:gotoAndStop(1)
+
+	self._cardAnim = animCard
+	local animBuffEffect = cc.MovieClip:create("xunhuan_jinengpaitishi", "BattleMCGroup")
+
+	animBuffEffect:addTo(view, 1)
+	animBuffEffect:addEndCallback(function (fid, mc)
+		mc:stop()
+		mc:gotoAndPlay(18)
+	end)
+	animBuffEffect:gotoAndStop(1)
+
+	self._animBuffEffect = animBuffEffect
+	local node = animCard:getChildByFullName("node")
+	local root = cc.Node:create()
+
+	node:addChild(root)
+	root:offset(0, 40)
+	animBuffEffect:changeParent(root)
+
+	local cardNode = animBuffEffect:getChildByFullName("card")
+
+	self._cardNode:changeParent(cardNode)
+	self:hideCardAnim()
+	self._cardNode:getChildByName("card_bg"):setVisible(false)
+	self._cardNode:getChildByName("Image"):setVisible(false)
+
+	local icon = animBuffEffect:getChildByFullName("card.icon.icon")
+
+	self._iconImageNode:changeParent(icon)
+	self._iconImageNode:center(icon:getContentSize())
+end
+
+function ExtraSkillCardWidget:simpleShow(isSimple)
+	self._cardEffectAnim:setVisible(not isSimple)
+	self._animBuffEffect:setVisible(not isSimple)
+	self._cardAnim:setVisible(not isSimple)
+
+	self:getView().isSimpleShow = isSimple
+
+	if isSimple then
+		self.disply = self._iconImageNode:clone()
+
+		self.disply:setVisible(true)
+		self.disply:setScale(1.4)
+		self.disply:addTo(self:getView()):center(self:getView():getContentSize())
+		self.disply:offset(20, 50)
+	elseif self.disply then
+		self.disply:removeFromParent()
+
+		self.disply = nil
+	end
+end
+
+function ExtraSkillCardWidget:restoreNormalState(originCardPosition)
+	super.restoreNormalState(self, originCardPosition)
+
+	if self:getView().isSimpleShow then
+		self:simpleShow(false)
+	end
+end
+
+function ExtraSkillCardWidget:freshEnergyAnim(energy, remain)
+	super.freshEnergyAnim(self, energy, remain, "jinengpaitishi")
+end
+
+function ExtraSkillCardWidget:getRes()
+	return self._iconRes
+end
+
+function ExtraSkillCardWidget:setCollesionRule(rule)
+	self._collesionRule = rule
+end
+
+function ExtraSkillCardWidget:getCollesionRule()
+	return self._collesionRule
+end
+
+function ExtraSkillCardWidget:updateCardInfo(info)
+	super.updateCardInfo(self, info)
+
+	self._skillLevel = info.skill.level
+	self._skillId = info.skill.id
+	local config = ConfigReader:getRecordById("TacticsCard", info.id)
+
+	if config then
+		local path = "asset/tacticsCard/"
+		local iconImagePath = path .. config.SkillPic .. ".png"
+
+		self:reloadIconImage(iconImagePath)
+		self._genrePic:loadTexture("TacticsCard_Type_" .. config.Type .. ".png", ccui.TextureResType.plistType)
+		self._bgImageNode:loadTexture("TacticsCard_Bg_" .. config.Type .. ".png", ccui.TextureResType.plistType)
+		self._skillImage1:loadTexture("TacticsCard_Icon_" .. config.Type .. ".png", ccui.TextureResType.plistType)
+		self:setCost(config.SkillCost)
+
+		local tagPic = config.TagPic
+
+		if tagPic then
+			local tag = self._rangePic:getChildByName("tag")
+
+			tag:setString(Strings:get(tagPic))
+			self._rangePic:setVisible(true)
+		else
+			self._rangePic:setVisible(false)
+		end
+
+		local cardRange = config.CardRange
+
+		self:setCollesionRule(cardRange)
 	end
 end

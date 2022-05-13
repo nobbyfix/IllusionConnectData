@@ -277,6 +277,13 @@ function RegularLogicState_NextWave:enter(battleLogic, battleContext, args)
 
 	self._args = args
 	self._updateAction = true
+
+	if self._debugTimer then
+		self._debugTimer:cancel()
+
+		self._debugTimer = nil
+	end
+
 	self._debugTimer = self:startTimer(4000, function ()
 		if self._battleRecorder then
 			self._battleRecorder:recordEvent(kBRMainLine, "Error", {
@@ -704,7 +711,7 @@ function RegularLogicState_DiligentRound:enter(battleLogic, battleContext, args)
 	local allCrossUnits = self._battleField:crossCollectDiligentUnits()
 
 	if next(allCrossUnits) then
-		self:startTimer(self._duration1, function ()
+		self:startTimer(args.duration or self._duration1, function ()
 			self._lessThanLeastTime = false
 
 			self:finish(battleLogic)
@@ -769,15 +776,19 @@ function RegularLogicState_DiligentRound:onMessage(battleLogic, message)
 
 	if self._waiting then
 		self._savedMessage = message
-	elseif message.type == "BOUT_END" then
-		super.onMessage(self, battleLogic, {
-			type = "NEXT_BOUT",
-			args = {
-				result = self._battleContext:getObject("BattleReferee"):getResult()
-			}
-		})
 	else
-		super.onMessage(self, battleLogic, message)
+		if message.type == "BOUT_END" then
+			super.onMessage(self, battleLogic, {
+				type = "NEXT_BOUT",
+				args = {
+					result = self._battleContext:getObject("BattleReferee"):getResult()
+				}
+			})
+		else
+			super.onMessage(self, battleLogic, message)
+		end
+
+		self._savedMessage = nil
 	end
 end
 

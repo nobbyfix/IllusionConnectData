@@ -46,36 +46,42 @@ function RTPKSystem:initialize()
 end
 
 function RTPKSystem:tryEnter()
-	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
-	local unlock, tips = systemKeeper:isUnlock("RTPK")
+	if CommonUtils.GetSwitch("fn_arena_rtpk") then
+		local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+		local unlock, tips = systemKeeper:isUnlock("RTPK")
 
-	if unlock then
-		self:requestRTPKInfo(function ()
-			local status = self._rtpk:getCurStatus()
+		if unlock then
+			self:requestRTPKInfo(function ()
+				local status = self._rtpk:getCurStatus()
 
-			if status == RTPKSeasonStatus.kRest and self:getSeasonNextCD() <= 0 then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("RTPK_SeasonReset_Tip")
-				}))
+				if status == RTPKSeasonStatus.kRest and self:getSeasonNextCD() <= 0 then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("RTPK_SeasonReset_Tip")
+					}))
 
-				return
-			end
+					return
+				end
 
-			if status == RTPKSeasonStatus.kRest then
-				self:dispatch(ShowTipEvent({
-					tip = Strings:get("RTPK_NewSeason_Ready")
-				}))
+				if status == RTPKSeasonStatus.kRest then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("RTPK_NewSeason_Ready")
+					}))
 
-				return
-			end
+					return
+				end
 
-			local view = self:getInjector():getInstance("RTPKMainView")
+				local view = self:getInjector():getInstance("RTPKMainView")
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
-		end)
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {}))
+			end)
+		else
+			self:dispatch(ShowTipEvent({
+				tip = tips
+			}))
+		end
 	else
 		self:dispatch(ShowTipEvent({
-			tip = tips
+			tip = Strings:get("ClubNew_UI_37")
 		}))
 	end
 end
@@ -89,7 +95,31 @@ function RTPKSystem:switchRTPKMainView()
 end
 
 function RTPKSystem:checkShowRed()
+	local status = self:getRTPKState()
+
+	if (status == RTPKSeasonStatus.kNotCanMatch or status == RTPKSeasonStatus.kCanMatch) and self:isInMatchTime() then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local playerId = developSystem:getPlayer():getRid()
+		local key = playerId .. "rtpk_entertime"
+		local lastTime = cc.UserDefault:getInstance():getIntegerForKey(key, 0)
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimestamp()
+		local isSameDay = TimeUtil:isSameDay(lastTime, curTime, {
+			sec = 0,
+			min = 0,
+			hour = 5
+		})
+
+		if not isSameDay then
+			return true
+		end
+	end
+
 	if self:checkGradeRewardRedpoint() then
+		return true
+	end
+
+	if self:checkWinTaskRewardRedpoint() then
 		return true
 	end
 
@@ -128,6 +158,24 @@ function RTPKSystem:checkGradeRewardRedpoint()
 	local gradeInfo = self:getGradeConfigInfo()
 
 	for i, v in ipairs(gradeInfo) do
+		if v.state == RTPKGradeRewardState.kCanGet then
+			return true
+		end
+	end
+
+	return false
+end
+
+function RTPKSystem:checkWinTaskRewardRedpoint()
+	local status = self._rtpk:getCurStatus()
+
+	if status == RTPKSeasonStatus.kRest then
+		return false
+	end
+
+	local data = self._rtpk:getWinTaskData()
+
+	for i, v in ipairs(data) do
 		if v.state == RTPKGradeRewardState.kCanGet then
 			return true
 		end
@@ -219,7 +267,7 @@ function RTPKSystem:getSeasonBuffData()
 	local ruleMap = {}
 	local heroes = ruleConfig.ExcellentHero
 
-	if heroes then
+	if heroes and table.nums(heroes) > 0 then
 		local list = {}
 
 		for i, v in pairs(heroes) do
@@ -244,6 +292,7 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.StarsAttrEffect and ruleConfig.StarsAttrEffect ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.StarsAttrEffect)
 		local data = {
+			iconPath = "st_bg_wxhb.png",
 			buffId = ruleConfig.StarsAttrEffect,
 			name = Strings:get(Strings:get("Crusade_Point_17")),
 			shortDesc = Strings:get(skillConfig.Desc),
@@ -255,6 +304,7 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.AwakenAttrEffect and ruleConfig.AwakenAttrEffect ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.AwakenAttrEffect)
 		local data = {
+			iconPath = "st_bg_jxhb.png",
 			buffId = ruleConfig.AwakenAttrEffect,
 			name = Strings:get(Strings:get("Crusade_Point_18")),
 			shortDesc = Strings:get(skillConfig.Desc),
@@ -266,8 +316,11 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.ConfigLevelLimitID and ruleConfig.ConfigLevelLimitID ~= "" then
 		local lv = DataReader:getDataByNameIdAndKey("ConfigLevelLimit", ruleConfig.ConfigLevelLimitID, "StandardLv")
 		local data = {
-			shortDesc = "",
+			iconPath = "ico_rtpk_faircombat.png",
 			name = Strings:get("SpPower_ShowName"),
+			shortDesc = Strings:get("RTPK_Bonus_FairPower", {
+				level = lv
+			}),
 			desc = Strings:get("RTPK_SpPowerDesc", {
 				level = lv
 			})
@@ -278,9 +331,10 @@ function RTPKSystem:getSeasonBuffData()
 	if ruleConfig.SeasonSkill and ruleConfig.SeasonSkill ~= "" then
 		local skillConfig = ConfigReader:getRecordById("Skill", ruleConfig.SeasonSkill)
 		local data = {
-			shortDesc = "",
+			iconPath = "ico_rtpk_buff.png",
 			buffId = ruleConfig.SeasonSkill,
-			name = Strings:get(skillConfig.Name),
+			name = Strings:get("RTPK_BonusPopUp_Buff"),
+			shortDesc = Strings:get("RTPK_BonusPopUp_Buff"),
 			desc = Strings:get(skillConfig.Desc, {
 				fontSize = 20,
 				fontName = TTF_FONT_FZYH_M
@@ -373,6 +427,20 @@ function RTPKSystem:checkSeasonData(callback)
 	end
 end
 
+function RTPKSystem:isDoubleScore()
+	local status = self._rtpk:getCurStatus()
+
+	if (status == RTPKSeasonStatus.kNotCanMatch or status == RTPKSeasonStatus.kCanMatch) and self:isInMatchTime() then
+		local doubleTimes = self._rtpk:getDoubleTimes()
+
+		if doubleTimes > 0 then
+			return true
+		end
+	end
+
+	return false
+end
+
 function RTPKSystem:requestGetReward(data, callback)
 	self._rtpkService:requestGetReward(data, function (response)
 		if response.resCode == GS_SUCCESS then
@@ -438,11 +506,13 @@ function RTPKSystem:getIsRecommend(heroId)
 	local ruleConfig = ConfigReader:getRecordById("RTPKRule", ruleId)
 	local HeroBase = ConfigReader:getRecordById("HeroBase", heroId)
 
-	for k, v in pairs(ruleConfig.ExcellentHero) do
-		if v.Hero then
-			for index, id in pairs(v.Hero) do
-				if id == HeroBase.Id then
-					return true
+	if ruleConfig.ExcellentHero then
+		for k, v in pairs(ruleConfig.ExcellentHero) do
+			if v.Hero then
+				for index, id in pairs(v.Hero) do
+					if id == HeroBase.Id then
+						return true
+					end
 				end
 			end
 		end
@@ -457,11 +527,13 @@ function RTPKSystem:getRecomandHeroIds()
 	local recomand = ruleConfig.ExcellentHero
 	local recomandHeroIds = {}
 
-	for i = 1, #recomand do
-		local heroIds = recomand[i].Hero
+	if recomand then
+		for i = 1, #recomand do
+			local heroIds = recomand[i].Hero
 
-		for j = 1, #heroIds do
-			table.insert(recomandHeroIds, heroIds[j])
+			for j = 1, #heroIds do
+				table.insert(recomandHeroIds, heroIds[j])
+			end
 		end
 	end
 
@@ -519,7 +591,6 @@ end
 function RTPKSystem:requestRTPKInfo(callback, blockUI)
 	self._rtpkService:requestGetInfo({}, function (response)
 		if response.resCode == GS_SUCCESS then
-			dump(response.data, "requestGetInfo")
 			self._rtpk:synchronize(response.data)
 
 			if callback then
@@ -593,6 +664,32 @@ function RTPKSystem:requestRobotBattleSurrender(data, callback)
 			end
 
 			self:showResultView(response.data)
+		end
+	end, true)
+end
+
+function RTPKSystem:requestTotalWinReward(data, callback)
+	self._rtpkService:requestTotalWinReward(data, function (response)
+		if response.resCode == GS_SUCCESS then
+			self._rtpk:synchronize(response.data)
+
+			local rewards = response.data.rewards
+
+			if rewards and next(rewards) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = rewards
+				}))
+			end
+
+			if callback then
+				callback(response)
+			end
+
+			self:dispatch(Event:new(EVT_REFRESH_GRADE_REWARD_DONE))
 		end
 	end, true)
 end
@@ -738,6 +835,27 @@ function RTPKSystem:enterRobotBattle(data)
 		outSelf:requestRobotBattleFinish(param)
 	end
 
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("MasterCutInView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+			friend = friend,
+			enemy = enemy
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	local ruleId = self._rtpk:getSeasonRule()
 	local ruleConfig = ConfigReader:getRecordById("RTPKRule", ruleId)
 	local bgRes = ruleConfig.BattleBackground or "battle_scene_1"
@@ -755,6 +873,7 @@ function RTPKSystem:enterRobotBattle(data)
 			opPanelClazz = "BattleUIMediator",
 			mainView = "rtpvpRobotBattle",
 			opPanelRes = "asset/ui/BattleUILayer.csb",
+			isShowEmoji = true,
 			canChangeSpeedLevel = true,
 			finalHitShow = true,
 			battleSettingType = SettingBattleTypes.kArena,
@@ -835,6 +954,34 @@ function RTPKSystem:enterPvpBattle(data)
 		settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
 	end
 
+	function battleDelegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+		local delegate = self
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = settingSystem:getInjector():getInstance("MasterCutInView")
+
+		if battleDelegate:getMainPlayerId() == friend.rid then
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = friend,
+				enemy = enemy
+			}, popupDelegate))
+		else
+			settingSystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, nil, {
+				friend = enemy,
+				enemy = friend
+			}, popupDelegate))
+		end
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	local data = {
 		isReplay = false,
 		battleData = battleData,
@@ -844,6 +991,7 @@ function RTPKSystem:enterPvpBattle(data)
 		viewConfig = {
 			mainView = "rtpvpBattle",
 			opPanelRes = "asset/ui/BattleUILayer.csb",
+			isShowEmoji = true,
 			disableHeroTip = true,
 			canChangeSpeedLevel = false,
 			opPanelClazz = "BattleUIMediator",
@@ -888,5 +1036,24 @@ function RTPKSystem:enterPvpBattle(data)
 end
 
 function RTPKSystem:doReset()
-	self:requestRTPKInfo(nil, false)
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips = systemKeeper:isUnlock("RTPK")
+
+	if unlock then
+		self:requestRTPKInfo(nil, false)
+	end
+end
+
+function RTPKSystem:requestUseEmoji(emojiList)
+	local params = {
+		list = emojiList
+	}
+
+	self._rtpkService:requestUseEmoji(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("RTPK_EMO_Tips3")
+			}))
+		end
+	end, true)
 end

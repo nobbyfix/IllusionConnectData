@@ -86,6 +86,7 @@ function PetraceAwardMediator:addRankAwardPanel(cell, rewardId)
 
 	local reward = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "Reward") or ""
 	local rank = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "Rank") or {}
+	local dartnum = ConfigReader:getDataByNameIdAndKey("RankReward", rewardId, "DartNum") or 0
 	local panel = self._cellPanel:clone()
 
 	panel:setVisible(true)
@@ -106,16 +107,26 @@ function PetraceAwardMediator:addRankAwardPanel(cell, rewardId)
 
 	rankNum:setString(randDes)
 
+	local text_dartnum = panel:getChildByName("text_score")
+
+	text_dartnum:setString(dartnum)
+
 	local rewards = ConfigReader:getDataByNameIdAndKey("Reward", reward, "Content") or {}
 	local iconPanel = panel:getChildByName("icon")
 	local length = #rewards
 
 	for i = 1, length do
-		local icon = IconFactory:createRewardIcon(rewards[i])
+		local icon = IconFactory:createRewardIcon(rewards[i], {
+			showAmount = true,
+			isWidget = true
+		})
 
 		icon:addTo(iconPanel)
 		icon:setScale(0.7)
-		icon:setPosition(cc.p(iconPanel:getContentSize().width / 2 + (i - 1) * 105, iconPanel:getContentSize().height / 2))
+		icon:setPosition(cc.p(iconPanel:getContentSize().width / 2 + (i - 1) * 94, iconPanel:getContentSize().height / 2))
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewards[i], {
+			needDelay = true
+		})
 	end
 end
 

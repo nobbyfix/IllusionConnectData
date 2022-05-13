@@ -1,10 +1,40 @@
 module(...)
 
 local mappings = {
+	EVT_LOGIN = {
+		url = "sdk.IDPSAnySdk",
+		name = "EVT_LOGIN",
+		type = "@V"
+	},
+	EVT_SWITCH_ACCOUNT = {
+		url = "sdk.IDPSAnySdk",
+		name = "EVT_SWITCH_ACCOUNT",
+		type = "@V"
+	},
+	EVT_LOG_OUT = {
+		url = "sdk.IDPSAnySdk",
+		name = "EVT_LOG_OUT",
+		type = "@V"
+	},
+	EVT_PAY_OFF = {
+		url = "sdk.IDPSAnySdk",
+		name = "EVT_PAY_OFF",
+		type = "@V"
+	},
+	BattleItemMediator = {
+		url = "dm.battle.view.BattleItemMediator",
+		name = "BattleItemMediator",
+		type = "@C"
+	},
 	EVT_REQUEST_LOGIN_SUCC = {
 		url = "dm.launch.login.LoginSystem",
 		name = "EVT_REQUEST_LOGIN_SUCC",
 		type = "@V"
+	},
+	LoginQueueMediator = {
+		url = "dm.launch.login.view.LoginQueueMediator",
+		name = "LoginQueueMediator",
+		type = "@C"
 	},
 	EVT_RTPK_STARTMATCH = {
 		url = "dm.gameplay.rtpk.controller.RTPKSystem",
@@ -46,6 +76,11 @@ local mappings = {
 		name = "RTPKMatchMediator",
 		type = "@C"
 	},
+	RTPKEmojiMediator = {
+		url = "dm.gameplay.rtpk.view.RTPKEmojiMediator",
+		name = "RTPKEmojiMediator",
+		type = "@C"
+	},
 	RTPKNewSeasonTipsMediator = {
 		url = "dm.gameplay.rtpk.view.RTPKNewSeasonTipsMediator",
 		name = "RTPKNewSeasonTipsMediator",
@@ -84,6 +119,11 @@ local mappings = {
 	ClubBossGainRewardMediator = {
 		url = "dm.gameplay.club.view.ClubBossGainRewardMediator",
 		name = "ClubBossGainRewardMediator",
+		type = "@C"
+	},
+	ClubNewInfoMediator = {
+		url = "dm.gameplay.club.view.ClubNewInfoMediator",
+		name = "ClubNewInfoMediator",
 		type = "@C"
 	},
 	ClubTechnologyMediator = {
@@ -136,9 +176,19 @@ local mappings = {
 		name = "ClubAuditLimitTipMediator",
 		type = "@C"
 	},
+	ClubNewHallMediator = {
+		url = "dm.gameplay.club.view.ClubNewHallMediator",
+		name = "ClubNewHallMediator",
+		type = "@C"
+	},
 	ClubAuditMediator = {
 		url = "dm.gameplay.club.view.ClubAuditMediator",
 		name = "ClubAuditMediator",
+		type = "@C"
+	},
+	ClubSNSTipMediator = {
+		url = "dm.gameplay.club.view.ClubSNSTipMediator",
+		name = "ClubSNSTipMediator",
 		type = "@C"
 	},
 	ClubMailTipMediator = {
@@ -206,6 +256,21 @@ local mappings = {
 		name = "ClubBossActivityScoreMediator",
 		type = "@C"
 	},
+	ClubBossRecordMediator = {
+		url = "dm.gameplay.club.view.ClubBossRecordMediator",
+		name = "ClubBossRecordMediator",
+		type = "@C"
+	},
+	ClubNewTechnologyMediator = {
+		url = "dm.gameplay.club.view.ClubNewTechnologyMediator",
+		name = "ClubNewTechnologyMediator",
+		type = "@C"
+	},
+	ClubMapViewMediator = {
+		url = "dm.gameplay.club.view.ClubMapViewMediator",
+		name = "ClubMapViewMediator",
+		type = "@C"
+	},
 	ClubMediator = {
 		url = "dm.gameplay.club.view.ClubMediator",
 		name = "ClubMediator",
@@ -221,29 +286,49 @@ local mappings = {
 		name = "ClubTextMediator",
 		type = "@C"
 	},
+	DebugBustShowViewMediator2 = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator2",
+		name = "DebugBustShowViewMediator2",
+		type = "@C"
+	},
+	DebugBustShowViewMediator3 = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator3",
+		name = "DebugBustShowViewMediator3",
+		type = "@C"
+	},
 	HomeMediator = {
-		url = "dm.gameplay.home.view.home.HomeMediator",
+		url = "dm.gameplay.home.view.HomeMediator",
 		name = "HomeMediator",
 		type = "@C"
 	},
+	DebugShowBustAniUnAwake = {
+		url = "dm.gameplay.home.view.DebugShowBustAniUnAwake",
+		name = "DebugShowBustAniUnAwake",
+		type = "@C"
+	},
 	SetHomeBgPopMediator = {
-		url = "dm.gameplay.home.view.home.SetHomeBgPopMediator",
+		url = "dm.gameplay.home.view.SetHomeBgPopMediator",
 		name = "SetHomeBgPopMediator",
 		type = "@C"
 	},
 	DailyGiftViewMediator = {
-		url = "dm.gameplay.home.view.home.DailyGiftViewMediator",
+		url = "dm.gameplay.home.view.DailyGiftViewMediator",
 		name = "DailyGiftViewMediator",
 		type = "@C"
 	},
 	HeroInteractionViewMediator = {
-		url = "dm.gameplay.home.view.home.HeroInteractionViewMediator",
+		url = "dm.gameplay.home.view.HeroInteractionViewMediator",
 		name = "HeroInteractionViewMediator",
 		type = "@C"
 	},
 	SetBoardHeroPopMediator = {
-		url = "dm.gameplay.home.view.home.SetBoardHeroPopMediator",
+		url = "dm.gameplay.home.view.SetBoardHeroPopMediator",
 		name = "SetBoardHeroPopMediator",
+		type = "@C"
+	},
+	DebugBustShowViewMediator = {
+		url = "dm.gameplay.home.view.DebugBustShowViewMediator",
+		name = "DebugBustShowViewMediator",
 		type = "@C"
 	},
 	EVT_RECRUIT_SUCC = {
@@ -281,6 +366,11 @@ local mappings = {
 		name = "RecruitTipMediator",
 		type = "@C"
 	},
+	RecruitRewardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitRewardMediator",
+		name = "RecruitRewardMediator",
+		type = "@C"
+	},
 	RecruitHeroPreviewMediator = {
 		url = "dm.gameplay.recruit.view.RecruitHeroPreviewMediator",
 		name = "RecruitHeroPreviewMediator",
@@ -289,6 +379,11 @@ local mappings = {
 	RecruitHeroBoxMediator = {
 		url = "dm.gameplay.recruit.view.RecruitHeroBoxMediator",
 		name = "RecruitHeroBoxMediator",
+		type = "@C"
+	},
+	RecruitNewDrawCardMediator = {
+		url = "dm.gameplay.recruit.view.RecruitNewDrawCardMediator",
+		name = "RecruitNewDrawCardMediator",
 		type = "@C"
 	},
 	RecruitMainMediator = {
@@ -331,6 +426,11 @@ local mappings = {
 		name = "BaseRewardBoxMediator",
 		type = "@C"
 	},
+	ShowSomeWordTipsMediator = {
+		url = "dm.gameplay.popup.ShowSomeWordTipsMediator",
+		name = "ShowSomeWordTipsMediator",
+		type = "@C"
+	},
 	GetRewardMediator = {
 		url = "dm.gameplay.popup.GetRewardMediator",
 		name = "GetRewardMediator",
@@ -339,6 +439,11 @@ local mappings = {
 	EntranceGodhandMediator = {
 		url = "dm.gameplay.popup.EntranceGodhandMediator",
 		name = "EntranceGodhandMediator",
+		type = "@C"
+	},
+	NativeWebViewMediator = {
+		url = "dm.gameplay.popup.NativeWebViewMediator",
+		name = "NativeWebViewMediator",
 		type = "@C"
 	},
 	AlertMediator = {
@@ -351,6 +456,11 @@ local mappings = {
 		name = "SourceMediator",
 		type = "@C"
 	},
+	ComposeToEquipTipsMediator = {
+		url = "dm.gameplay.popup.ComposeToEquipTipsMediator",
+		name = "ComposeToEquipTipsMediator",
+		type = "@C"
+	},
 	NewSystemUnlockMediator = {
 		url = "dm.gameplay.popup.NewSystemUnlockMediator",
 		name = "NewSystemUnlockMediator",
@@ -359,6 +469,11 @@ local mappings = {
 	BuffTipsMediator = {
 		url = "dm.gameplay.popup.BuffTipsMediator",
 		name = "BuffTipsMediator",
+		type = "@C"
+	},
+	GameIntroduceMediator = {
+		url = "dm.gameplay.popup.GameIntroduceMediator",
+		name = "GameIntroduceMediator",
 		type = "@C"
 	},
 	ItemTipsMediator = {
@@ -394,6 +509,11 @@ local mappings = {
 	FriendListMediator = {
 		url = "dm.gameplay.friend.view.FriendListMediator",
 		name = "FriendListMediator",
+		type = "@C"
+	},
+	FriendBlackMediator = {
+		url = "dm.gameplay.friend.view.FriendBlackMediator",
+		name = "FriendBlackMediator",
 		type = "@C"
 	},
 	EVT_FRIEND_GETFRIENDSLIST_SUCC = {
@@ -531,6 +651,61 @@ local mappings = {
 		name = "PetRaceRuleMediator",
 		type = "@C"
 	},
+	ArenaNewRankMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRankMediator",
+		name = "ArenaNewRankMediator",
+		type = "@C"
+	},
+	ArenaNewDefendTeamMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewDefendTeamMediator",
+		name = "ArenaNewDefendTeamMediator",
+		type = "@C"
+	},
+	ArenaNewRewardMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRewardMediator",
+		name = "ArenaNewRewardMediator",
+		type = "@C"
+	},
+	ArenaNewTeamListMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewTeamListMediator",
+		name = "ArenaNewTeamListMediator",
+		type = "@C"
+	},
+	ArenaNewMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewMediator",
+		name = "ArenaNewMediator",
+		type = "@C"
+	},
+	ArenaNewReportMainMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewReportMainMediator",
+		name = "ArenaNewReportMainMediator",
+		type = "@C"
+	},
+	ArenaNewRivalMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRivalMediator",
+		name = "ArenaNewRivalMediator",
+		type = "@C"
+	},
+	ArenaNewLoseMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewLoseMediator",
+		name = "ArenaNewLoseMediator",
+		type = "@C"
+	},
+	ArenaNewRecordMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRecordMediator",
+		name = "ArenaNewRecordMediator",
+		type = "@C"
+	},
+	ArenaNewTeamMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewTeamMediator",
+		name = "ArenaNewTeamMediator",
+		type = "@C"
+	},
+	ArenaNewRankUpMediator = {
+		url = "dm.gameplay.newArena.view.ArenaNewRankUpMediator",
+		name = "ArenaNewRankUpMediator",
+		type = "@C"
+	},
 	DiffCommand = {
 		url = "dm.gameplay.develop.controller.DiffCommand",
 		name = "DiffCommand",
@@ -636,6 +811,11 @@ local mappings = {
 		name = "MasterUpstarAniMediator",
 		type = "@C"
 	},
+	MasterLeadStageDetailMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageDetailMediator",
+		name = "MasterLeadStageDetailMediator",
+		type = "@C"
+	},
 	MasterDebrisChangeTipMediator = {
 		url = "dm.gameplay.develop.view.master.MasterDebrisChangeTipMediator",
 		name = "MasterDebrisChangeTipMediator",
@@ -649,6 +829,11 @@ local mappings = {
 	MasterLeaderSkillMediator = {
 		url = "dm.gameplay.develop.view.master.MasterLeaderSkillMediator",
 		name = "MasterLeaderSkillMediator",
+		type = "@C"
+	},
+	MasterCutInMediator = {
+		url = "dm.gameplay.develop.view.master.MasterCutInMediator",
+		name = "MasterCutInMediator",
 		type = "@C"
 	},
 	MasterEmblemQualityUpMediator = {
@@ -676,6 +861,11 @@ local mappings = {
 		name = "MasterCultivateMediator",
 		type = "@C"
 	},
+	MasterLeadStageAwakeMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageAwakeMediator",
+		name = "MasterLeadStageAwakeMediator",
+		type = "@C"
+	},
 	NewMasterMediator = {
 		url = "dm.gameplay.develop.view.master.NewMasterMediator",
 		name = "NewMasterMediator",
@@ -689,6 +879,11 @@ local mappings = {
 	MasterEnterMediator = {
 		url = "dm.gameplay.develop.view.master.MasterEnterMediator",
 		name = "MasterEnterMediator",
+		type = "@C"
+	},
+	MasterLeadStageMediator = {
+		url = "dm.gameplay.develop.view.master.MasterLeadStageMediator",
+		name = "MasterLeadStageMediator",
 		type = "@C"
 	},
 	HeroSoulDimondUpTipMediator = {
@@ -786,6 +981,11 @@ local mappings = {
 		name = "HeroLevelUpTipMediator",
 		type = "@C"
 	},
+	HeroGeneralFragmentMeditor = {
+		url = "dm.gameplay.develop.view.herostrength.HeroGeneralFragmentMeditor",
+		name = "HeroGeneralFragmentMeditor",
+		type = "@C"
+	},
 	HeroStarItemSelectMediator = {
 		url = "dm.gameplay.develop.view.herostrength.HeroStarItemSelectMediator",
 		name = "HeroStarItemSelectMediator",
@@ -826,6 +1026,11 @@ local mappings = {
 		name = "HeroStrengthSkillMediator",
 		type = "@C"
 	},
+	BagURMapRewardMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapRewardMediator",
+		name = "BagURMapRewardMediator",
+		type = "@C"
+	},
 	BagSelectMaterialMediator = {
 		url = "dm.gameplay.develop.view.bag.BagSelectMaterialMediator",
 		name = "BagSelectMaterialMediator",
@@ -836,9 +1041,24 @@ local mappings = {
 		name = "BagGiftChooseOneMediator",
 		type = "@C"
 	},
+	BagURMapMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapMediator",
+		name = "BagURMapMediator",
+		type = "@C"
+	},
+	BagURExhangeMeditor = {
+		url = "dm.gameplay.develop.view.bag.BagURExhangeMeditor",
+		name = "BagURExhangeMeditor",
+		type = "@C"
+	},
 	BagUseScrollMediator = {
 		url = "dm.gameplay.develop.view.bag.BagUseScrollMediator",
 		name = "BagUseScrollMediator",
+		type = "@C"
+	},
+	BagURMapViewDetailMediator = {
+		url = "dm.gameplay.develop.view.bag.BagURMapViewDetailMediator",
+		name = "BagURMapViewDetailMediator",
 		type = "@C"
 	},
 	BagBatchUseSellMediator = {
@@ -1056,6 +1276,16 @@ local mappings = {
 		name = "EVT_ACTIVITY_CLOSE",
 		type = "@V"
 	},
+	EVT_ACTIVITY_ZERO_EXPORTPOINT = {
+		url = "dm.gameplay.activity.model.zero.ActivityZero",
+		name = "EVT_ACTIVITY_ZERO_EXPORTPOINT",
+		type = "@V"
+	},
+	ActivityZeroTaskAchievementMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroTaskAchievementMediator",
+		name = "ActivityZeroTaskAchievementMediator",
+		type = "@C"
+	},
 	RechargeActivityMediator = {
 		url = "dm.gameplay.activity.view.RechargeActivityMediator",
 		name = "RechargeActivityMediator",
@@ -1069,11 +1299,6 @@ local mappings = {
 	ActivityBlockDectiveMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockDectiveMediator",
 		name = "ActivityBlockDectiveMediator",
-		type = "@C"
-	},
-	AccumulatedLoginMediator = {
-		url = "dm.gameplay.activity.view.AccumulatedLoginMediator",
-		name = "AccumulatedLoginMediator",
 		type = "@C"
 	},
 	MonsterShopPopupMediator = {
@@ -1096,9 +1321,29 @@ local mappings = {
 		name = "ExchangeActivityMediator",
 		type = "@C"
 	},
+	ActivityBakingMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityBakingMainMediator",
+		name = "ActivityBakingMainMediator",
+		type = "@C"
+	},
+	ActivityKnightMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityKnightMainMediator",
+		name = "ActivityKnightMainMediator",
+		type = "@C"
+	},
 	ActivityEggRewardMediator = {
 		url = "dm.gameplay.activity.view.ActivityEggRewardMediator",
 		name = "ActivityEggRewardMediator",
+		type = "@C"
+	},
+	ActivityPointDetailRuleMediator = {
+		url = "dm.gameplay.activity.view.ActivityPointDetailRuleMediator",
+		name = "ActivityPointDetailRuleMediator",
+		type = "@C"
+	},
+	ActivityFireMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityFireMainMediator",
+		name = "ActivityFireMainMediator",
 		type = "@C"
 	},
 	MCInfoPopMediator = {
@@ -1106,9 +1351,19 @@ local mappings = {
 		name = "MCInfoPopMediator",
 		type = "@C"
 	},
+	ActivityReturnLetterMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnLetterMediator",
+		name = "ActivityReturnLetterMediator",
+		type = "@C"
+	},
 	EliteTaskActivityMediator = {
 		url = "dm.gameplay.activity.view.EliteTaskActivityMediator",
 		name = "EliteTaskActivityMediator",
+		type = "@C"
+	},
+	ActivityMailMediator = {
+		url = "dm.gameplay.activity.view.ActivityMailMediator",
+		name = "ActivityMailMediator",
 		type = "@C"
 	},
 	CommonEightDayLoginMediator = {
@@ -1124,6 +1379,16 @@ local mappings = {
 	ActivitySagaWinMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaWinMediator",
 		name = "ActivitySagaWinMediator",
+		type = "@C"
+	},
+	ActivityZeroTaskDailyMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroTaskDailyMediator",
+		name = "ActivityZeroTaskDailyMediator",
+		type = "@C"
+	},
+	ActivityTaskStageStarMediator = {
+		url = "dm.gameplay.activity.view.ActivityTaskStageStarMediator",
+		name = "ActivityTaskStageStarMediator",
 		type = "@C"
 	},
 	ActivityTaskCollectStarMediator = {
@@ -1166,6 +1431,11 @@ local mappings = {
 		name = "BaseActivityMediator",
 		type = "@C"
 	},
+	ActivityLogin14CommonMediator = {
+		url = "dm.gameplay.activity.view.ActivityLogin14CommonMediator",
+		name = "ActivityLogin14CommonMediator",
+		type = "@C"
+	},
 	QuestionActivityMediator = {
 		url = "dm.gameplay.activity.view.QuestionActivityMediator",
 		name = "QuestionActivityMediator",
@@ -1176,9 +1446,19 @@ local mappings = {
 		name = "ExtraRewardActivityMediator",
 		type = "@C"
 	},
-	ActivityBlockGoldEggMediator = {
-		url = "dm.gameplay.activity.view.ActivityBlockGoldEggMediator",
-		name = "ActivityBlockGoldEggMediator",
+	ActivitySunflowerMainMediator = {
+		url = "dm.gameplay.activity.view.ActivitySunflowerMainMediator",
+		name = "ActivitySunflowerMainMediator",
+		type = "@C"
+	},
+	ActivityZeroMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMainMediator",
+		name = "ActivityZeroMainMediator",
+		type = "@C"
+	},
+	ActivityPuzzleGameMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameMediator",
+		name = "ActivityPuzzleGameMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportRankMediator = {
@@ -1191,14 +1471,34 @@ local mappings = {
 		name = "ActivitySagaSupportStageMediator",
 		type = "@C"
 	},
+	ActivityCommonMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityCommonMainMediator",
+		name = "ActivityCommonMainMediator",
+		type = "@C"
+	},
 	ActivityBlockMonsterShopMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMonsterShopMediator",
 		name = "ActivityBlockMonsterShopMediator",
 		type = "@C"
 	},
+	ActivityZeroPointDetailMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroPointDetailMediator",
+		name = "ActivityZeroPointDetailMediator",
+		type = "@C"
+	},
+	ActivityDrawCardFeedbackMediator = {
+		url = "dm.gameplay.activity.view.ActivityDrawCardFeedbackMediator",
+		name = "ActivityDrawCardFeedbackMediator",
+		type = "@C"
+	},
 	ActivityStageUnFinishMediator = {
 		url = "dm.gameplay.activity.view.ActivityStageUnFinishMediator",
 		name = "ActivityStageUnFinishMediator",
+		type = "@C"
+	},
+	ReturnActivityTaskReachedMediator = {
+		url = "dm.gameplay.activity.view.ReturnActivityTaskReachedMediator",
+		name = "ReturnActivityTaskReachedMediator",
 		type = "@C"
 	},
 	ActivityPointDetailMediator = {
@@ -1271,14 +1571,39 @@ local mappings = {
 		name = "ActivitySagaSupportClubMediator",
 		type = "@C"
 	},
+	ActivityZeroMapMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMapMediator",
+		name = "ActivityZeroMapMediator",
+		type = "@C"
+	},
+	ActivityPointDetailNewMediator = {
+		url = "dm.gameplay.activity.view.ActivityPointDetailNewMediator",
+		name = "ActivityPointDetailNewMediator",
+		type = "@C"
+	},
 	ImageBoardActivityMediator = {
 		url = "dm.gameplay.activity.view.ImageBoardActivityMediator",
 		name = "ImageBoardActivityMediator",
 		type = "@C"
 	},
+	ActivityNpcRoleDetailMediator = {
+		url = "dm.gameplay.activity.view.ActivityNpcRoleDetailMediator",
+		name = "ActivityNpcRoleDetailMediator",
+		type = "@C"
+	},
 	ActivityBlockTeamMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockTeamMediator",
 		name = "ActivityBlockTeamMediator",
+		type = "@C"
+	},
+	ActivityReturnLetterRewardMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnLetterRewardMediator",
+		name = "ActivityReturnLetterRewardMediator",
+		type = "@C"
+	},
+	ActivityZeroDiceStepMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroDiceStepMediator",
+		name = "ActivityZeroDiceStepMediator",
 		type = "@C"
 	},
 	RechargeTipMediator = {
@@ -1289,6 +1614,11 @@ local mappings = {
 	ActivityExchangeMediator = {
 		url = "dm.gameplay.activity.view.ActivityExchangeMediator",
 		name = "ActivityExchangeMediator",
+		type = "@C"
+	},
+	ActivityFocusOnMediator = {
+		url = "dm.gameplay.activity.view.ActivityFocusOnMediator",
+		name = "ActivityFocusOnMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportMapMediator = {
@@ -1304,6 +1634,16 @@ local mappings = {
 	GameBoardActivityMediator = {
 		url = "dm.gameplay.activity.view.GameBoardActivityMediator",
 		name = "GameBoardActivityMediator",
+		type = "@C"
+	},
+	ActivityReturnMediator = {
+		url = "dm.gameplay.activity.view.ActivityReturnMediator",
+		name = "ActivityReturnMediator",
+		type = "@C"
+	},
+	ActivityZeroSelectMapMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroSelecteMapMediator",
+		name = "ActivityZeroSelectMapMediator",
 		type = "@C"
 	},
 	ActivityStageFinishMediator = {
@@ -1326,9 +1666,19 @@ local mappings = {
 		name = "LoginActivityMediator",
 		type = "@C"
 	},
+	ActivityZeroMapUIMediator = {
+		url = "dm.gameplay.activity.view.ActivityZeroMapUIMediator",
+		name = "ActivityZeroMapUIMediator",
+		type = "@C"
+	},
 	ActivityBlockTaskMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockTaskMediator",
 		name = "ActivityBlockTaskMediator",
+		type = "@C"
+	},
+	ActivityListMediator = {
+		url = "dm.gameplay.activity.view.ActivityListMediator",
+		name = "ActivityListMediator",
 		type = "@C"
 	},
 	FreeStaminaActivityMediator = {
@@ -1346,6 +1696,11 @@ local mappings = {
 		name = "ActivityHeroCollectMediator",
 		type = "@C"
 	},
+	ReturnShopActivityMediator = {
+		url = "dm.gameplay.activity.view.ReturnShopActivityMediator",
+		name = "ReturnShopActivityMediator",
+		type = "@C"
+	},
 	ActivityLoginLoverMediator = {
 		url = "dm.gameplay.activity.view.ActivityLoginLoverMediator",
 		name = "ActivityLoginLoverMediator",
@@ -1361,6 +1716,11 @@ local mappings = {
 		name = "TaskActivityMediator",
 		type = "@C"
 	},
+	ActivityRiddleVoteMediator = {
+		url = "dm.gameplay.activity.view.ActivityRiddleVoteMediator",
+		name = "ActivityRiddleVoteMediator",
+		type = "@C"
+	},
 	ActivityTaskReachedMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskReachedMediator",
 		name = "ActivityTaskReachedMediator",
@@ -1371,6 +1731,26 @@ local mappings = {
 		name = "ActivityBlockSummerExchangeMediator",
 		type = "@C"
 	},
+	ReturnHeroChangeMediator = {
+		url = "dm.gameplay.activity.view.ReturnHeroChangeMediator",
+		name = "ReturnHeroChangeMediator",
+		type = "@C"
+	},
+	ActivityBlockZeroTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockZeroTaskMediator",
+		name = "ActivityBlockZeroTaskMediator",
+		type = "@C"
+	},
+	ActivityBlockMusicMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockMusicMediator",
+		name = "ActivityBlockMusicMediator",
+		type = "@C"
+	},
+	ActivityMapNewMediator = {
+		url = "dm.gameplay.activity.view.ActivityMapNewMediator",
+		name = "ActivityMapNewMediator",
+		type = "@C"
+	},
 	ActivityBlockSummerMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockSummerMediator",
 		name = "ActivityBlockSummerMediator",
@@ -1379,6 +1759,11 @@ local mappings = {
 	MCBuySuccessMediator = {
 		url = "dm.gameplay.activity.view.MCBuySuccessMediator",
 		name = "MCBuySuccessMediator",
+		type = "@C"
+	},
+	ActivityBlockZeroShopMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockZeroShopMediator",
+		name = "ActivityBlockZeroShopMediator",
 		type = "@C"
 	},
 	ActivitySagaBatchUseSellMediator = {
@@ -1396,9 +1781,19 @@ local mappings = {
 		name = "EightDayLoginMediator",
 		type = "@C"
 	},
+	ActivityPuzzleGameTaskMediator = {
+		url = "dm.gameplay.activity.view.ActivityPuzzleGameTaskMediator",
+		name = "ActivityPuzzleGameTaskMediator",
+		type = "@C"
+	},
 	ActivityTaskMonthCardMediator = {
 		url = "dm.gameplay.activity.view.ActivityTaskMonthCardMediator",
 		name = "ActivityTaskMonthCardMediator",
+		type = "@C"
+	},
+	TimeLimitShopActivityMediator = {
+		url = "dm.gameplay.activity.view.TimeLimitShopActivityMediator",
+		name = "TimeLimitShopActivityMediator",
 		type = "@C"
 	},
 	ActivityTaskCollectMediator = {
@@ -1411,9 +1806,19 @@ local mappings = {
 		name = "ActivityFateEncountersMediator",
 		type = "@C"
 	},
+	ActivityCollapsedMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityCollapsedMainMediator",
+		name = "ActivityCollapsedMainMediator",
+		type = "@C"
+	},
 	ActivityBlockMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockMediator",
 		name = "ActivityBlockMediator",
+		type = "@C"
+	},
+	ReturnActivityLoginMediator = {
+		url = "dm.gameplay.activity.view.ReturnActivityLoginMediator",
+		name = "ReturnActivityLoginMediator",
 		type = "@C"
 	},
 	ActivitySagaSupportScheduleMediator = {
@@ -1466,6 +1871,41 @@ local mappings = {
 		name = "MailMediator",
 		type = "@C"
 	},
+	DreamHouseSystem = {
+		url = "dm.gameplay.dreamHouse.controller.DreamHouseSystem",
+		name = "DreamHouseSystem",
+		type = "@C"
+	},
+	DreamHousePassMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHousePassMediator",
+		name = "DreamHousePassMediator",
+		type = "@C"
+	},
+	DreamHouseDetailMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseDetailMediator",
+		name = "DreamHouseDetailMediator",
+		type = "@C"
+	},
+	DreamHouseBattleEndMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseBattleEndMediator",
+		name = "DreamHouseBattleEndMediator",
+		type = "@C"
+	},
+	DreamHouseTeamMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseTeamMediator",
+		name = "DreamHouseTeamMediator",
+		type = "@C"
+	},
+	DreamHouseMainMediator = {
+		url = "dm.gameplay.dreamHouse.view.DreamHouseMainMediator",
+		name = "DreamHouseMainMediator",
+		type = "@C"
+	},
+	GalleryPartnerPastCell = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerPastCell",
+		name = "GalleryPartnerPastCell",
+		type = "@C"
+	},
 	GalleryMemoryListMediator = {
 		url = "dm.gameplay.gallery.view.GalleryMemoryListMediator",
 		name = "GalleryMemoryListMediator",
@@ -1481,6 +1921,11 @@ local mappings = {
 		name = "GalleryPartnerMediator",
 		type = "@C"
 	},
+	GalleryBookMediator = {
+		url = "dm.gameplay.gallery.view.GalleryBookMediator",
+		name = "GalleryBookMediator",
+		type = "@C"
+	},
 	GalleryAlbumMediator = {
 		url = "dm.gameplay.gallery.view.GalleryAlbumMediator",
 		name = "GalleryAlbumMediator",
@@ -1494,6 +1939,16 @@ local mappings = {
 	GalleryDateMediator = {
 		url = "dm.gameplay.gallery.view.GalleryDateMediator",
 		name = "GalleryDateMediator",
+		type = "@C"
+	},
+	GalleryPartnerNewMediator = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerNewMediator",
+		name = "GalleryPartnerNewMediator",
+		type = "@C"
+	},
+	GalleryPartnerInfoNewMediator = {
+		url = "dm.gameplay.gallery.view.GalleryPartnerInfoNewMediator",
+		name = "GalleryPartnerInfoNewMediator",
 		type = "@C"
 	},
 	GalleryPartnerRewardMediator = {
@@ -1519,6 +1974,11 @@ local mappings = {
 	GalleryMemoryInfoMediator = {
 		url = "dm.gameplay.gallery.view.GalleryMemoryInfoMediator",
 		name = "GalleryMemoryInfoMediator",
+		type = "@C"
+	},
+	GalleryGiftCellWidget = {
+		url = "dm.gameplay.gallery.view.GalleryGiftCellWidget",
+		name = "GalleryGiftCellWidget",
 		type = "@C"
 	},
 	GalleryAlbumShotsMediator = {
@@ -1651,6 +2111,11 @@ local mappings = {
 		name = "ShopPackageMainMediator",
 		type = "@C"
 	},
+	ShopSurfaceNewMediator = {
+		url = "dm.gameplay.shop.view.ShopSurfaceNewMediator",
+		name = "ShopSurfaceNewMediator",
+		type = "@C"
+	},
 	ShopBuySurfaceMediator = {
 		url = "dm.gameplay.shop.view.ShopBuySurfaceMediator",
 		name = "ShopBuySurfaceMediator",
@@ -1676,6 +2141,11 @@ local mappings = {
 		name = "ShopBuyPackageMediator",
 		type = "@C"
 	},
+	ShopCoopExchangeBuyMediator = {
+		url = "dm.gameplay.shop.view.ShopCoopExchangeBuyMediator",
+		name = "ShopCoopExchangeBuyMediator",
+		type = "@C"
+	},
 	ShopMonthCardMediator = {
 		url = "dm.gameplay.shop.view.ShopMonthCardMediator",
 		name = "ShopMonthCardMediator",
@@ -1689,6 +2159,11 @@ local mappings = {
 	ShopRecommendMediator = {
 		url = "dm.gameplay.shop.view.ShopRecommendMediator",
 		name = "ShopRecommendMediator",
+		type = "@C"
+	},
+	ShopHistoryMediator = {
+		url = "dm.gameplay.shop.view.ShopHistoryMediator",
+		name = "ShopHistoryMediator",
 		type = "@C"
 	},
 	ShopNormalMediator = {
@@ -1716,9 +2191,19 @@ local mappings = {
 		name = "ShopResetMediator",
 		type = "@C"
 	},
+	ShopCoopExchangeMediator = {
+		url = "dm.gameplay.shop.view.ShopCoopExchangeMediator",
+		name = "ShopCoopExchangeMediator",
+		type = "@C"
+	},
 	ShopBuyMonthCardFMediator = {
 		url = "dm.gameplay.shop.view.ShopBuyMonthCardFMediator",
 		name = "ShopBuyMonthCardFMediator",
+		type = "@C"
+	},
+	ShopURExchangeMediator = {
+		url = "dm.gameplay.shop.view.ShopURExchangeMediator",
+		name = "ShopURExchangeMediator",
 		type = "@C"
 	},
 	ShopDebrisSellMediator = {
@@ -1786,6 +2271,11 @@ local mappings = {
 		name = "CrusadeSystem",
 		type = "@C"
 	},
+	CrusadeWorldRuleMediator = {
+		url = "dm.gameplay.crusade.view.CrusadeWorldRuleMediator",
+		name = "CrusadeWorldRuleMediator",
+		type = "@C"
+	},
 	CrusadePowerMediator = {
 		url = "dm.gameplay.crusade.view.CrusadePowerMediator",
 		name = "CrusadePowerMediator",
@@ -1834,6 +2324,11 @@ local mappings = {
 	ExploreMapCaseAlertMediator = {
 		url = "dm.gameplay.explore.view.ExploreMapCaseAlertMediator",
 		name = "ExploreMapCaseAlertMediator",
+		type = "@C"
+	},
+	ExploreSweepMediator = {
+		url = "dm.gameplay.explore.view.ExploreSweepMediator",
+		name = "ExploreSweepMediator",
 		type = "@C"
 	},
 	ExploreShopMediator = {
@@ -2106,6 +2601,26 @@ local mappings = {
 		name = "EVT_DARTS_PASSGAME_SUCC",
 		type = "@V"
 	},
+	EVT_JUMP_PLAYAGAIN = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_PLAYAGAIN",
+		type = "@V"
+	},
+	EVT_JUMP_RESULTCLOSE = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_RESULTCLOSE",
+		type = "@V"
+	},
+	EVT_JUMP_REWARDCONFIRM = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_REWARDCONFIRM",
+		type = "@V"
+	},
+	EVT_JUMP_QUIT_SUCC = {
+		url = "dm.gameplay.miniGame.controller.JumpSystem",
+		name = "EVT_JUMP_QUIT_SUCC",
+		type = "@V"
+	},
 	EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS = {
 		url = "dm.gameplay.miniGame.MiniGameConfig",
 		name = "EVT_ACTIVITY_MINIGAME_REQUEST_ENTER_SUCCESS",
@@ -2185,6 +2700,11 @@ local mappings = {
 		url = "dm.gameplay.miniGame.MiniGameConfig",
 		name = "EVT_CLUB_MINIGAME_SWEEEP_SCUESS",
 		type = "@V"
+	},
+	JumpMediator = {
+		url = "dm.gameplay.miniGame.view.jump.JumpMediator",
+		name = "JumpMediator",
+		type = "@C"
 	},
 	MiniGameRankMediator = {
 		url = "dm.gameplay.miniGame.view.common.MiniGameRankMediator",
@@ -2486,6 +3006,11 @@ local mappings = {
 		name = "StageBoxRewardMediator",
 		type = "@C"
 	},
+	ChangeTeamModelMediator = {
+		url = "dm.gameplay.stage.view.ChangeTeamModelMediator",
+		name = "ChangeTeamModelMediator",
+		type = "@C"
+	},
 	AlertGoStoryPopMediator = {
 		url = "dm.gameplay.stage.view.AlertGoStoryPopMediator",
 		name = "AlertGoStoryPopMediator",
@@ -2666,6 +3191,11 @@ local mappings = {
 		name = "EVT_BUGFEEDBACK_SUCC",
 		type = "@V"
 	},
+	SetHeroShowDetailMediator = {
+		url = "dm.gameplay.setting.view.SetHeroShowDetailMediator",
+		name = "SetHeroShowDetailMediator",
+		type = "@C"
+	},
 	SetAreaPopMediator = {
 		url = "dm.gameplay.setting.view.SetAreaPopMediator",
 		name = "SetAreaPopMediator",
@@ -2674,6 +3204,11 @@ local mappings = {
 	ExitGameMediator = {
 		url = "dm.gameplay.setting.view.ExitGameMediator",
 		name = "ExitGameMediator",
+		type = "@C"
+	},
+	SetHeroShowMediator = {
+		url = "dm.gameplay.setting.view.SetHeroShowMediator",
+		name = "SetHeroShowMediator",
 		type = "@C"
 	},
 	ChangeHeadImgMediator = {
@@ -2689,6 +3224,16 @@ local mappings = {
 	SettingCodeExcMediator = {
 		url = "dm.gameplay.setting.view.SettingCodeExcMediator",
 		name = "SettingCodeExcMediator",
+		type = "@C"
+	},
+	SettingDownloadPackageMediator = {
+		url = "dm.gameplay.setting.view.SettingDownloadPackageMediator",
+		name = "SettingDownloadPackageMediator",
+		type = "@C"
+	},
+	DownloadAlertMediator = {
+		url = "dm.gameplay.setting.view.DownloadAlertMediator",
+		name = "DownloadAlertMediator",
 		type = "@C"
 	},
 	ResourceDownloadMediator = {
@@ -2716,6 +3261,16 @@ local mappings = {
 		name = "GameValueSetMediator",
 		type = "@C"
 	},
+	SetAccountPopMediator = {
+		url = "dm.gameplay.setting.view.SetAccountPopMediator",
+		name = "SetAccountPopMediator",
+		type = "@C"
+	},
+	SetAccountPopupMediator = {
+		url = "dm.gameplay.setting.view.SetAccountPopMediator",
+		name = "SetAccountPopupMediator",
+		type = "@C"
+	},
 	SetSexPopMediator = {
 		url = "dm.gameplay.setting.view.SetSexPopMediator",
 		name = "SetSexPopMediator",
@@ -2724,6 +3279,11 @@ local mappings = {
 	SettingMediator = {
 		url = "dm.gameplay.setting.view.SettingMediator",
 		name = "SettingMediator",
+		type = "@C"
+	},
+	SettingMediatorJP = {
+		url = "dm.gameplay.setting.view.SettingMediatorJP",
+		name = "SettingMediatorJP",
 		type = "@C"
 	},
 	BugFeedbackMediator = {
@@ -2776,6 +3336,61 @@ local mappings = {
 		name = "EVT_BUY_CRYSTAL_SUCC",
 		type = "@V"
 	},
+	LeadStageArenaTeamMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaTeamMediator",
+		name = "LeadStageArenaTeamMediator",
+		type = "@C"
+	},
+	LeadStageArenaLoadingMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaLoadingMediator",
+		name = "LeadStageArenaLoadingMediator",
+		type = "@C"
+	},
+	LeadStageArenaFreshRivalMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaFreshRivalMediator",
+		name = "LeadStageArenaFreshRivalMediator",
+		type = "@C"
+	},
+	LeadStageArenaPlayerInfoViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaPlayerInfoViewMediator",
+		name = "LeadStageArenaPlayerInfoViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaReportViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaReportViewMediator",
+		name = "LeadStageArenaReportViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaMainMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaMainMediator",
+		name = "LeadStageArenaMainMediator",
+		type = "@C"
+	},
+	LeadStageArenaRankViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRankViewMediator",
+		name = "LeadStageArenaRankViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaRewardViewMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRewardViewMediator",
+		name = "LeadStageArenaRewardViewMediator",
+		type = "@C"
+	},
+	LeadStageArenaTeamListMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaTeamListMediator",
+		name = "LeadStageArenaTeamListMediator",
+		type = "@C"
+	},
+	LeadStageAreaBattleFinishMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageAreaBattleFinishMediator",
+		name = "LeadStageAreaBattleFinishMediator",
+		type = "@C"
+	},
+	LeadStageArenaRivalMediator = {
+		url = "dm.gameplay.leadStageArena.view.LeadStageArenaRivalMediator",
+		name = "LeadStageArenaRivalMediator",
+		type = "@C"
+	},
 	RTPVPRobotBattleMediator = {
 		url = "dm.gameplay.rtpvp.view.RTPVPRobotBattleMediator",
 		name = "RTPVPRobotBattleMediator",
@@ -2784,6 +3399,11 @@ local mappings = {
 	BuildingLvUpSucMediator = {
 		url = "dm.gameplay.building.view.BuildingLvUpSucMediator",
 		name = "BuildingLvUpSucMediator",
+		type = "@C"
+	},
+	ClubBuildingMediator = {
+		url = "dm.gameplay.building.view.club.ClubBuildingMediator",
+		name = "ClubBuildingMediator",
 		type = "@C"
 	},
 	BuildingUnlockRoomMediator = {
@@ -2914,6 +3534,51 @@ local mappings = {
 	SpStageBoxMediator = {
 		url = "dm.gameplay.spStage.view.SpStageBoxMediator",
 		name = "SpStageBoxMediator",
+		type = "@C"
+	},
+	ShareMediator = {
+		url = "dm.gameplay.share.view.ShareMediator",
+		name = "ShareMediator",
+		type = "@C"
+	},
+	CooperateBossSystem = {
+		url = "dm.gameplay.cooperateBoss.controller.CooperateBossSystem",
+		name = "CooperateBossSystem",
+		type = "@C"
+	},
+	CooperateBossInviteFriendMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossInviteFriendMediator",
+		name = "CooperateBossInviteFriendMediator",
+		type = "@C"
+	},
+	CooperateBossFightMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossFightMediator",
+		name = "CooperateBossFightMediator",
+		type = "@C"
+	},
+	CooperateBossBattleEndMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossBattleEndMediator",
+		name = "CooperateBossBattleEndMediator",
+		type = "@C"
+	},
+	CooperateBossMainMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossMainMediator",
+		name = "CooperateBossMainMediator",
+		type = "@C"
+	},
+	CooperateBossTeamMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossTeamMediator",
+		name = "CooperateBossTeamMediator",
+		type = "@C"
+	},
+	CooperateBossInviteMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossInviteMediator",
+		name = "CooperateBossInviteMediator",
+		type = "@C"
+	},
+	CooperateBossBuyTimeMediator = {
+		url = "dm.gameplay.cooperateBoss.view.CooperateBossBuyTimeMediator",
+		name = "CooperateBossBuyTimeMediator",
 		type = "@C"
 	},
 	TestSceneMediator = {

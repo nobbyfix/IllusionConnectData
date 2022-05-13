@@ -34,6 +34,9 @@ SettingSystem:has("_weatherData", {
 SettingSystem:has("_settingService", {
 	is = "r"
 }):injectWith("SettingService")
+SettingSystem:has("_packageUpdater", {
+	is = "r"
+})
 
 function SettingSystem:initialize()
 	super.initialize(self)
@@ -53,6 +56,9 @@ function SettingSystem:initialize()
 	table.sort(self._orderTab, function (a, b)
 		return a.sort < b.sort
 	end)
+
+	self._randomRolePool = {}
+	self._randomBgPool = {}
 end
 
 function SettingSystem:dispose()
@@ -86,8 +92,11 @@ function SettingSystem:getWeatherData()
 	if playerArea ~= "" and playerArea ~= nil then
 		local a = string.split(playerArea, "-")
 		local b = self._regionData[a[1]]
-		local c = b.FID
-		cityId = c[tonumber(a[2])]
+
+		if b then
+			local c = b.FID
+			cityId = c[tonumber(a[2])]
+		end
 	end
 
 	self:requestWeatherData(cityId, function ()
@@ -143,7 +152,7 @@ function SettingSystem:checkNetworkStatus(callback1, callback)
 
 	if curNetState == 0 then
 		self:dispatch(ShowTipEvent({
-			tip = "没有网络"
+			tip = Strings:get("setting_ui_DownloadTips_4")
 		}))
 
 		return
@@ -227,8 +236,32 @@ function SettingSystem:setSoundCVIgnoreNetState(ignore)
 	end
 end
 
+function SettingSystem:setPackageIgnoreNetState(ignore)
+	local curNetState = 1
+
+	if app.getDevice and app.getDevice() then
+		curNetState = app.getDevice():getNetworkStatus()
+	end
+
+	self._packageUpdater:setIgnoreNetState(ignore)
+
+	if ignore then
+		self._packageUpdater:resumeTask()
+	elseif curNetState == 2 then
+		self._packageUpdater:autoPauseTask()
+	end
+end
+
+function SettingSystem:hasPackage()
+	if not GameExtPackUpdaterManager or not GameConfigs.extPackType or DownloadPackType.kNoPackage >= tonumber(GameConfigs.extPackType) then
+		return false
+	end
+
+	return true
+end
+
 function SettingSystem:canDownloadPortrait()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
+	if not self:hasPackage() then
 		return false
 	end
 
@@ -253,9 +286,11 @@ function SettingSystem:isPortraitDownloadStart()
 end
 
 function SettingSystem:isPortraitDownloadOver()
-	local downloadOver = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kSpinePortraitDownloadKey)
+	if not self._portraitUpdater then
+		return true
+	end
 
-	return downloadOver
+	return self:getPortraitProgress() == 100
 end
 
 function SettingSystem:createPortraitDownloader()
@@ -307,14 +342,18 @@ function SettingSystem:createPortraitDownloader()
 end
 
 function SettingSystem:autoDownloadPortrait()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
-		return
+	if not self:hasPackage() then
+		return false
 	end
 
 	self:createPortraitDownloader()
 
-	local downloadStart = self:isPortraitDownloadStart()
-	local downloadOver = self:isPortraitDownloadOver()
+	local portraitProgress = self:getPortraitProgress()
+
+	if portraitProgress == 100 then
+		return
+	end
+
 	local canAuto = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kAutoDownloadKey)
 
 	self._portraitUpdater:setIgnoreNetState(canAuto)
@@ -322,14 +361,18 @@ function SettingSystem:autoDownloadPortrait()
 end
 
 function SettingSystem:getPortraitProgress()
+	if not self._portraitUpdater then
+		return 100
+	end
+
 	local progress = self._portraitUpdater:getProgress()
 
 	return progress
 end
 
 function SettingSystem:downloadPortrait()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
-		return
+	if not self:hasPackage() then
+		return false
 	end
 
 	local downloadStart = true
@@ -403,7 +446,7 @@ function SettingSystem:downloadPortrait()
 end
 
 function SettingSystem:canDownloadSoundCV()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
+	if not self:hasPackage() then
 		return false
 	end
 
@@ -428,9 +471,11 @@ function SettingSystem:isSoundCVDownloadStart()
 end
 
 function SettingSystem:isSoundCVDownloadOver()
-	local downloadOver = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kSoundCVDownloadKey)
+	if not self._soundCVUpdater then
+		return true
+	end
 
-	return downloadOver
+	return self:getSoundCVProgress() == 100
 end
 
 function SettingSystem:createSoundCVDownloader()
@@ -443,7 +488,6 @@ function SettingSystem:createSoundCVDownloader()
 				print("网络变更为wifi自动恢复任务")
 			end
 		}
-		local outself = self
 
 		function delegate1:onTaskError(task, errorCode, errorCodeInternal, errorStr)
 			if errorCodeInternal ~= -1 and errorCodeInternal ~= 0 then
@@ -482,14 +526,18 @@ function SettingSystem:createSoundCVDownloader()
 end
 
 function SettingSystem:autoDownloadSoundCV()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
-		return
+	if not self:hasPackage() then
+		return false
 	end
 
 	self:createSoundCVDownloader()
 
-	local downloadStart = self:isSoundCVDownloadStart()
-	local downloadOver = self:isSoundCVDownloadOver()
+	local soundcvProgress = self:getSoundCVProgress()
+
+	if soundcvProgress == 100 then
+		return
+	end
+
 	local canAuto = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kAutoDownloadKey)
 
 	self._soundCVUpdater:setIgnoreNetState(canAuto)
@@ -497,14 +545,18 @@ function SettingSystem:autoDownloadSoundCV()
 end
 
 function SettingSystem:getSoundCVProgress()
+	if not self._soundCVUpdater then
+		return 100
+	end
+
 	local progress = self._soundCVUpdater:getProgress()
 
 	return progress
 end
 
 function SettingSystem:downloadSoundCV()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
-		return
+	if not self:hasPackage() then
+		return false
 	end
 
 	local downloadStart = true
@@ -587,7 +639,6 @@ function SettingSystem:createMusicDownloader()
 				print("网络变更为wifi自动恢复任务")
 			end
 		}
-		local outself = self
 
 		function delegate1:onTaskError(task, errorCode, errorCodeInternal, errorStr)
 			if errorCodeInternal ~= -1 and errorCodeInternal ~= 0 then
@@ -607,12 +658,202 @@ function SettingSystem:createMusicDownloader()
 end
 
 function SettingSystem:autoDownloadMusic()
-	if not GameExtPackUpdaterManager or GameConfigs.noExtPack then
-		return
+	if not self:hasPackage() then
+		return false
 	end
 
 	self:createMusicDownloader()
 	self._musicUpdater:run()
+end
+
+function SettingSystem:canPackageDownload()
+	local guideSystem = self:getInjector():getInstance(GuideSystem)
+	local pass = guideSystem:getPassStory1_2()
+
+	return pass
+end
+
+function SettingSystem:isPackageDownloadStart()
+	local downloadStart = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kPackageDownloadStartKey)
+
+	return downloadStart
+end
+
+function SettingSystem:isPackageDownloadOver()
+	if not self._packageUpdater then
+		return true
+	end
+
+	return self:getPackageProgress() == 100
+end
+
+function SettingSystem:createPackageDownloader()
+	if not self._packageUpdater then
+		local delegate1 = {
+			onAutoPause = function (self)
+				print("网络变更为蜂窝流量自动暂停任务")
+			end,
+			onAutoResume = function (self)
+				print("网络变更为wifi自动恢复任务")
+			end
+		}
+
+		function delegate1:onTaskError(task, errorCode, errorCodeInternal, errorStr)
+			if errorCodeInternal ~= -1 and errorCodeInternal ~= 0 then
+				local str = string.format("下载任务失败:%s,%s,%s,%s", task.requestURL or "", errorCode, errorCodeInternal, errorStr)
+
+				CommonUtils.uploadDataToBugly("_updater_150_error:", str)
+			end
+		end
+
+		self._packageUpdater = GameExtPackUpdaterManager.getUpdater()
+
+		self._packageUpdater:setDelegate(delegate1)
+
+		local sqlStr = string.format("extension IN (%s,%s,%s,%s,%s,%s)", ExPackCgf.animi_150, ExPackCgf.explore_150, ExPackCgf.heros_150, ExPackCgf.scene_150, ExPackCgf.items_150, ExPackCgf.sound_150)
+
+		self._packageUpdater:initWithTypeOrSqlStr(nil, sqlStr)
+
+		self._packageTotalSize = self._packageUpdater:getTotalExpectedSize() / 1024 / 1024
+
+		self._packageUpdater:setProgressFunc(function (progress)
+			if progress == 100 then
+				cc.UserDefault:getInstance():setBoolForKey(UserDefaultKey.kPackageDownloadKey, true)
+				self:dispatch(Event:new(EVT_DOWNLOAD_PACKAGE_OVER, {}))
+				self._packageUpdater:setDownloaderMaxNumPerFrame(2)
+				self:autoDownloadPortrait()
+				self:autoDownloadSoundCV()
+				self:autoDownloadMusic()
+			end
+
+			local currentSize = self._packageUpdater:getTotalReceivedSize() / 1024 / 1024
+
+			self:dispatch(Event:new(EVT_DOWNLOAD_PACKAGE, {
+				currentSize = currentSize,
+				totalSize = self._packageTotalSize,
+				progress = progress
+			}))
+		end)
+
+		local canAuto = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kAutoDownloadKey)
+
+		self._packageUpdater:setIgnoreNetState(canAuto)
+	end
+end
+
+function SettingSystem:getPackageProgress()
+	if not self._packageUpdater then
+		return 100
+	end
+
+	local progress = self._packageUpdater:getProgress()
+
+	return progress
+end
+
+function SettingSystem:autoDownloadPackage()
+	if not GameExtPackUpdaterManager or not GameConfigs.extPackType or DownloadPackType.kMediumPackage >= tonumber(GameConfigs.extPackType) then
+		self:autoDownloadPortrait()
+		self:autoDownloadSoundCV()
+		self:autoDownloadMusic()
+
+		return false
+	end
+
+	self:createPackageDownloader()
+	cc.UserDefault:getInstance():setBoolForKey(UserDefaultKey.kPackageDownloadStartKey, true)
+
+	local canAuto = cc.UserDefault:getInstance():getBoolForKey(UserDefaultKey.kAutoDownloadKey)
+
+	self._packageUpdater:setIgnoreNetState(canAuto)
+	self._packageUpdater:run()
+end
+
+function SettingSystem:downloadPackage(callFunc)
+	if not GameExtPackUpdaterManager or not GameConfigs.extPackType or DownloadPackType.kMediumPackage >= tonumber(GameConfigs.extPackType) then
+		if callFunc then
+			callFunc()
+		end
+
+		return false
+	end
+
+	local canDownload = self:canPackageDownload()
+
+	if not canDownload then
+		if callFunc then
+			callFunc()
+		end
+
+		return false
+	end
+
+	local progress = self._packageUpdater:getProgress()
+
+	if progress == 100 then
+		if callFunc then
+			callFunc()
+		end
+
+		return false
+	end
+
+	local function callback()
+		local currentSize = self._packageUpdater:getTotalReceivedSize() / 1024 / 1024
+		local progress = self._packageUpdater:getProgress()
+		local data = {
+			eventKey = EVT_DOWNLOAD_SOUNDCV,
+			currentSize = currentSize,
+			totalSize = self._packageTotalSize,
+			progress = progress,
+			tips = Strings:get("setting_ui_DownloadTips_5"),
+			callFunc = function ()
+				if callFunc then
+					callFunc()
+				end
+			end
+		}
+		local view = self:getInjector():getInstance("DownloadPackageView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			isAreaIndependent = true
+		}, data, nil))
+		self._packageUpdater:setDownloaderMaxNumPerFrame(4)
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				if callback then
+					callback()
+				end
+			elseif data.response == "cancel" then
+				-- Nothing
+			elseif data.response == "close" then
+				-- Nothing
+			end
+		end
+	}
+	local data = {
+		noClose = true,
+		title = Strings:get("setting_ui_DownloadTips"),
+		title1 = Strings:get("UITitle_EN_Xiazaitishi"),
+		content = Strings:get("setting_ui_DownloadTips_2") .. "\n" .. Strings:get("setting_Text_ResourceSize", {
+			num = string.format("%.1f", self._packageTotalSize)
+		}),
+		sureBtn = {
+			text = Strings:get("setting_ui_ConfirmDownload"),
+			text1 = Strings:get("UITitle_EN_Queding")
+		}
+	}
+	local view = self:getInjector():getInstance("DownloadAlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		isAreaIndependent = true
+	}, data, delegate))
+
+	return true
 end
 
 function SettingSystem:setMusicOff(isOff)
@@ -669,6 +910,7 @@ function SettingSystem:getShowHeadImgList()
 	local heroSystem = developSystem:getHeroSystem()
 	local masterSystem = developSystem:getMasterSystem()
 	local bagSystem = developSystem:getBagSystem()
+	local surfaceSystem = developSystem:getSurfaceSystem()
 	local list = {}
 	local config = ConfigReader:getDataTable("PlayerHeadModel")
 
@@ -703,6 +945,12 @@ function SettingSystem:getShowHeadImgList()
 			else
 				data.unlock = 0
 			end
+		elseif value.Type == 5 then
+			if surfaceSystem:hasHeroSkin(value.SurfaceMasterId) then
+				data.unlock = 1
+			else
+				data.unlock = 0
+			end
 		end
 
 		if data.unlock == 1 or value.IsHiddenHead == 0 then
@@ -723,11 +971,50 @@ function SettingSystem:getShowHeadImgList()
 	return list
 end
 
+function SettingSystem:getLimitTimeBg()
+	local allBg = ConfigReader:getDataTable("HomeBackground")
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+
+	for id, v in pairs(allBg) do
+		local unlockCondition = v.Condition
+		local isUnlock, argeNum = self:checkCondition(unlockCondition)
+
+		if isUnlock and v.TimeFactor then
+			local key = "HomeViewBG_ForceChange" .. id .. developSystem:getPlayer():getRid()
+			local value = cc.UserDefault:getInstance():getBoolForKey(key, false)
+
+			if not value then
+				local startDate = TimeUtil:parseDateTime(nil, v.TimeFactor.start)
+				local curTime = self:getInjector():getInstance(GameServerAgent):remoteTimestamp()
+				local startTs = TimeUtil:timeByRemoteDate(startDate)
+				local endDate = TimeUtil:parseDateTime(nil, v.TimeFactor["end"])
+				local endTs = TimeUtil:timeByRemoteDate(endDate)
+
+				if startTs < curTime and curTime < endTs then
+					cc.UserDefault:getInstance():setBoolForKey(key, true)
+					self:setHomeBgId(id)
+
+					return id
+				end
+			end
+		end
+	end
+end
+
 function SettingSystem:getHomeBgId()
 	local defValue = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HomeBackground_Default", "content")
 	local value = cc.UserDefault:getInstance():getStringForKey("HomeViewBG_ID", defValue)
+	local config = ConfigReader:getRecordById("HomeBackground", value)
 
-	return value
+	if not config then
+		value = defValue
+
+		self:setHomeBgId(value)
+	end
+
+	local limitId = self:getLimitTimeBg()
+
+	return limitId or value
 end
 
 function SettingSystem:setHomeBgId(id)
@@ -826,6 +1113,8 @@ end
 
 function SettingSystem:requestUpdatePlayerInfo(playerInfo, callback)
 	self._settingService:requestUpdatePlayerInfo(playerInfo, true, function (response)
+		dump(response, "response >>>>>>>>>>")
+
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Set_PlayerInfo_Suc")
@@ -929,21 +1218,41 @@ function SettingSystem:dealWeatherData(data)
 	end
 end
 
+function SettingSystem:requestPlayerInfo(rid, callback)
+	local params = {
+		rid = rid
+	}
+
+	self._settingService:requestPlayerInfo(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_GET_PLAYER_INFO_SUCC))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end, false)
+end
+
 KTabType = {
 	HEAD = 1,
 	FRAME = 2
 }
 KFrameType = {
-	RARE = "RARE",
 	ACTIVITY = "ACTIVITY",
+	Zodiac = "ZODIAC",
 	FESTIVAL = "FESTIVAL",
-	Zodiac = "ZODIAC"
+	LEADSTAGE = "LEADSTAGE",
+	LIMIT = "LIMIT",
+	RARE = "RARE"
 }
 KFrameSort = {
 	ALL = 0,
 	ACTIVITY = 1,
 	FESTIVAL = 2,
 	ZODIAC = 4,
+	LEADSTAGE = 5,
+	LIMIT = 6,
 	RARE = 3
 }
 
@@ -953,6 +1262,65 @@ function SettingSystem:getHeadFrameData()
 	end
 
 	return self._headFrameDB
+end
+
+function SettingSystem:getHeadFrameGetTime(id)
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local headFrames = developSystem:getPlayer():getHeadFrames()
+
+	for k, time in pairs(headFrames) do
+		if k == id then
+			return time
+		end
+	end
+end
+
+function SettingSystem:checkHeadFrameExpire(id, data)
+	data = data or {}
+	data.isExpire = false
+	local getDate = data.frameData or self:getHeadFrameGetTime(id)
+	local config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config.CondiType == "Time" then
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimeMillis()
+		data.expireTime = getDate + config.TypeNum.value * 86400 * 1000
+		data.useText = config.TypeDesc
+
+		if data.expireTime < curTime then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "RTPK" then
+		local rtpk = self:getInjector():getInstance(RTPKSystem):getRtpk()
+		local rank = rtpk:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "StageArena" then
+		local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem):getLeadStageArena()
+		local rank = leadStageArena:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	return data
+end
+
+function SettingSystem:setLimitHeadFrameData(id, data)
+	local config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config.Type == KFrameType.LIMIT then
+		data.isLimit = true
+
+		self:checkHeadFrameExpire(id, data)
+	end
 end
 
 function SettingSystem:getShowHeadFrameList()
@@ -968,8 +1336,15 @@ function SettingSystem:getShowHeadFrameList()
 		}
 
 		if headFrames[k] then
-			data.unlock = 1
 			data.frameData = headFrames[k]
+
+			self:setLimitHeadFrameData(k, data)
+
+			if data.isLimit and data.isExpire then
+				data.unlock = 0
+			else
+				data.unlock = 1
+			end
 		end
 
 		if data.unlock == 1 or value.Unlook == 1 then
@@ -995,4 +1370,107 @@ function SettingSystem:getShowHeadFrameList()
 	end)
 
 	return list
+end
+
+function SettingSystem:getRandomShowRoleAndBg()
+	local resultRoleId = ""
+	local resultBGId = ""
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local heroSystem = developSystem:getHeroSystem()
+	local herosList = heroSystem:getOwnHeroIds()
+
+	if self._randomRolePool == nil or #self._randomRolePool == 0 then
+		self._randomRolePool = {}
+
+		for k, v in pairs(herosList) do
+			local roleId = v.id
+			self._randomRolePool[#self._randomRolePool + 1] = roleId
+		end
+	end
+
+	local random1 = math.random(1, #self._randomRolePool)
+	resultRoleId = self._randomRolePool[random1]
+
+	table.remove(self._randomRolePool, random1)
+
+	if self._randomBgPool == nil or #self._randomBgPool == 0 then
+		local player = developSystem:getPlayer()
+		local background = player:getBackground()
+		local allBg = ConfigReader:getDataTable("HomeBackground")
+		self._randomBgPool = {}
+
+		for k, v in pairs(allBg) do
+			local bgId = v.Id
+
+			if v.Unlook == 1 then
+				if v.Information then
+					if background[bgId] then
+						self._randomBgPool[#self._randomBgPool + 1] = bgId
+					end
+				else
+					local unlockCondition = v.Condition
+					local isUnlock, argeNum = self:checkCondition(unlockCondition)
+
+					if isUnlock then
+						self._randomBgPool[#self._randomBgPool + 1] = bgId
+					end
+				end
+			end
+		end
+	end
+
+	local random2 = math.random(1, #self._randomBgPool)
+	resultBGId = self._randomBgPool[random2]
+
+	table.remove(self._randomBgPool, random2)
+
+	return resultRoleId, resultBGId
+end
+
+function SettingSystem:checkCondition(unlockCondition)
+	local isOK = true
+	local argeNum = nil
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local unlockSystem = self:getInjector():getInstance(SystemKeeper)
+	local playerLevel = developSystem:getPlayer():getLevel()
+
+	for k, v in pairs(unlockCondition) do
+		if k == "LEVEL" and playerLevel < v then
+			isOK = false
+			argeNum = v
+
+			break
+		end
+
+		if k == "STAGE" then
+			isOK, argeNum = unlockSystem:checkStagePointLock(v)
+		end
+	end
+
+	return isOK, argeNum
+end
+
+function SettingSystem:tryEnter(rid)
+	self:requestPlayerInfo(rid, function (response)
+		local data = response.data
+		local view = self:getInjector():getInstance("settingView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			player = data
+		}))
+	end)
+end
+
+function SettingSystem:changeShowHero(param, callback)
+	local params = {
+		heroes = param
+	}
+
+	self._settingService:changeShowHero(params, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response)
+		end
+	end, true)
 end

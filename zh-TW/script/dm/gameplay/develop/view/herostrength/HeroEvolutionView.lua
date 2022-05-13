@@ -108,6 +108,7 @@ function HeroEvolutionView:createView(info)
 	self._upBtn:addClickEventListener(function ()
 		self:onEvolutionClicked()
 	end)
+	self._mainPanel:getChildByFullName("upBtn.name1"):setString("")
 	self._infoPanel:getChildByFullName("level_1"):setString(self._showLevel .. "/" .. self._maxLevel)
 
 	self._sourcePanel = self._mainPanel:getChildByFullName("costNode2.costBg")
@@ -185,14 +186,11 @@ function HeroEvolutionView:createProgress()
 	heroNode:getChildByFullName("bg1"):setLocalZOrder(2)
 	heroNode:getChildByFullName("bg2"):setLocalZOrder(3)
 
-	local node = IconFactory:createRoleIconSprite({
-		stencil = 2,
-		iconType = "Bust8",
-		id = self._heroData:getModel(),
-		size = cc.size(234, 234)
+	local node = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe8",
+		id = self._heroData:getModel()
 	})
 
-	node:setScale(0.8)
 	node:addTo(heroNode):center(heroNode:getContentSize())
 	node:setLocalZOrder(1)
 

@@ -139,7 +139,7 @@ function HeadTipWidget:setHeadIcon(info)
 
 	local playerlevel = info.level
 
-	textlevel:setString("lv." .. playerlevel)
+	textlevel:setString(Strings:get("Common_LV_Text") .. playerlevel)
 end
 
 function HeadTipWidget:setTitle(data)

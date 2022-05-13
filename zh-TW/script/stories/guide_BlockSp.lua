@@ -147,37 +147,6 @@ function scene_guide_BlockSp.actions.action_guide_BlockSp(_root, args)
 				})
 			}
 		}),
-		click({
-			args = function (_ctx)
-				return {
-					id = "SpStageRuleMediator.btnClose",
-					statisticPoint = "guide_BlockSp_4",
-					mask = {
-						touchMask = true,
-						opacity = 0
-					},
-					clickSize = {
-						width = 500,
-						height = 500
-					},
-					offset = {
-						x = 0,
-						y = -220
-					}
-				}
-			end
-		}),
-		wait({
-			args = function (_ctx)
-				return {
-					type = "exit_SpStageRuleMediator",
-					mask = {
-						touchMask = true,
-						opacity = 0
-					}
-				}
-			end
-		}),
 		guideShow({
 			args = function (_ctx)
 				return {
@@ -245,8 +214,8 @@ function scene_guide_BlockSp.actions.action_guide_BlockSp(_root, args)
 						h = 60
 					},
 					offset = {
-						x = 120,
-						y = -72
+						x = 140,
+						y = -68
 					}
 				}
 			end

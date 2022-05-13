@@ -143,3 +143,18 @@ function BuildingLockComponent:hideRoomLockDes()
 		end
 	end
 end
+
+function BuildingLockComponent:showRoomLockImage(status)
+	local view = self:getView()
+	local tiledMapComponent = self._buildingMediator._tiledMapComponent
+	local tiledMapList = tiledMapComponent._tiledMapList or {}
+
+	for k, v in pairs(tiledMapList) do
+		local lockKey = "lockRoom_" .. k
+		local imageLock = view:getChildByName(lockKey)
+
+		if imageLock then
+			imageLock:setVisible(status)
+		end
+	end
+end

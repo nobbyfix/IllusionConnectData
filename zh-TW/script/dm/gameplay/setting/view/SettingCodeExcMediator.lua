@@ -41,7 +41,9 @@ function SettingCodeExcMediator:enterWithData()
 			height = 408
 		}
 	})
-	self:bindWidget("main.mStateBtn", OneLevelViceButton, {})
+
+	self.btnWidget = self:bindWidget("main.mStateBtn", OneLevelViceButton, {})
+
 	self:mapEventListener(self:getEventDispatcher(), EVT_CODE_EXCHANGE_SUC, self, self.changeSuc)
 
 	self._keyStr = ""
@@ -84,11 +86,22 @@ function SettingCodeExcMediator:setupView()
 end
 
 function SettingCodeExcMediator:onClickok()
+	local btn = self:getView():getChildByFullName("main.mStateBtn.button")
+
+	if btn._isColdTime then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Voice_HLDNan_30_SoundDesc")
+		}))
+
+		return
+	end
+
 	if self._keyStr == "" then
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Setting_Welfare_ERROR")
 		}))
 	else
+		self.btnWidget:setTimeLimit(btn)
 		self._settingSystem:requestWelfareCode(self._keyStr)
 	end
 end
@@ -99,5 +112,7 @@ function SettingCodeExcMediator:changeSuc()
 	if self._editBox.setText then
 		self._editBox:setText("")
 		tipsText:setVisible(true)
+
+		self._keyStr = ""
 	end
 end

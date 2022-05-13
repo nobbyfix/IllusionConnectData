@@ -1,7 +1,118 @@
 {
     "BGEffectBlack": {
         "Anim": "",
+        "Black": "",
         "Location": "",
+        "Music": "",
+        "Order": "",
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "BGEffectHalfBlack": {
+        "Anim": "",
+        "Black": 180,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "BGEffectTrueBlack": {
+        "Anim": "",
+        "Black": 255,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_Dagun": {
+        "Anim": "dengchang_dengchang",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_Fangao": {
+        "Anim": "fangao_fangaodazhao",
+        "Black": "",
+        "Location": "",
+        "Music": "Se_Skill_FGao_StarryNight",
+        "Order": 1,
+        "Path": "asset/scene/bg_battle_vgao.jpg",
+        "Zoom": 1.0
+    },
+    "Ground_LDYu": {
+        "Anim": "main_handujineng",
+        "Black": "",
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "asset/scene/bg_battle_hdu.jpg",
+        "Zoom": 1.0
+    },
+    "Ground_QTLJia": {
+        "Anim": "",
+        "Black": 255,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "asset/scene/bg_qtljia.jpg",
+        "Zoom": 1.0
+    },
+    "Ground_SNGLSi": {
+        "Anim": "main_tangguopiaoxue",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_SP_ALPo": {
+        "Anim": "main_splijiyaquanping",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_SP_KTSJKe": {
+        "Anim": "main_hexihongping",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_SP_SSQXin": {
+        "Anim": "main_xiamuquanping",
+        "Black": 0,
+        "Location": "",
+        "Music": "",
+        "Order": 1,
+        "Path": "",
+        "Zoom": 1.0
+    },
+    "Ground_Xige": {
+        "Anim": "",
+        "Black": "",
+        "Location": "",
+        "Music": "Se_Skill_FLYDe_MaxThunder",
+        "Order": 1,
+        "Path": "asset/scene/ground_effect_xige.jpg",
+        "Zoom": 1.0
+    },
+    "Ground_Yiasong": {
+        "Anim": "quanpingcx_yiasongbeijing",
+        "Black": "",
+        "Location": "",
+        "Music": "",
+        "Order": 1,
         "Path": "",
         "Zoom": 1.0
     }

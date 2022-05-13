@@ -14,7 +14,7 @@ HeroShowListMediator:has("_systemKeeper", {
 }):injectWith("SystemKeeper")
 
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -22,7 +22,7 @@ local kHeroWeakemAnim = "dikuang_yinghunxuanze"
 local kHeroWeakemShangAnim = "shangkuang_yinghunxuanze"
 local kNum = 3
 local kBtnHandlers = {
-	["main.leftNode.sortBtn"] = {
+	["main.sortBtnPanel.sortBtn"] = {
 		clickAudio = "Se_Click_Tab_1",
 		func = "onClickSort"
 	},
@@ -36,6 +36,19 @@ local kEquipTypeToImage = {
 	[HeroEquipType.kDecoration] = "img_yinghun_accessories",
 	[HeroEquipType.kTops] = "img_yinghun_clothes",
 	[HeroEquipType.kShoes] = "img_yinghun_shoes"
+}
+local TargetOccupation = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Team_TypeOrder", "content")
+local SortExtendFunc = {
+	{
+		func = function (sortExtendType, hero)
+			return hero.rareity == 17 - sortExtendType
+		end
+	},
+	{
+		func = function (sortExtendType, hero)
+			return hero.type == TargetOccupation[sortExtendType - 5]
+		end
+	}
 }
 
 function HeroShowListMediator:initialize()
@@ -58,6 +71,8 @@ function HeroShowListMediator:onRegister()
 end
 
 function HeroShowListMediator:enterWithData(data)
+	self._subSortType = {}
+
 	self._stageSystem:setSortType(1)
 	cc.UserDefault:getInstance():setBoolForKey(UserDefaultKey.kGetNewHeroRed, false)
 
@@ -113,7 +128,7 @@ function HeroShowListMediator:initWidgetInfo()
 
 	self._listNode = self._main:getChildByFullName("heroList")
 	self._buttonTip = self._heroNode:getChildByFullName("nameBg.buttonTip")
-	self._sortType = self._main:getChildByFullName("leftNode.sortBtn.text")
+	self._sortType = self._main:getChildByFullName("sortBtnPanel.sortBtn.text")
 
 	self._heroNode:setTouchEnabled(true)
 	self._heroNode:addClickEventListener(function ()
@@ -184,7 +199,7 @@ function HeroShowListMediator:adjustView()
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image1"), AdjustUtils.kAdjustType.Left)
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image2"), AdjustUtils.kAdjustType.Right)
 	AdjustUtils.ignorSafeAreaRectForNode(leftNode:getChildByFullName("listBg.image3"), AdjustUtils.kAdjustType.Bottom)
-	AdjustUtils.ignorSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Bottom)
+	AdjustUtils.addSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Bottom)
 	AdjustUtils.ignorSafeAreaRectForNode(self._heroNode, AdjustUtils.kAdjustType.Right)
 
 	local director = cc.Director:getInstance()
@@ -241,6 +256,52 @@ function HeroShowListMediator:updateData()
 
 	for i = 1, #self._ownHeroList do
 		self._showList[#self._showList + 1] = self._ownHeroList[i]
+	end
+
+	if next(self._subSortType) and self._subSortType[1] ~= 1 then
+		local retList = {}
+		local sub1 = {}
+		local sub2 = {}
+
+		for i, v in ipairs(self._subSortType) do
+			if v ~= 1 and v <= 5 then
+				table.insert(sub1, v)
+			elseif v ~= 1 then
+				table.insert(sub2, v)
+			end
+		end
+
+		if next(sub1) then
+			for i, hero in pairs(self._showList) do
+				for i, sort in ipairs(sub1) do
+					if SortExtendFunc[1].func(sort, hero) then
+						table.insert(retList, hero)
+
+						break
+					end
+				end
+			end
+
+			self._showList = retList
+		else
+			retList = self._showList
+		end
+
+		local retList2 = {}
+
+		if next(sub2) then
+			for i, hero in pairs(retList) do
+				for i, sort in ipairs(sub2) do
+					if SortExtendFunc[2].func(sort, hero) then
+						table.insert(retList2, hero)
+
+						break
+					end
+				end
+			end
+
+			self._showList = retList2
+		end
 	end
 
 	local heroInfo = self._heroSystem:getHeroInfoById(self._chooseHeroId)
@@ -396,7 +457,7 @@ function HeroShowListMediator:createTeamCell(cell, index)
 
 			heroPanel:removeAllChildren()
 
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = heroData.roleModel
 			})
 
@@ -423,8 +484,9 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			local nameBg = actionNode:getChildByFullName("nameBg")
 
 			if not nameBg then
-				nameBg = cc.Sprite:create("asset/common/common_bd_jsmd.png")
+				nameBg = ccui.ImageView:create("asset/common/common_bd_jsmd.png", ccui.TextureResType.localType)
 
+				nameBg:setScale9Enabled(true)
 				nameBg:setAnchorPoint(cc.p(0.5, 0))
 				nameBg:addTo(actionNode):posite(91, -8.6)
 				nameBg:setName("nameBg")
@@ -457,20 +519,33 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			end
 
 			local occupation = occupationBg:getChildByFullName("baseNode.occupation")
-			local rarityBg = actionNode:getChildByFullName("rarityBg")
 
-			if not rarityBg then
-				rarityBg = cc.Sprite:create("asset/common/common_bd_xydd.png")
+			actionNode:removeChildByName("rarityBg")
 
-				rarityBg:addTo(actionNode):posite(32, 167)
-				rarityBg:setGlobalZOrder(95)
-				rarityBg:setName("rarityBg")
+			local name_Bg = "common_bd_xydd.png"
 
-				local baseNode = cc.GroupedNode:create()
+			if heroData.rareity == 15 then
+				name_Bg = "common_bd_xydd_sp.png"
+			end
 
-				baseNode:addTo(rarityBg)
-				baseNode:setGlobalZOrder(96)
-				baseNode:setName("baseNode")
+			local rarityBg = cc.Sprite:create("asset/common/" .. name_Bg)
+
+			rarityBg:addTo(actionNode):posite(32, 167)
+			rarityBg:setGlobalZOrder(95)
+			rarityBg:setName("rarityBg")
+
+			local baseNode = cc.GroupedNode:create()
+
+			baseNode:addTo(rarityBg)
+			baseNode:setGlobalZOrder(96)
+			baseNode:setName("baseNode")
+
+			local rarityAnim = IconFactory:getHeroRarityAnim(heroData.rareity)
+
+			rarityAnim:addTo(baseNode):posite(36, 40)
+
+			if heroData.rareity == 15 then
+				rarityAnim:setPosition(cc.p(38, 55))
 			end
 
 			local levelImage = actionNode:getChildByName("levelImage")
@@ -509,11 +584,6 @@ function HeroShowListMediator:createTeamCell(cell, index)
 
 			occupation:loadTexture(occupationImg)
 			cost:setString(heroData.cost)
-
-			local baseNode = rarityBg:getChildByFullName("baseNode"):removeAllChildren()
-			local rarityAnim = IconFactory:getHeroRarityAnim(heroData.rareity)
-
-			rarityAnim:addTo(baseNode):posite(36, 40)
 			bg2:loadTexture(GameStyle:getHeroRarityBg(heroData.rareity)[2])
 			weak:removeAllChildren()
 			weakTop:removeAllChildren()
@@ -524,7 +594,12 @@ function HeroShowListMediator:createTeamCell(cell, index)
 				local anim = cc.MovieClip:create(kHeroRarityBgAnim[heroData.rareity])
 
 				anim:addTo(bg1):center(bg1:getContentSize())
-				anim:offset(-1, -30)
+
+				if heroData.rareity <= 14 then
+					anim:offset(-1, -30)
+				else
+					anim:offset(-3, 0)
+				end
 
 				if heroData.rareity >= 14 then
 					local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -659,6 +734,12 @@ function HeroShowListMediator:createTeamCell(cell, index)
 			name:setPositionX(0)
 			qualityLevel:setPositionX(name:getContentSize().width)
 			namePanel:setContentSize(cc.size(name:getContentSize().width + qualityLevel:getContentSize().width, 30))
+
+			local nameWidth = name:getContentSize().width + qualityLevel:getContentSize().width
+			local w = math.max(104, nameWidth + 25)
+
+			nameBg:setContentSize(cc.size(w, nameBg:getContentSize().height))
+			nameBg:setPositionX(namePanel:getPositionX())
 			heroIcon:setVisible(true)
 
 			if heroData.id == self._chooseHeroId then
@@ -788,9 +869,18 @@ function HeroShowListMediator:initHeroInfo()
 	end
 
 	local length = utf8.len(nameString)
-	local fontSize = length >= 5 and 38 or 48
+	local Image_bg = self._heroNode:getChildByFullName("nameBg.Image_bg")
+	local size = name:getVirtualRendererSize()
 
-	name:setFontSize(fontSize)
+	if length >= 5 and size.width > 190 then
+		name:setPositionX(70 - size.width + 190)
+		occupation:setPositionX(name:getPositionX() - 20)
+		Image_bg:setContentSize(cc.size(size.width + 80, Image_bg:getContentSize().height))
+	else
+		name:setPositionX(70)
+		occupation:setPositionX(50)
+		Image_bg:setContentSize(cc.size(267, Image_bg:getContentSize().height))
+	end
 
 	if self._showHeroAnim then
 		local heroIcon = self._main:getChildByFullName("heroIcon")
@@ -801,9 +891,9 @@ function HeroShowListMediator:initHeroInfo()
 
 		iconNode:removeAllChildren()
 
-		local img = IconFactory:createRoleIconSprite({
+		local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust4",
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
@@ -811,9 +901,24 @@ function HeroShowListMediator:initHeroInfo()
 		img:setPosition(cc.p(55, -143))
 
 		self._heroAnim = img
+		self._heroPicInfo = picInfo
 
 		self:refreshBg()
 	end
+
+	local redPoint = self._buttonTip:getChildByFullName("RedPoint")
+
+	if not redPoint then
+		redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
+
+		redPoint:addTo(self._buttonTip):posite(0, 55)
+		redPoint:setName("RedPoint")
+	end
+
+	local surfaceSystem = self:getInjector():getInstance(SurfaceSystem)
+	local isRed = surfaceSystem:getRedPointByHeroId(self._chooseHeroId)
+
+	redPoint:setVisible(isRed)
 end
 
 function HeroShowListMediator:refreshView()
@@ -844,7 +949,14 @@ function HeroShowListMediator:refreshEquip()
 		return
 	end
 
-	local hasRed = self._heroSystem:hasRedPointByEquip(self._chooseHeroId)
+	local hasRed = true
+	local teamHeroes = self._heroSystem:getTeamHeroes()
+
+	if not teamHeroes[self._chooseHeroId] then
+		hasRed = false
+	end
+
+	hasRed = hasRed and self._heroSystem:hasRedPointByEquip(self._chooseHeroId)
 
 	self._strengthenNode:getChildByFullName("redPoint"):setVisible(hasRed)
 
@@ -884,6 +996,13 @@ function HeroShowListMediator:resetSelectImg()
 	self._selectImage:addTo(self:getView())
 end
 
+local sortEnum = {
+	1,
+	7,
+	2,
+	3
+}
+
 function HeroShowListMediator:createSortView()
 	if self._main:getChildByFullName("SortPanel") then
 		return
@@ -892,14 +1011,15 @@ function HeroShowListMediator:createSortView()
 	local sortType = self._stageSystem:getSortType()
 
 	local function callBack(data)
-		local sortStr = self._stageSystem:getSortTypeStr(data.sortType)
+		self._sortType:setString(data.sortStr)
+		self._stageSystem:setSortType(sortEnum[data.sortType])
 
-		self._sortType:setString(sortStr)
-		self._stageSystem:setSortType(data.sortType)
+		self._subSortType = data.subSortType
+
 		self:refreshSortView()
 	end
 
-	self._sortComponent = SortHeroListComponent:new({
+	self._sortComponent = SortHeroListNewComponent:new({
 		isHide = false,
 		sortType = sortType,
 		mediator = self,
@@ -909,7 +1029,7 @@ function HeroShowListMediator:createSortView()
 
 	self._sortType:setString(sortStr)
 	self._sortComponent:getRootNode():setVisible(false)
-	self._sortComponent:getRootNode():addTo(self._main):posite(637, 205)
+	self._sortComponent:getRootNode():addTo(self._main):posite(400, 148)
 	self._sortComponent:getRootNode():setName("SortPanel")
 end
 
@@ -1174,16 +1294,18 @@ function HeroShowListMediator:runResumeAnim()
 		roleModel = hero:getModel()
 	end
 
-	local img = IconFactory:createRoleIconSprite({
+	local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
+	img:setScale(1.15)
 	img:addTo(iconNode)
 	img:setPosition(cc.p(55, -143))
 
 	self._heroAnim = img
+	self._heroPicInfo = picInfo
 	local moveto1 = cc.MoveTo:create(0.2, cc.p(898, 298))
 	local callFunc = cc.CallFunc:create(function ()
 		if DisposableObject:isDisposed(self) or tolua.isnull(action) then
@@ -1219,6 +1341,10 @@ function HeroShowListMediator:runResumeAnim()
 
 		if str == "IconAnim4" then
 			self:showStartAction(cells, 4)
+		end
+
+		if str == "IconAnim5" then
+			self:showStartAction(cells, 5)
 		end
 
 		if str == "HeroAnim" then
@@ -1288,6 +1414,10 @@ function HeroShowListMediator:runStartAnim()
 			self:showStartAction(cells, 4)
 		end
 
+		if str == "IconAnim5" then
+			self:showStartAction(cells, 5)
+		end
+
 		if str == "HeroAnim" then
 			local heroAnim = cc.MovieClip:create("renwu_yingling")
 
@@ -1310,16 +1440,18 @@ function HeroShowListMediator:runStartAnim()
 				roleModel = hero:getModel()
 			end
 
-			local img = IconFactory:createRoleIconSprite({
+			local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust4",
+				frameId = "bustframe9",
 				id = roleModel
 			})
 
+			img:setScale(1.15)
 			img:addTo(iconNode)
 			img:setPosition(cc.p(55, -143))
 
 			self._heroAnim = img
+			self._heroPicInfo = picInfo
 		end
 
 		if str == "EndAnim" then
@@ -1371,7 +1503,7 @@ function HeroShowListMediator:getShowCells()
 	local children = self._heroView:getContainer():getChildren()
 	local cells = {}
 
-	for index = 1, 4 do
+	for index = 1, #children do
 		local cell = children[index]
 
 		if cell then
@@ -1444,7 +1576,7 @@ function HeroShowListMediator:runEndAnim()
 		end
 
 		if str == "IconAnim3" then
-			-- Nothing
+			self:showEndAction(cells, 5)
 		end
 
 		if str == "IconAnim4" then
@@ -1452,7 +1584,7 @@ function HeroShowListMediator:runEndAnim()
 
 			heroPanel:setPosition(cc.p(898, 298))
 
-			local moveto = cc.MoveTo:create(0.2, cc.p(544, 320))
+			local moveto = cc.MoveTo:create(0.2, cc.p(500, 315))
 
 			heroPanel:runAction(moveto)
 		end
@@ -1466,6 +1598,7 @@ function HeroShowListMediator:runEndAnim()
 			self._bgAnim:changeParent(scene)
 			self._heroSystem:setHeroAnim(self._heroAnim)
 			self._heroSystem:setHeroBgAnim(self._bgAnim)
+			self._heroSystem:setHeroPicInfo(self._heroPicInfo)
 			view:setVisible(true)
 
 			local mediator = self:getMediatorMap():retrieveMediator(view)
@@ -1511,7 +1644,7 @@ function HeroShowListMediator:getEndShowCells()
 	local children = self._heroView:getContainer():getChildren()
 	local cells = {}
 
-	for index = 1, 4 do
+	for index = 1, #children do
 		local cell = children[index]
 
 		if cell then

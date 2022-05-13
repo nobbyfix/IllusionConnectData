@@ -74,6 +74,7 @@ function RankRewardMediator:initView()
 	local txt = self._rankType == RankType.kClub and Strings:get("RankRuleUI_2") or Strings:get("RankRuleUI_1")
 
 	self:getView():getChildByFullName("main.tipTxt"):setString(txt)
+	self:getView():getChildByFullName("main.button_rule"):setPositionX(660)
 end
 
 function RankRewardMediator:initContent()
@@ -132,11 +133,7 @@ function RankRewardMediator:setCellView(panel, data, index)
 
 	rankTxt1:setString(Strings:get(data.ConditionDes, {
 		Condition = ""
-	}))
-
-	local rankNum = cellPanel:getChildByFullName("rankNum")
-
-	rankNum:setString(data.Condition)
+	}) .. " " .. data.Condition)
 
 	if not rewards then
 		name:setString(Strings:get("RankRuleUI_4"))

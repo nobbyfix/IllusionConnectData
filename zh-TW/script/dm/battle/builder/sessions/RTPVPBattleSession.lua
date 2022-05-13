@@ -92,6 +92,56 @@ function RTPVPBattleSession:generateResultSummary()
 	}
 end
 
+function RTPVPBattleSession:_applyBattleConfig(battleData, battleConfig)
+	local playerExtra = {
+		masterRageBase = battleConfig.MasterRageBase,
+		heroRageBase = battleConfig.HeroRageBase,
+		masterRageRules = battleConfig.MasterRageRules,
+		heroRageRules = battleConfig.HeroRageRules,
+		energy = {
+			base = battleConfig.EnergyBase,
+			capacity = battleConfig.Fight_StageEnergyMax[2],
+			scale = battleConfig.EnergyScale
+		},
+		masterFBReduction = battleConfig.FriendFBReduction,
+		masterpasvs = battleConfig.FriendSpecialPassive,
+		masterpasvsParam = battleConfig.FriendSpecialPassiveParm,
+		combatAdjust = battleConfig.CombatAdjust
+	}
+
+	if battleData.playerData.rid then
+		self:_adjustPlayerData(battleData.playerData, playerExtra)
+	else
+		for i, playerData in ipairs(battleData.playerData) do
+			self:_adjustPlayerData(playerData, playerExtra)
+		end
+	end
+
+	local enemyExtra = {
+		masterRageBase = battleConfig.MasterRageBase,
+		heroRageBase = battleConfig.HeroRageBase,
+		masterRageRules = battleConfig.MasterRageRules,
+		heroRageRules = battleConfig.HeroRageRules,
+		energy = {
+			base = battleConfig.EnemyEnergyBase,
+			capacity = battleConfig.Fight_StageEnergyMax[1],
+			scale = battleConfig.EnemyEnergyScale
+		},
+		masterFBReduction = battleConfig.EnemyFBReduction,
+		masterpasvs = battleConfig.EnemySpecialPassive,
+		masterpasvsParam = battleConfig.EnemySpecialPassiveParm,
+		combatAdjust = battleConfig.CombatAdjust
+	}
+
+	if battleData.enemyData.rid then
+		self:_adjustPlayerData(battleData.enemyData, enemyExtra)
+	else
+		for i, enemyData in ipairs(battleData.enemyData) do
+			self:_adjustPlayerData(enemyData, enemyExtra)
+		end
+	end
+end
+
 function RTPVPBattleSession:getBattleType()
 	return "rtpvp"
 end
@@ -99,18 +149,26 @@ end
 function RTPVPBattleSession:getBattlePassiveSkill(battleData, mainPlayerId)
 	local playerShow = {}
 	local enemyShow = {}
+	local playerStagePassShow = {}
+	local enemyStagePassShow = {}
 
 	if battleData.playerData and battleData.playerData.rid == mainPlayerId then
 		playerShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
 		enemyShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+		playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+		enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	else
 		enemyShow = BattleDataHelper:getPassiveSkill(battleData.playerData)
 		playerShow = BattleDataHelper:getPassiveSkill(battleData.enemyData)
+		playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
+		enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
 	end
 
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill

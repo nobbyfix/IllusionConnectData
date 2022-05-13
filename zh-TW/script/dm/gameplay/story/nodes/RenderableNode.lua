@@ -1,5 +1,7 @@
 module("story", package.seeall)
 
+HideAnimTimeInterval = 0.3
+
 local function _changeMaskNodeAction(maskNode, colorInfo, duration, onEnd)
 	if colorInfo == nil or maskNode == nil then
 		return
@@ -418,6 +420,9 @@ function PortraitNode:createRoleIconSprite(info)
 	end
 
 	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+
+	assert(picInfo, "SpecialPicture not find. id:" .. rolePicId)
+
 	local path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(picInfo.Path)], commonResource, picInfo.Filename)
 	local sprite = cc.Sprite:create(path)
 	sprite = sprite or cc.Sprite:create()
@@ -645,6 +650,27 @@ function DialogueNode:speak(args, callback)
 	if args.location == nil then
 		location = "left"
 	end
+
+	local dialogImage = "jq_dialogue_bg_1.png"
+
+	if args.dialogImage ~= nil then
+		dialogImage = args.dialogImage
+	end
+
+	local imagePath = CommonUtils.getPathByType(args.pathType, dialogImage)
+
+	dialog:loadTexture(imagePath, ccui.TextureResType.localType)
+	dialog:setScale9Enabled(true)
+
+	if args.capInsets and #args.capInsets == 4 then
+		dialog:setCapInsets(cc.rect(args.capInsets[1], args.capInsets[2], args.capInsets[3], args.capInsets[4]))
+	else
+		dialog:setCapInsets(cc.rect(240, 114, 250, 119))
+	end
+
+	local winSize = cc.Director:getInstance():getWinSize()
+
+	dialog:setContentSize(cc.size(winSize.width - 2 * AdjustUtils.getFixOffsetX(), dialog:getContentSize().height))
 
 	local name, nameBg = nil
 
@@ -947,6 +973,38 @@ function DialogueNode:updateAutoPlayState(isAutoPlay)
 		self:startAutoPlay()
 	else
 		self:stopAutoPlay()
+	end
+end
+
+function DialogueNode:startHidePlay(notAnim)
+	local renderNode = self._renderNode:getChildByName("main")
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, -100))
+		local fadeOut = cc.FadeOut:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeOut)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function DialogueNode:stopHidePlay(notAnim)
+	local renderNode = self._renderNode:getChildByName("main")
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, 100))
+		local fadeIn = cc.FadeIn:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeIn)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function DialogueNode:updateHideUIState(isAutoPlay, notAnim)
+	if isAutoPlay then
+		self:startHidePlay(notAnim)
+	else
+		self:stopHidePlay(notAnim)
 	end
 end
 
@@ -1820,13 +1878,29 @@ function SkipButtonNode:onClickSkip()
 		return
 	end
 
-	local isElide = AudioEngine:getInstance():getElide()
+	if self._date then
+		self:showLovesTips()
 
-	if isElide then
-		AudioEngine:getInstance():setElide(false)
+		return
 	end
 
+	self:skip()
+end
+
+function SkipButtonNode:skip()
+	local agent = self:getAgent()
+
+	if agent == nil then
+		return
+	end
+
+	agent:setAutoPlayState(false, true)
 	AudioEngine:getInstance():stopEffectsByType()
+	AudioEngine:getInstance():playEffect("Se_Click_Story_2", false)
+
+	if AudioEngine:getInstance():getElide() then
+		AudioEngine:getInstance():setElide(false)
+	end
 
 	if agent._guideStatisticSta then
 		local scriptName = agent:getCurrentScriptName()
@@ -1841,12 +1915,91 @@ function SkipButtonNode:onClickSkip()
 	agent:skip(true)
 end
 
+function SkipButtonNode:showLovesTips()
+	local agent = self:getAgent()
+
+	agent:setAutoPlayState(false, true)
+
+	if agent.showSkipChoose then
+		local ctx = agent:getCurrentScriptCtx()
+
+		if ctx ~= nil then
+			local scene = ctx:getScene()
+			local actor = scene:getChildById("skipChoose")
+
+			if actor == nil then
+				actor = StageNodeFactory:createSkipChooseDialog(scene)
+			end
+
+			if actor then
+				actor:show()
+
+				local director = agent:getDirector()
+				local gallerySystem = director:getInjector():getInstance(GallerySystem)
+				local opts, loves = gallerySystem:getDateOptionsValue()
+				local text = Strings:get("UI_DateSpik", {
+					fontName = TTF_FONT_FZYH_M,
+					Num = loves
+				})
+
+				actor:setView({
+					type = "date",
+					text = text
+				})
+			end
+		end
+	end
+end
+
 function SkipButtonNode:hide()
 	self._renderNode:setVisible(false)
 end
 
-function SkipButtonNode:show()
+function SkipButtonNode:show(args)
+	if args.date then
+		self._date = args.date
+		local agent = self:getAgent()
+		local director = agent:getDirector()
+		local gallerySystem = director:getInjector():getInstance(GallerySystem)
+
+		self._renderNode:setVisible(gallerySystem:isShowSkip())
+
+		return
+	end
+
 	self._renderNode:setVisible(true)
+end
+
+function SkipButtonNode:startHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, 100))
+		local fadeOut = cc.FadeOut:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeOut)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function SkipButtonNode:stopHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, -100))
+		local fadeIn = cc.FadeIn:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeIn)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function SkipButtonNode:updateHideUIState(isAutoPlay, notAnim)
+	if isAutoPlay then
+		self:startHidePlay(notAnim)
+	else
+		self:stopHidePlay(notAnim)
+	end
 end
 
 GuideSkipButtonNode = class("GuideSkipButtonNode", StageNode)
@@ -1870,6 +2023,7 @@ function GuideSkipButtonNode:createRenderNode(config)
 	renderNode:setTouchEnabled(true)
 	renderNode:addTouchEventListener(function (sender, eventType)
 		if eventType == ccui.TouchEventType.ended then
+			AudioEngine:getInstance():playEffect("Se_Click_Story_2", false)
 			self:onClickSkip(sender, eventType)
 		end
 	end)
@@ -1985,11 +2139,11 @@ function GuideSkipAllButtonNode:onClickSkip()
 	agent:skip(true)
 end
 
-function SkipButtonNode:hide()
+function GuideSkipAllButtonNode:hide()
 	self._renderNode:setVisible(false)
 end
 
-function SkipButtonNode:show()
+function GuideSkipAllButtonNode:show()
 	self._renderNode:setVisible(true)
 end
 
@@ -2011,9 +2165,12 @@ end
 function ReviewButtonNode:createRenderNode(config)
 	local renderNode = ccui.Button:create("asset/common/ck_auto_btn1.png", "asset/common/ck_auto_btn2.png")
 
-	mapButtonHandlerClick(self, renderNode, function (sender, eventType)
-		self:onClickReview()
-	end, renderNode)
+	mapButtonHandlerClick(self, renderNode, {
+		clickAudio = "Se_Click_Story_2",
+		func = function (sender, eventType)
+			self:onClickReview()
+		end
+	}, renderNode)
 
 	local title1 = cc.Label:createWithTTF(Strings:get("Story_Review"), TTF_FONT_FZYH_R, 18)
 
@@ -2067,6 +2224,38 @@ end
 
 function ReviewButtonNode:show()
 	self._renderNode:setVisible(true)
+end
+
+function ReviewButtonNode:startHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, 100))
+		local fadeOut = cc.FadeOut:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeOut)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function ReviewButtonNode:stopHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, -100))
+		local fadeIn = cc.FadeIn:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeIn)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function ReviewButtonNode:updateHideUIState(isAutoPlay, notAnim)
+	if isAutoPlay then
+		self:startHidePlay(notAnim)
+	else
+		self:stopHidePlay(notAnim)
+	end
 end
 
 DialogueChooseNode = class("DialogueChooseNode", StageNode)
@@ -2205,9 +2394,8 @@ end
 
 function SkipChooseNode:createRenderNode(config)
 	local renderNode = cc.CSLoader:createNode("asset/ui/SkipChooseDialog.csb")
-	local btnOk = renderNode:getChildByFullName("main.btnOk.button")
-	local btnCanel = renderNode:getChildByFullName("main.btnCanel.button")
-	local bg = renderNode:getChildByFullName("main.bg")
+	local btnOk = renderNode:getChildByFullName("main.btnOk")
+	local btnCanel = renderNode:getChildByFullName("main.btnCanel")
 
 	btnOk:getChildByName("name"):setString(Strings:get("story_des_4"))
 	btnOk:getChildByName("name1"):setString(Strings:get("UITitle_EN_Queding"))
@@ -2218,13 +2406,15 @@ function SkipChooseNode:createRenderNode(config)
 
 	touchLayer:addClickEventListener(function ()
 	end)
-	mapButtonHandlerClick(self, btnOk, function (sender, eventType)
+	mapButtonHandlerClick(self, btnOk:getChildByName("button"), function (sender, eventType)
 		self:onClickBtnOk()
 	end, renderNode)
-	mapButtonHandlerClick(self, btnCanel, function (sender, eventType)
+	mapButtonHandlerClick(self, btnCanel:getChildByName("button"), function (sender, eventType)
 		self:onClickBtnCanel()
 	end, renderNode)
 	renderNode:setVisible(false)
+
+	self._desLab = renderNode:getChildByFullName("main.desLab")
 
 	return renderNode
 end
@@ -2238,7 +2428,14 @@ function SkipChooseNode:onClickBtnOk()
 		return
 	end
 
-	agent:skip(true)
+	local ctx = agent:getCurrentScriptCtx()
+
+	if ctx ~= nil then
+		local scene = ctx:getScene()
+		local actor = scene:getChildById("skipButton")
+
+		actor:skip()
+	end
 end
 
 function SkipChooseNode:onClickBtnCanel()
@@ -2246,6 +2443,25 @@ function SkipChooseNode:onClickBtnCanel()
 end
 
 function SkipChooseNode:onClickBtnBack()
+end
+
+function SkipChooseNode:setView(data)
+	if data and data.type == "date" then
+		self._desLab:setString("")
+
+		local desc = self._desLab:getChildByName("desLabRichText")
+
+		if not desc then
+			local richText = ccui.RichText:createWithXML("", {})
+
+			richText:addTo(self._desLab)
+			richText:setName("desLabRichText")
+
+			desc = richText
+		end
+
+		desc:setString(data.text)
+	end
 end
 
 function SkipChooseNode:show()
@@ -2776,7 +2992,7 @@ function MessageNode:createRoleImg(args)
 	local modelId = args.modelId
 	local modelScale = args.modelScale or 1
 	local modelOffset = args.modelOffset or cc.p(0, 0)
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		iconType = 2,
 		id = modelId
 	})
@@ -2952,6 +3168,7 @@ end
 function AutoPlayButtonNode:onClickPlay()
 	local agent = self:getAgent()
 
+	AudioEngine:getInstance():playEffect("Se_Click_Story_2", false)
 	agent:setAutoPlayState(not agent:isAutoPlayState())
 end
 
@@ -2973,6 +3190,198 @@ function AutoPlayButtonNode:updateAutoPlayState(isAutoPlay)
 	else
 		self:stopAutoPlay()
 	end
+end
+
+function AutoPlayButtonNode:startHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, 100))
+		local fadeOut = cc.FadeOut:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeOut)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function AutoPlayButtonNode:stopHidePlay(notAnim)
+	local renderNode = self._renderNode
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, -100))
+		local fadeIn = cc.FadeIn:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeIn)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function AutoPlayButtonNode:updateHideUIState(isAutoPlay, notAnim)
+	if isAutoPlay then
+		self:startHidePlay(notAnim)
+	else
+		self:stopHidePlay(notAnim)
+	end
+end
+
+HideButtonNode = class("HideButtonNode", StageNode)
+
+register_stage_node("HideButton", HideButtonNode)
+
+local acitons = {
+	hide = HideButtonNodeHide,
+	show = HideButtonNodeShow
+}
+
+HideButtonNode:extendActionsForClass(acitons)
+
+function HideButtonNode:initialize(config)
+	super.initialize(self, config)
+end
+
+function HideButtonNode:createRenderNode(config)
+	local image1 = cc.Sprite:create("asset/common/ck_auto_btn1.png")
+	local renderNode = ccui.Layout:create()
+
+	renderNode:setAnchorPoint(cc.p(0.5, 0.5))
+	renderNode:setContentSize(image1:getContentSize())
+	renderNode:setTouchEnabled(true)
+	renderNode:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			self:onClickHide(sender, eventType)
+		end
+	end)
+	image1:addTo(renderNode):center(renderNode:getContentSize())
+
+	local title1 = cc.Label:createWithTTF(Strings:get("Story_Hide"), TTF_FONT_FZYH_R, 18)
+
+	title1:enableOutline(cc.c4b(0, 0, 0, 204), 2)
+	title1:addTo(image1):offset(image1:getContentSize().width * 0.5, image1:getContentSize().height * 0.65)
+
+	local lineGradiantVec1 = {
+		{
+			ratio = 0.5,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 1,
+			color = cc.c4b(225, 231, 252, 255)
+		}
+	}
+
+	title1:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
+
+	local title2 = cc.Label:createWithTTF(Strings:get("Story_Hide"), TTF_FONT_FZYH_R, 18)
+
+	title2:enableOutline(cc.c4b(0, 0, 0, 204), 2)
+
+	local lineGradiantVec1 = {
+		{
+			ratio = 0.5,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 1,
+			color = cc.c4b(225, 231, 252, 255)
+		}
+	}
+
+	title2:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec1, {
+		x = 0,
+		y = -1
+	}))
+
+	renderNode._image1 = image1
+
+	renderNode:setVisible(false)
+
+	return renderNode
+end
+
+function HideButtonNode:startHidePlay(notAnim)
+	local renderNode = self._renderNode
+	local parent = renderNode:getParent()
+	local hideStoryMask = parent:getChildByName("HideStoryMask")
+
+	if not hideStoryMask then
+		local renderNode = cc.CSLoader:createNode("asset/ui/HideStoryUIMask.csb")
+
+		renderNode:addTo(parent)
+		renderNode:setLocalZOrder(99999)
+		renderNode:setName("HideStoryMask")
+		renderNode:getChildByName("touch_layer"):addClickEventListener(function ()
+			self:onClickHide()
+		end)
+	else
+		hideStoryMask:setVisible(true)
+	end
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, 100))
+		local fadeOut = cc.FadeOut:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeOut)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function HideButtonNode:stopHidePlay(notAnim)
+	local renderNode = self._renderNode
+	local parent = renderNode:getParent()
+	local hideStoryMask = parent:getChildByName("HideStoryMask")
+
+	if hideStoryMask then
+		hideStoryMask:setVisible(false)
+	end
+
+	if not notAnim then
+		local moveTo = cc.MoveBy:create(HideAnimTimeInterval, cc.p(0, -100))
+		local fadeIn = cc.FadeIn:create(HideAnimTimeInterval)
+		local sequence = cc.Spawn:create(moveTo, fadeIn)
+
+		renderNode:runAction(sequence)
+	end
+end
+
+function HideButtonNode:onClickHide()
+	local agent = self:getAgent()
+
+	AudioEngine:getInstance():playEffect("Se_Click_Story_2", false)
+	agent:setHideUIState(not agent:isHideUIState())
+
+	if agent:isHideUIState() then
+		DmGame:getInstance():dispatch(ShowTipEvent({
+			tip = Strings:get("Story_Touch_Show")
+		}))
+	end
+end
+
+function HideButtonNode:hide()
+	self._renderNode:setVisible(false)
+end
+
+function HideButtonNode:show()
+	self._renderNode:setVisible(true)
+
+	local agent = self:getAgent()
+
+	self:updateHideUIState(agent:isHideUIState(), true)
+	self:updateAutoPlayState(agent:isAutoPlayState())
+end
+
+function HideButtonNode:updateHideUIState(isAutoPlay, notAnim)
+	if isAutoPlay then
+		self:startHidePlay(notAnim)
+	else
+		self:stopHidePlay(notAnim)
+	end
+end
+
+function HideButtonNode:updateAutoPlayState(isAutoPlay)
+	self._renderNode:setVisible(not isAutoPlay)
 end
 
 ParticleNode = class("ParticleNode", StageNode)

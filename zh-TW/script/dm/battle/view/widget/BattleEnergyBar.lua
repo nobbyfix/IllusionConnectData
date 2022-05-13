@@ -1,5 +1,5 @@
 local MAX_BAR_INDEX = 30
-local MAX_ENERGY_NUM = 99
+local MAX_ENERGY_NUM = 199
 local kColorCharMap = {
 	"a",
 	"c",
@@ -80,6 +80,33 @@ function BattleEnergyBar:_setupEnergyLabel(view)
 	self._lblEnergy = lblEnergy
 	self._energyTextAnim = view:getChildByFullName("energy_text")
 	self._oldEnergy = 0
+end
+
+function BattleEnergyBar:setBarGray(isGray)
+	self:getView():getChildByFullName("bar_node"):setGray(isGray)
+
+	local circleNode = self:getView():getChildByFullName("energy_circle")
+
+	circleNode:setVisible(not isGray)
+
+	local energy_bg = self:getView():getChildByFullName("energy_bg")
+
+	energy_bg:setVisible(not isGray)
+
+	if not self._shuiMoClip then
+		self._shuiMoClip = cc.MovieClip:create("shuimo_shuijingtiaoman")
+
+		self._shuiMoClip:addTo(circleNode:getParent())
+		self._shuiMoClip:setPosition(circleNode:getPosition())
+		self._shuiMoClip:setLocalZOrder(-1)
+		self._shuiMoClip:offset(7, -3)
+
+		self._shuimoAnim = self._shuiMoClip:getChildByName("clip")
+
+		self._shuimoAnim:gotoAndStop(1)
+	end
+
+	self._shuiMoClip:setVisible(isGray)
 end
 
 function BattleEnergyBar:_setupBarNode(view)
@@ -297,6 +324,10 @@ function BattleEnergyBar:_updateBarNodes()
 			end
 
 			circle:gotoAndStop(math.max(1, math.floor(remain * 30)))
+
+			if self._shuiMoClip then
+				self._shuimoAnim:gotoAndStop(math.max(1, math.floor(remain * 20)))
+			end
 		elseif circle then
 			self._circleAnims[i] = nil
 		end
@@ -352,7 +383,13 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 
 		local animName = nil
 
-		if energy >= 10 and self._oldEnergy >= 10 then
+		if energy >= 100 and self._oldEnergy >= 100 then
+			animName = "dhg_zhandoushuzi"
+		elseif energy >= 100 and self._oldEnergy < 100 then
+			animName = "dhe_zhandoushuzi"
+		elseif energy < 100 and self._oldEnergy >= 100 then
+			animName = "dhf_zhandoushuzi"
+		elseif energy >= 10 and self._oldEnergy >= 10 then
 			animName = "dhc_zhandoushuzi"
 		elseif energy >= 10 and self._oldEnergy < 10 then
 			animName = "dhb_zhandoushuzi"
@@ -363,6 +400,17 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 		end
 
 		local anim = cc.MovieClip:create(animName, "BattleMCGroup")
+
+		if energy >= 100 then
+			local bai = string.format("%d", energy):sub(-3, -3)
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai2"):addChild(baiText)
+
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai_shine"):addChild(baiText)
+		end
 
 		if energy >= 10 then
 			local ten = string.format("%d", energy):sub(-2, -2)
@@ -383,6 +431,13 @@ function BattleEnergyBar:setEnergyText(energy, withEffect)
 		local unitText = ccui.TextBMFont:create(ten, fntFile)
 
 		anim:getChildByFullName("unit_shine"):addChild(unitText)
+
+		if self._oldEnergy >= 100 then
+			local bai = string.format("%d", self._oldEnergy):sub(-3, -3)
+			local baiText = ccui.TextBMFont:create(bai, fntFile)
+
+			anim:getChildByFullName("bai"):addChild(baiText)
+		end
 
 		if self._oldEnergy >= 10 then
 			local ten = string.format("%d", self._oldEnergy):sub(-2, -2)

@@ -92,7 +92,7 @@ function ClubDonationMediator:refreshTopView()
 		local pointLevel = self._pointData:getLevel()
 
 		if pointLevel < self._pointData:getMaxLevel() then
-			levelLabel:setString("Lv." .. pointLevel)
+			levelLabel:setString(Strings:get("Common_LV_Text") .. pointLevel)
 		else
 			levelLabel:setString(Strings:get("Club_Contribute_UI2"))
 			proLabel:setVisible(false)
@@ -264,7 +264,9 @@ function ClubDonationMediator:createDonationView()
 			func = callFunc
 		})
 
-		local engoughSta = self._bagSystem:checkCostEnough(donationData:getType(), donationData:getDemand())
+		local engoughSta = self._bagSystem:checkCostEnough(donationData:getType(), donationData:getDemand(), {
+			notShowTip = true
+		})
 		local colorNum = engoughSta and 1 or 6
 
 		cellClone:setPosition(posMap[i].basePosX, 80)

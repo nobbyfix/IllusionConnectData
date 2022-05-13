@@ -15,6 +15,10 @@ local kBtnHandlers = {
 	["mainpanel.starNode.costPanel.starbtn"] = {
 		ignoreClickAudio = true,
 		func = "onUpStarClicked"
+	},
+	["mainpanel.starNode.costPanel.translateBtn"] = {
+		ignoreClickAudio = true,
+		func = "onTranslateClicked"
 	}
 }
 local kAttrType = {
@@ -31,6 +35,7 @@ local kStarPanelPosX = {
 	70,
 	0
 }
+local Hero_GeneralFragmentLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_GeneralFragmentLimit", "content")
 
 function HeroStrengthAwakenDetailMediator:initialize()
 	super.initialize(self)
@@ -44,6 +49,7 @@ end
 function HeroStrengthAwakenDetailMediator:onRegister()
 	super.onRegister(self)
 	self:mapEventListener(self:getEventDispatcher(), EVT_GALLERY_SEND_GIFT_SUCC, self, self.refreshHero)
+	self:mapEventListener(self:getEventDispatcher(), EVT_HERODEBRISCHANGE_SUCC, self, self.refreshStarUpCostPanel)
 
 	self._developSystem = self:getInjector():getInstance("DevelopSystem")
 	self._heroSystem = self._developSystem:getHeroSystem()
@@ -77,6 +83,7 @@ function HeroStrengthAwakenDetailMediator:initNodes()
 
 	self._awakeRoleNode = self._main:getChildByFullName("herobase.heropanel")
 	self._awakeAreaRoleNode = self._starPanel:getChildByFullName("boxPanel.role")
+	self._translateBtn = self._costPanel:getChildByFullName("translateBtn")
 	local addImg = self._costPanel:getChildByFullName("costNode1.costBg.addImg")
 	local touchPanel = addImg:getChildByFullName("touchPanel")
 
@@ -122,13 +129,14 @@ function HeroStrengthAwakenDetailMediator:initNodes()
 	GameStyle:setCostNodeEffect(self._costPanel:getChildByFullName("costNode3"))
 
 	local roleModel = self._heroData:getAwakenStarConfig().Portrait
-	local masterIcon = IconFactory:createRoleIconSprite({
-		iconType = "Portrait",
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe18",
 		id = roleModel
 	})
 
 	self._awakeRoleNode:removeAllChildren()
-	masterIcon:addTo(self._awakeRoleNode):center(self._awakeRoleNode:getContentSize()):offset(150, 50)
+	masterIcon:addTo(self._awakeRoleNode)
+	masterIcon:setPosition(cc.p(0, 200))
 	masterIcon:setRotation(15.5)
 end
 
@@ -475,6 +483,10 @@ function HeroStrengthAwakenDetailMediator:refreshStarUpCostPanel()
 end
 
 function HeroStrengthAwakenDetailMediator:refreshView(heroId)
+	local canExchange = not table.indexof(Hero_GeneralFragmentLimit, self._heroId)
+
+	self._translateBtn:setVisible(canExchange)
+	self._upStarBtn:setPositionX(canExchange and 647 or 500)
 	self:refreshViewState()
 end
 
@@ -543,6 +555,60 @@ function HeroStrengthAwakenDetailMediator:onUpStarClicked()
 	self._heroSystem:requestHeroAwake(self._heroId, items, callback)
 end
 
+function HeroStrengthAwakenDetailMediator:onTranslateClicked()
+	local data = self:getIsHaveFragmentFlag()
+	local hasFragmentNum = self._bagSystem:getItemCount(data.id)
+
+	if hasFragmentNum <= 0 then
+		local heroPrototype = self._heroData:getHeroPrototype()
+		local param = {
+			needNum = 0,
+			isNeed = true,
+			hasNum = 0,
+			hasWipeTip = true,
+			itemId = data.id
+		}
+		local view = self:getInjector():getInstance("sourceView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, param))
+
+		return
+	end
+
+	local debrisChangeTipView = self:getInjector():getInstance("HeroGeneralFragmentView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, debrisChangeTipView, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		kind = 2,
+		heroId = self._heroId
+	}, nil))
+end
+
+function HeroStrengthAwakenDetailMediator:getIsHaveFragmentFlag()
+	local data = nil
+	local heroData = self._heroSystem:getHeroById(self._heroId)
+	local quality = self._heroData:getRarity()
+	local info = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_StarFragment", "content")
+
+	for k, v in pairs(info) do
+		if quality == tonumber(k) then
+			data = {
+				id = next(v),
+				num = v[next(v)]
+			}
+
+			break
+		end
+	end
+
+	assert(data, "no qualiy Hero_StarFragment ")
+
+	return data
+end
+
 function HeroStrengthAwakenDetailMediator:onClickBack()
 	self:dismiss()
 end
@@ -592,12 +658,7 @@ function HeroStrengthAwakenDetailMediator:onClickStiveItem()
 end
 
 function HeroStrengthAwakenDetailMediator:onClickLoveItem()
-	local view = self:getInjector():getInstance("GalleryDateView")
-
-	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-		type = "gift",
-		id = self._heroId
-	}))
+	self._heroSystem:tryEnterDate(self._heroId, GalleryFuncName.kGift)
 end
 
 function HeroStrengthAwakenDetailMediator:runStartAction()

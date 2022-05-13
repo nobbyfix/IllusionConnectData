@@ -90,7 +90,7 @@ function MasterAttrShowTipWidget:createAttrPanel(attrType, attrNum, attrIcon)
 	local label1 = cc.Label:createWithTTF(attrType, TTF_FONT_FZYH_M, 18)
 
 	label1:setColor(cc.c3b(255, 255, 255))
-	label1:setAnchorPoint(1, 0.5)
+	label1:setAnchorPoint(0, 0.5)
 	GameStyle:setCommonOutlineEffect(label1, 255)
 
 	local label2 = cc.Label:createWithTTF(attrNum, TTF_FONT_FZYH_M, 18)
@@ -100,14 +100,14 @@ function MasterAttrShowTipWidget:createAttrPanel(attrType, attrNum, attrIcon)
 	GameStyle:setCommonOutlineEffect(label2, 255)
 	layout:setContentSize(cc.size(232, cellHeight))
 	layout:setAnchorPoint(cc.p(0.5, 0.5))
-	label1:addTo(layout):posite(110, 16)
-	label2:addTo(layout):posite(122, 16)
+	label1:addTo(layout):posite(40, 16)
+	label2:addTo(layout):posite(label1:getPositionX() + label1:getContentSize().width + 5, 16)
 
 	if attrIcon ~= "" then
 		local icon = ccui.ImageView:create(attrIcon, 1)
 
 		icon:setAnchorPoint(0, 0.5)
-		icon:addTo(layout):posite(label1:getPositionX() - label1:getContentSize().width - 35, 18)
+		icon:addTo(layout):posite(0, 18)
 	end
 
 	return layout

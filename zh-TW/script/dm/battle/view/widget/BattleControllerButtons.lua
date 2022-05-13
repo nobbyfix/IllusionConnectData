@@ -126,6 +126,19 @@ function BattleControllerButtons:_setupView()
 	self._speedPanel = self:getView():getChildByName("speed_panel")
 	self._speedLabel = self._speedPanel:getChildByName("label1")
 	self._speedLabel1 = self._speedPanel:getChildByName("label2")
+	local localLanguage = getCurrentLanguage()
+
+	if localLanguage ~= GameLanguageType.CN then
+		self._speedLabel:setVisible(false)
+		self._speedLabel1:setVisible(false)
+
+		self._speedLabel = self._speedPanel:getChildByName("label3")
+
+		self._speedLabel:setVisible(true)
+	else
+		self._speedPanel:getChildByName("label3"):setVisible(false)
+	end
+
 	self._speedBtn = self._speedPanel:getChildByName("speed_btn")
 
 	self._speedBtn:addTouchEventListener(function (sender, eventType)
@@ -275,13 +288,23 @@ function BattleControllerButtons:_setupSkipBtn()
 
 	label2:enableOutline(cc.c4b(255, 255, 255, 153), 1)
 
+	local label3 = skipPanel:getChildByName("label3")
+
+	label3:enableOutline(cc.c4b(255, 255, 255, 153), 1)
+
+	local function setSkipLabelVisible(visible)
+		dump(visible, "setSkipLabelVisible")
+		label1:setVisible(false)
+		label2:setVisible(false)
+		label3:setVisible(visible)
+	end
+
 	local state = self._btnsState.skip
 
 	if state.skipTime and state.enable and skipPanel:isVisible() then
 		self._waitTime = state.skipTime
 
-		label1:setVisible(false)
-		label2:setVisible(false)
+		setSkipLabelVisible(false)
 
 		local timeLabel = cc.Label:createWithTTF(tostring(math.ceil(self._waitTime)), TTF_FONT_FZYH_R, 20)
 
@@ -317,15 +340,20 @@ function BattleControllerButtons:_setupSkipBtn()
 					self._skipLabel = nil
 					self._skipWaiting = false
 
-					label1:setVisible(true)
-					label2:setVisible(true)
+					setSkipLabelVisible(true)
 				end
 			end
 		end)
+	else
+		setSkipLabelVisible(true)
 	end
 end
 
 function BattleControllerButtons:_setupAutoBtns()
+	if self._auto then
+		self:_resetSpeedBtnsByAuto()
+	end
+
 	local curBtnName = self._auto and "auto_enabled" or "auto_disabled"
 	local curBtn = nil
 
@@ -362,6 +390,21 @@ function BattleControllerButtons:_setupAutoBtns()
 		local label2 = labelnode:getChildByName("label2")
 
 		label2:enableOutline(cc.c4b(255, 255, 255, 153), 1)
+
+		local label3 = labelnode:getChildByName("label3")
+
+		label3:enableOutline(cc.c4b(255, 255, 255, 153), 1)
+
+		local localLanguage = getCurrentLanguage()
+
+		if localLanguage ~= GameLanguageType.CN then
+			label1:setVisible(false)
+			label2:setVisible(false)
+			label3:setVisible(true)
+		else
+			label3:setVisible(false)
+		end
+
 		labelnode:setVisible(labelnode:getName() == curBtnName)
 	end
 
@@ -373,6 +416,10 @@ function BattleControllerButtons:_setupAutoBtns()
 end
 
 function BattleControllerButtons:_resetAutoBtns(sender)
+	if sender:getName() == "auto_disabled" then
+		self:_resetSpeedBtnsByAuto()
+	end
+
 	local nextButton = nil
 
 	for i, button in ipairs(self._autoButtons) do
@@ -449,8 +496,8 @@ function BattleControllerButtons:_initSpeedBtns()
 	end
 end
 
-function BattleControllerButtons:_resetSpeedBtns(sender)
-	if not self:isTouchEnabled() then
+function BattleControllerButtons:_resetSpeedBtns(sender, isForce)
+	if not self:isTouchEnabled() and not isForce then
 		return
 	end
 
@@ -477,6 +524,14 @@ function BattleControllerButtons:_resetSpeedBtns(sender)
 
 	self:resetSpeedLable()
 	self._listener:onSpeedLevelChanged(self._speedLevel)
+end
+
+function BattleControllerButtons:_resetSpeedBtnsByAuto()
+	local speedLevel = self.speedConfig[1]
+
+	if speedLevel == self._speedLevel then
+		self:_resetSpeedBtns(nil, true)
+	end
 end
 
 function BattleControllerButtons:resetSpeedLable()

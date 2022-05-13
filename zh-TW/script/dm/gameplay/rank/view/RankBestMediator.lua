@@ -17,7 +17,7 @@ local rankPowerType = {
 	[RankType.kClub] = Strings:get("Strenghten_Text9"),
 	[RankType.kCombat] = Strings:get("HEROS_UI49") .. ":",
 	[RankType.kBlockStar] = Strings:get("RANK_UI6") .. ":",
-	[RankType.kPetRace] = Strings:get("Rank_Petrace_Score") .. ":",
+	[RankType.KPetWorldScore] = Strings:get("Petrace_Daily_Point") .. ":",
 	[RankType.kCrusade] = Strings:get("Crusade_UI14") .. ":",
 	[RankType.kMap] = Strings:get("EXPLORE_UI46") .. ":",
 	[RankType.kArena] = Strings:get("RANK_WeeklyHonor") .. ":",
@@ -71,7 +71,7 @@ function RankBestMediator:initWidgetInfo()
 	self._clonePanel:setVisible(false)
 
 	local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local month = date.month >= 10 and date.month or "0" .. date.month
 	local day = date.day >= 10 and date.day or "0" .. date.day
 	local week = date.wday == 1 and 7 or date.wday - 1
@@ -90,6 +90,22 @@ function RankBestMediator:initWidgetInfo()
 	self._tableView = self._viewPanel:getChildByFullName("tableView")
 
 	self:setBestTableView()
+
+	local titleText1 = self._mainPanel:getChildByFullName("titleNode.Text_1")
+	local titleText1_frame_w = titleText1:getContentSize().width
+	local titleText1_text_w = titleText1:getAutoRenderSize().width
+
+	print("getAutoRenderSize = " .. titleText1_text_w .. ", getTextAreaSize = " .. titleText1:getTextAreaSize().width)
+
+	if titleText1_frame_w < titleText1_text_w then
+		titleText1_text_w = titleText1_frame_w
+	end
+
+	local lineImage = self._mainPanel:getChildByFullName("main_bg_0")
+
+	lineImage:setPositionX(titleText1_text_w + 60)
+	dateText:setPositionX(titleText1_text_w + 70)
+	dateyear:setPositionX(titleText1_text_w + 70)
 end
 
 function RankBestMediator:setBestTableView()
@@ -198,13 +214,15 @@ function RankBestMediator:updataCell(cell, data, index)
 	local name_lbl = name_bg:getChildByFullName("name_lbl")
 	local power_num = name_bg:getChildByFullName("power_num")
 	local power_lbl = name_bg:getChildByFullName("power_lbl")
+	local nameBg = name_bg:getChildByFullName("name_bg")
+	local combatBg = name_bg:getChildByFullName("combat_bg")
 
 	local function switchTabView(response)
-		if tolua.isnull(rankName_bg) then
+		if response.resCode ~= GS_SUCCESS then
 			return
 		end
 
-		if response.resCode ~= GS_SUCCESS then
+		if tolua.isnull(rankName_bg) then
 			return
 		end
 
@@ -236,11 +254,6 @@ function RankBestMediator:updataCell(cell, data, index)
 			name_bg:setVisible(true)
 			name_lbl:setString(lb[1].nickname)
 			power_num:setString(lb[1].value)
-
-			if rankType == RankType.kPetRace then
-				power_num:setString(lb[1].score)
-			end
-
 			power_lbl:setString(rankPowerType[rankType])
 
 			if rankType == RankType.kClub or rankType == RankType.kClubBoss then
@@ -264,13 +277,13 @@ function RankBestMediator:updataCell(cell, data, index)
 					roleModel = ConfigReader:requireDataByNameIdAndKey("HeroBase", lb[1].board, "RoleModel")
 				end
 
-				local img, jsonPath = IconFactory:createRoleIconSprite({
-					iconType = "Bust4",
+				local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+					frameId = "bustframe4_8",
 					id = roleModel
 				})
 
-				img:addTo(roleNode):posite(30, 90)
-				img:setScale(0.8)
+				img:addTo(roleNode):posite(-40, 210)
+				img:setScale(1)
 				roleNode:setVisible(true)
 			end
 		elseif rankType == RankType.kClub or rankType == RankType.kClubBoss then
@@ -280,11 +293,21 @@ function RankBestMediator:updataCell(cell, data, index)
 			rankNull:setVisible(true)
 		end
 
-		local size = power_lbl:getContentSize().width
-		local posX = 100
+		local nameWidth = name_lbl:getContentSize().width
+		local nameBgWidth = nameWidth < 179 and 179 or nameWidth
 
-		power_lbl:setPositionX(100 + size - 57)
-		power_num:setPositionX(power_lbl:getPositionX() + 5)
+		nameBg:setContentSize(cc.size(nameBgWidth + 20, nameBg:getContentSize().height))
+		name_lbl:setPositionX(nameBg:getPositionX() - nameBg:getContentSize().width / 2)
+
+		local allWidth = power_num:getContentSize().width + power_lbl:getContentSize().width
+		local bgWidth = allWidth < 180 and 180 or allWidth
+
+		combatBg:setContentSize(cc.size(bgWidth + 15, combatBg:getContentSize().height))
+
+		local centerX = combatBg:getPositionX() - combatBg:getContentSize().width / 2
+
+		power_lbl:setPositionX(centerX - allWidth / 2)
+		power_num:setPositionX(power_lbl:getPositionX() + power_lbl:getContentSize().width)
 	end
 
 	local sendData = {
@@ -305,6 +328,7 @@ function RankBestMediator:updataCell(cell, data, index)
 			end
 
 			self._rankSystem:tryEnterRank({
+				blockUI = true,
 				ignoreClean = true,
 				index = self.allRankData[index].AppID
 			})

@@ -995,11 +995,8 @@ all.TowerBuffs_AfterActRpRecovery = {
 		passive2 = global["[duration]"](this, {
 			0
 		}, passive2)
-		passive2 = global["[trigger_by]"](this, {
-			"SELF:AFTER_UNIQUE"
-		}, passive2)
 		this.passive2 = global["[trigger_by]"](this, {
-			"SELF:AFTER_ACTION"
+			"SELF:AFTER_UNIQUE"
 		}, passive2)
 
 		return this

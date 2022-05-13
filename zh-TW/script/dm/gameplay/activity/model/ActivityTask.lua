@@ -15,10 +15,14 @@ ActivityTask:has("_taskValueList", {
 ActivityTask:has("_activityId", {
 	is = "rw"
 })
+ActivityTask:has("_type", {
+	is = "rw"
+})
 
 function ActivityTask:initialize()
 	super.initialize(self)
 
+	self._type = "ActivityTask"
 	self._id = ""
 	self._status = ActivityTaskStatus.kUnfinish
 	self._config = {}
@@ -83,6 +87,10 @@ function ActivityTask:updateTaskValue(data)
 			if value.targetValue then
 				self._taskValueList[tonumber(k) + 1].targetValue = value.targetValue
 			end
+
+			if value.targetList then
+				self._taskValueList[tonumber(k) + 1].targetList = value.targetList
+			end
 		end
 	end
 end
@@ -123,4 +131,32 @@ end
 
 function ActivityTask:getOrderNum()
 	return self:getConfig().OrderNum
+end
+
+function ActivityTask:getOrderStatusNum()
+	local result = 0
+
+	if self._status == ActivityTaskStatus.kUnfinish then
+		result = 20
+	elseif self._status == ActivityTaskStatus.kGet then
+		result = 10
+	else
+		result = 30
+	end
+
+	return result
+end
+
+function ActivityTask:getTaskUnFinishNum()
+	local num = 0
+
+	for _, v in pairs(self._taskValueList[1].targetList) do
+		num = num + 1
+	end
+
+	return num
+end
+
+function ActivityTask:getTaskTotalhNum()
+	return #self._config.Condition[1].factorStr1
 end

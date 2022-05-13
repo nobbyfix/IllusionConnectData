@@ -110,6 +110,12 @@ IconFactory.kClikpStencil = {
 	},
 	{
 		path = "asset/stencil/smzb_bg_bzdi_stencil.png"
+	},
+	{
+		path = "asset/stencil/bg_leadstage_kuang_caiqie1.png"
+	},
+	{
+		path = "asset/stencil/bg_leadstage_kuang_caiqie2.png"
 	}
 }
 IconFactory.ScaleRatio = {
@@ -188,10 +194,22 @@ function IconTouchHandler:removeItemTipView()
 		equipTipView:removeFromParent(true)
 	end
 
+	local composeToEquipTipView = self._parentViewMediator:getView():getChildByTag(ComposeToEquipTipsViewTag)
+
+	if composeToEquipTipView ~= nil then
+		composeToEquipTipView:removeFromParent(true)
+	end
+
 	local buffTipView = self._parentViewMediator:getView():getChildByTag(BuffTipsViewTag)
 
 	if buffTipView ~= nil then
 		buffTipView:removeFromParent(true)
+	end
+
+	local wordTipView = self._parentViewMediator:getView():getChildByTag(SomeWordTipsViewTag)
+
+	if wordTipView ~= nil then
+		wordTipView:removeFromParent(true)
 	end
 
 	local itemBuffTipView = self._parentViewMediator:getView():getChildByTag(ItemBuffTipsViewTag)
@@ -200,10 +218,10 @@ function IconTouchHandler:removeItemTipView()
 		itemBuffTipView:removeFromParent(true)
 	end
 
-	local itemShowTipsView = self._parentViewMediator:getView():getChildByTag(ItemShowTipsViewTag)
+	local itemBuffTipView = self._parentViewMediator:getView():getChildByTag(ItemShowTipsViewTag)
 
-	if itemShowTipsView ~= nil then
-		itemShowTipsView:removeFromParent(true)
+	if itemBuffTipView ~= nil then
+		itemBuffTipView:removeFromParent(true)
 	end
 end
 
@@ -239,6 +257,15 @@ function IconTouchHandler:onBegan(icon)
 	elseif rewardType == RewardType.kShow then
 		itemTipView = mediator:getInjector():getInstance("ItemShowTipsView")
 		tipsViewTag = ItemShowTipsViewTag
+	elseif rewardType == RewardType.kItem then
+		if RewardSystem:checkIsComposeItem(info) then
+			itemTipView = mediator:getInjector():getInstance("ComposeToEquipTipsView")
+			info.parentMediatorSize = mediator:getView():getContentSize()
+			tipsViewTag = ComposeToEquipTipsViewTag
+		else
+			itemTipView = mediator:getInjector():getInstance("ItemTipsView")
+			tipsViewTag = ItemTipsViewTag
+		end
 	else
 		itemTipView = mediator:getInjector():getInstance("ItemTipsView")
 		tipsViewTag = ItemTipsViewTag
@@ -329,6 +356,31 @@ function BuffTouchHandler:onBegan(icon)
 	}))
 end
 
+SomeWordTouchHandler = class("SomeWordTouchHandler", IconTouchHandler, _M)
+
+function SomeWordTouchHandler:onBegan(icon)
+	local pos = icon:getTouchBeganPosition()
+	self._beginPos = {
+		x = pos.x,
+		y = pos.y
+	}
+	local info = icon.info
+
+	self:removeItemTipView()
+
+	local mediator = self._parentViewMediator
+	self._parentViewMediator.zorder = self._parentViewMediator:getView():getLocalZOrder()
+	local oneTipView = mediator:getInjector():getInstance("ShowSomeWordTipsView")
+	local tipsViewTag = SomeWordTipsViewTag
+
+	mediator:getView():addChild(oneTipView, 99999, tipsViewTag)
+	mediator:dispatch(Event:new(EVT_SHOW_SOME_WORDTIP, {
+		info = info,
+		icon = icon,
+		style = icon.style
+	}))
+end
+
 function IconFactory:bindTouchHander(icon, handler, info, style)
 	local rewardData = RewardSystem:parseInfo(info)
 	icon.info = rewardData
@@ -342,8 +394,11 @@ function IconFactory:bindTouchHander(icon, handler, info, style)
 		end
 
 		if eventType == ccui.TouchEventType.began then
+			icon.isReturn = false
 			local delayAct = cc.DelayTime:create(style.delayTime or 0.1)
 			local judgeShowAct = cc.CallFunc:create(function ()
+				icon.isReturn = true
+
 				if handler.onBegan ~= nil then
 					handler:onBegan(icon)
 				end
@@ -371,6 +426,8 @@ function IconFactory:bindTouchHander(icon, handler, info, style)
 			if handler.onEnded ~= nil then
 				handler:onEnded(icon)
 			end
+
+			icon.isReturn = false
 		end
 	end)
 end
@@ -483,6 +540,9 @@ function IconFactory:getRoleIconPath(id, type)
 end
 
 function IconFactory:createRoleIconSprite(info)
+	dump(info, "===========================createRoleIconSprite")
+	assert(false, "invalid function")
+
 	local id = info.id
 	local type = info.iconType or 1
 	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", id, IconFactory.kIconType[type] or type)
@@ -625,6 +685,7 @@ function IconFactory:createRoleIconSprite(info)
 		node:setContentSize(size)
 		node:setAnchorPoint(cc.p(0.5, 0.5))
 		sprite:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:setName("hero")
 		sprite:addTo(node)
 		sprite:setPosition(x + size.width * 0.5, y + size.height * 0.5)
 
@@ -632,6 +693,295 @@ function IconFactory:createRoleIconSprite(info)
 	end
 
 	return sprite, animPath, spineani, picInfo
+end
+
+function IconFactory:getStencilByName(stecialInfo, size)
+	local stencilPath = "asset/stencil/" .. stecialInfo.name
+	local stencil = nil
+
+	if stecialInfo.name == "drawNode" then
+		local radius = (size and size.width or 100) * 0.5
+		stencil = cc.DrawNode:create()
+
+		stencil:drawSolidCircle(cc.p(radius, radius), radius, 0, 100, 1, 1, cc.c4f(1, 0, 0, 1))
+		stencil:setContentSize(cc.size(radius * 2, radius * 2))
+		stencil:setAnchorPoint(0.5, 0.5)
+	else
+		if stecialInfo.scale9 then
+			srect = cc.rect(stecialInfo.scale9[1], stecialInfo.scale9[2], stecialInfo.scale9[3], stecialInfo.scale9[4])
+			stencil = ccui.Scale9Sprite:create(srect, stencilPath)
+		else
+			stencil = ccui.ImageView:create()
+
+			stencil:loadTexture(stencilPath)
+			stencil:ignoreContentAdaptWithSize(false)
+		end
+
+		size = size or stencil:getContentSize()
+
+		stencil:setContentSize(size)
+	end
+
+	return stencil
+end
+
+function IconFactory:createRoleIconSpriteNew(info)
+	local id = info.id
+
+	if not info.frameId then
+		return IconFactory:createRoleIconSpriteNewIcon(info)
+	end
+
+	local frameId = info.frameId
+	local frameInfo = ConfigReader:getRecordById("BustFrame", frameId)
+	local roleModelInfo = ConfigReader:getRecordById("RoleModel", id)
+	local bustInfo = roleModelInfo[frameInfo.BustTempId]
+	local stencil = frameInfo.Stencil
+
+	if info.useAnim and not next(stencil) and frameInfo.Size[1] > 0 then
+		stencil = {
+			name = "icon_zz.png"
+		}
+	end
+
+	local modelID = roleModelInfo.Model
+	local commonResource = roleModelInfo.CommonResource
+
+	if not commonResource or commonResource == "" then
+		commonResource = modelID
+	end
+
+	local path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(roleModelInfo.Path)], commonResource, roleModelInfo.Filename)
+	local animPath, sprite, spineani = nil
+
+	if info.useAnim then
+		animPath = string.format("asset/anim/%s.skel", roleModelInfo.Filename)
+		local imagePath = string.format("asset/anim/%s.png", roleModelInfo.Filename)
+		local plistPath = string.format("asset/anim/%s.plist", roleModelInfo.Filename)
+		local imageAlphaPath = string.format("asset/anim/%s.png@alpha", roleModelInfo.Filename)
+
+		if (DEBUG ~= 0 or cc.FileUtils:getInstance():isFileExist(imageAlphaPath)) and cc.FileUtils:getInstance():isFileExist(animPath) and cc.FileUtils:getInstance():isFileExist(imagePath) and cc.FileUtils:getInstance():isFileExist(plistPath) then
+			local spineNode = sp.SkeletonAnimation:create(animPath)
+
+			spineNode:playAnimation(0, "", true)
+			spineNode:setTag(666)
+
+			spineani = spineNode
+			local boundingBox = spineNode:getBoundingBox()
+
+			spineNode:playAnimation(0, "animation", true)
+
+			local size = cc.size(boundingBox.width, boundingBox.height)
+			local node = self:createBaseNode(true)
+
+			node:setTouchEnabled(false)
+			node:setContentSize(size)
+			node:setAnchorPoint(cc.p(0.5, 0.5))
+			spineNode:addTo(node)
+			spineNode:setPosition(size.width * 0.5, 0)
+
+			sprite = node
+		end
+	end
+
+	sprite = sprite or cc.Sprite:create(path)
+
+	if not sprite then
+		sprite = cc.Sprite:create()
+
+		CommonUtils.uploadDataToBugly("IconFactory:createRoleIconSpriteNew", "未找到RoleModel表中所配文件：" .. path .. " id: " .. id .. "type" .. type)
+	end
+
+	local bustZoom = nil
+	local spriteSize = sprite:getContentSize()
+	local x = frameInfo.Pos[1] or 0
+	local y = frameInfo.Pos[2] or 0
+	local frameSize = cc.size(frameInfo.Size[1], frameInfo.Size[2])
+
+	if stencil and next(stencil) then
+		bustZoom = roleModelInfo.bustZoom or 1
+
+		sprite:setScale(bustZoom)
+		sprite:setPosition(cc.p(bustInfo[1], bustInfo[2]))
+
+		local size = sprite:getContentSize()
+		size.width = size.width * sprite:getScale()
+		size.height = size.height * sprite:getScale()
+		local spnode = self:createBaseNode(true)
+
+		spnode:setTouchEnabled(false)
+		spnode:setContentSize(size)
+		spnode:setAnchorPoint(cc.p(0, 0))
+		spnode:setPosition(cc.p(0, 0))
+		sprite:setAnchorPoint(cc.p(0, 0))
+		sprite:addTo(spnode)
+		spnode:setScale(frameInfo.Scale)
+		spnode:setAnchorPoint(cc.p(x / (spnode:getContentSize().width * frameInfo.Scale), y / (spnode:getContentSize().height * frameInfo.Scale)))
+
+		stencil = self:getStencilByName(stencil, frameSize.width > 0 and frameSize or nil)
+
+		stencil:setPosition(0, 0)
+		stencil:setAnchorPoint(cc.p(0, 0))
+		spnode:setPosition(cc.p(0, 0))
+
+		sprite = ClippingNodeUtils.getClippingNodeByData({
+			stencil = stencil,
+			content = spnode
+		}, info.alpha)
+		local size = stencil:getContentSize()
+		size.width = size.width * stencil:getScaleX()
+		size.height = size.height * stencil:getScaleY()
+
+		sprite:setContentSize(size)
+		sprite:setAnchorPoint(cc.p(0, 0))
+		sprite:setIgnoreAnchorPointForPosition(false)
+
+		local size = sprite:getContentSize()
+		size.width = size.width * sprite:getScale()
+		size.height = size.height * sprite:getScale()
+		local node = self:createBaseNode(true)
+
+		node:setTouchEnabled(false)
+		node:setContentSize(size)
+		node:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:addTo(node)
+		sprite:setPosition(size.width * 0.5, size.height * 0.5)
+
+		if info.stencilFlip then
+			node:setFlippedX(info.stencilFlip)
+		end
+
+		sprite = node
+	elseif frameSize.width > 0 then
+		bustZoom = roleModelInfo.bustZoom or 1
+
+		sprite:setScale(bustZoom)
+		sprite:setPosition(cc.p(bustInfo[1], bustInfo[2]))
+
+		local size = sprite:getContentSize()
+		size.width = size.width * sprite:getScale()
+		size.height = size.height * sprite:getScale()
+		local spnode = self:createBaseNode(true)
+
+		spnode:setTouchEnabled(false)
+		spnode:setContentSize(size)
+		spnode:setAnchorPoint(cc.p(0, 0))
+		spnode:setPosition(cc.p(0, 0))
+		sprite:setAnchorPoint(cc.p(0, 0))
+		sprite:addTo(spnode)
+		spnode:setScale(frameInfo.Scale)
+
+		local realSize = cc.size(frameSize.width / frameInfo.Scale / bustZoom, frameSize.height / frameInfo.Scale / bustZoom)
+		local kuangPos = sprite:convertToNodeSpace(cc.p(x, y))
+		local realPosX = kuangPos.x
+		local realPosY = kuangPos.y
+		local clipSzie = realSize
+		local offsetX = math.max(0, realPosX)
+		local offsetY = math.max(0, spriteSize.height - realPosY - clipSzie.height)
+		local width = realPosX < 0 and clipSzie.width + realPosX or clipSzie.width
+		local height = offsetY < 0 and clipSzie.height + offsetY or clipSzie.height
+
+		sprite:setTextureRect(cc.rect(offsetX, offsetY, math.min(width, spriteSize.width - offsetX), height))
+		sprite:setScale(bustZoom * frameInfo.Scale)
+		spnode:setScale(1)
+
+		local size = sprite:getContentSize()
+		size.width = size.width * sprite:getScale()
+		size.height = size.height * sprite:getScale()
+
+		spnode:setContentSize(size)
+		spnode:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:setAnchorPoint(cc.p(0.5, 0.5))
+		sprite:setPosition(size.width * 0.5, size.height * 0.5)
+
+		sprite = spnode
+	else
+		local specialScaleId = frameInfo.SpecialScaleId
+
+		if specialScaleId and specialScaleId ~= "" then
+			bustZoom = roleModelInfo[specialScaleId] or 1
+		else
+			bustZoom = roleModelInfo.bustZoom or 1
+		end
+
+		sprite:setAnchorPoint(cc.p(0, 0))
+		sprite:setScale(bustZoom)
+		sprite:setPosition(cc.p(bustInfo[1] + x, bustInfo[2] + y))
+
+		local size = sprite:getContentSize()
+		size.width = size.width * sprite:getScale()
+		size.height = size.height * sprite:getScale()
+		local node = self:createBaseNode(true)
+
+		node:setTouchEnabled(false)
+		node:setContentSize(size)
+		node:setAnchorPoint(cc.p(0, 0))
+		node:setPosition(cc.p(0, 0))
+		sprite:setName("hero")
+		sprite:addTo(node)
+		node:setScale(frameInfo.Scale)
+
+		sprite = node
+	end
+
+	local picInfo = {
+		zoom = bustZoom,
+		Deviation = {
+			bustInfo[1] + x,
+			bustInfo[2] + y
+		}
+	}
+
+	return sprite, animPath, spineani, picInfo
+end
+
+function IconFactory:createRoleIconSpriteNewIcon(info)
+	local id = info.id
+	local type = info.iconType or 1
+
+	assert(type == 1 or type == 2 or type == "Portrait" or type == "MasterHeadWide", "error type")
+
+	local path = nil
+	local modelID = ConfigReader:getDataByNameIdAndKey("RoleModel", id, "Model")
+	local commonResource = ConfigReader:getDataByNameIdAndKey("RoleModel", id, "CommonResource")
+
+	if not commonResource or commonResource == "" then
+		commonResource = modelID
+	end
+
+	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", id, IconFactory.kIconType[type] or type)
+
+	assert(rolePicId and rolePicId ~= "", string.format("未找到RoleModel表中所配字段ID:%s,字段：%s", id, IconFactory.kIconType[type] or type))
+
+	local picInfo = ConfigReader:getRecordById("SpecialPicture", rolePicId)
+
+	assert(picInfo, string.format("未找到SpecialPicture表中所配字段ID:%s", rolePicId))
+
+	path = string.format("%s%s/%s.png", IconFactory.kIconPathCfg[tonumber(picInfo.Path)], commonResource, picInfo.Filename)
+	local sprite = cc.Sprite:create(path)
+
+	if not sprite then
+		sprite = cc.Sprite:create()
+
+		CommonUtils.uploadDataToBugly("IconFactory:createRoleIconSpriteNewIcon", "未找到RoleModel表中所配文件：" .. path .. " id: " .. id .. "type" .. type)
+	end
+
+	local size = sprite:getContentSize()
+	size.width = size.width * sprite:getScale()
+	size.height = size.height * sprite:getScale()
+	local node = self:createBaseNode(true)
+
+	node:setTouchEnabled(false)
+	node:setContentSize(size)
+	node:setAnchorPoint(cc.p(0.5, 0.5))
+	sprite:setAnchorPoint(cc.p(0.5, 0.5))
+	sprite:addTo(node)
+	sprite:setPosition(size.width * 0.5, size.height * 0.5)
+
+	sprite = node
+
+	return sprite
 end
 
 function IconFactory:createBaseNode(isWidget)
@@ -678,6 +1028,18 @@ function IconFactory:createIcon(info, style)
 
 			if config and config.Id then
 				return IconFactory:createBuffIcon(info, style)
+			end
+		elseif info.rewardType == RewardType.kBackground then
+			local config = ConfigReader:getRecordById("HomeBackground", tostring(id))
+
+			if config and config.Id then
+				return IconFactory:createBackgroundIcon(info, style)
+			end
+		elseif info.rewardType == RewardType.kRTPKEmoji then
+			local config = ConfigReader:getRecordById("MasterFace", tostring(id))
+
+			if config and config.Id then
+				return IconFactory:createRTPKEmojiIcon(info, style)
 			end
 		end
 	end
@@ -744,6 +1106,17 @@ function IconFactory:createRewardIcon(rewardInfo, style)
 			if label then
 				label:setScale(0.8 / scale)
 				label:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+
+				if icon:getChildByName("AmountBg") then
+					local amountBg = icon:getChildByName("AmountBg")
+
+					amountBg:setAnchorPoint(cc.p(1, 0))
+
+					local width = amountBg:getContentSize().width * scale
+					local scaleX = (label:getContentSize().width * 0.8 / scale + 16) / width
+
+					amountBg:setScaleX(scaleX * scale)
+				end
 			end
 		end
 	end
@@ -937,7 +1310,7 @@ function IconFactory:createMasterIcon(info, style)
 	local scale = info.scale or 1
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", id)
 	info.id = roleModel
-	local heroImg = self:createRoleIconSprite(info)
+	local heroImg = self:createRoleIconSpriteNew(info)
 
 	if heroImg == nil then
 		heroImg = self:createSprite("asset/master/1001/1001_head.png")
@@ -996,7 +1369,7 @@ function IconFactory:createMasterIcon(info, style)
 	local scale = info.scale or 1
 	local roleModel = IconFactory:getRoleModelByKey("MasterBase", id)
 	info.id = roleModel
-	local heroImg = self:createRoleIconSprite(info)
+	local heroImg = self:createRoleIconSpriteNew(info)
 
 	assert(heroImg ~= nil, "主角没有头像。")
 
@@ -1088,7 +1461,7 @@ function IconFactory:createHeroIcon(info, style)
 	local kHeroSpriteTag = 65569
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", id)
 	info.id = roleModel
-	local heroImg = self:createRoleIconSprite(info)
+	local heroImg = self:createRoleIconSpriteNew(info)
 
 	heroImg:setTag(kHeroSpriteTag)
 
@@ -1104,7 +1477,7 @@ function IconFactory:createHeroIcon(info, style)
 
 		heroImg:removeFromParent()
 
-		heroImg = IconFactory:createRoleIconSprite(info)
+		heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 		heroImg:setTag(kHeroSpriteTag)
 		heroImg:addTo(heroNode)
@@ -1414,7 +1787,7 @@ function IconFactory:createHeroSmallIcon(info, style)
 	rootPanel:getChildByName("HeroBg"):loadTexture(GameStyle:getHeroQualityRectFile(quality)[4])
 	rootPanel:removeChildByName("HeroIcon")
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.6)
 
@@ -1537,10 +1910,10 @@ local kHeroRarityAnim = {
 	"r_yingxiongxuanze",
 	"sr_yingxiongxuanze",
 	"ssr_yingxiongxuanze",
-	"ssr_yingxiongxuanze"
+	"sp_xiao_urequipeff"
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -1564,7 +1937,7 @@ function IconFactory:createHeroLargeIcon(info, style)
 	local qualityLevel = info.qualityLevel and info.qualityLevel or 0
 	info.id = info.roleModel or IconFactory:getRoleModelByKey("HeroBase", id)
 	local heroPanel = actionNode:getChildByName("hero")
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.id
 	})
 
@@ -1616,7 +1989,12 @@ function IconFactory:createHeroLargeIcon(info, style)
 			local anim = cc.MovieClip:create(kHeroRarityBgAnim[rarity])
 
 			anim:addTo(bg):center(bg:getContentSize())
-			anim:offset(-1, -30)
+
+			if rarity <= 14 then
+				anim:offset(-1, -30)
+			else
+				anim:offset(-3, 0)
+			end
 
 			if rarity >= 14 then
 				local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1706,6 +2084,10 @@ function IconFactory:createHeroLargeIcon(info, style)
 			end
 		end
 
+		if style.hideStarBg then
+			starBg:loadTexture("toumingtu.png", 1)
+		end
+
 		if style.hideLevel then
 			levelLabel:removeFromParent()
 			levelImage:removeFromParent()
@@ -1784,7 +2166,7 @@ function IconFactory:createHeroLargeNotRemoveIcon(info, style)
 	local qualityLevel = info.qualityLevel and info.qualityLevel or 0
 	info.id = info.roleModel or IconFactory:getRoleModelByKey("HeroBase", id)
 	local heroPanel = actionNode:getChildByName("hero")
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.id
 	})
 
@@ -1820,6 +2202,26 @@ function IconFactory:createHeroLargeNotRemoveIcon(info, style)
 	raritybg:loadTexture(GameStyle:getHeroRarityImage(rarity), 1)
 	bg1:loadTexture(GameStyle:getHeroRarityBg(rarity)[1])
 	bg2:loadTexture(GameStyle:getHeroRarityBg(rarity)[2])
+
+	local weak = actionNode:getChildByName("weak")
+	local weakTop = actionNode:getChildByName("weak")
+
+	weak:removeAllChildren()
+	weakTop:removeAllChildren()
+
+	if info and info.awakenLevel and info.awakenLevel > 0 then
+		local anim = cc.MovieClip:create("dikuang_yinghunxuanze")
+
+		anim:addTo(weak):center(weak:getContentSize())
+		anim:setScale(2)
+		anim:offset(-5, 18)
+
+		anim = cc.MovieClip:create("shangkuang_yinghunxuanze")
+
+		anim:addTo(weakTop):center(weakTop:getContentSize())
+		anim:setScale(2)
+		anim:offset(-5, 18)
+	end
 
 	if style.hideAll then
 		starBg:setVisible(false)
@@ -1936,7 +2338,7 @@ function IconFactory:createSurfaceIcon(info, style)
 		IconFactory:centerAddNode(node, quaRectImg)
 	end
 
-	local itemImg = self:createRoleIconSprite({
+	local itemImg = self:createRoleIconSpriteNew({
 		id = config.Model
 	})
 	local scale = 0.6
@@ -1963,6 +2365,20 @@ function IconFactory:createSurfaceIcon(info, style)
 
 	IconFactory:centerAddNode(node, itemImg)
 
+	local markImg = ccui.ImageView:create("asset/common/pf_bg_sz.png")
+
+	markImg:setRotation(30)
+	markImg:setPosition(node:getContentSize().width - 20, node:getContentSize().height - 20)
+	node:addChild(markImg)
+
+	local label = cc.Label:createWithTTF("", "asset/font/CustomFont_FZYH_R.TTF", 18)
+
+	label:setString(Strings:get("Surface_ShowTip"))
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(50, 27)
+	label:addTo(markImg):center(markImg:getContentSize()):offset(0, 3)
+
 	return node
 end
 
@@ -1976,8 +2392,13 @@ function IconFactory:createHeroIconForReward(info, style)
 	local heroPrototype = PrototypeFactory:getInstance():getHeroPrototype(id)
 	local heroConfig = heroPrototype:getConfig()
 	local star = newInfo.star and newInfo.star or heroConfig.BaseStar
-	local quality = heroConfig.Rareity
-	local qualityImg = GameStyle:getItemQuaRectFile(quality - 9, 1)
+	local quality = heroConfig.Rareity - 9
+
+	if heroConfig.Rareity == 15 then
+		quality = 7
+	end
+
+	local qualityImg = GameStyle:getItemQuaRectFile(quality, 1)
 	local quaRectImg = IconFactory:createSprite(qualityImg)
 	local colorRectSize = cc.size(110, 110)
 	local node = self:createBaseNode(style and style.isWidget)
@@ -1994,7 +2415,7 @@ function IconFactory:createHeroIconForReward(info, style)
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", id)
 	newInfo.id = roleModel
-	local heroImg = self:createRoleIconSprite(newInfo)
+	local heroImg = self:createRoleIconSpriteNew(newInfo)
 
 	heroImg:setScale(0.55)
 
@@ -2035,6 +2456,11 @@ function IconFactory:createEquipPic(info, style)
 		local iconName = config.Icon
 		local path = "asset/items/" .. iconName .. ".png"
 		icon = cc.Sprite:create(path)
+		local size = icon:getContentSize()
+
+		if size.width > 200 then
+			icon:setScale(0.42)
+		end
 	else
 		icon = cc.Sprite:create()
 	end
@@ -2108,40 +2534,10 @@ function IconFactory:createEquipIcon(info, style)
 	end
 
 	local equipImg = self:createEquipPic(info)
-	local spriteSize = equipImg:getContentSize()
-	local coordinates = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "Coordinates") or {}
+	local scale = equipImg:getScale()
 	local contentScale = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "zoom") or 1
-	local x = coordinates[1] or 0
-	local y = coordinates[2] or 0
-	local clipIndex = 1
-	local stencilSize = cc.size(105, 105)
 
-	if style.showAllSprite == true then
-		stencilSize = spriteSize
-	end
-
-	info.stencil = self:getStencilByType(clipIndex, stencilSize)
-	local equipSize = info.stencil:getContentSize()
-	equipSize.width = equipSize.width * info.stencil:getScaleX()
-	equipSize.height = equipSize.height * info.stencil:getScaleY()
-	local anchorPoint = cc.p(x / (spriteSize.width * contentScale), y / (spriteSize.height * contentScale))
-
-	if style.showAllSprite == true then
-		anchorPoint = cc.p(0, 0)
-	end
-
-	equipImg:setAnchorPoint(anchorPoint)
-	equipImg:setFlippedX(info.stencilFlip)
-	equipImg:setScale(contentScale)
-	info.stencil:setPosition(0, 0)
-	info.stencil:setAnchorPoint(cc.p(0, 0))
-
-	equipImg = ClippingNodeUtils.getClippingNodeByData({
-		stencil = info.stencil,
-		content = equipImg
-	}, info.alpha)
-
-	equipImg:setContentSize(equipSize)
+	equipImg:setScale(contentScale * scale)
 	equipImg:setAnchorPoint(cc.p(0.5, 0.5))
 	equipImg:setIgnoreAnchorPointForPosition(false)
 	IconFactory:centerAddNode(node, equipImg)
@@ -2542,6 +2938,13 @@ function IconFactory:createItemIcon(info, style)
 	local amount = info.amount
 	info.clipIndex = info.clipIndex or 1
 	info.stencilSize = info.stencilSize or cc.size(105, 105)
+	local isLock = info.lock or false
+	local useNoEnough = true
+
+	if info.useNoEnough ~= nil then
+		useNoEnough = info.useNoEnough
+	end
+
 	local quaImgType = style and style.rectType and style.rectType or 1
 	local qualityImg = GameStyle:getItemQuaRectFile(quality, quaImgType)
 	local quaRectImg = IconFactory:createSprite(qualityImg)
@@ -2588,6 +2991,24 @@ function IconFactory:createItemIcon(info, style)
 		end
 	end
 
+	local kLockName = "LockImage"
+
+	function node:setLock(lock)
+		local lockImage = self:getChildByName(kLockName)
+
+		if not lockImage then
+			lockImage = ccui.ImageView:create("yinghun_img_lock.png", ccui.TextureResType.plistType)
+
+			lockImage:addTo(node)
+			lockImage:setName(kLockName)
+			lockImage:setAnchorPoint(cc.p(0, 0))
+			lockImage:setPosition(cc.p(3, 24))
+			lockImage:setScale(0.9)
+		end
+
+		lockImage:setVisible(lock)
+	end
+
 	function node:setAmount(amount, effect)
 		if style and style.showAmount == false then
 			return
@@ -2624,7 +3045,14 @@ function IconFactory:createItemIcon(info, style)
 		local scaleX = (label:getContentSize().width + 16) / width
 
 		amountBg:setScaleX(scaleX)
-		amountBg:setVisible(amount ~= "" and tonumber(amount) > 0)
+
+		if type(amount) == "number" then
+			if useNoEnough then
+				amountBg:setVisible(tonumber(amount) > 0)
+			end
+		else
+			amountBg:setVisible(amount ~= "")
+		end
 
 		if effect then
 			if effect.color then
@@ -2635,11 +3063,21 @@ function IconFactory:createItemIcon(info, style)
 				label:disableEffect(1)
 				label:enableOutline(effect.outline, 1)
 			end
+		elseif type(amount) == "number" then
+			if useNoEnough then
+				label:setVisible(tonumber(amount) > 0)
+			elseif tonumber(amount) == 0 then
+				label:setColor(cc.c3b(220, 0, 0))
+			else
+				label:setColor(cc.c3b(255, 255, 255))
+			end
 		else
-			label:setVisible(amount ~= "" and tonumber(amount) > 0)
+			label:setVisible(amount ~= "")
 		end
 
-		self:setNotEngouhState(amount == 0)
+		if useNoEnough then
+			self:setNotEngouhState(amount == 0)
+		end
 	end
 
 	function node:adjustAmountBg()
@@ -2703,6 +3141,10 @@ function IconFactory:createItemIcon(info, style)
 
 	if info.rarity then
 		node:setRarity(info.rarity)
+	end
+
+	if style and style.showLock then
+		node:setLock(isLock)
 	end
 
 	return node
@@ -3006,7 +3448,6 @@ function IconFactory:createItemPic(info, style)
 	assert(info and info.id, "Bad argument")
 
 	local config = ConfigReader:getRecordById("ItemConfig", tostring(info.id))
-	local ResourcesIconConfig = ConfigReader:getRecordById("ResourcesIcon", tostring(info.id))
 	local path = "asset/items/" .. config.Icon .. ".png"
 	local icon = self:createSprite()
 	info.offset = info.offset or {
@@ -3017,13 +3458,8 @@ function IconFactory:createItemPic(info, style)
 	if config.Type == ItemTypes.K_HERO_F or config.Type == ItemTypes.K_MASTER_F then
 		local tableName = config.Type == ItemTypes.K_HERO_F and "HeroBase" or "MasterBase"
 		local roleModel = self:getRoleModelByKey(tableName, config.TargetId.id)
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			id = roleModel
-		})
-	elseif config.Icon == "" and ResourcesIconConfig then
-		icon = self:createResourcePic(config, {
-			ignoreScaleSize = true,
-			largeIcon = true
 		})
 	elseif config.Icon ~= "" then
 		icon = self:createSprite(path)
@@ -3237,7 +3673,7 @@ function IconFactory:createPlayerIcon(info)
 
 	if imageType == 1 then
 		local modelId = IconFactory:getRoleModelByKey("HeroBase", id)
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			id = modelId
 		})
 		offset = {
@@ -3246,7 +3682,7 @@ function IconFactory:createPlayerIcon(info)
 		}
 	elseif imageType == 2 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("MasterBase", id, "RoleModel")
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			id = modelId
 		})
 		offset = {
@@ -3365,6 +3801,121 @@ function IconFactory:createPlayerIcon(info)
 	return node, oldIcon
 end
 
+function IconFactory:createBackgroundIcon(info, style)
+	assert(info ~= nil, "Bad argument")
+
+	local config = ConfigReader:getRecordById("HomeBackground", tostring(info.id))
+	style = style or {}
+
+	if config ~= nil then
+		local index, iconNode = nil
+		iconNode = ccui.ImageView:create("asset/items/" .. config.Information.img .. ".png")
+
+		if iconNode == nil then
+			iconNode = self:createSprite(GameStyle:getDefaultUnfoundFile())
+		end
+
+		iconNode:setScale(0.5)
+
+		local node = ccui.Widget:create()
+
+		node:setContentSize(cc.size(iconNode:getContentSize().width, iconNode:getContentSize().height))
+		node:setAnchorPoint(cc.p(0.5, 0.5))
+
+		local quality = cc.Sprite:create("asset/itemRect/common_pz_huang.png")
+
+		node:addChild(quality)
+		quality:setPosition(100, 100)
+		iconNode:addTo(node):center(node:getContentSize())
+
+		iconNode = node
+
+		if info.scaleRatio then
+			iconNode:setScale(info.scaleRatio)
+		else
+			iconNode:setScale(1)
+		end
+
+		local size = cc.size(110, 110)
+		local node = self:createBaseNode(style and style.isWidget)
+
+		node:setContentSize(size)
+		IconFactory:centerAddNode(node, iconNode)
+
+		local kAmountTag = 65536
+		local mySelf = self
+
+		function node:setAmount(amount)
+			if style and style.showAmount == false then
+				return
+			end
+
+			amount = amount or ""
+			local label = self:getChildByTag(kAmountTag)
+
+			if not label then
+				local amountBg = cc.Sprite:create("asset/common/common_icon_sld.png")
+
+				amountBg:setAnchorPoint(cc.p(1, 0))
+				amountBg:addTo(self):posite(109, -5)
+				amountBg:setName("AmountBg")
+
+				label = mySelf:_createAmountLabel(info, nil, self)
+
+				label:setTag(kAmountTag)
+				label:setAnchorPoint(1, 0.5)
+				label:setPosition(cc.p(100, 15))
+			end
+
+			if type(amount) == "number" and amount > 99999 then
+				local str = Strings:get("Common_Time_01")
+				local amountTemp = amount / 10000
+
+				label:setString(amountTemp .. str)
+			else
+				label:setString(amount)
+			end
+
+			local amountBg = self:getChildByName("AmountBg")
+			local width = amountBg:getContentSize().width
+			local scaleX = (label:getContentSize().width + 16) / width
+
+			amountBg:setScaleX(scaleX)
+			amountBg:setVisible(amount ~= "" and tonumber(amount) > 0)
+		end
+
+		function node:adjustAmountBg()
+			if style and style.showAmount == false then
+				return
+			end
+
+			local label = self:getChildByTag(kAmountTag)
+			local amountBg = self:getChildByName("AmountBg")
+
+			if not label or not amountBg then
+				return
+			end
+
+			local width = amountBg:getContentSize().width
+			local scaleX = (label:getContentSize().width + 16) / width
+
+			amountBg:setScaleX(scaleX)
+		end
+
+		function node:getAmountLabel()
+			return self:getChildByTag(kAmountTag)
+		end
+
+		node:setAmount(info.amount)
+
+		if style and style.shine then
+			IconFactory:_createShineAnim(nil, , node)
+		end
+
+		return node
+	end
+end
+
 function IconFactory:createPlayerFrameIcon(info, style)
 	assert(info ~= nil, "Bad argument")
 
@@ -3471,6 +4022,21 @@ function IconFactory:createPlayerFrameIcon(info, style)
 
 		node:setAmount(info.amount)
 
+		if config.Type == "LIMIT" and not info.notShowFrameLimit then
+			local tnode = self:createBaseNode()
+			local img = ccui.ImageView:create("asset/common/common_bg_xb_4.png", ccui.TextureResType.localType)
+
+			IconFactory:centerAddNode(tnode, img)
+
+			local lvLabel = cc.Label:createWithTTF("", CUSTOM_TTF_FONT_1, 18)
+
+			lvLabel:setString(Strings:get("ActivityBlock_UI_13"))
+			lvLabel:setColor(cc.c3b(255, 255, 255))
+			lvLabel:addTo(tnode):offset(0, 5)
+			tnode:setScale(1.2)
+			tnode:addTo(node):posite(90, 100)
+		end
+
 		if style and style.shine then
 			IconFactory:_createShineAnim(nil, , node)
 		end
@@ -3487,10 +4053,9 @@ function IconFactory:createRactHeadImage(info)
 
 	if imageType == 1 then
 		local modelId = IconFactory:getRoleModelByKey("HeroBase", id)
-		icon = self:createRoleIconSprite({
-			useAnim = false,
-			iconType = "Bust11",
-			id = modelId
+		icon = self:createRoleIconSpriteNew({
+			id = modelId,
+			frameId = info.frameId
 		})
 		offset = {
 			0,
@@ -3498,10 +4063,9 @@ function IconFactory:createRactHeadImage(info)
 		}
 	elseif imageType == 2 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("MasterBase", id, "RoleModel")
-		icon = self:createRoleIconSprite({
-			useAnim = false,
-			iconType = "Bust11",
-			id = modelId
+		icon = self:createRoleIconSpriteNew({
+			id = modelId,
+			frameId = info.frameId
 		})
 		offset = {
 			0,
@@ -3509,10 +4073,16 @@ function IconFactory:createRactHeadImage(info)
 		}
 	elseif imageType == 4 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("HeroAwaken", id, "ModelId")
-		icon = self:createRoleIconSprite({
-			useAnim = false,
-			iconType = "Bust11",
-			id = modelId
+		icon = self:createRoleIconSpriteNew({
+			id = modelId,
+			frameId = info.frameId
+		})
+	elseif imageType == 5 then
+		local skinId = playerHeadImgConfig.SurfaceMasterId
+		local modelId = ConfigReader:getDataByNameIdAndKey("Surface", skinId, "Model")
+		icon = self:createRoleIconSpriteNew({
+			id = modelId,
+			frameId = info.frameId
 		})
 	else
 		icon = cc.Sprite:create(playerHeadImgConfig.IconPath)
@@ -3523,20 +4093,15 @@ function IconFactory:createRactHeadImage(info)
 			-40,
 			10
 		}
+
+		if playerHeadImgConfig.HeadMove then
+			offset = playerHeadImgConfig.HeadMove
+		end
 	end
 
 	local oldIcon = icon
-	icon = self:addStencilForIcon(icon, 1, info.size, offset)
-	local node = self:createBaseNode(true)
 
-	node:setTouchEnabled(false)
-
-	local size = icon:getContentSize()
-
-	node:setContentSize(size)
-	icon:addTo(node):center(node:getContentSize())
-
-	return node, oldIcon
+	return icon, oldIcon
 end
 
 function IconFactory:createPetRaceHeadImage(info)
@@ -3547,9 +4112,9 @@ function IconFactory:createPetRaceHeadImage(info)
 
 	if imageType == 1 then
 		local modelId = IconFactory:getRoleModelByKey("HeroBase", id)
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			useAnim = false,
-			iconType = "Bust11",
+			frameId = "bustframe11_4",
 			id = modelId
 		})
 		offset = {
@@ -3558,9 +4123,9 @@ function IconFactory:createPetRaceHeadImage(info)
 		}
 	elseif imageType == 2 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("MasterBase", id, "RoleModel")
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			useAnim = false,
-			iconType = "Bust11",
+			frameId = "bustframe11_4",
 			id = modelId
 		})
 		offset = {
@@ -3569,9 +4134,21 @@ function IconFactory:createPetRaceHeadImage(info)
 		}
 	elseif imageType == 4 then
 		local modelId = ConfigReader:getDataByNameIdAndKey("HeroAwaken", id, "ModelId")
-		icon = self:createRoleIconSprite({
+		icon = self:createRoleIconSpriteNew({
 			useAnim = false,
-			iconType = "Bust11",
+			frameId = "bustframe11_4",
+			id = modelId
+		})
+		offset = {
+			50,
+			0
+		}
+	elseif imageType == 5 then
+		local skinId = playerHeadImgConfig.SurfaceMasterId
+		local modelId = ConfigReader:getDataByNameIdAndKey("Surface", skinId, "Model")
+		icon = self:createRoleIconSpriteNew({
+			useAnim = false,
+			frameId = "bustframe11_4",
 			id = modelId
 		})
 		offset = {
@@ -3589,7 +4166,6 @@ function IconFactory:createPetRaceHeadImage(info)
 		}
 	end
 
-	icon = self:addStencilForIcon(icon, 12, nil, offset)
 	local node = self:createBaseNode(true)
 
 	node:setTouchEnabled(false)
@@ -3598,8 +4174,6 @@ function IconFactory:createPetRaceHeadImage(info)
 
 	node:setContentSize(size)
 	icon:addTo(node):center(node:getContentSize())
-	icon:setPositionX(icon:getPositionX())
-	icon:setPositionY(icon:getPositionY() - 9)
 
 	return node
 end
@@ -3759,6 +4333,10 @@ function IconFactory:createClubIcon(info, style)
 	local backImg = cc.Sprite:create("asset/itemRect/yizhuang_icon_bai.png")
 
 	backImg:addTo(node):center(node:getContentSize())
+
+	if style and style.isNoBG then
+		backImg:setVisible(false)
+	end
 
 	local clubIconMap = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Club_Icon", "content")
 	local clubIconImage = nil
@@ -3979,7 +4557,7 @@ function IconFactory:createLoveUpAnim(heroId, num, roleModel, isLoveLevelMax)
 		local heroInfo = {
 			id = roleModel
 		}
-		local headImgName = IconFactory:createRoleIconSprite(heroInfo)
+		local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
 
 		headImgName:setScale(0.6)
 
@@ -4050,7 +4628,7 @@ function IconFactory:createMazeClueHead(info)
 			clipType = 3,
 			id = heroId
 		}
-		local headImgName = self:createRoleIconSprite(heroInfo)
+		local headImgName = self:createRoleIconSpriteNew(heroInfo)
 
 		headImgName:setScale(0.5)
 
@@ -4087,7 +4665,7 @@ function IconFactory:createStoryMazeClueHead(info)
 			clipType = 3,
 			id = heroId
 		}
-		local headImgName = self:createRoleIconSprite(heroInfo)
+		local headImgName = self:createRoleIconSpriteNew(heroInfo)
 
 		headImgName:setScale(1)
 
@@ -4124,7 +4702,8 @@ local kHeroPartyImagePath = {
 		[GalleryPartyType.kMNJH] = "asset/common/sl_bg_mvjh.png",
 		[GalleryPartyType.kDWH] = "asset/common/sl_bg_dwh.png",
 		[GalleryPartyType.kWNSXJ] = "asset/common/sl_bg_wns.png",
-		[GalleryPartyType.kSSZS] = "asset/common/sl_bg_smzs.png"
+		[GalleryPartyType.kSSZS] = "asset/common/sl_bg_smzs.png",
+		[GalleryPartyType.kUNKNOWN] = "asset/common/sl_bg_unknown.png"
 	}
 }
 
@@ -4150,28 +4729,283 @@ function IconFactory:getHeroRarityAnim(rarity)
 	end
 end
 
-function IconFactory:createRTPKGradeIcon(gradeId)
+local rtpkAnimOffset = {
+	{
+		0.5,
+		-32
+	},
+	{
+		0,
+		-50
+	},
+	{
+		0,
+		-19
+	},
+	{
+		0,
+		-27
+	},
+	{
+		0,
+		-25
+	},
+	{
+		-3,
+		-30
+	},
+	{
+		0,
+		2
+	}
+}
+
+function IconFactory:createRTPKGradeIcon(gradeId, style)
+	style = style or {}
 	local gradeConfig = ConfigReader:getRecordById("RTPKGrade", gradeId)
 	local icon = ccui.ImageView:create(gradeConfig.GradePic .. ".png", ccui.TextureResType.plistType)
-	local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), CUSTOM_TTF_FONT_1, 24)
-	local lineGradiantVec2 = {
-		{
-			ratio = 0.3,
-			color = cc.c4b(66, 56, 143, 255)
-		},
-		{
-			ratio = 0.7,
-			color = cc.c4b(81, 83, 170, 255)
-		}
-	}
 
-	nameText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
-		x = 0,
-		y = -1
-	}))
-	nameText:addTo(icon):center(icon:getContentSize()):offset(5, -125)
+	if not style.hideName then
+		local namedi = ccui.ImageView:create("rtpk_badge_hengfu.png", ccui.TextureResType.plistType)
+
+		namedi:addTo(icon):center(icon:getContentSize())
+
+		local nameText = ccui.Text:create(Strings:get(gradeConfig.Name), TTF_FONT_FZYH_M, 24)
+		local lineGradiantVec2 = {
+			{
+				ratio = 0.3,
+				color = cc.c4b(255, 255, 255, 255)
+			},
+			{
+				ratio = 0.7,
+				color = cc.c4b(182, 200, 212, 255)
+			}
+		}
+
+		nameText:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+			x = 0,
+			y = -1
+		}))
+		nameText:addTo(icon):center(icon:getContentSize()):offset(0, -142)
+		nameText:enableOutline(cc.c4b(90, 91, 171, 200), 2)
+	end
+
+	icon.gradeId = gradeId
+
+	if style.useAnim then
+		local animName = "duanwei" .. gradeConfig.GradeType .. "_tiantiduanweieff"
+		local anim = cc.MovieClip:create(animName)
+
+		if anim then
+			local offset = rtpkAnimOffset[gradeConfig.GradeType]
+
+			anim:addTo(icon):center(icon:getContentSize()):offset(offset[1], offset[2])
+		end
+	end
 
 	return icon
+end
+
+function IconFactory:createLeadStageIconVer(id, lv, style)
+	if lv == 0 then
+		return nil
+	end
+
+	style = style or {}
+	local font = style.font and style.font or TTF_FONT_FZYH_M
+	local fontSize = style.fontSize and style.fontSize or 18
+	local needBg = style.needBg and style.needBg or 1
+	local layout = ccui.Layout:create()
+
+	if needBg == 1 then
+		local iconBg = ccui.ImageView:create("bg_leadstage_zhezhao0" .. 9 - lv .. ".png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(6, -9)
+	elseif needBg == 2 then
+		local iconBg = ccui.ImageView:create("bg_zhezhao_hei.png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(4, 0)
+	end
+
+	local config = ConfigReader:getRecordById("MasterLeadStage", id)
+	local icon = ccui.ImageView:create(config.Icon, ccui.TextureResType.plistType)
+
+	icon:ignoreContentAdaptWithSize(true)
+	icon:addTo(layout):center(layout:getContentSize())
+	icon:setScale(lv == 8 and 0.5 or lv == 1 and 0.6 or 0.8)
+
+	local nameText = ccui.Text:create(Strings:get(config.RomanNum) .. Strings:get(config.StageName), font, fontSize)
+
+	nameText:enableOutline(cc.c4b(255, 255, 255, 255), 2)
+	nameText:setTextColor(GameStyle:getLeadStageColor(lv))
+	nameText:addTo(layout):center(layout:getContentSize()):offset(0, -35)
+	print("id,lv " .. id .. lv .. nameText:getString())
+
+	return layout
+end
+
+function IconFactory:createLeadStageIconHor(id, lv, style)
+	if lv == 0 then
+		return nil
+	end
+
+	style = style or {}
+	local font = style.font and style.font or TTF_FONT_FZYH_M
+	local fontSize = style.fontSize and style.fontSize or 18
+	local kind = style.kind
+	local layout = ccui.Layout:create()
+
+	if kind then
+		local iconBg = ccui.ImageView:create("asset/common/common_bd_sx.png", ccui.TextureResType.localType)
+
+		iconBg:addTo(layout):offset(50, -15)
+		iconBg:setScale(0.9)
+	else
+		local iconBg = ccui.ImageView:create("bg_zj_leadstage_heidi.png", ccui.TextureResType.plistType)
+
+		iconBg:addTo(layout):offset(40, -5)
+	end
+
+	local config = ConfigReader:getRecordById("MasterLeadStage", id)
+	local icon = ccui.ImageView:create(config.Icon, ccui.TextureResType.plistType)
+
+	icon:ignoreContentAdaptWithSize(true)
+	icon:addTo(layout):center(layout:getContentSize()):offset(0, -5)
+	icon:setScale(lv == 8 and 0.3 or lv == 1 and 0.4 or 0.5)
+
+	local nameText = ccui.Text:create(Strings:get(config.RomanNum) .. Strings:get(config.StageName), font, fontSize)
+
+	nameText:enableOutline(cc.c4b(255, 255, 255, 255), 2)
+	nameText:setTextColor(GameStyle:getLeadStageColor(lv))
+	nameText:addTo(layout):center(layout:getContentSize()):offset(45, -5)
+
+	if kind then
+		icon:offset(-32, 0)
+		icon:setScale(lv == 8 and 0.5 or lv == 1 and 0.6 or 0.8)
+		nameText:offset(0, 0)
+	end
+
+	return layout
+end
+
+function IconFactory:createMasterLeadStageSkillIcon(info, style, clickfun)
+	style = style or {}
+	local id = info.id and info.id
+	local isLock = info.isLock
+	local isGray = info.isGray or false
+	local kind = style.kind and style.kind or 0
+	local scale = info.scale and info.scale or 1
+	local skillConfig = ConfigReader:getRecordById("Skill", tostring(id))
+	local node = cc.Node:create()
+	local root = ccui.Layout:create()
+
+	root:setContentSize(cc.size(94, 94))
+	root:setTag(66)
+	node:addChild(root)
+
+	local kLevelTag = 65536
+	local kLockTag = 65537
+
+	if kind == 0 then
+		local under = ccui.ImageView:create("leadStage_img_jinegndi.png", 1)
+
+		root:addChild(under)
+		under:setPosition(cc.p(47, 47))
+		under:setScale(1.65)
+	else
+		local under = ccui.ImageView:create("yh_bg_jnk_new.png", 1)
+
+		root:addChild(under)
+		under:setPosition(cc.p(50, 44))
+		under:setScale(1.4)
+	end
+
+	local kSkillTag = 65539
+	local skillImg = IconFactory:createSkillPic({
+		id = skillConfig.Icon
+	})
+
+	skillImg:setTag(kSkillTag)
+	IconFactory:centerAddNode(node, skillImg)
+	skillImg:setPosition(cc.p(47, 47))
+	skillImg:setScale(scale)
+
+	local btn = ccui.Button:create("asset/master/masterRect/masterSkillBottomRect/pic_tongyong_di_pzk_jn.png", "asset/master/masterRect/masterSkillBottomRect/pic_tongyong_di_pzk_jn.png")
+
+	btn:setSwallowTouches(false)
+	btn:setTag(668)
+	btn:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended and clickfun then
+			clickfun()
+		end
+	end)
+	btn:setOpacity(0)
+	btn:setPosition(cc.p(47, 47))
+	node:addChild(btn, 999)
+
+	function node:setLock(isLock)
+		local lockImg = self:getChildByTag(kLockTag)
+
+		if not lockImg then
+			lockImg = ccui.ImageView:create("asset/common/common_icon_lock_new.png")
+
+			lockImg:setPosition(80, 100)
+			node:addChild(lockImg, 1, kLockTag)
+		end
+
+		lockImg:setVisible(isLock)
+		lockImg:setScale(1.4)
+
+		local skillImg = self:getChildByTag(kSkillTag)
+
+		if skillImg then
+			skillImg:setGray(isLock)
+
+			if isGray then
+				skillImg:setGray(isGray)
+			end
+		end
+	end
+
+	node:setLock(isLock)
+
+	return node
+end
+
+function IconFactory:createRTPKEmojiIcon(info, style)
+	local config = ConfigReader:getRecordById("MasterFace", info.id)
+
+	if config then
+		local quaImgType = 1
+		local qualityImg = GameStyle:getItemQuaRectFile(5, quaImgType)
+		local quaRectImg = IconFactory:createSprite(qualityImg)
+		local size = cc.size(110, 110)
+		local node = self:createBaseNode(style and style.isWidget)
+
+		node:setContentSize(size)
+		IconFactory:centerAddNode(node, quaRectImg)
+
+		local emojiImg = ccui.ImageView:create("asset/emotion/" .. config.EMJPic, 0)
+
+		emojiImg:addTo(node):center(node:getContentSize()):setScale(0.54)
+
+		return node
+	end
+end
+
+function IconFactory:getSpMvpBattleEndMid(model)
+	local mid = model
+	local configShow = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Bust_Battleend_Show", "content") or {}
+
+	if table.indexof(configShow, mid) then
+		local linkMid = ConfigReader:getDataByNameIdAndKey("RoleModel", mid, "BattleShow")
+
+		if linkMid and linkMid ~= "" then
+			mid = linkMid
+		end
+	end
+
+	return mid
 end
 
 IconFactory:initialize()

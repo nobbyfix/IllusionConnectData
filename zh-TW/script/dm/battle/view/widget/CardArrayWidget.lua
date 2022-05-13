@@ -1,9 +1,14 @@
 CardWidgetSlot = class("CardWidgetSlot", objectlua.Object, _M)
+KSlotType = {
+	NORMAL = 1,
+	EXTRA = 2
+}
 
 function CardWidgetSlot:initialize(container)
 	super.initialize(self)
 
 	self._node = container
+	self._slotType = KSlotType.NORMAL
 end
 
 function CardWidgetSlot:getContainerNode()
@@ -12,6 +17,14 @@ end
 
 function CardWidgetSlot:getCard()
 	return self._card
+end
+
+function CardWidgetSlot:getSlotType()
+	return self._slotType
+end
+
+function CardWidgetSlot:setSlotType(type)
+	self._slotType = type
 end
 
 function CardWidgetSlot:setCard(cardWidget, action)
@@ -72,6 +85,62 @@ end
 CardArrayWidget = class("CardArrayWidget", BattleWidget, _M)
 local kPreviewScale = 0.54
 
+function CardArrayWidget:FlyCard(endCall)
+	local collectObj = {}
+
+	for k, v in pairs(self._cardSlots) do
+		if v:getSlotType() == KSlotType.EXTRA and v:getCard() then
+			collectObj[#collectObj + 1] = v:getCard()
+		end
+	end
+
+	local scene = cc.Director:getInstance():getRunningScene()
+	local actionCnt = 0
+	local pos = {
+		{
+			cc.p(scene:getContentSize().width / 2, scene:getContentSize().height / 2)
+		},
+		{
+			cc.p(scene:getContentSize().width / 2 - 100, scene:getContentSize().height / 2),
+			cc.p(scene:getContentSize().width / 2 + 100, scene:getContentSize().height / 2)
+		}
+	}
+	self._flyingItemsArray = {}
+
+	for k, v in pairs(collectObj) do
+		local target = ccui.ImageView:create(v:getRes())
+
+		target:setScale(0.6)
+		scene:addChild(target)
+		target:setPosition(pos[#collectObj][k])
+
+		local descPos = v:getView():getParent():convertToWorldSpace(cc.p(v:getView():getPosition()))
+		local callback = cc.CallFunc:create(function ()
+			actionCnt = actionCnt - 1
+
+			if actionCnt <= 0 then
+				endCall()
+			end
+
+			self._flyingItemsArray[target] = nil
+
+			target:removeFromParent()
+		end)
+
+		target:setOpacity(0)
+
+		local upmove = cc.MoveTo:create(0.2, cc.p(target:getPositionX(), target:getPositionY() + 50))
+		local up = cc.Spawn:create(upmove, cc.FadeTo:create(0.2, 255))
+		local spawn = cc.Spawn:create(cc.MoveTo:create(0.4, cc.p(descPos)), cc.ScaleTo:create(0.4, 0.3))
+		local sequence = cc.Sequence:create(cc.EaseSineIn:create(up), cc.DelayTime:create(0.5), cc.EaseSineOut:create(spawn), callback)
+
+		target:runAction(sequence)
+
+		actionCnt = actionCnt + 1
+		self._flyingItemsArray[target] = target
+	end
+end
+
 function CardArrayWidget:initialize(view)
 	super.initialize(self, view)
 	self:initSubviews(view)
@@ -81,18 +150,26 @@ end
 
 function CardArrayWidget:dispose()
 	self:unregisterTouchEvents()
+
+	for k, v in pairs(self._flyingItemsArray or {}) do
+		v:removeFromParent()
+	end
+
 	super.dispose(self)
 end
 
 function CardArrayWidget:clearAll()
-	self:clearHittedCard()
 	self:clearActiveCard()
 
 	for i = 1, 4 do
 		self._cardSlots[i]:setCard(nil)
 	end
 
-	self._previewContainer:removeAllChildren()
+	for k, v in pairs(self._previewCards or {}) do
+		if not v:isExtraCard() then
+			v:getView():removeFromParent()
+		end
+	end
 
 	self._previewCards = nil
 
@@ -105,6 +182,20 @@ function CardArrayWidget:initSubviews(view)
 	for i = 1, 4 do
 		local container = view:getChildByName("C" .. i)
 		self._cardSlots[i] = CardWidgetSlot:new(container)
+
+		self._cardSlots[i]:setSlotType(KSlotType.NORMAl)
+	end
+
+	for i = 1, 2 do
+		local container = view:getChildByName("E" .. i)
+
+		container:setScale(0.7)
+		container:offset(60, 0)
+
+		local slotInstance = CardWidgetSlot:new(container)
+		self._cardSlots[#self._cardSlots + 1] = slotInstance
+
+		slotInstance:setSlotType(KSlotType.EXTRA)
 	end
 
 	self._previewContainer = view:getChildByName("preview")
@@ -332,6 +423,7 @@ function CardArrayWidget:onTouchBegan(touch, event)
 	end
 
 	local hittedCard = hittedSlot:getCard()
+	self._hittedSlot = hittedSlot
 	self._touchBeginPosition = pt
 	self._hittedCard = hittedCard
 	self._moving = false
@@ -382,9 +474,21 @@ function CardArrayWidget:onTouchMoved(touch, event)
 				self._listener:dragMoved(self, self._hittedCard, pt)
 			end
 		elseif self._hittedCard:getType() == "skill" then
+			moved.x = moved.x / cardNode:getParent():getParent():getScale()
+			moved.y = moved.y / cardNode:getParent():getParent():getScale()
 			local newPos = cc.pAdd(self._originCardPosition, moved)
 
 			cardNode:setPosition(newPos)
+
+			if self._hittedSlot:getSlotType() == KSlotType.EXTRA then
+				if not cardNode.isSimpleShow then
+					self._hittedCard:simpleShow(true)
+				end
+
+				if self._listener then
+					self._listener:dragExtraSkillMoved(self, self._hittedCard, pt)
+				end
+			end
 		end
 	elseif cc.pGetLength(moved) > 10 and hittedCard:isEnergyEnough() then
 		if self._activeCard then
@@ -398,6 +502,8 @@ function CardArrayWidget:onTouchMoved(touch, event)
 
 		if self._listener and self._hittedCard:getType() == "hero" then
 			self._listener:dragBegan(self, self._hittedCard)
+		elseif self._hittedCard:getType() == "skill" and self._hittedSlot:getSlotType() == KSlotType.EXTRA then
+			self._listener:dragExtraSkillBegan(self, self._hittedCard)
 		end
 	end
 
@@ -427,12 +533,20 @@ function CardArrayWidget:onTouchEnded(touch, event)
 		local hittedCard = self._hittedCard
 		local cardNode = hittedCard:getView()
 
-		cardNode:getParent():setLocalZOrder(1)
+		if not tolua.isnull(cardNode) then
+			cardNode:getParent():setLocalZOrder(1)
+		end
 
 		if self._listener and hittedCard:getType() == "hero" then
 			self._listener:dragEnded(self, hittedCard, pt)
 		elseif self._listener and hittedCard:getType() == "skill" then
-			self._listener:applySkillCard(self, hittedCard, pt)
+			if self._hittedSlot:getSlotType() == KSlotType.EXTRA then
+				if self._listener then
+					self._listener:dragExtraSkillEnded(self, self._hittedCard, pt)
+				end
+			else
+				self._listener:applySkillCard(self, hittedCard, pt)
+			end
 		end
 	else
 		local hittedSlot = nil
@@ -455,6 +569,7 @@ function CardArrayWidget:onTouchEnded(touch, event)
 	end
 
 	self._hittedCard = nil
+	self._hittedSlot = nil
 
 	if self._listener and self._listener._mainMediator then
 		self._listener._mainMediator:setGuideLayerVisible(true)
@@ -492,6 +607,7 @@ function CardArrayWidget:forceTouchEnded()
 	end
 
 	self._hittedCard = nil
+	self._hittedSlot = nil
 end
 
 function CardArrayWidget:setActiveCard(hittedCard)

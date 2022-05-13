@@ -102,7 +102,7 @@ function EnergyReservoir:consume(cost)
 	if cost <= energy then
 		local speed = nil
 
-		if self._capacity <= energy then
+		if self._capacity < energy then
 			self._immediateSpeed = self:getSpeedValue()
 		end
 
@@ -189,6 +189,14 @@ function EnergyReservoir:update(dt, count, speedScale)
 			isKeyframe = oldValue ~= newValue
 			self._immediateSpeed = self:getSpeedValue()
 		end
+	end
+
+	if changed then
+		return {
+			self._energy,
+			self._tmpEnergy * 0.001,
+			self._immediateSpeed
+		}
 	end
 
 	if isKeyframe then

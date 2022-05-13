@@ -141,6 +141,7 @@ function ExploreBattleFinishMediator:refreshView()
 
 		contentText:setAnchorPoint(cc.p(0, 0))
 		contentText:addTo(self._enoughTip)
+		ajustRichTextCustomWidth(contentText, 420)
 	end
 
 	local anim = nil
@@ -270,15 +271,16 @@ function ExploreBattleFinishMediator:refreshView()
 
 	if model then
 		local roleNode = anim:getChildByName("roleNode")
-		local mvpSprite = IconFactory:createRoleIconSprite({
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust9",
+			frameId = "bustframe17",
 			id = model
 		})
 
 		mvpSprite:addTo(roleNode)
 		mvpSprite:setScale(0.8)
-		mvpSprite:setPosition(cc.p(50, -100))
+		mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 
 		local roleId = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Hero")
 		local heroMvpText = ""
@@ -325,6 +327,10 @@ function ExploreBattleFinishMediator:initWinView()
 			isWidget = true
 		})
 
+		IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), rewardData, {
+			swallowTouches = true,
+			needDelay = true
+		})
 		icon:addTo(layout):center(layout:getContentSize())
 		rewardNode:pushBackCustomItem(layout)
 		icon:setScale(1)
@@ -369,10 +375,20 @@ function ExploreBattleFinishMediator:initLoseView()
 	self._losePanel:getChildByName("heroBtn"):changeParent(text2)
 end
 
+function ExploreBattleFinishMediator:leaveWithData()
+	self:onTouchMaskLayer()
+end
+
 function ExploreBattleFinishMediator:onTouchMaskLayer()
 	if self._data.callBack then
 		AudioEngine:getInstance():playEffect("Se_Click_Close_1", false)
-		BattleLoader:popBattleView(self)
+
+		if self._data.quickbattle then
+			self:close()
+		else
+			BattleLoader:popBattleView(self)
+		end
+
 		self._data.callBack()
 	end
 end

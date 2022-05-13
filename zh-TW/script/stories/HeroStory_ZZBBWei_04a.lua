@@ -186,11 +186,11 @@ function scene_HeroStory_ZZBBWei_04a.actions.start_HeroStory_ZZBBWei_04a(_root, 
 					modelId = "Model_ZZBBWei",
 					id = "ZZBBWei_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.68,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -130,
+						y = -100,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -213,8 +213,8 @@ function scene_HeroStory_ZZBBWei_04a.actions.start_HeroStory_ZZBBWei_04a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = -19.9,
-								y = 601
+								x = 6.1,
+								y = 714.8
 							}
 						}
 					}
@@ -583,11 +583,11 @@ function scene_HeroStory_ZZBBWei_04a.actions.start_HeroStory_ZZBBWei_04a(_root, 
 					modelId = "Model_KMLa",
 					id = "KMLa_speak",
 					rotationX = 0,
-					scale = 1.3,
+					scale = 0.65,
 					zorder = 12,
 					position = {
 						x = 0,
-						y = -490,
+						y = -160,
 						refpt = {
 							x = 1.5,
 							y = 0
@@ -633,7 +633,7 @@ function scene_HeroStory_ZZBBWei_04a.actions.start_HeroStory_ZZBBWei_04a(_root, 
 					duration = 0,
 					position = {
 						x = 0,
-						y = -490,
+						y = -160,
 						refpt = {
 							x = 0.5,
 							y = 0

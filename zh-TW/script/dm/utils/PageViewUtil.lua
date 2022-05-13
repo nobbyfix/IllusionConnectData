@@ -5,6 +5,7 @@ function PageViewUtil:initialize(data)
 
 	self._view = data.view
 	self._delegate = data.delegate
+	self._notUseCirculation = data.notUseCirculation
 	self._pageNum = self._delegate:getPageNum()
 	self._viewSize = self._view:getContentSize()
 	self._innerContainerSize = cc.size(self._viewSize.width * 3, self._viewSize.height * 3)
@@ -20,25 +21,47 @@ function PageViewUtil:initialize(data)
 	self._curPageIndex = 1
 	self._pageDirty = true
 	self._speed = 600
+	self._ratio = 0.5
 
 	self._view:setInnerContainerPosition(cc.p(-self._viewSize.width, 0))
+
+	if self._notUseCirculation then
+		self._view:setInnerContainerPosition(cc.p(0, 0))
+
+		self._speed = 1100
+		self._ratio = 0.3
+	end
+
 	self._view:setTouchEnabled(false)
 
 	self._dragging = false
-	self._ratio = 0.5
 
 	self._view:addEventListener(function (sender, eventType)
 		if ccui.ScrollviewEventType.autoscrollEnded == eventType then
+			self._view:setTouchEnabled(true)
 			performWithDelay(self._view, function ()
-				self._view:setTouchEnabled(true)
-				self:refreshPage()
+				if self._notUseCirculation then
+					self:refreshPageNotUseCirculation()
+				else
+					self:refreshPage()
+				end
 			end, 0)
 		end
 	end)
 
 	local function onTouched(touch, event)
+		if self._delegate.viewTouchEvent then
+			self._delegate:viewTouchEvent(touch, event)
+		end
+
 		if not self._view:isTouchEnabled() then
-			return
+			if self._notUseCirculation then
+				if self._pageNum ~= 1 then
+					return
+				end
+			else
+				return
+			end
 		end
 
 		if tolua.isnull(self._view) then
@@ -54,7 +77,11 @@ function PageViewUtil:initialize(data)
 		if eventType == ccui.TouchEventType.ended or eventType == ccui.TouchEventType.canceled then
 			self._dragging = false
 
-			self:dealTouchEnd()
+			if self._notUseCirculation then
+				self:dealTouchEndNotUseCirculation()
+			else
+				self:dealTouchEnd()
+			end
 		end
 
 		return true
@@ -101,13 +128,23 @@ function PageViewUtil:reloadData()
 	self._curPageIndex = 1
 	self._pageDirty = true
 
-	self:refreshPage()
+	if self._notUseCirculation then
+		self:refreshPageNotUseCirculation()
+	else
+		self:refreshPage()
+	end
 end
 
 function PageViewUtil:setCurPageIndex(index)
-	self._curPageIndex = self:adjustIndex(index)
+	local targetIdx = self:adjustIndex(index)
 
-	self:refreshPage()
+	if targetIdx == self._curPageIndex then
+		return
+	end
+
+	self._curPageIndex = targetIdx
+
+	self:refreshPageForce()
 end
 
 function PageViewUtil:scrollToDirection(dir, time)
@@ -152,6 +189,34 @@ function PageViewUtil:adjustIndex(index)
 	return index
 end
 
+function PageViewUtil:adjustIndexNotUseCirculation(index)
+	if index == 0 then
+		if self._notUseCirculation then
+			index = -1
+		else
+			index = self._pageNum
+		end
+	end
+
+	if index < 0 then
+		if self._notUseCirculation then
+			index = -1
+		else
+			index = self._pageNum + 1 + index
+		end
+	end
+
+	if self._pageNum < index then
+		if self._notUseCirculation then
+			index = self._pageNum + 1
+		else
+			index = 1
+		end
+	end
+
+	return index
+end
+
 function PageViewUtil:dealTouchEnd()
 	local posX = self._view:getInnerContainerPosition().x
 	local moveDistance = 0
@@ -173,6 +238,57 @@ function PageViewUtil:dealTouchEnd()
 		return
 	end
 
+	self._view:scrollToPercentHorizontal(moveTo / (self._viewSize.width * 2) * 100, moveDistance / self._speed, true)
+end
+
+function PageViewUtil:dealTouchEndNotUseCirculation()
+	local posX = self._view:getInnerContainerPosition().x
+	local moveDistance = 0
+	local doRefrsh = true
+	local moveTo = self._viewSize.width
+	self._forceRefresh = false
+
+	if self._curPageIndex == 1 then
+		if posX < -self._viewSize.width * self._ratio then
+			moveTo = 0
+			self._forceRefresh = true
+		else
+			moveTo = 0
+
+			if moveTo == 0 and posX == 0 then
+				doRefrsh = false
+			end
+		end
+	elseif self._curPageIndex == self._pageNum then
+		if posX > -self._viewSize.width * (2 - self._ratio) then
+			moveTo = self._viewSize.width * 2
+			self._forceRefresh = true
+		else
+			moveTo = self._viewSize.width * 2
+
+			if moveTo == self._viewSize.width * 2 and posX == -self._viewSize.width * 2 then
+				doRefrsh = false
+			end
+		end
+	elseif posX < -self._viewSize.width * (1 + self._ratio) then
+		moveTo = self._viewSize.width * 2
+	elseif posX > -self._viewSize.width * (1 - self._ratio) then
+		moveTo = 0
+	else
+		moveTo = self._viewSize.width
+	end
+
+	moveDistance = math.abs(moveTo - math.abs(posX))
+
+	if moveDistance == 0 then
+		if doRefrsh then
+			self:refreshPageNotUseCirculation(forceRefresh)
+		end
+
+		return
+	end
+
+	self._view:setTouchEnabled(false)
 	self._view:scrollToPercentHorizontal(moveTo / (self._viewSize.width * 2) * 100, moveDistance / self._speed, true)
 end
 
@@ -227,12 +343,116 @@ function PageViewUtil:refreshPage()
 	end
 
 	self._view:setInnerContainerPosition(cc.p(-self._viewSize.width, 0))
+	self._view:setTouchEnabled(true)
 
 	if not self._pageDirty then
 		return
 	end
 
 	self._pageDirty = false
+	local leftIndex = self:adjustIndex(self._curPageIndex - 1)
+	local midIndex = self._curPageIndex
+	local rightIndex = self:adjustIndex(self._curPageIndex + 1)
+
+	self:_cleanPages()
+
+	local leftNode = self._delegate:getPageByIndex(leftIndex)
+	local midNode = self._delegate:getPageByIndex(midIndex)
+	local rightNode = self._delegate:getPageByIndex(rightIndex)
+
+	self._baseLayoutArray[1]:addChild(leftNode)
+	self._baseLayoutArray[2]:addChild(midNode)
+	self._baseLayoutArray[3]:addChild(rightNode)
+
+	if self._delegate.flipEndCallBack then
+		self._delegate:flipEndCallBack(midNode, self._curPageIndex)
+	end
+end
+
+function PageViewUtil:refreshPageNotUseCirculation()
+	local posX = self._view:getInnerContainerPosition().x
+	local targetIndex = self._curPageIndex
+
+	if targetIndex == 1 then
+		if self._forceRefresh then
+			targetIndex = targetIndex + 1
+			self._forceRefresh = false
+		end
+	elseif targetIndex == self._pageNum then
+		if self._forceRefresh then
+			targetIndex = targetIndex - 1
+			self._forceRefresh = false
+		end
+	elseif posX < -self._viewSize.width * (1 + self._ratio) then
+		targetIndex = targetIndex + 1
+	elseif posX > -self._viewSize.width * (1 - self._ratio) then
+		targetIndex = targetIndex - 1
+	end
+
+	if targetIndex == 1 then
+		self._view:setInnerContainerPosition(cc.p(0, 0))
+	elseif targetIndex == self._pageNum then
+		self._view:setInnerContainerPosition(cc.p(-self._viewSize.width * 2, 0))
+	else
+		self._view:setInnerContainerPosition(cc.p(-self._viewSize.width, 0))
+	end
+
+	targetIndex = self:adjustIndex(targetIndex)
+
+	if self._curPageIndex ~= targetIndex then
+		self._pageDirty = true
+		self._curPageIndex = targetIndex
+
+		if self._notUseCirculation then
+			self._delegate:setPageIndex(self._curPageIndex)
+		end
+	end
+
+	if not self._pageDirty then
+		return
+	end
+
+	self._pageDirty = false
+	local leftIndex = self:adjustIndexNotUseCirculation(self._curPageIndex - 1)
+	local midIndex = self._curPageIndex
+	local rightIndex = self:adjustIndexNotUseCirculation(self._curPageIndex + 1)
+
+	self:_cleanPages()
+
+	local leftNode = self._delegate:getPageByIndex(leftIndex)
+	local midNode = self._delegate:getPageByIndex(midIndex)
+	local rightNode = self._delegate:getPageByIndex(rightIndex)
+
+	if leftIndex < 0 then
+		if midNode then
+			self._baseLayoutArray[1]:addChild(midNode)
+		end
+
+		if rightNode then
+			self._baseLayoutArray[2]:addChild(rightNode)
+		end
+	elseif self._pageNum < rightIndex then
+		if leftNode then
+			self._baseLayoutArray[2]:addChild(leftNode)
+		end
+
+		if midNode then
+			self._baseLayoutArray[3]:addChild(midNode)
+		end
+	else
+		self._baseLayoutArray[1]:addChild(leftNode)
+		self._baseLayoutArray[2]:addChild(midNode)
+		self._baseLayoutArray[3]:addChild(rightNode)
+	end
+
+	if self._delegate.flipEndCallBack then
+		self._delegate:flipEndCallBack(midNode, self._curPageIndex)
+	end
+end
+
+function PageViewUtil:refreshPageForce()
+	self._view:setInnerContainerPosition(cc.p(-self._viewSize.width, 0))
+
 	local leftIndex = self:adjustIndex(self._curPageIndex - 1)
 	local midIndex = self._curPageIndex
 	local rightIndex = self:adjustIndex(self._curPageIndex + 1)

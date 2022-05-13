@@ -4,9 +4,6 @@ EVT_ACTIVITY_CLOSE = "EVT_ACTIVITY_CLOSE"
 EVT_ACTIVITY_REDPOINT_REFRESH = "EVT_ACTIVITY_REDPOINT_REFRESH"
 EVT_ACTIVITY_SAGA_SCORE = "EVT_ACTIVITY_SAGA_SCORE"
 DailyGift = "FreeStamina"
-
-require("dm.gameplay.activity.model.ActivityList")
-
 ActivitySystem = class("ActivitySystem", legs.Actor)
 
 ActivitySystem:has("_activityList", {
@@ -28,8 +25,6 @@ ActivitySystem:has("_curStageType", {
 	is = "rw"
 })
 
-local checkNewOpenActivity = nil
-
 function ActivitySystem:initialize()
 	super.initialize(self)
 
@@ -42,11 +37,11 @@ function ActivitySystem:initialize()
 	self._timer = {}
 	self._initActivityClubBoss = false
 	self._bannerData = ConfigReader:getDataTable("ActivityBanner")
-	checkNewOpenActivity = {}
+	self._checkNewOpenActivity = {}
 
 	for k, v in pairs(self._bannerData) do
 		if v.Type == ActivityBannerType.kActivity then
-			checkNewOpenActivity[#checkNewOpenActivity + 1] = v.TypeId
+			self._checkNewOpenActivity[#self._checkNewOpenActivity + 1] = v.TypeId
 		end
 	end
 end
@@ -252,6 +247,27 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 		end
 	end
 
+	function battleDelegate:showBattleItem(pauseFunc, resumeCallback, paseSta)
+		local popupDelegate = {
+			willClose = function (self, sender, data)
+				if resumeCallback then
+					resumeCallback()
+				end
+			end
+		}
+		local bossView = outSelf:getInjector():getInstance("BattleItemShowView")
+
+		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, bossView, {
+			maskOpacity = 0
+		}, {
+			paseSta = paseSta
+		}, popupDelegate))
+
+		if pauseFunc then
+			pauseFunc()
+		end
+	end
+
 	function battleDelegate:onShowRestraint(continueCallback)
 		local popupDelegate = {
 			willClose = function (self, sender)
@@ -263,8 +279,10 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}, popupDelegate))
 	end
 
-	local bgRes = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "Background") or "battle_scene_1"
-	local BGM = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "BGM")
+	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", blockPointId)
+	local bgRes = pointConfig.Background or "battle_scene_1"
+	local BGM = pointConfig.BGM
 	local battleSpeed_Display = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Display", "content")
 	local battleSpeed_Actual = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Actual", "content")
 	local data = {
@@ -290,7 +308,7 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 			passiveSkill = battlePassiveSkill,
 			unlockMasterSkill = self:getInjector():getInstance(SystemKeeper):isUnlock("Master_BattleSkill"),
 			finishWaitTime = BattleDataHelper:getBattleFinishWaitTime("crusade"),
-			changeMaxNum = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", blockPointId, "BossRound") or 1,
+			changeMaxNum = pointConfig.BossRound or 1,
 			btnsShow = {
 				speed = {
 					visible = speedOpenSta and speedCanshow,
@@ -335,13 +353,25 @@ function ActivitySystem:requestFinishActstage(activityId, subActivityId, params)
 				data.activityId = activityId
 				data.subActivityId = subActivityId
 				data.pointId = params.pointId
+				data.params = params
 
 				if data.pass then
 					local function endFunc()
 						self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityStageFinishView"), {}, data, self))
 					end
 
-					local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", data.pointId, "StoryLink")
+					local activity = self:getActivityById(activityId)
+					local subActivity = activity:getBlockMapActivity(subActivityId)
+					local point = nil
+
+					if subActivity:getType() == ActivityType.KActivityBlockMapNew then
+						point = subActivity:getSubPointById(params.pointId)
+					else
+						point = subActivity:getPointById(params.pointId)
+					end
+
+					local pointConfig = point:getConfig()
+					local storyLink = pointConfig.StoryLink
 					local storynames = storyLink and storyLink.win
 					local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 					local storyAgent = storyDirector:getStoryAgent()
@@ -403,6 +433,7 @@ function ActivitySystem:requestLeaveActstage(activityId, subActivityId, params)
 			data.subActivityId = subActivityId
 			data.pointId = params.pointId
 			data.activeLeave = true
+			data.params = params
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ActivityStageUnFinishView"), {}, data))
 		else
@@ -450,7 +481,7 @@ function ActivitySystem:checkActivityState()
 		if not isOver and not self._timer[activityId] then
 			self._timer[activityId] = 1
 
-			if table.indexof(checkNewOpenActivity, activityId) then
+			if table.indexof(self._checkNewOpenActivity, activityId) then
 				hasNewActivity = true
 			end
 		end
@@ -511,18 +542,13 @@ function ActivitySystem:shutSchedule()
 end
 
 function ActivitySystem:checkCarnival()
-	local carnivalActivity = self:getActivityByType("Carnival")
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local unlock, tips = systemKeeper:isUnlock("Carnival")
+	local isOpen = self:isActivityOpen("Carnival")
+	local isOver = self:isActivityOver("Carnival")
+	local openCondition = self:checkConditionWithId("Carnival")
 
-	if not carnivalActivity then
-		return false
-	end
-
-	local realId = carnivalActivity:getId()
-	local isOpen = self:isActivityOpen(realId)
-	local isOver = self:isActivityOver(realId)
-	local openCondition = self:checkConditionWithId(realId)
-
-	return isOpen and not isOver and openCondition
+	return isOpen and not isOver and unlock and openCondition
 end
 
 function ActivitySystem:tryEnterCarnival()
@@ -553,12 +579,13 @@ function ActivitySystem:showEasterRewards(data)
 	}))
 end
 
-function ActivitySystem:enterTeam(activityId, blockActivity)
+function ActivitySystem:enterTeam(activityId, blockActivity, param)
 	local view = self:getInjector():getInstance("ActivityBlockTeamView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 		activity = blockActivity,
-		activityId = activityId
+		activityId = activityId,
+		param = param
 	}))
 end
 
@@ -580,12 +607,15 @@ function ActivitySystem:showEggSucc(activityId, eggActivity, callback)
 	}))
 end
 
-function ActivitySystem:showActivityRules(rules)
+function ActivitySystem:showActivityRules(rules, param, extraParams)
 	local view = self:getInjector():getInstance("ArenaRuleView")
 	local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = rules
+		rule = rules,
+		param1 = param,
+		useParam = param ~= nil or extraParams ~= nil,
+		extraParams = extraParams
 	}, nil)
 
 	self:dispatch(event)
@@ -751,12 +781,24 @@ function ActivitySystem:getActivityByType(actType)
 	return self:getActivityList():getActivityByType(actType)
 end
 
-function ActivitySystem:getActivityByComplexId(complexId)
-	return self:getActivityList():getActivityByComplexId(complexId)
+function ActivitySystem:getActivityByComplexId(activityId)
+	local activity = self:getActivityList():getActivityById(activityId)
+
+	if activity and self:checkComplexActivity(activityId) then
+		return activity
+	end
+
+	return nil
 end
 
 function ActivitySystem:getActivityByComplexUI(ui)
-	return self:getActivityList():getActivityByComplexUI(ui)
+	local activity = self:getActivityList():getActivityByComplexUI(ui)
+
+	if activity and self:checkComplexActivity(activity:getId()) then
+		return activity
+	end
+
+	return nil
 end
 
 function ActivitySystem:getActivitiesByType(type)
@@ -891,7 +933,27 @@ function ActivitySystem:hasRedPointForActivity(activityId)
 	local activity = self:getActivityById(activityId)
 
 	if activity then
-		return activity:hasRedPoint()
+		if self:hasRedPointForActivityById(activityId) then
+			return true
+		end
+
+		local redPointRelatedActivity = self:getActivityById(activityId):getActivityConfig().RedPointRelatedActivity or {}
+
+		for i, actId in ipairs(redPointRelatedActivity) do
+			if self:hasRedPointForActivityById(actId) then
+				return true
+			end
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:hasRedPointForActivityById(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity and activity.hasRedPoint and activity:hasRedPoint() then
+		return true
 	end
 
 	return false
@@ -918,13 +980,24 @@ function ActivitySystem:hasRedPointForActivitySummer(activityId)
 	return true
 end
 
-function ActivitySystem:isActivityOpen(activityId)
+function ActivitySystem:hasRedPointForActivityZero(activityId)
+	if not self:hasRedPointForActivity(activityId) then
+		local activity = self:getActivityById(activityId)
+
+		return activity:hasBigRewardRedPoint()
+	end
+
+	return true
+end
+
+function ActivitySystem:isActivityOpen(activityId, startTime)
 	local activity = self:getActivityById(activityId)
 
 	if activity then
 		local curTime = self._gameServerAgent:remoteTimeMillis()
+		local startTime = startTime or activity:getStartTime()
 
-		if curTime < activity:getStartTime() or activity:getEndTime() < curTime then
+		if curTime < startTime or activity:getEndTime() < curTime then
 			return false
 		end
 
@@ -967,9 +1040,9 @@ function ActivitySystem:disableEightDayLoginPop()
 end
 
 function ActivitySystem:isCarnivalGruopOpen(index)
-	local activity = self:getActivityByType("Carnival")
+	local activity = self:getActivityById("Carnival")
 
-	return activity and activity:isGroupOpen(index)
+	return activity:isGroupOpen(index)
 end
 
 function ActivitySystem:doReset(resetId, value, response)
@@ -1021,7 +1094,7 @@ function ActivitySystem:getTimeWillOpen(start)
 		min = m,
 		sec = s
 	}
-	local mills = TimeUtil:getTimeByDate(table)
+	local mills = TimeUtil:timeByRemoteDate(table)
 	local remoteTimestamp = self:getCurrentTime()
 	local remainTime = mills - remoteTimestamp
 	local str = ""
@@ -1055,52 +1128,381 @@ function ActivitySystem:isCanGetStamina(timeList, index)
 	local minData = string.split(timeList[1], ":")
 	local maxData = string.split(timeList[2], ":")
 	local currentTimeStamp = self:getInjector():getInstance("GameServerAgent"):remoteTimestamp()
-	local minDayTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+	local curData = TimeUtil:remoteDate("*t", currentTimeStamp)
+	local minDayTimeStamp = TimeUtil:timeByRemoteDate({
+		year = curData.year,
+		month = curData.month,
+		day = curData.day,
 		hour = dayMaxDataMin[1],
 		min = dayMaxDataMin[2],
 		sec = dayMaxDataMin[3]
 	})
-	local minTimeStamp, maxTimeStamp, isTomorrow = nil
+	local minTimeStamp, maxTimeStamp = nil
 
 	if minDayTimeStamp <= currentTimeStamp and index ~= timeSlot then
-		minTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		minTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day + 1,
 			hour = minData[1],
 			min = minData[2],
 			sec = minData[3]
 		})
-		maxTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		maxTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day + 1,
 			hour = maxData[1],
 			min = maxData[2],
 			sec = maxData[3]
 		})
-		minTimeStamp = minTimeStamp + 86400
-		maxTimeStamp = maxTimeStamp + 86400
-		isTomorrow = true
 	else
-		minTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		minTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day,
 			hour = minData[1],
 			min = minData[2],
 			sec = minData[3]
 		})
-		maxTimeStamp = TimeUtil:getTimeByDateForTargetTimeInToday({
+		maxTimeStamp = TimeUtil:timeByRemoteDate({
+			year = curData.year,
+			month = curData.month,
+			day = curData.day,
 			hour = maxData[1],
 			min = maxData[2],
 			sec = maxData[3]
 		})
-		isTomorrow = false
 	end
 
+	local canDiamondGet = false
+	local status = nil
+
 	if maxTimeStamp < currentTimeStamp then
-		return StaminaRewardTimeStatus.kBefore, isTomorrow
+		if TimeUtil:isSameDay(currentTimeStamp, maxTimeStamp, {
+			sec = 0,
+			min = 0,
+			hour = 5
+		}) and receiveStatus ~= ActivityTaskStatus.kGet then
+			canDiamondGet = true
+		end
+
+		status = StaminaRewardTimeStatus.kBefore
 	elseif currentTimeStamp <= maxTimeStamp and minTimeStamp <= currentTimeStamp then
 		if receiveStatus == ActivityTaskStatus.kGet then
-			return StaminaRewardTimeStatus.kBefore, isTomorrow
+			status = StaminaRewardTimeStatus.kBefore
 		else
-			return StaminaRewardTimeStatus.kNow, isTomorrow
+			status = StaminaRewardTimeStatus.kNow
 		end
 	else
-		return StaminaRewardTimeStatus.kAfter, isTomorrow
+		local baseTime = TimeUtil:timeByRemoteDate({
+			hour = 5,
+			min = 0,
+			sec = 0,
+			year = curData.year,
+			month = curData.month,
+			day = curData.day
+		})
+
+		if receiveStatus ~= ActivityTaskStatus.kGet and (currentTimeStamp < baseTime or minDayTimeStamp < currentTimeStamp) then
+			canDiamondGet = true
+		end
+
+		status = StaminaRewardTimeStatus.kAfter
 	end
+
+	return status, canDiamondGet
+end
+
+function ActivitySystem:getTimeLimitShopLeaveTime()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local endTime = activity:getEndTime() / 1000
+		local currentTime = self:getCurrentTime()
+
+		if currentTime < endTime then
+			return endTime - currentTime
+		end
+	end
+
+	return 0
+end
+
+function ActivitySystem:checkTimeLimitShopShow()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local srartTime = activity:getStartTime() / 1000
+		local endTime = activity:getEndTime() / 1000
+		local currentTime = self:getCurrentTime()
+
+		if currentTime < endTime and srartTime < currentTime then
+			return true
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:tryEnterTimeLimitSHop()
+	if self:checkTimeLimitShopRedpointShow() then
+		self:saveTimeLimitShopRedpoint()
+	end
+
+	if self:checkTimeLimitShopShow() then
+		local view = self:getInjector():getInstance("TimeShopActivityView")
+
+		if view then
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}, {
+				activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+			}))
+		end
+	end
+end
+
+function ActivitySystem:saveTimeLimitShopRedpoint()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local activityId = activity:getId()
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "TimeLimitShopActivity")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		if diskData then
+			table.insert(diskData, activityId)
+			CommonUtils.saveDataToLocalByKey(diskData, rid .. "TimeLimitShopActivity")
+		end
+	end
+end
+
+function ActivitySystem:checkTimeLimitShopRedpointShow()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		local activityId = activity:getId()
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "TimeLimitShopActivity")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		for i = 1, #diskData do
+			if diskData[i] == activityId then
+				return false
+			end
+		end
+
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:getFestivalPackageTitle()
+	local activity = self:getActivityByComplexUI("FESTIVALPACKAGE")
+
+	if activity then
+		return activity:getTitle()
+	end
+
+	return ""
+end
+
+function ActivitySystem:tryEnterActivityCalendar()
+	local view = self:getInjector():getInstance("ActivityListiew")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {}))
+end
+
+function ActivitySystem:isActivityCalendarTimeType(type)
+	if type == "RANGE_CONTINUE" or type == "RANGE_CONTINUE_TOP" or type == "FIXED" or type == "SERVER_FIXED" then
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:getActivityCalendarList()
+	local bannerConfig = self._bannerData
+	local sortOpenBanner = {}
+	local sortCloseBanner = {}
+	local closeDay = ConfigReader:getDataByNameIdAndKey("ConfigValue", "MainPage_PreviewDays", "content")
+
+	for k, v in pairs(bannerConfig) do
+		if CommonUtils.GetSwitch(v.Switch) then
+			local isOpen = false
+
+			if ActivityBannerType.kCooperateBoss == v.Type then
+				local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+				isOpen = coopSystem:cooperateBossShow()
+			elseif ActivityBannerType.kActivity == v.Type then
+				local activity = self:getActivityById(v.TypeId)
+
+				if activity and activity:getConfig().Enable ~= 0 then
+					isOpen = activity:getIsTodayOpen()
+
+					if isOpen then
+						local mills = nil
+						local bannerTime = v.BannerTime
+
+						if bannerTime then
+							local start = bannerTime.start[1]
+							local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
+							mills = TimeUtil:timeByRemoteDate({
+								year = y,
+								month = mon,
+								day = d,
+								hour = h,
+								min = m,
+								sec = s
+							})
+							mills = mills * 1000
+							isOpen = self:isActivityOpen(v.TypeId, mills)
+						end
+					end
+				end
+			end
+
+			if isOpen then
+				table.insert(sortOpenBanner, v)
+			elseif v.TypeId and v.TypeId ~= "" then
+				local config = ConfigReader:getRecordById("Activity", v.TypeId)
+
+				if config and config.Time and self:isActivityCalendarTimeType(config.Time) and config.Enable ~= 0 then
+					if v.EarlyShow and v.EarlyShow ~= "" then
+						closeDay = v.EarlyShow
+					end
+
+					local _, _, y, m, d, hour, min, sec = string.find(config.TimeFactor.start[1], "(%d+)-(%d+)-(%d+)%s*(%d+):(%d+):(%d+)")
+					local timestamp = TimeUtil:timeByRemoteDate({
+						year = y,
+						month = m,
+						day = d,
+						hour = hour,
+						min = min,
+						sec = sec
+					})
+					local curstamp = TimeUtil:timeByRemoteDate()
+
+					if curstamp < timestamp and timestamp < curstamp + closeDay * 24 * 60 * 60 then
+						table.insert(sortCloseBanner, v)
+					end
+				end
+			end
+		end
+	end
+
+	table.sort(sortOpenBanner, function (a, b)
+		return b.Sort < a.Sort
+	end)
+	table.sort(sortCloseBanner, function (a, b)
+		return b.Sort < a.Sort
+	end)
+
+	return sortOpenBanner, sortCloseBanner
+end
+
+function ActivitySystem:isActivityCalendarShow(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:cooperateBossShow()
+	elseif ActivityBannerType.kActivity == data.Type then
+		local activity = self:getActivityById(data.TypeId)
+
+		if activity then
+			return activity:getIsTodayOpen()
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:isActivityCalendarRedpointShowAll(data)
+	local openList = self:getActivityCalendarList()
+
+	for i = 1, #openList do
+		local tmpRedPoint = self:isActivityCalendarRedpointShow(openList[i])
+
+		if tmpRedPoint then
+			return true
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:isActivityCalendarRedpointShow(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:redPointShow()
+	elseif ActivityBannerType.kActivity == data.Type then
+		return self:hasRedPointForActivity(data.TypeId)
+	end
+
+	return false
+end
+
+function ActivitySystem:getActivityCalendarEndTime(data)
+	if ActivityBannerType.kCooperateBoss == data.Type then
+		local coopSystem = self:getInjector():getInstance(CooperateBossSystem)
+
+		return coopSystem:getCooperateBoss():getEndTime()
+	elseif ActivityBannerType.kActivity == data.Type then
+		local activityData = self:getActivityById(data.TypeId)
+
+		return activityData:getEndTime() * 0.001
+	end
+
+	return nil
+end
+
+function ActivitySystem:saveActivityCalNewTag(activityId)
+	if activityId then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "ActivityCalender")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		if diskData then
+			table.insert(diskData, activityId)
+			CommonUtils.saveDataToLocalByKey(diskData, rid .. "ActivityCalender")
+		end
+	end
+end
+
+function ActivitySystem:checkActivityCalNewTagShow(activityId)
+	if activityId then
+		local developSystem = self:getInjector():getInstance(DevelopSystem)
+		local rid = developSystem:getPlayer():getRid()
+		local diskData = CommonUtils.getDataFromLocalByKey(rid .. "ActivityCalender")
+
+		if diskData == nil then
+			diskData = {}
+		end
+
+		for i = 1, #diskData do
+			if diskData[i] == activityId then
+				return false
+			end
+		end
+
+		return true
+	end
+
+	return false
 end
 
 function ActivitySystem:requestAllActicities(blockUI, callback)
@@ -1154,6 +1556,26 @@ function ActivitySystem:requestDoActivity(activityId, param, callback)
 
 			self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 		end
+	end)
+end
+
+function ActivitySystem:requestDoActivity2(activityId, param, callback)
+	if not self:getVersionCanBuy(activityId) then
+		return
+	end
+
+	local cjson = require("cjson.safe")
+	local params = {
+		activityId = activityId,
+		param = param
+	}
+
+	self._activityService:requestDoActivity(params, true, function (response)
+		if callback then
+			callback(response)
+		end
+
+		self:dispatch(Event:new(EVT_ACTIVITY_REDPOINT_REFRESH, {}))
 	end)
 end
 
@@ -1290,7 +1712,7 @@ end
 
 function ActivitySystem:complexActivityTryEnter(data)
 	local activityId = data.activityId
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1299,17 +1721,39 @@ function ActivitySystem:complexActivityTryEnter(data)
 	end
 end
 
+function ActivitySystem:complexActivityTaskTryEnter(data)
+	local activityId = data.activityId
+	local activity = self:getActivityByComplexId(activityId)
+
+	if activity then
+		self:enterSupportTaskView(data.activityId, data.taskId)
+	end
+end
+
 function ActivitySystem:tryEnterComplexMainView(ui)
 	local activity = self:getActivityByComplexUI(ui)
 
-	if activity and self:checkComplexActivity(activity:getId()) then
+	if activity then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 		self:requestAllActicities(true, function ()
-			local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
+			local function enter(rewards)
+				local view = self:getInjector():getInstance(ActivityComplexUI.tryEnterComplexMainView[ui])
 
-			self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-				activityId = activity:getId()
-			}))
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+					activityId = activity:getId(),
+					rewards = rewards
+				}))
+			end
+
+			local startStory = activity:getActivityConfig().StartStory
+
+			if startStory and startStory.mapId and startStory.pointId then
+				self:onClickPlayStory(activity, startStory.mapId, startStory.pointId, function (rewards)
+					enter(rewards)
+				end)
+			else
+				enter()
+			end
 		end)
 	end
 end
@@ -1321,7 +1765,7 @@ function ActivitySystem:tryEnterBlockMonsterShopView(data)
 end
 
 function ActivitySystem:enterSupportStage(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1340,11 +1784,11 @@ function ActivitySystem:enterSagaSupportStage(activityId)
 	}
 
 	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
-
-		local activity = self:getActivityById(activityId)
+		local activity = self:getActivityByComplexId(activityId)
 
 		if activity then
+			activity:synchronizePeriodsInfo(response.data)
+
 			local ui = activity:getActivityComplexUI()
 			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportStageView[ui])
 
@@ -1361,11 +1805,11 @@ function ActivitySystem:enterSagaSupportSchedule(activityId)
 	}
 
 	self:requestDoActivity(activityId, params, function (response)
-		self:getActivityById(activityId):synchronizePeriodsInfo(response.data)
-
-		local activity = self:getActivityById(activityId)
+		local activity = self:getActivityByComplexId(activityId)
 
 		if activity then
+			activity:synchronizePeriodsInfo(response.data)
+
 			local ui = activity:getActivityComplexUI()
 			local view = self:getInjector():getInstance(ActivityComplexUI.enterSagaSupportScheduleView[ui])
 
@@ -1376,21 +1820,22 @@ function ActivitySystem:enterSagaSupportSchedule(activityId)
 	end)
 end
 
-function ActivitySystem:enterSupportTaskView(activityId)
-	local activity = self:getActivityById(activityId)
+function ActivitySystem:enterSupportTaskView(activityId, taskId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
 		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportTaskView[ui])
 
 		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
+			activityId = activityId,
+			taskId = taskId
 		}))
 	end
 end
 
 function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1406,7 +1851,7 @@ function ActivitySystem:enterSagaSupportRankRewardView(activityId, periodId)
 end
 
 function ActivitySystem:enterSagaWinView(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1418,22 +1863,46 @@ function ActivitySystem:enterSagaWinView(activityId)
 	end
 end
 
-function ActivitySystem:enterBlockMap(activityId)
-	local activity = self:getActivityById(activityId)
+function ActivitySystem:enterBlockMap(activityId, blockActivityId, stageType, useThreeChoice)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
 		local view = self:getInjector():getInstance(ActivityComplexUI.enterSupportStageView[ui])
 		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
-			activityId = activityId
+			activityId = activityId,
+			blockActivityId = blockActivityId,
+			stageType = stageType,
+			useThreeChoice = useThreeChoice
 		})
 
 		self:dispatch(event)
 	end
 end
 
+function ActivitySystem:enterSelecteZeroMap(activityId)
+	local function callback()
+		self:enterBlockMap(activityId)
+	end
+
+	local view = self:getInjector():getInstance("ActivityZeroSelectMapView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+		activityId = activityId
+	}))
+end
+
+function ActivitySystem:enterZeroShop(activityId)
+	local view = self:getInjector():getInstance("ActivityBlockZeroShopView")
+	local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		activityId = activityId
+	})
+
+	self:dispatch(event)
+end
+
 function ActivitySystem:enterBlockMonsterShopView(activityId)
-	local activity = self:getActivityById(activityId)
+	local activity = self:getActivityByComplexId(activityId)
 
 	if activity then
 		local ui = activity:getActivityComplexUI()
@@ -1460,4 +1929,386 @@ function ActivitySystem:enterBlockFudaiView(activityId)
 	end
 
 	self._shopSystem:requestGetPackageShop(callback)
+end
+
+function ActivitySystem:tryEnterCoopExchangeView(data)
+	local unlock, tips = self:checkEnabled()
+	local outself = self
+
+	if unlock then
+		self:requestAllActicities(true, function ()
+			if self:checkCoopExchangeEnable(data.activityId) then
+				local view = self:getInjector():getInstance("ShopCoopExchangeView")
+
+				self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+			else
+				self:dispatch(ShowTipEvent({
+					duration = 0.35,
+					tip = Strings:get("Activity_Not_Found")
+				}))
+			end
+		end)
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = tips
+		}))
+	end
+end
+
+function ActivitySystem:checkCoopExchangeEnable(activityId)
+	local activity = self:getActivityById(activityId)
+
+	if activity then
+		return activity:getIsTodayOpen()
+	end
+
+	return false
+end
+
+function ActivitySystem:getFanXingZhiMengActivity()
+	local resultActivity = nil
+	local activityList = self:getAllActivityIds()
+
+	for k, activityId in ipairs(activityList) do
+		local activity = self:getActivityById(activityId)
+
+		if activity:getUI() == ActivityType_UI.KTASKSTAGESTAR then
+			resultActivity = activity
+
+			break
+		end
+	end
+
+	return resultActivity
+end
+
+function ActivitySystem:isReturnActivityShow()
+	local returnActivity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if returnActivity and returnActivity:getIsBackFlow() then
+		return true
+	end
+
+	return false
+end
+
+function ActivitySystem:isReturnLetterDraw()
+	local returnActivity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if returnActivity then
+		local letterActivity = returnActivity:getSubActivityByType(ActivityType.KLetter)
+
+		if letterActivity then
+			return letterActivity:getIsDraw()
+		end
+	end
+
+	return false
+end
+
+function ActivitySystem:tryEnterActivityLetter(callback)
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+	local view = self:getInjector():getInstance("ActivityReturnLetterView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+		activityId = activity:getId()
+	}, callback))
+end
+
+function ActivitySystem:tryEnterActivityReturn()
+	self:requestAllActicities(true, function ()
+		local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+		local view = self:getInjector():getInstance("ActivityReturnView")
+
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			activityId = activity:getId()
+		}))
+	end)
+end
+
+function ActivitySystem:activityReturnRedPointShow()
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+
+	if activity then
+		return activity:hasRedPoint()
+	end
+
+	return false
+end
+
+function ActivitySystem:drawLetterReward(callback)
+	local activity = self:getActivityByComplexUI(ActivityType.KReturn)
+	local letterActivity = activity:getSubActivityByType(ActivityType.KLetter)
+	local params = {
+		doActivityType = 101
+	}
+	local activityId = activity:getId()
+	local subActivityId = letterActivity:getId()
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local data = response.data.rewards
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+end
+
+function ActivitySystem:requestRecruitActivity(activityId, data, callback)
+	local params = {
+		doActivityType = 101,
+		drawId = data.id,
+		times = data.times
+	}
+	local activityId = activityId
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			local data = response.data
+
+			if callback then
+				callback()
+			end
+
+			self:dispatch(Event:new(EVT_RECRUIT_SUCC, data))
+		else
+			self:dispatch(Event:new(EVT_RECRUIT_FAIL))
+		end
+	end
+
+	self:requestDoActivity(activityId, params, callbackFunc)
+end
+
+function ActivitySystem:requestRecruitActivityReward(activityId, subActivityId, data, callback)
+	local params = {
+		doActivityType = data.doActivityType
+	}
+
+	if data.taskId then
+		params.taskId = data.taskId
+	end
+
+	if data.round then
+		params.round = data.round
+	end
+
+	if data.TimeReward then
+		params.TimeReward = data.TimeReward
+	end
+
+	local activityId = activityId
+
+	local function callbackFunc(response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local data = response.data.rewards
+
+			if subActivityId then
+				data = response.data.reward
+			end
+
+			self:dispatch(Event:new(EVT_RECRUITNEWDRAWCARD_REFRESH))
+
+			if data and next(data) then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = data
+				}))
+			end
+		end
+	end
+
+	if subActivityId then
+		self:requestDoChildActivity(activityId, subActivityId, params, callbackFunc)
+	else
+		self:requestDoActivity(activityId, params, callbackFunc)
+	end
+end
+
+function ActivitySystem:tryEnterActivityMailView()
+	local activity = self:getActivityById("RiddlePreMail_211201")
+
+	if activity then
+		local list = activity:getMailList()
+
+		if #list > 0 then
+			local view = self:getInjector():getInstance("ActivityMailView")
+			local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, {}, nil)
+
+			self:dispatch(event)
+		else
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("Activity_Not_Found")
+			}))
+		end
+	else
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = Strings:get("Activity_Not_Found")
+		}))
+	end
+end
+
+function ActivitySystem:onClickPlayStory(activity, subActivityId, pointId, callback)
+	local storyPoint = activity:getBlockMapActivity(subActivityId):getPointById(pointId)
+
+	if not storyPoint:isPass() then
+		local storyLink = ConfigReader:getDataByNameIdAndKey("ActivityStoryPoint", pointId, "StoryLink")
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local startTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+		local storyAgent = storyDirector:getStoryAgent()
+
+		local function endCallBack()
+			self:requestDoChildActivity(activity:getId(), subActivityId, {
+				doActivityType = 106,
+				pointId = pointId
+			}, function (response)
+				local gallerySystem = DmGame:getInstance()._injector:getInstance("GallerySystem")
+
+				gallerySystem:setActivityStorySaveStatus(gallerySystem:getStoryIdByStoryLink(storyLink, pointId), true)
+				storyDirector:notifyWaiting("story_play_end")
+				callback(response.data.reward)
+			end)
+
+			local endTs = self:getInjector():getInstance(GameServerAgent):remoteTimeMillis()
+			local statisticsData = storyAgent:getStoryStatisticsData(storyLink)
+
+			StatisticSystem:send({
+				id_first = 1,
+				type = "plot_end",
+				op_type = "plot_activity",
+				point = "plot_end",
+				activityid = activity:getTitle(),
+				plot_id = storyLink,
+				plot_name = storyPoint:getName(),
+				totaltime = endTs - startTs,
+				detail = statisticsData.detail,
+				amount = statisticsData.amount,
+				misc = statisticsData.misc
+			})
+		end
+
+		storyAgent:setSkipCheckSave(true)
+		storyAgent:trigger(storyLink, function ()
+			AudioEngine:getInstance():stopBackgroundMusic()
+		end, endCallBack)
+
+		return
+	end
+
+	callback()
+end
+
+function ActivitySystem:requestLightPuzzleOnePiece(activityId, pieceIndex, callback)
+	local param = {
+		doActivityType = 101
+	}
+
+	if pieceIndex ~= nil then
+		param.index = pieceIndex
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			self:dispatch(Event:new(EVT_PUZZLEGAME_REFRESH))
+		end
+	end)
+end
+
+function ActivitySystem:requestGetPuzzleReward(activityId, rewardType, callback)
+	local param = {
+		doActivityType = 102
+	}
+
+	if rewardType ~= nil then
+		param.type = rewardType
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local rewards = response.data.rewards
+			local showRewards = {}
+
+			for i = 1, #rewards do
+				if rewards[i].type ~= RewardType.kGalleryMemory then
+					table.insert(showRewards, rewards[i])
+				end
+			end
+
+			local view = self:getInjector():getInstance("getRewardView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 0
+			}, {
+				rewards = showRewards
+			}))
+			self:dispatch(Event:new(EVT_PUZZLEGAME_REFRESH))
+		end
+	end)
+end
+
+function ActivitySystem:requestGetPuzzleTaskReward(activityId, taskId, callback)
+	local param = {
+		doActivityType = 103
+	}
+
+	if taskId ~= nil then
+		param.taskId = taskId
+	else
+		return
+	end
+
+	self:requestDoActivity(activityId, param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback(response)
+			end
+
+			local rewards = response.data.reward
+			local view = self:getInjector():getInstance("getRewardView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 0
+			}, {
+				rewards = rewards
+			}))
+			self:dispatch(Event:new(EVT_PUZZLEGAME_TASK_REFRESH))
+		end
+	end)
 end

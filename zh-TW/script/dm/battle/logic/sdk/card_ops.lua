@@ -9,6 +9,52 @@ function exports.GetCardCost(env, card)
 	return card:getActualCost()
 end
 
+function exports.addHeroCardSeatRules(env, player, card, rules, dierules)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:addHeroCardSeatRules(player, card, rules, dierules)
+end
+
+function exports.clearHeroCardSeatRules(env, player, card, rules, dierules)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:clearHeroCardSeatRules(player, card, rules, dierules)
+end
+
+function exports.ClearCardFlags(env, card, flags)
+	if not card then
+		return
+	end
+
+	card:clearFlags(flags or {})
+end
+
+function exports.AddCardFlags(env, card, flags)
+	if not card then
+		return
+	end
+
+	card:addFlags(flags or {})
+end
+
+function exports.setEnterPauseTime(env, player, card, time)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:setEnterPauseTime(player, card, time)
+end
+
 function exports.CARD_HERO_MARKED(env, flag)
 	return MakeFilter(function (card)
 		if card:getType() == "hero" then
@@ -83,6 +129,16 @@ function exports.CardsInWindow(env, player, cardfilter)
 	return cardSystem:getHeroCardsInWindow(player, cardfilter)
 end
 
+function exports.CardAtWindowIndex(env, player, index)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:getHeroCardByIndex(player, index)
+end
+
 function exports.CardsInPool(env, player, cardfilter)
 	local cardSystem = env.global["$CardSystem"]
 
@@ -110,7 +166,8 @@ function exports.ApplyEnchant(env, player, card, config, enchants)
 
 	local enchantConfig = {
 		duration = config.duration,
-		timing = config.timing
+		timing = config.timing,
+		tags = config.tags
 	}
 	local enchantObject = EnchantObject:new(enchantConfig, enchants)
 
@@ -128,7 +185,7 @@ function exports.ApplyEnchant(env, player, card, config, enchants)
 	return cardSystem:applyEnchantOnCard(player, card, enchantObject, groupConfig, env["$id"])
 end
 
-function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffects)
+function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffects, anim)
 	local cardSystem = env.global["$CardSystem"]
 
 	if cardSystem == nil then
@@ -137,7 +194,79 @@ function exports.ApplyHeroCardBuff(env, player, heroCard, buffConfig, buffEffect
 
 	local triggerBuff = TriggerBuff:new(buffConfig, buffEffects)
 
-	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, env["$id"])
+	return cardSystem:applyBuffsOnHeroCard(player, heroCard, triggerBuff, anim, env["$id"])
+end
+
+function exports.DispelTiggerOnHeroCard(env, heroCard, tags)
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return nil
+	end
+
+	return cardSystem:dispelTiggerOnHeroCard(heroCard, tags or {})
+end
+
+function exports.SelectCardBuffCount(env, heroCard, tag)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tag)
+end
+
+function exports.SelectCardPassiveCount(env, heroCard, skillId)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getPassiveCountOnHeroCard(heroCard, skillId)
+end
+
+function exports.DispelBuffOnHeroCard(env, heroCard, tags)
+	if not heroCard then
+		return 0
+	end
+
+	if heroCard:getType() ~= "hero" then
+		return 0
+	end
+
+	local cardSystem = env.global["$CardSystem"]
+
+	if cardSystem == nil then
+		return 0
+	end
+
+	return cardSystem:getTiggerBuffCountOnHeroCard(heroCard, tags)
+end
+
+function exports.SelectEnhanceCount(env, player, target, tagOrFilter)
+	local cardSystem = env.global["$CardSystem"]
+	local matchFunc = makeBuffMatchFunction(env, tagOrFilter)
+	local buffs, count = cardSystem:selectEnchantOnTarget(player, target, matchFunc)
+
+	return count
 end
 
 function exports.LockHeroCards(env, player, cardfilter)

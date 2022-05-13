@@ -8,82 +8,9 @@ trycall(require, "dm.base.waiting.WaitingView")
 trycall(require, "dm.utils.AdjustUtils")
 trycall(require, "dm.assets.DataReader")
 trycall(require, "dm.assets.ConfigReader")
-
-local text = {
-	UPDATE_UI12 = "<outline color='#0000005A' size = '1'><font face='${fontName}' size='20' color='#ffffff'>正在玩命更新${totalByte}數據，更新完成後可獲得更新獎勵（</font></outline><outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='#FFFFFF'>更新中…</font></outline><outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='#ffffff'>${progress}）</font></outline>",
-	vmsRequestError = "申請版本信息錯誤",
-	UPDATE_UI21 = "正在解壓中，請耐心等待…",
-	Common_button3 = "保存",
-	UPDATE_UI5 = "去下載",
-	downloadError = "下載錯誤",
-	UPDATE_UI7 = "提示",
-	notice = "遊戲公告",
-	UITitle_EN_Queding = "OK",
-	UPDATE_UI14 = "更新中..",
-	UPDATE_UI8 = "遊戲數據異常，請點擊重新啟動遊戲~",
-	forceupdate = "需要強行更新",
-	UPDATE_UI17 = "最近登錄：",
-	Common_button2 = "取消",
-	UPDATE_UI4 = "當前遊戲版本過低，請前往應用商店下載最新版本哦~",
-	UPDATE_UI11 = "<outline color='#0000005A' size = '1'><font face='${fontName}' size='18' color='#FFFFFF'>遊戲需要進行更新，更新包大小${size}，當前未連接WIFI，是否開始更新？</font></outline>",
-	Common_button1 = "確定",
-	downloading = "正在下載更新包",
-	EQUIP_DOWNSTAR_DESC3 = "取消",
-	downloadFinish = "下載更新包完成",
-	UPDATE_UI20 = "本次測試為邀請測試，請使用有測試資格的賬號登錄，未獲得測試資格的玩家請關註我們的官網及論壇，感謝您的支持",
-	updateFinish = "更新完成",
-	UPDATE_UI23 = "<outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='#ffffff'>${content}</font></outline>",
-	UITitle_EN_Quxiao = "CANCEL",
-	maintain = "需要維護",
-	UITitle_EN_Tishi = "TIPS",
-	UITitle_EN_Gengxintishi = "UPDATE TIPS",
-	LOADING_CONTENT_UPDATE = "正在更新，請喝杯茶稍等壹下……",
-	UPDATE_UI1 = "連接創建失敗請重試",
-	UPDATE_UI16 = "<outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='#ffffff'>更新版本：</font></outline><outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='ffae12'>v.${version}</font></outline>",
-	UPDATE_UI19 = "${startIndex}區-${endIndex}區",
-	UPDATE_UI10 = "<outline color='#0000005A' size = '1'><font face='${fontName}' size='18' color='#FFFFFF'>遊戲需要進行更新，更新包大小${size}，當前為WIFI連接狀態，是否開始更新？</font></outline>",
-	UPDATE_UI6 = "維護提示",
-	UPDATE_UI13 = "WIFI更新中...",
-	ensureUpdate = "確認更新",
-	UPDATE_UI22 = "解壓失敗，請點擊重新啟動遊戲~",
-	UPDATE_UI9 = "<outline color='#0000005A' size = '1'><font face='${fontName}' size='18' color='#FFFFFF'>${text}</font></outline>",
-	noUpdate = "不需要更新",
-	UPDATE_UI3 = "當前遊戲版本過低，請前往AppStore下載最新版本哦~",
-	update = "有版本更新",
-	UPDATE_UI18 = "推薦服務器",
-	installPackage = "正在安裝更新包",
-	UPDATE_UI15 = "<outline color='#0000005A' size = '2'><font face='${fontName}' size='20' color='#ffffff'>當前版本：v.${version}</font></outline>",
-	UPDATE_UI2 = "更新提示",
-	patchAndSwitch = "遊戲patch和開關",
-	vmsState = "vms狀態"
-}
-
-trycall(require, "dm.assets.Constants")
-
-local Strings = {}
-
 trycall(require, "dragon.misc.TextTemplate")
-
-function Strings:find(key)
-	return key and text[key] or tostring(key)
-end
-
-function Strings:get(id, env, filters)
-	local text = self:find(id)
-
-	if text == nil then
-		return id
-	end
-
-	if env ~= nil and type(env) == "table" and TextTemplate then
-		trycall(function ()
-			local tmpl = TextTemplate:new(text)
-			text = tmpl:stringify(env, filters)
-		end)
-	end
-
-	return text
-end
+trycall(require, "dm.assets.Strings")
+trycall(require, "dm.assets.Constants")
 
 local UpdateGame = {
 	appWillResignActive = function (self)
@@ -234,6 +161,7 @@ function GameUpdateMediator:refreshGameUpdate(event)
 				btnText = Strings:get("UPDATE_UI5")
 			},
 			okCallback = function ()
+				PlatformHelper:thirdUpdate()
 			end
 		})
 		self:showForceUpdate()
@@ -244,10 +172,17 @@ function GameUpdateMediator:refreshGameUpdate(event)
 
 		self:dismiss()
 	elseif data.type == "downloadError" then
+		local tips = "UPDATE_UI8"
+		local errorReason = ""
+
+		if data.data and data.data.errorCodeInternal and data.data.errorStr then
+			errorReason = "\n(" .. tostring(data.data.errorCodeInternal) .. ":" .. tostring(data.data.errorStr) .. ")"
+		end
+
 		self:showAlertView({
 			title = Strings:get("UPDATE_UI7"),
 			title1 = Strings:get("UITitle_EN_Tishi"),
-			content = Strings:get("UPDATE_UI8") .. "\n(" .. tostring(data.data.errorCodeInternal) .. ":" .. tostring(data.data.errorStr) .. ")",
+			content = Strings:get(tips) .. errorReason,
 			sureBtn = {},
 			okCallback = function ()
 				REBOOT()
@@ -434,6 +369,10 @@ function GameUpdateMediator:launchLoading(data)
 		updateTips:formatText()
 		updateTips:setAnchorPoint(cc.p(0.5, 0.5))
 		updateTips:renderContent()
+
+		local x, y = changeTips:getPosition()
+		self._yPos = y
+
 		updateTips:addTo(changeTips:getParent()):posite(changeTips:getPosition())
 
 		self._updateTips = updateTips
@@ -443,8 +382,8 @@ function GameUpdateMediator:launchLoading(data)
 			fontName = TTF_FONT_FZYH_R
 		}), {})
 
-		curVersionText:setAnchorPoint(cc.p(1, 0.5))
-		curVersionText:addTo(bottom):posite(1100, 20)
+		curVersionText:setAnchorPoint(cc.p(0, 0.5))
+		curVersionText:addTo(bottom):posite(36, self._yPos - 20)
 
 		self._loadingWidget = loadingWidget
 
@@ -463,8 +402,8 @@ function GameUpdateMediator:launchLoading(data)
 			fontName = TTF_FONT_FZYH_R
 		}), {})
 
-		targetVersionText:setAnchorPoint(cc.p(0, 0.5))
-		targetVersionText:addTo(bottom):posite(36, 20)
+		targetVersionText:setAnchorPoint(cc.p(1, 0.5))
+		targetVersionText:addTo(bottom):posite(1100, self._yPos - 20)
 		targetVersionText:setName("targetVersion")
 
 		loadingWidget.targetVersion = targetVersion

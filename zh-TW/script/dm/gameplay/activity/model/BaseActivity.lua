@@ -1,4 +1,5 @@
 require("dm.gameplay.activity.model.ActivityTask")
+require("dm.gameplay.activity.model.ActivityNumTask")
 
 BaseActivity = class("BaseActivity", objectlua.Object, _M)
 
@@ -153,7 +154,82 @@ function BaseActivity:getLeftBanner()
 end
 
 function BaseActivity:getTimeFactor()
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:remoteDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+
+		return timeInfo
+	end
+
 	return self._config.TimeFactor
+end
+
+function BaseActivity:getLocalTimeFactor()
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", self._endTime / 1000)
+
+		return timeInfo
+	else
+		local timeInfo = clone(self._config.TimeFactor)
+
+		for k, v in pairs(timeInfo.start or {}) do
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
+			local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
+			timeInfo.start[k] = localDate
+		end
+
+		if timeInfo["end"] then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
+			local localDate = TimeUtil:localDate("%Y-%m-%d %H:%M:%S", remoteTime)
+			timeInfo["end"] = localDate
+		end
+
+		return timeInfo
+	end
+end
+
+function BaseActivity:getLocalTimeFactor1()
+	if self._config.Time == "MERGE_CONTINUE" or self._config.Time == "MERGE_RESTART" then
+		local timeInfo = {
+			start = {}
+		}
+		timeInfo.start[1] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._startTime / 1000)
+		timeInfo.start[2] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._endTime / 1000)
+		timeInfo["end"] = TimeUtil:localDate("%Y.%m.%d %H:%M", self._endTime / 1000)
+
+		return timeInfo
+	else
+		local timeInfo = clone(self._config.TimeFactor)
+
+		for k, v in pairs(timeInfo.start or {}) do
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(v)
+			local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+			timeInfo.start[k] = localDate
+		end
+
+		if timeInfo["end"] then
+			local remoteTime = TimeUtil:formatStrToRemoteTImestamp(timeInfo["end"])
+			local localDate = TimeUtil:localDate("%Y.%m.%d %H:%M", remoteTime)
+			timeInfo["end"] = localDate
+		end
+
+		return timeInfo
+	end
+end
+
+function BaseActivity:getTimeStr1()
+	local timeInfo = self:getLocalTimeFactor1()
+
+	return timeInfo.start[1] .. "~" .. timeInfo["end"]
 end
 
 function BaseActivity:getBubleDesc()
@@ -164,8 +240,8 @@ function BaseActivity:getBgm()
 	return self._config.ActivityConfig.bgm or "Mus_Story_Festival"
 end
 
-function BaseActivity:getActivityComplexId()
-	return self._config.ActivityConfig.ActivityComplexId
+function BaseActivity:getBgm1()
+	return self._config.ActivityConfig.bgm
 end
 
 function BaseActivity:getActivityComplexUI()

@@ -20,6 +20,10 @@ local kBtnHandlers = {
 	["mainpanel.starNode.costPanel.starbtn"] = {
 		ignoreClickAudio = true,
 		func = "onUpStarClicked"
+	},
+	["mainpanel.starNode.costPanel.btn_translate"] = {
+		ignoreClickAudio = true,
+		func = "onTranslateClicked"
 	}
 }
 local kAttrType = {
@@ -36,6 +40,7 @@ local kStarPanelPosX = {
 	70,
 	0
 }
+local Hero_GeneralFragmentLimit = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_GeneralFragmentLimit", "content")
 
 function HeroStrengthStarMediator:initialize()
 	super.initialize(self)
@@ -97,6 +102,7 @@ function HeroStrengthStarMediator:initNodes()
 	self._boxPanel = self._starPanel:getChildByFullName("boxPanel")
 	self._costPanel = self._mainPanel:getChildByFullName("costPanel")
 	self._debrisBtn = self._costPanel:getChildByFullName("debrisbtn")
+	self._translteBtn = self._costPanel:getChildByFullName("btn_translate")
 	self._upStarBtn = self._costPanel:getChildByFullName("starbtn")
 	self._title = self._mainPanel:getChildByFullName("text")
 
@@ -349,9 +355,6 @@ function HeroStrengthStarMediator:refreshStarNodes(showAnim)
 				label:addTo(text)
 				label:setAnchorPoint(cc.p(0, 0.5))
 				label:setPosition(cc.p(0, height / 2))
-
-				local width = math.min(width, label:getContentSize().width)
-
 				label:renderContent(width, 0)
 			elseif hasSkill then
 				skillNode:setVisible(true)
@@ -579,16 +582,16 @@ function HeroStrengthStarMediator:refreshStarUpCostPanel()
 	cost:setTextColor(GameStyle:getColor(colorNum1))
 	costLimit:setTextColor(GameStyle:getColor(colorNum1))
 
-	addImg = self._costPanel:getChildByFullName("costNode1.costBg.addImg")
+	addImg = self._costPanel:getChildByFullName("costNode1.costBg.addImg.Image_1")
 
 	addImg:setVisible(not self._debrisEngouh)
 	iconpanel:setGray(not self._debrisEngouh)
 end
 
 function HeroStrengthStarMediator:refreshView(heroId)
-	local canExchange = false
+	local canExchange = not table.indexof(Hero_GeneralFragmentLimit, self._heroId)
 
-	self._debrisBtn:setVisible(canExchange)
+	self._translteBtn:setVisible(canExchange)
 	self._shopBtn:setVisible(self._shopSystem:isShopFragmentOpen())
 
 	local hasStarBoxReward = self._heroData:getHasStarBoxReward()
@@ -698,6 +701,63 @@ function HeroStrengthStarMediator:onDebrisClicked()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, debrisChangeTipView, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, self._heroId, nil))
+end
+
+function HeroStrengthStarMediator:onTranslateClicked()
+	local data = self:getIsHaveFragmentFlag()
+	local hasFragmentNum = self._bagSystem:getItemCount(data.id)
+
+	if hasFragmentNum <= 0 then
+		local heroPrototype = self._heroData:getHeroPrototype()
+		local needNum = heroPrototype:getStarCostFragByStar(self._heroData:getNextStarId())
+		local hasCount = self._heroSystem:getHeroDebrisCount(self._heroId)
+		local n = (needNum - hasCount) / data.num
+		local param = {
+			needNum = 0,
+			isNeed = true,
+			hasNum = 0,
+			hasWipeTip = true,
+			itemId = data.id
+		}
+		local view = self:getInjector():getInstance("sourceView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, param))
+
+		return
+	end
+
+	local debrisChangeTipView = self:getInjector():getInstance("HeroGeneralFragmentView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, debrisChangeTipView, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		kind = 1,
+		heroId = self._heroId
+	}, nil))
+end
+
+function HeroStrengthStarMediator:getIsHaveFragmentFlag()
+	local data = nil
+	local heroData = self._heroSystem:getHeroById(self._heroId)
+	local quality = self._heroData:getRarity()
+	local info = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_StarFragment", "content")
+
+	for k, v in pairs(info) do
+		if quality == tonumber(k) then
+			data = {
+				id = next(v),
+				num = v[next(v)]
+			}
+
+			break
+		end
+	end
+
+	assert(data, "no qualiy Hero_StarFragment ")
+
+	return data
 end
 
 function HeroStrengthStarMediator:onClickSkill()

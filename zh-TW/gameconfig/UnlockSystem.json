@@ -17,9 +17,27 @@
         "UnlockAnima": "",
         "UnlockDesc": "Activity_UnlockDesc"
     },
+    "ActivityCalendar": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "ActivityCalendar_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Activity_ClubStage": {
         "Condition": {
-            "CLUBLEVEL": 3
+            "LEVEL": 100
         },
         "Icon": "",
         "IsPlay": "",
@@ -29,9 +47,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "CLUBLEVEL": 3
+            "LEVEL": 100
         },
-        "Tip": "ClubStage_UnlockDesc",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
@@ -91,11 +109,11 @@
     },
     "Arena_System": {
         "Condition": {
-            "STAGE": "M05S14"
+            "STAGE": "M05S15"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
-        "Link": "view://arenaView&viewType=push",
+        "Link": "view://ArenaNewView&viewType=push",
         "LongDesc": "Unlock_Arena_System_Desc",
         "Name": "Unlock_Arena_System",
         "OutputDesc": "Unlock_Arena_System_OpDesc",
@@ -150,7 +168,7 @@
     },
     "BattlePass": {
         "Condition": {
-            "STAGE": "M01S04"
+            "LEVEL": 1
         },
         "Icon": "",
         "IsPlay": 0,
@@ -160,9 +178,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M01S04"
+            "LEVEL": 1
         },
-        "Tip": "Unlock_BattlePass_Tips",
+        "Tip": "Unlock_Begin_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "BattlePass_UnlockDesc"
     },
@@ -186,7 +204,7 @@
     },
     "Battle_MasterRageLock": {
         "Condition": {
-            "STAGE": "M05S01"
+            "STAGE": "M05S02"
         },
         "Icon": "",
         "IsPlay": "",
@@ -196,7 +214,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M05S01"
+            "STAGE": "M05S02"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -204,7 +222,7 @@
     },
     "BlockSp_All": {
         "Condition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Icon": "",
         "IsPlay": "",
@@ -222,7 +240,7 @@
     },
     "BlockSp_Crystal": {
         "Condition": {
-            "STAGE": "M05S03"
+            "STAGE": "M05S04"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 1,
@@ -237,7 +255,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -245,7 +263,7 @@
     },
     "BlockSp_Entrance": {
         "Condition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -260,7 +278,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -291,7 +309,7 @@
     },
     "BlockSp_Exp": {
         "Condition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -306,7 +324,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -314,10 +332,10 @@
     },
     "BlockSp_Gold": {
         "Condition": {
-            "STAGE": "M05S06"
+            "STAGE": "M04S13"
         },
         "Icon": "new_system_club.png",
-        "IsPlay": 1,
+        "IsPlay": 0,
         "Link": "view://SpStageMainView&viewType=push&tabType=1&spType=gold",
         "LongDesc": "Unlock_Collect_Memory_Desc",
         "Name": "Unlock_BlockSp_Gold",
@@ -329,7 +347,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M05S03"
+            "STAGE": "M04S13"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -447,7 +465,7 @@
     },
     "BuyExp": {
         "Condition": {
-            "STAGE": "M05S04"
+            "STAGE": "M05S02"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -516,7 +534,7 @@
     },
     "Chat_System": {
         "Condition": {
-            "LEVEL": 12
+            "LEVEL": 5
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -526,15 +544,38 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 6
+            "LEVEL": 5
         },
         "Tip": "Unlock_Chat_System_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Chat_System_UnlockDesc"
     },
+    "ChessArena_System": {
+        "Condition": {
+            "STAGE": "M05S15"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "view://ArenaNewView&viewType=push",
+        "LongDesc": "Unlock_Arena_System_Desc",
+        "Name": "Unlock_Arena_System",
+        "OutputDesc": "Unlock_Arena_System_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Arena"
+        ],
+        "ShowCondition": {
+            "STAGE": "M04S02"
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Arena_System_UnlockDesc"
+    },
     "ClubStage": {
         "Condition": {
-            "CLUBLEVEL": 3
+            "CLUBLEVEL": 2
         },
         "Icon": "",
         "IsPlay": "",
@@ -544,7 +585,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "CLUBLEVEL": 3
+            "CLUBLEVEL": 2
         },
         "Tip": "ClubStage_UnlockDesc",
         "UnlockAnima": "",
@@ -570,7 +611,7 @@
     },
     "Club_Chat": {
         "Condition": {
-            "LEVEL": 12
+            "LEVEL": 5
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -580,7 +621,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 6
+            "LEVEL": 5
         },
         "Tip": "Unlock_Club_Chat_Tips",
         "UnlockAnima": "",
@@ -588,7 +629,7 @@
     },
     "Club_System": {
         "Condition": {
-            "STAGE": "M05S07"
+            "STAGE": "M05S06"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -599,8 +640,8 @@
         "ResourcesBanner": [
             "IR_Gold",
             "IR_Crystal",
-            "IR_Club",
-            "IR_Diamond"
+            "IR_Diamond",
+            "IR_Club"
         ],
         "ShowCondition": {
             "LEVEL": 1
@@ -609,9 +650,27 @@
         "UnlockAnima": "HOME",
         "UnlockDesc": "Club_System_UnlockDesc"
     },
+    "CooperateBoss_SkipBattle": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Crusade": {
         "Condition": {
-            "STAGE": "M08S10"
+            "STAGE": "M08S08"
         },
         "Icon": "",
         "IsPlay": 1,
@@ -619,9 +678,14 @@
         "LongDesc": "Unlock_Crusade_Desc",
         "Name": "Unlock_Crusade_Name",
         "OutputDesc": "Unlock_Crusade_OpDesc",
-        "ResourcesBanner": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond",
+            "IR_Pve"
+        ],
         "ShowCondition": {
-            "STAGE": "M08S10"
+            "STAGE": "M08S08"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -645,6 +709,24 @@
         "UnlockAnima": "",
         "UnlockDesc": "DailyQuest_UnlockDesc"
     },
+    "Daily_Task_Receive": {
+        "Condition": {
+            "STAGE": "M07S01"
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Daily_Task_Receive",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "STAGE": "M07S01"
+        },
+        "Tip": "Unlock_Daily_Task_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "DataStatistics": {
         "Condition": {
             "STAGE": "M02S01"
@@ -665,7 +747,7 @@
     },
     "Draw_Equip": {
         "Condition": {
-            "STAGE": "M07S12"
+            "STAGE": "M07S09"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -675,7 +757,7 @@
         "OutputDesc": "Unlock_Draw_Equip_OpDesc",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M07S12"
+            "STAGE": "M07S09"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -726,21 +808,42 @@
     },
     "DreamChallenge": {
         "Condition": {
-            "LEVEL": 43
+            "LEVEL": 999
         },
         "Icon": "",
         "IsPlay": "",
         "Link": "",
-        "LongDesc": "DreamChallenge_Unlock_Name",
+        "LongDesc": "DreamChallenge_LongDesc",
         "Name": "DreamChallenge_Unlock_Name",
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 43
+            "LEVEL": 999
         },
-        "Tip": "DreamChallenge_Unlock_Tips",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
+    },
+    "DreamHouseUnlockParm": {
+        "Condition": {
+            "STAGE": "M04S13"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "view://RecruitView&viewType=push&recruitType=DrawCard_Diamond_1",
+        "LongDesc": "Unlock_Draw_Hero_Desc",
+        "Name": "Unlock_Draw_Hero",
+        "OutputDesc": "Unlock_Draw_Hero_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Draw_Hero_UnlockDesc"
     },
     "Elite_Block": {
         "Condition": {
@@ -798,7 +901,7 @@
     },
     "Equip_LevelUp": {
         "Condition": {
-            "STAGE": "M06S02"
+            "STAGE": "M05S14"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -813,7 +916,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M06S02"
+            "STAGE": "M05S14"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -821,7 +924,7 @@
     },
     "Equip_StarUp": {
         "Condition": {
-            "STAGE": "M06S02"
+            "STAGE": "M05S14"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -831,7 +934,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M06S02"
+            "STAGE": "M05S14"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -875,7 +978,7 @@
     },
     "Friend_PK": {
         "Condition": {
-            "STAGE": "M04S01"
+            "LEVEL": 999
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -885,9 +988,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M04S01"
+            "LEVEL": 999
         },
-        "Tip": "Unlock_Stage_Tips",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Friend_PK_UnlockDesc"
     },
@@ -916,7 +1019,7 @@
     },
     "Hero_Equip": {
         "Condition": {
-            "STAGE": "M05S06"
+            "STAGE": "M05S04"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -931,7 +1034,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M05S06"
+            "STAGE": "M05S04"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -1093,7 +1196,7 @@
     },
     "Hero_StoryPoint": {
         "Condition": {
-            "LEVEL": 200
+            "LEVEL": 100
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1103,15 +1206,15 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 200
+            "LEVEL": 100
         },
-        "Tip": "Unlock_Stage_Tips",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Hero_StoryPoint_UnlockDesc"
     },
     "HerosLegend": {
         "Condition": {
-            "STAGE": "M06S16"
+            "STAGE": "M06S10"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1134,7 +1237,7 @@
     },
     "HitCharts": {
         "Condition": {
-            "CLUBLEVEL": "3"
+            "LEVEL": 100
         },
         "Icon": "",
         "IsPlay": "",
@@ -1144,15 +1247,15 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "CLUBLEVEL": "3"
+            "LEVEL": 100
         },
-        "Tip": "",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
     "KOF": {
         "Condition": {
-            "STAGE": "M08S24"
+            "STAGE": "M08S14"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1167,11 +1270,34 @@
             "IR_Arena"
         ],
         "ShowCondition": {
-            "LEVEL": 100
+            "LEVEL": 1
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
         "UnlockDesc": "KOF_UnlockDesc"
+    },
+    "LeadStage": {
+        "Condition": {
+            "LEVEL": 50
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "LeadStage_Unlock_Name",
+        "Name": "LeadStage_SystemName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IM_MasterStage_Exp",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 45
+        },
+        "Tip": "LeadStage_EntryUnlockTip",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
     },
     "MainTask": {
         "Condition": {
@@ -1211,7 +1337,7 @@
     },
     "Master_All": {
         "Condition": {
-            "STAGE": "M05S02"
+            "STAGE": "M05S03"
         },
         "Icon": "",
         "IsPlay": "",
@@ -1247,7 +1373,7 @@
     },
     "Master_BattleSkill": {
         "Condition": {
-            "STAGE": "M05S01"
+            "STAGE": "M05S02"
         },
         "Icon": "",
         "IsPlay": "",
@@ -1257,7 +1383,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M05S01"
+            "STAGE": "M05S02"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -1265,7 +1391,7 @@
     },
     "Master_Equip": {
         "Condition": {
-            "STAGE": "M05S12"
+            "STAGE": "M05S08"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1275,7 +1401,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M05S12"
+            "STAGE": "M05S08"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -1283,7 +1409,7 @@
     },
     "Master_Skill": {
         "Condition": {
-            "STAGE": "M05S02"
+            "STAGE": "M05S03"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1298,7 +1424,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M05S02"
+            "STAGE": "M05S03"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -1402,10 +1528,12 @@
         "IsPlay": 0,
         "Link": "",
         "LongDesc": "Unlock_Elite_OnceRaid_Desc",
-        "Name": "Unlock_Elite_OnceRaid",
+        "Name": "Unlock_Package_Shop",
         "OutputDesc": "",
         "ResourcesBanner": [
             "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
             "IR_Diamond"
         ],
         "ShowCondition": {
@@ -1470,9 +1598,27 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 1
+            "LEVEL": 100
         },
         "Tip": "Unlock_Joking_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
+    "QuickChallenge": {
+        "Condition": {
+            "STAGE": "M09S15"
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "QuickChanllenge_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "STAGE": "M09S15"
+        },
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
@@ -1508,7 +1654,7 @@
         "Icon": "new_system_club.png",
         "IsPlay": 0,
         "Link": "",
-        "LongDesc": "Unlock_RankList_Desc",
+        "LongDesc": "",
         "Name": "Unlock_RankList",
         "OutputDesc": "",
         "ResourcesBanner": [
@@ -1549,7 +1695,7 @@
     },
     "Shop_Arena": {
         "Condition": {
-            "LEVEL": 100
+            "LEVEL": 999
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1561,15 +1707,35 @@
             "IR_Arena"
         ],
         "ShowCondition": {
-            "LEVEL": 100
+            "LEVEL": 999
         },
-        "Tip": "Unlock_Level_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Arena_UnlockDesc"
     },
+    "Shop_Association_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_Association_Unlock_Desc",
+        "Name": "Shop_AssociationName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Club"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_Association_Unlock_Unlock_UnlockDesc"
+    },
     "Shop_Club": {
         "Condition": {
-            "LEVEL": 100
+            "LEVEL": 999
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1581,9 +1747,9 @@
             "IR_Club"
         ],
         "ShowCondition": {
-            "LEVEL": 100
+            "LEVEL": 999
         },
-        "Tip": "Unlock_Level_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Club_UnlockDesc"
     },
@@ -1629,6 +1795,29 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "Shop_GoldPartner_Unlock": {
+        "Condition": {
+            "LEVEL": 1,
+            "UNLOCKTIME": "2021-09-13 05:00:00"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_GoldPartner_Unlock_Desc",
+        "Name": "Shop_GoldPartner_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IHF_HeroStone_SSR",
+            "IHF_HeroStone_SR"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1,
+            "UNLOCKTIME": "2021-09-13 05:00:00"
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_GoldPartner_Unlock_UnlockDesc"
+    },
     "Shop_Groceries": {
         "Condition": {
             "LEVEL": 1
@@ -1652,7 +1841,7 @@
     },
     "Shop_KOF": {
         "Condition": {
-            "LEVEL": 100
+            "STAGE": "M06S06"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1664,9 +1853,9 @@
             "IR_KON"
         ],
         "ShowCondition": {
-            "LEVEL": 100
+            "STAGE": "M06S06"
         },
-        "Tip": "Unlock_Level_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_KOF_UnlockDesc"
     },
@@ -1714,6 +1903,46 @@
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Mystery_UnlockDesc"
     },
+    "Shop_PVE_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_PVE_Unlock_Desc",
+        "Name": "Shop_PVEName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Pve"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_PVE_Unlock_Unlock_UnlockDesc"
+    },
+    "Shop_PVP_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_PVP_Unlock_Desc",
+        "Name": "Shop_PVPName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Arena"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_PVP_Unlock_Unlock_UnlockDesc"
+    },
     "Shop_Recommend": {
         "Condition": {
             "LEVEL": 1
@@ -1757,6 +1986,26 @@
         "Tip": "Unlock_Level_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
+    },
+    "Shop_StageArenaShop_Unlock": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_StageArenaShop_Unlock_Desc",
+        "Name": "Shop_StageArenaShop_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_NewArenaCoin"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_StageArenaShop_Unlock_UnlockDesc"
     },
     "Shop_SurfacePackage": {
         "Condition": {
@@ -1804,6 +2053,29 @@
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "Shop_Timelimitedmall": {
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Shop_Timelimitedmall",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 1
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "Shop_Tower": {
         "Condition": {
             "LEVEL": 100
@@ -1822,6 +2094,26 @@
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Tower_UnlockDesc"
     },
+    "Shop_URMap_Unlock": {
+        "Condition": {
+            "SERVER": 120
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Shop_URMap_Unlock_Desc",
+        "Name": "Shop_URmap_Unlock_Name",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_URMapCoin"
+        ],
+        "ShowCondition": {
+            "SERVER": 120
+        },
+        "Tip": "",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_URMap_Unlock_UnlockDesc"
+    },
     "Shop_Unlock": {
         "Condition": {
             "LEVEL": 1
@@ -1839,6 +2131,30 @@
         "Tip": "Unlock_Level_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Shop_Unlock_UnlockDesc"
+    },
+    "StageArena": {
+        "Condition": {
+            "LEADER": 3,
+            "LEVEL": 60
+        },
+        "Icon": "",
+        "IsPlay": 1,
+        "Link": "",
+        "LongDesc": "StageArena_Unlock_Name",
+        "Name": "StageArena_SystemName",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 3
+        },
+        "Tip": "StageArena_EntryUnlockTip",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": ""
     },
     "StagePresent1_Unlock": {
         "Condition": {
@@ -1878,7 +2194,7 @@
     },
     "StagePresent3_Unlock": {
         "Condition": {
-            "STAGE": "M05S16"
+            "STAGE": "M05S15"
         },
         "Icon": "",
         "IsPlay": "",
@@ -1888,7 +2204,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M05S16"
+            "STAGE": "M05S15"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -1896,7 +2212,7 @@
     },
     "StagePresent4_Unlock": {
         "Condition": {
-            "STAGE": "M07S20"
+            "STAGE": "M07S15"
         },
         "Icon": "",
         "IsPlay": "",
@@ -1906,7 +2222,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M07S20"
+            "STAGE": "M07S15"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -1914,7 +2230,7 @@
     },
     "StagePresent5_Unlock": {
         "Condition": {
-            "STAGE": "M09S24"
+            "STAGE": "M09S15"
         },
         "Icon": "",
         "IsPlay": "",
@@ -1924,15 +2240,81 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "STAGE": "M09S24"
+            "STAGE": "M09S15"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
+    "Stage_Battle": {
+        "Condition": {
+            "LEVEL": 999
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Stage_Battle_Desc",
+        "Name": "Unlock_Stage_Battle",
+        "OutputDesc": "Unlock_Stage_Practice_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 999
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Stage_Practice_UnlockDesc"
+    },
+    "Stage_Challenge": {
+        "Condition": {
+            "LEVEL": 999
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Stage_Challenge_Desc",
+        "Name": "Unlock_Stage_Challenge",
+        "OutputDesc": "Unlock_Stage_Practice_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 999
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Stage_Practice_UnlockDesc"
+    },
+    "Stage_Exercise": {
+        "Condition": {
+            "STAGE": "M06S09"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Stage_Exercise_Desc",
+        "Name": "Unlock_Stage_Exercise",
+        "OutputDesc": "Unlock_Stage_Practice_OpDesc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "STAGE": "M04S13"
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Stage_Practice_UnlockDesc"
+    },
     "Stage_Practice": {
         "Condition": {
-            "STAGE": "M06S08"
+            "STAGE": "M06S09"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -1946,7 +2328,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M04S10"
+            "STAGE": "M04S13"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "HOME",
@@ -1954,7 +2336,7 @@
     },
     "Subscribe": {
         "Condition": {
-            "LEVEL": 999
+            "LEVEL": 100
         },
         "Icon": "",
         "IsPlay": 0,
@@ -1964,9 +2346,9 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 999
+            "LEVEL": 100
         },
-        "Tip": "Unlock_Level_Tips",
+        "Tip": "Unlock_Joking_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
@@ -1990,7 +2372,7 @@
     },
     "Task_Achievement": {
         "Condition": {
-            "STAGE": "M06S05"
+            "STAGE": "M06S04"
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -2005,7 +2387,7 @@
             "IR_Diamond"
         ],
         "ShowCondition": {
-            "STAGE": "M06S05"
+            "STAGE": "M06S04"
         },
         "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
@@ -2036,7 +2418,7 @@
     },
     "Team_Chat": {
         "Condition": {
-            "LEVEL": 12
+            "LEVEL": 5
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -2046,11 +2428,54 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 6
+            "LEVEL": 5
         },
         "Tip": "Unlock_Team_Chat_Tips",
         "UnlockAnima": "",
         "UnlockDesc": "Team_Chat_UnlockDesc"
+    },
+    "URMap_Unlock": {
+        "Condition": {
+            "LEVEL": 20
+        },
+        "Icon": "",
+        "IsPlay": 1,
+        "Link": "",
+        "LongDesc": "",
+        "Name": "Unlock_Secret_Hall",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Power",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "LEVEL": 20
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "URMaps_Unlock_Des"
+    },
+    "Unlock_Shop_Crystal": {
+        "Condition": {
+            "LEVEL": 60
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Shop_Crystal_Desc",
+        "Name": "Unlock_Unlock_Shop_Crystal",
+        "OutputDesc": "",
+        "ResourcesBanner": [
+            "IR_Crystal"
+        ],
+        "ShowCondition": {
+            "LEVEL": 60
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": "Shop_Crystal_UnlockDesc"
     },
     "Unlock_Shop_Diamond": {
         "Condition": {
@@ -2128,8 +2553,8 @@
         "ResourcesBanner": [
             "IR_Gold",
             "IR_Crystal",
-            "IR_Power",
-            "IR_Diamond"
+            "IR_Diamond",
+            "IR_Pve"
         ],
         "ShowCondition": {
             "STAGE": "M06S10"
@@ -2152,7 +2577,7 @@
         "ShowCondition": {
             "LEVEL": 1
         },
-        "Tip": "Unlock_Level_Tips",
+        "Tip": "Unlock_Stage_Tips",
         "UnlockAnima": "",
         "UnlockDesc": ""
     },
@@ -2179,9 +2604,27 @@
         "UnlockAnima": "HOME",
         "UnlockDesc": "Village_Building_UnlockDesc"
     },
+    "Walkthrough_Main": {
+        "Condition": {
+            "LEVEL": 5
+        },
+        "Icon": "",
+        "IsPlay": "",
+        "Link": "",
+        "LongDesc": "",
+        "Name": "",
+        "OutputDesc": "",
+        "ResourcesBanner": "",
+        "ShowCondition": {
+            "LEVEL": 5
+        },
+        "Tip": "Unlock_Level_Tips",
+        "UnlockAnima": "",
+        "UnlockDesc": ""
+    },
     "World_Chat": {
         "Condition": {
-            "LEVEL": 12
+            "LEVEL": 5
         },
         "Icon": "new_system_club.png",
         "IsPlay": 0,
@@ -2191,7 +2634,7 @@
         "OutputDesc": "",
         "ResourcesBanner": "",
         "ShowCondition": {
-            "LEVEL": 6
+            "LEVEL": 5
         },
         "Tip": "Unlock_World_Chat_Tips",
         "UnlockAnima": "",

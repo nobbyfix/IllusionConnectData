@@ -46,6 +46,9 @@ function ClubBossGainRewardMediator:initNodes()
 		title = Strings:get("clubBoss_17"),
 		title1 = Strings:get("clubBoss_18")
 	})
+	self._haveImage = self._main:getChildByFullName("haveImage")
+
+	self._haveImage:setVisible(false)
 end
 
 function ClubBossGainRewardMediator:onDoRefrsh(event)
@@ -63,6 +66,8 @@ function ClubBossGainRewardMediator:onDoRefrsh(event)
 
 	if self._clubBossInfo:getHurtTarget() <= self._clubBossInfo:getHurt() and self._clubBossInfo:getHasGetHurtAward() == true then
 		self._sureBtn:setButtonName(Strings:get("clubBoss_39"), Strings:get("clubBoss_40"))
+		self._haveImage:setVisible(true)
+		self._sureBtn:setVisible(false)
 	end
 end
 
@@ -123,6 +128,8 @@ function ClubBossGainRewardMediator:setUi()
 
 	if self._clubBossInfo:getHurtTarget() <= self._clubBossInfo:getHurt() and self._clubBossInfo:getHasGetHurtAward() == true then
 		self._sureBtn:setButtonName(Strings:get("clubBoss_39"), Strings:get("clubBoss_40"))
+		self._haveImage:setVisible(true)
+		self._sureBtn:setVisible(false)
 	end
 end
 

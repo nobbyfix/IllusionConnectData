@@ -64,10 +64,18 @@ function EliteSevenCell:initWidget()
 
 	AdjustUtils.adjustLayoutByType(Image2, AdjustUtils.kAdjustType.Bottom)
 
-	local text = self._textPanel:getChildByFullName("hideText.text1")
+	local localLanguage = getCurrentLanguage()
+	local text1 = self._textPanel:getChildByFullName("hideText.text1")
+	local text2 = self._textPanel:getChildByFullName("hideText.text1_horizontal")
 
-	text:getVirtualRenderer():setDimensions(20, 0)
+	text1:setVisible(false)
+	text2:setVisible(true)
+	text2:getVirtualRenderer():setLineSpacing(0)
 	self._textPanel:setSwallowTouches(false)
+
+	local hideText = self._textPanel:getChildByName("hideText")
+
+	hideText:setPosition(cc.p(103, -30))
 
 	local function callFunc(sender, eventType)
 		local hideText = sender:getChildByName("hideText")

@@ -122,6 +122,9 @@ BattleSkill:has("_canDoubleHit", {
 BattleSkill:has("_canBeHitBack", {
 	is = "rwb"
 })
+BattleSkill:has("_notAskForTarget", {
+	is = "rwb"
+})
 
 function BattleSkill:initialize(skillConfig)
 	super.initialize(self)
@@ -132,6 +135,7 @@ function BattleSkill:initialize(skillConfig)
 	self._dblhitRate = skillConfig.dblrate or 0
 	self._canDoubleHit = skillConfig.dblhit
 	self._canBeHitBack = skillConfig.behit
+	self._notAskForTarget = skillConfig.notAskForTarget
 	self._proto = skillConfig.proto
 	self._args = skillConfig.args
 	self._range = skillConfig.range
@@ -161,6 +165,10 @@ function BattleSkill:dumpInformation()
 		level = self._level,
 		icon = self._icon
 	}
+end
+
+function BattleSkill:getArgs()
+	return self._args
 end
 
 function BattleSkill:build(globalScope, force)

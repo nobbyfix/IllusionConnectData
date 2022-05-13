@@ -20,7 +20,7 @@ local kBtnHandlers = {
 		func = "onClickReceiveOneKey"
 	},
 	btn_close = {
-		clickAudio = "Se_Click_Close_2",
+		clickAudio = "Se_Click_Close_1",
 		func = "onClickClose"
 	}
 }
@@ -51,7 +51,9 @@ function MailMediator:onRegister()
 	self:bindWidget("mailpanel.button_one_key_receive", TwoLevelMainButton, {
 		ignoreAddKerning = true
 	})
-	self:bindWidget("mailpanel.bg_right.button_receive", TwoLevelViceButton, {})
+
+	self._receiveBtnWidget = self:bindWidget("mailpanel.bg_right.button_receive", TwoLevelViceButton, {})
+
 	self:mapEventListeners()
 end
 
@@ -341,6 +343,12 @@ function MailMediator:refreshContent(idx)
 		end
 	end
 
+	if self._mailSystem:isNeedUpdateVersion(mailInfo) then
+		self._receiveBtnWidget:setButtonName(Strings:get("Task_UI7"))
+	else
+		self._receiveBtnWidget:setButtonName(Strings:get("Task_UI11"))
+	end
+
 	self._remainTime:setVisible(true)
 
 	local expireDate = mailInfo:getExpire()
@@ -429,9 +437,9 @@ function MailMediator:onTick(dt)
 		local minutes = math.modf((remainDate - math.modf(3600 * hour)) / 60)
 		local day, daylit = math.modf(hour / 24)
 		hour = math.modf(daylit * 24)
-		local dayStr = day > 0 and tostring(day .. Strings:get("TimeUtil_Day")) or ""
-		local hourstr = hour > 0 and tostring(hour .. Strings:get("Activity_Remain_Hour")) or ""
-		local minutestr = minutes > 0 and tostring(minutes .. Strings:get("TimeUtil_Min")) or ""
+		local dayStr = day > 0 and tostring(day .. Strings:get("Questionnaire_UI_Desc5")) or ""
+		local hourstr = hour > 0 and tostring(hour .. Strings:get("Questionnaire_UI_Desc6")) or ""
+		local minutestr = minutes > 0 and tostring(minutes .. Strings:get("Questionnaire_UI_Desc7")) or ""
 		local catStr = nil
 
 		if dayStr ~= "" then
@@ -532,12 +540,20 @@ end
 
 function MailMediator:onClickReceiveOneKey(sender, eventType, oppoRecord)
 	self._mailSystem:requestReceiveMailOneKey(true, function (resData)
-		self:oneKeyReceiveAwardSuc(resData)
+		if checkDependInstance(self) then
+			self:oneKeyReceiveAwardSuc(resData)
+		end
 	end)
 end
 
 function MailMediator:onClickReceive(sender, eventType, oppoRecord)
 	local mailInfo = self._mailSystem:getMailByIndex(kSelectedMail)
+
+	if self._mailSystem:isNeedUpdateVersion(mailInfo) then
+		PlatformHelper:thirdUpdate()
+
+		return
+	end
 
 	if mailInfo._expireAfterRead == 0 then
 		self._mailSystem:setReceiveExpireMail(true)

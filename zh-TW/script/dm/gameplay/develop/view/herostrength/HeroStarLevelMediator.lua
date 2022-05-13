@@ -6,11 +6,11 @@ HeroStarLevelMediator:has("_developSystem", {
 
 local kNum = 6
 local kHeroStiveId = "IR_HeroStive"
-local HeroStar_StiveOut = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveOut", "content")
 local HeroStar_StiveChange = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChange", "content")
 local HeroStar_StiveChangeSelf = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroStar_StiveChangeSelf", "content")
 local kExpConsumeKey = {
 	[12.0] = "HeroStar_R",
+	[15.0] = "HeroStar_SP",
 	[13.0] = "HeroStar_SR",
 	[14.0] = "HeroStar_SSR"
 }
@@ -101,12 +101,14 @@ function HeroStarLevelMediator:initData(data)
 	local rarityArr = {
 		"12",
 		"13",
-		"14"
+		"14",
+		"15"
 	}
 	self._rarityItem = {
 		["12"] = {},
 		["13"] = {},
-		["14"] = {}
+		["14"] = {},
+		["15"] = {}
 	}
 	self._selfItem = nil
 
@@ -115,34 +117,59 @@ function HeroStarLevelMediator:initData(data)
 		local id = value.id
 		local itemId = value.fragId
 		local rarity = tostring(value.rareity)
+		local num = self._bagSystem:getItemCount(itemId)
+		local awakeHeroFragId, debrisCostCount = self._heroSystem:getAwakeHeroFragIdAndDebrisCostCount()
 
-		if not table.indexof(HeroStar_StiveOut, id) then
-			local num = self._bagSystem:getItemCount(itemId)
+		if itemId == awakeHeroFragId then
+			num = num - debrisCostCount
 
-			if num > 0 then
-				local exp = HeroStar_StiveChange[rarity]
+			if num < 0 then
+				num = 0
+			end
+		end
 
-				if self._heroId == id then
-					exp = math.floor(exp * HeroStar_StiveChangeSelf)
-					self._selfItem = {
-						eatCount = 0,
-						itemId = itemId,
-						exp = exp,
-						rarity = tonumber(rarity),
-						allCount = num
-					}
-				end
+		if num > 0 then
+			local exp = HeroStar_StiveChange[rarity]
 
-				local itemData = {
+			if self._heroId == id then
+				exp = math.floor(exp * HeroStar_StiveChangeSelf)
+				self._selfItem = {
 					eatCount = 0,
 					itemId = itemId,
 					exp = exp,
 					rarity = tonumber(rarity),
 					allCount = num
 				}
-
-				table.insert(self._rarityItem[rarity], itemData)
 			end
+
+			local itemData = {
+				eatCount = 0,
+				heroId = id,
+				itemId = itemId,
+				exp = exp,
+				rarity = tonumber(rarity),
+				allCount = num
+			}
+
+			table.insert(self._rarityItem[rarity], itemData)
+		end
+	end
+
+	local Hero_WivesTeam = ConfigReader:getRecordById("ConfigValue", "Hero_WivesTeam").content
+
+	local function sortFunc(v)
+		table.sort(v, function (a, b)
+			if table.indexof(Hero_WivesTeam, a.heroId) then
+				return false
+			elseif table.indexof(Hero_WivesTeam, b.heroId) then
+				return true
+			end
+		end)
+	end
+
+	for k, v in pairs(self._rarityItem) do
+		if tonumber(k) == 12 or tonumber(k) == 13 then
+			sortFunc(v)
 		end
 	end
 
@@ -416,9 +443,10 @@ function HeroStarLevelMediator:createTeamCell(cell, index)
 						end
 
 						local curNum = itemData.eatCount
+						local allCount = itemData.allCount
 
 						numPanel:setSwallowTouches(false)
-						numPanel:getChildByFullName("num"):setString(curNum .. "/" .. itemData.allCount)
+						numPanel:getChildByFullName("num"):setString(curNum .. "/" .. allCount)
 						numPanel:addTouchEventListener(function (sender, eventType)
 							self:onEatItemClicked(sender, eventType, true)
 						end)
@@ -555,6 +583,8 @@ function HeroStarLevelMediator:getQuickItems()
 		end
 	end
 
+	local Hero_WivesTeam = ConfigReader:getRecordById("ConfigValue", "Hero_WivesTeam").content
+
 	for i = 1, #self._rarityItems do
 		if self._needNum <= self._curExp then
 			return
@@ -571,29 +601,33 @@ function HeroStarLevelMediator:getQuickItems()
 					return
 				end
 
+				local rarity = items[index].rarity
+				local ret = (rarity == 12 or rarity == 13) and table.indexof(Hero_WivesTeam, items[index].heroId)
 				local itemId = items[index].itemId
 
 				if not self._selfItem or self._selfItem.itemId ~= itemId then
-					local exp = items[index].exp
-					local allCount = items[index].allCount
-					local eatCount = items[index].eatCount
+					if not ret then
+						local exp = items[index].exp
+						local allCount = items[index].allCount
+						local eatCount = items[index].eatCount
 
-					for jj = eatCount + 1, allCount do
-						if self._needNum <= self._curExp then
-							return
-						end
+						for jj = eatCount + 1, allCount do
+							if self._needNum <= self._curExp then
+								return
+							end
 
-						self._rarityItems[i].items[index].eatCount = self._rarityItems[i].items[index].eatCount + 1
-						self._curExp = self._curExp + exp
+							self._rarityItems[i].items[index].eatCount = self._rarityItems[i].items[index].eatCount + 1
+							self._curExp = self._curExp + exp
 
-						if not self._consumeTemp[itemId] then
-							self._consumeTemp[itemId] = {
-								eatCount = self._rarityItems[i].items[index].eatCount,
-								exp = exp,
-								rarity = self._rarityItems[i].items[index].rarity
-							}
-						else
-							self._consumeTemp[itemId].eatCount = self._rarityItems[i].items[index].eatCount
+							if not self._consumeTemp[itemId] then
+								self._consumeTemp[itemId] = {
+									eatCount = self._rarityItems[i].items[index].eatCount,
+									exp = exp,
+									rarity = self._rarityItems[i].items[index].rarity
+								}
+							else
+								self._consumeTemp[itemId].eatCount = self._rarityItems[i].items[index].eatCount
+							end
 						end
 					end
 				elseif self._selfItem.itemId == itemId then
@@ -806,9 +840,10 @@ end
 
 function HeroStarLevelMediator:checkBeginEatCount(sender)
 	local data = sender.data
-	local lastCount = data.allCount - data.eatCount
+	local allCount = data.allCount
+	local lastCount = allCount - data.eatCount
 
-	if lastCount == 0 then
+	if lastCount <= 0 then
 		return false
 	end
 

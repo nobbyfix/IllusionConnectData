@@ -127,6 +127,7 @@ function BuildingOverviewMediator:setupView()
 	self._node_tip = self._mainPanel:getChildByFullName("Node_Tip")
 
 	self._node_tip:setVisible(false)
+	self._node_tip:getChildByFullName("Node_3.Image_94"):loadTexture("asset/items/IM_ExpUp1.png")
 
 	local buildListNode = self._mainPanel:getChildByFullName("Node_buildList")
 
@@ -1536,6 +1537,14 @@ function BuildingOverviewMediator:refreshBuildDes()
 	contentText:formatText()
 	contentText:renderContent(panel:getContentSize().width, 0, true)
 	node_des:addChild(contentText)
+
+	local localLanguage = getCurrentLanguage()
+
+	if localLanguage ~= GameLanguageType.CN then
+		contentText:renderContent(panel:getContentSize().width * 1.05, 0, true)
+		contentText:offset(0, 8)
+		contentText:setScale(0.88)
+	end
 end
 
 function BuildingOverviewMediator:refreshRedPoint()
@@ -1627,12 +1636,12 @@ function BuildingOverviewMediator:getLoopWordPos(loopType)
 			local node = topInfoWidget:getView():getChildByFullName("currency_bar_4")
 			local worldPos = node:convertToWorldSpace(cc.p(0, 0))
 
-			return cc.p(worldPos.x - 95, worldPos.y - 35)
+			return cc.p(worldPos.x - 163, worldPos.y - 24)
 		elseif loopType == KBuildingType.kCrystalOre then
 			local node = topInfoWidget:getView():getChildByFullName("currency_bar_3")
 			local worldPos = node:convertToWorldSpace(cc.p(0, 0))
 
-			return cc.p(worldPos.x - 95, worldPos.y - 35)
+			return cc.p(worldPos.x - 163, worldPos.y - 24)
 		elseif loopType == KBuildingType.kExpOre then
 			local worldPos = self._buildingSystem:getBagWorldPos() or cc.p(0, 0)
 

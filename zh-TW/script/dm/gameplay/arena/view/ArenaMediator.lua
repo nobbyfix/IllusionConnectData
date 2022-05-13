@@ -16,7 +16,7 @@ KLevelName = {
 	["5"] = Strings:get("Arena_Rank_Bojin"),
 	["6"] = Strings:get("Arena_Rank_Zongshi"),
 	["7"] = Strings:get("Arena_Rank_Wangzhe"),
-	["0"] = Strings:get("Arena_Text_None") .. Strings:get("Arena_Title1_Rank")
+	["0"] = Strings:get("Arena_Title1_Rank") .. Strings:get("Arena_Text_None")
 }
 KLevelColor = {
 	["1"] = {
@@ -91,7 +91,8 @@ ArenaMediator:has("_stageSystem", {
 	is = "r"
 }):injectWith("StageSystem")
 
-local Arena_NumReward = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Arena_NumReward", "content")
+local ArenaNumReward = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Arena_NumReward", "content")
+local ArenaFirstNumReward = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Arena_FirstNumReward", "content")
 local kArenaTimeCoin = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Arena_ItemUse", "content")
 local kArenaTimeCoinMax = ConfigReader:getDataByNameIdAndKey("ItemConfig", kArenaTimeCoin, "MaxPile")
 local kArenaCoin = CurrencyIdKind.kHonor
@@ -121,6 +122,23 @@ local kBtnHandlers = {
 		func = "onClickRefresh"
 	}
 }
+local firstBoxRewardImg = {
+	{
+		"rcc_baoxiang",
+		"rca_baoxiang",
+		"baoxiang_3_3.png"
+	},
+	{
+		"rdc_baoxiang",
+		"rda_baoxiang",
+		"baoxiang_4_3.png"
+	},
+	{
+		"rec_baoxiang",
+		"rea_baoxiang",
+		"baoxiang_5_3.png"
+	}
+}
 local ArenaTeamType = {
 	StageTeamType.ARENA_ATK,
 	StageTeamType.ARENA_DEF
@@ -131,37 +149,14 @@ function ArenaMediator:initialize()
 end
 
 function ArenaMediator:getRewardInfo()
-	self._first = self._arenaSystem:getArena():getFirstReward()
-	local rewardContent = Arena_NumReward
-	local boxRewardImg = {
-		{
-			"rcc_baoxiang",
-			"rca_baoxiang",
-			"baoxiang_3_3.png"
-		},
-		{
-			"rdc_baoxiang",
-			"rda_baoxiang",
-			"baoxiang_4_3.png"
-		},
-		{
-			"rec_baoxiang",
-			"rea_baoxiang",
-			"baoxiang_5_3.png"
-		}
-	}
-
-	if self._first then
-		rewardContent = self._first
-		boxRewardImg = "icon_zuanshi_1.png"
-	end
-
+	self._winReward = self._arenaSystem:getArena():getFirstReward()
 	local awards = {}
 
-	for i, v in pairs(rewardContent) do
+	for i, v in pairs(self._winReward) do
 		local data = {
 			num = tonumber(i),
-			rewardId = v
+			rewardId = v,
+			first = self._winReward[i] == ArenaFirstNumReward[i]
 		}
 
 		table.insert(awards, data)
@@ -174,7 +169,7 @@ function ArenaMediator:getRewardInfo()
 	self._rewardInfo = {}
 
 	for i = 1, 3 do
-		awards[i].icon = self._first and boxRewardImg or boxRewardImg[i]
+		awards[i].icon = awards[i].first and "icon_zuanshi_1.png" or firstBoxRewardImg[i]
 
 		table.insert(self._rewardInfo, awards[i])
 	end
@@ -356,11 +351,23 @@ function ArenaMediator:initWidgetInfo()
 	richText:addTo(seasonInfo:getParent())
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 24,
+		fontSize = 20,
 		fontName = TTF_FONT_FZYH_R
 	})
 
 	richText:setString(text)
+	richText:renderContent()
+
+	local size = richText:getContentSize()
+
+	if size.width > 760 then
+		local text = Strings:get(seasonSkillData.Desc, {
+			fontSize = 17,
+			fontName = TTF_FONT_FZYH_R
+		})
+
+		richText:setString(text)
+	end
 
 	local startTime, endTime = self._arenaSystem:getSeasonTime()
 
@@ -453,19 +460,6 @@ function ArenaMediator:initWidgetInfo()
 		jingjichang:stop()
 	end)
 	jingjichang:addTo(bg):center(bg:getContentSize())
-	self:showNewseasonView()
-end
-
-function ArenaMediator:showNewseasonView()
-	local isShow = self._arenaSystem:isShowNewSeasonView()
-
-	if isShow then
-		local view = self:getInjector():getInstance("ArenaNewSeasonView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, {}))
-	end
 end
 
 function ArenaMediator:createTableView()
@@ -487,7 +481,7 @@ function ArenaMediator:createTableView()
 		local posX = i <= 5 and 208 * (i - 1) or 208 * (i - 6)
 		local posY = i <= 5 and 149 or -5
 
-		nodeview:setPosition(cc.p(posX + 30, posY))
+		nodeview:setPosition(cc.p(posX + 10, posY))
 
 		local rival = self._arenaSystem:getRivalByIndex(i)
 
@@ -656,7 +650,7 @@ function ArenaMediator:refreshProgress()
 		local animName = data.icon
 
 		if status then
-			if self._first then
+			if data.first then
 				local child = ccui.ImageView:create(animName, 1)
 
 				child:addTo(iconPanel):center(iconPanel:getContentSize())
@@ -669,7 +663,7 @@ function ArenaMediator:refreshProgress()
 				child:setScale(0.9)
 				child:offset(0, 5)
 			end
-		elseif self._first then
+		elseif data.first then
 			local child = ccui.ImageView:create(animName, 1)
 
 			child:addTo(iconPanel):center(iconPanel:getContentSize())

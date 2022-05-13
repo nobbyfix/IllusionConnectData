@@ -112,12 +112,19 @@ function RechargeActivityMediator:dispose()
 		self._countDowntimer = nil
 	end
 
+	if self._cdTimer then
+		self._cdTimer:stop()
+
+		self._cdTimer = nil
+	end
+
 	super.dispose(self)
 end
 
 function RechargeActivityMediator:onRegister()
 	super.onRegister(self)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_DIAMOND_RECHARGE_SUCC, self, self.onRechargeSuccCallback)
 
 	self._systemKeeper = self:getInjector():getInstance(SystemKeeper)
 	self._bagSystem = self._developSystem:getBagSystem()
@@ -150,6 +157,7 @@ end
 
 function RechargeActivityMediator:enterWithData(data)
 	self._activityId = data.activity:getId()
+	self._parentMediator = data.parentMediator
 
 	self:initView()
 	self:updateData(true)
@@ -237,6 +245,8 @@ function RechargeActivityMediator:normalData()
 		tip = Strings:get("Recharge_ERROR_Tip2")
 	}))
 	self._tipText:setVisible(false)
+	self._startbtn:setVisible(true)
+	self._resetbtn:setVisible(true)
 
 	if not self._activity then
 		self._main:getChildByName("tipBtn"):setVisible(false)
@@ -344,7 +354,7 @@ function RechargeActivityMediator:createRewardNode()
 		icon:setPosition(parent:getContentSize().width / 2, parent:getContentSize().height / 2)
 		icon:setAnchorPoint(0.5, 0.5)
 		icon:addTo(parent)
-		IconFactory:bindClickHander(icon, IconTouchHandler:new(self), reward, {
+		IconFactory:bindClickHander(icon, IconTouchHandler:new(self._parentMediator), reward, {
 			touchDisappear = true,
 			swallowTouches = true
 		})
@@ -412,19 +422,7 @@ end
 
 function RechargeActivityMediator:refreshLeftTime()
 	self._leftTimeNode:setVisible(true)
-
-	local text = self._leftTimeNode:getChildByFullName("text")
-	local endTime = self._activity:getEndTime()
-	local remoteTimestamp = self._gameServerAgent:remoteTimeMillis()
-	local remainTime = endTime - remoteTimestamp
-
-	if remainTime <= 0 then
-		self:normalData()
-	end
-
-	local str = self._activity:getConfigEndTime()
-
-	text:setString(str)
+	self:setTimer()
 end
 
 function RechargeActivityMediator:onStartbtnClick()
@@ -711,4 +709,71 @@ function RechargeActivityMediator:isActivityOver()
 	local curTime = self._gameServerAgent:remoteTimeMillis()
 
 	return self._activity:getEndTime() <= curTime
+end
+
+function RechargeActivityMediator:stopTimer()
+	if self._cdTimer then
+		self._cdTimer:stop()
+
+		self._cdTimer = nil
+	end
+end
+
+function RechargeActivityMediator:setTimer()
+	self:stopTimer()
+
+	if not self._activity then
+		return
+	end
+
+	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
+	local remoteTimestamp = gameServerAgent:remoteTimestamp()
+	local endMills = self._activity:getEndTime() / 1000
+
+	if remoteTimestamp < endMills and not self._cdTimer then
+		local function checkTimeFunc()
+			remoteTimestamp = gameServerAgent:remoteTimestamp()
+			local endMills = self._activity:getEndTime() / 1000
+			local remainTime = endMills - remoteTimestamp
+
+			if math.floor(remainTime) <= 0 then
+				self:stopTimer()
+
+				return
+			end
+
+			local str = ""
+			local fmtStr = "${d}:${H}:${M}:${S}"
+			local timeStr = TimeUtil:formatTime(fmtStr, remainTime)
+			local parts = string.split(timeStr, ":", nil, true)
+			local timeTab = {
+				day = tonumber(parts[1]),
+				hour = tonumber(parts[2]),
+				min = tonumber(parts[3]),
+				sec = tonumber(parts[4])
+			}
+
+			if timeTab.day > 0 then
+				str = timeTab.day .. Strings:get("TimeUtil_Day") .. timeTab.hour .. Strings:get("TimeUtil_Hour")
+			elseif timeTab.hour > 0 then
+				str = timeTab.hour .. Strings:get("TimeUtil_Hour") .. timeTab.min .. Strings:get("TimeUtil_Min")
+			else
+				str = timeTab.min .. Strings:get("TimeUtil_Min") .. timeTab.sec .. Strings:get("TimeUtil_Sec")
+			end
+
+			local text = self._leftTimeNode:getChildByFullName("text")
+
+			text:setString(str .. Strings:get("Activity_Collect_Finish"))
+		end
+
+		checkTimeFunc()
+
+		self._cdTimer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+	elseif remainTime <= 0 then
+		self:normalData()
+	end
+end
+
+function RechargeActivityMediator:onRechargeSuccCallback(event)
+	self:updateData(true)
 end

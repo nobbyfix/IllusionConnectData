@@ -6,6 +6,7 @@ require("dm.battle.view.widget.BattleCardWidget")
 require("dm.battle.view.widget.BattleControllerButtons")
 require("dm.battle.view.widget.BattleSkillCardRefreshButton")
 require("dm.battle.view.widget.BattlePassiveSkillWidget")
+require("dm.battle.view.widget.LeadStagePassiveSkillWidget")
 require("dm.battle.view.widget.BattlePassiveSkillTip")
 require("dm.battle.view.widget.BattleEnergyBar")
 require("dm.battle.view.widget.BattleMasterWidget")
@@ -19,6 +20,9 @@ require("dm.battle.view.widget.RoundInfoWidget")
 require("dm.battle.view.widget.BattleLootWidget")
 require("dm.battle.view.widget.BattleWaveWidget")
 require("dm.battle.view.widget.BattleChangeWidget")
+require("dm.battle.view.widget.BattleDeadCountWidget")
+require("dm.battle.view.widget.BattlePvpSpeedUpWidget")
+require("dm.battle.view.widget.BattleNoticeEnhanceWidget")
 require("dm.battle.view.BattleUnitManager")
 require("dm.battle.view.BattleRoleObject")
 require("dm.battle.view.BattleRoleModel")
@@ -187,6 +191,7 @@ end
 function BattleMainMediator:adjustLayout(targetFrame)
 	self:getView():setContentSize(targetFrame)
 
+	targetFrame.width = targetFrame.width - 2 * AdjustUtils.getFixOffsetX()
 	self.targetFrame = targetFrame
 
 	self.screenEffectLayer:adjustLayout(targetFrame)
@@ -274,8 +279,26 @@ function BattleMainMediator:getBackGround()
 	return self:getView():getChildByName("BattleBackground")
 end
 
-function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId)
+function BattleMainMediator:setCellState(isVisible)
+	for k, v in pairs(self.groundLayer:getLeftGroundCells()) do
+		v:getDisplayNode():setVisible(isVisible)
+	end
+
+	for k, v in pairs(self.groundLayer:getRightGroundCells()) do
+		v:getDisplayNode():setVisible(isVisible)
+	end
+end
+
+function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId, extra, blackOpacity)
 	local opacity = 160
+
+	if extra and extra.opacity then
+		opacity = extra.opacity
+	end
+
+	if blackOpacity and blackOpacity ~= "" then
+		opacity = blackOpacity
+	end
 
 	self._bgEffectLayer:removeAllChildren()
 
@@ -292,7 +315,7 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 		end
 	else
 		local winSize = cc.Director:getInstance():getVisibleSize()
-		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width, winSize.height)
+		background = cc.LayerColor:create(cc.c4b(0, 0, 0, opacity), winSize.width + 1000, winSize.height + 500)
 	end
 
 	local frame = self:getView():getContentSize()
@@ -302,7 +325,6 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 	background:center(CC_DESIGN_RESOLUTION)
 	self._bgEffectLayer:addChild(background)
 	background:setOpacity(0)
-	background:runAction(cc.FadeTo:create(0.2, opacity))
 
 	self._bgEffectLayer.bg = background
 
@@ -314,27 +336,79 @@ function BattleMainMediator:playGroundEffect(bgRes, align, animName, zoom, actId
 		bgEffect:setScale(zoom)
 		bgEffect:addEndCallback(function (cid, mc)
 			mc:stop()
-			background:stopAllActions()
-			background:runAction(cc.FadeTo:create(0.2, 0))
 
-			self._bgEffectLayer.bg = nil
+			if not extra or not extra.zorder or extra.zorder <= 0 then
+				background:stopAllActions()
+				background:runAction(cc.FadeTo:create(0.2, 0))
 
-			mc:removeFromParent(true)
-			self._bgEffectLayer:removeAllChildren()
+				self._bgEffectLayer.bg = nil
+
+				mc:removeFromParent(true)
+				self._bgEffectLayer:removeAllChildren()
+			end
 		end)
 	end
-end
 
-function BattleMainMediator:clearGroundEffect(actId)
-	if self._bgEffectLayer.act == actId then
-		if self._bgEffectLayer.bg then
-			self._bgEffectLayer.bg:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
+	local function speceilFunc()
+		self._bgEffectLayer.bg.isRetain = extra.duration ~= nil
+		extra.duration = extra.duration or 20000
+		local actions = cc.Sequence:create(cc.FadeTo:create(0.2, opacity), cc.DelayTime:create(extra.duration / 1000 or 2), cc.CallFunc:create(function ()
+			local members = self._unitManager:getMembers()
+
+			for k, v in pairs(members) do
+				local displayObj = v:getView()
+
+				displayObj:setVisible(true)
+			end
+
+			self:setCellState(true)
+			background:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
 				self._bgEffectLayer.bg = nil
 
 				self._bgEffectLayer:removeAllChildren()
 			end)))
-		else
+		end))
+
+		background:runAction(actions)
+
+		local members = self._unitManager:getMembers()
+
+		for k, v in pairs(members) do
+			local displayObj = v:getView()
+
+			if extra.unit and extra.zorder > 1 and extra.unit:getId() ~= v:getId() then
+				displayObj:setVisible(false)
+			end
+		end
+
+		self:setCellState(false)
+
+		if extra.Music and extra.Music ~= "" then
+			AudioEngine:getInstance():playEffect(extra.Music)
+		end
+	end
+
+	if extra and extra.zorder and extra.zorder > 0 then
+		speceilFunc()
+	else
+		background:runAction(cc.FadeTo:create(0.2, opacity))
+	end
+end
+
+function BattleMainMediator:clearGroundEffect(actId)
+	if self._bgEffectLayer.act == actId and not clearGroundEffect then
+		if self._bgEffectLayer.bg and not self._bgEffectLayer.bg.isRetain then
+			self._bgEffectLayer.bg:runAction(cc.Sequence:create(cc.FadeTo:create(0.2, 0), cc.CallFunc:create(function ()
+				self._bgEffectLayer.bg = nil
+
+				self._bgEffectLayer:removeAllChildren()
+				self:setCellState(true)
+			end)))
+		elseif self._bgEffectLayer.bg and not self._bgEffectLayer.bg.isRetain then
 			self._bgEffectLayer:removeAllChildren()
+			self:setCellState(true)
+		else
+			self:setCellState(true)
 		end
 	end
 end
@@ -354,12 +428,15 @@ function BattleMainMediator:playBGM(music)
 end
 
 function BattleMainMediator:playDieEffect(sound)
-	dump(sound)
 	AudioEngine:getInstance():playEffect(sound)
 end
 
 function BattleMainMediator:getViewConfig()
 	return self._battleData and self._battleData.viewConfig
+end
+
+function BattleMainMediator:getBattleConfig()
+	return self._battleData and self._battleData.battleConfig
 end
 
 function BattleMainMediator:enterWithData(data)
@@ -386,7 +463,8 @@ function BattleMainMediator:enterWithData(data)
 
 	self._camera:workOnNodes({
 		self.groundLayer:getView(),
-		self:getBackGround()
+		self:getBackGround(),
+		self._bgEffectLayer
 	})
 
 	local viewContext = self._viewContext
@@ -404,14 +482,18 @@ function BattleMainMediator:enterWithData(data)
 	viewContext:setValue("battleSuppress", viewConfig.battleSuppress or {})
 	viewContext:setValue("unlockMasterSkill", viewConfig.unlockMasterSkill)
 
-	self._unitManager = BattleUnitManager:new()
-
-	viewContext:setValue("BattleUnitManager", self._unitManager)
-
 	local battleShowQueue = BattleShowQueue:new()
 
 	battleShowQueue:setViewContext(viewContext)
 	viewContext:setValue("BattleShowQueue", battleShowQueue)
+
+	if self._battleData.battleData then
+		battleShowQueue:addMasterShow(self._battleData.battleData.playerData, self._battleData.battleData.enemyData)
+	end
+
+	if self._battleData.battleData then
+		battleShowQueue:addBattleItemShow(self._battleData.battleData.playerData, self.battleUIMediator)
+	end
 
 	if self._delegate.onBattleStart then
 		self._delegate:onBattleStart(self, viewContext:getEventDispatcher())
@@ -421,6 +503,10 @@ function BattleMainMediator:enterWithData(data)
 	self._battleDirector = logicInfo.director
 
 	assert(self._battleDirector ~= nil)
+
+	self._unitManager = BattleUnitManager:new()
+
+	viewContext:setValue("BattleUnitManager", self._unitManager)
 	viewContext:setValue("MainPlayerId", logicInfo.mainPlayerId)
 
 	local teams = logicInfo.teams or {}
@@ -451,6 +537,10 @@ function BattleMainMediator:enterWithData(data)
 	self.groundLayer:enterWithData(viewConfig)
 	self.battleUIMediator:setupViewConfig(viewConfig, data.isReplay)
 
+	if self.battleUIMediator.setBattleType then
+		self.battleUIMediator:setBattleType(self._battleData.battleType)
+	end
+
 	local tlInterpFactory = self:createTLInterpFactory()
 	local battleInterpreter = logicInfo.interpreter
 
@@ -462,7 +552,7 @@ function BattleMainMediator:enterWithData(data)
 	self._battleDirector:start()
 	self:startMainLoop()
 
-	if GameConfigs.openDevWin then
+	if GameConfigs.openDevWin and not GameConfigs.debugHeroId then
 		self:setupDevMode()
 	end
 
@@ -490,6 +580,14 @@ function BattleMainMediator:enterWithData(data)
 		end
 	end)
 	self:getInjector():mapValue("Debug_BattleDump", nil)
+
+	local battleSimulator = self._battleDirector:getBattleSimulator()
+
+	if battleSimulator then
+		local battleContext = battleSimulator:getBattleContext()
+
+		self._unitManager:setBattleContext(battleContext)
+	end
 
 	local director = cc.Director:getInstance()
 
@@ -599,6 +697,55 @@ function BattleMainMediator:showHero(heroBaseId)
 
 	if self._delegate.showHero then
 		self._delegate:showHero(heroBaseId, pauseFunc, resumeCallback)
+	else
+		resumeCallback()
+	end
+end
+
+function BattleMainMediator:showMaster(friend, enemy)
+	if self._pauseBlock then
+		return
+	end
+
+	local function pauseFunc()
+	end
+
+	local function resumeCallback()
+		self:onResume()
+
+		local battleShowQueue = self._viewContext:getValue("BattleShowQueue")
+
+		if battleShowQueue then
+			battleShowQueue:show()
+		end
+	end
+
+	if self._delegate.showMaster then
+		self._delegate:showMaster(friend, enemy, pauseFunc, resumeCallback)
+	else
+		resumeCallback()
+	end
+end
+
+function BattleMainMediator:showBattleItem(paseSta)
+	if self._pauseBlock then
+		return
+	end
+
+	local function resumeCallback()
+		if paseSta then
+			self:onResume()
+		end
+
+		local battleShowQueue = self._viewContext:getValue("BattleShowQueue")
+
+		if battleShowQueue then
+			battleShowQueue:show()
+		end
+	end
+
+	if self._delegate.showBattleItem then
+		self._delegate:showBattleItem(pauseFunc, resumeCallback, paseSta)
 	end
 end
 
@@ -1117,20 +1264,19 @@ end
 
 function BattleMainMediator:setupDevMode()
 	local winBtn = ccui.Button:create()
+	local winBtn = ccui.Text:create("PASS", TTF_FONT_FZYH_M, 40)
 
-	winBtn:loadTextures("pic_kfz_sheng.png", "pic_kfz_sheng.png", "pic_kfz_sheng.png", ccui.TextureResType.plistType)
-	winBtn:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			self:stopScheduler()
-			self._delegate:onDevWin(self)
-		end
+	winBtn:setTouchEnabled(true)
+	winBtn:addClickEventListener(function ()
+		self:stopScheduler()
+		self._delegate:onDevWin(self)
 	end)
 
 	local director = cc.Director:getInstance()
 	local size = director:getVisibleSize()
 
 	winBtn:setAnchorPoint(cc.p(1, 0.5))
-	winBtn:setPosition(cc.p(size.width, size.height * 0.3))
+	winBtn:setPosition(cc.p(size.width - 140, size.height * 0.2))
 	winBtn:setScale(1.5)
 	self:getView():addChild(winBtn, BattleViewZOrder.Dev)
 end
@@ -1233,7 +1379,7 @@ function BattleMainMediator:debugChangeSpeed(event)
 	self:setTimeScale(speed)
 end
 
-function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flip)
+function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flipx, flipy)
 	local zOrders = {
 		Ground = 0,
 		UnderUI = BattleViewZOrder.OpLayer,
@@ -1241,7 +1387,8 @@ function BattleMainMediator:addEffectAnim(anim, pos, zOrder, loop, flip)
 	}
 	local movieClip = cc.MovieClip:create(anim, "BattleMCGroup")
 
-	movieClip:setScaleX(flip and -1 or 1)
+	movieClip:setScaleX(flipx and -1 or 1)
+	movieClip:setScaleY(flipy and -1 or 1)
 
 	local worldPos = self:getView():convertToWorldSpace(cc.p(0, 0))
 

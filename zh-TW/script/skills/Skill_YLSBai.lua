@@ -317,9 +317,8 @@ all.Skill_YLSBai_Passive = {
 					"STATUS",
 					"NUMERIC",
 					"BUFF",
-					"MAXHPUP",
 					"UNDEAD",
-					"UNDISPELLABLE",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
@@ -627,6 +626,182 @@ all.Skill_YLSBai_Unique_EX = {
 		return _env
 	end
 }
+all.Skill_YLSBai_Unique_Awken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				5,
+				0
+			}
+		end
+
+		this.HealRateFactor = externs.HealRateFactor
+
+		if this.HealRateFactor == nil then
+			this.HealRateFactor = 0.85
+		end
+
+		this.BlockRateFactor = externs.BlockRateFactor
+
+		if this.BlockRateFactor == nil then
+			this.BlockRateFactor = 0.4
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3100
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_YLSBai"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.RetainObject(_env, _env.TARGET)
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-1.8,
+				0
+			}, 100, "skill3"))
+			global.HarmTargetView(_env, {
+				_env.TARGET
+			})
+			global.AssignRoles(_env, _env.TARGET, "target")
+		end)
+		exec["@time"]({
+			1933
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				533
+			}, global.SplitValue(_env, damage, {
+				0.4,
+				0.6
+			}))
+
+			if global.FriendMaster(_env) then
+				if global.UnitPropGetter(_env, "hpRatio")(_env, global.FriendMaster(_env)) >= 0.9 then
+					local buffeft4 = global.NumericEffect(_env, "+blockrate", {
+						"+Normal",
+						"+Normal"
+					}, this.BlockRateFactor)
+
+					global.ApplyBuff(_env, global.FriendMaster(_env), {
+						timing = 3,
+						display = "BlockRateUp",
+						group = "Skill_YLSBai_Unique_Awken",
+						duration = 2,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"BLOCKRATEUP",
+							"Skill_YLSBai_Unique_Awken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft4
+					})
+					global.ApplyBuff(_env, _env.ACTOR, {
+						timing = 3,
+						display = "BlockRateUp",
+						group = "Skill_YLSBai_Unique_Awken",
+						duration = 2,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"BLOCKRATEUP",
+							"Skill_YLSBai_Unique_Awken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft4
+					})
+				end
+
+				local heal = damage * this.HealRateFactor
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), heal)
+
+				local buffeft3 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, global.FriendMaster(_env), {
+					timing = 2,
+					duration = 1,
+					display = "Heal",
+					tags = {
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft3
+				})
+			end
+		end)
+		exec["@time"]({
+			3100
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 all.Skill_YLSBai_Passive_EX = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -669,6 +844,23 @@ all.Skill_YLSBai_Passive_EX = {
 
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
+				display = "MaxHpUp",
+				group = "Skill_YLSBai_Passive_EX_Hp",
+				duration = 99,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"BUFF",
+					"MAXHPUP",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			}, 1)
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 0,
 				display = "Undead",
 				group = "Skill_YLSBai_Passive_EX",
 				duration = 99,
@@ -677,13 +869,11 @@ all.Skill_YLSBai_Passive_EX = {
 					"STATUS",
 					"NUMERIC",
 					"BUFF",
-					"MAXHPUP",
 					"UNDEAD",
-					"UNDISPELLABLE",
+					"DISPELLABLE",
 					"UNSTEALABLE"
 				}
 			}, {
-				buffeft1,
 				buffeft2
 			}, 1)
 		end)

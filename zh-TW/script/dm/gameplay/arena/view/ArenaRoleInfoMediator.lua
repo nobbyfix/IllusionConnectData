@@ -31,6 +31,7 @@ function ArenaRoleInfoMediator:onRegister()
 	self:mapButtonHandlersClick(kBtnHandlers)
 
 	self._bagSystem = self._developSystem:getBagSystem()
+	self._masterSystem = self._developSystem:getMasterSystem()
 
 	self:bindWidget("bg.battleBtn", OneLevelViceButton, {
 		handler = {
@@ -101,7 +102,7 @@ function ArenaRoleInfoMediator:initRoleInfo()
 
 	name:setString(self._record:getNickName())
 	combat:setString(self._record:getCombat())
-	level:setString("Lv." .. self._record:getLevel())
+	level:setString(Strings:get("Common_LV_Text") .. self._record:getLevel())
 
 	local headIcon = IconFactory:createPlayerIcon({
 		clipType = 1,
@@ -145,14 +146,12 @@ function ArenaRoleInfoMediator:initTeamInfo()
 	local master = self._record:getMaster()
 
 	if master then
-		local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", master[1], "RoleModel")
+		local roleModel = self._masterSystem:getMasterLeadStageModel(master[1], self._record:getLeadStageId() or "")
 		local info = {
-			stencil = 6,
-			iconType = "Bust5",
-			id = roleModel,
-			size = cc.size(426, 115)
+			frameId = "bustframe4_5",
+			id = roleModel
 		}
-		local masterIcon = IconFactory:createRoleIconSprite(info)
+		local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 		masterIcon:setAnchorPoint(cc.p(0, 0))
 		masterIcon:setPosition(cc.p(0, 0))
@@ -183,6 +182,16 @@ function ArenaRoleInfoMediator:initTeamInfo()
 			petNode:setScale(0.35)
 			petNode:addTo(petBg):center(petBg:getContentSize())
 			petNode:setPositionY(petNode:getPositionY() - 5)
+		end
+
+		local node = self._bg:getChildByFullName("teamInfo.node_leadStage")
+
+		node:removeAllChildren()
+
+		local icon = IconFactory:createLeadStageIconHor(self._record:getLeadStageId(), self._record:getLeadStageLevel())
+
+		if icon then
+			icon:addTo(node)
 		end
 	end
 end
@@ -241,10 +250,6 @@ function ArenaRoleInfoMediator:setupClickEnvs()
 		local battleBtn = self._bg:getChildByName("battleBtn")
 
 		storyDirector:setClickEnv("ArenaRoleInfoMediator.battleBtn", battleBtn, function (sender, eventType)
-			if SDKHelper and SDKHelper:isEnableSdk() then
-				SDKHelper:adjustEventTracking(AdjustEventList.ADJUST_ARENA_CHALLENGE_EVENT)
-			end
-
 			self:onClickFight(sender, eventType)
 		end)
 		storyDirector:notifyWaiting("enter_ArenaRoleInfoMediator")

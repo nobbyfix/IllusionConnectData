@@ -85,6 +85,36 @@ end
 function scene_JDCZhangDate03.actions.start_JDCZhangDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -123,13 +153,13 @@ function scene_JDCZhangDate03.actions.start_JDCZhangDate03(_root, args)
 					modelId = "Model_JDCZhang",
 					id = "JDCZhang_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.75,
 					zorder = 20000,
 					position = {
-						x = -200,
-						y = -335,
+						y = -400,
+						x = -0,
 						refpt = {
-							x = 0.75,
+							x = 0.54,
 							y = 0
 						}
 					},
@@ -151,8 +181,8 @@ function scene_JDCZhangDate03.actions.start_JDCZhangDate03(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -46,
-								y = 750.7
+								x = -68.5,
+								y = 1064
 							}
 						}
 					}

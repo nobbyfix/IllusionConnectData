@@ -49,6 +49,10 @@ function LoadingMediator:enterWithData(data)
 	self:start()
 end
 
+function LoadingMediator:leaveWithData()
+	print("LoadingMediator:leaveWithData ...... ")
+end
+
 function LoadingMediator:initAnim()
 	local mc = cc.MovieClip:create("mengjingbbb_mingzi")
 

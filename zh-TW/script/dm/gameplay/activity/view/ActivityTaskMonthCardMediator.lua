@@ -6,6 +6,9 @@ ActivityTaskMonthCardMediator:has("_activitySystem", {
 ActivityTaskMonthCardMediator:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
+ActivityTaskMonthCardMediator:has("_stageSystem", {
+	is = "r"
+}):injectWith("StageSystem")
 ActivityTaskMonthCardMediator:has("_rechargeAndVipModel", {
 	is = "r"
 }):injectWith("RechargeAndVipModel")
@@ -29,6 +32,7 @@ end
 
 function ActivityTaskMonthCardMediator:enterWithData(data)
 	self._activity = data.activity
+	self._activityUIType = data.activity:getConfig().UI
 	self._parentMediator = data.parentMediator
 
 	self:setupView()
@@ -39,10 +43,11 @@ function ActivityTaskMonthCardMediator:setupView()
 	self._listView = self._main:getChildByName("ListView")
 	self._descPanel = self._main:getChildByName("desc")
 	self._cloneCell = self:getView():getChildByName("cloneCell")
+	self._cloneCell2 = self:getView():getChildByName("cloneCell2")
 
 	self._cloneCell:setVisible(false)
 
-	self._taskList = self._activity:getSortActivityList(ActivityType.KTASKMONTHCARD)
+	self._taskList = self._activity:getSortActivityList()
 
 	self._descPanel:setString(Strings:get(self._activity:getDesc()))
 	self._descPanel:getVirtualRenderer():setLineSpacing(2)
@@ -54,14 +59,22 @@ function ActivityTaskMonthCardMediator:setupView()
 	if activityConfig.showHero then
 		local heroPanel = self._main:getChildByName("heroPanel")
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", activityConfig.showHero)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = roleModel
 		})
 
 		heroSprite:setScale(1.1)
 		heroSprite:addTo(heroPanel)
 		heroSprite:setPosition(cc.p(275, 90))
+
+		if activityConfig.ModelPos then
+			heroSprite:posite(activityConfig.ModelPos[1], activityConfig.ModelPos[2])
+		end
+
+		if activityConfig.ModelScale then
+			heroSprite:setScale(activityConfig.ModelScale)
+		end
 	end
 
 	self:createTableView()
@@ -88,7 +101,13 @@ function ActivityTaskMonthCardMediator:createTableView()
 
 		if not cell then
 			cell = cc.TableViewCell:new()
-			local cloneCell = self._cloneCell:clone()
+			local cloneCell = nil
+
+			if ActivityType.KTASKMONTHCARDSTAGE == self._activityUIType then
+				cloneCell = self._cloneCell2:clone()
+			else
+				cloneCell = self._cloneCell:clone()
+			end
 
 			cloneCell:setVisible(true)
 			cloneCell:addTo(cell):setName("main")
@@ -101,7 +120,7 @@ function ActivityTaskMonthCardMediator:createTableView()
 			cloneCell:getChildByName("title"):setAdditionalKerning(2)
 		end
 
-		self:updataCell(cell, index)
+		self:updataCell(cell, index, self._activityUIType)
 
 		return cell
 	end
@@ -122,14 +141,36 @@ function ActivityTaskMonthCardMediator:createTableView()
 	self._tableView = tableView
 end
 
-function ActivityTaskMonthCardMediator:updataCell(cell, index)
+function ActivityTaskMonthCardMediator:updataCell(cell, index, uiType)
 	local mainView = cell:getChildByName("main")
 	local data = self._taskList[index]
 	local taskValueList = data:getTaskValueList()
 
-	mainView:getChildByName("cur"):setString(taskValueList[1].currentValue)
-	mainView:getChildByName("target"):setString("/" .. taskValueList[1].targetValue)
-	mainView:getChildByName("level"):setString(taskValueList[1].targetValue)
+	if ActivityType.KTASKMONTHCARDSTAGE == self._activityUIType then
+		local condition = data:getCondition()
+		local targetMis = condition[1].params[1]
+		local lastMission = self._stageSystem:getLastPassStagePointId(StageType.kNormal)
+		local currentValue = 0
+
+		if lastMission then
+			local config = ConfigReader:getRecordById("BlockPoint", lastMission)
+			local mapId = config.Map
+			local subPoints = ConfigReader:getDataByNameIdAndKey("BlockMap", mapId, "SubPoint")
+			currentValue = ConfigReader:getDataByNameIdAndKey("BlockMap", mapId, "Order")
+
+			if lastMission ~= subPoints[#subPoints] then
+				currentValue = currentValue - 1
+			end
+		end
+
+		local targetValue = tostring(ConfigReader:getDataByNameIdAndKey("BlockMap", targetMis, "Order"))
+
+		mainView:getChildByName("progressText"):setString("(" .. currentValue .. "/" .. targetValue .. ")")
+		mainView:getChildByName("level"):setString(targetValue)
+	else
+		mainView:getChildByName("progressText"):setString("(" .. taskValueList[1].currentValue .. "/" .. taskValueList[1].targetValue .. ")")
+		mainView:getChildByName("level"):setString(taskValueList[1].targetValue)
+	end
 
 	local rewardPanel = mainView:getChildByName("reward")
 
@@ -190,9 +231,11 @@ function ActivityTaskMonthCardMediator:updataCell(cell, index)
 	local noRecieveStr = mainView:getChildByName("noRecieveStr")
 
 	noRecieveStr:setVisible(false)
+	mainView:getChildByName("progressText"):setVisible(false)
 
 	if status == ActivityTaskStatus.kUnfinish then
 		noRecieveStr:setVisible(true)
+		mainView:getChildByName("progressText"):setVisible(true)
 	elseif status == ActivityTaskStatus.kFinishNotGet then
 		actBtn:setVisible(true)
 

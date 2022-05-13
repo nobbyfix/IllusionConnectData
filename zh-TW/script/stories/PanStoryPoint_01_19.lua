@@ -101,10 +101,10 @@ function scene_PanStoryPoint_01_19.actions.start_PanStoryPoint_01_19(_root, args
 					modelId = "Model_YSuo",
 					id = "YSuo_speak",
 					rotationX = 0,
-					scale = 1.03,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -635,
+						y = -750,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -128,8 +128,8 @@ function scene_PanStoryPoint_01_19.actions.start_PanStoryPoint_01_19(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -166,
-								y = 1064
+								x = -251,
+								y = 1658
 							}
 						}
 					}

@@ -35,9 +35,9 @@ function HeroStrengthAwakenSuccessMediator:initNodes()
 	self._nodeAnim = self._main:getChildByName("animNode")
 	self._awakeRoleNode = self._main:getChildByFullName("heropanel")
 	local roleModel = self._heroData:getAwakenStarConfig().ModelId
-	local masterIcon = IconFactory:createRoleIconSprite({
+	local masterIcon = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		useAnim = true,
-		iconType = "Bust4",
 		id = roleModel
 	})
 
@@ -104,6 +104,12 @@ function HeroStrengthAwakenSuccessMediator:playVideo(close)
 
 	self:getView():addChild(videoSprite)
 	videoSprite:setPosition(cc.p(568, 320))
+
+	local animSound = self._heroData:getAwakenStarConfig().AnimSound
+
+	if animSound and animSound ~= "" then
+		AudioEngine:getInstance():playEffect(animSound, false)
+	end
 end
 
 function HeroStrengthAwakenSuccessMediator:showResult()
@@ -112,6 +118,12 @@ function HeroStrengthAwakenSuccessMediator:showResult()
 		self:close()
 	end)
 
+	if self._heroEffect then
+		AudioEngine:getInstance():stopEffect(self._heroPickUpEffect)
+	end
+
+	local audioName = "Voice_" .. self._heroId .. "_65"
+	self._heroEffect = AudioEngine:getInstance():playRoleEffect(audioName, false)
 	local animAwaken = cc.MovieClip:create("juexingchenggong_juexingchenggong")
 
 	animAwaken:addTo(self._nodeAnim)

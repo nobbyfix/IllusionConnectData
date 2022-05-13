@@ -40,9 +40,9 @@ function StageProgressPopMediator:enterWithData(data)
 	end
 
 	local heroModelId = self._stageInfo.Model
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = 6,
+		frameId = "bustframe9",
 		id = heroModelId
 	})
 	local heroPanel = self._main:getChildByName("heroPanel")
@@ -111,6 +111,9 @@ function StageProgressPopMediator:setRewardPanel()
 
 		rewardIcon:addTo(iconFrame, 1, 9521)
 		rewardIcon:setPosition(cc.p(38.7, 40.5))
+		IconFactory:bindTouchHander(iconFrame, IconTouchHandler:new(self), rewardInfo[1], {
+			needDelay = true
+		})
 
 		local curStage = _cell:getChildByName("curStage")
 		local a, b = self:countPointIndex(startPointId, rewardList[i].count)
@@ -127,21 +130,23 @@ function StageProgressPopMediator:setRewardPanel()
 
 		if i == #rewardList then
 			_cell:setPosition(cc.p(460, 102))
-			curStage:setAnchorPoint(0.5, 0.5)
-			curStage:setPositionX(_cell:getContentSize().width / 2)
-			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - curStage:getContentSize().width / 2 - 3)
-			_cell:getChildByName("extText"):setPositionX(_cell:getContentSize().width / 2 + curStage:getContentSize().width / 2 + 3)
+			_cell:getChildByName("Text_1"):setAnchorPoint(0.5, 0.5)
+			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2)
+			curStage:setAnchorPoint(1, 0.5)
+			curStage:setPositionX(_cell:getContentSize().width / 2 - _cell:getChildByName("Text_1"):getContentSize().width / 2 - 3)
+			_cell:getChildByName("extText"):setPositionX(_cell:getContentSize().width / 2 + _cell:getChildByName("Text_1"):getContentSize().width / 2 + 3)
 		else
-			local persent = rewardList[i].count / rewardList[#rewardList].count
+			local persent = math.min(rewardList[i].count / rewardList[#rewardList].count, 0.7)
 
 			iconFrame:setScale(0.76)
 			redPoint:setScale(1.316)
 			_cell:setPosition(cc.p(460 * persent, 102))
 			_cell:getChildByName("extImage"):setVisible(false)
 			_cell:getChildByName("extText"):setVisible(false)
-			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - 2)
-			curStage:setAnchorPoint(0, 0.5)
-			curStage:setPositionX(_cell:getContentSize().width / 2)
+			_cell:getChildByName("Text_1"):setAnchorPoint(0, 0.5)
+			_cell:getChildByName("Text_1"):setPositionX(_cell:getContentSize().width / 2 - 8)
+			curStage:setAnchorPoint(1, 0.5)
+			curStage:setPositionX(_cell:getContentSize().width / 2 - 10)
 		end
 
 		_cell.kCount = rewardList[i].count
@@ -166,7 +171,7 @@ function StageProgressPopMediator:setRewardPanel()
 			mapButtonHandlerClick(nil, _cell, {
 				ignoreClickAudio = true,
 				func = callFunc
-			})
+			}, nil, true)
 		end
 
 		if redPoint:isVisible() then

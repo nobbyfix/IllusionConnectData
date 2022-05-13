@@ -1,6 +1,6 @@
 {
     "ClubCombat_1": {
-        "Condition": 600000,
+        "Condition": 200000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_2",
         "Reward": "ClubCombat_1_Reward",
@@ -16,7 +16,7 @@
         "Type": 9
     },
     "ClubCombat_10": {
-        "Condition": 12000000,
+        "Condition": 5500000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "",
         "Reward": "ClubCombat_10_Reward",
@@ -32,7 +32,7 @@
         "Type": 9
     },
     "ClubCombat_2": {
-        "Condition": 850000,
+        "Condition": 300000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_3",
         "Reward": "ClubCombat_2_Reward",
@@ -48,7 +48,7 @@
         "Type": 9
     },
     "ClubCombat_3": {
-        "Condition": 1400000,
+        "Condition": 450000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_4",
         "Reward": "ClubCombat_3_Reward",
@@ -64,7 +64,7 @@
         "Type": 9
     },
     "ClubCombat_4": {
-        "Condition": 2000000,
+        "Condition": 800000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_5",
         "Reward": "ClubCombat_4_Reward",
@@ -80,7 +80,7 @@
         "Type": 9
     },
     "ClubCombat_5": {
-        "Condition": 3200000,
+        "Condition": 1300000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_6",
         "Reward": "ClubCombat_5_Reward",
@@ -96,7 +96,7 @@
         "Type": 9
     },
     "ClubCombat_6": {
-        "Condition": 4500000,
+        "Condition": 2100000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_7",
         "Reward": "ClubCombat_6_Reward",
@@ -112,7 +112,7 @@
         "Type": 9
     },
     "ClubCombat_7": {
-        "Condition": 6000000,
+        "Condition": 3000000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_8",
         "Reward": "ClubCombat_7_Reward",
@@ -128,7 +128,7 @@
         "Type": 9
     },
     "ClubCombat_8": {
-        "Condition": 8000000,
+        "Condition": 3700000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_9",
         "Reward": "ClubCombat_8_Reward",
@@ -144,7 +144,7 @@
         "Type": 9
     },
     "ClubCombat_9": {
-        "Condition": 10000000,
+        "Condition": 4800000,
         "ConditionDes": "ClubCombat_Desc",
         "NextId": "ClubCombat_10",
         "Reward": "ClubCombat_9_Reward",
@@ -512,7 +512,7 @@
         "Type": 14
     },
     "PointStar_1": {
-        "Condition": 200,
+        "Condition": 300,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_2",
         "Reward": "PointStar_1_Reward",
@@ -528,7 +528,7 @@
         "Type": 2
     },
     "PointStar_10": {
-        "Condition": 2400,
+        "Condition": 4300,
         "ConditionDes": "PointStar_Desc",
         "NextId": "",
         "Reward": "PointStar_10_Reward",
@@ -544,7 +544,7 @@
         "Type": 2
     },
     "PointStar_2": {
-        "Condition": 400,
+        "Condition": 500,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_3",
         "Reward": "PointStar_2_Reward",
@@ -560,7 +560,7 @@
         "Type": 2
     },
     "PointStar_3": {
-        "Condition": 600,
+        "Condition": 800,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_4",
         "Reward": "PointStar_3_Reward",
@@ -576,7 +576,7 @@
         "Type": 2
     },
     "PointStar_4": {
-        "Condition": 850,
+        "Condition": 1200,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_5",
         "Reward": "PointStar_4_Reward",
@@ -592,7 +592,7 @@
         "Type": 2
     },
     "PointStar_5": {
-        "Condition": 1100,
+        "Condition": 1500,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_6",
         "Reward": "PointStar_5_Reward",
@@ -608,7 +608,7 @@
         "Type": 2
     },
     "PointStar_6": {
-        "Condition": 1400,
+        "Condition": 1900,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_7",
         "Reward": "PointStar_6_Reward",
@@ -624,7 +624,7 @@
         "Type": 2
     },
     "PointStar_7": {
-        "Condition": 1600,
+        "Condition": 2400,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_8",
         "Reward": "PointStar_7_Reward",
@@ -640,7 +640,7 @@
         "Type": 2
     },
     "PointStar_8": {
-        "Condition": 1800,
+        "Condition": 2800,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_9",
         "Reward": "PointStar_8_Reward",
@@ -656,7 +656,7 @@
         "Type": 2
     },
     "PointStar_9": {
-        "Condition": 2100,
+        "Condition": 3300,
         "ConditionDes": "PointStar_Desc",
         "NextId": "PointStar_10",
         "Reward": "PointStar_9_Reward",

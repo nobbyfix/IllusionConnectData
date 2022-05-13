@@ -14,21 +14,25 @@ HeroShowOwnMediator:has("_surfaceSystem", {
 }):injectWith("SurfaceSystem")
 
 local kBtnHandlers = {
-	["mainpanel.detailbtn"] = {
+	["mainpanel.buttonPanel.detailbtn"] = {
 		clickAudio = "Se_Click_Open_2",
 		func = "onClickDetail"
 	},
-	["mainpanel.soundbtn"] = {
+	["mainpanel.buttonPanel.soundbtn"] = {
 		clickAudio = "Se_Click_Open_2",
 		func = "onClickSound"
 	},
-	["mainpanel.surfacebtn"] = {
+	["mainpanel.buttonPanel.surfacebtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickSurface"
 	},
-	["mainpanel.bustbtn"] = {
+	["mainpanel.buttonPanel.bustbtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickBust"
+	},
+	["mainpanel.buttonPanel.storybtn"] = {
+		clickAudio = "Se_Click_Open_2",
+		func = "onClickStory"
 	},
 	["mainpanel.changebtn"] = {
 		clickAudio = "Se_Click_Common_2",
@@ -41,10 +45,6 @@ local kBtnHandlers = {
 	["mainpanel.levelNode.levelUpBtn"] = {
 		clickAudio = "Se_Click_Open_2",
 		func = "onClickLevelUpBtn"
-	},
-	["mainpanel.storyPanel.storyBtn"] = {
-		clickAudio = "Se_Click_Open_2",
-		func = "onClickStory"
 	}
 }
 local heroVoiceList = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Hero_VoiceList", "content")
@@ -56,7 +56,8 @@ local kBgAnimAndImage = {
 	[GalleryPartyType.kMNJH] = "asset/ui/gallery/party_icon_monv.png",
 	[GalleryPartyType.kDWH] = "asset/ui/gallery/party_icon_dongwenhui.png",
 	[GalleryPartyType.kWNSXJ] = "asset/ui/gallery/party_icon_weinasi.png",
-	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png"
+	[GalleryPartyType.kSSZS] = "asset/ui/gallery/party_icon_she.png",
+	[GalleryPartyType.kUNKNOWN] = "asset/ui/gallery/party_icon_unknown.png"
 }
 local kHeroRarityAnim = {
 	[15] = {
@@ -219,9 +220,29 @@ function HeroShowOwnMediator:initNodes()
 		self:onClickRarityTip()
 	end)
 
-	self._storyPanel = self._mainPanel:getChildByFullName("storyPanel")
-	self._surfaceBtn = self._mainPanel:getChildByFullName("surfacebtn")
+	self._buttonPanel = self._mainPanel:getChildByFullName("buttonPanel")
+	self._surfaceBtn = self._buttonPanel:getChildByFullName("surfacebtn")
+	self._storyBtn = self._buttonPanel:getChildByFullName("storybtn")
+	self._bustBtn = self._buttonPanel:getChildByFullName("bustbtn")
 
+	self._buttonPanel:getChildByFullName("detailbtn.text"):setString(Strings:get("Hero_button_1"))
+	self._buttonPanel:getChildByFullName("surfacebtn.text"):setString(Strings:get("Hero_button_2"))
+	self._buttonPanel:getChildByFullName("soundbtn.text"):setString(Strings:get("Hero_button_3"))
+	self._buttonPanel:getChildByFullName("storybtn.text"):setString(Strings:get("Hero_button_4"))
+	self._buttonPanel:getChildByFullName("bustbtn.text"):setString(Strings:get("Hero_button_5"))
+
+	local redPoint = self._surfaceBtn:getChildByFullName("RedPoint")
+
+	if not redPoint then
+		redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
+
+		redPoint:addTo(self._surfaceBtn):posite(45, 50)
+		redPoint:setName("RedPoint")
+		redPoint:setVisible(false)
+	end
+
+	self._storyBtn:setVisible(false)
+	self._bustBtn:setPositionX(self._storyBtn:getPositionX())
 	self:setEffect()
 end
 
@@ -245,24 +266,18 @@ end
 function HeroShowOwnMediator:refreshStory()
 	local unlock, tips = self._systemKeeper:isUnlock("Hero_Gallery")
 
-	self._storyPanel:setVisible(unlock)
+	if not unlock then
+		return
+	end
 
-	local storyAnim = self._storyPanel:getChildByFullName("StoryAnim")
+	local heroRewards = self._gallerySystem:getHeroRewards()
+	local canGet = not heroRewards[self._heroData:getId()]
 
-	if self._storyPanel:isVisible() and storyAnim then
-		local text1 = storyAnim:getChildByFullName("text1")
+	if canGet then
+		local redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
 
-		text1:removeChildByName("RewardRed")
-
-		local heroRewards = self._gallerySystem:getHeroRewards()
-		local canGet = not heroRewards[self._heroData:getId()]
-
-		if canGet then
-			local redPoint = ccui.ImageView:create(IconFactory.redPointPath1, 1)
-
-			redPoint:addTo(text1):posite(18, 20)
-			redPoint:setName("RewardRed")
-		end
+		redPoint:addTo(self._storyBtn):posite(45, 50)
+		redPoint:setName("RewardRed")
 	end
 end
 
@@ -343,6 +358,11 @@ function HeroShowOwnMediator:refreshInfoPanel()
 			end
 		end
 	end
+
+	local redPoint = self._surfaceBtn:getChildByFullName("RedPoint")
+	local isRed = self._surfaceSystem:getRedPointByHeroId(self._heroData:getId())
+
+	redPoint:setVisible(isRed)
 end
 
 function HeroShowOwnMediator:refreshAttr()
@@ -495,7 +515,7 @@ function HeroShowOwnMediator:onClickHelp()
 			local soundId = "Voice_" .. heroId .. "_" .. index
 			local pkgName = ConfigReader:getDataByNameIdAndKey("Sound", soundId, "PkgName")
 
-			if pkgName and pkgName ~= "common/Default" then
+			if pkgName ~= "common/Default" then
 				local unlock = self:isSoundUnlock(soundId)
 
 				if unlock then
@@ -586,6 +606,12 @@ function HeroShowOwnMediator:onClickDetail()
 end
 
 function HeroShowOwnMediator:onClickBust()
+	if self._soundId then
+		AudioEngine:getInstance():stopEffect(self._soundId)
+
+		self._soundId = nil
+	end
+
 	local view = self:getInjector():getInstance("HeroShowHeroPicView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
@@ -674,7 +700,8 @@ function HeroShowOwnMediator:onClickSkill(skill)
 			mediator = self._parentMedi
 		})))
 
-		self._skillWidget:getView():addTo(self._parentMedi:getView()):posite(464, 40)
+		self._skillWidget:getView():addTo(self._parentMedi:getView())
+		self._skillWidget:getView():setPosition(cc.p(self._skillPanel:getPosition())):offset(-240, -48)
 	end
 
 	self._skillWidget:refreshInfo(skill, self._heroData)
@@ -713,6 +740,17 @@ function HeroShowOwnMediator:onClickLevelUpBtn()
 end
 
 function HeroShowOwnMediator:onClickStory()
+	local unlock, tips = self._systemKeeper:isUnlock("Hero_Gallery")
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.35,
+			tip = tips
+		}))
+
+		return
+	end
+
 	local heroId = self._heroData:getId()
 
 	if not self._gallerySystem:isPastOpen(heroId) then
@@ -811,6 +849,8 @@ function HeroShowOwnMediator:refreshHero()
 
 	self:runStartAnim()
 
+	self._touchTimes = 0
+
 	if self._heroPanelAnim then
 		local panel = self._heroAnimPanel
 
@@ -823,19 +863,149 @@ function HeroShowOwnMediator:refreshHero()
 				heroAnim:setVisible(true)
 				heroAnim:changeParent(panel)
 				heroAnim:setPosition(cc.p(60, -110))
+
+				local size = heroAnim:getContentSize()
+				local offSetX = size.width / 2
+				local picInfo = self._heroSystem:getHeroPicInfo()
+				local surfaceId = self._heroData:getSurfaceId()
+				local surfaceData = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "ClickAction")
+				local num = #surfaceData
+
+				for i = 1, num do
+					local _info = surfaceData[i]
+					local touchPanel = ccui.Layout:create()
+
+					touchPanel:setAnchorPoint(cc.p(0.5, 0.5))
+
+					local point = _info.point
+
+					if point[1] == "all" then
+						local size = heroAnim:getContentSize()
+
+						touchPanel:setContentSize(cc.size(size.width / 2 * picInfo.zoom, size.height * picInfo.zoom))
+						touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
+					else
+						touchPanel:setContentSize(cc.size(_info.range[1] * picInfo.zoom, _info.range[2] * picInfo.zoom))
+						touchPanel:setPosition(cc.p(_info.point[1] * picInfo.zoom + picInfo.Deviation[1] + offSetX, _info.point[2] * picInfo.zoom + picInfo.Deviation[2]))
+					end
+
+					if GameConfigs.HERO_TOUCHVIEW_DEBUG then
+						touchPanel:setBackGroundColorType(1)
+						touchPanel:setBackGroundColor(cc.c3b(255, 0, 0))
+						touchPanel:setBackGroundColorOpacity(180)
+					end
+
+					touchPanel:setTouchEnabled(true)
+					touchPanel:addTouchEventListener(function (sender, eventType)
+						if eventType == ccui.TouchEventType.began then
+							if self._sharedSpine and self._sharedSpine:hasAnimation(_info.action) then
+								self._sharedSpine:playAnimation(0, _info.action, true)
+							end
+
+							if self._soundId then
+								return
+							end
+
+							self._touchTimes = self._touchTimes + 1
+							local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._heroData:getId(), _info.part, self._touchTimes)
+							self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
+								self:showDateToast()
+
+								self._soundId = nil
+							end)
+
+							self._parentMedi:setHeroEffectId(self._soundId)
+
+							local desc = ConfigReader:getDataByNameIdAndKey("Sound", soundId, "SoundDesc")
+							local str = Strings:get(desc)
+
+							if str ~= "" then
+								self:showDateToast(str)
+							end
+
+							self._parentMedi:setIgnoreSoundEffect(true)
+						end
+					end)
+					touchPanel:addTo(heroAnim, num + 1 - i)
+				end
+
 				self._heroSystem:setHeroAnim(nil)
 
 				return
 			end
 
-			local img = IconFactory:createRoleIconSprite({
+			local img, path, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
-				iconType = "Bust4",
+				frameId = "bustframe9",
 				id = self._heroData:getModel()
 			})
 
 			panel:addChild(img)
 			img:setPosition(cc.p(60, -110))
+
+			local size = img:getContentSize()
+			local offSetX = size.width / 2
+			local surfaceId = self._heroData:getSurfaceId()
+			local surfaceData = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "ClickAction")
+			local num = #surfaceData
+
+			for i = 1, num do
+				local _info = surfaceData[i]
+				local touchPanel = ccui.Layout:create()
+
+				touchPanel:setAnchorPoint(cc.p(0.5, 0.5))
+
+				local point = _info.point
+
+				if point[1] == "all" then
+					local size = img:getContentSize()
+
+					touchPanel:setContentSize(cc.size(size.width / 2 * picInfo.zoom, size.height * picInfo.zoom))
+					touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
+				else
+					touchPanel:setContentSize(cc.size(_info.range[1] * picInfo.zoom, _info.range[2] * picInfo.zoom))
+					touchPanel:setPosition(cc.p(_info.point[1] * picInfo.zoom + picInfo.Deviation[1] + offSetX, _info.point[2] * picInfo.zoom + picInfo.Deviation[2]))
+				end
+
+				if GameConfigs.HERO_TOUCHVIEW_DEBUG then
+					touchPanel:setBackGroundColorType(1)
+					touchPanel:setBackGroundColor(cc.c3b(255, 0, 0))
+					touchPanel:setBackGroundColorOpacity(180)
+				end
+
+				touchPanel:setTouchEnabled(true)
+				touchPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.began then
+						if self._sharedSpine and self._sharedSpine:hasAnimation(_info.action) then
+							self._sharedSpine:playAnimation(0, _info.action, true)
+						end
+
+						if self._soundId then
+							return
+						end
+
+						self._touchTimes = self._touchTimes + 1
+						local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._heroData:getId(), _info.part, self._touchTimes)
+						self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
+							self:showDateToast()
+
+							self._soundId = nil
+						end)
+
+						self._parentMedi:setHeroEffectId(self._soundId)
+
+						local desc = ConfigReader:getDataByNameIdAndKey("Sound", soundId, "SoundDesc")
+						local str = Strings:get(desc)
+
+						if str ~= "" then
+							self:showDateToast(str)
+						end
+
+						self._parentMedi:setIgnoreSoundEffect(true)
+					end
+				end)
+				touchPanel:addTo(img, num + 1 - i)
+			end
 		elseif self._heroSystem:getShowHeroType() == 2 then
 			local anim, jsonPath = RoleFactory:createHeroAnimation(self._heroData:getModel())
 
@@ -1109,16 +1279,25 @@ function HeroShowOwnMediator:createEffectDescPanel(desc, otherHeight, width)
 end
 
 function HeroShowOwnMediator:refreshName()
-	self._surfaceBtn:setVisible(#self._heroData:getSurfaceList() > 1)
+	self._surfaceBtn:setVisible(#self._heroData:getSurfaceList() >= 1)
 
 	local nameBg = self._infoNode:getChildByFullName("nameBg.nameBg")
 	local name = self._infoNode:getChildByFullName("nameLabel.nameLabel")
+	local linkImage = self._infoNode:getChildByFullName("nameLabel.linkImage")
 	local nameString = self._heroData:getName()
 	local qualityLevel = self._heroData:getQualityLevel() == 0 and "" or "+" .. self._heroData:getQualityLevel()
 
 	name:setString(nameString .. qualityLevel)
+	name:setFontSize(self:getFontSizeForName(nameString .. qualityLevel))
 	GameStyle:setHeroNameByQuality(name, self._heroData:getQuality(), 1)
 	nameBg:setScaleX((name:getContentSize().width + 90) / nameBg:getContentSize().width)
+
+	if self._heroSystem:isLinkStageHero(self._heroData:getId()) then
+		linkImage:setVisible(true)
+		linkImage:setPositionX(nameBg:getContentSize().width * nameBg:getScaleX())
+	else
+		linkImage:setVisible(false)
+	end
 
 	local cvname = self._infoNode:getChildByFullName("cvname.cvname")
 	local cvNameString = self._heroData:getCVName()
@@ -1126,14 +1305,6 @@ function HeroShowOwnMediator:refreshName()
 	cvname:setString(Strings:get("GALLERY_UI10", {
 		cvname = cvNameString
 	}))
-
-	local length = utf8.len(cvNameString)
-
-	if length > 10 then
-		cvname:setFontSize(14)
-	else
-		cvname:setFontSize(19)
-	end
 
 	local rarityIcon = self._infoNode:getChildByFullName("rarityIcon.rarityIcon")
 
@@ -1153,6 +1324,19 @@ function HeroShowOwnMediator:refreshName()
 	end
 end
 
+function HeroShowOwnMediator:getFontSizeForName(str)
+	local fontSize = 50
+	local width = 10000
+
+	repeat
+		local lvLabel = cc.Label:createWithTTF(str, CUSTOM_TTF_FONT_1, fontSize)
+		width = lvLabel:getContentSize().width
+		fontSize = fontSize - 2
+	until width < 200 or fontSize < 2
+
+	return fontSize
+end
+
 function HeroShowOwnMediator:runStartAnim()
 	self._mainPanel:stopAllActions()
 
@@ -1165,6 +1349,7 @@ function HeroShowOwnMediator:runStartAnim()
 	self._starTouchPanel:setVisible(false)
 	self._attrTouchLayer:setVisible(false)
 	self._levelNode:setVisible(false)
+	self._buttonPanel:setVisible(false)
 
 	if self._specialPanel:isVisible() then
 		for i = 1, #self._specialNode do
@@ -1198,13 +1383,11 @@ function HeroShowOwnMediator:runStartAnim()
 		end
 	end
 
-	self._storyPanel:setOpacity(0)
-
-	local storyAnim = self._storyPanel:getChildByFullName("StoryAnim")
-
-	if storyAnim then
-		storyAnim:setVisible(false)
-	end
+	local detailbtnName = self._buttonPanel:getChildByFullName("detailbtn.text")
+	local surfacebtnName = self._buttonPanel:getChildByFullName("surfacebtn.text")
+	local soundbtnName = self._buttonPanel:getChildByFullName("soundbtn.text")
+	local storybtnName = self._buttonPanel:getChildByFullName("storybtn.text")
+	local bustbtnName = self._buttonPanel:getChildByFullName("bustbtn.text")
 
 	local function onFrameEvent(frame)
 		if frame == nil then
@@ -1216,11 +1399,13 @@ function HeroShowOwnMediator:runStartAnim()
 		if str == "HeroTipAnim" and not self._parentMedi:getIgnoreSoundEffect() then
 			self._parentMedi:stopHeroEffect()
 
-			local soundId = AudioEngine:getInstance():playRoleEffect("Voice_" .. self._heroData:getId() .. "_10", false, function ()
+			self._soundId = AudioEngine:getInstance():playRoleEffect("Voice_" .. self._heroData:getId() .. "_10", false, function ()
 				self:showDateToast()
+
+				self._soundId = nil
 			end)
 
-			self._parentMedi:setHeroEffectId(soundId)
+			self._parentMedi:setHeroEffectId(self._soundId)
 
 			local desc = ConfigReader:getDataByNameIdAndKey("Sound", "Voice_" .. self._heroData:getId() .. "_10", "SoundDesc")
 			local str = Strings:get(desc)
@@ -1320,28 +1505,6 @@ function HeroShowOwnMediator:runStartAnim()
 			self._levelNode:fadeIn({
 				time = 0.2
 			})
-			self._storyPanel:setOpacity(255)
-
-			if not storyAnim then
-				storyAnim = cc.MovieClip:create("storyAnim_yinghunzhujiemian")
-
-				storyAnim:addTo(self._storyPanel)
-				storyAnim:setName("StoryAnim")
-				storyAnim:setPosition(cc.p(-180, 30))
-				storyAnim:addEndCallback(function ()
-					storyAnim:stop()
-				end)
-
-				local text1 = storyAnim:getChildByFullName("text1")
-				local text2 = storyAnim:getChildByFullName("text2")
-
-				self._storyPanel:getChildByFullName("text1"):changeParent(text1):posite(0, 0)
-				self._storyPanel:getChildByFullName("text2"):changeParent(text2):posite(0, 0)
-				storyAnim:setPlaySpeed(1.5)
-			end
-
-			storyAnim:setVisible(true)
-			storyAnim:gotoAndPlay(0)
 			self:refreshStory()
 			self:refreshSkill()
 
@@ -1369,6 +1532,22 @@ function HeroShowOwnMediator:runStartAnim()
 				time = 0.2
 			})
 			listView:fadeIn({
+				time = 0.2
+			})
+			self._buttonPanel:setVisible(true)
+			detailbtnName:fadeIn({
+				time = 0.2
+			})
+			surfacebtnName:fadeIn({
+				time = 0.2
+			})
+			soundbtnName:fadeIn({
+				time = 0.2
+			})
+			storybtnName:fadeIn({
+				time = 0.2
+			})
+			bustbtnName:fadeIn({
 				time = 0.2
 			})
 		end

@@ -79,3 +79,7 @@ function CrusadeFloor:getRewards()
 
 	return rewards
 end
+
+function CrusadeFloor:getDynamicDifficulty()
+	return self._config.Crusade_Dynamic_Difficlt_Ratio
+end

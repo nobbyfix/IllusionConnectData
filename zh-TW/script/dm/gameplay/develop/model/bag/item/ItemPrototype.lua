@@ -10,6 +10,13 @@ ItemPages = {
 	kOther = "OTHER",
 	kStuff = "STUFF"
 }
+EquipBagShowType = {
+	kDecoration = "Decoration",
+	kShoes = "Shoes",
+	kWeapon = "Weapon",
+	kTops = "Tops",
+	kAll = "All"
+}
 ItemTypes = {
 	K_EQUIPCURRENCY = "EQUIPCURRENCY",
 	K_HERO_QUALITY_UP = "HERO_QUALITY_UP",
@@ -63,7 +70,7 @@ ItemTypes = {
 	K_DIAMOND_ITEM = "DIAMOND_ITEM",
 	K_ARENA_TICKET = "ARENATICKET",
 	K_EMGUARD = "EMGUARD",
-	k_ACTIVITY_ITEM = "ACTIVITY_ITEM",
+	K_MasterLeadStage = "MasterLeadStage",
 	K_EQUIP_DRAW = "EQUIP_DRAW",
 	K_EXP_UP = "EXP_UP",
 	K_COMPOSE = "COMPOSE",
@@ -71,6 +78,7 @@ ItemTypes = {
 	K_EQUIP_STAR = "EQUIP_STAR",
 	K_SURFACEPOINT = "SURFACEPOINT",
 	K_ACTIVITY = "ACTIVITY",
+	k_ACTIVITY_ITEM = "ACTIVITY_ITEM",
 	K_ARENA_TIMES = "ARENA_TIMES",
 	K_EQUIP_QUALITY_UP = "EQUIP_QUALITY_UP",
 	K_ORE_COLLECT = "ORE_COLLECT"
@@ -299,4 +307,12 @@ end
 
 function ItemPrototype:getResource()
 	return self._itemBase.Resource
+end
+
+function ItemPrototype:getCanLock()
+	if self._itemBase.Lock and self._itemBase.Lock > 0 then
+		return true
+	end
+
+	return false
 end

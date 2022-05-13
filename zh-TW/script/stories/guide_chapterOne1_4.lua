@@ -840,7 +840,7 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 									dir = 2
 								},
 								maskSize = {
-									w = 740,
+									w = 790,
 									h = 270
 								}
 							}
@@ -1560,6 +1560,26 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 					branch({
 						{
 							cond = function (_ctx)
+								return _ctx:downloadRes()
+							end,
+							subnode = sequential({
+								wait({
+									args = function (_ctx)
+										return {
+											type = "download_150package_res_finish",
+											mask = {
+												touchMask = true,
+												opacity = 0
+											}
+										}
+									end
+								})
+							})
+						}
+					}),
+					branch({
+						{
+							cond = function (_ctx)
 								return _ctx:getCurViewName() == "CommonStageChapterView"
 							end,
 							subnode = sequential({
@@ -1626,22 +1646,6 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 											}
 										}
 									end
-								}),
-								branch({
-									{
-										cond = function (_ctx)
-											return _ctx:playHomeVedioPV("Welcome_Text1")
-										end,
-										subnode = sequential({
-											wait({
-												args = function (_ctx)
-													return {
-														type = "exit_home_playVedioSprite"
-													}
-												end
-											})
-										})
-									}
 								})
 							})
 						}
@@ -1960,6 +1964,17 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 							}
 						end
 					}),
+					wait({
+						args = function (_ctx)
+							return {
+								type = "enter_building_main_view",
+								mask = {
+									touchMask = true,
+									opacity = 0
+								}
+							}
+						end
+					}),
 					click({
 						args = function (_ctx)
 							return {
@@ -1983,31 +1998,6 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 								}
 							}
 						end
-					}),
-					branch({
-						{
-							cond = function (_ctx)
-								return _ctx:checkComplexityNum(9)
-							end,
-							subnode = sequential({
-								branch({
-									{
-										cond = function (_ctx)
-											return _ctx:playHomeVedioPV("Welcome_Text2")
-										end,
-										subnode = sequential({
-											wait({
-												args = function (_ctx)
-													return {
-														type = "exit_home_playVedioSprite"
-													}
-												end
-											})
-										})
-									}
-								})
-							})
-						}
 					})
 				})
 			}
@@ -2336,7 +2326,11 @@ function scene_guideChapterOne1_4.actions.guide_chapterOne1_4_action(_root, args
 								wait({
 									args = function (_ctx)
 										return {
-											type = "enter_commonStageMain_view"
+											type = "enter_commonStageMain_view",
+											mask = {
+												touchMask = true,
+												opacity = 0
+											}
 										}
 									end
 								}),

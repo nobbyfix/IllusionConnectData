@@ -8,25 +8,42 @@ local kBtnHandlers = {}
 local kAttrPosition = {
 	kQualityPos = {
 		{
-			cc.p(177, 47)
+			cc.p(90, -5)
 		},
 		{
-			cc.p(177, 47),
-			cc.p(378, 47)
+			cc.p(90, -5),
+			cc.p(378, -5)
 		},
 		{
-			cc.p(177, 63),
-			cc.p(378, 63),
-			cc.p(177, 32)
+			cc.p(90, 15),
+			cc.p(378, 15),
+			cc.p(90, -30)
+		},
+		{
+			cc.p(90, 15),
+			cc.p(378, 15),
+			cc.p(90, -30),
+			cc.p(378, -30)
 		}
 	},
 	kLevelPos = {
 		{
-			cc.p(167, 47)
+			cc.p(90, -5)
 		},
 		{
-			cc.p(167, 63),
-			cc.p(167, 32)
+			cc.p(90, 15),
+			cc.p(90, -30)
+		},
+		{
+			cc.p(90, 35),
+			cc.p(90, -5),
+			cc.p(90, -45)
+		},
+		{
+			cc.p(90, 40),
+			cc.p(90, 10),
+			cc.p(90, -25),
+			cc.p(90, -55)
 		}
 	}
 }
@@ -297,7 +314,7 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 		end
 	end
 
-	local descBg = descPanel:getChildByFullName("bg")
+	local Bg = descPanel:getChildByFullName("bg")
 	local needcolor, curql, nextql = self._curSelectEmblem:getNeedColorQuality()
 
 	self._quickUpBtn:setVisible(not canupquatily)
@@ -305,8 +322,8 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 	local ownNum = self._developSystem:getCrystal()
 
 	if canupquatily then
-		descBg:setContentSize(cc.size(457, 66))
-		self._descBg:setPositionX(412)
+		Bg:setContentSize(cc.size(580, 66))
+		self._descBg:setPosition(cc.p(300, 370))
 		self:setEmblemQuality(emblemcellNow, self._curSelectEmblem:getImgName())
 
 		local costNum = self._curSelectEmblem:getQualityCurrencyCost()
@@ -369,8 +386,8 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 			text_LvNext:setVisible(false)
 		end
 	else
-		descBg:setContentSize(cc.size(237, 66))
-		self._descBg:setPositionX(341)
+		Bg:setContentSize(cc.size(295, 100))
+		self._descBg:setPosition(cc.p(300, 332))
 		self._costNode:setVisible(true)
 
 		local costNum = self._curSelectEmblem:getLevelCurrencyCost()
@@ -432,7 +449,7 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 
 	for i = 1, num do
 		descPanel:getChildByFullName("des_" .. i):setVisible(false)
-		descPanel:getChildByFullName("des_" .. i .. ".extandText"):setString("")
+		descPanel:getChildByFullName("des_" .. i .. ".extendText"):setString("")
 	end
 
 	local showNum = 0
@@ -448,26 +465,36 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 			local numA = tonumber(string.split(curattr[i].value, "%")[1])
 			local numB = tonumber(string.split(nextattr[i].value, "%")[1])
 
-			if numB - numA > 0 then
+			if numB - numA >= 0 then
 				dif = numB - numA .. "%"
 				showNum = showNum + 1
 			end
 		else
 			local addValue = nextattr[i].value - curattr[i].value
 
-			if addValue > 0 then
+			if addValue >= 0 then
 				dif = addValue
 				showNum = showNum + 1
 			end
 		end
 
 		if dif ~= "" then
-			descPanel:getChildByFullName("des_" .. showNum .. ".extandText"):setVisible(not isLevelFull)
-			descPanel:getChildByFullName("des_" .. showNum .. ".extandText"):setString("+" .. dif)
+			descPanel:getChildByFullName("des_" .. showNum .. ".extendText"):setString("+" .. dif)
 			descPanel:getChildByFullName("des_" .. showNum):setVisible(true)
 			descPanel:getChildByFullName("des_" .. showNum .. ".image"):loadTexture(AttrTypeImage[curattr[i].att], ccui.TextureResType.plistType)
 			descPanel:getChildByFullName("des_" .. showNum .. ".text"):setString(curattr[i].value)
+			descPanel:getChildByFullName("des_" .. showNum .. ".name"):setString(curattr[i].name)
 		end
+	end
+
+	if canupquatily == false then
+		if showNum == 3 then
+			Bg:setContentSize(cc.size(295, 130))
+		elseif showNum == 4 then
+			Bg:setContentSize(cc.size(295, 160))
+		end
+	elseif showNum > 2 then
+		Bg:setContentSize(cc.size(580, 100))
 	end
 
 	local pos = kAttrPosition.kLevelPos[showNum]
@@ -481,6 +508,12 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 	end
 end
 
+local AttToAttrPercentage = {
+	DEF = "DEF_RATE",
+	HP = "HP_RATE",
+	ATK = "ATK_RATE"
+}
+
 function MasterEmblemMediator:updateAttrInfo()
 	local curattr = {}
 	local nextattr = {}
@@ -489,6 +522,35 @@ function MasterEmblemMediator:updateAttrInfo()
 		curattr, nextattr = self._curSelectEmblem:getEmblemQualityGrowUpAttr()
 	else
 		curattr, nextattr = self._curSelectEmblem:getEmblemLevelGrowUpAttr()
+	end
+
+	local leadStageAllAttr = self._masterData:getLeadStageAllAttrByType()
+	local id, leadStageLv = self._masterSystem:getMasterLeadStatgeLevel(self._masterId)
+	local leadStageAttr = {}
+
+	for k, v in pairs(leadStageAllAttr) do
+		local config = ConfigReader:getRecordById("SkillAttrEffect", k)
+
+		for i = 1, #config.Value do
+			local attrNum = SkillAttribute:getAddNumByConfig(config, i, leadStageLv)
+			local attrType = SkillAttribute:getAddTypeByConfig(config, i)
+			leadStageAttr[attrType] = leadStageAttr[attrType] or 0
+			leadStageAttr[attrType] = leadStageAttr[attrType] + attrNum
+		end
+	end
+
+	for i, v in ipairs(curattr) do
+		if AttrBaseType[v.att] then
+			local add = leadStageAttr[AttToAttrPercentage[v.att]] or 0
+			curattr[i].value = math.floor(curattr[i].value * (1 + add))
+		end
+	end
+
+	for i, v in ipairs(nextattr) do
+		if AttrBaseType[v.att] then
+			local add = leadStageAttr[AttToAttrPercentage[v.att]] or 0
+			nextattr[i].value = math.floor(nextattr[i].value * (1 + add))
+		end
 	end
 
 	return curattr, nextattr
@@ -508,7 +570,7 @@ function MasterEmblemMediator:onEmblemCultivateSucc(event)
 	if data.preData and data.preData.combat then
 		local preCombat = data.preData.combat
 
-		self._mediator:showCombatAnim(preCombat, cc.p(433, 268))
+		self._mediator:showCombatAnim(preCombat, cc.p(433, 208))
 	end
 end
 
@@ -677,6 +739,7 @@ function MasterEmblemMediator:runStartAction()
 			anim:stop()
 		end)
 		anim:addTo(bgAnim2)
+		anim:offset(0, -3)
 		anim:setName("BgAnim1")
 	end
 
@@ -689,6 +752,7 @@ function MasterEmblemMediator:runStartAction()
 			anim:stop()
 		end)
 		anim:addTo(bgAnim3)
+		anim:offset(0, -3)
 		anim:setName("BgAnim2")
 	end
 

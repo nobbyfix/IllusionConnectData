@@ -124,9 +124,36 @@ function DreamChallengeDetailMediator:refreshView()
 		local buffInfoBtnPosX = 0
 		local timeNode = self._detailView:getChildByName("timeNode")
 		local timeText = self._detailView:getChildByFullName("timeNode.desc")
-		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
+		local timeTitle = self._detailView:getChildByFullName("timeNode.title")
+		local timeBg = self._detailView:getChildByFullName("timeNode.timeBg")
+		local leftWorlds = self._detailView:getChildByFullName("bg")
+
+		leftWorlds:setPosition(cc.p(701, 383))
+
+		local textPic = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "TextPic")
+
+		if textPic and textPic ~= "" then
+			timeBg:setVisible(false)
+			leftWorlds:setVisible(true)
+			leftWorlds:loadTexture("asset/ui/dreamChallenge/" .. textPic .. ".png", ccui.TextureResType.localType)
+		else
+			leftWorlds:setVisible(false)
+			timeBg:setVisible(true)
+		end
+
+		local challengeType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
+
+		if kDreamChallengeType.kTwo == challengeType or kDreamChallengeType.kThree == challengeType then
+			timeBg:loadTexture("mjt_z_xntz_sjd.png", ccui.TextureResType.plistType)
+			timeTitle:setTextColor(cc.c3b(201, 0, 62))
+		else
+			timeBg:loadTexture("mjt_z_mjjc_sjd.png", ccui.TextureResType.plistType)
+			timeTitle:setTextColor(cc.c3b(93, 82, 205))
+		end
 
 		timeNode:setVisible(false)
+
+		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
 
 		if timeStrKey and timeStrKey ~= "" then
 			timeNode:setVisible(true)
@@ -139,9 +166,6 @@ function DreamChallengeDetailMediator:refreshView()
 				EndTime = endTime,
 				fontName = CUSTOM_TTF_FONT_1
 			})
-
-			dump(str, "str >>>>>>>>>>>>>")
-
 			local richText = ccui.RichText:createWithXML("", {})
 
 			richText:setAnchorPoint(timeText:getAnchorPoint())
@@ -191,9 +215,17 @@ function DreamChallengeDetailMediator:refreshView()
 
 			icon:addTo(rewardPanel):setScale(0.5)
 			icon:setPosition(cc.p(40 + (i - 1) * 70, 35))
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
-				needDelay = true
-			})
+
+			if RewardSystem:checkIsComposeItem(reward[i]) then
+				IconFactory:bindClickHander(icon, IconTouchHandler:new(self), reward[i], {
+					touchDisappear = true,
+					swallowTouches = true
+				})
+			else
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
+					needDelay = true
+				})
+			end
 		end
 
 		local title3 = self._detailView:getChildByFullName("title3")
@@ -305,6 +337,25 @@ function DreamChallengeDetailMediator:refreshView()
 	else
 		local timeNode = self._lockView:getChildByName("timeNode")
 		local timeText = self._lockView:getChildByFullName("timeNode.desc")
+		local timeBg = self._lockView:getChildByFullName("timeNode.timeBg")
+		local timeTitle = self._lockView:getChildByFullName("timeNode.title")
+		local leftWorlds = self._lockView:getChildByFullName("bg")
+
+		leftWorlds:setPosition(cc.p(701, 383))
+
+		local textPic = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "TextPic")
+
+		if textPic and textPic ~= "" then
+			timeBg:setVisible(false)
+			leftWorlds:setVisible(true)
+			leftWorlds:loadTexture("asset/ui/dreamChallenge/" .. textPic .. ".png", ccui.TextureResType.localType)
+		else
+			leftWorlds:setVisible(false)
+			timeBg:setVisible(true)
+		end
+
+		timeNode:setVisible(false)
+
 		local timeStrKey = self._dreamSystem:getMapTimeDesc(self._mapId)
 
 		timeNode:setVisible(false)
@@ -340,9 +391,17 @@ function DreamChallengeDetailMediator:refreshView()
 
 			icon:addTo(rewardPanel):setScale(0.5)
 			icon:setPosition(cc.p(40 + (i - 1) * 70, 35))
-			IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
-				needDelay = true
-			})
+
+			if RewardSystem:checkIsComposeItem(reward[i]) then
+				IconFactory:bindClickHander(icon, IconTouchHandler:new(self), reward[i], {
+					touchDisappear = true,
+					swallowTouches = true
+				})
+			else
+				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward[i], {
+					needDelay = true
+				})
+			end
 		end
 
 		local talkText = self._lockView:getChildByFullName("role.Text_43")
@@ -357,6 +416,16 @@ function DreamChallengeDetailMediator:refreshView()
 			local node = self._lockView:getChildByFullName("lockInfo.node" .. i)
 
 			node:setVisible(false)
+			node:setPositionX(-55)
+
+			local condText = node:getChildByName("cond")
+
+			if not node.condRt then
+				node.condRt = ccui.RichText:createWithXML("", {})
+
+				node.condRt:setAnchorPoint(0, 0.5)
+				node.condRt:addTo(node):posite(condText:getPosition())
+			end
 
 			condNodes[i] = node
 		end
@@ -368,9 +437,6 @@ function DreamChallengeDetailMediator:refreshView()
 
 			local condText = node:getChildByName("cond")
 			local nameText = node:getChildByName("name")
-
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Pass"))
-
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
@@ -398,8 +464,17 @@ function DreamChallengeDetailMediator:refreshView()
 				end
 			end
 
-			nameText:setString("[" .. pointName .. "-" .. battleName .. "]")
+			condText:setString("")
+			nameText:setString("")
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Pass", {
+				fontName = TTF_FONT_FZYH_M,
+				name = "[" .. pointName .. "-" .. battleName .. "]",
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end
@@ -414,13 +489,21 @@ function DreamChallengeDetailMediator:refreshView()
 			local playerInfo = self._developSystem:getPlayer()
 			local isPass = pointLockCond.LEVEL <= playerInfo:getLevel()
 
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Level"))
-			nameText:setString(tostring(pointLockCond.LEVEL))
+			condText:setString("")
+			nameText:setString("")
 
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Level", {
+				fontName = TTF_FONT_FZYH_M,
+				level = pointLockCond.LEVEL,
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end
@@ -432,9 +515,6 @@ function DreamChallengeDetailMediator:refreshView()
 
 			local condText = node:getChildByName("cond")
 			local nameText = node:getChildByName("name")
-
-			condText:setString(Strings:get("DreamChallenge_Point_Cond_Hero"))
-
 			local condSize = condText:getContentSize()
 
 			nameText:setPositionX(condSize.width + condText:getPositionX() + 10)
@@ -451,8 +531,17 @@ function DreamChallengeDetailMediator:refreshView()
 				end
 			end
 
-			nameText:setString(nameStr)
+			condText:setString("")
+			nameText:setString("")
 			nameText:setTextColor(isPass and cc.c3b(6, 237, 0) or cc.c3b(255, 120, 0))
+
+			local str = Strings:get("DreamChallenge_Point_Cond_Hero", {
+				fontName = TTF_FONT_FZYH_M,
+				name = nameStr,
+				color = isPass and "#06ed00" or "#ff7800"
+			})
+
+			node.condRt:setString(str)
 
 			condIndex = condIndex + 1
 		end

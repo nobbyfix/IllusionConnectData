@@ -128,10 +128,10 @@ function scene_HeroStory_KTSJKe_03a.actions.start_HeroStory_KTSJKe_03a(_root, ar
 					modelId = "Model_MGNa",
 					id = "MGNa_speak",
 					rotationX = 0,
-					scale = 1.115,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -375,
+						y = -440,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -155,8 +155,8 @@ function scene_HeroStory_KTSJKe_03a.actions.start_HeroStory_KTSJKe_03a(_root, ar
 								y = 0.5
 							},
 							position = {
-								x = -214,
-								y = 748.5
+								x = -369.5,
+								y = 1262
 							}
 						}
 					}

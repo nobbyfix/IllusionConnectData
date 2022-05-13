@@ -46,7 +46,8 @@ DebugBoxMainIndex = {
 					"开启/关闭战斗开始loading",
 					"设置血量增加倍数",
 					"开启/关闭打印实时属性",
-					"开启/关闭顺序出牌"
+					"开启/关闭顺序出牌",
+					"开启/关闭AI权重显示"
 				}
 			},
 			{
@@ -69,7 +70,8 @@ DebugBoxMainIndex = {
 					"打开测试面板",
 					"修改服务器时间",
 					"调cross和游戏服时间",
-					"设置DEBUG模式"
+					"设置DEBUG模式",
+					"开启ldebug"
 				}
 			},
 			{
@@ -80,7 +82,8 @@ DebugBoxMainIndex = {
 					"清除数据",
 					"增加次数",
 					"修改跨服时间",
-					"数据上报"
+					"数据上报",
+					"n场内不能匹配相同对手"
 				}
 			},
 			{
@@ -96,7 +99,8 @@ DebugBoxMainIndex = {
 					"加核心",
 					"加装备",
 					"强化装备至满级",
-					"我要装备！"
+					"我要装备！",
+					"加头像框"
 				}
 			},
 			{
@@ -106,7 +110,12 @@ DebugBoxMainIndex = {
 					"主角养成",
 					"增加英魂",
 					"一键无敌",
-					"添加皮肤"
+					"添加皮肤",
+					"语音检测",
+					"一键装备",
+					"一键卸下装备",
+					"一键觉醒",
+					"一键最佳装备"
 				}
 			},
 			{
@@ -119,18 +128,42 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"源阶",
+				{
+					"增加源阶",
+					"增加古币",
+					"增加源阶体力",
+					"增加源阶排行榜",
+					"清除全部赛季数据",
+					"清除服务器分组"
+				}
+			},
+			{
+				"新梦境技场",
+				{
+					"调整排名",
+					"调整最大排名",
+					"指定分组id添加真人",
+					"查询指定分组真人数",
+					"查询服务器分组数量"
+				}
+			},
+			{
 				"城建",
 				{
 					"清除队列"
 				}
 			},
 			{
-				"主线副本",
+				"副本",
 				{
 					"通关至指定普通关卡",
 					"通关至指定精英关卡",
 					"重置英魂副本挑战次数",
-					"关卡一键速达"
+					"关卡一键速达",
+					"通关所有活动本",
+					"通关指定梦境塔",
+					"通关所有新活动本"
 				}
 			},
 			{
@@ -178,8 +211,8 @@ DebugBoxMainIndex = {
 					"修改指定地图DP值",
 					"增加道具到大地图临时背包",
 					"开启debug模式",
-					"恢复玩家探索次数最大值",
-					"恢复大地图每日推荐次数",
+					"恢复探索次数最大值",
+					"恢复每日推荐次数",
 					"解锁所有探索地图",
 					"刷新一次性物件",
 					"修改移动速度",
@@ -247,7 +280,9 @@ DebugBoxMainIndex = {
 			},
 			{
 				"任务",
-				{}
+				{
+					"一键完成梦之轨迹"
+				}
 			},
 			{
 				"链接争霸",
@@ -294,13 +329,54 @@ DebugBoxMainIndex = {
 			{
 				"小游戏",
 				{
-					"投飞镖：设置关卡"
+					"投飞镖：设置关卡",
+					"增加小游戏次数",
+					"美食作战：设置初始跳台"
+				}
+			},
+			{
+				"BOSS共斗",
+				{
+					"触发BOSS共斗",
+					"增加共斗BOSS挑战次数"
+				}
+			},
+			{
+				"通用后端命令",
+				{
+					"触发后端命令"
 				}
 			},
 			{
 				"bust展示",
 				{
-					"设置bust"
+					"设置bust",
+					"显示主角",
+					"显示伙伴",
+					"主角和伙伴",
+					"特殊bust",
+					"不裁切主角",
+					"不裁切主角伙伴",
+					"未觉醒伙伴"
+				}
+			},
+			{
+				"属性计算",
+				{
+					"属性计算展示"
+				}
+			},
+			{
+				"从零活动",
+				{
+					"重置副本mapId"
+				}
+			},
+			{
+				"音频测试",
+				{
+					"战斗音频",
+					"其他音频"
 				}
 			}
 		}
@@ -338,6 +414,10 @@ DebugBoxMainIndex = {
 				"changeTagetServerTime"
 			},
 			{
+				"开启ldebug",
+				"openLdebug"
+			},
+			{
 				"无限充值开启",
 				"FreeRecharge"
 			},
@@ -358,7 +438,7 @@ DebugBoxMainIndex = {
 				"AddMyEquip"
 			},
 			{
-				"单个角色",
+				"属性计算展示",
 				"AttrInfoView"
 			},
 			{
@@ -392,6 +472,26 @@ DebugBoxMainIndex = {
 			{
 				"添加皮肤",
 				"AddSurface"
+			},
+			{
+				"语音检测",
+				"TestSound"
+			},
+			{
+				"一键装备",
+				"OneKeyEquip"
+			},
+			{
+				"一键卸下装备",
+				"OneKeyDownEquip"
+			},
+			{
+				"一键觉醒",
+				"OneKeyAwake"
+			},
+			{
+				"一键最佳装备",
+				"OneKeyBestEquip"
 			},
 			{
 				"进入剧情编辑",
@@ -566,6 +666,18 @@ DebugBoxMainIndex = {
 				"PracticleToPoint"
 			},
 			{
+				"通关所有活动本",
+				"ActivityStageFinish"
+			},
+			{
+				"通关指定梦境塔",
+				"DreamChallengeFinish"
+			},
+			{
+				"通关所有新活动本",
+				"NewActivityStageFinish"
+			},
+			{
 				"增加本周荣誉值",
 				"ArenaAddHonor"
 			},
@@ -630,11 +742,11 @@ DebugBoxMainIndex = {
 				"ExploreAddBagItem"
 			},
 			{
-				"恢复玩家探索次数最大值",
+				"恢复探索次数最大值",
 				"ExploreAddTimes"
 			},
 			{
-				"恢复大地图每日推荐次数",
+				"恢复每日推荐次数",
 				"ExploreResetDailyTimes"
 			},
 			{
@@ -714,16 +826,108 @@ DebugBoxMainIndex = {
 				"CrusadeReset"
 			},
 			{
+				"重置副本mapId",
+				"ZeroMapReset"
+			},
+			{
 				"投飞镖：设置关卡",
 				"ChangeDartsLevel"
+			},
+			{
+				"增加小游戏次数",
+				"addMiniGameTimes"
+			},
+			{
+				"美食作战：设置初始跳台",
+				"ChangeJumpStage"
+			},
+			{
+				"触发BOSS共斗",
+				"CooperateBossTrigger"
+			},
+			{
+				"增加共斗BOSS挑战次数",
+				"AddCopperateBossTime"
+			},
+			{
+				"触发后端命令",
+				"CooperateBossCommand"
 			},
 			{
 				"设置bust",
 				"DebugShowBustAni"
 			},
 			{
-				"一键完成梦之轨迹",
-				"OnekeyStageTask"
+				"显示主角",
+				"DebugShowBustAniMaster"
+			},
+			{
+				"显示伙伴",
+				"DebugShowBustAniHero"
+			},
+			{
+				"主角和伙伴",
+				"DebugShowBustAniAll"
+			},
+			{
+				"特殊bust",
+				"DebugShowBustAniSpe"
+			},
+			{
+				"不裁切主角",
+				"DebugShowBustAniNoStencil"
+			},
+			{
+				"不裁切主角伙伴",
+				"DebugShowBustAniNoStencil2"
+			},
+			{
+				"未觉醒伙伴",
+				"DebugShowBustAniNoStencil3"
+			},
+			{
+				"增加源阶",
+				"DebugAddLeadStageLevel"
+			},
+			{
+				"增加古币",
+				"DebugAddStageArenaOldCoin"
+			},
+			{
+				"增加源阶体力",
+				"DebugAddStageArenaPower"
+			},
+			{
+				"增加源阶排行榜",
+				"DebugAddStageArenaRank"
+			},
+			{
+				"清除全部赛季数据",
+				"DebugClearStageArenaData"
+			},
+			{
+				"调整排名",
+				"DebugNewArenaSetUpRank"
+			},
+			{
+				"调整最大排名",
+				"DebugNewArenaSetUpMaxRank"
+			},
+			{
+				"清除服务器分组",
+				"DebugClearServerGroup"
+			},
+			{
+				"指定分组id添加真人",
+				"DebugNewArenaAddRole"
+			},
+			{
+				"查询指定分组真人数",
+				"DebugNewArenaCheckRoleNum"
+			},
+			{
+				"查询服务器分组数量",
+				"DebugNewArenaGroupNum"
 			},
 			{
 				"增加积分(可负)",
@@ -750,8 +954,20 @@ DebugBoxMainIndex = {
 				"RTPKServerMatch"
 			},
 			{
+				"n场内不能匹配相同对手",
+				"RTPKMatchSwitch"
+			},
+			{
 				"设置DEBUG模式",
 				"ChangeDEBUGValue"
+			},
+			{
+				"一键完成梦之轨迹",
+				"OnekeyStageTask"
+			},
+			{
+				"加头像框",
+				"AddHeadFrame"
 			},
 			{
 				"技能Args检查",
@@ -778,12 +994,24 @@ DebugBoxMainIndex = {
 				"HealthMultiBox"
 			},
 			{
+				"战斗音频",
+				"BattleSoundBox"
+			},
+			{
+				"其他音频",
+				"OtherSoundBox"
+			},
+			{
 				"开启/关闭打印实时属性",
 				"DumpUnitPropertiesBox"
 			},
 			{
 				"开启/关闭顺序出牌",
 				"NoAiSetBox"
+			},
+			{
+				"开启/关闭AI权重显示",
+				"ShowAiWeightBox"
 			},
 			{
 				"播放主线校验错误",
@@ -896,6 +1124,7 @@ DebugBoxMainIndex = {
 			"GuideReset",
 			"GuideEndBattle",
 			"TestPlayStory",
+			"TestSound",
 			"CheckConfigBox",
 			"CheckTranslateConfig",
 			"OnekeyInvincible",
@@ -907,13 +1136,16 @@ DebugBoxMainIndex = {
 			"ClearExploreOrBlockSpTimes",
 			"ClubBoss",
 			"BattleSettingBox",
-			"ChangeMiniGame",
-			"DebugShowBustAni",
 			"FreeRecharge",
 			"BattleExtend",
 			"ChangeMiniGame",
+			"CooperateBossTest",
 			"DebugShowBustAni",
-			"DebugRTPKScore"
+			"DebugAddLeadStageLevel",
+			"DebugNewArenaSetUpRank",
+			"DebugRTPKScore",
+			"ChangeTask",
+			"ZeroMapReset"
 		}
 
 		for k, v in pairs(requireNameMap) do

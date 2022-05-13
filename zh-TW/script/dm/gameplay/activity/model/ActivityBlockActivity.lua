@@ -78,14 +78,43 @@ function ActivityBlockActivity:getSubActivityById(id)
 	end
 end
 
-function ActivityBlockActivity:getBlockMapActivity()
+function ActivityBlockActivity:getBlockMapIds()
+	local ids = {}
+	local activityIds = self:getActivity()
+
+	for _, id in pairs(activityIds) do
+		local config = ConfigReader:getRecordById("Activity", id)
+
+		if config.Type == "ActivityBlockMap" or config.Type == ActivityType.KActivityBlockMapNew then
+			ids[#ids + 1] = id
+		end
+	end
+
+	return ids
+end
+
+function ActivityBlockActivity:getBlockMapActivity(activityId)
+	local function getActivity(id)
+		local activity = self:getSubActivityById(id)
+
+		if activity and (activity:getType() == ActivityType.KActivityBlockMap or activity:getType() == ActivityType.KActivityBlockMapNew) and self:subActivityOpen(id) then
+			return activity
+		end
+
+		return nil
+	end
+
+	if activityId then
+		return getActivity(activityId)
+	end
+
 	local activityIds = self:getActivity()
 
 	for i = 1, #activityIds do
 		local id = activityIds[i]
-		local activity = self:getSubActivityById(id)
+		local activity = getActivity(id)
 
-		if activity and self:subActivityOpen(id) and activity:getType() == ActivityType.KActivityBlockMap then
+		if activity then
 			return activity
 		end
 	end
@@ -137,7 +166,7 @@ function ActivityBlockActivity:getActivityClubBossActivity()
 			min = m,
 			sec = s
 		}
-		local endTime = TimeUtil:getTimeByDate(table)
+		local endTime = TimeUtil:timeByRemoteDate(table)
 		local remoteTimestamp = self._activitySystem:getCurrentTime()
 		local remainTime = endTime - remoteTimestamp
 
@@ -237,6 +266,12 @@ function ActivityBlockActivity:getEggActivity()
 	return nil
 end
 
+function ActivityBlockActivity:getJumpActivity()
+	local activityId = self:getActivityConfig().JumpActivityId
+
+	return self._activitySystem:getActivityById(activityId)
+end
+
 function ActivityBlockActivity:getActivityTpurchase()
 	local activityIds = self:getActivity()
 
@@ -322,7 +357,7 @@ function ActivityBlockActivity:getButtonConfig()
 		local config = ConfigReader:getRecordById("Activity", id)
 
 		if config then
-			if config.Type == ActivityType.KActivityBlockMap then
+			if config.Type == ActivityType.KActivityBlockMap or config.Type == ActivityType.KActivityBlockMapNew then
 				local data = {
 					icon = config.ActivityConfig.ButtonIcon,
 					title = Strings:get(config.Title),
@@ -347,8 +382,24 @@ function ActivityBlockActivity:getBgPath()
 	return string.format("asset/scene/%s.jpg", self:getActivityConfig().Bmg)
 end
 
+function ActivityBlockActivity:getFrontBgPath()
+	if self:getActivityConfig().Bmgupp then
+		return string.format("asset/sceneStory/%s", self:getActivityConfig().Bmgupp)
+	end
+
+	return ""
+end
+
+function ActivityBlockActivity:getChangeBgPath()
+	return string.format("asset/scene/%s.jpg", self:getActivityConfig().ChangeBmg)
+end
+
 function ActivityBlockActivity:getTitlePath()
-	return string.format("%s.png", self:getActivityConfig().Logo)
+	if self:getActivityConfig().Logo then
+		return string.format("%s.png", self:getActivityConfig().Logo)
+	end
+
+	return nil
 end
 
 function ActivityBlockActivity:getTimeStr()
@@ -356,7 +407,7 @@ function ActivityBlockActivity:getTimeStr()
 		return self._timeStr
 	end
 
-	local timeStr = self._config.TimeFactor
+	local timeStr = self:getLocalTimeFactor()
 	local start = ""
 	local end_ = ""
 
@@ -412,4 +463,169 @@ function ActivityBlockActivity:deleteSubActivity(activityMap)
 			end
 		end
 	end
+end
+
+function ActivityBlockActivity:getSubActivityOpenTimes(config)
+	local startTime = TimeUtil:formatStrToTImestamp(config.TimeFactor.start[1])
+	local endTime = TimeUtil:formatStrToTImestamp(config.TimeFactor.start[2])
+
+	return {
+		startTime = startTime,
+		endTime = endTime
+	}
+end
+
+function ActivityBlockActivity:getSubActivityBaseData(activityId)
+	return ConfigReader:getRecordById("Activity", activityId)
+end
+
+function ActivityBlockActivity:subActivityIsOpen(activityId)
+	local activity = self:getSubActivityById(activityId)
+
+	if activity then
+		local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimeMillis()
+
+		return activity:getStartTime() <= curTime
+	end
+
+	return false
+end
+
+function ActivityBlockActivity:subActivityIsOver(activityId)
+	local activity = self:getSubActivityById(activityId)
+
+	if activity then
+		local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimeMillis()
+
+		return activity:getEndTime() <= curTime
+	end
+
+	return true
+end
+
+function ActivityBlockActivity:isVote()
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return false
+	end
+
+	local pointId = map:getActivityConfig().VoteUnlock
+	local point = map:getPointById(pointId)
+
+	if not point then
+		return false
+	end
+
+	local pass = point:isPass()
+
+	return pass
+end
+
+function ActivityBlockActivity:checkVote()
+	local isVote = self:isVote()
+
+	if not isVote then
+		return
+	end
+
+	local map = self:getBlockMapActivity()
+	local isVote = map:getIsVote()
+
+	if isVote then
+		self:showVoteResult()
+
+		return
+	end
+
+	self:showVoteAlert()
+end
+
+function ActivityBlockActivity:showVoteResult()
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	local data = {
+		doActivityType = 109
+	}
+
+	self._activitySystem:requestDoChildActivity(self._activityId, map:getId(), data, function (response)
+		if response.data then
+			local view = self._activitySystem:getInjector():getInstance("ActivityRiddleVoteView")
+
+			self._activitySystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				maskOpacity = 200
+			}, {
+				data = response.data
+			}))
+		end
+	end)
+end
+
+function ActivityBlockActivity:showVoteAlert()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_2", false)
+
+	local map = self:getBlockMapActivity()
+
+	if not map then
+		self._activitySystem:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	local function ok()
+		local data = {
+			doActivityType = 108
+		}
+
+		self._activitySystem:requestDoChildActivity(self._activityId, map:getId(), data, function (response)
+			if response.data then
+				self:showVoteResult()
+			end
+		end)
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				ok()
+			elseif data.response == "cancel" then
+				ok()
+			elseif data.response == "close" then
+				-- Nothing
+			end
+		end
+	}
+	local data = {
+		title1 = "",
+		title = Strings:get("VoteTitle_Des"),
+		content = Strings:get("VoteContent_Des"),
+		sureBtn = {
+			text1 = "",
+			text = Strings:get("Vote_Des_2")
+		},
+		cancelBtn = {
+			text1 = "",
+			text = Strings:get("Vote_Des_1")
+		}
+	}
+	local view = self._activitySystem:getInjector():getInstance("AlertView")
+
+	self._activitySystem:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
 end

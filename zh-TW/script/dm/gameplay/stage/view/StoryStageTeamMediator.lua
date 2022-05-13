@@ -14,7 +14,7 @@ StoryStageTeamMediator:has("_systemKeeper", {
 
 local kBtnHandlers = {}
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -697,7 +697,7 @@ function StoryStageTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -719,7 +719,12 @@ function StoryStageTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -789,18 +794,14 @@ function StoryStageTeamMediator:refreshMasterInfo()
 	local img = nil
 
 	if self._playerMasterMode == 1 then
-		img = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust6",
-			id = model,
-			size = cc.size(188, 274)
+		img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_2",
+			id = model
 		})
 	else
-		img = IconFactory:createRoleIconSprite({
-			stencil = 6,
-			iconType = "Bust12",
-			id = model,
-			size = cc.size(188, 274)
+		img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_2",
+			id = model
 		})
 	end
 

@@ -95,9 +95,13 @@ function BuildingPutHeroMediator:setupView()
 	self._text_sortType = self:getView():getChildByFullName("sortBtn.text")
 	self._sortPanel = self:getView():getChildByFullName("sortnode")
 	self._tabpanel = self._mainPanel:getChildByFullName("tabpanel")
-	local node_name = self._mainPanel:getChildByFullName("node_name")
+	local bgNode = self._mainPanel:getChildByFullName("node_bg")
 
-	bindWidget(self, node_name, PopupNormalTitle, {
+	bindWidget(self, bgNode, PopupNormalTabWidget, {
+		btnHandler = {
+			clickAudio = "Se_Click_Close_2",
+			func = bind1(self.onBackClicked, self)
+		},
 		title = Strings:get("Building_UI_Laying"),
 		title1 = Strings:get("UITitle_EN_Fangzhi")
 	})
@@ -914,15 +918,16 @@ function BuildingPutHeroMediator:refreshLoveTip(panel)
 				richTextInfo.num = village_RoomHeroLove - allComfort % village_RoomHeroLove
 			end
 
+			richTextInfo.time = TimeUtil:getSystemResetDate()
 			local richText = ccui.RichText:createWithXML(Strings:get(des, richTextInfo), {})
 
 			richText:setAnchorPoint(cc.p(0, 1))
 			richText:setPosition(cc.p(31, posY))
 			richText:addTo(node_des)
-			richText:renderContent()
+			richText:renderContent(480, 0, true)
 
-			posY = posY - 30
 			local size = richText:getContentSize()
+			posY = posY - size.height
 
 			if widthMax < size.width then
 				widthMax = size.width

@@ -631,6 +631,68 @@
         "TriggerType": 1,
         "Walk": ""
     },
+    "Alice_1_CaiDanMuBei1": {
+        "BornAction": "",
+        "BornEffect": "",
+        "Caseimg": "Alice_CaiDanMuBei_01",
+        "Cases": [
+            "Alice_1_CaiDanMuBei1_Case1",
+            "Alice_1_CaiDanMuBei1_Case2"
+        ],
+        "ClickPic": "Btn_DuiHua",
+        "ClickSound": "Se_Click_Common_1",
+        "DieAction": "",
+        "DieEffect": "",
+        "ExploreRate": "",
+        "IsBlock": 1,
+        "MapTipsPic": "",
+        "Name": "",
+        "NamePosition": "",
+        "NoStop": "",
+        "Position": {
+            "0.33": [
+                405,
+                251
+            ],
+            "0.34": [
+                619,
+                272
+            ]
+        },
+        "Range": [
+            [
+                -2,
+                2
+            ],
+            [
+                16,
+                -10
+            ]
+        ],
+        "Rate": 0.5,
+        "RefreshCondition": "",
+        "SelPosition": [
+            10,
+            170
+        ],
+        "Size": [
+            [
+                1,
+                -1
+            ],
+            [
+                13,
+                -7
+            ]
+        ],
+        "TipsPic": "",
+        "TipsPicPosition": [
+            50,
+            150
+        ],
+        "TriggerType": 1,
+        "Walk": ""
+    },
     "Alice_1_ChaiJunMao1": {
         "BornAction": "",
         "BornEffect": "",
@@ -6482,6 +6544,68 @@
         "TriggerType": 1,
         "Walk": ""
     },
+    "Alice_2_CaiDanMuBei1": {
+        "BornAction": "",
+        "BornEffect": "",
+        "Caseimg": "Alice_CaiDanMuBei_01",
+        "Cases": [
+            "Alice_2_CaiDanMuBei1_Case1",
+            "Alice_2_CaiDanMuBei1_Case2"
+        ],
+        "ClickPic": "Btn_DuiHua",
+        "ClickSound": "Se_Click_Common_1",
+        "DieAction": "",
+        "DieEffect": "",
+        "ExploreRate": "",
+        "IsBlock": 1,
+        "MapTipsPic": "",
+        "Name": "",
+        "NamePosition": "",
+        "NoStop": "",
+        "Position": {
+            "0.33": [
+                213,
+                164
+            ],
+            "0.34": [
+                477,
+                119
+            ]
+        },
+        "Range": [
+            [
+                -2,
+                2
+            ],
+            [
+                16,
+                -10
+            ]
+        ],
+        "Rate": 0.5,
+        "RefreshCondition": "",
+        "SelPosition": [
+            10,
+            170
+        ],
+        "Size": [
+            [
+                1,
+                -1
+            ],
+            [
+                13,
+                -7
+            ]
+        ],
+        "TipsPic": "",
+        "TipsPicPosition": [
+            50,
+            150
+        ],
+        "TriggerType": 1,
+        "Walk": ""
+    },
     "Alice_2_CaiDanTang1": {
         "BornAction": "",
         "BornEffect": "",
@@ -12323,7 +12447,7 @@
                 -7
             ]
         ],
-        "Rate": 0.25,
+        "Rate": 0.6,
         "RefreshCondition": {
             "DP": 25
         },
@@ -12744,6 +12868,68 @@
         ],
         "TipsPic": "",
         "TipsPicPosition": "",
+        "TriggerType": 1,
+        "Walk": ""
+    },
+    "Alice_3_CaiDanMuBei1": {
+        "BornAction": "",
+        "BornEffect": "",
+        "Caseimg": "Alice_CaiDanMuBei_01",
+        "Cases": [
+            "Alice_3_CaiDanMuBei1_Case1",
+            "Alice_3_CaiDanMuBei1_Case2"
+        ],
+        "ClickPic": "Btn_DuiHua",
+        "ClickSound": "Se_Click_Common_1",
+        "DieAction": "",
+        "DieEffect": "",
+        "ExploreRate": "",
+        "IsBlock": 1,
+        "MapTipsPic": "",
+        "Name": "",
+        "NamePosition": "",
+        "NoStop": "",
+        "Position": {
+            "0.33": [
+                406,
+                322
+            ],
+            "0.34": [
+                461,
+                134
+            ]
+        },
+        "Range": [
+            [
+                -2,
+                2
+            ],
+            [
+                16,
+                -10
+            ]
+        ],
+        "Rate": 0.5,
+        "RefreshCondition": "",
+        "SelPosition": [
+            10,
+            170
+        ],
+        "Size": [
+            [
+                1,
+                -1
+            ],
+            [
+                13,
+                -7
+            ]
+        ],
+        "TipsPic": "",
+        "TipsPicPosition": [
+            50,
+            150
+        ],
         "TriggerType": 1,
         "Walk": ""
     },
@@ -20069,6 +20255,68 @@
         "TipsPic": "",
         "TipsPicPosition": "",
         "TriggerType": 2,
+        "Walk": ""
+    },
+    "Alice_4_CaiDanMuBei1": {
+        "BornAction": "",
+        "BornEffect": "",
+        "Caseimg": "Alice_CaiDanMuBei_01",
+        "Cases": [
+            "Alice_4_CaiDanMuBei1_Case1",
+            "Alice_4_CaiDanMuBei1_Case2"
+        ],
+        "ClickPic": "Btn_DuiHua",
+        "ClickSound": "Se_Click_Common_1",
+        "DieAction": "",
+        "DieEffect": "",
+        "ExploreRate": "",
+        "IsBlock": 1,
+        "MapTipsPic": "",
+        "Name": "",
+        "NamePosition": "",
+        "NoStop": "",
+        "Position": {
+            "0.33": [
+                369,
+                275
+            ],
+            "0.34": [
+                525,
+                256
+            ]
+        },
+        "Range": [
+            [
+                -2,
+                2
+            ],
+            [
+                16,
+                -10
+            ]
+        ],
+        "Rate": 0.5,
+        "RefreshCondition": "",
+        "SelPosition": [
+            10,
+            170
+        ],
+        "Size": [
+            [
+                1,
+                -1
+            ],
+            [
+                13,
+                -7
+            ]
+        ],
+        "TipsPic": "",
+        "TipsPicPosition": [
+            50,
+            150
+        ],
+        "TriggerType": 1,
         "Walk": ""
     },
     "Alice_4_CaiDanPingGuo1": {

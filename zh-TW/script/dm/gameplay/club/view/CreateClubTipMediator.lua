@@ -6,6 +6,9 @@ CreateClubTipMediator:has("_developSystem", {
 CreateClubTipMediator:has("_clubSystem", {
 	is = "r"
 }):injectWith("ClubSystem")
+CreateClubTipMediator:has("_systemKeeper", {
+	is = "r"
+}):injectWith("SystemKeeper")
 
 local KEYBOARD_WILL_SHOW_ACTION_TAG = 160
 local KEYBOARD_WILL_HIDE_ACTION_TAG = 161
@@ -212,11 +215,14 @@ function CreateClubTipMediator:onClickCreate(sender, eventType)
 		return
 	end
 
-	if self._developSystem:getPlayer():getLevel() < levelNeed.LEVEL then
+	local condition = {
+		STAGE = levelNeed.STAGE
+	}
+	local isOpen, lockTip, unLockLevel = self._systemKeeper:isUnlockByCondition(condition)
+
+	if not isOpen then
 		self:dispatch(ShowTipEvent({
-			tip = Strings:get("Club_Text192", {
-				level = levelNeed.LEVEL
-			})
+			tip = lockTip
 		}))
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 

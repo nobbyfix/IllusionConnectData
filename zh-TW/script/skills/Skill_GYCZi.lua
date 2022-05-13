@@ -137,7 +137,7 @@ all.Skill_GYCZi_Proud = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			local buffeft2 = global.NumericEffect(_env, "-critrate", {
+			local buffeft2 = global.NumericEffect(_env, "-becuredrate", {
 				"+Normal",
 				"+Normal"
 			}, 0.4)
@@ -228,7 +228,7 @@ all.Skill_GYCZi_Proud_EX = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			local buffeft2 = global.NumericEffect(_env, "-critrate", {
+			local buffeft2 = global.NumericEffect(_env, "-becuredrate", {
 				"+Normal",
 				"+Normal"
 			}, 0.4)

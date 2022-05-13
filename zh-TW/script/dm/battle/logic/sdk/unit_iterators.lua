@@ -51,6 +51,24 @@ function FilterMeta.__call(t, ...)
 	return t.__func(...)
 end
 
+local function makeBuffMatchFunction(env, tagOrFilter)
+	if tagOrFilter == nil then
+		return nil
+	end
+
+	local atype = type(tagOrFilter)
+
+	if atype == "string" then
+		return function (buff)
+			return buff:isMatched(tagOrFilter)
+		end
+	elseif atype == "table" or atype == "function" then
+		return function (buff)
+			return tagOrFilter(env, buff)
+		end
+	end
+end
+
 function exports.ONESELF(env, who)
 	return MakeFilter(function (_, unit)
 		return unit == who
@@ -225,8 +243,29 @@ function exports.MARKED(env, flag)
 	end)
 end
 
+function exports.HASSTATUS(env, statu)
+	return MakeFilter(function (_, unit)
+		return unit:hasStatus(statu)
+	end)
+end
+
+function exports.HASBUFFTAG(env, filter)
+	local buffSystem = env.global["$BuffSystem"]
+	local matchFunc = makeBuffMatchFunction(env, filter)
+
+	return MakeFilter(function (_, unit)
+		local buffs = buffSystem:selectBuffsOnTarget(unit, matchFunc)
+
+		return #buffs > 0
+	end)
+end
+
 exports.PETS = MakeFilter(function (_, unit)
-	return unit:getFlagCheckers()["$HERO"](unit)
+	local flag = unit:getComponent("Flag")
+
+	if not flag:hasStatus(kBEOffline) then
+		return unit:getFlagCheckers()["$HERO"](unit)
+	end
 end)
 exports.MASTER = MakeFilter(function (_, unit)
 	return unit:getFlagCheckers()["$MASTER"](unit)
@@ -259,7 +298,16 @@ _G.filterArrayElements = filterArrayElements
 
 function exports.AllUnits(env, filter)
 	local actorSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:crossCollectUnits({}, actorSide)
+	local units_ = env.global["$BattleField"]:crossCollectUnits({}, actorSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -270,7 +318,16 @@ end
 
 function exports.FriendUnits(env, filter)
 	local targetSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -281,7 +338,16 @@ end
 
 function exports.FriendEntities(env, filter)
 	local targetSide = env["$actor"]:getSide()
-	local units = env.global["$BattleField"]:collectAllUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectAllUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -292,7 +358,16 @@ end
 
 function exports.EnemyUnits(env, filter)
 	local targetSide = opposeBattleSide(env["$actor"]:getSide())
-	local units = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units_ = env.global["$BattleField"]:collectUnits({}, targetSide)
+	local units = {}
+
+	for k, v in pairs(units_) do
+		local flag = v:getComponent("Flag")
+
+		if not flag:hasStatus(kBEOffline) then
+			units[#units + 1] = v
+		end
+	end
 
 	if filter == nil then
 		return units
@@ -320,6 +395,32 @@ function exports.FriendMaster(env)
 
 	for _, unit in ipairs(units) do
 		if unit:getFlagCheckers()["$MASTER"](unit) then
+			return unit
+		end
+	end
+
+	return nil
+end
+
+function exports.FriendField(env)
+	local targetSide = env["$actor"]:getSide()
+	local units = env.global["$BattleField"]:collectFieldUnits({}, targetSide)
+
+	for _, unit in ipairs(units) do
+		if unit:getFlagCheckers()["$FIELD"](unit) then
+			return unit
+		end
+	end
+
+	return nil
+end
+
+function exports.EnemyField(env)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units = env.global["$BattleField"]:collectFieldUnits({}, targetSide)
+
+	for _, unit in ipairs(units) do
+		if unit:getFlagCheckers()["$FIELD"](unit) then
 			return unit
 		end
 	end
@@ -482,4 +583,48 @@ function exports.RandomN(env, n, array)
 	targets[n + 1] = nil
 
 	return targets
+end
+
+function exports.FriendDiedUnits(env, filter)
+	local targetSide = env["$actor"]:getSide()
+	local units = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
+end
+
+function exports.EnemyDiedUnits(env, filter)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
+end
+
+function exports.AllDiedUnits(env, filter)
+	local targetSide = env["$actor"]:getSide()
+	local units_f = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+	local targetSide = opposeBattleSide(env["$actor"]:getSide())
+	local units_e = env.global["$FormationSystem"]:getCemetery():getUnitsBySide(targetSide)
+	local units = {}
+
+	for k, v in pairs(units_f) do
+		units[#units + 1] = v
+	end
+
+	for k, v in pairs(units_e) do
+		units[#units + 1] = v
+	end
+
+	if filter == nil then
+		return units
+	end
+
+	return filterArrayElements(env, units, filter)
 end

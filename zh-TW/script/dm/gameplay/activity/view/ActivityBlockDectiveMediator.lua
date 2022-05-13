@@ -42,6 +42,10 @@ local kBtnHandlers = {
 	["btnPanel.right.button"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickRight"
+	},
+	["main.panel_item1"] = {
+		ignoreClickAudio = true,
+		func = "onClickStage"
 	}
 }
 local kModelType = {
@@ -81,7 +85,7 @@ function ActivityBlockDectiveMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
 	self._topPanel = self:getView():getChildByName("topinfo_node")
@@ -124,13 +128,6 @@ function ActivityBlockDectiveMediator:onRegister()
 
 	self._titlePosX, self._titlePosY = self._titlePanel:getPosition()
 	self._addPosX, self._addPosY = self._addPanel1:getPosition()
-
-	self._titlePanel:addTouchEventListener(function (sender, eventType)
-		if eventType == ccui.TouchEventType.ended then
-			self:onClickStage()
-		end
-	end)
-
 	local lineGradiantVec2 = {
 		{
 			ratio = 0.3,
@@ -149,13 +146,8 @@ function ActivityBlockDectiveMediator:onRegister()
 end
 
 function ActivityBlockDectiveMediator:setupTopInfoWidget()
-	local width = 0
-	local currencyInfo = self._activity:getResourcesBanner()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -163,6 +155,22 @@ function ActivityBlockDectiveMediator:setupTopInfoWidget()
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityBlockDectiveMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local width = 0
+	local currencyInfo = self._activity:getResourcesBanner()
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = currencyInfo
+	}
 
 	self._topInfoWidget:updateView(config)
 
@@ -173,19 +181,24 @@ end
 
 function ActivityBlockDectiveMediator:enterWithData(data)
 	self._activityId = data.activityId
-	self._activity = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._activity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
 		return
 	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
 
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initAnim()
 	self:initView()
-	self:playBackgroundMusic()
 end
 
 function ActivityBlockDectiveMediator:initAnim()
@@ -273,30 +286,13 @@ function ActivityBlockDectiveMediator:playBackgroundMusic()
 end
 
 function ActivityBlockDectiveMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
-	self:playBackgroundMusic()
+	self:doReset()
 end
 
 function ActivityBlockDectiveMediator:initData()
-	self._activity = self._activitySystem:getActivityById(self._activityId)
-	self._activityId = self._activity:getActivityId()
-	self._blockActivity = nil
-	self._taskActivities = {}
-	self._monsterShopActivity = nil
-
-	if self._activity then
-		self._taskActivities = self._activity:getTaskActivities()
-		self._monsterShopActivity = self._activity:getMonsterShopActivity()
-		self._blockActivity = self._activity:getBlockMapActivity()
-	end
-
+	self._taskActivities = self._activity:getTaskActivities()
+	self._monsterShopActivity = self._activity:getMonsterShopActivity()
+	self._blockActivity = self._activity:getBlockMapActivity()
 	self._roleIndex = 1
 	self._roles = self._activity:getRoleParams()
 end
@@ -307,6 +303,7 @@ function ActivityBlockDectiveMediator:initView()
 	self:initRoleTimer()
 	self:updateRolePanel()
 	self:setAdditionHero()
+	self:playBackgroundMusic()
 end
 
 function ActivityBlockDectiveMediator:initInfo()
@@ -469,9 +466,9 @@ function ActivityBlockDectiveMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 
@@ -504,18 +501,16 @@ end
 function ActivityBlockDectiveMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._activity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._activity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockDectiveMediator:refreshView()

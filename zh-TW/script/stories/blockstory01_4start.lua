@@ -54,33 +54,12 @@ function scene_blockstory01_4start:stage(args)
 				children = {
 					{
 						resType = 0,
-						name = "bg",
+						name = "bg1",
 						pathType = "SCENE",
 						type = "Image",
 						image = "bg_story_scene_1_10.jpg",
 						layoutMode = 1,
 						zorder = 6,
-						id = "bg",
-						scale = 1,
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						}
-					},
-					{
-						resType = 0,
-						name = "bg1",
-						pathType = "SCENE",
-						type = "Image",
-						image = "bg_story_scene_1_6.jpg",
-						layoutMode = 1,
-						zorder = 10,
 						id = "bg1",
 						scale = 1,
 						anchorPoint = {
@@ -93,18 +72,38 @@ function scene_blockstory01_4start:stage(args)
 								y = 0.41
 							}
 						}
+					},
+					{
+						resType = 0,
+						name = "bg2",
+						pathType = "SCENE",
+						type = "Image",
+						image = "bg_story_scene_1_6.jpg",
+						layoutMode = 1,
+						zorder = 1,
+						id = "bg2",
+						scale = 1,
+						anchorPoint = {
+							x = 0.5,
+							y = 0.5
+						},
+						position = {
+							refpt = {
+								x = 0.5,
+								y = 0.5
+							}
+						}
 					}
 				}
 			},
 			{
 				layoutMode = 1,
-				type = "MovieClip",
-				zorder = 3,
-				displayType = "ui",
 				visible = false,
-				id = "panA",
-				scale = 1.05,
-				actionName = "zhuanchanga_juqingtexiao",
+				type = "VideoSprite",
+				zorder = 2,
+				videoName = "story_baozha",
+				id = "story_baozha",
+				scale = 1.5,
 				anchorPoint = {
 					x = 0.5,
 					y = 0.5
@@ -117,18 +116,23 @@ function scene_blockstory01_4start:stage(args)
 				}
 			},
 			{
-				id = "baozha_story",
-				fileName = "Se_Story_Collapse",
+				id = "Se_Story_Fire_2",
+				fileName = "Se_Story_Fire_2",
 				type = "Sound"
 			},
 			{
-				id = "Se_Story_Nightmare_Many",
-				fileName = "Se_Story_Nightmare_Many",
+				id = "Se_Story_Collapse",
+				fileName = "Se_Story_Collapse",
 				type = "Sound"
 			},
 			{
 				id = "flashMask",
 				type = "FlashMask"
+			},
+			{
+				id = "Mus_Story_Danger_Loop",
+				fileName = "Mus_Story_Danger",
+				type = "Music"
 			}
 		},
 		__actions__ = self.actions
@@ -151,258 +155,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 		}),
 		act({
 			action = "activateNode",
-			actor = __getnode__(_root, "bg")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_Story_Normal",
-					id = "Monster_1_speak",
-					rotationX = 0,
-					scale = 0.8,
-					zorder = 16,
-					position = {
-						x = 0,
-						y = -80,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "Monster_1_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Monster_1_speak"),
-				args = function (_ctx)
-					return {
-						duration = 1
-					}
-				end
-			})
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_Story_Normal",
-					id = "Monster_2_speak",
-					rotationX = 0,
-					scale = 0.8,
-					zorder = 16,
-					position = {
-						x = 0,
-						y = -80,
-						refpt = {
-							x = 0.15,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_Enemy_Story_Normal",
-					id = "Monster_3_speak",
-					rotationX = 0,
-					scale = 0.8,
-					zorder = 16,
-					position = {
-						x = 0,
-						y = -80,
-						refpt = {
-							x = 0.85,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "Monster_3_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Monster_3_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "updateNode",
-				actor = __getnode__(_root, "Monster_2_speak"),
-				args = function (_ctx)
-					return {
-						opacity = 0
-					}
-				end
-			}),
-			act({
-				action = "fadeIn",
-				actor = __getnode__(_root, "Monster_2_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.2
-					}
-				end
-			})
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "Se_Story_Nightmare_Many")
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 0.3
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "Monster_2_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -80,
-						refpt = {
-							x = -0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "Monster_3_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.5,
-					position = {
-						x = 0,
-						y = -80,
-						refpt = {
-							x = 1.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Monster_1_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Monster_2_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5
-					}
-				end
-			}),
-			act({
-				action = "fadeOut",
-				actor = __getnode__(_root, "Monster_3_speak"),
-				args = function (_ctx)
-					return {
-						duration = 0.5
-					}
-				end
-			})
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						""
-					},
-					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>夢魘密密麻麻包圍在維納斯陷阱的周圍，試圖破壞。<br/>僅有少數的連結者試著從建築物內部進行抵抗。</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						""
-					},
-					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>面對龐大的夢魘大軍，微弱反擊如同涓滴入海，一下就被吞沒。<br/>在維納斯陷阱的正門前，一道漆黑的身影正命令著夢魘。</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
+			actor = __getnode__(_root, "bg1")
 		}),
 		act({
 			action = "addPortrait",
@@ -412,11 +165,11 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 					modelId = "Model_LDu",
 					id = "LDu_speak",
 					rotationX = 0,
-					scale = 1.075,
+					scale = 0.74,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -350,
+						y = -400,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -428,7 +181,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 							name = "LDu_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "LDu/LDu_face_2.png",
+							image = "LDu/LDu_face_5.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -440,8 +193,8 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 11.5,
-								y = 774.5
+								x = -30.5,
+								y = 1089
 							}
 						}
 					}
@@ -473,7 +226,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "？？？",
+					name = "dialog_speak_name_32",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -481,7 +234,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						"LDu_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>上吧！寶貝們！！破壞一切！<br/>把「那個」找出來，獻給羅塔妮安大人！</font>"
+						"blockstory01_4start_1"
 					},
 					durations = {
 						0.03
@@ -490,65 +243,12 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			end
 		}),
 		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		concurrent({
-			act({
-				action = "play",
-				actor = __getnode__(_root, "panA")
-			}),
-			act({
-				action = "play",
-				actor = __getnode__(_root, "Se_Story_Cut_In")
-			})
-		}),
-		sleep({
+			action = "rock",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "panA")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "LDu_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0.5
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 0.5
+					freq = 2,
+					strength = 1
 				}
 			end
 		}),
@@ -560,13 +260,13 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 					modelId = "Model_Story_ZTXChang",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 0.6,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -368,
+						y = -270,
 						refpt = {
-							x = 0.6,
+							x = 0.4,
 							y = 0
 						}
 					},
@@ -576,7 +276,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 							name = "ZTXChang_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "ZTXChang/ZTXChang_face_9.png",
+							image = "ZTXChang/ZTXChang_face_4.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -588,8 +288,8 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 								y = 0.5
 							},
 							position = {
-								x = -50.8,
-								y = 789
+								x = -51.3,
+								y = 977.5
 							}
 						}
 					}
@@ -614,6 +314,15 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						duration = 0.2
 					}
 				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "LDu_speak"),
+				args = function (_ctx)
+					return {
+						duration = 0.2
+					}
+				end
 			})
 		}),
 		act({
@@ -621,7 +330,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "村咲小夜",
+					name = "dialog_speak_name_6",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -629,20 +338,11 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						"ZTXChang_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>那個人是……艾絲維亞！！？</font>"
+						"blockstory01_4start_2"
 					},
 					durations = {
 						0.03
 					}
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "ZTXChang_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1
 				}
 			end
 		}),
@@ -654,13 +354,13 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 11,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
-							x = 0.5,
+							x = 0.65,
 							y = 0
 						}
 					},
@@ -682,8 +382,8 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -705,18 +405,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 				actor = __getnode__(_root, "CLMan_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.2
-					}
-				end
-			}),
-			act({
-				action = "orbitCamera",
-				actor = __getnode__(_root, "CLMan_speak"),
-				args = function (_ctx)
-					return {
-						angleZ = 0,
-						time = 0,
-						deltaAngleZ = 180
+						duration = 0.25
 					}
 				end
 			})
@@ -726,7 +415,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "妮娜",
+					name = "dialog_speak_name_5",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -734,7 +423,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						"CLMan_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>噬夢之蛇的艾絲維亞？？可惡，原来都是噬夢之蛇搞的鬼嗎？</font>"
+						"blockstory01_4start_3"
 					},
 					durations = {
 						0.03
@@ -744,10 +433,19 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 		}),
 		act({
 			action = "fadeOut",
+			actor = __getnode__(_root, "ZTXChang_speak"),
+			args = function (_ctx)
+				return {
+					duration = 0.25
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
 			actor = __getnode__(_root, "CLMan_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.1
+					duration = 0.25
 				}
 			end
 		}),
@@ -757,7 +455,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "LDu/LDu_face_1.png",
+					image = "LDu/LDu_face_2.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -767,7 +465,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "LDu_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.2
+					duration = 0.25
 				}
 			end
 		}),
@@ -776,7 +474,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "艾絲維亞",
+					name = "dialog_speak_name_9",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -784,7 +482,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						"LDu_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>哎呀呀呀，這不是維納斯陷阱小朋友們嗎？？你們回來晚了，真可惜呢……</font>"
+						"blockstory01_4start_4"
 					},
 					durations = {
 						0.03
@@ -808,7 +506,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "艾絲維亞",
+					name = "dialog_speak_name_9",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -816,7 +514,7 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 						"LDu_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>做為補償，不如……就再來點歡迎的煙火吧，哈哈哈哈哈！</font>"
+						"blockstory01_4start_5"
 					},
 					durations = {
 						0.03
@@ -829,78 +527,64 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 			actor = __getnode__(_root, "dialogue")
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "LDu_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "flashScreen",
-				actor = __getnode__(_root, "flashMask"),
-				args = function (_ctx)
-					return {
-						arr = {
-							{
-								color = "#FF0000",
-								fadeout = 0.3,
-								alpha = 1,
-								duration = 0.3,
-								fadein = 0.3
-							}
-						}
-					}
-				end
-			})
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "bg1"),
-			args = function (_ctx)
-				return {
-					duration = 0.125
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "bg1"),
-			args = function (_ctx)
-				return {
-					duration = 0.3,
-					position = {
-						x = 0.5,
-						y = 0.5,
-						refpt = {
-							x = 0.5,
-							y = 0.5
-						}
-					}
-				}
-			end
+			action = "play",
+			actor = __getnode__(_root, "story_baozha")
 		}),
 		act({
 			action = "play",
-			actor = __getnode__(_root, "baozha_story")
+			actor = __getnode__(_root, "Se_Story_Fire_2")
 		}),
-		rockScreen({
+		sleep({
 			args = function (_ctx)
 				return {
-					freq = 4,
-					strength = 3
+					duration = 1.7
 				}
 			end
 		}),
-		rockScreen({
-			args = function (_ctx)
-				return {
-					freq = 3,
-					strength = 2
-				}
-			end
+		act({
+			action = "stop",
+			actor = __getnode__(_root, "story_baozha")
+		}),
+		concurrent({
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "bg1"),
+				args = function (_ctx)
+					return {
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "fadeIn",
+				actor = __getnode__(_root, "bg2"),
+				args = function (_ctx)
+					return {
+						duration = 2
+					}
+				end
+			}),
+			rockScreen({
+				args = function (_ctx)
+					return {
+						freq = 5,
+						strength = 3
+					}
+				end
+			}),
+			act({
+				action = "fadeOut",
+				actor = __getnode__(_root, "LDu_speak"),
+				args = function (_ctx)
+					return {
+						duration = 0
+					}
+				end
+			}),
+			act({
+				action = "play",
+				actor = __getnode__(_root, "Se_Story_Collapse")
+			})
 		}),
 		sleep({
 			args = function (_ctx)
@@ -911,140 +595,60 @@ function scene_blockstory01_4start.actions.start_blockstory01_4start(_root, args
 		}),
 		act({
 			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
+			actor = __getnode__(_root, "ZTXChang_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0.3
+					duration = 0.2
 				}
 			end
 		}),
 		act({
 			action = "fadeIn",
-			actor = __getnode__(_root, "bg1"),
+			actor = __getnode__(_root, "CLMan_speak"),
 			args = function (_ctx)
 				return {
-					duration = 0
+					duration = 0.2
 				}
 			end
 		}),
 		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					duration = 0.5
+					name = "dialog_speak_name_5",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"CLMan_speak"
+					},
+					content = {
+						"blockstory01_4start_6"
+					},
+					durations = {
+						0.03
+					}
 				}
 			end
 		}),
-		concurrent({
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						name = "妮娜",
-						dialogImage = "jq_dialogue_bg_1.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							""
-						},
-						content = {
-							"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>啊！維納斯陷阱！！！</font>"
-						},
-						durations = {
-							0.03
-						}
-					}
-				end
-			}),
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 2
-					}
-				end
-			})
-		}),
-		concurrent({
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						name = "村咲小夜",
-						dialogImage = "jq_dialogue_bg_1.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							""
-						},
-						content = {
-							"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>妳、妳竟敢……</font>"
-						},
-						durations = {
-							0.03
-						}
-					}
-				end
-			}),
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 2
-					}
-				end
-			})
-		}),
-		concurrent({
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						name = "維多莉亞",
-						dialogImage = "jq_dialogue_bg_1.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							""
-						},
-						content = {
-							"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>絕對，不可饒恕！！</font>"
-						},
-						durations = {
-							0.03
-						}
-					}
-				end
-			}),
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 3
-					}
-				end
-			})
-		}),
 		act({
-			action = "updateColor",
-			actor = __getnode__(_root, "curtain"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					color = {
-						255,
-						255,
-						255,
-						255
+					name = "dialog_speak_name_6",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"ZTXChang_speak"
+					},
+					content = {
+						"blockstory01_4start_7"
+					},
+					durations = {
+						0.03
 					}
 				}
 			end

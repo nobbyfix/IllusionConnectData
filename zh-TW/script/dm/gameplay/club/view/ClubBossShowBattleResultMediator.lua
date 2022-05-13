@@ -31,7 +31,7 @@ function ClubBossShowBattleResultMediator:enterWithData(data)
 end
 
 function ClubBossShowBattleResultMediator:initWidget()
-	AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Win")
+	AudioEngine:getInstance():playBackgroundMusic("Mus_Battle_Common_Over")
 
 	self._main = self:getView():getChildByName("content")
 	self._wordPanel = self._main:getChildByFullName("word")
@@ -58,18 +58,6 @@ function ClubBossShowBattleResultMediator:refreshView()
 	local pointName = self._winPanel:getChildByFullName("bossPanel.pointName")
 	local hpbar = self._winPanel:getChildByFullName("bossPanel.LoadingBar")
 	local rate = self._winPanel:getChildByFullName("bossPanel.rate")
-
-	if self._data.enemyRatio then
-		local rateNum = self._data.enemyRatio * 100
-
-		if rateNum < 1 and rateNum > 0 then
-			rateNum = 1
-		end
-
-		hpbar:setPercent(rateNum)
-		rate:setString(string.format("%.1f", rateNum) .. "%")
-	end
-
 	local anim = cc.MovieClip:create("tiaozhanjieshu_fubenjiesuan")
 
 	anim:addEndCallback(function ()
@@ -114,22 +102,44 @@ function ClubBossShowBattleResultMediator:refreshView()
 			model = currentBlockConfig.PointHead
 		end
 
-		pointName:setString(Strings:get("clubBoss_33", {
+		local pointNameStr = Strings:get("clubBoss_33", {
 			name = currentBossPoint:getPointName()
-		}))
+		})
+
+		if currentBlockConfig.Name ~= nil then
+			pointNameStr = pointNameStr .. "    " .. Strings:get(currentBlockConfig.Name)
+		end
+
+		pointName:setString(pointNameStr)
+
+		if self._data.enemyRatio then
+			local rateNum = self._data.enemyRatio * 100
+
+			if rateNum < 1 and rateNum > 0 then
+				rateNum = 1
+			end
+
+			hpbar:setPercent(rateNum)
+
+			local maxHp = math.floor(currentBossPoint:getBossHp() + 0.5)
+			local curHp = math.floor(maxHp * self._data.enemyRatio + 0.5)
+
+			rate:setString(tostring(curHp) .. "/" .. tostring(maxHp))
+		end
 	end
 
 	if model then
 		local roleNode = anim:getChildByName("roleNode")
-		local mvpSprite = IconFactory:createRoleIconSprite({
+		model = IconFactory:getSpMvpBattleEndMid(model)
+		local mvpSprite = IconFactory:createRoleIconSpriteNew({
 			useAnim = true,
-			iconType = "Bust9",
+			frameId = "bustframe17",
 			id = model
 		})
 
 		mvpSprite:addTo(roleNode)
 		mvpSprite:setScale(0.8)
-		mvpSprite:setPosition(cc.p(50, -100))
+		mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 
 		local roleId = ConfigReader:getDataByNameIdAndKey("RoleModel", model, "Hero")
 		local heroMvpText = ""

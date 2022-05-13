@@ -572,6 +572,10 @@ function ExploreMap:getUnlockCondition()
 	return self._config.UnlockCondition
 end
 
+function ExploreMap:getOpenType()
+	return self._config.OpenType
+end
+
 function ExploreMap:getMapResource()
 	return self._config.MapResource
 end

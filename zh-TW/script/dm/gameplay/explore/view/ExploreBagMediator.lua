@@ -132,6 +132,7 @@ function ExploreBagMediator:initTabView()
 
 	for i = 1, #kTabName do
 		data[#data + 1] = {
+			textHeight = 50,
 			tabText = Strings:get(kTabName[i][1]),
 			tabTextTranslate = Strings:get(kTabName[i][2])
 		}

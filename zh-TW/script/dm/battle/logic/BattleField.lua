@@ -15,6 +15,12 @@ BFCell:has("_position", {
 BFCell:has("_resident", {
 	is = "rw"
 })
+BFCell:has("_oldResident", {
+	is = "rw"
+})
+BFCell:has("_oldResidentDieRule", {
+	is = "rw"
+})
 BFCell:has("_isLocked", {
 	is = "rwb"
 })
@@ -162,7 +168,14 @@ function BattleField:createCells()
 		cells[-i] = BFCell:new(-i)
 	end
 
+	cells[108] = BFCell:new(108)
+	cells[-108] = BFCell:new(-108)
+
 	return cells
+end
+
+function BattleField:getCells()
+	return self._cells
 end
 
 function BattleField:getCellById(cellId)
@@ -438,8 +451,11 @@ function BattleField:exchangeUnits(cellId1, cellId2)
 
 	local unit1 = cell1:getResident()
 	local unit2 = cell2:getResident()
+	local unit1Old = cell1:getOldResident()
+	local unit2Old = cell2:getOldResident()
 
 	cell1:setResident(unit2)
+	cell1:setOldResident(unit2Old)
 
 	if unit2 ~= nil then
 		local posComp = unit2:getComponent("Position")
@@ -452,6 +468,7 @@ function BattleField:exchangeUnits(cellId1, cellId2)
 	end
 
 	cell2:setResident(unit1)
+	cell2:setOldResident(unit1Old)
 
 	if unit1 ~= nil then
 		local posComp = unit1:getComponent("Position")
@@ -479,7 +496,15 @@ function BattleField:eraseUnit(unit)
 	if posComp then
 		local cell = posComp:getCell()
 
-		if cell:getResident() == unit then
+		if cell:getOldResident() then
+			if cell:getOldResident() == unit then
+				cell:setOldResident(nil)
+
+				removed = true
+
+				return true
+			end
+		elseif cell:getResident() == unit then
 			cell:setResident(nil)
 
 			removed = true
@@ -535,6 +560,30 @@ function BattleField:collectCells(result, side, descending)
 
 	for id = start, guard, step do
 		result[#result + 1] = cells[id]
+	end
+
+	return result
+end
+
+function BattleField:collectFieldUnits(result, side)
+	if result == nil then
+		result = {}
+	end
+
+	local cells = self._cells
+
+	if side == kBattleSideA then
+		local unit = cells[108]:getResident()
+
+		if unit ~= nil and unit:isInStages(ULS_Normal) then
+			result[#result + 1] = unit
+		end
+	else
+		local unit = cells[-108]:getResident()
+
+		if unit ~= nil and unit:isInStages(ULS_Normal) then
+			result[#result + 1] = unit
+		end
 	end
 
 	return result

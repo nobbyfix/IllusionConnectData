@@ -6,6 +6,9 @@ FormationSystem:has("_entityManager", {
 FormationSystem:has("_randomizer", {
 	is = "rw"
 })
+FormationSystem:has("_cemetery", {
+	is = "rw"
+})
 
 function FormationSystem:initialize()
 	super.initialize(self)
@@ -76,7 +79,7 @@ local function getEmptyCell(emptyCells, positions)
 	return nil
 end
 
-function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd, fromAction)
+function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd, fromAction, rightNowSit)
 	local battleField = self._battleField
 	local unitType = unit:getUnitType()
 
@@ -106,7 +109,11 @@ function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd,
 
 	local enterAction = BattleEnterAction:new(isUserCmd):withActor(unit)
 
-	self._actionScheduler:addEmergentAction(enterAction)
+	if rightNowSit then
+		self._actionScheduler:addEmergentActionAtFirst(enterAction)
+	else
+		self._actionScheduler:addEmergentAction(enterAction)
+	end
 
 	if self._eventCenter then
 		self._eventCenter:dispatchEvent("UnitPreEnter", {
@@ -121,19 +128,67 @@ function FormationSystem:_settleUnit(player, unit, cellId, animation, isUserCmd,
 	return unit
 end
 
-function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost)
+function FormationSystem:CanBeSitBy(cellId, seatRules)
+	local battleField = self._battleField
+	local cell = battleField:getCellById(cellId)
+	local oldRes = cell:getResident()
+
+	if oldRes then
+		local canBeSit = false
+		local killOrKick = nil
+
+		for rule, killorkick in pairs(seatRules) do
+			if rule == "SUMMONED" then
+				canBeSit = oldRes:isSummoned()
+			else
+				local flagComp = oldRes:getComponent("Flag")
+				canBeSit = flagComp:hasFlag(rule)
+			end
+
+			if canBeSit then
+				killOrKick = killorkick
+
+				break
+			end
+		end
+
+		if canBeSit then
+			oldRes:setLifeStage(ULS_Kicked)
+			cell:setOldResident(oldRes)
+			cell:setOldResidentDieRule(killOrKick)
+
+			return true
+		end
+	end
+
+	return false, "InvalidTargetPosition"
+end
+
+function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCmd, isMasterOrCost, seatRules, rightNowSit)
 	local cellId = makeCellId(player:getSide(), cellNo)
 	local battleField = self._battleField
 
 	if not battleField:isEmptyCell(cellId) then
-		return false, "InvalidTargetPosition"
+		if seatRules and not next(seatRules) then
+			return false, "InvalidTargetPosition"
+		else
+			local canBeSit, reason = self:CanBeSitBy(cellId, seatRules)
+
+			if not canBeSit then
+				return canBeSit, reason
+			end
+		end
 	end
 
 	local entityManager = self._entityManager
 	local unit = nil
 
 	if isMasterOrCost == true then
-		unit = entityManager:createMasterUnit(unitData)
+		if unitData.isBattleField then
+			unit = entityManager:createBattleFieldUnit(unitData)
+		else
+			unit = entityManager:createMasterUnit(unitData)
+		end
 	else
 		local cost = isMasterOrCost
 		local energyInfo = nil
@@ -153,13 +208,51 @@ function FormationSystem:SpawnUnit(player, unitData, cellNo, animation, isUserCm
 		unit = entityManager:createHeroUnit(unitData)
 	end
 
-	return self:_settleUnit(player, unit, cellId, animation, isUserCmd, "SpawnUnit")
+	return self:_settleUnit(player, unit, cellId, animation, isUserCmd, "SpawnUnit", rightNowSit)
 end
 
 local function extend(values, constants)
 	for name, value in _G.pairs(constants) do
 		_G.rawset(values, name, value)
 	end
+end
+
+function FormationSystem:SpawnByTransform(player, unit, location, isMarkedSummon)
+	local transformData = unit:getTransformData()
+
+	if not transformData then
+		return
+	end
+
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
+
+	if not cellId then
+		return false, "InvalidSpawnPosition"
+	end
+
+	local unit = unit
+	local targetId = nil
+	local prefix = unit:getId() .. "_r"
+	local entityManager = self._entityManager
+	local index = 0
+
+	repeat
+		targetId = prefix .. index
+		index = index + 1
+	until entityManager:fetchEntity(targetId) == nil
+
+	local newUnit = entityManager:copyHeroUnit(unit, targetId, 1)
+
+	newUnit:transformWithData(transformData)
+	newUnit:setIsSummoned(isMarkedSummon)
+
+	local animation = {
+		dur = 1000,
+		name = anim or "init"
+	}
+	animation = nil
+
+	self:_settleUnit(player, newUnit, cellId, animation, false, "SpawnUnit")
 end
 
 function FormationSystem:summon(actor, source, summonId, summonFactor, location)
@@ -178,7 +271,7 @@ function FormationSystem:summon(actor, source, summonId, summonFactor, location)
 		return false, "NoSummonInfo"
 	end
 
-	if actor:getSurfaceIndex() > 0 and summonInfo.extraSurFace and summonInfo.extraSurFace[actor:getSurfaceIndex()] then
+	if actor:getSurfaceIndex() and actor:getSurfaceIndex() > 0 and summonInfo.extraSurFace and summonInfo.extraSurFace[actor:getSurfaceIndex()] then
 		summonInfo.modelId = summonInfo.extraSurFace[actor:getSurfaceIndex()]
 	end
 
@@ -197,6 +290,98 @@ function FormationSystem:summon(actor, source, summonId, summonFactor, location)
 		self._eventCenter:dispatchEvent("UnitSummoned", {
 			unit = unit,
 			actor = actor
+		})
+	end
+
+	return result
+end
+
+function FormationSystem:summonMaster(actor, source, summonId, summonFactor, workId)
+	assert(type(summonId) == "string", "summonId is not string")
+
+	local player = actor:getOwner()
+	local summonInfo = actor:getOwner():getSummonInfo(summonId)
+
+	if not summonInfo then
+		return false, "NoSummonInfo"
+	end
+
+	summonInfo.skills.unique = nil
+
+	extend(summonFactor, summonInfo)
+
+	local targetId = player:calcSummonIdentify(summonId)
+	local entityManager = self._entityManager
+	local unit = entityManager:summonHeroUnit(source, targetId, summonFactor)
+	local animation = nil
+
+	player:setMasterUnit(unit)
+
+	local sourceAngerComp = source:getComponent("Anger")
+	local unitAngerComp = unit:getComponent("Anger")
+
+	unitAngerComp:setAngerRules(sourceAngerComp:getAngerRules())
+
+	local skillComp = source:getComponent("Skill")
+	local targetSkill = unit:getComponent("Skill")
+	local passives = targetSkill:getSkill(kBattlePassiveSkill)
+	passives = passives or {}
+
+	for k, v in pairs(skillComp:getSkill(kBattlePassiveSkill)) do
+		local passive = v:clone()
+		passives[#passives + 1] = passive
+	end
+
+	unit:setCardInfo({
+		enterPauseTime = 1500
+	})
+	unit:getComponent("Skill"):setupSkillList(kBattlePassiveSkill, passives)
+	source:setPresentMaster(false)
+
+	if self._battleField:eraseUnit(source) then
+		if self._processRecorder then
+			self._processRecorder:recordObjectEvent(source:getId(), "ClearAllSwitchAction")
+			self._processRecorder:recordObjectEvent(source:getId(), "Die")
+		end
+
+		if eventCenter then
+			eventCenter:dispatchEvent("UnitDied", source, source:getOwner())
+		end
+	end
+
+	unit:setUnitType(BattleUnitType.kMaster)
+	unit:setPresentMaster(true)
+
+	local playerSide = player:getSide()
+	local cellId = 8
+	cellId = playerSide == kBattleSideA and 8 or -8
+	local result = self:_settleUnit(player, unit, cellId, animation, false, "CallMasterUnit")
+
+	source:getFSM():changeState(nil)
+	source:setLifeStage(ULS_Kicked)
+
+	local buffSystem = self._battleContext:getObject("BuffSystem")
+	local skillSystem = self._battleContext:getObject("SkillSystem")
+
+	buffSystem:cloneBuffsOnTarget(unit, source, nil, workId)
+	skillSystem:clearTriggersForActor(source)
+	skillSystem:cancelSkillsForActor(source)
+	buffSystem:cleanupBuffsOnTarget(source)
+
+	if self._eventCenter then
+		self._eventCenter:dispatchEvent("UnitSummoned", {
+			unit = unit,
+			actor = actor
+		})
+	end
+
+	local battleStatist = self._battleContext:getObject("BattleStatist")
+
+	if battleStatist then
+		battleStatist:sendStatisticEvent("UnitHurt", {
+			hpDetails = {
+				[source:getId()] = 0
+			}
 		})
 	end
 
@@ -305,6 +490,10 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 		return false, "NoValidBody"
 	end
 
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
 	local targetId = nil
 	local prefix = unit:getId() .. "_r"
 	local entityManager = self._entityManager
@@ -327,6 +516,53 @@ function FormationSystem:revive(actor, hpRatio, anger, location)
 	local healthComp = newUnit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
+
+	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
+
+	if unit then
+		self._cemetery:untomb(unit)
+	end
+
+	return newUnit, detail
+end
+
+function FormationSystem:reviveByUnit(actor, unit, hpRatio, anger, location, owner)
+	local player = owner or actor:getOwner()
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), location)
+
+	if not cellId then
+		return false, "InvalidRevivePosition"
+	end
+
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
+	local unit = unit
+	local targetId = nil
+	local prefix = unit:getId() .. "_r"
+	local entityManager = self._entityManager
+	local index = 0
+
+	repeat
+		targetId = prefix .. index
+		index = index + 1
+	until entityManager:fetchEntity(targetId) == nil
+
+	local newUnit = entityManager:copyHeroUnit(unit, targetId, 1)
+
+	newUnit:setModelId(unit:getModelId())
+
+	local animation = nil
+	local angerComp = newUnit:getComponent("Anger")
+
+	angerComp:setAnger(anger)
+
+	local healthComp = newUnit:getComponent("Health")
+
+	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
 
 	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
 
@@ -363,6 +599,10 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 		return false, "NoValidBody"
 	end
 
+	if not unit:canBeUnearth() then
+		return false, "ForbidenRevive"
+	end
+
 	local targetId = nil
 	local prefix = (player:getSide() == kBattleSideA and "f_" or "e_") .. unit:getId() .. "_r"
 	local entityManager = self._entityManager
@@ -385,6 +625,7 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	local healthComp = newUnit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+	newUnit:setBeRevive(true)
 
 	local newUnit, detail = self:_settleUnit(player, newUnit, cellId, animation, false, "Revive")
 
@@ -401,14 +642,16 @@ function FormationSystem:reviveRandom(actor, hpRatio, anger, location)
 	return newUnit, detail
 end
 
-function FormationSystem:rebornUnit(unit, ratio)
+function FormationSystem:rebornUnit(unit, ratio, anger, location)
 	local hpRatio = ratio or 1
 	local player = unit:getOwner()
 	local pos = unit:getPosition()
 	local id = BFCell_pos2id(1, pos.x, pos.y)
-	local cellId = self._battleField:findEmptyCellId(player:getSide(), {
+	local l_ocation = {
 		id
-	})
+	}
+	location = location and l_ocation
+	local cellId = self._battleField:findEmptyCellId(player:getSide(), l_ocation)
 
 	if not cellId then
 		return false, "InvalidRebornPosition"
@@ -417,6 +660,12 @@ function FormationSystem:rebornUnit(unit, ratio)
 	local healthComp = unit:getComponent("Health")
 
 	healthComp:setHp(healthComp:getMaxHp() * hpRatio)
+
+	if anger then
+		local AngerComp = unit:getComponent("Anger")
+
+		AngerComp:setAnger(anger)
+	end
 
 	local battleField = self._battleField
 	local unitType = unit:getUnitType()
@@ -444,9 +693,21 @@ function FormationSystem:rebornUnit(unit, ratio)
 	end
 end
 
+function FormationSystem:changeUnitPreSettled(unit)
+	local processRecorder = self._processRecorder
+
+	if processRecorder ~= nil then
+		processRecorder:recordObjectEvent(unit:getId(), "Settled")
+	end
+end
+
 function FormationSystem:changeUnitSettled(unit)
 	if unit:isInStages(ULS_Newborn) then
 		unit:setLifeStage(ULS_Normal)
+
+		local skillSystem = self._battleContext:getObject("SkillSystem")
+
+		skillSystem:buildSkillsForActor(unit)
 		unit:getFSM():changeState(UnitSimpleState:new("Preparing", 600))
 
 		local processRecorder = self._processRecorder
@@ -462,6 +723,57 @@ function FormationSystem:changeUnitSettled(unit)
 		end
 
 		self._TrapSystem:triggerTrap(unit)
+	end
+end
+
+function FormationSystem:clearOldResident(actor)
+	local oldResident = actor:getCell():getOldResident()
+
+	if oldResident then
+		local dieRules = actor:getCell():getOldResidentDieRule()
+
+		for k, v in pairs(dieRules) do
+			if v == "kick" then
+				local skillSystem = self._battleContext:getObject("SkillSystem")
+
+				skillSystem:activateSpecificTrigger(oldResident, "UNIT_KICK_BY_OTHERSET", {
+					dierule = "kick",
+					newunit = actor
+				})
+				skillSystem:activateGlobalTrigger("UNIT_KICK_BY_OTHERSET", {
+					dierule = "kick",
+					unit = oldResident,
+					newunit = actor
+				})
+				self:_kickUnit(oldResident)
+
+				if self._eventCenter then
+					self._eventCenter:dispatchEvent("UnitsWillLeave", {
+						oldResident
+					}, self:_groupUnitsByPlayer({
+						oldResident
+					}))
+					self._eventCenter:dispatchEvent("UnitsLeft", {
+						oldResident
+					}, self:_groupUnitsByPlayer({
+						oldResident
+					}), false, true)
+				end
+
+				return
+			end
+		end
+
+		for k, v in pairs(dieRules) do
+			if v == "die" then
+				oldResident:setLifeStage(ULS_Dying)
+				self:removeDyingUnits({
+					oldResident
+				})
+
+				return
+			end
+		end
 	end
 end
 
@@ -488,6 +800,8 @@ local kExcludeDying = "dying"
 local kExcludeExpelled = "expelled"
 local kExcludeFlee = "flee"
 local kExcludeReviving = "reviving"
+local kExcludeExpelledJoinreferee = "expelled_joinreferee"
+local kExcludeFleedJoinreferee = "fleed_joinreferee"
 
 function FormationSystem:_excludeUnit(unit, reason, workId, force)
 	local excludingUnits = self._excludingUnits
@@ -519,12 +833,20 @@ function FormationSystem:excludeDyingUnit(unit, workId)
 	return self:_excludeUnit(unit, kExcludeDying, workId)
 end
 
-function FormationSystem:expelUnit(unit, workId, force)
-	return self:_excludeUnit(unit, kExcludeExpelled, workId, force)
+function FormationSystem:expelUnit(unit, workId, force, joinReferee)
+	if joinReferee then
+		return self:_excludeUnit(unit, kExcludeExpelledJoinreferee, workId, force)
+	else
+		return self:_excludeUnit(unit, kExcludeExpelled, workId, force)
+	end
 end
 
-function FormationSystem:fleeUnit(unit, workId, force)
-	return self:_excludeUnit(unit, kExcludeFlee, workId, force)
+function FormationSystem:fleeUnit(unit, workId, force, joinReferee)
+	if joinReferee then
+		return self:_excludeUnit(unit, kExcludeFleedJoinreferee, workId, force)
+	else
+		return self:_excludeUnit(unit, kExcludeFlee, workId, force)
+	end
 end
 
 function FormationSystem:reviveUnit(unit, force)
@@ -563,8 +885,12 @@ function FormationSystem:processExcludingUnits(workId)
 	local cntDead = 0
 	local expelledUnits = nil
 	local cntExpelled = 0
+	local expelledRefereeUnits = nil
+	local cntRefereeExpelled = 0
 	local fleeUnits = nil
 	local cntFlee = 0
+	local fleeRefereeUnits = nil
+	local cntFleedExpelled = 0
 
 	for i = 1, total do
 		local unit = excludingUnits[i]
@@ -596,6 +922,20 @@ function FormationSystem:processExcludingUnits(workId)
 
 				cntExpelled = cntExpelled + 1
 				expelledUnits[cntExpelled] = unit
+			elseif reason == kExcludeExpelledJoinreferee then
+				if expelledRefereeUnits == nil then
+					expelledRefereeUnits = {}
+				end
+
+				cntRefereeExpelled = cntRefereeExpelled + 1
+				expelledRefereeUnits[cntRefereeExpelled] = unit
+			elseif reason == kExcludeExpelledJoinreferee then
+				if fleeRefereeUnits == nil then
+					fleeRefereeUnits = {}
+				end
+
+				cntFleedExpelled = cntFleedExpelled + 1
+				fleeRefereeUnits[cntFleedExpelled] = unit
 			elseif reason == kExcludeFlee then
 				if fleeUnits == nil then
 					fleeUnits = {}
@@ -613,8 +953,16 @@ function FormationSystem:processExcludingUnits(workId)
 		self:removeExpelledUnits(expelledUnits)
 	end
 
+	if expelledRefereeUnits then
+		self:removeExpelledUnits(expelledRefereeUnits, nil, true)
+	end
+
 	if fleeUnits then
 		self:removeExpelledUnits(fleeUnits, true)
+	end
+
+	if fleeRefereeUnits then
+		self:removeExpelledUnits(fleeRefereeUnits, true, true)
 	end
 
 	if deadUnits then
@@ -622,7 +970,7 @@ function FormationSystem:processExcludingUnits(workId)
 	end
 end
 
-function FormationSystem:removeExpelledUnits(units, fleeSta)
+function FormationSystem:removeExpelledUnits(units, fleeSta, joinReferee)
 	if units == nil or #units == 0 then
 		return nil
 	end
@@ -639,7 +987,7 @@ function FormationSystem:removeExpelledUnits(units, fleeSta)
 	end
 
 	if eventCenter then
-		eventCenter:dispatchEvent("UnitsLeft", units, groupedByPlayer, fleeSta)
+		eventCenter:dispatchEvent("UnitsLeft", units, groupedByPlayer, fleeSta, joinReferee)
 	end
 
 	return groupedByPlayer
@@ -777,6 +1125,14 @@ function FormationSystem:transportExt(unit, cellNo, duration, timeScale)
 		targetUnit = targetCell:getResident()
 	end
 
+	if unit and unit:hasFlag("CANNOT_MOVE") then
+		return
+	end
+
+	if targetUnit and targetUnit:hasFlag("CANNOT_MOVE") then
+		return
+	end
+
 	battleField:exchangeUnits(oldCellId, cellId)
 
 	local processRecorder = self._processRecorder
@@ -802,7 +1158,8 @@ function FormationSystem:transportExt(unit, cellNo, duration, timeScale)
 		self._eventCenter:dispatchEvent("UnitTransported", {
 			player = player,
 			unit = unit,
-			cellId = cellId
+			cellId = cellId,
+			oldCellId = oldCellId
 		})
 	end
 
@@ -834,7 +1191,8 @@ function FormationSystem:transport(unit, cellNo)
 		self._eventCenter:dispatchEvent("UnitTransported", {
 			player = player,
 			unit = unit,
-			cellId = cellId
+			cellId = cellId,
+			oldCellId = oldCellId
 		})
 	end
 
@@ -850,6 +1208,11 @@ function FormationSystem:checkDying()
 	self._hasDying = nil
 
 	return dying
+end
+
+function FormationSystem:forbidenRevive(unit)
+	unit:forbidenRevive()
+	self._cemetery:untomb(unit)
 end
 
 local function isMad(actor)
@@ -910,6 +1273,25 @@ function FormationSystem:findFoe(actor)
 	return nil
 end
 
+function FormationSystem:getPassiveCountOnHero(unit, skillId)
+	local count = 0
+	local skillComp = unit:getComponent("Skill")
+
+	for k, v in pairs(skillComp:getSkills() or {}) do
+		if table.getn(v) > 0 then
+			for k_, v_ in pairs(v) do
+				if v_:getId() == skillId then
+					count = count + 1
+				end
+			end
+		elseif v.getId and v:getId() == skillId then
+			count = count + 1
+		end
+	end
+
+	return count
+end
+
 function FormationSystem:updateOnRoundEnded()
 	local buffSystem = self._battleContext:getObject("BuffSystem")
 	local units = self._battleField:crossCollectUnits()
@@ -934,6 +1316,16 @@ function FormationSystem:update(dt, battleContext)
 
 	for i = 1, #units do
 		units[i]:update(dt, battleContext)
+
+		local posComp = units[i]:getComponent("Position")
+
+		if posComp then
+			local cell = posComp:getCell()
+
+			if cell:getOldResident() then
+				cell:getOldResident():update(dt, battleContext)
+			end
+		end
 	end
 end
 

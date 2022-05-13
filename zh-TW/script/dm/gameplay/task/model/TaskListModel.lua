@@ -39,13 +39,18 @@ TaskListModel:has("_achieveTaskMap", {
 TaskListModel:has("_achieveTaskList", {
 	is = "rw"
 })
+TaskListModel:has("_activityLevel", {
+	is = "rw"
+})
 
 TaskType = {
-	kMapMain = 7,
-	kBranch = 4,
-	kStage = 5,
+	kURMap = 9,
 	kDaily = 1,
+	kStage = 5,
+	kMapMain = 7,
 	kMapDaily = 6,
+	kStageArena = 8,
+	kBranch = 4,
 	kLevel = 3,
 	kOffer = 2
 }
@@ -264,6 +269,10 @@ function TaskListModel:updateTasks(data)
 		self._dayLiveness = data.dailyAcPoint
 	end
 
+	if data.activityLevel then
+		self._activityLevel = data.activityLevel
+	end
+
 	self._hasSync = true
 end
 
@@ -358,9 +367,15 @@ end
 
 function TaskListModel:getTaskListByType(taskType)
 	if self._taskListMap[taskType] ~= nil then
-		table.sort(self._taskListMap[taskType], function (a, b)
-			return self:compare(a, b)
-		end)
+		if taskType == TaskType.kURMap then
+			table.sort(self._taskListMap[taskType], function (a, b)
+				return a:getSortId() < b:getSortId()
+			end)
+		else
+			table.sort(self._taskListMap[taskType], function (a, b)
+				return self:compare(a, b)
+			end)
+		end
 
 		return self._taskListMap[taskType]
 	end
@@ -392,7 +407,7 @@ function TaskListModel:clearDailyTaskData()
 end
 
 function TaskListModel:updateDelTasks(data)
-	data = data.player
+	data = data.taskCenter
 
 	if data == nil then
 		return
@@ -440,6 +455,18 @@ function TaskListModel:getUnFinishedDailyTaskCount()
 	end
 
 	return count
+end
+
+function TaskListModel:hasUnreceivedTask(taskType)
+	local list = self:getTaskListByType(taskType)
+
+	for id, task in pairs(list) do
+		if task:getStatus() == TaskStatus.kFinishNotGet then
+			return true
+		end
+	end
+
+	return false
 end
 
 function TaskListModel:getShowMapTask()

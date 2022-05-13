@@ -8,6 +8,8 @@ local kDefaultDelayTime = 0.1
 local kMoveSensitiveDist = cc.p(5, 5)
 local HeroEquipExp = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipExp", "content")
 local HeroEquipStar = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipStar", "content")
+local HeroEquipExpMax = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipExpMax", "content")
+local HeroEquipStarMax = ConfigReader:getDataByNameIdAndKey("ConfigValue", "HeroEquipStarMax", "content")
 
 function EquipTipsMediator:initialize()
 	super.initialize(self)
@@ -54,6 +56,8 @@ function EquipTipsMediator:onShowContent(event)
 end
 
 function EquipTipsMediator:setUi(data)
+	self._main:getChildByFullName("Text_79"):setString(Strings:get("Equip_ShowUI"))
+
 	local iconBg = self._main:getChildByName("icon")
 
 	if data.info and data.info.clipIndex then
@@ -61,9 +65,15 @@ function EquipTipsMediator:setUi(data)
 	end
 
 	local id = data.info.id
-	local rarity = ConfigReader:getDataByNameIdAndKey("HeroEquipBase", id, "Rareity")
-	local level = ConfigReader:getDataByNameIdAndKey("HeroEquipExp", HeroEquipExp[tostring(rarity)], "ShowLevel")
-	local star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", HeroEquipStar[tostring(rarity)], "StarLevel")
+	local config = ConfigReader:requireRecordById("HeroEquipBase", id)
+	local rarity = config.Rareity
+	local level = ConfigReader:getDataByNameIdAndKey("HeroEquipExp", HeroEquipExpMax[tostring(rarity)], "ShowLevel")
+	local star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", HeroEquipStarMax[tostring(rarity)], "StarLevel")
+
+	if rarity >= 15 and config.StartEquipEndID then
+		star = ConfigReader:getDataByNameIdAndKey("HeroEquipStar", config.StartEquipEndID, "StarLevel")
+	end
+
 	local info = {
 		id = id,
 		level = level,
@@ -84,33 +94,69 @@ function EquipTipsMediator:setUi(data)
 
 	local config = ConfigReader:getRecordById("HeroEquipBase", id)
 
+	assert(config, "装备id：%s配置错误", id)
 	GameStyle:setRarityText(nameText, config.Rareity)
 
 	local equipOccu = config.Profession
 	local occupationDesc = config.ProfessionDesc
+	local occupationType = config.ProfessionType
 	local limitDesc = self._main:getChildByFullName("text")
 	local limitNode = self._main:getChildByFullName("limit")
 
 	limitNode:removeAllChildren()
 
 	if occupationDesc ~= "" then
+		limitDesc:ignoreContentAdaptWithSize(true)
 		limitDesc:setString(Strings:get("Equip_UI24") .. " " .. Strings:get(occupationDesc))
 	else
 		limitDesc:setString(Strings:get("Equip_UI24"))
 
-		for i = 1, #equipOccu do
-			local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
-			local image = ccui.ImageView:create(occupationIcon)
+		if occupationType == nil or occupationType == 0 then
+			if equipOccu then
+				for i = 1, #equipOccu do
+					local occupationName, occupationIcon = GameStyle:getHeroOccupation(equipOccu[i])
+					local image = ccui.ImageView:create(occupationIcon)
 
-			image:setAnchorPoint(cc.p(0, 0.5))
-			image:setPosition(cc.p(35 * (i - 1), 0))
-			image:addTo(limitNode)
-			image:setScale(0.5)
+					image:setAnchorPoint(cc.p(0, 0.5))
+					image:setPosition(cc.p(40 * (i - 1), 0))
+					image:setScale(0.5)
+					image:addTo(limitNode)
+				end
+			end
+		elseif occupationType == 1 and equipOccu then
+			for i = 1, #equipOccu do
+				local heroInfo = {
+					id = IconFactory:getRoleModelByKey("HeroBase", equipOccu[i])
+				}
+				local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
+
+				headImgName:setScale(0.2)
+
+				headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+				headImgName:setAnchorPoint(cc.p(0, 0.5))
+				headImgName:setPosition(cc.p(40 * (i - 1), 0))
+				headImgName:addTo(limitNode)
+			end
 		end
 	end
 
 	local nodeAttr = self._main:getChildByName("nodeAttr")
-	local attrBg = nodeAttr:getChildByName("attrBg")
+	local animNode1 = nodeAttr:getChildByFullName("animNode")
+
+	if not animNode1:getChildByFullName("BgAnim") then
+		local anim = cc.MovieClip:create("fangxingkuang_jiemianchuxian")
+
+		anim:addCallbackAtFrame(13, function ()
+			anim:stop()
+		end)
+		anim:addTo(animNode1)
+		anim:setName("BgAnim")
+		anim:offset(0, -5)
+	end
+
+	animNode1:getChildByFullName("BgAnim"):gotoAndPlay(1)
+
 	local attrList = {}
 	local params = {
 		level = level,
@@ -131,10 +177,6 @@ function EquipTipsMediator:setUi(data)
 	table.sort(attrList, function (a, b)
 		return a.index < b.index
 	end)
-
-	local height = #attrList > 2 and 80 or 50
-
-	attrBg:setContentSize(cc.size(331, height))
 
 	for i = 1, 2 do
 		local attrPanel = nodeAttr:getChildByFullName("desc_" .. i)
@@ -164,12 +206,31 @@ function EquipTipsMediator:setUi(data)
 		end
 	end
 
+	if #attrList == 1 then
+		local attrPanel = nodeAttr:getChildByFullName("desc_1")
+
+		attrPanel:setPositionY(30)
+	end
+
 	local nodeSkill = self._main:getChildByName("nodeSkill")
-	local posY = nodeAttr:getPositionY() - height - 15
+	local animNode2 = nodeSkill:getChildByFullName("animNode")
 
-	nodeSkill:setPositionY(posY)
+	if not animNode2:getChildByFullName("BgAnim") then
+		local anim = cc.MovieClip:create("fangxingkuang_jiemianchuxian")
 
-	local bgWidth = posY + 35
+		anim:addCallbackAtFrame(13, function ()
+			anim:stop()
+		end)
+		anim:addTo(animNode2)
+		anim:setName("BgAnim")
+		anim:offset(0, -4)
+	end
+
+	animNode2:getChildByFullName("BgAnim"):gotoAndPlay(1)
+
+	local skillListView = nodeSkill:getChildByFullName("listView")
+
+	skillListView:setScrollBarEnabled(false)
 
 	if config.Skill == "" then
 		nodeSkill:setVisible(false)
@@ -178,10 +239,6 @@ function EquipTipsMediator:setUi(data)
 
 		local skillName = nodeSkill:getChildByName("name")
 		local skillLevel = nodeSkill:getChildByName("level")
-		local skillDesc = nodeSkill:getChildByName("skillDesc")
-
-		skillLevel:setColor(cc.c3b(147, 147, 147))
-
 		local skillPro = PrototypeFactory:getInstance():getSkillPrototype(config.Skill)
 		local skillConfig = skillPro:getConfig()
 
@@ -195,9 +252,10 @@ function EquipTipsMediator:setUi(data)
 		end
 
 		local unlockLevel = HeroEquipSkillLevel[1]
-		local tip = Strings:get("Equip_UI47") .. Strings:get("Strenghten_Text78", {
-			level = unlockLevel
-		}) .. Strings:get("Equip_UI48")
+		local maxSkillLevel = #HeroEquipSkillLevel
+		local tip = Strings:get("Strenghten_Text78", {
+			level = maxSkillLevel
+		})
 
 		skillLevel:setString(tip)
 		skillLevel:setPositionX(skillName:getPositionX() + skillName:getContentSize().width + 5)
@@ -209,7 +267,7 @@ function EquipTipsMediator:setUi(data)
 			fontColor = "#7B7474",
 			fontName = TTF_FONT_FZYH_M
 		}
-		local desc = ConfigReader:getEffectDesc("Skill", title, skillId, 1, style)
+		local desc = ConfigReader:getEffectDesc("Skill", title, skillId, maxSkillLevel, style)
 		local getSkillDesc = skillPro:getAttrDescs(1, style)[1]
 
 		if getSkillDesc then
@@ -217,25 +275,22 @@ function EquipTipsMediator:setUi(data)
 			desc = getSkillDesc .. add .. desc
 		end
 
-		local width = skillDesc:getContentSize().width
-		local height = skillDesc:getContentSize().height
+		local width = skillListView:getContentSize().width
 		local label = ccui.RichText:createWithXML(desc, {})
 
 		label:renderContent(width, 0)
-		label:setAnchorPoint(cc.p(0, 1))
-		label:setPosition(cc.p(0, height))
-		label:addTo(skillDesc)
+		label:setAnchorPoint(cc.p(0, 0))
+		label:setPosition(cc.p(0, 0))
 
-		bgWidth = bgWidth + 45 + label:getContentSize().height
+		local height = label:getContentSize().height
+		local newPanel = ccui.Layout:create()
+
+		newPanel:setContentSize(cc.size(width, height))
+		label:addTo(newPanel)
+		skillListView:pushBackCustomItem(newPanel)
 	end
 
-	local detailBg = self._main:getChildByName("Image_bg")
-
-	detailBg:setContentSize(cc.size(372, bgWidth))
-
-	local posY = 318 - bgWidth
-
-	self:_expandDescHeight(posY)
+	self._deltaY = -200
 end
 
 function EquipTipsMediator:adjustPos(icon, direction)
@@ -244,16 +299,17 @@ function EquipTipsMediator:adjustPos(icon, direction)
 	view:setAnchorPoint(cc.p(0.5, 0.5))
 	view:setIgnoreAnchorPointForPosition(false)
 
-	local kUpMargin = 20
-	local kDownMargin = 20
-	local kLeftMargin = 20
-	local kRightMargin = 20
+	local kUpMargin = 5
+	local kDownMargin = 5
+	local kLeftMargin = 5
+	local kRightMargin = 5
+	local contentSize = self._main:getContentSize()
 	local viewSize = view:getContentSize()
 	local iconBoundingBox = icon:getBoundingBox()
 	local worldPos = icon:getParent():convertToWorldSpace(cc.p(iconBoundingBox.x, iconBoundingBox.y))
 	local scene = cc.Director:getInstance():getRunningScene()
 	local winSize = scene:getContentSize()
-	direction = direction or (worldPos.y + iconBoundingBox.height + viewSize.height + kUpMargin > winSize.height - 30 or ItemTipsDirection.kUp) and (worldPos.x + iconBoundingBox.width * 0.5 >= winSize.width * 0.5 or ItemTipsDirection.kRight) and ItemTipsDirection.kLeft
+	direction = direction or (worldPos.y + iconBoundingBox.height + contentSize.height + kUpMargin > winSize.height - 30 or ItemTipsDirection.kUp) and (worldPos.x + iconBoundingBox.width * 0.5 >= winSize.width * 0.5 or ItemTipsDirection.kRight) and ItemTipsDirection.kLeft
 	local iconBox = {
 		x = worldPos.x,
 		y = worldPos.y,
@@ -261,18 +317,20 @@ function EquipTipsMediator:adjustPos(icon, direction)
 		height = icon:getContentSize().height * icon:getScale()
 	}
 	local x, y = nil
+	local contentPosY = self._main:getPositionY()
+	local deltaY = self._deltaY or 0
 
 	if direction == ItemTipsDirection.kUp then
 		x = iconBox.x + iconBox.width * 0.5
-		y = iconBox.y + iconBox.height + viewSize.height * 0.5 + kUpMargin
+		y = iconBox.y + iconBox.height + kUpMargin + contentPosY - deltaY
 	elseif direction == ItemTipsDirection.kDown then
 		x = iconBox.x + iconBox.width * 0.5
-		y = iconBox.y - viewSize.height * 0.5 - kDownMargin
+		y = iconBox.y - contentSize.height * 0.5 - kDownMargin
 	elseif direction == ItemTipsDirection.kLeft then
-		x = iconBox.x - viewSize.width * 0.5 - kLeftMargin
+		x = iconBox.x - contentSize.width * 0.5 - kLeftMargin
 		y = iconBox.y + iconBox.height - viewSize.height * 0.5
 	elseif direction == ItemTipsDirection.kRight then
-		x = iconBox.x + iconBox.width + viewSize.width * 0.5 + kRightMargin
+		x = iconBox.x + iconBox.width + contentSize.width * 0.5 + kRightMargin
 		y = iconBox.y + iconBox.height - viewSize.height * 0.5
 	end
 
@@ -282,16 +340,16 @@ function EquipTipsMediator:adjustPos(icon, direction)
 	local kUpMinMargin = 0
 	local kDownMinMargin = 0
 
-	if kLeftMinMargin >= x - viewSize.width * 0.5 then
-		x = kLeftMinMargin + viewSize.width * 0.5
-	elseif x + viewSize.width * 0.5 >= winSize.width - kRightMinMargin then
-		x = winSize.width - kRightMinMargin - viewSize.width * 0.5
+	if kLeftMinMargin >= x - contentSize.width * 0.5 then
+		x = kLeftMinMargin + contentSize.width * 0.5
+	elseif x + contentSize.width * 0.5 >= winSize.width - kRightMinMargin then
+		x = winSize.width - kRightMinMargin - contentSize.width * 0.5
 	end
 
-	if kDownMinMargin > y - viewSize.height * 0.5 then
-		y = kDownMinMargin + viewSize.height * 0.5
-	elseif y + viewSize.height * 0.5 > winSize.height - kUpMinMargin then
-		y = winSize.height - kUpMinMargin - viewSize.height * 0.5
+	if kDownMinMargin > y - contentSize.height * 0.5 then
+		y = kDownMinMargin + contentSize.height * 0.5
+	elseif y + contentSize.height * 0.5 > winSize.height - kUpMinMargin then
+		y = winSize.height - kUpMinMargin - contentSize.height * 0.5
 	end
 
 	view:setPosition(cc.p(x - nodePos.x, y - nodePos.y))
@@ -300,8 +358,14 @@ end
 function EquipTipsMediator:_expandDescHeight(expandHeight)
 	if expandHeight and expandHeight ~= 0 then
 		local currentPosY = self._main:getPositionY()
+		self._deltaY = expandHeight * 0.5
 
-		self._main:setPositionY(currentPosY - expandHeight / 2)
+		self._main:setPositionY(currentPosY - self._deltaY)
+
+		local detailBg = self._main:getChildByName("Image_bg")
+		local bgSize = detailBg:getContentSize()
+
+		self._main:setContentSize(cc.size(bgSize.width, bgSize.height))
 	end
 end
 

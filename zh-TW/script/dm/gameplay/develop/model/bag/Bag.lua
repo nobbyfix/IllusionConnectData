@@ -88,6 +88,7 @@ function Bag:_createEntryList(mapData, isDiff)
 						self:_setBagTabRedTag(pageType, id)
 					end
 
+					entry.unlock = true
 					self._entryList[id] = entry
 				else
 					item:synchronize(itemData, id)
@@ -112,6 +113,40 @@ function Bag:_createEntryList(mapData, isDiff)
 			self._entryList[id] = nil
 		end
 	end
+end
+
+function Bag:synchronizeLockItems(lockItem)
+	if self._lockItems == nil then
+		self._lockItems = {}
+	end
+
+	local checkItems = {}
+
+	for id, itemId in pairs(lockItem) do
+		local entry = self._entryList[itemId]
+
+		if entry then
+			entry.unlock = false
+		end
+
+		checkItems[itemId] = 1
+
+		if self._lockItems[itemId] then
+			self._lockItems[itemId] = 0
+		end
+	end
+
+	for itemId, value in pairs(self._lockItems) do
+		if value > 0 then
+			local entry = self._entryList[itemId]
+
+			if entry then
+				entry.unlock = true
+			end
+		end
+	end
+
+	self._lockItems = checkItems
 end
 
 function Bag:_setBagTabRedTag(type, id)

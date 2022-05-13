@@ -1,12 +1,11 @@
 ClubService = class("ClubService", Service, _M)
 local opType = {
+	OPCODE_CLUB_GET_VILLAGE_INFO = 12312,
+	CLUBBOSSUPDATETEAM = 12310,
 	OPCODE_CLUB_FINISH_BATTLE = 12306,
 	OPCODE_CLUB_BOSS_SET_TIP_READ_TIME = 12308,
 	OPCODE_CLUB_OPEN_BOSS = 12303,
 	OPCODE_CLUB_START_BATTLE = 12305
-}
-local ReType = {
-	CLUBBOSSUPDATETEAM = 12310
 }
 
 function ClubService:initialize()
@@ -18,7 +17,7 @@ function ClubService:dispose()
 end
 
 function ClubService:requestUpdateTeam(params, callback, blockUI)
-	local request = self:newRequest(ReType.CLUBBOSSUPDATETEAM, params, function (response)
+	local request = self:newRequest(opType.CLUBBOSSUPDATETEAM, params, function (response)
 		if callback then
 			callback(response)
 		end
@@ -239,6 +238,12 @@ function ClubService:listenPushClubRedPoint(callback)
 	end)
 end
 
+function ClubService:setClubSnsInfo(params, blockUI, callback)
+	local request = self:newRequest(11926, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
 function ClubService:requestClubBossInfo(params, blockUI, callback)
 	local request = self:newRequest(12303, params, callback)
 
@@ -269,6 +274,18 @@ function ClubService:requestClubBossBlockPointRewardByPonitID(params, blockUI, c
 	self:sendRequest(request, blockUI)
 end
 
+function ClubService:requestClubVillageInfo(params, blockUI, callback)
+	local request = self:newRequest(opType.OPCODE_CLUB_GET_VILLAGE_INFO, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestClubVillageDetail(params, blockUI, callback)
+	local request = self:newRequest(12315, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
 function ClubService:requestClubBattleData(params, blockUI, callback)
 	local request = self:newRequest(14101, params, callback)
 
@@ -277,6 +294,30 @@ end
 
 function ClubService:requestClubBattleReward(params, blockUI, callback)
 	local request = self:newRequest(14102, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestClubBossRecordData(params, blockUI, callback)
+	local request = self:newRequest(12311, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestOpenClubVillageData(params, blockUI, callback)
+	local request = self:newRequest(12312, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestClubVillageChangeData(params, blockUI, callback)
+	local request = self:newRequest(12313, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function ClubService:requestClubDetailInfoData(params, blockUI, callback)
+	local request = self:newRequest(12314, params, callback)
 
 	self:sendRequest(request, blockUI)
 end

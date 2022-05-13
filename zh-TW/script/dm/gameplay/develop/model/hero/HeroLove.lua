@@ -25,7 +25,7 @@ function HeroLove:initialize(owner)
 end
 
 function HeroLove:createAttrEffect(owner, player)
-	self._effect = SkillAttrEffect:new(AttrSystemName.kHeroHeroLove)
+	self._effect = SkillAttrEffect:new(AttrSystemName.kHeroLove)
 
 	self._effect:setOwner(owner, player)
 end

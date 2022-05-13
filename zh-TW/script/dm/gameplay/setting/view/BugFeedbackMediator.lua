@@ -7,153 +7,89 @@ BugFeedbackMediator:has("_settingSystem", {
 	is = "r"
 }):injectWith("SettingSystem")
 
-local kBtnHandlers = {
-	["main.btnOk.button"] = {
-		clickAudio = "Se_Click_Common_1",
-		func = "onClickok"
-	}
-}
-
 function BugFeedbackMediator:initialize()
 	super.initialize(self)
 end
 
 function BugFeedbackMediator:dispose()
+	if self._webView then
+		self._webView:removeFromParent()
+
+		self._webView = nil
+	end
+
 	super.dispose(self)
 end
 
 function BugFeedbackMediator:onRegister()
 	super.onRegister(self)
-	self:bindWidgets()
-
-	self._main = self:getView():getChildByName("main")
-	self._editBox = self._main:getChildByName("TextField")
-
 	self:mapEventListeners()
-end
-
-function BugFeedbackMediator:bindWidgets()
-	self:bindWidget("main.btnOk", OneLevelViceButton, {})
-	self:bindWidget("main.bg", PopupNormalWidget, {
-		btnHandler = {
-			clickAudio = "Se_Click_Close_2",
-			func = bind1(self.onClickClose, self)
-		},
-		title = Strings:get("Setting_Text26"),
-		title1 = Strings:get("UITitle_EN_Wentifankui"),
-		bgSize = {
-			width = 690,
-			height = 408
-		}
-	})
 end
 
 function BugFeedbackMediator:onRemove()
 	super.onRemove(self)
-	self._settingSystem:setCurMediatorTag(nil)
 end
 
 function BugFeedbackMediator:enterWithData(data)
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self._main = self:getView():getChildByName("main")
 
-	self._bagSystem = self._developSystem:getBagSystem()
-	self._player = self._developSystem:getPlayer()
-	self._tipsText = self:getView():getChildByFullName("main.tipsText")
+	self._main:getChildByFullName("bg"):setVisible(false)
+	self._main:getChildByFullName("Image_di"):setVisible(false)
+	self._main:getChildByFullName("TextField"):setVisible(false)
+	self._main:getChildByFullName("tipsText"):setVisible(false)
+	self._main:getChildByFullName("btnOk"):setVisible(false)
 
-	self:setupView()
-	self._settingSystem:setCurMediatorTag("BugFeedbackMediator")
+	local CSDHelper = require("sdk.CSDHelper")
+	local player = self._developSystem:getPlayer()
+	local winSize = cc.Director:getInstance():getVisibleSize()
+
+	if device.platform ~= "mac" and device.platform ~= "windows" then
+		self._webView = ccui.WebView:create()
+
+		if self._webView then
+			self._webView:setPosition(winSize.width / 2, winSize.height / 2)
+			self._webView:setContentSize(winSize.width / 2, winSize.height - 20)
+			self._webView:loadURL(CSDHelper:getCSDUrl(player:getRid()))
+			self._webView:setScalesPageToFit(true)
+			self._webView:setVisible(false)
+
+			self._waitingHandler = self:getInjector():instantiate("WaitingHandler")
+
+			self._webView:setOnShouldStartLoading(function (sender, url)
+				self:showWaiting()
+
+				return true
+			end)
+			self._webView:setOnDidFinishLoading(function (sender, url)
+				self._webView:setVisible(true)
+				self:hideWaiting()
+			end)
+			self._webView:setOnDidFailLoading(function (sender, url)
+				self._webView:setVisible(true)
+				self:hideWaiting()
+			end)
+			self._webView:center(self._main:getContentSize())
+			AdjustUtils.adjustLayoutByType(self:getView(), AdjustUtils.kAdjustType.Top)
+			self._main:addChild(self._webView)
+			self._webView:reload()
+		end
+	else
+		cc.Application:getInstance():openURL(CSDHelper:getCSDUrl(player:getRid()))
+	end
+end
+
+function BugFeedbackMediator:showWaiting()
+	WaitingView:getInstance():show(WaitingStyle.kLoading, {})
+end
+
+function BugFeedbackMediator:hideWaiting()
+	WaitingView:getInstance():hide()
 end
 
 function BugFeedbackMediator:mapEventListeners()
-	self:mapEventListener(self:getEventDispatcher(), EVT_BUGFEEDBACK_SUCC, self, self.close)
-end
-
-function BugFeedbackMediator:setupView()
-	local maxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Feedback_Word_Limit", "content")
-	local touchPanel = self:getView():getChildByFullName("touchPanel")
-
-	touchPanel:setSwallowTouches(false)
-
-	local function callFunc()
-		self._tipsText:setVisible(false)
-	end
-
-	mapButtonHandlerClick(nil, touchPanel, {
-		ignoreClickAudio = true,
-		func = callFunc
-	})
-
-	if self._editBox:getDescription() == "TextField" then
-		self._editBox:setMaxLength(maxLength)
-		self._editBox:setMaxLengthEnabled(true)
-		self._editBox:setPlaceHolder("")
-	end
-
-	self._editBox = convertTextFieldToEditBox(self._editBox)
-	self._beginInput = false
-
-	self._editBox:onEvent(function (eventName, sender)
-		if eventName == "began" then
-			if not self._beginInput then
-				self._beginInput = true
-
-				self._editBox:setPlaceHolder("")
-				self._editBox:setText("")
-			end
-		elseif eventName == "ended" then
-			local text = self._editBox:getText()
-
-			if text == "" then
-				self._tipsText:setVisible(true)
-			end
-		elseif eventName == "return" then
-			-- Nothing
-		elseif eventName == "changed" then
-			self._oldStr = self._editBox:getText()
-		elseif eventName == "ForbiddenWord" then
-			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
-				tip = Strings:get("Common_Tip1")
-			}))
-		elseif eventName == "Exceed" then
-			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Tips_WordNumber_Limit", {
-					number = sender:getMaxLength()
-				})
-			}))
-		end
-	end)
 end
 
 function BugFeedbackMediator:onClickClose(sender, eventType)
+	self._webView:setVisible(false)
 	self:close()
-end
-
-function BugFeedbackMediator:onClickok()
-	if self._beginInput == false then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("setting_tips3")
-		}))
-
-		return
-	end
-
-	local str = self._editBox:getText()
-
-	if str == "" then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("setting_tips3")
-		}))
-
-		return
-	end
-
-	if StringChecker.isAllofCharForbidden(str) then
-		self:dispatch(ShowTipEvent({
-			tip = Strings:get("Setting_Tip7")
-		}))
-
-		return
-	end
-
-	self._settingSystem:requestBugFeedback(str)
 end

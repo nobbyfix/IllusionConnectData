@@ -272,7 +272,7 @@ function ExploreMapViewMediator:enterWithData(data)
 
 	local director = cc.Director:getInstance()
 
-	director:setAnimationInterval(0.03333333333333333)
+	director:setAnimationInterval(1 / (GAME_MAX_FPS or 30))
 end
 
 function ExploreMapViewMediator:setMoveTimeForPerGrid()
@@ -617,6 +617,8 @@ function ExploreMapViewMediator:removeObject(data)
 end
 
 function ExploreMapViewMediator:setupView()
+	self._quickView = self:getChildView("QuickBattle")
+	self._animNode = self:getChildView("QuickBattle.QuickBattleAnim")
 	self._panel_touch = self:getChildView("Panel_base.Panel_touch")
 	self._btnPanel = self:getChildView("Panel_base.btnPanel")
 	self._caseBtn = self._btnPanel:getChildByFullName("caseBtn")
@@ -671,6 +673,30 @@ function ExploreMapViewMediator:setupView()
 	self._scrollView:addChild(self._sceneEffectNode)
 	self:initRocker()
 	self:createDebugGrid()
+	self:createQuickBattelAnim()
+end
+
+function ExploreMapViewMediator:createQuickBattelAnim()
+	if not self._quickBattleAnim then
+		local anim = cc.MovieClip:create("dajia_zhujuedajia")
+
+		anim:addTo(self._animNode):posite(0, 0)
+
+		self._quickBattleAnim = anim
+	end
+
+	self._quickBattleAnim:stop()
+	self._quickView:setVisible(false)
+end
+
+function ExploreMapViewMediator:playQuickBattleAnim(callback)
+	self._quickView:setVisible(true)
+	self._quickBattleAnim:gotoAndPlay(0)
+	delayCallByTime(1500, function ()
+		callback()
+		self._quickBattleAnim:stop()
+		self._quickView:setVisible(false)
+	end)
 end
 
 function ExploreMapViewMediator:createDebugGrid()
@@ -947,18 +973,25 @@ end
 function ExploreMapViewMediator:onEventForCollectionView(sender, eventType)
 end
 
+function ExploreMapViewMediator:getMapConfig(key)
+	self._explormapConfig = self._explormapConfig or {}
+	self._explormapConfig[key] = self._explormapConfig[key] or require("asset.exploreMap.ExploreMap")[key]
+
+	return self._explormapConfig[key]
+end
+
 function ExploreMapViewMediator:getMapByIndex(key, row, col, isGlobalZOrder, isAlias, isFloor)
 	local indexStr = string.format("_%d_%d", row, col)
 	local path = string.format("asset/exploreMap/%s%s.lua", key, indexStr)
 	local headPath = string.format("asset/exploreMap/%s_head.lua", key)
-	self._mapHeads[key] = self._mapHeads[key] or require(headPath)()
+	self._mapHeads[key] = self._mapHeads[key] or self:getMapConfig(key .. "_head")()
 
 	if self._mapHeads[key].cells[indexStr] then
 		local layerData = self._mapCellDatas[path]
 
 		if not layerData then
-			layerData = loadstring(cc.FileUtils:getInstance():getStringFromFile(path))()()
-			self._mapCellDatas[path] = layerData
+			layerData = self:getMapConfig(key .. indexStr)()
+			self._mapCellDatas[path] = self:getMapConfig(key .. indexStr)()
 		end
 
 		local mapMediator = CustomMap:new()
@@ -1475,6 +1508,27 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 				tempFunc()
 			end
 
+			local function enterQuickBattle()
+				local function tempFunc()
+					self._exploreSystem:requestGetBattleData(function (response)
+						if not response.data.data then
+							local str = string.format("isAuto:%s / caseId:%s / caseType:%s / objId:%s", tostring(isAuto), caseId, caseType, objId)
+
+							CommonUtils.uploadDataToBugly("ExploreCaseDebug", str)
+						end
+
+						self._exploreSystem:enterQuickBattle(caseFactor.mapbattlepoint, response.data.data, {
+							caseId = caseId,
+							objData = obj:getExploreObject()
+						})
+					end, {
+						objectId = objId
+					})
+				end
+
+				self:playQuickBattleAnim(tempFunc)
+			end
+
 			if not caseFactor.casefactor or self._autoPlay then
 				isAuto = true
 
@@ -1484,11 +1538,27 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 				local view = self:getInjector():getInstance("ExploreCaseAlertView")
 
 				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+					caseType = "BATTLE",
 					battleId = caseFactor.mapbattlepoint,
 					caseFactor = caseFactor.casefactor,
 					callback = function (chooseId)
 						if caseFactor.casefactor:getBattleOption() == chooseId then
 							enterBattle()
+						elseif caseFactor.casefactor:getQuickBattleOption() == chooseId then
+							enterQuickBattle()
+						elseif ExploreCloseChooseId == chooseId then
+							obj.endTriggering = true
+
+							self._exploreSystem:endTrigger(function (response)
+								obj.endTriggering = false
+
+								self:endTriggerCallBack(response, case, dealEndDialogue)
+							end, {
+								objectId = objId,
+								params = {
+									type = "1"
+								}
+							}, true, self)
 						else
 							obj.endTriggering = true
 
@@ -1543,6 +1613,7 @@ function ExploreMapViewMediator:dealEventByType(obj, case, dealEndDialogue)
 			local view = self:getInjector():getInstance("ExploreCaseAlertView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+				caseType = "CHOICE",
 				caseFactor = caseFactor.casefactor,
 				callback = tempFunc
 			}))
@@ -2928,4 +2999,8 @@ function ExploreMapViewMediator:updateCaseObj()
 	if self._caseData and self._objectsRenderMap[self._caseData._exploreObject] then
 		self._caseData:setDoing(false)
 	end
+end
+
+function ExploreMapViewMediator:leaveWithData()
+	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 end

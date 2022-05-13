@@ -403,11 +403,11 @@ function scene_eventstory_siren_003a.actions.start_eventstory_siren_003a(_root, 
 					modelId = "Model_LCYShi",
 					id = "LCYShi_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.68,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -350,
+						y = -380,
 						refpt = {
 							x = 0.75,
 							y = 0
@@ -646,11 +646,11 @@ function scene_eventstory_siren_003a.actions.start_eventstory_siren_003a(_root, 
 					modelId = "Model_WEDe",
 					id = "WEDe_speak",
 					rotationX = 0,
-					scale = 1.225,
+					scale = 0.65,
 					zorder = 3,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 0.675,
 							y = 0
@@ -674,8 +674,8 @@ function scene_eventstory_siren_003a.actions.start_eventstory_siren_003a(_root, 
 								y = 0.5
 							},
 							position = {
-								x = 124,
-								y = 788
+								x = 190.5,
+								y = 1380
 							}
 						}
 					}
@@ -945,7 +945,7 @@ function scene_eventstory_siren_003a.actions.start_eventstory_siren_003a(_root, 
 					duration = 1,
 					position = {
 						x = 0,
-						y = -460,
+						y = -430,
 						refpt = {
 							x = 1.5,
 							y = 0

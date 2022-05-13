@@ -122,7 +122,7 @@ function KernelList:getAllKernelIntList()
 		kernelintlist[count].id = count
 		kernelintlist[count].Position = ConfigReader:getDataByNameIdAndKey("MasterCoreBase", v.configId, "Position")
 		local namekey = ConfigReader:getDataByNameIdAndKey("MasterCoreBase", v.configId, "Name")
-		kernelintlist[count].Name = ConfigReader:getDataByNameIdAndKey("Translate", namekey, "Zh_CN")
+		kernelintlist[count].Name = Strings:get(namekey)
 		kernelintlist[count].isExpCore = ConfigReader:getDataByNameIdAndKey("MasterCoreBase", v.configId, "IsExpCore")
 		kernelintlist[count].quality = ConfigReader:getDataByNameIdAndKey("MasterCoreBase", v.configId, "Quality")
 		count = count + 1
@@ -152,7 +152,7 @@ function KernelList:getNameByConfigId(configid)
 
 	print("namekey::", namekey)
 
-	return ConfigReader:getDataByNameIdAndKey("Translate", namekey, "Zh_CN")
+	return Strings:get(namekey)
 end
 
 function KernelList:getPosByConfigId(configid)
@@ -233,7 +233,7 @@ function KernelList:calculateEquipListAttribute(equipdata)
 			for kkk, vvv in pairs(namekeylist) do
 				if attrType[1] == kkk then
 					namekey = vvv
-					local name = ConfigReader:getDataByNameIdAndKey("Translate", namekey, "Zh_CN")
+					local name = Strings:get(namekey)
 					local temp = attrSumTable[name]
 
 					if temp == nil then
@@ -293,8 +293,8 @@ function KernelList:initSuiteList()
 			Name = v.Name,
 			Icon = v.Icon,
 			IncludeCore = v.IncludeCore,
-			ThreePieceDesc = ConfigReader:getDataByNameIdAndKey("Translate", v.ThreePieceDesc, "Zh_CN"),
-			FivePieceDesc = ConfigReader:getDataByNameIdAndKey("Translate", v.FivePieceDesc, "Zh_CN")
+			ThreePieceDesc = Strings:get(v.ThreePieceDesc),
+			FivePieceDesc = Strings:get(v.FivePieceDesc)
 		}
 		self._suiteList[index] = suittemp
 		index = index + 1
@@ -309,20 +309,20 @@ function KernelList:getOneSuitDescByKernelId(configid)
 
 	if type(belongThreeSuiteDesc) == "table" then
 		for k, v in pairs(belongThreeSuiteDesc) do
-			threeDesc[k] = ConfigReader:getDataByNameIdAndKey("Translate", v, "Zh_CN")
+			threeDesc[k] = Strings:get(v)
 		end
 	else
-		threeDesc = ConfigReader:getDataByNameIdAndKey("Translate", belongThreeSuiteDesc, "Zh_CN")
+		threeDesc = Strings:get(belongThreeSuiteDesc)
 	end
 
 	local belongFiveSuiteDesc = ConfigReader:getDataByNameIdAndKey("MasterCoreSuite", suiteid, "FivePieceDesc")
 
 	if type(belongFiveSuiteDesc) == "table" then
 		for k, v in pairs(belongFiveSuiteDesc) do
-			fiveDesc[k] = ConfigReader:getDataByNameIdAndKey("Translate", v, "Zh_CN")
+			fiveDesc[k] = Strings:get(v)
 		end
 	else
-		fiveDesc = ConfigReader:getDataByNameIdAndKey("Translate", belongFiveSuiteDesc, "Zh_CN")
+		fiveDesc = Strings:get(belongFiveSuiteDesc)
 	end
 
 	local desc = {
@@ -397,9 +397,9 @@ function KernelList:getEquipSuiteDesc(kerneldata)
 		local fd = ConfigReader:getDataByNameIdAndKey("MasterCoreSuite", k, "FivePieceEffect")
 
 		if #v >= 3 then
-			suitedesc.suite_3_info = ConfigReader:getDataByNameIdAndKey("Translate", td, "Zh_CN")
+			suitedesc.suite_3_info = Strings:get(td)
 		elseif #v >= 5 then
-			suitedesc.suite_5_info = ConfigReader:getDataByNameIdAndKey("Translate", fd, "Zh_CN")
+			suitedesc.suite_5_info = Strings:get(fd)
 		end
 	end
 
@@ -483,7 +483,7 @@ end
 function KernelList:getEffectDesc(effectId, level)
 	local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", effectId)
 	local effectDesc = effectConfig.EffectDesc
-	local descValue = ConfigReader:getDataByNameIdAndKey("Translate", effectDesc, "Zh_CN")
+	local descValue = Strings:get(effectDesc)
 	local factorMap = ConfigReader:getRecordById("SkillAttrEffect", effectId)
 	local t = TextTemplate:new(descValue)
 	local funcMap = {

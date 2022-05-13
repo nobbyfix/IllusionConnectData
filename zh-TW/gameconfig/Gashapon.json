@@ -47,52 +47,52 @@
             "Gashapon_1st_Normal_16": 800
         }
     },
-    "Gashapon_2nd_01": {
+    "Gashapon_2st_01": {
         "Cost": 1,
         "KeyReword": {
-            "Gashapon_2nd_Core_1": 100
+            "Gashapon_1st_Core_1": 100
         },
         "MiddleReward": {
-            "Gashapon_2nd_Middle_01": 200,
-            "Gashapon_2nd_Middle_02": 200,
-            "Gashapon_2nd_Middle_03": 200,
-            "Gashapon_2nd_Middle_04": 200,
-            "Gashapon_2nd_Middle_05": 500,
-            "Gashapon_2nd_Middle_06": 500,
-            "Gashapon_2nd_Middle_07": 600,
-            "Gashapon_2nd_Middle_08": 1000
+            "Gashapon_1st_Middle_01": 200,
+            "Gashapon_1st_Middle_02": 200,
+            "Gashapon_1st_Middle_03": 200,
+            "Gashapon_1st_Middle_04": 200,
+            "Gashapon_1st_Middle_05": 500,
+            "Gashapon_1st_Middle_06": 500,
+            "Gashapon_1st_Middle_07": 600,
+            "Gashapon_1st_Middle_08": 1000
         },
         "MiddleRewardShow": [
-            "Gashapon_2nd_Middle_05",
-            "Gashapon_2nd_Middle_04",
-            "Gashapon_2nd_Middle_03",
-            "Gashapon_2nd_Middle_02",
-            "Gashapon_2nd_Middle_01",
-            "Gashapon_2nd_Middle_08",
-            "Gashapon_2nd_Middle_07",
-            "Gashapon_2nd_Middle_06"
+            "Gashapon_1st_Middle_05",
+            "Gashapon_1st_Middle_04",
+            "Gashapon_1st_Middle_03",
+            "Gashapon_1st_Middle_02",
+            "Gashapon_1st_Middle_01",
+            "Gashapon_1st_Middle_08",
+            "Gashapon_1st_Middle_07",
+            "Gashapon_1st_Middle_06"
         ],
-        "NextPoint": "Gashapon_2nd_01",
+        "NextPoint": "Gashapon_2st_01",
         "NormalRewardShow": [
-            "Gashapon_2nd_Normal_15",
-            "Gashapon_2nd_Normal_14",
-            "Gashapon_2nd_Normal_13",
-            "Gashapon_2nd_Normal_12",
-            "Gashapon_2nd_Normal_11",
-            "Gashapon_2nd_Normal_10",
-            "Gashapon_2nd_Normal_09",
-            "Gashapon_2nd_Normal_16"
+            "Gashapon_2st_Normal_15",
+            "Gashapon_2st_Normal_14",
+            "Gashapon_1st_Normal_13",
+            "Gashapon_1st_Normal_12",
+            "Gashapon_1st_Normal_11",
+            "Gashapon_1st_Normal_10",
+            "Gashapon_1st_Normal_09",
+            "Gashapon_1st_Normal_16"
         ],
         "Order": 1,
         "RewardShow": {
-            "Gashapon_2nd_Normal_09": 800,
-            "Gashapon_2nd_Normal_10": 800,
-            "Gashapon_2nd_Normal_11": 600,
-            "Gashapon_2nd_Normal_12": 1000,
-            "Gashapon_2nd_Normal_13": 800,
-            "Gashapon_2nd_Normal_14": 800,
-            "Gashapon_2nd_Normal_15": 800,
-            "Gashapon_2nd_Normal_16": 800
+            "Gashapon_1st_Normal_09": 800,
+            "Gashapon_1st_Normal_10": 800,
+            "Gashapon_1st_Normal_11": 600,
+            "Gashapon_1st_Normal_12": 1000,
+            "Gashapon_1st_Normal_13": 800,
+            "Gashapon_1st_Normal_16": 800,
+            "Gashapon_2st_Normal_14": 800,
+            "Gashapon_2st_Normal_15": 800
         }
     }
 }

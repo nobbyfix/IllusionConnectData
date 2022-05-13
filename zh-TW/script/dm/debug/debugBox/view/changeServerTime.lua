@@ -110,3 +110,23 @@ function changeTagetServerTime:onClick(data)
 		}))
 	end)
 end
+
+openLdebug = class("openLdebug", DebugViewTemplate, _M)
+
+function openLdebug:initialize()
+	self._viewConfig = {
+		{
+			default = 6789,
+			name = "port",
+			title = "端口",
+			type = "Input"
+		}
+	}
+end
+
+function openLdebug:onClick(data)
+	require(".ldebug").start("127.0.0.1", data.port or 6789)
+	self:dispatch(ShowTipEvent({
+		tip = Strings:get("EXEC_SUCC")
+	}))
+end

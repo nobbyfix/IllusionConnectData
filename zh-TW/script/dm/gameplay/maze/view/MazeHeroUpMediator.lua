@@ -221,7 +221,7 @@ function MazeHeroUpMediator:setCellInfo(cell, idx)
 
 	local level = ConfigReader:getDataByNameIdAndKey("PansLabAttr", data.attrId, "Level")
 
-	cell:getChildByFullName("lv"):setString("Lv." .. level)
+	cell:getChildByFullName("lv"):setString(Strings:get("Common_LV_Text") .. level)
 
 	local node = cell:getChildByFullName("Panel_1")
 	local rarity = cell:getChildByFullName("rarity")
@@ -283,7 +283,7 @@ function MazeHeroUpMediator:showUpHero(herodata)
 
 	local level = ConfigReader:getDataByNameIdAndKey("PansLabAttr", herodata.attrId, "Level")
 
-	self._heroPanel:getChildByFullName("uplv"):setString("Lv." .. level)
+	self._heroPanel:getChildByFullName("uplv"):setString(Strings:get("Common_LV_Text") .. level)
 
 	local name = Strings:find(ConfigReader:getDataByNameIdAndKey("HeroBase", herodata.id, "Name"))
 

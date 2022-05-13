@@ -60,12 +60,38 @@ function CommonButtonWithName:dispose()
 	super.dispose(self)
 end
 
+function CommonButtonWithName:setTimeLimit(sender)
+	sender._isColdTime = true
+	local cDTime = 5
+	local str = self._nameText:getString()
+
+	self._nameText:setString(str .. "(" .. tostring(cDTime) .. ")")
+
+	local action = schedule(sender, function ()
+		cDTime = cDTime - 1
+
+		self._nameText:setString(str .. "(" .. tostring(cDTime) .. ")")
+
+		if cDTime <= 0 then
+			sender:stopActionByTag(66666)
+
+			sender._isColdTime = false
+
+			self._nameText:setString(str)
+		end
+	end, 1, 66666)
+end
+
 function CommonButtonWithName:setButtonName(buttonName, buttonName1)
 	self._nameText:setString(buttonName)
 
 	if self._nameText1 then
-		self._nameText1:setString(buttonName1 or "")
+		self._nameText1:setString("")
 	end
+end
+
+function CommonButtonWithName:setButtonClickName(buttonName)
+	self._button:setName(buttonName)
 end
 
 function CommonButtonWithName:setGray(gray)

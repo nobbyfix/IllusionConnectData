@@ -50,69 +50,6 @@ function scene_blockstory01_2start:stage(args)
 						x = 0.5,
 						y = 0.5
 					}
-				},
-				children = {
-					{
-						resType = 0,
-						name = "bg",
-						pathType = "SCENE",
-						type = "Image",
-						image = "bg_story_EXscene_1_3.jpg",
-						layoutMode = 1,
-						zorder = 2,
-						id = "bg",
-						scale = 1,
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						},
-						children = {
-							{
-								id = "bgEx_xuzhangzhengchang",
-								layoutMode = 1,
-								type = "MovieClip",
-								scale = 1,
-								actionName = "xuzhangzhengchang_xuzhangzhengchang",
-								anchorPoint = {
-									x = 0.5,
-									y = 0.5
-								},
-								position = {
-									refpt = {
-										x = 0.5,
-										y = 0.5
-									}
-								}
-							}
-						}
-					},
-					{
-						resType = 0,
-						name = "bg1",
-						pathType = "SCENE",
-						type = "Image",
-						image = "bg_story_cg_01_3.jpg",
-						layoutMode = 1,
-						zorder = 3,
-						id = "bg1",
-						scale = 1,
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						}
-					}
 				}
 			},
 			{
@@ -140,28 +77,6 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 			actor = __getnode__(_root, "autoPlayButton")
 		}),
 		act({
-			action = "activateNode",
-			actor = __getnode__(_root, "bg")
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "bgEx_xuzhangzhengchang"),
-			args = function (_ctx)
-				return {
-					time = -1
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
 			action = "addPortrait",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
@@ -169,11 +84,11 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -295,
+						y = -250,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -185,7 +100,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 							name = "CLMan_face",
 							pathType = "STORY_FACE",
 							type = "Image",
-							image = "CLMan/CLMan_face_13.png",
+							image = "CLMan/CLMan_face_1.png",
 							scaleX = 1,
 							scaleY = 1,
 							layoutMode = 1,
@@ -197,8 +112,8 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -220,85 +135,17 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 				actor = __getnode__(_root, "CLMan_speak"),
 				args = function (_ctx)
 					return {
-						duration = 0.5
+						duration = 0.25
 					}
 				end
 			})
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0.1
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0.1
-						}
-					}
-				}
-			end
-		}),
-		act({
-			action = "moveTo",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0.1,
-					position = {
-						x = 0,
-						y = -295,
-						refpt = {
-							x = 0.5,
-							y = 0
-						}
-					}
-				}
-			end
 		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "妮娜",
+					name = "dialog_speak_name_5",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -306,7 +153,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 						"CLMan_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>隊長！小夜！你們來啦！ </font>"
+						"blockstory01_2start_1"
 					},
 					durations = {
 						0.03
@@ -320,7 +167,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 			args = function (_ctx)
 				return {
 					resType = 0,
-					image = "CLMan/CLMan_face_6.png",
+					image = "CLMan/CLMan_face_13.png",
 					pathType = "STORY_FACE"
 				}
 			end
@@ -330,7 +177,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "妮娜",
+					name = "dialog_speak_name_5",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -338,7 +185,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 						"CLMan_speak"
 					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>哼哼～區區夢魘不是我大英雄妮娜的對手，但數量一多就很麻煩呢！</font>"
+						"blockstory01_2start_2"
 					},
 					durations = {
 						0.03
@@ -347,41 +194,16 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 			end
 		}),
 		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"<font size='32' color='#ffffff'><outline color='#000000' size='1'>妮娜～還好妳沒事……</outline></font>"
-					}
-				}
-			end
-		}),
-		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "CLMan_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "CLMan/CLMan_face_3.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "妮娜",
+					name = "dialog_speak_name_5",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
-					speakings = {
-						"CLMan_speak"
-					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>既然你們來了，那就一起把這些可惡的夢魘一掃而空！</font>"
+						"blockstory01_2start_3"
 					},
 					durations = {
 						0.03
@@ -394,208 +216,7 @@ function scene_blockstory01_2start.actions.start_blockstory01_2start(_root, args
 			actor = __getnode__(_root, "curtain"),
 			args = function (_ctx)
 				return {
-					duration = 0.3
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "CLMan_speak"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "bg"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "bg1"),
-			args = function (_ctx)
-				return {
-					duration = 0
-				}
-			end
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0.3
-				}
-			end
-		}),
-		rockScreen({
-			args = function (_ctx)
-				return {
-					freq = 3,
-					strength = 2
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 2
-				}
-			end
-		}),
-		concurrent({
-			act({
-				action = "speak",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						name = "妮娜",
-						dialogImage = "jq_dialogue_bg_1.png",
-						location = "left",
-						pathType = "STORY_ROOT",
-						speakings = {
-							""
-						},
-						content = {
-							"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>怒吼吧！朗基努斯！</font>"
-						},
-						durations = {
-							0.03
-						}
-					}
-				end
-			}),
-			act({
-				action = "rock",
-				actor = __getnode__(_root, "dialogue"),
-				args = function (_ctx)
-					return {
-						freq = 3,
-						strength = 2
-					}
-				end
-			})
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "村咲小夜",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>妮娜！別衝……</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "村咲小夜",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"<font size='28' face='${fontName_FZYH_R}' color='#ffffff'>大笨蛋！</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"<font size='32' color='#ffffff'><outline color='#000000' size='1'>她衝出去了……</outline></font>"
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "村咲小夜",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>嘖。這個腦袋跟水母一樣單純的熱血笨蛋！</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"<font size='32' color='#ffffff'><outline color='#000000' size='1'>總之先跟上吧！</outline></font>",
-						"<font size='32' color='#ffffff'><outline color='#000000' size='1'>先把附近的夢魘清除掉，再把妮娜架回來！</outline></font>"
-					}
-				}
-			end
-		}),
-		act({
-			action = "updateColor",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					color = {
-						255,
-						255,
-						255,
-						255
-					}
-				}
-			end
-		}),
-		act({
-			action = "fadeIn",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 0.3
+					duration = 0.5
 				}
 			end
 		})

@@ -59,6 +59,7 @@ function GalleryPartnerRewardMediator:enterWithData(data)
 		},
 		title = title,
 		title1 = title1,
+		titleSize = cc.size(540, 80),
 		bgSize = {
 			width = 736,
 			height = 374

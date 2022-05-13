@@ -33,6 +33,7 @@ ExploreZombieState = {
 	kOpen = 1,
 	kHide = -1
 }
+ExploreCloseChooseId = "999"
 local MapOpenType = {
 	openType = 1
 }
@@ -201,50 +202,56 @@ function ExploreSystem:updateMapStatus()
 		local isLock = false
 		local lockTip = ""
 		local condition = obj:getUnlockCondition()
+		local openType = obj:getOpenType()
 
-		if condition.LEVEL then
-			isLock = playerLevel < condition.LEVEL
-			lockTip = isLock and Strings:get("EXPLORE_UI2", {
-				level = condition.LEVEL
-			}) or ""
-		end
-
-		if condition.DP then
-			local mapObj = self:getMapTypeDic()[obj:getMapType()]
-			local preStatus = isLock
-			isLock = isLock or mapObj:getDpNum() < condition.DP
-
-			if (not preStatus or not lockTip) and isLock then
-				lockTip = Strings:get("EXPLORE_UI5", {
-					dpNum = condition.DP
-				}) or lockTip
+		if openType == 1 then
+			isLock = true
+			lockTip = Strings:get("EXPLORE_UI112")
+		else
+			if condition.LEVEL then
+				isLock = playerLevel < condition.LEVEL
+				lockTip = isLock and Strings:get("EXPLORE_UI2", {
+					level = condition.LEVEL
+				}) or ""
 			end
-		end
 
-		if condition.ALLDP then
-			local preStatus = isLock
-			isLock = isLock or self._totalDp < condition.ALLDP
+			if condition.DP then
+				local mapObj = self:getMapTypeDic()[obj:getMapType()]
+				local preStatus = isLock
+				isLock = isLock or mapObj:getDpNum() < condition.DP
 
-			if (not preStatus or not lockTip) and isLock then
-				lockTip = Strings:get("EXPLORE_UI5", {
-					dpNum = condition.ALLDP
-				}) or lockTip
+				if (not preStatus or not lockTip) and isLock then
+					lockTip = Strings:get("EXPLORE_UI5", {
+						dpNum = condition.DP
+					}) or lockTip
+				end
 			end
-		end
 
-		if condition.PREPOINT then
-			local preStatus = isLock
+			if condition.ALLDP then
+				local preStatus = isLock
+				isLock = isLock or self._totalDp < condition.ALLDP
 
-			for i, v in pairs(condition.PREPOINT) do
-				local targetObj = self:getMapPointObjById(i)
+				if (not preStatus or not lockTip) and isLock then
+					lockTip = Strings:get("EXPLORE_UI5", {
+						dpNum = condition.ALLDP
+					}) or lockTip
+				end
+			end
 
-				if targetObj:getMapTaskCount() < v then
-					isLock = true
-					lockTip = preStatus and lockTip or Strings:get("EXPLORE_UI6", {
-						times = v
-					})
+			if condition.PREPOINT then
+				local preStatus = isLock
 
-					break
+				for i, v in pairs(condition.PREPOINT) do
+					local targetObj = self:getMapPointObjById(i)
+
+					if targetObj:getMapTaskCount() < v then
+						isLock = true
+						lockTip = preStatus and lockTip or Strings:get("EXPLORE_UI6", {
+							times = v
+						})
+
+						break
+					end
 				end
 			end
 		end
@@ -1050,6 +1057,19 @@ function ExploreSystem:requestGetBattleData(callback, params, blockUI, ins)
 	end, params, blockUI)
 end
 
+function ExploreSystem:requestSweepPoint(pointId, times, callback)
+	local params = {
+		pointId = pointId,
+		times = times
+	}
+
+	self._exploreService:requestSwppePoint(params, true, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response)
+		end
+	end)
+end
+
 function ExploreSystem:getPointConfigById(pointId)
 	return ConfigReader:getRecordById("MapBattlePoint", pointId)
 end
@@ -1380,6 +1400,39 @@ function ExploreSystem:enterBattle(pointId, battleDataS, extraData, isAutoPlay)
 	}
 
 	BattleLoader:pushBattleView(self, data)
+end
+
+function ExploreSystem:enterQuickBattle(pointId, battleDataS, extraData)
+	local playerData = battleDataS.playerData
+	local enemyData = battleDataS.enemyData
+	local battleType = SettingBattleTypes.kExplore
+	local isAuto, timeScale = self:getInjector():getInstance(SettingSystem):getSettingModel():getBattleSetting(battleType)
+
+	local function callback(report)
+		self:endTrigger(function (response)
+			local function tempFunc()
+				self:dispatch(Event:new(EVT_EXPLORE_FIGHT_FINISH))
+			end
+
+			self._fightFinishData = {
+				response = response,
+				extraData = extraData,
+				isWin = report.result == 1
+			}
+			local view = self:getInjector():getInstance("ExploreBattleFinishView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+				quickbattle = true,
+				report = response.data,
+				callBack = tempFunc
+			}))
+		end, {
+			objectId = extraData.objData:getId(),
+			params = report
+		}, true)
+	end
+
+	callback(self:immediateBattle(pointId, battleDataS))
 end
 
 function ExploreSystem:enterZombieView(pointId)

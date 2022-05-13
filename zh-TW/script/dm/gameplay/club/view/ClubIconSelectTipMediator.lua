@@ -74,9 +74,10 @@ function ClubIconSelectTipMediator:initState()
 	if self._curIndex ~= -1 then
 		local lineIndex = math.modf((self._curIndex - 1) / 4)
 		local cell = self._tableView:cellAtIndex(lineIndex):getChildByTag(self._curIndex - 4 * lineIndex)
-		local selectKuang = cc.Sprite:createWithSpriteFrameName("yizhuang_icon_ixuanzhong.png")
+		local backImg = ccui.Scale9Sprite:createWithSpriteFrameName("legend_img_select.png")
 
-		selectKuang:addTo(cell):center(cell:getContentSize()):setTag(1517)
+		backImg:addTo(cell):center(cell:getContentSize()):setTag(1517)
+		backImg:setContentSize(cc.rect(0, 0, cell:getContentSize().width, cell:getContentSize().height + 2))
 
 		self._curCell = cell
 	end
@@ -192,9 +193,10 @@ function ClubIconSelectTipMediator:onIconSelectClicked(sender, eventType, index)
 				return
 			end
 
-			local selectKuang = cc.Sprite:createWithSpriteFrameName("yizhuang_icon_ixuanzhong.png")
+			local backImg = ccui.Scale9Sprite:createWithSpriteFrameName("legend_img_select.png")
 
-			selectKuang:addTo(sender):center(sender:getContentSize()):setTag(1517)
+			backImg:addTo(sender):center(sender:getContentSize()):setTag(1517)
+			backImg:setContentSize(cc.rect(0, 0, sender:getContentSize().width, sender:getContentSize().height + 2))
 
 			self._curIndex = index
 

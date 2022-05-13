@@ -193,27 +193,20 @@ end
 
 function PassListModel:sortActivityTask()
 	local function sortFun(a, b)
-		if a:getStatus() == ActivityTaskStatus.kFinishNotGet and b:getStatus() ~= ActivityTaskStatus.kFinishNotGet then
-			return true
+		if a:getOrderStatusNum() == b:getOrderStatusNum() then
+			return a:getOrderNum() < b:getOrderNum()
 		end
 
-		if a:getStatus() ~= ActivityTaskStatus.kFinishNotGet and b:getStatus() == ActivityTaskStatus.kFinishNotGet then
-			return false
-		end
-
-		if a:getStatus() == ActivityTaskStatus.kUnfinish and b:getStatus() == ActivityTaskStatus.kGet then
-			return true
-		end
-
-		if a:getStatus() == ActivityTaskStatus.kGet and b:getStatus() == ActivityTaskStatus.kUnfinish then
-			return false
-		end
-
-		return a:getOrderNum() < b:getOrderNum()
+		return b:getOrderStatusNum() < a:getOrderStatusNum()
 	end
 
-	table.sort(self._passTaskList[PassTaskType.kDailyTask], sortFun)
-	table.sort(self._passTaskList[PassTaskType.kWeekTask], sortFun)
+	if self._passTaskList[PassTaskType.kDailyTask] ~= nil then
+		table.sort(self._passTaskList[PassTaskType.kDailyTask], sortFun)
+	end
+
+	if self._passTaskList[PassTaskType.kWeekTask] ~= nil then
+		table.sort(self._passTaskList[PassTaskType.kWeekTask], sortFun)
+	end
 
 	if self._passTaskList[PassTaskType.kMonthTask] ~= nil then
 		table.sort(self._passTaskList[PassTaskType.kMonthTask], sortFun)

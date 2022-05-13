@@ -83,7 +83,8 @@ function ActivityBlockSummerMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
 	self._topPanel = self:getView():getChildByName("topPanel")
 	self._main = self:getView():getChildByName("main")
@@ -147,13 +148,8 @@ function ActivityBlockSummerMediator:onRegister()
 end
 
 function ActivityBlockSummerMediator:setupTopInfoWidget()
-	local width = 0
-	local currencyInfo = self._summerActivity:getResourcesBanner()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -161,6 +157,22 @@ function ActivityBlockSummerMediator:setupTopInfoWidget()
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function ActivityBlockSummerMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local width = 0
+	local currencyInfo = self._summerActivity:getResourcesBanner()
+	local config = {
+		hideLine = true,
+		style = 1,
+		currencyInfo = currencyInfo
+	}
 
 	self._topInfoWidget:updateView(config)
 
@@ -172,19 +184,24 @@ end
 function ActivityBlockSummerMediator:enterWithData(data)
 	self._resumeName = data and data.resumeName or nil
 	self._activityId = data.activityId
-	self._summerActivity = self._activitySystem:getActivityById(self._activityId)
+	self._summerActivity = self._activitySystem:getActivityByComplexId(self._activityId)
 
 	if not self._summerActivity then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
 		return
 	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
 
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 	self:runBtnAnim()
-	self:playBackgroundMusic()
 end
 
 function ActivityBlockSummerMediator:playBackgroundMusic()
@@ -194,28 +211,12 @@ function ActivityBlockSummerMediator:playBackgroundMusic()
 end
 
 function ActivityBlockSummerMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
-	self:playBackgroundMusic()
+	self:doReset()
 end
 
 function ActivityBlockSummerMediator:initData()
-	self._summerActivity = self._activitySystem:getActivityById(self._activityId)
-	self._activityId = self._summerActivity:getActivityId()
-	self._blockActivity = nil
-	self._taskActivities = {}
-
-	if self._summerActivity then
-		self._blockActivity = self._summerActivity:getBlockMapActivity()
-		self._taskActivities = self._summerActivity:getTaskActivities()
-	end
-
+	self._blockActivity = self._summerActivity:getBlockMapActivity()
+	self._taskActivities = self._summerActivity:getTaskActivities()
 	self._roleIndex = 1
 	self._roles = self._summerActivity:getRoleParams()
 end
@@ -225,6 +226,7 @@ function ActivityBlockSummerMediator:initView()
 	self:initTimer()
 	self:initRoleTimer()
 	self:updateRolePanel()
+	self:playBackgroundMusic()
 end
 
 function ActivityBlockSummerMediator:initInfo()
@@ -271,7 +273,7 @@ function ActivityBlockSummerMediator:setSummerPanelBtn()
 			min = m,
 			sec = s
 		}
-		local endTime = TimeUtil:getTimeByDate(table)
+		local endTime = TimeUtil:timeByRemoteDate(table)
 		local remoteTimestamp = self._activitySystem:getCurrentTime()
 		local remainTime = endTime - remoteTimestamp
 
@@ -349,7 +351,7 @@ function ActivityBlockSummerMediator:initTimer()
 			min = m,
 			sec = s
 		}
-		self._endTime = TimeUtil:getTimeByDate(table)
+		self._endTime = TimeUtil:timeByRemoteDate(table)
 
 		if remoteTimestamp < self._endTime then
 			if self._timer then
@@ -434,9 +436,9 @@ function ActivityBlockSummerMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 
@@ -449,18 +451,16 @@ end
 function ActivityBlockSummerMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._summerActivity = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._summerActivity then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockSummerMediator:refreshView()

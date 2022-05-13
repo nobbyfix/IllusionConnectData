@@ -58,6 +58,7 @@ function Tree:createRoot(node, name, space, isHide)
 		self:getView():addChild(self._rootNode:getView())
 		self._rootNode:setPosition(cc.p(0, posY - self._height))
 		self:getEventDispatcher():addEventListener(EVT_TREE_NODE_CHANGED, self, self.handleUpdate, false, 0)
+		self:getEventDispatcher():addEventListener(EVT_TREE_NODE_SELECTED, self, self.handleNodeSelect, false, 0)
 	end
 end
 
@@ -112,6 +113,23 @@ function Tree:handleUpdate(event)
 	end
 end
 
+function Tree:handleNodeSelect(event)
+	local percent = event:getData()
+	local scrollView = self:getView()
+	local innerSize = scrollView:getInnerContainerSize()
+	local minY = scrollView:getContentSize().height - innerSize.height
+
+	scrollView:jumpToPercentVertical(math.min(math.abs(percent / minY), 1) * 100)
+end
+
+function Tree:jumpToByPos(percent)
+	local scrollView = self:getView()
+	local innerSize = scrollView:getInnerContainerSize()
+	local minY = scrollView:getContentSize().height - innerSize.height
+
+	scrollView:jumpToPercentVertical(math.min(math.abs(percent / minY), 1) * 100)
+end
+
 TreeNode = class("TreeNode", BaseWidget, _M)
 
 function TreeNode:initialize(view, name, space, isHide, treeEventDispatcher)
@@ -128,6 +146,7 @@ end
 
 function TreeNode:dispose()
 	super.dispose(self)
+	self._nodeContainer:release()
 
 	self._nodeContainer = nil
 end
@@ -182,6 +201,16 @@ function TreeNode:setTouchEvent()
 
 			if self._clickEvent and self._clickContext then
 				self._clickEvent(self._clickContext, self._userdata)
+
+				if self._treeEventDispatcher then
+					local touchPos = self:getView():getPositionY()
+					local height = self:getView():getContentSize().height
+					local per = math.abs(touchPos) - height
+
+					if #self._nodeArr > 0 then
+						self._treeEventDispatcher:dispatchEvent(Event:new(EVT_TREE_NODE_SELECTED, per))
+					end
+				end
 			end
 		end
 	end)

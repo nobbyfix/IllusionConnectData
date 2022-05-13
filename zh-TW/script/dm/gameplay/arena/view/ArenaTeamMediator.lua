@@ -22,7 +22,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -50,6 +50,8 @@ function ArenaTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ARENA_CHANGE_TEAM_SUCC, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_STAGE_CHANGENAME_SUCC, self, self.refreshTeamName)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -132,9 +134,15 @@ function ArenaTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function ArenaTeamMediator:initData()
+function ArenaTeamMediator:initData(team)
 	self._teamList = self._developSystem:getAllUnlockTeams()
-	self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._developSystem:getSpTeamByType(self._stageType)
+	end
+
 	self._curTeamId = self._curTeam:getId()
 	local modelTmp = {
 		_heroes = self:removeExceptHeros(),
@@ -221,6 +229,7 @@ function ArenaTeamMediator:setupView()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function ArenaTeamMediator:initWidgetInfo()
@@ -241,6 +250,11 @@ function ArenaTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._infoBtn = self._main:getChildByFullName("infoBtn")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
@@ -256,12 +270,12 @@ function ArenaTeamMediator:initWidgetInfo()
 	buffInfo:setString("")
 
 	local text = Strings:get(seasonSkillData.Desc, {
-		fontSize = 28,
+		fontSize = 22,
 		fontName = TTF_FONT_FZYH_R
 	})
 	local richText = ccui.RichText:createWithXML(text, {})
 
-	richText:setFontSize(28)
+	richText:setFontSize(22)
 	richText:setAnchorPoint(buffInfo:getAnchorPoint())
 	richText:setPosition(cc.p(buffInfo:getPositionX(), buffInfo:getPositionY()))
 	richText:addTo(buffInfo:getParent())
@@ -901,7 +915,7 @@ function ArenaTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -923,7 +937,12 @@ function ArenaTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -998,7 +1017,9 @@ function ArenaTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		if dicengEff then
 			dicengEff:setVisible(isActive)
@@ -1013,6 +1034,11 @@ function ArenaTeamMediator:initTeamHero(node, info)
 end
 
 function ArenaTeamMediator:refreshCombatAndCost()
+	local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
+	local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+	local isDouble = table.indexof(effectScene, "ARENA") > 0
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and effectRate or 1) or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1021,6 +1047,10 @@ function ArenaTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1041,6 +1071,10 @@ function ArenaTeamMediator:refreshCombatAndCost()
 
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+	self._infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	self._infoBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickInfo(eventType, nil, isDouble)
+	end)
 end
 
 function ArenaTeamMediator:changeMasterId(event)
@@ -1049,6 +1083,7 @@ function ArenaTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function ArenaTeamMediator:refreshMasterInfo()
@@ -1227,4 +1262,15 @@ function ArenaTeamMediator:setupClickEnvs()
 	end))
 
 	oneKeyBtn:runAction(sequence)
+end
+
+function ArenaTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:refreshPetNode()
+
+	self._hasForceChangeTeam = true
 end

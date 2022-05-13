@@ -527,7 +527,10 @@ function FriendPvpInviteWidget:onClickChatView(selectFriend)
 				master = selectFriend:getMaster(),
 				clubName = selectFriend:getClubName(),
 				isFriend = response.isFriend,
-				close = response.isFriend == 1 and response.close or nil
+				close = response.isFriend == 1 and response.close or nil,
+				block = response.block,
+				leadStageId = selectFriend:getLeadStageId(),
+				leadStageLevel = selectFriend:getLeadStageLevel()
 			}
 
 			self._friendSystem:addRecentFriend(data)

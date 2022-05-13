@@ -26,6 +26,7 @@ SurfaceViewType = {
 	kShop = "shop",
 	kMaster = "master"
 }
+local SurfaceNodeRed = ConfigReader:getDataByNameIdAndKey("ConfigValue", "surface_notred", "content")
 
 function SurfaceSystem:initialize()
 	super.initialize(self)
@@ -33,6 +34,10 @@ function SurfaceSystem:initialize()
 	self._surfaceList = SurfaceList:new()
 
 	self._surfaceList:initSurface()
+end
+
+function SurfaceSystem:userInject()
+	self._heroSystem = self._developSystem:getHeroSystem()
 end
 
 function SurfaceSystem:checkEnabled(data)
@@ -71,6 +76,16 @@ end
 
 function SurfaceSystem:getSurfaceById(id)
 	return self:getSurfaces()[id]
+end
+
+function SurfaceSystem:hasHeroSkin(id)
+	local surface = self:getSurfaceById(id)
+
+	if surface then
+		return surface:getUnlock()
+	end
+
+	return false
 end
 
 function SurfaceSystem:getSurfaces()
@@ -124,6 +139,7 @@ function SurfaceSystem:requestBuySurface(data, callback)
 				callback()
 			end
 
+			self:setSurfaceCustomDataByKey(data.surfaceId, true)
 			self:dispatch(Event:new(EVT_SURFACE_BUY_SUCC, params))
 		end
 	end)
@@ -140,7 +156,161 @@ function SurfaceSystem:requestSelectSurface(data, callback)
 				callback()
 			end
 
+			self:setSurfaceCustomDataByKey(data.surfaceId, true)
 			self:dispatch(Event:new(EVT_SURFACE_SELECT_SUCC, response))
 		end
 	end)
+end
+
+function SurfaceSystem:getHeroShowRedPoint(s)
+	if s and s:getUnlock() and s:getIsVisible() then
+		local t = s:getType() or 0
+
+		if not table.indexof(SurfaceNodeRed, t) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function SurfaceSystem:checkIsShowRedPoint()
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return false
+	end
+
+	local heroes = self._heroSystem:getOwnHeroIds()
+
+	for i = 1, #heroes do
+		local heroId = heroes[i].id
+
+		if self:getRedPointByHeroId(heroId) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function SurfaceSystem:getRedPointByHeroId(heroId)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return false
+	end
+
+	local heroId = heroId
+	local heroSurfaces = self:getSurfaceByTargetRole(heroId)
+
+	for i, s in ipairs(heroSurfaces) do
+		if self:getRedPointByHeroIdAndSur(heroId, s:getId()) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function SurfaceSystem:getRedPointByHeroIdAndSur(heroId, surfaceId)
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		return false
+	end
+
+	local allSurfaces = self:getSurfaces()
+	local s = allSurfaces[surfaceId]
+
+	if self:getHeroShowRedPoint(s) then
+		local state = self:getSurfaceCustomDataByKey(surfaceId)
+
+		if state == 0 then
+			return true
+		end
+	end
+
+	return false
+end
+
+function SurfaceSystem:initSurfaceCustomData()
+	local state = self._customDataSystem:getValue(PrefixType.kGlobal, "surface_is_first")
+
+	if state and tonumber(state) == 1 then
+		return
+	end
+
+	self._customDataSystem:setValue(PrefixType.kGlobal, "surface_is_first", 1)
+
+	local haveIds = {}
+	local heroes = self._heroSystem:getOwnHeroIds()
+
+	for i = 1, #heroes do
+		local heroId = heroes[i].id
+		local heroSurfaces = self:getSurfaceByTargetRole(heroId)
+
+		for i, s in ipairs(heroSurfaces) do
+			if self:getHeroShowRedPoint(s) then
+				table.insert(haveIds, s:getId())
+			end
+		end
+	end
+
+	if next(haveIds) then
+		self:setSurfaceCustomDataByKeys(haveIds)
+	end
+end
+
+function SurfaceSystem:getSurfaceCustomDataByKey(surfaceId)
+	local cjson = require("cjson.safe")
+	local data = cjson.decode(self._customDataSystem:getValue(PrefixType.kGlobal, "SurfaceCustom", "{}"))
+
+	if not data[surfaceId] then
+		return 0
+	end
+
+	return tonumber(data[surfaceId])
+end
+
+function SurfaceSystem:setSurfaceCustomDataByKey(surFaceId, isRefresh)
+	local allSurfaces = self:getSurfaces()
+	local s = allSurfaces[surFaceId]
+
+	if not self:getHeroShowRedPoint(s) then
+		return
+	end
+
+	local cjson = require("cjson.safe")
+	local data = cjson.decode(self._customDataSystem:getValue(PrefixType.kGlobal, "SurfaceCustom", "{}"))
+
+	if data[surFaceId] and tonumber(data[surFaceId]) == 1 then
+		return
+	end
+
+	local calback = nil
+
+	if isRefresh then
+		function calback()
+			self:dispatch(Event:new(EVT_SURFACE_REFRESH_REDPOINT, {}))
+		end
+	end
+
+	data[surFaceId] = 1
+	local dataStr = cjson.encode(data)
+
+	self._customDataSystem:setValue(PrefixType.kGlobal, "SurfaceCustom", dataStr, calback)
+end
+
+function SurfaceSystem:setSurfaceCustomDataByKeys(surFaceIds)
+	local cjson = require("cjson.safe")
+	local data = cjson.decode(self._customDataSystem:getValue(PrefixType.kGlobal, "SurfaceCustom", "{}"))
+
+	for i, v in ipairs(surFaceIds) do
+		data[v] = 1
+	end
+
+	local dataStr = cjson.encode(data)
+
+	self._customDataSystem:setValue(PrefixType.kGlobal, "SurfaceCustom", dataStr)
 end

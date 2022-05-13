@@ -82,6 +82,14 @@ function TaskSystem:synchronizeTask(data)
 		self:getTaskListModel():updateTasks(data.mapTaskManager)
 	end
 
+	if data.urTaskManager then
+		self:getTaskListModel():updateTasks(data.urTaskManager)
+	end
+
+	if data.seasonTaskManager then
+		self:getTaskListModel():updateTasks(data.seasonTaskManager)
+	end
+
 	self:dispatch(Event:new(EVT_TASK_REFRESHVIEW, {}))
 end
 
@@ -95,8 +103,33 @@ function TaskSystem:synchronizeAchieveTask(data)
 	end
 end
 
-function TaskSystem:getLivenessList()
+function TaskSystem:getLivenessRewardConfig()
 	local configList = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ActiveReward", "content")
+	local data = configList
+
+	if configList[1] and configList[1].level then
+		local actLevel = self._taskListModel:getActivityLevel()
+
+		for i, v in pairs(configList) do
+			if v.level[1] and v.level[2] then
+				if tonumber(v.level[1]) <= tonumber(actLevel) and tonumber(actLevel) <= tonumber(v.level[2]) then
+					data = v.reward
+
+					break
+				end
+			elseif v.level[1] and tonumber(v.level[1]) <= tonumber(actLevel) then
+				data = v.reward
+
+				break
+			end
+		end
+	end
+
+	return data
+end
+
+function TaskSystem:getLivenessList()
+	local configList = self:getLivenessRewardConfig()
 	local livenessList = {}
 
 	for k, v in pairs(configList) do
@@ -111,7 +144,7 @@ function TaskSystem:getLivenessList()
 end
 
 function TaskSystem:getLivenessRewardByType(rType)
-	local configList = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ActiveReward", "content")
+	local configList = self:getLivenessRewardConfig()
 	local rewardId = nil
 
 	for k, v in pairs(configList) do
@@ -176,6 +209,30 @@ function TaskSystem:hasDailyRedPoint()
 
 	if self:hasWeekRewardRed() then
 		return true
+	end
+
+	local daiyTaskList = self:getShowDailyTaskList()
+
+	for i = 1, #daiyTaskList do
+		local taskData = daiyTaskList[i]
+		local taskStatus = taskData:getStatus()
+		local condition = taskData:getShowCondition()
+		local systemKeeper = self:getInjector():getInstance(SystemKeeper)
+
+		if taskStatus == TaskStatus.kFinishNotGet and systemKeeper:isConditionReached(condition) then
+			return true
+		end
+	end
+
+	return false
+end
+
+function TaskSystem:hasDailyTaskRedPoint()
+	local unlock, tip = self._systemKeeper:isUnlock("DailyQuest")
+	local canShow = self._systemKeeper:canShow("DailyQuest")
+
+	if not canShow or not unlock then
+		return false
 	end
 
 	local daiyTaskList = self:getShowDailyTaskList()
@@ -283,6 +340,14 @@ function TaskSystem:getShowMapTaskList()
 	return self._taskListModel:getShowMapTask()
 end
 
+function TaskSystem:getTaskListByType(taskType)
+	return self._taskListModel:getTaskListByType(taskType)
+end
+
+function TaskSystem:hasUnreceivedTask(taskType)
+	return self._taskListModel:hasUnreceivedTask(taskType)
+end
+
 function TaskSystem:hasAchieveRedPoint()
 	local unlock, tip = self._systemKeeper:isUnlock("Task_Achievement")
 	local canShow = self._systemKeeper:canShow("Task_Achievement")
@@ -332,6 +397,7 @@ function TaskSystem:requestTaskList(params, callback, mediator, blockUI)
 	taskService:requestTaskList(params, blockUI, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:getTaskListModel():synchronizeModel(response.data)
+			self:dispatch(Event:new(EVT_TASK_REFRESHVIEW, {}))
 
 			if mediator and DisposableObject:isDisposed(mediator) then
 				return
@@ -402,6 +468,70 @@ function TaskSystem:requestAchievementReward(params, callback)
 	taskService:requestAchievementReward(params, function (response)
 		if response.resCode == GS_SUCCESS then
 			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestOneKeyDailyTaskReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestOneKeyDailyTaskReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestOneKeyAchievementReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestOneKeyAchievementReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_ACHI_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:oneKeyURTaskReward(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:oneKeyURTaskReward(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
+				response = response.data.rewards
+			}))
+
+			if callback then
+				callback(response)
+			end
+		end
+	end)
+end
+
+function TaskSystem:requestObtainCoinRewardOneKey(params, callback)
+	local taskService = self:getInjector():getInstance(TaskService)
+
+	taskService:requestObtainCoinRewardOneKey(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_TASK_REWARD_SUCC, {
 				response = response.data.rewards
 			}))
 

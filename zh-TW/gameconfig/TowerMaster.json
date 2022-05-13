@@ -47,6 +47,7 @@
             "Tower_1_Point8",
             "Tower_1_Point9"
         ],
+        "Sex": 1,
         "TeamSkill1": "SectSkill_Master_XueZhan_1",
         "TeamSkill2": "SectSkill_Master_XueZhan_2",
         "TeamSkill3": "SectSkill_Master_XueZhan_3",
@@ -73,6 +74,63 @@
             }
         ],
         "TeamSkillCondition1": [
+            [
+                {
+                    "param": [
+                        [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "LDu"
+                        ],
+                        [
+                            "YBYa"
+                        ],
+                        [
+                            "ATSheng"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        10
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Summon"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        4,
+                        99
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
             [
                 {
                     "param": [
@@ -245,153 +303,6 @@
                 }
             ]
         ],
-        "TeamSkillCondition2": [
-            [
-                {
-                    "param": [
-                        [
-                            "ZTXChang"
-                        ],
-                        [
-                            "FTLEShi"
-                        ],
-                        [
-                            "CLMan"
-                        ],
-                        [
-                            "ATSheng"
-                        ],
-                        [
-                            "XLai"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        2,
-                        10
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition3": [
-            [
-                {
-                    "param": [
-                        [
-                            "Attack"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Defense"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Cure"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Aoe"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Support"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Curse"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        99
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition4": [
-            [
-                {
-                    "param": [
-                        [
-                            "Attack"
-                        ],
-                        [
-                            "Defense"
-                        ],
-                        [
-                            "Aoe"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        7,
-                        100
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
         "TeamSkillCondition5": [
             [
                 {
@@ -415,6 +326,9 @@
                     "param": [
                         [
                             "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
                         ]
                     ],
                     "range": "group",
@@ -475,6 +389,7 @@
             "Tower_1_Point8",
             "Tower_1_Point9"
         ],
+        "Sex": 1,
         "TeamSkill1": "SectSkill_Master_LieSha_1",
         "TeamSkill2": "SectSkill_Master_LieSha_2",
         "TeamSkill3": "SectSkill_Master_LieSha_3",
@@ -497,6 +412,63 @@
         "TeamSkillCondition1": [
             [
                 {
+                    "param": [
+                        [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "BBLMa"
+                        ],
+                        [
+                            "KTSJKe"
+                        ],
+                        [
+                            "CZheng"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        10
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Attack"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        4,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
+            [
+                {
                     "param": [],
                     "range": "group",
                     "scope": [
@@ -513,72 +485,12 @@
                 }
             ]
         ],
-        "TeamSkillCondition2": [
-            [
-                {
-                    "param": [
-                        [
-                            "BBLMa"
-                        ],
-                        [
-                            "MKLJLuo"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        1,
-                        2
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition3": [
-            [
-                {
-                    "param": [
-                        [
-                            "Attack"
-                        ],
-                        [
-                            "Aoe"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        6,
-                        100
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
-        "TeamSkillCondition4": [
-            [
-                {
-                    "param": [
-                        [
-                            "Summon"
-                        ],
-                        [
-                            "Curse"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        6,
-                        100
-                    ],
-                    "type": "tag"
-                }
-            ]
-        ],
         "TeamSkillCondition5": [
             [
                 {
                     "param": [
                         [
-                            "Cost15Down"
+                            "Attack"
                         ]
                     ],
                     "range": "hold",
@@ -594,6 +506,21 @@
                     ],
                     "type": "percent"
                 }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Attack"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
+                }
             ]
         ],
         "TeamSkillCondition6": [
@@ -602,6 +529,9 @@
                     "param": [
                         [
                             "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
                         ]
                     ],
                     "range": "group",
@@ -662,6 +592,7 @@
             "Tower_1_Point8",
             "Tower_1_Point9"
         ],
+        "Sex": 1,
         "TeamSkill1": "SectSkill_Master_BiLei_1",
         "TeamSkill2": "SectSkill_Master_BiLei_2",
         "TeamSkill3": "SectSkill_Master_BiLei_3",
@@ -684,19 +615,17 @@
         "TeamSkillCondition1": [
             [
                 {
-                    "param": [],
-                    "range": "group",
-                    "scope": [
+                    "param": [
                         [
-                            14,
-                            1
-                        ],
-                        [
-                            99,
-                            1
+                            "Star1Up"
                         ]
                     ],
-                    "type": "avgcost"
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
                 }
             ]
         ],
@@ -709,12 +638,15 @@
                         ],
                         [
                             "WEDe"
+                        ],
+                        [
+                            "LLan"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -725,26 +657,15 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Defense"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        6,
-                        100
+                        4,
+                        99
                     ],
                     "type": "tag"
-                },
-                {
-                    "param": [
-                        []
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        4
-                    ],
-                    "type": "typevalue"
                 }
             ]
         ],
@@ -753,26 +674,15 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Cost18Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        6,
+                        3,
                         100
                     ],
                     "type": "tag"
-                },
-                {
-                    "param": [
-                        []
-                    ],
-                    "range": "group",
-                    "scope": [
-                        6,
-                        100
-                    ],
-                    "type": "typevalue"
                 }
             ]
         ],
@@ -781,7 +691,7 @@
                 {
                     "param": [
                         [
-                            "Cost14Up"
+                            "Defense"
                         ]
                     ],
                     "range": "hold",
@@ -797,6 +707,21 @@
                     ],
                     "type": "percent"
                 }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Defense"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
+                }
             ]
         ],
         "TeamSkillCondition6": [
@@ -805,6 +730,9 @@
                     "param": [
                         [
                             "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
                         ]
                     ],
                     "range": "group",
@@ -865,6 +793,7 @@
             "Tower_1_Point8",
             "Tower_1_Point9"
         ],
+        "Sex": 1,
         "TeamSkill1": "SectSkill_Master_FuHun_1",
         "TeamSkill2": "SectSkill_Master_FuHun_2",
         "TeamSkill3": "SectSkill_Master_FuHun_3",
@@ -889,12 +818,12 @@
                 {
                     "param": [
                         [
-                            "Aoe"
+                            "Star1Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        5,
+                        10,
                         100
                     ],
                     "type": "tag"
@@ -909,13 +838,16 @@
                             "MGNa"
                         ],
                         [
-                            "JDCZhang"
+                            "SLMen"
+                        ],
+                        [
+                            "XSMLi"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -926,78 +858,13 @@
                 {
                     "param": [
                         [
-                            "Attack"
+                            "Aoe"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Defense"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Cure"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Support"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
-                    ],
-                    "type": "tag"
-                },
-                {
-                    "param": [
-                        [
-                            "Curse"
-                        ]
-                    ],
-                    "range": "group",
-                    "scope": [
-                        0,
-                        1
+                        4,
+                        99
                     ],
                     "type": "tag"
                 }
@@ -1008,16 +875,169 @@
                 {
                     "param": [
                         [
-                            "Support"
-                        ],
-                        [
-                            "Curse"
+                            "Cost8"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        3,
-                        100
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost9"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost10"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost11"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost12"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost13"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost14"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost15"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost16"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost17"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost18"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost19"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
+                    ],
+                    "type": "tag"
+                },
+                {
+                    "param": [
+                        [
+                            "Cost20"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        0,
+                        2
                     ],
                     "type": "tag"
                 }
@@ -1044,6 +1064,21 @@
                     ],
                     "type": "percent"
                 }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Aoe"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
+                }
             ]
         ],
         "TeamSkillCondition6": [
@@ -1052,6 +1087,9 @@
                     "param": [
                         [
                             "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
                         ]
                     ],
                     "range": "group",
@@ -1112,6 +1150,7 @@
             "Tower_1_Point8",
             "Tower_1_Point9"
         ],
+        "Sex": 1,
         "TeamSkill1": "SectSkill_Master_SenLing_1",
         "TeamSkill2": "SectSkill_Master_SenLing_2",
         "TeamSkill3": "SectSkill_Master_SenLing_3",
@@ -1139,15 +1178,12 @@
                 {
                     "param": [
                         [
-                            "Cure"
-                        ],
-                        [
-                            "Support"
+                            "Star1Up"
                         ]
                     ],
                     "range": "group",
                     "scope": [
-                        5,
+                        10,
                         100
                     ],
                     "type": "tag"
@@ -1159,16 +1195,19 @@
                 {
                     "param": [
                         [
-                            "TPGZhu"
+                            "LFEr"
                         ],
                         [
-                            "LCYShi"
+                            "MLYTLSha"
+                        ],
+                        [
+                            "LYXi"
                         ]
                     ],
                     "range": "group",
                     "scope": [
                         1,
-                        2
+                        10
                     ],
                     "type": "tag"
                 }
@@ -1179,7 +1218,7 @@
                 {
                     "param": [
                         [
-                            "Defense"
+                            "Cure"
                         ]
                     ],
                     "range": "group",
@@ -1194,17 +1233,19 @@
         "TeamSkillCondition4": [
             [
                 {
-                    "param": [
-                        [
-                            "Summon"
-                        ]
-                    ],
+                    "param": [],
                     "range": "group",
                     "scope": [
-                        3,
-                        100
+                        [
+                            15,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
                     ],
-                    "type": "tag"
+                    "type": "avgcost"
                 }
             ]
         ],
@@ -1212,9 +1253,6 @@
             [
                 {
                     "param": [
-                        [
-                            "Support"
-                        ],
                         [
                             "Cure"
                         ]
@@ -1232,6 +1270,21 @@
                     ],
                     "type": "percent"
                 }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Cure"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
+                }
             ]
         ],
         "TeamSkillCondition6": [
@@ -1240,6 +1293,198 @@
                     "param": [
                         [
                             "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        5,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ]
+    },
+    "Tower_1_Master6": {
+        "ActionSkill1": "Sk_Action1_Master_LiMing",
+        "ActionSkill2": "Sk_Action2_Master_LiMing",
+        "ActionSkill3": "Sk_Action3_Master_LiMing",
+        "AttackSkill": "Sk_Attack_Master_LiMing",
+        "Buff": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            7
+        ],
+        "Factor": [
+            1,
+            1.1,
+            1.3,
+            1.5,
+            1.9,
+            2.2,
+            2.7,
+            3.3,
+            4
+        ],
+        "Feature": "Tower_1_MasterBase_Feature_6",
+        "Master": "Tower_1_PlayerMaster_6",
+        "MinAttack": [
+            1200,
+            1300,
+            1500,
+            1800,
+            2100,
+            2500,
+            3000,
+            3500,
+            4000
+        ],
+        "Point": [
+            "Tower_1_Point1",
+            "Tower_1_Point2",
+            "Tower_1_Point3",
+            "Tower_1_Point4",
+            "Tower_1_Point5",
+            "Tower_1_Point6",
+            "Tower_1_Point7",
+            "Tower_1_Point8",
+            "Tower_1_Point9"
+        ],
+        "Sex": 0,
+        "TeamSkill1": "SectSkill_Master_LiMing_1",
+        "TeamSkill2": "SectSkill_Master_LiMing_2",
+        "TeamSkill3": "SectSkill_Master_LiMing_3",
+        "TeamSkill4": "SectSkill_Master_LiMing_4",
+        "TeamSkill5": "SectSkill_Master_LiMing_5",
+        "TeamSkill6": "SectSkill_Master_LiMing_6",
+        "TeamSkillCondition": [],
+        "TeamSkillCondition1": [
+            [
+                {
+                    "param": [
+                        [
+                            "Star1Up"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        10,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition2": [
+            [
+                {
+                    "param": [
+                        [
+                            "TPGZhu"
+                        ],
+                        [
+                            "FEMSi"
+                        ],
+                        [
+                            "FLBDSi"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        10
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition3": [
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        4,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition4": [
+            [
+                {
+                    "param": [
+                        [
+                            "Cost13Down"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        3,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition5": [
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        [
+                            80,
+                            1
+                        ],
+                        [
+                            100,
+                            1
+                        ]
+                    ],
+                    "type": "percent"
+                }
+            ],
+            [
+                {
+                    "param": [
+                        [
+                            "Support"
+                        ]
+                    ],
+                    "range": "hold",
+                    "scope": [
+                        15,
+                        100
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "TeamSkillCondition6": [
+            [
+                {
+                    "param": [
+                        [
+                            "Rarity14"
+                        ],
+                        [
+                            "Rarity15"
                         ]
                     ],
                     "range": "group",

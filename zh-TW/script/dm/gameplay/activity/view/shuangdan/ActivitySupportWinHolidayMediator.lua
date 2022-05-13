@@ -166,6 +166,7 @@ function ActivitySupportWinHolidayMediator:setupView()
 	scoreNode:getChildByName("value2"):enableOutline(uiConfig.scoreOutLine, 2)
 	scoreNode:getChildByName("value1"):enableOutline(uiConfig.scoreOutLine, 2)
 	scoreNode:getChildByName("value1"):setString(self._activity:getWinPopularity())
+	scoreNode:getChildByName("value1"):offset(10, 3)
 
 	local rankBtn = self._main:getChildByName("showRankBtn")
 

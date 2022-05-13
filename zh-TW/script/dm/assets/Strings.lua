@@ -8,7 +8,13 @@ Strings = {
 			local r = ConfigReader:getRecordById("Translate", strId)
 
 			if r ~= nil then
-				content = r.Zh_CN
+				local language = getCurrentLanguage()
+
+				if language == GameLanguageType.EN then
+					content = r.En_EU
+				else
+					content = r.Zh_CN
+				end
 
 				if content ~= nil then
 					-- Nothing
@@ -49,6 +55,8 @@ Strings = {
 		if text == nil then
 			return id
 		end
+
+		text = string.gsub(text, "\\n", "\n")
 
 		if env ~= nil and type(env) == "table" then
 			local tmpl = TextTemplate:new(text)

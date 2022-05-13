@@ -1,9 +1,100 @@
 {
+    "AllHero": {
+        "Icon": [
+            "gallery_btn_normal_08_2",
+            "gallery_btn_normal_08_1"
+        ],
+        "IncludeHero": [],
+        "Party": "AllHero",
+        "PartyDesc": "",
+        "PartyReward": [],
+        "ShowRank": 8,
+        "Type": 1
+    },
+    "Aoe": {
+        "Icon": [
+            "gallery_btn_zhiye_01_2",
+            "gallery_btn_zhiye_01_1",
+            "gallery_img_zy_fs"
+        ],
+        "IncludeHero": [
+            "SP_ALPo",
+            "SP_PNCao",
+            "HLa",
+            "DFQi",
+            "HLMGen",
+            "WTXXuan",
+            "CLMan",
+            "SSQXin",
+            "YLMGZhu",
+            "MGNa",
+            "XSMLi",
+            "BQDShe",
+            "SLMen",
+            "SRen",
+            "NFEr",
+            "MYing",
+            "AJTa",
+            "WLSTNCi",
+            "LAMu",
+            "TLMi"
+        ],
+        "Party": "Aoe",
+        "PartyDesc": "Party_Aoe_Desc",
+        "PartyReward": [],
+        "ShowRank": 4,
+        "Type": 2
+    },
+    "Attack": {
+        "Icon": [
+            "gallery_btn_zhiye_03_2",
+            "gallery_btn_zhiye_03_1",
+            "gallery_img_zy_gx"
+        ],
+        "IncludeHero": [
+            "SP_SSQXin",
+            "YFZZhu",
+            "ZTXChang",
+            "CZheng",
+            "HSYZhai",
+            "GLin",
+            "YMHTPu",
+            "KTSJKe",
+            "DNTLuo",
+            "ZZBBWei",
+            "BBLMa",
+            "NXYYi",
+            "MKLJLuo",
+            "YSuo",
+            "BDFen",
+            "QTQCi",
+            "MZGXiu",
+            "SLWan",
+            "KMLa",
+            "WSLi",
+            "LEMHou",
+            "YMJDe",
+            "FLEr",
+            "LEIMu"
+        ],
+        "Party": "Attack",
+        "PartyDesc": "Party_Attack_Desc",
+        "PartyReward": [],
+        "ShowRank": 1,
+        "Type": 2
+    },
     "BSNCT": {
+        "Icon": [
+            "gallery_btn_normal_03_2",
+            "gallery_btn_normal_03_1",
+            "gallery_img_sl_bsn"
+        ],
         "IncludeHero": [
             "SDTZi",
-            "NFEr",
             "TPGZhu",
+            "NFEr",
+            "FLBDSi",
+            "XHMao",
             "YLSBai",
             "ZZBBWei",
             "YBYa",
@@ -34,15 +125,69 @@
             "BSNCT_Star4",
             "BSNCT_Star5"
         ],
-        "ShowRank": 3
+        "ShowRank": 3,
+        "Type": 1
+    },
+    "Cure": {
+        "Icon": [
+            "gallery_btn_zhiye_05_2",
+            "gallery_btn_zhiye_05_1",
+            "gallery_img_zy_zy"
+        ],
+        "IncludeHero": [
+            "XBKLDi",
+            "SNGLSi",
+            "CKFSJi",
+            "SSBYa",
+            "AMLYa",
+            "LYXi",
+            "LFEr",
+            "MLYTLSha",
+            "KXuan",
+            "NDGEr",
+            "XLai"
+        ],
+        "Party": "Cure",
+        "PartyDesc": "Party_Cure_Desc",
+        "PartyReward": [],
+        "ShowRank": 3,
+        "Type": 2
+    },
+    "Curse": {
+        "Icon": [
+            "gallery_btn_zhiye_07_2",
+            "gallery_btn_zhiye_07_1",
+            "gallery_img_zy_zz"
+        ],
+        "IncludeHero": [
+            "ADHWShi",
+            "DDing",
+            "SDTZi",
+            "ALPo",
+            "YSTLu",
+            "MLYDi",
+            "FLYDe",
+            "XDE"
+        ],
+        "Party": "Curse",
+        "PartyDesc": "Party_Curse_Desc",
+        "PartyReward": [],
+        "ShowRank": 7,
+        "Type": 2
     },
     "DWH": {
+        "Icon": [
+            "gallery_btn_normal_04_2w",
+            "gallery_btn_normal_04_1w",
+            "gallery_img_sl_dwh_w"
+        ],
         "IncludeHero": [
+            "SP_SSQXin",
             "BBLMa",
             "DCJKang",
-            "YYing",
-            "SYAi",
-            "GYCZi",
+            "QTQCi",
+            "HSYZhai",
+            "YXZChun",
             "CZheng",
             "BQDShe",
             "NXYYi",
@@ -70,23 +215,65 @@
             "DWH_Star4",
             "DWH_Star5"
         ],
-        "ShowRank": 4
+        "ShowRank": 4,
+        "Type": 1
+    },
+    "Defense": {
+        "Icon": [
+            "gallery_btn_zhiye_04_2",
+            "gallery_btn_zhiye_04_1",
+            "gallery_img_zy_sh"
+        ],
+        "IncludeHero": [
+            "NCai",
+            "ZTXCun",
+            "WEDe",
+            "JDCZhang",
+            "YKDMLai",
+            "YDZZong",
+            "JSTDing",
+            "LCYShi",
+            "FTLEShi",
+            "YLSBai",
+            "LLan",
+            "BEr",
+            "DCJKang",
+            "FGao",
+            "BLTu",
+            "HGEr"
+        ],
+        "Party": "Defense",
+        "PartyDesc": "Party_Defense_Desc",
+        "PartyReward": [],
+        "ShowRank": 2,
+        "Type": 2
     },
     "MNJH": {
+        "Icon": [
+            "gallery_btn_normal_05_2",
+            "gallery_btn_normal_05_1",
+            "gallery_img_sl_mnjh"
+        ],
         "IncludeHero": [
+            "SP_ALPo",
+            "SP_PNCao",
             "MGNa",
+            "WSLi",
+            "MYing",
+            "AJTa",
+            "TLSi",
             "KTSJKe",
             "MTZMEShi",
-            "PGNNi",
-            "AJTa",
-            "YSLBin",
             "ALPo",
+            "FLEr",
             "DDing",
             "PNCao",
             "YSuo",
             "JDCZhang",
             "HLMGen",
-            "LYSi"
+            "LYSi",
+            "XDE",
+            "SNGLSi"
         ],
         "Party": "MNJH",
         "PartyDesc": "PartyDesc_MNJH",
@@ -106,20 +293,182 @@
             "MNJH_Star4",
             "MNJH_Star5"
         ],
-        "ShowRank": 5
+        "ShowRank": 5,
+        "Type": 1
+    },
+    "R": {
+        "Icon": [
+            "gallery_btn_zizhi_04_2",
+            "gallery_btn_zizhi_04_1"
+        ],
+        "IncludeHero": [
+            "YKDMLai",
+            "ADHWShi",
+            "HLMGen",
+            "YDZZong",
+            "JSTDing",
+            "GLin",
+            "SSQXin",
+            "YMHTPu",
+            "ALSi",
+            "DNTLuo",
+            "NDGEr"
+        ],
+        "Party": "R",
+        "PartyDesc": "Party_R_Desc",
+        "PartyReward": [],
+        "ShowRank": 4,
+        "Type": 3
+    },
+    "SP": {
+        "Icon": [
+            "gallery_btn_zizhi_01_2",
+            "gallery_btn_zizhi_01_1"
+        ],
+        "IncludeHero": [
+            "SP_ALPo",
+            "SP_PNCao",
+            "SP_SSQXin"
+        ],
+        "Party": "SP",
+        "PartyDesc": "Party_SP_Desc",
+        "PartyReward": [],
+        "ShowRank": 1,
+        "Type": 3
+    },
+    "SR": {
+        "Icon": [
+            "gallery_btn_zizhi_03_2",
+            "gallery_btn_zizhi_03_1"
+        ],
+        "IncludeHero": [
+            "YFZZhu",
+            "ZTXCun",
+            "DFQi",
+            "JDCZhang",
+            "WTXXuan",
+            "PNCao",
+            "DDing",
+            "NFDDi",
+            "KXuan",
+            "TTKMeng",
+            "ATSheng",
+            "MKLJLuo",
+            "ALPo",
+            "TLMi",
+            "XLai",
+            "YSuo",
+            "LYSi",
+            "NCai",
+            "FLEr"
+        ],
+        "Party": "SR",
+        "PartyDesc": "Party_SR_Desc",
+        "PartyReward": [],
+        "ShowRank": 3,
+        "Type": 3
+    },
+    "SSR": {
+        "Icon": [
+            "gallery_btn_zizhi_02_2",
+            "gallery_btn_zizhi_02_1"
+        ],
+        "IncludeHero": [
+            "QBTe",
+            "WEDe",
+            "CZheng",
+            "LDu",
+            "LFEr",
+            "HSYZhai",
+            "JNLong",
+            "LCYShi",
+            "KTSJKe",
+            "TPGZhu",
+            "ZZBBWei",
+            "YLMGZhu",
+            "YLSBai",
+            "BBLMa",
+            "MTZMEShi",
+            "LLan",
+            "MGNa",
+            "MLYTLSha",
+            "YBYa",
+            "SDTZi",
+            "SGHQShou",
+            "XSMLi",
+            "SLMen",
+            "BEr",
+            "YSTLu",
+            "DCJKang",
+            "YXNMei",
+            "KEDGong",
+            "QTQCi",
+            "MZGXiu",
+            "SLWan",
+            "FLBDSi",
+            "MZu",
+            "BQDShe",
+            "LFKLFTe",
+            "KMLa",
+            "BLTu",
+            "XBKLDi",
+            "NFEr",
+            "WSLi",
+            "MYing",
+            "BHTZi",
+            "LYXi",
+            "FGao",
+            "BDFen",
+            "AJTa",
+            "YXZChun",
+            "FEMSi",
+            "XLDBLTe",
+            "MLYDi",
+            "FLYDe",
+            "XDE",
+            "LEMHou",
+            "HGEr",
+            "LSLTe",
+            "HLa",
+            "YMJDe",
+            "SRen",
+            "TLSi",
+            "XHMao",
+            "SNGLSi",
+            "AMLBLTe",
+            "WLSTNCi",
+            "CKFSJi",
+            "SSBYa",
+            "NXYYi",
+            "LEIMu",
+            "LAMu",
+            "AMLYa"
+        ],
+        "Party": "SSR",
+        "PartyDesc": "Party_SSR_Desc",
+        "PartyReward": [],
+        "ShowRank": 2,
+        "Type": 3
     },
     "SSZS": {
+        "Icon": [
+            "gallery_btn_normal_06_2",
+            "gallery_btn_normal_06_1",
+            "gallery_img_sl_smzs"
+        ],
         "IncludeHero": [
+            "FLYDe",
             "SLMen",
+            "HLa",
+            "YMJDe",
+            "KMLa",
             "BEr",
             "YLMGZhu",
             "YXNMei",
-            "PDLa",
+            "YSTLu",
             "JNLong",
             "XSMLi",
             "LDu",
-            "YSTLu",
-            "KMLa",
             "KXuan",
             "TTKMeng"
         ],
@@ -141,18 +490,101 @@
             "SMZS_Star4",
             "SMZS_Star5"
         ],
-        "ShowRank": 6
+        "ShowRank": 6,
+        "Type": 1
+    },
+    "Summon": {
+        "Icon": [
+            "gallery_btn_zhiye_06_2",
+            "gallery_btn_zhiye_06_1",
+            "gallery_img_zy_zh"
+        ],
+        "IncludeHero": [
+            "PNCao",
+            "LDu",
+            "JNLong",
+            "YBYa",
+            "SGHQShou",
+            "ATSheng",
+            "LFKLFTe",
+            "XHMao",
+            "YXZChun"
+        ],
+        "Party": "Summon",
+        "PartyDesc": "Party_Summon_Desc",
+        "PartyReward": [],
+        "ShowRank": 5,
+        "Type": 2
+    },
+    "Support": {
+        "Icon": [
+            "gallery_btn_zhiye_02_2",
+            "gallery_btn_zhiye_02_1",
+            "gallery_img_zy_gm"
+        ],
+        "IncludeHero": [
+            "QBTe",
+            "TPGZhu",
+            "ALSi",
+            "MTZMEShi",
+            "FEMSi",
+            "NFDDi",
+            "TTKMeng",
+            "YXNMei",
+            "MZu",
+            "KEDGong",
+            "TLSi",
+            "FLBDSi",
+            "BHTZi",
+            "XLDBLTe",
+            "AMLBLTe",
+            "LSLTe"
+        ],
+        "Party": "Support",
+        "PartyDesc": "Party_Support_Desc",
+        "PartyReward": [],
+        "ShowRank": 6,
+        "Type": 2
+    },
+    "UNKNOWN": {
+        "Icon": [
+            "gallery_btn_normal_07_2",
+            "gallery_btn_normal_07_1",
+            "gallery_img_sl_unknown"
+        ],
+        "IncludeHero": [
+            "LFKLFTe",
+            "MLYDi",
+            "LEMHou",
+            "LEIMu",
+            "LAMu",
+            "AMLYa"
+        ],
+        "Party": "UNKNOWN",
+        "PartyDesc": "PartyDesc_UNKNOWN",
+        "PartyReward": [],
+        "ShowRank": 7,
+        "Type": 1
     },
     "WNSXJ": {
+        "Icon": [
+            "gallery_btn_normal_01_2",
+            "gallery_btn_normal_01_1",
+            "gallery_img_sl_wnsxj"
+        ],
         "IncludeHero": [
             "ZTXChang",
             "CLMan",
             "FTLEShi",
-            "MLYTLSha",
-            "HYe",
-            "FEMSi",
-            "HSheng",
             "BLTu",
+            "MZu",
+            "CKFSJi",
+            "MLYTLSha",
+            "XLDBLTe",
+            "AMLBLTe",
+            "MZGXiu",
+            "SLWan",
+            "FEMSi",
             "BDFen",
             "XLai",
             "ATSheng",
@@ -177,15 +609,30 @@
             "WNSXJ_Star4",
             "WNSXJ_Star5"
         ],
-        "ShowRank": 1
+        "ShowRank": 1,
+        "Type": 1
     },
     "XD": {
+        "Icon": [
+            "gallery_btn_normal_02_2",
+            "gallery_btn_normal_02_1",
+            "gallery_img_sl_xd"
+        ],
         "IncludeHero": [
+            "WLSTNCi",
+            "HGEr",
+            "LSLTe",
             "LLan",
+            "SSBYa",
+            "QBTe",
+            "XBKLDi",
+            "KEDGong",
+            "FGao",
             "LCYShi",
             "WEDe",
             "SGHQShou",
             "SRen",
+            "NCai",
             "NFDDi",
             "TLMi",
             "YMHTPu",
@@ -210,6 +657,7 @@
             "XD_Star4",
             "XD_Star5"
         ],
-        "ShowRank": 2
+        "ShowRank": 2,
+        "Type": 1
     }
 }

@@ -82,19 +82,7 @@ function Arena:synchronize(data)
 end
 
 function Arena:getFirstReward()
-	if self._winReward then
-		local content = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Arena_FirstNumReward", "content")
-
-		for key, value in pairs(content) do
-			if not self._winReward[key] or self._winReward[key] ~= value then
-				return nil
-			end
-		end
-
-		return content
-	end
-
-	return nil
+	return self._winReward
 end
 
 function Arena:synchronizeEnemies(data)

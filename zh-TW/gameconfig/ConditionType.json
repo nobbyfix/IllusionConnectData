@@ -27,6 +27,27 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ActivityTask_Desc"
     },
+    "Condi_Activity_Block": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.?1.subActivities.?2.stageInfos.?3.stageMaps.?4.points.?5.passed",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Block_Desc"
+    },
+    "Condi_Activity_Block_Num": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "passCount.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Block_Num_Desc"
+    },
+    "Condi_Activity_Story_Block": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "actStoryPass.?1.?2",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Activity_Story_Block_Desc"
+    },
     "Condi_AddFriend": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -47,6 +68,13 @@
         "ConditionType1": "starCount.?1",
         "ConditionType2": "",
         "EffectDesc": "Condi_AhalloweenStageStarSum_Desc"
+    },
+    "Condi_AnimalExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Animal_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AnimalExchangeAchieve_Desc"
     },
     "Condi_ArenaCurStreakWin": {
         "AchieveType1": "REACH",
@@ -69,12 +97,26 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_AttendArena_Desc"
     },
+    "Condi_AttendRTPK": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "rtpkBattle",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AttendRTPK_Desc"
+    },
     "Condi_AuraUp": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
         "ConditionType1": "masterAuraUp",
         "ConditionType2": "",
         "EffectDesc": "Condi_AuraUp_Desc"
+    },
+    "Condi_BakingExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Baking_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BakingExchangeAchieve_Desc"
     },
     "Condi_BlockStarSum": {
         "AchieveType1": "SIZESUM",
@@ -286,6 +328,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ClubDonation_Desc"
     },
+    "Condi_CollapsedExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Collapsed_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_CollapsedExchangeAchieve_Desc"
+    },
     "Condi_CommonStage": {
         "AchieveType1": "SIZEREACH",
         "AchieveType2": "",
@@ -356,6 +405,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_DailyTaskPoint_Desc"
     },
+    "Condi_DeepSeaExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_DeepSea_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DeepSeaExchangeAchieve_Desc"
+    },
     "Condi_DetectiveToken": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -390,6 +446,13 @@
         "ConditionType1": "player.bag.items.IR_Diamond.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DiamondReduce_Desc"
+    },
+    "Condi_DramaExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Drama_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DramaExchangeAchieve_Desc"
     },
     "Condi_DrawCardTag": {
         "AchieveType1": "CUSTOM",
@@ -432,6 +495,13 @@
         "ConditionType1": "drawTimeReward",
         "ConditionType2": "",
         "EffectDesc": "Condi_DrawTimeReward_Desc"
+    },
+    "Condi_DuskExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Dusk_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_DuskExchangeAchieve_Desc"
     },
     "Condi_EliteStage": {
         "AchieveType1": "SIZEREACH",
@@ -503,6 +573,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ExploreMapTimes_Desc"
     },
+    "Condi_FemaleExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Female_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FemaleExchangeAchieve_Desc"
+    },
     "Condi_FinishDailyTask": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -516,6 +593,20 @@
         "ConditionType1": "finishTask",
         "ConditionType2": "",
         "EffectDesc": "Condi_FinishTask_Desc"
+    },
+    "Condi_FireExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Fire_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireExchangeAchieve_Desc"
+    },
+    "Condi_FireWorksExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_FireWorks_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireWorksExchangeAchieve_Desc"
     },
     "Condi_FriendCount": {
         "AchieveType1": "REACH",
@@ -741,6 +832,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_KernelSuite_Desc"
     },
+    "Condi_KnightExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Knight_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_KnightExchangeAchieve_Desc"
+    },
     "Condi_LabFight": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -926,16 +1024,37 @@
     "Condi_MiniGameDailyScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts_20210202.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.?1.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Decs"
+    },
+    "Condi_MiniGameDailyScore_Jump": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_2.dailyTotalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
     "Condi_MiniGameTotalScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Darts_20210202.totalScore",
+        "ConditionType1": "player.activities.activityMap.?1.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Decs"
+    },
+    "Condi_MiniGameTotalScore_Jump": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_2.totalScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
+    },
+    "Condi_MusicFestivalExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_MusicFestival_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MusicFestivalExchangeAchieve_Desc"
     },
     "Condi_NormalLabEnter": {
         "AchieveType1": "CUSTOM",
@@ -1063,12 +1182,26 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_PracticeWin_Desc"
     },
+    "Condi_PurewhiteExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Purewhite_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_PurewhiteChengjiuDian_Desc"
+    },
     "Condi_QualityCollect": {
         "AchieveType1": "REACHCOUNT",
         "AchieveType2": "",
         "ConditionType1": "player.cultivation.heroes.*.quality",
         "ConditionType2": "",
         "EffectDesc": "Condi_QualityCollect_Desc"
+    },
+    "Condi_ReZeroExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ReZero_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ReZeroExchangeAchieve_Desc"
     },
     "Condi_RelationLevelSum": {
         "AchieveType1": "REACHCOUNT",
@@ -1091,6 +1224,20 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ResourceStage_Desc"
     },
+    "Condi_RiddleExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Riddle_ExchangeItem_Re.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RiddleExchangeAchieve_Desc"
+    },
+    "Condi_SilentNightExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_SilentNight_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SilentNightExchangeAchieve_Desc"
+    },
     "Condi_SnowflakeChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1112,6 +1259,20 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SpStagePoint_Desc"
     },
+    "Condi_StageStarSum": {
+        "AchieveType1": "SIZESUM",
+        "AchieveType2": "",
+        "ConditionType1": "player.stages.*.stageMaps.*.points.*.stars",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StageStarSum_Desc"
+    },
+    "Condi_StoryBookExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_StoryBook_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StoryBookExchangeAchieve_Desc"
+    },
     "Condi_SumArenaScore": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1126,12 +1287,33 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SummerChengjiuDian_Desc"
     },
+    "Condi_SummerReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_SummerRe_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SummerReExchangeAchieve_Desc"
+    },
+    "Condi_SunflowerExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Sunflower_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SunflowerExchangeAchieve_Desc"
+    },
     "Condi_TargetResStageLevel": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
         "ConditionType1": "winResourceStage.?1.?2",
         "ConditionType2": "",
         "EffectDesc": "Condi_TargetResStageLevel_Desc"
+    },
+    "Condi_TerrorExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Terror_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_TerrorExchangeAchieve_Desc"
     },
     "Condi_TodayLogin": {
         "AchieveType1": "TOTALLOGIN",
@@ -1147,20 +1329,6 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_TouchDogHead_Desc"
     },
-    "Condi_TourMaxRank": {
-        "AchieveType1": "RANK",
-        "AchieveType2": "",
-        "ConditionType1": "player.tourMaxRank",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_TourMaxRank_Desc"
-    },
-    "Condi_TournamentRank": {
-        "AchieveType1": "CUSTOMMIN",
-        "AchieveType2": "",
-        "ConditionType1": "tourRank",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_TournamentRank_Desc"
-    },
     "Condi_TowerEnter": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -1174,6 +1342,13 @@
         "ConditionType1": "towerWin",
         "ConditionType2": "",
         "EffectDesc": "Condi_TowerWin_Desc"
+    },
+    "Condi_URMap_URCount": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.urCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_URMap_URCount_Des"
     },
     "Condi_UseExp": {
         "AchieveType1": "CUSTOM",
@@ -1203,13 +1378,6 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_WinEliteStage_Desc"
     },
-    "Condi_WinTournament": {
-        "AchieveType1": "CUSTOM",
-        "AchieveType2": "",
-        "ConditionType1": "winTournament",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_WinTournament_Desc"
-    },
     "Condi_WuXiuHuiChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1237,20 +1405,6 @@
         "ConditionType1": "player.bag.items.IM_ZuoHeChengjiuDian.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_ZuoHeChengjiuDian_Desc"
-    },
-    "Condi_arenaContiWin": {
-        "AchieveType1": "CUSTOMCONTI",
-        "AchieveType2": "",
-        "ConditionType1": "arenaContiWin",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_arenaContiWin_Desc"
-    },
-    "Condi_arenaRank": {
-        "AchieveType1": "CUSTOMMIN",
-        "AchieveType2": "",
-        "ConditionType1": "arenaRank",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_arenaRank_Desc"
     },
     "Condi_attendTargetResStage": {
         "AchieveType1": "CUSTOM",
@@ -1300,13 +1454,6 @@
         "ConditionType1": "heroStarUp",
         "ConditionType2": "",
         "EffectDesc": "Condi_heroStarUp_Desc"
-    },
-    "Condi_historyRank": {
-        "AchieveType1": "CONTAIN",
-        "AchieveType2": "",
-        "ConditionType1": "player.playerArena.historyRank",
-        "ConditionType2": "",
-        "EffectDesc": "Condi_historyRank_Desc"
     },
     "Condi_joinTournament": {
         "AchieveType1": "CUSTOM",
@@ -1412,5 +1559,19 @@
         "ConditionType1": "winArenaChallenge",
         "ConditionType2": "",
         "EffectDesc": "Condi_winArenaChallenge_Desc"
+    },
+    "Condi_winNewActStage": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "winNewActStage.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_winNewActStage_Desc"
+    },
+    "StageArena_GoldReward": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerStageArena.rlyehCoin",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StageArena_GoldReward"
     }
 }

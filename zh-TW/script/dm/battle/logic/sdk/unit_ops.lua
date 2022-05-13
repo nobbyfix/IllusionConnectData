@@ -4,6 +4,14 @@ function exports.GetOwner(env, target)
 	return target and target:getOwner()
 end
 
+function exports.GetSufaceIndex(env, target)
+	if target and target:getSurfaceIndex() and target:getSurfaceIndex() > 0 then
+		return target:getSurfaceIndex()
+	end
+
+	return 1
+end
+
 local function getTargetRoles(env, target, createIfNotExist)
 	local rolesMap = env["$roles_map"]
 
@@ -95,7 +103,26 @@ function exports.UnassignRoles(env, target, ...)
 	end
 end
 
-function exports.Transform(env, target, hpRatio)
+function exports.Transform(env, target, hpRatio, triggerDie)
+	local skillSystem = env.global["$SkillSystem"]
+
+	if triggerDie then
+		skillSystem:activateSpecificTrigger(target, "TRANSFORM", {
+			unit = target,
+			isTransform = triggerDie
+		})
+		skillSystem:activateGlobalTrigger("UNIT_TRANSFORM", {
+			unit = target,
+			isTransform = triggerDie
+		})
+	end
+
+	local timeTrigger = skillSystem:getTimeTrigger()
+
+	if timeTrigger then
+		timeTrigger:removeAction(target)
+	end
+
 	local formationSystem = env.global["$FormationSystem"]
 
 	formationSystem:transform(target, hpRatio)
@@ -208,4 +235,167 @@ function exports.CancelTargetView(env)
 	env.global.RecordImmediately(env, actor:getId(), "CancelTargetView", {
 		act = env["$id"]
 	})
+end
+
+function exports.SwitchActionTo(env, srcAnim, desAnim, target)
+	local actor = env["$actor"]
+
+	if target then
+		actor = target
+	end
+
+	env.global.RecordImmediately(env, actor:getId(), "SwitchActionTo", {
+		act = env["$id"],
+		srcAnim = srcAnim,
+		desAnim = desAnim
+	})
+end
+
+function exports.ChangeActionLoop(env, desAnim, isLoop, target)
+	local actor = env["$actor"]
+
+	if target then
+		actor = target
+	end
+
+	env.global.RecordImmediately(env, actor:getId(), "ChangeActionLoop", {
+		act = env["$id"],
+		isLoop = isLoop,
+		desAnim = desAnim
+	})
+end
+
+function exports.SetDisplayZorder(env, unit, zorder)
+	env.global.RecordImmediately(env, unit:getId(), "SetDisplayZorder", {
+		act = env["$id"],
+		zorder = zorder
+	})
+end
+
+function exports.ResetDisplayZorder(env, unit)
+	env.global.RecordImmediately(env, unit:getId(), "ResetDisplayZorder", {
+		act = env["$id"]
+	})
+end
+
+function exports.UpdateFanProgress(env, unit, progress)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "FanUpdate", {
+		progress = progress
+	})
+end
+
+function exports.SetHSVColor(env, unit, hue, contrast, brightness, saturation)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetHSVColor", {
+		hue = hue,
+		contrast = contrast,
+		brightness = brightness,
+		saturation = saturation
+	})
+end
+
+function exports.setRootVisible(env, unit, isVisible)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetRootVisible", {
+		isVisible = isVisible
+	})
+end
+
+function exports.setRoleScale(env, unit, scale)
+	if not unit then
+		return
+	end
+
+	env.global.RecordImmediately(env, unit:getId(), "SetRoleScale", {
+		scale = scale
+	})
+end
+
+function exports.ForbidenRevive(env, unit, isforbiden)
+	if not unit then
+		return
+	end
+
+	if isforbiden then
+		unit:forbidenUnearth()
+	else
+		unit:enableUnearth()
+	end
+
+	return true
+end
+
+function exports.GetSex(env, unit)
+	if not unit then
+		return
+	end
+
+	return unit:getSex()
+end
+
+function exports.ClearFlags(env, unit, flags)
+	if not unit then
+		return
+	end
+
+	local flag = unit:getComponent("Flag")
+	local result = flag:clearFlags(flags or {})
+
+	env.global.RecordImmediately(env, unit:getId(), "ChangeFlags", {
+		flags = flag:getFlags()
+	})
+
+	return result
+end
+
+function exports.AddFlags(env, unit, flags)
+	if not unit then
+		return
+	end
+
+	local flag = unit:getComponent("Flag")
+	local result = flag:setFlags(flags or {})
+
+	env.global.RecordImmediately(env, unit:getId(), "ChangeFlags", {
+		flags = flag:getFlags()
+	})
+
+	return result
+end
+
+function exports.GetAIPosition(env, side, card)
+	if not card then
+		return
+	end
+
+	if card:getType() ~= "hero" then
+		return nil
+	end
+
+	local cardAi = card:getCardAI()
+
+	if cardAi then
+		local cardPos = cardAi.ForcedPosition
+		local aiPos = {}
+
+		for k, v in pairs(cardPos or {}) do
+			for k_, v_ in pairs(v) do
+				aiPos[k] = v_ * side
+			end
+		end
+
+		return aiPos
+	end
+
+	return nil
 end

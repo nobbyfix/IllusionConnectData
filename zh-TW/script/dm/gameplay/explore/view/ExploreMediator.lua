@@ -192,6 +192,7 @@ end
 function ExploreMediator:setupView(ignoreAnim)
 	self._lineAnim:gotoAndPlay(0)
 
+	local language = getCurrentLanguage()
 	local maxPosX = 976
 	local hasUnlock = false
 	local hasChangePosY = false
@@ -245,6 +246,16 @@ function ExploreMediator:setupView(ignoreAnim)
 			local lockImage = ccui.ImageView:create("xlg_bg_suo.png", 1)
 
 			lockImage:addTo(animNode:getChildByName("lockImage")):posite(1, 5)
+			name:setOverflow(cc.LabelOverflow.SHRINK)
+			name:setDimensions(160, 60)
+			name:setVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
+			lockDesc:setOverflow(cc.LabelOverflow.SHRINK)
+			lockDesc:setDimensions(200, 30)
+			lockDesc:setVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
+
+			if language ~= GameLanguageType.CN then
+				name:setLineSpacing(-8)
+			end
 		else
 			local info = kCellInfo.UnLock
 
@@ -293,8 +304,8 @@ function ExploreMediator:setupView(ignoreAnim)
 			local name1 = cc.Label:createWithTTF(nameLabel1, CUSTOM_TTF_FONT_1, 60)
 
 			name1:enableOutline(cc.c4b(35, 15, 5, 255), 1)
-			name1:setAnchorPoint(cc.p(0, 0.5))
-			name1:addTo(name_1):posite(-60, 10)
+			name1:setAnchorPoint(cc.p(0, 0))
+			name1:addTo(name_1):posite(-60, -30)
 
 			local lineGradiantVec2 = {
 				{
@@ -315,21 +326,34 @@ function ExploreMediator:setupView(ignoreAnim)
 			local name2 = cc.Label:createWithTTF(nameLabel2, CUSTOM_TTF_FONT_1, 78)
 
 			name2:enableOutline(cc.c4b(35, 15, 5, 255), 1)
-			name2:setAnchorPoint(cc.p(1, 0.5))
-			name2:addTo(name_2):posite(60, 6)
+			name2:setAnchorPoint(cc.p(0, 0.5))
+			name2:addTo(name_2):posite(-50, -6)
 			name2:setAdditionalKerning(-15)
 
 			local name3 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
 
-			name3:setAnchorPoint(cc.p(1, 0.5))
-			name3:addTo(name_2):posite(98, 6)
+			name3:setAnchorPoint(cc.p(0, 0.5))
+			name3:addTo(name_2):posite(40, -6)
 			name3:setOpacity(90)
 
-			local name3 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
+			local name4 = cc.Label:createWithTTF(nameLabel3, CUSTOM_TTF_FONT_1, 78)
 
-			name3:setAnchorPoint(cc.p(1, 0.5))
-			name3:addTo(name_2):posite(118, 6)
-			name3:setOpacity(50)
+			name4:setAnchorPoint(cc.p(0, 0.5))
+			name4:addTo(name_2):posite(60, -6)
+			name4:setOpacity(50)
+			name1:setOverflow(cc.LabelOverflow.SHRINK)
+			name1:setDimensions(250, 90)
+			name2:setOverflow(cc.LabelOverflow.SHRINK)
+			name2:setDimensions(200, 160)
+			name3:setOverflow(cc.LabelOverflow.SHRINK)
+			name3:setDimensions(200, 160)
+			name4:setOverflow(cc.LabelOverflow.SHRINK)
+			name4:setDimensions(200, 160)
+
+			if language ~= GameLanguageType.CN then
+				name2:setLineSpacing(-30)
+				name2:setAdditionalKerning(-10)
+			end
 		end
 
 		panel:getChildByName("AnimNode"):gotoAndStop(0)

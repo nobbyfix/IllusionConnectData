@@ -57,6 +57,15 @@ function BattleEntityManager:createMasterUnit(masterData)
 	return unit
 end
 
+function BattleEntityManager:createBattleFieldUnit(battleFieldData)
+	local unit = BattleUnit:createBattleFieldUnit(battleFieldData.id)
+
+	unit:initWithRawData(battleFieldData)
+	self:registerEntity(unit)
+
+	return unit
+end
+
 function BattleEntityManager:copyHeroUnit(srcUnit, entityId, ratio)
 	local unit = BattleUnit:createHeroUnit(entityId)
 

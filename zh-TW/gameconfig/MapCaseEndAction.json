@@ -144,6 +144,12 @@
         "FactorType2": "",
         "Type": "CS"
     },
+    "Alice_1_getreward_CaiDanMuBei1": {
+        "Action": "getreward",
+        "FactorType1": "Alice_1_CaiDanMuBei",
+        "FactorType2": "",
+        "Type": "CS"
+    },
     "Alice_1_getreward_CaiDanShu1": {
         "Action": "getreward",
         "FactorType1": "Alice_1_CaiDanShu1",
@@ -752,6 +758,12 @@
     "Alice_2_getreward_CaiDanBoss": {
         "Action": "getreward",
         "FactorType1": "Alice_2_CaiDanBoss1",
+        "FactorType2": "",
+        "Type": "CS"
+    },
+    "Alice_2_getreward_CaiDanMuBei1": {
+        "Action": "getreward",
+        "FactorType1": "Alice_2_CaiDanMuBei",
         "FactorType2": "",
         "Type": "CS"
     },
@@ -1532,6 +1544,12 @@
     "Alice_3_getreward_CaiDanBossDuBo": {
         "Action": "getreward",
         "FactorType1": "Alice_3_CaiDanBossDuBo",
+        "FactorType2": "",
+        "Type": "CS"
+    },
+    "Alice_3_getreward_CaiDanMuBei1": {
+        "Action": "getreward",
+        "FactorType1": "Alice_3_CaiDanMuBei",
         "FactorType2": "",
         "Type": "CS"
     },
@@ -2370,6 +2388,12 @@
             "BuffId": "Alice4_MapTeambuff",
             "BuffLevel": 1
         },
+        "Type": "CS"
+    },
+    "Alice_4_getreward_CaiDanMuBei1": {
+        "Action": "getreward",
+        "FactorType1": "Alice_4_CaiDanMuBei",
+        "FactorType2": "",
         "Type": "CS"
     },
     "Alice_4_getreward_FangChe": {

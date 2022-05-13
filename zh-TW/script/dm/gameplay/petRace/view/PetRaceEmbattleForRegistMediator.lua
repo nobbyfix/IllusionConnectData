@@ -787,7 +787,7 @@ function PetRaceEmbattleForRegistMediator:initHero(node, info)
 
 	heroPanel:removeAllChildren()
 
-	local heroImg = IconFactory:createRoleIconSprite({
+	local heroImg = IconFactory:createRoleIconSpriteNew({
 		id = info.id
 	})
 
@@ -821,7 +821,7 @@ function PetRaceEmbattleForRegistMediator:initHero(node, info)
 
 	local level = node:getChildByName("level")
 
-	level:setString("Lv." .. info.level)
+	level:setString(Strings:get("Common_LV_Text") .. info.level)
 
 	local starBg = node:getChildByName("starBg")
 	local size = cc.size(148, 32)

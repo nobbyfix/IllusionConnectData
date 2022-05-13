@@ -320,6 +320,16 @@ function PetRaceReportMediator:refreshBattleDes()
 	local fileNum = self._petRaceSystem:getFileNum()
 
 	text_victories:setString(string.format(Strings:get("Petrace_Text_30"), winNum, fileNum))
+
+	local text_des_2 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_2")
+	local victoriesDes = self._panel_base:getChildByFullName("Node_titleDes.Text_victories_des")
+	local text_des_1 = self._panel_base:getChildByFullName("Node_titleDes.Text_des_1")
+
+	text_rank:setPositionX(text_des_2:getPositionX() + text_des_2:getContentSize().width + 10)
+	victoriesDes:setPositionX(text_rank:getPositionX() + text_rank:getContentSize().width + 40)
+	text_victories:setPositionX(victoriesDes:getPositionX() + victoriesDes:getContentSize().width + 5)
+	text_des_1:setPositionX(text_victories:getPositionX() + text_victories:getContentSize().width + 40)
+	text_score:setPositionX(text_des_1:getPositionX() + text_des_1:getContentSize().width + 5)
 end
 
 function PetRaceReportMediator:updateState(event)
@@ -391,6 +401,8 @@ function PetRaceReportMediator:createTabControl()
 		local textdes = tabBtnList[i]
 		local textdes1 = tabBtnList_1[i]
 		data[#data + 1] = {
+			textHeight = 40,
+			textWidth = 160,
 			tabText = Strings:get(textdes),
 			tabTextTranslate = Strings:get(textdes1)
 		}

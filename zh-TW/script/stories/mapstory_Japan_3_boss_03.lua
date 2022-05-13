@@ -57,10 +57,10 @@ function scene_mapstory_Japan_3_boss_03.actions.start_mapstory_Japan_3_boss_03(_
 					modelId = "Model_YLMGZhu",
 					id = "YLMGZhu_speak",
 					rotationX = 0,
-					scale = 1.4,
+					scale = 0.75,
 					position = {
 						x = 0,
-						y = -450,
+						y = -360,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -84,8 +84,8 @@ function scene_mapstory_Japan_3_boss_03.actions.start_mapstory_Japan_3_boss_03(_
 								y = 0.5
 							},
 							position = {
-								x = 73.5,
-								y = 691.5
+								x = 108.5,
+								y = 1021
 							}
 						}
 					}
@@ -161,11 +161,11 @@ function scene_mapstory_Japan_3_boss_03.actions.start_mapstory_Japan_3_boss_03(_
 					modelId = "Model_BBLMa",
 					id = "BBLMa_speak",
 					rotationX = 0,
-					scale = 1.155,
+					scale = 0.66,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -450,
+						y = -350,
 						refpt = {
 							x = 0.2,
 							y = 0
@@ -182,14 +182,14 @@ function scene_mapstory_Japan_3_boss_03.actions.start_mapstory_Japan_3_boss_03(_
 							zorder = 1100,
 							visible = true,
 							id = "BBLMa_face",
-							scale = 1.025,
+							scale = 1,
 							anchorPoint = {
 								x = 0.5,
 								y = 0.5
 							},
 							position = {
-								x = 90.3,
-								y = 779.5
+								x = 150.5,
+								y = 1123
 							}
 						}
 					}
@@ -314,10 +314,10 @@ function scene_mapstory_Japan_3_boss_03.actions.start_mapstory_Japan_3_boss_03(_
 					modelId = "Model_NXYYi",
 					id = "NXYYi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 1,
 					position = {
 						x = 0,
-						y = -390,
+						y = -330,
 						refpt = {
 							x = 0.3,
 							y = 0

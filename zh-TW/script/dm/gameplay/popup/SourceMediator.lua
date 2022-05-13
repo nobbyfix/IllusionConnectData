@@ -105,8 +105,7 @@ function SourceMediator:onRegister()
 end
 
 function SourceMediator:setUpView()
-	local config = ConfigReader:getRecordById("ItemConfig", tostring(self._itemData.itemId))
-	self._sourceList = config.Resource or {}
+	self._sourceList = RewardSystem:getResource(tostring(self._itemData.itemId)) or {}
 	self._noTips = self._main:getChildByName("Text_notips")
 
 	self._noTips:setVisible(false)
@@ -224,18 +223,22 @@ function SourceMediator:setUpView()
 		end)
 		table.sort(lock, function (a, b)
 			if a.sort == b.sort then
-				if a.stageType == b.stageType then
-					if a.mapIndex ~= nil and b.mapIndex ~= nil then
-						if a.mapIndex == b.mapIndex then
-							return a.pointIndex < b.pointIndex
+				if a.stageType ~= nil and b.stageType ~= nil then
+					if a.stageType == b.stageType then
+						if a.mapIndex ~= nil and b.mapIndex ~= nil then
+							if a.mapIndex == b.mapIndex then
+								return a.pointIndex < b.pointIndex
+							else
+								return a.mapIndex < b.mapIndex
+							end
 						else
-							return a.mapIndex < b.mapIndex
+							return a.mapIndex ~= nil
 						end
 					else
-						return a.mapIndex ~= nil
+						return a.stageType < b.stageType
 					end
 				else
-					return a.stageType < b.stageType
+					return a.stageType ~= nil
 				end
 			else
 				return b.sort < a.sort
@@ -389,11 +392,7 @@ function SourceMediator:createCell(cell, index)
 	goBtn:setVisible(false)
 
 	local titleText = cell:getChildByName("Text_name")
-	local render = titleText:getVirtualRenderer()
 
-	render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
-	render:setOverflow(cc.LabelOverflow.SHRINK)
-	render:setDimensions(100, 36)
 	titleText:setString(Strings:get(sourceConfig.ResourceText))
 
 	local url = sourceConfig.URL
@@ -519,7 +518,7 @@ function SourceMediator:createCell(cell, index)
 
 				regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
 				regionText:addTo(cell):setName("text")
-				regionText:setPositionX(goBtn:getPositionX())
+				regionText:setPositionX(goBtn:getPositionX() - 20)
 				regionText:setPositionY(goBtn:getPositionY() + 10)
 				regionText:setString(tip)
 			end
@@ -680,6 +679,9 @@ function SourceMediator:onClickGo(data)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 	local url = data.URL
+
+	dump(url, "url >>>>>>>>>>>")
+
 	local context = self:getInjector():instantiate(URLContext)
 	local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
 
@@ -696,7 +698,10 @@ function SourceMediator:onClickGo(data)
 
 		self._stageSystem:setEnterPoint(params.enterPoint)
 		entry:response(context, params)
-		self:close()
+
+		if not DisposableObject:isDisposed(self) then
+			self:close()
+		end
 	else
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Function_Not_Open")

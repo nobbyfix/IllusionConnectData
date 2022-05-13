@@ -1,4 +1,4 @@
-ClubAuditMediator = class("ClubAuditMediator", DmAreaViewMediator, _M)
+ClubAuditMediator = class("ClubAuditMediator", DmPopupViewMediator, _M)
 
 ClubAuditMediator:has("_developSystem", {
 	is = "r"
@@ -22,6 +22,10 @@ local kBtnHandlers = {
 	["main.bottomnode.rejectbtn.button"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickRefuse"
+	},
+	["main.btn_close"] = {
+		clickAudio = "Se_Click_Close_2",
+		func = "onClickBack"
 	}
 }
 local auditStrList = {
@@ -73,6 +77,7 @@ function ClubAuditMediator:enterWithData(data)
 	self:initNodes()
 	self:createData()
 	self:refreshData(data)
+	self:refreshView()
 end
 
 function ClubAuditMediator:createData()
@@ -138,7 +143,11 @@ function ClubAuditMediator:initNodes()
 
 	self._cellPanel:setVisible(false)
 
+	self._listPanel = self._mainPanel:getChildByFullName("listPanel")
 	self._nothasSprite = self._bottomPanel:getChildByFullName("nothasSprite")
+
+	self._mainPanel:getChildByFullName("title_node.Text_1"):setString(Strings:get("Club_Text120"))
+	self._mainPanel:getChildByFullName("title_node.Text_2"):setString(Strings:get("UITitle_EN_Shenhe"))
 end
 
 function ClubAuditMediator:refreshBottomPanel()
@@ -187,15 +196,16 @@ function ClubAuditMediator:refreshBottomPanel()
 		str2 = str2,
 		fontName = TTF_FONT_FZYH_R
 	})
+	local titlelabel = self._bottomPanel:getChildByFullName("titlelabel")
 	local descLabel = ccui.RichText:createWithXML(richTextStr, {})
 
 	descLabel:ignoreContentAdaptWithSize(true)
 	descLabel:rebuildElements()
 	descLabel:formatText()
-	descLabel:setAnchorPoint(cc.p(0, 1))
+	descLabel:setAnchorPoint(cc.p(0, 0.5))
 	descLabel:renderContent()
 	self._bottomPanel:addChild(descLabel, 99)
-	descLabel:setPosition(281, 66)
+	descLabel:setPosition(titlelabel:getPositionX() + 3, titlelabel:getPositionY())
 	descLabel:setTag(123)
 end
 
@@ -243,15 +253,14 @@ function ClubAuditMediator:createTableView()
 		return self._auditRecordListOj:getRecordCount()
 	end
 
-	local tableView = cc.TableView:create(cc.size(925, 368))
+	local tableView = cc.TableView:create(self._listPanel:getContentSize())
 
 	tableView:setTag(1234)
 	tableView:setDirection(cc.SCROLLVIEW_DIRECTION_VERTICAL)
 	tableView:setVerticalFillOrder(cc.TABLEVIEW_FILL_TOPDOWN)
 	tableView:setAnchorPoint(0, 0)
-	tableView:setPosition(194, 139)
 	tableView:setDelegate()
-	self._bottomPanel:addChild(tableView, 10)
+	self._listPanel:addChild(tableView, 10)
 	tableView:registerScriptHandler(numberOfCellsInTableView, cc.NUMBER_OF_CELLS_IN_TABLEVIEW)
 	tableView:registerScriptHandler(scrollViewDidScroll, cc.SCROLLVIEW_SCRIPT_SCROLL)
 	tableView:registerScriptHandler(cellSizeForTable, cc.TABLECELL_SIZE_FOR_INDEX)
@@ -281,13 +290,15 @@ function ClubAuditMediator:createCell(cell, idx)
 
 	iconPanel:removeAllChildren()
 
-	local icon = IconFactory:createPlayerIcon({
+	local icon, oldIcon = IconFactory:createPlayerIcon({
 		clipType = 1,
-		frameStyle = 2,
+		headFrameScale = 0.4,
 		id = data:getHeadId(),
+		size = cc.size(84, 84),
 		headFrameId = data:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	icon:addTo(iconPanel):center(iconPanel:getContentSize())
 	icon:setScale(0.8)
 
@@ -302,7 +313,22 @@ function ClubAuditMediator:createCell(cell, idx)
 	}))
 
 	local combatLabel = cell:getChildByFullName("combatlabel")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.5,
+			color = cc.c4b(255, 255, 255, 255)
+		},
+		{
+			ratio = 0.5,
+			color = cc.c4b(129, 118, 113, 255)
+		}
+	}
+	local lineGradiantDir = {
+		x = 0,
+		y = -1
+	}
 
+	combatLabel:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
 	combatLabel:setString(data:getCombat())
 
 	local timeLabel = cell:getChildByFullName("audittime")
@@ -439,7 +465,7 @@ function ClubAuditMediator:onCellClicked(eventType, idx)
 end
 
 function ClubAuditMediator:onClickBack(sender, eventType)
-	self:dismiss()
+	self:close()
 	cc.Director:getInstance():getOpenGLView():setIMEKeyboardState(false)
 end
 
@@ -483,6 +509,7 @@ function ClubAuditMediator:agreeClick(rid)
 	self._clubSystem:agreeEnterClubApply(rid, function ()
 		self:refreshData()
 		self:refreshView()
+		self:dispatch(Event:new(EVT_CLUB_PUSHMEMBERCHANGE_SUCC))
 	end)
 end
 

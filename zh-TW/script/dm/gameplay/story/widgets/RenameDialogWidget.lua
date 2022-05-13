@@ -32,9 +32,17 @@ function RenameDialogWidget:setupView()
 	mapButtonHandlerClick(self, self._reNameBtn, function (sender, eventType)
 		self:onClickOk()
 	end, view)
-	mapButtonHandlerClick(self, self._btn_dice_click, function (sender, eventType)
-		self:onClickDice()
-	end, view)
+
+	if CommonUtils.GetSwitch("fn_name_dice") then
+		self._btn_dice:setVisible(true)
+		self._btn_dice_click:setVisible(true)
+		mapButtonHandlerClick(self, self._btn_dice_click, function (sender, eventType)
+			self:onClickDice()
+		end, view)
+	else
+		self._btn_dice:setVisible(false)
+		self._btn_dice_click:setVisible(false)
+	end
 
 	local nameDi = self._main:getChildByName("Image_namedi")
 	local pos = nameDi:convertToWorldSpace(cc.p(0, 0))
@@ -50,6 +58,7 @@ function RenameDialogWidget:setupView()
 	local maxLength = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Player_Name_MaxWords", "content")
 
 	if self._editBox:getDescription() == "TextField" then
+		self._editBox:setPlaceHolder(Strings:get("Change_Name_Tips"))
 		self._editBox:setMaxLength(maxLength)
 		self._editBox:setMaxLengthEnabled(true)
 	end
@@ -89,7 +98,13 @@ function RenameDialogWidget:updateView(data, onEnd, agent)
 	self._agent = agent
 	local view = self:getView()
 
-	self._editBox:setText(self:getNameUntilNotForbid())
+	dump(data, "RenameDialogWidget:updateView(data")
+
+	if CommonUtils.GetSwitch("fn_name_dice") then
+		self._editBox:setText(self:getNameUntilNotForbid())
+	else
+		self._editBox:setText("")
+	end
 
 	self._isClickFlg = false
 
@@ -134,7 +149,6 @@ function RenameDialogWidget:onClickOk()
 		self._onEnd = nil
 
 		if onEnd ~= nil then
-			self:reportMsgToSDK()
 			onEnd()
 		end
 	end
@@ -143,6 +157,14 @@ function RenameDialogWidget:onClickOk()
 		point = "guide_main_rename_2",
 		type = "loginpoint"
 	})
+
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		local data = developSystem:getStatsInfo()
+		data.eventName = "createdRole"
+
+		SDKHelper:reportStatsData(data)
+	end
+
 	settingSystem:requestChangePlayerName(nameStr, true, endCallback)
 end
 
@@ -190,12 +212,12 @@ function RenameDialogWidget:initRoleAnim()
 
 		panel:removeAllChildren()
 
-		local role = IconFactory:createRoleIconSprite({
+		local role = IconFactory:createRoleIconSpriteNew({
 			id = "Model_Master_XueZhan",
-			iconType = "Bust2"
+			frameId = "bustframe2_1"
 		})
 
-		role:addTo(panel):posite(60, -130)
+		role:addTo(panel):posite(-500, -300)
 		role:setScale(0.9)
 		role:setSaturation(0)
 	end
@@ -214,8 +236,9 @@ end
 
 function RenameDialogWidget:initGameNameAnim()
 	local direc = self._agent:getDirector()
-	local videoName = "video/LOGO.usm"
-	local videoSize = cc.size(600, 342)
+	local loginSystem = direc:getInjector():getInstance(LoginSystem)
+	local videoName = loginSystem:getLogoPvName()
+	local videoSize = loginSystem:getLogoSize()
 	local actionPanel = self._main:getChildByFullName("AnimBg.nameAnim")
 	local localSize = actionPanel:getContentSize()
 	local scale = 1
@@ -226,13 +249,10 @@ function RenameDialogWidget:initGameNameAnim()
 
 	scale = scale * 1.1
 	local realVideoSize = cc.size(videoSize.width * scale, videoSize.height * scale)
-	local videoPos = cc.p(localSize.width / 2, realVideoSize.height / 2 - 30)
-	local video = VideoSprite.create(videoName, function (instance, eventName, index)
-		if eventName == "complete" then
-			instance:getPlayer():pause(true)
-		end
-	end)
+	local videoPos = cc.p(localSize.width / 2, realVideoSize.height / 2 - 38)
+	local video = ccui.ImageView:create("asset/lang_common/dream_memory_logo.png")
 
+	video:setScale(0.7)
 	video:addTo(actionPanel)
 	video:setContentSize(realVideoSize)
 	video:setPosition(videoPos)
@@ -278,31 +298,4 @@ function RenameDialogWidget:getNameUntilNotForbid()
 	end
 
 	return finalString
-end
-
-function RenameDialogWidget:reportMsgToSDK()
-	if SDKHelper:isEnableSdk() then
-		local direc = self._agent:getDirector()
-		local developSystem = direc:getInjector():getInstance(DevelopSystem)
-		local curServer = direc:getInjector():getInstance(LoginSystem):getCurServer()
-		local player = developSystem:getPlayer()
-		local clubSystem = direc:getInjector():getInstance(ClubSystem)
-		local params = {
-			serverId = tostring(curServer:getSecId()),
-			serverName = tostring(curServer:getName()),
-			roleName = tostring(player:getNickName()),
-			roleId = tostring(player:getRid()),
-			roleLevel = tostring(player:getLevel()),
-			roleCombat = tostring(developSystem:getCombat())
-		}
-
-		if clubSystem:getHasJoinClub() then
-			params.clubId = tostring(clubSystem:getClubId())
-			params.clubName = tostring(clubSystem:getName())
-			params.clubTitle = tostring(clubSystem:getPositionName())
-			params.clubLevel = tostring(clubSystem:getLevel())
-		end
-
-		SDKHelper:reportLogin(params)
-	end
 end

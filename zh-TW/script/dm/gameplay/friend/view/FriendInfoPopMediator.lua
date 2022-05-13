@@ -83,7 +83,7 @@ function FriendInfoPopMediator:initRoleInfo()
 
 	group:setString(Strings:get("Resource_SheTuan") .. ":" .. clubName)
 	combat:setString(self._record.combat)
-	level:setString("Lv." .. self._record.level)
+	level:setString(Strings:get("Common_LV_Text") .. self._record.level)
 	slogan:setString(self._record.slogan)
 
 	local headIcon = IconFactory:createPlayerIcon({

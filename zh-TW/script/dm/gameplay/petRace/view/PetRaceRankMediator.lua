@@ -32,7 +32,7 @@ function PetRaceRankMediator:onRegister()
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
 		},
-		title = Strings:get("Petrace_Text_52"),
+		title = Strings:get("Petrace_Daily_Rank"),
 		title1 = Strings:get("UITitle_EN_Paihang")
 	})
 end
@@ -72,6 +72,19 @@ function PetRaceRankMediator:initWigetInfo()
 	self._mainPanel:getChildByName("rankBg"):setVisible(false)
 	self._mainPanel:getChildByName("main_bg"):setVisible(false)
 	self._viewPanel:setPosition(249, 42)
+
+	local kRankTitleKey = {
+		"RANK_UI2",
+		"RANK_UI3",
+		"Rank_Petrace_WinNum",
+		"Rank_Petrace_Score"
+	}
+
+	for i = 1, #kRankTitleKey do
+		local title = self._mainPanel:getChildByFullName("viewPanel.property_bg.property_" .. i)
+
+		title:setString(Strings:get(kRankTitleKey[i]))
+	end
 end
 
 function PetRaceRankMediator:createTabController()

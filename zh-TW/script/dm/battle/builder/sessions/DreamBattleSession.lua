@@ -34,6 +34,7 @@ function DreamBattleSession:genBattleConfigAndData(battleData, dreamBattleId, ma
 	end
 
 	local battleConfig = ConfigReader:getRecordById("DreamChallengeBattle", dreamBattleId)
+	self._assistNPC = battleConfig.NPC
 	local battleConfig = self:_getBlockBattleConfig(battleConfig.BlockBattleConfig)
 	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
 	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
@@ -56,6 +57,31 @@ function DreamBattleSession:genBattleConfigAndData(battleData, dreamBattleId, ma
 		victoryCfg = victoryConditions,
 		groundCellCfg = cellCfg
 	}
+end
+
+function DreamBattleSession:_applyBattleConfig(battleData, battleConfig)
+	super._applyBattleConfig(self, battleData, battleConfig)
+
+	local npc_maps = {}
+
+	for k, v in pairs(self._assistNPC or {}) do
+		npc_maps[v.id] = true
+		local enemy = ConfigReader:getRecordById("EnemyHero", v.id)
+
+		if enemy and enemy.RageRules then
+			npc_maps[v.id] = enemy.RageRules
+		end
+	end
+
+	if battleData.playerData.waves then
+		for k, v in pairs(battleData.playerData.waves) do
+			for _, hero in pairs(v.heros) do
+				if npc_maps[hero.cid] then
+					hero.angerRules = npc_maps[hero.cid]
+				end
+			end
+		end
+	end
 end
 
 function DreamBattleSession:buildCoreBattleLogic()
@@ -136,9 +162,13 @@ function DreamBattleSession:getBattlePassiveSkill()
 		}
 	end
 
+	local playerStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.playerData)
+	local enemyStagePassShow = BattleDataHelper:getStagePassiveSkill(battleData.enemyData)
 	local passiveSkill = {
 		playerShow = playerShow,
-		enemyShow = enemyShow
+		enemyShow = enemyShow,
+		playerStagePassShow = playerStagePassShow,
+		enemyStagePassShow = enemyStagePassShow
 	}
 
 	return passiveSkill

@@ -74,14 +74,15 @@ function SpStageFinishMediator:initWidgetInfo()
 	local unlockKey = kSpStageTeamAndPointType[self._data.spType].unlockType
 	local heroNode = anim:getChildByFullName("roleNode")
 	local roleModel = stageAccount[1]
-	local heroIcon = IconFactory:createRoleIconSprite({
+	roleModel = IconFactory:getSpMvpBattleEndMid(roleModel)
+	local heroIcon = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = roleModel
 	})
 
 	heroIcon:setScale(0.8)
-	heroIcon:setPosition(cc.p(50, -100))
+	heroIcon:setPosition(cc.p(-250, -200))
 	heroNode:addChild(heroIcon)
 	anim:addCallbackAtFrame(9, function ()
 		bg:getChildByFullName("sloganPanel"):fadeIn({
@@ -197,7 +198,7 @@ function SpStageFinishMediator:initWidgetInfo()
 
 	pointName:setString(pointName_)
 	unlockName:setString(unlockStr)
-	unlockName:setPositionX(pointName:getPositionX() + pointName:getContentSize().width + 10)
+	unlockName:setPositionX(pointName:getPositionX() + pointName:getAutoRenderWidth() + 10)
 	unlockName:setOpacity(0)
 	bg:stopAllActions()
 
@@ -242,9 +243,14 @@ function SpStageFinishMediator:initWidgetInfo()
 					extMc:addTo(layout)
 					extMc:setPosition(cc.p(35, 45))
 
-					local firstRewardText = ccui.Text:create(Strings:get("BLOCKSP_UI15"), TTF_FONT_FZYH_M, 24)
+					local firstRewardText = ccui.Text:create("", TTF_FONT_FZYH_M, 24)
 					local mcPanel = extMc:getChildByName("lastText")
 
+					firstRewardText:ignoreContentAdaptWithSize(false)
+					firstRewardText:setContentSize(cc.size(107, 28))
+					firstRewardText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+					firstRewardText:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
+					firstRewardText:setString(Strings:get("BLOCKSP_UI15"))
 					firstRewardText:addTo(mcPanel):posite(-2, 1)
 
 					local lineGradiantVec2 = {
@@ -291,9 +297,14 @@ function SpStageFinishMediator:initWidgetInfo()
 				extMc:addTo(layout)
 				extMc:setPosition(cc.p(35, 45))
 
-				local secondRewardText = ccui.Text:create(Strings:get("BLOCKSP_UI21"), TTF_FONT_FZYH_M, 24)
+				local secondRewardText = ccui.Text:create("", TTF_FONT_FZYH_M, 24)
 				local mcPanel = extMc:getChildByName("lastText")
 
+				secondRewardText:ignoreContentAdaptWithSize(false)
+				secondRewardText:setContentSize(cc.size(107, 28))
+				secondRewardText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+				secondRewardText:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
+				secondRewardText:setString(Strings:get("BLOCKSP_UI21"))
 				secondRewardText:addTo(mcPanel):posite(-2, 1)
 
 				if hasFirstRewards then

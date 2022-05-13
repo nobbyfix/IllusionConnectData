@@ -11,7 +11,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AngerRateDown": {
         "Color": "",
@@ -25,7 +26,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AngerRateUp": {
         "Color": "",
@@ -39,7 +41,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AtkDown": {
         "Color": "",
@@ -53,7 +56,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AtkUp": {
         "Color": "",
@@ -67,7 +71,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AtkWeakenDown": {
         "Color": "",
@@ -81,7 +86,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "AtkWeakenUp": {
         "Color": "",
@@ -95,7 +101,23 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "BOSS_yujing": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "main_bossyujing",
+        "EffectPos": 1.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BadOmen": {
         "Color": "",
@@ -109,11 +131,12 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "BeCuredRateDown": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_behealedrate_down.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -123,11 +146,12 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BeCuredRateUp": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_behealedrate_up.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -137,7 +161,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BlockRateDown": {
         "Color": "",
@@ -151,7 +176,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BlockRateUp": {
         "Color": "",
@@ -165,7 +191,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BlockStrgDown": {
         "Color": "",
@@ -179,7 +206,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "BlockStrgUp": {
         "Color": "",
@@ -193,7 +221,23 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "BossAoeWave": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "suijijineng_bufftexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Burning": {
         "Color": "",
@@ -207,7 +251,53 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 3
+        "Type": 3,
+        "zOrder": 1.0
+    },
+    "CShieldRpUp": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "nuqishangshangsheng_bufftexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "CShieldUnHurtRate": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "gedang_bufftexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "CShieldUnHurtRateBreak": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "Summon_buff",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
     },
     "ChangeHp": {
         "Color": "",
@@ -221,7 +311,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Cold": {
         "Color": "",
@@ -235,7 +326,8 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 3
+        "Type": 3,
+        "zOrder": 1.0
     },
     "CounterRateDown": {
         "Color": "",
@@ -249,7 +341,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CounterRateUp": {
         "Color": "",
@@ -263,7 +356,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CritRateDown": {
         "Color": "",
@@ -277,7 +371,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CritRateUp": {
         "Color": "",
@@ -291,7 +386,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CritStrgDown": {
         "Color": "",
@@ -305,7 +401,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CritStrgUp": {
         "Color": "",
@@ -319,11 +416,12 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CureRateDown": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_healrate_down.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -333,11 +431,12 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "CureRateUp": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_healrate_up.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -347,7 +446,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Daze": {
         "Color": "",
@@ -358,10 +458,11 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 1,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "DefDown": {
         "Color": "",
@@ -375,7 +476,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "DefUp": {
         "Color": "",
@@ -389,7 +491,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "DefWeakenDown": {
         "Color": "",
@@ -403,7 +506,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "DefWeakenUp": {
         "Color": "",
@@ -417,7 +521,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Demon": {
         "Color": "",
@@ -431,7 +536,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Dispel": {
         "Color": "",
@@ -445,7 +551,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Dispel1_TPGZhu": {
         "Color": "",
@@ -459,7 +566,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Dispel2_TPGZhu": {
         "Color": "",
@@ -473,7 +581,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "DoubleRateDown": {
         "Color": "",
@@ -487,7 +596,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "DoubleRateUp": {
         "Color": "",
@@ -501,7 +611,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EffectRateDown": {
         "Color": "",
@@ -515,7 +626,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EffectRateUp": {
         "Color": "",
@@ -529,7 +641,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EffectStrgDown": {
         "Color": "",
@@ -543,7 +656,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EffectStrgUp": {
         "Color": "",
@@ -557,7 +671,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EnergyEffectDown": {
         "Color": "",
@@ -571,7 +686,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "EnergyEffectUp": {
         "Color": "",
@@ -585,7 +701,38 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "EquipSkill_Armor_15009": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "xiufu_xiufu",
+        "EffectPos": 0.35,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 5,
+        "zOrder": 1.0
+    },
+    "FanGao_Shield": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "fangaodun_bufftexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Fossil": {
         "Color": "",
@@ -599,7 +746,8 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 3
+        "Type": 3,
+        "zOrder": 1.0
     },
     "Freeze": {
         "Color": "",
@@ -610,10 +758,11 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 1,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "HPLink": {
         "Color": "",
@@ -627,7 +776,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 3
+        "Type": 3,
+        "zOrder": 1.0
     },
     "Heal": {
         "Color": "",
@@ -641,7 +791,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Hit_TPGZhu": {
         "Color": "",
@@ -655,7 +806,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Hot": {
         "Color": "",
@@ -669,7 +821,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "HurtRateDown": {
         "Color": "",
@@ -683,7 +836,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "HurtRateUp": {
         "Color": "",
@@ -697,7 +851,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Immune": {
         "Color": "",
@@ -711,7 +866,158 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Injury": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "zs_zhongshangtexiao",
+        "EffectPos": 0.4,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "LSLTe_Circle_1": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "quan1_weienbaodian",
+        "EffectPos": 0.0,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 2,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "LSLTe_Circle_2": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "quan2_weienbaodian",
+        "EffectPos": 0.0,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 2,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "LSLTe_Circle_3": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "quan3_weienbaodian",
+        "EffectPos": 0.0,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 2,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "LeadStage_BiLei": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "hudun_xiaohuanghudun",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "LeadStage_LiMing": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "baodian_nuqitisheng",
+        "EffectPos": 0.6,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "LeadStage_SenLing": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "loop_xiaolvfazhen",
+        "EffectPos": -1.0,
+        "HorizontalPos": 1.0,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4,
+        "zOrder": 1.0
+    },
+    "LeadStage_SenLing_Start": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "start_xiaolvfazhen",
+        "EffectPos": -1.0,
+        "HorizontalPos": 1.0,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4,
+        "zOrder": 1.0
+    },
+    "MZu_Shoot": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "xiaocx_linmomodazhao",
+        "EffectPos": 1.7,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 0,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "MZu_Shoot_2": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "kucx_linmomodazhao",
+        "EffectPos": 1.7,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 0,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Mad": {
         "Color": "",
@@ -722,14 +1028,15 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 3,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "MaxHpDown": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_maxhp_down.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -739,11 +1046,12 @@
         "Priority": 5,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "MaxHpUp": {
         "Color": "",
-        "DescWord": "",
+        "DescWord": "text_buffimage_maxhp_up.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
@@ -753,7 +1061,53 @@
         "Priority": 5,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "Muou1": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "zuzhou1_muouzuzhou",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Muou2": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "zuzhou2_muouzuzhou",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Muou3": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "zuzhou3_muouzuzhou",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Murderer": {
         "Color": "",
@@ -767,7 +1121,8 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Mute": {
         "Color": "",
@@ -778,10 +1133,11 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 2,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "PigHead": {
         "Color": "",
@@ -795,7 +1151,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Poison": {
         "Color": "",
@@ -809,7 +1166,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 3
+        "Type": 3,
+        "zOrder": 1.0
     },
     "Prepare": {
         "Color": "",
@@ -823,7 +1181,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Protecto": {
         "Color": "",
@@ -837,7 +1196,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 4
+        "Type": 4,
+        "zOrder": 1.0
     },
     "Provoke": {
         "Color": "",
@@ -851,7 +1211,23 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "RageDown": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "jiangnuqi_bufftexiao",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 2,
+        "zOrder": 1.0
     },
     "Reflect": {
         "Color": "",
@@ -865,7 +1241,158 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "Sea_Dark": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "xunhuan_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4,
+        "zOrder": 1.0
+    },
+    "Sea_Dark_In": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "jin_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4,
+        "zOrder": 1.0
+    },
+    "Sea_Dark_Leave": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "tui_zhanzhengmiwu",
+        "EffectPos": 0.0,
+        "HorizontalPos": -0.8,
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 0,
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 4,
+        "zOrder": 1.0
+    },
+    "Shader_BOTu": {
+        "Color": "Red",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Shader_Black": {
+        "Color": "Black",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Shader_MagicBox_1": {
+        "Color": "Green",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Shader_MagicBox_2": {
+        "Color": "Yellow",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Shader_MagicBox_3": {
+        "Color": "Red",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "Shader_Purple": {
+        "Color": "Purple",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "ShenYin": {
+        "Color": "Translucent",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Shield": {
         "Color": "",
@@ -879,7 +1406,8 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     },
     "ShieldBreak": {
         "Color": "",
@@ -893,7 +1421,23 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
+    },
+    "SingleHurtRateUp": {
+        "Color": "",
+        "DescWord": "text_buffimage_singlehurtrate_up.png",
+        "Effect": "",
+        "EffectPos": "",
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": "",
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
+        "zOrder": 1.0
     },
     "SkillRateDown": {
         "Color": "",
@@ -907,7 +1451,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "SkillRateUp": {
         "Color": "",
@@ -921,7 +1466,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Spark": {
         "Color": "",
@@ -935,7 +1481,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "SpeedDown": {
         "Color": "",
@@ -949,7 +1496,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "SpeedUp": {
         "Color": "",
@@ -963,7 +1511,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Stealth": {
         "Color": "",
@@ -977,7 +1526,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
     },
     "Taunt": {
         "Color": "",
@@ -988,10 +1538,26 @@
         "Icon": "",
         "Invisible": 1,
         "Loop": 1,
-        "Priority": 4,
+        "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 1
+        "Type": 1,
+        "zOrder": 1.0
+    },
+    "TouMing": {
+        "Color": "Invisible",
+        "DescWord": "",
+        "Effect": "",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 2,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": 1.0
     },
     "UnBlockRateDown": {
         "Color": "",
@@ -1005,7 +1571,8 @@
         "Priority": 2,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnBlockRateUp": {
         "Color": "",
@@ -1019,7 +1586,8 @@
         "Priority": 1,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnCritRateDown": {
         "Color": "",
@@ -1033,7 +1601,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnCritRateUp": {
         "Color": "",
@@ -1047,7 +1616,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnEffectRateDown": {
         "Color": "",
@@ -1061,7 +1631,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnEffectRateUp": {
         "Color": "",
@@ -1075,7 +1646,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnHurtRateDown": {
         "Color": "",
@@ -1089,7 +1661,8 @@
         "Priority": 4,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "UnHurtRateUp": {
         "Color": "",
@@ -1103,7 +1676,8 @@
         "Priority": 3,
         "Tick": "",
         "TickPos": "",
-        "Type": 0
+        "Type": 0,
+        "zOrder": 1.0
     },
     "Undead": {
         "Color": "",
@@ -1117,6 +1691,7 @@
         "Priority": "",
         "Tick": "",
         "TickPos": "",
-        "Type": 2
+        "Type": 2,
+        "zOrder": 1.0
     }
 }

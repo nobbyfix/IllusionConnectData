@@ -48,10 +48,14 @@ ShopSystem:has("_shopService", {
 ShopSystem:has("_playInstance", {
 	is = "rw"
 })
+ShopSystem:has("_activitySystem", {
+	is = "rw"
+}):injectWith("ActivitySystem")
 
 KMonthCardType = {
 	KMonthCardForever = "monthCardF",
 	KMonthCardSubscribe = "MonthCard_SubScribe",
+	KCardFanxingZhi = "KCarfFanxingZhiMeng",
 	KMonthCard = "MonthCard_1"
 }
 kShopResetType = {
@@ -66,11 +70,12 @@ ShopSpecialId = {
 	kShopReset = "Shop_Reset",
 	KLuckyBag = "LuckyBag",
 	kShopNormal = "Shop_Normal",
-	kShopSurface = "Shop_Surface",
+	KShopTimelimitedmall = "Shop_Timelimitedmall",
 	kShopTimeLimit = "Shop_TimeLimit",
 	kShopMonthcard = "Shop_Monthcard",
 	kShopPackage = "Shop_Package",
-	kShopRecommend = "Shop_Recommend"
+	kShopRecommend = "Shop_Recommend",
+	kShopSurface = "Shop_Surface"
 }
 ShopDirectPackageType = {
 	ShopSpecialId.kShopPackage,
@@ -84,15 +89,16 @@ kShopResetTypeSort = {
 }
 ShopUnlockId = {
 	kShopMall = "Charge_System",
-	kShopMonthcard = "Shop_Monthcard",
-	kShopSurface = "Unlock_Shop_Surface",
 	kShopReset = "Shop_Reset",
+	kShopSurface = "Unlock_Shop_Surface",
 	kShop = "Shop_Unlock",
 	kShopNormal = "Shop_Unlock",
+	kShopTimelimitedmall = "Shop_Timelimitedmall",
+	kShopMonthcard = "Shop_Monthcard",
 	kShopSurfacePackage = "Shop_SurfacePackage",
-	kShopTimeLimit = "Shop_TimeLimit",
 	kShopPackage = "Package_Shop",
-	kShopRecommend = "Shop_Recommend"
+	kShopRecommend = "Shop_Recommend",
+	kShopTimeLimit = "Shop_TimeLimit"
 }
 ShopUnlockTip = {
 	kShopMall = "Unlock_Charge_System_Tips",
@@ -120,11 +126,17 @@ function ShopSystem:initialize()
 	self._packageResetList = {}
 	self._surfaceList = {}
 	self._playInstance = false
+	self._itemPurchaseStamp = {}
 end
 
 function ShopSystem:userInject()
 	self._bagSystem = self._developSystem:getBagSystem()
 	self._heroSystem = self._developSystem:getHeroSystem()
+end
+
+function ActivitySystem:dispose()
+	self:shuttleTimers()
+	super.dispose(self)
 end
 
 function ShopSystem:checkEnabled(data)
@@ -389,7 +401,7 @@ function ShopSystem:getLeftShowTabs()
 			end
 		elseif shopId == ShopSpecialId.kShopNormal then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopNormal)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopNormal)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopNormal) and CommonUtils.GetSwitch("fn_shop_normal")
 
 			if unlock and canShow then
 				local index = #showArr + 1
@@ -408,7 +420,7 @@ function ShopSystem:getLeftShowTabs()
 			end
 		elseif shopId == ShopSpecialId.kShopMall then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopMall)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopMall)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopMall) and CommonUtils.GetSwitch("fn_shop_mall")
 
 			if canShow and unlock then
 				local index = #showArr + 1
@@ -425,29 +437,9 @@ function ShopSystem:getLeftShowTabs()
 					unlockKey = ShopUnlockId.kShopMall
 				}
 			end
-		elseif shopId == ShopSpecialId.kShopPackage then
-			local list = self:getPackageList(shopId)
-			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopPackage)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopPackage)
-
-			if #list > 0 and canShow and unlock then
-				local index = #showArr + 1
-				showArr[index] = {
-					shopId = shopId,
-					name = {
-						Strings:get("shop_UI28"),
-						""
-					},
-					unlockKey = ShopUnlockId.kShopPackage
-				}
-				showMap[shopId] = {
-					index = index,
-					unlockKey = ShopUnlockId.kShopPackage
-				}
-			end
 		elseif shopId == ShopSpecialId.kShopRecommend then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopRecommend)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopRecommend)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopRecommend) and CommonUtils.GetSwitch("fn_shop_recommend")
 
 			if canShow and unlock then
 				local index = #showArr + 1
@@ -464,9 +456,30 @@ function ShopSystem:getLeftShowTabs()
 					unlockKey = ShopUnlockId.kShopRecommend
 				}
 			end
+		elseif shopId == ShopSpecialId.KShopTimelimitedmall then
+			local list1 = self:getPackageList(ShopSpecialId.kShopPackage)
+			local list2 = self:getPackageList(ShopSpecialId.kShopTimeLimit)
+			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopTimelimitedmall)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopTimelimitedmall) and CommonUtils.GetSwitch("fn_shop_timelimitedmall")
+
+			if (#list1 > 0 or #list2 > 0) and canShow and unlock then
+				local index = #showArr + 1
+				showArr[index] = {
+					shopId = shopId,
+					name = {
+						Strings:get("Unlock_Shop_Timelimitedmall"),
+						""
+					},
+					unlockKey = ShopUnlockId.kShopTimelimitedmall
+				}
+				showMap[shopId] = {
+					index = index,
+					unlockKey = ShopUnlockId.kShopTimelimitedmall
+				}
+			end
 		elseif shopId == ShopSpecialId.kShopReset then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopReset)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopReset)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopReset) and CommonUtils.GetSwitch("fn_shop_reset")
 
 			if canShow and unlock then
 				local index = #showArr + 1
@@ -485,7 +498,7 @@ function ShopSystem:getLeftShowTabs()
 			end
 		elseif shopId == ShopSpecialId.kShopSurface then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopSurface)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopSurface)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopSurface) and CommonUtils.GetSwitch("fn_shop_surface")
 
 			if canShow and unlock then
 				local index = #showArr + 1
@@ -504,7 +517,7 @@ function ShopSystem:getLeftShowTabs()
 			end
 		elseif shopId == ShopSpecialId.kShopMonthcard then
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopMonthcard)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopMonthcard)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopMonthcard) and CommonUtils.GetSwitch("fn_shop_monthcard")
 
 			if canShow and unlock then
 				local index = #showArr + 1
@@ -524,7 +537,7 @@ function ShopSystem:getLeftShowTabs()
 		elseif shopId == ShopSpecialId.kShopSurfacePackage then
 			local list = self:getPackageList(shopId)
 			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopSurfacePackage)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopSurfacePackage)
+			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopSurfacePackage) and CommonUtils.GetSwitch("fn_shop_surface_package")
 
 			if #list > 0 and canShow and unlock then
 				local index = #showArr + 1
@@ -539,26 +552,6 @@ function ShopSystem:getLeftShowTabs()
 				showMap[shopId] = {
 					index = index,
 					unlockKey = ShopUnlockId.kShopSurfacePackage
-				}
-			end
-		elseif shopId == ShopSpecialId.kShopTimeLimit then
-			local list = self:getPackageList(shopId)
-			local unlock, tips = self._systemKeeper:isUnlock(ShopUnlockId.kShopTimeLimit)
-			local canShow = self._systemKeeper:canShow(ShopUnlockId.kShopTimeLimit)
-
-			if #list > 0 and canShow and unlock then
-				local index = #showArr + 1
-				showArr[index] = {
-					shopId = shopId,
-					name = {
-						Strings:get("Shop_TimeLimit_Name"),
-						""
-					},
-					unlockKey = ShopUnlockId.kShopTimeLimit
-				}
-				showMap[shopId] = {
-					index = index,
-					unlockKey = ShopUnlockId.kShopTimeLimit
 				}
 			end
 		end
@@ -636,6 +629,7 @@ function ShopSystem:syncSurface(data)
 end
 
 function ShopSystem:getSurfaceList()
+	local curTime = self:getCurSystemTime()
 	local list = {}
 	local keyList = ConfigReader:getKeysOfTable("ShopSurface")
 
@@ -651,7 +645,13 @@ function ShopSystem:getSurfaceList()
 			if hasSurface and hasSurface:getUnlock() then
 				local surfaceItem = ShopSurface:new(key)
 
-				table.insert(list, surfaceItem)
+				if surfaceItem:getIsLimit() then
+					if surfaceItem:getStartMills() <= curTime and curTime <= surfaceItem:getEndMills() then
+						table.insert(list, surfaceItem)
+					end
+				else
+					table.insert(list, surfaceItem)
+				end
 			elseif canBuySurface then
 				table.insert(list, canBuySurface)
 			end
@@ -775,7 +775,9 @@ function ShopSystem:getPackageList(packageType)
 		local times1 = a:getLeftCount()
 		local times2 = b:getLeftCount()
 
-		if times1 == 0 or times2 == 0 then
+		if times1 == -1 or times2 == -1 then
+			return a:getSort() < b:getSort()
+		elseif times1 == 0 or times2 == 0 then
 			return times2 < times1
 		else
 			return a:getSort() < b:getSort()
@@ -787,7 +789,7 @@ end
 
 function ShopSystem:getResetShopEndMills(id)
 	local serverTimeMap = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
-	local tb = os.date("*t", serverTimeMap)
+	local tb = TimeUtil:remoteDate("*t", serverTimeMap)
 	local shopReset_RefreshTime = ConfigReader:getDataByNameIdAndKey("Reset", "ShopReset_RefreshTime", "ResetSystem")
 	local resetTime = shopReset_RefreshTime.resetTime[1]
 	local _, _, h, m, s = string.find(resetTime, "(%d+):(%d+):(%d+)")
@@ -1099,17 +1101,67 @@ function ShopSystem:requestDebrisSell(params, callback)
 	end)
 end
 
+function ShopSystem:checkPurchaseCD(goodsId)
+	local curTime = self._gameServerAgent:remoteTimestamp()
+	local cd = CommonUtils.GetPurchaseCD()
+
+	if cd > 0 then
+		if self._itemPurchaseStamp[goodsId] then
+			local remainTime = math.ceil(self._itemPurchaseStamp[goodsId] + cd - curTime)
+
+			if remainTime > 0 then
+				self:dispatch(ShowTipEvent({
+					tip = Strings:get("ShopPurchaseCDTip", {
+						num = remainTime
+					})
+				}))
+
+				return false
+			end
+		end
+
+		self._itemPurchaseStamp[goodsId] = curTime
+	end
+
+	return true
+end
+
+function ShopSystem:checkDeliverCD(packageId, count)
+	local curTime = self._gameServerAgent:remoteTimestamp()
+	local cd = CommonUtils.GetDeliverCD()
+
+	if cd > 0 then
+		local package = self._packageList[packageId]
+		local leftCount = package and package:getLeftCount() or 0
+
+		if leftCount > 0 and leftCount <= count then
+			local payKey = ConfigReader:getDataByNameIdAndKey("PackageShop", packageId, "Pay")
+			local productId = ConfigReader:getDataByNameIdAndKey("Pay", payKey, "ProductId")
+			local payOffSystem = self:getInjector():getInstance(PayOffSystem)
+			local notDelivered, timestamp = payOffSystem:haveNotDeliveredOrder(productId)
+
+			if notDelivered then
+				local remainTime = math.ceil(timestamp + cd - curTime)
+
+				if remainTime > 0 then
+					self:dispatch(ShowTipEvent({
+						tip = Strings:get("ShopPurchaseCDTip", {
+							num = remainTime
+						})
+					}))
+
+					return false
+				end
+			end
+		end
+	end
+
+	return true
+end
+
 local perTime = 0
 
 function ShopSystem:requestBuyPackageShop(packageId, callback, isFree)
-	if isFree ~= KShopBuyType.KFree and isFree ~= KShopBuyType.KCoin then
-		self:dispatch(ShowTipEvent({
-			tip = "儲值服務已關閉"
-		}))
-
-		return
-	end
-
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -1117,6 +1169,17 @@ function ShopSystem:requestBuyPackageShop(packageId, callback, isFree)
 	end
 
 	perTime = curTime
+
+	if isFree == 0 then
+		if not self:checkPurchaseCD(packageId) then
+			return
+		end
+
+		if not self:checkDeliverCD(packageId, 1) then
+			return
+		end
+	end
+
 	local param = {
 		itemId = packageId
 	}
@@ -1156,14 +1219,6 @@ end
 local perTime = 0
 
 function ShopSystem:requestBuyPackageShopCount(packageId, count, callback, isFree)
-	if isFree ~= KShopBuyType.KFree and isFree ~= KShopBuyType.KCoin then
-		self:dispatch(ShowTipEvent({
-			tip = "儲值服務已關閉"
-		}))
-
-		return
-	end
-
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
 	if curTime - perTime < 0.5 then
@@ -1171,6 +1226,17 @@ function ShopSystem:requestBuyPackageShopCount(packageId, count, callback, isFre
 	end
 
 	perTime = curTime
+
+	if isFree == 0 then
+		if not self:checkPurchaseCD(packageId) then
+			return
+		end
+
+		if not self:checkDeliverCD(packageId, count) then
+			return
+		end
+	end
+
 	local param = {
 		itemId = packageId,
 		count = count
@@ -1232,7 +1298,7 @@ function ShopSystem:getTimeEnd(timeType)
 			min = m,
 			sec = s
 		}
-		local mills = TimeUtil:getTimeByDate(table)
+		local mills = TimeUtil:timeByRemoteDate(table)
 		local ends = timeType["end"]
 		local _, _, y, mon, d, h, m, s = string.find(ends, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 		local table = {
@@ -1243,7 +1309,7 @@ function ShopSystem:getTimeEnd(timeType)
 			min = m,
 			sec = s
 		}
-		local mille = TimeUtil:getTimeByDate(table)
+		local mille = TimeUtil:timeByRemoteDate(table)
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()
 
@@ -1286,6 +1352,19 @@ function ShopSystem:getRecomendData()
 							add = true
 						elseif info.Vanish == 0 then
 							add = true
+						end
+					end
+
+					if pid == KMonthCardType.KCardFanxingZhi then
+						local activity = self._activitySystem:getFanXingZhiMengActivity()
+
+						if activity and self._activitySystem:isActivityOpen(activity:getId()) and not self._activitySystem:isActivityOver(activity:getId()) then
+							local buy = activity:getPayStatus()
+							local deadline = activity:getDeadline()
+
+							if not buy and not deadline then
+								add = true
+							end
 						end
 					end
 
@@ -1365,6 +1444,14 @@ function ShopSystem:requestGetSurfaceShop(callback)
 	end)
 end
 
+function ShopSystem:requestRechargeHistory(callback)
+	self._shopService:requestRechargeHistory(nil, false, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response)
+		end
+	end)
+end
+
 function ShopSystem:getForeverConfig()
 	if not self._foreverConfig then
 		self._foreverConfig = {
@@ -1381,7 +1468,8 @@ function ShopSystem:getForeverConfig()
 			MonthCardForever_Img = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_Img", "content"),
 			MonthCardForever_WindowImg = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_WindowImg", "content"),
 			MonthCardForever_Pay = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "MonthCardForever_Pay", "content"),
-			Stamina_Max = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Max", "content")
+			Stamina_Max = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Max", "content"),
+			Stamina_CD = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Stamina_Recovery", "content")
 		}
 	end
 
@@ -1434,7 +1522,7 @@ function ShopSystem:getPackageListDirectPurchaseMCF()
 	local monthCardF = {
 		_id = KMonthCardType.KMonthCardForever,
 		_name = Strings:get(config.MonthCardForever_Name),
-		_icon = config.MonthCardForever_Img,
+		_icon = config.MonthCardForever_Img .. ".png",
 		_buyIcon = config.MonthCardForever_WindowImg,
 		_fCardWeekFlag = self._rechargeAndVipModel:getFCardWeekFlag(),
 		_fCardBuyFlag = self._rechargeAndVipModel:getFCardBuyFlag(),
@@ -1444,7 +1532,8 @@ function ShopSystem:getPackageListDirectPurchaseMCF()
 		_sort = config.MonthCardForever_Sort,
 		_staminaLimit = config.MonthCardForever_StaminaLimit,
 		_weekReward = config.MonthCardForever_WeekReward,
-		_stamina_Max = config.Stamina_Max
+		_stamina_Max = config.Stamina_Max,
+		_stamina_CD = config.Stamina_CD
 	}
 
 	return monthCardF
@@ -1473,6 +1562,57 @@ end
 
 function ShopSystem:getRedPointForMonthcard()
 	return self:getRedPointForMCFWeekFlag() or self:getRedPointForMCFStamina()
+end
+
+function ShopSystem:refreshMCFRedPoint()
+	self:shuttleTimers()
+
+	self._isRefresh = true
+
+	local function checkTimeFunc()
+		local data = self:getPackageListDirectPurchaseMCF()
+
+		if data._fCardBuyFlag then
+			local data = self:getPackageListDirectPurchaseMCF()
+			local entry = self._bagSystem:getEntryById(CurrencyIdKind.kPower)
+			local curBagCount = entry.count
+			local curPower, lastRecoverTime = self._bagSystem:getPower()
+			local level = self._developSystem:getLevel()
+			local powerLimit = self._bagSystem:getRecoveryPowerLimit(level)
+			local cd = data._stamina_CD
+
+			if powerLimit <= curPower and curBagCount < powerLimit then
+				lastRecoverTime = (powerLimit - curBagCount) * cd + lastRecoverTime
+			end
+
+			if powerLimit <= curPower then
+				local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
+				local enougth = math.floor((remoteTimestamp - lastRecoverTime) / cd) >= data._staminaLimit - data._fCardStamina
+
+				if enougth and self._isRefresh then
+					self._rechargeAndVipSystem:requestFefreshForeverCard()
+
+					self._isRefresh = false
+				end
+			end
+		end
+	end
+
+	self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 2, false)
+
+	checkTimeFunc()
+end
+
+function ShopSystem:resetRefresh()
+	self._isRefresh = true
+end
+
+function ShopSystem:shuttleTimers()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
 end
 
 function ShopSystem:getRedPointForDirectPackage()
@@ -1551,22 +1691,35 @@ end
 
 function ShopSystem:getMonthCardHeadFrame()
 	local data = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Test_RealTime", "content")
+
+	if not data then
+		return nil
+	end
+
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
-	for i, v in pairs(data.normal) do
-		local startDate = TimeUtil:parseDateTime({}, v.start)
-		local endDate = TimeUtil:parseDateTime({}, v["end"])
-		local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
-		local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
+	if data then
+		for i, v in pairs(data.normal) do
+			local startDate = TimeUtil:parseDateTime({}, v.start)
+			local endDate = TimeUtil:parseDateTime({}, v["end"])
+			local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
+			local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
 
-		if startT <= curTime and curTime <= endT then
-			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
+			if startT <= curTime and curTime <= endT then
+				local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
 
-			for _, reward in pairs(rewards) do
-				if reward.type == 14 then
-					return reward
+				for _, reward in pairs(rewards) do
+					if reward.type == 14 then
+						return reward
+					end
 				end
 			end
 		end
 	end
+
+	return nil
+end
+
+function ShopSystem:getRedPointForShopExchange()
+	return self._bagSystem:getRedPointForShopExchange()
 end

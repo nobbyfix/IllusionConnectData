@@ -7,74 +7,15 @@ BagSystem:has("_developSystem", {
 	is = "r"
 }):injectWith("DevelopSystem")
 BagSystem:has("_composeTimes", {
-	is = "rw"
+	is = "r"
+})
+BagSystem:has("_uRCount", {
+	is = "r"
+})
+BagSystem:has("_uREquipState", {
+	is = "r"
 })
 
-local PowerConfigMap = {
-	[CurrencyIdKind.kPower] = {
-		all = "Power_RecAll",
-		perMin = "Power_RecPerMin",
-		next = "Power_RecNext",
-		configId = "3",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityStaminaPower] = {
-		all = "Act_Power_RecAll",
-		perMin = "Act_Power_RecPerMin",
-		next = "Act_Power_RecNext",
-		configId = "AcitvityStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvitySnowPower] = {
-		all = "Act_Snowflake_Power_RecAll",
-		perMin = "Act_Snowflake_Power_RecPerMin",
-		next = "Act_Snowflake_Power_RecNext",
-		configId = "AcitvitySnowflakeStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityZuoHePower] = {
-		all = "Act_ZuoHe_Power_RecAll",
-		perMin = "Act_ZuoHe_Power_RecPerMin",
-		next = "Act_ZuoHe_Power_RecNext",
-		configId = "AcitvityZuoHeStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityWxhPower] = {
-		all = "Act_Wxh_Power_RecAll",
-		perMin = "Act_Wxh_Power_RecPerMin",
-		next = "Act_Wxh_Power_RecNext",
-		configId = "AcitvityWuXiuHuiStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvitySummerPower] = {
-		all = "Act_Summer_Power_RecAll",
-		perMin = "Act_Summer_Power_RecPerMin",
-		next = "Act_Summer_Power_RecNext",
-		configId = "AcitvitySummerStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kAcitvityHalloweenPower] = {
-		all = "Act_Halloween_Power_RecAll",
-		perMin = "Act_Halloween_Power_RecPerMin",
-		next = "Act_Halloween_Power_RecNext",
-		configId = "AcitvityHalloweenStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kActivityHolidayPower] = {
-		all = "Act_NewYear_Power_RecAll",
-		perMin = "Act_NewYear_Power_RecPerMin",
-		next = "Act_NewYear_Power_RecNext",
-		configId = "AcitvityHolidayStamina_Reset",
-		tableName = "Reset"
-	},
-	[CurrencyIdKind.kActivityDetectivePower] = {
-		all = "Act_Detective_Power_RecAll",
-		perMin = "Act_Detective_Power_RecPerMin",
-		next = "Act_Detective_Power_RecNext",
-		configId = "AcitvityDetectiveStamina_Reset",
-		tableName = "Reset"
-	}
-}
 local crusadeEnergyReset = nil
 
 function BagSystem:initialize()
@@ -87,18 +28,21 @@ function BagSystem:initialize()
 	self._viewVector = {}
 	self._sharedScheduler = nil
 	self._powerResetMap = {}
-
-	self:initPowerReset()
-
+	self._composeTimes = {}
+	self._uRCount = 0
+	self._uREquipState = {
+		uRSuiteMap = {},
+		uRStatMap = {}
+	}
 	crusadeEnergyReset = self:initConfigSystem("Reset", "Crusade_Energy_Recovery")
 end
 
 function BagSystem:initPowerReset()
 	for k, v in pairs(PowerConfigMap) do
-		self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
+		if v.tableName and v.configId then
+			self._powerResetMap[k] = self:initConfigSystem(v.tableName, v.configId)
+		end
 	end
-
-	dump(self._powerResetMap, "initPowerReset")
 end
 
 function BagSystem:initConfigSystem(tableName, configId)
@@ -119,8 +63,12 @@ function BagSystem:tryEnter(data)
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, bagView, nil, data))
 end
 
-function BagSystem:synchronize(data)
+function BagSystem:synchronize(data, isDiff)
 	self:dispatch(Event:new(EVT_BAG_SYNCHRONIZED, {}))
+
+	if isDiff then
+		self:updataURExhangeRedPoint(data)
+	end
 end
 
 function BagSystem:getBag()
@@ -279,26 +227,42 @@ function BagSystem:getPowerByCurrencyId(currencyId)
 
 	assert(resetConfig, "not find config in local PowerConfigMap, id " .. currencyId)
 
+	if not self._powerResetMap[currencyId] then
+		self:initPowerReset()
+	end
+
 	local resetSystem = self._powerResetMap[currencyId]
 	local entry = self:getEntryById(currencyId)
 	local count = 0
 	local lastRecoverTime = 0
 
-	if entry then
+	if entry and resetSystem then
 		lastRecoverTime = entry.item:getLastRecoverTime()
-		count = entry.count
 
-		if count < resetSystem.limit then
+		if lastRecoverTime == 0 then
+			lastRecoverTime = self._gameServerAgent:remoteTimestamp()
+		end
+
+		count = entry.count
+		local powerLimit = resetSystem.limit
+
+		if count < powerLimit then
 			local curTime = self._gameServerAgent:remoteTimestamp()
 			local changeCount = math.max(0, math.floor((curTime - lastRecoverTime) / resetSystem.cd))
-			count = math.min(count + changeCount, resetSystem.limit)
+			count = math.min(count + changeCount, powerLimit)
 		end
+	else
+		count = entry and entry.count or 0
 	end
 
 	return count, lastRecoverTime
 end
 
 function BagSystem:getPower()
+	if not self._powerResetMap[CurrencyIdKind.kPower] then
+		self:initPowerReset()
+	end
+
 	local entry = self:getEntryById(CurrencyIdKind.kPower)
 	local count = 0
 	local lastRecoverTime = 0
@@ -339,36 +303,8 @@ function BagSystem:getCrusadeEnergy()
 	return count, lastRecoverTime
 end
 
-function BagSystem:getAcitvityStaminaPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityStaminaPower)
-end
-
-function BagSystem:getAcitvitySnowPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
-end
-
-function BagSystem:getAcitvitySagaSupportPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityZuoHePower)
-end
-
-function BagSystem:getAcitvityWxhSupportPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvityWxhPower)
-end
-
 function BagSystem:getAcitvitySummerPower()
 	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySummerPower)
-end
-
-function BagSystem:getActivityHolidayPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityHolidayPower)
-end
-
-function BagSystem:getAcitvitySnowPower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kAcitvitySnowPower)
-end
-
-function BagSystem:getAcitvityDetectivePower()
-	return self:getPowerByCurrencyId(CurrencyIdKind.kActivityDetectivePower)
 end
 
 function BagSystem:getDiamond()
@@ -1376,6 +1312,10 @@ function BagSystem:updateView()
 			return
 		end
 
+		if not self._powerResetMap[currencyId] then
+			self:initPowerReset()
+		end
+
 		local view = obj:getView()
 		local textNode = view:getChildByFullName("text_bg.text")
 		local curPower = 0
@@ -1647,4 +1587,464 @@ function BagSystem:isHasCompose()
 	end
 
 	return slot6
+end
+
+function BagSystem:setComposeTimes(composeTimes)
+	for key, value in pairs(composeTimes) do
+		self._composeTimes[key] = value
+	end
+end
+
+function BagSystem:setURCount(count)
+	self._uRCount = count
+end
+
+function BagSystem:setUREquipState(info)
+	if info.uRStatMap then
+		for k, v in pairs(info.uRStatMap) do
+			self._uREquipState.uRStatMap[k] = v
+		end
+	end
+
+	if info.uRSuiteMap then
+		for k, v in pairs(info.uRSuiteMap) do
+			local t = {}
+
+			for _, id in pairs(v) do
+				table.insert(t, id)
+			end
+
+			self._uREquipState.uRSuiteMap[k] = t
+		end
+	end
+end
+
+function BagSystem:requestItemLock(param, callback, blockUI)
+	local param_request = {
+		itemId = param.itemId
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:requestItemLock(param_request, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback()
+			end
+
+			self:dispatch(Event:new(EVT_ITEM_LOCK_SUCC, {
+				viewtype = param.viewtype
+			}))
+		end
+	end, blockUI)
+end
+
+function BagSystem:getAllComposeEntrys(composeStoneId, curComposeId)
+	if self._composeToPos == nil then
+		self._composeToPos = ConfigReader:getRecordById("ConfigValue", "URStone_Exchange").content
+	end
+
+	local composeIds = {}
+
+	if self._composeToPos[composeStoneId] then
+		local pos = self._composeToPos[composeStoneId]
+		local dataTable = ConfigReader:getDataTable("Compose")
+
+		for k, v in pairs(dataTable) do
+			if pos == v.ComposePosition then
+				local haveCount = self:getItemCount(k)
+
+				if curComposeId and curComposeId == k then
+					haveCount = haveCount - 1
+				else
+					local ret = true
+					local currentTime = self._composeTimes[k]
+
+					if currentTime and currentTime >= 1 then
+						ret = false
+					end
+
+					if ret then
+						haveCount = haveCount - 1
+					end
+				end
+
+				if haveCount > 0 then
+					composeIds[#composeIds + 1] = k
+				end
+			end
+		end
+	end
+
+	table.sort(composeIds, function (a, b)
+		local sortA = self:getEntryById(a).item:getSort()
+		local sortB = self:getEntryById(b).item:getSort()
+
+		if sortA >= sortB then
+			slot4 = false
+		else
+			slot4 = true
+		end
+
+		return slot4
+	end)
+
+	return composeIds
+end
+
+function BagSystem:getComposePos(composeItemId)
+	if self._composeToPos == nil then
+		self._composeToPos = ConfigReader:getRecordById("ConfigValue", "URStone_Exchange").content
+	end
+
+	return self._composeToPos[composeItemId]
+end
+
+UPMapStatus = {
+	kNot_Collect_NOT_Over = 1,
+	kFinish_YiLingQu = 2,
+	KFinish_WeiLingQu = 0
+}
+
+function BagSystem:getURMapConfig(urMapId)
+	return ConfigReader:getRecordById("UREuipmentMap", urMapId)
+end
+
+function BagSystem:getURMapStateById(urMapId)
+	local state = UPMapStatus.kNot_Collect_NOT_Over
+	local urMapState = self:getUREquipState()
+	local config = self:getURMapConfig(urMapId)
+
+	if urMapState.uRSuiteMap and urMapState.uRSuiteMap[urMapId] and next(urMapState.uRSuiteMap) and #config.EquipList == #urMapState.uRSuiteMap[urMapId] then
+		if urMapState.uRStatMap[urMapId] and urMapState.uRStatMap[urMapId] == 1 then
+			state = UPMapStatus.KFinish_WeiLingQu
+		elseif urMapState.uRStatMap[urMapId] and urMapState.uRStatMap[urMapId] == 2 then
+			state = UPMapStatus.kFinish_YiLingQu
+		end
+	end
+
+	return state
+end
+
+function BagSystem:getHasURMapEquipId(urMapId, eqId)
+	local urMapState = self:getUREquipState()
+
+	if not urMapState or not urMapState.uRSuiteMap then
+		return false
+	end
+
+	local gotEquips = urMapState.uRSuiteMap[urMapId]
+
+	if gotEquips and next(gotEquips) and table.indexof(gotEquips, eqId) then
+		return true
+	end
+
+	return false
+end
+
+function BagSystem:getURMapInfo()
+	local info = {}
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+
+	for k, v in pairs(dataTable) do
+		local tmp = {
+			config = v
+		}
+		local state = self:getURMapStateById(k)
+		tmp.state = state
+
+		table.insert(info, tmp)
+	end
+
+	table.sort(info, function (a, b)
+		if a.state ~= b.state then
+			if a.state >= b.state then
+				slot2 = false
+			else
+				slot2 = true
+			end
+
+			return slot2
+		else
+			if a.config.Sort >= b.config.Sort then
+				slot2 = false
+			else
+				slot2 = true
+			end
+
+			return slot2
+		end
+	end)
+
+	return info
+end
+
+function BagSystem:getURMapIdByItemId(itemId)
+	local index = -1
+	local info = self:getURMapInfo()
+
+	for i, v in ipairs(info) do
+		local data = v.config
+
+		for i, v in ipairs(data.EquipList) do
+			if itemId == v.scrollID then
+				index = i
+			end
+		end
+	end
+
+	return index
+end
+
+function BagSystem:getProcessByURMapId(urMapId)
+	local urMapState = self:getUREquipState()
+	local ret1 = 0
+	local ret2 = nil
+	local configData = self:getURMapConfig(urMapId)
+	ret2 = #configData.EquipList
+
+	if urMapState.uRSuiteMap[urMapId] then
+		ret1 = #urMapState.uRSuiteMap[urMapId]
+	end
+
+	return ret1, ret2
+end
+
+function BagSystem:getProcessOfURMap()
+	local ret = 0
+	local info = self:getURMapInfo()
+
+	for k, v in pairs(info) do
+		ret = ret + #v.config.EquipList
+	end
+
+	return ret
+end
+
+function BagSystem:getURSuiteRewards(urMapId, callback)
+	local param = {
+		UREquipmentMapId = urMapId
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:getURSuiteRewards(param, function (response)
+		if response.resCode == GS_SUCCESS then
+			if callback then
+				callback()
+			end
+
+			local rewards = response.data
+
+			if rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = rewards
+				}))
+			end
+
+			self:dispatch(Event:new(EVT_URMAP_GetReward_SUCC, {}))
+		end
+	end, true)
+end
+
+function BagSystem:mainInfoURSuite(callback)
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip = systemKeeper:isUnlock("URMap_Unlock")
+
+	if not result then
+		if callback then
+			callback()
+		end
+
+		return
+	end
+
+	local param = {}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:mainInfoURSuite(param, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback()
+		end
+	end, true)
+end
+
+function BagSystem:getURMapRedPoint()
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip = systemKeeper:isUnlock("URMap_Unlock")
+
+	if not result then
+		return false
+	end
+
+	local taskSys = self._developSystem:getTaskSystem()
+	local hasRedPoint = taskSys:hasUnreceivedTask(TaskType.kURMap)
+
+	if hasRedPoint then
+		return true
+	end
+
+	local urMapInfo = self:getURMapInfo()
+
+	for k, v in pairs(urMapInfo) do
+		if v.state == UPMapStatus.KFinish_WeiLingQu then
+			return true
+		end
+	end
+
+	return self:checkURMapCountKey()
+end
+
+function BagSystem:checkURMapCountKey()
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+	local playerId = self._developSystem:getPlayer():getRid()
+
+	if not cc.UserDefault:getInstance():getIntegerForKey(playerId .. UserDefaultKey.KURMapCountKey) then
+		local cur = ""
+	end
+
+	if cur == table.nums(dataTable) then
+		slot4 = false
+	else
+		slot4 = true
+	end
+
+	return slot4
+end
+
+function BagSystem:setURMapCountKeyValue()
+	local dataTable = ConfigReader:getDataTable("UREuipmentMap")
+	local playerId = self._developSystem:getPlayer():getRid()
+	local cur = table.nums(dataTable)
+
+	cc.UserDefault:getInstance():setIntegerForKey(playerId .. UserDefaultKey.KURMapCountKey, cur)
+end
+
+function BagSystem:checkCanUseCompose(item)
+	local result = true
+	local composeTimes = self:getComposeTimes()
+
+	if item:getSubType() == ItemTypes.K_COMPOSE and composeTimes then
+		local configData = ConfigReader:getRecordById("Compose", item:getId())
+
+		if configData and configData.Times and configData.Times > 0 then
+			local currentTime = composeTimes[item:getId()]
+
+			if currentTime and configData.Times <= currentTime then
+				result = false
+			end
+		end
+	end
+
+	return result
+end
+
+function BagSystem:getRepeatURItems()
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local equipSystem = developSystem:getEquipSystem()
+	local ids = {}
+	local bagIds = self:getAllEntryIds()
+	local kTabFilterMap = self:getTabFilterMap()
+	local filterFunc = kTabFilterMap[BagItemShowType.kCompose]
+
+	for _, entryId in ipairs(bagIds) do
+		local entry = self:getEntryById(entryId)
+		local isvislble = self:getItemIsVisible(entryId)
+
+		if entry and isvislble and filterFunc(entry.item) then
+			local configData = ConfigReader:getRecordById("Compose", entryId)
+
+			if configData and configData.IfTrans and configData.IfTrans > 0 then
+				if self:checkCanUseCompose(entry.item) then
+					if entry.count > 1 then
+						table.insert(ids, {
+							isEatAll = true,
+							itemId = entryId,
+							allCount = entry.count - 1
+						})
+					end
+				else
+					table.insert(ids, {
+						isEatAll = true,
+						itemId = entryId,
+						allCount = entry.count
+					})
+				end
+			end
+		end
+	end
+
+	return ids
+end
+
+function BagSystem:transferURScroll(params, callback)
+	local param = {
+		items = params
+	}
+	local bagService = self:getInjector():getInstance(BagService)
+
+	bagService:transferURScroll(param, function (response)
+		if response.resCode == GS_SUCCESS then
+			local rewards = response.data.rewards
+
+			if rewards then
+				local view = self:getInjector():getInstance("getRewardView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+					maskOpacity = 0
+				}, {
+					rewards = {
+						rewards
+					}
+				}))
+			end
+
+			if callback then
+				callback()
+			end
+		end
+	end, true)
+end
+
+function BagSystem:getRedPointForShopExchange()
+	return self:getURExchangeRedPoint()
+end
+
+function BagSystem:updataURExhangeRedPoint(data)
+	for k, v in pairs(data) do
+		local itemConfig = self:getItemConfig(k)
+
+		if itemConfig and itemConfig.Page == ItemPages.kCompose then
+			local entry = self:getEntryById(k)
+			local isRed = false
+
+			print(self:checkCanUseCompose(entry.item))
+
+			if self:checkCanUseCompose(entry.item) then
+				if entry.count > 1 then
+					isRed = true
+				end
+			else
+				isRed = true
+			end
+
+			if isRed then
+				self:setURExchangeRedPoint(true)
+			end
+		end
+	end
+end
+
+function BagSystem:getURExchangeRedPoint()
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+
+	return cc.UserDefault:getInstance():getBoolForKey(playerId .. UserDefaultKey.KURExchangeRedPoint)
+end
+
+function BagSystem:setURExchangeRedPoint(status)
+	local playerId = self:getDevelopSystem():getPlayer():getRid()
+
+	cc.UserDefault:getInstance():setBoolForKey(playerId .. UserDefaultKey.KURExchangeRedPoint, status)
 end

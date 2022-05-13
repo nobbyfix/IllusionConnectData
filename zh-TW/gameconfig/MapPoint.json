@@ -48,12 +48,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -270,6 +265,7 @@
         ],
         "OnceObject": {
             "Alice_1_CaiDanBoss": "Alice_1_CaiDanBoss_Case3",
+            "Alice_1_CaiDanMuBei1": "Alice_1_CaiDanMuBei1_Case2",
             "Alice_1_SanYueTuTuBaoXiang": "Alice_1_SanYueTuTuBaoXiang_Case1",
             "Alice_1_TongHuaShuNew1": "Alice_1_TongHuaShuNew1_Case2",
             "Alice_1_TongHuaShuNew2": "Alice_1_TongHuaShuNew2_Case2",
@@ -277,6 +273,7 @@
             "Alice_1_TongHuaShuNew4": "Alice_1_TongHuaShuNew4_Case2",
             "Alice_1_TongHuaShuNew5": "Alice_1_TongHuaShuNew5_Case2"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Down",
@@ -400,12 +397,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -668,11 +660,13 @@
         ],
         "OnceObject": {
             "Alice_2_CaiDanBoss": "Alice_2_CaiDanBoss_Case1_2",
+            "Alice_2_CaiDanMuBei1": "Alice_2_CaiDanMuBei1_Case2",
             "Alice_2_CaiDanTang1": "Alice_2_Tang1_Case2",
             "Alice_2_CaiDanTang2": "Alice_2_Tang2_Case2",
             "Alice_2_CaiDanTang3": "Alice_2_Tang3_Case2",
             "Alice_2_CaiDanTang4": "Alice_2_Tang4_Case2"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Right",
@@ -801,12 +795,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -1051,11 +1040,13 @@
         ],
         "OnceObject": {
             "Alice_3_CaiDanBoss": "Alice_3_CaiDanBoss_Case2",
+            "Alice_3_CaiDanMuBei1": "Alice_3_CaiDanMuBei1_Case2",
             "Alice_3_NanGua": "Alice_3_NanGua_Case2",
             "Alice_3_SaoZhou": "Alice_3_SaoZhou_Case2",
             "Alice_3_ShuiJingXie": "Alice_3_ShuiJingXie_Case2",
             "Alice_3_XianNvBang": "Alice_3_XianNvBang_Case2"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -1184,12 +1175,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -1503,11 +1489,13 @@
         ],
         "OnceObject": {
             "Alice_4_CaiDanBoss": "Alice_4_CaiDanBoss_Case4",
+            "Alice_4_CaiDanMuBei1": "Alice_4_CaiDanMuBei1_Case2",
             "Alice_4_CaiDanPingGuo1": "Alice_4_CaiDanPingGuo1_Case2",
             "Alice_4_CaiDanPingGuo2": "Alice_4_CaiDanPingGuo2_Case2",
             "Alice_4_CaiDanPingGuo3": "Alice_4_CaiDanPingGuo3_Case2",
             "Alice_4_CaiDanPingGuo4": "Alice_4_CaiDanPingGuo4_Case2"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -1631,7 +1619,7 @@
             },
             {
                 "image": "ts_bg_fl_2",
-                "itemId": "IR_Equip14",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type2"
             },
             {
@@ -1828,6 +1816,7 @@
             "China_1_DengYang1"
         ],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Right",
@@ -1870,7 +1859,9 @@
         "UnlockAuto": {
             "MapGuide": 90
         },
-        "UnlockCondition": {},
+        "UnlockCondition": {
+            "LEVEL": 99
+        },
         "WeekRecommend": [
             1,
             4,
@@ -1899,7 +1890,7 @@
             },
             {
                 "image": "ts_bg_fl_2",
-                "itemId": "IR_Equip14",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type2"
             },
             {
@@ -2079,6 +2070,7 @@
         "NeedPower": 30,
         "Object": [],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Right",
@@ -2121,7 +2113,9 @@
         "UnlockAuto": {
             "MapGuide": 90
         },
-        "UnlockCondition": {},
+        "UnlockCondition": {
+            "LEVEL": 99
+        },
         "WeekRecommend": [
             2,
             3,
@@ -2150,7 +2144,7 @@
             },
             {
                 "image": "ts_bg_fl_2",
-                "itemId": "IR_Equip14",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type2"
             },
             {
@@ -2318,6 +2312,7 @@
         "NeedPower": 30,
         "Object": [],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -2360,7 +2355,9 @@
         "UnlockAuto": {
             "MapGuide": 90
         },
-        "UnlockCondition": {},
+        "UnlockCondition": {
+            "LEVEL": 99
+        },
         "WeekRecommend": [
             1,
             2,
@@ -2386,7 +2383,7 @@
             },
             {
                 "image": "ts_bg_fl_2",
-                "itemId": "IR_Equip14",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type2"
             },
             {
@@ -2584,6 +2581,7 @@
         "NeedPower": 30,
         "Object": [],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -2626,7 +2624,9 @@
         "UnlockAuto": {
             "MapGuide": 90
         },
-        "UnlockCondition": {},
+        "UnlockCondition": {
+            "LEVEL": 99
+        },
         "WeekRecommend": [
             3,
             4,
@@ -2715,12 +2715,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -2924,6 +2919,7 @@
             "Egypt_1_FaZhen1"
         ],
         "OnceObject": "",
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -3023,12 +3019,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -3235,6 +3226,7 @@
             "Egypt_2_StoryBoss1"
         ],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -3278,7 +3270,7 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 52,
+            "LEVEL": 99,
             "PREPOINT": {
                 "Egypt_1": 1
             }
@@ -3349,12 +3341,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -3562,6 +3549,7 @@
             "Egypt_3_StoryMiYa1"
         ],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Right",
@@ -3605,7 +3593,7 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 55,
+            "LEVEL": 99,
             "PREPOINT": {
                 "Egypt_2": 1
             }
@@ -3699,12 +3687,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -3940,6 +3923,7 @@
             "Egypt_4_HaTuo1"
         ],
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -3983,7 +3967,7 @@
             "MapGuide": 90
         },
         "UnlockCondition": {
-            "LEVEL": 58,
+            "LEVEL": 99,
             "PREPOINT": {
                 "Egypt_3": 1
             }
@@ -4021,12 +4005,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -4260,6 +4239,7 @@
             "Japan_1_CaiDanRenZheWuQi4": "Japan_1_CaiDanRenZheWuQi4_Case1",
             "Japan_1_CaiDanShuYe": "Japan_1_CaiDanShuYe_Case2"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -4386,12 +4366,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -4635,6 +4610,7 @@
             "Japan_2_CaiDanMiJi3": "Japan_2_CaiDanMiJi3_Case1",
             "Japan_2_CaiDanMiJi4": "Japan_2_CaiDanMiJi4_Case1"
         },
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -4826,12 +4802,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -5049,6 +5020,7 @@
             "Japan_3_ZuDangBoss1"
         ],
         "OnceObject": "",
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -5130,12 +5102,7 @@
             },
             {
                 "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip14",
-                "text": "EXPLORE_RewardShow_Type1"
-            },
-            {
-                "image": "ts_bg_fl_1",
-                "itemId": "IR_Equip13",
+                "itemId": "IR_Pve",
                 "text": "EXPLORE_RewardShow_Type1"
             }
         ],
@@ -5381,6 +5348,7 @@
             "Japan_4_StoryBossA1"
         ],
         "OnceObject": "",
+        "OpenType": "",
         "PlayerPos": {
             "1": {
                 "Direction": "Left",
@@ -5501,6 +5469,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -5616,6 +5585,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -5731,6 +5701,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -5846,6 +5817,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -5945,6 +5917,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6028,6 +6001,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6111,6 +6085,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6194,6 +6169,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6277,6 +6253,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6360,6 +6337,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6443,6 +6421,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6526,6 +6505,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6609,6 +6589,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6692,6 +6673,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6775,6 +6757,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6858,6 +6841,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -6941,6 +6925,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -7024,6 +7009,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -7107,6 +7093,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",
@@ -7190,6 +7177,7 @@
         "NeedPower": 30,
         "Object": "",
         "OnceObject": "",
+        "OpenType": 1,
         "PlayerPos": {
             "1": {
                 "Direction": "Up",

@@ -45,7 +45,7 @@ local SwipState = {
 	ON = 1
 }
 
-function ActivityStagePoint:initialize(pointId)
+function ActivityStagePoint:initialize(pointId, configName)
 	super.initialize(self)
 
 	self._id = pointId
@@ -55,7 +55,9 @@ function ActivityStagePoint:initialize(pointId)
 	self._firstPass = nil
 	self._firstPassTag = false
 	self._isDailyFirstEnter = true
-	self._config = ConfigReader:getRecordById("ActivityBlockPoint", pointId)
+	configName = configName or "ActivityBlockPoint"
+	self._config = ConfigReader:getRecordById(configName, pointId)
+	self._configName = configName
 end
 
 function ActivityStagePoint:sync(data)
@@ -106,7 +108,7 @@ function ActivityStagePoint:isUnlock()
 	local prePoints = self._config.OpenPoint
 	local preStoryPoints = self._config.PreStoryPoint
 
-	if prePoints[1] then
+	if prePoints and prePoints[1] then
 		local _point = self._owner:getPointById(prePoints[1])
 
 		if _point and not _point:isPass() then
@@ -114,11 +116,34 @@ function ActivityStagePoint:isUnlock()
 		end
 	end
 
-	if preStoryPoints[1] then
+	if preStoryPoints and preStoryPoints[1] then
 		local _point = self._owner:getStoryPointById(preStoryPoints[1])
 
 		if _point and not _point:isPass() then
 			return false
+		end
+	end
+
+	local condition = self._config.UnlockCondition
+
+	if condition then
+		if condition.LEVEL then
+			local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+			local player = developSystem:getPlayer()
+
+			if player:getLevel() < condition.LEVEL then
+				return false
+			end
+		end
+
+		if condition.Pass then
+			local cfg = ConfigReader:getRecordById("ActivityBlockBattle", condition.Pass)
+			local sortPoint = self._owner:getOwner():getPointById(cfg.Map)
+			local _point = sortPoint:getPointById(condition.Pass)
+
+			if _point and not _point:isPass() then
+				return false, Strings:get("")
+			end
 		end
 	end
 
@@ -162,7 +187,7 @@ function ActivityStagePoint:isBoss()
 end
 
 function ActivityStagePoint:getDesc()
-	return Strings:get(self._config.BlockDesc)
+	return Strings:get(self._config.BlockDesc or self._config.Desc)
 end
 
 function ActivityStagePoint:getType()
@@ -171,6 +196,14 @@ end
 
 function ActivityStagePoint:getCostEnergy()
 	return self._config.StaminaCost
+end
+
+function ActivityStagePoint:getMainItemId()
+	if self._config.MainShowItem == "" then
+		return nil
+	end
+
+	return self._config.MainShowItem
 end
 
 function ActivityStagePoint:getStarCondition()
@@ -213,14 +246,54 @@ end
 
 function ActivityStagePoint:canWipeOnce()
 	if SwipState.ON == self._config.IsSweep then
-		local needStars = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Stage_Sweep_Stars", "content")
+		if self._configName == "ActivityBlockBattle" then
+			if self:isPass() then
+				return true
+			end
+		else
+			local needStars = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Stage_Sweep_Stars", "content")
 
-		if needStars <= self:getStarCount() then
-			return true
+			if needStars <= self:getStarCount() then
+				return true
+			end
 		end
 
 		return false
 	end
 
 	return false
+end
+
+function ActivityStagePoint:getAssist()
+	return self._config.Assist or {}
+end
+
+function ActivityStagePoint:getAssistEnemy()
+	local list = {}
+	local assist = self:getAssist()
+
+	for index, value in ipairs(assist) do
+		list[#list + 1] = value.id
+	end
+
+	return list
+end
+
+function ActivityStagePoint:getAssistHero()
+	local list = {}
+	local assist = self:getAssist()
+
+	for index, value in ipairs(assist) do
+		list[#list + 1] = value.forbidid
+	end
+
+	return list
+end
+
+function ActivityStagePoint:getHeroAttrStarExtra()
+	return self._config.HeroAttrSatrExtra
+end
+
+function ActivityStagePoint:getBlockInformation()
+	return self._config.BlockInformation or {}
 end

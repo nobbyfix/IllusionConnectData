@@ -141,7 +141,7 @@ function ClubRankMediator:updateCell(cell, index, rankRecord)
 	local damage = cell:getChildByName("damage")
 
 	name:setString(rankRecord:getNickName())
-	level:setString("Lv." .. rankRecord:getLevel())
+	level:setString(Strings:get("Common_LV_Text") .. rankRecord:getLevel())
 
 	local changeImg = cell:getChildByName("change")
 
@@ -367,12 +367,9 @@ function ClubRankMediator:onCellClicked(sender, eventType, idx)
 				outSelf._textFieldCanMove = true
 			end
 
-			local view = self:getInjector():getInstance("PlayerInfoView")
+			local friendSystem = self:getInjector():getInstance(FriendSystem)
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				remainLastView = true,
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, rankRecord, delegate))
+			friendSystem:showFriendPlayerInfoView(rankRecord:getRid(), rankRecord)
 		end
 	elseif eventType == ccui.TouchEventType.began then
 		self._tableViewPosY = self:getTableViewPosY()

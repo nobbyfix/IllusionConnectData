@@ -33,7 +33,7 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickAward"
 	},
-	["main.bg_bottom.btn_openPower"] = {
+	["main.namePanel.powerPanel.nameBg_0"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onOpenPowerView"
 	}
@@ -82,6 +82,8 @@ function CrusadeMainMediator:onRegister()
 
 	self:mapButtonHandlersClick(kBtnHandlers)
 	self:mapEventListeners()
+	self:getView():getChildByFullName("main.bg_bottom.btn_openPower"):setVisible(false)
+	self:getView():getChildByFullName("main.namePanel.powerPanel.nameBg_0"):setTouchEnabled(true)
 end
 
 function CrusadeMainMediator:mapEventListeners()
@@ -92,7 +94,6 @@ end
 
 function CrusadeMainMediator:CrusadeWipe()
 	self._sweepBtn:setVisible(false)
-	self._sweepBtn:setPosition(cc.p(1073, 323))
 end
 
 function CrusadeMainMediator:updateView(event)
@@ -149,14 +150,16 @@ end
 
 function CrusadeMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local currencyInfoWidget = self._systemKeeper:getResourceBannerIds("Crusade")
+	local currencyInfo = {}
+
+	for i = #currencyInfoWidget, 1, -1 do
+		currencyInfo[#currencyInfoWidget - i + 1] = currencyInfoWidget[i]
+	end
+
 	local config = {
 		style = 1,
-		currencyInfo = {
-			CurrencyIdKind.kDiamond,
-			CurrencyIdKind.kPower,
-			CurrencyIdKind.kCrystal,
-			CurrencyIdKind.kGold
-		},
+		currencyInfo = currencyInfo,
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -180,7 +183,7 @@ function CrusadeMainMediator:initWidgetInfo()
 
 	self._progressPanel = self._mainPanel:getChildByName("progressPanel")
 	self._rewardPanel = self._mainPanel:getChildByFullName("bg_bottom.rewardPanel")
-	self._namePanel = self._mainPanel:getChildByFullName("bg_bottom.namePanel")
+	self._namePanel = self._mainPanel:getChildByFullName("namePanel")
 	self._sweepBtn = self._mainPanel:getChildByFullName("bg_bottom.button_sweep")
 	self._recruitBtn = self._mainPanel:getChildByFullName("bg_bottom.button_recruit")
 
@@ -366,13 +369,11 @@ function CrusadeMainMediator:updateCheckPointView(node, style)
 
 	local role = infoPanel:getChildByFullName("role")
 	local info = {
-		stencil = 1,
-		iconType = "Bust7",
+		frameId = "bustframe7_2",
 		id = point:getRoleModel(),
-		size = cc.size(245, 350),
 		useAnim = index == curIndex
 	}
-	local icon = IconFactory:createRoleIconSprite(info)
+	local icon = IconFactory:createRoleIconSpriteNew(info)
 
 	icon:setAnchorPoint(cc.p(0.5, 0.5))
 	icon:addTo(role):center(role:getContentSize()):offset(0, -50)
@@ -570,8 +571,6 @@ function CrusadeMainMediator:setRecommendHeroView()
 	local recommendHero2 = bgBottom:getChildByFullName("recommendHero2")
 	local recommendHero3 = bgBottom:getChildByFullName("recommendHero3")
 
-	bgBottom:getChildByFullName("Node_recommend.text"):setString(Strings:get("EXPLORE_UI22") .. "\n" .. Strings:get("GALLERY_UI1"))
-
 	for i = 1, 3 do
 		if recommendHero[i] then
 			local iconNode = recommendHero1:getChildByFullName("iconNode" .. i)
@@ -590,7 +589,7 @@ function CrusadeMainMediator:setRecommendHeroView()
 			end
 
 			local config = ConfigReader:getRecordById("HeroBase", recommendHero[i].Hero[1])
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
@@ -656,6 +655,26 @@ end
 
 function CrusadeMainMediator:showGetReward()
 	if #self._crusadeSystem:getShowAwardAfterBattle() > 0 then
+		local delegate = {}
+		local outself = self
+
+		function delegate:willClose(popupMediator, data)
+			local playerId = outself._developSystem:getPlayer():getRid()
+			local volume = cc.UserDefault:getInstance():getStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum)
+
+			if outself._crusade:getCrusadeFloorId() == outself._crusadeSystem:getFloorIdByFloorNum(11) and volume ~= "11" then
+				local storyDirector = outself:getInjector():getInstance(story.StoryDirector)
+				local storyLink = "guide_plot_expedition"
+				local storyAgent = storyDirector:getStoryAgent()
+
+				storyAgent:setSkipCheckSave(true)
+				storyAgent:trigger(storyLink, nil, function ()
+					outself._crusadeSystem:showWorldRuleView()
+				end)
+				cc.UserDefault:getInstance():setStringForKey(playerId .. UserDefaultKey.kCrusadeFloorNum, "11")
+			end
+		end
+
 		local rewards = self._crusadeSystem:getShowAwardAfterBattle()
 		local view = self:getInjector():getInstance("getRewardView")
 
@@ -664,7 +683,7 @@ function CrusadeMainMediator:showGetReward()
 		}, {
 			needClick = true,
 			rewards = rewards
-		}))
+		}, delegate))
 		self._crusadeSystem:setShowAwardAfterBattle({})
 	end
 end

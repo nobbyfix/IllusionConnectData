@@ -385,51 +385,97 @@ all.Skill_CombatDominating = {
 
 			if this.CombatDominating_HurtRateFactor ~= 0 then
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
-						"+Normal",
-						"+Normal"
-					}, this.CombatDominating_HurtRateFactor)
+					if this.CombatDominating_HurtRateFactor > 0 then
+						local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.CombatDominating_HurtRateFactor)
 
-					global.ApplyBuff(_env, unit, {
-						duration = 99,
-						group = "Skill_MainStage_CombatDominating_Hurtrate",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Skill_MainStage_CombatDominating_Hurtrate"
-						}
-					}, {
-						buffeft1
-					})
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_Hurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_Hurtrate"
+							}
+						}, {
+							buffeft1
+						})
+					else
+						local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, global.abs(_env, this.CombatDominating_HurtRateFactor))
+
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_Hurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_Hurtrate"
+							}
+						}, {
+							buffeft1
+						})
+					end
 				end
 			end
 
 			if this.CombatDominating_UnHurtRateFactor ~= 0 then
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
-						"+Normal",
-						"+Normal"
-					}, this.CombatDominating_UnHurtRateFactor)
+					if this.CombatDominating_UnHurtRateFactor > 0 then
+						local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.CombatDominating_UnHurtRateFactor)
 
-					global.ApplyBuff(_env, unit, {
-						duration = 99,
-						group = "Skill_MainStage_CombatDominating_UnHurtrate",
-						timing = 0,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"Skill_MainStage_CombatDominating_UnHurtrate"
-						}
-					}, {
-						buffeft2
-					})
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_UnHurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_UnHurtrate"
+							}
+						}, {
+							buffeft2
+						})
+					else
+						local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+							"+Normal",
+							"+Normal"
+						}, global.abs(_env, this.CombatDominating_UnHurtRateFactor))
+
+						global.ApplyBuff(_env, unit, {
+							duration = 99,
+							group = "Skill_MainStage_CombatDominating_UnHurtrate",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"NUMERIC",
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"Skill_MainStage_CombatDominating_UnHurtrate"
+							}
+						}, {
+							buffeft2
+						})
+					end
 				end
 			end
 		end)
@@ -458,7 +504,9 @@ all.Skill_CombatDominating = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
-				if this.CombatDominating_HurtRateFactor ~= 0 then
+				if this.CombatDominating_HurtRateFactor == 0 then
+					-- Nothing
+				elseif this.CombatDominating_HurtRateFactor > 0 then
 					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
 						"+Normal",
 						"+Normal"
@@ -479,13 +527,57 @@ all.Skill_CombatDominating = {
 					}, {
 						buffeft1
 					})
+				else
+					local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, global.abs(_env, this.CombatDominating_HurtRateFactor))
+
+					global.ApplyBuff(_env, _env.unit, {
+						duration = 99,
+						group = "Skill_MainStage_CombatDominating_Hurtrate",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"Skill_MainStage_CombatDominating_Hurtrate"
+						}
+					}, {
+						buffeft1
+					})
 				end
 
-				if this.CombatDominating_UnHurtRateFactor ~= 0 then
+				if this.CombatDominating_UnHurtRateFactor == 0 then
+					-- Nothing
+				elseif this.CombatDominating_UnHurtRateFactor > 0 then
 					local buffeft2 = global.NumericEffect(_env, "+unhurtrate", {
 						"+Normal",
 						"+Normal"
 					}, this.CombatDominating_UnHurtRateFactor)
+
+					global.ApplyBuff(_env, _env.unit, {
+						duration = 99,
+						group = "Skill_MainStage_CombatDominating_UnHurtrate",
+						timing = 0,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"UNDISPELLABLE",
+							"UNSTEALABLE",
+							"Skill_MainStage_CombatDominating_UnHurtrate"
+						}
+					}, {
+						buffeft2
+					})
+				else
+					local buffeft2 = global.NumericEffect(_env, "-unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, global.abs(_env, this.CombatDominating_UnHurtRateFactor))
 
 					global.ApplyBuff(_env, _env.unit, {
 						duration = 99,
@@ -692,6 +784,7 @@ all.Skill_MainStage_EnterDaze_Passive_1_1 = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -733,6 +826,7 @@ all.Skill_MainStage_EnterDaze_Passive_1_1 = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -2105,6 +2199,7 @@ all.Skill_ALPo_Unique_Special = {
 						"STATUS",
 						"DEBUFF",
 						"MUTE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -2337,6 +2432,7 @@ all.Skill_JDCZhang_Unique_Special = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2598,6 +2694,7 @@ all.Skill_ALSi_Unique_Special = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -2845,6 +2942,7 @@ all.Skill_Frozen = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -3154,6 +3252,7 @@ all.Skill_SSQXin_Unique_Special = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -4468,6 +4567,7 @@ all.Skill_MainStage_PreEnter_Freeze = {
 					"STATUS",
 					"DEBUFF",
 					"FREEZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -4520,6 +4620,7 @@ all.Skill_MainStage_PreEnter_Daze = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -5423,6 +5524,7 @@ all.Skill_MainStage_EnemyMasterBurning_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -5468,6 +5570,7 @@ all.Skill_MainStage_EnemyMasterBurning_Passive = {
 						"STATUS",
 						"DEBUFF",
 						"BURNING",
+						"ABNORMAL",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -6820,6 +6923,7 @@ all.Skill_MainStage_EnterDaze_Passive = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -6876,6 +6980,7 @@ all.Skill_MainStage_EnterFreeze_Passive = {
 					"STATUS",
 					"DEBUFF",
 					"DAZE",
+					"ABNORMAL",
 					"UNDISPELLABLE"
 				}
 			}, {
@@ -7595,6 +7700,10 @@ all.Skill_MainStage_DieTransform_BossComing = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+transformcount", {
+				"+Normal",
+				"+Normal"
+			}, 9999)
 
 			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie", nil, , 1))
 			global.AddAnim(_env, {
@@ -7667,6 +7776,272 @@ all.Skill_MainStage_Start_BossComing = {
 			local global = _env.global
 
 			global.BossComingPause(_env)
+		end)
+
+		return _env
+	end
+}
+all.Skill_Boss_AfterUnique_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.SelfRageFactor = externs.SelfRageFactor
+
+		if this.SelfRageFactor == nil then
+			this.SelfRageFactor = 1000
+		end
+
+		this.MaxHpDamageFactor = externs.MaxHpDamageFactor
+
+		if this.MaxHpDamageFactor == nil then
+			this.MaxHpDamageFactor = 0.15
+		end
+
+		this.RageDamageFactor = externs.RageDamageFactor
+
+		if this.RageDamageFactor == nil then
+			this.RageDamageFactor = 500
+		end
+
+		this.BlockRateFactor = externs.BlockRateFactor
+
+		if this.BlockRateFactor == nil then
+			this.BlockRateFactor = 0.3
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:AFTER_UNIQUE"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local i = global.Random(_env, 1, 800)
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "AFTER_UNIQUE", "Skill_Boss_AfterUnique_Passive")) == 0 then
+				if i <= 200 then
+					global.ApplyRPRecovery(_env, _env.ACTOR, this.SelfRageFactor)
+				elseif i < 401 then
+					for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+						local MaxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+						local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+							1,
+							1,
+							0
+						})
+						damage.val = MaxHp * this.MaxHpDamageFactor
+						local buff_show = global.SpecialNumericEffect(_env, "+bossbo", {
+							"+Normal",
+							"+Normal"
+						}, 1)
+
+						global.ApplyBuff(_env, _env.ACTOR, {
+							timing = 2,
+							duration = 1,
+							display = "BossAoeWave",
+							tags = {}
+						}, {
+							buff_show
+						})
+						global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+					end
+				elseif i < 601 then
+					for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+						global.ApplyRPDamage(_env, unit, this.RageDamageFactor)
+
+						local buff_show_rage = global.SpecialNumericEffect(_env, "+ragedown", {
+							"+Normal",
+							"+Normal"
+						}, 1)
+
+						global.ApplyBuff(_env, unit, {
+							timing = 2,
+							duration = 1,
+							display = "RageDown",
+							tags = {}
+						}, {
+							buff_show_rage
+						})
+					end
+				else
+					local buffeft1 = global.NumericEffect(_env, "+blockrate", {
+						"+Normal",
+						"+Normal"
+					}, this.BlockRateFactor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+						timing = 2,
+						display = "BlockRateUp",
+						group = "Boss_AfterUnique_BlockRateUp",
+						duration = 2,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
+				local buff_check = global.SpecialNumericEffect(_env, "+self_check", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					duration = 1,
+					group = "Skill_Boss_AfterUnique_Passive",
+					timing = 2,
+					limit = 1,
+					tags = {
+						"AFTER_UNIQUE",
+						"Skill_Boss_AfterUnique_Passive"
+					}
+				}, {
+					buff_check
+				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_Detective_DieBubble_Passive = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.BubbleIDFactor = externs.BubbleIDFactor
+
+		assert(this.BubbleIDFactor ~= nil, "External variable `BubbleIDFactor` is not provided.")
+
+		this.DurationFactor = externs.DurationFactor
+
+		assert(this.DurationFactor ~= nil, "External variable `DurationFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			1200
+		}, main)
+		this.main = global["[trigger_by]"](this, {
+			"SELF:DYING"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Speak(_env, _env.ACTOR, {
+				{
+					this.BubbleIDFactor,
+					this.DurationFactor
+				}
+			}, "", 0)
+		end)
+
+		return _env
+	end
+}
+all.Skill_Detective_DieBubble_Passive_HasHero = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HeroIDFactor = externs.HeroIDFactor
+
+		assert(this.HeroIDFactor ~= nil, "External variable `HeroIDFactor` is not provided.")
+
+		this.BubbleIDFactor = externs.BubbleIDFactor
+
+		assert(this.BubbleIDFactor ~= nil, "External variable `BubbleIDFactor` is not provided.")
+
+		this.DurationFactor = externs.DurationFactor
+
+		assert(this.DurationFactor ~= nil, "External variable `DurationFactor` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			1200
+		}, main)
+		this.main = global["[trigger_by]"](this, {
+			"SELF:DYING"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local factor = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				if global.MARKED(_env, "ZTXChang")(_env, unit) then
+					factor = 1
+				end
+			end
+
+			if factor == 1 then
+				global.Speak(_env, _env.ACTOR, {
+					{
+						this.BubbleIDFactor,
+						this.DurationFactor
+					}
+				}, "", 0)
+			end
 		end)
 
 		return _env

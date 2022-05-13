@@ -20,6 +20,10 @@ local kBtnHandlers = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickEnter"
 	},
+	["main.leftPanel.quickBtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickQuickBtn"
+	},
 	["main.leftPanel.strategyBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickStrategy"
@@ -63,6 +67,7 @@ function ExplorePointInfoMediator:initView()
 
 	self._heroInfoPanel:setVisible(false)
 
+	self._quickBtn = self._leftPanel:getChildByName("quickBtn")
 	self._autoBtn = self._leftPanel:getChildByName("autoBtn")
 
 	self._autoBtn:addClickEventListener(function ()
@@ -83,6 +88,7 @@ function ExplorePointInfoMediator:initView()
 	GameStyle:setCommonOutlineEffect(self._leftPanel:getChildByName("text3"))
 	GameStyle:setCommonOutlineEffect(self:getView():getChildByFullName("exploreTimesPanel.text"), 127.5)
 	GameStyle:setCommonOutlineEffect(self:getView():getChildByFullName("exploreTimesPanel.times"), 127.5)
+	self._leftPanel:getChildByFullName("text3.Image_3"):setVisible(false)
 	self:setupTopInfoWidget()
 	self:updateDailyRewardTimes()
 	self:initHeroIcon()
@@ -143,6 +149,7 @@ function ExplorePointInfoMediator:updateDailyRewardTimes()
 	local autoState = self._pointData:getAutoState()
 
 	self._autoBtn:getChildByFullName("lock"):setVisible(not canAuto)
+	self._quickBtn:setVisible(canAuto)
 
 	local color = cc.c3b(195, 195, 195)
 
@@ -176,14 +183,13 @@ function ExplorePointInfoMediator:initHeroIcon()
 		roleModel = hero:getModel()
 	end
 
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = roleModel
 	})
 
 	heroIcon:addChild(img)
-	img:setAnchorPoint(cc.p(0.5, 0.5))
 	img:setPosition(cc.p(90, -80))
 end
 
@@ -194,6 +200,7 @@ end
 
 function ExplorePointInfoMediator:updateView()
 	self:initLeftPanel()
+	self:updateDailyRewardTimes()
 	self._leftPanel:getChildByFullName("enterBtn"):setGray(self._pointData:getLock())
 end
 
@@ -313,11 +320,14 @@ function ExplorePointInfoMediator:initLeftPanel()
 				text:addTo(image)
 				text:setColor(cc.p(0, 0, 0))
 
-				local width = math.max(52, text:getContentSize().width + 18)
-				local height = image:getContentSize().height
+				local width = 85
+				local height = 36
 
 				image:setContentSize(cc.size(width, height))
-				text:setPosition(cc.p(width / 2 - 2.5, height / 2 + 3))
+				text:setOverflow(cc.LabelOverflow.SHRINK)
+				text:setDimensions(width - 5, 30)
+				text:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+				text:setPosition(cc.p(width / 2 - 3, height / 2 + 4))
 			end
 		end
 	end
@@ -346,16 +356,10 @@ function ExplorePointInfoMediator:updateHeroInfo(heroId)
 
 	local roleModel = IconFactory:getRoleModelByKey("HeroBase", heroId)
 	local info = {
-		clipType = 1,
 		id = roleModel
 	}
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
-	heroImg:setScale(0.6)
-
-	heroImg = IconFactory:addStencilForIcon(heroImg, info.clipType, cc.size(88, 90))
-
-	heroImg:setScale(0.86)
 	heroImg:addTo(heroPanel):center(heroPanel:getContentSize())
 
 	local name = self._heroInfoPanel:getChildByName("name")
@@ -508,6 +512,78 @@ function ExplorePointInfoMediator:onClickEnter()
 	end
 
 	enterFunc()
+end
+
+function ExplorePointInfoMediator:onClickQuickBtn()
+	local times = math.min(self._exploreSystem:getEnterTimes(), 5)
+
+	if self._pointData:getLock() then
+		self:dispatch(ShowTipEvent({
+			tip = self._pointData:getLockTip()
+		}))
+
+		return
+	end
+
+	if times <= 0 then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_11307")
+		}))
+
+		return
+	end
+
+	local costPower = self._pointData:getNeedPower()
+
+	if self._developSystem:getEnergy() < costPower then
+		CurrencySystem:buyCurrencyByType(self, CurrencyType.kActionPoint)
+
+		return
+	end
+
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if not data then
+				return
+			end
+
+			if data.returnValue == 1 then
+				outSelf:onClickEnter()
+			elseif data.returnValue == 2 then
+				outSelf:onClickWipeTimes(times)
+			elseif data.returnValue == 3 then
+				outSelf:onClickWipeTimes(1)
+			end
+		end
+	}
+	local data = {
+		normalType = 1,
+		desc = "BigMap_RewardFast_Text02",
+		stageType = StageType.kElite,
+		challengeTimes = times
+	}
+
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("SweepBoxPopView"), {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
+function ExplorePointInfoMediator:onClickWipeTimes(times)
+	self._exploreSystem:requestSweepPoint(self._pointId, times, function (response)
+		local data = {
+			reward = response.data,
+			param = {
+				pointId = self._pointId,
+				wipeTimes = times
+			}
+		}
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("ExploreSweepView"), {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data))
+	end)
 end
 
 function ExplorePointInfoMediator:onClickStrategy()

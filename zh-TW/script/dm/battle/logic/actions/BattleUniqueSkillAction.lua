@@ -65,19 +65,19 @@ function BattleUniqueSkillAction:cancel(battleContext)
 
 	if self._actorSkillComp:getUniqueSkillRoutine() == self then
 		self._actorSkillComp:setUniqueSkillRoutine(nil)
-	end
 
-	if actor:getUnitType() == BattleUnitType.kMaster then
-		local angerComp = self._actorAngerComp
-		local anger = angerComp:getAnger()
-		local battleRecorder = battleContext:getObject("BattleRecorder")
+		if actor:getUnitType() == BattleUnitType.kMaster then
+			local angerComp = self._actorAngerComp
+			local anger = angerComp:getAnger()
+			local battleRecorder = battleContext:getObject("BattleRecorder")
 
-		if battleRecorder then
-			local actorId = actor:getId()
+			if battleRecorder then
+				local actorId = actor:getId()
 
-			battleRecorder:recordEvent(actorId, "CancelUnique", {
-				anger = anger
-			})
+				battleRecorder:recordEvent(actorId, "CancelUnique", {
+					anger = anger
+				})
+			end
 		end
 	end
 end
@@ -90,6 +90,16 @@ function BattleUniqueSkillAction:doStart(battleContext)
 	if actor:isInStages(ULS_Newborn) then
 		self._formationSystem:changeUnitSettled(actor)
 	end
+
+	local cardInfo = actor:getCardInfo()
+	self._duration = cardInfo and cardInfo.enterPauseTime
+	local battleContext = self:getBattleContext()
+	local skillSystem = battleContext:getObject("SkillSystem")
+
+	skillSystem:activateSpecificTrigger(actor, "BEFORE_FINDTARGET")
+	skillSystem:activateGlobalTrigger("UNIT_BEFORE_FINDTARGET", {
+		unit = actor
+	})
 end
 
 function BattleUniqueSkillAction:doSkill()
@@ -116,6 +126,7 @@ function BattleUniqueSkillAction:doSkill()
 	end
 
 	local battleContext = self:getBattleContext()
+	local skillSystem = battleContext:getObject("SkillSystem")
 	local formationSystem = battleContext:getObject("FormationSystem")
 	local primTrgt = formationSystem:findPrimaryTarget(actor)
 
@@ -134,16 +145,24 @@ function BattleUniqueSkillAction:doSkill()
 		ACTOR = actor,
 		TARGET = primTrgt
 	}
-	local skillSystem = battleContext:getObject("SkillSystem")
 
-	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE")
+	skillSystem:activateSpecificTrigger(actor, "BEFORE_UNIQUE", {
+		primTrgt = primTrgt
+	})
+	skillSystem:activateGlobalTrigger("UNIT_BEFORE_UNIQUE", {
+		unit = actor,
+		primTrgt = primTrgt
+	})
 
 	local skillAction = skill and skill:getEntryAction()
 
 	skillExecutor:runAction(skillAction, args, function (executor)
-		skillSystem:activateSpecificTrigger(actor, "AFTER_UNIQUE")
+		skillSystem:activateSpecificTrigger(actor, "AFTER_UNIQUE", {
+			primTrgt = primTrgt
+		})
 		skillSystem:activateGlobalTrigger("UNIT_AFTER_UNIQUE", {
-			unit = actor
+			unit = actor,
+			primTrgt = primTrgt
 		})
 
 		local battleStatist = battleContext:getObject("BattleStatist")

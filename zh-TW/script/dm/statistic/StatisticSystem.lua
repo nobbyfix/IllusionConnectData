@@ -65,14 +65,10 @@ local function genSign(params)
 end
 
 function StatisticSystem:send(content)
+	dump(content, "content-____")
+
 	if GameConfigs.closeClientStatistic then
 		return
-	end
-
-	if content.type == "loginpoint" then
-		local step = StatisticPointConfig[content.point] or ""
-
-		print("StatisticSystem:send............." .. content.point .. "____" .. step)
 	end
 
 	if content.type == "clickpoint" then
@@ -96,7 +92,7 @@ function StatisticSystem:send(content)
 
 	content.version = app:getAssetsManager():getCurrentVersion()
 
-	if content.type == "loginflow" or content.type == "updateflow" or content.type == "guideflow" or content.type == "otherflow" then
+	if content.type == "loginflow" or content.type == "updateflow" or content.type == "guideflow" or content.type == "otherflow" or content.type == "loginchoose" then
 		content.step = StatisticPointConfig[content.point]
 	end
 
@@ -147,24 +143,13 @@ function StatisticSystem:send(content)
 
 	xhr:send(data)
 
-	if PlatformHelper:getChannelID() == "kuaishou_android" and DmGame then
-		if content._type_ == "loginpoint" then
-			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
+	if (content._type_ == "loginpoint" or content._type_ == "loginchoose") and DmGame then
+		local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
 
-			developSystem:guideLog({
-				guideId = tostring(content.point),
-				step = tostring(content.step or "")
-			})
-		end
-
-		if content._type_ == "loginchoose" then
-			local developSystem = DmGame:getInstance()._injector:getInstance("DevelopSystem")
-
-			developSystem:guideLog({
-				guideId = tostring(content.difficult),
-				step = tostring(content.step or "")
-			})
-		end
+		developSystem:guideLog({
+			guideId = tostring(content.point),
+			step = tostring(content.step or "")
+		})
 	end
 end
 

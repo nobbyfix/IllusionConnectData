@@ -208,8 +208,8 @@ function legs.Mediator:mapButtonHandlersClick(buttonsConfig, view)
 	end
 end
 
-function legs.Mediator:mapButtonHandlerClick(buttonName, handler, view)
-	mapButtonHandlerClick(self, buttonName, handler, view)
+function legs.Mediator:mapButtonHandlerClick(buttonName, handler, view, addLayout)
+	mapButtonHandlerClick(self, buttonName, handler, view, addLayout)
 end
 
 function legs.Mediator:bindBackBtnFlash(bindPanel, position)

@@ -44,7 +44,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -148,12 +148,10 @@ function TowerTeamBattleMediator:setMasterView()
 	end)
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust4",
-		id = data:getModel(),
-		size = cc.size(340.17, 315)
+		frameId = "bustframe4_2",
+		id = data:getModel()
 	}
-	local masterIcon = IconFactory:createRoleIconSprite(info)
+	local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 	masterIcon:setAnchorPoint(cc.p(0, 0))
 	masterIcon:setPosition(cc.p(0, 0))
@@ -213,7 +211,10 @@ function TowerTeamBattleMediator:checkMasterSkillActive()
 			newSkillNode:setPosition(cc.p(12 + 46 * (i - 1), 15))
 
 			local conditions = skill:getActiveCondition()
-			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, kActiveHeroType.kTower)
+			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+				masterId = self._curMasterId,
+				heroType = kActiveHeroType.kTower
+			})
 
 			newSkillNode:setGray(not isActive)
 
@@ -856,6 +857,8 @@ function TowerTeamBattleMediator:updateChallengeNum()
 end
 
 function TowerTeamBattleMediator:refreshListView(ignoreReloadData)
+	self._stageSystem:setSortExtand(0)
+
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
 	local sortType = self._stageSystem:getTowerCardSortType()
 
@@ -969,7 +972,7 @@ function TowerTeamBattleMediator:initTeamHero(node, info, heroObj)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -991,7 +994,12 @@ function TowerTeamBattleMediator:initTeamHero(node, info, heroObj)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -1053,7 +1061,10 @@ function TowerTeamBattleMediator:initTeamHero(node, info, heroObj)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, kActiveHeroType.kTower)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId,
+			heroType = kActiveHeroType.kTower
+		})
 
 		skillPanel:setGray(not isActive)
 	end
@@ -1172,6 +1183,10 @@ end
 
 function TowerTeamBattleMediator:onClickBack()
 	self:sendUpdateTowerTeam1(function ()
+		if DisposableObject:isDisposed(self) or DisposableObject:isDisposed(self:getView()) then
+			return
+		end
+
 		self:dismiss()
 	end)
 end
@@ -1206,7 +1221,10 @@ function TowerTeamBattleMediator:onClickRule()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 
@@ -1276,7 +1294,7 @@ function TowerTeamBattleMediator:getHeroInfoById(id)
 		rareity = heroInfo:getRarity(),
 		qualityLevel = heroInfo:getQualityLevel(),
 		name = heroInfo:getName(),
-		roleModel = heroInfo:getRoleModel(),
+		roleModel = heroInfo:getModel(),
 		type = heroInfo:getType(),
 		cost = heroInfo:getCost(),
 		combat = heroInfo:getCombat(),

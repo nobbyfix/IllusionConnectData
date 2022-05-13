@@ -137,7 +137,7 @@ end
 function ShopPackage:getBuyIcon()
 	local path = self._config.WindowIcon
 
-	if path and path ~= "" then
+	if path ~= "" then
 		return "asset/ui/shop/" .. path .. ".png"
 	end
 
@@ -177,6 +177,15 @@ function ShopPackage:getStorage()
 end
 
 function ShopPackage:getStartMills()
+	local typeData = self:getTimeType()
+
+	if typeData.merge and typeData.merge == 1 then
+		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+		local mergeTime = developSystem:getServerMergeTime()
+
+		return mergeTime + 86400 * (typeData.start - 1)
+	end
+
 	if self:getTimeTypeType() == kShopResetType.KResetUnlimit then
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()
@@ -186,7 +195,7 @@ function ShopPackage:getStartMills()
 
 	local start = self:getTimeType().start
 	local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
-	local mills = TimeUtil:getTimeByDate({
+	local mills = TimeUtil:timeByRemoteDate({
 		year = y,
 		month = mon,
 		day = d,
@@ -199,6 +208,15 @@ function ShopPackage:getStartMills()
 end
 
 function ShopPackage:getEndMills()
+	local typeData = self:getTimeType()
+
+	if typeData.merge and typeData.merge == 1 then
+		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
+		local mergeTime = developSystem:getServerMergeTime()
+
+		return mergeTime + 86400 * (typeData["end"] - 1)
+	end
+
 	if self:getTimeTypeType() == kShopResetType.KResetUnlimit then
 		local gameServerAgent = DmGame:getInstance()._injector:getInstance("GameServerAgent")
 		local curTime = gameServerAgent:remoteTimestamp()
@@ -216,7 +234,7 @@ function ShopPackage:getEndMills()
 		min = m,
 		sec = s
 	}
-	local mills = TimeUtil:getTimeByDate(table)
+	local mills = TimeUtil:timeByRemoteDate(table)
 
 	return mills
 end
@@ -230,7 +248,7 @@ function ShopPackage:getEndMillsByCondition()
 		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
 		local createTime = developSystem:getPlayer():getCreateTime()
 		createTime = createTime / 1000 + (endDay - 1) * 24 * 60 * 60
-		local tb = os.date("*t", createTime)
+		local tb = TimeUtil:remoteDate("*t", createTime)
 		local shopReset_RefreshTime = ConfigReader:getDataByNameIdAndKey("Reset", "ShopReset_RefreshTime", "ResetSystem")
 		local resetTime = shopReset_RefreshTime.resetTime[1]
 		local _, _, h, m, s = string.find(resetTime, "(%d+):(%d+):(%d+)")
@@ -301,4 +319,8 @@ end
 
 function ShopPackage:getGameCoin()
 	return self._config.GameCoin
+end
+
+function ShopPackage:getCondition()
+	return self._config.Condition
 end

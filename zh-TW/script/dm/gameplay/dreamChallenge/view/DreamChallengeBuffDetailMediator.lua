@@ -12,7 +12,7 @@ DreamChallengeBuffDetailMediator:has("_developSystem", {
 
 local kBtnHandlers = {}
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -194,6 +194,7 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 	local index = 1
 
 	for i = 1, #heros do
+		local config = ConfigReader:getRecordById("HeroBase", heros[i])
 		local node3 = self._infoCellClone:clone()
 		local attackText = node3:getChildByFullName("text")
 		local icon = node3:getChildByFullName("icon")
@@ -208,11 +209,18 @@ function DreamChallengeBuffDetailMediator:createAddInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture("asset/commonRaw/common_bd_ssr01.png", ccui.TextureResType.localType)
+
+		local iconName = "asset/commonRaw/common_bd_ssr01.png"
+
+		if config.Rareity == 15 then
+			iconName = "asset/commonRaw/common_bd_sp01.png"
+		end
+
+		icon:loadTexture(iconName, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(88, 88))
 
 		local config = ConfigReader:getRecordById("HeroBase", heros[i])
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 
@@ -599,7 +607,7 @@ function DreamChallengeBuffDetailMediator:setHero(node, info)
 	local modelInfo = {
 		id = info.roleModel
 	}
-	local heroImg = IconFactory:createRoleIconSprite(modelInfo)
+	local heroImg = IconFactory:createRoleIconSpriteNew(modelInfo)
 
 	heroImg:setScale(0.68)
 
@@ -625,6 +633,10 @@ function DreamChallengeBuffDetailMediator:setHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")

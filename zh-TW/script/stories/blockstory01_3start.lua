@@ -54,13 +54,13 @@ function scene_blockstory01_3start:stage(args)
 				children = {
 					{
 						resType = 0,
-						name = "bg",
+						name = "bg1",
 						pathType = "SCENE",
 						type = "Image",
 						image = "bg_story_cg_01_2.jpg",
 						layoutMode = 1,
 						zorder = 3,
-						id = "bg",
+						id = "bg1",
 						scale = 1,
 						anchorPoint = {
 							x = 0.5,
@@ -88,6 +88,28 @@ end
 function scene_blockstory01_3start.actions.start_blockstory01_3start(_root, args)
 	return sequential({
 		act({
+			action = "activateNode",
+			actor = __getnode__(_root, "bg1")
+		}),
+		act({
+			action = "play",
+			actor = __getnode__(_root, "bgEx_xuzhangzhengchang"),
+			args = function (_ctx)
+				return {
+					time = -1
+				}
+			end
+		}),
+		act({
+			action = "fadeOut",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 1
+				}
+			end
+		}),
+		act({
 			action = "show",
 			actor = __getnode__(_root, "skipButton")
 		}),
@@ -100,63 +122,16 @@ function scene_blockstory01_3start.actions.start_blockstory01_3start(_root, args
 			actor = __getnode__(_root, "autoPlayButton")
 		}),
 		act({
-			action = "activateNode",
-			actor = __getnode__(_root, "bg")
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "printerEffect"),
-			args = function (_ctx)
-				return {
-					center = 1,
-					bgShow = false,
-					heightSpace = 32,
-					content = {
-						"<font size='24' face='${fontName_FZYH_M}' color='#ffffff'>離維納斯陷阱不遠的路口處</font>"
-					},
-					durations = {
-						0.06
-					},
-					waitTimes = {
-						1
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "printerEffect")
-		}),
-		act({
-			action = "fadeOut",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		sleep({
-			args = function (_ctx)
-				return {
-					duration = 1
-				}
-			end
-		}),
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "維多莉亞",
+					name = "dialog_speak_name_4",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
-					speakings = {
-						""
-					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>匡扶正義，唯善是舉！騎士維多莉亞在此，夢魘休想通過！</font>"
+						"blockstory01_3start_1"
 					},
 					durations = {
 						0.03
@@ -169,68 +144,15 @@ function scene_blockstory01_3start.actions.start_blockstory01_3start(_root, args
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "妮娜",
+					name = "dialog_speak_name_4",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
-					speakings = {
-						""
-					},
 					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>你們看！是學姐！</font>"
+						"blockstory01_3start_2"
 					},
 					durations = {
 						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "speak",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					name = "村咲小夜",
-					dialogImage = "jq_dialogue_bg_1.png",
-					location = "left",
-					pathType = "STORY_ROOT",
-					speakings = {
-						"ZTXChang_speak"
-					},
-					content = {
-						"<font size='26' face='${fontName_FZYH_R}' color='#ffffff'>她這樣隻身上前，難道是想以自身當誘餌……</font>"
-					},
-					durations = {
-						0.03
-					}
-				}
-			end
-		}),
-		act({
-			action = "hide",
-			actor = __getnode__(_root, "dialogue")
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					content = {
-						"<font size='32' color='#ffffff'><outline color='#000000' size='1'>不好，我們快去支援！</outline></font>"
-					}
-				}
-			end
-		}),
-		act({
-			action = "updateColor",
-			actor = __getnode__(_root, "curtain"),
-			args = function (_ctx)
-				return {
-					color = {
-						255,
-						255,
-						255,
-						255
 					}
 				}
 			end

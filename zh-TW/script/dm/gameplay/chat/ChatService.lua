@@ -3,6 +3,7 @@ local opType = {
 	getHistory = 30001,
 	sendMsg = 30002,
 	pushMsg = 1004,
+	removeMessage = 30008,
 	blockUser = 30006,
 	readMsg = 30003,
 	getBlockList = 30007
@@ -50,6 +51,12 @@ end
 
 function ChatService:requestGetBlockList(params, callback, notShowWaiting)
 	local request = self:newRequest(opType.getBlockList, params, callback)
+
+	self:sendRequest(request, not notShowWaiting)
+end
+
+function ChatService:requestRemoveMessage(params, callback, notShowWaiting)
+	local request = self:newRequest(opType.removeMessage, params, callback)
 
 	self:sendRequest(request, not notShowWaiting)
 end

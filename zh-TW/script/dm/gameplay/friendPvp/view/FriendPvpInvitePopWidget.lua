@@ -115,8 +115,10 @@ function FriendPvpInvitePopWidget:onClickRefuse()
 end
 
 function FriendPvpInvitePopWidget:close()
-	self:getView():removeFromParent(true)
-	self:dispose()
+	if checkDependInstance(self) and self._view then
+		self:getView():removeFromParent(true)
+		self:dispose()
+	end
 end
 
 function FriendPvpInvitePopWidget:onClickCheckBox(sender, eventType)

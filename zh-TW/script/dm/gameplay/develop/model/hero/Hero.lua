@@ -159,6 +159,9 @@ Hero:has("_nextEventType", {
 Hero:has("_clone", {
 	is = "rw"
 })
+Hero:has("_lastDate", {
+	is = "rw"
+})
 
 function Hero:initialize(heroId, player)
 	super.initialize(self)
@@ -214,6 +217,12 @@ function Hero:initialize(heroId, player)
 	self:initSys()
 	self:initSoundList()
 	self:initStarRewardsConfig()
+
+	self._lastDate = {}
+end
+
+function Hero:getConfig()
+	return self._config
 end
 
 function Hero:initAttribute()
@@ -252,10 +261,7 @@ function Hero:initSoundList()
 
 		if not self._sounds[id] then
 			local sound = HeroSound:new(id)
-
-			if sound and sound:getConfig() then
-				self._sounds[id] = sound
-			end
+			self._sounds[id] = sound
 		end
 	end
 end
@@ -422,6 +428,18 @@ function Hero:synchronize(data)
 
 	if hasBaseAttrChange then
 		self:rCreateEffect()
+	end
+
+	if data.lastDate then
+		for storyIndex, options in pairs(data.lastDate) do
+			local opts = {}
+
+			for key, value in pairs(options) do
+				opts[tonumber(key) + 1] = value
+			end
+
+			self._lastDate[storyIndex] = opts
+		end
 	end
 end
 
@@ -678,6 +696,10 @@ function Hero:getBuildComfortEffectById(type)
 	return self._player:getEffectCenter():getBuildComfortEffectById(type)
 end
 
+function Hero:getTimeEffectById(type)
+	return self._player:getEffectCenter():getHeroTimeEffectByIdForType(self._id, type)
+end
+
 function Hero:getEquipAttrByType(type)
 	local num = 0
 	local equipList = self._player:getEquipList()
@@ -715,7 +737,7 @@ end
 function Hero:getAddAttrByType(type)
 	self:createEquipSkillAttr()
 
-	local num = self:getGalleryAllAttrByType(type) + self:getAuraEffectById(type) + self:getEquipAttrByType(type) + self:getBuildComfortEffectById(type)
+	local num = self:getGalleryAllAttrByType(type) + self:getAuraEffectById(type) + self:getEquipAttrByType(type) + self:getBuildComfortEffectById(type) + self:getTimeEffectById(type)
 
 	return num
 end
@@ -1261,6 +1283,11 @@ function Hero:getGotGiftMark(itemData)
 	}
 	itemData.markTag = 2
 	local itemId = itemData.itemId
+	local random = math.random(1, 2)
+
+	if random > 1 then
+		itemData.useSoundDes = true
+	end
 
 	if self._loveModule:getLovelyGift()[itemId] then
 		itemData.markSound = "Voice_" .. self._id .. "_20"

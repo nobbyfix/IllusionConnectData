@@ -37,9 +37,9 @@ function scene_YBYaDate03:stage(args)
 				name = "bg",
 				pathType = "SCENE",
 				type = "Image",
-				image = "bg_story_EXscene_3_1.jpg",
+				image = "album_bg_01.jpg",
 				layoutMode = 1,
-				zorder = 3,
+				zorder = 1,
 				id = "bg",
 				scale = 1,
 				anchorPoint = {
@@ -51,32 +51,11 @@ function scene_YBYaDate03:stage(args)
 						x = 0.5,
 						y = 0.5
 					}
-				},
-				children = {
-					{
-						layoutMode = 1,
-						type = "MovieClip",
-						zorder = 3,
-						visible = true,
-						id = "bgEx_jingyubeishang",
-						scale = 1,
-						actionName = "anim_jingyubeishang",
-						anchorPoint = {
-							x = 0.5,
-							y = 0.5
-						},
-						position = {
-							refpt = {
-								x = 0.5,
-								y = 0.5
-							}
-						}
-					}
 				}
 			},
 			{
-				id = "date_music",
-				fileName = "Mus_Story_Common_2",
+				id = "Mus_Date",
+				fileName = "Mus_Story_Playground",
 				type = "Music"
 			}
 		},
@@ -87,21 +66,42 @@ end
 function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
 		act({
 			action = "play",
-			actor = __getnode__(_root, "bgEx_jingyubeishang"),
-			args = function (_ctx)
-				return {
-					time = -1
-				}
-			end
-		}),
-		act({
-			action = "play",
-			actor = __getnode__(_root, "date_music"),
+			actor = __getnode__(_root, "Mus_Date"),
 			args = function (_ctx)
 				return {
 					isLoop = true
@@ -117,54 +117,54 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 				}
 			end
 		}),
-		act({
-			action = "addPortrait",
-			actor = __getnode__(_root, "dialogue"),
-			args = function (_ctx)
-				return {
-					modelId = "Model_YBYa",
-					id = "YBYa_speak",
-					rotationX = 0,
-					scale = 1.205,
-					zorder = 3,
-					position = {
-						x = 0,
-						y = -465,
-						refpt = {
-							x = 0.45,
-							y = 0
-						}
-					},
-					children = {
-						{
-							resType = 0,
-							name = "YBYa_face",
-							pathType = "STORY_FACE",
-							type = "Image",
-							image = "YBYa/YBYa_face_1.png",
-							scaleX = 1,
-							scaleY = 1,
-							layoutMode = 1,
-							zorder = 11,
-							visible = true,
-							id = "YBYa_face",
-							anchorPoint = {
+		concurrent({
+			act({
+				action = "addPortrait",
+				actor = __getnode__(_root, "dialogue"),
+				args = function (_ctx)
+					return {
+						modelId = "Model_YBYa",
+						id = "YBYa",
+						rotationX = 0,
+						scale = 0.75,
+						zorder = 40,
+						position = {
+							x = 0,
+							y = -440,
+							refpt = {
 								x = 0.5,
-								y = 0.5
-							},
-							position = {
-								x = -18,
-								y = 747.5
+								y = 0
+							}
+						},
+						children = {
+							{
+								resType = 0,
+								name = "YBYa_face",
+								pathType = "STORY_FACE",
+								type = "Image",
+								image = "YBYa/YBYa_face_1.png",
+								scaleX = 1,
+								scaleY = 1,
+								layoutMode = 1,
+								zorder = 1100,
+								visible = true,
+								id = "YBYa_face",
+								anchorPoint = {
+									x = 0.5,
+									y = 0.5
+								},
+								position = {
+									x = -2.5,
+									y = 1137
+								}
 							}
 						}
 					}
-				}
-			end
-		}),
-		concurrent({
+				end
+			}),
 			act({
 				action = "updateNode",
-				actor = __getnode__(_root, "YBYa_speak"),
+				actor = __getnode__(_root, "YBYa"),
 				args = function (_ctx)
 					return {
 						opacity = 0
@@ -173,25 +173,36 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 			}),
 			act({
 				action = "fadeIn",
-				actor = __getnode__(_root, "YBYa_speak"),
+				actor = __getnode__(_root, "YBYa"),
 				args = function (_ctx)
 					return {
-						duration = 1
+						duration = 0.5
 					}
 				end
 			})
+		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
 		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_1"
@@ -203,19 +214,52 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 			end
 		}),
 		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"YBYaDate03_2",
+						"YBYaDate03_3"
+					},
+					actionName = {
+						"start_YBYaDate03a",
+						"start_YBYaDate03b"
+					}
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03a(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
-						"YBYaDate03_2"
+						"YBYaDate03_4"
 					},
 					durations = {
 						0.03
@@ -224,49 +268,16 @@ function scene_YBYaDate03.actions.start_YBYaDate03(_root, args)
 			end
 		}),
 		act({
-			action = "changeTexture",
-			actor = __getnode__(_root, "YBYa_face"),
-			args = function (_ctx)
-				return {
-					resType = 0,
-					image = "YBYa/YBYa_face_1.png",
-					pathType = "STORY_FACE"
-				}
-			end
-		}),
-		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
-			args = function (_ctx)
-				return {
-					date = true,
-					content = {
-						"YBYaDate03_3",
-						"YBYaDate03_4"
-					},
-					actionName = {
-						"start_YBYaDate03b",
-						"start_YBYaDate03c"
-					}
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03b(_root, args)
-	return sequential({
-		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_5"
@@ -280,26 +291,37 @@ function scene_YBYaDate03.actions.start_YBYaDate03b(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_YBYaDate03d"
+					name = "start_YBYaDate03c"
 				}
 			end
 		})
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03c(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03b(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_6.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_6"
@@ -310,29 +332,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03c(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03d"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_7"
@@ -343,17 +353,40 @@ function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03c"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03c(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_8"
@@ -369,12 +402,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_9"
@@ -396,8 +429,8 @@ function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
 						"YBYaDate03_11"
 					},
 					actionName = {
-						"start_YBYaDate03e",
-						"start_YBYaDate03f"
+						"start_YBYaDate03d",
+						"start_YBYaDate03e"
 					}
 				}
 			end
@@ -405,19 +438,30 @@ function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03e(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03d(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_12"
@@ -428,17 +472,40 @@ function scene_YBYaDate03.actions.start_YBYaDate03e(_root, args)
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03f"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03e(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_3.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_13"
@@ -449,29 +516,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03e(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03g"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03f(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_14"
@@ -482,17 +537,40 @@ function scene_YBYaDate03.actions.start_YBYaDate03f(_root, args)
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03f"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03f(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_5.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_15"
@@ -503,29 +581,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03f(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03g"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03g(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_16"
@@ -541,12 +607,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_17"
@@ -562,12 +628,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03g(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_18"
@@ -579,38 +645,58 @@ function scene_YBYaDate03.actions.start_YBYaDate03g(_root, args)
 			end
 		}),
 		act({
-			action = "show",
-			actor = __getnode__(_root, "dialogueChoose"),
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					date = true,
-					content = {
-						"YBYaDate03_19",
-						"YBYaDate03_20"
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
 					},
-					actionName = {
-						"start_YBYaDate03h",
-						"start_YBYaDate03i"
+					content = {
+						"YBYaDate03_19"
+					},
+					durations = {
+						0.03
 					}
 				}
 			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03h(_root, args)
-	return sequential({
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_20"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_21"
@@ -626,12 +712,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_22"
@@ -647,12 +733,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03h(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_23"
@@ -663,29 +749,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03h(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03j"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03i(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_24"
@@ -701,12 +775,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03i(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_25"
@@ -717,29 +791,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03i(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03j"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03j(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_26"
@@ -761,8 +823,8 @@ function scene_YBYaDate03.actions.start_YBYaDate03j(_root, args)
 						"YBYaDate03_28"
 					},
 					actionName = {
-						"start_YBYaDate03k",
-						"start_YBYaDate03l"
+						"start_YBYaDate03g",
+						"start_YBYaDate03h"
 					}
 				}
 			end
@@ -770,19 +832,30 @@ function scene_YBYaDate03.actions.start_YBYaDate03j(_root, args)
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03k(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03g(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_5.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_29"
@@ -794,16 +867,27 @@ function scene_YBYaDate03.actions.start_YBYaDate03k(_root, args)
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_30"
@@ -817,26 +901,37 @@ function scene_YBYaDate03.actions.start_YBYaDate03k(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_YBYaDate03m"
+					name = "start_YBYaDate03i"
 				}
 			end
 		})
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03l(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03h(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_31"
@@ -850,26 +945,37 @@ function scene_YBYaDate03.actions.start_YBYaDate03l(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_YBYaDate03m"
+					name = "start_YBYaDate03i"
 				}
 			end
 		})
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03i(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_1.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_32"
@@ -885,12 +991,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_33"
@@ -902,16 +1008,27 @@ function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
 			end
 		}),
 		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_34"
@@ -933,8 +1050,8 @@ function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
 						"YBYaDate03_36"
 					},
 					actionName = {
-						"start_YBYaDate03n",
-						"start_YBYaDate03o"
+						"start_YBYaDate03j",
+						"start_YBYaDate03k"
 					}
 				}
 			end
@@ -942,19 +1059,30 @@ function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03n(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03j(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_37"
@@ -968,26 +1096,37 @@ function scene_YBYaDate03.actions.start_YBYaDate03n(_root, args)
 		enterSceneFollowAction({
 			args = function (_ctx)
 				return {
-					name = "start_YBYaDate03p"
+					name = "start_YBYaDate03l"
 				}
 			end
 		})
 	})
 end
 
-function scene_YBYaDate03.actions.start_YBYaDate03o(_root, args)
+function scene_YBYaDate03.actions.start_YBYaDate03k(_root, args)
 	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_38"
@@ -998,17 +1137,40 @@ function scene_YBYaDate03.actions.start_YBYaDate03o(_root, args)
 				}
 			end
 		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03l"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03l(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_4.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_2",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_39"
@@ -1024,12 +1186,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03o(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_40"
@@ -1040,29 +1202,17 @@ function scene_YBYaDate03.actions.start_YBYaDate03o(_root, args)
 				}
 			end
 		}),
-		enterSceneFollowAction({
-			args = function (_ctx)
-				return {
-					name = "start_YBYaDate03p"
-				}
-			end
-		})
-	})
-end
-
-function scene_YBYaDate03.actions.start_YBYaDate03p(_root, args)
-	return sequential({
 		act({
 			action = "speak",
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_41"
@@ -1078,12 +1228,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_170",
+					name = "YBYaDate_dialog_speak_name_1",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_42"
@@ -1099,12 +1249,12 @@ function scene_YBYaDate03.actions.start_YBYaDate03p(_root, args)
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_17",
-					dialogImage = "jq_dialogue_bg_6.png",
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
 					speakings = {
-						"YBYa_speak"
+						"YBYa"
 					},
 					content = {
 						"YBYaDate03_43"
@@ -1115,6 +1265,232 @@ function scene_YBYaDate03.actions.start_YBYaDate03p(_root, args)
 				}
 			end
 		}),
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_6.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_44"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_45"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_46"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "dialogueChoose"),
+			args = function (_ctx)
+				return {
+					date = true,
+					content = {
+						"YBYaDate03_47",
+						"YBYaDate03_48"
+					},
+					actionName = {
+						"start_YBYaDate03m",
+						"start_YBYaDate03n"
+					}
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03m(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_49"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_50"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03o"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03n(_root, args)
+	return sequential({
+		act({
+			action = "changeTexture",
+			actor = __getnode__(_root, "YBYa_face"),
+			args = function (_ctx)
+				return {
+					resType = 0,
+					image = "YBYa/YBYa_face_2.png",
+					pathType = "STORY_FACE"
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_51"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		act({
+			action = "speak",
+			actor = __getnode__(_root, "dialogue"),
+			args = function (_ctx)
+				return {
+					name = "YBYaDate_dialog_speak_name_1",
+					dialogImage = "jq_dialogue_bg_1.png",
+					location = "left",
+					pathType = "STORY_ROOT",
+					speakings = {
+						"YBYa"
+					},
+					content = {
+						"YBYaDate03_52"
+					},
+					durations = {
+						0.03
+					}
+				}
+			end
+		}),
+		enterSceneFollowAction({
+			args = function (_ctx)
+				return {
+					name = "start_YBYaDate03o"
+				}
+			end
+		})
+	})
+end
+
+function scene_YBYaDate03.actions.start_YBYaDate03o(_root, args)
+	return sequential({
 		act({
 			action = "hide",
 			actor = __getnode__(_root, "dialogue")

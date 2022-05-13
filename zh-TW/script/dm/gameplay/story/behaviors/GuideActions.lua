@@ -7,8 +7,6 @@ function GuideClick:start(args)
 	local scene = context:getScene()
 	local actor = scene:getChildById("click")
 
-	print("guide id :" .. args.id)
-
 	if actor == nil then
 		return BehaviorResult.Success
 	end

@@ -74,7 +74,13 @@ end
 function ShopSellMediator:onYesBtnClicked(sender, eventType)
 	self._sellBtn:getButton():setTouchEnabled(false)
 	AudioEngine:getInstance():playEffect("Se_Alert_Sell", false)
-	self._shopSystem:requestAutoSell()
+
+	if self._function then
+		self._function()
+	else
+		self._shopSystem:requestAutoSell()
+	end
+
 	self:close()
 end
 
@@ -87,7 +93,7 @@ function ShopSellMediator:initListView()
 	local node = cc.CSLoader:createNode("asset/ui/shopSellItem.csb")
 	local template = node:getChildByName("main")
 	self._money = 0
-	local entrys = self._shopSystem:getCanSellBagEntrys()
+	local entrys = self._entryFunction and self._entryFunction() or self._shopSystem:getCanSellBagEntrys()
 	local length = math.ceil(#entrys / 4)
 
 	for i = 1, length do

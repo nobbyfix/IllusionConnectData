@@ -272,6 +272,7 @@ all.Skill_HSheng_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"HSheng_Unique"
 					}
@@ -298,6 +299,7 @@ all.Skill_HSheng_Unique = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE",
 								"HSheng_Unique"
 							}
@@ -742,6 +744,7 @@ all.Skill_HSheng_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE",
 						"HSheng_Unique"
 					}
@@ -766,6 +769,7 @@ all.Skill_HSheng_Unique_EX = {
 								"STATUS",
 								"DEBUFF",
 								"DAZE",
+								"ABNORMAL",
 								"DISPELLABLE",
 								"HSheng_Unique"
 							}
@@ -1004,6 +1008,213 @@ all.Skill_HSheng_Passive_EX = {
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "UNHURTRATEUP", "Skill_HSheng_Passive"), 99)
 			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_HSheng_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				2,
+				0
+			}
+		end
+
+		this.DazeRateFactor = externs.DazeRateFactor
+
+		if this.DazeRateFactor == nil then
+			this.DazeRateFactor = 0.2
+		end
+
+		this.LeastDazeNum = externs.LeastDazeNum
+
+		if this.LeastDazeNum == nil then
+			this.LeastDazeNum = 2
+		end
+
+		this.UnHurtRateFactor = externs.UnHurtRateFactor
+
+		if this.UnHurtRateFactor == nil then
+			this.UnHurtRateFactor = 0.1
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3167
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_HSheng"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2867
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft = global.Daze(_env)
+
+			for _, unit in global.__iter__(global.RandomN(_env, this.LeastDazeNum, global.EnemyUnits(_env))) do
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 2,
+					duration = 1,
+					display = "Daze",
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DAZE",
+						"ABNORMAL",
+						"DISPELLABLE",
+						"HSheng_Unique"
+					}
+				}, {
+					buffeft
+				}, 1, 0)
+
+				if global.MASTER(_env, unit) == false then
+					local buff_murder = global.SpecialNumericEffect(_env, "+murder", {
+						"+Normal",
+						"+Normal"
+					}, 1)
+
+					global.ApplyBuff(_env, unit, {
+						timing = 0,
+						display = "Murderer",
+						group = "FEMSi_MURDERER",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"MURDERER",
+							"ABNORMAL",
+							"Skill_HSheng_Unique_Awaken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff_murder
+					})
+
+					local buff = global.NumericEffect(_env, "-unhurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.UnHurtRateFactor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+						timing = 0,
+						display = "UnHurtRateDown",
+						group = "Skill_HSheng_Unique_Awaken",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"NUMERIC",
+							"DEBUFF",
+							"UNHURTRATEUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff
+					}, 1)
+				end
+			end
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "HSheng_Unique")) == 0 then
+					local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
+
+					if global.ProbTest(_env, prob) then
+						global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+							timing = 2,
+							duration = 1,
+							display = "Daze",
+							tags = {
+								"STATUS",
+								"DEBUFF",
+								"DAZE",
+								"ABNORMAL",
+								"DISPELLABLE",
+								"HSheng_Unique"
+							}
+						}, {
+							buffeft
+						}, 1, 0)
+					end
+				end
+			end
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			3034
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
 		return _env

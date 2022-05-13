@@ -22,6 +22,14 @@ local kBtnHandlers = {
 	["mainpanel.leaderSkillPanel.infoButton"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickLeaderSkill"
+	},
+	["mainpanel.leadStageSkillPanel.infoButton"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickLeaderLeadStageSkill"
+	},
+	["mainpanel.infoPanel.infoNode.btn_leadStage"] = {
+		clickAudio = "Se_Click_Common_2",
+		func = "onClickLeadStageIcon"
 	}
 }
 local MasterStarCountMax = 6
@@ -69,6 +77,7 @@ function MasterCultivateMediator:initNodes()
 	self._lockPanel = self._mainPanel:getChildByFullName("lockPanel")
 	self._innerUpBtn = self._lockPanel:getChildByFullName("innerUpBtn")
 	self._leaderSkillPanel = self._mainPanel:getChildByFullName("leaderSkillPanel")
+	self._leaderLeadStageSkillPanel = self._mainPanel:getChildByFullName("leadStageSkillPanel")
 	self._starTouchPanel = self._infoPanel:getChildByFullName("starBg.starTouchPanel")
 
 	self._starTouchPanel:addClickEventListener(function ()
@@ -127,6 +136,7 @@ end
 function MasterCultivateMediator:refreshData(masterId)
 	self._masterId = masterId
 	self._masterData = self._masterSystem:getMasterById(self._masterId)
+	self._leadStageData = self._masterData:getLeadStageData()
 	self._masterLeaderSkills = self._masterSystem:getMasterLeaderSkillList(self._masterId)
 end
 
@@ -135,9 +145,10 @@ function MasterCultivateMediator:refreshAllView(hideAnim)
 
 	self._lockPanel:setVisible(isLock)
 	self._leaderSkillPanel:setVisible(not isLock)
+	self._leaderLeadStageSkillPanel:setVisible(not isLock and CommonUtils.GetSwitch("fn_master_leadStage"))
 	self._levelNode:setVisible(not isLock)
 	self._infoPanel:getChildByFullName("attrPanel"):setVisible(not isLock)
-	self._infoPanel:getChildByFullName("starBg"):setVisible(not isLock)
+	self._infoPanel:getChildByFullName("starBg"):setVisible(false)
 	self._infoPanel:getChildByFullName("combatNode"):setVisible(not isLock)
 
 	if isLock then
@@ -145,10 +156,10 @@ function MasterCultivateMediator:refreshAllView(hideAnim)
 	else
 		AudioEngine:getInstance():playEffect("Se_Effect_Character_Info", false)
 		self:refreshInfoPanel()
-		self:refreshStar()
 	end
 
 	self:refreshLeaderSkill()
+	self:refreshLeadStageSkill()
 	self:refreshName()
 	self:initRoleAnim()
 	self:refreshRole()
@@ -166,6 +177,7 @@ function MasterCultivateMediator:refreshLock()
 	local icon = IconFactory:createItemIcon(info)
 
 	icon:addTo(iconPanel):center(iconPanel:getContentSize())
+	icon:setScale(0.6)
 
 	local number = self._bagSystem:getItemCount(info.id)
 	local maxnumber = self._masterData:getCompositePay()
@@ -277,13 +289,12 @@ function MasterCultivateMediator:refreshRole()
 
 		panel:removeAllChildren()
 
-		local role = IconFactory:createRoleIconSprite({
-			iconType = "Bust2",
+		local role = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe2_1",
 			id = self._masterData:getModel()
 		})
 
-		role:addTo(panel):posite(60, -130)
-		role:setScale(0.8)
+		role:addTo(panel):posite(-500, -220)
 
 		if self._masterData:getIsLock() then
 			role:setSaturation(-100)
@@ -320,7 +331,27 @@ function MasterCultivateMediator:refreshName()
 	local str = self._masterData:getFeature()
 
 	sloganLabel:setString(str)
-	sloganLabelBg:setScaleX((sloganLabel:getContentSize().width + 30) / sloganLabelBg:getContentSize().width)
+	sloganLabelBg:setScaleX((sloganLabel:getContentSize().width + 60) / sloganLabelBg:getContentSize().width)
+
+	local node = self._infoNode:getChildByFullName("node_leadStage")
+	local btn = self._infoNode:getChildByFullName("btn_leadStage")
+
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(self._masterId)
+
+	btn:setVisible(lv > 0)
+
+	local icon = IconFactory:createLeadStageIconHor(id, lv, {
+		fontSize = 26,
+		imgBg = true,
+		kind = 1,
+		font = CUSTOM_TTF_FONT_1
+	})
+
+	if icon then
+		icon:addTo(node)
+	end
 end
 
 function MasterCultivateMediator:onClickAttribute(sender, eventType)
@@ -546,8 +577,80 @@ function MasterCultivateMediator:refreshLeaderSkill()
 
 		newSkillNode:setScale(0.6)
 		panel:addChild(newSkillNode)
+		newSkillNode:setPosition(cc.p(9.8, 9.8))
 
 		self._skillNodes[#self._skillNodes + 1] = newSkillNode
+	end
+end
+
+function MasterCultivateMediator:refreshLeadStageSkill()
+	local allSkill = self._leadStageData:getConfigInfo()
+	local showLeadStageLevel = self._leadStageData:getLeadStageLevel()
+	local isGray = false
+
+	if showLeadStageLevel == 0 then
+		showLeadStageLevel = 1
+		isGray = true
+	end
+
+	local stageName = self._mainPanel:getChildByFullName("leadStageSkillPanel.stageName")
+	local stageName1 = self._mainPanel:getChildByFullName("leadStageSkillPanel.stageName_0")
+	local configInfo_Stage = self._leadStageData:getConfigInfo()
+
+	if configInfo_Stage[showLeadStageLevel] then
+		stageName:setString(Strings:get(configInfo_Stage[showLeadStageLevel].RomanNum) .. Strings:get(configInfo_Stage[showLeadStageLevel].StageName))
+		stageName1:setString(stageName:getString())
+		stageName:setVisible(showLeadStageLevel == self._leadStageData:getMaxLeadStageLevel())
+		stageName1:setVisible(not stageName:isVisible())
+		stageName:setGray(isGray)
+		stageName1:setGray(isGray)
+
+		if not isGray then
+			stageName:setGray(false)
+			stageName1:setGray(false)
+
+			if showLeadStageLevel == self._leadStageData:getMaxLeadStageLevel() then
+				local lineGradiantVec2 = {
+					{
+						ratio = 0.3,
+						color = cc.c4b(147, 255, 233, 255)
+					},
+					{
+						ratio = 0.7,
+						color = cc.c4b(255, 140, 248, 255)
+					}
+				}
+
+				stageName:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, {
+					x = 0,
+					y = -1
+				}))
+			else
+				stageName1:setTextColor(GameStyle:getLeadStageColor(showLeadStageLevel))
+			end
+		end
+	end
+
+	local stageSkills = allSkill[showLeadStageLevel].skills
+
+	for index = 1, #stageSkills do
+		local skillId = stageSkills[index]
+		local oneSkill = stageSkills[skillId]
+		local skillNode = self._mainPanel:getChildByFullName("leadStageSkillPanel.skill_" .. index .. ".panel")
+
+		skillNode:removeAllChildren()
+
+		local info = {
+			id = skillId,
+			isLock = self._leadStageData:getLeadStageLevel() == 0 and true or oneSkill.state == MasterLeadStageSkillState.KLOCK
+		}
+		local newSkillNode = IconFactory:createMasterLeadStageSkillIcon(info, {
+			kind = 1
+		}, nil)
+
+		newSkillNode:setScale(0.6)
+		newSkillNode:setPosition(cc.p(9.8, 9.8))
+		newSkillNode:addTo(skillNode)
 	end
 end
 
@@ -567,4 +670,44 @@ function MasterCultivateMediator:onClickLeaderSkill()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, params))
+end
+
+function MasterCultivateMediator:onClickLeaderLeadStageSkill()
+	local systemKeeper = self:getInjector():getInstance("SystemKeeper")
+	local result, tip, unLockLevel = systemKeeper:isUnlock("LeadStage")
+
+	if not result then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("LeadStage_MainSkillTip02", {
+				level = unLockLevel
+			})
+		}))
+
+		return
+	end
+
+	local skills = self._masterSystem:getMasterActiveSkills(self._masterId)
+
+	if #skills == 0 then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("LeadStage_MainSkillTip01")
+		}))
+
+		return
+	end
+
+	local params = {
+		index = 2,
+		masterId = self._masterId,
+		active = {}
+	}
+	local view = self:getInjector():getInstance("MasterLeaderSkillView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, params))
+end
+
+function MasterCultivateMediator:onClickLeadStageIcon()
+	self._parentMedi._tabController:selectTabByTag(3)
 end

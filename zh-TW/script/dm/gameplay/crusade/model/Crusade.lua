@@ -47,6 +47,12 @@ Crusade:has("_lastWeekFloor", {
 Crusade:has("_curWeekFloor", {
 	is = "r"
 })
+Crusade:has("_limitHero", {
+	is = "r"
+})
+Crusade:has("_floorCombat", {
+	is = "r"
+})
 
 function Crusade:initialize()
 	super.initialize(self)
@@ -71,9 +77,12 @@ function Crusade:initialize()
 		quality = 1,
 		name = ""
 	}
+	self._limitHero = {}
 end
 
 function Crusade:synchronize(data)
+	dump(data, "Crusade:synchronize")
+
 	if data.leftTime then
 		self._leftTime = data.leftTime
 	end
@@ -137,6 +146,16 @@ function Crusade:synchronize(data)
 
 	if data.wipeFloor then
 		self._wipeFloor = data.wipeFloor
+
+		self:refreshCurWeekFloor()
+	end
+
+	if data.limitHero then
+		self._limitHero = data.limitHero
+	end
+
+	if data.combat then
+		self._floorCombat = data.combat
 	end
 end
 

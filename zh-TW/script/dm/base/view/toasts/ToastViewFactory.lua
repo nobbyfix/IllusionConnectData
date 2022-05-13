@@ -6,9 +6,6 @@ local capInsetsx = 13
 local capInsets = 13
 local capInsetw = 13
 local capInseth = 13
-local kMaxLabelWidth = 500
-local tmpX = 3
-local tmpY = 0
 
 function tipView(text)
 	local toastView = cc.Node:create()
@@ -30,19 +27,8 @@ function tipView(text)
 	label:formatText()
 	label:setAnchorPoint(cc.p(0.5, 0.5))
 	label:renderContent()
-	label:offset(0, tmpY)
 
 	local labelSize = label:getContentSize()
-
-	if kMaxLabelWidth < labelSize.width then
-		label:ignoreContentAdaptWithSize(false)
-		label:setContentSize(cc.size(kMaxLabelWidth, 0))
-		label:renderContent()
-		label:offset(1, 0)
-
-		labelSize = label:getContentSize()
-	end
-
 	local w = labelSize.width + 20
 	local h = labelSize.height + 10
 
@@ -51,7 +37,6 @@ function tipView(text)
 	label:setColor(cc.c3b(255, 255, 255))
 
 	local bgWidth = bgw < w and w or bgw
-	tmpX = bgw < w and 0 or 3
 	local bgHeight = bgh < h and h or bgh
 	local bgColor = cc.c4b(0, 0, 0, 255)
 
@@ -68,7 +53,8 @@ function tipView(text)
 	local pointImg = ccui.ImageView:create(tippointPath, ccui.TextureResType.plistType)
 
 	pointImg:setAnchorPoint(cc.p(0.5, 0.5))
-	pointImg:setPosition(tmpX - w / 2, tmpY)
+	pointImg:setPosition(-15, labelSize.height / 2)
+	label:addChild(pointImg)
 
 	local capInsets = cc.rect(capInsetsx, capInsets, capInsetw, capInseth)
 	local tipSprite = ccui.Scale9Sprite:createWithSpriteFrameName(tipbgPath)
@@ -77,16 +63,14 @@ function tipView(text)
 	tipSprite:setCapInsets(capInsets)
 	tipSprite:setAnchorPoint(cc.p(0.5, 0.5))
 	tipSprite:setContentSize(cc.size(bgWidth, bgHeight))
-	tipSprite:setPosition(tmpX, tmpY)
+	tipSprite:setScaleX(math.max(bgWidth / bgw, 1))
 	toastView:addChild(tipSprite, -1)
-	toastView:addChild(pointImg)
 	toastView:setContentSize(cc.size(bgWidth, bgHeight))
 
 	local touchNode = ccui.Widget:create()
 
 	touchNode:setAnchorPoint(0.5, 0.5)
 	touchNode:setContentSize(cc.size(bgWidth, bgHeight))
-	touchNode:setPosition(tmpX, tmpY)
 	toastView:addChild(touchNode, -1)
 
 	toastView.label = label

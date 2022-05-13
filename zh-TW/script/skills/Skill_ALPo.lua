@@ -231,6 +231,7 @@ all.Skill_ALPo_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -247,6 +248,7 @@ all.Skill_ALPo_Unique = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -391,6 +393,7 @@ all.Skill_ALPo_Passive = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 2,
 				duration = 4,
+				display = "MaxHpUp",
 				tags = {
 					"NUMERIC",
 					"BUFF",
@@ -475,6 +478,7 @@ all.Skill_ALPo_Proud_EX = {
 					"STATUS",
 					"DEBUFF",
 					"MUTE",
+					"ABNORMAL",
 					"DISPELLABLE"
 				}
 			}, {
@@ -581,6 +585,7 @@ all.Skill_ALPo_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"MUTE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -597,6 +602,7 @@ all.Skill_ALPo_Unique_EX = {
 							"STATUS",
 							"DEBUFF",
 							"DAZE",
+							"ABNORMAL",
 							"DISPELLABLE"
 						}
 					}, {
@@ -749,6 +755,7 @@ all.Skill_ALPo_Passive_EX = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
+				display = "MaxHpUp",
 				tags = {
 					"NUMERIC",
 					"BUFF",

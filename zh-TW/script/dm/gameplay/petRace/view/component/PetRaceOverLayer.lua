@@ -106,24 +106,14 @@ function PetRaceOverLayer:refreshTopThreeInfo()
 
 			text_clubName:setString(clubStr)
 
-			local showId, modelId = self:getBoardHero(info)
-			local idList = {
-				showId
-			}
-			local modelIdList = {
-				modelId
-			}
-			local posList = __topThreePos[#idList]
-			local info = {
-				iconType = "Bust14",
-				idList = idList,
-				modelIdList = modelIdList,
-				offsetList = posList,
-				stencil = panel_icon
-			}
-			local realImgRole = self:createTopThreeIcon(info)
+			modelId = ConfigReader:getDataByNameIdAndKey("Surface", info.surfaceId, "Model")
+			actionType = ConfigReader:getDataByNameIdAndKey("Surface", info.surfaceId, "Type")
+			local action = actionType == SurfaceType.kAwake and "stand1" or "stand"
+			local hero = RoleFactory:createHeroAnimation(modelId, action)
 
-			realImgRole:addTo(node_icon):center(node_icon:getContentSize())
+			hero:setAnchorPoint(cc.p(0.5, 0))
+			hero:addTo(node_icon):center(node_icon:getContentSize())
+			hero:setPositionY(0.9)
 		else
 			text_clubName:setString(Strings:get("Petrace_Text_94"))
 			text_roleName:setString(Strings:get("Petrace_Text_94"))
@@ -145,12 +135,13 @@ function PetRaceOverLayer:getBoardHero(info)
 	local showHeroId = nil
 	local finalEightInfo = self._petRaceSystem:getFinalVO() or {}
 	local userList = finalEightInfo.userList or {}
-	local modelId = nil
+	local modelId, actionType = nil
 
 	for k, v in pairs(userList) do
 		if v.rid == info.rid then
 			if v.showSurface then
 				modelId = ConfigReader:getDataByNameIdAndKey("Surface", v.showSurface, "Model")
+				actionType = ConfigReader:getDataByNameIdAndKey("Surface", v.showSurface, "Type")
 			end
 
 			showHeroId = v.showId
@@ -159,7 +150,7 @@ function PetRaceOverLayer:getBoardHero(info)
 		end
 	end
 
-	return showHeroId, modelId
+	return showHeroId, modelId, actionType
 end
 
 function PetRaceOverLayer:showTip(str)

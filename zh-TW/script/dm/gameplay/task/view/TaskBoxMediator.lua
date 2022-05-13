@@ -21,6 +21,8 @@ function TaskBoxMediator:setupView(data)
 	local rewardId = data.rewardId
 	local hasGet = data.hasGet
 	local descId = data.descId
+	local desc = data.desc
+	local isRich = data.isRich
 	local rewards = RewardSystem:getRewardsById(rewardId)
 
 	if rewards then
@@ -32,9 +34,20 @@ function TaskBoxMediator:setupView(data)
 	self._normalBoxInfo:setVisible(true)
 
 	local descLabel = self._normalBoxInfo:getChildByFullName("desc_text")
-	local descStr = Strings:get(descId, {
-		num = liveness
-	})
 
-	descLabel:setString(descStr)
+	if isRich then
+		descLabel:setString("")
+
+		local richText = ccui.RichText:createWithXML(desc, {})
+
+		richText:setAnchorPoint(descLabel:getAnchorPoint())
+		richText:setPosition(cc.p(descLabel:getPosition()))
+		richText:addTo(descLabel:getParent())
+	else
+		local descStr = Strings:get(descId, {
+			num = liveness
+		})
+
+		descLabel:setString(descStr)
+	end
 end

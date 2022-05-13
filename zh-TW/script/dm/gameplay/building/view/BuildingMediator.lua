@@ -27,6 +27,7 @@ function BuildingMediator:dispose()
 		self._schedule_cd = nil
 	end
 
+	self._buildingSystem:switchSelfBuild()
 	super.dispose(self)
 end
 
@@ -55,6 +56,7 @@ function BuildingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.onResetDone)
 	self:mapEventListener(self:getEventDispatcher(), BUILDING_EVT_OPERATE_BUILD_REVERT_REFRESH, self, self.onOperateRevertRefresh)
 	self:mapEventListener(self:getEventDispatcher(), BUILDING_EVT_ENTER_ROOM, self, self.onMoveToRoom)
+	self:mapEventListener(self:getEventDispatcher(), BUILDING_EVT_GETRES_SUCCESS, self, self.onEventGetResAnim)
 end
 
 function BuildingMediator:enterWithData(enterData)
@@ -85,6 +87,8 @@ function BuildingMediator:enterWithData(enterData)
 	local function onCompleted()
 		enterLoadingView:removeFromParent()
 		self:showAfterLoading()
+		self:addShare()
+		self:playEnterViewVoice()
 	end
 
 	if mediator then
@@ -96,6 +100,27 @@ function BuildingMediator:enterWithData(enterData)
 	end
 
 	self._buildingSystem:sendRefreshAfkEvent()
+end
+
+function BuildingMediator:addShare()
+	local data = {
+		enterType = ShareEnterType.KBuilding,
+		node = self:getView(),
+		preConfig = function ()
+			self._mainComponentView:setVisible(false)
+			self._decorateComponent:refreshHeroList(true)
+			self._decorateComponent:showRoomHeroList()
+			self._decorateComponent:hideOtherRoomHeroList()
+			self._lockComponent:showRoomLockImage(false)
+		end,
+		endConfig = function ()
+			self._mainComponentView:setVisible(true)
+			self._decorateComponent:hideRoomHeroList()
+			self._lockComponent:showRoomLockImage(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
 end
 
 function BuildingMediator:buildLoadingTask()
@@ -191,6 +216,7 @@ function BuildingMediator:addDecorateComponent(endCallback)
 
 	self._decorateComponent:setBuildingMediator(self)
 	self._decorateComponent:enterWithData(endCallback)
+	self._decorateComponent:refreshHeroList()
 end
 
 function BuildingMediator:addBuildingLootComponent(endCallback)
@@ -348,6 +374,10 @@ function BuildingMediator:enterRoomByPos(worldPos, firstRoomId)
 
 			return
 		elseif self._buildingSystem:canUnlockRoom(roomId) then
+			if not self._buildingSystem:isSelfBuilding() then
+				return
+			end
+
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 			self:showUnlockRoom(roomId)
 		elseif str and str ~= "" then
@@ -392,19 +422,27 @@ function BuildingMediator:onMoveToRoom(event)
 end
 
 function BuildingMediator:enterRoom(roomId, time)
+	DmGame:getInstance()._injector:getInstance(ShareSystem):setShareVisible({
+		status = false,
+		enterType = ShareEnterType.KBuilding,
+		node = self:getView()
+	})
+
 	local function timeCallfun()
 		self._buildingSystem._mapShowType = KBuildingMapShowType.kInRoom
 
 		self._decorateComponent:refreshBuildingList()
 		self._decorateComponent:refreshHeroList()
 		self._decorateComponent:showRoomHeroList()
+		self._decorateComponent:hideOtherRoomHeroList(true)
+		self._decorateComponent:hideOtherRoomBuilding(true)
 		self._collectionView:reFreshCurCells()
+		self._mainComponent:showCornerMask()
 	end
 
 	local function endCallfun()
 		self._decorateComponent:refreshBuildResourceSacle()
 		self._lockComponent:refreshRoomLock()
-		self:playEnterHeroAudio()
 	end
 
 	local centerWorldPos = self._tiledMapComponent:getRoomCenterWorldPos(roomId)
@@ -422,9 +460,14 @@ function BuildingMediator:enterRoom(roomId, time)
 end
 
 function BuildingMediator:enterShowAll()
+	DmGame:getInstance()._injector:getInstance(ShareSystem):setShareVisible({
+		status = true,
+		enterType = ShareEnterType.KBuilding,
+		node = self:getView()
+	})
+
 	local function timeCallfun()
-		self._decorateComponent:refreshBuildingList()
-		self._decorateComponent:hideRoomHeroList()
+		self._decorateComponent:refreshBuildingList(true)
 	end
 
 	local function endCallfun()
@@ -435,6 +478,7 @@ function BuildingMediator:enterShowAll()
 		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 
 		storyDirector:notifyWaiting("enter_building_main_view")
+		self._mainComponent:hideCornerMask()
 	end
 
 	local roomId = self._buildingSystem:getShowRoomId()
@@ -450,6 +494,7 @@ function BuildingMediator:enterShowAll()
 	self._collectionView:zoomScaleToCenterByTime(self._minCollectionViewScale, centerWorldPos, cc.p(winSize.width / 2, winSize.height / 2), scaleTime, timeCallfun, scaleTime / 3, endCallfun)
 	self._decorateComponent:hideBuildResource()
 	self._lockComponent:hideRoomLockDes()
+	self._decorateComponent:showRoomHeroList()
 end
 
 function BuildingMediator:moveToRoom(roomId, time)
@@ -460,6 +505,10 @@ function BuildingMediator:moveToRoom(roomId, time)
 	local winSize = cc.Director:getInstance():getWinSize()
 
 	self._collectionView:zoomScaleToCenterByTime(nil, centerWorldPos, cc.p(winSize.width / 2, winSize.height / 2), time or KBUILDING_CHANGE_SCALE_TIME)
+	self._decorateComponent:showRoomHeroList()
+	self._decorateComponent:hideOtherRoomHeroList(true)
+	self._decorateComponent:refreshBuildingList()
+	self._decorateComponent:hideOtherRoomBuilding(true)
 end
 
 function BuildingMediator:changeCollectionViewSacleInAll(diffLen, centerWorldPos)
@@ -647,6 +696,7 @@ function BuildingMediator:removeBuyBuilding()
 	self._decorateComponent:removeBuyingBuilding()
 	self._mainComponent:refreshLayerBtn()
 	self._decorateComponent:showRoomHeroList()
+	self._decorateComponent:hideOtherRoomHeroList()
 end
 
 function BuildingMediator:onBuyBuildingSuc(event)
@@ -720,6 +770,7 @@ function BuildingMediator:onSendMoveBuildingSuc(event)
 	self._decorateComponent:removeOperationBuilding()
 	self._mainComponent:refreshLayerBtn()
 	self._decorateComponent:showRoomHeroList()
+	self._decorateComponent:hideOtherRoomHeroList()
 end
 
 function BuildingMediator:onMoveBuildingFinsh()
@@ -815,6 +866,7 @@ function BuildingMediator:onRecycleSuc(event)
 	self._buildingSystem:setOperateInfo(nil)
 	self._mainComponent:refreshLayerBtn()
 	self._decorateComponent:showRoomHeroList()
+	self._decorateComponent:hideOtherRoomHeroList()
 	self:dispatch(ShowTipEvent({
 		duration = 0.5,
 		tip = Strings:get("Building_Tips_Recovery")
@@ -873,6 +925,7 @@ function BuildingMediator:onWarehouseToMapSuc(event)
 
 	self:removeWarehouseBuilding()
 	self._decorateComponent:showRoomHeroList()
+	self._decorateComponent:hideOtherRoomHeroList()
 end
 
 function BuildingMediator:onPutHeroSuc(event)
@@ -1126,5 +1179,25 @@ function BuildingMediator:showAfterLoading()
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 			self:showUnlockRoom(roomId)
 		end
+	end
+end
+
+function BuildingMediator:playEnterViewVoice()
+	local roomList = self._buildingSystem:getRoomList()
+	local heroListOwn = {}
+
+	for k, v in pairs(roomList) do
+		local heroList = v:getHeroList() or {}
+
+		for __, id in pairs(heroList) do
+			heroListOwn[#heroListOwn + 1] = id
+		end
+	end
+
+	if #heroListOwn > 0 then
+		local randomNum = math.random(1, #heroListOwn)
+		local heroId = heroListOwn[randomNum]
+		local audioName = "Voice_" .. heroId .. "_63"
+		self._enterHeroAudio = AudioEngine:getInstance():playEffect(audioName, false)
 	end
 end

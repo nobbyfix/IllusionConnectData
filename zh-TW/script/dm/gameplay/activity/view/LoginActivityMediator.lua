@@ -88,6 +88,51 @@ local actUIConfig = {
 			"ywzjdzx_btn_14qd_ld_xz.png",
 			"ywzjdzx_btn_14qd_ld_ylq.png"
 		}
+	},
+	Login_Music = {
+		bgPath = "asset/scene/musicfestival_img_14qd_ljdl.jpg",
+		cellTitle = "musicfestival_btn_14qd_ldi.png",
+		title = {
+			img = "musicfestival_img_14qd_biaoti.png",
+			textFontSize = 36,
+			size = cc.size(617, 139),
+			offset = {
+				66,
+				-14
+			},
+			textOffset = {
+				-2,
+				-14
+			},
+			color = cc.c3b(255, 255, 255),
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			},
+			textshadow = {
+				width = 1,
+				color = cc.c4b(0, 0, 0, 90),
+				size = cc.size(0, -2)
+			}
+		},
+		desc = {
+			color = cc.c3b(228, 225, 175),
+			offset = {
+				-30,
+				17
+			},
+			textOutline = {
+				size = 1,
+				color = cc.c4b(0, 0, 0, 255)
+			}
+		},
+		cellBg = {
+			"musicfestival_btn_14qd_ldj.png",
+			"musicfestival_btn_14qd_ld_j.png",
+			"musicfestival_btn_14qd_ld_wxz.png",
+			"musicfestival_btn_14qd_ld_xz.png",
+			"musicfestival_btn_14qd_ld_ylq.png"
+		}
 	}
 }
 local lightColor = cc.c3b(180, 180, 180)
@@ -265,7 +310,6 @@ function LoginActivityMediator:createTableView()
 	end
 
 	local function tableCellTouch(table, cell)
-		self:touchCell(cell:getIdx() + 1)
 	end
 
 	local function cellSizeForTable(table, idx)
@@ -408,6 +452,8 @@ function LoginActivityMediator:updateCell(cell, index)
 	icon:setSwallowTouches(false)
 	icon:addTo(iconNode):center(iconNode:getContentSize())
 
+	cell.icon = icon
+
 	if status == ActivityTaskStatus.kGet then
 		icon:setColor(cc.c3b(120, 120, 120))
 
@@ -446,9 +492,22 @@ function LoginActivityMediator:updateCell(cell, index)
 		rewardNameStr:setTextColor(cc.c3b(255, 255, 255))
 		rewardNameStr:enableOutline(cc.c3b(83, 72, 54), 2)
 	end
+
+	local touchPanel = cloneCell:getChildByName("touchPanel")
+
+	touchPanel:setSwallowTouches(false)
+	touchPanel:addClickEventListener(function ()
+		self:touchCell(index)
+	end)
 end
 
 function LoginActivityMediator:touchCell(index)
+	local cell = self._tableView:cellAtIndex(index - 1)
+
+	if cell and cell.icon and cell.icon.isReturn then
+		return
+	end
+
 	local taskInfo = self._loginDayList[index]
 	local status = taskInfo:getStatus()
 
@@ -511,8 +570,8 @@ function LoginActivityMediator:refreshRightView()
 	if activityConfig.showHero then
 		local heroPanel = self._main:getChildByName("heroPanel")
 		local roleModel = IconFactory:getRoleModelByKey("HeroBase", activityConfig.showHero)
-		local heroSprite = IconFactory:createRoleIconSprite({
-			iconType = 6,
+		local heroSprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
 			id = roleModel
 		})
 

@@ -22,6 +22,11 @@ local kBtnHandlers = {
 		func = "onClickScreen"
 	}
 }
+local kRoleScaleMax = 1.8
+local kRoleScaleMin = 0.5
+local kRolePosOffset1 = -200
+local kRolePosOffset2 = -50
+local kRoleRoundOffset = 100
 
 local function formatUnorderTable(unorderTable, compFunc)
 	local _tab = {}
@@ -42,6 +47,10 @@ function HeroShowHeroPicMediator:initialize()
 end
 
 function HeroShowHeroPicMediator:dispose()
+	if self._boardHeroEffect then
+		AudioEngine:getInstance():stopEffect(self._boardHeroEffect)
+	end
+
 	super.dispose(self)
 end
 
@@ -60,6 +69,119 @@ function HeroShowHeroPicMediator:enterWithData(data)
 
 	self:initView()
 	self:initHeroView()
+	self:addShare()
+end
+
+function HeroShowHeroPicMediator:addShare()
+	local data = {
+		enterType = ShareEnterType.KHeroH,
+		node = self:getView(),
+		preConfig = function ()
+			self._screenBtn:setVisible(false)
+			self._backBtn:setVisible(false)
+			self._heroSprite:setVisible(false)
+
+			self._heroSpriteTemp = IconFactory:createRoleIconSpriteNew({
+				useAnim = false,
+				frameId = "bustframe6_5",
+				id = self._model
+			})
+
+			self._heroSpriteTemp:addTo(self._roleNode):posite(10, -190)
+		end,
+		endConfig = function ()
+			self._screenBtn:setVisible(true)
+			self._backBtn:setVisible(true)
+
+			if self._heroSpriteTemp then
+				self._heroSpriteTemp:removeFromParent()
+
+				self._heroSpriteTemp = nil
+			end
+
+			self._heroSprite:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+
+	local data = {
+		enterType = ShareEnterType.KHeroV,
+		node = self:getView(),
+		preConfig = function ()
+			self._screenBtn1:setVisible(false)
+			self._backBtn1:setVisible(false)
+			self._heroSprite:setVisible(false)
+
+			self._heroSpriteTemp = IconFactory:createRoleIconSpriteNew({
+				useAnim = false,
+				frameId = "bustframe6_5",
+				id = self._model
+			})
+
+			self._heroSpriteTemp:addTo(self._roleNode):posite(13, -55)
+		end,
+		endConfig = function ()
+			self._screenBtn1:setVisible(true)
+			self._backBtn1:setVisible(true)
+
+			if self._heroSpriteTemp then
+				self._heroSpriteTemp:removeFromParent()
+
+				self._heroSpriteTemp = nil
+			end
+
+			self._heroSprite:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+	self:setShareVisible()
+end
+
+function HeroShowHeroPicMediator:addShareTest()
+	local data = {
+		enterType = ShareEnterType.KHeroHTest,
+		node = self:getView(),
+		preConfig = function ()
+			self._screenBtn:setVisible(false)
+			self._backBtn:setVisible(false)
+		end,
+		endConfig = function ()
+			self._screenBtn:setVisible(true)
+			self._backBtn:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+
+	local data = {
+		enterType = ShareEnterType.KHeroVTest,
+		node = self:getView(),
+		preConfig = function ()
+			self._screenBtn1:setVisible(false)
+			self._backBtn1:setVisible(false)
+		end,
+		endConfig = function ()
+			self._screenBtn1:setVisible(true)
+			self._backBtn1:setVisible(true)
+		end
+	}
+
+	DmGame:getInstance()._injector:getInstance(ShareSystem):addShare(data)
+end
+
+function HeroShowHeroPicMediator:setShareVisible()
+	DmGame:getInstance()._injector:getInstance(ShareSystem):setShareVisible({
+		enterType = ShareEnterType.KHeroH,
+		node = self:getView(),
+		status = not self._needBtnHide and not self._viewState
+	})
+	DmGame:getInstance()._injector:getInstance(ShareSystem):setShareVisible({
+		enterType = ShareEnterType.KHeroV,
+		node = self:getView(),
+		status = not self._needBtnHide and self._viewState
+	})
 end
 
 function HeroShowHeroPicMediator:initView()
@@ -80,11 +202,25 @@ function HeroShowHeroPicMediator:initView()
 	if self._setHomeBgId then
 		self:initBg()
 	else
-		local party = self._heroData:getParty()
-		local bgAnim = GameStyle:getHeroPartyBg(party)
-
-		bgAnim:addTo(self._bg)
+		self:refreshBg()
 	end
+
+	self._needBtnHide = false
+
+	self:initMultiTouchLayer()
+end
+
+function HeroShowHeroPicMediator:refreshBg()
+	local heroData = self._heroSystem:getHeroInfoById(self._heroId)
+	local bgPanel = self._main:getChildByFullName("bg")
+
+	bgPanel:stopAllActions()
+	bgPanel:removeAllChildren()
+
+	local bgAnim = self._heroData and GameStyle:getHeroPartyByHeroInfo(self._heroData) or GameStyle:getHeroPartyBg(heroData.party)
+
+	bgAnim:addTo(self._bg)
+	bgPanel:runAction(cc.ScaleTo:create(0.2, 1))
 end
 
 function HeroShowHeroPicMediator:initBg()
@@ -208,13 +344,15 @@ function HeroShowHeroPicMediator:setClimateScene(node)
 end
 
 function HeroShowHeroPicMediator:initHeroView()
-	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSprite({
+	local heroSprite, _, spineani, picInfo = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust6",
+		frameId = "bustframe9",
 		id = self._model
 	})
 
 	heroSprite:addTo(self._roleNode):posite(0, -200)
+
+	self._heroSprite = heroSprite
 
 	if spineani then
 		spineani:registerSpineEventHandler(handler(self, self.spineAnimEvent), sp.EventType.ANIMATION_COMPLETE)
@@ -225,12 +363,24 @@ function HeroShowHeroPicMediator:initHeroView()
 	end
 
 	self._roleAnim = heroSprite
+	self._roleDeviation = picInfo.Deviation
+	self._roleScale = 1
+	self._roleRawDeviation = {
+		picInfo.Deviation[1],
+		picInfo.Deviation[2]
+	}
 	local surfaceId = self._heroData:getSurfaceId()
 
 	if surfaceId then
 		self._touchTimes = 0
+		self._isRoleTouch = {
+			value = false
+		}
+		self._isRoleTouchRange = {
+			value = false
+		}
 		local surfaceData = ConfigReader:getDataByNameIdAndKey("Surface", surfaceId, "ClickAction")
-		local num = #surfaceData
+		local num = #surfaceData + 1
 
 		for i = 1, num do
 			local _info = surfaceData[i]
@@ -238,16 +388,7 @@ function HeroShowHeroPicMediator:initHeroView()
 
 			touchPanel:setAnchorPoint(cc.p(0.5, 0.5))
 
-			local point = _info.point
 			local size = heroSprite:getContentSize()
-
-			if point[1] == "all" then
-				touchPanel:setContentSize(cc.size(size.width / 2 * picInfo.zoom, size.height * picInfo.zoom))
-				touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
-			else
-				touchPanel:setContentSize(cc.size(_info.range[1] * picInfo.zoom, _info.range[2] * picInfo.zoom))
-				touchPanel:setPosition(cc.p(_info.point[1] * picInfo.zoom + picInfo.Deviation[1] + size.width / 2, _info.point[2] * picInfo.zoom + picInfo.Deviation[2]))
-			end
 
 			if GameConfigs.HERO_TOUCHVIEW_DEBUG then
 				touchPanel:setBackGroundColorType(1)
@@ -255,80 +396,231 @@ function HeroShowHeroPicMediator:initHeroView()
 				touchPanel:setBackGroundColorOpacity(180)
 			end
 
-			touchPanel:setTouchEnabled(true)
-			touchPanel:addTouchEventListener(function (sender, eventType)
-				if eventType == ccui.TouchEventType.ended then
-					if self._sharedSpine and self._sharedSpine:hasAnimation(_info.action) then
-						self._sharedSpine:playAnimation(0, _info.action, true)
+			local function touchBeganFun(sender, touchflag)
+				if not self._inTouchScaleSta and not touchflag.value then
+					touchflag.value = true
+					self._roleMoveBeganPos = nil
+				end
+			end
+
+			local function touchMovedFun(sender, touchflag)
+				if self._inTouchScaleSta or not touchflag.value then
+					return
+				end
+
+				self._isRoleMove = true
+				local beganPos = self._roleMoveBeganPos or sender:getTouchBeganPosition()
+				local movedPos = sender:getTouchMovePosition()
+				local delta = math.abs(cc.pDistanceSQ(beganPos, movedPos))
+
+				if delta > 100 then
+					self._roleMoveBeganPos = movedPos
+
+					if not self._isRoleTouch.value then
+						self._isRoleTouch.value = true
 					end
 
-					self._touchTimes = self._touchTimes + 1
+					local deltaX = movedPos.x - beganPos.x
+					local deltaY = movedPos.y - beganPos.y
 
-					if self._touchTimes > 1 then
-						-- Nothing
-					end
+					if self._viewState then
+						local posX = self._roleAnim:getPositionX()
+						local posY = self._roleAnim:getPositionY()
+						posX = posX + deltaY
+						posY = posY - deltaX
 
-					if self._boardHeroEffect then
-						return
-					end
+						self:dealRolePosition(posX, posY)
+					else
+						local posX = self._roleAnim:getPositionX()
+						local posY = self._roleAnim:getPositionY()
+						posX = posX + deltaX
+						posY = posY + deltaY
 
-					local soundTab = {}
-
-					for _, v in ipairs(_info.voice) do
-						local isUnlock = self:checkSoundUnlock(v)
-
-						if isUnlock and (self._lastClickSound ~= v or #soundTab == 0) then
-							soundTab[#soundTab + 1] = v
-						end
-					end
-
-					local weighting = 1
-
-					if self._touchTimes > 5 and self._lastClickSound ~= "Voice_" .. self._heroId .. "_60" then
-						soundTab[#soundTab + 1] = "Voice_" .. self._heroId .. "_60"
-						weighting = 1.6
-					end
-
-					local randomCount = math.ceil(#soundTab * weighting)
-					local soundId = soundTab[math.random(1, randomCount)]
-					soundId = soundId or "Voice_" .. self._heroId .. "_60"
-					local isExistStr = Strings:get(ConfigReader:getDataByNameIdAndKey("Sound", soundId, "CueName"))
-
-					if isExistStr and isExistStr ~= "Voice_Default" then
-						local trueSoundId = nil
-						self._boardHeroEffect, trueSoundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
-							self._boardHeroEffect = nil
-						end)
-						self._lastClickSound = soundId
+						self:dealRolePosition(posX, posY)
 					end
 				end
-			end)
+
+				self._isRoleMove = false
+			end
+
+			local function touchCanceledFun(sender, touchflag)
+				if touchflag.value then
+					touchflag.value = false
+				end
+
+				if self._isRoleTouch.value then
+					self._isRoleTouch.value = false
+				end
+			end
+
+			local function touchEndFunc(sender, touchflag)
+				if touchflag.value then
+					touchflag.value = false
+				end
+
+				if self._isRoleTouch.value then
+					self._isRoleTouch.value = false
+				end
+			end
+
+			local function touchActionFunc()
+				if self._sharedSpine and self._sharedSpine:hasAnimation(_info.action) then
+					self._sharedSpine:playAnimation(0, _info.action, true)
+				end
+
+				self._touchTimes = self._touchTimes + 1
+
+				if self._touchTimes > 1 then
+					-- Nothing
+				end
+
+				if self._boardHeroEffect then
+					return
+				end
+
+				local soundId = AudioTimerSystem:getHeroTouchSoundByPart(self._heroId, _info.part, self._touchTimes)
+				local isExistStr = Strings:get(ConfigReader:getDataByNameIdAndKey("Sound", soundId, "CueName"))
+
+				if isExistStr and isExistStr ~= "Voice_Default" then
+					local trueSoundId = nil
+					self._boardHeroEffect, trueSoundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
+						self._boardHeroEffect = nil
+					end)
+					self._lastClickSound = soundId
+				end
+			end
+
+			touchPanel:setTouchEnabled(true)
+
+			if _info and _info.point then
+				local point = _info.point
+
+				if point[1] == "all" then
+					touchPanel:setContentSize(cc.size(size.width / 2 * picInfo.zoom, size.height * picInfo.zoom))
+					touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
+				else
+					touchPanel:setContentSize(cc.size(_info.range[1] * picInfo.zoom, _info.range[2] * picInfo.zoom))
+					touchPanel:setPosition(cc.p(_info.point[1] * picInfo.zoom + picInfo.Deviation[1] + size.width / 2, _info.point[2] * picInfo.zoom + picInfo.Deviation[2]))
+				end
+
+				touchPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.began then
+						touchBeganFun(sender, self._isRoleTouch)
+					end
+
+					if eventType == ccui.TouchEventType.canceled then
+						touchCanceledFun(sender, self._isRoleTouch)
+					end
+
+					if eventType == ccui.TouchEventType.moved then
+						touchMovedFun(sender, self._isRoleTouch)
+					end
+
+					if eventType == ccui.TouchEventType.ended then
+						touchEndFunc(sender, self._isRoleTouch)
+						touchActionFunc()
+					end
+				end)
+			else
+				touchPanel:setContentSize(cc.size(size.width, size.height))
+				touchPanel:setPosition(size.width / 2 + picInfo.Deviation[1], size.height / 2 + picInfo.Deviation[2])
+				touchPanel:addTouchEventListener(function (sender, eventType)
+					if eventType == ccui.TouchEventType.began then
+						touchBeganFun(sender, self._isRoleTouchRange)
+					end
+
+					if eventType == ccui.TouchEventType.canceled then
+						touchCanceledFun(sender, self._isRoleTouchRange)
+					end
+
+					if eventType == ccui.TouchEventType.moved then
+						touchMovedFun(sender, self._isRoleTouchRange)
+					end
+
+					if eventType == ccui.TouchEventType.ended then
+						touchEndFunc(sender, self._isRoleTouchRange)
+					end
+				end)
+			end
+
 			touchPanel:addTo(heroSprite, num + 1 - i)
 		end
 	end
 end
 
+function HeroShowHeroPicMediator:dealRoleScale(changeScale)
+	if changeScale < kRoleScaleMin then
+		changeScale = kRoleScaleMin
+	end
+
+	if kRoleScaleMax < changeScale then
+		changeScale = kRoleScaleMax
+	end
+
+	self._roleAnim:setScale(changeScale)
+
+	self._roleScale = changeScale
+	self._roleDeviation[1] = self._roleRawDeviation[1] * changeScale
+	self._roleDeviation[2] = self._roleRawDeviation[2] * changeScale
+end
+
+function HeroShowHeroPicMediator:dealRolePosition(targetX, targetY)
+	local roleSize = self._roleAnim:getContentSize()
+	local halfRoleSize = cc.size(roleSize.width / 2 * self._roleScale, roleSize.height / 2 * self._roleScale)
+	local posX = targetX or self._roleAnim:getPositionX()
+	local posY = targetY or self._roleAnim:getPositionY()
+
+	if self._viewState then
+		local tmpX = posX + self._roleDeviation[1]
+		local tmpY = posY + self._roleDeviation[2]
+		local absX = math.abs(tmpX)
+		local absY = math.abs(tmpY)
+		local tempx = absX - halfRoleSize.height + kRoleRoundOffset
+		local tempy = absY - halfRoleSize.width + kRoleRoundOffset
+
+		if absX - halfRoleSize.width + kRoleRoundOffset > self._winSize.height / 2 then
+			posX = tmpX / absX * (self._winSize.height / 2 + halfRoleSize.width - kRoleRoundOffset) - self._roleDeviation[1]
+		end
+
+		if absY - halfRoleSize.height + kRoleRoundOffset > self._winSize.width / 2 then
+			posY = tmpY / absY * (self._winSize.width / 2 + halfRoleSize.height - kRoleRoundOffset) - self._roleDeviation[2]
+		end
+
+		self._roleAnim:setPosition(cc.p(posX, posY))
+	else
+		local tmpX = posX + self._roleDeviation[1]
+		local tmpY = posY + self._roleDeviation[2]
+		local absX = math.abs(tmpX)
+		local absY = math.abs(tmpY)
+		local tempx = absX - halfRoleSize.width + kRoleRoundOffset
+		local tempy = absY - halfRoleSize.height + kRoleRoundOffset
+
+		if absX - halfRoleSize.width + kRoleRoundOffset > self._winSize.width / 2 then
+			posX = tmpX / absX * (self._winSize.width / 2 + halfRoleSize.width - kRoleRoundOffset) - self._roleDeviation[1]
+		end
+
+		if absY - halfRoleSize.height + kRoleRoundOffset > self._winSize.height / 2 then
+			posY = tmpY / absY * (self._winSize.height / 2 + halfRoleSize.height - kRoleRoundOffset) - self._roleDeviation[2]
+		end
+
+		self._roleAnim:setPosition(cc.p(posX, posY))
+	end
+end
+
 function HeroShowHeroPicMediator:checkSoundUnlock(soundId)
 	local sound = {
-		config = ConfigReader:getRecordById("Sound", soundId)
+		config = ConfigReader:getRecordById("Sound", soundId),
+		setUnlock = function (self, unlock)
+		end,
+		getUnlockDesc = function (self)
+			return self.config.UnlockDesc
+		end,
+		getUnlockCondition = function (self)
+			local unlock = self.config.Unlock or {}
+
+			return unlock
+		end
 	}
-
-	if not sound.config then
-		return
-	end
-
-	function sound:setUnlock(unlock)
-	end
-
-	function sound:getUnlockDesc()
-		return self.config.UnlockDesc
-	end
-
-	function sound:getUnlockCondition()
-		local unlock = self.config.Unlock or {}
-
-		return unlock
-	end
 
 	return self._heroSystem:getSoundUnlock(self._heroData, sound)
 end
@@ -338,27 +630,56 @@ function HeroShowHeroPicMediator:onClickBack()
 end
 
 function HeroShowHeroPicMediator:onClickScreen()
-	if not self._viewState then
-		self._viewState = true
+	if not self._needBtnHide then
+		local isClick = true
 
-		self._main:setRotation(-90)
-		self._screenBtn1:setVisible(true)
-		self._backBtn1:setVisible(true)
-		self._screenBtn:setVisible(false)
-		self._backBtn:setVisible(false)
-		self._bg:setScale(1.63)
-		self._roleAnim:setPosition(cc.p(0, -50))
+		if self._lastViewState ~= nil then
+			self._viewState = self._lastViewState
+			self._lastViewState = nil
+			isClick = false
+		end
+
+		if not self._viewState then
+			self._viewState = true
+
+			self._main:setRotation(-90)
+			self._multiTouchLayer:setRotation(-90)
+			self._screenBtn1:setVisible(true)
+			self._backBtn1:setVisible(true)
+			self._screenBtn:setVisible(false)
+			self._backBtn:setVisible(false)
+			self._bg:setScale(1.63)
+
+			if isClick then
+				self._roleAnim:setPosition(cc.p(0, kRolePosOffset2))
+				self:dealRoleScale(1)
+			end
+		else
+			self._viewState = false
+
+			self._main:setRotation(0)
+			self._multiTouchLayer:setRotation(0)
+			self._screenBtn1:setVisible(false)
+			self._backBtn1:setVisible(false)
+			self._screenBtn:setVisible(true)
+			self._backBtn:setVisible(true)
+			self._bg:setScale(1)
+
+			if isClick then
+				self._roleAnim:setPosition(cc.p(0, kRolePosOffset1))
+				self:dealRoleScale(1)
+			end
+		end
 	else
-		self._viewState = false
-
-		self._main:setRotation(0)
 		self._screenBtn1:setVisible(false)
 		self._backBtn1:setVisible(false)
-		self._screenBtn:setVisible(true)
-		self._backBtn:setVisible(true)
-		self._bg:setScale(1)
-		self._roleAnim:setPosition(cc.p(0, -200))
+		self._screenBtn:setVisible(false)
+		self._backBtn:setVisible(false)
+
+		self._lastViewState = not self._viewState
 	end
+
+	self:setShareVisible()
 end
 
 function HeroShowHeroPicMediator:spineAnimEvent(event)
@@ -369,4 +690,162 @@ function HeroShowHeroPicMediator:spineAnimEvent(event)
 
 		self._sharedSpine:playAnimation(0, "animation", true)
 	end
+end
+
+function HeroShowHeroPicMediator:initMultiTouchLayer()
+	self._touchPoint = {}
+
+	if not self._multiTouchLayer then
+		local director = cc.Director:getInstance()
+		local winSize = director:getWinSize()
+		local multiTouchLayer = cc.LayerColor:create(cc.c4b(0, 0, 0, 0))
+
+		multiTouchLayer:setContentSize(cc.size(winSize.width, winSize.height))
+		multiTouchLayer:setTouchMode(cc.EVENT_TOUCH_ALL_AT_ONCE)
+		multiTouchLayer:setSwallowsTouches(false)
+		multiTouchLayer:setVisible(true)
+		multiTouchLayer:setTouchEnabled(true)
+		multiTouchLayer:onTouch(handler(self, self.onTouchMultiTouchLayer), true, false)
+		multiTouchLayer:addTo(self._main)
+
+		self._winSize = winSize
+		self._multiTouchLayer = multiTouchLayer
+	end
+end
+
+function HeroShowHeroPicMediator:onTouchMultiTouchLayer(event)
+	if event.name == "began" then
+		self:dealOnMultiTouchBegan(event)
+	elseif event.name == "moved" then
+		self:dealOnMultiTouchMoved(event)
+	elseif event.name == "ended" then
+		self:dealOnMultiTouchEnded(event)
+	end
+end
+
+function HeroShowHeroPicMediator:dealOnMultiTouchBegan(event)
+	self._touchBeganDistance = -99999
+
+	for k, v in pairs(event.points) do
+		if self:getPointById(v.id, self._touchPoint) == nil then
+			self._touchPoint[#self._touchPoint + 1] = v
+		end
+	end
+
+	if #self._touchPoint > 1 then
+		self._inTouchScaleSta = true
+		local p1 = self:getPointById(0, self._touchPoint)
+		local p2 = self:getPointById(1, self._touchPoint)
+
+		if p2 and p1 then
+			self._touchBeganDistance = math.floor(cc.pGetDistance(cc.p(p1.x, p1.y), cc.p(p2.x, p2.y)))
+		end
+	else
+		local p1 = self:getPointById(0, self._touchPoint)
+
+		if p1 then
+			self._touchOnePoint = p1
+		end
+	end
+end
+
+function HeroShowHeroPicMediator:dealOnMultiTouchMoved(event)
+	if #self._touchPoint > 1 then
+		if self._inTouchScaleSta then
+			local p1 = self:getPointById(0, event.points)
+			local p2 = self:getPointById(1, event.points)
+
+			if p2 == nil or p1 == nil or self._touchBeganDistance == -99999 then
+				return
+			end
+
+			local length = math.floor(cc.pGetDistance(cc.p(p1.x, p1.y), cc.p(p2.x, p2.y)))
+			local diffLen = math.abs(length - self._touchBeganDistance)
+
+			if diffLen > 15 then
+				local changeScale = length / self._touchBeganDistance * self._roleAnim:getScale()
+
+				self:dealRoleScale(changeScale)
+
+				self._touchBeganDistance = length
+
+				self:dealRolePosition()
+				self:setPointById(0, self._touchPoint, p1)
+				self:setPointById(1, self._touchPoint, p2)
+			end
+		end
+	elseif self._inTouchScaleSta then
+		self._inTouchScaleSta = flase
+	end
+end
+
+function HeroShowHeroPicMediator:dealOnMultiTouchEnded(event)
+	if #self._touchPoint > 1 and self._inTouchScaleSta then
+		self._inTouchScaleSta = false
+		local p1 = self:getPointById(0, self._touchPoint)
+		local p2 = self:getPointById(1, self._touchPoint)
+		self._touchPoint = {}
+
+		if self._touchBeganDistance ~= -99999 then
+			-- Nothing
+		end
+	elseif #self._touchPoint > 0 then
+		if not self._isRoleMove then
+			if self._isRoleTouch.value then
+				-- Nothing
+			else
+				local p1 = self:getPointById(0, self._touchPoint)
+				local p2 = self._touchOnePoint
+
+				if p1 and p2 then
+					local delta = cc.pGetDistance(cc.p(p1.x, p1.y), cc.p(p2.x, p2.y))
+
+					if math.abs(delta) < 15 then
+						self._needBtnHide = not self._needBtnHide
+
+						self:onClickScreen()
+					end
+				end
+			end
+		end
+
+		self._touchPoint = {}
+		self._touchOnePoint = nil
+	else
+		self._inTouchScaleSta = false
+		self._touchPoint = {}
+		self._touchOnePoint = nil
+	end
+end
+
+function HeroShowHeroPicMediator:getPointById(id, points)
+	for k, v in pairs(points) do
+		if v.id == id then
+			v.x = math.floor(v.x)
+			v.y = math.floor(v.y)
+
+			return v
+		end
+	end
+
+	return nil
+end
+
+function HeroShowHeroPicMediator:setPointById(id, points, point)
+	for k, v in pairs(points) do
+		if v.id == id then
+			v.x = point.x
+			v.y = point.y
+		end
+	end
+end
+
+function HeroShowHeroPicMediator:getContainPosSta(posList, pos)
+	for k, v in pairs(posList) do
+		if v.x == pos.x and v.y == pos.y then
+			return true
+		end
+	end
+
+	return false
 end

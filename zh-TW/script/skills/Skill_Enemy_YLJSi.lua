@@ -314,6 +314,10 @@ all.Skill_Enemy_YLJSi_Skill_Heal = {
 
 			_env.Funits = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 3)
 
+			for _, unit in global.__iter__(_env.Funits) do
+				global.AssignRoles(_env, unit, "target")
+			end
+
 			global.HealTargetView(_env, _env.Funits)
 		end)
 		exec["@time"]({
@@ -332,7 +336,7 @@ all.Skill_Enemy_YLJSi_Skill_Heal = {
 					"+Normal"
 				}, 0)
 
-				global.ApplyBuff(_env, global.friendunit, {
+				global.ApplyBuff(_env, Funit, {
 					timing = 2,
 					duration = 1,
 					display = "Heal",

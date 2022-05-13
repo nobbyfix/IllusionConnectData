@@ -34,7 +34,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -43,6 +43,12 @@ function ActivityBlockTeamMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
 
+	self._fightBtn = self:bindWidget("main.btnPanel.fightBtn", TwoLevelViceButton, {
+		handler = {
+			clickAudio = "Se_Click_Common_2",
+			func = bind1(self.onClickFight, self)
+		}
+	})
 	self._oneKeyWidget = self:bindWidget("main.info_bg.button_one_key_embattle", ThreeLevelViceButton, {
 		handler = {
 			clickAudio = "Se_Click_Common_2",
@@ -61,6 +67,8 @@ function ActivityBlockTeamMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshViewBySort)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGE_TEAM_BYMODE_SUCC, self, self.changeTeamByMode)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -114,6 +122,8 @@ function ActivityBlockTeamMediator:enterWithData(data)
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._uiType = self._activityModel:getUI()
 	self._activity = self._data.activity
+	self._param = self._data.param
+	self._pointId = self._param and self._param.pointId and self._param.pointId or nil
 	self._cardsExcept = {}
 	self._cardsRecommend = self._activity:getActivityConfig().BonusHero
 	self._masterList = self._masterSystem:getShowMasterList()
@@ -135,6 +145,7 @@ function ActivityBlockTeamMediator:enterWithData(data)
 
 	self._stageSystem:setSortExtand(0)
 
+	self._hasForceChangeTeam = false
 	self._ignoreReloadData = true
 
 	self:initData()
@@ -174,13 +185,42 @@ function ActivityBlockTeamMediator:resumeWithData()
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 end
 
-function ActivityBlockTeamMediator:initData()
-	self._curTeam = self._activity:getTeam()
+function ActivityBlockTeamMediator:getOwnMasterId(pointid)
+	local masterid = ConfigReader:getDataByNameIdAndKey("ActivityBlockPoint", pointid, "Master")
+
+	if masterid ~= "" then
+		return masterid
+	end
+
+	return nil
+end
+
+function ActivityBlockTeamMediator:getOwnMasterRoleModel(masterid)
+	local roleModel = ConfigReader:getDataByNameIdAndKey("EnemyMaster", masterid, "RoleModel")
+
+	return roleModel
+end
+
+function ActivityBlockTeamMediator:initData(team)
+	if team then
+		self._curTeam = team
+	else
+		self._curTeam = self._activity:getTeam()
+	end
+
 	local modelTmp = {
 		_heroes = self:removeExceptHeros(),
 		_masterId = self._curTeam:getMasterId()
 	}
+	self._heroes = modelTmp._heroes
 	self._curMasterId = modelTmp._masterId
+	local pointData = self._activity:getPointById(self._pointId)
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		self._curMasterId = ownMasterId
+		self._showChangeMaster = false
+	end
 
 	if self._curMasterId == "" or self._curMasterId == 0 then
 		self._curMasterId = self._developSystem:getStageTeamById(1):getMasterId()
@@ -202,6 +242,7 @@ function ActivityBlockTeamMediator:initData()
 	self._petListAll = {}
 
 	table.copy(self._petList, {})
+	self:initAssistData()
 end
 
 function ActivityBlockTeamMediator:updateData()
@@ -234,7 +275,7 @@ function ActivityBlockTeamMediator:showOneKeyHeros()
 	for i = 1, #orderPets do
 		local isExcept = self._stageSystem:isHeroExcept(self._cardsExcept, orderPets[i])
 
-		if #self._orderPets < self._maxTeamPetNum and not isExcept then
+		if #self._orderPets < self._maxTeamPetNum and not isExcept and not table.indexof(self._assistHero, orderPets[i]) then
 			self._orderPets[#self._orderPets + 1] = orderPets[i]
 		else
 			self._leavePets[#self._leavePets + 1] = orderPets[i]
@@ -244,11 +285,13 @@ end
 
 function ActivityBlockTeamMediator:setupView()
 	self:initLockIcons()
+	self:initAssistView()
 	self:refreshPetNode()
 	self:refreshMasterInfo()
 	self:initView()
 	self:refreshListView()
 	self:createSortView()
+	self:showSetButton(true)
 end
 
 function ActivityBlockTeamMediator:initWidgetInfo()
@@ -275,6 +318,11 @@ function ActivityBlockTeamMediator:initWidgetInfo()
 	self._masterImage = self._bg:getChildByName("role")
 	self._teamBg = self._bg:getChildByName("team_bg")
 	self._labelCombat = self._main:getChildByFullName("info_bg.combatLabel")
+	self._infoBtn = self._main:getChildByFullName("infoBtn")
+	self._fightInfoTip = self._main:getChildByFullName("fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._costAverageLabel = self._main:getChildByFullName("info_bg.averageLabel")
 	self._costTotalLabel1 = self._main:getChildByFullName("info_bg.cost1")
 	self._costTotalLabel2 = self._main:getChildByFullName("info_bg.cost2")
@@ -306,6 +354,7 @@ function ActivityBlockTeamMediator:initWidgetInfo()
 
 	self._teamPetClone:setVisible(false)
 	self._teamPetClone:setScale(0.64)
+	self._myPetClone:getChildByFullName("myPetClone.fatigueBg"):setVisible(false)
 
 	self._pageTipPanel = self._main:getChildByFullName("pageTipPanel")
 
@@ -322,9 +371,9 @@ function ActivityBlockTeamMediator:ignoreSafeArea()
 	AdjustUtils.ignorSafeAreaRectForNode(self._spPanel:getChildByFullName("combatBg"), AdjustUtils.kAdjustType.Right)
 
 	local director = cc.Director:getInstance()
-	local winSize = director:getWinSize()
+	self._winSize = director:getWinSize()
 
-	self._heroPanel:setContentSize(cc.size(winSize.width, 220))
+	self._heroPanel:setContentSize(cc.size(self._winSize.width, 220))
 end
 
 function ActivityBlockTeamMediator:createTeamCell(cell, index)
@@ -361,6 +410,7 @@ function ActivityBlockTeamMediator:createTeamCell(cell, index)
 	detailBtn:addClickEventListener(function ()
 		self:onClickHeroDetail(id)
 	end)
+	self:initAssistHero(node, heroInfo)
 end
 
 function ActivityBlockTeamMediator:checkStageType()
@@ -371,7 +421,6 @@ function ActivityBlockTeamMediator:checkStageType()
 	local spRuleLabel = self._spPanel:getChildByFullName("ruleLabel")
 
 	spRuleLabel:setString(Strings:get("ActivityBlock_UI_2"))
-	ruleBtn:setPositionX(spRuleLabel:getPositionX() - spRuleLabel:getContentSize().width / 2 - 30)
 end
 
 function ActivityBlockTeamMediator:setLabelEffect()
@@ -471,9 +520,7 @@ function ActivityBlockTeamMediator:changeOwnPet(cell)
 	local targetIndex = nil
 
 	for i = 1, self._maxTeamPetNum do
-		local iconBg = self._teamBg:getChildByName("pet_" .. i)
-
-		if self:checkCollision(iconBg) then
+		if self:checkCollision(self:getPetNode(i)) then
 			targetIndex = i
 
 			break
@@ -488,9 +535,9 @@ function ActivityBlockTeamMediator:changeOwnPet(cell)
 		return
 	end
 
-	local iconBg = self._teamBg:getChildByName("pet_" .. targetIndex)
+	local iconBg = self:getPetNode(targetIndex)
 	local targetId = iconBg.id
-	local selectCanceled = self:isSelectCanceledByDray(id, iconBg.id)
+	local selectCanceled = self:isSelectCanceledByDray(id, targetId)
 
 	if selectCanceled then
 		return
@@ -694,6 +741,7 @@ function ActivityBlockTeamMediator:refreshListView(ignoreAdjustOffset)
 	local sortType = self._stageSystem:getCardSortType()
 
 	self._heroSystem:sortHeroes(self._petListAll, sortType, self._cardsRecommend)
+	self:sortAssistHero(self._petListAll)
 
 	if table.nums(self._cardsExcept) > 0 then
 		local heros1 = {}
@@ -844,7 +892,7 @@ function ActivityBlockTeamMediator:refreshPetNode()
 	self._petNodeList = {}
 
 	for i = 1, self._maxTeamPetNum do
-		local iconBg = self._teamBg:getChildByName("pet_" .. i)
+		local iconBg = self:getPetNode(i)
 
 		iconBg:removeAllChildren()
 		iconBg:setTag(i)
@@ -889,11 +937,12 @@ end
 
 function ActivityBlockTeamMediator:initTeamHero(node, info)
 	local heroId = info.id
-	info.id = info.roleModel
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		id = info.roleModel
+	})
 
 	heroImg:setScale(0.68)
 
@@ -921,7 +970,12 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -997,7 +1051,9 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		if dicengEff then
 			dicengEff:setVisible(isActive)
@@ -1026,7 +1082,118 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 	end
 end
 
+function ActivityBlockTeamMediator:onClickMasterSkill()
+	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+	local params = {
+		masterId = self._curMasterId,
+		active = self._skillActive
+	}
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		params.ownSkills = self._ownerSkillList
+		params.ownMasterRoleModel = self._ownMasterRoleModel
+	end
+
+	local view = self:getInjector():getInstance("MasterLeaderSkillView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, params))
+end
+
+function ActivityBlockTeamMediator:checkMasterSkillActive()
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		local kConditonKey = {
+			TeamSkill5 = "TeamSkillCondition5",
+			TeamSkill4 = "TeamSkillCondition4",
+			TeamSkill6 = "TeamSkillCondition6",
+			TeamSkill3 = "TeamSkillCondition3",
+			TeamSkill2 = "TeamSkillCondition2",
+			TeamSkill1 = "TeamSkillCondition1"
+		}
+
+		self._masterSkillPanel:removeAllChildren()
+
+		self._skillActive = {}
+		local masterConfig = ConfigReader:getRecordById("MasterBase", tostring("Master_LiMing"))
+		local skillShowType = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "Master_TeamSkillShow", "content")
+		self._skillIndex = {}
+		self._skills = {}
+
+		for i = 1, #skillShowType do
+			local skillId = masterConfig[skillShowType[i]]
+			local conditionKey = kConditonKey[skillShowType[i]]
+			local condition = masterConfig[conditionKey]
+
+			if skillId and skillId ~= "" then
+				table.insert(self._skillIndex, skillId)
+
+				self._skills[skillId] = MasterSkill:new(skillId)
+
+				self._skills[skillId]:createAttrEffect(self, self._player, AttrSystemName.kMasterSkill)
+				self._skills[skillId]:setActiveCondition(condition)
+			end
+		end
+
+		local skills = {}
+
+		for k, v in pairs(self._skills) do
+			skills[#skills + 1] = v
+		end
+
+		self._ownerSkillList = skills
+
+		for i = 1, #skills do
+			local skill = skills[i]
+			local skillId = skill:getId()
+			local info = {
+				levelHide = true,
+				id = skillId,
+				skillType = skill:getSkillType()
+			}
+			local newSkillNode = IconFactory:createMasterSkillIcon(info)
+
+			newSkillNode:setScale(0.36)
+			self._masterSkillPanel:addChild(newSkillNode, 2)
+
+			local index = i <= 3 and i or i - 3
+			local posX = 20 + (index - 1) * 55
+			local posY = i <= 3 and 61 or 10
+
+			newSkillNode:setPosition(cc.p(posX, posY))
+
+			local conditions = skill:getActiveCondition()
+			local isActive = self._stageSystem:checkIsKeySkillActive(conditions, self._teamPets, {
+				masterId = self._curMasterId
+			})
+
+			newSkillNode:setGray(not isActive)
+
+			if isActive then
+				self._skillActive[i] = true
+				local shangceng = cc.MovieClip:create("shangceng_jinengjihuo")
+
+				shangceng:addTo(newSkillNode)
+				shangceng:setPosition(cc.p(46.5, 46.5))
+				shangceng:setScale(1.42)
+			else
+				newSkillNode:setGray(true)
+
+				self._skillActive[i] = false
+			end
+		end
+	else
+		super.checkMasterSkillActive(self)
+	end
+end
+
 function ActivityBlockTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
 	local totalCombat = 0
 	local totalCost = 0
 	local averageCost = 0
@@ -1035,6 +1202,10 @@ function ActivityBlockTeamMediator:refreshCombatAndCost()
 		local heroInfo = self._heroSystem:getHeroById(v)
 		totalCost = totalCost + heroInfo:getCost()
 		totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+	end
+
+	if leadConfig then
+		totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 	end
 
 	local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -1055,6 +1226,10 @@ function ActivityBlockTeamMediator:refreshCombatAndCost()
 	self._costTotalLabel1:setTextColor(color)
 	self._costTotalLabel2:setString("/" .. self._costMaxNum)
 	self._costTotalLabel2:setPositionX(self._costTotalLabel1:getPositionX() + self._costTotalLabel1:getContentSize().width)
+	self._infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+	self._infoBtn:addTouchEventListener(function (sender, eventType)
+		self:onClickInfo(eventType)
+	end)
 end
 
 function ActivityBlockTeamMediator:changeMasterId(event)
@@ -1063,17 +1238,39 @@ function ActivityBlockTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
+end
+
+function ActivityBlockTeamMediator:getMasterName(masterid)
+	return Strings:get(ConfigReader:getDataByNameIdAndKey("MasterBase", masterid, "Name"))
 end
 
 function ActivityBlockTeamMediator:refreshMasterInfo()
-	local masterData = self._masterSystem:getMasterById(self._curMasterId)
+	local ownMasterId = self:getOwnMasterId(self._pointId)
+
+	if ownMasterId then
+		local roleModel = self:getOwnMasterRoleModel(ownMasterId)
+		local sprite = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe6_3",
+			id = roleModel
+		})
+
+		sprite:setAnchorPoint(cc.p(0, 0))
+		self._masterImage:addChild(sprite)
+
+		self._ownMasterRoleModel = roleModel
+	else
+		local masterData = self._masterSystem:getMasterById(self._curMasterId)
+
+		self._masterImage:removeAllChildren()
+		self._masterImage:addChild(masterData:getHalfImage())
+	end
 
 	self._masterBtn:setVisible(self._showChangeMaster)
 	self._masterImage:setVisible(true)
-	self._masterImage:removeAllChildren()
-	self._masterImage:addChild(masterData:getHalfImage())
 	self:refreshCombatAndCost()
 	self:refreshButtons()
+	self:setLeadStageInfo()
 end
 
 function ActivityBlockTeamMediator:refreshButtons()
@@ -1120,12 +1317,18 @@ function ActivityBlockTeamMediator:getSendData()
 		hasHero = true
 	end
 
+	local masterId = self._curMasterId
+
+	if self:getOwnMasterId(self._pointId) then
+		masterId = self._developSystem:getStageTeamById(1):getMasterId()
+	end
+
 	if not hasHero then
 		table.insert(sendData, {})
 	end
 
 	local params = {
-		masterId = self._curMasterId,
+		masterId = masterId,
 		heroes = sendData
 	}
 
@@ -1138,6 +1341,10 @@ function ActivityBlockTeamMediator:hasChangeTeam()
 	end
 
 	if #self._tempTeams ~= #self._teamPets then
+		return true
+	end
+
+	if #self._tempTeams ~= #self._heroes then
 		return true
 	end
 
@@ -1159,11 +1366,10 @@ end
 function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 	local hasChange = self:hasChangeTeam()
 	local params = self:getSendData()
-	params.doActivityType = "101"
 
-	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, function (response)
+	local function callback1(response)
 		if checkDependInstance(self) then
-			if hasChange then
+			if hasChange or self._hasForceChangeTeam then
 				self:dispatch(Event:new(EVT_ARENA_CHANGE_TEAM_SUCC))
 				self:dispatch(ShowTipEvent({
 					tip = Strings:get("Team_StorageSuccessTips")
@@ -1174,7 +1380,11 @@ function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 				callBack()
 			end
 		end
-	end)
+	end
+
+	params.doActivityType = "101"
+
+	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, callback1)
 end
 
 function ActivityBlockTeamMediator:onClickRule()
@@ -1195,12 +1405,212 @@ function ActivityBlockTeamMediator:onClickOneKeyBreak()
 	self:refreshPetNode()
 end
 
-function ActivityBlockTeamMediator:onClickBack()
+function ActivityBlockTeamMediator:onClickBack(sender, eventType, onClickFightCallback)
 	local function func()
-		self:dismiss()
+		if onClickFightCallback then
+			onClickFightCallback()
+		else
+			self:dismiss()
+		end
 	end
 
 	if self:checkToExit(func, false, "Stage_Team_UI10") then
 		func()
 	end
+end
+
+local assitEnemyTag = 100
+
+function ActivityBlockTeamMediator:getPetNode(idx)
+	return self._teamBg:getChildByName("pet_" .. idx + self._presetTeamPetNum)
+end
+
+function ActivityBlockTeamMediator:initAssistData()
+	local showNpcTeam = self._activityModel:getActivityConfig().ShowNpcTeam
+	local pointData = self._activity:getPointById(self._pointId)
+
+	if not pointData or not showNpcTeam then
+		self._assistEnemy = {}
+		self._presetTeamPetNum = 0
+		self._assistHero = {}
+
+		return
+	end
+
+	self._assistEnemy = pointData and pointData:getAssistEnemy() or {}
+	self._presetTeamPetNum = #self._assistEnemy
+	self._maxTeamPetNum = self._maxTeamPetNum - self._presetTeamPetNum
+	self._assistHero = pointData and pointData:getAssistHero() or {}
+
+	for i, id in ipairs(self._assistHero) do
+		local idx = table.indexof(self._teamPets, id)
+
+		if idx then
+			table.remove(self._teamPets, idx)
+			table.remove(self._tempTeams, idx)
+		end
+	end
+
+	for idx = self._maxTeamPetNum + 1, #self._teamPets do
+		table.remove(self._teamPets, idx)
+		table.remove(self._tempTeams, idx)
+	end
+end
+
+function ActivityBlockTeamMediator:initAssistView()
+	for i, enemyId in ipairs(self._assistEnemy) do
+		local enemyData = self._activity:getAssistEnemyInfo(enemyId)
+
+		if enemyData then
+			local iconBg = self._teamBg:getChildByName("pet_" .. i)
+
+			iconBg:removeAllChildren()
+			iconBg:setTag(assitEnemyTag + i)
+			iconBg:addTouchEventListener(function (sender, eventType)
+				self:onClickOnTeamEnemy(sender, eventType)
+			end)
+
+			local emptyIcon = GameStyle:createEmptyIcon()
+
+			emptyIcon:addTo(iconBg):center(iconBg:getContentSize())
+			emptyIcon:setName("EmptyIcon")
+
+			iconBg.id = enemyId
+			local node = self._teamPetClone:clone()
+
+			node:setVisible(true)
+
+			node.id = enemyId
+
+			self:initTeamHero(node, enemyData)
+			node:addTo(iconBg):center(iconBg:getContentSize())
+			node:offset(0, -9)
+			iconBg:setTouchEnabled(true)
+
+			local flag = ccui.ImageView:create("asset/common/kazu_bg_yuan.png", ccui.TextureResType.localType)
+
+			flag:addTo(node):offset(94, 182)
+		end
+	end
+
+	self._btnPanel:setVisible(self._pointId and true or false)
+	self._heroPanel:setContentSize(cc.size(self._pointId and self._winSize.width - 177 or self._winSize.width, 220))
+end
+
+function ActivityBlockTeamMediator:onClickOnTeamEnemy(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("DreamChallenge_Team_Helper_Info")
+		}))
+	end
+end
+
+function ActivityBlockTeamMediator:initAssistHero(node, info)
+	local heroId = info.id
+
+	node:setColor(cc.c3b(255, 255, 255))
+
+	local fatigueBg = node:getChildByFullName("fatigueBg")
+
+	fatigueBg:setVisible(false)
+
+	if not table.indexof(self._assistHero, heroId) then
+		return
+	end
+
+	fatigueBg:setVisible(true)
+	fatigueBg:getChildByName("fatigueTxt"):setString(Strings:get("DreamChallenge_Point_Team_Npc_Name"))
+	node:addTouchEventListener(function (sender, eventType)
+		if eventType == ccui.TouchEventType.ended then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("DreamChallenge_Point_Team_Npc_Forbid")
+			}))
+		end
+	end)
+	node:setColor(cc.c3b(150, 150, 150))
+end
+
+function ActivityBlockTeamMediator:sortAssistHero(list)
+	for i, v in ipairs(self._assistHero) do
+		if table.indexof(list, v) then
+			table.remove(list, table.indexof(list, v))
+			table.insert(list, #list + 1, v)
+		end
+	end
+end
+
+function ActivityBlockTeamMediator:onClickFight(sender, eventType)
+	local function callback()
+		self._curTeam = self._activity:getTeam()
+
+		AudioTimerSystem:playStartBattleVoice(self._curTeam)
+		self._activitySystem:setBattleTeamInfo(self._curTeam)
+
+		if self._activity:getType() == ActivityType.KActivityBlockMapNew then
+			local point = self._activity:getSubPointById(self._pointId)
+			self._param.parent._parent._data.enterBattlePointId = point:getOwner():getId()
+
+			self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+				doActivityType = 102,
+				type = self._param.type,
+				mapId = self._param.mapId,
+				pointId = self._pointId
+			}, function (rsdata)
+				if rsdata.resCode == GS_SUCCESS then
+					local function endFunc()
+						self._param.parent:onClickBack()
+						self:dismiss()
+						self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+					end
+
+					local pointConfig = point:getConfig()
+					local storyLink = pointConfig.StoryLink
+					local storynames = storyLink and storyLink.enter
+					local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+					local storyAgent = storyDirector:getStoryAgent()
+
+					storyAgent:setSkipCheckSave(false)
+					storyAgent:trigger(storynames, nil, endFunc)
+				end
+			end, true)
+
+			return
+		end
+
+		local point = self._activity:getPointById(self._pointId)
+
+		point:recordOldStar()
+		point:recordHpRate()
+
+		self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
+		self._param.parent._parent._data.enterBattlePointId = self._pointId
+
+		self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+			doActivityType = 102,
+			type = self._param.type,
+			mapId = self._param.mapId,
+			pointId = self._pointId
+		}, function (rsdata)
+			if rsdata.resCode == GS_SUCCESS then
+				self._param.parent:onClickBack()
+				self:dismiss()
+				self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+			end
+		end, true)
+	end
+
+	self:onClickBack(nil, , callback)
+end
+
+function ActivityBlockTeamMediator:changeTeamByMode(event)
+	local teamData = event:getData()
+
+	self:initData(teamData)
+	self:initAssistView()
+	self:refreshPetNode()
+	self:refreshMasterInfo()
+	self:refreshListView()
+	self:createSortView()
+
+	self._hasForceChangeTeam = true
 end

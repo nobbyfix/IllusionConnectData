@@ -1,30 +1,26 @@
 ShopItem = class("ShopItem", objectlua.Object, _M)
 local ItemTag = {
 	Hot = {
-		bg = "common_bg_xb_2.png",
-		text = Strings:get("shop_UI20"),
-		outline = cc.c4b(139, 27, 27, 255)
+		bg = "shop_img_xin.png",
+		text = Strings:get("shop_UI20")
 	},
 	Recommend = {
-		bg = "common_bg_xb_2.png",
-		text = Strings:get("shop_UI25"),
-		outline = cc.c4b(139, 27, 27, 255)
+		bg = "shop_img_xin.png",
+		text = Strings:get("shop_UI25")
 	},
 	New = {
 		bg = "common_bg_xb_1.png",
-		text = Strings:get("shop_UI26"),
-		outline = cc.c4b(58, 86, 8, 255)
+		text = Strings:get("shop_UI26")
 	},
 	Limit = {
 		bg = "common_bg_xb_1.png",
-		text = Strings:get("shop_UI27"),
-		outline = cc.c4b(58, 86, 8, 255)
+		text = Strings:get("shop_UI27")
 	}
 }
 local kMarkImgAndStr = {
-	SoldOutMark = Strings:get("shop_UI16"),
-	RecoverMark = Strings:get("shop_UI17"),
-	OwnMark = Strings:get("shop_UI21")
+	RecoverMark = "shop_img_hfz.png",
+	OwnMark = "shop_img_yyy.png",
+	SoldOutMark = "sd_lb_sq.png"
 }
 local kSurfaceQualityBg = {
 	{
@@ -62,6 +58,7 @@ end
 function ShopItem:setView(view, ui)
 	self._rootView = view
 	self._view = self._rootView:getChildByFullName("cell")
+	self._imageMark = self._rootView:getChildByFullName("ImageMark")
 	self._mediator = ui
 	self._iconLayout = self._view:getChildByFullName("icon_layout")
 	self._goods_num = self._view:getChildByFullName("goods_num")
@@ -92,6 +89,10 @@ end
 
 function ShopItem:setTouchHandler(callback)
 	self._touchPanel:addClickEventListener(function ()
+		if self._iconLayout.isReturn then
+			return
+		end
+
 		callback()
 	end)
 end
@@ -121,7 +122,7 @@ function ShopItem:setInfo(data)
 		id = self._data:getCostType()
 	})
 
-	goldIcon:addTo(self._moneyIcon):center(self._moneyIcon:getContentSize()):offset(16, 0)
+	goldIcon:addTo(self._moneyIcon):center(self._moneyIcon:getContentSize()):offset(0, 0)
 
 	local name = self._data:getName()
 
@@ -151,7 +152,13 @@ function ShopItem:setInfo(data)
 		local totalPrice = self._data:getPrice()
 
 		if costOff * 10 ~= 0 then
-			totalPrice = math.ceil(totalPrice / costOff)
+			local originalPrice = self._data:getOriginalPrice()
+
+			if originalPrice then
+				totalPrice = originalPrice
+			else
+				totalPrice = math.ceil(totalPrice / costOff)
+			end
 		end
 
 		self._totalMoney:setString(totalPrice)
@@ -166,7 +173,7 @@ function ShopItem:setInfo(data)
 	local width = self._totalMoney:getContentSize().width
 
 	if self._totalMoney:isVisible() then
-		self._lineImage:setContentSize(cc.size(width + 16, 16))
+		self._lineImage:setContentSize(cc.size(width + 16, 1))
 	end
 
 	self._touchPanel:setTouchEnabled(true)
@@ -230,11 +237,9 @@ end
 
 function ShopItem:refreshSurfaceIcon()
 	local config = self._data:getItemConfig()
-	local heroImg = IconFactory:createRoleIconSprite({
-		stencil = 1,
-		iconType = "Bust1",
-		id = config.Model,
-		size = cc.size(246, 206)
+	local heroImg = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe13_2",
+		id = config.Model
 	})
 
 	heroImg:addTo(self._iconLayout):center(self._iconLayout:getContentSize())
@@ -279,6 +284,7 @@ function ShopItem:refreshIcon()
 		self._iconLayout:addChild(icon)
 		icon:setAnchorPoint(cc.p(0.5, 0.5))
 		icon:setPosition(cc.p(self._iconLayout:getContentSize().width / 2, self._iconLayout:getContentSize().height / 2))
+		icon:setScale(0.8)
 		self._goods_num:setString(rewardInfo.amount)
 		GameStyle:setRarityText(self._nameText, info.rarity)
 	else
@@ -295,11 +301,14 @@ function ShopItem:refreshIcon()
 		self._iconLayout:addChild(icon)
 		icon:setAnchorPoint(cc.p(0.5, 0.5))
 		icon:setPosition(cc.p(self._iconLayout:getContentSize().width / 2, self._iconLayout:getContentSize().height / 2))
+		icon:setScale(0.8)
 		self._goods_num:setString(number)
 		GameStyle:setQualityText(self._nameText, self._data:getQuality(), true)
 	end
 
-	self._iconLayout:setScale(0.8)
+	IconFactory:bindTouchHander(self._iconLayout, IconTouchHandler:new(self._mediator), rewardInfo, {
+		needDelay = true
+	})
 end
 
 function ShopItem:refreshTimes()
@@ -331,7 +340,11 @@ function ShopItem:refreshTimes()
 		self._duihuanText:setString(str)
 		self._times:setString("")
 		self._times1:setString("")
-	elseif times1 == 0 then
+	end
+
+	self:hideMarkImg()
+
+	if times1 == 0 then
 		if self._shopId ~= ShopSpecialId.kShopSurface then
 			self:setMarkImg(kMarkImgAndStr.SoldOutMark)
 		else
@@ -354,6 +367,9 @@ function ShopItem:refreshTimePanel()
 	local lastTime = updateTime - gameServerAgent:remoteTimestamp()
 	local times1 = self._data:getStock()
 	local times2 = self._data:getStorage()
+
+	self:hideMarkImg()
+
 	local hasTime = lastTime > 0 and times1 < times2
 
 	if hasTime then
@@ -412,6 +428,8 @@ function ShopItem:refreshPackageTime()
 		return
 	end
 
+	self:hideMarkImg()
+
 	if curTime < start or end_ < curTime or times1 <= 0 then
 		if self._shopId ~= ShopSpecialId.kShopSurface then
 			self:setMarkImg(kMarkImgAndStr.SoldOutMark)
@@ -440,32 +458,13 @@ function ShopItem:refreshPackageTime()
 	self._duihuanText:setPositionX(self._times1:getPositionX() - self._times1:getContentSize().width - 2)
 end
 
+function ShopItem:hideMarkImg()
+	self._imageMark:setVisible(false)
+end
+
 function ShopItem:setMarkImg(type)
-	local image = self._view:getChildByFullName("ImageMark")
-
-	if not type then
-		if image then
-			image:removeFromParent()
-		end
-
-		return
-	end
-
-	if not image then
-		image = cc.Node:create()
-
-		image:addTo(self._view)
-		image:setName("ImageMark")
-
-		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 22)
-
-		label:addTo(image):offset(100, 120)
-		label:setName("TipMark")
-		label:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 2)
-	end
-
-	image:setPosition(cc.p(0, 0))
-	image:getChildByFullName("TipMark"):setString(type)
+	self._imageMark:setVisible(true)
+	self._imageMark:getChildByName("ImageMark"):loadTexture(type, ccui.TextureResType.plistType)
 end
 
 function ShopItem:setRecommendImg(tagData)
@@ -485,19 +484,18 @@ function ShopItem:setRecommendImg(tagData)
 		image:addTo(self._view)
 		image:setName("RecommendMark")
 
-		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 18)
+		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 20)
 
 		label:addTo(image)
-		label:setPosition(cc.p(22, 24))
+		label:setPosition(cc.p(18, 20))
 		label:setName("TipMark")
 	end
 
-	local position = self._shopId == ShopSpecialId.kShopSurface and cc.p(248, 120) or cc.p(123, 128)
+	local position = self._shopId == ShopSpecialId.kShopSurface and cc.p(248, 120) or cc.p(155, 175)
 
 	image:setPosition(position)
 
 	local str = tagData.text
-	local outline = tagData.outline
 	local bg = tagData.bg
 
 	image:loadTexture("asset/common/" .. bg)
@@ -505,7 +503,7 @@ function ShopItem:setRecommendImg(tagData)
 	local label = image:getChildByFullName("TipMark")
 
 	label:setString(str)
-	label:enableOutline(outline, 2)
+	image:setVisible(self._data:getStock() ~= 0)
 end
 
 function ShopItem:setDiscountImg(costOff)
@@ -528,22 +526,20 @@ function ShopItem:setDiscountImg(costOff)
 		local label = cc.Label:createWithTTF("", TTF_FONT_FZYH_M, 18)
 
 		label:addTo(image)
-		label:setPosition(cc.p(26, 19))
+		label:setPosition(cc.p(40, 16))
 		label:setName("TipMark")
 	end
 
-	local position = self._shopId == ShopSpecialId.kShopSurface and cc.p(26, 219) or cc.p(25, 127)
+	local position = self._shopId == ShopSpecialId.kShopSurface and cc.p(26, 219) or cc.p(187, 243)
 
 	image:setPosition(position)
 
 	local label = image:getChildByFullName("TipMark")
 
 	if costOff > 0.2 then
-		image:loadTexture("asset/common/common_bg_xb_4.png")
-		label:enableOutline(cc.c4b(139, 27, 27, 255), 2)
+		image:loadTexture("asset/common/sd_lb_fl1.png")
 	else
-		image:loadTexture("asset/common/common_bg_xb_3.png")
-		label:enableOutline(cc.c4b(58, 86, 8, 255), 2)
+		image:loadTexture("asset/common/sd_lb_fl1.png")
 	end
 
 	label:setString(costOff * 10 .. Strings:get("SHOP_COST_OFF_TEXT10"))

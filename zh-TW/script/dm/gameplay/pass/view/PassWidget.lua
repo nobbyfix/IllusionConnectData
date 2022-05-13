@@ -54,7 +54,7 @@ function PassSpineTalkVoice:createRoleIconSprite(view, viewType)
 				end
 			end
 		else
-			local heroSprite = IconFactory:createRoleIconSprite({
+			local heroSprite = IconFactory:createRoleIconSpriteNew({
 				useAnim = true,
 				iconType = 2,
 				id = roleModel

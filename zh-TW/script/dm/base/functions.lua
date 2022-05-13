@@ -355,13 +355,13 @@ function replaceTextFieldToEditLayer(textWidget, ignoreForbiddenWord, maskType)
 			end
 		end
 
-		local backImg = ccui.Scale9Sprite:create("asset/common/common_bg_shurukuang.png")
+		local backImg = ccui.Scale9Sprite:create("asset/common/common_bg_shurukuang2.png")
 
 		backImg:addTo(editLayer):move(visibleSize.width / 2, visibleSize.height * 0.9)
 		backImg:setContentSize(cc.rect(0, 0, visibleSize.width * 0.81, 80))
 
 		local editBox = pNewLayer._editBox
-		local editName = ccui.EditBox:create(cc.size(visibleSize.width * 0.8, 60), "asset/common/common_bg_srk.png")
+		local editName = ccui.EditBox:create(cc.size(visibleSize.width * 0.8, 60), "asset/common/common_bg_srk2.png")
 
 		editName:setInputMode(pNewLayer._inputMode)
 		editName:setReturnType(pNewLayer._returnType)
@@ -369,9 +369,9 @@ function replaceTextFieldToEditLayer(textWidget, ignoreForbiddenWord, maskType)
 		editName:registerScriptEditBoxHandler(editBoxTextEventHandle)
 		editName:setText(editBox:getText())
 		editName:touchDownAction(editName, ccui.TouchEventType.ended)
-		editName:setFontSize(28)
+		editName:setFontSize(40)
 		editName:setFontName(pNewLayer._fontName)
-		editName:setFontColor(pNewLayer._fontColor)
+		editName:setFontColor(cc.c3b(0, 0, 0))
 
 		return true
 	end
@@ -591,6 +591,11 @@ function convertTextFieldToEditBox(textWidget, ignoreForbiddenWord, maskType)
 	editBox:registerScriptEditBoxHandler(function (eventName, sender)
 		if eventName == "began" then
 			local contentLabel = editBox:getContentLabel()
+
+			if contentLabel:getString() ~= editBox:getText() then
+				editBox:setText(contentLabel:getString())
+				sender:setText(contentLabel:getString())
+			end
 
 			if contentLabel then
 				contentLabel:setVisible(false)

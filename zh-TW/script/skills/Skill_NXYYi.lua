@@ -241,7 +241,7 @@ all.Skill_NXYYi_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyRPDamage(_env, _env.TARGET, this.RageFactor)
+			global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, this.RageFactor)
 			global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
 
 			local defender1 = global.LoadUnit(_env, _env.TARGET, "ALL")
@@ -257,6 +257,7 @@ all.Skill_NXYYi_Unique = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {
@@ -640,7 +641,7 @@ all.Skill_NXYYi_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyRPDamage(_env, _env.TARGET, this.RageFactor)
+			global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, this.RageFactor)
 			global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
 
 			local defender1 = global.LoadUnit(_env, _env.TARGET, "ALL")
@@ -656,6 +657,7 @@ all.Skill_NXYYi_Unique_EX = {
 						"STATUS",
 						"DEBUFF",
 						"DAZE",
+						"ABNORMAL",
 						"DISPELLABLE"
 					}
 				}, {

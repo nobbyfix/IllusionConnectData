@@ -136,7 +136,7 @@ end
 function ShopReset:getBuyIcon()
 	local path = self._config.WindowIcon
 
-	if path and path ~= "" then
+	if path ~= "" then
 		return "asset/ui/shop/" .. path .. ".png"
 	end
 
@@ -185,7 +185,7 @@ function ShopReset:getStartMills()
 
 	local start = self:getTimeType().start
 	local _, _, y, mon, d, h, m, s = string.find(start, "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
-	local mills = TimeUtil:getTimeByDate({
+	local mills = TimeUtil:timeByRemoteDate({
 		year = y,
 		month = mon,
 		day = d,
@@ -215,7 +215,7 @@ function ShopReset:getEndMills()
 		min = m,
 		sec = s
 	}
-	local mills = TimeUtil:getTimeByDate(table)
+	local mills = TimeUtil:timeByRemoteDate(table)
 
 	return mills
 end
@@ -229,7 +229,7 @@ function ShopReset:getEndMillsByCondition()
 		local developSystem = DmGame:getInstance()._injector:getInstance(DevelopSystem)
 		local createTime = developSystem:getPlayer():getCreateTime()
 		createTime = createTime / 1000 + (endDay - 1) * 24 * 60 * 60
-		local tb = os.date("*t", createTime)
+		local tb = TimeUtil:remoteDate("*t", createTime)
 		local shopReset_RefreshTime = ConfigReader:getDataByNameIdAndKey("Reset", "ShopReset_RefreshTime", "ResetSystem")
 		local resetTime = shopReset_RefreshTime.resetTime[1]
 		local _, _, h, m, s = string.find(resetTime, "(%d+):(%d+):(%d+)")

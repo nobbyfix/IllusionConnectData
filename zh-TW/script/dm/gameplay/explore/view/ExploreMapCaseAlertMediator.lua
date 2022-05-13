@@ -11,6 +11,10 @@ local kBtnHandlers = {
 	["main.backBtn"] = {
 		clickAudio = "Se_Click_Close_2",
 		func = "onClickClose"
+	},
+	["main.back"] = {
+		clickAudio = "Se_Click_Close_2",
+		func = "onClickClose"
 	}
 }
 local kRoleType = {
@@ -77,6 +81,7 @@ function ExploreMapCaseAlertMediator:enterWithData(data)
 	self._caseFactor = data.caseFactor
 	self._battleId = data.battleId or ""
 	self._callback = data.callback
+	self._caseType = data.caseType
 	self._btnParam = {}
 
 	self:initView()
@@ -138,6 +143,7 @@ function ExploreMapCaseAlertMediator:initView()
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_1.progress"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.name"))
 	GameStyle:setCommonOutlineEffect(self._typePanel1:getChildByFullName("clonePanel.node_2.progress"))
+	self._main:getChildByFullName("back"):setVisible(self._caseType and self._caseType == "BATTLE")
 end
 
 function ExploreMapCaseAlertMediator:updateView()
@@ -362,6 +368,14 @@ function ExploreMapCaseAlertMediator:updateView()
 
 						needItem:addTo(itemPanel):center(itemPanel:getContentSize())
 						progress:setString(self._exploreSystem:getItemCount(param.item) .. "/" .. param.num)
+						panel:getChildByName("name"):setTextAreaSize(cc.size(195, 21))
+						panel:getChildByName("name"):getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+						panel:getChildByName("name"):setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+					else
+						panel:getChildByName("name"):setPositionX(20)
+						panel:getChildByName("name"):setTextAreaSize(cc.size(220, 21))
+						panel:getChildByName("name"):getVirtualRenderer():setOverflow(cc.LabelOverflow.SHRINK)
+						panel:getChildByName("name"):setTextVerticalAlignment(cc.TEXT_ALIGNMENT_CENTER)
 					end
 				end
 			end
@@ -403,12 +417,13 @@ function ExploreMapCaseAlertMediator:createImg(parent, pic)
 
 		node:setAnchorPoint(cc.p(0.5, 0.5))
 	elseif type == 5 then
-		node = IconFactory:createRoleIconSprite({
+		node = IconFactory:createRoleIconSpriteNew({
 			iconType = 2,
 			id = resName
 		})
 
 		node:setAnchorPoint(cc.p(0.5, 0.5))
+		node:offset(0, -158)
 	end
 
 	node = node or cc.Node:create()
@@ -500,6 +515,10 @@ function ExploreMapCaseAlertMediator:onClickBattleTip()
 end
 
 function ExploreMapCaseAlertMediator:onClickClose(sender, eventType)
+	if self._callback then
+		self._callback(ExploreCloseChooseId)
+	end
+
 	self:close()
 end
 
@@ -559,4 +578,7 @@ function ExploreMapCaseAlertMediator:onClickPanel(param)
 	end
 
 	self:close()
+end
+
+function ExploreMapCaseAlertMediator:onTouchMaskLayer()
 end

@@ -578,6 +578,32 @@ function GameUpdater:installPackages()
 				self._delegate:onInstallPackage(event, details)
 			end
 		elseif event == "completed" then
+			self._updateExtCache = self._updateExtCache or {}
+			local cjson = require("cjson.safe")
+			local updateCfgPath = writablePath .. "updateExt"
+			local updateExtDistPath = writablePath .. "updateExtDist"
+
+			if fileUtils:isFileExist(updateCfgPath) then
+				if not fileUtils:isFileExist(updateExtDistPath) then
+					app.copyFile(updateCfgPath, updateExtDistPath)
+				else
+					local distData = cjson.decode(fileUtils:getStringFromFile(updateExtDistPath))
+					local srcData = cjson.decode(fileUtils:getStringFromFile(updateCfgPath))
+
+					for _, item in ipairs(srcData.data) do
+						if self._updateExtCache[item[1]] then
+							local index = self._updateExtCache[item[1]]
+							self._updateExtCache[index] = item
+						else
+							distData.data[#distData.data + 1] = item
+							self._updateExtCache[item[1]] = #distData.data
+						end
+					end
+
+					io.writefile(updateExtDistPath, cjson.encode(distData), "w+")
+				end
+			end
+
 			local socket = require("socket")
 			local t = math.floor(socket.gettime() * 1000)
 			local content = {
@@ -596,6 +622,7 @@ function GameUpdater:installPackages()
 			end
 
 			dump(jsonData.version, "switchVersion:")
+			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if fileUtils then
 				fileUtils:removeDirectory(writablePath .. PATCH_FOLDER)
@@ -626,7 +653,7 @@ function GameUpdater:installPackages()
 				for i = 1, 3 do
 					fileUtils:removeFile(tempUpdateDBPath)
 
-					if not safeCopyDb(destDBFilePath, tempUpdateDBPath) then
+					if not copyDB(destDBFilePath, tempUpdateDBPath) then
 						return
 					end
 
@@ -649,13 +676,6 @@ function GameUpdater:installPackages()
 						callBack = callBack
 					})
 
-					local content = {
-						point = "dataset_db_tmp_error",
-						type = "otherflow"
-					}
-
-					StatisticSystem:send(content)
-
 					return
 				end
 
@@ -665,8 +685,6 @@ function GameUpdater:installPackages()
 				fileUtils:purgeCachedEntries()
 				print("*********merge db over*********")
 			end
-
-			self._assetsManager:switchAssetsVersion(tonumber(jsonData.version))
 
 			if self._delegate and self._delegate.onInstallPackage then
 				self._delegate:onInstallPackage(event, details)

@@ -197,10 +197,6 @@ function HeroStrengthLevelMediator:setupClickEnvs()
 
 			if upBtn then
 				storyDirector:setClickEnv("HeroStrengthLevelMediator.upBtn", upBtn, function (sender, eventType)
-					if SDKHelper and SDKHelper:isEnableSdk() then
-						SDKHelper:adjustEventTracking(AdjustEventList.ADJUST_PARTENER_LEVEL_UP_EVENT)
-					end
-
 					self._eatItemView:onClickLevelUp()
 					storyDirector:notifyWaiting("click_HeroUpLevel_upBtn")
 				end)

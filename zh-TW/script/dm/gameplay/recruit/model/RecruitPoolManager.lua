@@ -2,11 +2,12 @@ RecruitPoolType = {
 	kGold = "GOLD",
 	kEquip = "EQUIP",
 	kActivity = "ACTIVITYDRAW",
-	kDiamond = "DIAMOND",
 	kPve = "PVE",
-	kClub = "CLUB",
 	kPvp = "PVP",
-	kActivityEquip = "ACTIVITYDRAWEQUIP"
+	kActivityEquip = "ACTIVITYDRAWEQUIP",
+	kDiamond = "DIAMOND",
+	kActivityUREquip = "ACTIVITYDRAWUR",
+	kClub = "CLUB"
 }
 RecruitPoolId = {
 	kHeroGold = "DrawCard_Gold_1",
@@ -84,6 +85,10 @@ function RecruitPoolManager:sync(data)
 			for jj, vv in pairs(v) do
 				self._drawTimeMap[i][jj] = vv
 			end
+
+			if self._recruitPools[i] then
+				self._recruitPools[i]:syncRebateCount(v["1"])
+			end
 		end
 	end
 
@@ -92,6 +97,22 @@ function RecruitPoolManager:sync(data)
 
 		for index, times in pairs(data.pointRewarded) do
 			boxStateData[times] = true
+		end
+	end
+
+	if data.rebateInfoMap then
+		for id, info in pairs(data.rebateInfoMap) do
+			if self._recruitPools[id] then
+				self._recruitPools[id]:syncRebateInfo(info)
+			end
+		end
+	end
+
+	if data.rebateRoundInfoMap then
+		for id, counts in pairs(data.rebateRoundInfoMap) do
+			if self._recruitPools[id] then
+				self._recruitPools[id]:syncRebateRound(counts)
+			end
 		end
 	end
 end

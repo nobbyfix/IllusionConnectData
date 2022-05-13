@@ -55,6 +55,7 @@ local heroShowSortList = {
 }
 local SortExtend = {
 	{
+		"SP",
 		"SSR",
 		"SR",
 		"R"
@@ -65,7 +66,8 @@ local SortExtend = {
 		GalleryPartyType.kBSNCT,
 		GalleryPartyType.kDWH,
 		GalleryPartyType.kMNJH,
-		GalleryPartyType.kSSZS
+		GalleryPartyType.kSSZS,
+		GalleryPartyType.kUNKNOWN
 	}
 }
 
@@ -88,21 +90,119 @@ function BuildingSystem:initialize()
 	self._cardHeroEffectValue = 0
 	self._costHeroEffectValue = 0
 	self._sortExtand = {}
+	self._rid = nil
+	self._selfData = nil
+	self._otherData = nil
+end
+
+function BuildingSystem:clearVars()
+	self._roomList = {}
+	self._usedWorkers = 0
+	self._buildingCollect = {}
+	self._baseLevel = 0
+	self._usedWorkers = 0
+	self._workers = {}
+	self._secondStore = 0
+end
+
+function BuildingSystem:extendTable(t1, t2)
+	for k, v in pairs(t1) do
+		t2[k] = v
+	end
+end
+
+function BuildingSystem:combin(update, org)
+	for k, v in pairs(update.buildingCollect or {}) do
+		org.buildingCollect[k] = v
+	end
+
+	for k, v in pairs(update.unlockedRooms or {}) do
+		if org.unlockedRooms[k] then
+			for k1, v1 in pairs(v.buildings or {}) do
+				if org.unlockedRooms[k].buildings[k1] then
+					self:extendTable(v1, org.unlockedRooms[k].buildings[k1])
+				else
+					org.unlockedRooms[k].buildings[k1] = v1
+				end
+			end
+
+			if update.unlockedRooms[k].unlockedSurface then
+				self:extendTable(update.unlockedRooms[k].unlockedSurface, org.unlockedRooms[k].unlockedSurface)
+			end
+
+			if update.unlockedRooms[k].lastHeroLove then
+				org.unlockedRooms[k].lastHeroLove = update.unlockedRooms[k].lastHeroLove
+			end
+
+			if update.unlockedRooms[k].heroes then
+				org.unlockedRooms[k].heroes = update.unlockedRooms[k].heroes
+			end
+
+			if update.unlockedRooms[k].comfortValue then
+				org.unlockedRooms[k].comfortValue = update.unlockedRooms[k].comfortValue
+			end
+
+			if update.unlockedRooms[k].lastLoveMillis then
+				org.unlockedRooms[k].lastLoveMillis = update.unlockedRooms[k].lastLoveMillis
+			end
+
+			if update.unlockedRooms[k].lastHeroLove then
+				self:extendTable(update.unlockedRooms[k].lastHeroLove, org.unlockedRooms[k].lastHeroLove)
+			end
+		else
+			org.unlockedRooms[k] = v
+		end
+
+		if v.placedBuildings then
+			org.unlockedRooms[k].placedBuildings = v.placedBuildings
+		end
+	end
+
+	for k, v in pairs(update.workers or {}) do
+		org.workers[k] = v
+	end
+
+	if update.secondStore then
+		org.secondStore = update.secondStore
+	end
+
+	if update.baseLevel then
+		org.baseLevel = update.baseLevel
+	end
+
+	if update.usedWorkers then
+		org.usedWorkers = update.usedWorkers
+	end
 end
 
 function BuildingSystem:synchronize(data)
+	self._selfData = self._selfData or data
+
+	self:combin(data, self._selfData)
+	self:_synchronize(data)
+end
+
+function BuildingSystem:_synchronize(data, playerInfo)
 	if not data then
 		return
+	end
+
+	self._rid = self._developSystem:getRid()
+
+	if playerInfo and playerInfo.rid then
+		self._rid = playerInfo.rid
+	end
+
+	self._heroSufaces = {}
+
+	if playerInfo and playerInfo.heroSufaces then
+		self._heroSufaces = playerInfo.heroSufaces
 	end
 
 	if data.buildingCollect then
 		for k, v in pairs(data.buildingCollect) do
 			self._buildingCollect[v] = true
 		end
-	end
-
-	if data.usedWorkers then
-		-- Nothing
 	end
 
 	if data.baseLevel then
@@ -133,6 +233,14 @@ function BuildingSystem:synchronize(data)
 			self._workers[k] = v.coolDownMills
 		end
 	end
+
+	if data.secondStore then
+		self._secondStore = data.secondStore
+	end
+end
+
+function BuildingSystem:isSelfBuilding()
+	return self._rid == self._developSystem:getRid()
 end
 
 function BuildingSystem:userInject()
@@ -146,13 +254,45 @@ function BuildingSystem:dispose()
 	super.dispose(self)
 end
 
+function BuildingSystem:getHeroSufaceMap()
+	return self._heroSufaces or {}
+end
+
 function BuildingSystem:checkEnabled()
 	local unlock, tips = self._systemKeeper:isUnlock("Village_Building")
 
 	return unlock, tips
 end
 
+function BuildingSystem:checkGetExpEnable()
+	local unlock, tips = self._systemKeeper:isUnlock("Village_Building")
+
+	if unlock then
+		local config = self:getBuildingConfig("ExpOre_Normal_1")
+		local infoDes = self:getConditionDesInfo(config.Condition)
+		infoDes.fontName = TTF_FONT_FZYH_M
+		infoDes.fontSize = 18
+		infoDes.fontColor = "#FFFFFF"
+		unlock = self:isMeetCondition(config.Condition)
+		tips = Strings:get(config.UnlockDescColor, infoDes)
+
+		if unlock then
+			local lastGetResTime = self:getBuildLastGetResTime()
+
+			if lastGetResTime <= 0 then
+				tips = Strings:get("Build_ResourceBuilding_Unlock")
+				unlock = false
+			end
+		end
+	end
+
+	return unlock, tips
+end
+
 function BuildingSystem:tryEnter(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
 	local unlock, tips = self:checkEnabled()
 
 	if not unlock then
@@ -168,11 +308,21 @@ function BuildingSystem:tryEnter(data)
 	end
 end
 
+function BuildingSystem:switchSelfBuild()
+	self:clearVars()
+	self:_synchronize(self._selfData)
+end
+
 function BuildingSystem:tryEnterOverview(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
 	self:_tryEnterSubView("overview", data)
 end
 
 function BuildingSystem:tryEnterBuyDecorate(data)
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
 	local unlock, tips = self._systemKeeper:isUnlock("VillageShopDecorate")
 
 	if not unlock then
@@ -217,6 +367,36 @@ function BuildingSystem:_tryEnterSubView(type, data)
 		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
 			t = type,
 			roomId = roomId
+		})
+
+		self:dispatch(event)
+	end
+end
+
+function BuildingSystem:tryEnterGetResView()
+	self:clearVars()
+	self:_synchronize(self._selfData)
+
+	local view = self:getInjector():getInstance("BuildingOneKeyGetResView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view))
+end
+
+function BuildingSystem:tryEnterClubBuilding(data, info)
+	self:clearVars()
+	self:_synchronize(data, info)
+
+	local unlock, tips = self:checkEnabled()
+
+	if not unlock then
+		self:dispatch(ShowTipEvent({
+			duration = 0.2,
+			tip = tips
+		}))
+	else
+		local view = self:getInjector():getInstance("ClubBuildingView")
+		local event = ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+			userInfo = info
 		})
 
 		self:dispatch(event)
@@ -525,7 +705,7 @@ function BuildingSystem:getBuildingRevert(roomId, id)
 	return sta
 end
 
-function BuildingSystem:getSortRoomIdList(sortKey)
+function BuildingSystem:getSortRoomIdList(sortKey, showType)
 	local roomList = self:getRoomList()
 	local roomIdList = {}
 
@@ -544,6 +724,10 @@ function BuildingSystem:getSortRoomIdList(sortKey)
 
 			return false
 		end)
+	end
+
+	if showType == 2 then
+		roomIdList[#roomIdList + 1] = kStoreRoomName
 	end
 
 	return roomIdList
@@ -831,6 +1015,18 @@ function BuildingSystem:getBuildingRecycleList(roomId)
 
 			return false
 		end)
+
+		return list
+	elseif roomId == kStoreRoomName then
+		local list = {}
+
+		for room, v in pairs(self._secondStore) do
+			if not self:getRoomOpenSta(room) then
+				for name, _ in pairs(v) do
+					table.insert(list, name)
+				end
+			end
+		end
 
 		return list
 	end
@@ -1340,7 +1536,11 @@ function BuildingSystem:clearAllHeroPutInfo()
 end
 
 function BuildingSystem:clearAllAddLove()
-	for k, v in pairs(self._roomList) do
+	for k, v in pairs(self._selfData.unlockedRooms or {}) do
+		v.lastHeroLove = {}
+	end
+
+	for k, v in pairs(self._roomList or {}) do
 		v._lastHeroLove = {}
 	end
 end
@@ -1381,12 +1581,6 @@ function BuildingSystem:checkBuildingEffect(data, isDiff)
 
 					if self._cardEffectValue ~= resultCardNum and isDiff then
 						self._customDataSystem:setValue(PrefixType.kGlobal, "StageTeamRed", "1")
-
-						local initCardEffectNum = self._stageSystem:getPlayerInit()
-
-						if SDKHelper and SDKHelper:isEnableSdk() then
-							SDKHelper:adjustEventTracking(AdjustOpenTeamPosEventList[resultCardNum + initCardEffectNum])
-						end
 					end
 				end
 			end
@@ -1439,7 +1633,6 @@ end
 function BuildingSystem:resetCostAndCardBuff()
 	local result = 0
 	local heroResult = 0
-	local oldcardEffectNum = self._cardEffectValue
 
 	for k, v in pairs(self._costEffectBuffList) do
 		local buffKey = string.split(k, "_")[1]
@@ -1501,7 +1694,7 @@ end
 local SortExtendFunc = {
 	{
 		func = function (sortExtendType, hero)
-			return hero:getRarity() == 15 - sortExtendType
+			return hero:getRarity() == 16 - sortExtendType
 		end
 	},
 	{
@@ -1831,6 +2024,10 @@ function BuildingSystem:getBuildQueueCostByTime(sec)
 end
 
 function BuildingSystem:getBuildPutHeroAddBuffLv(roomId, heroList)
+	if not self:isSelfBuilding() then
+		return 0
+	end
+
 	local room = self:getRoom(roomId)
 
 	if room then
@@ -2340,6 +2537,10 @@ function BuildingSystem:sendBuyNPlaceSystemBuilding(params, blockUI, callfun)
 end
 
 function BuildingSystem:sendGetHeroLove(blockUI, callfun)
+	if not self:isSelfBuilding() then
+		return
+	end
+
 	local roomList = {}
 	local sendSta = false
 
@@ -2416,6 +2617,10 @@ function BuildingSystem:getHeroLoveSendSta()
 end
 
 function BuildingSystem:sendOneKeyCollectRes(place, isHomeView, callBack, items)
+	if not isHomeView and not self:isSelfBuilding() then
+		return
+	end
+
 	local rewardIdList = {
 		IR_Gold = self._developSystem:getBagSystem():getItemCount("IR_Gold") or 0,
 		IR_Crystal = self._developSystem:getBagSystem():getItemCount("IR_Crystal") or 0

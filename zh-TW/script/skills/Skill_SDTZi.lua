@@ -68,13 +68,12 @@ all.Skill_SDTZi_Normal = {
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			local DeRageFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-
-			global.ApplyRPDamage(_env, _env.TARGET, DeRageFactor)
+			local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
 			if global.MASTER(_env, _env.TARGET) then
-				local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
-
-				global.ApplyRPDamage(_env, _env.TARGET, MasterDeRageFactor)
+				global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, DeRageFactor + MasterDeRageFactor)
+			else
+				global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, DeRageFactor)
 			end
 		end)
 
@@ -154,13 +153,12 @@ all.Skill_SDTZi_Proud = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 				local DeRageFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-
-				global.ApplyRPDamage(_env, unit, DeRageFactor)
+				local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
 				if global.MASTER(_env, unit) then
-					local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
-
-					global.ApplyRPDamage(_env, unit, MasterDeRageFactor)
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor + MasterDeRageFactor)
+				else
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor)
 				end
 			end
 		end)
@@ -258,13 +256,12 @@ all.Skill_SDTZi_Unique = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 				local DeRageFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-
-				global.ApplyRPDamage(_env, unit, DeRageFactor)
+				local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
 				if global.MASTER(_env, unit) then
-					local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
-
-					global.ApplyRPDamage(_env, unit, MasterDeRageFactor)
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor + MasterDeRageFactor)
+				else
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor)
 				end
 			end
 		end)
@@ -434,13 +431,12 @@ all.Skill_SDTZi_Proud_EX = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 				local DeRageFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-
-				global.ApplyRPDamage(_env, unit, DeRageFactor)
+				local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
 				if global.MASTER(_env, unit) then
-					local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
-
-					global.ApplyRPDamage(_env, unit, MasterDeRageFactor)
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor + MasterDeRageFactor)
+				else
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor)
 				end
 			end
 		end)
@@ -538,13 +534,12 @@ all.Skill_SDTZi_Unique_EX = {
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 				local DeRageFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, _env.ACTOR)
-
-				global.ApplyRPDamage(_env, unit, DeRageFactor)
+				local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
 
 				if global.MASTER(_env, unit) then
-					local MasterDeRageFactor = global.SpecialPropGetter(_env, "specialnum2")(_env, _env.ACTOR)
-
-					global.ApplyRPDamage(_env, unit, MasterDeRageFactor)
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor + MasterDeRageFactor)
+				else
+					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, DeRageFactor)
 				end
 			end
 		end)

@@ -27,6 +27,8 @@ function ActivityTaskAchievementMediator:onRegister()
 	self._cellPanel:setVisible(false)
 	self._cloneNode:getChildByFullName("btn_get"):setSwallowTouches(false)
 	self._cloneNode:getChildByFullName("btn_go"):setSwallowTouches(false)
+	self._cellPanel:getChildByFullName("cell.process.loadingBar"):setScale9Enabled(true)
+	self._cellPanel:getChildByFullName("cell.process.loadingBar"):setCapInsets(cc.rect(1, 1, 1, 1))
 	self:adjustView()
 end
 
@@ -166,11 +168,20 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		panel = panel:getChildByFullName("cell")
 		local taskStatus = taskData:getStatus()
 		local subActivityId = taskData:getActivityId()
-		local config = taskData:getConfig()
-		local taskId = config.Id
+		local taskId = taskData:getId()
 		local iconNode = panel:getChildByName("icon")
 		local descText = panel:getChildByName("desc")
 		local processNode = panel:getChildByName("process")
+
+		processNode:setVisible(false)
+		descText:setPositionY(55)
+		processNode:setPositionY(20)
+
+		local getVirtualRenderer = descText:getVirtualRenderer()
+
+		getVirtualRenderer:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
+		getVirtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+		getVirtualRenderer:setDimensions(430, 30)
 
 		if self._itemId then
 			local icon = IconFactory:createItemPic({
@@ -185,19 +196,20 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 
 		descText:setString(Strings:get(taskData:getDesc()))
 
-		if self._activityId == "ActivityBlock_Halloween_AchieveMentTask" or self._activityId == "ActivityBlock_Detective_AchieveMentTask" then
+		local taskValues = taskData._taskValueList[1]
+
+		if self._activity:getActivityConfig().ShowProgress and taskValues and taskValues.targetValue ~= 0 then
 			processNode:setVisible(true)
 			processNode:setTouchEnabled(false)
 
 			local bar = processNode:getChildByFullName("loadingBar")
 			local process = processNode:getChildByFullName("progress")
-			local taskValues = taskData._taskValueList[1]
 
 			if taskValues then
 				bar:setPercent(taskValues.currentValue / taskValues.targetValue * 100)
 				process:setString(taskValues.currentValue .. "/" .. taskValues.targetValue)
-				processNode:setPositionX(descText:getPositionX() - 5)
-				descText:setPositionY(70)
+				processNode:setPositionX(descText:getPositionX())
+				descText:setPositionY(60)
 			end
 		end
 
@@ -206,16 +218,18 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		if taskStatus == TaskStatus.kGet then
 			local mark = self._cloneNode:getChildByFullName("doneanim"):clone()
 
-			mark:addTo(panel)
+			mark:addTo(panel):posite(810, 45)
 			mark:setName("TodoMark")
+			mark:setVisible(true)
 		elseif taskStatus == TaskStatus.kFinishNotGet then
 			local btnGet = self._cloneNode:getChildByFullName("btn_get"):clone()
 
-			btnGet:addTo(panel)
+			btnGet:addTo(panel):posite(810, 45)
 			btnGet:setName("TodoMark")
+			btnGet:setVisible(true)
 
 			local function callFunc()
-				self:onClickGetReward(subActivityId, taskId)
+				self:onClickGetReward(subActivityId, taskData)
 			end
 
 			mapButtonHandlerClick(nil, btnGet, {
@@ -225,14 +239,17 @@ function ActivityTaskAchievementMediator:createCell(cell, index)
 		elseif taskStatus == TaskStatus.kUnfinish then
 			local btnGo = self._cloneNode:getChildByFullName("btn_go"):clone()
 
-			btnGo:addTo(panel)
+			btnGo:addTo(panel):posite(810, 45)
 			btnGo:setName("TodoMark")
+			btnGo:setVisible(true)
 		end
 
 		local rewards = taskData:getReward().Content
 		local rewardBg = panel:getChildByName("rewardicon")
 
+		rewardBg:setPositionX(560)
 		rewardBg:removeAllChildren()
+		rewardBg:setPositionX(500)
 
 		if rewards then
 			for i = 1, #rewards do
@@ -274,20 +291,25 @@ function ActivityTaskAchievementMediator:setBg(panel, titleImage)
 end
 
 function ActivityTaskAchievementMediator:refreshTime(timeStr)
-	local time = self._activity:getTimeStr()
+	local time = self._activity:getTimeStr1()
 
 	timeStr:setString(Strings:get("ActivityBlock_UI_17", {
 		time = time
 	}))
 end
 
-function ActivityTaskAchievementMediator:onClickGetReward(subActivityId, taskId)
+function ActivityTaskAchievementMediator:onClickGetReward(subActivityId, taskData)
 	AudioEngine:getInstance():playEffect("Se_Click_Get", false)
 
-	local param = {
-		doActivityType = "101",
-		taskId = taskId
-	}
+	local param = {}
+
+	if taskData:getType() == "ActivityNumTask" then
+		param.doActivityType = "102"
+		param.num = taskData:getId()
+	else
+		param.doActivityType = "101"
+		param.taskId = taskData:getId()
+	end
 
 	self._activitySystem:requestDoChildActivity(self._activityModel:getId(), subActivityId, param, function (response)
 		if checkDependInstance(self) then
@@ -334,7 +356,7 @@ function ActivityTaskAchievementMediator:runListAnim()
 
 	local allCells = self._tableView:getContainer():getChildren()
 
-	for i = 1, 5 do
+	for i = 1, 7 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(123) then
@@ -352,7 +374,7 @@ function ActivityTaskAchievementMediator:runListAnim()
 	local length = math.min(4, #allCells)
 	local delayTime1 = 0.06666666666666667
 
-	for i = 1, 5 do
+	for i = 1, 7 do
 		local child = allCells[i]
 
 		if child and child:getChildByTag(123) then

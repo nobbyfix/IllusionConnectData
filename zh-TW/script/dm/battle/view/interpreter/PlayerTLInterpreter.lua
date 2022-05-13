@@ -52,6 +52,17 @@ function PlayerTLInterpreter:checkMainPlayerId(id)
 	return false
 end
 
+function PlayerTLInterpreter:act_RelocatCardWindow(action, args)
+	if self._isMainPlayer then
+		local cards = args.cards
+		local remain = args.cardPoolSize
+		local nextCard = args.nextCard
+
+		self._battleUIMediator:removeCards()
+		self._battleUIMediator:updateCardArray(cards, remain, nextCard)
+	end
+end
+
 function PlayerTLInterpreter:act_NewPlayer(action, args)
 	local id = args.id
 	local side = args.side
@@ -76,12 +87,14 @@ function PlayerTLInterpreter:act_NewPlayer(action, args)
 		end
 
 		local cards = args.cards
+		local extraCards = args.extraCards
 		local remain = args.cardPoolSize
 		local nextCard = args.nextCard
 		local energy = args.energy
 
 		self._battleUIMediator:removeCards()
 		self._battleUIMediator:updateCardArray(cards, remain, nextCard)
+		self._battleUIMediator:updateExtraCardArray(extraCards, remain)
 		self._battleUIMediator:syncEnergy(energy, 0, 0)
 
 		headWidget = self._battleUIMediator:getLeftHeadWidget()
@@ -167,6 +180,20 @@ function PlayerTLInterpreter:act_SyncERecovery(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_ShowGrayEnergyEffect(action, args)
+	if self._isMainPlayer then
+		local isShow = args or false
+
+		if self._battleUIMediator.showGrayEnergyEffect then
+			self._battleUIMediator:showGrayEnergyEffect(isShow)
+		end
+	end
+end
+
+function PlayerTLInterpreter:act_RemoveSCard(action, args)
+	self._battleUIMediator:removeCards()
+end
+
 function PlayerTLInterpreter:act_FillSCard(action, args)
 	local cards = args.cards
 	local remain = args.cardPoolSize
@@ -221,6 +248,12 @@ function PlayerTLInterpreter:act_SwapCard(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_UseHeroCard(action, args)
+	if self._battleUIMediator.usedCard then
+		self._battleUIMediator:usedCard(args.cardId)
+	end
+end
+
 function PlayerTLInterpreter:act_RecruitCard(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx
@@ -244,6 +277,17 @@ function PlayerTLInterpreter:act_BackToCard(action, args)
 		local card = args.card
 
 		self._battleUIMediator:replacePreview(card)
+		self._battleUIMediator:getLeftHeadWidget():addCard(args.type)
+	else
+		self._battleUIMediator:getRightHeadWidget():addCard(args.type)
+	end
+end
+
+function PlayerTLInterpreter:act_BackToExtraCard(action, args)
+	if self._isMainPlayer then
+		local card = args.card
+
+		self._battleUIMediator:replaceExtraPreview(card, args.idx)
 		self._battleUIMediator:getLeftHeadWidget():addCard(args.type)
 	else
 		self._battleUIMediator:getRightHeadWidget():addCard(args.type)
@@ -281,6 +325,17 @@ function PlayerTLInterpreter:act_StackEnchant(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_UpdateHeroCard(action, args)
+	if self._isMainPlayer then
+		local cardInfo = args.cardInfo
+		local idx = args.idx
+
+		if cardInfo and idx then
+			self._battleUIMediator:updateCardInfo(idx, cardInfo)
+		end
+	end
+end
+
 function PlayerTLInterpreter:act_RmEnchant(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx
@@ -295,12 +350,31 @@ function PlayerTLInterpreter:act_RmEnchant(action, args)
 	end
 end
 
+function PlayerTLInterpreter:act_UpdateCardWeight(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:updateCardWeight(args.cardInfos[1], args.cardInfos[2], args.cardInfos[3])
+	end
+end
+
+function PlayerTLInterpreter:act_CurrentBattleSt(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:updateCurrentBattleSt(args.status)
+	end
+end
+
+function PlayerTLInterpreter:act_MaxCardWeight(action, args)
+	if self._isMainPlayer then
+		self._battleUIMediator:maxCardWeight(args.cardInfos)
+	end
+end
+
 function PlayerTLInterpreter:act_TriggerBuff(action, args)
 	if self._isMainPlayer then
 		local idx = args.idx
+		local anim = args.anim
 
 		if idx and self._battleUIMediator.adjustCardBuff then
-			self._battleUIMediator:adjustCardBuff(idx)
+			self._battleUIMediator:adjustCardBuff(idx, anim)
 		end
 	end
 end

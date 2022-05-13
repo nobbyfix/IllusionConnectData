@@ -31,6 +31,7 @@ function ChatOperatorWidget:initialize(view)
 	self._inputMode = InputMode.kText
 	self._isIMEOpen = false
 	self._enableText = ""
+	self._chatCDTime = 0
 end
 
 function ChatOperatorWidget:dispose()
@@ -83,11 +84,13 @@ function ChatOperatorWidget:enterWithData(data)
 
 	self._bg = view:getChildByFullName("main_panel.input_bg")
 	self._inputBg = view:getChildByFullName("main_panel.input_bg")
+	self._btnSendName = view:getChildByFullName("main_panel.btn_send.name")
 	self._editBox = view:getChildByFullName("main_panel.text_field")
 
 	if self._editBox:getDescription() == "TextField" then
 		self._editBox:setMaxLengthEnabled(true)
 		self._editBox:setMaxLength(maxLength)
+		self._editBox:setPlaceHolder(Strings:get("ChatOperator_TextFiled_Text"))
 	end
 
 	self._editBox = convertTextFieldToEditBox(self._editBox, nil, MaskWordType.CHAT)
@@ -150,6 +153,34 @@ function ChatOperatorWidget:enterWithData(data)
 		end
 	end)
 	self:changeInputMode(InputMode.kText)
+
+	local channel = self._delegate:getChannel()
+
+	if channel then
+		local systemKeeper = self:getInjector():getInstance(SystemKeeper)
+		local unlockId = unlockIdMap[channel:getId()]
+		unlockId = unlockId or "World_Chat"
+		local unlock, tips = systemKeeper:isUnlock(unlockId)
+		local btnSend = view:getChildByFullName("main_panel.btn_send.button")
+		local btnImg = unlock and "common_btn_l01.png" or "common_btn_l02.png"
+
+		btnSend:loadTextureNormal(btnImg, ccui.TextureResType.plistType)
+		btnSend:loadTexturePressed(btnImg, ccui.TextureResType.plistType)
+
+		local config = ConfigReader:getRecordById("UnlockSystem", unlockId)
+
+		if config then
+			local unLockLevel = config.Condition.LEVEL and config.Condition.LEVEL or 0
+
+			if unlock then
+				self._btnSendName:setString(Strings:get("Friend_UI10"))
+			else
+				self._btnSendName:setString(Strings:get("LEVEL_UNLOCK_TIP", {
+					LEVEL = unLockLevel
+				}))
+			end
+		end
+	end
 end
 
 function ChatOperatorWidget:changeInputMode(inputMode)
@@ -220,11 +251,23 @@ function ChatOperatorWidget:onClickSend(sender, eventType)
 			AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 
 			local coldTime = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Chat_Send_CD", "content")
-			self._chatColdTimer = LuaScheduler:getInstance():schedule(function ()
-				self._chatColdTimer:stop()
+			self._chatCDTime = coldTime
 
-				self._chatColdTimer = nil
-			end, coldTime, false)
+			self._btnSendName:setString(string.format(Strings:get("Friend_UI10_CD"), tostring(self._chatCDTime)))
+
+			self._chatColdTimer = LuaScheduler:getInstance():schedule(function ()
+				self._chatCDTime = self._chatCDTime - 1
+
+				if self._chatCDTime <= 0 then
+					self._chatColdTimer:stop()
+
+					self._chatColdTimer = nil
+
+					self._btnSendName:setString(Strings:get("Friend_UI10"))
+				else
+					self._btnSendName:setString(string.format(Strings:get("Friend_UI10_CD"), tostring(self._chatCDTime)))
+				end
+			end, 1, false)
 		end
 
 		local developSystem = self:getInjector():getInstance("DevelopSystem")

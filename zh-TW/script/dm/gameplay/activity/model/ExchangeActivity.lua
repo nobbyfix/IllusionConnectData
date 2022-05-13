@@ -1,8 +1,5 @@
 ExchangeActivity = class("ExchangeActivity", BaseActivity, _M)
 
-ExchangeActivity:has("_developSystem", {
-	is = "rw"
-}):injectWith("DevelopSystem")
 ExchangeActivity:has("_allData", {
 	is = "r"
 })
@@ -94,10 +91,11 @@ function ExchangeActivity:getSortSummerExchangeList()
 	end
 
 	local function sortFun(a, b)
-		local numA = a:getLeftExchangeCount() == 0 and 0 or 1
-		local numB = b:getLeftExchangeCount() == 0 and 0 or 1
+		if a:getLeftExchangeCount() == b:getLeftExchangeCount() then
+			return b:getOrder() < a:getOrder()
+		end
 
-		return numA > numB
+		return b:getLeftExchangeCount() < a:getLeftExchangeCount()
 	end
 
 	table.sort(list, sortFun)
@@ -122,6 +120,35 @@ function ExchangeActivity:getSortExchangeList()
 		end
 
 		return a.index < b.index
+	end)
+
+	return list
+end
+
+function ExchangeActivity:getCostSortExchangeList()
+	local list = {}
+
+	for id, data in pairs(self._exchangeMap) do
+		list[#list + 1] = data
+	end
+
+	table.sort(list, function (a, b)
+		if a.amount == 0 then
+			return false
+		end
+
+		if b.amount == 0 then
+			return true
+		end
+
+		local aCost = a.config.Cost[1].amount
+		local bCost = b.config.Cost[1].amount
+
+		if aCost == bCost then
+			return a.index < b.index
+		else
+			return bCost < aCost
+		end
 	end)
 
 	return list
@@ -154,12 +181,12 @@ function ExchangeActivity:hasRedPoint()
 	for i, value in pairs(list) do
 		local rid = developSystem:getPlayer():getRid()
 		local key = "ActivityExchange_" .. self._id .. "_" .. rid .. "_" .. value.index
+		local default = true
 
 		if value.config.isRemind == 0 then
-			-- Nothing
+			default = false
 		end
 
-		local default = true
 		local sta = cc.UserDefault:getInstance():getBoolForKey(key, default)
 
 		if sta and value.amount > 0 then

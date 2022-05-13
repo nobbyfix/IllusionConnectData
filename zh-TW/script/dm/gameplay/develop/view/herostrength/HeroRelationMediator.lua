@@ -300,7 +300,7 @@ function HeroRelationMediator:onClickClubShare(sender, eventType)
 
 	if club and club ~= "" then
 		local function callback()
-			self._heroSystem:getShareCDTime().clubShare = os.time()
+			self._heroSystem:getShareCDTime().clubShare = TimeUtil:timeByLocalDate()
 
 			self._heroSystem:shareHeroRelation(self._heroId, ChatTabType.kUnion)
 		end
@@ -308,7 +308,7 @@ function HeroRelationMediator:onClickClubShare(sender, eventType)
 		if not self._heroSystem:getShareCDTime().clubShare then
 			callback()
 		else
-			local curTime = os.time()
+			local curTime = TimeUtil:timeByLocalDate()
 
 			if curTime - self._heroSystem:getShareCDTime().clubShare < 60 then
 				self:dispatch(ShowTipEvent({
@@ -327,7 +327,7 @@ end
 
 function HeroRelationMediator:onClickWorldShare(sender, eventType)
 	local function callback()
-		self._heroSystem:getShareCDTime().worldShare = os.time()
+		self._heroSystem:getShareCDTime().worldShare = TimeUtil:timeByLocalDate()
 
 		self._heroSystem:shareHeroRelation(self._heroId, ChatTabType.kWorld)
 	end
@@ -335,7 +335,7 @@ function HeroRelationMediator:onClickWorldShare(sender, eventType)
 	if not self._heroSystem:getShareCDTime().worldShare then
 		callback()
 	else
-		local curTime = os.time()
+		local curTime = TimeUtil:timeByLocalDate()
 
 		if curTime - self._heroSystem:getShareCDTime().worldShare < 60 then
 			self:dispatch(ShowTipEvent({

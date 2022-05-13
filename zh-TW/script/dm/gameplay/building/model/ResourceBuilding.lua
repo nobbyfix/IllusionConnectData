@@ -39,6 +39,11 @@ function ResourceBuilding:synchronize(data)
 end
 
 function ResourceBuilding:getResouseNum()
+	if not self._buildingSystem:isSelfBuilding() then
+		return 0
+	end
+
+	local stageSystem = self._buildingSystem:getStageSystem()
 	local gameServerAgent = self._buildingSystem._gameServerAgent
 	local timeNow = gameServerAgent:remoteTimestamp()
 	local num = math.floor(self._storage + (timeNow - self._resSec) / 3600 * self._output)
@@ -50,7 +55,9 @@ function ResourceBuilding:getResouseNum()
 	if self._type == KBuildingType.kGoldOre then
 		local condition = ConfigReader:getDataByNameIdAndKey("ConfigValue", "GoldOreMinHit", "content")
 		local value = condition.value
-		local time = condition.time
+		local pointId = condition.change
+		local point = stageSystem:getPointById(pointId)
+		local time = point and point:isPass() and condition.time[2] or condition.time[1]
 
 		if value <= num and time < timeNow - self._resSec then
 			if num < self._limit then
@@ -62,7 +69,9 @@ function ResourceBuilding:getResouseNum()
 	elseif self._type == KBuildingType.kExpOre then
 		local condition = ConfigReader:getDataByNameIdAndKey("ConfigValue", "ExpOreMinHit", "content")
 		local value = condition.value
-		local time = condition.time
+		local pointId = condition.change
+		local point = stageSystem:getPointById(pointId)
+		local time = point and point:isPass() and condition.time[2] or condition.time[1]
 		local prototype = ItemPrototype:new(value)
 		value = prototype:getReward() and prototype:getReward()[1].amount or 1
 
@@ -76,7 +85,9 @@ function ResourceBuilding:getResouseNum()
 	elseif self._type == KBuildingType.kCrystalOre then
 		local condition = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CrystalOreMinHit", "content")
 		local value = condition.value
-		local time = condition.time
+		local pointId = condition.change
+		local point = stageSystem:getPointById(pointId)
+		local time = point and point:isPass() and condition.time[2] or condition.time[1]
 
 		if value <= num and time < timeNow - self._resSec then
 			if num < self._limit then

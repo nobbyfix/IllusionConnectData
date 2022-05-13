@@ -6,9 +6,6 @@ HeroSound:has("_id", {
 HeroSound:has("_unlock", {
 	is = "rw"
 })
-HeroSound:has("_config", {
-	is = "rw"
-})
 
 function HeroSound:initialize(id)
 	super.initialize(self)

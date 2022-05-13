@@ -90,7 +90,7 @@ function MazeHeroShopMediator:initViews()
 
 		local level = ConfigReader:getDataByNameIdAndKey("PansLabAttr", self._model._heroAttrId, "Level")
 
-		cellview:getChildByFullName("lv"):setString("Lv." .. level)
+		cellview:getChildByFullName("lv"):setString(Strings:get("Common_LV_Text") .. level)
 
 		count = count + 1
 		local rarity = cellview:getChildByFullName("rarity")
@@ -103,7 +103,7 @@ function MazeHeroShopMediator:initViews()
 		butbtn:addTouchEventListener(function (sender, eventType)
 			if eventType == ccui.TouchEventType.ended then
 				self._sucName:setString(name)
-				self._sucLv:setString("Lv." .. level)
+				self._sucLv:setString(Strings:get("Common_LV_Text") .. level)
 				self:onClickBuyHero(k, v)
 			end
 		end)

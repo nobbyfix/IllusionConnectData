@@ -22,7 +22,7 @@ local kBtnHandlers = {
 	}
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -56,6 +56,7 @@ function ExploreTeamMediator:onRegister()
 
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_CHANGE_MASTER, self, self.changeMasterId)
 	self:mapEventListener(self:getEventDispatcher(), EVT_TEAM_REFRESH_PETS, self, self.refreshView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshCombatAndCost)
 
 	local touchPanel = self:getView():getChildByFullName("main.bg.touchPanel")
 
@@ -370,7 +371,16 @@ function ExploreTeamMediator:createTeamCell(cell, index)
 	local detailBtn = node:getChildByFullName("detailBtn")
 
 	detailBtn:addClickEventListener(function ()
-		self:onClickHeroDetail(id)
+		local attrAdds = {}
+
+		if self:checkIsRecommend(id) then
+			attrAdds[#attrAdds + 1] = {}
+			attrAdds[#attrAdds].title = Strings:get("Team_Hero_Title")
+			attrAdds[#attrAdds].desc = Strings:get("EXPLORE_UI15")
+			attrAdds[#attrAdds].type = StageAttrAddType.HERO
+		end
+
+		self:onClickHeroDetail(id, attrAdds)
 	end)
 end
 
@@ -817,7 +827,7 @@ function ExploreTeamMediator:initTeamHero(node, info)
 
 	super.initTeamHero(self, node, info)
 
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -832,6 +842,13 @@ function ExploreTeamMediator:initTeamHero(node, info)
 
 	bg1:loadTexture(GameStyle:getHeroRarityBg(info.rareity)[1])
 	bg2:loadTexture(GameStyle:getHeroRarityBg(info.rareity)[2])
+
+	local recommond = node:getChildByName("recommond")
+	local text = node:getChildByFullName("recommond.text")
+	local textSize = text:getContentSize()
+
+	recommond:setContentSize(cc.size(textSize.width + 8, textSize.height + 6))
+	text:setPosition(cc.p(textSize.width / 2 + 4, textSize.height / 2 + 3))
 	bg1:removeAllChildren()
 	bg2:removeAllChildren()
 
@@ -839,7 +856,12 @@ function ExploreTeamMediator:initTeamHero(node, info)
 		local anim = cc.MovieClip:create(kHeroRarityBgAnim[info.rareity])
 
 		anim:addTo(bg1):center(bg1:getContentSize())
-		anim:offset(-1, -29)
+
+		if info.rareity <= 14 then
+			anim:offset(-1, -29)
+		else
+			anim:offset(-3, 0)
+		end
 
 		if info.rareity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
@@ -914,7 +936,9 @@ function ExploreTeamMediator:initTeamHero(node, info)
 			image:offset(0, -5)
 		end
 
-		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets)
+		local isActive = self._stageSystem:checkIsKeySkillActive(condition, self._teamPets, {
+			masterId = self._curMasterId
+		})
 
 		if dicengEff then
 			dicengEff:setVisible(isActive)
@@ -929,6 +953,9 @@ function ExploreTeamMediator:initTeamHero(node, info)
 end
 
 function ExploreTeamMediator:refreshCombatAndCost()
+	local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(self._curMasterId)
+	local addPercent = leadConfig and leadConfig.LeadFightHero or 0
+
 	for i = 1, #self._teamList do
 		local heroes = self._teamList[i].heroes
 		local totalCombat = 0
@@ -938,6 +965,10 @@ function ExploreTeamMediator:refreshCombatAndCost()
 			local heroInfo = self._heroSystem:getHeroById(v)
 			totalCost = totalCost + heroInfo:getCost()
 			totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+		end
+
+		if leadConfig then
+			totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
 		end
 
 		local masterData = self._masterSystem:getMasterById(self._curMasterId)
@@ -965,6 +996,15 @@ function ExploreTeamMediator:refreshCombatAndCost()
 			local color = self._costTotal <= self._costMaxNum and cc.c3b(255, 255, 255) or cc.c3b(255, 65, 51)
 
 			cost1:setTextColor(color)
+
+			local infoBtn = teamPanel:getChildByFullName("infoBtn")
+
+			infoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+			infoBtn:addTouchEventListener(function (sender, eventType)
+				local fightTip = teamPanel:getChildByFullName("fightInfo")
+
+				self:onClickInfo(eventType, fightTip)
+			end)
 		end
 	end
 end
@@ -975,6 +1015,7 @@ function ExploreTeamMediator:changeMasterId(event)
 
 	self:refreshMasterInfo()
 	self:checkMasterSkillActive()
+	self:refreshPetNode()
 end
 
 function ExploreTeamMediator:refreshMasterInfo()

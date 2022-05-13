@@ -64,9 +64,9 @@ function ActivityColorEggMediator:initView(data)
 			local modelType = data.model.Type or "Bust4"
 			local scale = data.model.Scale and tonumber(data.model.Scale) or 0.8
 			local useAnim = data.model.UseAnim ~= nil and data.model.UseAnim or true
-			local img, jsonPath = IconFactory:createRoleIconSprite({
+			local img, jsonPath = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe9",
 				id = modelId,
-				iconType = modelType,
 				useAnim = useAnim
 			})
 

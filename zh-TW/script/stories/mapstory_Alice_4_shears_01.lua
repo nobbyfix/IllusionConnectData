@@ -57,10 +57,10 @@ function scene_mapstory_Alice_4_shears_01.actions.start_mapstory_Alice_4_shears_
 					modelId = "Model_Story_CLMan",
 					id = "CLMan_speak",
 					rotationX = 0,
-					scale = 0.9,
+					scale = 0.63,
 					position = {
 						x = 0,
-						y = -295,
+						y = -300,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -84,8 +84,8 @@ function scene_mapstory_Alice_4_shears_01.actions.start_mapstory_Alice_4_shears_
 								y = 0.5
 							},
 							position = {
-								x = 60.5,
-								y = 787
+								x = 77.5,
+								y = 1045.5
 							}
 						}
 					}
@@ -148,10 +148,10 @@ function scene_mapstory_Alice_4_shears_01.actions.start_mapstory_Alice_4_shears_
 					modelId = "Model_XLai",
 					id = "XLai_speak",
 					rotationX = 0,
-					scale = 1,
+					scale = 0.76,
 					position = {
 						x = 0,
-						y = -305,
+						y = -300,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -175,8 +175,8 @@ function scene_mapstory_Alice_4_shears_01.actions.start_mapstory_Alice_4_shears_
 								y = 0.5
 							},
 							position = {
-								x = 0,
-								y = 709.5
+								x = 0.5,
+								y = 899
 							}
 						}
 					}

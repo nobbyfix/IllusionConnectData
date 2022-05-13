@@ -1,4 +1,137 @@
 {
+    "Announce_Arena1": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank1"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena2": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank2"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena3": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank3"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena4": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank4"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena5": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank5"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena6": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank6"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
+    "Announce_Arena7": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            "Arena_Rank7"
+        ],
+        "ExpireTime": "",
+        "Label": 8,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "ARENA_RANK",
+        "Words": [
+            "Announce_Arena"
+        ]
+    },
     "Announce_Arena_1": {
         "Channel": [
             "BASE-SYSTEM",
@@ -34,6 +167,216 @@
         "Type": "ARENA_PLAYER",
         "Words": [
             "Announce_Arena_2A"
+        ]
+    },
+    "Announce_CardPointStar1": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_1"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar10": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_10"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar2": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_2"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_3"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar4": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_4"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar5": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_5"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar6": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_6"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar7": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_7"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar8": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_8"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
+        ]
+    },
+    "Announce_CardPointStar9": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "Combat_9"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_CardPointStar"
         ]
     },
     "Announce_Chapter_HardPass": {
@@ -72,6 +415,216 @@
         "Type": "STAGE_FINISH",
         "Words": [
             "Announce_Chapter_NormalPassA"
+        ]
+    },
+    "Announce_ClubPointStar1": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_1"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar10": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_10"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar2": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_2"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_3"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar4": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_4"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar5": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_5"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar6": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_6"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar7": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_7"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar8": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_8"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
+        ]
+    },
+    "Announce_ClubPointStar9": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "ClubCombat_9"
+        ],
+        "ExpireTime": 600,
+        "Label": 3,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ClubPointStar"
         ]
     },
     "Announce_Club_ChangeName": {
@@ -290,6 +843,231 @@
             "Announce_Club_SSR"
         ]
     },
+    "Announce_CooperateBoss": {
+        "Channel": [
+            "BASE-SYSTEM"
+        ],
+        "Condition": [],
+        "ExpireTime": 600,
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "COOPERATE_BOSS_INVITE",
+        "Words": [
+            "CooperateBoss_AnnounceContent"
+        ]
+    },
+    "Announce_ExplorDegree1": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_1"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree2": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_2"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_3"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree4": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_4"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree5": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_5"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree6": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_6"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree7": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_7"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree8": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_8"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_ExplorDegree9": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "MapPoint_9"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_ExplorDegree"
+        ]
+    },
+    "Announce_FeelingUpgrade": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            10
+        ],
+        "ExpireTime": "",
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "FEELING_GET",
+        "Words": [
+            "Announce_FeelingUpgrade"
+        ]
+    },
     "Announce_GM": {
         "Channel": [
             "BASE-SYSTEM",
@@ -336,7 +1114,8 @@
             11,
             12,
             13,
-            14
+            14,
+            15
         ],
         "ExpireTime": "",
         "Label": 2,
@@ -348,6 +1127,86 @@
         "Type": "HERO_FIRSTGET",
         "Words": [
             "Announce_GetHero2A"
+        ]
+    },
+    "Announce_GetHero3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            15
+        ],
+        "ExpireTime": 600,
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_RARE",
+        "Words": [
+            "Announce_GetHero3A"
+        ]
+    },
+    "Announce_GetTwoHero": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "CHAT-WORLD"
+        ],
+        "Condition": [
+            2,
+            14
+        ],
+        "ExpireTime": "",
+        "Label": 7,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_LUCKY",
+        "Words": [
+            "Announce_GetTwoHero"
+        ]
+    },
+    "Announce_GetTwoHero_SP": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "CHAT-WORLD"
+        ],
+        "Condition": [
+            2,
+            15
+        ],
+        "ExpireTime": "",
+        "Label": 7,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HERO_LUCKY",
+        "Words": [
+            "Announce_GetTwoHero_SP"
+        ]
+    },
+    "Announce_Huanjinghuilang_Clear": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [],
+        "ExpireTime": "",
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "HJHL_LEVEL",
+        "Words": [
+            "Announce_Huanjinghuilang_Clear"
         ]
     },
     "Announce_KOF_End": {
@@ -475,6 +1334,216 @@
             "Announce_Relation_AchieveA"
         ]
     },
+    "Announce_StarRating1": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_1"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating10": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_10"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating2": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_2"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating3": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_3"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating4": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_4"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating5": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_5"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating6": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_6"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating7": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_7"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating8": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_8"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
+    "Announce_StarRating9": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "FLOW-HOME"
+        ],
+        "Condition": [
+            1,
+            "PointStar_9"
+        ],
+        "ExpireTime": 600,
+        "Label": 6,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": 1,
+        "ReachType": "",
+        "Times": 1,
+        "Type": "RANKING_LIST",
+        "Words": [
+            "Announce_StarRating"
+        ]
+    },
     "Announce_StarUp1": {
         "Channel": [
             "BASE-SYSTEM",
@@ -520,13 +1589,54 @@
             "Announce_StarUp2A"
         ]
     },
+    "Announce_TwoWeaponGot": {
+        "Channel": [
+            "BASE-SYSTEM",
+            "CHAT-WORLD"
+        ],
+        "Condition": [
+            2,
+            14
+        ],
+        "ExpireTime": "",
+        "Label": 7,
+        "Link": "",
+        "NotifyGroup": 1,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "WEAPON_LUCKY",
+        "Words": [
+            "Announce_TwoWeaponGot"
+        ]
+    },
+    "Announce_Upgrade": {
+        "Channel": [
+            "BASE-SELF"
+        ],
+        "Condition": [
+            60
+        ],
+        "ExpireTime": "",
+        "Label": 1,
+        "Link": "",
+        "NotifyGroup": 4,
+        "Priority": "",
+        "ReachType": "",
+        "Times": 1,
+        "Type": "LEAD_LEVELUP",
+        "Words": [
+            "Announce_Upgrade"
+        ]
+    },
     "Announce_WeaponGot": {
         "Channel": [
             "BASE-SYSTEM",
             "FLOW-HOME"
         ],
         "Condition": [
-            14
+            14,
+            15
         ],
         "ExpireTime": 600,
         "Label": 1,

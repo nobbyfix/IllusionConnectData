@@ -10,7 +10,20 @@ PlayerInfoMediator:has("_chatSystem", {
 	is = "r"
 }):injectWith("ChatSystem")
 
-local kBtnHandlers = {}
+local kBtnHandlers = {
+	["bg.btn_chat"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickBtn"
+	},
+	["bg.btn_add"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickBtn"
+	},
+	["bg.btn_Ok"] = {
+		clickAudio = "Se_Click_Confirm",
+		func = "onClickBtn"
+	}
+}
 local constellationAge = {
 	120,
 	219,
@@ -57,36 +70,24 @@ end
 function PlayerInfoMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
-	self:bindWidget("bg.btn_Ok", OneLevelMainButton, {
-		handler = {
-			clickAudio = "Se_Click_Confirm",
-			func = bind1(self.onOkClicked, self)
-		}
-	})
-	self:bindWidget("bg.btn_chat", OneLevelMainButton, {
-		handler = {
-			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onSendMsgClicked, self)
-		}
-	})
-	self:bindWidget("bg.btn_add", OneLevelViceButton, {
-		handler = {
-			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onAddFriendClicked, self)
-		}
-	})
+
+	self._bg = self:getView():getChildByName("bg")
+	self._btnOkNode = self:getView():getChildByFullName("bg.btn_Ok")
+	self._btnChatNode = self:getView():getChildByFullName("bg.btn_chat")
+	self._btnAddNode = self:getView():getChildByFullName("bg.btn_add")
 end
 
 function PlayerInfoMediator:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._player = self._developSystem:getPlayer()
+	self._masterSystem = self._developSystem:getMasterSystem()
 end
 
 function PlayerInfoMediator:enterWithData(data)
-	self._bg = self:getView():getChildByName("bg")
 	local text = self._bg:getChildByFullName("Text_107")
 
-	text:setAdditionalKerning(35)
+	text:setAdditionalKerning(0)
+	self._bg:getChildByFullName("group_name"):setPositionX(text:getPositionX() + text:getContentSize().width + 20)
 
 	local bgNode = self._bg:getChildByFullName("tipnode")
 
@@ -98,7 +99,7 @@ function PlayerInfoMediator:enterWithData(data)
 		title = Strings:get("RANK_PLAYER_VIEW_TITLE"),
 		title1 = Strings:get("UITitle_EN_Wanjiaxinxi"),
 		bgSize = {
-			width = 761,
+			width = 840,
 			height = 580
 		}
 	})
@@ -167,7 +168,7 @@ function PlayerInfoMediator:initRoleInfo()
 
 	group:setString(clubName)
 	combat:setString(self._record:getCombat())
-	level:setString("Lv." .. self._record:getLevel())
+	level:setString(Strings:get("Common_LV_Text") .. self._record:getLevel())
 	slogan:setString(self._record:getSlogan())
 	slogan:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998, 1))
 
@@ -183,27 +184,10 @@ function PlayerInfoMediator:initRoleInfo()
 	headIcon:setScale(1.15)
 	headIcon:addTo(playerIconBg):center(playerIconBg:getContentSize())
 
-	local chatBtn = self._bg:getChildByName("btn_chat")
-	local friendBtn = self._bg:getChildByName("btn_add")
-	local btnOk = self._bg:getChildByName("btn_Ok")
-
-	chatBtn:setVisible(self._record:getRid() ~= self._player:getRid())
-	friendBtn:setVisible(self._record:getRid() ~= self._player:getRid())
-
 	local isFriend = self._friendSystem:checkIsFriend(self._record:getRid())
 
-	if friendBtn:isVisible() and isFriend then
-		friendBtn:setVisible(false)
-		chatBtn:setPositionX(btnOk:getPositionX())
-		friendImg:setVisible(true)
-	end
-
-	if self._record.nochat then
-		chatBtn:setVisible(false)
-		friendBtn:setPositionX(btnOk:getPositionX())
-	end
-
-	btnOk:setVisible(not friendBtn:isVisible() and not chatBtn:isVisible())
+	friendImg:setVisible(isFriend)
+	self:setButtonStatus()
 end
 
 function PlayerInfoMediator:initBaseInfo()
@@ -243,11 +227,16 @@ function PlayerInfoMediator:initBaseInfo()
 
 		local parts = string.split(playerBaseData.city, "-")
 		local areaInfo = ConfigReader:getRecordById("PlayerPlace", parts[1])
-		local str1 = Strings:get(areaInfo.Provinces)
-		local cityInfo = areaInfo.City[tonumber(parts[2])]
-		local str2 = Strings:get(cityInfo)
 
-		areaView:getChildByName("area"):setString(str1 .. " " .. str2)
+		if areaInfo then
+			local str1 = Strings:get(areaInfo.Provinces)
+			local cityInfo = areaInfo.City[tonumber(parts[2])]
+			local str2 = Strings:get(cityInfo)
+
+			areaView:getChildByName("area"):setString(str1 .. " " .. str2)
+		else
+			areaView:getChildByName("area"):setString("PlayerPlace city not exist")
+		end
 	else
 		areaView:setVisible(false)
 	end
@@ -271,15 +260,13 @@ end
 function PlayerInfoMediator:initTeamInfo()
 	local master = self._record:getMaster()
 
-	if master then
-		local roleModel = ConfigReader:requireDataByNameIdAndKey("MasterBase", master[1], "RoleModel")
+	if master and master[1] then
+		local roleModel = self._masterSystem:getMasterLeadStageModel(master[1], self._record:getLeadStageId() or "")
 		local info = {
-			stencil = 6,
-			iconType = "Bust5",
-			id = roleModel,
-			size = cc.size(426, 115)
+			frameId = "bustframe4_5",
+			id = roleModel
 		}
-		local masterIcon = IconFactory:createRoleIconSprite(info)
+		local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 		masterIcon:setAnchorPoint(cc.p(0, 0))
 		masterIcon:setPosition(cc.p(0, 0))
@@ -298,12 +285,15 @@ function PlayerInfoMediator:initTeamInfo()
 			local heroInfo = {
 				id = v[1],
 				quality = tonumber(v[4]),
-				rarity = tonumber(v[5])
+				rarity = tonumber(v[5]),
+				awakenLevel = tonumber(v[7]) or 0
 			}
 
 			if self._record:getRid() == self._player:getRid() then
 				local heroModel = self._heroSystem:getHeroById(v[1])
 				heroInfo.roleModel = heroModel:getModel()
+			elseif v[6] and v[6] ~= "" then
+				heroInfo.roleModel = ConfigReader:getDataByNameIdAndKey("Surface", v[6], "Model")
 			end
 
 			local petNode = IconFactory:createHeroLargeNotRemoveIcon(heroInfo, {
@@ -315,6 +305,16 @@ function PlayerInfoMediator:initTeamInfo()
 			petNode:setScale(0.35)
 			petNode:addTo(petBg):center(petBg:getContentSize())
 			petNode:setPositionY(petNode:getPositionY() - 5)
+		end
+
+		local node = self._bg:getChildByFullName("teamInfo.node_leadStage")
+
+		node:removeAllChildren()
+
+		local icon = IconFactory:createLeadStageIconHor(self._record:getLeadStageId(), self._record:getLeadStageLevel())
+
+		if icon then
+			icon:addTo(node)
 		end
 	end
 end
@@ -360,7 +360,9 @@ function PlayerInfoMediator:onSendMsgClicked()
 			online = self._record:getOnline(),
 			lastOfflineTime = self._record:getLastOfflineTime(),
 			isFriend = self._record:getIsFriend(),
-			close = self._record:getIsFriend() == 1 and self._record:getFamiliarity() or nil
+			close = self._record:getIsFriend() == 1 and self._record:getFamiliarity() or nil,
+			leadStageId = self._record:getLeadStageId(),
+			leadStageLevel = self._record:getLeadStageLevel()
 		}
 
 		self._friendSystem:addRecentFriend(data)
@@ -395,8 +397,187 @@ function PlayerInfoMediator:onAddFriendClicked()
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, record))
+	self:close()
 end
 
 function PlayerInfoMediator:onOkClicked()
 	self:close()
+end
+
+function PlayerInfoMediator:onRemoveFriendClicked()
+	local outSelf = self
+	local delegate = {}
+
+	function delegate:willClose(popupMediator, data)
+		if data.response == AlertResponse.kOK then
+			outSelf._friendSystem:requestDeleteFriend(outSelf._record:getRid(), function ()
+				outSelf:getEventDispatcher():dispatchEvent(ShowTipEvent({
+					duration = 0.35,
+					tip = Strings:get("Friend_Remove_Friend_Succ")
+				}))
+				outSelf:close()
+			end)
+		elseif data.response == AlertResponse.kCancel then
+			-- Nothing
+		end
+	end
+
+	local data = {
+		title = Strings:get("UPDATE_UI7"),
+		title1 = Strings:get("UITitle_EN_Tishi"),
+		content = Strings:get("Friend_UI33"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
+end
+
+function PlayerInfoMediator:onAddShieldClicked()
+	local outSelf = self
+	local delegate = {}
+
+	function delegate:willClose(popupMediator, data)
+		if data.response == AlertResponse.kOK then
+			outSelf:requestBlockUser(outSelf._record:getRid(), false)
+		elseif data.response == AlertResponse.kCancel then
+			-- Nothing
+		end
+	end
+
+	local data = {
+		title = Strings:get("UPDATE_UI7"),
+		title1 = Strings:get("UITitle_EN_Tishi"),
+		content = Strings:get("RANK_ADD_SHIELD_CONTENT"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
+end
+
+function PlayerInfoMediator:onRemoveShieldClicked()
+	local friendCount = self._friendSystem:getFriendModel():getFriendCount(kFriendType.kGame)
+	local maxCount = self._friendSystem:getFriendModel():getMaxFriendsCount()
+
+	if self._chatSystem:getBlockUserFriendStatus(self._record:getRid()) and maxCount <= friendCount then
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == AlertResponse.kOK then
+					outSelf:requestBlockUser(outSelf._record:getRid(), true)
+				elseif data.response == AlertResponse.kCancel then
+					-- Nothing
+				end
+			end
+		}
+		local data = {
+			title = Strings:get("UPDATE_UI7"),
+			title1 = Strings:get("UITitle_EN_Tishi"),
+			content = Strings:get("RANK_REMOVE_SHIELD_FRIENDFULL_CONTENT"),
+			sureBtn = {},
+			cancelBtn = {}
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil, data, delegate))
+
+		return
+	end
+
+	self:requestBlockUser(self._record:getRid(), true)
+end
+
+function PlayerInfoMediator:requestBlockUser(shieldId, status)
+	local function callback(data)
+		if data then
+			local tips = self._chatSystem:getBlockUserStatus(shieldId) and Strings:get("Chat_ShieldSuccess_Tips") or Strings:get("Chat_ShieldCancel_Tips")
+
+			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+				duration = 0.35,
+				tip = tips
+			}))
+			self._friendSystem:requestFriendsMainInfo()
+			self:close()
+		end
+	end
+
+	if not status or not {} then
+		local block = {
+			shieldId
+		}
+	end
+
+	local unblock = status and {
+		shieldId
+	} or {}
+
+	self._chatSystem:requestBlockUser(block, unblock, callback)
+end
+
+function PlayerInfoMediator:onClickBtn(sender)
+	local name = sender:getName()
+
+	if name == "ok" then
+		self:onOkClicked()
+	elseif name == "sendMsg" then
+		self:onSendMsgClicked()
+	elseif name == "addFriend" then
+		self:onAddFriendClicked()
+	elseif name == "removeFriend" then
+		self:onRemoveFriendClicked()
+	elseif name == "addShield" then
+		self:onAddShieldClicked()
+	elseif name == "removeShield" then
+		self:onRemoveShieldClicked()
+	end
+end
+
+function PlayerInfoMediator:setButtonStatus()
+	local chatBtn = self._bg:getChildByName("btn_chat")
+	local btnOk = self._bg:getChildByName("btn_Ok")
+	local friendBtn = self._bg:getChildByName("btn_add")
+
+	chatBtn:setVisible(true)
+	btnOk:setVisible(true)
+	friendBtn:setVisible(true)
+
+	if self._record:getRid() == self._player:getRid() then
+		chatBtn:setVisible(false)
+		btnOk:setVisible(false)
+		self:setButton(self._btnAddNode, Strings:get("Common_button1"), Strings:get("UITitle_EN_Queding"), "ok")
+		friendBtn:setPositionX(btnOk:getPositionX())
+
+		return
+	end
+
+	local isShield = self._record:getBlock()
+	local isFriend = self._friendSystem:checkIsFriend(self._record:getRid())
+
+	if isShield then
+		chatBtn:setVisible(false)
+		btnOk:setVisible(false)
+		self:setButton(self._btnAddNode, Strings:get("RANK_REMOVE_SHIELD"), Strings:get("RANK_REMOVE_SHIELD_EN"), "removeShield")
+		friendBtn:setPositionX(btnOk:getPositionX())
+
+		return
+	end
+
+	if isFriend then
+		self:setButton(self._btnChatNode, Strings:get("RANK_ADD_SHIELD"), Strings:get("RANK_ADD_SHIELD_EN"), "addShield")
+		self:setButton(self._btnOkNode, Strings:get("RANK_REMOVE_FRIEND"), Strings:get("RANK_REMOVE_FRIEND_EN"), "removeFriend")
+		self:setButton(self._btnAddNode, Strings:get("RANK_CHAT"), Strings:get("UIFRIEND_EN_Faxiaoxi"), "sendMsg")
+	else
+		self:setButton(self._btnChatNode, Strings:get("RANK_ADD_SHIELD"), Strings:get("RANK_ADD_SHIELD_EN"), "addShield")
+		self:setButton(self._btnOkNode, Strings:get("RANK_CHAT"), Strings:get("UIFRIEND_EN_Faxiaoxi"), "sendMsg")
+		self:setButton(self._btnAddNode, Strings:get("RANK_ADD_FRIEND"), Strings:get("UIFRIEND_EN_Jiahaoyou"), "addFriend")
+	end
+end
+
+function PlayerInfoMediator:setButton(view, txt, txten, name)
+	view:getChildByName("txt"):setString(txt)
+	view:getChildByName("txten"):setString("")
+	view:setName(name)
 end

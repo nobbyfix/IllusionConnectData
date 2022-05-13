@@ -51,7 +51,8 @@ function RTPKRankViewMediator:onRegister()
 	local bgNode = self:getView():getChildByFullName("main.bgNode")
 	local tempNode = bindWidget(self, bgNode, PopupNormalTabWidget, {
 		title = Strings:get("RTPK_PopUpRank_UI01"),
-		title1 = Strings:get("EN_RTPK_PopUpRank_UI01")
+		title1 = Strings:get("EN_RTPK_PopUpRank_UI01"),
+		titleSize = cc.size(240, 80)
 	})
 end
 
@@ -265,7 +266,9 @@ function RTPKRankViewMediator:addRankPanel(cell, index)
 
 		roleGradeIcon:removeAllChildren()
 
-		local icon = IconFactory:createRTPKGradeIcon(info.Id)
+		local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+			hideName = true
+		})
 
 		icon:setScale(0.25)
 		icon:addTo(roleGradeIcon):offset(25, 25)
@@ -489,7 +492,9 @@ function RTPKRankViewMediator:refreshMyselfInfo()
 
 		roleGradeIcon:removeAllChildren()
 
-		local icon = IconFactory:createRTPKGradeIcon(info.Id)
+		local icon = IconFactory:createRTPKGradeIcon(info.Id, {
+			hideName = true
+		})
 
 		icon:setScale(0.25)
 		icon:addTo(roleGradeIcon):offset(25, 35)

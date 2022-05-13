@@ -6,6 +6,15 @@ ClubBossMediator:has("_developSystem", {
 ClubBossMediator:has("_clubSystem", {
 	is = "r"
 }):injectWith("ClubSystem")
+ClubBossMediator:has("_heroSystem", {
+	is = "r"
+}):injectWith("HeroSystem")
+ClubBossMediator:has("_gameServerAgent", {
+	is = "r"
+}):injectWith("GameServerAgent")
+ClubBossMediator:has("_systemKeeper", {
+	is = "r"
+}):injectWith("SystemKeeper")
 
 local heroRarityTextArrRGB = {
 	nil,
@@ -32,6 +41,10 @@ local kBtnHandlers = {
 		ignoreClickAudio = false,
 		func = "onClickRankPanel"
 	},
+	["main.bottomAttackNode.recordPanel"] = {
+		ignoreClickAudio = false,
+		func = "onClickRecordPanel"
+	},
 	["main.rewardNode.boxNode.boxPanel"] = {
 		ignoreClickAudio = false,
 		func = "onClickBox"
@@ -48,6 +61,7 @@ end
 
 function ClubBossMediator:dispose()
 	self:stopTimer()
+	self:dispatch(Event:new(EVT_CLUBOSSREDPOINT_REFRESH))
 	super.dispose(self)
 end
 
@@ -69,13 +83,19 @@ end
 function ClubBossMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH, self, self.onDoRefrsh)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH_HURTANDHP, self, self.refreshHurtAndHp)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH_BATTLECOUNT, self, self.refreshBattleCount)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_KILLED, self, self.doBossKilledLogic)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_BACKMAINVIEW, self, self.onBackToThisView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CLUBBOSS_REFRESH_HURTREWARD, self, self.onDoRefrshHurtReward)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CLUB_FORCEDLEVEL, self, self.onForcedLevel)
 end
 
 function ClubBossMediator:enterWithData(data)
+	if data and data.viewType then
+		self._viewType = data.viewType
+	end
+
 	self._goToBack = false
 	self._doingKillAnim = false
 	self._enterDoKillAnim = false
@@ -83,6 +103,7 @@ function ClubBossMediator:enterWithData(data)
 
 	self:initData()
 	self:initNodes()
+	self:setupTopInfoWidget()
 	self:doSomeNotChangeUI()
 	self:doSomeChangeUI()
 	self:runStartAction()
@@ -92,9 +113,15 @@ function ClubBossMediator:enterWithData(data)
 		self._enterDoKillAnim = true
 	end
 
-	if self._viewType == ClubHallType.kBoss and self._clubSystem:getClubBossKilled(self._viewType) and data and data.goToBoss == true then
-		self._enterDoKillAnim = true
+	if self._viewType == ClubHallType.kBoss then
+		if self._clubSystem:getClubBossKilled(self._viewType) and data and data.goToBoss == true then
+			self._enterDoKillAnim = true
+		end
+
+		self._clubSystem:resetClubBossTabRed()
 	end
+
+	self:setupClickEnvs()
 end
 
 function ClubBossMediator:setViewType(viewType)
@@ -204,7 +231,11 @@ function ClubBossMediator:refreshHurtAndHp(event)
 		self._rewardMaxExp:setString("/" .. tostring(self._clubBossInfo:getHurtTarget()))
 		self._rewardLoadingBar:setPercent(self._clubBossInfo:getHurt() / self._clubBossInfo:getHurtTarget() * 100)
 		self._heroLoadingBar:setPercent(100 - self._clubBossInfo:getHpRate() * 100)
-		self._heroLoadingText:setString(string.format("%.1f", self._clubBossInfo:getHpRate() * 100) .. "%")
+
+		local maxHp = math.floor(self._currentBossPoints:getBossHp() + 0.5)
+		local curHp = math.floor(maxHp * self._clubBossInfo:getHpRate() + 0.5)
+
+		self._heroLoadingText:setString(tostring(curHp) .. "/" .. tostring(maxHp))
 
 		if self._clubBossInfo:getHurt() < self._clubBossInfo:getHurtTarget() then
 			self._rewardBoxImage1:setVisible(true)
@@ -275,6 +306,10 @@ function ClubBossMediator:initNodes()
 
 	self._integralButton = self._integralNode:getChildByFullName("infoButton")
 	self._bossPanel = self._mainPanel:getChildByFullName("heroNode.bossPanel")
+	self._battleAnimNode = self._bossPanel:getChildByFullName("battleAnimNode")
+
+	self._battleAnimNode:setVisible(false)
+
 	self._talkNode = self._bossPanel:getChildByFullName("talkNode")
 	self._talkText = self._talkNode:getChildByFullName("Text_talk")
 	self._heroNode = self._bossPanel:getChildByFullName("bossInfoNode.heroNode")
@@ -324,10 +359,24 @@ function ClubBossMediator:initNodes()
 
 	desPanel:setVisible(false)
 
+	local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+
+	haveHeroPanel:setVisible(false)
+
+	local battleText = self._mainPanel:getChildByFullName("bottomAttackNode.battleText")
+
+	battleText:setVisible(false)
+
 	local rankPanel = self._mainPanel:getChildByFullName("bottomAttackNode.rankPanel")
 
 	if self._viewType == ClubHallType.kActivityBoss then
 		rankPanel:setVisible(false)
+	end
+
+	local recordPanel = self._mainPanel:getChildByFullName("bottomAttackNode.recordPanel")
+
+	if self._viewType == ClubHallType.kActivityBoss then
+		recordPanel:setVisible(false)
 	end
 
 	self._rewardLoadingBar = self._mainPanel:getChildByFullName("rewardNode.barNode.loadingBar")
@@ -346,6 +395,48 @@ function ClubBossMediator:initNodes()
 	self._newsCellPanel = self._mainPanel:getChildByFullName("newsNode.newsCellPanel")
 
 	self._newsCellPanel:setVisible(false)
+
+	local guide_panel_1 = self:getView():getChildByFullName("main.guide_panel_1")
+	local guide_panel_2 = self:getView():getChildByFullName("main.guide_panel_2")
+	local guide_panel_3 = self:getView():getChildByFullName("main.guide_panel_3")
+
+	guide_panel_1:setVisible(false)
+	guide_panel_2:setVisible(false)
+	guide_panel_3:setVisible(false)
+end
+
+function ClubBossMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+
+	topInfoNode:setLocalZOrder(999)
+
+	local currencyInfoWidget = self._systemKeeper:getResourceBannerIds("Club_System")
+	local currencyInfo = {}
+
+	for i = #currencyInfoWidget, 1, -1 do
+		currencyInfo[#currencyInfoWidget - i + 1] = currencyInfoWidget[i]
+	end
+
+	local title = Strings:get("ClubNew_UI_28")
+
+	if self._viewType == ClubHallType.kActivityBoss then
+		title = Strings:get("ClubNew_UI_29")
+	end
+
+	local config = {
+		style = 1,
+		hasAnim = true,
+		currencyInfo = currencyInfo,
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		},
+		title = title
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
 end
 
 function ClubBossMediator:doSomeNotChangeUI()
@@ -372,6 +463,18 @@ function ClubBossMediator:doSomeNotChangeUI()
 		local Text_39 = self._baseNewsPanel:getChildByFullName("Text_39")
 
 		Text_39:setString(Strings:get("clubBoss_31"))
+
+		local anim = cc.MovieClip:create("zdxunhuan_shetuantaofa")
+
+		anim:addTo(self._battleAnimNode, 1)
+		anim:gotoAndPlay(1)
+
+		local battleNode = anim:getChildByName("battleNode")
+		local battleText = self._mainPanel:getChildByFullName("bottomAttackNode.battleText")
+		local battleCloneText = battleText:clone()
+
+		battleCloneText:setVisible(true)
+		battleCloneText:addTo(battleNode):posite(-5, 8)
 	end
 end
 
@@ -409,13 +512,34 @@ function ClubBossMediator:addBottomAnimation()
 
 	if oneHero ~= nil then
 		local config = ConfigReader:getRecordById("HeroBase", oneHero)
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 
 		bgImage:addChild(heroImg)
 		heroImg:setPosition(cc.p(116.5, 116.5))
 		heroImg:setScale(0.625)
+
+		local data = {
+			text1 = "clubBoss_51",
+			rightOff_x = 40,
+			downOff_y = 60,
+			type = RewardType.kRewardLink
+		}
+
+		IconFactory:bindTouchHander(heroImg, SomeWordTouchHandler:new(self), data, {
+			needDelay = true
+		})
+
+		if self._heroSystem:hasHero(oneHero) then
+			local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+			local haveHero = haveHeroPanel:clone()
+
+			haveHero:setVisible(true)
+			bgImage:addChild(haveHero)
+			haveHero:setScale(2.5)
+			haveHero:setPosition(cc.p(116.5, 205))
+		end
 	end
 
 	anim:addCallbackAtFrame(2, function ()
@@ -450,13 +574,33 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
 			bgImage:addChild(heroImg)
 			heroImg:setPosition(cc.p(116.5, 116.5))
 			heroImg:setScale(0.625)
+
+			local data = {
+				downOff_y = 60,
+				text1 = "clubBoss_51",
+				type = RewardType.kRewardLink
+			}
+
+			IconFactory:bindTouchHander(heroImg, SomeWordTouchHandler:new(self), data, {
+				needDelay = true
+			})
+
+			if self._heroSystem:hasHero(oneHero) then
+				local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+				local haveHero = haveHeroPanel:clone()
+
+				haveHero:setVisible(true)
+				bgImage:addChild(haveHero)
+				haveHero:setScale(2.5)
+				haveHero:setPosition(cc.p(116.5, 205))
+			end
 		end
 
 		local textPanel1 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel1")
@@ -493,13 +637,33 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
 			bgImage:addChild(heroImg)
 			heroImg:setPosition(cc.p(116.5, 116.5))
 			heroImg:setScale(0.625)
+
+			local data = {
+				downOff_y = 60,
+				text1 = "clubBoss_51",
+				type = RewardType.kRewardLink
+			}
+
+			IconFactory:bindTouchHander(heroImg, SomeWordTouchHandler:new(self), data, {
+				needDelay = true
+			})
+
+			if self._heroSystem:hasHero(oneHero) then
+				local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+				local haveHero = haveHeroPanel:clone()
+
+				haveHero:setVisible(true)
+				bgImage:addChild(haveHero)
+				haveHero:setScale(2.5)
+				haveHero:setPosition(cc.p(116.5, 205))
+			end
 		end
 	end)
 	anim:addCallbackAtFrame(5, function ()
@@ -524,13 +688,33 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
 			bgImage:addChild(heroImg)
 			heroImg:setPosition(cc.p(116.5, 116.5))
 			heroImg:setScale(0.625)
+
+			local data = {
+				downOff_y = 60,
+				text1 = "clubBoss_51",
+				type = RewardType.kRewardLink
+			}
+
+			IconFactory:bindTouchHander(heroImg, SomeWordTouchHandler:new(self), data, {
+				needDelay = true
+			})
+
+			if self._heroSystem:hasHero(oneHero) then
+				local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+				local haveHero = haveHeroPanel:clone()
+
+				haveHero:setVisible(true)
+				bgImage:addChild(haveHero)
+				haveHero:setScale(2.5)
+				haveHero:setPosition(cc.p(116.5, 205))
+			end
 		end
 
 		local textPanel2 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel2")
@@ -567,17 +751,37 @@ function ClubBossMediator:addBottomAnimation()
 
 		if oneHero ~= nil then
 			local config = ConfigReader:getRecordById("HeroBase", oneHero)
-			local heroImg = IconFactory:createRoleIconSprite({
+			local heroImg = IconFactory:createRoleIconSpriteNew({
 				id = config.RoleModel
 			})
 
 			bgImage:addChild(heroImg)
 			heroImg:setPosition(cc.p(116.5, 116.5))
 			heroImg:setScale(0.625)
+
+			local data = {
+				downOff_y = 60,
+				text1 = "clubBoss_51",
+				type = RewardType.kRewardLink
+			}
+
+			IconFactory:bindTouchHander(heroImg, SomeWordTouchHandler:new(self), data, {
+				needDelay = true
+			})
+
+			if self._heroSystem:hasHero(oneHero) then
+				local haveHeroPanel = self._mainPanel:getChildByFullName("bottomAttackNode.haveHeroPanel")
+				local haveHero = haveHeroPanel:clone()
+
+				haveHero:setVisible(true)
+				bgImage:addChild(haveHero)
+				haveHero:setScale(2.5)
+				haveHero:setPosition(cc.p(116.5, 205))
+			end
 		end
 	end)
 	anim:addCallbackAtFrame(9, function ()
-		local attackIPanel3 = self._mainPanel:getChildByFullName("bottomAttackNode.attackPanel3")
+		local attackIPanel3 = self._mainPanel:getChildByFullName("bottomAttackNode.attackPanel4")
 		local attackPane = attackIPanel3:clone()
 
 		attackPane:setVisible(true)
@@ -586,9 +790,20 @@ function ClubBossMediator:addBottomAnimation()
 
 		attackPane:addTo(heroNode6)
 		attackPane:setPosition(cc.p(0, 0))
+
+		local data = {
+			downOff_y = 0,
+			text1 = "clubBoss_52",
+			type = RewardType.kRewardLink
+		}
+		local Image = attackPane:getChildByName("Image")
+
+		IconFactory:bindTouchHander(Image, SomeWordTouchHandler:new(self), data, {
+			needDelay = true
+		})
 	end)
 	anim:addCallbackAtFrame(11, function ()
-		local textPanel3 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel3")
+		local textPanel3 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel4")
 		local textPanel = textPanel3:clone()
 
 		textPanel:setVisible(true)
@@ -602,8 +817,8 @@ function ClubBossMediator:addBottomAnimation()
 
 		self:setOutline(effectText)
 
-		if currentSeasonConfig.StarsAttrEffect ~= nil then
-			local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", currentSeasonConfig.StarsAttrEffect)
+		if currentSeasonConfig.AwakenAttrEffect ~= nil then
+			local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", currentSeasonConfig.AwakenAttrEffect)
 
 			if effectConfig then
 				effectText:setString(Strings:get(effectConfig.EffectDesc))
@@ -611,7 +826,7 @@ function ClubBossMediator:addBottomAnimation()
 		end
 	end)
 	anim:addCallbackAtFrame(13, function ()
-		local attackIPanel4 = self._mainPanel:getChildByFullName("bottomAttackNode.attackPanel4")
+		local attackIPanel4 = self._mainPanel:getChildByFullName("bottomAttackNode.attackPanel3")
 		local attackPane = attackIPanel4:clone()
 
 		attackPane:setVisible(true)
@@ -620,9 +835,20 @@ function ClubBossMediator:addBottomAnimation()
 
 		attackPane:addTo(heroNode7)
 		attackPane:setPosition(cc.p(0, 0))
+
+		local data = {
+			downOff_y = 0,
+			text1 = "clubBoss_52",
+			type = RewardType.kRewardLink
+		}
+		local Image = attackPane:getChildByName("Image")
+
+		IconFactory:bindTouchHander(Image, SomeWordTouchHandler:new(self), data, {
+			needDelay = true
+		})
 	end)
 	anim:addCallbackAtFrame(15, function ()
-		local textPanel4 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel4")
+		local textPanel4 = self._mainPanel:getChildByFullName("bottomAttackNode.textPanel3")
 		local textPanel = textPanel4:clone()
 
 		textPanel:setVisible(true)
@@ -636,8 +862,8 @@ function ClubBossMediator:addBottomAnimation()
 
 		self:setOutline(effectText)
 
-		if currentSeasonConfig.AwakenAttrEffect ~= nil then
-			local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", currentSeasonConfig.AwakenAttrEffect)
+		if currentSeasonConfig.StarsAttrEffect ~= nil then
+			local effectConfig = ConfigReader:getRecordById("SkillAttrEffect", currentSeasonConfig.StarsAttrEffect)
 
 			if effectConfig then
 				effectText:setString(Strings:get(effectConfig.EffectDesc))
@@ -714,11 +940,11 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 		end
 
 		self._heroLoadingBar:setPercent(rate)
-		self._heroLoadingText:setString(string.format("%.1f", self._clubBossInfo:getHpRate() * 100) .. "%")
 
-		if self._clubBossInfo:getHpRate() * 100 < 1 then
-			self._heroLoadingText:setString("1.0%")
-		end
+		local maxHp = math.floor(self._currentBossPoints:getBossHp() + 0.5)
+		local curHp = math.floor(maxHp * self._clubBossInfo:getHpRate() + 0.5)
+
+		self._heroLoadingText:setString(tostring(curHp) .. "/" .. tostring(maxHp))
 
 		if self._clubBossInfo:getHurt() < self._clubBossInfo:getHurtTarget() then
 			self._rewardBoxImage1:setVisible(true)
@@ -733,6 +959,10 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 			if self._clubBossInfo:getHasGetHurtAward() == false then
 				self._rewardBoxImage2:setVisible(true)
+
+				if self._clubSystem:checkBossDelayHurtRewardMark(self._viewType) == false then
+					self._rewardBoxImage2:getChildByFullName("redPoint"):setVisible(false)
+				end
 			end
 
 			if self._clubBossInfo:getHasGetHurtAward() == true then
@@ -769,37 +999,37 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 				self._heroAnim = anim
 				local heroBaseNode1 = anim:getChildByName("heroBaseNode1")
-				local modelSprite = IconFactory:createRoleIconSprite({
+				local modelSprite = IconFactory:createRoleIconSpriteNew({
 					useAnim = true,
-					iconType = "Bust9",
+					frameId = "bustframe9",
 					id = currentBlockConfig.PointHead
 				})
 
-				modelSprite:setScale(0.5)
-				modelSprite:setPositionY(30)
+				modelSprite:setScale(0.7)
+				modelSprite:setPosition(cc.p(30, 30))
 				heroBaseNode1:addChild(modelSprite)
 				anim:gotoAndStop(45)
 				anim:addCallbackAtFrame(52, function ()
 					local heroMiddleNode1 = anim:getChildByName("heroMiddleNode1")
-					local modelSprite1 = IconFactory:createRoleIconSprite({
+					local modelSprite1 = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust9",
+						frameId = "bustframe9",
 						id = currentBlockConfig.PointHead
 					})
 
-					modelSprite1:setScale(0.5)
-					modelSprite1:setPositionY(30)
+					modelSprite1:setScale(0.7)
+					modelSprite1:setPosition(cc.p(30, 30))
 					heroMiddleNode1:addChild(modelSprite1)
 
 					local heroMiddleNode2 = anim:getChildByName("heroMiddleNode2")
-					local modelSprite2 = IconFactory:createRoleIconSprite({
+					local modelSprite2 = IconFactory:createRoleIconSpriteNew({
 						useAnim = true,
-						iconType = "Bust9",
+						frameId = "bustframe9",
 						id = currentBlockConfig.PointHead
 					})
 
-					modelSprite2:setScale(0.5)
-					modelSprite2:setPositionY(30)
+					modelSprite2:setScale(0.7)
+					modelSprite2:setPosition(cc.p(30, 30))
 					heroMiddleNode2:addChild(modelSprite2)
 				end)
 				anim:addCallbackAtFrame(69, function ()
@@ -814,14 +1044,14 @@ function ClubBossMediator:doSomeChangeUI(isEnter)
 
 					if pointHead then
 						local heroBaseNode2 = anim:getChildByName("heroBaseNode2")
-						local modelSprite1 = IconFactory:createRoleIconSprite({
+						local modelSprite1 = IconFactory:createRoleIconSpriteNew({
 							useAnim = true,
-							iconType = "Bust9",
+							frameId = "bustframe9",
 							id = pointHead
 						})
 
-						modelSprite1:setScale(0.5)
-						modelSprite1:setPositionY(30)
+						modelSprite1:setScale(0.7)
+						modelSprite1:setPosition(cc.p(30, 30))
 						heroBaseNode2:addChild(modelSprite1)
 					end
 				end)
@@ -1110,11 +1340,21 @@ function ClubBossMediator:onClickInfoBtn(sender, eventType)
 			end
 		end
 
+		local resetInfo = ConfigReader:getDataByNameIdAndKey("Reset", "ClubBlock_Reset", "ResetSystem")
+		local week = TimeUtil:getLocalWeekByRemote(resetInfo.resetDate[1])
+		startTime = TimeUtil:localDate("%H:%M:%S", TimeUtil:getTimeByDateForTargetTimeInToday({
+			hour = string.split(resetInfo.resetTime[1], ":")[1],
+			min = string.split(resetInfo.resetTime[1], ":")[2],
+			sec = string.split(resetInfo.resetTime[1], ":")[3]
+		}))
 		local view = self:getInjector():getInstance("ArenaRuleView")
+		local weekStr = Strings:get("Time_Title1_Rule_" .. week)
 		local event = ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
-			rule = RuleDesc
+			useParam = true,
+			rule = RuleDesc,
+			param1 = weekStr .. startTime
 		}, nil)
 
 		self:dispatch(event)
@@ -1136,6 +1376,10 @@ function ClubBossMediator:onClickChallenge(sender, eventType)
 
 			if self._viewType == ClubHallType.kActivityBoss then
 				tips = Strings:get("Club_ActivityBoss_16")
+			end
+
+			if self._viewType == ClubHallType.kBoss and self:checkJoinToday() == true then
+				tips = Strings:get("clubBoss_61")
 			end
 
 			self:dispatch(ShowTipEvent({
@@ -1186,6 +1430,16 @@ function ClubBossMediator:onClickRankPanel(sender, eventType)
 	end
 end
 
+function ClubBossMediator:onClickRecordPanel(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		if self._doingKillAnim or self._enterDoKillAnim then
+			return
+		end
+
+		self._clubSystem:showClubBossRecordView(self._viewType)
+	end
+end
+
 function ClubBossMediator:onClickHeroPanel(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		if self._doingKillAnim or self._enterDoKillAnim then
@@ -1231,6 +1485,14 @@ function ClubBossMediator:onClickSkill(skillId)
 	AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
 	self._skillTipPanel:setVisible(true)
 	self:updateSkillDesc(skillId)
+end
+
+function ClubBossMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
+function ClubBossMediator:onForcedLevel(event)
+	self:dismiss()
 end
 
 function ClubBossMediator:goToBack()
@@ -1625,6 +1887,15 @@ function ClubBossMediator:afterKillAnim()
 end
 
 function ClubBossMediator:showTalkWord(isDead)
+	local count = self._clubSystem:getClubBossBattleConunt(self._viewType, self._clubBossInfo:getNowPoint())
+
+	if count > 0 and isDead == false then
+		self._talkNode:stopAllActions()
+		self._talkNode:setVisible(false)
+
+		return
+	end
+
 	local currentBlockConfig = self._currentBossPoints:getBlockConfig()
 	local playVoice = nil
 
@@ -1700,7 +1971,7 @@ function ClubBossMediator:setStarAndEndTime()
 				min = m,
 				sec = s
 			}
-			local startTime = TimeUtil:getTimeByDate(table)
+			local startTime = TimeUtil:timeByRemoteDate(table)
 			local _, _, y, mon, d, h, m, s = string.find(timeStamp.start[2], "(%d+)-(%d+)-(%d+) (%d+):(%d+):(%d+)")
 			local table = {
 				year = y,
@@ -1710,10 +1981,10 @@ function ClubBossMediator:setStarAndEndTime()
 				min = m,
 				sec = s
 			}
-			local endTime = TimeUtil:getTimeByDate(table)
-			local tb = os.date("*t", startTime)
+			local endTime = TimeUtil:timeByRemoteDate(table)
+			local tb = TimeUtil:localDate("*t", startTime)
 			local starTimeStr = tostring(tb.year) .. "." .. tostring(tb.month) .. "." .. tostring(tb.day)
-			tb = os.date("*t", endTime)
+			tb = TimeUtil:localDate("*t", endTime)
 			local endTimeStr = tostring(tb.year) .. "." .. tostring(tb.month) .. "." .. tostring(tb.day)
 			local str = starTimeStr .. " - " .. endTimeStr
 			local timeText = self._timeNode:getChildByFullName("time")
@@ -1740,5 +2011,81 @@ function ClubBossMediator:setScore()
 		self._integralButton:addClickEventListener(function ()
 			self:onClickIntegralButton()
 		end)
+	end
+end
+
+function ClubBossMediator:refreshBattleCount(event)
+	local data = event:getData()
+
+	if data and data.viewType ~= self._viewType then
+		return
+	end
+
+	local count = self._clubSystem:getClubBossBattleConunt(self._viewType, self._clubBossInfo:getNowPoint())
+
+	if count > 0 then
+		self._battleAnimNode:setVisible(true)
+		self._talkNode:stopAllActions()
+		self._talkNode:setVisible(false)
+	else
+		self._battleAnimNode:setVisible(false)
+	end
+end
+
+function ClubBossMediator:checkJoinToday()
+	local result = false
+	local lastJoinTime = self._developSystem:getPlayer():getClub():getInfo():getLastJoinTime()
+	local curTime = self._gameServerAgent:remoteTimeMillis()
+	local baseTime = {
+		sec = 0,
+		min = 0,
+		hour = 5
+	}
+	local isSameDay = TimeUtil:isSameDay(lastJoinTime, curTime / 1000, baseTime)
+	result = isSameDay
+
+	return result
+end
+
+function ClubBossMediator:setupClickEnvs()
+	if GameConfigs.closeGuide then
+		return
+	end
+
+	local scriptNames = "guide_ClubBoss"
+	local guideSystem = self:getInjector():getInstance(GuideSystem)
+
+	if guideSystem:checkGuideSwitchOpen(scriptNames) then
+		local sequence = cc.Sequence:create(cc.CallFunc:create(function ()
+			local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+			local guide_panel_1 = self:getView():getChildByFullName("main.guide_panel_1")
+			local guide_panel_2 = self:getView():getChildByFullName("main.guide_panel_2")
+			local guide_panel_3 = self:getView():getChildByFullName("main.guide_panel_3")
+
+			if guide_panel_1 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_1", guide_panel_1, nil)
+			end
+
+			if guide_panel_2 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_2", guide_panel_2, nil)
+			end
+
+			if guide_panel_3 then
+				storyDirector:setClickEnv("ClubBossMediator.guide_panel_3", guide_panel_3, nil)
+			end
+
+			local storyAgent = storyDirector:getStoryAgent()
+
+			storyAgent:setSkipCheckSave(true)
+
+			local guideAgent = storyDirector:getGuideAgent()
+			local guideSaved = guideAgent:isSaved(scriptNames)
+
+			if not guideSaved then
+				guideAgent:trigger(scriptNames, nil, )
+			end
+		end))
+
+		self:getView():runAction(sequence)
 	end
 end

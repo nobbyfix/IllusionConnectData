@@ -19,6 +19,7 @@ function BattleActionScheduler:reset(battleContext)
 	end
 
 	self._userActions = {}
+	self._extraActions = {}
 end
 
 function BattleActionScheduler:setFinished()
@@ -121,6 +122,24 @@ function BattleActionScheduler:addEmergentAction(action)
 	self._emergentActions[#self._emergentActions + 1] = action
 end
 
+function BattleActionScheduler:addEmergentActionAtFirst(action)
+	table.insert(self._emergentActions, 1, action)
+end
+
+function BattleActionScheduler:addUserActionAtFirst(action)
+	local actionIndex = #self._userActions + 1
+
+	for k, v in pairs(self._userActions) do
+		if v._targetSkillType and (v._targetSkillType == kBattleUniqueSkill or v._targetSkillType == kBattleMasterSkill1 or v._targetSkillType == kBattleMasterSkill2 or v._targetSkillType == kBattleMasterSkill3) then
+			actionIndex = k
+
+			break
+		end
+	end
+
+	table.insert(self._userActions, actionIndex, action)
+end
+
 function BattleActionScheduler:removeEmergentAction(action)
 	return self:removeActionFromSequence(self._emergentActions, action)
 end
@@ -141,7 +160,7 @@ function BattleActionScheduler:nextUserAction(battleContext)
 	return self:nextActionInSequence(self._userActions, battleContext)
 end
 
-function BattleActionScheduler:exertUniqueSkill(actor, skillType)
+function BattleActionScheduler:exertUniqueSkill(actor, skillType, isEmergent)
 	if self._finished then
 		return false, "Finished"
 	end
@@ -170,7 +189,11 @@ function BattleActionScheduler:exertUniqueSkill(actor, skillType)
 
 	skillRoutine = BattleUniqueSkillAction:new(skillType):withActor(actor)
 
-	self:addUserAction(skillRoutine)
+	if isEmergent then
+		self:addUserActionAtFirst(skillRoutine)
+	else
+		self:addUserAction(skillRoutine)
+	end
 
 	return true
 end
@@ -185,6 +208,44 @@ function BattleActionScheduler:exertSpecificSkill(actor, skill)
 	self:addUserAction(specificAction)
 
 	return true
+end
+
+function BattleActionScheduler:exertExtraSkill(actor, skill)
+	if self._finished then
+		return false, "Finished"
+	end
+
+	local specificAction = BattleSpecificSkillAction:new(skill):withActor(actor)
+
+	self:addExtraSkillAction(specificAction)
+
+	return true
+end
+
+function BattleActionScheduler:addExtraSkillAction(action)
+	self._extraActions[#self._extraActions + 1] = action
+end
+
+function BattleActionScheduler:updateExtraSkill(dt, battleContext)
+	if self._finished then
+		return false, "Finished"
+	end
+
+	self._runningExtraActions = self._runningExtraActions or {}
+
+	for k, v in pairs(self._extraActions) do
+		if not self._runningExtraActions[v] then
+			self._runningExtraActions[v] = v
+
+			self._runningExtraActions[v]:start(battleContext, function ()
+				self._runningExtraActions[v] = nil
+
+				self:removeActionFromSequence(self._extraActions, v)
+			end)
+		else
+			self._runningExtraActions[v]:update(dt)
+		end
+	end
 end
 
 function BattleActionScheduler:update(dt, battleContext)
@@ -272,6 +333,8 @@ function BattleActionScheduler:update(dt, battleContext)
 			end
 		until true
 	end
+
+	self:updateExtraSkill(dt, battleContext)
 
 	return running
 end

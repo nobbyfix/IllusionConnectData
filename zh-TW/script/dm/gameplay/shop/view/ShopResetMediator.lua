@@ -671,7 +671,7 @@ function ShopResetMediator:onClickItem(sender, eventType, data)
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, {
-			shopId = ShopSpecialId.kShopPackage,
+			shopId = ShopSpecialId.KShopTimelimitedmall,
 			item = data
 		}))
 	end

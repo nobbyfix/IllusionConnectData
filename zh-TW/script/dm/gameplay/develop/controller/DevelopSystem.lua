@@ -14,6 +14,12 @@ DevelopSystem:has("_developService", {
 DevelopSystem:has("_serverOpenTime", {
 	is = "rw"
 })
+DevelopSystem:has("_serverMergeTime", {
+	is = "rw"
+})
+DevelopSystem:has("_timeZone", {
+	is = "rw"
+})
 DevelopSystem:has("_bagSystem", {
 	is = "r"
 })
@@ -71,6 +77,12 @@ DevelopSystem:has("_rankSystem", {
 DevelopSystem:has("_dreamSystem", {
 	is = "r"
 }):injectWith("DreamChallengeSystem")
+DevelopSystem:has("_cooperateBossSystem", {
+	is = "r"
+}):injectWith("CooperateBossSystem")
+DevelopSystem:has("_dreamHouseSystem", {
+	is = "r"
+}):injectWith("DreamHouseSystem")
 
 function DevelopSystem:initialize()
 	super.initialize(self)
@@ -78,6 +90,9 @@ function DevelopSystem:initialize()
 	self._player = Player:new()
 	self._playerLevelUpData = {}
 	self._serverOpenTime = 0
+	self._serverIp = ""
+	self._serverPort = 0
+	self._serverMergeTime = 0
 
 	self:initSystem()
 end
@@ -117,11 +132,16 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self._bagSystem:showTips(data.bag.items)
 		self:getBag():synchronize(data.bag.items, isDiff)
 		self._heroSystem:syncHeroShowIds()
-		self._bagSystem:synchronize(data.bag.items)
+		self._bagSystem:synchronize(data.bag.items, isDiff)
 	end
 
 	if data.bag and data.bag.del then
 		self._bagSystem:delItems(data.bag.del)
+	end
+
+	if data.lockItem then
+		self:getBag():synchronizeLockItems(data.lockItem)
+		self._bagSystem:synchronize(data.lockItem)
 	end
 
 	if data.shops then
@@ -142,6 +162,14 @@ function DevelopSystem:syncPlayer(data, isDiff)
 
 	if data.composeTimes then
 		self._bagSystem:setComposeTimes(data.composeTimes)
+	end
+
+	if data.urCount then
+		self._bagSystem:setURCount(data.urCount)
+	end
+
+	if data.urEquipStat then
+		self._bagSystem:setUREquipState(data.urEquipStat)
 	end
 
 	if data.cultivation or data.level then
@@ -179,6 +207,14 @@ function DevelopSystem:syncPlayer(data, isDiff)
 			self:getPlayer():getClub():setCurDonateCount(clubData.donateCount.value)
 		end
 
+		if clubData.lastJoinTime then
+			clubInfo:setLastJoinTime(clubData.lastJoinTime)
+		end
+
+		if clubData.joinedClubCount then
+			clubInfo:setJoinedClubCount(clubData.joinedClubCount)
+		end
+
 		self:getPlayer():getClub():syncClubBossBasicInfo(clubData)
 	end
 
@@ -194,6 +230,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		local friendSystem = self:getInjector():getInstance(FriendSystem)
 
 		friendSystem:getFriendModel():syncFriendInfo(data.friendInfo)
+	end
+
+	if data.clubVillageChange then
+		self:getPlayer():getClub():setClubVillageChangeCount(data.clubVillageChange)
 	end
 
 	if data.vipLevel then
@@ -233,6 +273,7 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		activitySystem:checkActivityState()
 		activitySystem:checkPassActivityData()
 		activitySystem:checkClubBossSummerActivityData()
+		self._cooperateBossSystem:synchronize(data.activities.activityMap)
 	end
 
 	if data.spStages then
@@ -299,6 +340,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 		self:getPlayer():syncStagePractice(data.stagePractice)
 	end
 
+	if data.stages then
+		self._stageSystem:syncStages(data.stages, self:getPlayer())
+	end
+
 	if data.stagePresents then
 		self._stageSystem:syncStagePresents(data.stagePresents)
 	end
@@ -333,6 +378,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 
 	if data.dreamChallenge then
 		self._dreamSystem:synchronize(data.dreamChallenge)
+	end
+
+	if data.house then
+		self._dreamHouseSystem:synchronize(data.house)
 	end
 
 	self:dispatch(Event:new(EVT_PLAYER_SYNCHRONIZED))
@@ -411,6 +460,20 @@ function DevelopSystem:syncDeleteData(data)
 
 	if data then
 		self._taskSystem:getTaskListModel():updateDelTasks(data)
+	end
+
+	if data and data.drawInfo then
+		local recruitSystem = self:getInjector():getInstance(RecruitSystem)
+
+		recruitSystem:sync(data.drawInfo, self._player)
+	end
+
+	if data and data.house then
+		self._dreamHouseSystem:delete(data.house)
+	end
+
+	if data and data.chessArena then
+		self:getPlayer():deleteNewArenaReward(data.chessArena)
 	end
 end
 
@@ -526,10 +589,6 @@ function DevelopSystem:checkPlayerLevelUp(preData)
 		end
 	end
 
-	if oldData and oldData.level < curData.level and SDKHelper and SDKHelper:isEnableSdk() then
-		SDKHelper:adjustEventTracking(AdjustLevelUpEventList[curData.level])
-	end
-
 	if self:getLevelupBackup() then
 		self:dispatch(Event:new(EVT_SYSTEM_LEVELUP))
 	end
@@ -607,8 +666,22 @@ function DevelopSystem:popPlayerLvlUpView(info)
 			roleName = tostring(player:getNickName()),
 			roleId = tostring(player:getRid()),
 			roleLevel = tostring(player:getLevel()),
-			roleCombat = checkint(player:getCombat())
+			roleCombat = checkint(player:getCombat()),
+			ip = tostring(self._serverIp),
+			port = tostring(self._serverPort),
+			serverId = self._serverId
 		})
+
+		local data = self:getStatsInfo()
+		data.eventName = "upgradeRole_l" .. tostring(player:getLevel())
+
+		SDKHelper:reportStatsData(data)
+
+		if device.platform == "ios" and player:getLevel() == 10 then
+			SDKHelper:attFriendlyPage({
+				eventName = "level_10"
+			})
+		end
 	end
 
 	return true
@@ -708,6 +781,10 @@ function DevelopSystem:getExplore()
 	return self:getPlayer():getExplore()
 end
 
+function DevelopSystem:getStageArenaStage()
+	return self:getPlayer():getPlayerStageArena()
+end
+
 function DevelopSystem:getEnergy()
 	return self._bagSystem:getItemCount(CurrencyIdKind.kPower)
 end
@@ -744,10 +821,29 @@ function DevelopSystem:setRid(rid)
 	self:getPlayer():setRid(rid)
 end
 
+function DevelopSystem:setServerInfo(id, name, ip, port)
+	self._serverId = id
+	self._serverName = name
+	self._serverIp = ip
+	self._serverPort = port
+end
+
+function DevelopSystem:getServerId()
+	return self._serverId
+end
+
+function DevelopSystem:getServerIp()
+	return self._serverIp
+end
+
+function DevelopSystem:getServerPort()
+	return self._serverPort
+end
+
 function DevelopSystem:getServerOpenDay()
 	local curServerTime = self:getCurServerTime()
-	local openDate = os.date("*t", self._serverOpenTime)
-	local openTime = os.time({
+	local openDate = TimeUtil:remoteDate("*t", self._serverOpenTime)
+	local openTime = TimeUtil:timeByRemoteDate({
 		hour = 5,
 		min = 0,
 		sec = 0,
@@ -759,10 +855,23 @@ function DevelopSystem:getServerOpenDay()
 	return math.ceil((curServerTime - openTime) / 86400)
 end
 
-function DevelopSystem:enterType(params, blockUI, callback)
-	self._developService:enterType(params, blockUI, callback)
+function DevelopSystem:getStatsInfo()
+	local data = {
+		roleId = self._player:getRid(),
+		roleName = self._player:getNickName(),
+		serverName = self._serverName,
+		serverId = tostring(self._serverId),
+		roleLevel = tostring(self._player:getLevel()),
+		vip = tostring(self:getVipLevel())
+	}
+
+	return data
 end
 
-function DevelopSystem:guideLog(params, blockUI, callback)
-	self._developService:guideLog(params, blockUI, callback)
+function DevelopSystem:enterType(params, callback)
+	self._developService:enterType(params, false, callback)
+end
+
+function DevelopSystem:guideLog(params, callback)
+	self._developService:guideLog(params, false, callback)
 end

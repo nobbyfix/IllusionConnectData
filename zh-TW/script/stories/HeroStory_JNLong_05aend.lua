@@ -147,10 +147,10 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 					modelId = "Model_LLan",
 					id = "LLan_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.72,
 					position = {
 						x = 0,
-						y = -395,
+						y = -390,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -173,8 +173,8 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = -9.5,
-								y = 770.7
+								x = -23.5,
+								y = 1095
 							}
 						}
 					}
@@ -239,11 +239,11 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 					modelId = "Model_Story_SGHQShou03",
 					id = "SGHQShou3_speak",
 					rotationX = 0,
-					scale = 1.23,
+					scale = 0.62,
 					zorder = 1,
 					position = {
 						x = 0,
-						y = -330,
+						y = -307,
 						refpt = {
 							x = 0.5,
 							y = 0
@@ -266,8 +266,8 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 33.6,
-								y = 681.5
+								x = 69,
+								y = 1322
 							}
 						}
 					}
@@ -448,10 +448,10 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 					modelId = "Model_JNLong",
 					id = "JNLong_speak",
 					rotationX = 0,
-					scale = 1.125,
+					scale = 0.65,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 0.35,
 							y = 0
@@ -475,8 +475,8 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 								y = 0.5
 							},
 							position = {
-								x = 177.5,
-								y = 806.4
+								x = 268.5,
+								y = 1184
 							}
 						}
 					}
@@ -747,7 +747,7 @@ function scene_HeroStory_JNLong_05aend.actions.start_HeroStory_JNLong_05aend(_ro
 					duration = 0.8,
 					position = {
 						x = 0,
-						y = -395,
+						y = -330,
 						refpt = {
 							x = 1.5,
 							y = 0

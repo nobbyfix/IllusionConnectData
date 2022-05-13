@@ -21,6 +21,7 @@ local opType = {
 	OPCODE_FIGHT_RESOULT_CHECK = 10403,
 	OPCODE_HEROSTORY_RESOULT_CHECK = 10502,
 	OPCODE_HEROSTORY_LEAVE = 10504,
+	OPCODE_STAGE_QUICKCHANGE_ENTER = 10425,
 	OPCODE_STAGE_STORY = 10421
 }
 
@@ -54,6 +55,16 @@ end
 
 function StageService:requestStageEnter(params, blockUI, callback)
 	local request = self:newRequest(opType.OPCODE_STAGE_ENTER, params, function (response)
+		if callback ~= nil then
+			callback(response)
+		end
+	end)
+
+	self:sendRequest(request, blockUI)
+end
+
+function StageService:requestQuickStageEnter(params, blockUI, callback)
+	local request = self:newRequest(opType.OPCODE_STAGE_QUICKCHANGE_ENTER, params, function (response)
 		if callback ~= nil then
 			callback(response)
 		end

@@ -1,4 +1,3 @@
-local PlatformHelper = {}
 local cjson = require("cjson.safe")
 local isPlatformIOS = false
 local isPlatformAndroid = false
@@ -18,107 +17,121 @@ elseif target == 3 then
 	PlatformClassPath = "org/dpstrom/anysdk/DPSLuaHelper"
 end
 
-function PlatformHelper:isIOS()
-	return isPlatformIOS
-end
+local PlatformHelper = {
+	isIOS = function (self)
+		return isPlatformIOS
+	end,
+	isAndroid = function (self)
+		return isPlatformAndroid
+	end,
+	getChannelID = function (self)
+		if self:isAndroid() then
+			local success, channel = luaj.callStaticMethod(PlatformClassPath, "getChannelID", {}, "()Ljava/lang/String;")
 
-function PlatformHelper:isAndroid()
-	return isPlatformAndroid
-end
+			if not success then
+				channel = "test"
+			end
 
-function PlatformHelper:regSDKCallback(cb)
-	if self:isIOS() then
-		luaoc.callStaticMethod(PlatformClassPath, "setLuaCallBack", {
-			luaCallBack = cb
-		})
-	elseif self:isAndroid() then
-		luaj.callStaticMethod(PlatformClassPath, "setLuaCallBack", {
-			cb
-		}, "(I)V")
-	end
-end
-
-function PlatformHelper:callSDKFunction(cmd, params)
-	if not cmd then
-		return
-	end
-
-	local args = {
-		cmd
-	}
-
-	if params and table.nums(params) > 0 then
-		args[2] = cjson.encode(params)
-	else
-		args[2] = ""
-	end
-
-	if self:isIOS() then
-		luaoc.callStaticMethod(PlatformClassPath, "commandFunction", {
-			cmd = args[1],
-			json = args[2]
-		})
-	elseif self:isAndroid() then
-		luaj.callStaticMethod(PlatformClassPath, "commandFunction", args, "(Ljava/lang/String;Ljava/lang/String;)V")
-	end
-end
-
-function PlatformHelper:getChannelID()
-	local channel = ""
-	local success = false
-
-	if self:isIOS() then
-		success, channel = luaoc.callStaticMethod(PlatformClassPath, "getChannelID")
-	elseif self:isAndroid() then
-		success, channel = luaj.callStaticMethod(PlatformClassPath, "getChannelID", {}, "()Ljava/lang/String;")
-	end
-
-	if not success then
-		channel = "test"
-	end
-
-	return channel
-end
-
-function PlatformHelper:getSdkSource()
-	local channel = ""
-	local success = false
-
-	if self:isIOS() then
-		success, channel = luaoc.callStaticMethod(PlatformClassPath, "getSdkSource")
-	elseif self:isAndroid() then
-		success, channel = luaj.callStaticMethod(PlatformClassPath, "getSdkSource", {}, "()Ljava/lang/String;")
-	end
-
-	if not success then
-		channel = ""
-	end
-
-	return channel
-end
-
-function PlatformHelper:getSdkDid()
-	if device.platform == "mac" or device.platform == "windows" then
-		return ""
-	end
-
-	if gameDid and gameDid ~= "" then
-		return gameDid
-	end
-
-	if self:isAndroid() and app.pkgConfig.packJobId and app.pkgConfig.packJobId > 3904 then
-		local success, did = luaj.callStaticMethod(PlatformClassPath, "getDeviceID", {}, "()Ljava/lang/String;")
-
-		if not success then
-			did = app.getDevice():getDeviceInfo().deviceId or ""
+			return channel
+		elseif self:isIOS() then
+			return "efun_ios"
 		end
 
-		gameDid = did
-	else
-		gameDid = app.getDevice():getDeviceInfo().deviceId or ""
-	end
+		return nil
+	end,
+	thirdUpdate = function (self)
+		local channelID = self:getChannelID()
+		local channel2url = {
+			efun_android = "https://play.google.com/store/apps/details?id=com.efun.mjlj",
+			efun_ios = "https://apps.apple.com/jp/app/id1512893932"
+		}
 
-	return gameDid
-end
+		if channel2url[channelID] then
+			cc.Application:getInstance():openURL(channel2url[channelID])
+
+			return
+		end
+
+		if channelID == "dpstorm_android" then
+			self:callSDKFunction("thirdUpdate", {})
+		end
+	end,
+	isInstallApp = function (self, packageName)
+		local success = false
+		local isInstall = false
+
+		if self:isIOS() then
+			isInstall = false
+		elseif self:isAndroid() then
+			success, isInstall = luaj.callStaticMethod(PlatformClassPath, "isInstallApp", {
+				packageName
+			}, "(Ljava/lang/String;)Z")
+		end
+
+		return isInstall
+	end,
+	getSdkDid = function (self)
+		if device.platform == "mac" or device.platform == "windows" then
+			return ""
+		end
+
+		if gameDid and gameDid ~= "" then
+			return gameDid
+		end
+
+		if self:isAndroid() then
+			local success, did = luaj.callStaticMethod(PlatformClassPath, "getDeviceID", {}, "()Ljava/lang/String;")
+
+			if not success then
+				did = app.getDevice():getDeviceInfo().deviceId or ""
+			end
+
+			gameDid = did
+		else
+			gameDid = app.getDevice():getDeviceInfo().deviceId or ""
+		end
+
+		return gameDid
+	end,
+	callSDKFunction = function (self, cmd, params)
+		if not cmd then
+			return
+		end
+
+		local args = {
+			cmd
+		}
+
+		if params and table.nums(params) > 0 then
+			args[2] = cjson.encode(params)
+		else
+			args[2] = ""
+		end
+
+		if self:isIOS() then
+			-- Nothing
+		elseif self:isAndroid() then
+			luaj.callStaticMethod(PlatformClassPath, "commandFunction", args, "(Ljava/lang/String;Ljava/lang/String;)V")
+		end
+	end,
+	reportObbEvent = function (self, cmd, eventName)
+		if not cmd then
+			return
+		end
+
+		if not eventName or eventName == "" then
+			return
+		end
+
+		local args = {
+			cmd,
+			eventName
+		}
+
+		if self:isAndroid() then
+			luaj.callStaticMethod(PlatformClassPath, "commandFunction", args, "(Ljava/lang/String;Ljava/lang/String;)V")
+		end
+	end
+}
 
 return PlatformHelper

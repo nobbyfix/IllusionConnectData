@@ -45,6 +45,7 @@ function StoryChooseDialogWidget:setupView()
 
 	descLabel:setPosition(cc.p(568, 45))
 	self._title:addChild(descLabel)
+	ajustRichTextCustomWidth(descLabel, 980)
 
 	local lineGradiantVec = {
 		{
@@ -104,14 +105,6 @@ function StoryChooseDialogWidget:setupView()
 
 			self._agent:saveGuideComplexNum(self._complexityNum)
 
-			if SDKHelper and SDKHelper:isEnableSdk() then
-				if self._complexityNum == kGuideComplexityList.veteran then
-					SDKHelper:adjustEventTracking(AdjustGuideEventList.ADJUST_GUIDE_VETERAN_EVENT)
-				elseif self._complexityNum == kGuideComplexityList.novice then
-					SDKHelper:adjustEventTracking(AdjustGuideEventList.ADJUST_GUIDE_NOVICE_EVENT)
-				end
-			end
-
 			if self._complexityNum == kGuideComplexityList.novice then
 				point = "story_difficult_novice"
 			elseif self._complexityNum == kGuideComplexityList.veteran then
@@ -120,7 +113,7 @@ function StoryChooseDialogWidget:setupView()
 
 			local content = {
 				type = "loginchoose",
-				difficult = point
+				point = point
 			}
 
 			StatisticSystem:send(content)
@@ -131,6 +124,15 @@ function StoryChooseDialogWidget:setupView()
 			if onEnd ~= nil then
 				onEnd()
 				AudioEngine:getInstance():setElide(false)
+			end
+
+			if SDKHelper and SDKHelper:isEnableSdk() then
+				local direc = self._agent:getDirector()
+				local develop = direc:getInjector():getInstance(DevelopSystem)
+				local data = develop:getStatsInfo()
+				data.eventName = "guide_select"
+
+				SDKHelper:reportStatsData(data)
 			end
 		end
 	end)

@@ -54,7 +54,7 @@ function scene_mapstory_Alice_2_true_01.actions.start_mapstory_Alice_2_true_01(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_198",
+					name = "dialog_speak_name_123",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -75,7 +75,7 @@ function scene_mapstory_Alice_2_true_01.actions.start_mapstory_Alice_2_true_01(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_198",
+					name = "dialog_speak_name_123",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -96,7 +96,7 @@ function scene_mapstory_Alice_2_true_01.actions.start_mapstory_Alice_2_true_01(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_198",
+					name = "dialog_speak_name_123",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",
@@ -117,7 +117,7 @@ function scene_mapstory_Alice_2_true_01.actions.start_mapstory_Alice_2_true_01(_
 			actor = __getnode__(_root, "dialogue"),
 			args = function (_ctx)
 				return {
-					name = "dialog_speak_name_198",
+					name = "dialog_speak_name_123",
 					dialogImage = "jq_dialogue_bg_1.png",
 					location = "left",
 					pathType = "STORY_ROOT",

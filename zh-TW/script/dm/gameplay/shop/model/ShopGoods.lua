@@ -64,6 +64,12 @@ function ShopGoods:initialize(shopId)
 	self._shopId = ""
 	self._index = 1
 	self._condition = {}
+	self._scale = {
+		Zoom = 1,
+		YOffset = 0,
+		XOffst = 0
+	}
+	self._sort = 0
 end
 
 function ShopGoods:syncGoods(positionId, data)
@@ -153,6 +159,16 @@ function ShopGoods:getResetMode()
 	return nil
 end
 
+function ShopGoods:getOriginalPrice()
+	local rewards = RewardSystem:getRewardsById(self._rewardId)
+
+	if rewards[1].originalPrice then
+		return rewards[1].originalPrice
+	end
+
+	return nil
+end
+
 function ShopGoods:getUpdateTime()
 	if not self._updateTime then
 		return 1
@@ -210,8 +226,16 @@ function ShopGoods:setShopId(shopId)
 	self._shopConfig = ConfigReader:getRecordById("Shop", self._shopId)
 end
 
+function ShopGoods:getShopId()
+	return self._shopId
+end
+
 function ShopGoods:setCondition(condition)
 	self._condition = condition
+end
+
+function ShopGoods:getTime()
+	return self._condition.TIME
 end
 
 function ShopGoods:getCondition()
@@ -226,8 +250,22 @@ function ShopGoods:getCondition()
 	return isOpen, lockTip, unLockLevel
 end
 
-function ShopGoods:getShopId()
-	return self._shopId
+function ShopGoods:setScale(scale)
+	if scale then
+		self._scale = scale
+	end
+end
+
+function ShopGoods:getScale()
+	return self._scale
+end
+
+function ShopGoods:setSort(sort)
+	self._sort = sort
+end
+
+function ShopGoods:getSort()
+	return self._sort
 end
 
 function ShopGoods:getQuality()

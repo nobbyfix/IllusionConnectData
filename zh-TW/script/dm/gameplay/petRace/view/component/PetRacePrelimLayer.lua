@@ -38,6 +38,7 @@ function PetRacePrelimLayer:updateEightRank()
 		local text_name = node_cell:getChildByName("Text_name")
 		local text_score = node_cell:getChildByName("Text_score_num")
 		local text_win = node_cell:getChildByName("Text_win_num")
+		local text_scoreDes = node_cell:getChildByName("Text_scoreDes")
 		local nameStr = tostring(i) .. "."
 
 		if data_role and data_role.nickname and data_role.nickname ~= "" then
@@ -51,6 +52,8 @@ function PetRacePrelimLayer:updateEightRank()
 		else
 			text_score:setString("0")
 		end
+
+		text_score:setPositionX(text_scoreDes:getPositionX() + text_scoreDes:getContentSize().width + 10)
 
 		if data_role and data_role.winNum then
 			text_win:setString(data_role.winNum)
@@ -102,5 +105,5 @@ function PetRacePrelimLayer:updateTime()
 		0,
 		0,
 		255
-	})
+	}, true)
 end

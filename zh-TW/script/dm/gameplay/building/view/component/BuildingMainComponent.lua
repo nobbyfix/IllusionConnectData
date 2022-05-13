@@ -211,6 +211,7 @@ function BuildingMainComponent:enterWithData()
 	self:refreshQueueNum()
 	self:refreshRedPoint()
 	self:refreshBuildOutPut()
+	self:setupCornerMask()
 
 	local button_build = self:getView():getChildByFullName("main.Layer_normal.Button_build")
 	local button_put = self:getView():getChildByFullName("main.Layer_normal.Button_put")
@@ -247,6 +248,62 @@ function BuildingMainComponent:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function BuildingMainComponent:setupCornerMask()
+	local adjustType = {
+		AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Bottom,
+		AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Top,
+		AdjustUtils.kAdjustType.Right + AdjustUtils.kAdjustType.Bottom,
+		AdjustUtils.kAdjustType.Right + AdjustUtils.kAdjustType.Top
+	}
+	local idx = 1
+	self._maskImg = self._maskImg or {}
+
+	if #self._maskImg == 0 then
+		local mainNode = self:getView():getChildByFullName("main")
+		local size = mainNode:getContentSize()
+
+		for x = 1, 2 do
+			for y = 1, 2 do
+				local maskImg = ccui.ImageView:create("asset/ui/building/pic_jiaodu.png", ccui.TextureResType.localType)
+
+				maskImg:setAnchorPoint(cc.p(0, 0))
+				maskImg:setScaleX(x > 1 and -1 or 1)
+				maskImg:setScaleY(y > 1 and -1 or 1)
+				maskImg:setOpacity(0)
+				AdjustUtils.adjustLayoutByType(maskImg, adjustType[idx])
+				self:getView():addChild(maskImg, -1)
+				table.insert(self._maskImg, maskImg)
+
+				local offsetX = cc.Director:getInstance():getWinSize().width - 1136
+
+				maskImg:setPosition(cc.p((x - 1) * size.width - offsetX * (x > 1 and -1 or 1), (y - 1) * size.height))
+
+				idx = idx + 1
+			end
+		end
+	end
+end
+
+function BuildingMainComponent:showCornerMask()
+	for k, v in pairs(self._maskImg) do
+		local fadeIn = cc.FadeIn:create(0.25)
+		local callback = cc.CallFunc:create(function ()
+		end)
+
+		v:runAction(cc.Sequence:create(fadeIn, callback))
+	end
+end
+
+function BuildingMainComponent:hideCornerMask()
+	for k, v in pairs(self._maskImg) do
+		local fadeout = cc.FadeOut:create(0.25)
+		local callback = cc.CallFunc:create(function ()
+		end)
+
+		v:runAction(cc.Sequence:create(fadeout, callback))
+	end
+end
+
 function BuildingMainComponent:onClickBack(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		if self._buildingSystem:getMapShowType() == KBuildingMapShowType.kInRoom then
@@ -263,10 +320,6 @@ function BuildingMainComponent:onClickPutHero(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		if self._buildingMediator:getActionRuning() then
 			return
-		end
-
-		if SDKHelper and SDKHelper:isEnableSdk() then
-			SDKHelper:adjustEventTracking(AdjustEventList.ADJUST_TOUCH_BUILD_SET_EVENT)
 		end
 
 		local systemKeeper = self._buildingSystem:getSystemKeeper()

@@ -57,11 +57,11 @@ function scene_mapstory_Egypt_4_boss_01a.actions.start_mapstory_Egypt_4_boss_01a
 					modelId = "Model_Story_FTLEShi",
 					id = "FTLEShi_speak",
 					rotationX = 0,
-					scale = 1.025,
+					scale = 0.6,
 					zorder = 13,
 					position = {
 						x = 0,
-						y = -510,
+						y = -310,
 						refpt = {
 							x = 0.3,
 							y = 0
@@ -85,8 +85,8 @@ function scene_mapstory_Egypt_4_boss_01a.actions.start_mapstory_Egypt_4_boss_01a
 								y = 0.5
 							},
 							position = {
-								x = -16,
-								y = 998
+								x = -41.5,
+								y = 1286.1
 							}
 						}
 					}
@@ -151,10 +151,10 @@ function scene_mapstory_Egypt_4_boss_01a.actions.start_mapstory_Egypt_4_boss_01a
 					modelId = "Model_TTKMeng",
 					id = "TTKMeng_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.7,
 					position = {
 						x = 0,
-						y = -255,
+						y = -370,
 						refpt = {
 							x = 0.7,
 							y = 0
@@ -178,8 +178,8 @@ function scene_mapstory_Egypt_4_boss_01a.actions.start_mapstory_Egypt_4_boss_01a
 								y = 0.5
 							},
 							position = {
-								x = 14,
-								y = 615.5
+								x = 20,
+								y = 991
 							}
 						}
 					}
@@ -283,10 +283,10 @@ function scene_mapstory_Egypt_4_boss_01a.actions.start_mapstory_Egypt_4_boss_01a
 					modelId = "Model_TLMi",
 					id = "TLMi_speak",
 					rotationX = 0,
-					scale = 1.15,
+					scale = 0.66,
 					position = {
 						x = 0,
-						y = -350,
+						y = -360,
 						refpt = {
 							x = 0.25,
 							y = 0

@@ -70,7 +70,7 @@ function FriendPvpLoseMediator:refreshView()
 	self._title:runAction(cc.FadeIn:create(0.75))
 	self:initSvpRole()
 	svpSpritePanel:addChild(self._svpSprite)
-	self._svpSprite:setPosition(cc.p(cc.p(50, -100)))
+	self._svpSprite:setPosition(cc.p(-200, -200))
 	anim:gotoAndPlay(1)
 
 	local posX1, posY1 = self._skillBtn:getPosition()
@@ -115,7 +115,9 @@ function FriendPvpLoseMediator:initSvpRole()
 		playersInfo = role.players
 	end
 
-	local model = ConfigReader:getDataByNameIdAndKey("MasterBase", loserMasterId, "RoleModel")
+	local masterSystem = self._developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(loserMasterId)
+	model = masterData:getModel()
 
 	if playersInfo and playersInfo[loserInfo.id] then
 		local mvpPoint = 0
@@ -145,9 +147,10 @@ function FriendPvpLoseMediator:initSvpRole()
 		end
 	end
 
-	local svpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local svpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 	self._svpSprite = svpSprite
@@ -176,6 +179,10 @@ function FriendPvpLoseMediator:doClose()
 			userdata = {}
 		})
 	end
+end
+
+function FriendPvpLoseMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function FriendPvpLoseMediator:onTouchLayout(sender, eventType)

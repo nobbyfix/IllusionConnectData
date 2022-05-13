@@ -274,7 +274,7 @@ function ExploreMapZombieMediator:updateLvInfo()
 	local text_des1 = self._Node_lv:getChildByName("Text_des_1")
 	local loadingBar = self._Node_lv:getChildByName("LoadingBar")
 
-	text_lv:setString("Lv." .. level)
+	text_lv:setString(Strings:get("Common_LV_Text") .. level)
 
 	if data[level] then
 		text_des:setString(exp)

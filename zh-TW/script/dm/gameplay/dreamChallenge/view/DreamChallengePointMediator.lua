@@ -84,15 +84,19 @@ end
 function DreamChallengePointMediator:initWidget()
 	self._main = self:getView():getChildByName("main")
 	self._pointView = self._main:getChildByName("point")
-	self.pointCellType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
+	self._pointCellType = DataReader:getDataByNameIdAndKey("DreamChallengePoint", self._pointId, "MissionPicType")
 	local pointCellNameStr = "pointCellClone"
 
-	if kDreamChallengeType.kOne == self.pointCellType then
+	if kDreamChallengeType.kOne == self._pointCellType then
 		pointCellNameStr = "pointCellClone"
-	elseif kDreamChallengeType.kTwo == self.pointCellType then
+	elseif kDreamChallengeType.kTwo == self._pointCellType then
 		pointCellNameStr = "pointCell2Clone"
-	elseif kDreamChallengeType.kThree == self.pointCellType then
+	elseif kDreamChallengeType.kThree == self._pointCellType then
 		pointCellNameStr = "pointCell3Clone"
+	elseif kDreamChallengeType.kForth == self._pointCellType then
+		pointCellNameStr = "pointCell4Clone"
+	elseif kDreamChallengeType.kFifth == self._pointCellType then
+		pointCellNameStr = "pointCell5Clone"
 	end
 
 	self._pointCellClone = self:getView():getChildByName(pointCellNameStr)
@@ -100,6 +104,13 @@ function DreamChallengePointMediator:initWidget()
 	self._infoList = self._main:getChildByName("infoList")
 	self._infoCellClone = self:getView():getChildByName("infoCellClone")
 	self._infoBuffCellClone = self:getView():getChildByName("buffInfoCellClone")
+	self._bg = self._main:getChildByName("bg")
+
+	self._bg:setVisible(true)
+
+	if kDreamChallengeType.kForth == self._pointCellType then
+		self._bg:setVisible(false)
+	end
 end
 
 function DreamChallengePointMediator:refreshPointView()
@@ -115,7 +126,7 @@ function DreamChallengePointMediator:refreshPointView()
 	table.deepcopy(battles, battlesTmp)
 
 	local targetCell = battleNum >= 12 and self._pointCellCloneSmall or self._pointCellClone
-	local pointListWidth = 920
+	local pointListWidth = 940
 	local rowCellNum = battleNum >= 12 and 3 or 2
 	local row = math.ceil(battleNum / rowCellNum)
 	local offsetY = targetCell:getContentSize().height
@@ -168,9 +179,48 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 
 	name:setString(self._dreamSystem:getBattleName(battleId))
 
+	if self._pointCellType == kDreamChallengeType.kForth then
+		local lineGradiantVec2 = {
+			{
+				ratio = 0.3,
+				color = cc.c4b(244, 244, 255, 255)
+			},
+			{
+				ratio = 0.7,
+				color = cc.c4b(155, 175, 251, 255)
+			}
+		}
+		local lineGradiantDir = {
+			x = 0,
+			y = -1
+		}
+
+		name:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
+		name:enableShadow(cc.c4b(17, 13, 40, 79.05), cc.size(2, 0), 2)
+	end
+
 	local num = layout:getChildByFullName("num")
 
 	num:setString(tostring(index))
+
+	if self._pointCellType == kDreamChallengeType.kForth then
+		local lineGradiantVec2 = {
+			{
+				ratio = 0.3,
+				color = cc.c4b(147, 102, 193, 255)
+			},
+			{
+				ratio = 0.7,
+				color = cc.c4b(81, 50, 157, 255)
+			}
+		}
+		local lineGradiantDir = {
+			x = 0,
+			y = -1
+		}
+
+		num:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
+	end
 
 	local isUnLock = self._dreamSystem:checkBattleLock(self._mapId, self._pointId, battleId)
 	local isPass = self._dreamSystem:checkBattlePass(self._mapId, self._pointId, battleId)
@@ -223,6 +273,7 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 	end
 
 	local guang = layout:getChildByFullName("guang")
+	local klqImg = layout:getChildByFullName("klq")
 
 	if reward and reward.type == RewardType.kBuff then
 		guang:loadTexture("mjt_xuanzhongtai.png", ccui.TextureResType.plistType)
@@ -235,6 +286,7 @@ function DreamChallengePointMediator:setPoint(layout, battleId, index, small)
 	end
 
 	guang:setVisible(isRewardLock and not isReward)
+	klqImg:setVisible(isRewardLock and not isReward)
 
 	local lock = layout:getChildByFullName("lock")
 
@@ -364,6 +416,8 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		local infoDesc = ""
 		local infoTitle = ""
 
+		text:setFontSize(16)
+
 		if data.type == "job" then
 			iconTexture = kJobIcon[data.value]
 			infoTitle = Strings:get("TypeName_" .. data.value)
@@ -427,6 +481,7 @@ function DreamChallengePointMediator:refreshBuffInfo()
 
 	for i = 1, #heros do
 		addIndex = addIndex + 1
+		local config = ConfigReader:getRecordById("HeroBase", heros[i])
 		local node3 = self._infoCellClone:clone()
 		local attackText = node3:getChildByFullName("text")
 		local icon = node3:getChildByFullName("icon")
@@ -443,7 +498,14 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		end
 
 		icon:removeAllChildren()
-		icon:loadTexture("asset/commonRaw/common_bd_ssr01.png", ccui.TextureResType.localType)
+
+		local iconName = "asset/commonRaw/common_bd_ssr01.png"
+
+		if config.Rareity == 15 then
+			iconName = "asset/commonRaw/common_bd_sp01.png"
+		end
+
+		icon:loadTexture(iconName, ccui.TextureResType.localType)
 		icon:setContentSize(cc.size(93, 93))
 
 		local touchInfo = {
@@ -459,7 +521,7 @@ function DreamChallengePointMediator:refreshBuffInfo()
 		})
 
 		local config = ConfigReader:getRecordById("HeroBase", heros[i])
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = config.RoleModel
 		})
 

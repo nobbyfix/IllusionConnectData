@@ -1,110 +1,31 @@
+require("sdk.SDKHelperEnum")
+
 local PlatformHelper = require("sdk.PlatformHelper")
 local cjson = require("cjson.safe")
-local SDKHelper = class("SDKHelper", legs.Actor)
-EVT_LOGIN = "EVT_LOGIN"
-EVT_SWITCH_ACCOUNT = "EVT_SWITCH_ACCOUNT"
-EVT_LOG_OUT = "EVT_LOG_OUT"
-EVT_PAY_OFF = "EVT_PAY_OFF"
-local SDK_FUN = {
-	CHECK_REALNAME_AUTH = "checkRealNameAuth",
-	REPORT_DATA = "reportData",
-	HIDE_FLOAT_VIEW = "hideFloatView",
-	LOGIN = "login",
-	PAY = "pay",
-	SHOW_FLOAT_VIEW = "showFloatView",
-	EXTURN_FUNCTION = "exturnFunction",
-	EXIT = "exit",
-	PAY_INIT = "payInit",
-	PAY_INCOMPLETE = "payIncomplete",
-	LOGOUT = "logout",
-	INIT = "init",
-	SWITCH_ACCOUNT = "switchAccount"
-}
-local EVENT_TYPE = {
-	SDK_ORDER_SUCCESS = 1009,
-	LOGOUT_SUCCESS = 1006,
-	PAY_INCOMPLETE_SUCCESS = 1015,
-	PAY_CANCEL = 1011,
-	PAY_INCOMPLETE_NO = 1014,
-	LOGIN_CANCEL = 1002,
-	LOGIN_SUCCESS = 1000,
-	LOGOUT_CANCEL = 1008,
-	SWITCH_ACCOUNT_CANCEL = 1005,
-	LOGIN_FAILURE = 1001,
-	SWITCH_ACCOUNT_SUCCESS = 1003,
-	PAY_INCOMPLETE_FAILURE = 1016,
-	PAY_SUCCESS = 1012,
-	SWITCH_ACCOUNT_FAILURE = 1004,
-	PAY_COMPLETE = 1013,
-	PAY_FAILURE = 1010,
-	LOGOUT_FAILURE = 1007
-}
-local REPORT_TYPE = {
-	LOGIN = "LOGIN",
-	CREATE = "CREATE",
-	UPLEVEL = "UPLEVEL"
-}
+
+if PlatformHelper:isIOS() then
+	require("sdk.DPSAnySdk-iOS")
+elseif PlatformHelper:isAndroid() then
+	require("sdk.DPSAnySdk-Android")
+else
+	require("sdk.DPSAnySdk-mac")
+end
+
 local _noSdkSourceTable = {
 	android = "dpstorm_android",
 	mac = "dpstorm_ios",
 	windows = "dpstorm_ios",
 	ios = "dpstorm_ios"
 }
+local SDKHelper = class("SDKHelper", DPSAnySdk, _M)
 
 function SDKHelper:initialize()
-	self:init()
+	super.initialize(self)
 
-	self.EVENT_TYPE = EVENT_TYPE
 	self.cacheInfo = {}
 	self.mSdkSource = nil
+	self.mChannelID = nil
 	self._repotParams = {}
-end
-
-function SDKHelper:dispose()
-end
-
-function SDKHelper:init()
-	local this = self
-
-	local function cb(_data)
-		local params = nil
-
-		if _data and _data ~= "" then
-			params = cjson.decode(_data)
-		end
-
-		this:onSDKCallBack(params)
-	end
-
-	PlatformHelper:regSDKCallback(cb)
-
-	if dpsAnySdk then
-		dpsAnySdk.startup("")
-	end
-
-	self:adjustEventTracking(AdjustEventList.ADJUST_OPEN_GSAME_EVENT)
-end
-
-function SDKHelper:onSDKCallBack(params)
-	if params == nil then
-		return
-	end
-
-	local cmd = params.cmd
-
-	if cmd == nil then
-		return
-	end
-
-	local cb = self["sdk_cb_" .. cmd]
-
-	if cb then
-		cb(self, params)
-	end
-end
-
-function SDKHelper:callMethod(methodName, params)
-	PlatformHelper:callSDKFunction(methodName, params)
 end
 
 function SDKHelper:isEnableSdk()
@@ -120,10 +41,8 @@ function SDKHelper:isEnableSdk()
 end
 
 function SDKHelper:getSdkSource()
-	print("SDKHelper:getSdkSource", self.mSdkSource)
-
 	if not self.mSdkSource then
-		self.mSdkSource = PlatformHelper:getSdkSource()
+		self.mSdkSource = super.getSdkSource(self)
 
 		if not self.mSdkSource then
 			self.mSdkSource = ""
@@ -134,10 +53,8 @@ function SDKHelper:getSdkSource()
 end
 
 function SDKHelper:getChannelID()
-	print("SDKHelper:getChannelID", self.mChannelID)
-
 	if not self.mChannelID then
-		self.mChannelID = PlatformHelper:getChannelID()
+		self.mChannelID = super.getChannelID(self)
 
 		if not self.mChannelID then
 			self.mChannelID = ""
@@ -147,125 +64,8 @@ function SDKHelper:getChannelID()
 	return self.mChannelID
 end
 
-function SDKHelper:login(data)
-	self:callMethod(SDK_FUN.LOGIN)
-end
-
-function SDKHelper:switchAccount(data)
-	self:callMethod(SDK_FUN.SWITCH_ACCOUNT)
-end
-
-function SDKHelper:logOut(data)
-	self:callMethod(SDK_FUN.LOGOUT)
-end
-
-function SDKHelper:pay(data)
-	if not data then
-		self:dispatch(ShowTipEvent({
-			tip = "function SDKHelper:pay(data): data is nil"
-		}))
-
-		return
-	end
-
-	self:callMethod(SDK_FUN.PAY, data)
-end
-
-function SDKHelper:payInit(productList)
-	self:callMethod(SDK_FUN.PAY_INIT, productList)
-end
-
-function SDKHelper:payIncomplete()
-	self:callMethod(SDK_FUN.PAY_INCOMPLETE)
-end
-
-function SDKHelper:getServerId()
-	return self:callMethod("getServerId")
-end
-
-function SDKHelper:report(reportType, data)
-	if not data then
-		self:dispatch(ShowTipEvent({
-			tip = "SDKHelper:report(data): data is nil"
-		}))
-
-		return
-	end
-
-	local params = self._repotParams
-	params.reportType = reportType
-
-	for key, value in pairs(data) do
-		params[key] = value
-	end
-
-	self:callMethod(SDK_FUN.REPORT_DATA, params)
-end
-
-function SDKHelper:reportLogin(data)
-	self:report(REPORT_TYPE.LOGIN, data)
-end
-
-function SDKHelper:reportCreate(data)
-	self:report(REPORT_TYPE.CREATE, data)
-end
-
-function SDKHelper:reportUpLevel(data)
-	self:report(REPORT_TYPE.UPLEVEL, data)
-end
-
 function SDKHelper:getVerifyData()
 	return ""
-end
-
-function SDKHelper:setOpenId(openId)
-	if dpsAnySdk then
-		return dpsAnySdk.setOpenId(tostring(openId))
-	end
-end
-
-function SDKHelper:getOpenId()
-	if dpsAnySdk then
-		return dpsAnySdk.getOpenId()
-	end
-
-	return ""
-end
-
-function SDKHelper:_adjustEvent(data)
-	if device.platform == "mac" or device.platform == "windows" then
-		return
-	end
-
-	if data.eventName == "eventTracking" then
-		dpsAnySdk.callMethod("trackEvent", data.eventName, data.eventToken)
-	elseif data.eventName == "revenueTracking" then
-		dpsAnySdk.callMethod("trackEvent", data.eventName, data.eventToken, data.revenue, data.transactionId)
-	end
-end
-
-function SDKHelper:adjustEventTracking(token)
-	if token == nil then
-		return
-	end
-
-	local reportData = {
-		eventName = "eventTracking",
-		eventToken = token
-	}
-
-	self:_adjustEvent(reportData)
-end
-
-function SDKHelper:adjustRevenueTracking(token, orderId, price, currency)
-	local reportData = {
-		eventName = "revenueTracking",
-		eventToken = token,
-		revenue = tostring(price) .. "," .. currency,
-		transactionId = tostring(orderId)
-	}
-
-	self:_adjustEvent(reportData)
 end
 
 function SDKHelper:getGlobalData(openId, isDefault)
@@ -304,6 +104,7 @@ end
 function SDKHelper:getStatisticsBaseInfo()
 	local openId = self:getOpenId()
 	local sdkSource = self:getSdkSource()
+	local channel = GameConfigs.channel
 
 	if sdkSource == "" then
 		sdkSource = _noSdkSourceTable[tostring(device.platform)]
@@ -311,13 +112,15 @@ function SDKHelper:getStatisticsBaseInfo()
 
 	if device.platform == "mac" or device.platform == "windows" then
 		return {
-			mac = "",
+			atype = 0,
 			did = "",
-			ks_channel = "",
+			gid = 0,
 			imei = "",
 			idfv = "",
 			ks_packageChannel = "",
 			os = "mac_os",
+			mac = "",
+			ks_channel = "",
 			xingeToken = "",
 			baseVersion = "1.0.0",
 			platform = "mac",
@@ -325,10 +128,11 @@ function SDKHelper:getStatisticsBaseInfo()
 			dtype = "",
 			pass = "",
 			ip = "",
-			channel = "mac-simulator",
+			pid = 0,
 			version = "1.0.0",
 			openid = openId,
-			source = sdkSource
+			source = sdkSource,
+			channel = channel or "mac-simulator"
 		}
 	end
 
@@ -355,9 +159,13 @@ function SDKHelper:getStatisticsBaseInfo()
 		xingeToken = app.getXGPushServiceToken()
 	end
 
-	local channel = self:getChannelID() or device.platform
+	channel = channel or self:getChannelID() or device.platform
 	local ks_channel = self:readCacheValue("ks_channel") or ""
 	local ks_packageChannel = self:readCacheValue("ks_packageChannel") or ""
+	local loginType = self:readCacheValue("loginType")
+	local gid = self:getGameId()
+	local pid = self:getPlayerId()
+	local extension_info = self:readCacheValue("extension_info") or ""
 	local did = PlatformHelper:getSdkDid()
 
 	return {
@@ -365,7 +173,7 @@ function SDKHelper:getStatisticsBaseInfo()
 		source = sdkSource,
 		baseVersion = baseVersion,
 		version = version,
-		platform = deviceInfo.systemName,
+		platform = device.platform,
 		os = deviceInfo.systemName .. " " .. deviceInfo.systemVersion,
 		dtype = deviceInfo.deviceName,
 		did = did,
@@ -378,111 +186,12 @@ function SDKHelper:getStatisticsBaseInfo()
 		xingeToken = xingeToken,
 		channel = channel,
 		ks_channel = ks_channel,
-		ks_packageChannel = ks_packageChannel
+		ks_packageChannel = ks_packageChannel,
+		atype = loginType,
+		gid = gid,
+		pid = pid,
+		extension_info = extension_info
 	}
-end
-
-function SDKHelper:sdk_cb_login(params)
-	local errorCode = "loginFailure"
-
-	if EVENT_TYPE.LOGIN_SUCCESS == params.eventType then
-		errorCode = "loginSuccess"
-
-		self:adjustEventTracking(AdjustEventList.ADJUST_LOGIN_SUCCESS_EVENT)
-
-		local loginType = self:getLoginWay()
-
-		if loginType == "mamba_login" then
-			self:adjustEventTracking(AdjustEventList.ADJUST_LOGIN_MB_SUCCESS_EVENT)
-		elseif loginType == "google_login" then
-			self:adjustEventTracking(AdjustEventList.ADJUST_LOGIN_G_SUCCESS_EVENT)
-		elseif loginType == "facebook_login" then
-			self:adjustEventTracking(AdjustEventList.ADJUST_LOGIN_FB_SUCCESS_EVENT)
-		end
-
-		self:saveLoginInfo(params.playerInfo)
-	end
-
-	self:dispatch(Event:new(EVT_LOGIN, {
-		errorCode = errorCode,
-		message = params
-	}))
-end
-
-function SDKHelper:sdk_cb_logout(params)
-	local errorCode = "logoutFailure"
-
-	if EVENT_TYPE.LOGOUT_SUCCESS == params.eventType then
-		errorCode = "logoutSuccess"
-	end
-
-	self:dispatch(Event:new(EVT_LOG_OUT, {
-		errorCode = errorCode,
-		message = params
-	}))
-
-	if errorCode == "logoutSuccess" then
-		REBOOT("REBOOT_NOUPDATE")
-	end
-end
-
-function SDKHelper:sdk_cb_switchAccount(params)
-	local errorCode = "switchAccountFailure"
-
-	if EVENT_TYPE.SWITCH_ACCOUNT_SUCCESS == params.eventType then
-		errorCode = "switchAccountSuccess"
-
-		self:saveLoginInfo(params.playerInfo)
-
-		local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
-		local topViewName = scene:getTopViewName()
-
-		if topViewName ~= "LoginView" then
-			REBOOT("REBOOT_NOUPDATE")
-		end
-	end
-
-	self:dispatch(Event:new(EVT_SWITCH_ACCOUNT, {
-		errorCode = errorCode,
-		message = params
-	}))
-end
-
-function SDKHelper:sdk_cb_pay(params)
-	local errorCode = "payFailure"
-
-	if EVENT_TYPE.PAY_SUCCESS == params.eventType then
-		errorCode = "paySuccess"
-	end
-
-	self:dispatch(Event:new(EVT_PAY_OFF, {
-		errorCode = errorCode,
-		message = params
-	}))
-end
-
-function SDKHelper:sdk_cb_payInit(params)
-	local errorCode = "payInitSuccess"
-
-	self:dispatch(Event:new(EVT_PAY_OFF, {
-		errorCode = errorCode,
-		message = params
-	}))
-end
-
-function SDKHelper:sdk_cb_payIncomplete(params)
-	local errorCode = "payIncFailure"
-
-	if EVENT_TYPE.PAY_INCOMPLETE_NO == params.eventType then
-		errorCode = "payNoIncomplete"
-	elseif EVENT_TYPE.PAY_INCOMPLETE_SUCCESS == params.eventType then
-		errorCode = "payIncComplete"
-	end
-
-	self:dispatch(Event:new(EVT_PAY_OFF, {
-		errorCode = errorCode,
-		message = params
-	}))
 end
 
 function SDKHelper:saveLoginInfo(params)
@@ -495,8 +204,8 @@ function SDKHelper:saveLoginInfo(params)
 	self:saveCacheValue("extension_info", params.extension_info or "")
 	self:saveCacheValue("ks_channel", params.channel or "")
 	self:saveCacheValue("ks_packageChannel", params.packageChannel or "")
-	self:saveCacheValue("loginway", params.loginway or "")
 	self:setOpenId(tostring(self:readCacheValue("uid")))
+	self:saveCacheValue("loginType", params.loginType or 0)
 end
 
 function SDKHelper:saveCacheValue(key, value)
@@ -507,8 +216,228 @@ function SDKHelper:readCacheValue(key)
 	return self.cacheInfo[key]
 end
 
-function SDKHelper:getLoginWay()
-	return self:readCacheValue("loginway")
+function SDKHelper:login(data)
+	print("lua-----login")
+	self:callMethod(SDK_FUN.LOGIN)
+end
+
+function SDKHelper:attFriendlyPage(data)
+	print("lua-----attFriendlyPage")
+	self:callMethod(SDK_FUN.ATT_FRIENDLY_PAGE, cjson.encode(data))
+end
+
+function SDKHelper:showPlatform(data)
+	print("lua-----showPlatform")
+	self:callMethod(SDK_FUN.SHOW_PLATFORM, cjson.encode(data))
+end
+
+function SDKHelper:onLoginCallBack(errorCode, params)
+	if errorCode == "loginSuccess" then
+		self:saveLoginInfo(params)
+		self:dispatch(Event:new(EVT_LOGIN, {
+			errorCode = tostring(errorCode),
+			message = params
+		}))
+	elseif errorCode == "loginFailure" then
+		self:dispatch(ShowTipEvent({
+			tip = tostring(errorCode)
+		}))
+	end
+end
+
+function SDKHelper:switchAccount(data)
+	self:callMethod(SDK_FUN.SWITCH_ACCOUNT)
+end
+
+function SDKHelper:onSwitchAccountCallBack(errorCode, params)
+	if errorCode == "switchAccountSuccess" then
+		self:saveLoginInfo(params)
+
+		local scene = self:getInjector():getInstance("BaseSceneMediator", "activeScene")
+		local topViewName = scene:getTopViewName()
+
+		if topViewName ~= "LoginView" then
+			REBOOT("REBOOT_NOUPDATE")
+		end
+	end
+
+	self:dispatch(Event:new(EVT_SWITCH_ACCOUNT, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+end
+
+function SDKHelper:getInheritanceCode(data)
+	print("SDKHelper:getInheritanceCode")
+	self:callMethod(SDK_FUN.GET_INHERITANCECODE)
+end
+
+function SDKHelper:checkGooglePromoPurchase(data)
+	dump(data, "SDKHelper:checkGooglePromoPurchase(data)")
+	self:callMethod(SDK_FUN.CHECK_PURCHASE, cjson.encode(data))
+end
+
+function SDKHelper:onCheckGooglePromoPurchaseCallBack(errorCode, params)
+	dump(errorCode, "onCheckGooglePromoPurchaseCallBack(errorCode)")
+end
+
+function SDKHelper:consumeGooglePromoPurchase(data)
+	dump(data, "SDKHelper:consumeGooglePromoPurchase(data)")
+	self:callMethod(SDK_FUN.CONSUME_PURCHASE, cjson.encode(data))
+end
+
+function SDKHelper:onConsumeGooglePromoPurchaseCallBack(errorCode, params)
+	dump(errorCode, "onConsumeGooglePromoPurchaseCallBack(errorCode)")
+end
+
+function SDKHelper:deleteAccount(data)
+	print("SDKHelper:deleteAccount")
+	self:callMethod(SDK_FUN.DELETE_ACCOUNT)
+end
+
+function SDKHelper:onDeleteAccountCallBack(errorCode, params)
+	if errorCode == "deleteAccountSuccess" then
+		self:dispatch(Event:new(EVT_DELETE_ACCOUNT, {
+			errorCode = tostring(errorCode),
+			message = params
+		}))
+	end
+end
+
+function SDKHelper:bindAccount(data)
+	dump(data, "SDKHelper:bindAccount(data)")
+	self:callMethod(SDK_FUN.BIND_ACCOUNT)
+end
+
+function SDKHelper:onBindAccountCallBack(errorCode, params)
+	dump(errorCode, "onBindAccountCallBack(errorCode)")
+	self:dispatch(Event:new(EVT_BIND_ACCOUNT, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+end
+
+function SDKHelper:checkBindState(data)
+	print("SDKHelper:checkBindState")
+	self:callMethod(SDK_FUN.CHECK_BIND_STATE)
+end
+
+function SDKHelper:onCheckBindStateCallBack(errorCode, params)
+	dump(errorCode, "onCheckBindStateCallBack(errorCode)")
+	self:dispatch(Event:new(EVT_BIND_ACCOUNT, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+end
+
+function SDKHelper:bindPhone(data)
+	print("SDKHelper:bindPhone")
+	self:callMethod(SDK_FUN.BIND_PHONE)
+end
+
+function SDKHelper:onBindPhoneCallBack(errorCode, params)
+	dump(errorCode, "onBindPhoneCallBack(errorCode)")
+	self:dispatch(Event:new(EVT_BIND_ACCOUNT, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+end
+
+function SDKHelper:customerService(data)
+	dump(data, "SDKHelper:customerService(data)")
+	self:callMethod(SDK_FUN.CUSTOMER_SERVICE, cjson.encode(data))
+end
+
+function SDKHelper:requestReviewInApp(data)
+	dump(data, "SDKHelper:requestReviewInApp(data)")
+	self:callMethod(SDK_FUN.REQUEST_REVIEW_IN_APP, cjson.encode(data))
+end
+
+function SDKHelper:logOut(data)
+	dump(data, "SDKHelper:logOut(data)")
+	self:callMethod(SDK_FUN.LOGOUT)
+end
+
+function SDKHelper:onLogOutCallBack(errorCode, params)
+	self:dispatch(Event:new(EVT_LOG_OUT, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+
+	if errorCode == "logoutSuccess" then
+		REBOOT("REBOOT_NOUPDATE")
+	end
+end
+
+function SDKHelper:payInit(productList)
+	self:callMethod(SDK_FUN.PAY_INIT, cjson.encode(productList))
+end
+
+function SDKHelper:payIncomplete()
+	self:callMethod(SDK_FUN.PAY_INCOMPLETE)
+end
+
+function SDKHelper:onPayCallBack(errorCode, params)
+	self:dispatch(Event:new(EVT_PAY_OFF, {
+		errorCode = tostring(errorCode),
+		message = params
+	}))
+end
+
+function SDKHelper:userCenterByPwrdView()
+	self:callMethod(SDK_FUN.USER_CENTER)
+end
+
+function SDKHelper:openUrl(data)
+	if not data then
+		self:dispatch(ShowTipEvent({
+			tip = "function Sdk:openUrl(data): data is nil"
+		}))
+
+		return
+	end
+
+	self:callMethod(SDK_FUN.OPEM_URL, cjson.encode(data))
+end
+
+function SDKHelper:systemShare(data)
+	self:callMethod(SDK_FUN.SYSTEM_SHARE, cjson.encode(data))
+end
+
+function SDKHelper:reportLogin(data)
+	self:report(REPORT_TYPE.LOGIN, data)
+end
+
+function SDKHelper:reportCreate(data)
+	self:report(REPORT_TYPE.CREATE, data)
+end
+
+function SDKHelper:reportUpLevel(data)
+	self:report(REPORT_TYPE.UPLEVEL, data)
+end
+
+function SDKHelper:reportLogout(data)
+	self:report(REPORT_TYPE.LOGOUT, data)
+end
+
+function SDKHelper:reportLoginError(data)
+	self:report(REPORT_TYPE.LOGIN_ERROR, data)
+end
+
+function SDKHelper:reportByAD(data)
+	self:callMethod(SDK_FUN.TRACK_EVENT_AD, cjson.encode(data))
+end
+
+function SDKHelper:reportStatsData(data)
+	self:callMethod(SDK_FUN.TRACK_EVENT_NAME, cjson.encode(data))
+end
+
+function SDKHelper:reportInitiatedCheckout(data)
+	self:report(REPORT_TYPE.INITIATEDCHECKOUT, data)
+end
+
+function SDKHelper:reportFinishPurchase(data)
+	self:report(REPORT_TYPE.FINISHPURCHASE, data)
 end
 
 return SDKHelper

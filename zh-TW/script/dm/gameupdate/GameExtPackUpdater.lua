@@ -1,6 +1,6 @@
 local fileUtils = cc.FileUtils:getInstance()
 local writablePath = fileUtils:getWritablePath()
-local kDownloadRetryMax = 2
+local kDownloadRetryMax = 5
 local dbFilePath = writablePath .. "extensions.db"
 local cjson = require("cjson.safe")
 
@@ -8,6 +8,7 @@ require("dm.gameupdate.GameUpdaterDelegate")
 require("dm.gameupdate.GameUpdater")
 
 local isInitUpdateCfg = false
+local maxDownloadNum = 20
 GameExtPackUpdater = GameExtPackUpdater or {}
 
 local function createSqlStr(sqlData)
@@ -74,22 +75,49 @@ function GameExtPackUpdater.initUpdateCfg()
 		print("*********extensions db existing*********")
 	end
 
-	local updateCfgPath = writablePath .. "updateExt"
+	local updateCfgPath = writablePath .. "updateExtDist"
 
 	if fileUtils:isFileExist(updateCfgPath) then
-		local sqlData = fileUtils:getStringFromFile(updateCfgPath)
-		local sqlStr = createSqlStr(sqlData)
+		local updateContent = fileUtils:getStringFromFile(updateCfgPath)
+		local maxSQLCount = 300
+		local cjson = require("cjson.safe")
+		local updateData = cjson.decode(updateContent)
+		local sqlVector = {}
+		local sqls = updateData.data
 
-		print("start update extensions db")
+		if maxSQLCount < table.nums(sqls) then
+			for i, v in ipairs(sqls) do
+				local pointer = math.ceil(i / maxSQLCount)
+				sqlVector[pointer] = sqlVector[pointer] or {
+					data = {},
+					version = updateData.version
+				}
+				local subSQLData = sqlVector[pointer]
+				local index = math.mod(i, maxSQLCount)
+
+				if index == 0 then
+					index = maxSQLCount or index
+				end
+
+				subSQLData.data[index] = sqls[i]
+			end
+		else
+			sqlVector[#sqlVector + 1] = updateData
+		end
 
 		local tempUpdateDBPath = writablePath .. "extensions_temp.db"
 
 		fileUtils:removeFile(tempUpdateDBPath)
 		app.copyFile(dbFilePath, tempUpdateDBPath)
+		print("start update extensions db")
 
-		local errorInfo = app.getAssetsManager():mergeDbBySQLString(tempUpdateDBPath, sqlStr)
+		for _, subSqlData in ipairs(sqlVector) do
+			local subContent = createSqlStr(cjson.encode(subSqlData))
+			local errorInfo = app.getAssetsManager():mergeDbBySQLString(tempUpdateDBPath, subContent)
 
-		assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
+			assert(#errorInfo == 0, "mergeDb error:" .. errorInfo)
+		end
+
 		fileUtils:removeFile(dbFilePath)
 		fileUtils:renameFile(tempUpdateDBPath, dbFilePath)
 		fileUtils:removeFile(updateCfgPath)
@@ -111,9 +139,22 @@ end
 
 function GameExtPackUpdater:initialize()
 	self._downloader = Downloader:getInstance()
+
+	if app.setDownloaderMaxNumPerFrame then
+		app.setDownloaderMaxNumPerFrame(2)
+	end
+
 	self._isAllDownloadFinish = false
 	self._resType = nil
 	self._packages = {}
+end
+
+function GameExtPackUpdater:setDownloaderMaxNumPerFrame(num)
+	self._downloader = Downloader:getInstance()
+
+	if app.setDownloaderMaxNumPerFrame then
+		app.setDownloaderMaxNumPerFrame(num)
+	end
 end
 
 function GameExtPackUpdater:initWithTypeOrSqlStr(type, sqlConditionStr)
@@ -129,36 +170,45 @@ function GameExtPackUpdater:initWithTypeOrSqlStr(type, sqlConditionStr)
 	end
 
 	self._extensionsInfo = app.getAssetsManager():getExtRowsByConditionStr(sqlstr) or {}
+	local tempCache = {}
 	self._packages = {}
 
 	for _, v in pairs(self._extensionsInfo) do
-		local cdnInfo = {}
-		_G.CDN_URLS = _G.CDN_URLS or {}
-		cdnInfo[#cdnInfo + 1] = _G.CDN_URLS[1] or "http://cdn.dpstorm.com/"
-		local extraCdnUrl = _G.CDN_URLS[2]
+		if not tempCache[v[7]] then
+			local cdnInfo = {}
+			_G.CDN_URLS = _G.CDN_URLS or {}
+			cdnInfo[#cdnInfo + 1] = _G.CDN_URLS[1] or "http://cdn.dpstorm.com"
+			local extraCdnUrl = _G.CDN_URLS[2]
 
-		if extraCdnUrl and extraCdnUrl ~= "" then
-			cdnInfo[#cdnInfo + 1] = extraCdnUrl
+			if extraCdnUrl and extraCdnUrl ~= "" then
+				cdnInfo[#cdnInfo + 1] = extraCdnUrl
+			end
+
+			local isDownload = v[5] == "1"
+			local packageInfo = {
+				cdnUrl = cdnInfo,
+				url = v[4],
+				packName = v[3],
+				size = tonumber(v[6]),
+				md5 = v[7]
+			}
+			local package = UpdatePackage:new(packageInfo)
+			package.totalBytesReceived = 0
+			package.logic = v[1]
+
+			if isDownload or fileUtils:isFileExist(package:getPath()) then
+				package.totalBytesReceived = packageInfo.size
+
+				package:setStatus(PkgStatus.kDownloadFinsh)
+
+				if not isDownload then
+					self:updateDownloadState(package:getName())
+				end
+			end
+
+			self._packages[#self._packages + 1] = package
+			tempCache[v[7]] = true
 		end
-
-		local isDownload = v[5] == "1"
-		local packageInfo = {
-			cdnUrl = cdnInfo,
-			url = v[4],
-			packName = v[3],
-			size = tonumber(v[6]),
-			md5 = v[7]
-		}
-		local package = UpdatePackage:new(packageInfo)
-		package.totalBytesReceived = 0
-
-		if isDownload then
-			package.totalBytesReceived = packageInfo.size
-
-			package:setStatus(PkgStatus.kDownloadFinsh)
-		end
-
-		self._packages[#self._packages + 1] = package
 	end
 end
 
@@ -215,7 +265,7 @@ function GameExtPackUpdater:pauseTask()
 
 	self._isPause = true
 
-	for index, package in ipairs(self._packages) do
+	for index, package in ipairs(self._downLoadingTask) do
 		self._downloader:cancelTask(package:getCurDownloadUrl())
 	end
 end
@@ -244,7 +294,7 @@ function GameExtPackUpdater:resumeTask()
 	self._isPause = false
 	self._isAutoPause = false
 
-	for k, v in pairs(self._packages) do
+	for k, v in pairs(self._downLoadingTask) do
 		v:resetCdnIndex()
 		self:downloadResPack(v)
 	end
@@ -282,13 +332,19 @@ function GameExtPackUpdater:getProgress()
 end
 
 function GameExtPackUpdater:getTotalReceivedSize()
+	if self._totalBytesReceived then
+		return self._totalBytesReceived
+	end
+
 	local totalBytesReceived = 0
 
 	for index, package in ipairs(self._packages) do
 		totalBytesReceived = totalBytesReceived + package.totalBytesReceived
 	end
 
-	return totalBytesReceived
+	self._totalBytesReceived = totalBytesReceived
+
+	return self._totalBytesReceived
 end
 
 function GameExtPackUpdater:getTotalExpectedSize()
@@ -322,10 +378,41 @@ function GameExtPackUpdater:run()
 		return
 	end
 
-	print("准备下载任务数量", #self._extensionsInfo)
+	self._downloadNum = #self._packages
+	self._progress = 0
+	self._currentDownloadIndex = 0
+	self._downLoadingTask = {}
 
-	for k, v in pairs(self._packages) do
-		self:downloadResPack(v)
+	print("准备下载任务数量", self._downloadNum)
+
+	local startDownloadNum = maxDownloadNum <= self._downloadNum and maxDownloadNum or self._downloadNum
+
+	table.sort(self._packages, function (a, b)
+		if a:getStatus() == b:getStatus() then
+			return b:getCurDownloadUrl() < a:getCurDownloadUrl()
+		else
+			return a:getStatus() == PkgStatus.kDownloadFinsh
+		end
+	end)
+
+	while self._currentDownloadIndex < self._downloadNum and startDownloadNum > 0 do
+		self._currentDownloadIndex = self._currentDownloadIndex + 1
+		local package = self._packages[self._currentDownloadIndex]
+
+		if package:getStatus() ~= PkgStatus.kDownloadFinsh then
+			startDownloadNum = startDownloadNum - 1
+
+			self:downloadResPack(package)
+		end
+	end
+
+	local progress = self:getProgress()
+
+	if self._progressFunc and (progress - self._progress > 1 or progress == 100) then
+		self._progress = progress
+
+		self._progressFunc(progress)
+		print(string.format("----------------总下载进度:%s--------------", progress))
 	end
 end
 
@@ -333,6 +420,30 @@ function GameExtPackUpdater:updateDownloadState(real)
 	local sqlstr = string.format("UPDATE extension SET downloaded = '1' WHERE real = '%s'", real)
 
 	app.getAssetsManager():mergeExtensionsDBBySQLString(sqlstr)
+end
+
+function GameExtPackUpdater:_clearErrorPackage()
+	for index, package in ipairs(self._packages) do
+		local pkgPath = package:getPath()
+
+		if pkgPath then
+			if package:getStatus() == PkgStatus.kDownloadFail then
+				local errorCode = package:getErrorCode()
+
+				if errorCode ~= 42 and errorCode ~= 6 and errorCode ~= 56 then
+					fileUtils:removeFile(pkgPath .. ".tmp")
+
+					self._totalBytesReceived = self:getTotalReceivedSize() - package.totalBytesReceived
+					package.totalBytesReceived = 0
+				end
+			elseif package:getStatus() == PkgStatus.kDownloadDamage then
+				fileUtils:removeFile(pkgPath)
+
+				self._totalBytesReceived = self:getTotalReceivedSize() - package.totalBytesReceived
+				package.totalBytesReceived = 0
+			end
+		end
+	end
 end
 
 function GameExtPackUpdater:downloadResPack(package)
@@ -347,29 +458,16 @@ function GameExtPackUpdater:downloadResPack(package)
 
 			package:setDownloadTaskInfo(downloadTaskInfo)
 			package:setStatus(PkgStatus.kDownloading)
+			print("重置cdn尝试下载", curDownloadUrl)
+
+			local pkgPath = package:getPath()
+
 			self._downloader:addDownloadTask(downloadTaskInfo)
 		end
 	end
 
-	local function clearErrorPackage()
-		for index, package in ipairs(self._packages) do
-			local pkgPath = package:getPath()
-
-			if pkgPath then
-				if package:getStatus() == PkgStatus.kDownloadFail then
-					local errorCode = package:getErrorCode()
-
-					if errorCode ~= 42 and errorCode ~= 6 and errorCode ~= 56 then
-						fileUtils:removeFile(pkgPath .. ".tmp")
-					end
-				elseif package:getStatus() == PkgStatus.kDownloadDamage then
-					fileUtils:removeFile(pkgPath)
-				end
-			end
-		end
-	end
-
 	local function onTaskProgress(task, bytesReceived, totalBytesReceived, totalBytesExpected)
+		self._totalBytesReceived = self:getTotalReceivedSize() + totalBytesReceived - package.totalBytesReceived
 		package.totalBytesReceived = totalBytesReceived
 
 		if self._delegate and self._delegate.onTaskProgress then
@@ -378,6 +476,7 @@ function GameExtPackUpdater:downloadResPack(package)
 	end
 
 	local function onFileTaskSuccess(task)
+		self._totalBytesReceived = self:getTotalReceivedSize() + package:getSize() - package.totalBytesReceived
 		package.totalBytesReceived = package:getSize()
 
 		if self._delegate and self._delegate.onFileTaskSuccess then
@@ -386,17 +485,29 @@ function GameExtPackUpdater:downloadResPack(package)
 
 		package:setStatus(PkgStatus.kDownloadFinsh)
 
-		local progress = self:getProgress()
+		self._downLoadingTask[package.logic] = nil
 
-		if self._progressFunc then
-			self._progressFunc(progress)
+		if package:getRetryCount() > 0 then
+			print("重新尝试下载成功:", package:getCurDownloadUrl())
 		end
 
-		print(string.format("----------------总下载进度:%s--------------", progress))
+		if self._currentDownloadIndex < self._downloadNum then
+			self._currentDownloadIndex = self._currentDownloadIndex + 1
+
+			self:downloadResPack(self._packages[self._currentDownloadIndex])
+		else
+			self:_clearErrorPackage()
+		end
+
 		self:updateDownloadState(package:getName())
 
-		if not self:hasDownloadingTask() then
-			clearErrorPackage()
+		local progress = self:getProgress()
+
+		if self._progressFunc and (progress - self._progress > 1 or progress == 100) then
+			self._progress = progress
+
+			self._progressFunc(progress)
+			print(string.format("----------------总下载进度:%s--------------", progress))
 		end
 	end
 
@@ -416,6 +527,9 @@ function GameExtPackUpdater:downloadResPack(package)
 
 			if errorCode ~= 6 and errorCode ~= 56 then
 				fileUtils:removeFile(pkgPath .. ".tmp")
+
+				self._totalBytesReceived = self:getTotalReceivedSize() - package.totalBytesReceived
+				package.totalBytesReceived = 0
 			end
 		end
 
@@ -425,6 +539,8 @@ function GameExtPackUpdater:downloadResPack(package)
 		local curDownloadUrl = package:getCurDownloadUrl()
 
 		if curDownloadUrl then
+			print("切换cdn尝试下载", curDownloadUrl)
+
 			local downloadTaskInfo = package:getDownloadTaskInfo()
 			downloadTaskInfo.srcUrl = curDownloadUrl
 
@@ -438,10 +554,17 @@ function GameExtPackUpdater:downloadResPack(package)
 			retry(package)
 		else
 			package:setStatus(PkgStatus.kDownloadFail)
-			clearErrorPackage()
+			self:_clearErrorPackage()
+			print(string.format("****下载任务最终尝试失败*****:%s,%s,%s,%s", task.requestURL or "", errorCode, errorCodeInternal, errorStr))
 
 			if self._delegate and self._delegate.onTaskError then
 				self._delegate:onTaskError(task, errorCode, errorCodeInternal, errorStr)
+			end
+
+			if self._currentDownloadIndex < self._downloadNum then
+				self._currentDownloadIndex = self._currentDownloadIndex + 1
+
+				self:downloadResPack(self._packages[self._currentDownloadIndex])
 			end
 		end
 	end
@@ -450,7 +573,7 @@ function GameExtPackUpdater:downloadResPack(package)
 	local curDownloadUrl = package:getCurDownloadUrl()
 	local taskInfo = {
 		type = "file",
-		identifier = curDownloadUrl,
+		identifier = package.logic,
 		md5 = package:getMd5(),
 		srcUrl = curDownloadUrl,
 		storagePath = destPath,
@@ -466,6 +589,8 @@ function GameExtPackUpdater:downloadResPack(package)
 	end
 
 	if fileUtils:isFileExist(destPath) then
+		print("文件已经存在直接下载成功", curDownloadUrl)
+
 		local size = package:getSize()
 		local task = {
 			storagePath = taskInfo.storagePath,
@@ -477,6 +602,13 @@ function GameExtPackUpdater:downloadResPack(package)
 		onFileTaskSuccess(task)
 	else
 		package:setStatus(PkgStatus.kDownloading)
+
+		self._downLoadingTask[package.logic] = package
+
+		if self._isPause then
+			return
+		end
+
 		self._downloader:addDownloadTask(taskInfo)
 	end
 end

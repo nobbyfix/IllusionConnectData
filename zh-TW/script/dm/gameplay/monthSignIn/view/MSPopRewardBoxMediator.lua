@@ -39,6 +39,7 @@ function MSPopRewardBoxMediator:enterWithData(data)
 
 	richText:addTo(self:getView())
 	richText:setPosition(cc.p(603, 370))
+	ajustRichTextCustomWidth(richText, 260)
 
 	local layout = ccui.Layout:create()
 

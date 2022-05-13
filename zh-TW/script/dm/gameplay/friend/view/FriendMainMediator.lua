@@ -6,7 +6,7 @@ FriendMainMediator:has("_friendSystem", {
 
 local kBtnHandlers = {
 	["main.btn_close"] = {
-		clickAudio = "Se_Click_Close_2",
+		clickAudio = "Se_Click_Close_1",
 		func = "onCloseClicked"
 	}
 }
@@ -14,25 +14,29 @@ local kTabViewNames = {
 	[kFriendType.kGame] = "FriendListView",
 	[kFriendType.kRecent] = "FriendListView",
 	[kFriendType.kFind] = "FriendFindView",
-	[kFriendType.kApply] = "FriendApplyView"
+	[kFriendType.kApply] = "FriendApplyView",
+	[kFriendType.kBlack] = "FriendBlcakView"
 }
 local kTabNames = {
 	[kFriendType.kGame] = "kGame",
 	[kFriendType.kRecent] = "kRecent",
 	[kFriendType.kFind] = "kFind",
-	[kFriendType.kApply] = "kApply"
+	[kFriendType.kApply] = "kApply",
+	[kFriendType.kApply] = "kBlack"
 }
 local TabName = {
 	"Friend_UI5",
 	"Friend_UI49",
 	"Friend_UI4",
-	"Friend_UI50"
+	"Friend_UI50",
+	"Friend_UI50_1"
 }
 local TabNameTranslate = {
 	"UITitle_EN_Haoyou",
 	"UITitle_EN_Xiaoxi",
 	"UITitle_EN_Shenqing",
-	"UITitle_EN_Shenhe"
+	"UITitle_EN_Shenhe",
+	"UITitle_EN_Heimingdan"
 }
 
 function FriendMainMediator:initialize()
@@ -110,7 +114,7 @@ function FriendMainMediator:initTabView()
 	local widget = TabBtnWidget:createWidgetNode()
 	self._tabBtnWidget = self:autoManageObject(injector:injectInto(TabBtnWidget:new(widget)))
 
-	self._tabBtnWidget:adjustScrollViewSize(0, 430)
+	self._tabBtnWidget:adjustScrollViewSize(0, 482)
 	self._tabBtnWidget:initTabBtn(config, {
 		ignoreSound = true,
 		noCenterBtn = true,
@@ -121,7 +125,7 @@ function FriendMainMediator:initTabView()
 
 	local view = self._tabBtnWidget:getMainView()
 
-	view:addTo(self._tabPanel):posite(0, 0)
+	view:addTo(self._tabPanel):posite(0, 10)
 	view:setLocalZOrder(1100)
 end
 
@@ -146,8 +150,6 @@ function FriendMainMediator:showView()
 
 		if mediator then
 			local data = {}
-
-			dump(self._oldTabType, "self._oldTabType")
 
 			if self._curTabType == kFriendType.kGame then
 				if self._oldTabType == kFriendType.kRecent then

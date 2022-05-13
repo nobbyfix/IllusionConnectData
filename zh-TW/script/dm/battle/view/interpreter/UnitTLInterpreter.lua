@@ -24,7 +24,7 @@ end
 function UnitTLInterpreter:doAction(action, args, mode)
 	local role = self._unitManager:getUnitById(self:getId())
 
-	if role == nil and action ~= "SpawnUnit" and action ~= "RebornUnit" and action ~= "CallUnit" and action ~= "Revive" then
+	if role == nil and action ~= "SpawnUnit" and action ~= "RebornUnit" and action ~= "CallUnit" and action ~= "Revive" and action ~= "CallMasterUnit" then
 		return
 	end
 
@@ -88,6 +88,18 @@ function UnitTLInterpreter:syncMainViewMaster()
 	end
 end
 
+function UnitTLInterpreter:act_ChangeFlags(action, args)
+	local flags = args.flags
+
+	self._dataModel:setFlags(flags)
+end
+
+function UnitTLInterpreter:act_IsSummond(action, args)
+	local isSummoned = args.isSummoned
+
+	self._dataModel:setIsSummond(isSummoned)
+end
+
 function UnitTLInterpreter:act_SpawnUnit(action, args)
 	self._mainPlayerSide = self._context:getValue("IsTeamAView")
 	self._mainPlayerId = self._context:getValue("CurMainPlayerId")
@@ -116,6 +128,10 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 	roleDataModel:setAwakenLevel(args.awakenLevel or 0)
 	roleDataModel:setModelScale(args.modelScale)
 	roleDataModel:setConfigId(args.cid)
+	roleDataModel:setIsSummond(args.isSummoned)
+	roleDataModel:setSide(args.side)
+	roleDataModel:setFlags(args.flags)
+	roleDataModel:setIsBattleField(args.isBattleField)
 
 	local pos = self._battleGround:relPositionFor(isLeft, posInArr)
 	local role = BattleRoleObject:new(id, roleDataModel, self._context)
@@ -140,11 +156,12 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 
 		occupy = false
 	else
-		role:hideRole(180)
+		role:hideRole(args.opacity or 180)
 	end
 
 	if occupy then
 		self._battleGround:resetGroundCell(roleDataModel:getCellId(), GroundCellStatus.OCCUPIED)
+		self._battleGround:setCellOccupiedHero(roleDataModel:getCellId(), roleDataModel)
 	end
 
 	self:setUnitObject(role)
@@ -177,12 +194,12 @@ function UnitTLInterpreter:act_SpawnUnit(action, args)
 
 			local headWidget = self._battleUIMediator:getLeftHeadWidget()
 
-			headWidget:updateHeadInfo(data)
+			headWidget:updateHeadInfo(data, roleDataModel)
 			self:setHeadWidget(headWidget)
 		else
 			local headWidget = self._battleUIMediator:getRightHeadWidget()
 
-			headWidget:updateHeadInfo(data)
+			headWidget:updateHeadInfo(data, roleDataModel)
 			self:setHeadWidget(headWidget)
 		end
 
@@ -281,6 +298,12 @@ function UnitTLInterpreter:act_CallUnit(action, args)
 	self:act_SpawnUnit("SpawnUnit", args)
 end
 
+function UnitTLInterpreter:act_CallMasterUnit(action, args)
+	args.opacity = 0
+
+	self:act_SpawnUnit("SpawnUnit", args)
+end
+
 function UnitTLInterpreter:act_Revive(action, args)
 	self:act_SpawnUnit("SpawnUnit", args)
 end
@@ -358,7 +381,10 @@ function UnitTLInterpreter:act_TransportExt(action, args, mode)
 	local oldTimeScale = role:getRoleAnim():getTimeScale()
 
 	role:getRoleAnim():setTimeScale(timeScale)
+	role:setBusyState(true)
 	role:moveWithDuration(pos, duration, function ()
+		role:setBusyState(false)
+
 		if not ignoreSwitch then
 			self._unitManager:exchange(oldCellId, dataModel:getCellId())
 		end
@@ -367,6 +393,10 @@ function UnitTLInterpreter:act_TransportExt(action, args, mode)
 		self._battleGround:resetGroundCell(self._dataModel:getCellId(), GroundCellStatus.OCCUPIED)
 		role:getRoleAnim():setTimeScale(oldTimeScale)
 	end)
+
+	if not ignoreSwitch then
+		self._battleGround:swipCellOccupiedHero(oldCellId, dataModel:getCellId())
+	end
 end
 
 function UnitTLInterpreter:act_Transport(action, args, mode)
@@ -457,17 +487,33 @@ function UnitTLInterpreter:act_BeginSkill(action, args, mode)
 			local awakeSkillId, _ = unpack(string.split(skill, ":"))
 			local skillDesc = ConfigReader:getDataByNameIdAndKey("Skill", awakeSkillId, "SkillPic")
 			local awakePortrait = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "AwakePic")
+			local roleModelId = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "RoleModel")
+			local _modelId = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModelId, "Model")
 
-			if configId then
-				effectLayer:pushPortraitEffect(configId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, awakePortrait)
-			end
+			effectLayer:pushPortraitEffect(_modelId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, awakePortrait, configId)
 
 			break
 		end
 
 		local skillDesc = ConfigReader:getDataByNameIdAndKey("Skill", skillId, "SkillPic")
+		local configId = self._dataModel:getConfigId()
+		local rareity = ConfigReader:getDataByNameIdAndKey("HeroBase", configId, "Rareity")
 
-		effectLayer:pushPortraitEffect(modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect)
+		if not rareity then
+			local enemyInfo = ConfigReader:getRecordById("EnemyHero", configId)
+
+			if enemyInfo then
+				rareity = enemyInfo.Rarity
+			end
+		end
+
+		if rareity == 15 then
+			effectLayer:pushPortraitEffect(model .. "/" .. modelConfig.CutIn, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , true)
+
+			break
+		end
+
+		effectLayer:pushPortraitEffect(modelId, flag, skillDesc, not self._unit:isLeft(), isAwakenEffect, nil, , false)
 
 		break
 	end
@@ -517,6 +563,10 @@ function UnitTLInterpreter:act_EndSkill(action, args, mode)
 	local abort = args.reason and (args.reason == "abort" or args.reason == "finish")
 	local skillAction = self._context:getSkillAction(actId)
 
+	if not skillAction then
+		return
+	end
+
 	skillAction:setState(BattleRoleSkillState.End)
 
 	local performAct = self._dataModel:getPerformAct()
@@ -528,6 +578,15 @@ function UnitTLInterpreter:act_EndSkill(action, args, mode)
 		local mainMediator = self._context:getValue("BattleMainMediator")
 
 		mainMediator:clearGroundEffect(actId)
+
+		local camera = self._context:getValue("Camera")
+		local cameraActId = self._context:getValue("CameraActId")
+
+		if cameraActId == actId then
+			camera:focusOn(display.cx, display.cy, 1, 0.2)
+		end
+
+		self._battleGround:subGroundBlackCount()
 		skillAction:setIsInSupering(false)
 		self._battleGround:cancelTarget(actId)
 	end
@@ -561,10 +620,15 @@ end
 function UnitTLInterpreter:act_Perform(action, args, mode)
 	local actId = args.act
 	local animation = args.anim
+	local autoStand = args.autoStand
 
 	self:stopRunningPerform(actId)
 
 	local skillAction = self._context:getSkillAction(actId)
+
+	if not skillAction then
+		return
+	end
 
 	skillAction:setState(BattleRoleSkillState.Perform)
 
@@ -582,7 +646,7 @@ function UnitTLInterpreter:act_Perform(action, args, mode)
 			self._unit:goBack()
 			self._unit:clearSkillEffect(actId)
 			self._unit:clearSkillMovie(actId)
-		else
+		elseif autoStand then
 			self._unit:switchState("stand", {
 				loop = -1
 			})
@@ -595,6 +659,11 @@ function UnitTLInterpreter:stopRunningPerform(nextAct)
 
 	if performAct then
 		local skillAction = self._context:getSkillAction(performAct)
+
+		if not skillAction then
+			return
+		end
+
 		local behaviorNode = skillAction:getBehaviorNode()
 		local targets = skillAction:getTargets()
 
@@ -657,10 +726,16 @@ function UnitTLInterpreter:act_Flee(action, args)
 		self._heroHeadWidget:unitFlee(self._id)
 	end
 
-	local fleeWidget = self._battleUIMediator:getFleeWidget()
+	if self._battleUIMediator.getFleeWidget then
+		local fleeWidget = self._battleUIMediator:getFleeWidget()
 
-	if fleeWidget then
-		fleeWidget:reduceNum(args.cell, args.flags)
+		if fleeWidget then
+			fleeWidget:reduceNum(args.cell, args.flags)
+		end
+	end
+
+	if self._heroHeadWidget and self._heroHeadWidget.unitDie then
+		self._heroHeadWidget:unitDie(self._id)
 	end
 end
 
@@ -784,6 +859,34 @@ function UnitTLInterpreter:act_Drop(action, args)
 	end
 end
 
+function UnitTLInterpreter:act_SwitchActionTo(action, args)
+	local actionSrc = args.srcAnim
+	local actionDes = args.desAnim
+
+	self._unit:switchAction(actionSrc, actionDes)
+end
+
+function UnitTLInterpreter:act_ChangeActionLoop(action, args)
+	local isLoop = args.isLoop
+	local actionDes = args.desAnim
+
+	self._unit:changeActionLoop(actionDes, isLoop)
+end
+
+function UnitTLInterpreter:act_ClearAllSwitchAction(action, args)
+	self._unit:clearAllTransformAction()
+end
+
+function UnitTLInterpreter:act_SetDisplayZorder(action, args)
+	local zorder = args.zorder
+
+	self._unit:setDisplayZorder(zorder)
+end
+
+function UnitTLInterpreter:act_ResetDisplayZorder(action, args)
+	self._unit:resetDisplayZorder()
+end
+
 function UnitTLInterpreter:act_Hurt(action, args)
 	args.raw = args.raw or 0
 	args.eft = args.eft or 0
@@ -863,6 +966,12 @@ function UnitTLInterpreter:act_Hurt(action, args)
 	end
 end
 
+function UnitTLInterpreter:act_FlyBallToCard(action, args)
+	if self._battleUIMediator and self._unit:isLeft() then
+		self._battleUIMediator:flyBallToCard(self._unit, args.index)
+	end
+end
+
 function UnitTLInterpreter:checkHurt(action, args, diff)
 	local raw, eft = nil
 	local performAct = args.act
@@ -898,10 +1007,12 @@ end
 function UnitTLInterpreter:act_HpReduce(action, args)
 	args.raw = args.raw or 0
 	args.eft = args.eft or 0
+	args.isFlyLabel = args.isFlyLabel or false
 	args.val = args.val or self._dataModel:getHp()
 	local eft = args.eft
 	local val = args.val
 	local shldVal = args.shldVal
+	local isFlyLabel = args.isFlyLabel
 	local shldCost = args.shldCost or 0
 	local lastHp = self._dataModel:getHp()
 	local diff = 0
@@ -919,7 +1030,14 @@ function UnitTLInterpreter:act_HpReduce(action, args)
 		self._dataModel:setShield(shldVal)
 	end
 
-	if args.raw > 0 then
+	if isFlyLabel then
+		if args.raw > 0 then
+			self._unit:reduceHealth(math.floor(args.raw), {
+				type = "damage"
+			})
+			self._dataModel:setHp(newHp)
+		end
+	elseif args.raw > 0 then
 		self._dataModel:setHp(newHp)
 	end
 
@@ -1008,6 +1126,31 @@ function UnitTLInterpreter:dealWithBuffEft(eft)
 			elseif detail.evt == "modifyMaxHp" then
 				local maxHp = detail.maxHp
 				local hp = detail.hp
+				local orgMaxHp = self._dataModel:getOrgMaxHp()
+
+				if self._unit._roleType == RoleType.Master then
+					if self._unit:isLeft() then
+						if self._battleUIMediator._leftHeadWidget then
+							if maxHp < orgMaxHp then
+								self._battleUIMediator._leftHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+							else
+								self._battleUIMediator._leftHeadWidget:modifyMaxHp(maxHp, maxHp)
+							end
+						end
+					elseif self._battleUIMediator._rightHeadWidget then
+						if maxHp < orgMaxHp then
+							self._battleUIMediator._rightHeadWidget:modifyMaxHp(maxHp, orgMaxHp)
+						else
+							self._battleUIMediator._rightHeadWidget:modifyMaxHp(maxHp, maxHp)
+						end
+					end
+				end
+
+				if maxHp < orgMaxHp then
+					self._unit:modifyMaxHp(orgMaxHp, maxHp)
+				else
+					self._unit:modifyMaxHp(maxHp, maxHp)
+				end
 
 				self._dataModel:updateMaxHp(maxHp, hp)
 			end
@@ -1070,16 +1213,54 @@ function UnitTLInterpreter:act_Focus(action, args, mode)
 	end
 end
 
+function UnitTLInterpreter:act_FocusCamera(action, args, mode)
+	local act = args.act
+	local dst = args.dst
+	local scale = args.scale or 1
+	local dur = args.dur or 200
+	local heightOffset = 50
+	local skillAction = self._context:getSkillAction(act)
+
+	if skillAction and skillAction:isInSupering() and dst then
+		local zone = dst[1]
+
+		if self._unit:isTeamFlipped() then
+			zone = -zone
+		end
+
+		local targetPos = self._battleGround:relPosWithZoneAndOffset(zone, dst[2], dst[3])
+		local point = self._battleGround:convertRelPos2WorldSpace(targetPos)
+		local camera = self._context:getValue("Camera")
+
+		self._context:setValue("CameraActId", act)
+		camera:focusOn(point.x, point.y + heightOffset, scale, dur / 1000)
+	end
+end
+
 function UnitTLInterpreter:act_GroundEft(action, args, mode)
 	local act = args.act
 	local id = args.id
+	local inSupering = args.inSupering
 	local config = ConfigReader:getRecordById("BattleGroundEffect", tostring(id))
 	local skillAction = self._context:getSkillAction(act)
 
-	if config and skillAction and skillAction:isInSupering() then
+	if config and (skillAction and skillAction:isInSupering() or inSupering == false) then
 		local mainMediator = self._context:getValue("BattleMainMediator")
+		local extra = nil
 
-		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act)
+		if config.Order and config.Order > 0 then
+			extra = {
+				opacity = 255,
+				zorder = config.Order,
+				duration = args.duration,
+				unit = self._unit,
+				Music = config.Music
+			}
+		end
+
+		local blackOpacity = config.Black
+
+		mainMediator:playGroundEffect(config.Path, {}, config.Anim, config.Zoom, act, extra, blackOpacity)
 	end
 end
 
@@ -1131,6 +1312,10 @@ end
 
 function UnitTLInterpreter:act_CancelTargetView(action, args, mode)
 	self._battleGround:cancelTarget(args.act)
+end
+
+function UnitTLInterpreter:act_SetOpacity(action, args, mode)
+	self._unit:hideRole(args.value)
 end
 
 function UnitTLInterpreter:act_Die(action, args)
@@ -1228,6 +1413,11 @@ function UnitTLInterpreter:onUnitDie(evt)
 
 	if performAct then
 		local skillAction = self._context:getSkillAction(performAct)
+
+		if not skillAction then
+			return
+		end
+
 		local behaviorNode = skillAction:getBehaviorNode()
 
 		if behaviorNode and behaviorNode:isRunning() then
@@ -1371,13 +1561,58 @@ function UnitTLInterpreter:act_AddAnim(action, args)
 	local zOrder = args.zOrder
 
 	if self._unit then
-		local realPos = self._battleGround:relPosWithZoneAndOffset(pos[1], pos[2], pos[3])
+		local zone = pos[1]
+		local isLeft = true
+		isLeft = (self._mainPlayerSide and zone > 0 or not self._mainPlayerSide and zone < 0) and true or false
+
+		if isLeft then
+			zone = math.abs(zone)
+		else
+			zone = -math.abs(zone)
+		end
+
+		local realPos = self._battleGround:relPosWithZoneAndOffset(zone, pos[2], pos[3])
 		local targetPos = self._battleGround:convertRelPos2WorldSpace(realPos)
-		local flip = not self._unit:isLeft()
 		local mainMediator = self._context:getValue("BattleMainMediator")
 
 		if mainMediator.addEffectAnim then
 			mainMediator:addEffectAnim(anim, targetPos, zOrder, loop, flip)
+		end
+	end
+end
+
+function UnitTLInterpreter:act_AddAnimWithFlip(action, args)
+	local pos = args.pos
+	local anim = args.anim
+	local loop = args.loop
+	local zOrder = args.zOrder
+	local isflip = args.isFlip
+	local isflipX = args.isFlipX
+	local isflipY = args.isFlipY
+
+	if self._unit then
+		local zone = pos[1]
+		local isLeft = true
+		isLeft = (self._mainPlayerSide and zone > 0 or not self._mainPlayerSide and zone < 0) and true or false
+
+		if isLeft then
+			zone = math.abs(zone)
+		else
+			zone = -math.abs(zone)
+		end
+
+		local _isflipX = not isLeft
+
+		if isflipX then
+			_isflipX = not _isflipX
+		end
+
+		local realPos = self._battleGround:relPosWithZoneAndOffset(zone, pos[2], pos[3])
+		local targetPos = self._battleGround:convertRelPos2WorldSpace(realPos)
+		local mainMediator = self._context:getValue("BattleMainMediator")
+
+		if mainMediator.addEffectAnim then
+			mainMediator:addEffectAnim(anim, targetPos, zOrder, loop, _isflipX, isflipY)
 		end
 	end
 end
@@ -1408,6 +1643,10 @@ end
 
 function UnitTLInterpreter:act_HolyHide(action, args)
 	self._unit:holyHide(args.alpha)
+end
+
+function UnitTLInterpreter:act_FanUpdate(action, args)
+	self._unit:updateFanBar(args.progress)
 end
 
 function UnitTLInterpreter:act_CancelSpecificSkill(action, args)
@@ -1457,4 +1696,38 @@ end
 function UnitTLInterpreter:act_GuideMoveBy(action, args)
 	self._unit:guideMoveBy(args)
 	self._unit:setBarAndBuffVisble(false)
+end
+
+function UnitTLInterpreter:act_SetHSVColor(action, args)
+	local hue = args.hue or 0
+	local contrast = args.contrast or 0
+	local brightness = args.brightness or 0
+	local saturation = args.saturation or 0
+
+	self._unit:setHSVColor(hue, contrast, brightness, saturation)
+end
+
+function UnitTLInterpreter:act_ShowAtkAndDef(action, args)
+	local atk = args.detail.atk or 0
+	local def = args.detail.def or 0
+	local hurtrate = args.detail.hurtrate or 0
+	local unhurtrate = args.detail.unhurtrate or 0
+
+	self._unit:showAtkAndDef(atk, def, hurtrate, unhurtrate)
+end
+
+function UnitTLInterpreter:act_Emoji(action, args)
+	self._unit:RtpkEmoji(args)
+end
+
+function UnitTLInterpreter:act_SetRootVisible(action, args)
+	local isVisible = args.isVisible
+
+	self._unit:setRootVisible(isVisible)
+end
+
+function UnitTLInterpreter:act_SetRoleScale(action, args)
+	local scale = args.scale
+
+	self._unit:setRoleScale(scale)
 end

@@ -76,7 +76,7 @@ function ClubPositionManageTipMediator:enterWithData(data)
 
 	local Text_Lv = self._mainPanel:getChildByFullName("Text_Lv")
 
-	Text_Lv:setString("Lv." .. data:getLevel())
+	Text_Lv:setString(Strings:get("Common_LV_Text") .. data:getLevel())
 
 	local nameLabel = self._mainPanel:getChildByFullName("namelabel")
 
@@ -111,7 +111,7 @@ function ClubPositionManageTipMediator:enterWithData(data)
 	local joinDayLabel = self._mainPanel:getChildByFullName("joindaylabel2")
 	local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
 	local joinTime = gameServerAgent:remoteTimestamp() - data:getJoinTime()
-	local dayNum = math.max(1, os.date("%d", joinTime))
+	local dayNum = math.max(1, TimeUtil:localDate("%d", joinTime))
 
 	joinDayLabel:setString(Strings:get("Club_Text148", {
 		day = dayNum

@@ -1226,11 +1226,11 @@ function scene_eventstory_dreamtower_05a.actions.start_eventstory_dreamtower_05a
 					modelId = "Model_ZTXChang_YYing",
 					id = "ZTXChang_speak",
 					rotationX = 0,
-					scale = 1.08,
+					scale = 1,
 					zorder = 5,
 					position = {
 						x = 0,
-						y = -410,
+						y = -340,
 						refpt = {
 							x = 0.25,
 							y = 0
@@ -1254,8 +1254,8 @@ function scene_eventstory_dreamtower_05a.actions.start_eventstory_dreamtower_05a
 								y = 0.5
 							},
 							position = {
-								x = -36,
-								y = 795
+								x = -35.1,
+								y = 786.2
 							}
 						}
 					}

@@ -38,6 +38,9 @@ RechargeAndVipModel:has("_endTime", {
 RechargeAndVipModel:has("_type", {
 	is = "rw"
 })
+RechargeAndVipModel:has("_rechargedIds", {
+	is = "rw"
+})
 
 function RechargeAndVipModel:initialize()
 	super.initialize(self)
@@ -47,6 +50,7 @@ function RechargeAndVipModel:initialize()
 	self._fCardWeekFlag = {}
 	self._fCardBuyFlag = false
 	self._fCardStamina = 0
+	self._rechargedIds = {}
 	self._isPurchased = false
 	self._endTime = -1
 	self._type = "SUBSCRIBE"
@@ -134,6 +138,8 @@ function RechargeAndVipModel:synchronizeModel(data)
 	end
 
 	if data.rechargedIds then
+		self._rechargedIds = data.rechargedIds
+
 		for k, v in pairs(data.rechargedIds) do
 			if self._rechargeGoodsMap[v] then
 				self._rechargeGoodsMap[v]:setIsFirstRecharge(false)
@@ -167,6 +173,22 @@ function RechargeAndVipModel:synchronizeModel(data)
 		self._endTime = data.SUBSCRIBE.endTime
 		self._type = data.SUBSCRIBE.type
 	end
+end
+
+function RechargeAndVipModel:getRechargedStatus(payId)
+	local config = ConfigReader:getRecordById("Pay", payId)
+
+	if config then
+		local productId = config.ProductId
+
+		for k, v in pairs(self._rechargedIds) do
+			if v == productId then
+				return true
+			end
+		end
+	end
+
+	return false
 end
 
 function RechargeAndVipModel:synchronizeVipRewards(data)

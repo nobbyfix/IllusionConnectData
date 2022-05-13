@@ -841,6 +841,87 @@
         "EndJournalDes": "",
         "EndStory": ""
     },
+    "Alice_1_CaiDanMuBei1_Case1": {
+        "BeginDialogue": "",
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": {
+            "casefactor": "Alice_1_CaiDanMuBei1_Choice1"
+        },
+        "CaseType": "CHOICE",
+        "DPTaskId": "",
+        "EndAction": {
+            "1": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "2": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "3": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "4": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "out": [
+                {
+                    "1": [
+                        "Map_Common_count"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_1_CaiDanMuBei1_Case2": {
+        "BeginDialogue": [
+            {
+                "TalkDes": "Alice_1_CaiDanMuBei_Talk1",
+                "Talker": "Alice_1_CaiDanMuBei1",
+                "Time": 2
+            }
+        ],
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": "",
+        "CaseType": "EMPTY",
+        "DPTaskId": "",
+        "EndAction": {
+            "end": [
+                {
+                    "1": [
+                        "Map_Common_objectdel",
+                        "Alice_1_getreward_CaiDanMuBei1"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
     "Alice_1_ChaiJunMao1_Case1": {
         "BeginDialogue": [
             {
@@ -3992,6 +4073,87 @@
                     "1": [
                         "Map_Common_objectdel",
                         "Alice_2_getreward_Hua"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_2_CaiDanMuBei1_Case1": {
+        "BeginDialogue": "",
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": {
+            "casefactor": "Alice_2_CaiDanMuBei1_Choice1"
+        },
+        "CaseType": "CHOICE",
+        "DPTaskId": "",
+        "EndAction": {
+            "1": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "2": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "3": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "4": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "out": [
+                {
+                    "1": [
+                        "Map_Common_count"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_2_CaiDanMuBei1_Case2": {
+        "BeginDialogue": [
+            {
+                "TalkDes": "Alice_2_CaiDanMuBei_Talk1",
+                "Talker": "Alice_2_CaiDanMuBei1",
+                "Time": 2
+            }
+        ],
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": "",
+        "CaseType": "EMPTY",
+        "DPTaskId": "",
+        "EndAction": {
+            "end": [
+                {
+                    "1": [
+                        "Map_Common_objectdel",
+                        "Alice_2_getreward_CaiDanMuBei1"
                     ]
                 }
             ]
@@ -7275,7 +7437,7 @@
                 {
                     "1": [
                         "Map_Common_objectdel",
-                        "Alice_3_getreward_CaiDanBoss"
+                        "Alice_3_getreward_BoLiPingGuai"
                     ]
                 }
             ]
@@ -8263,6 +8425,87 @@
                     "1": [
                         "Map_Common_objectdel",
                         "Alice_3_getreward_Hua"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_3_CaiDanMuBei1_Case1": {
+        "BeginDialogue": "",
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": {
+            "casefactor": "Alice_3_CaiDanMuBei1_Choice1"
+        },
+        "CaseType": "CHOICE",
+        "DPTaskId": "",
+        "EndAction": {
+            "1": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "2": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "3": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "4": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "out": [
+                {
+                    "1": [
+                        "Map_Common_count"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_3_CaiDanMuBei1_Case2": {
+        "BeginDialogue": [
+            {
+                "TalkDes": "Alice_3_CaiDanMuBei_Talk1",
+                "Talker": "Alice_3_CaiDanMuBei1",
+                "Time": 2
+            }
+        ],
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": "",
+        "CaseType": "EMPTY",
+        "DPTaskId": "",
+        "EndAction": {
+            "end": [
+                {
+                    "1": [
+                        "Map_Common_objectdel",
+                        "Alice_3_getreward_CaiDanMuBei1"
                     ]
                 }
             ]
@@ -11627,7 +11870,7 @@
     "Alice_4_CaiDanBaoXiangGuai_Case1": {
         "BeginDialogue": [
             {
-                "TalkDes": "Alice_5_CaiDanBaoXiangGuai_Talk1",
+                "TalkDes": "Alice_4_CaiDanBaoXiangGuai_Talk1",
                 "Talker": "Alice_4_CaiDanBaoXiangGuai",
                 "Time": 1
             }
@@ -12250,6 +12493,87 @@
                     "1": [
                         "Map_Common_objectdel",
                         "Alice_3_getreward_Hua"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_4_CaiDanMuBei1_Case1": {
+        "BeginDialogue": "",
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": {
+            "casefactor": "Alice_4_CaiDanMuBei1_Choice1"
+        },
+        "CaseType": "CHOICE",
+        "DPTaskId": "",
+        "EndAction": {
+            "1": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "2": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "3": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "4": [
+                {
+                    "1": [
+                        "Map_Common_autoexecute"
+                    ]
+                }
+            ],
+            "out": [
+                {
+                    "1": [
+                        "Map_Common_count"
+                    ]
+                }
+            ]
+        },
+        "EndDialogue": "",
+        "EndJournalDes": "",
+        "EndStory": ""
+    },
+    "Alice_4_CaiDanMuBei1_Case2": {
+        "BeginDialogue": [
+            {
+                "TalkDes": "Alice_4_CaiDanMuBei_Talk1",
+                "Talker": "Alice_4_CaiDanMuBei1",
+                "Time": 2
+            }
+        ],
+        "BeginJournalDes": "",
+        "BeginStory": "",
+        "CaseCondition": "",
+        "CaseCount": 1,
+        "CaseFactor": "",
+        "CaseType": "EMPTY",
+        "DPTaskId": "",
+        "EndAction": {
+            "end": [
+                {
+                    "1": [
+                        "Map_Common_objectdel",
+                        "Alice_4_getreward_CaiDanMuBei1"
                     ]
                 }
             ]

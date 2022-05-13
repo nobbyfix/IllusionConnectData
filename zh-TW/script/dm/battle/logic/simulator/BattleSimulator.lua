@@ -12,9 +12,6 @@ BattleSimulator:has("_battleRecorder", {
 BattleSimulator:has("_battleStatist", {
 	is = "rw"
 })
-BattleSimulator:has("_battleSession", {
-	is = "rw"
-})
 BattleSimulator:has("_inputManager", {
 	is = "r"
 })
@@ -34,6 +31,10 @@ end
 
 function BattleSimulator:getBattleResult()
 	return self._battleResult
+end
+
+function BattleSimulator:setDelegate(delegate)
+	self._delegate = delegate
 end
 
 function BattleSimulator:getCurrentFrame()
@@ -72,7 +73,6 @@ function BattleSimulator:start(frameInterval)
 	battleContext:setObject("BattleRecorder", self._battleRecorder)
 	battleContext:setObject("BattleStatist", self._battleStatist)
 	battleContext:setObject("BattleLogic", self._battleLogic)
-	battleContext:setObject("BattleSession", self._battleSession)
 
 	self._frameInterval = frameInterval
 
@@ -98,6 +98,10 @@ function BattleSimulator:start(frameInterval)
 	end
 
 	self._autoScheduler:start(battleContext)
+
+	if self._delegate and self._delegate.battleStart then
+		self._delegate.battleStart(battleContext)
+	end
 end
 
 function BattleSimulator:tick(frameInterval)

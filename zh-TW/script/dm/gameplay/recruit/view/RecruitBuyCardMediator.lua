@@ -9,6 +9,9 @@ RecruitBuyCardMediator:has("_shopSystem", {
 RecruitBuyCardMediator:has("_recruitSystem", {
 	is = "r"
 }):injectWith("RecruitSystem")
+RecruitBuyCardMediator:has("_activitySystem", {
+	is = "r"
+}):injectWith("ActivitySystem")
 
 local kBtnHandlers = {
 	buyBtn = {
@@ -20,8 +23,6 @@ local kBtnHandlers = {
 		func = "onClickCloseTip"
 	}
 }
-local DrawCard_SinglePrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_SinglePrice", "content")
-local DrawCard_TenTimesPrice = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_TenTimesPrice", "content")
 
 function RecruitBuyCardMediator:initialize()
 	super.initialize(self)
@@ -47,8 +48,8 @@ function RecruitBuyCardMediator:enterWithData(data)
 			clickAudio = "Se_Click_Close_2",
 			func = bind1(self.onClickClose, self)
 		},
-		title = Strings:get("Recruit_UI16"),
-		title1 = Strings:get("UITitle_EN_Zhaohuanzhizhengbuzu")
+		title = RecruitCurrencyStr.KBuyTitle[self._costId],
+		title1 = RecruitCurrencyStr.KBuyTitle1[self._costId]
 	})
 
 	self._ensureBtn = self:bindWidget("sureBtn", OneLevelMainButton, {
@@ -59,6 +60,7 @@ function RecruitBuyCardMediator:enterWithData(data)
 	})
 	self._buyBtn = self:getView():getChildByName("buyBtn")
 	self._closeBtn = self:getView():getChildByName("closeBtn")
+	self._closeBtnSelectImg = self._closeBtn:getChildByName("image")
 	self._tipLabel = self:getView():getChildByName("tipLabel")
 	self._buyPanel = self:getView():getChildByName("buyPanel")
 
@@ -68,15 +70,17 @@ function RecruitBuyCardMediator:enterWithData(data)
 	self._buyBtn:setVisible(false)
 	self._buyPanel:setVisible(false)
 	self:initView()
+	self:onClickCloseTip()
 end
 
 function RecruitBuyCardMediator:initData(data)
 	self._param = data.param
 	self._costId = data.itemId
 	local needCount = data.costCount
+	self._activityId = data.activityId
 	local hasCount = self._bagSystem:getItemCount(self._costId)
 	self._num = needCount - hasCount
-	local price = self._param.times == 1 and DrawCard_SinglePrice or DrawCard_TenTimesPrice
+	local price = self._param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[self._costId] or RecruitCurrencyStr.KBuyPrice.ten[self._costId]
 	self._cost = self._num * price
 	local hasDiamondCount = self._bagSystem:getItemCount(CurrencyIdKind.kDiamond)
 	self._canBuy = self._cost <= hasDiamondCount
@@ -90,7 +94,7 @@ end
 function RecruitBuyCardMediator:initView()
 	self._buyBtn:setVisible(true)
 	self._buyPanel:setVisible(true)
-	self._buyPanel:getChildByName("tipLabel"):setString(Strings:get("Recruit_UI18", {
+	self._buyPanel:getChildByName("tipLabel"):setString(Strings:get(RecruitCurrencyStr.KBuyContent[self._costId], {
 		cost = self._cost,
 		num = self._num
 	}))
@@ -110,7 +114,7 @@ function RecruitBuyCardMediator:initView()
 end
 
 function RecruitBuyCardMediator:onClickEnsure()
-	self:close({
+	self:closeView({
 		callback = function ()
 			self._shopSystem:tryEnter({
 				shopId = "Shop_Normal"
@@ -123,7 +127,7 @@ function RecruitBuyCardMediator:onClickBuy()
 	if not self._canBuy then
 		local data = {
 			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
-			content = Strings:get("Recruit_UI21"),
+			content = RecruitCurrencyStr.KGoToShop[self._costId],
 			sureBtn = {},
 			cancelBtn = {}
 		}
@@ -142,33 +146,49 @@ function RecruitBuyCardMediator:onClickBuy()
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, data, delegate))
+		self:closeView()
 
 		return
 	end
 
-	self:close({
+	self:closeView({
 		callback = function ()
-			self._recruitSystem:requestRecruit(self._param)
+			if self._activityId then
+				self._activitySystem:requestRecruitActivity(self._activityId, self._param, nil)
+			else
+				self._recruitSystem:requestRecruit(self._param)
+			end
 		end
 	})
 end
 
-function RecruitBuyCardMediator:onClickCloseTip()
-	local image = self._closeBtn:getChildByName("image")
-
-	if image:isVisible() then
-		image:setVisible(false)
-		cc.UserDefault:getInstance():setIntegerForKey(RecruitAutoBuyCard, 0)
+function RecruitBuyCardMediator:onClickCloseTip(sender)
+	if sender then
+		self._closeBtnSelectImg:setVisible(not self._closeBtnSelectImg:isVisible())
 	else
-		image:setVisible(true)
+		local visible, userStr = self._recruitSystem:getBuyTipsStatus(self._costId)
 
-		local gameServerAgent = self:getInjector():getInstance("GameServerAgent")
-		local lastLoginTime = gameServerAgent:remoteTimestamp()
-
-		cc.UserDefault:getInstance():setIntegerForKey(RecruitAutoBuyCard, lastLoginTime)
+		self._closeBtn:setVisible(visible)
+		self._closeBtnSelectImg:setVisible(false)
 	end
 end
 
 function RecruitBuyCardMediator:onClickClose()
-	self:close()
+	self:closeView()
+end
+
+function RecruitBuyCardMediator:closeView(data)
+	self:close(data)
+end
+
+function RecruitBuyCardMediator:close(data)
+	local isVisible = self._closeBtnSelectImg:isVisible()
+
+	if isVisible then
+		local visible, userStr = self._recruitSystem:getBuyTipsStatus(self._costId)
+
+		cc.UserDefault:getInstance():setIntegerForKey(userStr, self:getInjector():getInstance("GameServerAgent"):remoteTimestamp())
+	end
+
+	super.close(self, data)
 end

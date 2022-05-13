@@ -66,6 +66,36 @@ end
 function scene_XSMLiDate01.actions.start_XSMLiDate01(_root, args)
 	return sequential({
 		act({
+			action = "fadeIn",
+			actor = __getnode__(_root, "curtain"),
+			args = function (_ctx)
+				return {
+					duration = 0.1
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "hideButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "skipButton"),
+			args = function (_ctx)
+				return {
+					date = true
+				}
+			end
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "reviewButton")
+		}),
+		act({
+			action = "show",
+			actor = __getnode__(_root, "autoPlayButton")
+		}),
+		act({
 			action = "activateNode",
 			actor = __getnode__(_root, "bg")
 		}),
@@ -95,11 +125,11 @@ function scene_XSMLiDate01.actions.start_XSMLiDate01(_root, args)
 					modelId = "Model_XSMLi",
 					id = "XSMLi_speak",
 					rotationX = 0,
-					scale = 1.05,
+					scale = 0.75,
 					zorder = 10,
 					position = {
 						x = 0,
-						y = -410,
+						y = -480,
 						refpt = {
 							x = 0.65,
 							y = 0
@@ -123,8 +153,8 @@ function scene_XSMLiDate01.actions.start_XSMLiDate01(_root, args)
 								y = 0.5
 							},
 							position = {
-								x = -182,
-								y = 793
+								x = -342.5,
+								y = 1158
 							}
 						}
 					}
@@ -1665,7 +1695,7 @@ function scene_XSMLiDate01.actions.start_XSMLiDate01p(_root, args)
 					duration = 1,
 					position = {
 						x = 0,
-						y = -410,
+						y = -480,
 						refpt = {
 							x = -0.5,
 							y = 0

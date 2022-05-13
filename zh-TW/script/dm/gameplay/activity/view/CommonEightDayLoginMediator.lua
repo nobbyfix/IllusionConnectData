@@ -106,10 +106,18 @@ function CommonEightDayLoginMediator:setupView()
 	heroPanel:removeAllChildren()
 
 	if heroId then
+		local modelId = nil
 		local config = ConfigReader:getRecordById("HeroBase", heroId)
-		local img = IconFactory:createRoleIconSprite({
-			iconType = "Bust4",
-			id = config.RoleModel
+
+		if config then
+			modelId = config.RoleModel
+		else
+			modelId = heroId
+		end
+
+		local img = IconFactory:createRoleIconSpriteNew({
+			frameId = "bustframe9",
+			id = modelId
 		})
 
 		img:setScale(1.2)
@@ -173,6 +181,7 @@ function CommonEightDayLoginMediator:initEightDayCell()
 		cellClone:setPosition(cc.p(start_x + (i - 1) * 140, posY))
 		cellClone:addTo(self._listPanel)
 
+		local actConfig = self._activity:getActivityConfig()
 		local iconPanel = cellClone:getChildByName("Panel_reward")
 		local rewardId = activityData._config.Reward
 		local rewards = ConfigReader:getRecordById("Reward", rewardId)
@@ -196,7 +205,7 @@ function CommonEightDayLoginMediator:initEightDayCell()
 						local node = RoleFactory:createRoleAnimation(model)
 
 						node:addTo(iconPanel):offset(65, 5):setName("rewardInstance")
-						node:setScale(0.5)
+						node:setScale(actConfig.ModelScale or 0.5)
 					end
 
 					if reward.type == 3 then
@@ -246,6 +255,18 @@ function CommonEightDayLoginMediator:initEightDayCell()
 					local nameStr = RewardSystem:getName(reward)
 
 					cellClone:getChildByName("8rewardName"):setString(nameStr)
+
+					if actConfig.NameScale then
+						cellClone:getChildByName("8rewardName"):setScale(actConfig.NameScale)
+					end
+
+					if actConfig.NamePos then
+						cellClone:getChildByName("8rewardName"):posite(actConfig.NamePos[1], actConfig.NamePos[2])
+					end
+				end
+
+				if cellClone:getChildByName("Image_2") and actConfig.HideStar then
+					cellClone:getChildByName("Image_2"):setVisible(false)
 				end
 			end
 		end

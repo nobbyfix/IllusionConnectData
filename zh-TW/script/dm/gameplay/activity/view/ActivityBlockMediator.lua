@@ -46,6 +46,10 @@ local kBtnHandlers = {
 	["main.btnNode.leftBtn"] = {
 		clickAudio = "Se_Click_Common_2",
 		func = "onClickLeft"
+	},
+	["main.rolePanel"] = {
+		ignoreClickAudio = true,
+		func = "onClickRolePanel"
 	}
 }
 local kModelType = {
@@ -81,7 +85,7 @@ function ActivityBlockMediator:onRegister()
 
 	self._heroSystem = self._developSystem:getHeroSystem()
 
-	self:mapButtonHandlersClick(kBtnHandlers)
+	self:setupTopInfoWidget()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.refreshView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 
@@ -101,17 +105,14 @@ function ActivityBlockMediator:onRegister()
 	self._eggBtn = self._main:getChildByName("eggBtn")
 	self._teamBtn = self._main:getChildByName("teamBtn")
 
-	self._taskBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
-	self._eggBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
-	self._teamBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-15)
+	self._taskBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-5)
+	self._eggBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-5)
+	self._teamBtn:getChildByFullName("text"):getVirtualRenderer():setLineSpacing(-5)
 end
 
 function ActivityBlockMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
 	local config = {
-		style = 1,
-		hideLine = true,
-		currencyInfo = self._model:getResourcesBanner(),
 		btnHandler = {
 			clickAudio = "Se_Click_Close_1",
 			func = bind1(self.onClickBack, self)
@@ -123,38 +124,49 @@ function ActivityBlockMediator:setupTopInfoWidget()
 	self._topInfoWidget:updateView(config)
 end
 
+function ActivityBlockMediator:updateInfoWidget()
+	if not self._topInfoWidget then
+		return
+	end
+
+	local config = {
+		style = 1,
+		currencyInfo = self._model:getResourcesBanner(),
+		title = Strings:get(self._model:getTitle())
+	}
+
+	self._topInfoWidget:updateView(config)
+end
+
 function ActivityBlockMediator:enterWithData(data)
 	self._activityId = data.activityId or ActivityId.kActivityBlock
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
+
+	if not self._model then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_12806")
+		}))
+
+		return
+	end
+
+	self:mapButtonHandlersClick(kBtnHandlers)
+	self:updateInfoWidget()
+
 	self._canChangeHero = true
 
 	self:initData()
-	self:setupTopInfoWidget()
 	self:initView()
 end
 
 function ActivityBlockMediator:resumeWithData()
-	local quit = self:doReset()
-
-	if quit then
-		return
-	end
-
-	self:initData()
-	self:initView()
+	self:doReset()
 end
 
 function ActivityBlockMediator:initData()
-	self._model = self._activitySystem:getActivityById(self._activityId)
-	self._blockActivity = nil
-	self._taskActivities = {}
-	self._eggActivity = nil
-
-	if self._model then
-		self._blockActivity = self._model:getBlockMapActivity()
-		self._taskActivities = self._model:getTaskActivities()
-		self._eggActivity = self._model:getEggActivity()
-	end
-
+	self._blockActivity = self._model:getBlockMapActivity()
+	self._taskActivities = self._model:getTaskActivities()
+	self._eggActivity = self._model:getEggActivity()
 	self._roleIndex = 1
 	self._roles = self._model:getRoleParams()
 end
@@ -202,12 +214,21 @@ function ActivityBlockMediator:initInfo()
 		image:loadTexture(btns.blockParams.icon .. ".png", 1)
 
 		local title = btns.blockParams.title
-		local length = utf8.len(title)
-		local name1 = utf8.sub(title, 1, 2)
-		local name2 = utf8.sub(title, 3, length)
+		local localLanguage = getCurrentLanguage()
 
-		text1:setString(name1)
-		text2:setString(name2)
+		if localLanguage ~= GameLanguageType.CN then
+			text1:setString(title)
+			text2:setVisible(false)
+		else
+			text2:setVisible(true)
+
+			local length = utf8.len(title)
+			local name1 = utf8.sub(title, 1, 2)
+			local name2 = utf8.sub(title, 3, length)
+
+			text1:setString(name1)
+			text2:setString(name2)
+		end
 
 		if btns.blockParams.rewards then
 			local length = math.ceil(#btns.blockParams.rewards / 4)
@@ -220,13 +241,17 @@ function ActivityBlockMediator:initInfo()
 					if reward then
 						local icon = IconFactory:createRewardIcon(reward, {
 							showAmount = false,
+							isWidget = true,
 							notShowQulity = true
 						})
 
 						icon:addTo(itemNode):setScale(0.26)
+						IconFactory:bindTouchHander(icon, IconTouchHandler:new(self), reward, {
+							needDelay = true
+						})
 
-						local x = 33 * (jj - 1)
-						local y = -30 * (i - 1)
+						local x = 33 * (jj - 1) - 15
+						local y = -30 * (i - 1) + 10
 
 						icon:setPosition(cc.p(x, y))
 					end
@@ -235,6 +260,7 @@ function ActivityBlockMediator:initInfo()
 		end
 
 		if btns.blockParams.heroes then
+			local length = #btns.blockParams.heroes
 			local length = #btns.blockParams.heroes
 
 			for i = 1, length do
@@ -246,7 +272,7 @@ function ActivityBlockMediator:initInfo()
 
 				icon:addTo(heroNode):setScale(0.5)
 
-				local x = 30 * (3 - length) + 68 * (i - 1)
+				local x = (i - 1) * 62
 
 				icon:setPositionX(x)
 
@@ -271,7 +297,7 @@ function ActivityBlockMediator:initInfo()
 
 	local text = self._eggBtn:getChildByName("text")
 
-	if btns.eggParams then
+	if btns.eggParams and btns.eggParams.icon then
 		image:loadTexture(btns.eggParams.icon .. ".png", 1)
 
 		local title = btns.eggParams.title
@@ -281,6 +307,14 @@ function ActivityBlockMediator:initInfo()
 		self._endTip.eggEndTip = Strings:get(tipStr, {
 			activityId = title
 		})
+	end
+
+	if self._model:getActivityConfig().ButtonIcon then
+		image:loadTexture(self._model:getActivityConfig().ButtonIcon .. ".png", 1)
+	end
+
+	if self._model:getActivityConfig().ButtonText then
+		text:setString(Strings:get(self._model:getActivityConfig().ButtonText))
 	end
 
 	local redPoint = self._teamBtn:getChildByName("redPoint")
@@ -309,7 +343,7 @@ end
 function ActivityBlockMediator:initTimer()
 	local text = self._timeNode:getChildByName("time")
 
-	text:setString(self._model:getTimeStr())
+	text:setString(self._model:getTimeStr1())
 
 	local remainLabel = self._stagePanel:getChildByName("remainTime")
 
@@ -323,6 +357,10 @@ function ActivityBlockMediator:initTimer()
 			end
 
 			local function checkTimeFunc()
+				if DisposableObject:isDisposed(self) then
+					return
+				end
+
 				remoteTimestamp = self._activitySystem:getCurrentTime()
 				local remainTime = self._endTime - remoteTimestamp
 
@@ -422,9 +460,9 @@ function ActivityBlockMediator:updateRolePanel()
 
 	self._roleNode:removeAllChildren()
 
-	local img, jsonPath = IconFactory:createRoleIconSprite({
+	local img, jsonPath = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = model
 	})
 
@@ -437,18 +475,16 @@ end
 function ActivityBlockMediator:doReset()
 	self:stopTimer()
 
-	local model = self._activitySystem:getActivityById(self._activityId)
+	self._model = self._activitySystem:getActivityByComplexId(self._activityId)
 
-	if not model then
+	if not self._model then
 		self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
 
-		return true
+		return
 	end
 
 	self:initData()
 	self:initView()
-
-	return false
 end
 
 function ActivityBlockMediator:refreshView()
@@ -517,6 +553,23 @@ function ActivityBlockMediator:onClickTeam()
 end
 
 function ActivityBlockMediator:onClickEgg()
+	local url = self._model:getActivityConfig().ExchangeUrl
+
+	if url then
+		local context = self:getInjector():instantiate(URLContext)
+		local entry, params = UrlEntryManage.resolveUrlWithUserData(url)
+
+		if not entry then
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("Function_Not_Open")
+			}))
+		else
+			entry:response(context, params)
+		end
+
+		return
+	end
+
 	if not self._eggActivity then
 		self:dispatch(ShowTipEvent({
 			tip = self._endTip.eggEndTip
@@ -590,4 +643,24 @@ function ActivityBlockMediator:onClickRight()
 	end
 
 	self:updateRolePanel()
+end
+
+function ActivityBlockMediator:onClickRolePanel()
+	local model = self._roles[self._roleIndex].model
+	local type_ = self._roles[self._roleIndex].type
+	local modelId, heroId = nil
+
+	if type_ == kModelType.kSurface then
+		modelId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Model")
+		heroId = ConfigReader:getDataByNameIdAndKey("Surface", model, "Hero")
+	elseif type_ == kModelType.kHero then
+		modelId = IconFactory:getRoleModelByKey("HeroBase", model)
+		heroId = model
+	end
+
+	local view = self:getInjector():getInstance("HeroInfoView")
+
+	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, {
+		heroId = heroId
+	}))
 end

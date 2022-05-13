@@ -13,6 +13,20 @@ local kBtnHandlers = {
 		func = "onClickReward"
 	}
 }
+local AlbumGroupType = {
+	{
+		"Party",
+		"Force_Screen"
+	},
+	{
+		"Profession",
+		"HEROS_UI35"
+	},
+	{
+		"Rareity",
+		"HEROS_UI30"
+	}
+}
 local kNums = 4
 local kImageDi = {
 	"album_bg_tab_1_0.png",
@@ -20,7 +34,38 @@ local kImageDi = {
 	"album_bg_tab_3_0.png",
 	"album_bg_tab_4_0.png",
 	"album_bg_tab_5_0.png",
-	"album_bg_tab_6_0.png"
+	"album_bg_tab_6_0.png",
+	"album_bg_tab_7_0.png"
+}
+local kImageParty = {
+	XD = {
+		"common_btn_xd.png",
+		"img_gallery_sl_xd.png"
+	},
+	MNJH = {
+		"common_btn_mnjh.png",
+		"img_gallery_sl_mnjh.png"
+	},
+	BSNCT = {
+		"common_btn_bsn.png",
+		"img_gallery_sl_bsn.png"
+	},
+	DWH = {
+		"common_btn_dwh.png",
+		"img_gallery_sl_dwh.png"
+	},
+	WNSXJ = {
+		"common_btn_wnsxj.png",
+		"img_gallery_sl_wnsxj.png"
+	},
+	SSZS = {
+		"common_btn_smzs.png",
+		"img_gallery_sl_smzs.png"
+	},
+	UNKNOWN = {
+		"common_btn_unknown.png",
+		"img_gallery_sl_unknown.png"
+	}
 }
 local kRarityBg = {
 	nil,
@@ -37,7 +82,7 @@ local kRarityBg = {
 	"asset/ui/gallery/album_bg_archives_txd_r.png",
 	"asset/ui/gallery/album_bg_archives_txd_sr.png",
 	"asset/ui/gallery/album_bg_archives_txd_ssr.png",
-	"asset/ui/gallery/album_bg_archives_txd_ssr.png"
+	"asset/ui/gallery/album_bg_archives_txd_sp.png"
 }
 
 function GalleryPartnerMediator:initialize()
@@ -59,11 +104,38 @@ function GalleryPartnerMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_GALLERY_BOX_GET_SUCC, self, self.refreshRewardRedPoint)
 end
 
+function GalleryPartnerMediator:enterWithData(data)
+	self:setupTopInfoWidget()
+	self:setupView(data)
+	self:runStartAnim()
+end
+
+function GalleryPartnerMediator:setupTopInfoWidget()
+	local topInfoNode = self:getView():getChildByFullName("topinfo_node")
+	local config = {
+		style = 1,
+		currencyInfo = {},
+		title = Strings:get("GALLERY_UI1"),
+		btnHandler = {
+			clickAudio = "Se_Click_Close_1",
+			func = bind1(self.onClickBack, self)
+		}
+	}
+	local injector = self:getInjector()
+	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
+
+	self._topInfoWidget:updateView(config)
+end
+
+function GalleryPartnerMediator:onClickBack(sender, eventType)
+	self:dismiss()
+end
+
 function GalleryPartnerMediator:setupView(data)
 	self:initData(data)
 	self:initWidgetInfo()
 	self:initView()
-	self:refreshView(true)
+	self:refreshView(true, true)
 end
 
 function GalleryPartnerMediator:refreshBySync()
@@ -73,13 +145,16 @@ end
 
 function GalleryPartnerMediator:initWidgetInfo()
 	self._main = self:getView():getChildByFullName("main")
-	self._bonusPanel = self:getView():getChildByFullName("bonusPanel")
+	self._bonusPanel = self._main:getChildByFullName("bonusPanel")
 
 	self._bonusPanel:setVisible(false)
 
 	self._loveCount = self._main:getChildByFullName("loveCount")
 	self._title = self._main:getChildByFullName("title")
 	self._desc = self._main:getChildByFullName("desc")
+
+	self._desc:getVirtualRenderer():setLineHeight(24)
+
 	self._currencyNum = self._main:getChildByFullName("currencyNum")
 	self._totalNum = self._main:getChildByFullName("totalNum")
 	self._tableViewPanel = self._main:getChildByFullName("tableView")
@@ -90,15 +165,31 @@ function GalleryPartnerMediator:initWidgetInfo()
 
 	self._cellClone:setVisible(false)
 
-	self._imageDi = self._main:getChildByFullName("bg.image")
+	self._partyNode = self._main:getChildByFullName("partyNode")
 	self._progressPanel = self._main:getChildByFullName("progressPanel")
 	self._touchLayer = self:getView():getChildByFullName("touchLayer")
 
 	self._touchLayer:setVisible(false)
+
+	self._btnClone_1 = self:getView():getChildByFullName("btnClone_1")
+
+	self._btnClone_1:setVisible(false)
+
+	self._btnClone_2 = self:getView():getChildByFullName("btnClone_2")
+
+	self._btnClone_2:setVisible(false)
+
+	self._bottomPanel = self._main:getChildByFullName("bottomPanel")
+	self._buttonNode = self._main:getChildByFullName("bottomPanel.buttonNode")
+
 	self._cellClone:getChildByFullName("loveIcon.text"):enableOutline(cc.c4b(60, 80, 20, 127), 2)
-	self._loveCount:setTouchEnabled(true)
-	self._loveCount:addTouchEventListener(function (sender, eventType)
+	self._loveCount:getChildByFullName("touchPanel"):setTouchEnabled(true)
+	self._loveCount:getChildByFullName("touchPanel"):addTouchEventListener(function (sender, eventType)
 		self:onClickBonus(sender, eventType, self._attrData)
+	end)
+	self._bottomPanel:getChildByFullName("infoBtn"):setTouchEnabled(true)
+	self._bottomPanel:getChildByFullName("infoBtn"):addTouchEventListener(function (sender, eventType)
+		self:onClickInfoBtn(sender, eventType, self._attrData)
 	end)
 
 	self._slider = self._progressPanel:getChildByFullName("slider")
@@ -108,19 +199,34 @@ function GalleryPartnerMediator:initWidgetInfo()
 			self:onSliderChanged()
 		end
 	end)
+
+	local director = cc.Director:getInstance()
+	local winSize = director:getWinSize()
+
+	self._tableViewPanel:setContentSize(cc.size(630, winSize.height - 128 - 133))
+
+	self._posY_table = self._tableViewPanel:getPositionY()
 end
 
 function GalleryPartnerMediator:initData(data)
+	self._albumType = data and data.albumType and data.albumType or 1
 	self._tabType = data and data.tabType and data.tabType or 1
-	self._partyArray = self._gallerySystem:getPartyArray()
+	self._albumArray = self._gallerySystem:getPartyArray()
+	self._partyArray = self._albumArray[self._albumType]
 	self._curPartyData = self._partyArray[self._tabType]
-	self._showHeros = self._curPartyData:getHeroIds()
+
+	self:doLogicForShowHeros()
+
 	self._tabCache = {}
+	self._bottomTabCache = {}
 	self._attrData = self._gallerySystem:getLoveAddAttr()
+	self._tabSelect = {
+		[self._albumType] = self._tabType
+	}
 end
 
 function GalleryPartnerMediator:initView()
-	for i = 1, #self._partyArray do
+	for i = 1, #self._albumArray do
 		local tabBtn = self._tabPanelLight:getChildByFullName("btn_" .. i)
 
 		tabBtn:addClickEventListener(function ()
@@ -129,6 +235,13 @@ function GalleryPartnerMediator:initView()
 
 		local darkImg = self._tabPanelDark:getChildByFullName("tab_" .. i)
 		local lightImg = self._tabPanelLight:getChildByFullName("tab_" .. i)
+		local nameText_1 = darkImg:getChildByFullName("nameText")
+		local nameText_2 = lightImg:getChildByFullName("nameText")
+
+		nameText_1:setString(Strings:get(AlbumGroupType[i][2]))
+		nameText_2:setString(Strings:get(AlbumGroupType[i][2]))
+		nameText_1:getVirtualRenderer():setLineHeight(33)
+		nameText_2:getVirtualRenderer():setLineHeight(33)
 
 		if not self._tabCache[i] then
 			self._tabCache[i] = {
@@ -206,6 +319,14 @@ function GalleryPartnerMediator:createTeamCell(cell, index)
 			panel:setAnchorPoint(cc.p(0.5, 0.5))
 
 			local rarity = panel:getChildByFullName("rarity")
+			local linkImage = panel:getChildByFullName("linkImage")
+
+			if self._heroSystem:isLinkStageHero(id) then
+				linkImage:setVisible(true)
+			else
+				linkImage:setVisible(false)
+			end
+
 			local hero = self._heroSystem:getHeroById(id)
 
 			rarity:setVisible(not not hero)
@@ -242,11 +363,9 @@ function GalleryPartnerMediator:createTeamCell(cell, index)
 				self:onClickHeroIcon(sender, eventType, id)
 			end)
 
-			local heroIcon = IconFactory:createRoleIconSprite({
-				stencil = 1,
-				iconType = "Bust7",
-				id = roleModel,
-				size = cc.size(245, 336)
+			local heroIcon = IconFactory:createRoleIconSpriteNew({
+				frameId = "bustframe7_1",
+				id = roleModel
 			})
 
 			heroIcon:setScale(0.5)
@@ -282,14 +401,23 @@ function GalleryPartnerMediator:createTeamCell(cell, index)
 	end
 end
 
-function GalleryPartnerMediator:refreshData()
+function GalleryPartnerMediator:refreshData(changeAlbumType)
+	if changeAlbumType then
+		self._albumArray = self._gallerySystem:getPartyArray()
+		self._partyArray = self._albumArray[self._albumType]
+	end
+
 	self._curPartyData = self._partyArray[self._tabType]
-	self._showHeros = self._curPartyData:getHeroIds()
+
+	self:doLogicForShowHeros()
+
 	self._attrData = self._gallerySystem:getLoveAddAttr()
 end
 
-function GalleryPartnerMediator:refreshView(hideReload)
+function GalleryPartnerMediator:refreshView(hideReload, changeAlbumType)
 	self:refreshTabStatus()
+	self:refreshBottomView()
+	self:refreshBottomTabStatus()
 	self:refreshRewardRedPoint()
 
 	if not hideReload then
@@ -300,11 +428,18 @@ function GalleryPartnerMediator:refreshView(hideReload)
 	self._title:setString(self._curPartyData:getTitle())
 	self._desc:setString(self._curPartyData:getDesc())
 
-	local curNum, totalNum = self._gallerySystem:getCurNums(self._curPartyData:getHeroIds())
+	local curNum, totalNum = self._gallerySystem:getCurNums(self._showHeros)
 
 	self._currencyNum:setString(curNum)
 	self._totalNum:setString("/" .. totalNum)
-	self._imageDi:loadTexture("asset/ui/gallery/" .. kImageDi[self._tabType])
+	self._partyNode:removeAllChildren()
+
+	if kImageParty[self._curPartyData:getPartyId()] then
+		local img_party = ccui.ImageView:create("asset/ui/gallery/" .. kImageParty[self._curPartyData:getPartyId()][2], ccui.TextureResType.localType)
+
+		img_party:setAnchorPoint(cc.p(0, 1))
+		img_party:addTo(self._partyNode)
+	end
 
 	local label = self._loveCount:getChildByName("loveNum")
 	local loveLevel = self._gallerySystem:getTotalLoveLevel()
@@ -312,31 +447,162 @@ function GalleryPartnerMediator:refreshView(hideReload)
 	label:setString(loveLevel)
 end
 
+function GalleryPartnerMediator:refreshBottomView()
+	self._buttonNode:removeAllChildren()
+
+	self._bottomTabCache = {}
+	local cellInterval = 90
+	local cellWidth = 70
+	local start_x = cellWidth / 2 - 10 + math.floor(#self._partyArray / 2) * -cellInterval + 20 + #self._partyArray % 2 * -55
+	local cloneBaseNode = self._btnClone_1
+
+	if self._albumType == 1 then
+		cloneBaseNode = self._btnClone_2
+		cellInterval = 85
+		cellWidth = 40
+		start_x = cellWidth / 2 - 22.5 + math.floor(#self._partyArray / 2) * -cellInterval + 45 + #self._partyArray % 2 * -65
+	elseif self._albumType == 2 then
+		cellInterval = 88
+		cellWidth = 68
+		start_x = -20 + cellWidth / 2 - 10 + math.floor(#self._partyArray / 2) * -cellInterval + 20 + #self._partyArray % 2 * -54
+	end
+
+	for i = 1, #self._partyArray do
+		local data = self._partyArray[i]
+		local btn = cloneBaseNode:clone()
+
+		btn:setVisible(true)
+		btn:addTo(self._buttonNode):posite(start_x + (i - 1) * cellInterval, 0)
+
+		local touchPanel = btn:getChildByFullName("touchPanel")
+
+		touchPanel:addClickEventListener(function ()
+			self:onClickBottomTab(i)
+		end)
+
+		local darkImg = btn:getChildByFullName("Image_dark")
+		local lightImg = btn:getChildByFullName("Image_light")
+		local name = btn:getChildByFullName("name")
+
+		if name then
+			if self._albumType == 2 then
+				name:setString(Strings:get(GameStyle:getHeroOccupation(data:getPartyId())))
+			elseif self._albumType == 3 then
+				name:setString(data:getPartyId())
+			end
+		end
+
+		if self._albumType == 1 then
+			local Image_icon = btn:getChildByFullName("Image_3")
+
+			Image_icon:loadTexture(kImageParty[data:getPartyId()][1], ccui.TextureResType.plistType)
+
+			local redPoint = btn:getChildByFullName("redPoint")
+			local canGain = self._gallerySystem:checkcanReceive(data:getPartyId())
+			canGain = canGain or self._gallerySystem:checkCanGetHeroReward(data:getPartyId())
+
+			redPoint:setVisible(canGain)
+		end
+
+		if not self._bottomTabCache[i] then
+			self._bottomTabCache[i] = {
+				lightImg,
+				darkImg
+			}
+		end
+	end
+end
+
+function GalleryPartnerMediator:refreshBottomTabStatus()
+	for i = 1, #self._bottomTabCache do
+		self._bottomTabCache[i][1]:setVisible(self._tabType == i)
+
+		if self._bottomTabCache[i][2] then
+			self._bottomTabCache[i][2]:setVisible(self._tabType ~= i)
+		end
+	end
+
+	local colectText = self._bottomPanel:getChildByFullName("colectText")
+	local currentScoreText = self._bottomPanel:getChildByFullName("currentScoreText")
+	local targetScoreText = self._bottomPanel:getChildByFullName("targetScoreText")
+	local loadingNode = self._bottomPanel:getChildByFullName("loadingNode")
+	local loadingBar = loadingNode:getChildByName("loading")
+	local allCountHero = 0
+	local currentCountHero = 0
+
+	for i = 1, #self._showHeros do
+		local id = self._showHeros[i]
+
+		if self._heroSystem:isLinkStageHero(id) == false then
+			allCountHero = allCountHero + 1
+
+			if self._heroSystem:hasHero(id) then
+				currentCountHero = currentCountHero + 1
+			end
+		end
+	end
+
+	if allCountHero ~= 0 then
+		loadingNode:setVisible(true)
+		colectText:setVisible(true)
+		currentScoreText:setVisible(true)
+		targetScoreText:setVisible(true)
+
+		local rate = currentCountHero / allCountHero
+
+		colectText:setString(Strings:get("NewAlbum_UI01", {
+			percent = string.format("%.1f", rate * 100)
+		}) .. "%")
+		currentScoreText:setString("" .. currentCountHero)
+		targetScoreText:setString("/" .. allCountHero)
+		loadingBar:setPercent(rate * 100)
+	else
+		loadingNode:setVisible(false)
+		colectText:setVisible(false)
+		currentScoreText:setVisible(false)
+		targetScoreText:setVisible(false)
+	end
+end
+
 function GalleryPartnerMediator:refreshTabStatus()
 	for i = 1, #self._tabCache do
-		self._tabCache[i][1]:setVisible(self._tabType ~= i)
-		self._tabCache[i][2]:setVisible(self._tabType == i)
+		self._tabCache[i][1]:setVisible(self._albumType ~= i)
+		self._tabCache[i][2]:setVisible(self._albumType == i)
 	end
 end
 
 function GalleryPartnerMediator:refreshRewardRedPoint()
-	local canReceive = self._gallerySystem:canRevieveReward(self._curPartyData:getPartyId())
+	local canReceive, hasReward = self._gallerySystem:canRevieveReward(self._curPartyData:getPartyId())
 
 	self._rewardBtn:getChildByFullName("redMark"):setVisible(canReceive)
+	self._rewardBtn:setVisible(hasReward)
 
 	for i = 1, #self._tabCache do
 		local btn = self._tabCache[i][2]
-		local partyId = self._partyArray[i]:getPartyId()
 
 		if not self._tabPanelLight:getChildByName("RedPoint_" .. i) then
 			local redPoint = ccui.ImageView:create(IconFactory.redPointPath, 1)
 
 			redPoint:setName("RedPoint_" .. i)
-			redPoint:addTo(self._tabPanelLight):posite(btn:getPositionX() + 40, btn:getPositionY() + 40)
+			redPoint:addTo(self._tabPanelLight):posite(btn:getPositionX() + 35, btn:getPositionY() + 60)
 		end
 
-		canReceive = self._gallerySystem:checkcanReceive(partyId)
-		canReceive = canReceive or self._gallerySystem:checkCanGetHeroReward(partyId)
+		local partyArray = self._albumArray[i]
+		local showRedPoint = false
+
+		for j = 1, #partyArray do
+			local partyId = partyArray[j]:getPartyId()
+			local canGain = self._gallerySystem:checkcanReceive(partyId)
+			canGain = canGain or self._gallerySystem:checkCanGetHeroReward(partyId)
+
+			if canGain then
+				canReceive = true
+
+				self._tabPanelLight:getChildByName("RedPoint_" .. i):setVisible(canReceive)
+
+				return
+			end
+		end
 
 		self._tabPanelLight:getChildByName("RedPoint_" .. i):setVisible(canReceive)
 	end
@@ -399,6 +665,22 @@ end
 function GalleryPartnerMediator:onClickTab(index)
 	AudioEngine:getInstance():playEffect("Se_Click_Tab_Carera", false)
 
+	self._tabSelect[self._albumType] = self._tabType
+	self._albumType = index
+
+	if self._tabSelect[self._albumType] then
+		self._tabType = self._tabSelect[self._albumType]
+	else
+		self._tabType = 1
+	end
+
+	self:refreshData(true)
+	self:refreshView(nil, true)
+end
+
+function GalleryPartnerMediator:onClickBottomTab(index)
+	AudioEngine:getInstance():playEffect("Se_Click_Tab_Carera", false)
+
 	self._tabType = index
 
 	self:refreshData()
@@ -408,8 +690,15 @@ end
 function GalleryPartnerMediator:onClickBonus(sender, eventType, data)
 	if eventType == ccui.TouchEventType.began then
 		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+		local targetPos = sender:getParent():convertToWorldSpace(cc.p(sender:getPosition()))
+
+		self._bonusPanel:setPositionX(self._bonusPanel:getParent():convertToNodeSpace(targetPos).x)
 		self._bonusPanel:setVisible(true)
-		self:refreshInnerAttrPanel(data)
+
+		local height = self:refreshInnerAttrPanel(data)
+
+		self._bonusPanel:setPositionY(self._bonusPanel:getParent():convertToNodeSpace(targetPos).y + 30 + height)
 	elseif eventType == ccui.TouchEventType.canceled or eventType == ccui.TouchEventType.ended then
 		self._bonusPanel:setVisible(false)
 	end
@@ -448,6 +737,8 @@ function GalleryPartnerMediator:refreshInnerAttrPanel(data)
 	end
 
 	self._bonusPanel:getChildByName("imageBg"):setContentSize(cc.size(width + 40, height))
+
+	return height
 end
 
 function GalleryPartnerMediator:onSliderChanged()
@@ -472,10 +763,10 @@ function GalleryPartnerMediator:runStartAnim()
 	self._main:runAction(spawn)
 	self._tableViewPanel:setOpacity(0)
 	self._loveCount:setOpacity(0)
-	self._tableViewPanel:setPosition(cc.p(681, 30))
+	self._tableViewPanel:setPosition(cc.p(630, self._posY_table + 30))
 
 	local delay = cc.DelayTime:create(0.4)
-	local moveto = cc.MoveTo:create(0.3, cc.p(681, 0))
+	local moveto = cc.MoveTo:create(0.3, cc.p(630, self._posY_table))
 	local fadeIn = cc.FadeIn:create(0.2)
 	local callback = cc.CallFunc:create(function ()
 		self._heroView:reloadData()
@@ -515,4 +806,38 @@ function GalleryPartnerMediator:setupClickEnvs()
 	end
 
 	storyDirector:notifyWaiting("enter_GalleryPartnerMediator")
+end
+
+function GalleryPartnerMediator:onClickInfoBtn(sender, eventType)
+	if eventType == ccui.TouchEventType.began then
+		AudioEngine:getInstance():playEffect("Se_Click_Common_1", false)
+
+		local targetPos = sender:getParent():convertToWorldSpace(cc.p(sender:getPosition()))
+
+		self._bonusPanel:setPositionX(self._bonusPanel:getParent():convertToNodeSpace(targetPos).x)
+		self._bonusPanel:setVisible(true)
+
+		local height = self:refreshInnerAttrPanel({
+			Strings:get("NewAlbum_UI04")
+		})
+
+		self._bonusPanel:setPositionY(self._bonusPanel:getParent():convertToNodeSpace(targetPos).y + 30 + height)
+	elseif eventType == ccui.TouchEventType.canceled or eventType == ccui.TouchEventType.ended then
+		self._bonusPanel:setVisible(false)
+	end
+end
+
+function GalleryPartnerMediator:doLogicForShowHeros()
+	self._showHeros = {}
+	local specialHeroIds = self._gallerySystem:getAlbumFeminineHeroForRareityString(self._curPartyData:getPartyId())
+
+	for i = 1, #specialHeroIds do
+		self._showHeros[#self._showHeros + 1] = specialHeroIds[i]
+	end
+
+	local showHeroIds = self._curPartyData:getHeroIds()
+
+	for i = 1, #showHeroIds do
+		self._showHeros[#self._showHeros + 1] = showHeroIds[i]
+	end
 end

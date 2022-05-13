@@ -230,7 +230,7 @@ function ShopBuyMediator:refreshBaseShowView()
 
 		self._numberText:setString(0)
 
-		descString = Strings:get(config.Desc)
+		descString = Strings:get(config.Desc) or ""
 		local goldIcon = IconFactory:createResourcePic({
 			id = self._costType
 		}, {
@@ -253,7 +253,8 @@ function ShopBuyMediator:refreshBaseShowView()
 
 	node:setPosition(cc.p(0, 0))
 	node:setVisible(true)
-	node:setString(descString):enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	node:setString(descString)
+	node:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 	node:getVirtualRenderer():setDimensions(self._descListView:getContentSize().width, 0)
 	self._descListView:pushBackCustomItem(node)
 

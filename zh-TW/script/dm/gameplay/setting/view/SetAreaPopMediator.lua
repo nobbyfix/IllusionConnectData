@@ -70,7 +70,12 @@ function SetAreaPopMediator:enterWithData(data)
 	self._regionId = _tab.regionId
 	self._regionIndex = _tab.regionIndex
 	self._areaIndex = _tab.areaIndex
-	self._citys = regionData[self._regionId].City
+
+	if regionData[self._regionId] then
+		self._citys = regionData[self._regionId].City
+	else
+		self._citys = {}
+	end
 
 	self:initAreaTableView()
 end
@@ -81,7 +86,7 @@ function SetAreaPopMediator:initAreaTableView()
 end
 
 function SetAreaPopMediator:initRegionTab()
-	local regionTableView = cc.TableView:create(cc.size(100, 132))
+	local regionTableView = cc.TableView:create(cc.size(160, 132))
 
 	local function cellSize(table, idx)
 		return 100, 44
@@ -114,7 +119,12 @@ function SetAreaPopMediator:initRegionTab()
 				local entityPosY = entity * -44
 				self._regionIndex = orderTabSize - entity
 				self._regionId = orderTab[self._regionIndex].Id
-				self._citys = regionData[self._regionId].City
+
+				if regionData[self._regionId] then
+					self._citys = regionData[self._regionId].City
+				else
+					self._citys = {}
+				end
 
 				if not self._isFirstEnter then
 					self._areaIndex = 1
@@ -159,8 +169,12 @@ function SetAreaPopMediator:initRegionTab()
 			local regionText = ccui.Text:create("", TTF_FONT_FZYH_M, 20)
 
 			regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+			regionText:ignoreContentAdaptWithSize(false)
+			regionText:setContentSize(cc.size(150, 30))
+			regionText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			regionText:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
 			regionText:addTo(cell):setName("regionText")
-			regionText:center(cc.size(100, 44))
+			regionText:center(cc.size(160, 44))
 		end
 
 		if self._regionIndex == idx then
@@ -190,7 +204,7 @@ function SetAreaPopMediator:initRegionTab()
 	regionTableView:registerScriptHandler(cellAtIndex, cc.TABLECELL_SIZE_AT_INDEX)
 	regionTableView:registerScriptHandler(onScroll, cc.SCROLLVIEW_SCRIPT_SCROLL)
 	regionTableView:addTo(self._main)
-	regionTableView:setPosition(cc.p(400, 273))
+	regionTableView:setPosition(cc.p(380, 273))
 	regionTableView:setBounceable(false)
 	regionTableView:reloadData()
 
@@ -269,6 +283,10 @@ function SetAreaPopMediator:initAreaTab()
 			local regionText = ccui.Text:create("", TTF_FONT_FZYH_M, 20)
 
 			regionText:enableOutline(cc.c4b(0, 0, 0, 255), 1)
+			regionText:ignoreContentAdaptWithSize(false)
+			regionText:setContentSize(cc.size(150, 30))
+			regionText:setTextHorizontalAlignment(cc.TEXT_ALIGNMENT_CENTER)
+			regionText:setTextVerticalAlignment(cc.VERTICAL_TEXT_ALIGNMENT_CENTER)
 			regionText:addTo(cell):setName("areaText")
 			regionText:center(cc.size(176, 44))
 		end

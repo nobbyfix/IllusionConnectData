@@ -697,7 +697,7 @@ function MazeSealMediator:getDesc(_config)
 	end
 
 	local effectDesc = effectConfig.EffectDesc
-	local descValue = ConfigReader:getDataByNameIdAndKey("Translate", effectDesc, "Zh_CN")
+	local descValue = Strings:get(effectDesc)
 	local factorMap = ConfigReader:getRecordById("SkillAttrEffect", effectId)
 	local t = TextTemplate:new(descValue)
 	local funcMap = {
@@ -730,7 +730,7 @@ end
 
 function MazeSealMediator:getShortDesc(configid)
 	local desc = ConfigReader:getDataByNameIdAndKey("PansLabOptionUnlock", configid, "ConditionDesc")
-	local transDesc = ConfigReader:getDataByNameIdAndKey("Translate", desc, "Zh_CN")
+	local transDesc = Strings:get(desc)
 	local factorMap = ConfigReader:getRecordById("PansLabOptionUnlock", configid)
 	local t = TextTemplate:new(transDesc)
 	local funcMap = {

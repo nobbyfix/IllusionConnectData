@@ -48,11 +48,12 @@ function PrinterEffectDialogWidget:updateView(data, onEnd, parentClass)
 	self._contentTextSpeeds = data.durations or {}
 	self._contentWaitTimes = data.waitTimes or {}
 	self._heightSpace = data.heightSpace or 26
-	self._center = data.center
+	self._center = data.center or 0
 	self._contentTextIndex = 0
 	self._contentTextList = {}
 	self._clickTouchTime = 0
 	self._newTextShowSta = false
+	self._printAudioOff = data.printAudioOff and true or false
 	local panelOpacity = 0
 
 	if data.panelOpacity then
@@ -97,7 +98,7 @@ function PrinterEffectDialogWidget:updateView(data, onEnd, parentClass)
 	plist2:setVisible(animShow)
 	plist3:setVisible(animShow)
 
-	if self._center and self._center == 1 then
+	if self._center > 0 then
 		self:addContent()
 		self:runNext()
 	else
@@ -158,7 +159,7 @@ function PrinterEffectDialogWidget:addContent()
 
 	local parentNode = contentNode
 
-	if centerType and centerType == 1 then
+	if centerType > 0 then
 		parentNode = contentNode_center
 	end
 
@@ -241,7 +242,9 @@ function PrinterEffectDialogWidget:addContent()
 			end
 
 			local function soundCallfun()
-				AudioEngine:getInstance():playEffect("Se_Story_Type", false)
+				if not self._printAudioOff then
+					AudioEngine:getInstance():playEffect("Se_Story_Type", false)
+				end
 			end
 
 			local typerAction = NewTypeWriterAction:create(contentText, duration, soundCallfun)
@@ -285,7 +288,7 @@ function PrinterEffectDialogWidget:addContent()
 		self._contentTextList[k] = contentText
 	end
 
-	if centerType and centerType == 1 then
+	if centerType > 0 then
 		baseNode:setPositionY(heightAll / 2 + 20)
 	end
 end
@@ -303,7 +306,7 @@ function PrinterEffectDialogWidget:clickToEndPrient()
 			self._contentTextIndex = index
 			local contentText = self._contentTextList[index]
 
-			if self._center and self._center == 1 then
+			if self._center > 0 then
 				if contentText and contentText.finishTypeWriter then
 					contentText:finishTypeWriter()
 				end

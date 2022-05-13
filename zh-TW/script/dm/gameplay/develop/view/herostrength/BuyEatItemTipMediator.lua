@@ -343,6 +343,10 @@ function BuyEatItemTipMediator:createGiftDataSource(resourceConfig)
 		end
 
 		self._giftNode:setVisible(true)
+		prePriceText:setVisible(false)
+		self._giftNode:getChildByFullName("Node_gift.Button_price.Image_17"):setVisible(false)
+		discountText:setVisible(false)
+		discountDescText:posite(128, 126)
 	else
 		self._giftNode:setVisible(false)
 	end
@@ -405,11 +409,7 @@ function BuyEatItemTipMediator:createCell(cell, index)
 	blockPanel:setVisible(true)
 
 	local titleText = cell:getChildByName("Text_name")
-	local render = titleText:getVirtualRenderer()
 
-	render:setAlignment(cc.TEXT_ALIGNMENT_LEFT, cc.TEXT_ALIGNMENT_CENTER)
-	render:setOverflow(cc.LabelOverflow.SHRINK)
-	render:setDimensions(100, 36)
 	titleText:setVisible(true)
 	titleText:setString(data.title)
 

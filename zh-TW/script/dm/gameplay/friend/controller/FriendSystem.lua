@@ -87,21 +87,16 @@ function FriendSystem:getRecentList(limitCount)
 		local senderInfo = chat:getSender(rid)
 		local friend = self._friendModel:getFriendByRid(kFriendType.kGame, rid)
 
-		if not friend then
-			if senderInfo ~= nil then
-				friend = Friend:new()
+		if not friend and senderInfo ~= nil then
+			friend = Friend:new()
 
-				friend:synchronize(senderInfo)
+			friend:synchronize(senderInfo)
 
-				friend.time = time
-
-				if not self:hasInList(list, rid) then
-					list[#list + 1] = friend
-				end
-			end
-		elseif not self:hasInList(list, rid) then
 			friend.time = time
-			list[#list + 1] = friend
+
+			if not self:hasInList(list, rid) then
+				list[#list + 1] = friend
+			end
 		end
 
 		if limitCount <= #list then
@@ -583,6 +578,8 @@ end
 
 local __bases = {
 	31536000,
+	15768000,
+	2592000,
 	86400,
 	3600,
 	60,
@@ -614,20 +611,32 @@ function FriendSystem:formatOnlineTime(time)
 	end
 
 	if farmat[2] > 0 then
-		return Strings:get("Friend_UI22", {
-			day = farmat[2]
+		return Strings:get("Friend_UI43_1", {
+			halfyear = farmat[2]
 		})
 	end
 
 	if farmat[3] > 0 then
-		return Strings:get("Friend_UI21", {
-			hour = farmat[3]
+		return Strings:get("Friend_UI43_2", {
+			month = farmat[3]
 		})
 	end
 
 	if farmat[4] > 0 then
+		return Strings:get("Friend_UI22", {
+			day = farmat[4]
+		})
+	end
+
+	if farmat[5] > 0 then
+		return Strings:get("Friend_UI21", {
+			hour = farmat[5]
+		})
+	end
+
+	if farmat[6] > 0 then
 		return Strings:get("Friend_UI20", {
-			min = farmat[4]
+			min = farmat[6]
 		})
 	end
 
@@ -724,4 +733,21 @@ function FriendSystem:getHasApplyList()
 	end
 
 	return {}
+end
+
+function FriendSystem:showFriendPlayerInfoView(rid, record, fromView)
+	local settingSystem = self:getInjector():getInstance(SettingSystem)
+
+	settingSystem:requestPlayerInfo(rid, function (response)
+		local data = response.data
+		local view = self:getInjector():getInstance("settingView")
+
+		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, {
+			player = data,
+			record = record,
+			fromView = fromView
+		}))
+	end)
 end

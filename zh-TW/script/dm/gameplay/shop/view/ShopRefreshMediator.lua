@@ -95,7 +95,7 @@ function ShopRefreshMediator:refreshInfo()
 		local label1 = self._node1:getChildByFullName("Text_2")
 		local width = label1:getContentSize().width
 
-		self._moneyIcon:setPositionX(label1:getPositionX() + label1:getContentSize().width - 5)
+		self._moneyIcon:setPositionX(label1:getPositionX() + 5)
 
 		width = width + costIcon:getContentSize().width - 5
 

@@ -1,4 +1,8 @@
 {
+    "$以下為增加": {
+        "clz": "",
+        "content": ""
+    },
     "ACT_MYXH_RuleTranslate": {
         "clz": "string[]",
         "content": [
@@ -14,14 +18,22 @@
         ]
     },
     "ActiveReward": {
-        "clz": "dict",
-        "content": {
-            "120": "ActiveReward_3",
-            "160": "ActiveReward_4",
-            "200": "ActiveReward_5",
-            "40": "ActiveReward_1",
-            "80": "ActiveReward_2"
-        }
+        "clz": "array",
+        "content": [
+            {
+                "level": [
+                    0,
+                    99
+                ],
+                "reward": {
+                    "120": "ActiveReward_3",
+                    "160": "ActiveReward_New_4",
+                    "200": "ActiveReward_New_5",
+                    "40": "ActiveReward_1",
+                    "80": "ActiveReward_2"
+                }
+            }
+        ]
     },
     "ActiveRewardChange": {
         "clz": "string",
@@ -40,9 +52,113 @@
     "Activity_Point_Hide": {
         "clz": "string[]",
         "content": [
-            "IM_Boom",
-            "IM_BoomEx"
+            "IM_Boom"
         ]
+    },
+    "Activity_TeamNameConfig": {
+        "clz": "string",
+        "content": "Activity_TeamName"
+    },
+    "Activity_TeamPresetOffset": {
+        "clz": "dict",
+        "content": {
+            "Master_BiLei": [
+                0,
+                0
+            ],
+            "Master_FuHun": [
+                0,
+                0
+            ],
+            "Master_JiangJun": [
+                0,
+                0
+            ],
+            "Master_LieSha": [
+                0,
+                0
+            ],
+            "Master_SenLing": [
+                0,
+                0
+            ],
+            "Master_WuShi": [
+                0,
+                0
+            ],
+            "Master_XueZhan": [
+                0,
+                0
+            ],
+            "Master_ZhaoHuan": [
+                0,
+                0
+            ]
+        }
+    },
+    "AntiAdvertisement_A": {
+        "clz": "int",
+        "content": 75
+    },
+    "AntiAdvertisement_A_Mail": {
+        "clz": "string",
+        "content": "Mail_AntiAdvertisement_A"
+    },
+    "AntiAdvertisement_B": {
+        "clz": "int",
+        "content": 50
+    },
+    "AntiAdvertisement_B_Mail": {
+        "clz": "string",
+        "content": "Mail_AntiAdvertisement_B"
+    },
+    "AntiAdvertisement_Block": {
+        "clz": "int",
+        "content": 5
+    },
+    "AntiAdvertisement_C": {
+        "clz": "int",
+        "content": 25
+    },
+    "AntiAdvertisement_C_Mail": {
+        "clz": "string",
+        "content": "Mail_AntiAdvertisement_C"
+    },
+    "AntiAdvertisement_D": {
+        "clz": "int",
+        "content": 0
+    },
+    "AntiAdvertisement_FrequentTalk": {
+        "clz": "int",
+        "content": -2
+    },
+    "AntiAdvertisement_Pay": {
+        "clz": "int",
+        "content": 10
+    },
+    "AntiAdvertisement_PlayerBasePoint": {
+        "clz": "int",
+        "content": 100
+    },
+    "AntiAdvertisement_PlayerMaxPoint": {
+        "clz": "int",
+        "content": 200
+    },
+    "AntiAdvertisement_Shield": {
+        "clz": "int",
+        "content": -15
+    },
+    "AntiAdvertisement_ShieldAmount": {
+        "clz": "int",
+        "content": 50
+    },
+    "AntiAdvertisement_SpecialBlock": {
+        "clz": "int",
+        "content": 3
+    },
+    "AntiAdvertisement_TalkAmount": {
+        "clz": "int",
+        "content": 4
     },
     "ArenaRobot_FloatRange": {
         "clz": "double[]",
@@ -58,8 +174,12 @@
             "12": 0.95,
             "13": 1,
             "14": 1.1,
-            "15": 1.2
+            "15": 1.1
         }
+    },
+    "ArenaStage_Background": {
+        "clz": "string",
+        "content": "Battle_scene_stagearena"
     },
     "Arena_Background": {
         "clz": "string",
@@ -122,14 +242,14 @@
         "clz": "double[]",
         "content": [
             1,
-            0.3
+            0.2
         ]
     },
     "Arena_MatchLevelUp": {
         "clz": "double[]",
         "content": [
             2,
-            1
+            0.5
         ]
     },
     "Arena_NormalInterval": {
@@ -181,6 +301,12 @@
             0.25
         ]
     },
+    "Arena_Passive": {
+        "clz": "string[]",
+        "content": [
+            "ArenaFixed_HurtRateUp"
+        ]
+    },
     "Arena_PlayerExtraA": {
         "clz": "double",
         "content": 1.05
@@ -198,11 +324,11 @@
         "content": {
             "jjc_bg_txk_1b": [
                 4,
-                6
+                7
             ],
             "jjc_bg_txk_1c": [
-                7,
-                8
+                8,
+                10
             ],
             "jjc_bg_txk_1w": [
                 0,
@@ -221,7 +347,7 @@
         "clz": "double[]",
         "content": [
             -2,
-            3
+            2
         ]
     },
     "Arena_PlayerMatch": {
@@ -258,8 +384,7 @@
             "RankWeekReward_4",
             "RankWeekReward_5",
             "RankWeekReward_6",
-            "RankWeekReward_7",
-            "RankWeekReward_8"
+            "RankWeekReward_7"
         ]
     },
     "Arena_Rank_Num": {
@@ -384,8 +509,7 @@
                 "BattlePass_RuleDesc_5",
                 "BattlePass_RuleDesc_10",
                 "BattlePass_RuleDesc_11",
-                "BattlePass_RuleDesc_12",
-                "BattlePass_RuleDesc_13"
+                "BattlePass_RuleDesc_12"
             ]
         }
     },
@@ -416,7 +540,10 @@
             "tower",
             "crusade",
             "actstage",
-            "club_battle"
+            "club_battle",
+            "dream_battle",
+            "stagearena",
+            "arena_new_challenge"
         ]
     },
     "BattleSpeed_Display": {
@@ -497,6 +624,10 @@
     "BeginSeason": {
         "clz": "string[]",
         "content": []
+    },
+    "Blacklist_MaxAmount": {
+        "clz": "int",
+        "content": 100
     },
     "BlockArena_ShowUI_Des": {
         "clz": "string",
@@ -588,7 +719,8 @@
             "M16",
             "M17",
             "M18",
-            "M19"
+            "M19",
+            "M20"
         ]
     },
     "Block_StarConditionDesc": {
@@ -664,6 +796,9 @@
             "IM_EquipShowBox2",
             "IM_EquipShowBox3",
             "IM_EquipShowBox4",
+            "IB_RHeroF_R",
+            "IB_RHeroF_SR",
+            "IB_RHeroF_SSR",
             "IB_RHeroF_R2SSR"
         ]
     },
@@ -818,6 +953,22 @@
         "clz": "int",
         "content": 0
     },
+    "BulletTime_PVP_StageArena": {
+        "clz": "int",
+        "content": 0
+    },
+    "Bust_Battleend_Show": {
+        "clz": "string[]",
+        "content": [
+            "Model_SP_PNCao_NNuo"
+        ]
+    },
+    "Bust_Inbattle_Show": {
+        "clz": "string[]",
+        "content": [
+            "Model_SP_PNCao"
+        ]
+    },
     "BuyCrystal_Base": {
         "clz": "dict",
         "content": {
@@ -880,6 +1031,12 @@
             150
         ]
     },
+    "BuyShowHero": {
+        "clz": "string[]",
+        "content": [
+            "TPGZhu"
+        ]
+    },
     "CDKey_Dif": {
         "clz": "string",
         "content": "#"
@@ -930,7 +1087,7 @@
     },
     "Chat_Word_Limit": {
         "clz": "int",
-        "content": 50
+        "content": 100
     },
     "CheckInDesc": {
         "clz": "dict",
@@ -1320,6 +1477,284 @@
         "clz": "string",
         "content": "Mail_CheckInReward"
     },
+    "ChessArena_Background": {
+        "clz": "string",
+        "content": "Battle_Scene_1"
+    },
+    "ChessArena_ChangeShowTime": {
+        "clz": "int",
+        "content": 24
+    },
+    "ChessArena_Mail_DayReward": {
+        "clz": "string",
+        "content": 1005
+    },
+    "ChessArena_Mail_Reward": {
+        "clz": "string",
+        "content": 1003
+    },
+    "ChessArena_Rank_Num": {
+        "clz": "int",
+        "content": 100
+    },
+    "ChessArena_RecordRank": {
+        "clz": "int",
+        "content": 50
+    },
+    "ChessArena_RobotAutograph": {
+        "clz": "string[]",
+        "content": [
+            "ClassArena_Autograph1",
+            "ClassArena_Autograph2",
+            "ClassArena_Autograph3",
+            "ClassArena_Autograph4",
+            "ClassArena_Autograph5",
+            "ClassArena_Autograph6",
+            "ClassArena_Autograph7",
+            "ClassArena_Autograph8",
+            "ClassArena_Autograph9",
+            "ClassArena_Autograph10"
+        ]
+    },
+    "ChessArena_Robot_Job_Deviation": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                1.1,
+                1,
+                0.81
+            ],
+            "Attack": [
+                1.2,
+                0.82,
+                0.71
+            ],
+            "Cure": [
+                1.06,
+                1,
+                1.18
+            ],
+            "Curse": [
+                1.05,
+                1,
+                1.04
+            ],
+            "Defense": [
+                0.75,
+                1.18,
+                1.41
+            ],
+            "Summon": [
+                1,
+                1,
+                1
+            ],
+            "Support": [
+                1.04,
+                1,
+                1.15
+            ]
+        }
+    },
+    "ChessArena_Robot_Quality_Deviation": {
+        "clz": "dict",
+        "content": {
+            "12": 0.8,
+            "13": 0.9,
+            "14": 1,
+            "15": 1
+        }
+    },
+    "ChessArena_StepValueRate": {
+        "clz": "int",
+        "content": 4
+    },
+    "ClassArena_ActivePlayer": {
+        "clz": "int",
+        "content": 3
+    },
+    "ClassArena_Autograph": {
+        "clz": "string[]",
+        "content": [
+            10,
+            5
+        ]
+    },
+    "ClassArena_BattleSave": {
+        "clz": "int",
+        "content": 10
+    },
+    "ClassArena_BuyTimesCost": {
+        "clz": "int",
+        "content": 50
+    },
+    "ClassArena_DefaultRank": {
+        "clz": "int",
+        "content": 6001
+    },
+    "ClassArena_GroupAmount": {
+        "clz": "int",
+        "content": -1
+    },
+    "ClassArena_MaxTimes": {
+        "clz": "int",
+        "content": 5
+    },
+    "ClassArena_Member": {
+        "clz": "string[]",
+        "content": [
+            1500,
+            6000
+        ]
+    },
+    "ClassArena_PlayerMatch": {
+        "clz": "int",
+        "content": 3
+    },
+    "ClassArena_Rank_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "RankRules_1",
+            "RankRules_2",
+            "RankRules_3"
+        ]
+    },
+    "ClassArena_ReadyTime": {
+        "clz": "int",
+        "content": 300
+    },
+    "ClassArena_ReloadCD": {
+        "clz": "int",
+        "content": 0.75
+    },
+    "ClassArena_Reset": {
+        "clz": "string",
+        "content": "ChessArena_ResetTime"
+    },
+    "ClassArena_Reward_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "ClassArenaRankRewardTranslate1",
+            "ClassArenaRankRewardTranslate2",
+            "ClassArenaRankRewardTranslate3",
+            "ClassArenaRankRewardTranslate4",
+            "ClassArenaRankRewardTranslate5"
+        ]
+    },
+    "ClassArena_RobotAmount": {
+        "clz": "int",
+        "content": 10
+    },
+    "ClassArena_RobotBox": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                "DFQi",
+                "HLMGen",
+                "WTXXuan",
+                "SSQXin",
+                "YLMGZhu",
+                "MGNa",
+                "XSMLi",
+                "SLMen",
+                "TLMi",
+                "BQDShe"
+            ],
+            "Attack": [
+                "YFZZhu",
+                "CZheng",
+                "GLin",
+                "YMHTPu",
+                "KTSJKe",
+                "DNTLuo",
+                "ZZBBWei",
+                "BBLMa",
+                "NXYYi",
+                "MKLJLuo",
+                "YSuo",
+                "TJHDe",
+                "KMLa"
+            ],
+            "Cure": [
+                "HLDNan",
+                "LFEr",
+                "MLYTLSha",
+                "KXuan",
+                "NDGEr",
+                "XLai",
+                "XBKLDi"
+            ],
+            "Curse": [
+                "ADHWShi",
+                "DDing",
+                "SDTZi",
+                "ALPo"
+            ],
+            "Defense": [
+                "ZTXCun",
+                "WEDe",
+                "JDCZhang",
+                "YKDMLai",
+                "YDZZong",
+                "JSTDing",
+                "LCYShi",
+                "YLSBai",
+                "LLan",
+                "BEr",
+                "DCJKang",
+                "BLTu"
+            ],
+            "Summon": [
+                "PNCao",
+                "LDu",
+                "JNLong",
+                "YBYa",
+                "SGHQShou",
+                "ATSheng",
+                "LYSi"
+            ],
+            "Support": [
+                "TPGZhu",
+                "ALSi",
+                "MTZMEShi",
+                "NFDDi",
+                "TTKMeng",
+                "FEMSi",
+                "HSheng",
+                "YXNMei"
+            ]
+        }
+    },
+    "ClassArena_RuleTranslate": {
+        "clz": "string[]",
+        "content": [
+            "ClassArena_TITLE1_Rule0",
+            "ClassArena_TITLE1_Rule1",
+            "ClassArena_TITLE1_Rule2",
+            "ClassArena_TITLE1_Rule3",
+            "ClassArena_TITLE1_Rule4",
+            "ClassArena_TITLE1_Rule5",
+            "ClassArena_TITLE1_Rule6",
+            "ClassArena_TITLE1_Rule7",
+            "ClassArena_TITLE1_Rule8",
+            "ClassArena_TITLE1_Rule9",
+            "ClassArena_TITLE1_Rule10",
+            "ClassArena_TITLE1_Rule11",
+            "ClassArena_TITLE1_Rule12"
+        ]
+    },
+    "ClassArena_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 5
+    },
+    "ClassArena_SystemUnlock": {
+        "clz": "string",
+        "content": "ChessArena_System"
+    },
+    "Clender_LongTime": {
+        "clz": "int",
+        "content": 500
+    },
     "Click_Hero_Sound": {
         "clz": "string[]",
         "content": [
@@ -1364,13 +1799,12 @@
             "ClubBoss_Rule_Text4",
             "ClubBoss_Rule_Text5",
             "ClubBoss_Rule_Text6",
-            "ClubBoss_Rule_Text7",
-            "ClubBoss_Rule_Text8"
+            "ClubBoss_Rule_Text7"
         ]
     },
     "ClubBoss_SecondArena": {
         "clz": "int",
-        "content": 290000000
+        "content": 4206198
     },
     "ClubBoss_SkipBattle_WaitTime": {
         "clz": "int",
@@ -1378,7 +1812,7 @@
     },
     "ClubBoss_Standard": {
         "clz": "int",
-        "content": 110
+        "content": 135
     },
     "Club_Apply_Limited": {
         "clz": "int",
@@ -1404,7 +1838,7 @@
     "Club_Create_Level": {
         "clz": "dict",
         "content": {
-            "LEVEL": 20
+            "STAGE": "M05S07"
         }
     },
     "Club_Create_Price": {
@@ -1519,7 +1953,7 @@
     },
     "Club_Member_ShowNumber": {
         "clz": "int",
-        "content": 50
+        "content": 20
     },
     "Club_Name_Limited": {
         "clz": "int",
@@ -1533,6 +1967,26 @@
         "clz": "int",
         "content": 10
     },
+    "Club_PlayerHouse": {
+        "clz": "int[]",
+        "content": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+        ]
+    },
     "Club_Quike_CD_Time": {
         "clz": "int",
         "content": 30
@@ -1541,13 +1995,36 @@
         "clz": "int",
         "content": 20
     },
+    "Club_SNS_Rule": {
+        "clz": "string[]",
+        "content": [
+            {
+                "Desc": [
+                    "ChatRoom_EnterExplain"
+                ],
+                "Title": "ChatRoom_Title"
+            }
+        ]
+    },
+    "Club_ScientificHero": {
+        "clz": "string",
+        "content": "Model_LFEr"
+    },
     "Club_Second_Number": {
         "clz": "int",
         "content": 2
     },
+    "Club_Set_MaxBattleNum": {
+        "clz": "int",
+        "content": 7
+    },
     "Club_Set_MaxBattleValue": {
         "clz": "int",
-        "content": 100000
+        "content": 1100000
+    },
+    "Club_Set_MaxLevelNum": {
+        "clz": "int",
+        "content": 2
     },
     "Club_Third_Number": {
         "clz": "int",
@@ -1591,8 +2068,26 @@
             {
                 "Base_Value": "0",
                 "Max": "1",
-                "Min": "0",
+                "Min": "0.92",
+                "Para": "3"
+            },
+            {
+                "Base_Value": "0.08",
+                "Max": "0.92",
+                "Min": "0.80",
                 "Para": "2"
+            },
+            {
+                "Base_Value": "-0.72",
+                "Max": "0.8",
+                "Min": "0.7",
+                "Para": "6"
+            },
+            {
+                "Base_Value": "0.708",
+                "Max": "0.7",
+                "Min": "0",
+                "Para": "1"
             }
         ]
     },
@@ -1602,18 +2097,36 @@
             {
                 "Base_Value": "0",
                 "Max": "1",
-                "Min": "0",
+                "Min": "0.92",
+                "Para": "3"
+            },
+            {
+                "Base_Value": "0.08",
+                "Max": "0.92",
+                "Min": "0.80",
                 "Para": "2"
+            },
+            {
+                "Base_Value": "0.28",
+                "Max": "0.8",
+                "Min": "0.7",
+                "Para": "1"
+            },
+            {
+                "Base_Value": "0.43",
+                "Max": "0.7",
+                "Min": "0",
+                "Para": "0.5"
             }
         ]
     },
     "CombatAdjust_SuppressFor_B_Hurt": {
         "clz": "double",
-        "content": 0.3
+        "content": 1.5
     },
     "CombatAdjust_SuppressFor_B_Unhurt": {
         "clz": "double",
-        "content": 0.3
+        "content": 0.8
     },
     "CombatAdjust_TooStrong_A": {
         "clz": "double",
@@ -1624,9 +2137,15 @@
         "content": [
             {
                 "Base_Value": "0",
-                "Max": "2",
-                "Min": "1.02",
-                "Para": "1.5"
+                "Max": "1.10",
+                "Min": "1",
+                "Para": "2"
+            },
+            {
+                "Base_Value": "-0.2",
+                "Max": "999",
+                "Min": "1.1",
+                "Para": "4"
             }
         ]
     },
@@ -1635,19 +2154,25 @@
         "content": [
             {
                 "Base_Value": "0",
-                "Max": "2",
-                "Min": "1.02",
-                "Para": "1.5"
+                "Max": "1.10",
+                "Min": "1",
+                "Para": "2"
+            },
+            {
+                "Base_Value": "-0.2",
+                "Max": "999",
+                "Min": "1.1",
+                "Para": "4"
             }
         ]
     },
     "CombatAdjust_WeakFor_B_Hurt": {
         "clz": "double",
-        "content": 0.3
+        "content": 0.8
     },
     "CombatAdjust_WeakFor_B_Unhurt": {
         "clz": "double",
-        "content": 0.3
+        "content": 1.5
     },
     "Complete_BattleBuff": {
         "clz": "dict",
@@ -1664,6 +2189,223 @@
                 "reward": "CollectSecret_GiftTest"
             }
         }
+    },
+    "CooperateBoss_BossColor": {
+        "clz": "dict",
+        "content": [
+            {
+                "level": [
+                    1,
+                    20
+                ],
+                "pic": "gongdou_but_xuanzhonglv"
+            },
+            {
+                "level": [
+                    21,
+                    35
+                ],
+                "pic": "gongdou_but_xuanzhonglan"
+            },
+            {
+                "level": [
+                    36,
+                    50
+                ],
+                "pic": "gongdou_but_xuanzhongzi"
+            },
+            {
+                "anim": "huangse-CX_gongdoutouxiangkuang",
+                "level": [
+                    51,
+                    60
+                ],
+                "pic": "gongdou_but_xuanzhongcheng"
+            },
+            {
+                "anim": "hongse-CX_gongdoutouxiangkuang",
+                "level": [
+                    61,
+                    10000
+                ],
+                "pic": "gongdou_but_xuanzhonghong"
+            }
+        ]
+    },
+    "CooperateBoss_EntryBubble_Gone": {
+        "clz": "int",
+        "content": 25
+    },
+    "CooperateBoss_EntryBubble_Stay": {
+        "clz": "int",
+        "content": 5
+    },
+    "CooperateBoss_InviteBubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_InviteBubble01",
+            "CooperateBoss_InviteBubble02"
+        ]
+    },
+    "CooperateBoss_LevelUp": {
+        "clz": "array",
+        "content": [
+            {
+                "LV": [
+                    99,
+                    50
+                ],
+                "Value": 15
+            },
+            {
+                "LV": [
+                    49,
+                    40
+                ],
+                "Value": 15
+            },
+            {
+                "LV": [
+                    39,
+                    30
+                ],
+                "Value": 10
+            },
+            {
+                "LV": [
+                    29,
+                    20
+                ],
+                "Value": 10
+            },
+            {
+                "LV": [
+                    19,
+                    10
+                ],
+                "Value": 8
+            },
+            {
+                "LV": [
+                    9,
+                    0
+                ],
+                "Value": 8
+            }
+        ]
+    },
+    "CooperateBoss_MainBossShow": {
+        "clz": "string",
+        "content": "ZTXChang"
+    },
+    "CooperateBoss_MainRule": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_MainRule_Text01",
+            "CooperateBoss_MainRule_Text02",
+            "CooperateBoss_MainRule_Text03",
+            "CooperateBoss_MainRule_Text04",
+            "CooperateBoss_MainRule_Text05",
+            "CooperateBoss_MainRule_Text06",
+            "CooperateBoss_MainRule_Text07",
+            "CooperateBoss_MainRule_Text08"
+        ]
+    },
+    "CooperateBoss_Main_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_NoBossTip",
+            "CooperateBoss_NoBossTip02",
+            "CooperateBoss_NoBossTip03",
+            "CooperateBoss_NoBossTip04"
+        ]
+    },
+    "CooperateBoss_Main_Bubble_Stay": {
+        "clz": "int",
+        "content": 5
+    },
+    "CooperateBoss_MyBossBubble": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_MyBossBubble01",
+            "CooperateBoss_MyBossBubble02",
+            "CooperateBoss_MyBossBubble03"
+        ]
+    },
+    "CooperateBoss_Occasion": {
+        "clz": "string[]",
+        "content": [
+            "NORMAL",
+            "ELITE",
+            "GOLD",
+            "CRYSTAL",
+            "EXP"
+        ]
+    },
+    "CooperateBoss_OpenTine": {
+        "clz": "int",
+        "content": 86400
+    },
+    "CooperateBoss_PurchaseTime": {
+        "clz": "array",
+        "content": [
+            [
+                50,
+                1
+            ],
+            [
+                50,
+                1
+            ],
+            [
+                100,
+                1
+            ],
+            [
+                100,
+                1
+            ],
+            [
+                150,
+                1
+            ],
+            [
+                150,
+                1
+            ],
+            [
+                200,
+                1
+            ],
+            [
+                200,
+                1
+            ],
+            [
+                250,
+                1
+            ],
+            [
+                250,
+                1
+            ]
+        ]
+    },
+    "CooperateBoss_RuleTitle": {
+        "clz": "string[]",
+        "content": [
+            "CooperateBoss_RuleTitle_Text01",
+            "CooperateBoss_RuleTitle_Text02",
+            "CooperateBoss_RuleTitle_Text03"
+        ]
+    },
+    "CooperateBoss_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 3
+    },
+    "CooperationBossBumbleTip": {
+        "clz": "int",
+        "content": 480
     },
     "Crusade_5_Star_buff": {
         "clz": "string",
@@ -1870,6 +2612,13 @@
                     "Crusade_Title3_Rule2"
                 ],
                 "Title": "Crusade_Title3"
+            },
+            {
+                "Desc": [
+                    "Crusade_Title4_Rule1",
+                    "Crusade_Title4_Rule2"
+                ],
+                "Title": "Crusade_Title4"
             }
         ]
     },
@@ -1894,9 +2643,44 @@
     "CrystalOreMinHit": {
         "clz": "dict",
         "content": {
-            "time": 15,
+            "change": "M02S06",
+            "time": [
+                15,
+                90
+            ],
             "value": 1
         }
+    },
+    "DMMPShop_Capital": {
+        "clz": "string[]",
+        "content": [
+            "DMMPShop_Capital_1",
+            "DMMPShop_Capital_2",
+            "DMMPShop_Capital_3",
+            "DMMPShop_Capital_4",
+            "DMMPShop_Capital_5",
+            "DMMPShop_Capital_6",
+            "DMMPShop_Capital_7",
+            "DMMPShop_Capital_8",
+            "DMMPShop_Capital_9",
+            "DMMPShop_Capital_10"
+        ]
+    },
+    "DMMPShop_Specific": {
+        "clz": "",
+        "content": [
+            "DMMPShop_Specific_1",
+            "DMMPShop_Specific_2",
+            "DMMPShop_Specific_3",
+            "DMMPShop_Specific_4",
+            "DMMPShop_Specific_5",
+            "DMMPShop_Specific_6",
+            "DMMPShop_Specific_7",
+            "DMMPShop_Specific_8",
+            "DMMPShop_Specific_9",
+            "DMMPShop_Specific_10",
+            "DMMPShop_Specific_11"
+        ]
     },
     "Damage_reward_1": {
         "clz": "string",
@@ -1906,9 +2690,24 @@
         "clz": "string",
         "content": 0.6
     },
+    "DefaultEMJ": {
+        "clz": "array",
+        "content": [
+            "EMJ_001",
+            "EMJ_002",
+            "EMJ_003",
+            "EMJ_004",
+            "EMJ_005",
+            "EMJ_006"
+        ]
+    },
     "Default_Model_Board": {
         "clz": "string",
         "content": "ZTXChang"
+    },
+    "Default_Weather": {
+        "clz": "string",
+        "content": "SK-1"
     },
     "DefualtResetTime": {
         "clz": "int",
@@ -1930,9 +2729,121 @@
             "DrawCardDiamond_TimesRewardRule3"
         ]
     },
+    "DrawCardEX_ReZero_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_ReZero_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_UR_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_UR_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_Zuohe_SinglePrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCardEX_Zuohe_TenTimesPrice": {
+        "clz": "int",
+        "content": 400
+    },
+    "DrawCard_AllPrice": {
+        "clz": "dict",
+        "content": {
+            "IM_DiamondDraw": [
+                200,
+                188
+            ],
+            "IM_DiamondDrawEX": [
+                400,
+                400
+            ],
+            "IM_DiamondDrawEX_SAGA": [
+                400,
+                400
+            ],
+            "IM_DiamondDrawEX_Zuohe": [
+                400,
+                400
+            ],
+            "IM_DiamondDraw_ReZero": [
+                400,
+                400
+            ],
+            "IM_DiamondDraw_UR": [
+                400,
+                400
+            ]
+        }
+    },
+    "DrawCard_AllType": {
+        "clz": "dict",
+        "content": {
+            "IM_DiamondDraw": [
+                "RecruitAutoBuyCard",
+                "Recruit_UI21",
+                "Recruit_UI16",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI18"
+            ],
+            "IM_DiamondDrawEX": [
+                "RecruitAutoBuyCardEx",
+                "Recruit_UI_2",
+                "Recruit_UI_1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_3"
+            ],
+            "IM_DiamondDrawEX_SAGA": [
+                "RecruitAutoBuyCardSAGA",
+                "Recruit_UI_2",
+                "Zuohe_DrawCard_UI1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Zuohe_DrawCard_UI2"
+            ],
+            "IM_DiamondDrawEX_Zuohe": [
+                "RecruitAutoBuyCardExZuoHe",
+                "Recruit_UI_2",
+                "Zuohe_DrawCard_UI1",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Zuohe_DrawCard_UI2"
+            ],
+            "IM_DiamondDraw_ReZero": [
+                "RecruitAutoBuyCardEx",
+                "Recruit_UI_5",
+                "Recruit_UI_4",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_6"
+            ],
+            "IM_DiamondDraw_UR": [
+                "RecruitAutoBuyCardUR",
+                "Recruit_UI_8",
+                "Recruit_UI_7",
+                "UITitle_EN_Zhaohuanzhizhengbuzu",
+                "Recruit_UI_9"
+            ]
+        }
+    },
     "DrawCard_First": {
         "clz": "string",
         "content": "DrawCard_First_Reward"
+    },
+    "DrawCard_Rebate_Limit": {
+        "clz": "int",
+        "content": ""
     },
     "DrawCard_Resource": {
         "clz": "string",
@@ -1956,6 +2867,9 @@
                 "IM_DiamondDraw",
                 "IR_Gold",
                 "IR_Diamond"
+            ],
+            "ACTIVITYDRAWUR": [
+                "IM_DiamondDraw_UR"
             ],
             "CLUB": [
                 "IR_Club"
@@ -1984,6 +2898,24 @@
             ]
         }
     },
+    "DrawCard_SP_Position": {
+        "clz": "dict",
+        "content": {
+            "1": 0,
+            "2": 120,
+            "3": 550,
+            "4": 750
+        }
+    },
+    "DrawCard_SP_Speed": {
+        "clz": "dict",
+        "content": {
+            "1": 0.6,
+            "2": 0.9,
+            "3": 1.6,
+            "4": 2.6
+        }
+    },
     "DrawCard_SinglePrice": {
         "clz": "int",
         "content": 200
@@ -1994,12 +2926,53 @@
             "12": 1,
             "13": 2,
             "14": 5,
+            "15": 5,
             "reward": "IR_HeroStive"
         }
     },
     "DrawCard_TenTimesPrice": {
         "clz": "int",
         "content": 188
+    },
+    "DreamChallenge_EntryBubble_Gone": {
+        "clz": "int",
+        "content": 10
+    },
+    "DreamChallenge_EntryBubble_Stay": {
+        "clz": "int",
+        "content": 8
+    },
+    "DreamHouseHeroBattleNum": {
+        "clz": "int",
+        "content": 1
+    },
+    "DreamHouseHeroNum": {
+        "clz": "int",
+        "content": 6
+    },
+    "DreamHouseViewNum": {
+        "clz": "int",
+        "content": 1
+    },
+    "DreamHouse_Rule": {
+        "clz": "string[]",
+        "content": [
+            "DreamHouse_Rule01",
+            "DreamHouse_Rule02",
+            "DreamHouse_Rule03",
+            "DreamHouse_Rule04",
+            "DreamHouse_Rule05"
+        ]
+    },
+    "DreamHouse_StarTrans": {
+        "clz": "dict",
+        "content": {
+            "killBossHero": "StarCondition_killBossHero",
+            "killCount": "StarCondition_killCount",
+            "occupationCount": "StarCondition_occupationCount",
+            "usedHero": "StarCondition_usedHero",
+            "win": "StarCondition_win"
+        }
     },
     "Dream_Challenge_Rule": {
         "clz": "string[]",
@@ -2016,6 +2989,26 @@
                 "Title": "DreamChallenge_Rule_Info_0"
             }
         ]
+    },
+    "EMJ_LongCD_Num": {
+        "clz": "int",
+        "content": 3
+    },
+    "EMJ_LongCD_T": {
+        "clz": "int",
+        "content": 15
+    },
+    "EMJ_Long_CD": {
+        "clz": "int",
+        "content": 2
+    },
+    "EMJ_MaxEquip": {
+        "clz": "int",
+        "content": 6
+    },
+    "EMJ_Short_CD": {
+        "clz": "int",
+        "content": 20
     },
     "EliteBlock_MapList": {
         "clz": "string[]",
@@ -2185,6 +3178,34 @@
             67000
         ]
     },
+    "EquipSpecialPassive": {
+        "clz": "string[]",
+        "content": [
+            "Weapon_14023",
+            "Shoes_15103_3"
+        ]
+    },
+    "Equip_Translate": {
+        "clz": "dict",
+        "content": {
+            "Decoration": "Equip_DecorationText",
+            "Shoes": "Equip_ShoesText",
+            "Tops": "Equip_TopsText",
+            "Weapon": "Equip_WeaponText"
+        }
+    },
+    "Exchange_Crystal_Else": {
+        "clz": "string",
+        "content": "IM_VillageCrystalOre_6"
+    },
+    "Exchange_Exp_Else": {
+        "clz": "string",
+        "content": "IM_VillageExpOre_6"
+    },
+    "Exchange_Gold_Else": {
+        "clz": "string",
+        "content": "IM_VillageGoldOre_6"
+    },
     "ExpChargeItem": {
         "clz": "string[]",
         "content": [
@@ -2197,7 +3218,11 @@
     "ExpOreMinHit": {
         "clz": "dict",
         "content": {
-            "time": 15,
+            "change": "M02S06",
+            "time": [
+                15,
+                90
+            ],
             "value": "IM_ExpUp1"
         }
     },
@@ -2223,7 +3248,8 @@
             "clubboss",
             "actstage",
             "cooperateboss",
-            "orrtpk"
+            "orrtpk",
+            "stagearena"
         ]
     },
     "FAC_HP_Check": {
@@ -2244,6 +3270,38 @@
     "Feedback_Word_Limit": {
         "clz": "int",
         "content": 200
+    },
+    "FeedsContext": {
+        "clz": "dict",
+        "content": {
+            "context": "Socail_Sharing_Feeds_Context_1",
+            "icon": {
+                "bilibili_android": "dream_memory_icon_tai",
+                "changyouKR_android": "dream_memory_icon_korea",
+                "changyouKR_ios": "dream_memory_icon_korea",
+                "changyouKR_onestore_android": "dream_memory_icon_korea",
+                "dpstorm_android": "dream_memory_icon_tai",
+                "dpstorm_ios": "dream_memory_icon_tai",
+                "efunTw_android": "dream_memory_logo_tai",
+                "efunTw_ios": "dream_memory_logo_tai",
+                "normal": "dream_memory_icon_korea"
+            },
+            "title": "Socail_Sharing_Feeds_Title_1"
+        }
+    },
+    "FeedsUrl": {
+        "clz": "dict",
+        "content": {
+            "bilibili_android": "https://www.baidu.com",
+            "changyouKR_android": "https://illusionconnect.changyou.kr",
+            "changyouKR_ios": "https://illusionconnect.changyou.kr",
+            "changyouKR_onestore_android": "https://illusionconnect.changyou.kr",
+            "dpstorm_android": "https://www.baidu.com",
+            "dpstorm_ios": "https://www.baidu.com",
+            "efuntw_android": "https://dream.movergames.com/news.html",
+            "efuntw_ios": "https://dream.movergames.com/news.html",
+            "normal": "https://illusionconnect.changyou.kr"
+        }
     },
     "Fight_Arena": {
         "clz": "string",
@@ -2293,6 +3351,10 @@
         "clz": "string",
         "content": "PlayerCard"
     },
+    "Fight_StageArena": {
+        "clz": "string",
+        "content": "BlockBattle_StageArena"
+    },
     "Fight_StageEnergy": {
         "clz": "string",
         "content": "Normal"
@@ -2332,8 +3394,10 @@
         "content": "First_Defeat_Reward"
     },
     "First_LogOn": {
-        "clz": "string",
-        "content": "Mail_First_LogOn"
+        "clz": "string[]",
+        "content": [
+            "Mail_First_LogOn"
+        ]
     },
     "Forbidden_Rep": {
         "clz": "string",
@@ -2363,7 +3427,7 @@
     },
     "Friend_Apply_MaxWords": {
         "clz": "int",
-        "content": 20
+        "content": 30
     },
     "Friend_Familiarity": {
         "clz": "int[]",
@@ -2513,9 +3577,67 @@
             "GalleryRule_3"
         ]
     },
+    "Game_Forum_Url": {
+        "clz": "string",
+        "content": "http://yoouha.kr/"
+    },
+    "Game_Login_Forum_Url": {
+        "clz": "string",
+        "content": "http://yoouha.kr/"
+    },
     "Gashapon_DailyTimes": {
         "clz": "int",
         "content": 1
+    },
+    "Gm_Max_Stronger": {
+        "clz": "string[]",
+        "content": [
+            70,
+            1,
+            50,
+            70,
+            1,
+            300,
+            50,
+            6,
+            1,
+            10,
+            "Rareity14_70",
+            "Rareity14_7",
+            3000,
+            "M12S01",
+            "E12S01",
+            8,
+            1,
+            1,
+            "Rareity15_100",
+            8
+        ]
+    },
+    "Gm_Mid_Stronger": {
+        "clz": "string[]",
+        "content": [
+            60,
+            1,
+            42,
+            60,
+            1,
+            240,
+            43,
+            5,
+            1,
+            4,
+            "Rareity14_50",
+            "Rareity14_5",
+            3000,
+            "M12S01",
+            "E12S01",
+            5,
+            0,
+            1,
+            "Rareity15_50",
+            3
+        ]
     },
     "Gm_Middle_Stronger": {
         "clz": "string[]",
@@ -2535,6 +3657,31 @@
             3000,
             "M12S01",
             "E12S01"
+        ]
+    },
+    "Gm_Min_Stronger": {
+        "clz": "string[]",
+        "content": [
+            30,
+            1,
+            20,
+            30,
+            1,
+            80,
+            30,
+            3,
+            1,
+            2,
+            "Rareity14_30",
+            "Rareity14_3",
+            3000,
+            "M09S01",
+            "E09S01",
+            3,
+            0,
+            1,
+            "Rareity15_30",
+            1
         ]
     },
     "Gm_Primary_Stronger": {
@@ -2560,9 +3707,17 @@
     "GoldOreMinHit": {
         "clz": "dict",
         "content": {
-            "time": 15,
+            "change": "M02S06",
+            "time": [
+                15,
+                90
+            ],
             "value": 1
         }
+    },
+    "GusetCenterURL": {
+        "clz": "string",
+        "content": "https://changyouhelp.oqupie.com/portals/981"
     },
     "HappyRunBlock": {
         "clz": "dict",
@@ -2646,7 +3801,7 @@
                 ]
             ],
             "love": 10,
-            "loveMax": 8,
+            "loveMax": 11,
             "time": [
                 5,
                 9,
@@ -2688,6 +3843,13 @@
     "HeroAfkEventLove": {
         "clz": "int",
         "content": 4
+    },
+    "HeroBoard_ScaleRange": {
+        "clz": "double[]",
+        "content": [
+            0.5,
+            1.5
+        ]
     },
     "HeroCostAttr_ATK": {
         "clz": "dict",
@@ -2783,6 +3945,16 @@
             "IM_EquipExp4": 3500
         }
     },
+    "HeroEquipExpMax": {
+        "clz": "dict",
+        "content": {
+            "11": "Rareity11_70",
+            "12": "Rareity12_70",
+            "13": "Rareity13_70",
+            "14": "Rareity14_70",
+            "15": "Rareity15_100"
+        }
+    },
     "HeroEquipPowerUpOrder": {
         "clz": "string[]",
         "content": [
@@ -2868,6 +4040,16 @@
         "clz": "double",
         "content": 2
     },
+    "HeroEquipStarMax": {
+        "clz": "dict",
+        "content": {
+            "11": "Rareity11_7",
+            "12": "Rareity12_7",
+            "13": "Rareity13_7",
+            "14": "Rareity14_7",
+            "15": "Rareity15_7"
+        }
+    },
     "HeroEquipStarPayBack": {
         "clz": "double",
         "content": 0.9
@@ -2889,10 +4071,22 @@
     "HeroPartyName": {
         "clz": "dict",
         "content": {
+            "Aoe": "PROFESSION_AOE_Title",
+            "Attack": "PROFESSION_ATK_Title",
             "BSNCT": "HeroPartyName_BSNCT",
+            "Cure": "PROFESSION_CUR_Title",
+            "Curse": "PROFESSION_CURS_Title",
             "DWH": "HeroPartyName_DWH",
+            "Defense": "PROFESSION_DEF_Title",
             "MNJH": "HeroPartyName_MNJH",
+            "R": "Hero_Rarity_R",
+            "SP": "Hero_Rarity_SP",
+            "SR": "Hero_Rarity_SR",
+            "SSR": "Hero_Rarity_SSR",
             "SSZS": "HeroPartyName_SSZS",
+            "Summon": "PROFESSION_SUM_Title",
+            "Support": "PROFESSION_SUP_Title",
+            "UNKNOWN": "HeroPartyName_UNKNOWN",
             "WNSXJ": "HeroPartyName_WNSXJ",
             "XD": "HeroPartyName_XD"
         }
@@ -2911,7 +4105,16 @@
         "clz": "string[]",
         "content": [
             "WEDe",
-            "SGHQShou"
+            "SGHQShou",
+            "TJHDe",
+            "FLBDSi",
+            "SP_PNCao",
+            "LFKLFTe",
+            "BHTZi",
+            "AMLBLTe",
+            "XLDBLTe",
+            "SGBao",
+            "GCZi"
         ]
     },
     "HeroStar_BoxNum": {
@@ -2950,6 +4153,20 @@
                 ]
             },
             "14": {
+                "4": [
+                    14,
+                    5
+                ],
+                "5": [
+                    14,
+                    5
+                ],
+                "6": [
+                    14,
+                    10
+                ]
+            },
+            "15": {
                 "4": [
                     14,
                     5
@@ -3014,20 +4231,13 @@
         "content": {
             "12": 1,
             "13": 2,
-            "14": 5
+            "14": 5,
+            "15": 5
         }
     },
     "HeroStar_StiveChangeSelf": {
         "clz": "double",
         "content": 2
-    },
-    "HeroStar_StiveOut": {
-        "clz": "string[]",
-        "content": [
-            "ZTXChang",
-            "CLMan",
-            "FTLEShi"
-        ]
     },
     "HeroStar_TheLeadsStarReward": {
         "clz": "dict",
@@ -3179,6 +4389,14 @@
         "clz": "double",
         "content": 400
     },
+    "Hero_Album_Feminine": {
+        "clz": "string[]",
+        "content": [
+            "ZTXChang",
+            "CLMan",
+            "FTLEShi"
+        ]
+    },
     "Hero_AtkRate": {
         "clz": "double",
         "content": 1
@@ -3264,10 +4482,10 @@
             {
                 "Desc": [
                     {
-                        "HREO_HP_Title": "HREO_HP_Text"
+                        "HREO_ATK_Title": "HREO_ATK_Text"
                     },
                     {
-                        "HREO_ATK_Title": "HREO_ATK_Text"
+                        "HREO_HP_Title": "HREO_HP_Text"
                     },
                     {
                         "HREO_DEF_Title": "HREO_DEF_Text"
@@ -3452,6 +4670,17 @@
         "clz": "double",
         "content": 1
     },
+    "Hero_Linkage": {
+        "clz": "string[]",
+        "content": [
+            "SYAi",
+            "GYCZi",
+            "YYing",
+            "AMLYa",
+            "LAMu",
+            "LEIMu"
+        ]
+    },
     "Hero_Maxstar": {
         "clz": "int",
         "content": 6
@@ -3512,7 +4741,8 @@
         "content": {
             "12": 0.95,
             "13": 1,
-            "14": 1.05
+            "14": 1.05,
+            "15": 1.05
         }
     },
     "Hero_RarityFactor": {
@@ -3818,6 +5048,9 @@
             },
             "14": {
                 "IM_FAll14": 1
+            },
+            "15": {
+                "IM_FAll14": 1
             }
         }
     },
@@ -4018,18 +5251,20 @@
     },
     "HitCharts_Rule": {
         "clz": "string[]",
-        "content": {
-            "Desc": [
-                "HitCharts_Rule_Content_1",
-                "HitCharts_Rule_Content_2",
-                "HitCharts_Rule_Content_3",
-                "HitCharts_Rule_Content_4",
-                "HitCharts_Rule_Content_5",
-                "HitCharts_Rule_Content_6",
-                "HitCharts_Rule_Content_7",
-                "HitCharts_Rule_Content_8"
-            ]
-        }
+        "content": [
+            {
+                "Desc": [
+                    "HitCharts_Rule_Content_1",
+                    "HitCharts_Rule_Content_2",
+                    "HitCharts_Rule_Content_3",
+                    "HitCharts_Rule_Content_4",
+                    "HitCharts_Rule_Content_5",
+                    "HitCharts_Rule_Content_6",
+                    "HitCharts_Rule_Content_7"
+                ],
+                "Title": "HitCharts_TITLE1"
+            }
+        ]
     },
     "HitCharts_Start": {
         "clz": "int",
@@ -4050,7 +5285,7 @@
     },
     "HomeBackground_Default": {
         "clz": "string",
-        "content": "HomeBackground_1"
+        "content": "HomeBackground_9"
     },
     "Impression_Increase_Detail": {
         "clz": "string[]",
@@ -4098,7 +5333,7 @@
     },
     "KOF_AutoMaxNum": {
         "clz": "int",
-        "content": 4000
+        "content": 3000
     },
     "KOF_AutoNumber": {
         "clz": "int",
@@ -4175,6 +5410,7 @@
     "KOF_MatchNumber": {
         "clz": "string[]",
         "content": [
+            "17:00:00",
             "19:00:00"
         ]
     },
@@ -4284,6 +5520,12 @@
                     "Petrace_Title6_Rule1"
                 ],
                 "Title": "Petrace_Title6"
+            },
+            {
+                "Desc": [
+                    "Petrace_Title7_Rule1"
+                ],
+                "Title": "Petrace_Title7"
             }
         ]
     },
@@ -4321,7 +5563,7 @@
     },
     "KOF_ScoreWaitTime": {
         "clz": "int",
-        "content": 60
+        "content": 90
     },
     "KOF_ScoreWinBoxID": {
         "clz": "string",
@@ -4407,6 +5649,100 @@
             "Voice_BEr_24"
         ]
     },
+    "LeadStage_Effective": {
+        "clz": "string[]",
+        "content": [
+            "ARENA",
+            "RTPK",
+            "STAGE_ARENA",
+            "ChessArena"
+        ]
+    },
+    "LeadStage_EffectiveTranslate": {
+        "clz": "dict",
+        "content": {
+            "ARENA": "ARENA_TITLE",
+            "ChessArena": "ClassArena_Tital",
+            "RTPK": "RTPK_SystemName",
+            "STAGE_ARENA": "StageArena_SystemName"
+        }
+    },
+    "LeadStage_Effective_Rate": {
+        "clz": "double",
+        "content": 1.5
+    },
+    "LeadStage_Mail": {
+        "clz": "string",
+        "content": "LeadStage_Open_Mail"
+    },
+    "LeadStage_MailLevel": {
+        "clz": "int",
+        "content": 45
+    },
+    "LeadStage_Rebot_RTPK": {
+        "clz": "int",
+        "content": 1
+    },
+    "LeadStage_Rule": {
+        "clz": "string[]",
+        "content": [
+            "LeadStage_Rule01",
+            "LeadStage_Rule02",
+            "LeadStage_Rule03",
+            "LeadStage_Rule04"
+        ]
+    },
+    "LeadStage_SuppressSwitch": {
+        "clz": "int",
+        "content": 1
+    },
+    "LeadStage_Suppress_Attr_Type": {
+        "clz": "string[]",
+        "content": [
+            "CRITRATE",
+            "UNCRITRATE",
+            "HURTRATE",
+            "UNHURTRATE"
+        ]
+    },
+    "LeadStage_Suppress_MaxLv": {
+        "clz": "int",
+        "content": 2
+    },
+    "LeadStage_Suppress_Rate": {
+        "clz": "string[]",
+        "content": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "LeadStage_Suppress_Value_Section": {
+        "clz": "array",
+        "content": [
+            [
+                0,
+                0.15
+            ],
+            [
+                0,
+                0.15
+            ],
+            [
+                -0.2,
+                0.2
+            ],
+            [
+                -0.2,
+                0.2
+            ]
+        ]
+    },
     "LevelTask_ShowUnlockLevel": {
         "clz": "int",
         "content": 4
@@ -4461,6 +5797,10 @@
         "clz": "int",
         "content": 3
     },
+    "MailBox_UnlockLevel": {
+        "clz": "int",
+        "content": 4
+    },
     "Mail_DrawCardTimesReward": {
         "clz": "string",
         "content": "Mail_DrawCardTimesReward"
@@ -4485,9 +5825,45 @@
         "clz": "string",
         "content": "Mail_RTPK_RankTitleReward"
     },
+    "Mail_RTPK_WinReward": {
+        "clz": "string",
+        "content": "Mail_RTPK_WinReward"
+    },
+    "Mail_StageArena_GoldRewardConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_GoldReward"
+    },
+    "Mail_StageArena_RankRewardConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_RankReward"
+    },
+    "Mail_StageArena_ReplenishConfig": {
+        "clz": "string",
+        "content": "Mail_StageArena_Replenish"
+    },
     "Mail_StoreMax": {
         "clz": "int",
         "content": 200
+    },
+    "MainPage_Bubble": {
+        "clz": "string[]",
+        "content": [
+            "MainPage_Bubble01",
+            "MainPage_Bubble02",
+            "MainPage_Bubble03",
+            "MainPage_Bubble04"
+        ]
+    },
+    "MainPage_BubbleTime": {
+        "clz": "int[]",
+        "content": [
+            3,
+            12
+        ]
+    },
+    "MainPage_PreviewDays": {
+        "clz": "int",
+        "content": 7
     },
     "Main_TaskList": {
         "clz": "dict",
@@ -4661,6 +6037,22 @@
                     "Map_Team_TITLE4_Rule1"
                 ],
                 "Title": "Map_Team_TITLE4"
+            }
+        ]
+    },
+    "Marking_Rule": {
+        "clz": "string[]",
+        "content": [
+            {
+                "Desc": [
+                    "Marking_GuideInfo_text_2",
+                    "Marking_GuideInfo_text_3",
+                    "Marking_GuideInfo_text_4",
+                    "Marking_GuideInfo_text_5",
+                    "Marking_GuideInfo_text_6",
+                    "Marking_GuideInfo_text_7"
+                ],
+                "Title": "Marking_GuideInfo_text_1"
             }
         ]
     },
@@ -5173,6 +6565,14 @@
         "clz": "double",
         "content": 1
     },
+    "MergeClubNameMailId": {
+        "clz": "string",
+        "content": ""
+    },
+    "MergeSysMailId": {
+        "clz": "string",
+        "content": ""
+    },
     "MonthCardForever_Desc": {
         "clz": "string",
         "content": "MonthCardForever_Desc"
@@ -5191,7 +6591,7 @@
     },
     "MonthCardForever_Pay": {
         "clz": "string",
-        "content": "Pay_MonthCardForever"
+        "content": "Pay_MonthCard_98"
     },
     "MonthCardForever_Reset": {
         "clz": "string",
@@ -5332,6 +6732,14 @@
             ""
         ]
     },
+    "Music_BattleBGM_StageArena": {
+        "clz": "",
+        "content": [
+            "Mus_Battle_Danger_Boss",
+            "",
+            ""
+        ]
+    },
     "Music_PlayList": {
         "clz": "string[]",
         "content": [
@@ -5345,6 +6753,10 @@
     "MysteryItemName": {
         "clz": "string",
         "content": "MysteryItemName"
+    },
+    "NaverCafeURL": {
+        "clz": "string",
+        "content": "https://m.cafe.naver.com/illusionconnect.cafe?"
     },
     "NewGuide_VillageBuilding_ItemId1": {
         "clz": "string",
@@ -5413,6 +6825,13 @@
         "clz": "string",
         "content": "M02S06"
     },
+    "NewPlayerGuide_LevelOpen": {
+        "clz": "dict",
+        "content": {
+            "50": "guide_MasterLeadeStage",
+            "60": "guide_StageArena"
+        }
+    },
     "NewPlayerGuide_Limit": {
         "clz": "string[]",
         "content": [
@@ -5441,13 +6860,13 @@
             "M03S04": "guide_Village_Building_5",
             "M04S03": "guide_Village_Building_6",
             "M04S06": "guide_photo",
-            "M04S10": "guide_BlockSp",
+            "M04S13": "guide_BlockSp",
             "M05S05": "guide_Master_Skill",
-            "M05S06": "guide_Hero_Equip",
-            "M05S07": "guide_Club",
+            "M05S07": "guide_Hero_Equip",
+            "M05S09": "guide_Club",
             "M05S12": "guide_MasterEmblemAura",
-            "M05S14": "guide_ArenaChallengeRew",
-            "M06S05": "guide_Achievement",
+            "M06S09": "guide_Achievement",
+            "M06S19": "guide_Tower",
             "S02S02": "guide_Village_Building_2",
             "S03S03": "guide_ChapterElite",
             "S04S03": "guide_Village_Building_8",
@@ -5473,6 +6892,10 @@
     "NewPlayerGuide_Time4": {
         "clz": "int",
         "content": 3000
+    },
+    "NewPlayerPackage_Duration": {
+        "clz": "",
+        "content": 30
     },
     "NewPlayer_StageShowReward": {
         "clz": "dict",
@@ -5954,7 +7377,7 @@
         "clz": "dict",
         "content": [
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble01",
                 "hero": "Model_ZTXChang"
             },
@@ -5984,12 +7407,12 @@
                 "hero": "Model_LCYShi_sd"
             },
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble05",
                 "hero": "Model_TPGZhu"
             },
             {
-                "URL": "view://shopView&viewType=push&shopId=Shop_TimeLimit",
+                "URL": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
                 "bubble": "Newyear_Bubble05",
                 "hero": "Model_SDTZi"
             }
@@ -6100,7 +7523,8 @@
         "content": [
             "OreCollectRule1",
             "OreCollectRule2",
-            "OreCollectRule3"
+            "OreCollectRule3",
+            "OreCollectRule4"
         ]
     },
     "OreIniValue": {
@@ -6295,6 +7719,14 @@
             "16": "PlayerLevel_Reward2"
         }
     },
+    "PlayerSuppress_Value": {
+        "clz": "string",
+        "content": 0.2
+    },
+    "Player_AdvanceDrawCard_Mail": {
+        "clz": "string",
+        "content": "Mail_AdvanceDrawCard"
+    },
     "Player_Battle_DeckMax": {
         "clz": "int",
         "content": 10
@@ -6329,6 +7761,30 @@
     "Player_DefaultSign": {
         "clz": "string",
         "content": "Player_Sign"
+    },
+    "Player_DiamondReturn": {
+        "clz": "string[]",
+        "content": [
+            "Mail_DiamondReturn1",
+            "Mail_DiamondReturn2"
+        ]
+    },
+    "Player_DiamondReturn_30Reward": {
+        "clz": "string",
+        "content": "DiamondReturn_30Reward"
+    },
+    "Player_FriendInvite_Mail": {
+        "clz": "string",
+        "content": "Mail_FriendInvite"
+    },
+    "Player_FriendInvite_Reward": {
+        "clz": "string[]",
+        "content": [
+            "FriendInvite_1",
+            "FriendInvite_2",
+            "FriendInvite_3",
+            "FriendInvite_4"
+        ]
     },
     "Player_Init_Cost": {
         "clz": "int",
@@ -6431,7 +7887,7 @@
     },
     "Player_Name_MaxWords": {
         "clz": "int",
-        "content": 7
+        "content": 14
     },
     "Player_RenamePrice": {
         "clz": "int",
@@ -6571,6 +8027,14 @@
             "Point_Skill_Text3"
         ]
     },
+    "Privacy_Clause": {
+        "clz": "string",
+        "content": "https://sdk-file-download.efunjp.com/policy/common/ja_JP/privacypolicy.html"
+    },
+    "Push_Translate": {
+        "clz": "array",
+        "content": ""
+    },
     "QualityDesc": {
         "clz": "dict",
         "content": {
@@ -6606,24 +8070,36 @@
             "64": "QualityDesc_64"
         }
     },
+    "QuickChallenge_Combat": {
+        "clz": "double",
+        "content": 1.3
+    },
+    "QuickChallenge_Config": {
+        "clz": "string",
+        "content": "QuickChallenge"
+    },
     "RTPK_AddScope": {
         "clz": "array",
         "content": [
             [
-                -50,
-                50
-            ],
-            [
-                -100,
-                100
-            ],
-            [
-                -200,
-                200
+                -150,
+                150
             ],
             [
                 -300,
                 300
+            ],
+            [
+                -450,
+                450
+            ],
+            [
+                -600,
+                600
+            ],
+            [
+                -600,
+                600
             ]
         ]
     },
@@ -6657,19 +8133,30 @@
             5,
             10,
             15,
-            20
+            20,
+            25
         ]
     },
     "RTPK_OpenTime": {
         "clz": "string[]",
         "content": [
-            "12:00:00-14:00:00",
-            "20:00:00-22:00:00"
+            "11:00:00-14:00:00",
+            "20:00:00-23:00:00"
+        ]
+    },
+    "RTPK_Quicken": {
+        "clz": "string[]",
+        "content": [
+            "RTPK_Quicken"
         ]
     },
     "RTPK_RankMax": {
         "clz": "int",
         "content": 999
+    },
+    "RTPK_Rate": {
+        "clz": "int",
+        "content": 2
     },
     "RTPK_ReportMax": {
         "clz": "int",
@@ -6690,13 +8177,23 @@
             0.8
         ]
     },
+    "RTPK_Robot_Rank_Point": {
+        "clz": "int",
+        "content": 7000
+    },
+    "RTPK_Robot_Time": {
+        "clz": "int[]",
+        "content": [
+            26,
+            30
+        ]
+    },
     "RTPK_RuleTranslate": {
         "clz": "string[]",
         "content": [
             {
                 "Desc": [
                     "RTPK_GeneralRules_2",
-                    "RTPK_GeneralRules_3",
                     "RTPK_GeneralRules_4",
                     "RTPK_GeneralRules_5",
                     "RTPK_GeneralRules_6",
@@ -6716,6 +8213,10 @@
     "RTPK_SameGame": {
         "clz": "int",
         "content": 3
+    },
+    "RTPK_SameGame_Top": {
+        "clz": "int",
+        "content": 8500
     },
     "RTPK_Scope": {
         "clz": "string[]",
@@ -6804,6 +8305,10 @@
             2
         ]
     },
+    "Reflection_UpLimit": {
+        "clz": "double",
+        "content": 6
+    },
     "ResourceChange_LowerLimit": {
         "clz": "double",
         "content": 0.4
@@ -6811,6 +8316,49 @@
     "ResourceChange_UpperLimit": {
         "clz": "double",
         "content": 3
+    },
+    "SDKQA_Config": {
+        "clz": "dict",
+        "content": {
+            "changyou_android": 1,
+            "chuxin_android": 1,
+            "cy17173_android": 1,
+            "dpstorm_android": 1,
+            "dpstorm_ios": 1,
+            "linyou_android": 1
+        }
+    },
+    "SP_Star_Bonus": {
+        "clz": "array",
+        "content": [
+            [
+                3,
+                3.5,
+                4,
+                4.5,
+                5,
+                5.5,
+                6
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.3,
+                0.3
+            ],
+            [
+                0,
+                0.1,
+                0.1,
+                0.3,
+                0.3,
+                0.3,
+                0.3
+            ]
+        ]
     },
     "SR_Star_Bonus": {
         "clz": "array",
@@ -6933,9 +8481,25 @@
         "clz": "int",
         "content": 3
     },
-    "Setting_YJFK": {
-        "clz": "string",
-        "content": "https://cs.mamba.games"
+    "ServerMatch_StageArena_ActivePlayer": {
+        "clz": "int",
+        "content": 5
+    },
+    "ServerMatch_StageArena_CombatRank": {
+        "clz": "int",
+        "content": 50
+    },
+    "ServerMatch_StageArena_LoginDays": {
+        "clz": "int",
+        "content": 5
+    },
+    "Shield_UpLimit_Master": {
+        "clz": "double",
+        "content": 1
+    },
+    "Shield_UpLimit_Pets": {
+        "clz": "double",
+        "content": 1
     },
     "ShopTalkShow": {
         "clz": "string[]",
@@ -6946,14 +8510,32 @@
             "ShopTalkShowRandom3"
         ]
     },
+    "Shop_Capital": {
+        "clz": "string[]",
+        "content": [
+            "Shop_Capital_1",
+            "Shop_Capital_2",
+            "Shop_Capital_3",
+            "Shop_Capital_4",
+            "Shop_Capital_5",
+            "Shop_Capital_6",
+            "Shop_Capital_7",
+            "Shop_Capital_8",
+            "Shop_Capital_9",
+            "Shop_Capital_10"
+        ]
+    },
     "Shop_ShowSequence": {
         "clz": "string[]",
         "content": [
+            "Shop_StageArena",
+            "Shop_PVP",
+            "Shop_PVE",
+            "Shop_Association",
+            "Shop_GoldPartner",
+            "Shop_URMap",
+            "Shop_Crystal",
             "Shop1",
-            "Shop3",
-            "Shop5",
-            "Shop6",
-            "Shop7",
             "Shop_Diamond"
         ]
     },
@@ -6961,13 +8543,33 @@
         "clz": "string[]",
         "content": [
             "Shop_Recommend",
-            "Shop_Package",
             "Shop_Reset",
+            "Shop_Timelimitedmall",
             "Shop_Monthcard",
-            "Shop_Mall",
-            "Shop_Normal",
-            "Shop_SurfacePackage",
             "Shop_Surface",
+            "Shop_Mall",
+            "Shop_Normal"
+        ]
+    },
+    "Shop_Specific": {
+        "clz": "string[]",
+        "content": [
+            "Shop_Specific_1",
+            "Shop_Specific_2",
+            "Shop_Specific_3",
+            "Shop_Specific_4",
+            "Shop_Specific_5",
+            "Shop_Specific_6",
+            "Shop_Specific_7",
+            "Shop_Specific_8",
+            "Shop_Specific_9",
+            "Shop_Specific_10",
+            "Shop_Specific_11"
+        ]
+    },
+    "Shop_TimeLimit_Sort": {
+        "clz": "",
+        "content": [
             "Shop_TimeLimit"
         ]
     },
@@ -7006,6 +8608,541 @@
     "SkipTime": {
         "clz": "int",
         "content": -1
+    },
+    "SocialSahringLogo": {
+        "clz": "",
+        "content": {
+            "bilibili_android": "dream_memory_logo_tai",
+            "changyouKR_android": "dream_memory_logo_korea",
+            "changyouKR_onestore_android": "dream_memory_logo_korea",
+            "dpstorm_android": "dream_memory_logo_tai",
+            "dpstorm_ios": "dream_memory_logo_tai",
+            "efunTw_android": "dream_memory_logo_tai",
+            "efunTw_ios": "dream_memory_logo_tai",
+            "normal": "dream_memory_logo"
+        }
+    },
+    "StageArena_Achievement_Rank": {
+        "clz": "array",
+        "content": [
+            {
+                "bubble": [
+                    "StageArena_rankBubble01"
+                ],
+                "rank": [
+                    1,
+                    1
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble02"
+                ],
+                "rank": [
+                    2,
+                    2
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble03"
+                ],
+                "rank": [
+                    3,
+                    3
+                ]
+            },
+            {
+                "bubble": [
+                    "StageArena_rankBubble04"
+                ],
+                "rank": [
+                    4,
+                    20
+                ]
+            }
+        ]
+    },
+    "StageArena_Achievement_WinNum": {
+        "clz": "array",
+        "content": [
+            {
+                "bubble": [
+                    "StageArena_winNumBubble01"
+                ],
+                "winNum": 5
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble02"
+                ],
+                "winNum": 6
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble03"
+                ],
+                "winNum": 7
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble04"
+                ],
+                "winNum": 8
+            },
+            {
+                "bubble": [
+                    "StageArena_winNumBubble05"
+                ],
+                "winNum": 10
+            }
+        ]
+    },
+    "StageArena_Attenuation": {
+        "clz": "string[]",
+        "content": [
+            1,
+            1,
+            1
+        ]
+    },
+    "StageArena_DefaultTeam": {
+        "clz": "string[]",
+        "content": [
+            "ZTXChang",
+            "CLMan",
+            "FTLEShi"
+        ]
+    },
+    "StageArena_MainBubble": {
+        "clz": "string[]",
+        "content": [
+            "StageArena_MainBubble01",
+            "StageArena_MainBubble02",
+            "StageArena_MainBubble03",
+            "StageArena_MainBubble04",
+            "StageArena_MainBubble05",
+            "StageArena_MainBubble06",
+            "StageArena_MainBubble07",
+            "StageArena_MainBubble08",
+            "StageArena_MainBubble09",
+            "StageArena_MainBubble10",
+            "StageArena_MainBubble11",
+            "StageArena_MainBubble12",
+            "StageArena_MainBubble13",
+            "StageArena_MainBubble14",
+            "StageArena_MainBubble15",
+            "StageArena_MainBubble16",
+            "StageArena_MainBubble17",
+            "StageArena_MainBubble18",
+            "StageArena_MainBubble19",
+            "StageArena_MainBubble20",
+            "StageArena_MainBubble21",
+            "StageArena_MainBubble22",
+            "StageArena_MainBubble23",
+            "StageArena_MainBubble24",
+            "StageArena_MainBubble25",
+            "StageArena_MainBubble26",
+            "StageArena_MainBubble27",
+            "StageArena_MainBubble28",
+            "StageArena_MainBubble29",
+            "StageArena_MainBubble30",
+            "StageArena_MainBubble31",
+            "StageArena_MainBubble32",
+            "StageArena_MainBubble33"
+        ]
+    },
+    "StageArena_MainPlayerNum": {
+        "clz": "int[]",
+        "content": [
+            7,
+            7
+        ]
+    },
+    "StageArena_MainRankNum": {
+        "clz": "int",
+        "content": 200
+    },
+    "StageArena_MatchStep01": {
+        "clz": "dict",
+        "content": {
+            "0": {
+                "rate": 1700,
+                "sameStage": 0.25
+            },
+            "1": {
+                "rate": 1800,
+                "sameStage": 0.25
+            },
+            "2": {
+                "rate": 1900,
+                "sameStage": 0.25
+            },
+            "3": {
+                "rate": 2000,
+                "sameStage": 0.25
+            },
+            "4": {
+                "rate": 2000,
+                "sameStage": 0.25
+            },
+            "5": {
+                "rate": 2300,
+                "sameStage": 0.25
+            },
+            "6": {
+                "rate": 2500,
+                "sameStage": 0.25
+            },
+            "7": {
+                "rate": 2800,
+                "sameStage": 0.25
+            },
+            "8": {
+                "rate": 3000,
+                "sameStage": 0.25
+            }
+        }
+    },
+    "StageArena_MatchStep02": {
+        "clz": "dict",
+        "content": "{\"0\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"1\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"2\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"3\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"4\":{\"1\":10,\"2\":10,\"3\":10,\"4\":10,\"5\":20,\"6\":10,\"7\":5,\"8\":0},\"5\":{\"1\":5,\"2\":5,\"3\":10,\"4\":15,\"5\":10,\"6\":10,\"7\":15,\"8\":5},\"6\":{\"1\":5,\"2\":5,\"3\":10,\"4\":15,\"5\":10,\"6\":10,\"7\":15,\"7\":15,\"8\":5},\"7\":{\"1\":0,\"2\":5,\"3\":5,\"4\":5,\"5\":10,\"6\":10,\"7\":20,\"8\":20},\"8\":{\"1\":0,\"2\":5,\"3\":5,\"4\":5,\"5\":10,\"6\":10,\"7\":20,\"8\":20}}"
+    },
+    "StageArena_MatchStep03": {
+        "clz": "dict",
+        "content": {
+            "1": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "2": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "3": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "4": [
+                {
+                    "rate": 100,
+                    "weight": 12
+                },
+                {
+                    "rate": 500,
+                    "weight": 38
+                },
+                {
+                    "rate": 1500,
+                    "weight": 38
+                },
+                {
+                    "rate": 2500,
+                    "weight": 6
+                },
+                {
+                    "rate": 3500,
+                    "weight": 7
+                }
+            ],
+            "5": [
+                {
+                    "rate": 100,
+                    "weight": 10
+                },
+                {
+                    "rate": 500,
+                    "weight": 32
+                },
+                {
+                    "rate": 1500,
+                    "weight": 40
+                },
+                {
+                    "rate": 2500,
+                    "weight": 8
+                },
+                {
+                    "rate": 3500,
+                    "weight": 10
+                }
+            ],
+            "6": [
+                {
+                    "rate": 100,
+                    "weight": 10
+                },
+                {
+                    "rate": 500,
+                    "weight": 32
+                },
+                {
+                    "rate": 1500,
+                    "weight": 40
+                },
+                {
+                    "rate": 2500,
+                    "weight": 8
+                },
+                {
+                    "rate": 3500,
+                    "weight": 10
+                }
+            ],
+            "7": [
+                {
+                    "rate": 500,
+                    "weight": 30
+                },
+                {
+                    "rate": 1500,
+                    "weight": 48
+                },
+                {
+                    "rate": 2500,
+                    "weight": 10
+                },
+                {
+                    "rate": 3500,
+                    "weight": 12
+                }
+            ],
+            "8": [
+                {
+                    "rate": 500,
+                    "weight": 30
+                },
+                {
+                    "rate": 1500,
+                    "weight": 48
+                },
+                {
+                    "rate": 2500,
+                    "weight": 10
+                },
+                {
+                    "rate": 3500,
+                    "weight": 12
+                }
+            ]
+        }
+    },
+    "StageArena_ModelSpwanSec": {
+        "clz": "double",
+        "content": 0.5
+    },
+    "StageArena_ModelWalkSpeed": {
+        "clz": "int",
+        "content": 50
+    },
+    "StageArena_RankMax": {
+        "clz": "int",
+        "content": 999
+    },
+    "StageArena_RateRandom": {
+        "clz": "array",
+        "content": [
+            0.0,
+            0.0
+        ]
+    },
+    "StageArena_RealTimeFresh": {
+        "clz": "int",
+        "content": 300
+    },
+    "StageArena_RedPoint_Num": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_RefreshCost": {
+        "clz": "int",
+        "content": 150
+    },
+    "StageArena_ReportMax": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_ReportRetain": {
+        "clz": "int",
+        "content": 5
+    },
+    "StageArena_RobotTeamNum": {
+        "clz": "array",
+        "content": [
+            {
+                "num": [
+                    1,
+                    4
+                ],
+                "stage": [
+                    0,
+                    2
+                ]
+            },
+            {
+                "num": [
+                    6,
+                    10
+                ],
+                "stage": [
+                    3,
+                    5
+                ]
+            },
+            {
+                "num": [
+                    10,
+                    10
+                ],
+                "stage": [
+                    6,
+                    8
+                ]
+            }
+        ]
+    },
+    "StageArena_Robot_Job_Deviation": {
+        "clz": "dict",
+        "content": {
+            "Aoe": [
+                1.1,
+                1,
+                0.81
+            ],
+            "Attack": [
+                1.2,
+                0.82,
+                0.71
+            ],
+            "Cure": [
+                1.06,
+                1,
+                1.18
+            ],
+            "Curse": [
+                1.05,
+                1,
+                1.04
+            ],
+            "Defense": [
+                0.75,
+                1.18,
+                1.41
+            ],
+            "Summon": [
+                1,
+                1,
+                1
+            ],
+            "Support": [
+                1.04,
+                1,
+                1.15
+            ]
+        }
+    },
+    "StageArena_Robot_Quality_Deviation": {
+        "clz": "dict",
+        "content": {
+            "12": 0.8,
+            "13": 0.9,
+            "14": 1,
+            "15": 1
+        }
+    },
+    "StageArena_RuleTranslate": {
+        "clz": "string[]",
+        "content": {
+            "Desc": [
+                "StageArena_GeneralRules_1",
+                "StageArena_GeneralRules_2",
+                "StageArena_GeneralRules_3",
+                "StageArena_GeneralRules_4",
+                "StageArena_GeneralRules_5",
+                "StageArena_GeneralRules_6",
+                "StageArena_GeneralRules_7",
+                "StageArena_GeneralRules_8",
+                "StageArena_GeneralRules_9",
+                "StageArena_GeneralRules_10",
+                "StageArena_GeneralRules_11",
+                "StageArena_GeneralRules_12",
+                "StageArena_GeneralRules_13"
+            ]
+        }
+    },
+    "StageArena_SameGame": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_SeasonShowTime": {
+        "clz": "int",
+        "content": 72
+    },
+    "StageArena_SkipBattle_WaitTime": {
+        "clz": "int",
+        "content": 3
+    },
+    "StageArena_security": {
+        "clz": "dict",
+        "content": {
+            "gold": 3500,
+            "stage": -2,
+            "times": 3
+        }
     },
     "StagePractice_CommentMaxWords": {
         "clz": "int",
@@ -7070,25 +9207,25 @@
                 "Button1": "Button2_Text1",
                 "Button2": "Button2_Text2",
                 "Button3": "Button2_Text3",
-                "FinalPoint": "M05S16",
+                "FinalPoint": "M05S15",
                 "HeroInfo1": "StagePresent2_HeroInfo1",
                 "HeroInfo2": "StagePresent2_HeroInfo2",
-                "Icon": "main_btn_shengqiang",
+                "Icon": "main_btn_shengshi",
                 "Model": "Model_CLMan",
                 "TitleDesc1": "StagePresent2_Title1",
                 "TitleDesc2": "StagePresent2_Title2",
                 "Unlock": "StagePresent2_Unlock",
                 "reward": [
                     {
-                        "count": 9,
+                        "count": 12,
                         "reward": "StagePresent2_Reward1"
                     },
                     {
-                        "count": 18,
+                        "count": 21,
                         "reward": "StagePresent2_Reward2"
                     },
                     {
-                        "count": 28,
+                        "count": 30,
                         "reward": "StagePresent2_Reward3"
                     }
                 ],
@@ -7098,7 +9235,7 @@
                 "Button1": "Button3_Text1",
                 "Button2": "Button3_Text2",
                 "Button3": "Button3_Text3",
-                "FinalPoint": "M07S20",
+                "FinalPoint": "M07S15",
                 "HeroInfo1": "StagePresent3_HeroInfo1",
                 "HeroInfo2": "StagePresent3_HeroInfo2",
                 "Icon": "main_btn_shengjia",
@@ -7108,15 +9245,15 @@
                 "Unlock": "StagePresent3_Unlock",
                 "reward": [
                     {
-                        "count": 12,
+                        "count": 10,
                         "reward": "StagePresent3_Reward1"
                     },
                     {
-                        "count": 24,
+                        "count": 20,
                         "reward": "StagePresent3_Reward2"
                     },
                     {
-                        "count": 36,
+                        "count": 30,
                         "reward": "StagePresent3_Reward3"
                     }
                 ],
@@ -7126,7 +9263,7 @@
                 "Button1": "Button4_Text1",
                 "Button2": "Button4_Text2",
                 "Button3": "Button4_Text3",
-                "FinalPoint": "M09S24",
+                "FinalPoint": "M09S15",
                 "HeroInfo1": "StagePresent4_HeroInfo1",
                 "HeroInfo2": "StagePresent4_HeroInfo2",
                 "Icon": "main_btn_shengshi",
@@ -7136,15 +9273,15 @@
                 "Unlock": "StagePresent4_Unlock",
                 "reward": [
                     {
-                        "count": 16,
+                        "count": 12,
                         "reward": "StagePresent4_Reward1"
                     },
                     {
-                        "count": 32,
+                        "count": 23,
                         "reward": "StagePresent4_Reward2"
                     },
                     {
-                        "count": 48,
+                        "count": 30,
                         "reward": "StagePresent4_Reward3"
                     }
                 ],
@@ -7154,29 +9291,25 @@
                 "Button1": "Button5_Text1",
                 "Button2": "Button5_Text2",
                 "Button3": "Button5_Text3",
-                "FinalPoint": "M12S24",
+                "FinalPoint": "M11S15",
                 "HeroInfo1": "StagePresent5_HeroInfo1",
                 "HeroInfo2": "StagePresent5_HeroInfo2",
-                "Icon": "main_btn_shengqiang",
+                "Icon": "main_btn_shengshi",
                 "Model": "Model_TPGZhu",
                 "TitleDesc1": "StagePresent5_Title1",
                 "TitleDesc2": "StagePresent5_Title2",
                 "Unlock": "StagePresent5_Unlock",
                 "reward": [
                     {
-                        "count": 18,
-                        "reward": "StagePresent5_Reward1"
-                    },
-                    {
-                        "count": 36,
+                        "count": 10,
                         "reward": "StagePresent5_Reward2"
                     },
                     {
-                        "count": 54,
+                        "count": 20,
                         "reward": "StagePresent5_Reward3"
                     },
                     {
-                        "count": 72,
+                        "count": 30,
                         "reward": "StagePresent5_Reward4"
                     }
                 ],
@@ -7255,7 +9388,8 @@
             },
             {
                 "Desc": [
-                    "EXPLORE_TITLE3_Rule1"
+                    "EXPLORE_TITLE3_Rule1",
+                    "EXPLORE_TITLE3_Rule2"
                 ],
                 "Title": "EXPLORE_TITLE3"
             }
@@ -7364,6 +9498,24 @@
             ]
         }
     },
+    "Suppress_Lv1": {
+        "clz": "string[]",
+        "content": [
+            0.05,
+            0.05,
+            0.05,
+            0.05
+        ]
+    },
+    "Suppress_Lv2": {
+        "clz": "string[]",
+        "content": [
+            0.06,
+            0.06,
+            0.075,
+            0.075
+        ]
+    },
     "TacticsCard_Availible": {
         "clz": "string[]",
         "content": [
@@ -7387,6 +9539,139 @@
     "TacticsCard_Reload": {
         "clz": "int",
         "content": 2
+    },
+    "TansuoOneClickMonsterNum": {
+        "clz": "int",
+        "content": 16
+    },
+    "TansuoOneClickReward": {
+        "clz": "dict",
+        "content": {
+            "Alice_1": {
+                "normal": {
+                    "straight": "Alice_1_OnceClickReward_Normal1",
+                    "unStraight": "Alice_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_1_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_2": {
+                "normal": {
+                    "straight": "Alice_2_OnceClickReward_Normal1",
+                    "unStraight": "Alice_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_2_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_3": {
+                "normal": {
+                    "straight": "Alice_3_OnceClickReward_Normal1",
+                    "unStraight": "Alice_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_3_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Alice_4": {
+                "normal": {
+                    "straight": "Alice_4_OnceClickReward_Normal1",
+                    "unStraight": "Alice_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Alice_4_OnceClickReward_Recommend1",
+                    "unStraight": "Alice_4_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_1": {
+                "normal": {
+                    "straight": "Egypt_1_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_1_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_2": {
+                "normal": {
+                    "straight": "Egypt_2_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_2_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_3": {
+                "normal": {
+                    "straight": "Egypt_3_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_3_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Egypt_4": {
+                "normal": {
+                    "straight": "Egypt_4_OnceClickReward_Normal1",
+                    "unStraight": "Egypt_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Egypt_4_OnceClickReward_Recommend1",
+                    "unStraight": "Egypt_4_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_1": {
+                "normal": {
+                    "straight": "Japan_1_OnceClickReward_Normal1",
+                    "unStraight": "Japan_1_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_1_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_1_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_2": {
+                "normal": {
+                    "straight": "Japan_2_OnceClickReward_Normal1",
+                    "unStraight": "Japan_2_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_2_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_2_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_3": {
+                "normal": {
+                    "straight": "Japan_3_OnceClickReward_Normal1",
+                    "unStraight": "Japan_3_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_3_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_3_OnceClickReward_Recommend2"
+                }
+            },
+            "Japan_4": {
+                "normal": {
+                    "straight": "Japan_4_OnceClickReward_Normal1",
+                    "unStraight": "Japan_4_OnceClickReward_Normal2"
+                },
+                "recommend": {
+                    "straight": "Japan_4_OnceClickReward_Recommend1",
+                    "unStraight": "Japan_4_OnceClickReward_Recommend2"
+                }
+            }
+        }
+    },
+    "TansuoOneClickReward_Show": {
+        "clz": "string",
+        "content": "IR_Pve"
     },
     "Task_BubbleChange_Time": {
         "clz": "int",
@@ -7517,6 +9802,14 @@
             ]
         }
     },
+    "Tourist_TalkAmount": {
+        "clz": "int",
+        "content": 20
+    },
+    "Tourist_TalkTime": {
+        "clz": "int",
+        "content": 60
+    },
     "Tower_1_Awake_Buff": {
         "clz": "string",
         "content": "Tower_1_Awake_Buff"
@@ -7535,24 +9828,49 @@
             "SYAi",
             "YYing",
             "GYCZi",
-            "DFQi",
-            "DCJKang",
             "NXYYi",
-            "BQDShe",
-            "YXNMei",
             "AJTa",
             "SRen",
-            "BHTZi",
-            "LYXi",
-            "YSLBin",
-            "KMLa",
-            "PDLa",
-            "NFEr",
-            "HSheng",
-            "FEMSi",
             "BLTu",
-            "BDFen",
-            "PGNNi"
+            "FLYDe",
+            "TJHDe",
+            "FGao",
+            "XBKLDi",
+            "KEDGong",
+            "HGEr",
+            "QTQCi",
+            "LSLTe",
+            "TLSi",
+            "XHMao",
+            "FLBDSi",
+            "SP_PNCao",
+            "YXZChun",
+            "MZu",
+            "LFKLFTe",
+            "SP_SSQXin",
+            "WSLi",
+            "MYing",
+            "MLYDi",
+            "AMLBLTe",
+            "XLDBLTe",
+            "SP_KTSJKe",
+            "WLSTNCi",
+            "LEMHou",
+            "XDE",
+            "HLa",
+            "YMJDe",
+            "SNGLSi",
+            "SP_ALPo",
+            "CKFSJi",
+            "XXFSi",
+            "MDSi",
+            "SSBYa",
+            "SGBao",
+            "PSKe",
+            "LEIMu",
+            "LAMu",
+            "AMLYa",
+            "GCZi"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -7560,7 +9878,8 @@
         "content": {
             "12": 50,
             "13": 80,
-            "14": 150
+            "14": 150,
+            "15": 150
         }
     },
     "Tower_1_GrowRareityBase": {
@@ -7568,7 +9887,8 @@
         "content": {
             "12": 10,
             "13": 20,
-            "14": 30
+            "14": 30,
+            "15": 30
         }
     },
     "Tower_1_GrowSameCard": {
@@ -7576,7 +9896,8 @@
         "content": {
             "12": 10,
             "13": 15,
-            "14": 20
+            "14": 20,
+            "15": 20
         }
     },
     "Tower_1_GrowSameType": {
@@ -7584,7 +9905,8 @@
         "content": {
             "12": 15,
             "13": 15,
-            "14": 15
+            "14": 15,
+            "15": 15
         }
     },
     "Tower_1_HeroChooseValue": {
@@ -7608,7 +9930,8 @@
         "content": {
             "12": 1,
             "13": 1,
-            "14": 1
+            "14": 1,
+            "15": 1
         }
     },
     "Tower_1_HeroValue": {
@@ -7654,7 +9977,8 @@
             "Tower_1_Master2",
             "Tower_1_Master3",
             "Tower_1_Master4",
-            "Tower_1_Master5"
+            "Tower_1_Master5",
+            "Tower_1_Master6"
         ]
     },
     "Tower_1_MasterSkillShow": {
@@ -7761,6 +10085,36 @@
         "clz": "double",
         "content": 0.15
     },
+    "TrapModel_Castle": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_meikejineng",
+            "EffectPos": 230,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Dun": {
+        "clz": "dict",
+        "content": {
+            "Effect": "dun_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_EquipSkill_Shoes_15006": {
+        "clz": "dict",
+        "content": {
+            "Effect": "shubiao_shubiaodian",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
     "TrapModel_Freeze": {
         "clz": "dict",
         "content": {
@@ -7771,10 +10125,151 @@
             "Type": 1
         }
     },
+    "TrapModel_Huo": {
+        "clz": "dict",
+        "content": {
+            "Effect": "huo_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jian": {
+        "clz": "dict",
+        "content": {
+            "Effect": "jian_bumengguanjizhitexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhen": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhefazhen",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Jianzhendazhao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_xuanhedazhaofazhen",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Light_cheng": {
+        "clz": "dict",
+        "content": {
+            "Effect": "cheng_kongbubenchangjingtexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Light_lan": {
+        "clz": "dict",
+        "content": {
+            "Effect": "lan_kongbubenchangjingtexiao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_Stage": {
+        "clz": "dict",
+        "content": {
+            "Effect": "main_yinyuehe",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_1_1": {
+        "clz": "dict",
+        "content": {
+            "Effect": "diceng_lansekeji",
+            "EffectPos": 40,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_1_2": {
+        "clz": "dict",
+        "content": {
+            "Effect": "dicengbianse_lansekeji",
+            "EffectPos": 40,
+            "Loop": 0,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_2_1": {
+        "clz": "dict",
+        "content": {
+            "Effect": "shangceng_lansekeji",
+            "EffectPos": 40,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_ZFQi_2_2": {
+        "clz": "dict",
+        "content": {
+            "Effect": "shangcengbianse_lansekeji",
+            "EffectPos": 40,
+            "Loop": 0,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_cheng_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "cheng_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_fen_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "fen_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
+    "TrapModel_fencheng_yumao": {
+        "clz": "dict",
+        "content": {
+            "Effect": "fencheng_jianyumao",
+            "EffectPos": 5,
+            "Loop": 1,
+            "Priority": null,
+            "Type": 1
+        }
+    },
     "TrialSwitch": {
         "clz": "string[]",
         "content": [
             "spstage",
+            "dreamhouse",
             "explore",
             "tower",
             "dreamchallenge",
@@ -7794,14 +10289,50 @@
             "Support": "LIGHT"
         }
     },
-    "UNLOCKMEMORY": {
+    "URMap_RuleText": {
+        "clz": "dict",
+        "content": [
+            {
+                "Desc": [
+                    "URMaps_Rule_1",
+                    "URMaps_Rule_2",
+                    "URMaps_Rule_3"
+                ],
+                "Title": "URMaps_Title"
+            }
+        ]
+    },
+    "URStone_Exchange": {
         "clz": "dict",
         "content": {
-            "TASK": [
-                "Memory_ACTIVILIST_1",
-                "Memory_ACTIVILIST_2"
-            ]
+            "CO_DecorationStone_1": "Decoration",
+            "CO_DecorationStone_2": "Decoration",
+            "CO_DecorationStone_3": "Decoration",
+            "CO_ShoesStone_1": "Shoes",
+            "CO_ShoesStone_2": "Shoes",
+            "CO_ShoesStone_3": "Shoes",
+            "CO_TopsStone_1": "Tops",
+            "CO_TopsStone_2": "Tops",
+            "CO_TopsStone_3": "Tops",
+            "CO_WeaponStone_1": "Weapon",
+            "CO_WeaponStone_2": "Weapon",
+            "CO_WeaponStone_3": "Weapon"
         }
+    },
+    "URmap_Shop_TransItem": {
+        "clz": "dict",
+        "content": {
+            "itemID": "IR_URMapCoin",
+            "transNum": 1
+        }
+    },
+    "URmap_Shop_UnlockTime": {
+        "clz": "int",
+        "content": 120
+    },
+    "Using_Conventions": {
+        "clz": "string",
+        "content": "https://sdk-file-download.efunjp.com/policy/common/ja_JP/useterms.html"
     },
     "VillageDecorateShopIcon": {
         "clz": "string[]",
@@ -8088,5 +10619,20 @@
                 "WeekActiveReward_Text2"
             ]
         }
+    },
+    "friend_add_reset_key": {
+        "clz": "string",
+        "content": "Friend_add"
+    },
+    "heroshow_limit": {
+        "clz": "int",
+        "content": 10
+    },
+    "surface_notred": {
+        "clz": "int[]",
+        "content": [
+            1,
+            5
+        ]
     }
 }

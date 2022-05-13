@@ -386,6 +386,24 @@ local uiComponentConfigs = {
 			}
 		},
 		zorder = kUIComponentZOrder.kSkipButton
+	},
+	{
+		id = "hideButton",
+		displayType = "ui",
+		type = "HideButton",
+		anchorPoint = {
+			x = 1,
+			y = 1
+		},
+		position = {
+			x = -270,
+			y = -26,
+			refpt = {
+				x = 1,
+				y = 1
+			}
+		},
+		zorder = kUIComponentZOrder.kSkipButton
 	}
 }
 

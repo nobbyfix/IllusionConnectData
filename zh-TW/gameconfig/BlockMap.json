@@ -140,7 +140,7 @@
         "MapName": "BlockMap_E04_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 180,
+        "OpenStar": 120,
         "Order": 4,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -181,7 +181,7 @@
         "MapName": "BlockMap_E05_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 180,
+        "OpenStar": 150,
         "Order": 5,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -227,7 +227,7 @@
         "MapName": "BlockMap_E06_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 270,
+        "OpenStar": 250,
         "Order": 6,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -273,7 +273,7 @@
         "MapName": "BlockMap_E07_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 270,
+        "OpenStar": 300,
         "Order": 7,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -320,7 +320,7 @@
         "MapName": "BlockMap_E08_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 460,
+        "OpenStar": 400,
         "Order": 8,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -370,7 +370,7 @@
         "MapName": "BlockMap_E09_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 460,
+        "OpenStar": 430,
         "Order": 9,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -420,7 +420,7 @@
         "MapName": "BlockMap_E10_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 670,
+        "OpenStar": 560,
         "Order": 10,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -467,13 +467,13 @@
         "MapName": "BlockMap_E11_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 670,
+        "OpenStar": 600,
         "Order": 11,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "16": "E11BOX01",
-            "32": "E11BOX02",
-            "48": "E11BOX03"
+            "12": "E11BOX01",
+            "24": "E11BOX02",
+            "36": "E11BOX03"
         },
         "SubPoint": [
             "E11S01",
@@ -487,11 +487,7 @@
             "E11S09",
             "E11S10",
             "E11S11",
-            "E11S12",
-            "E11S13",
-            "E11S14",
-            "E11S15",
-            "E11S16"
+            "E11S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -521,13 +517,13 @@
         "MapName": "BlockMap_E12_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 900,
+        "OpenStar": 720,
         "Order": 12,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "16": "E12BOX01",
-            "32": "E12BOX02",
-            "48": "E12BOX03"
+            "12": "E12BOX01",
+            "24": "E12BOX02",
+            "36": "E12BOX03"
         },
         "SubPoint": [
             "E12S01",
@@ -541,11 +537,7 @@
             "E12S09",
             "E12S10",
             "E12S11",
-            "E12S12",
-            "E12S13",
-            "E12S14",
-            "E12S15",
-            "E12S16"
+            "E12S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -575,13 +567,13 @@
         "MapName": "BlockMap_E13_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 900,
+        "OpenStar": 760,
         "Order": 13,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "16": "E13BOX01",
-            "32": "E13BOX02",
-            "48": "E13BOX03"
+            "12": "E13BOX01",
+            "24": "E13BOX02",
+            "36": "E13BOX03"
         },
         "SubPoint": [
             "E13S01",
@@ -595,11 +587,7 @@
             "E13S09",
             "E13S10",
             "E13S11",
-            "E13S12",
-            "E13S13",
-            "E13S14",
-            "E13S15",
-            "E13S16"
+            "E13S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -626,13 +614,13 @@
         "MapName": "BlockMap_E14_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1170,
+        "OpenStar": 870,
         "Order": 14,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E14BOX01",
-            "40": "E14BOX02",
-            "60": "E14BOX03"
+            "12": "E14BOX01",
+            "24": "E14BOX02",
+            "36": "E14BOX03"
         },
         "SubPoint": [
             "E14S01",
@@ -646,15 +634,7 @@
             "E14S09",
             "E14S10",
             "E14S11",
-            "E14S12",
-            "E14S13",
-            "E14S14",
-            "E14S15",
-            "E14S16",
-            "E14S17",
-            "E14S18",
-            "E14S19",
-            "E14S20"
+            "E14S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -681,13 +661,13 @@
         "MapName": "BlockMap_E15_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1170,
+        "OpenStar": 950,
         "Order": 15,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E15BOX01",
-            "40": "E15BOX02",
-            "60": "E15BOX03"
+            "12": "E15BOX01",
+            "24": "E15BOX02",
+            "36": "E15BOX03"
         },
         "SubPoint": [
             "E15S01",
@@ -701,15 +681,7 @@
             "E15S09",
             "E15S10",
             "E15S11",
-            "E15S12",
-            "E15S13",
-            "E15S14",
-            "E15S15",
-            "E15S16",
-            "E15S17",
-            "E15S18",
-            "E15S19",
-            "E15S20"
+            "E15S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -736,13 +708,13 @@
         "MapName": "BlockMap_E16_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1480,
+        "OpenStar": 1020,
         "Order": 16,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E16BOX01",
-            "40": "E16BOX02",
-            "60": "E16BOX03"
+            "12": "E16BOX01",
+            "24": "E16BOX02",
+            "36": "E16BOX03"
         },
         "SubPoint": [
             "E16S01",
@@ -756,15 +728,7 @@
             "E16S09",
             "E16S10",
             "E16S11",
-            "E16S12",
-            "E16S13",
-            "E16S14",
-            "E16S15",
-            "E16S16",
-            "E16S17",
-            "E16S18",
-            "E16S19",
-            "E16S20"
+            "E16S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -791,13 +755,13 @@
         "MapName": "BlockMap_E17_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1480,
+        "OpenStar": 1100,
         "Order": 17,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E17BOX01",
-            "40": "E17BOX02",
-            "60": "E17BOX03"
+            "12": "E17BOX01",
+            "24": "E17BOX02",
+            "36": "E17BOX03"
         },
         "SubPoint": [
             "E17S01",
@@ -811,15 +775,7 @@
             "E17S09",
             "E17S10",
             "E17S11",
-            "E17S12",
-            "E17S13",
-            "E17S14",
-            "E17S15",
-            "E17S16",
-            "E17S17",
-            "E17S18",
-            "E17S19",
-            "E17S20"
+            "E17S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -846,13 +802,13 @@
         "MapName": "BlockMap_E18_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1800,
+        "OpenStar": 1180,
         "Order": 18,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E18BOX01",
-            "40": "E18BOX02",
-            "60": "E18BOX03"
+            "12": "E18BOX01",
+            "24": "E18BOX02",
+            "36": "E18BOX03"
         },
         "SubPoint": [
             "E18S01",
@@ -866,15 +822,7 @@
             "E18S09",
             "E18S10",
             "E18S11",
-            "E18S12",
-            "E18S13",
-            "E18S14",
-            "E18S15",
-            "E18S16",
-            "E18S17",
-            "E18S18",
-            "E18S19",
-            "E18S20"
+            "E18S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -901,13 +849,13 @@
         "MapName": "BlockMap_E19_Name",
         "MapReward": "",
         "OpenLevel": 1,
-        "OpenStar": 1950,
+        "OpenStar": 1250,
         "Order": 19,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E19BOX01",
-            "40": "E19BOX02",
-            "60": "E19BOX03"
+            "12": "E19BOX01",
+            "24": "E19BOX02",
+            "36": "E19BOX03"
         },
         "SubPoint": [
             "E19S01",
@@ -921,15 +869,7 @@
             "E19S09",
             "E19S10",
             "E19S11",
-            "E19S12",
-            "E19S13",
-            "E19S14",
-            "E19S15",
-            "E19S16",
-            "E19S17",
-            "E19S18",
-            "E19S19",
-            "E19S20"
+            "E19S12"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -945,7 +885,7 @@
         ]
     },
     "E20": {
-        "BGM": "",
+        "BGM": "Mus_Story_Chaos",
         "Background": "Main_Img_06",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_10.jpg",
@@ -955,14 +895,14 @@
         "IconDesc": "",
         "MapName": "BlockMap_E20_Name",
         "MapReward": "",
-        "OpenLevel": 99,
-        "OpenStar": 2370,
+        "OpenLevel": 1,
+        "OpenStar": 1330,
         "Order": 20,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "20": "E20BOX01",
-            "40": "E20BOX02",
-            "60": "E20BOX03"
+            "12": "E20BOX01",
+            "24": "E20BOX02",
+            "36": "E20BOX03"
         },
         "SubPoint": [
             "E20S01",
@@ -976,18 +916,12 @@
             "E20S09",
             "E20S10",
             "E20S11",
-            "E20S12",
-            "E20S13",
-            "E20S14",
-            "E20S15",
-            "E20S16",
-            "E20S17",
-            "E20S18",
-            "E20S19",
-            "E20S20"
+            "E20S12"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S20E01"
+        ],
         "Task": [],
         "Type": "ELITE",
         "URL": "",
@@ -998,10 +932,10 @@
         ]
     },
     "E21": {
-        "BGM": "",
-        "Background": "Main_Img_06",
+        "BGM": "Mus_Story_Stage",
+        "Background": "Main_Img_21",
         "BackgroundLength": 2272,
-        "ButtonIcon": "main_chapter_11.jpg",
+        "ButtonIcon": "main_chapter_10.jpg",
         "ContinueDiamonds": "",
         "HidePoint": [],
         "Icon": "asset/ui/chapter/zx_bg_zj_1.png",
@@ -1009,7 +943,7 @@
         "MapName": "BlockMap_E21_Name",
         "MapReward": "",
         "OpenLevel": 99,
-        "OpenStar": 2370,
+        "OpenStar": 3280,
         "Order": 21,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -1062,7 +996,7 @@
         "MapName": "BlockMap_E22_Name",
         "MapReward": "",
         "OpenLevel": 99,
-        "OpenStar": 99999,
+        "OpenStar": 3850,
         "Order": 22,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -1113,7 +1047,7 @@
         "MapName": "BlockMap_E23_Name",
         "MapReward": "",
         "OpenLevel": 99,
-        "OpenStar": 99999,
+        "OpenStar": 3850,
         "Order": 23,
         "StageEventPoint": [],
         "StarBoxReward": {
@@ -1397,9 +1331,9 @@
         "Order": 4,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "12": "M04BOX01",
-            "24": "M04BOX02",
-            "36": "M04BOX03"
+            "15": "M04BOX01",
+            "30": "M04BOX02",
+            "45": "M04BOX03"
         },
         "SubPoint": [
             "M04S01",
@@ -1413,7 +1347,10 @@
             "M04S09",
             "M04S10",
             "M04S11",
-            "M04S12"
+            "M04S12",
+            "M04S13",
+            "M04S14",
+            "M04S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1442,13 +1379,13 @@
         "MapName": "BlockMap_M05_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 110,
+        "OpenStar": 120,
         "Order": 5,
         "StageEventPoint": [],
         "StarBoxReward": {
             "15": "M05BOX01",
             "30": "M05BOX02",
-            "48": "M05BOX03"
+            "45": "M05BOX03"
         },
         "SubPoint": [
             "M05S01",
@@ -1465,8 +1402,7 @@
             "M05S12",
             "M05S13",
             "M05S14",
-            "M05S15",
-            "M05S16"
+            "M05S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1495,13 +1431,13 @@
         "MapName": "BlockMap_M06_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 170,
+        "OpenStar": 160,
         "Order": 6,
         "StageEventPoint": [],
         "StarBoxReward": {
             "15": "M06BOX01",
             "30": "M06BOX02",
-            "48": "M06BOX03"
+            "45": "M06BOX03"
         },
         "SubPoint": [
             "M06S01",
@@ -1518,8 +1454,7 @@
             "M06S12",
             "M06S13",
             "M06S14",
-            "M06S15",
-            "M06S16"
+            "M06S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1548,13 +1483,13 @@
         "MapName": "BlockMap_M07_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 240,
+        "OpenStar": 230,
         "Order": 7,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "21": "M07BOX01",
-            "42": "M07BOX02",
-            "60": "M07BOX03"
+            "15": "M07BOX01",
+            "30": "M07BOX02",
+            "45": "M07BOX03"
         },
         "SubPoint": [
             "M07S01",
@@ -1571,12 +1506,7 @@
             "M07S12",
             "M07S13",
             "M07S14",
-            "M07S15",
-            "M07S16",
-            "M07S17",
-            "M07S18",
-            "M07S19",
-            "M07S20"
+            "M07S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1605,13 +1535,13 @@
         "MapName": "BlockMap_M08_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 330,
+        "OpenStar": 300,
         "Order": 8,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "24": "M08BOX01",
-            "48": "M08BOX02",
-            "72": "M08BOX03"
+            "15": "M08BOX01",
+            "30": "M08BOX02",
+            "45": "M08BOX03"
         },
         "SubPoint": [
             "M08S01",
@@ -1628,23 +1558,13 @@
             "M08S12",
             "M08S13",
             "M08S14",
-            "M08S15",
-            "M08S16",
-            "M08S17",
-            "M08S18",
-            "M08S19",
-            "M08S20",
-            "M08S21",
-            "M08S22",
-            "M08S23",
-            "M08S24"
+            "M08S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
             "S08S01",
             "S08S02",
-            "S08S03",
-            "S08S04"
+            "S08S03"
         ],
         "Task": [],
         "Type": "NORMAL",
@@ -1667,13 +1587,13 @@
         "MapName": "BlockMap_M09_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 420,
+        "OpenStar": 380,
         "Order": 9,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "24": "M09BOX01",
-            "48": "M09BOX02",
-            "72": "M09BOX03"
+            "15": "M09BOX01",
+            "30": "M09BOX02",
+            "45": "M09BOX03"
         },
         "SubPoint": [
             "M09S01",
@@ -1690,23 +1610,13 @@
             "M09S12",
             "M09S13",
             "M09S14",
-            "M09S15",
-            "M09S16",
-            "M09S17",
-            "M09S18",
-            "M09S19",
-            "M09S20",
-            "M09S21",
-            "M09S22",
-            "M09S23",
-            "M09S24"
+            "M09S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
             "S09S01",
             "S09S02",
-            "S09S03",
-            "S09S04"
+            "S09S03"
         ],
         "Task": [],
         "Type": "NORMAL",
@@ -1729,13 +1639,13 @@
         "MapName": "BlockMap_M10_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 530,
+        "OpenStar": 460,
         "Order": 10,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "24": "M10BOX01",
-            "48": "M10BOX02",
-            "72": "M10BOX03"
+            "15": "M10BOX01",
+            "30": "M10BOX02",
+            "45": "M10BOX03"
         },
         "SubPoint": [
             "M10S01",
@@ -1752,16 +1662,7 @@
             "M10S12",
             "M10S13",
             "M10S14",
-            "M10S15",
-            "M10S16",
-            "M10S17",
-            "M10S18",
-            "M10S19",
-            "M10S20",
-            "M10S21",
-            "M10S22",
-            "M10S23",
-            "M10S24"
+            "M10S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1790,13 +1691,13 @@
         "MapName": "BlockMap_M11_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 630,
+        "OpenStar": 540,
         "Order": 11,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "24": "M11BOX01",
-            "48": "M11BOX02",
-            "72": "M11BOX03"
+            "15": "M11BOX01",
+            "30": "M11BOX02",
+            "45": "M11BOX03"
         },
         "SubPoint": [
             "M11S01",
@@ -1813,16 +1714,7 @@
             "M11S12",
             "M11S13",
             "M11S14",
-            "M11S15",
-            "M11S16",
-            "M11S17",
-            "M11S18",
-            "M11S19",
-            "M11S20",
-            "M11S21",
-            "M11S22",
-            "M11S23",
-            "M11S24"
+            "M11S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1851,13 +1743,13 @@
         "MapName": "BlockMap_M12_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 750,
+        "OpenStar": 620,
         "Order": 12,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "24": "M12BOX01",
-            "48": "M12BOX02",
-            "72": "M12BOX03"
+            "15": "M12BOX01",
+            "30": "M12BOX02",
+            "45": "M12BOX03"
         },
         "SubPoint": [
             "M12S01",
@@ -1874,16 +1766,7 @@
             "M12S12",
             "M12S13",
             "M12S14",
-            "M12S15",
-            "M12S16",
-            "M12S17",
-            "M12S18",
-            "M12S19",
-            "M12S20",
-            "M12S21",
-            "M12S22",
-            "M12S23",
-            "M12S24"
+            "M12S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1912,13 +1795,13 @@
         "MapName": "BlockMap_M13_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 860,
+        "OpenStar": 700,
         "Order": 13,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "28": "M13BOX01",
-            "54": "M13BOX02",
-            "84": "M13BOX03"
+            "15": "M13BOX01",
+            "30": "M13BOX02",
+            "45": "M13BOX03"
         },
         "SubPoint": [
             "M13S01",
@@ -1935,20 +1818,7 @@
             "M13S12",
             "M13S13",
             "M13S14",
-            "M13S15",
-            "M13S16",
-            "M13S17",
-            "M13S18",
-            "M13S19",
-            "M13S20",
-            "M13S21",
-            "M13S22",
-            "M13S23",
-            "M13S24",
-            "M13S25",
-            "M13S26",
-            "M13S27",
-            "M13S28"
+            "M13S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -1977,13 +1847,13 @@
         "MapName": "BlockMap_M14_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 990,
+        "OpenStar": 780,
         "Order": 14,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "30": "M14BOX01",
-            "64": "M14BOX02",
-            "96": "M14BOX03"
+            "15": "M14BOX01",
+            "30": "M14BOX02",
+            "45": "M14BOX03"
         },
         "SubPoint": [
             "M14S01",
@@ -2000,24 +1870,7 @@
             "M14S12",
             "M14S13",
             "M14S14",
-            "M14S15",
-            "M14S16",
-            "M14S17",
-            "M14S18",
-            "M14S19",
-            "M14S20",
-            "M14S21",
-            "M14S22",
-            "M14S23",
-            "M14S24",
-            "M14S25",
-            "M14S26",
-            "M14S27",
-            "M14S28",
-            "M14S29",
-            "M14S30",
-            "M14S31",
-            "M14S32"
+            "M14S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2046,13 +1899,13 @@
         "MapName": "BlockMap_M15_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 1120,
+        "OpenStar": 860,
         "Order": 15,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "30": "M15BOX01",
-            "64": "M15BOX02",
-            "96": "M15BOX03"
+            "15": "M15BOX01",
+            "30": "M15BOX02",
+            "45": "M15BOX03"
         },
         "SubPoint": [
             "M15S01",
@@ -2069,24 +1922,7 @@
             "M15S12",
             "M15S13",
             "M15S14",
-            "M15S15",
-            "M15S16",
-            "M15S17",
-            "M15S18",
-            "M15S19",
-            "M15S20",
-            "M15S21",
-            "M15S22",
-            "M15S23",
-            "M15S24",
-            "M15S25",
-            "M15S26",
-            "M15S27",
-            "M15S28",
-            "M15S29",
-            "M15S30",
-            "M15S31",
-            "M15S32"
+            "M15S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2115,13 +1951,13 @@
         "MapName": "BlockMap_M16_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 1270,
+        "OpenStar": 940,
         "Order": 16,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "30": "M16BOX01",
-            "64": "M16BOX02",
-            "96": "M16BOX03"
+            "15": "M16BOX01",
+            "30": "M16BOX02",
+            "45": "M16BOX03"
         },
         "SubPoint": [
             "M16S01",
@@ -2138,24 +1974,7 @@
             "M16S12",
             "M16S13",
             "M16S14",
-            "M16S15",
-            "M16S16",
-            "M16S17",
-            "M16S18",
-            "M16S19",
-            "M16S20",
-            "M16S21",
-            "M16S22",
-            "M16S23",
-            "M16S24",
-            "M16S25",
-            "M16S26",
-            "M16S27",
-            "M16S28",
-            "M16S29",
-            "M16S30",
-            "M16S31",
-            "M16S32"
+            "M16S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2184,13 +2003,13 @@
         "MapName": "BlockMap_M17_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 1410,
+        "OpenStar": 1020,
         "Order": 17,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "108": "M17BOX03",
-            "36": "M17BOX01",
-            "72": "M17BOX02"
+            "15": "M17BOX01",
+            "30": "M17BOX02",
+            "45": "M17BOX03"
         },
         "SubPoint": [
             "M17S01",
@@ -2207,28 +2026,7 @@
             "M17S12",
             "M17S13",
             "M17S14",
-            "M17S15",
-            "M17S16",
-            "M17S17",
-            "M17S18",
-            "M17S19",
-            "M17S20",
-            "M17S21",
-            "M17S22",
-            "M17S23",
-            "M17S24",
-            "M17S25",
-            "M17S26",
-            "M17S27",
-            "M17S28",
-            "M17S29",
-            "M17S30",
-            "M17S31",
-            "M17S32",
-            "M17S33",
-            "M17S34",
-            "M17S35",
-            "M17S36"
+            "M17S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2257,13 +2055,13 @@
         "MapName": "BlockMap_M18_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 1600,
+        "OpenStar": 1100,
         "Order": 18,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "120": "M18BOX03",
-            "39": "M18BOX01",
-            "78": "M18BOX02"
+            "15": "M18BOX01",
+            "30": "M18BOX02",
+            "45": "M18BOX03"
         },
         "SubPoint": [
             "M18S01",
@@ -2280,32 +2078,7 @@
             "M18S12",
             "M18S13",
             "M18S14",
-            "M18S15",
-            "M18S16",
-            "M18S17",
-            "M18S18",
-            "M18S19",
-            "M18S20",
-            "M18S21",
-            "M18S22",
-            "M18S23",
-            "M18S24",
-            "M18S25",
-            "M18S26",
-            "M18S27",
-            "M18S28",
-            "M18S29",
-            "M18S30",
-            "M18S31",
-            "M18S32",
-            "M18S33",
-            "M18S34",
-            "M18S35",
-            "M18S36",
-            "M18S37",
-            "M18S38",
-            "M18S39",
-            "M18S40"
+            "M18S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2334,13 +2107,13 @@
         "MapName": "BlockMap_M19_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 1,
-        "OpenStar": 1750,
+        "OpenStar": 1180,
         "Order": 19,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "120": "M19BOX03",
-            "39": "M19BOX01",
-            "78": "M19BOX02"
+            "15": "M19BOX01",
+            "30": "M19BOX02",
+            "45": "M19BOX03"
         },
         "SubPoint": [
             "M19S01",
@@ -2357,32 +2130,7 @@
             "M19S12",
             "M19S13",
             "M19S14",
-            "M19S15",
-            "M19S16",
-            "M19S17",
-            "M19S18",
-            "M19S19",
-            "M19S20",
-            "M19S21",
-            "M19S22",
-            "M19S23",
-            "M19S24",
-            "M19S25",
-            "M19S26",
-            "M19S27",
-            "M19S28",
-            "M19S29",
-            "M19S30",
-            "M19S31",
-            "M19S32",
-            "M19S33",
-            "M19S34",
-            "M19S35",
-            "M19S36",
-            "M19S37",
-            "M19S38",
-            "M19S39",
-            "M19S40"
+            "M19S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [
@@ -2400,8 +2148,8 @@
         ]
     },
     "M20": {
-        "BGM": "",
-        "Background": "Main_Img_00",
+        "BGM": "Mus_Story_Stage",
+        "Background": "Main_Img_20",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_10.jpg",
         "ContinueDiamonds": "",
@@ -2410,14 +2158,14 @@
         "IconDesc": "",
         "MapName": "BlockMap_M20_Name",
         "MapReward": "Test_BlockSp_Reward",
-        "OpenLevel": 99,
-        "OpenStar": 1900,
+        "OpenLevel": 1,
+        "OpenStar": 1260,
         "Order": 20,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "144": "M20BOX03",
-            "48": "M20BOX01",
-            "96": "M20BOX02"
+            "15": "M20BOX01",
+            "30": "M20BOX02",
+            "45": "M20BOX03"
         },
         "SubPoint": [
             "M20S01",
@@ -2434,43 +2182,15 @@
             "M20S12",
             "M20S13",
             "M20S14",
-            "M20S15",
-            "M20S16",
-            "M20S17",
-            "M20S18",
-            "M20S19",
-            "M20S20",
-            "M20S21",
-            "M20S22",
-            "M20S23",
-            "M20S24",
-            "M20S25",
-            "M20S26",
-            "M20S27",
-            "M20S28",
-            "M20S29",
-            "M20S30",
-            "M20S31",
-            "M20S32",
-            "M20S33",
-            "M20S34",
-            "M20S35",
-            "M20S36",
-            "M20S37",
-            "M20S38",
-            "M20S39",
-            "M20S40",
-            "M20S41",
-            "M20S42",
-            "M20S43",
-            "M20S44",
-            "M20S45",
-            "M20S46",
-            "M20S47",
-            "M20S48"
+            "M20S15"
         ],
         "SubPracticePoint": [],
-        "SubStoryPoint": [],
+        "SubStoryPoint": [
+            "S20S01",
+            "S20S02",
+            "S20S03",
+            "S20S04"
+        ],
         "Task": [],
         "Type": "NORMAL",
         "URL": "",
@@ -2481,7 +2201,7 @@
         ]
     },
     "M21": {
-        "BGM": "",
+        "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_00",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_11.jpg",
@@ -2492,13 +2212,13 @@
         "MapName": "BlockMap_M21_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 99,
-        "OpenStar": 1900,
+        "OpenStar": 3200,
         "Order": 21,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "144": "M21BOX03",
-            "48": "M21BOX01",
-            "96": "M21BOX02"
+            "160": "M21BOX02",
+            "240": "M21BOX03",
+            "80": "M21BOX01"
         },
         "SubPoint": [
             "M21S01",
@@ -2548,7 +2268,39 @@
             "M21S45",
             "M21S46",
             "M21S47",
-            "M21S48"
+            "M21S48",
+            "M21S49",
+            "M21S50",
+            "M21S51",
+            "M21S52",
+            "M21S53",
+            "M21S54",
+            "M21S55",
+            "M21S56",
+            "M21S57",
+            "M21S58",
+            "M21S59",
+            "M21S60",
+            "M21S61",
+            "M21S62",
+            "M21S63",
+            "M21S64",
+            "M21S65",
+            "M21S66",
+            "M21S67",
+            "M21S68",
+            "M21S69",
+            "M21S70",
+            "M21S71",
+            "M21S72",
+            "M21S73",
+            "M21S74",
+            "M21S75",
+            "M21S76",
+            "M21S77",
+            "M21S78",
+            "M21S79",
+            "M21S80"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [],
@@ -2562,7 +2314,7 @@
         ]
     },
     "M22": {
-        "BGM": "",
+        "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_00",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_12.jpg",
@@ -2573,13 +2325,13 @@
         "MapName": "BlockMap_M22_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 99,
-        "OpenStar": 99999,
+        "OpenStar": 1420,
         "Order": 22,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "144": "M22BOX03",
-            "48": "M22BOX01",
-            "96": "M22BOX02"
+            "15": "M22BOX01",
+            "30": "M22BOX02",
+            "45": "M22BOX03"
         },
         "SubPoint": [
             "M22S01",
@@ -2596,40 +2348,7 @@
             "M22S12",
             "M22S13",
             "M22S14",
-            "M22S15",
-            "M22S16",
-            "M22S17",
-            "M22S18",
-            "M22S19",
-            "M22S20",
-            "M22S21",
-            "M22S22",
-            "M22S23",
-            "M22S24",
-            "M22S25",
-            "M22S26",
-            "M22S27",
-            "M22S28",
-            "M22S29",
-            "M22S30",
-            "M22S31",
-            "M22S32",
-            "M22S33",
-            "M22S34",
-            "M22S35",
-            "M22S36",
-            "M22S37",
-            "M22S38",
-            "M22S39",
-            "M22S40",
-            "M22S41",
-            "M22S42",
-            "M22S43",
-            "M22S44",
-            "M22S45",
-            "M22S46",
-            "M22S47",
-            "M22S48"
+            "M22S15"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [],
@@ -2643,7 +2362,7 @@
         ]
     },
     "M23": {
-        "BGM": "",
+        "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_00",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_13.jpg",
@@ -2654,13 +2373,13 @@
         "MapName": "BlockMap_M23_Name",
         "MapReward": "Test_BlockSp_Reward",
         "OpenLevel": 99,
-        "OpenStar": 99999,
+        "OpenStar": 3800,
         "Order": 23,
         "StageEventPoint": [],
         "StarBoxReward": {
-            "144": "M23BOX03",
-            "48": "M23BOX01",
-            "96": "M23BOX02"
+            "160": "M23BOX02",
+            "240": "M23BOX03",
+            "80": "M23BOX01"
         },
         "SubPoint": [
             "M23S01",
@@ -2710,7 +2429,39 @@
             "M23S45",
             "M23S46",
             "M23S47",
-            "M23S48"
+            "M23S48",
+            "M23S49",
+            "M23S50",
+            "M23S51",
+            "M23S52",
+            "M23S53",
+            "M23S54",
+            "M23S55",
+            "M23S56",
+            "M23S57",
+            "M23S58",
+            "M23S59",
+            "M23S60",
+            "M23S61",
+            "M23S62",
+            "M23S63",
+            "M23S64",
+            "M23S65",
+            "M23S66",
+            "M23S67",
+            "M23S68",
+            "M23S69",
+            "M23S70",
+            "M23S71",
+            "M23S72",
+            "M23S73",
+            "M23S74",
+            "M23S75",
+            "M23S76",
+            "M23S77",
+            "M23S78",
+            "M23S79",
+            "M23S80"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [],
@@ -2724,7 +2475,7 @@
         ]
     },
     "M24": {
-        "BGM": "",
+        "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_00",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_14.jpg",
@@ -2791,7 +2542,39 @@
             "M24S45",
             "M24S46",
             "M24S47",
-            "M24S48"
+            "M24S48",
+            "M24S49",
+            "M24S50",
+            "M24S51",
+            "M24S52",
+            "M24S53",
+            "M24S54",
+            "M24S55",
+            "M24S56",
+            "M24S57",
+            "M24S58",
+            "M24S59",
+            "M24S60",
+            "M24S61",
+            "M24S62",
+            "M24S63",
+            "M24S64",
+            "M24S65",
+            "M24S66",
+            "M24S67",
+            "M24S68",
+            "M24S69",
+            "M24S70",
+            "M24S71",
+            "M24S72",
+            "M24S73",
+            "M24S74",
+            "M24S75",
+            "M24S76",
+            "M24S77",
+            "M24S78",
+            "M24S79",
+            "M24S80"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [],
@@ -2805,7 +2588,7 @@
         ]
     },
     "M25": {
-        "BGM": "",
+        "BGM": "Mus_Story_Stage",
         "Background": "Main_Img_00",
         "BackgroundLength": 2272,
         "ButtonIcon": "main_chapter_15.jpg",
@@ -2872,7 +2655,39 @@
             "M25S45",
             "M25S46",
             "M25S47",
-            "M25S48"
+            "M25S48",
+            "M25S49",
+            "M25S50",
+            "M25S51",
+            "M25S52",
+            "M25S53",
+            "M25S54",
+            "M25S55",
+            "M25S56",
+            "M25S57",
+            "M25S58",
+            "M25S59",
+            "M25S60",
+            "M25S61",
+            "M25S62",
+            "M25S63",
+            "M25S64",
+            "M25S65",
+            "M25S66",
+            "M25S67",
+            "M25S68",
+            "M25S69",
+            "M25S70",
+            "M25S71",
+            "M25S72",
+            "M25S73",
+            "M25S74",
+            "M25S75",
+            "M25S76",
+            "M25S77",
+            "M25S78",
+            "M25S79",
+            "M25S80"
         ],
         "SubPracticePoint": [],
         "SubStoryPoint": [],

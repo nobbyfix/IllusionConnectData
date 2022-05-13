@@ -120,11 +120,11 @@ function scene_guideClub.actions.action_guide_Club(_root, args)
 								},
 								maskSize = {
 									w = 704,
-									h = 380
+									h = 350
 								},
 								offset = {
 									x = -180,
-									y = 50
+									y = 60
 								}
 							}
 						end

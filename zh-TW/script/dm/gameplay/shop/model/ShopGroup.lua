@@ -101,6 +101,14 @@ function ShopGroup:syncShopGoods(data)
 		self._goodsMap[id]:syncGoods(id, v)
 		self._goodsMap[id]:setShopId(self._shopId)
 		self._goodsMap[id]:setCondition(self._conditionMap[id])
+
+		if self._shopConfig.Positions and self._shopConfig.Positions[v.index] and self._shopConfig.Positions[v.index].Scale then
+			self._goodsMap[id]:setScale(self._shopConfig.Positions[v.index].Scale)
+		end
+
+		if self._shopConfig.Positions and self._shopConfig.Positions[v.index] and self._shopConfig.Positions[v.index].Sort then
+			self._goodsMap[id]:setSort(self._shopConfig.Positions[v.index].Sort)
+		end
 	end
 
 	self:sortGoodsList()
@@ -130,6 +138,26 @@ end
 
 function ShopGroup:getShopGoodByIndex(index)
 	return self._goodsList[index]
+end
+
+function ShopGroup:getGoodsList()
+	local list = {}
+
+	for i, goods in ipairs(self._goodsList) do
+		local time = goods:getTime()
+
+		if time and next(time) then
+			local curTime = DmGame:getInstance()._injector:getInstance("GameServerAgent"):remoteTimestamp()
+
+			if time[1] <= curTime and curTime <= time[2] then
+				list[#list + 1] = goods
+			end
+		else
+			list[#list + 1] = goods
+		end
+	end
+
+	return list
 end
 
 function ShopGroup:forceRefreshRemainTime()

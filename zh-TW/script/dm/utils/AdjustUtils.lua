@@ -73,6 +73,12 @@ else
 end
 
 winSize = director:getWinSize()
+local _maxFixedOffestX = 0
+
+if CC_DESIGN_RESOLUTION.maxfixedx < winSize.width / winSize.height then
+	_maxFixedOffestX = 0.5 * (winSize.width - CC_DESIGN_RESOLUTION.maxfixedx * winSize.height) + 3
+end
+
 safeAreaInset = view:getSafeAreaInset()
 local _safeRect = cc.rect(safeAreaInset.left, safeAreaInset.bottom, winSize.width - (safeAreaInset.left + safeAreaInset.right), winSize.height - (safeAreaInset.bottom + safeAreaInset.top))
 local _adjustOffset = cc.p((winSize.width - CC_DESIGN_RESOLUTION.width) * 0.5, (winSize.height - CC_DESIGN_RESOLUTION.height) * 0.5)
@@ -175,12 +181,12 @@ function adjustLayoutByType(node, type)
 	end
 
 	if isLeft and not isRight then
-		currentPos.x = currentPos.x - (_adjustOffset.x - _safeRect.x)
+		currentPos.x = currentPos.x - (_adjustOffset.x - _safeRect.x) + _maxFixedOffestX
 		adjustNodeInfoMap[node] = type
 	end
 
 	if isRight and not isLeft then
-		currentPos.x = currentPos.x + _adjustOffset.x - (ignorRightSafeAreaAdjust and 0 or _safeRect.x)
+		currentPos.x = currentPos.x + _adjustOffset.x - (ignorRightSafeAreaAdjust and 0 or _safeRect.x) - _maxFixedOffestX
 		adjustNodeInfoMap[node] = type
 	end
 
@@ -303,4 +309,8 @@ end
 
 function autoDoLayout(node)
 	ccui.Helper:doLayout(node)
+end
+
+function getFixOffsetX()
+	return _maxFixedOffestX
 end

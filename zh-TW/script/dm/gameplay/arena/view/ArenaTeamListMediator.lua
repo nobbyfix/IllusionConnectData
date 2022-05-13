@@ -53,6 +53,10 @@ end
 
 function ArenaTeamListMediator:initWidgetInfo()
 	self._main = self:getView():getChildByFullName("main")
+	self._fightInfoTip = self._main:getChildByFullName("panel.fightInfo")
+
+	self._fightInfoTip:setVisible(false)
+
 	self._skillDescPanel = self:getView():getChildByFullName("skillDescPanel")
 
 	self._skillDescPanel:setSwallowTouches(false)
@@ -119,12 +123,13 @@ function ArenaTeamListMediator:createTeamInfo(panel, data, index)
 end
 
 function ArenaTeamListMediator:createMaster(data)
-	local roleModel = IconFactory:getRoleModelByKey("MasterBase", data:getMasterId())
-	local sprite = IconFactory:createRoleIconSprite({
-		stencil = 6,
-		iconType = "Bust6",
-		id = roleModel,
-		size = cc.size(190, 269)
+	local developSystem = self:getInjector():getInstance("DevelopSystem")
+	local masterSystem = developSystem:getMasterSystem()
+	local masterData = masterSystem:getMasterById(data:getMasterId())
+	local roleModel = masterData:getModel()
+	local sprite = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe6_1",
+		id = roleModel
 	})
 
 	return sprite
@@ -300,6 +305,20 @@ function ArenaTeamListMediator:refreshView()
 		master:setAnchorPoint(cc.p(0, 0))
 		master:setPosition(cc.p(0, 0))
 
+		local node = cc.Node:create()
+
+		node:addTo(masterPanel):posite(90, 50)
+		node:removeAllChildren()
+
+		local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getMasterId())
+		local icon = IconFactory:createLeadStageIconVer(id, lv, {
+			needBg = 2
+		})
+
+		if icon then
+			icon:addTo(node)
+		end
+
 		local limit, average, isShow, combat = self:teamCostDes(data)
 
 		unlockPanel:getChildByFullName("redPoint"):setVisible(isShow)
@@ -316,7 +335,30 @@ function ArenaTeamListMediator:refreshView()
 
 		cost1:setTextColor(color)
 		infoBg:getChildByFullName("averageLabel"):setString(average)
-		infoBg:getChildByFullName("combatLabel"):setString(data:getCombat())
+
+		local effectScene = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective", "content")
+		local effectRate = ConfigReader:getDataByNameIdAndKey("ConfigValue", "LeadStage_Effective_Rate", "content")
+		local isDouble = table.indexof(effectScene, "ARENA") > 0
+		local leadConfig = self._masterSystem:getMasterCurLeadStageConfig(data:getMasterId())
+		local addPercent = leadConfig and leadConfig.LeadFightHero * (isDouble and effectRate or 1) or 0
+		local totalCombat = 0
+
+		for k, v in pairs(data:getHeroes()) do
+			local heroInfo = self._heroSystem:getHeroById(v)
+			totalCombat = totalCombat + heroInfo:getSceneCombatByType(SceneCombatsType.kAll)
+		end
+
+		if leadConfig then
+			totalCombat = math.ceil((addPercent + 1) * totalCombat) or totalCombat
+		end
+
+		local masterData = self._masterSystem:getMasterById(data:getMasterId())
+
+		if masterData then
+			totalCombat = totalCombat + masterData:getCombat() or totalCombat
+		end
+
+		infoBg:getChildByFullName("combatLabel"):setString(totalCombat)
 
 		local lineGradiantVec2 = {
 			{
@@ -333,6 +375,46 @@ function ArenaTeamListMediator:refreshView()
 			x = 0,
 			y = -1
 		}))
+
+		local combatInfoBtn = unlockPanel:getChildByFullName("infoBtn")
+
+		combatInfoBtn:setVisible(leadConfig ~= nil and addPercent > 0)
+		combatInfoBtn:addTouchEventListener(function (sender, eventType)
+			if not leadConfig then
+				return
+			end
+
+			self._fightInfoTip:setPositionY(i == 1 and 293 or 12)
+
+			if eventType == ccui.TouchEventType.began then
+				self._fightInfoTip:removeAllChildren()
+
+				local desc = Strings:get("LeadStage_TeamCombatInfo", {
+					fontSize = 20,
+					fontName = TTF_FONT_FZYH_M,
+					leader = masterData:getName(),
+					stage = Strings:get(leadConfig.RomanNum) .. Strings:get(leadConfig.StageName),
+					percent = math.ceil(addPercent * 100) .. "%"
+				})
+				local richText = ccui.RichText:createWithXML(desc, {})
+
+				richText:setAnchorPoint(cc.p(0, 0))
+				richText:setPosition(cc.p(10, 10))
+				richText:addTo(self._fightInfoTip)
+				richText:renderContent(440, 0, true)
+
+				local size = richText:getContentSize()
+
+				self._fightInfoTip:setContentSize(460, size.height + 20)
+				self._fightInfoTip:setVisible(true)
+			elseif eventType == ccui.TouchEventType.moved then
+				-- Nothing
+			elseif eventType == ccui.TouchEventType.canceled then
+				self._fightInfoTip:setVisible(false)
+			elseif eventType == ccui.TouchEventType.ended then
+				self._fightInfoTip:setVisible(false)
+			end
+		end)
 	end
 end
 

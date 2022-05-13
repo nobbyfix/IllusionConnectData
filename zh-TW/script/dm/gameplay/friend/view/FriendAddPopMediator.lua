@@ -45,7 +45,14 @@ function FriendAddPopMediator:enterWithData(data)
 end
 
 function FriendAddPopMediator:mapEventListeners()
-	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_ADD_SUCC, self, self.close)
+	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_ADD_SUCC, self, self.onApplySuccCallback)
+end
+
+function FriendAddPopMediator:onApplySuccCallback(event)
+	self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+		tip = Strings:get("Friend_UI15")
+	}))
+	self:close()
 end
 
 function FriendAddPopMediator:initPopupCommonWidgets()
@@ -65,15 +72,17 @@ function FriendAddPopMediator:setupView()
 
 	headBg:removeAllChildren()
 
-	local headicon = IconFactory:createPlayerIcon({
+	local headicon, oldIcon = IconFactory:createPlayerIcon({
+		frameStyle = 2,
 		clipType = 4,
-		frameStyle = 3,
+		headFrameScale = 0.4,
 		id = self._data:getHeadId(),
+		size = cc.size(74, 74),
 		headFrameId = self._data:getHeadFrame()
 	})
 
+	oldIcon:setScale(0.4)
 	headicon:addTo(headBg):center(headBg:getContentSize())
-	headicon:setScale(0.82)
 
 	local nameText = self._main:getChildByName("Text_name")
 
@@ -128,7 +137,7 @@ function FriendAddPopMediator:setupView()
 
 	local levelText = self._main:getChildByName("Text_level")
 
-	levelText:setString("Lv." .. self._data:getLevel())
+	levelText:setString(Strings:get("Common_LV_Text") .. self._data:getLevel())
 	levelText:setLocalZOrder(10)
 	levelText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 end

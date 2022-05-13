@@ -134,38 +134,27 @@ function ShopRechargeMediator:setInfo(panel, data)
 	local iconLayout = panel:getChildByFullName("icon_layout")
 	local nameText = panel:getChildByFullName("goods_name")
 	local moneyLayout = panel:getChildByFullName("money_layout")
-	local moneyIcon = moneyLayout:getChildByFullName("money_icon")
 	local moneyText = moneyLayout:getChildByFullName("money")
 	local touchPanel = panel:getChildByFullName("touch_panel")
 
 	touchPanel:addTouchEventListener(function (sender, eventType)
 		self:onClickItem(sender, eventType, data)
 	end)
-
-	local moneySymbol = moneyLayout:getChildByFullName("moneySymbol")
-
 	iconLayout:removeAllChildren()
-	moneyIcon:removeAllChildren()
 	first:setVisible(false)
 	extra:setVisible(false)
 
 	local symbol, price = data:getPaySymbolAndPrice()
 
-	moneyText:setString(price)
-	moneySymbol:setString(symbol)
-	moneyText:setPositionX(moneySymbol:getContentSize().width)
+	moneyText:setString(symbol .. "" .. price)
 
 	local name = data:getName()
 
 	nameText:setString(name)
 
-	local animFile = data:getIconAnim()
-	local goodsIconAnim = cc.MovieClip:create(animFile)
+	local under = ccui.ImageView:create(data:getIconAnim(), 1)
 
-	if goodsIconAnim then
-		goodsIconAnim:addTo(iconLayout):center(iconLayout:getContentSize())
-		goodsIconAnim:setScale(0.8)
-	end
+	under:addTo(iconLayout):center(iconLayout:getContentSize())
 
 	if data:getIsFirstRecharge() then
 		first:setVisible(true)
@@ -205,7 +194,14 @@ function ShopRechargeMediator:onClickItem(sender, eventType, data)
 		self._isReturn = true
 	elseif eventType == ccui.TouchEventType.ended and self._isReturn then
 		AudioEngine:getInstance():playEffect("Se_Click_Select_1", false)
-		self._rechargeSystem:requestRechargeDiamonds(data:getId())
+
+		if CommonUtils.GetSwitch("fn_recharge_diamond_function") then
+			self._rechargeSystem:requestRechargeDiamonds(data:getId())
+		else
+			self:getEventDispatcher():dispatchEvent(ShowTipEvent({
+				tip = Strings:get("Error_12410")
+			}))
+		end
 	end
 end
 

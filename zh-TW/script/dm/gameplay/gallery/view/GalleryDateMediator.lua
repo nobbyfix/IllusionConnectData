@@ -16,6 +16,16 @@ local kBtnHandlers = {
 		ignoreClickAudio = true,
 		eventType = 4,
 		func = "onSendGift"
+	},
+	["main.presentPanel.emptyNode.taskBtn"] = {
+		eventType = 4,
+		clickAudio = "Se_Click_Common_1",
+		func = "onTaskBtnClicked"
+	},
+	["main.presentPanel.emptyNode.shopBtn"] = {
+		eventType = 4,
+		clickAudio = "Se_Click_Common_1",
+		func = "onShopBtnClicked"
 	}
 }
 local kConsumeData = {
@@ -191,6 +201,9 @@ function GalleryDateMediator:initWidgetInfo()
 	self._addLove:setVisible(false)
 
 	self._sendGiftBtn = self._presentPanel:getChildByFullName("sendBtn")
+
+	self._emptyNode:getChildByFullName("taskBtn.name"):setFontSize(18)
+
 	self._rewardTip = self._lovePanel:getChildByName("rewardTip")
 
 	self._rewardTip:setVisible(false)
@@ -212,15 +225,15 @@ end
 function GalleryDateMediator:initView()
 	self._heroPanel:removeAllChildren()
 
-	local img = IconFactory:createRoleIconSprite({
+	local img = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust4",
+		frameId = "bustframe9",
 		id = self._heroData:getModel()
 	})
 
 	self._heroPanel:addChild(img)
-	img:setAnchorPoint(cc.p(0.5, 0.5))
-	img:setPosition(cc.p(self._heroPanel:getContentSize().width / 2 + 50, self._heroPanel:getContentSize().height / 2 - 150))
+	img:setPosition(cc.p(self._heroPanel:getContentSize().width / 2 + 50, self._heroPanel:getContentSize().height / 2 - 110))
+	self:doViewSound()
 
 	if self._type == GalleryFuncName.kGift then
 		self._talkPanel:setVisible(false)
@@ -230,8 +243,6 @@ function GalleryDateMediator:initView()
 		self:refreshGiftView()
 		self:showDateToast(Strings:get(self._heroData:getGiftGreetingDesc()), 10)
 	elseif self._type == GalleryFuncName.kDate then
-		self._soundId = AudioEngine:getInstance():playRoleEffect("Voice_" .. self._heroId .. "_21", false)
-
 		self._datePanel:setVisible(true)
 		self._presentPanel:setVisible(false)
 		self:refreshDateView()
@@ -365,6 +376,7 @@ function GalleryDateMediator:showItemTip()
 		descControl:setAnchorPoint(cc.p(0, 1))
 		desc:addChild(descControl)
 		descControl:setPosition(cc.p(0, desc:getContentSize().height))
+		ajustRichTextCustomWidth(descControl, 205)
 	end
 
 	local targetNode = self._selectItem.targetNode
@@ -429,6 +441,7 @@ function GalleryDateMediator:refreshInnerAttrPanel(data, title)
 					text:setString(str[1])
 					attr:setVisible(true)
 					attr:setString(str[2])
+					attr:setPositionX(text:getPositionX() + text:getContentSize().width + 8)
 
 					local image = text:getChildByFullName("image")
 
@@ -485,6 +498,7 @@ function GalleryDateMediator:refreshInnerAttrPanel(data, title)
 						text:setString(str[1])
 						attr:setVisible(true)
 						attr:setString(str[2])
+						attr:setPositionX(text:getPositionX() + text:getContentSize().width + 8)
 
 						local image = text:getChildByFullName("image")
 
@@ -513,14 +527,17 @@ function GalleryDateMediator:refreshInnerAttrPanel(data, title)
 			local str = ""
 
 			for i = 1, #infoList do
-				str = str .. infoList[i] .. "        "
+				str = str .. infoList[i] .. "   "
 			end
 
 			node:getChildByFullName("text_1"):setVisible(true)
 			node:getChildByFullName("text_1"):setString(str)
+
+			local width = node:getChildByFullName("text_1"):getContentSize().width
+
 			node:setVisible(true)
 			node:addTo(panel)
-			node:setPosition(cc.p(0, posY))
+			node:setPosition(cc.p(100 - width * 0.5, posY))
 
 			height = height + 30
 
@@ -702,7 +719,10 @@ function GalleryDateMediator:refreshData()
 end
 
 function GalleryDateMediator:refreshGiftView()
-	self._emptyNode:setVisible(#self._heroGifts == 0)
+	local showEmptyNode = #self._heroGifts == 0
+
+	self._emptyNode:setVisible(showEmptyNode)
+	self._presentPanel:getChildByName("remainTime"):setVisible(not showEmptyNode)
 
 	local offsetX = self._giftView:getContentOffset().x
 
@@ -810,7 +830,7 @@ function GalleryDateMediator:refreshLove()
 		fullBgEnd:setVisible(data.proportion == 1)
 
 		local heroNode = rewardTip:getChildByFullName("hero")
-		local heroImg = IconFactory:createRoleIconSprite({
+		local heroImg = IconFactory:createRoleIconSpriteNew({
 			id = self._heroData:getModel()
 		})
 
@@ -856,6 +876,13 @@ function GalleryDateMediator:onClickDate()
 	local storyId = dateData.storyId
 	local storyOption = dateData.option
 
+	self._gallerySystem:setCurDate({
+		heroData = self._heroData,
+		storyIndex = storyIndex,
+		storyId = storyId,
+		storyOption = storyOption
+	})
+
 	local function endCallBack()
 		local settingSystem = self:getInjector():getInstance(SettingSystem)
 		local mainBgMuisId = settingSystem:getCurBGMusicId()
@@ -864,21 +891,13 @@ function GalleryDateMediator:onClickDate()
 			AudioEngine:getInstance():playBackgroundMusic(mainBgMuisId)
 		end
 
-		local options = self._gallerySystem:getDateOptions()
+		local options, loves = self._gallerySystem:getDateOptionsValue()
 		local params = {
 			heroId = self._heroId,
 			storyIndex = storyIndex,
 			options = options
 		}
-		local addLove = 0
-
-		for i = 1, #options do
-			local index = options[i]
-
-			if storyOption[i] and storyOption[i][index] then
-				addLove = addLove + storyOption[i][index]
-			end
-		end
+		local addLove = loves
 
 		self._gallerySystem:requestHeroDate(params, function ()
 			self:dispatch(ShowTipEvent({
@@ -905,6 +924,22 @@ function GalleryDateMediator:onClickDate()
 
 	storyAgent:setSkipCheckSave(true)
 	storyAgent:trigger(storyId, nil, endCallBack)
+end
+
+function GalleryDateMediator:onTaskBtnClicked()
+	local taskSystem = self:getInjector():getInstance("TaskSystem")
+
+	taskSystem:tryEnter({
+		tabType = 1
+	})
+end
+
+function GalleryDateMediator:onShopBtnClicked()
+	local shopSystem = self:getInjector():getInstance("ShopSystem")
+
+	shopSystem:tryEnter({
+		shopId = "Shop_Normal"
+	})
 end
 
 function GalleryDateMediator:getTableViewOffsetX()
@@ -1033,9 +1068,10 @@ function GalleryDateMediator:touchBegin(sender)
 
 	local data = sender.data
 	local soundId = data.markSound or "Voice_" .. self._heroId .. "_20"
+	local useSound = data.useSoundDes
 
 	performWithDelay(self:getView(), function ()
-		if not self._soundId then
+		if not self._soundId and useSound then
 			self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false, function ()
 				self._soundId = nil
 			end)
@@ -1407,6 +1443,14 @@ function GalleryDateMediator:sendMessage(sender)
 		local addLove = (sender.data.extExp + sender.data.addExp) * sender.data.eatCount
 		local showTip = self._heroData:getGiftTip(self._selectItemId)
 
+		if sender.data.useSoundDes then
+			local desc = ConfigReader:getDataByNameIdAndKey("Sound", sender.data.markSound, "SoundDesc")
+
+			if desc then
+				showTip = Strings:get(desc)
+			end
+		end
+
 		self._gallerySystem:requestSendGift(params, function ()
 			if DisposableObject:isDisposed(self) then
 				return
@@ -1748,7 +1792,7 @@ function GalleryDateMediator:getUnlockData(levelStart, levelEnd)
 				for j = 1, #conditions do
 					local condition = conditions[j]
 
-					if condition.HeroLove and condition.HeroLove == loveLevel then
+					if condition.HeroLove and condition.HeroLove == loveLevel + 1 then
 						table.insert(sounds, sound)
 
 						break
@@ -1824,4 +1868,33 @@ function GalleryDateMediator:setupGuideRevEnvs(name)
 	local storyDirector = self:getInjector():getInstance(story.StoryDirector)
 
 	storyDirector:notifyWaiting(name)
+end
+
+function GalleryDateMediator:doViewSound()
+	local soundId = ""
+
+	if self._type == GalleryFuncName.kGift then
+		local rarity = self._heroData:getRarity()
+
+		if rarity > 12 then
+			soundId = "Voice_" .. self._heroId .. "_36"
+		else
+			soundId = "Voice_" .. self._heroId .. "_22_1"
+			local random = math.random(1, 2)
+
+			if random == 2 then
+				soundId = "Voice_" .. self._heroId .. "_22_2"
+			end
+		end
+	elseif self._type == GalleryFuncName.kDate then
+		soundId = "Voice_" .. self._heroId .. "_21"
+	end
+
+	if soundId ~= "" then
+		local cfg = ConfigReader:getRecordById("Sound", id)
+
+		if cfg then
+			self._soundId = AudioEngine:getInstance():playRoleEffect(soundId, false)
+		end
+	end
 end

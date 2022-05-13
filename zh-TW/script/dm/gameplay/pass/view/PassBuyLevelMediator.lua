@@ -245,7 +245,7 @@ end
 
 function PassBuyLevelMediator:onClickBuy()
 	if CurrencySystem:checkEnoughCurrency(self, CurrencyIdKind.kDiamond, self._price, {
-		tipType = "tip"
+		type = "tip"
 	}) then
 		self._passSystem:requestBuyLevel(self._buylevelCount, function (data)
 			if checkDependInstance(self) then

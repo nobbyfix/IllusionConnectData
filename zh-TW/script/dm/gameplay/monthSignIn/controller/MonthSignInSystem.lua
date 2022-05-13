@@ -81,9 +81,9 @@ function MonthSignInSystem:isTodaySign()
 	local curTime = gameServerAgent:remoteTimestamp()
 
 	if curTime < curDayTime then
-		return curUpdateTime > curDayTime - 86400
+		return curUpdateTime >= curDayTime - 86400
 	else
-		return curDayTime < curUpdateTime
+		return curDayTime <= curUpdateTime
 	end
 end
 
@@ -173,7 +173,7 @@ function MonthSignInSystem:getTodayLuckDesc()
 	return tab[todayNum]
 end
 
-function MonthSignInSystem:requestGetDailyReward(callback)
+function MonthSignInSystem:requestGetDailyReward(callback, failCallback)
 	local params = {}
 
 	self._monthSignInService:requestGetDailyReward(params, true, function (response)
@@ -188,6 +188,8 @@ function MonthSignInSystem:requestGetDailyReward(callback)
 			if callback then
 				callback(response)
 			end
+		elseif failCallback then
+			failCallback(response)
 		end
 	end)
 end

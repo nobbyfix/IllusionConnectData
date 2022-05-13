@@ -4,19 +4,12 @@ CC_DISABLE_GLOBAL = false
 CC_DESIGN_RESOLUTION = {
 	autoscale = "FIXED_WIDTH",
 	height = 640,
+	maxfixedx = 2.1666666666666665,
 	width = 1136,
 	callback = function (framesize)
 		local ratio = framesize.width / framesize.height
 
-		if ratio > 1.775 then
-			if ratio > 2.165625 then
-				return {
-					autoscale = "FIXED_WIDTH",
-					height = 640,
-					width = 1386
-				}
-			end
-
+		if ratio >= 1.7777777777777777 then
 			return {
 				autoscale = "FIXED_HEIGHT"
 			}

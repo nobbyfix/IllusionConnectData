@@ -1,3 +1,31 @@
+GameLanguageType = {
+	CN = ""
+}
+GameDefaultLanguage = GameLanguageType.CN
+GameSupportLanguage = {
+	GameDefaultLanguage
+}
+
+local function isSupportLanguage(language)
+	local isSupport = false
+
+	for k, v in pairs(GameSupportLanguage) do
+		if v == language and v ~= GameDefaultLanguage then
+			isSupport = true
+
+			break
+		end
+	end
+
+	return isSupport
+end
+
+function getCurrentLanguage()
+	cc.UserDefault:getInstance():setStringForKey("GAME_SETTING_LANGUAGE", "")
+
+	return GameLanguageType.CN
+end
+
 local fps = cc.UserDefault:getInstance():getIntegerForKey("GAME_MAX_FPS", GAME_MAX_FPS)
 GAME_MAX_FPS = fps or 30
 local director = cc.Director:getInstance()
@@ -27,7 +55,6 @@ cc.SpriteFrameCache:getInstance():loadIndicesFromJsonFile("asset/ui/index.json")
 cc.SpriteFrameCache:getInstance():loadIndicesFromJsonFile("asset/anim/index.json")
 cc.MCLibrary:getInstance():loadIndicesFromJsonFile("asset/anim/mclib.index")
 require("dm.statistic.StatisticSystem")
-require("sdk.AdjustEventList")
 
 if cc.Application:getInstance():getTargetPlatform() ~= 2 then
 	StatisticSystem:init()

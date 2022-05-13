@@ -64,6 +64,7 @@ ResetId = {
 	kEightDayLogin = "EightDaysCheckIn_Reset",
 	kRTPKReset = "PTPK_Reset",
 	kBlockSp_Skill_3 = "BlockSp_Skill_3",
+	kChessArenaReset = "ChessArena_ResetTime",
 	kDailyTaskActivity = "DailyTask_Activity",
 	kArenaChangeEnemyTimes = "Arena_ChangeEnemyTimes",
 	kPowerBuyTimes = "Power_BuyTime",
@@ -111,11 +112,12 @@ local DoResetMap = {
 	[ResetId.kGalleryDateTimes] = "GallerySystem",
 	[ResetId.kMapDailyRewardReset] = "ExploreSystem",
 	[ResetId.kMapPointReset] = "ExploreSystem",
-	[ResetId.kBattlePass_ClubTask] = "ActivitySystem",
-	[ResetId.kBattlePass_DailyTask] = "ActivitySystem",
 	[ResetId.kClubBlockTimesReset] = "ClubSystem",
 	[ResetId.kClubBlockReset] = "ClubSystem",
-	[ResetId.kRTPKReset] = "RTPKSystem"
+	[ResetId.kBattlePass_ClubTask] = "ActivitySystem",
+	[ResetId.kBattlePass_DailyTask] = "ActivitySystem",
+	[ResetId.kRTPKReset] = "RTPKSystem",
+	[ResetId.kChessArenaReset] = "ArenaNewSystem"
 }
 
 function ResetSystem:_doReset(resetIdList, response)

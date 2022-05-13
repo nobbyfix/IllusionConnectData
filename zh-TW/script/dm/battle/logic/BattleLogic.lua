@@ -331,7 +331,7 @@ function BattleLogic:on_UnitSpawned(_, args)
 		battleStatist:sendStatisticEvent("UnitSpawned", {
 			player = player,
 			unit = unit,
-			type = unitType == BattleUnitType.kMaster and "master" or "hero",
+			type = unitType == BattleUnitType.kMaster and "master" or unitType == BattleUnitType.kBattleField and "battlefield" or "hero",
 			round = self:getRoundNumber(),
 			startTime = self._battleContext:getCurrentTime()
 		})
@@ -341,9 +341,16 @@ end
 function BattleLogic:on_UnitSettled(_, args)
 	local unit = args.unit
 
-	self._skillSystem:activateSpecificTrigger(unit, "ENTER")
+	if unit:getUnitType() == BattleUnitType.kBattleField then
+		return
+	end
+
+	self._skillSystem:activateSpecificTrigger(unit, "ENTER", {
+		isRevive = unit:isBeRevive()
+	})
 	self._skillSystem:activateGlobalTrigger("UNIT_ENTER", {
-		unit = unit
+		unit = unit,
+		isRevive = unit:isBeRevive()
 	})
 end
 
@@ -376,6 +383,20 @@ function BattleLogic:on_UnitTransported(_, args)
 			cellId = args.cellId
 		})
 	end
+
+	local newCell = self._battleField:getCellById(args.cellId)
+	local oldCell = self._battleField:getCellById(args.oldCellId)
+
+	self._skillSystem:activateGlobalTrigger("UNIT_TRANSPORT", {
+		unit = args.unit,
+		oldCell = oldCell,
+		newCell = newCell
+	})
+	self._skillSystem:activateSpecificTrigger(args.unit, "TRANSPORT", {
+		unit = args.unit,
+		oldCell = oldCell,
+		newCell = newCell
+	})
 end
 
 function BattleLogic:on_UnitWillDie(_, unit, player)
@@ -421,7 +442,7 @@ function BattleLogic:on_UnitsWillLeave(_, units, unitGroups)
 	end
 end
 
-function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta)
+function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta, joinReferee)
 	local battleStatist = self._battleStatist
 
 	if battleStatist ~= nil then
@@ -439,6 +460,12 @@ function BattleLogic:on_UnitsLeft(_, units, unitGroups, fleeSta)
 
 		if fleeSta then
 			self._battleReferee:battleUnitsEscaped(units)
+		end
+
+		if joinReferee then
+			for k, v in pairs(units) do
+				self._battleReferee:battleUnitDied(v)
+			end
 		end
 	end
 end
@@ -468,6 +495,9 @@ function BattleLogic:on_EntityHurt(_, args)
 	if hurt.deadly and target ~= nil then
 		target:setLifeStage(ULS_Dying)
 		self._skillSystem:activateSpecificTrigger(target, "DYING")
+		self._skillSystem:activateGlobalTrigger("UNIT_DYING", {
+			unit = target
+		})
 	end
 
 	local targetHpComp = target:getComponent("Health")
@@ -476,7 +506,7 @@ function BattleLogic:on_EntityHurt(_, args)
 		local hurtRatio = targetHpComp:ratioOfMaxHp(hurt.eft)
 		local result = self._angerSystem:applyAngerRuleOnTarget(workId, target, AngerRules.kFromDamage, hurtRatio)
 
-		if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) then
+		if floor(prevHpRatio * 100) ~= floor(curHpRatio * 100) or curHpRatio <= 0 then
 			self._skillSystem:activateGlobalTrigger("UNIT_HPCHANGE", {
 				unit = target,
 				prevHpPercent = floor(prevHpRatio * 100),
@@ -583,10 +613,13 @@ function BattleLogic:on_UnitTransformed(_, unit, player)
 
 	buffSystem:triggerEnterBuffs(unit)
 	self._skillSystem:buildSkillsForActor(unit)
-	self._skillSystem:activateSpecificTrigger(unit, "ENTER")
+	self._skillSystem:activateSpecificTrigger(unit, "ENTER", {
+		isRevive = unit:isBeRevive()
+	})
 	self._skillSystem:activateGlobalTrigger("UNIT_ENTER", {
 		type = "transform",
-		unit = unit
+		unit = unit,
+		isRevive = unit:isBeRevive()
 	})
 end
 

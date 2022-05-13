@@ -1,5 +1,6 @@
 RecruitService = class("RecruitService", Service, _M)
 local opType = {
+	getDrawCardCountReward = 10805,
 	draw = 10801,
 	rewardPreview = 10804
 }
@@ -20,6 +21,12 @@ end
 
 function RecruitService:requestRewardPreview(params, callback, blockUI)
 	local request = self:newRequest(opType.rewardPreview, params, callback)
+
+	self:sendRequest(request, blockUI)
+end
+
+function RecruitService:requestGetDrawCardCountReward(params, callback, blockUI)
+	local request = self:newRequest(opType.getDrawCardCountReward, params, callback)
 
 	self:sendRequest(request, blockUI)
 end

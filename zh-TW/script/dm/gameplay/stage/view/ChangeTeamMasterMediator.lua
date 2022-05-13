@@ -43,6 +43,8 @@ function ChangeTeamMasterMediator:enterWithData(data)
 	self._curMasterId = data.masterId
 	self._masterList = data.masterList
 	self._recomand = data.recomandList or {}
+	self._forbidMasters = data.forbidMasters or {}
+	self._masterSystem = data.sys
 
 	self:initView()
 end
@@ -128,15 +130,14 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 	layer:getChildByName("selected"):setVisible(self._curMasterId == data:getId())
 
 	local info = {
-		stencil = 1,
-		iconType = "Bust1",
-		id = data:getModel(),
-		size = cc.size(155, 319)
+		frameId = "bustframe1",
+		id = data:getModel()
 	}
-	local rolePic = IconFactory:createRoleIconSprite(info)
+	local rolePic = IconFactory:createRoleIconSpriteNew(info)
 
 	if rolePic then
 		rolePic:addTo(layer)
+		rolePic:setPosition(cc.p(-100, -200))
 		rolePic:setPosition(layer:getChildByName("bg"):getPosition())
 		layer:getChildByName("touchLayer"):setSwallowTouches(false)
 		layer:getChildByName("touchLayer"):addClickEventListener(function ()
@@ -147,9 +148,54 @@ function ChangeTeamMasterMediator:createMaster(cell, index)
 
 		layer:setColor(color)
 	end
+
+	local lockPanel = layer:getChildByName("lockPanel")
+
+	lockPanel:setVisible(false)
+
+	local isForbid = false
+
+	for i = 1, #self._forbidMasters do
+		if data:getId() == self._forbidMasters[i] then
+			isForbid = true
+		end
+	end
+
+	if isForbid then
+		lockPanel:setTouchEnabled(false)
+		lockPanel:setVisible(true)
+		lockPanel:setLocalZOrder(10)
+		cell:setGray(true)
+	end
+
+	local node = cc.Node:create()
+
+	node:addTo(layer):posite(90, 80)
+	node:removeAllChildren()
+
+	local id, lv = self._masterSystem:getMasterLeadStatgeLevel(data:getId())
+	local icon = IconFactory:createLeadStageIconVer(id, lv, {
+		needBg = 1
+	})
+
+	if icon then
+		icon:addTo(node)
+	end
 end
 
 function ChangeTeamMasterMediator:onTouchChooseView(data)
+	local isForbid = false
+
+	for i = 1, #self._forbidMasters do
+		if data:getId() == self._forbidMasters[i] then
+			isForbid = true
+		end
+	end
+
+	if isForbid then
+		return
+	end
+
 	if data:getIsLock() then
 		AudioEngine:getInstance():playEffect("Se_Alert_Error", false)
 		self:dispatch(ShowTipEvent({
@@ -166,6 +212,9 @@ function ChangeTeamMasterMediator:onTouchChooseView(data)
 	self._curMasterId = data:getId()
 
 	AudioEngine:getInstance():playEffect("Se_Click_Tab_1", false)
+	self:dispatch(ShowTipEvent({
+		tip = Strings:get("Stage_Team_UI19")
+	}))
 
 	local offsetX = self._masterView:getContentOffset().x
 

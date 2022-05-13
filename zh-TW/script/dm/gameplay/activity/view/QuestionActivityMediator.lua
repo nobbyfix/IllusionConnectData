@@ -4,7 +4,16 @@ QuestionActivityMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
 
-local kBtnHandlers = {}
+local kBtnHandlers = {
+	["main.Button_go"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onQuestionClicked"
+	},
+	["main.Button_get"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onRewardClicked"
+	}
+}
 
 local function getHeroPortraitPath(roleModelId)
 	local rolePicId = ConfigReader:getDataByNameIdAndKey("RoleModel", roleModelId, "Portrait")
@@ -48,18 +57,6 @@ end
 function QuestionActivityMediator:onRegister()
 	super.onRegister(self)
 	self:mapButtonHandlersClick(kBtnHandlers)
-	bindWidget(self, "main.Button_go", OneLevelViceButton, {
-		handler = {
-			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onQuestionClicked, self)
-		}
-	})
-	bindWidget(self, "main.Button_get", OneLevelViceButton, {
-		handler = {
-			clickAudio = "Se_Click_Common_1",
-			func = bind1(self.onRewardClicked, self)
-		}
-	})
 end
 
 function QuestionActivityMediator:enterWithData(data)
@@ -77,38 +74,40 @@ function QuestionActivityMediator:setupView()
 end
 
 function QuestionActivityMediator:refreshView()
-	local title = self:getView():getChildByFullName("main.title")
 	local node_reward = self:getView():getChildByFullName("main.Node_reward")
 	local button_go = self:getView():getChildByFullName("main.Button_go")
 	local button_get = self:getView():getChildByFullName("main.Button_get")
 	local node_complete = self:getView():getChildByFullName("main.Node_complete")
-	local label_complete = self:getView():getChildByFullName("main.Node_complete.Text_des")
-	local label_des = self:getView():getChildByFullName("main.label_des")
-	local label_timeDes = self:getView():getChildByFullName("main.Node_time.Text_des")
+	local lineGradiantVec2 = {
+		{
+			ratio = 0.3,
+			color = cc.c4b(255, 218, 68, 255)
+		},
+		{
+			ratio = 0.7,
+			color = cc.c4b(255, 250, 227, 255)
+		}
+	}
+	local lineGradiantDir = {
+		x = 0,
+		y = -1
+	}
+	local text1 = button_go:getChildByFullName("Text_1")
+	local text2 = button_go:getChildByFullName("Text_2")
 
-	label_timeDes:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
+	text1:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
+	text2:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
 
-	local lable_none = self:getView():getChildByFullName("main.lable_none")
+	local text1 = button_get:getChildByFullName("Text_1")
 
-	lable_none:setString(Strings:get("Activity_Finish"))
-	title:setString(Strings:get(self._activityConfig.Title))
-	label_des:setString(Strings:get(self._activityConfig.Desc))
-	label_des:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-	label_complete:setAdditionalKerning(2)
-	label_des:setAdditionalKerning(2)
-	label_timeDes:setAdditionalKerning(2)
+	text1:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
 
-	local path = getHeroPortraitPath(self._activityConfig.RoleModel)
-	local heroPanel = self:getView():getChildByFullName("main.heroPanel.hero")
-	local heroWordPanel = self:getView():getChildByFullName("main.heroPanel.image")
+	local text1 = node_complete:getChildByFullName("Text_1")
 
-	heroPanel:loadTexture(path, ccui.TextureResType.localType)
-	heroWordPanel:loadTexture(self._activityConfig.DesPng .. ".png", ccui.TextureResType.plistType)
+	text1:enablePattern(cc.LinearGradientPattern:create(lineGradiantVec2, lineGradiantDir))
 
 	local canGetRewSta = self._activityData._canGetRewSta
 	local rewardStatus = self._activityData._rewardStatus
-
-	lable_none:setVisible(false)
 
 	if rewardStatus then
 		button_go:setVisible(false)
@@ -135,7 +134,7 @@ function QuestionActivityMediator:refreshView()
 
 		if rewards then
 			local num = #rewards
-			local kIconWigth = 73.6
+			local kIconWigth = 105
 
 			for k, v in pairs(rewards) do
 				local rewardData = v
@@ -144,7 +143,7 @@ function QuestionActivityMediator:refreshView()
 				})
 
 				icon:addTo(node_reward, 1):center(node_reward:getContentSize())
-				icon:setScaleNotCascade(0.56)
+				icon:setScaleNotCascade(0.7)
 				IconFactory:bindTouchHander(icon, IconTouchHandler:new(self._parentMediator), rewardData, {
 					needDelay = true
 				})
@@ -200,59 +199,24 @@ end
 function QuestionActivityMediator:updateTime()
 	local function update()
 		local button_go = self:getView():getChildByFullName("main.Button_go")
-		local Node_time = self:getView():getChildByFullName("main.Node_time")
-		local lable_none = self:getView():getChildByFullName("main.lable_none")
+		local button_get = self:getView():getChildByFullName("main.Button_get")
 		local activityId = self._activityData._id
 		local oneDaySec = 86400
 		local minSec = 60
 		local hourSec = 3600
 		local leaveTime = self:getActivitySystem():getActivityRemainTime(activityId)
-		local text_num = self:getView():getChildByFullName("main.Node_time.Text_num")
-
-		text_num:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
-
-		local text_time = self:getView():getChildByFullName("main.Node_time.Text_time")
-
-		text_time:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 		if self._activitySystem:isActivityOver(activityId) then
 			button_go:setVisible(false)
-			Node_time:setVisible(false)
-			lable_none:setVisible(true)
+			button_get:setVisible(false)
 
 			return
 		end
 
 		if leaveTime <= 0 then
-			text_num:setString(0)
-			text_time:setString(Strings:get("Questionnaire_UI_Desc7"))
 			button_go:setVisible(false)
-			Node_time:setVisible(false)
-			lable_none:setVisible(false)
 
 			return
-		end
-
-		Node_time:setVisible(true)
-		lable_none:setVisible(false)
-
-		leaveTime = leaveTime / 1000
-
-		if minSec >= leaveTime then
-			local num = math.floor(leaveTime / minSec)
-
-			text_num:setString(num)
-			text_time:setString(Strings:get("Questionnaire_UI_Desc7"))
-		elseif leaveTime <= hourSec then
-			local num = math.floor(leaveTime / hourSec)
-
-			text_num:setString(num)
-			text_time:setString(Strings:get("Questionnaire_UI_Desc6"))
-		else
-			local num = math.floor(leaveTime / oneDaySec)
-
-			text_num:setString(num)
-			text_time:setString(Strings:get("Questionnaire_UI_Desc5"))
 		end
 	end
 
@@ -264,17 +228,4 @@ function QuestionActivityMediator:updateTime()
 end
 
 function QuestionActivityMediator:initAnim()
-	local heroPanel = self:getView():getChildByFullName("main.heroPanel")
-
-	heroPanel:setOpacity(0)
-
-	local posX, posY = heroPanel:getPosition()
-
-	heroPanel:setPositionX(posX + 600)
-
-	local moveAct = cc.MoveTo:create(0.3, cc.p(posX, posY))
-	local action = cc.EaseBackOut:create(moveAct)
-
-	action:update(0.95)
-	heroPanel:runAction(cc.Spawn:create(action, cc.FadeIn:create(0.25)))
 end

@@ -2,7 +2,9 @@ LoginService = class("LoginService", Service, _M)
 local cjson = require("cjson.safe")
 local opType = {
 	iOSAccount = 110006,
-	login = 110001
+	login = 110001,
+	announceNew = 110010,
+	patFaceNew = 10012
 }
 
 function LoginService:initialize()
@@ -11,6 +13,20 @@ end
 
 function LoginService:dispose()
 	super.dispose(self)
+end
+
+function LoginService:getAnnounceData(url, params, blockUI, callback)
+	local opCode = opType.announceNew
+	local params = cjson.encode(params)
+	local data = "opCode=" .. opCode .. "&params=" .. params
+
+	easyHttpRequest(url, data, nil, callback, blockUI)
+end
+
+function LoginService:getPatFaceData(params, blockUI, callback)
+	local request = self:newRequest(opType.patFaceNew, params, callback)
+
+	self:sendRequest(request, blockUI)
 end
 
 function LoginService:requestPlayerInfo(params, blockUI, callback)
@@ -34,7 +50,6 @@ function LoginService:vmsRequest(url, version, callback)
 		channel = SDKHelper:getVerifyData()
 	end
 
-	local deviceInfo = app.getDevice():getDeviceInfo()
 	local data = "opCode=100101&params=" .. cjson.encode({
 		channel = channel,
 		version = version,

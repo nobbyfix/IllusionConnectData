@@ -54,10 +54,15 @@ function exports.MoveBy(env, displacement, duration, animation)
 	return animation
 end
 
-function exports.Perform(env, actor, animation)
+function exports.Perform(env, actor, animation, autoStand)
+	if autoStand == nil then
+		autoStand = true
+	end
+
 	env.global.RecordImmediately(env, actor:getId(), "Perform", {
 		act = env["$id"],
-		anim = animation
+		anim = animation,
+		autoStand = autoStand
 	})
 end
 
@@ -90,10 +95,25 @@ function exports.Focus(env, actor, destination, scale, duration)
 	})
 end
 
-function exports.GroundEft(env, actor, bgEftId)
+function exports.FocusCamera(env, actor, destination, scale, duration)
+	env.global.RecordImmediately(env, actor:getId(), "FocusCamera", {
+		act = env["$id"],
+		dst = destination,
+		scale = scale,
+		dur = duration
+	})
+end
+
+function exports.GroundEft(env, actor, bgEftId, duration, inSupering)
+	if inSupering == nil then
+		inSupering = true
+	end
+
 	env.global.RecordImmediately(env, actor:getId(), "GroundEft", {
 		act = env["$id"],
-		id = bgEftId
+		id = bgEftId,
+		inSupering = inSupering,
+		duration = duration
 	})
 end
 
@@ -120,9 +140,43 @@ function exports.AddAnim(env, configs)
 	})
 end
 
+function exports.AddAnimWithFlip(env, configs)
+	local actor = env["$actor"]
+
+	env.global.RecordImmediately(env, actor:getId(), "AddAnimWithFlip", {
+		pos = configs.pos,
+		zOrder = configs.zOrder,
+		loop = configs.loop,
+		anim = configs.anim,
+		isFlipX = configs.isFlipX,
+		isFlipY = configs.isFlipY
+	})
+end
+
+function exports.ShakeScreen(env, configs)
+	local actor = env["$actor"]
+
+	env.global.RecordImmediately(env, kBRMainLine, "ShakeScreen", {
+		Id = configs.Id,
+		duration = configs.duration,
+		enhance = configs.enhance
+	})
+end
+
 function exports.ChangeBG(env, filename)
 	env.global.RecordImmediately(env, kBRMainLine, "ChangeBG", {
 		filename = filename
+	})
+end
+
+function exports.StackSkill(env, skillId, stacknum, totalnum)
+	local player = env["$actor"]:getOwner()
+
+	env.global.RecordImmediately(env, kBRMainLine, "StackSkill", {
+		skillId = skillId,
+		stacknum = stacknum,
+		totalnum = totalnum,
+		playerId = player:getId()
 	})
 end
 
@@ -134,4 +188,31 @@ function exports.BossComingPause(env)
 	env.global.RecordImmediately(env, kBRMainLine, "BossComing", {
 		pause = true
 	})
+end
+
+function exports.PlayBGM(env, bgm)
+	local player = env["$actor"]:getOwner()
+
+	env.global.RecordImmediately(env, kBRMainLine, "PlayBGM", {
+		bgm = bgm,
+		playerId = player:getId()
+	})
+end
+
+function exports.PvpSpeedUp(env, arg1, arg2)
+	env.global.RecordImmediately(env, kBRMainLine, "PvpSpeedUp", {
+		arg1 = arg1,
+		arg2 = arg2
+	})
+end
+
+function exports.ShowEnhanceUp(env, time, value)
+	env.global.RecordImmediately(env, kBRMainLine, "ShowEnhanceUp", {
+		arg1 = time,
+		arg2 = value
+	})
+end
+
+function exports.HideEnhanceUp(env)
+	env.global.RecordImmediately(env, kBRMainLine, "HideEnhanceUp")
 end

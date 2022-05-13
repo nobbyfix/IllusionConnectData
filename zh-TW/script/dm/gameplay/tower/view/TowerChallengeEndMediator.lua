@@ -11,7 +11,7 @@ local kBtnHandlers = {
 	mTouchLayout = "onTouchLayout"
 }
 local kHeroRarityBgAnim = {
-	[15.0] = "ssrzong_yingxiongxuanze",
+	[15.0] = "spzong_urequipeff",
 	[13.0] = "srzong_yingxiongxuanze",
 	[14.0] = "ssrzong_yingxiongxuanze"
 }
@@ -126,7 +126,7 @@ function TowerChallengeEndMediator:showHeroPanelAnim()
 	local mvpSpritePanel = anim:getChildByName("roleNode")
 
 	mvpSpritePanel:addChild(self._mvpSprite)
-	self._mvpSprite:setPosition(cc.p(50, -100))
+	self._mvpSprite:setPosition(cc.p(cc.p(-200, -200)))
 	anim:addTo(animNode):center(animNode:getContentSize())
 	anim:gotoAndPlay(1)
 
@@ -156,9 +156,10 @@ function TowerChallengeEndMediator:showHeroPanel()
 
 	local enemyMaster = ConfigReader:getDataByNameIdAndKey("TowerMaster", towerMasterId, "Master")
 	local model = ConfigReader:getDataByNameIdAndKey("EnemyMaster", enemyMaster, "RoleModel")
-	local mvpSprite = IconFactory:createRoleIconSprite({
+	model = IconFactory:getSpMvpBattleEndMid(model)
+	local mvpSprite = IconFactory:createRoleIconSpriteNew({
 		useAnim = true,
-		iconType = "Bust9",
+		frameId = "bustframe17",
 		id = model
 	})
 
@@ -175,6 +176,10 @@ function TowerChallengeEndMediator:showHeroPanel()
 
 	textPanel:runAction(cc.FadeIn:create(0.6))
 	self:showHeroPanelAnim()
+end
+
+function TowerChallengeEndMediator:leaveWithData()
+	self:onTouchLayout()
 end
 
 function TowerChallengeEndMediator:onTouchLayout(sender, eventType)
@@ -195,8 +200,12 @@ function TowerChallengeEndMediator:showMissionInfo(cell)
 	cell:setVisible(true)
 
 	local text = cell:getChildByName("text")
+	local text1 = cell:getChildByName("text1")
+	local text2 = cell:getChildByName("text_2")
 
 	text:setString(self._totalWin)
+	text:setPositionX(text1:getPositionX() + text1:getContentSize().width + 10)
+	text2:setPositionX(text:getPositionX() + text:getContentSize().width + 6)
 end
 
 function TowerChallengeEndMediator:showBuffInfo(cell)
@@ -316,7 +325,7 @@ end
 
 function TowerChallengeEndMediator:initHero(node, info)
 	info.id = info.roleModel
-	local heroImg = IconFactory:createRoleIconSprite(info)
+	local heroImg = IconFactory:createRoleIconSpriteNew(info)
 
 	heroImg:setScale(0.68)
 
@@ -338,6 +347,10 @@ function TowerChallengeEndMediator:initHero(node, info)
 
 		anim:addTo(bg1):center(bg1:getContentSize())
 		anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+		if info.rareity == 15 then
+			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+		end
 
 		if info.rarity >= 14 then
 			local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")

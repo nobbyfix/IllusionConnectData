@@ -43,7 +43,7 @@ BaseRankRecord:has("_rid", {
 	is = "r"
 })
 BaseRankRecord:has("_isFriend", {
-	is = "r"
+	is = "rw"
 })
 BaseRankRecord:has("_online", {
 	is = "r"
@@ -81,6 +81,42 @@ BaseRankRecord:has("_city", {
 BaseRankRecord:has("_tags", {
 	is = "rw"
 })
+BaseRankRecord:has("_block", {
+	is = "rw"
+})
+BaseRankRecord:has("_leadStageId", {
+	is = "rw"
+})
+BaseRankRecord:has("_leadStageLevel", {
+	is = "rw"
+})
+BaseRankRecord:has("_totalStar", {
+	is = "rw"
+})
+BaseRankRecord:has("_totalHeroes", {
+	is = "rw"
+})
+BaseRankRecord:has("_totalSurface", {
+	is = "rw"
+})
+BaseRankRecord:has("_maxStageLevel", {
+	is = "rw"
+})
+BaseRankRecord:has("_showHeroes", {
+	is = "rw"
+})
+BaseRankRecord:has("_rtkpRank", {
+	is = "rw"
+})
+BaseRankRecord:has("_rtpkScore", {
+	is = "rw"
+})
+BaseRankRecord:has("_stageArenaRank", {
+	is = "rw"
+})
+BaseRankRecord:has("_stageArenaScore", {
+	is = "rw"
+})
 
 function BaseRankRecord:initialize()
 	super.initialize(self)
@@ -98,6 +134,15 @@ function BaseRankRecord:initialize()
 	self._headFrame = ""
 	self._board = "ZTXChang"
 	self._surfaceId = nil
+	self._totalStar = 0
+	self._totalHeroes = 0
+	self._totalSurface = 0
+	self._maxStageLevel = 0
+	self._showHeroes = {}
+	self._rtkpRank = 0
+	self._rtpkScore = 0
+	self._stageArenaRank = 0
+	self._stageArenaScore = 0
 end
 
 function BaseRankRecord:synchronize(data)
@@ -138,6 +183,18 @@ function BaseRankRecord:synchronize(data)
 		self._birthday = data.birthday
 		self._city = data.city
 		self._tags = data.tags
+		self._block = data.block
+		self._leadStageId = data.leadStageId or ""
+		self._leadStageLevel = data.leadStageLevel or 0
+		self._totalStar = data.totalStar or 0
+		self._totalHeroes = data.totalHeroes or 0
+		self._totalSurface = data.totalSurface or 0
+		self._maxStageLevel = data.maxStageLevel or 0
+		self._showHeroes = data.showHeroes or {}
+		self._rtkpRank = data.rtkpRank or 0
+		self._rtpkScore = data.rtpkScore or 0
+		self._stageArenaRank = data.stageArenaRank or 0
+		self._stageArenaScore = data.stageArenaScore or 0
 	end
 end
 
@@ -243,6 +300,28 @@ function SubPetRaceRankRecord:synchronize(data)
 	super.synchronize(self, data)
 
 	self._score = data.score or 0
+	self._winNum = data.winNum or 0
+end
+
+PetWorldScoreRankRecord = class("PetWorldScoreRankRecord", BaseRankRecord, _M)
+
+PetWorldScoreRankRecord:has("_score", {
+	is = "r"
+})
+PetWorldScoreRankRecord:has("_winNum", {
+	is = "r"
+})
+
+function PetWorldScoreRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KPetWorldScore
+end
+
+function PetWorldScoreRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
 	self._winNum = data.winNum or 0
 end
 
@@ -493,6 +572,35 @@ function ArenaRankRecord:synchronize(data)
 	self._score = data.value or 0
 end
 
+ArenaNewRankRecord = class("ArenaNewRankRecord", BaseRankRecord, _M)
+
+ArenaNewRankRecord:has("_winCount", {
+	is = "r"
+})
+ArenaNewRankRecord:has("_rank", {
+	is = "r"
+})
+ArenaNewRankRecord:has("_headImg", {
+	is = "r"
+})
+
+function ArenaNewRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KNewAreana
+	self._winCount = 0
+end
+
+function ArenaNewRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._winCount = data.winCount or 0
+	self._rid = data.id
+	self._headId = data.headImg
+	self._headImg = data.headImg
+	self._rank = data.rank
+end
+
 CrusadeRankRecord = class("CrusadeRankRecord", BaseRankRecord, _M)
 
 CrusadeRankRecord:has("_point", {
@@ -521,11 +629,30 @@ MiniGameRankRecord:has("_score", {
 function MiniGameRankRecord:initialize()
 	super.initialize(self)
 
-	self._rankType = RankType.kMiniGame
+	self._rankType = RankType.kDarts
 	self._score = 0
 end
 
 function MiniGameRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
+end
+
+MiniGameJumpRankRecord = class("MiniGameJumpRankRecord", BaseRankRecord, _M)
+
+MiniGameJumpRankRecord:has("_score", {
+	is = "r"
+})
+
+function MiniGameJumpRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.kJump
+	self._score = 0
+end
+
+function MiniGameJumpRankRecord:synchronize(data)
 	super.synchronize(self, data)
 
 	self._score = data.value or 0
@@ -557,4 +684,31 @@ function RTPKRankRecord:synchronize(data)
 	self._combat = data.c or data.combat
 	self._nickName = data.n or data.nickname
 	self._score = data.p or data.value
+end
+
+StageAreanaRankRecord = class("StageAreanaRankRecord", BaseRankRecord, _M)
+
+StageAreanaRankRecord:has("_oldCoin", {
+	is = "r"
+})
+
+function StageAreanaRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KStageAreana
+end
+
+function StageAreanaRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._rank = data.rank
+	self._rid = data.r
+	self._headId = data.h
+	self._name = data.n
+	self._level = data.l
+	self._headFrame = data.f
+	self._board = data.s
+	self._combat = data.c
+	self._nickName = data.n
+	self._oldCoin = data.p
 end

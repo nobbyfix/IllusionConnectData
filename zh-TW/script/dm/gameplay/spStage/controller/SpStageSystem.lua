@@ -1010,19 +1010,6 @@ function SpStageSystem:doReset(resetId, value)
 		stageType = SpStageType.kSkill3
 	end
 
-	local config = ConfigReader:getRecordById("Reset", resetId)
-
-	if config and config.ResetSystem then
-		local leaveTimes = self:getStageLeaveTime(spStageIds[stageType])
-		local max = config.ResetSystem.max
-		local add = config.ResetSystem.addValue or 0
-		value = leaveTimes + add
-
-		if max and max < value then
-			value = max
-		end
-	end
-
 	self._model:resetLeaveTimes(stageType, value)
 	self:dispatch(Event:new(EVT_LEAVETIME_CHANGE))
 end

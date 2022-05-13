@@ -7,6 +7,7 @@ function MainTLInterpreter:initialize(viewContext)
 	self._mainMediator = viewContext:getValue("BattleMainMediator")
 	self._battleUIMediator = viewContext:getValue("BattleUIMediator")
 	self._screenEffectLayer = viewContext:getValue("BattleScreenEffectLayer")
+	self._battleGround = viewContext:getValue("BattleGroundLayer")
 	self._viewFrame = self._mainMediator:getTargetFrame()
 end
 
@@ -88,6 +89,12 @@ function MainTLInterpreter:act_Timing(action, args)
 	elseif args.ctrl == "resume" then
 		self._battleUIMediator:resumeTiming(args.time)
 		self._battleUIMediator:resumeEnergyIncreasing()
+	end
+end
+
+function MainTLInterpreter:act_CountDeath(action, args)
+	if self._battleUIMediator.increaseDead then
+		self._battleUIMediator:increaseDead(args.cnt)
 	end
 end
 
@@ -173,9 +180,63 @@ function MainTLInterpreter:act_ChangeBG(action, args)
 	self._mainMediator:changeBackground(args.filename)
 end
 
+function MainTLInterpreter:act_ForbidSkill(action, args)
+	self._battleUIMediator:forbidSkillChange(args)
+end
+
 function MainTLInterpreter:act_Timeup(action, args)
 	self._context:finishBattle(args.result)
 	self._mainMediator:battleTimeup(args.result)
+end
+
+function MainTLInterpreter:act_PvpSpeedUp(action, args)
+	local arg1 = tostring(args.arg1)
+	local arg2 = tostring(args.arg1)
+
+	self._battleUIMediator:pvpSpeedUp(arg1, arg2)
+end
+
+function MainTLInterpreter:act_ShowEnhanceUp(action, args)
+	local arg1 = tostring(args.arg1)
+	local arg2 = tostring(args.arg2)
+
+	if self._battleUIMediator.showNoticeEnhance then
+		self._battleUIMediator:showNoticeEnhance(arg1, arg2)
+	end
+end
+
+function MainTLInterpreter:act_HideEnhanceUp(action, args)
+	if self._battleUIMediator.hideNoticeEnhance then
+		self._battleUIMediator:hideNoticeEnhance()
+	end
+end
+
+function MainTLInterpreter:act_ShowMaster(action, args)
+	local enemy = args.enemy
+	local friend = args.friend
+
+	self._battleUIMediator:showMaster(friend, enemy)
+end
+
+function MainTLInterpreter:act_ShowMasterArea(action, args)
+	local enemy = args.enemy
+	local friend = args.friend
+	local mainPlayerId = self._context:getValue("CurMainPlayerId")
+
+	if friend.id ~= mainPlayerId then
+		self._battleUIMediator:showMaster(enemy, friend)
+	else
+		self._battleUIMediator:showMaster(friend, enemy)
+	end
+end
+
+function MainTLInterpreter:act_ShakeScreen(action, args)
+	local id = args.Id or 1
+	local duration = args.duration or 30
+	duration = duration / 1000
+	local enhance = args.enhance or 1
+
+	self._battleGround:rock(id, enhance, duration)
 end
 
 function MainTLInterpreter:act_BossComing(action, args)
@@ -187,6 +248,27 @@ function MainTLInterpreter:act_BossComing(action, args)
 		else
 			battleShowQueue:addEndBossShow()
 		end
+	end
+end
+
+function MainTLInterpreter:act_StackSkill(action, args)
+	local skillId = args.skillId
+	local stacknum = args.stacknum
+	local totalnum = args.totalnum
+	local playerId = args.playerId
+	local mainPlayerId = self._context:getValue("CurMainPlayerId")
+
+	if playerId == mainPlayerId then
+		self._battleUIMediator:stackSkillLayer(skillId, stacknum, totalnum)
+	end
+end
+
+function MainTLInterpreter:act_PlayBGM(action, args)
+	local bgm = args.bgm
+	local playerId = args.playerId
+
+	if bgm and bgm ~= "" then
+		self._mainMediator:playBGM(bgm)
 	end
 end
 

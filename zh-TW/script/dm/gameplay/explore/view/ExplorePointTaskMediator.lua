@@ -4,12 +4,7 @@ ExplorePointTaskMediator:has("_exploreSystem", {
 	is = "r"
 }):injectWith("ExploreSystem")
 
-local kBtnHandlers = {
-	["main.tipBtn"] = {
-		clickAudio = "Se_Click_Close_2",
-		func = "onClickTip"
-	}
-}
+local kBtnHandlers = {}
 
 function ExplorePointTaskMediator:initialize()
 	super.initialize(self)
@@ -44,9 +39,11 @@ function ExplorePointTaskMediator:initView()
 	end)
 
 	local bg = self._touchPanel:getChildByFullName("bg")
-	local text = self._touchPanel:getChildByFullName("text")
+	local text = self._touchPanel:getChildByFullName("bg.text")
 
-	bg:setContentSize(cc.size(text:getContentSize().width + 21, text:getContentSize().height + 21))
+	text:getVirtualRenderer():setMaxLineWidth(325)
+	bg:setContentSize(cc.size(text:getAutoRenderSize().width + 21, text:getAutoRenderSize().height + 21))
+	text:setPositionY(bg:getContentSize().height / 2)
 
 	local bgNode = self._main:getChildByFullName("bgNode")
 
@@ -59,9 +56,10 @@ function ExplorePointTaskMediator:initView()
 			width = 837,
 			height = 503
 		},
-		title = Strings:get("EXPLORE_UI17"),
+		title = Strings:get("EXPLORE_UI11"),
 		title1 = Strings:get("UITitle_EN_Tansuorenwuxiangqing")
 	})
+	self._main:getChildByFullName("tipBtn"):setPositionX(650)
 
 	self._rewardPanel = self._main:getChildByName("rewardPanel")
 	self._taskPanel = self._main:getChildByName("taskPanel")

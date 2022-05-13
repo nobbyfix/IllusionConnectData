@@ -31,10 +31,12 @@ RankType = {
 	kBlockStar = 2,
 	kPetRace = 11,
 	KPetWorldScore = 25,
+	kJump = 44,
 	kClubBoss = 41,
 	KRTPK = 26,
 	kExp = 6,
 	kClub = 9,
+	KStageAreana = 43,
 	kGold = 5,
 	kMap = 14,
 	kMaze = 15,
@@ -44,7 +46,8 @@ RankType = {
 	kCombat = 1,
 	kCrusade = 30,
 	kHeroCombat = 3,
-	kMiniGame = 42
+	KNewAreana = 45,
+	kDarts = 42
 }
 RankClass = {
 	[RankType.kCombat] = CombatRankRecord,
@@ -61,12 +64,16 @@ RankClass = {
 	[RankType.kArena] = ArenaRankRecord,
 	[RankType.kCrusade] = CrusadeRankRecord,
 	[RankType.kClubBoss] = ClubBossRankRecord,
-	[RankType.kMiniGame] = MiniGameRankRecord,
+	[RankType.kDarts] = MiniGameRankRecord,
 	[RankType.KRTPK] = RTPKRankRecord,
-	[RankType.KPetWorldScore] = PetWorldScoreRankRecord
+	[RankType.KPetWorldScore] = PetWorldScoreRankRecord,
+	[RankType.KStageAreana] = StageAreanaRankRecord,
+	[RankType.kJump] = MiniGameJumpRankRecord,
+	[RankType.KNewAreana] = ArenaNewRankRecord
 }
 RankSwitch = {
-	[RankType.kClubBoss] = "fn_clubBoss"
+	[RankType.kClubBoss] = "fn_clubBoss",
+	[RankType.kArena] = "fn_arena_normal"
 }
 RankTopImage = {
 	"img_zlb_no1.png",
@@ -157,10 +164,10 @@ function RankSystem:tryEnter(data)
 	end
 
 	local remoteTimestamp = self._gameServerAgent:remoteTimestamp()
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local rankId = kShowRankBest[date.wday] or RankType.kCombat
 	remoteTimestamp = remoteTimestamp + 86400
-	local date = os.date("*t", remoteTimestamp)
+	local date = TimeUtil:localDate("*t", remoteTimestamp)
 	local nextRankId = kShowRankBest[date.wday] or RankType.kCombat
 
 	local function callback()
@@ -239,7 +246,7 @@ function RankSystem:tryEnterRank(data)
 		rankEnd = self:getRequestRankCountPerTime()
 	}
 
-	self:requestRankData(sendData, callback)
+	self:requestRankData(sendData, callback, data.blockUI)
 end
 
 function RankSystem:getAllRankData()
@@ -247,7 +254,9 @@ function RankSystem:getAllRankData()
 	local rankData = {}
 
 	for k, v in pairs(allRankData) do
-		table.insert(rankData, v)
+		if not RankSwitch[v.AppID] or CommonUtils.GetSwitch(RankSwitch[v.AppID]) then
+			table.insert(rankData, v)
+		end
 	end
 
 	table.sort(rankData, function (a, b)
@@ -257,27 +266,25 @@ function RankSystem:getAllRankData()
 	return rankData
 end
 
-function RankSystem:requestRankData(data, callback)
+function RankSystem:requestRankData(data, callback, blockUI)
 	local params = {
 		type = data.type,
 		start = data.rankStart,
 		["end"] = data.rankEnd
 	}
 
-	self._rankService:requestRankData(params, false, function (response)
-		if response.resCode == 0 then
-			local syncTime = self:getCurrentTime()
+	self._rankService:requestRankData(params, blockUI, function (response)
+		local syncTime = self:getCurrentTime()
 
-			if data.rankStart == 1 then
-				self._rank:cleanUpRankList(data.type)
-			end
+		if data.rankStart == 1 then
+			self._rank:cleanUpRankList(data.type)
+		end
 
-			self._rank:synchronize(response.data, data.type, syncTime)
-			self:dispatch(Event:new(EVT_RANK_REQUEST_SUCC))
+		self._rank:synchronize(response.data, data.type, syncTime)
+		self:dispatch(Event:new(EVT_RANK_REQUEST_SUCC))
 
-			if callback then
-				callback(response)
-			end
+		if callback then
+			callback(response)
 		end
 	end)
 end
@@ -290,6 +297,29 @@ function RankSystem:requestRTPKAllServerRankData(data, callback, blockUI)
 	}
 
 	self._rankService:requestRTPKAllServerRankData(params, blockUI, function (response)
+		local syncTime = self:getCurrentTime()
+
+		if data.rankStart == 1 then
+			self._rank:cleanUpRankList(data.type)
+		end
+
+		self._rank:synchronize(response.data, data.type, syncTime)
+		self:dispatch(Event:new(EVT_RANK_REQUEST_SUCC))
+
+		if callback then
+			callback(response)
+		end
+	end)
+end
+
+function RankSystem:requestStageAreanaAllServerRankData(data, callback, blockUI)
+	local params = {
+		rankType = data.type,
+		start = data.rankStart,
+		["end"] = data.rankEnd
+	}
+
+	self._rankService:requestStageAreanaAllServerRankData(params, blockUI, function (response)
 		local syncTime = self:getCurrentTime()
 
 		if data.rankStart == 1 then
@@ -405,7 +435,7 @@ function RankSystem:getMyselfShowInfoByType(record)
 			data[2] = record:getName()
 			data[3] = record:getClubName() == "" and Strings:get("ARENA_NO_RANK") or record:getClubName()
 			data[4] = record:getDp()
-		elseif record:getRankType() == RankType.kPetRace then
+		elseif record:getRankType() == RankType.KPetWorldScore then
 			data[1] = record:getRank()
 			data[2] = record:getName()
 			data[3] = record:getWinNum()
@@ -472,6 +502,14 @@ end
 
 function RankSystem:getRTPKMaxRank()
 	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_RankMax", "content")
+end
+
+function RankSystem:getLeadStageAreanaMaxRank()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "StageArena_RankMax", "content")
+end
+
+function RankSystem:getNewAreanaMaxRank()
+	return ConfigReader:getDataByNameIdAndKey("ConfigValue", "ChessArena_Rank_Num", "content")
 end
 
 function RankSystem:getRequestRankCountPerTime()

@@ -178,7 +178,7 @@ function TowerPointMediator:refreshPointCell(panel, index)
 	name:setString(Strings:get(towerEnemyConfig.Name))
 
 	if nameBg then
-		nameBg:setContentSize(cc.size(name:getContentSize().width + 19, 41))
+		nameBg:setContentSize(cc.size(name:getAutoRenderWidth() + 19, 41))
 	end
 
 	local color = win and cc.c3b(200, 200, 200) or cc.c3b(255, 255, 255)
@@ -202,26 +202,23 @@ function TowerPointMediator:refreshPointCell(panel, index)
 
 		local info = {
 			useAnim = true,
-			iconType = "Bust6",
+			frameId = "bustframe6_6",
 			id = towerEnemyConfig.PointHead
 		}
-		local masterIcon = IconFactory:createRoleIconSprite(info)
+		local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 		masterIcon:setAnchorPoint(cc.p(0.5, 0.5))
-		masterIcon:addTo(roleNode):center(roleNode:getContentSize()):offset(50, -80)
-		masterIcon:setScale(0.7)
+		masterIcon:addTo(roleNode):center(roleNode:getContentSize())
 		masterIcon:setRotation(-45)
 	else
 		local s = cc.size(245, 350)
 		local m = towerEnemyConfig.PointHead
 		local info = {
-			stencil = 1,
-			iconType = "Bust7",
+			frameId = "bustframe7_1",
 			id = m,
-			size = s,
 			useAnim = useAnim
 		}
-		local masterIcon = IconFactory:createRoleIconSprite(info)
+		local masterIcon = IconFactory:createRoleIconSpriteNew(info)
 
 		masterIcon:setAnchorPoint(cc.p(0.5, 0.5))
 		masterIcon:addTo(roleNode):center(roleNode:getContentSize()):offset(0, -20)
@@ -256,11 +253,20 @@ function TowerPointMediator:onClickRule(sender, eventType, oppoRecord)
 	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
 		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 	}, {
-		rule = Rule
+		rule = Rule,
+		ruleReplaceInfo = {
+			time = TimeUtil:getSystemResetDate()
+		}
 	}))
 end
 
 function TowerPointMediator:onClickBack(sender, eventType)
+	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
+		viewName = "TowerMainView"
+	}))
+end
+
+function TowerPointMediator:leaveWithData()
 	self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, {
 		viewName = "TowerMainView"
 	}))

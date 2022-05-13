@@ -294,19 +294,19 @@ function PetRaceEmBattleForScheduleMediator:updateViewInfo()
 	end
 
 	self._text_name_l:setString(myInfo.name)
-	self._text_level_l:setString("Lv." .. myInfo.level)
+	self._text_level_l:setString(Strings:get("Common_LV_Text") .. myInfo.level)
 	self._text_power_l:setString(tostring(myCombat))
 	self._text_cost_l:setString(myCost)
 	self._text_first_l:setString(mySpeed)
 	self._text_name_r:setString(enemyInfo.name)
-	self._text_level_r:setString("Lv." .. enemyInfo.level)
+	self._text_level_r:setString(Strings:get("Common_LV_Text") .. enemyInfo.level)
 	self._text_power_r:setString(tostring(enemyCombat))
 	self._text_cost_r:setString(enemyCost)
 	self._text_first_r:setString(enemySpeed)
 	self._final_name_l:setString(myInfo.name)
-	self._final_lv_l:setString("Lv." .. myInfo.level)
+	self._final_lv_l:setString(Strings:get("Common_LV_Text") .. myInfo.level)
 	self._final_name_r:setString(enemyInfo.name)
-	self._final_lv_r:setString("Lv " .. enemyInfo.level)
+	self._final_lv_r:setString(Strings:get("Common_LV_Text") .. enemyInfo.level)
 end
 
 function PetRaceEmBattleForScheduleMediator:createTeamTableView()

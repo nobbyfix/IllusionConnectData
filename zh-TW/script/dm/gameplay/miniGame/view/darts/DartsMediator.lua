@@ -428,6 +428,7 @@ function DartsMediator:sendResult()
 	local preHightScore = self._activity:getHighestScore()
 	local data = {
 		isWin = true,
+		modelId = "Model_YFZZhu",
 		stage = 0,
 		rewards = rewardsData,
 		score = self._curScore,
@@ -485,7 +486,8 @@ function DartsMediator:sendResult()
 				code = self._rewardHeroPieceId,
 				amount = fragAmount
 			}
-		}
+		},
+		round = self._curLevel
 	}
 	local doActivityType = 103
 
@@ -507,6 +509,20 @@ function DartsMediator:sendResult()
 			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {}, data, delegate))
 
 			return
+		end
+
+		if response.resCode == 13315 then
+			local data = {
+				title = Strings:get("Activity_Darts_Abn_1"),
+				title1 = Strings:get("Activity_Darts_Abn_2"),
+				content = Strings:get("Activity_Darts_Abn_3"),
+				sureBtn = {}
+			}
+			local view = self:getInjector():getInstance("AlertView")
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, delegate))
 		end
 
 		self:refreshStartView()
@@ -801,6 +817,8 @@ function DartsMediator:dartsShotOver()
 		self._curLevel = self._curLevel + 1
 
 		if self._dartsSystem:getMaxLevel() < self._curLevel then
+			self._curLevel = self._dartsSystem:getMaxLevel()
+
 			self:passGame()
 		else
 			self:NextLevel()
@@ -1069,6 +1087,7 @@ function DartsMediator:initCurLevelData()
 	self._curlevellabel:setString(Strings:get("Activity_Darts_Times", {
 		day = GameStyle:intNumToCnString(self._curLevel)
 	}))
+	self._lastTimelabel:setPositionX(self._curlevellabel:getPositionX() + self._curlevellabel:getContentSize().width + 20)
 end
 
 function DartsMediator:setButtonNameStyle(text)
@@ -1296,7 +1315,7 @@ function DartsMediator:onClickBack(sender, eventType)
 end
 
 function DartsMediator:onClickRank(sender, eventType)
-	self._miniGameSystem:requestActivityRankData(self._activityId, 1, self._dartsSystem:getMaximumShow(), function ()
+	self._miniGameSystem:requestActivityRankData(RankType.kDarts, self._activityId, 1, self._dartsSystem:getMaximumShow(), function ()
 		local view = self:getInjector():getInstance("MiniGameRankView")
 
 		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
@@ -1435,7 +1454,7 @@ function DartsMediator:checkBuyTimes(call)
 
 		if factor1 and factor2 then
 			self:dispatch(ShowTipEvent({
-				tip = Strings:get("Activity_Darts_Times")
+				tip = Strings:get("Activity_Darts_Times_Out")
 			}))
 
 			return false

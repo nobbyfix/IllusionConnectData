@@ -22,6 +22,10 @@ function BlockOnNewBornState:enter(battleAction)
 
 	if fsmComp == nil or not fsmComp:isInState("NewBorn") then
 		battleAction:changeState(DoEnterSkillsState:new())
+
+		local formationSystem = battleAction:getFormationSystem()
+
+		formationSystem:clearOldResident(actor)
 	else
 		self._actorFsmComp = fsmComp
 	end
@@ -48,11 +52,11 @@ function DoEnterSkillsState:enter(battleAction)
 	local buffSystem = battleContext:getObject("BuffSystem")
 
 	buffSystem:triggerEnterBuffs(actor)
-	battleContext:getObject("SkillSystem"):buildSkillsForActor(actor)
 	battleAction:changeState(AfterEnteringState:new())
 end
 
 function DoEnterSkillsState:update(battleAction, dt)
+	super.update(self, battleAction, dt)
 end
 
 AfterEnteringState = class("AfterEnteringState", BattleActionState, _M)
@@ -61,21 +65,45 @@ function AfterEnteringState:enter(battleAction)
 	local actor = battleAction:getActor()
 	local check = battleAction:getUserCmd() or battleAction:getBattleContext():getObject("BattleLogic"):getBattleMode() == 2
 	local formationSystem = battleAction:getFormationSystem()
+	local cardInfo = actor:getCardInfo()
+	self._duration = cardInfo and cardInfo.enterPauseTime
 
-	if isReadyForUniqueSkill(actor) and check then
-		local battleContext = battleAction:getBattleContext()
-		local actionScheduler = battleContext:getObject("ActionScheduler")
-
-		if not actionScheduler:exertUniqueSkill(actor, kBattleUniqueSkill) then
-			formationSystem:changeUnitSettled(actor)
-		end
-	else
+	local function doSetDown()
 		formationSystem:changeUnitSettled(actor)
 	end
 
-	battleAction:finish()
+	local function doSkill()
+		if isReadyForUniqueSkill(actor) and check then
+			local battleContext = battleAction:getBattleContext()
+			local actionScheduler = battleContext:getObject("ActionScheduler")
+
+			if not actionScheduler:exertUniqueSkill(actor, kBattleUniqueSkill) then
+				doSetDown()
+			end
+
+			battleAction:finish()
+		else
+			doSetDown()
+
+			if self._duration and self._duration > 0 then
+				self:startTimer(self._duration, function ()
+					battleAction:finish()
+				end)
+
+				return
+			end
+
+			battleAction:finish()
+		end
+	end
+
+	doSkill()
 end
 
 function AfterEnteringState:update(battleAction, dt)
-	battleAction:finish()
+	if self._duration and self._duration > 0 then
+		super.update(self, battleAction, dt)
+	else
+		battleAction:finish()
+	end
 end

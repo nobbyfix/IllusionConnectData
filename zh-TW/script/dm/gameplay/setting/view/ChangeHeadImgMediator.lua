@@ -20,6 +20,9 @@ local KMenu = {
 		},
 		{
 			title = Strings:get("Setting_Ui_Text_Awaken")
+		},
+		{
+			title = Strings:get("Setting_Ui_Text_skin")
 		}
 	},
 	[KTabType.FRAME] = {
@@ -49,6 +52,12 @@ function ChangeHeadImgMediator:initialize()
 end
 
 function ChangeHeadImgMediator:dispose()
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -77,6 +86,7 @@ function ChangeHeadImgMediator:onRegister()
 	mapButtonHandlerClick(nil, btn, {
 		func = callfunc
 	})
+	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.doReset)
 end
 
 function ChangeHeadImgMediator:enterWithData(data)
@@ -105,6 +115,7 @@ function ChangeHeadImgMediator:getData()
 			local master = {}
 			local hero = {}
 			local awaken = {}
+			local skin = {}
 
 			for i = 1, #data do
 				local v = data[i]
@@ -115,6 +126,8 @@ function ChangeHeadImgMediator:getData()
 					master[#master + 1] = v
 				elseif v.config.Type == 4 then
 					awaken[#awaken + 1] = v
+				elseif v.config.Type == 5 then
+					skin[#skin + 1] = v
 				end
 
 				if tostring(v.id) == tostring(self._player:getHeadId()) then
@@ -126,7 +139,8 @@ function ChangeHeadImgMediator:getData()
 				data,
 				master,
 				hero,
-				awaken
+				awaken,
+				skin
 			}
 		end
 
@@ -140,6 +154,7 @@ function ChangeHeadImgMediator:getData()
 			local festival = {}
 			local rare = {}
 			local zodiac = {}
+			local leadstage = {}
 			local data = self._settingSystem:getShowHeadFrameList()
 
 			for i = 1, #data do
@@ -149,10 +164,10 @@ function ChangeHeadImgMediator:getData()
 					table.insert(activity, v)
 				elseif v.config.Type == KFrameType.FESTIVAL then
 					table.insert(festival, v)
-				elseif v.config.Type == KFrameType.RARE then
-					table.insert(rare, v)
 				elseif v.config.Type == KFrameType.Zodiac then
 					table.insert(zodiac, v)
+				elseif v.config.Type == KFrameType.LEADSTAGE then
+					table.insert(leadstage, v)
 				end
 
 				if tostring(v.id) == tostring(self._player:getCurHeadFrame()) then
@@ -165,8 +180,8 @@ function ChangeHeadImgMediator:getData()
 				data,
 				activity,
 				festival,
-				rare,
-				zodiac
+				zodiac,
+				leadstage
 			}
 		end
 
@@ -194,6 +209,8 @@ function ChangeHeadImgMediator:initTabBar()
 		local lightText = _btn:getChildByFullName("light.text")
 		local darkText = _btn:getChildByFullName("dark.text")
 
+		lightText:setVisible(false)
+		darkText:setVisible(false)
 		lightText:enableOutline(cc.c4b(3, 1, 4, 51), 1)
 		lightText:setColor(cc.c4b(177, 235, 16, 73.94999999999999))
 		lightText:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
@@ -208,13 +225,16 @@ end
 function ChangeHeadImgMediator:setTabBarStatus()
 	for i = 1, 2 do
 		local _btn = self:getView():getChildByFullName("main.btn_" .. i)
+		local text = _btn:getChildByFullName("text")
 
 		if i == self._tabType then
 			_btn:getChildByFullName("light"):setVisible(true)
 			_btn:getChildByFullName("dark"):setVisible(false)
+			text:setTextColor(cc.c3b(0, 0, 0))
 		else
 			_btn:getChildByFullName("light"):setVisible(false)
 			_btn:getChildByFullName("dark"):setVisible(true)
+			text:setTextColor(cc.c3b(255, 255, 255))
 		end
 	end
 end
@@ -251,6 +271,7 @@ function ChangeHeadImgMediator:setSelectTab()
 			_btn:setPosition((i - 1) * 73 + 13, 15)
 			_btn:getChildByFullName("Text_48"):setString(menu[i].title)
 			_btn:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+			_btn:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 
 			local function callfunc(sender)
 				self:onChangeSelectType(sender)
@@ -281,6 +302,7 @@ function ChangeHeadImgMediator:resetSelect()
 				end
 
 				menu[j]:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+				menu[j]:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 			end
 		end
 	end
@@ -297,11 +319,13 @@ function ChangeHeadImgMediator:onChangeSelectStatus()
 			local btn = menu[self._selectTypePre]
 
 			btn:getChildByName("image"):loadTexture("sz_btn_02.png", 1)
+			btn:getChildByName("Text_48"):setTextColor(cc.c3b(255, 255, 255))
 		end
 
 		local btn = menu[self._selectType]
 
 		btn:getChildByName("image"):loadTexture("sz_btn_01.png", 1)
+		btn:getChildByName("Text_48"):setTextColor(cc.c3b(0, 0, 0))
 	end
 end
 
@@ -377,10 +401,25 @@ function ChangeHeadImgMediator:createIconFrame(view, headInfo, index)
 	local icon = ccui.ImageView:create(img)
 
 	icon:setAnchorPoint(cc.p(0, 0)):setScale(0.3)
-	icon:addTo(view):posite(25 + (index - 1) * kWidth - 12, 8)
+	icon:addTo(view):posite(25 + (index - 1) * kWidth - 12, 0)
 	icon:setTouchEnabled(true)
 	icon:setSwallowTouches(false)
 	icon:setTag(index)
+
+	if headInfo.config and headInfo.config.Type == "LIMIT" then
+		local tnode = IconFactory:createBaseNode()
+		local img = ccui.ImageView:create("asset/common/common_bg_xb_4.png", ccui.TextureResType.localType)
+
+		IconFactory:centerAddNode(tnode, img)
+
+		local lvLabel = cc.Label:createWithTTF("", CUSTOM_TTF_FONT_1, 18)
+
+		lvLabel:setString(Strings:get("ActivityBlock_UI_13"))
+		lvLabel:setColor(cc.c3b(255, 255, 255))
+		lvLabel:addTo(tnode):offset(0, 5)
+		tnode:setScale(1 / icon:getScale() * 0.8)
+		tnode:addTo(icon):center(icon:getContentSize()):offset(70, 90)
+	end
 
 	return icon
 end
@@ -614,8 +653,20 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 	local isUsed = self._main:getChildByFullName("view_0.isUsed")
 	local btn = self._main:getChildByFullName("view_0.exchangeBtn")
 	local getText = self._main:getChildByFullName("view_0.getDesc")
+	local expireText = self._main:getChildByFullName("view_0.expireTime")
 
 	getText:setString("")
+	expireText:setString("")
+
+	if self._timer then
+		self._timer:stop()
+
+		self._timer = nil
+	end
+
+	if self._curData.isLimit and not self._curData.isExpire and self._curData.expireTime and self._curData.useText then
+		self:setExpireTimer(expireText, self._curData)
+	end
 
 	if tostring(self._curData.id) == tostring(self._player:getCurHeadFrame()) then
 		isUsed:setVisible(true)
@@ -631,10 +682,31 @@ function ChangeHeadImgMediator:refreshHeadFrameInfoView()
 		end
 	end
 
-	if self._curData.frameData then
-		local tb = os.date("*t", tonumber(self._curData.frameData) / 1000)
+	if self._curData.frameData and self._curData.unlock == 1 then
+		local tb = TimeUtil:localDate("*t", tonumber(self._curData.frameData) / 1000)
 
 		getText:setString(Strings:get("Frame_UI_1") .. tb.year .. "." .. tb.month .. "." .. tb.day)
+	end
+end
+
+function ChangeHeadImgMediator:setExpireTimer(expireText, data)
+	local strId = data.useText
+	local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+
+	local function checkTimeFunc()
+		local curTime = gameServerAgent:remoteTimeMillis()
+		local remainTime = data.expireTime - curTime
+		local str = TimeUtil:formatTimeStr(remainTime * 0.001)
+
+		expireText:setString(Strings:get(strId, {
+			day = str
+		}))
+	end
+
+	if not self._timer then
+		self._timer = LuaScheduler:getInstance():schedule(checkTimeFunc, 1, false)
+
+		checkTimeFunc()
 	end
 end
 
@@ -652,5 +724,14 @@ function ChangeHeadImgMediator:setDescView(str)
 	local h = descText:getContentSize().height < 96 and 96 or descText:getContentSize().height
 
 	scrollView:setInnerContainerSize(cc.size(descText:getContentSize().width, h))
+	scrollView:scrollToTop(0.01, false)
 	descText:setPosition(cc.p(0, h))
+end
+
+function ChangeHeadImgMediator:doReset()
+	self._frameList = nil
+
+	self:getData()
+	self._tableView:reloadData()
+	self:refreshHeadImgInfoView()
 end

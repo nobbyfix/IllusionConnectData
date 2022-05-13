@@ -62,6 +62,18 @@ RTPK:has("_matchCDTs", {
 RTPK:has("_battleCDTs", {
 	is = "r"
 })
+RTPK:has("_doubleTimes", {
+	is = "r"
+})
+RTPK:has("_historyRank", {
+	is = "r"
+})
+RTPK:has("_totalWin", {
+	is = "r"
+})
+RTPK:has("_totalWinGot", {
+	is = "r"
+})
 
 function RTPK:initialize()
 	super.initialize(self)
@@ -86,6 +98,10 @@ function RTPK:initialize()
 	self._globalRank = -1
 	self._matchCDTs = 0
 	self._battleCDTs = 0
+	self._doubleTimes = 0
+	self._historyRank = 0
+	self._totalWin = 0
+	self._totalWinGot = {}
 
 	self:initGrade()
 end
@@ -164,6 +180,22 @@ function RTPK:synchronize(data)
 
 	if data.battleCDTs then
 		self._battleCDTs = data.battleCDTs
+	end
+
+	if data.doubleTimes then
+		self._doubleTimes = data.doubleTimes
+	end
+
+	if data.historyRank then
+		self._historyRank = data.historyRank
+	end
+
+	if data.totalWin then
+		self._totalWin = data.totalWin
+	end
+
+	if data.totalWinGot then
+		self._totalWinGot = data.totalWinGot
 	end
 end
 
@@ -302,7 +334,7 @@ function RTPK:getGradeConfigInfo()
 
 		if self:isGetGradeReward(grade) then
 			info[#info].state = RTPKGradeRewardState.kHadGet
-		elseif grade <= tonumber(self._curGrade.Id) then
+		elseif tonumber(v.ScoreLow) <= self._maxScore then
 			info[#info].state = RTPKGradeRewardState.kCanGet
 		else
 			info[#info].state = RTPKGradeRewardState.kCanNotGet
@@ -326,4 +358,44 @@ end
 
 function RTPK:getSeasonShowModel()
 	return self._seasonConfig.SeasonShowModel
+end
+
+function RTPK:isGotWinReward(key)
+	for i, v in pairs(self._totalWinGot) do
+		if v == tostring(key) then
+			return true
+		end
+	end
+end
+
+function RTPK:getWinTaskData()
+	local winTask = self._seasonConfig.SeasonWinTask
+	local info = {}
+
+	for i, v in pairs(winTask) do
+		for k, reward in pairs(v) do
+			local data = {
+				num = k,
+				state = RTPKGradeRewardState.kCanNotGet,
+				rewardId = reward
+			}
+			info[#info + 1] = data
+
+			if self:isGotWinReward(data.num) then
+				data.state = RTPKGradeRewardState.kHadGet
+			elseif tonumber(data.num) <= self._totalWin then
+				data.state = RTPKGradeRewardState.kCanGet
+			end
+		end
+	end
+
+	table.sort(info, function (a, b)
+		if a.state ~= b.state then
+			return a.state < b.state
+		else
+			return tonumber(a.num) < tonumber(b.num)
+		end
+	end)
+
+	return info
 end

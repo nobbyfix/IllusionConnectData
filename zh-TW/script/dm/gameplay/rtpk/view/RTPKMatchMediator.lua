@@ -24,6 +24,12 @@ function RTPKMatchMediator:dispose()
 		self._timer = nil
 	end
 
+	if self._delayTask then
+		cancelDelayCall(self._delayTask)
+
+		self._delayTask = nil
+	end
+
 	super.dispose(self)
 end
 
@@ -73,14 +79,20 @@ function RTPKMatchMediator:setupView()
 end
 
 function RTPKMatchMediator:createTimer()
-	local time = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_FristMatchTime", "content")
+	local time = ConfigReader:getDataByNameIdAndKey("ConfigValue", "RTPK_FristMatchTime", "content") + 5
 	local tickCount = 0
 	local pvpWaitTime = 0
 
 	local function update()
+		local matchText = self._matchingPanel:getChildByName("Text_1")
+
+		matchText:setString(Strings:get("RTPK_Matching", {
+			countdown = time - tickCount
+		}))
+
 		tickCount = tickCount + 1
 
-		if time <= tickCount and not self._enterPvp then
+		if time < tickCount and not self._enterPvp then
 			self._delegate._needShowTips = true
 
 			self:dismiss()
@@ -89,7 +101,7 @@ function RTPKMatchMediator:createTimer()
 		if self._enterPvp and not self._enterBattle then
 			pvpWaitTime = pvpWaitTime + 1
 
-			if pvpWaitTime >= 15 then
+			if pvpWaitTime >= 35 then
 				self:dismiss()
 			end
 		end
@@ -115,9 +127,13 @@ function RTPKMatchMediator:addMatchSuccAnim(data)
 
 	anim:addCallbackAtFrame(70, function ()
 		anim:stop()
+		anim:clearCallbacks()
 
 		if data.type == "ROBOT" then
-			self._rtpkSystem:enterRobotBattle(data)
+			self._enterBattle = true
+			self._delayTask = delayCallByTime(100, function ()
+				self._rtpkSystem:enterRobotBattle(data)
+			end)
 		else
 			self._rtpkSystem:enterRTPVP(data.ip, tonumber(data.port), data.room, data.br, "orrtpk")
 		end
@@ -161,8 +177,8 @@ function RTPKMatchMediator:setMyselfInfo(data)
 		}))
 	end
 
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
 		id = heroData:getModel(),
 		useAnim = self._settingModel:getRoleDynamic()
 	})
@@ -232,15 +248,17 @@ function RTPKMatchMediator:setRivalInfo(data)
 	end
 
 	local model = IconFactory:getRoleModelByKey("HeroBase", rivalInfo.s or "ZTXChang")
-	local role = IconFactory:createRoleIconSprite({
-		iconType = "Bust4",
-		id = model,
+	local sfModel = ConfigReader:getDataByNameIdAndKey("Surface", rivalInfo.sf, "Model")
+	local role = IconFactory:createRoleIconSpriteNew({
+		frameId = "bustframe9",
+		id = sfModel or model,
 		useAnim = self._settingModel:getRoleDynamic()
 	})
 
 	role:setTouchEnabled(true)
 	role:setScale(0.65)
 	role:addTo(heroNode):posite(70, -60)
+	heroNode:setScaleX(-1)
 
 	local headicon, oldIcon = IconFactory:createPlayerIcon({
 		clipType = 4,
