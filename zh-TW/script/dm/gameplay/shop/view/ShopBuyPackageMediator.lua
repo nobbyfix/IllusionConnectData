@@ -182,7 +182,6 @@ function ShopBuyPackageMediator:refreshView()
 		goldIcon1:addTo(self._moneyIconSum):setScale(0.8)
 		self._sliderPanel:setVisible(true)
 		self:refreshMoney()
-		self._listView:setContentSize(cc.size(307, 68))
 	elseif self._isFree == KShopBuyType.KFree then
 		self._freeText:setVisible(true)
 	else

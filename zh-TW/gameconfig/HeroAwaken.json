@@ -104,6 +104,48 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_FGao_Awake"
     },
+    "FLYDe": {
+        "AnimSound": "Se_Effect_Awakening_FLYDe",
+        "Animation": "xge_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_FLYDe_Awake",
+        "Name": "FLYDe_Awake_Name",
+        "NameDesc": "FLYDe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_FLYDe_UnAwake",
+        "Reward": "HeroAwaken_FLYDe",
+        "ShowHero": "FLYDe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "FLYDe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_FLYDe_Awake"
+    },
+    "HGEr": {
+        "AnimSound": "Se_Effect_Awakening_HGEr",
+        "Animation": "glte_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.6
+        ],
+        "ModelId": "Model_HGEr_Awake",
+        "Name": "HGEr_Awake_Name",
+        "NameDesc": "HGEr_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_HGEr_UnAwake",
+        "Reward": "HeroAwaken_HGEr",
+        "ShowHero": "HGEr",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "HGEr_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_HGEr_Awake"
+    },
     "JNLong": {
         "AnimSound": "Se_Effect_Awakening_JNLong",
         "Animation": "fldfa_Awaken",
@@ -418,6 +460,27 @@
         "StarId": "TPGZhu_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_TPGZhu_Awake"
+    },
+    "XHMao": {
+        "AnimSound": "Se_Effect_Awakening_XHMao",
+        "Animation": "lbi_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.6
+        ],
+        "ModelId": "Model_XHMao_Awake",
+        "Name": "XHMao_Awake_Name",
+        "NameDesc": "XHMao_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_XHMao_UnAwake",
+        "Reward": "HeroAwaken_XHMao",
+        "ShowHero": "XHMao",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "XHMao_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_XHMao_Awake"
     },
     "XSMLi": {
         "AnimSound": "Se_Effect_Awakening_XSMLi",

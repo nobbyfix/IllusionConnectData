@@ -296,6 +296,27 @@ all.Skill_XHMao_Unique = {
 
 				if SummonedXHMao then
 					global.AddStatus(_env, SummonedXHMao, "SummonedXHMao")
+
+					if global.SelectHeroPassiveCount(_env, _env.ACTOR, "Hero_PBattle_XHMao_Awaken") > 0 then
+						local buff = global.PassiveFunEffectBuff(_env, "Skill_XHMao_Wolf_Passive", {
+							WolfRateFactor = 80
+						})
+
+						global.ApplyBuff(_env, SummonedXHMao, {
+							duration = 99,
+							group = "Skill_XHMao_Passive_Awaken",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 			end
 
@@ -776,6 +797,27 @@ all.Skill_XHMao_Unique_EX = {
 
 				if SummonedXHMao then
 					global.AddStatus(_env, SummonedXHMao, "SummonedXHMao")
+
+					if global.SelectHeroPassiveCount(_env, _env.ACTOR, "Hero_PBattle_XHMao_Awaken") > 0 then
+						local buff = global.PassiveFunEffectBuff(_env, "Skill_XHMao_Wolf_Passive", {
+							WolfRateFactor = 80
+						})
+
+						global.ApplyBuff(_env, SummonedXHMao, {
+							duration = 99,
+							group = "Skill_XHMao_Passive_Awaken",
+							timing = 0,
+							limit = 1,
+							tags = {
+								"STATUS",
+								"BUFF",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buff
+						})
+					end
 				end
 			end
 
@@ -927,20 +969,20 @@ all.Skill_XHMao_Passive_Awaken = {
 			this.summonFactorAtk,
 			this.summonFactorDef
 		}
-		local passive = __action(this, {
-			name = "passive",
-			entry = prototype.passive
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
 		})
-		passive = global["[duration]"](this, {
+		passive1 = global["[duration]"](this, {
 			0
-		}, passive)
-		this.passive = global["[trigger_by]"](this, {
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
-		}, passive)
+		}, passive1)
 
 		return this
 	end,
-	passive = function (_env, externs)
+	passive1 = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1029,7 +1071,9 @@ all.Skill_XHMao_Wolf_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.WolfRateFactor)
+			if global.FriendMaster(_env) then
+				global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.WolfRateFactor)
+			end
 
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				if global.MARKED(_env, "XHMao")(_env, unit) then

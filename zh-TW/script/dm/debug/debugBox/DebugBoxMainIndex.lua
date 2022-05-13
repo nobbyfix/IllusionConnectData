@@ -339,7 +339,8 @@ DebugBoxMainIndex = {
 				{
 					"投飞镖：设置关卡",
 					"增加小游戏次数",
-					"美食作战：设置初始跳台"
+					"美食作战：设置初始跳台",
+					"大富翁点数"
 				}
 			},
 			{
@@ -860,6 +861,10 @@ DebugBoxMainIndex = {
 			{
 				"美食作战：设置初始跳台",
 				"ChangeJumpStage"
+			},
+			{
+				"大富翁点数",
+				"ChangeDiceNum"
 			},
 			{
 				"触发BOSS共斗",

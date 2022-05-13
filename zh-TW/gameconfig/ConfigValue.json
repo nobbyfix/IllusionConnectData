@@ -982,7 +982,11 @@
     "Bust_Battleend_Show": {
         "clz": "string[]",
         "content": [
-            "Model_SP_PNCao_NNuo"
+            "Model_SP_PNCao_NNuo",
+            "Model_SP_WTXXuan_CBJun_1",
+            "Model_SP_WTXXuan_CBJun_2",
+            "Model_SP_WTXXuan_CBJun_3",
+            "Model_SP_WTXXuan_CBJun_4"
         ]
     },
     "Bust_Inbattle_Show": {
@@ -4184,7 +4188,9 @@
             "SGBao",
             "GCZi",
             "SP_DDing",
-            "XDRLa"
+            "XDRLa",
+            "SP_WTXXuan",
+            "FCXJi"
         ]
     },
     "HeroStar_BoxNum": {
@@ -9950,10 +9956,15 @@
             "SSBYa",
             "SGBao",
             "PSKe",
+            "LDYu",
+            "GCZi",
             "LEIMu",
             "LAMu",
             "AMLYa",
-            "GCZi"
+            "SP_DDing",
+            "XSLuo",
+            "XDRLa",
+            "SP_WTXXuan"
         ]
     },
     "Tower_1_GrowMaxValue": {
@@ -10474,6 +10485,40 @@
             "Priority": null,
             "Type": 1,
             "zOrder": 1
+        }
+    },
+    "TrialRoad_Begin": {
+        "clz": "int",
+        "content": 5
+    },
+    "TrialRoad_BlockNum": {
+        "clz": "int",
+        "content": 22
+    },
+    "TrialRoad_Bubble": {
+        "clz": "dict",
+        "content": {
+            "TR_Girl": "TrialRoad_Bubble2",
+            "TR_HaiSeWei": "TrialRoad_Bubble1"
+        }
+    },
+    "TrialRoad_DiceProb": {
+        "clz": "dict",
+        "content": {
+            "1": 0.2,
+            "2": 0.2,
+            "3": 0.2,
+            "4": 0.25,
+            "5": 0.1,
+            "6": 0.05
+        }
+    },
+    "TrialRoad_Unlock": {
+        "clz": "dict",
+        "content": {
+            "Activity": "ActivityBlock_Magic",
+            "ActivityBlockMap": "ActivityBlock_Magic_Map",
+            "ActivityStoryPoint": "MagicS01S02"
         }
     },
     "TrialSwitch": {

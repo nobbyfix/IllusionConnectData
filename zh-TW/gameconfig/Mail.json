@@ -896,6 +896,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_EightDays_Magic": {
+        "Content": "Mail_EightDays_Magic_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Magic_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Magic_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_MusicFestival": {
         "Content": "Mail_EightDays_MusicFestival_Content",
         "ExpireAfterRead": 72000,
@@ -1349,6 +1362,32 @@
         "SubType": 0,
         "Title": "Mail_MZGXiuTask_DailyTask_Activity_Title",
         "TopStatus": "",
+        "Type": "USER"
+    },
+    "Mail_Magic_AchieveMentTask_Activity": {
+        "Content": "Mail_Magic_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Magic_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Magic_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Magic_DailyTask_Activity": {
+        "Content": "Mail_Magic_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Magic_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Magic_DailyTask_Activity_Title",
+        "TopStatus": 0,
         "Type": "USER"
     },
     "Mail_MonthCard": {

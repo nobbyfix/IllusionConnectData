@@ -2112,9 +2112,7 @@
         ],
         "Map": "M20",
         "Name": "BlockPoint_S20S03_Name",
-        "NextStoryPoint": [
-            "S20S04"
-        ],
+        "NextStoryPoint": [],
         "PointIcon": [
             "main_bg_xq_jqicon01.png",
             "main_bg_xq_jqxw01.png"
@@ -2127,32 +2125,6 @@
             "S20S02"
         ],
         "StoryLink": "story20_3a",
-        "UnlockBubble": ""
-    },
-    "S20S04": {
-        "FirstReward": "S20S04_Reward",
-        "Icon": "s_album_story_1",
-        "IsAuto": "",
-        "IsHide": "",
-        "Location": [
-            -400,
-            -90
-        ],
-        "Map": "M20",
-        "Name": "BlockPoint_S20S04_Name",
-        "NextStoryPoint": [],
-        "PointIcon": [
-            "main_bg_xq_jqicon01.png",
-            "main_bg_xq_jqxw01.png"
-        ],
-        "PointPicture": "",
-        "PreBattlePoint": [
-            "M20S15"
-        ],
-        "PreStoryPoint": [
-            "S20S03"
-        ],
-        "StoryLink": "story20_4a",
         "UnlockBubble": ""
     },
     "S21E01": {

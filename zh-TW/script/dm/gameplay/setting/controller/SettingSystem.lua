@@ -127,6 +127,10 @@ function SettingSystem:getMusicVolume()
 	return self:getSettingModel():getMusicVolume()
 end
 
+function SettingSystem:setMusicVolumeSave(isSave)
+	self:getSettingModel():setMusicVolumeSave(isSave)
+end
+
 function SettingSystem:setEffectVolume(volume)
 	self:getSettingModel():setEffectVolume(volume)
 end
@@ -947,6 +951,12 @@ function SettingSystem:getShowHeadImgList()
 			end
 		elseif value.Type == 5 then
 			if surfaceSystem:hasHeroSkin(value.SurfaceMasterId) then
+				data.unlock = 1
+			else
+				data.unlock = 0
+			end
+		elseif value.Type == 6 then
+			if masterSystem:getMasterLeadStageHeadById(value.HeroMasterId, value.Condition) then
 				data.unlock = 1
 			else
 				data.unlock = 0

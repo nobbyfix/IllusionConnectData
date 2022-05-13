@@ -242,7 +242,7 @@ all.Skill_ZTXChang_Unique = {
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			if global.PETS(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
+			if global.PETS(_env, _env.TARGET) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
 				_env.petsextra = maxHp * this.HpDmgRateFactor
 				damage.val = damage.val + _env.petsextra
@@ -447,7 +447,7 @@ all.Skill_ZTXChang_Unique_Awaken = {
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			if global.PETS(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
+			if global.PETS(_env, _env.TARGET) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
 				_env.petsextra = maxHp * this.HpDmgRateFactor
 				damage.val = damage.val + _env.petsextra

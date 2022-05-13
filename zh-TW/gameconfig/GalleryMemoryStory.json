@@ -287,7 +287,7 @@
                     1
                 ],
                 "params": [
-                    "ActivityBlock_Dusk_Map",
+                    "ActivityBlock_Dusk_Re_Map",
                     "DuskS01S01"
                 ]
             }
@@ -421,6 +421,48 @@
                 "id": [
                     "Memory_Act_FireWorks_3",
                     "Memory_Act_FireWorks_4"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
+    "Memory_Act_Magic": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Magic_Map",
+                    "MagicS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_magic_1",
+        "Name": "ActivityBlock_Magic_Name",
+        "Num": 23,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Magic_1",
+                    "Memory_Act_Magic_2",
+                    "Memory_Act_Magic_3",
+                    "Memory_Act_Magic_4",
+                    "Memory_Act_Magic_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Magic_6",
+                    "Memory_Act_Magic_7",
+                    "Memory_Act_Magic_8",
+                    "Memory_Act_Magic_9"
                 ],
                 "type": "ELITE"
             }

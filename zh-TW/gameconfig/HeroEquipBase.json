@@ -2351,6 +2351,50 @@
         ],
         "zoom": 0.6
     },
+    "Decoration_15112_3": {
+        "ATK": "UR_Decoration_ATK_AH",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Decoration_15112_3_Desc",
+        "HP": "UR_Decoration_HP_AH",
+        "Icon": "ico_equip_swmrenaccess",
+        "Name": "Decoration_15112_3_Name",
+        "Position": "Decoration",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Decoration_15112_3",
+        "Sort": 299068,
+        "StartEquipEndID": "Rareity15_DecorationStone3_8",
+        "StartEquipStarID": "Rareity15_DecorationStone3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
     "Shoes_11001": {
         "ATK": "",
         "AttrEffect": "",
@@ -4324,6 +4368,94 @@
         "Sort": 299059,
         "StartEquipEndID": "Rareity15_Shoes2_8",
         "StartEquipStarID": "Rareity15_Shoes2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15115_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15115_3_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_hycnianshoes",
+        "Name": "Shoes_15115_3_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15115_3",
+        "Sort": 299061,
+        "StartEquipEndID": "Rareity15_Shoes3_8",
+        "StartEquipStarID": "Rareity15_Shoes3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Shoes_15116_1": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Shoes_15116_1_Desc",
+        "HP": "UR_Shoes_HP",
+        "Icon": "ico_equip_ystxingshoes",
+        "Name": "Shoes_15116_1_Name",
+        "Position": "Shoes",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "UR_Shoes_SPEED",
+        "Shine": "",
+        "Skill": "EquipSkill_Shoes_15116_1",
+        "Sort": 299067,
+        "StartEquipEndID": "Rareity15_Shoes1_8",
+        "StartEquipStarID": "Rareity15_Shoes1_1",
         "URUPSkillLV": [
             30,
             40,
@@ -6522,6 +6654,50 @@
         "Sort": 299054,
         "StartEquipEndID": "Rareity15_Top2_8",
         "StartEquipStarID": "Rareity15_Top2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Tops_15112_3": {
+        "ATK": "",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "UR_Top_DEF",
+        "Desc": "CO_Tops_15112_3_Desc",
+        "HP": "UR_Top_HP",
+        "Icon": "ico_equip_ygwwucloth",
+        "Name": "Tops_15112_3_Name",
+        "Position": "Tops",
+        "Profession": [
+            "Defense",
+            "Attack",
+            "Support",
+            "Summon",
+            "Aoe",
+            "Curse",
+            "Cure"
+        ],
+        "ProfessionDesc": "Decoration_ProfessionDesc",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Tops_15112_3",
+        "Sort": 299066,
+        "StartEquipEndID": "Rareity15_Top3_8",
+        "StartEquipStarID": "Rareity15_Top3_1",
         "URUPSkillLV": [
             30,
             40,
@@ -9783,6 +9959,162 @@
         "Sort": 299057,
         "StartEquipEndID": "Rareity15_Weapon3_8",
         "StartEquipStarID": "Rareity15_Weapon3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15125_1": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15125_1_Desc",
+        "HP": "",
+        "Icon": "ico_equip_hccfengweapon",
+        "Name": "Weapon_15125_1_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "XHMao"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15125_1",
+        "Sort": 299062,
+        "StartEquipEndID": "Rareity15_Weapon1_8",
+        "StartEquipStarID": "Rareity15_Weapon1_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15126_2": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15126_2_Desc",
+        "HP": "",
+        "Icon": "ico_equip_wcxrongweapon",
+        "Name": "Weapon_15126_2_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "LDu",
+            "PDLa",
+            "SGHQShou"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15126_2",
+        "Sort": 299063,
+        "StartEquipEndID": "Rareity15_Weapon2_8",
+        "StartEquipStarID": "Rareity15_Weapon2_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15127_3": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15127_3_Desc",
+        "HP": "",
+        "Icon": "ico_equip_dccchuanweapon",
+        "Name": "Weapon_15127_3_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "Summon"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 0,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15127_3",
+        "Sort": 299064,
+        "StartEquipEndID": "Rareity15_Weapon3_8",
+        "StartEquipStarID": "Rareity15_Weapon3_1",
+        "URUPSkillLV": [
+            30,
+            40,
+            50,
+            60,
+            70,
+            80,
+            90,
+            100
+        ],
+        "zoom": 0.6
+    },
+    "Weapon_15128_1": {
+        "ATK": "UR_Weapon_ATK",
+        "AttrEffect": "",
+        "Coordinates": [
+            8,
+            8
+        ],
+        "DEF": "",
+        "Desc": "CO_Weapon_15128_1_Desc",
+        "HP": "",
+        "Icon": "ico_equip_twqluweapon",
+        "Name": "Weapon_15128_1_Name",
+        "Position": "Weapon",
+        "Profession": [
+            "KMLa",
+            "NXYYi",
+            "YSLBin"
+        ],
+        "ProfessionDesc": "",
+        "ProfessionType": 1,
+        "Rank": 280,
+        "Rareity": 15,
+        "SPEED": "",
+        "Shine": "",
+        "Skill": "EquipSkill_Weapon_15128_1",
+        "Sort": 299065,
+        "StartEquipEndID": "Rareity15_Weapon1_8",
+        "StartEquipStarID": "Rareity15_Weapon1_1",
         "URUPSkillLV": [
             30,
             40,

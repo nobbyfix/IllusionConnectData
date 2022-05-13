@@ -59,3 +59,36 @@ function ChangeJumpStage:onClick(data)
 
 	jumpSystem:setBeginStage(tonumber(mText))
 end
+
+ChangeDiceNum = class("ChangeDiceNum", DebugViewTemplate, _M)
+
+function ChangeDiceNum:initialize()
+	self._opType = 424
+	self._viewConfig = {
+		{
+			default = 1,
+			name = "point",
+			title = "骰子点数",
+			type = "Input"
+		}
+	}
+end
+
+function ChangeDiceNum:onClick(data)
+	local dataModificationDS = self:getInjector():getInstance(DataModificationDS)
+
+	dataModificationDS:requestTest(data, function (response)
+		local isSucc = response.resCode == GS_SUCCESS
+
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get(isSucc and "EXEC_SUCC" or "EXEC_FAIL")
+		}))
+		print("cdscdsnkjcndsjkcndskcndkscndksncdksnckdsnckdsnckds")
+		self:dispatch(Event:new("DEBUG_ROADWAY_FIXDICENUM", {
+			response = response,
+			param = {
+				doActivityType = 101
+			}
+		}))
+	end)
+end

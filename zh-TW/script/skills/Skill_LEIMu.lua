@@ -181,7 +181,7 @@ all.Skill_LEIMu_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			4100
+			4700
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_LEIMu"
@@ -854,7 +854,7 @@ all.Skill_LEIMu_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			4100
+			4700
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_LEIMu"

@@ -94,6 +94,25 @@
             }
         ]
     },
+    "CooperateBoss_FLYDe_220313": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_FLYDe_220313",
+        "Name": "HeroBase_Name_FLYDe",
+        "PointHead": "Model_FLYDe",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_JNLong": {
         "BGM": [
             "Mus_Battle_Whale",
@@ -334,6 +353,44 @@
         "EnemyMaster": "CooperateBoss_TPGZhu",
         "Name": "HeroBase_Name_TPGZhu",
         "PointHead": "Model_TPGZhu",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_XHMao_220126": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_XHMao_220126",
+        "Name": "HeroBase_Name_XHMao",
+        "PointHead": "Model_XHMao",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_XHMao_220226": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_XHMao_220226",
+        "Name": "HeroBase_Name_XHMao",
+        "PointHead": "Model_XHMao",
         "VictoryConditions": [
             {
                 "type": "TimeOut",
