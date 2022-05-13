@@ -177,3 +177,11 @@ function PushService:listenHistoryRankChange(callback)
 		end
 	end)
 end
+
+function PushService:listenPlayerDataChange(callback)
+	self:addPushHandler(111, function (op, response)
+		if callback then
+			callback(response)
+		end
+	end)
+end

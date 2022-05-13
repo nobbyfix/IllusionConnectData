@@ -4182,7 +4182,9 @@
             "AMLBLTe",
             "XLDBLTe",
             "SGBao",
-            "GCZi"
+            "GCZi",
+            "SP_DDing",
+            "XDRLa"
         ]
     },
     "HeroStar_BoxNum": {
@@ -10498,22 +10500,22 @@
     "Tsoul_EXPDown": {
         "clz": "dict",
         "content": {
-            "2": 0.4,
-            "3": 0.6,
+            "2": 0.8,
+            "3": 0.8,
             "4": 0.8,
-            "5": 1
+            "5": 0.8
         }
     },
     "Tsoul_EXPGold": {
         "clz": "int",
-        "content": 10
+        "content": 15
     },
     "Tsoul_Expitem_Exp": {
         "clz": "dict",
         "content": {
-            "Gem102": 100,
-            "Gem103": 200,
-            "Gem104": 300
+            "Gem102": 2500,
+            "Gem103": 5000,
+            "Gem104": 7500
         }
     },
     "Tsoul_LevelMax": {

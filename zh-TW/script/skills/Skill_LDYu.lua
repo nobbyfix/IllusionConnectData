@@ -425,20 +425,40 @@ all.Skill_LDYu_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Key"), 99)
+			if global.FriendMaster(_env) and global.MARKED(_env, "LDYu")(_env, _env.ACTOR) then
+				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Time"), 99)
 
-			local buff = global.PassiveFunEffectBuff(_env, "LDYu_Back")
+				local buff = global.PassiveFunEffectBuff(_env, "LDYu_Back")
 
-			global.ApplyBuff(_env, global.FriendField(_env), {
-				timing = 4,
-				duration = 20,
-				tags = {
-					"STATUS",
-					"LDYu_Passive_Key"
-				}
-			}, {
-				buff
-			})
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"LDYu_Passive_Key"
+					}
+				}, {
+					buff
+				})
+
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, global.FriendMaster(_env), {
+					duration = 20,
+					group = "LDYu_Passive_Key",
+					timing = 4,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"LDYu_Passive_Time"
+					}
+				}, {
+					buffeft2
+				})
+			end
 		end)
 
 		return _env
@@ -482,7 +502,7 @@ all.LDYu_Back = {
 			local global = _env.global
 			local count = global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LDYu_Back_Count"))
 
-			if global.MARKED(_env, "LDYu")(_env, _env.unit) and count < 2 then
+			if global.MARKED(_env, "LDYu")(_env, _env.unit) and global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Time")) > 0 and count < 2 then
 				local card = global.BackToCard_ResultCheck(_env, _env.unit, "card")
 
 				if card then

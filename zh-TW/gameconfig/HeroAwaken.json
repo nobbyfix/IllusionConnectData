@@ -20,6 +20,27 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BBLMa_Awake"
     },
+    "BHTZi": {
+        "AnimSound": "Se_Effect_Awakening_BSu",
+        "Animation": "bsu_Awaken",
+        "CutIn": [
+            0,
+            0,
+            1
+        ],
+        "ModelId": "Model_BHTZi_Awake",
+        "Name": "BHTZi_Awake_Name",
+        "NameDesc": "BHTZi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BHTZi_UnAwake",
+        "Reward": "HeroAwaken_BHTZi",
+        "ShowHero": "BHTZi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BHTZi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BHTZi_Awake"
+    },
     "BQDShe": {
         "AnimSound": "Se_Effect_Awakening_BQDShe",
         "Animation": "zqba_Awaken",
@@ -397,6 +418,27 @@
         "StarId": "TPGZhu_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_TPGZhu_Awake"
+    },
+    "XSMLi": {
+        "AnimSound": "Se_Effect_Awakening_XSMLi",
+        "Animation": "nkla_Awaken",
+        "CutIn": [
+            -280,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_XSMLi_Awake",
+        "Name": "XSMLi_Awake_Name",
+        "NameDesc": "XSMLi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_XSMLi_UnAwake",
+        "Reward": "HeroAwaken_XSMLi",
+        "ShowHero": "XSMLi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "XSMLi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_XSMLi_Awake"
     },
     "YBYa": {
         "AnimSound": "Se_Effect_Awakening_YBYa",

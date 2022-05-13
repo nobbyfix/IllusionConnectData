@@ -324,7 +324,7 @@ all.Skill_SGBao_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SGBao"))) do
 					local cardvaluechange = global.CardCostEnchant(_env, "-", this.CostFactor, 1)
 
@@ -751,7 +751,7 @@ all.Skill_SGBao_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) then
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SGBao"))) do
 					local cardvaluechange = global.CardCostEnchant(_env, "-", this.CostFactor, 1)
 
