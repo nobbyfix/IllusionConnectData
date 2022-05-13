@@ -1,6 +1,7 @@
 MiniGameConfig = MiniGameConfig or {}
 MiniGameType = {
 	kJump = "JUMP",
+	kPlaneWar = "Fly",
 	kDarts = "DARTS"
 }
 MiniGameEvn = {

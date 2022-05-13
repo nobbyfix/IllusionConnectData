@@ -237,6 +237,19 @@ function DartsMediator:createStartAnim()
 
 	anim:gotoAndPlay(1)
 	AudioEngine:getInstance():playEffect("Se_Effect_Dwtx_Logo", false)
+	anim:addCallbackAtFrame(15, function ()
+		local scriptNames = "ministory_2a"
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local storyAgent = storyDirector:getStoryAgent()
+
+		storyAgent:setSkipCheckSave(false)
+
+		local guideSaved = storyAgent:isSaved(scriptNames)
+
+		if not guideSaved then
+			storyAgent:trigger(scriptNames)
+		end
+	end)
 end
 
 function DartsMediator:closeBgSound()

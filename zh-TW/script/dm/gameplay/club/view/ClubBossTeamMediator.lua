@@ -159,7 +159,16 @@ function ClubBossTeamMediator:sendUpdateTowerTeam()
 			end
 
 			self._clubSystem:requestStartBossBattle(paramsData, function (data)
-				dump(self._viewType, "self._viewType")
+				if data.ErrorCode and data.ErrorCode == 11466 then
+					self:dispatch(ShowTipEvent({
+						duration = 0.35,
+						tip = Strings:get("Error_11466")
+					}))
+					self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+
+					return
+				end
+
 				self._clubSystem:enterBattle(data, self._viewType)
 			end)
 		end
@@ -183,6 +192,16 @@ function ClubBossTeamMediator:sendEnterBattle()
 	end
 
 	self._clubSystem:requestStartBossBattle(paramsData, function (data)
+		if data.ErrorCode and data.ErrorCode == 11466 then
+			self:dispatch(ShowTipEvent({
+				duration = 0.35,
+				tip = Strings:get("Error_11466")
+			}))
+			self:dispatch(Event:new(EVT_POP_TO_TARGETVIEW, "homeView"))
+
+			return
+		end
+
 		self._clubSystem:enterBattle(data, self._viewType)
 	end)
 end

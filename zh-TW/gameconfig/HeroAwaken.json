@@ -209,6 +209,48 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_LFEr_Awake"
     },
+    "LLan": {
+        "AnimSound": "Se_Effect_Awakening_LLan",
+        "Animation": "LUOLAN_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_LLan_Awake",
+        "Name": "LLan_Awake_Name",
+        "NameDesc": "LLan_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LLan_UnAwake",
+        "Reward": "HeroAwaken_LLan",
+        "ShowHero": "LLan",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LLan_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LLan_Awake"
+    },
+    "LYXi": {
+        "AnimSound": "Se_Effect_Awakening_LYXi",
+        "Animation": "slming_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.7
+        ],
+        "ModelId": "Model_LYXi_Awake",
+        "Name": "LYXi_Awake_Name",
+        "NameDesc": "LYXi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LYXi_UnAwake",
+        "Reward": "HeroAwaken_LYXi",
+        "ShowHero": "LYXi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LYXi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LYXi_Awake"
+    },
     "MGNa": {
         "AnimSound": "Se_Effect_Awakening_MGNa",
         "Animation": "yfei_Awaken",

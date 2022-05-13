@@ -1076,5 +1076,159 @@
             "end": "2022-01-21 23:00:00",
             "start": "2022-01-01 10:00:00"
         }
+    },
+    "RTPKSeason_8": {
+        "AllServerMinimum": "",
+        "AllServerNum": 30000,
+        "AllServerReward": [
+            "RTPK_SeriesALL_1_2202",
+            "RTPK_SeriesALL_2_2202",
+            "RTPK_SeriesALL_3_2202",
+            "RTPK_SeriesALL_4_2202",
+            "RTPK_SeriesALL_5_2202",
+            "RTPK_SeriesALL_6_2202",
+            "RTPK_SeriesALL_7_2202",
+            "RTPK_SeriesALL_8_2202",
+            "RTPK_SeriesALL_9_2202",
+            "RTPK_SeriesALL_10_2202",
+            "RTPK_SeriesALL_11_2202",
+            "RTPK_SeriesALL_12_2202",
+            "RTPK_SeriesALL_13_2202",
+            "RTPK_SeriesALL_14_2202",
+            "RTPK_SeriesALL_15_2202",
+            "RTPK_SeriesALL_16_2202",
+            "RTPK_SeriesALL_17_2202"
+        ],
+        "AttrPercent": [
+            1,
+            1,
+            1.1
+        ],
+        "DailyWinReward": "",
+        "DailyWinRewardShow": "",
+        "Name": "RTPKSeason_8_Name",
+        "OneServerMinimum": "",
+        "OneServerNum": 10000,
+        "SeasonBackground": "RTPK_scene_ppcg_xxd",
+        "SeasonOrder": 8,
+        "SeasonRule": "RTPKSeason_8",
+        "SeasonShowModel": "GCZi",
+        "SeasonWinTask": [
+            {
+                "1": "RTPK_WinReward_1"
+            },
+            {
+                "2": "RTPK_WinReward_2"
+            },
+            {
+                "3": "RTPK_WinReward_3"
+            },
+            {
+                "5": "RTPK_WinReward_5"
+            },
+            {
+                "8": "RTPK_WinReward_8"
+            },
+            {
+                "10": "RTPK_WinReward_10"
+            },
+            {
+                "12": "RTPK_WinReward_12"
+            },
+            {
+                "15": "RTPK_WinReward_15"
+            },
+            {
+                "18": "RTPK_WinReward_18"
+            },
+            {
+                "20": "RTPK_WinReward_20"
+            },
+            {
+                "22": "RTPK_WinReward_22"
+            },
+            {
+                "25": "RTPK_WinReward_25"
+            },
+            {
+                "28": "RTPK_WinReward_28"
+            },
+            {
+                "30": "RTPK_WinReward_30"
+            },
+            {
+                "32": "RTPK_WinReward_32"
+            },
+            {
+                "35": "RTPK_WinReward_35"
+            },
+            {
+                "38": "RTPK_WinReward_38"
+            },
+            {
+                "40": "RTPK_WinReward_40"
+            },
+            {
+                "42": "RTPK_WinReward_42"
+            },
+            {
+                "45": "RTPK_WinReward_45"
+            },
+            {
+                "47": "RTPK_WinReward_47"
+            },
+            {
+                "50": "RTPK_WinReward_50"
+            },
+            {
+                "52": "RTPK_WinReward_52"
+            },
+            {
+                "55": "RTPK_WinReward_55"
+            },
+            {
+                "58": "RTPK_WinReward_58"
+            },
+            {
+                "60": "RTPK_WinReward_60"
+            },
+            {
+                "62": "RTPK_WinReward_62"
+            },
+            {
+                "65": "RTPK_WinReward_65"
+            },
+            {
+                "70": "RTPK_WinReward_70"
+            },
+            {
+                "75": "RTPK_WinReward_75"
+            },
+            {
+                "80": "RTPK_WinReward_80"
+            },
+            {
+                "85": "RTPK_WinReward_85"
+            },
+            {
+                "90": "RTPK_WinReward_90"
+            },
+            {
+                "100": "RTPK_WinReward_100"
+            },
+            {
+                "110": "RTPK_WinReward_110"
+            },
+            {
+                "120": "RTPK_WinReward_120"
+            }
+        ],
+        "SeasonWinTaskDes": "RTPK_WinReward_UI02",
+        "ServerReward": [],
+        "ShowTime": 86400,
+        "TimeFactor": {
+            "end": "2022-02-21 23:00:00",
+            "start": "2022-02-01 10:00:00"
+        }
     }
 }

@@ -469,8 +469,8 @@
         "Sort": 2001,
         "Surface": "Surface_LEIMu_2",
         "TimeType": {
-            "end": "2022-01-21 05:00:00",
-            "start": "2022-01-17 05:00:00",
+            "end": "2022-01-25 05:00:00",
+            "start": "2022-01-21 05:00:00",
             "type": "limit"
         }
     },
@@ -509,6 +509,25 @@
         "TimeType": {
             "end": "2021-06-30 05:00:00",
             "start": "2021-06-24 05:00:00",
+            "type": "limit"
+        }
+    },
+    "ShopSurface_Surface_LSLTe_2": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_LSLTe_2",
+        "TimeType": {
+            "end": "2022-01-29 05:00:00",
+            "start": "2022-01-25 05:00:00",
             "type": "limit"
         }
     },

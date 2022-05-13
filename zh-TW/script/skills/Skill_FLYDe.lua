@@ -459,51 +459,104 @@ all.Skill_FLYDe_Passive = {
 			})
 
 			for _, unit in global.__iter__(global.AllUnits(_env, global.PETS - global.SUMMONS)) do
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
-				local cost = global.GetCost(_env, unit)
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
-					1,
-					1,
-					0
-				})
-				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					local cost = global.GetCost(_env, unit)
+					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						1,
+						0
+					})
+					damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
 
-				if this.DamageFactor - cost * this.DamageFloor == 1 then
-					damage.val = damage.val + 1
-				end
+					if this.DamageFactor - cost * this.DamageFloor == 1 then
+						damage.val = damage.val + 1
+					end
 
-				if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
-					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
-					local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+					if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+						local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+						local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
 
-					if damage.val > hp + shield then
+						if damage.val > hp + shield then
+							damage.val = 0
+							local buff = global.NumericEffect(_env, "+def", {
+								"+Normal",
+								"+Normal"
+							}, 0)
+
+							global.ApplyBuff(_env, unit, {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"LEIMu_Passive_Done"
+								}
+							}, {
+								buff
+							})
+						end
+					end
+
+					damage.crit = nil
+					damage.block = nil
+
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
 						damage.val = 0
-						local buff = global.NumericEffect(_env, "+def", {
-							"+Normal",
-							"+Normal"
-						}, 0)
+					end
 
-						global.ApplyBuff(_env, unit, {
+					if damage.val > 0 then
+						global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+						if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
+							global.AnimForTrgt(_env, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						else
+							global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						end
+					end
+				end
+			end
+
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					global.KillTarget(_env, unit)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+						global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
 							timing = 0,
 							duration = 99,
 							tags = {
-								"LEIMu_Passive_Done"
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"UR_EQUIPMENT"
 							}
 						}, {
-							buff
-						})
+							killcount
+						}, 1)
+
+						if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+							global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+						end
 					end
-				end
-
-				damage.crit = nil
-				damage.block = nil
-
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
-					damage.val = 0
-				end
-
-				if damage.val > 0 then
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 					if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
 						global.AnimForTrgt(_env, unit, {
@@ -526,55 +579,6 @@ all.Skill_FLYDe_Passive = {
 							}
 						})
 					end
-				end
-			end
-
-			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
-				global.KillTarget(_env, unit)
-
-				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
-					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						killcount
-					}, 1)
-
-					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
-						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
-					end
-				end
-
-				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
-					global.AnimForTrgt(_env, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
-				else
-					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
 				end
 			end
 		end)
@@ -969,51 +973,104 @@ all.Skill_FLYDe_Passive_EX = {
 			})
 
 			for _, unit in global.__iter__(global.AllUnits(_env, global.PETS - global.SUMMONS)) do
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
-				local cost = global.GetCost(_env, unit)
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
-					1,
-					1,
-					0
-				})
-				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					local cost = global.GetCost(_env, unit)
+					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						1,
+						0
+					})
+					damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
 
-				if this.DamageFactor - cost * this.DamageFloor == 1 then
-					damage.val = damage.val + 1
-				end
+					if this.DamageFactor - cost * this.DamageFloor == 1 then
+						damage.val = damage.val + 1
+					end
 
-				if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
-					local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
-					local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
+					if global.SelectBuffCount(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "LEIMu_Passive")) == 0 and global.MARKED(_env, "LEIMu")(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "IMMUNE")) == 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "UNDEAD")) == 0 then
+						local hp = global.UnitPropGetter(_env, "hp")(_env, unit)
+						local shield = global.UnitPropGetter(_env, "shield")(_env, unit)
 
-					if damage.val > hp + shield then
+						if damage.val > hp + shield then
+							damage.val = 0
+							local buff = global.NumericEffect(_env, "+def", {
+								"+Normal",
+								"+Normal"
+							}, 0)
+
+							global.ApplyBuff(_env, unit, {
+								timing = 0,
+								duration = 99,
+								tags = {
+									"LEIMu_Passive_Done"
+								}
+							}, {
+								buff
+							})
+						end
+					end
+
+					damage.crit = nil
+					damage.block = nil
+
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
 						damage.val = 0
-						local buff = global.NumericEffect(_env, "+def", {
-							"+Normal",
-							"+Normal"
-						}, 0)
+					end
 
-						global.ApplyBuff(_env, unit, {
+					if damage.val > 0 then
+						global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+						if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
+							global.AnimForTrgt(_env, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						else
+							global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						end
+					end
+				end
+			end
+
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					global.KillTarget(_env, unit)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+						global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
 							timing = 0,
 							duration = 99,
 							tags = {
-								"LEIMu_Passive_Done"
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"UR_EQUIPMENT"
 							}
 						}, {
-							buff
-						})
+							killcount
+						}, 1)
+
+						if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+							global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+						end
 					end
-				end
-
-				damage.crit = nil
-				damage.block = nil
-
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
-					damage.val = 0
-				end
-
-				if damage.val > 0 then
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 
 					if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
 						global.AnimForTrgt(_env, unit, {
@@ -1036,55 +1093,6 @@ all.Skill_FLYDe_Passive_EX = {
 							}
 						})
 					end
-				end
-			end
-
-			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
-				global.KillTarget(_env, unit)
-
-				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
-					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						killcount
-					}, 1)
-
-					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
-						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
-					end
-				end
-
-				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
-					global.AnimForTrgt(_env, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
-				else
-					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
 				end
 			end
 		end)
@@ -1900,32 +1908,87 @@ all.Skill_FLYDe_Passive_Awaken = {
 			})
 
 			for _, unit in global.__iter__(global.AllUnits(_env, global.PETS - global.SUMMONS)) do
-				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
-				local cost = global.GetCost(_env, unit)
-				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
-					1,
-					1,
-					0
-				})
-				damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
+					local cost = global.GetCost(_env, unit)
+					local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+						1,
+						1,
+						0
+					})
+					damage.val = global.max(_env, maxHp * (this.DamageFactor - cost * this.DamageFloor), 0)
 
-				if this.DamageFactor - cost * this.DamageFloor == 1 then
-					damage.val = damage.val + 1
-				end
-
-				damage.crit = nil
-				damage.block = nil
-
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
-					damage.val = 0
-				end
-
-				if damage.val > 0 then
-					local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-
-					if result and result.deadly == true then
-						_env.count = _env.count + 1
+					if this.DamageFactor - cost * this.DamageFloor == 1 then
+						damage.val = damage.val + 1
 					end
+
+					damage.crit = nil
+					damage.block = nil
+
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "DHB_Damage_Way")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Damage_Way_DARK")) == 0 then
+						damage.val = 0
+					end
+
+					if damage.val > 0 then
+						local result = global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+
+						if result and result.deadly == true then
+							_env.count = _env.count + 1
+						end
+
+						if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
+							global.AnimForTrgt(_env, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						else
+							global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
+								loop = 1,
+								anim = "xge_bufftexiao",
+								zOrder = "TopLayer",
+								pos = {
+									0.45,
+									0.85
+								}
+							})
+						end
+					end
+				end
+			end
+
+			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "NianShou")) == 0 then
+					global.KillTarget(_env, unit)
+
+					if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
+						global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"UNDISPELLABLE",
+								"UNSTEALABLE",
+								"UR_EQUIPMENT"
+							}
+						}, {
+							killcount
+						}, 1)
+
+						if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
+							global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
+						end
+					end
+
+					_env.count = _env.count + 1
 
 					if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
 						global.AnimForTrgt(_env, unit, {
@@ -1948,57 +2011,6 @@ all.Skill_FLYDe_Passive_Awaken = {
 							}
 						})
 					end
-				end
-			end
-
-			local killcount = global.SpecialNumericEffect(_env, "+weapon_15119_1", {
-				"+Normal",
-				"+Normal"
-			}, 1)
-
-			for _, unit in global.__iter__(global.AllUnits(_env, global.SUMMONS)) do
-				global.KillTarget(_env, unit)
-
-				if global.SpecialPropGetter(_env, "weapon_15119_1_check")(_env, _env.ACTOR) > 0 then
-					global.ApplyBuff_Buff(_env, _env.ACTOR, global.FriendField(_env), {
-						timing = 0,
-						duration = 99,
-						tags = {
-							"UNDISPELLABLE",
-							"UNSTEALABLE",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						killcount
-					}, 1)
-
-					if global.SpecialPropGetter(_env, "weapon_15119_1")(_env, global.FriendField(_env)) % 3 == 0 and global.EnemyMaster(_env) then
-						global.ApplyHPDamage(_env, global.EnemyMaster(_env), global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 1.2)
-					end
-				end
-
-				_env.count = _env.count + 1
-
-				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "XIGE_FIRST")) == 0 then
-					global.AnimForTrgt(_env, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
-				else
-					global.DelayCall(_env, 1600, global.AnimForTrgt, unit, {
-						loop = 1,
-						anim = "xge_bufftexiao",
-						zOrder = "TopLayer",
-						pos = {
-							0.45,
-							0.85
-						}
-					})
 				end
 			end
 

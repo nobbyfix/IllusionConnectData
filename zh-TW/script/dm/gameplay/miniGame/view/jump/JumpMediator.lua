@@ -34,6 +34,10 @@ local kBtnHandlers = {
 	["main.menu_panel.begin_btn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickBegin"
+	},
+	["main.menu_panel.addbtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickAddTimes"
 	}
 }
 local runType = "ONLINE"
@@ -65,6 +69,7 @@ function JumpMediator:bindMapEventListener()
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.dayRsetPush)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MINIGAME_GETREWARD_SCUESS, self, self.refreshRedPoints)
 	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MINIGAME_BEGIN_SCUESS, self, self.beginSuccessEvent)
+	self:mapEventListener(self:getEventDispatcher(), EVT_ACTIVITY_MINIGAME_BUYTIMES_SCUESS, self, self.buyTimesSuccessEvent)
 end
 
 function JumpMediator:beginSuccessEvent()
@@ -87,6 +92,11 @@ function JumpMediator:dayRsetPush(event)
 end
 
 function JumpMediator:buyTimesScuess(event)
+	self:refreshData()
+	self:refreshTimesView()
+end
+
+function JumpMediator:buyTimesSuccessEvent(event)
 	self:refreshData()
 	self:refreshTimesView()
 end
@@ -150,6 +160,7 @@ function JumpMediator:initNodes()
 	self._batBackBtn = self:getView():getChildByFullName("batback_btn")
 	self._gratzNode = self._mainPanel:getChildByFullName("gratz_pnl")
 	self._beginBtn = self._menuPanel:getChildByFullName("begin_btn")
+	self._addTimesBtn = self._menuPanel:getChildByName("addbtn")
 	self._rankBtn = self._mainPanel:getChildByFullName("menu_panel.rankbtn")
 	self._ruleBtn = self._mainPanel:getChildByFullName("menu_panel.rulebtn")
 	self._rewardBtn = self._mainPanel:getChildByFullName("menu_panel.rewardbtn")
@@ -174,8 +185,23 @@ function JumpMediator:addAnim()
 	self._gameInfoNode:changeParent(descNode):center(descNode:getContentSize())
 	self._beginBtn:changeParent(btnNode):center(btnNode:getContentSize())
 	self._gameTimesLabel:changeParent(timesNode):center(timesNode:getContentSize())
+	self._addTimesBtn:changeParent(timesNode)
+	self._addTimesBtn:setPosition(cc.p(self._gameTimesLabel:getPositionX() + self._gameTimesLabel:getContentSize().width / 2 + 20, 2))
 	anim:addEndCallback(function ()
 		anim:stop()
+	end)
+	anim:addCallbackAtFrame(15, function ()
+		local scriptNames = "ministory_1a"
+		local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+		local storyAgent = storyDirector:getStoryAgent()
+
+		storyAgent:setSkipCheckSave(false)
+
+		local guideSaved = storyAgent:isSaved(scriptNames)
+
+		if not guideSaved then
+			storyAgent:trigger(scriptNames)
+		end
 	end)
 end
 
@@ -228,6 +254,9 @@ function JumpMediator:refreshTimesView()
 	else
 		self._limitRewardLabel:setVisible(false)
 	end
+
+	self._addTimesBtn:setGray(self._activity:getBuyTimes() == self._jumpSystem:getCostBuyMaxTimes())
+	self._addTimesBtn:setVisible(self._activity:getGameTimes() == 0)
 end
 
 function JumpMediator:addIconAnim(icon, anim, time)
@@ -1685,7 +1714,12 @@ function JumpMediator:showResult(stageid)
 		isHightScore = preHightScore < self._score,
 		activityId = self._activityId,
 		event = EVT_JUMP_PLAYAGAIN,
-		isGetRewardLimit = self._jumpSystem:isGetRewardLimit()
+		isGetRewardLimit = self._jumpSystem:isGetRewardLimit(),
+		buytimes = self._activity:getBuyTimes(),
+		buymaxtimes = self._jumpSystem:getCostBuyMaxTimes(),
+		eachbuynum = self._jumpSystem:getEachBuyNum(),
+		costid = self._jumpSystem:getBuyCostItemId(),
+		amountlist = self._jumpSystem:getCostAmountList()
 	}
 
 	if preHightScore < self._score then
@@ -2009,13 +2043,50 @@ function JumpMediator:onClickBatBack(sender, eventType)
 	}, data))
 end
 
+function JumpMediator:buyTimes()
+	local buytimes = self._activity:getBuyTimes()
+	local outSelf = self
+	local delegate = {
+		willClose = function (self, popupMediator, data)
+			if data.response == "ok" then
+				if not outSelf._bagSystem:checkCostEnough(outSelf._jumpSystem:getBuyCostItemId(), outSelf._jumpSystem:getCostBuyTimes(buytimes + 1), {
+					type = "tip"
+				}) then
+					return
+				end
+
+				outSelf._miniGameSystem:requestActivityGameBuyTimes(outSelf._activityId)
+			end
+		end
+	}
+	local data = {
+		isRich = true,
+		title = Strings:get("MiniGame_BuyTimes_UI1"),
+		title1 = Strings:get("MiniGame_BuyTimes_UI2"),
+		content = Strings:get("Activity_Darts_UI_16", {
+			fontName = TTF_FONT_FZYH_R,
+			num = self._jumpSystem:getCostBuyTimes(buytimes + 1),
+			count = self._jumpSystem:getEachBuyNum()
+		}),
+		sureBtn = {}
+	}
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+end
+
 function JumpMediator:checkBuyTimes(call)
 	local times = self._activity:getGameTimes()
+	local buytimes = self._activity:getBuyTimes()
+	local maxtimes = self._jumpSystem:getCostBuyMaxTimes()
 
 	if times == 0 then
 		local factor1 = times == 0
+		local factor2 = buytimes == maxtimes
 
-		if factor1 then
+		if factor1 and factor2 then
 			self:dispatch(ShowTipEvent({
 				tip = Strings:get("Activity_Darts_Times_Out")
 			}))
@@ -2026,6 +2097,8 @@ function JumpMediator:checkBuyTimes(call)
 		if call and call() then
 			return
 		end
+
+		self:buyTimes()
 
 		return false
 	end
@@ -2081,4 +2154,20 @@ function JumpMediator:onClickBegin(sender, eventType)
 
 	self._miniGameSystem:requestActivityGameBegin(self._activity:getId(), function ()
 	end, doActivityType)
+end
+
+function JumpMediator:onClickAddTimes(sender, eventType)
+	if eventType == ccui.TouchEventType.ended then
+		local function callBack()
+			if not self:checkRewardLimitTips() then
+				return true
+			end
+
+			return false
+		end
+
+		if not self:checkBuyTimes(callBack) then
+			return
+		end
+	end
 end

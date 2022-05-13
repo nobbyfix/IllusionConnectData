@@ -53,6 +53,9 @@ Crusade:has("_limitHero", {
 Crusade:has("_floorCombat", {
 	is = "r"
 })
+Crusade:has("_resetTimes", {
+	is = "r"
+})
 
 function Crusade:initialize()
 	super.initialize(self)
@@ -78,6 +81,7 @@ function Crusade:initialize()
 		name = ""
 	}
 	self._limitHero = {}
+	self._resetTimes = 0
 end
 
 function Crusade:synchronize(data)
@@ -156,6 +160,10 @@ function Crusade:synchronize(data)
 
 	if data.combat then
 		self._floorCombat = data.combat
+	end
+
+	if data.resetTimes then
+		self._resetTimes = data.resetTimes
 	end
 end
 

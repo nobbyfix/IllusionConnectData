@@ -747,10 +747,10 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
-        "Type": "",
+        "Type": 1,
         "Unlook": 1
     },
     "Surface_ATSheng_1": {
@@ -3793,7 +3793,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -5475,10 +5475,10 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
-        "Type": "",
+        "Type": 1,
         "Unlook": 1
     },
     "Surface_LCYShi_1": {
@@ -5707,7 +5707,7 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
@@ -5881,10 +5881,10 @@
         "NotGetUnlook": "",
         "Quality": 2,
         "RepeatReward": "",
-        "SKIN": "",
+        "SKIN": 1,
         "ShopID": "",
         "Sort": 1,
-        "Type": "",
+        "Type": 1,
         "Unlook": 1
     },
     "Surface_LEIMu_2": {
@@ -6517,11 +6517,11 @@
             }
         ],
         "Desc": "Surface_LSLTe_artist_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_YLSBai_Detective_GainDesc",
         "GainShortDesc": "Surface_LSLTe_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_LSLTe_2",
         "Hero": "LSLTe",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_LSLTe_artist_LongDecs",
         "Model": "Model_LSLTe_artist",
         "Name": "Surface_LSLTe_artist_Name",
@@ -6529,9 +6529,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_LYSi_1": {
@@ -6806,23 +6806,23 @@
                 ]
             }
         ],
-        "Desc": "",
+        "Desc": "Surface_LYXi_1Awake_Desc",
         "GainDesc": "",
-        "GainShortDesc": "",
+        "GainShortDesc": "Surface_LYXi_Awake_GainDesc",
         "GoodsId": "",
-        "Hero": "",
+        "Hero": "LYXi",
         "Link": "",
         "LongDesc": "",
-        "Model": "",
-        "Name": "",
+        "Model": "Model_LYXi_Awake",
+        "Name": "Surface_LYXi_Awake_Name",
         "NotGetUnlook": "",
-        "Quality": "",
+        "Quality": 5,
         "RepeatReward": "",
         "SKIN": "",
         "ShopID": "",
-        "Sort": "",
-        "Type": "",
-        "Unlook": ""
+        "Sort": 2,
+        "Type": 5,
+        "Unlook": 1
     },
     "Surface_MDSi_1": {
         "ActivityId": "",
@@ -11895,6 +11895,64 @@
         "ShopID": "",
         "Sort": 1,
         "Type": 1,
+        "Unlook": 1
+    },
+    "Surface_XSMLi_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -218,
+                    1683
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -375,
+                    1536
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_XSMLi_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_XSMLi_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "XSMLi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_XSMLi_Awake",
+        "Name": "Surface_XSMLi_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 2,
+        "Type": 5,
         "Unlook": 1
     },
     "Surface_XXFSi_1": {

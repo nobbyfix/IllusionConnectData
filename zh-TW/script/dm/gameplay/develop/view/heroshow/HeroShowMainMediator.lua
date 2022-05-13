@@ -87,6 +87,13 @@ local kTabBtnData = {
 		unlockKey = "Hero_StarUp",
 		tabName = Strings:get("HEROS_UI5"),
 		tabName1 = Strings:get("UITitle_EN_Jingjie")
+	},
+	{
+		unlockKey = "Projection",
+		switchKey = "fn_hero_soul",
+		viewName = "TSoulMainView",
+		tabName = Strings:get("TimeSoul_Button_Name"),
+		tabName1 = Strings:get("UITitle_EN_TSoul")
 	}
 }
 local kBtnHandlers = {
@@ -441,6 +448,8 @@ function HeroShowMainMediator:resetViews(hideAnim)
 
 				if self._isClick then
 					view.mediator:runStartAction()
+
+					self._isClick = false
 				end
 			end
 		end
@@ -453,7 +462,7 @@ function HeroShowMainMediator:resetViews(hideAnim)
 		self._baseShowView:hideInfoBg(not isEquipView)
 	end
 
-	self._basePanel:setVisible(self._tabType > 1 and createNameType ~= 6)
+	self._basePanel:setVisible(self._tabType > 1 and createNameType ~= 6 and createNameType ~= 7)
 	self:refreshTabRedPoint()
 	self:refreshArrowState()
 	self:initTouchSlide()
@@ -649,6 +658,9 @@ function HeroShowMainMediator:onClickLeft()
 	self._selectHeroId = heroId
 
 	self._heroSystem:setUiSelectHeroId(heroId)
+
+	self._isClick = true
+
 	self:resetViews()
 end
 
@@ -680,6 +692,9 @@ function HeroShowMainMediator:onClickRight()
 	self._selectHeroId = heroId
 
 	self._heroSystem:setUiSelectHeroId(heroId)
+
+	self._isClick = true
+
 	self:resetViews()
 end
 

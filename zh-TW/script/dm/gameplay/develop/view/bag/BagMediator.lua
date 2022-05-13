@@ -1,5 +1,6 @@
 require("dm.gameplay.develop.view.bag.BagItemIconHandler")
 require("dm.gameplay.develop.view.bag.BagEquipPancel")
+require("dm.gameplay.develop.view.bag.BagTSoulPanel")
 
 BagMediator = class("BagMediator", DmAreaViewMediator, _M)
 
@@ -18,6 +19,10 @@ local kBtnHandlers = {
 	["mainpanel.equipPanel.nodeDesc.lockBtn"] = {
 		clickAudio = "Se_Click_Common_1",
 		func = "onClickLock"
+	},
+	["mainpanel.tsoulPanel.nodeDesc.lockBtn"] = {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickTsoulLock"
 	},
 	["mainpanel.detail_panel.frombtn"] = {
 		clickAudio = "Se_Click_Common_1",
@@ -72,6 +77,12 @@ local kTabBtnsNames_model = {
 		ItemPages.kEquip
 	},
 	{
+		"TimeSoul_Main_Button_ShiPo",
+		"",
+		false,
+		ItemPages.kTsoul
+	},
+	{
 		"bag_UI24",
 		"UITitle_EN_Qita",
 		false,
@@ -116,6 +127,7 @@ function BagMediator:userInject()
 	self._heroSystem = self._developSystem:getHeroSystem()
 	self._masterSystem = self._developSystem:getMasterSystem()
 	self._equipSystem = self._developSystem:getEquipSystem()
+	self._tSoulSystem = self._developSystem:getTSoulSystem()
 	local index = 1
 
 	for i = 1, #kTabBtnsNames_model do
@@ -123,7 +135,15 @@ function BagMediator:userInject()
 
 		if i == 2 then
 			local result, tip = self._systemKeeper:isUnlock("Bag_Secret")
-			canAdd = (result == true or self._bagSystem:isHasCompose() == true) and true or false
+
+			if result == true or self._bagSystem:isHasCompose() == true then
+				canAdd = true
+			else
+				canAdd = false
+			end
+		elseif i == 7 then
+			local result, tip = self._systemKeeper:isUnlock("Bag_TSoul")
+			canAdd = (result or self._bagSystem:isHasTSoulItem()) and true or false
 		end
 
 		if canAdd then
@@ -309,6 +329,15 @@ function BagMediator:initNodes()
 	equipPanel:hide()
 
 	self._equipPanel = equipPanel
+	local tsoulPanelUI = self._mainPanel:getChildByFullName("tsoulPanel")
+
+	AdjustUtils.ignorSafeAreaRectForNode(tsoulPanelUI, AdjustUtils.kAdjustType.Right)
+
+	local tsoulPanel = BagTSoulPanel:new(self, tsoulPanelUI)
+
+	tsoulPanel:hide()
+
+	self._tsoulPanel = tsoulPanel
 	self.URLevelLimit = self._mainPanel:getChildByFullName("detail_panel.URLevelLimit")
 
 	self.URLevelLimit:setVisible(false)
@@ -516,6 +545,7 @@ function BagMediator:refreshView()
 		self._itemScroll:setVisible(false)
 		self._detailPanel:setVisible(false)
 		self._equipPanel:hide()
+		self._tsoulPanel:hide()
 
 		return
 	end
@@ -531,8 +561,14 @@ function BagMediator:updateRightPancel()
 
 	if entry and ItemPages.kEquip == entry.item:getType() and ItemTypes.K_EQUIP_NEW == entry.item:getSubType() then
 		self._detailPanel:setVisible(false)
+		self._tsoulPanel:hide()
 		self._equipPanel:show(entry)
+	elseif entry and ItemPages.kTsoul == entry.item:getType() then
+		self._detailPanel:setVisible(false)
+		self._equipPanel:hide()
+		self._tsoulPanel:show(entry)
 	else
+		self._tsoulPanel:hide()
 		self._detailPanel:setVisible(true)
 		self._equipPanel:hide()
 		self:updateDetailArea()

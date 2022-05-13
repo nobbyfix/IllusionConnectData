@@ -36,6 +36,8 @@ function BagItemIconHandler:decorateWithData(entryId)
 
 		if ItemPages.kEquip == page and (subType == ItemTypes.K_EQUIP_NEW or subType == ItemTypes.K_EQUIP_NEW_ITEM) then
 			icon = self:getEquipIcon(item, pancel)
+		elseif ItemPages.kTsoul == page then
+			icon = self:getTSoulIcon(item, pancel)
 		else
 			local addFragamentCanCompEffect = false
 			local rarity = nil
@@ -102,6 +104,38 @@ function BagItemIconHandler:getEquipIcon(item, pancel)
 		lock = not equipData:getUnlock()
 	})
 	local heroId = equipData:getHeroId()
+
+	if heroId ~= "" then
+		local itemCellTop = self._itemCellTop:clone()
+
+		itemCellTop:setVisible(true)
+		itemCellTop:setName("itemCellTop")
+		itemCellTop:addTo(pancel, 2, 2):center(pancel:getContentSize())
+
+		local heroNode = itemCellTop:getChildByFullName("heroIcon")
+		local heroInfo = {
+			id = IconFactory:getRoleModelByKey("HeroBase", heroId)
+		}
+		local headImgName = IconFactory:createRoleIconSpriteNew(heroInfo)
+
+		headImgName:setScale(0.2)
+
+		headImgName = IconFactory:addStencilForIcon(headImgName, 2, cc.size(31, 31))
+
+		headImgName:addTo(heroNode):center(heroNode:getContentSize())
+		icon:setColor(cc.c3b(131, 131, 131))
+	end
+
+	return icon
+end
+
+function BagItemIconHandler:getTSoulIcon(item, pancel)
+	local icon = IconFactory:createTSoulIcon({
+		id = item:getConfigId(),
+		level = item:getLevel(),
+		lock = item:getLock()
+	})
+	local heroId = item:getHeroId()
 
 	if heroId ~= "" then
 		local itemCellTop = self._itemCellTop:clone()

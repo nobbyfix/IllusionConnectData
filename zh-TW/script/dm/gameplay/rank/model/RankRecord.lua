@@ -658,6 +658,14 @@ function MiniGameJumpRankRecord:synchronize(data)
 	self._score = data.value or 0
 end
 
+MiniGamePlaneRankRecord = class("MiniGamePlaneRankRecord", MiniGameJumpRankRecord, _M)
+
+function MiniGamePlaneRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.KPlane
+end
+
 RTPKRankRecord = class("RTPKRankRecord", BaseRankRecord, _M)
 
 RTPKRankRecord:has("_score", {

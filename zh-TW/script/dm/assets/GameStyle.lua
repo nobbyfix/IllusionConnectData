@@ -8,6 +8,7 @@ SomeWordTipsViewTag = 10012
 ItemBuffTipsViewTag = 10013
 ItemShowTipsViewTag = 10014
 ComposeToEquipTipsViewTag = 10015
+TSoulTipsViewTag = 10016
 GameStyle.touchEffectZorder = 9999
 BuffTypeSet = {
 	NormalBlock = "NormalBlock",
@@ -1070,4 +1071,14 @@ local leadStageColor = {
 
 function GameStyle:getLeadStageColor(lv)
 	return leadStageColor[lv]
+end
+
+local TsoulPosImg = {
+	itemFile .. "timesoul_ico_zuo.png",
+	itemFile .. "timesoul_ico_zhong.png",
+	itemFile .. "timesoul_ico_you.png"
+}
+
+function GameStyle:getTSoulPosImage(pos)
+	return TsoulPosImg[tonumber(pos)] or TsoulPosImg[1]
 end

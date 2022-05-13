@@ -7699,7 +7699,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.28,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_GCZi",
         "KeyPassiveSkill": "",
@@ -12539,7 +12539,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.28,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_LDYu",
         "KeyPassiveSkill": "Hero_PBattle_LDYu_Key",
@@ -14069,7 +14069,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 0.74,
-        "AwakePic": "",
+        "AwakePic": "portrait_ajla_awaken",
         "BaseAttack": 185.0,
         "BaseDefence": 66.0,
         "BaseHp": 1032.0,
@@ -14320,7 +14320,8 @@
         "StarId": "LLan_1",
         "SurfaceList": [
             "Surface_LLan_1",
-            "Surface_LLan_2"
+            "Surface_LLan_2",
+            "Surface_LLan_Awake"
         ],
         "TeamSpecialVoice": {
             "JNLong": "Voice_LLan_33"
@@ -14564,7 +14565,8 @@
         "Speed": 50,
         "StarId": "LSLTe_1",
         "SurfaceList": [
-            "Surface_LSLTe_1"
+            "Surface_LSLTe_1",
+            "Surface_LSLTe_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -14849,7 +14851,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.18,
-        "AwakePic": "",
+        "AwakePic": "portrait_slming_awaken",
         "BaseAttack": 227.0,
         "BaseDefence": 60.0,
         "BaseHp": 943.0,
@@ -15076,7 +15078,8 @@
         "StarId": "LYXi_1",
         "SurfaceList": [
             "Surface_LYXi_1",
-            "Surface_LYXi_2"
+            "Surface_LYXi_2",
+            "Surface_LYXi_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -22195,7 +22198,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.0,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_SP_KTSJKe",
         "KeyPassiveSkill": "Hero_PBattle_SP_KTSJKe_Key",

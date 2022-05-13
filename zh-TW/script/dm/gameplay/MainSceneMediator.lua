@@ -232,6 +232,12 @@ local muiscCfg = {
 	},
 	ActivityDramaMainView = {
 		noAutoPlay = true
+	},
+	ActivityFamilyMainView = {
+		noAutoPlay = true
+	},
+	ActivityOrientMapView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

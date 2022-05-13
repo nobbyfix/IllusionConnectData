@@ -27,6 +27,9 @@ MiniGameActivity:has("_dailyRewards", {
 MiniGameActivity:has("_maxReward", {
 	is == "r"
 })
+MiniGameActivity:has("_curTimes", {
+	is == "r"
+})
 
 function MiniGameActivity:initialize(id)
 	super.initialize(self, id)
@@ -35,6 +38,7 @@ function MiniGameActivity:initialize(id)
 	self._gameTimes = 0
 	self._buyTimes = 0
 	self._highestScore = 0
+	self._curTimes = 0
 	self._taskMap = {}
 	self._taskList = {}
 	self._dailyTaskList = {}
@@ -47,6 +51,10 @@ function MiniGameActivity:synchronize(data)
 	end
 
 	super.synchronize(self, data)
+
+	if data.gameTimes then
+		self._curTimes = data.gameTimes
+	end
 
 	if data.totalScore then
 		self._totalScore = data.totalScore
@@ -77,6 +85,16 @@ function MiniGameActivity:synchronize(data)
 			self._dailyRewards[k] = v
 		end
 	end
+end
+
+function MiniGameActivity:hasRewardRedPoint()
+	for _, task in pairs(self._taskMap) do
+		if task:getStatus() == TaskStatus.kFinishNotGet then
+			return true
+		end
+	end
+
+	return false
 end
 
 function MiniGameActivity:syncTaskList(taskData, taskList)
@@ -152,11 +170,11 @@ function MiniGameActivity:getCost()
 end
 
 function MiniGameActivity:getAllTimes()
-	return self:getActivityConfig().times
+	return self:getActivityConfig().maxTimes
 end
 
 function MiniGameActivity:getLimitBuyTimes()
-	return self:getActivityConfig().buyTimes
+	return self:getActivityConfig().buyLimit
 end
 
 function MiniGameActivity:getBuyCost()

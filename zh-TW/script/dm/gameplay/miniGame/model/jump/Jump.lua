@@ -50,6 +50,15 @@ Jump:has("_jumpFloorList", {
 Jump:has("_rewardMaxList", {
 	is = "rw"
 })
+Jump:has("_buyTimesCost", {
+	is = "r"
+})
+Jump:has("_eachBuyNum", {
+	is = "r"
+})
+Jump:has("_buyLimit", {
+	is = "r"
+})
 
 function Jump:initialize(data)
 	self._dailyRewards = {}
@@ -59,6 +68,9 @@ function Jump:initialize(data)
 	self._fragGetCount = 0
 	self._rewardHeroId = ""
 	self._rewardMaxList = {}
+	self._buyTimesCost = {}
+	self._eachBuyNum = 0
+	self._buyLimit = 0
 
 	self:synchronize(data)
 	self:initMaxReward()
@@ -75,6 +87,10 @@ function Jump:synchronize(data)
 	self._maxScore = pointConfig.MaxScoreClient
 
 	self:syncDailyReward()
+
+	self._eachBuyNum = activityConfig.eachBuyNum
+	self._buyTimesCost = activityConfig.buyTimesCost
+	self._buyLimit = activityConfig.buyLimit
 end
 
 function Jump:initMaxReward()

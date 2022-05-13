@@ -1086,3 +1086,11 @@ function CrusadeSystem:listenCrusadeDiff(callback)
 		self:dispatch(Event:new(EVT_CRUSADE_RESET_DIFF))
 	end)
 end
+
+function CrusadeSystem:requestResetCrusadePower(callback)
+	self._crusadeService:requestResetCrusadePower(nil, true, function (response)
+		if response.resCode == GS_SUCCESS and callback then
+			callback(response.data)
+		end
+	end)
+end

@@ -26567,6 +26567,4399 @@
         ],
         "WipeExtraReward": ""
     },
+    "FamilySE01E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS09N_BlockDesc",
+        "EnemyCard": "CardFamilySE01E",
+        "EnemyMaster": "FamilyE02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE01",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS09N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySE01E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS09M_BlockDesc",
+        "EnemyCard": "CardFamilySE01M",
+        "EnemyMaster": "FamilyM02P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_1",
+                "4": "Family_Buff_Star4_2_1",
+                "5": "Family_Buff_Star5_2_1",
+                "6": "Family_Buff_Star6_2_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE01",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS09M_Name",
+        "NextPoint": [
+            "FamilySE02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySE01M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS10N_BlockDesc",
+        "EnemyCard": "CardFamilySE02E",
+        "EnemyMaster": "FamilyE02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE02",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS10N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE02E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Family_Tittle_1",
+            "SpecialRule_Family_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS10M_BlockDesc",
+        "EnemyCard": "CardFamilySE02M",
+        "EnemyMaster": "FamilyM02P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_2",
+                "4": "Family_Buff_Star4_2_2",
+                "5": "Family_Buff_Star5_2_2",
+                "6": "Family_Buff_Star6_2_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE02",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS10M_Name",
+        "NextPoint": [
+            "FamilySE03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE02M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Family_Tittle_1",
+            "SpecialRule_Family_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS11N_BlockDesc",
+        "EnemyCard": "CardFamilySE03E",
+        "EnemyMaster": "FamilyE02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE03",
+        "Master": "FamilyE02P03U04N08",
+        "Name": "BlockPoint_FamilyS11N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE03E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS11M_BlockDesc",
+        "EnemyCard": "CardFamilySE03M",
+        "EnemyMaster": "FamilyM02P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_3",
+                "4": "Family_Buff_Star4_2_3",
+                "5": "Family_Buff_Star5_2_3",
+                "6": "Family_Buff_Star6_2_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE03",
+        "Master": "FamilyM02P03U04N08",
+        "Name": "BlockPoint_FamilyS11M_Name",
+        "NextPoint": [
+            "FamilySE04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE03M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": {
+            "enter": [
+                "eventstory_gohome_07a"
+            ]
+        },
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS12N_BlockDesc",
+        "EnemyCard": "CardFamilySE04E",
+        "EnemyMaster": "FamilyE02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE04",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS12N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE04E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS12M_BlockDesc",
+        "EnemyCard": "CardFamilySE04M",
+        "EnemyMaster": "FamilyM02P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_4",
+                "4": "Family_Buff_Star4_2_4",
+                "5": "Family_Buff_Star5_2_4",
+                "6": "Family_Buff_Star6_2_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE04",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS12M_Name",
+        "NextPoint": [
+            "FamilySE05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE04M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS13N_BlockDesc",
+        "EnemyCard": "CardFamilySE05E",
+        "EnemyMaster": "FamilyE02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE05",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS13N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySE05E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS13M_BlockDesc",
+        "EnemyCard": "CardFamilySE05M",
+        "EnemyMaster": "FamilyM02P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_5",
+                "4": "Family_Buff_Star4_2_5",
+                "5": "Family_Buff_Star5_2_5",
+                "6": "Family_Buff_Star6_2_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE05",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS13M_Name",
+        "NextPoint": [
+            "FamilySE06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySE05M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE06E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS14N_BlockDesc",
+        "EnemyCard": "CardFamilySE06E",
+        "EnemyMaster": "FamilyE02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE06",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS14N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE06E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE06M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS14M_BlockDesc",
+        "EnemyCard": "CardFamilySE06M",
+        "EnemyMaster": "FamilyM02P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE06M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_6",
+                "4": "Family_Buff_Star4_2_6",
+                "5": "Family_Buff_Star5_2_6",
+                "6": "Family_Buff_Star6_2_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE06",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS14M_Name",
+        "NextPoint": [
+            "FamilySE07M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE06M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE06M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS15N_BlockDesc",
+        "EnemyCard": "CardFamilySE07E",
+        "EnemyMaster": "FamilyE02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE07",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS15N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE07E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS15M_BlockDesc",
+        "EnemyCard": "CardFamilySE07M",
+        "EnemyMaster": "FamilyM02P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_7",
+                "4": "Family_Buff_Star4_2_7",
+                "5": "Family_Buff_Star5_2_7",
+                "6": "Family_Buff_Star6_2_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE07",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS15M_Name",
+        "NextPoint": [
+            "FamilySE08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySE07M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS16N_BlockDesc",
+        "EnemyCard": "CardFamilySE08E",
+        "EnemyMaster": "FamilyE02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE08",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS16N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE08E_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySE08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySE08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS16M_BlockDesc",
+        "EnemyCard": "CardFamilySE08M",
+        "EnemyMaster": "FamilyM02P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySE08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_2_8",
+                "4": "Family_Buff_Star4_2_8",
+                "5": "Family_Buff_Star5_2_8",
+                "6": "Family_Buff_Star6_2_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySE08",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS16M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySE08M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySE08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySH01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS01H_BlockDesc",
+        "EnemyCard": "CardFamilySH01M",
+        "EnemyMaster": "FamilyH01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySH01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE09",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS01H_Name",
+        "NextPoint": [
+            "FamilySH02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySH01M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySH01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySH02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS02H_BlockDesc",
+        "EnemyCard": "CardFamilySH02M",
+        "EnemyMaster": "FamilyH01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySH02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE10",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS02H_Name",
+        "NextPoint": [
+            "FamilySH03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySH02M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySH02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySH03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS03H_BlockDesc",
+        "EnemyCard": "CardFamilySH03M",
+        "EnemyMaster": "FamilyH01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySH03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySE11",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS03H_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySH03M_PointReward",
+        "PointTime": {
+            "start": "2022-02-07 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySH03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 20
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "HARD",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN01E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS01N_BlockDesc",
+        "EnemyCard": "CardFamilySN01E",
+        "EnemyMaster": "FamilyE01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN01E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN01",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS01N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN01E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN01E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN01M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN01M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS01M_BlockDesc",
+        "EnemyCard": "CardFamilySN01M",
+        "EnemyMaster": "FamilyM01P01U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN01M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_1",
+                "4": "Family_Buff_Star4_1_1",
+                "5": "Family_Buff_Star5_1_1",
+                "6": "Family_Buff_Star6_1_1"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN01",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS01M_Name",
+        "NextPoint": [
+            "FamilySN02M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN01M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN01M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN02E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_3",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS02N_BlockDesc",
+        "EnemyCard": "CardFamilySN02E",
+        "EnemyMaster": "FamilyE01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN02E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN02",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS02N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySN02E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN02E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN02M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN02M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_3",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS02M_BlockDesc",
+        "EnemyCard": "CardFamilySN02M",
+        "EnemyMaster": "FamilyM01P02U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN02M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_2",
+                "4": "Family_Buff_Star4_1_2",
+                "5": "Family_Buff_Star5_1_2",
+                "6": "Family_Buff_Star6_1_2"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN02",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS02M_Name",
+        "NextPoint": [
+            "FamilySN03M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySN02M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN02M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN03E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_1",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS03N_BlockDesc",
+        "EnemyCard": "CardFamilySN03E",
+        "EnemyMaster": "FamilyE01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN03E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN03",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS03N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN03E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN03E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [
+            "SpecialRule_Family_Tittle_1",
+            "SpecialRule_Family_Rule_1"
+        ],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN03M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN03M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS03M_BlockDesc",
+        "EnemyCard": "CardFamilySN03M",
+        "EnemyMaster": "FamilyM01P03U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN03M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_3",
+                "4": "Family_Buff_Star4_1_3",
+                "5": "Family_Buff_Star5_1_3",
+                "6": "Family_Buff_Star6_1_3"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN03",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS03M_Name",
+        "NextPoint": [
+            "FamilySN04M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN03M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN03M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": {
+            "enter": [
+                "eventstory_gohome_03a"
+            ]
+        },
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN04E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS04N_BlockDesc",
+        "EnemyCard": "CardFamilySN04E",
+        "EnemyMaster": "FamilyE01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN04E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN04",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS04N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN04E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN04E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN04M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN04M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": "",
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS04M_BlockDesc",
+        "EnemyCard": "CardFamilySN04M",
+        "EnemyMaster": "FamilyM01P04U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN04M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_4",
+                "4": "Family_Buff_Star4_1_4",
+                "5": "Family_Buff_Star5_1_4",
+                "6": "Family_Buff_Star6_1_4"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN04",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS04M_Name",
+        "NextPoint": [
+            "FamilySN05M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN04M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN04M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN05E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS05N_BlockDesc",
+        "EnemyCard": "CardFamilySN05E",
+        "EnemyMaster": "FamilyE01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN05E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN05",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS05N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySN05E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN05E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN05M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN05M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "GCZi",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS05M_BlockDesc",
+        "EnemyCard": "CardFamilySN05M",
+        "EnemyMaster": "FamilyM01P05U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_5",
+                "4": "Family_Buff_Star4_1_5",
+                "5": "Family_Buff_Star5_1_5",
+                "6": "Family_Buff_Star6_1_5"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN05",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS05M_Name",
+        "NextPoint": [
+            "FamilySN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_GCZi",
+        "PointPicture": "",
+        "PointReward": "FamilySN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN06E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS06N_BlockDesc",
+        "EnemyCard": "CardFamilySN06E",
+        "EnemyMaster": "FamilyE01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN06E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN06",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS06N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN06E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN06E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN06M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN06M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "LDYu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS06M_BlockDesc",
+        "EnemyCard": "CardFamilySN06M",
+        "EnemyMaster": "FamilyM01P06U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN05M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_6",
+                "4": "Family_Buff_Star4_1_6",
+                "5": "Family_Buff_Star5_1_6",
+                "6": "Family_Buff_Star6_1_6"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN06",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS06M_Name",
+        "NextPoint": [
+            "FamilySN06M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_LDYu",
+        "PointPicture": "",
+        "PointReward": "FamilySN05M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN05M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN07E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou",
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS07N_BlockDesc",
+        "EnemyCard": "CardFamilySN07E",
+        "EnemyMaster": "FamilyE01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN07E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN07",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS07N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN07E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN07E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN07M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN07M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou",
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS07M_BlockDesc",
+        "EnemyCard": "CardFamilySN07M",
+        "EnemyMaster": "FamilyM01P07U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN07M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_7",
+                "4": "Family_Buff_Star4_1_7",
+                "5": "Family_Buff_Star5_1_7",
+                "6": "Family_Buff_Star6_1_7"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN07",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS07M_Name",
+        "NextPoint": [
+            "FamilySN08M"
+        ],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN07M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN07M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN08E": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene05",
+        "Banner": "pic_guanqia2_02_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou",
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS08N_BlockDesc",
+        "EnemyCard": "CardFamilySN08E",
+        "EnemyMaster": "FamilyE01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN08E_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": "",
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 0,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "",
+        "Map": "FamilySN08",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS08N_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN08E_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN08E_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 12
+        },
+        "StaminaCostAgain": 0,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "ELITE",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "Pass": "FamilySN08M"
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
+    "FamilySN08M": {
+        "AiRules": "",
+        "Assist": "",
+        "BGM": [
+            "Mus_Battle_Family",
+            "",
+            ""
+        ],
+        "Background": "Family_Scene04",
+        "Banner": "pic_guanqia2_01_tx",
+        "BattleNumLimit": "",
+        "BlockBattleConfig": "Activity_Family_2",
+        "BlockBubble": "",
+        "BlockDetailAuto": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "show": "0"
+            },
+            "SpecialRule": [
+                "SpecialRule_NShou",
+                "SpecialRule_GXiang"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "Challenge": "",
+        "Combat_Adjust_Rate": 0.0,
+        "ConfigLevelLimitID": "LevelLimit_Family",
+        "CrystalReward": 0,
+        "Desc": "BlockPoint_FamilyS08M_BlockDesc",
+        "EnemyCard": "CardFamilySN08M",
+        "EnemyMaster": "FamilyM01P08U01N08",
+        "EnemyName": "",
+        "FirstKillReward": "FamilySN08M_FirstReward",
+        "GoldReward": 0,
+        "HeroAttrExtra": {
+            "LDYu": "Hero_ABlock_LDYu_Extra"
+        },
+        "HeroAttrExtraLua": "",
+        "HeroAttrSatrExtra": {
+            "LDYu": {
+                "3": "Family_LDYu_Buff_Star3",
+                "4": "Family_LDYu_Buff_Star4",
+                "5": "Family_LDYu_Buff_Star5",
+                "6": "Family_LDYu_Buff_Star6"
+            }
+        },
+        "HeroExpReward": "",
+        "HeroItemExtra": "",
+        "HeroItemSatrExtra": {
+            "LDYu": {
+                "3": "Family_Buff_Star3_1_8",
+                "4": "Family_Buff_Star4_1_8",
+                "5": "Family_Buff_Star5_1_8",
+                "6": "Family_Buff_Star6_1_8"
+            }
+        },
+        "HeroSkillSatrExtra": "",
+        "IsSweep": 1,
+        "ItemCard": [
+            {
+                "link": "TacticsCard_FZhou",
+                "type": 2
+            }
+        ],
+        "LoadingBorad": "",
+        "Location": "",
+        "MainShowItem": "IM_Family_ExchangeItem",
+        "Map": "FamilySN08",
+        "Master": "",
+        "Name": "BlockPoint_FamilyS08M_Name",
+        "NextPoint": [],
+        "OpenFAC": 1,
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointPicture": "",
+        "PointReward": "FamilySN08M_PointReward",
+        "PointTime": "",
+        "PointType": "NORMAL",
+        "PositionLimit": "",
+        "ReslutBoard": "",
+        "ShowItem": "FamilySN08M_ShowReward",
+        "SpRuleBubble": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StageEffect": "",
+        "StageGuide": "[]",
+        "StaminaBack": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCost": {
+            "IR_FamilyStamina": 6
+        },
+        "StaminaCostAgain": 1,
+        "StarCondition": [
+            {
+                "type": "Pass"
+            },
+            {
+                "type": "MyHpRatio",
+                "value": 10
+            },
+            {
+                "type": "Time",
+                "value": 180
+            }
+        ],
+        "StoryLink": "",
+        "StrongerGuide": [
+            "LEVEL",
+            "STAR",
+            "SKILL"
+        ],
+        "TeamMode": "",
+        "Type": "NORMAL",
+        "UnlockBubble": "",
+        "UnlockCondition": {
+            "LEVEL": 1
+        },
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ],
+        "WipeExtraReward": ""
+    },
     "RiddleSE01E": {
         "AiRules": "",
         "Assist": "",

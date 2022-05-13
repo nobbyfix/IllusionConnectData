@@ -185,7 +185,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityAnimal] = "ActivityAnimalMainView",
 		[ActivityType_UI.KActivityDusk] = "ActivityDuskMainView",
 		[ActivityType_UI.KActivitySilentNight] = "ActivitySilentNightMainView",
-		[ActivityType_UI.KActivityDrama] = "ActivityDramaMainView"
+		[ActivityType_UI.KActivityDrama] = "ActivityDramaMainView",
+		[ActivityType_UI.KActivityFamily] = "ActivityFamilyMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -219,7 +220,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityAnimal] = "ActivityMapNewView",
 		[ActivityType_UI.KActivityDusk] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySilentNight] = "ActivityMapNewView",
-		[ActivityType_UI.KActivityDrama] = "ActivityMapNewView"
+		[ActivityType_UI.KActivityDrama] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityFamily] = "ActivityOrientMapView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -258,7 +260,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityAnimal] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityDusk] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySilentNight] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityDrama] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityDrama] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityFamily] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -383,6 +386,13 @@ ActivityLogin14Config = {
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(145, 143, 198, 255)
+		}
+	},
+	EightDays_Family = {
+		resFile = "asset/ui/ActivityFamilyLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 249, 198, 255)
 		}
 	}
 }
@@ -572,4 +582,12 @@ ActivityMainMapTitleConfig = {
 ActivitySupportScheduleId = {
 	[ActivityType_UI.kActivityBlockZuoHe] = "ABS_ZuoHe",
 	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui"
+}
+OrientActivityMainConfig = {
+	anim = {
+		[ActivityType_UI.KActivityFamily] = {
+			name = "fubenrukou_huijiadeluzhuyefuben",
+			position = cc.p(410, 150)
+		}
+	}
 }

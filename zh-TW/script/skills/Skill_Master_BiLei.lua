@@ -201,7 +201,7 @@ all.Sk_Master_BiLei_Action1 = {
 								"DISPELLABLE"
 							}
 						}, {
-							global.buffeft2
+							buff
 						}, 1, 0)
 					end
 				end

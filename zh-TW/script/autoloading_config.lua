@@ -1261,6 +1261,36 @@ local mappings = {
 		name = "PassShopMediator",
 		type = "@C"
 	},
+	TSoulIntensifyMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulIntensifyMediator",
+		name = "TSoulIntensifyMediator",
+		type = "@C"
+	},
+	TSoulChangeMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulChangeMediator",
+		name = "TSoulChangeMediator",
+		type = "@C"
+	},
+	TSoulIntensifySuccMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulIntensifySuccMediator",
+		name = "TSoulIntensifySuccMediator",
+		type = "@C"
+	},
+	TSoulMainMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulMainMediator",
+		name = "TSoulMainMediator",
+		type = "@C"
+	},
+	TSoulSuitMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulSuitMediator",
+		name = "TSoulSuitMediator",
+		type = "@C"
+	},
+	TSoulTipMediator = {
+		url = "dm.gameplay.tsoul.view.TSoulTipMediator",
+		name = "TSoulTipMediator",
+		type = "@C"
+	},
 	EVT_ACTIVITY_RESET = {
 		url = "dm.gameplay.activity.controller.ActivitySystem",
 		name = "EVT_ACTIVITY_RESET",
@@ -1284,6 +1314,11 @@ local mappings = {
 	ActivityZeroTaskAchievementMediator = {
 		url = "dm.gameplay.activity.view.ActivityZeroTaskAchievementMediator",
 		name = "ActivityZeroTaskAchievementMediator",
+		type = "@C"
+	},
+	ActivityOrientMapMediator = {
+		url = "dm.gameplay.activity.view.ActivityOrientMapMediator",
+		name = "ActivityOrientMapMediator",
 		type = "@C"
 	},
 	RechargeActivityMediator = {
@@ -1729,6 +1764,11 @@ local mappings = {
 	ActivityBlockSummerExchangeMediator = {
 		url = "dm.gameplay.activity.view.ActivityBlockSummerExchangeMediator",
 		name = "ActivityBlockSummerExchangeMediator",
+		type = "@C"
+	},
+	ActivityOrientMainMediator = {
+		url = "dm.gameplay.activity.view.ActivityOrientMainMediator",
+		name = "ActivityOrientMainMediator",
 		type = "@C"
 	},
 	ReturnHeroChangeMediator = {
@@ -2276,6 +2316,11 @@ local mappings = {
 		name = "CrusadeWorldRuleMediator",
 		type = "@C"
 	},
+	CrusadeAlertMediator = {
+		url = "dm.gameplay.crusade.view.CrusadeAlertMediator",
+		name = "CrusadeAlertMediator",
+		type = "@C"
+	},
 	CrusadePowerMediator = {
 		url = "dm.gameplay.crusade.view.CrusadePowerMediator",
 		name = "CrusadePowerMediator",
@@ -2566,6 +2611,36 @@ local mappings = {
 		name = "RedPointRefreshCommond",
 		type = "@C"
 	},
+	EVT_PLANEWAR_STAGE_PAUSE = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_STAGE_PAUSE",
+		type = "@V"
+	},
+	EVT_PLANEWAR_PAUSETIP_CLOSE = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_PAUSETIP_CLOSE",
+		type = "@V"
+	},
+	EVT_PLANEWAR_STAGE_RESUME = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_STAGE_RESUME",
+		type = "@V"
+	},
+	EVT_PLANEWAR_GAMEOVER = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_GAMEOVER",
+		type = "@V"
+	},
+	EVT_PLANEWAR_STAGE_CLOSE = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_STAGE_CLOSE",
+		type = "@V"
+	},
+	EVT_PLANEWAR_RSTARTGAME = {
+		url = "dm.gameplay.miniGame.controller.PlaneWarSystem",
+		name = "EVT_PLANEWAR_RSTARTGAME",
+		type = "@V"
+	},
 	EVT_DARTS_PLAYAGAIN = {
 		url = "dm.gameplay.miniGame.controller.DartsSystem",
 		name = "EVT_DARTS_PLAYAGAIN",
@@ -2701,6 +2776,11 @@ local mappings = {
 		name = "EVT_CLUB_MINIGAME_SWEEEP_SCUESS",
 		type = "@V"
 	},
+	EVT_PLANE_RESTARTGAME = {
+		url = "dm.gameplay.miniGame.MiniGameConfig",
+		name = "EVT_PLANE_RESTARTGAME",
+		type = "@V"
+	},
 	JumpMediator = {
 		url = "dm.gameplay.miniGame.view.jump.JumpMediator",
 		name = "JumpMediator",
@@ -2734,6 +2814,101 @@ local mappings = {
 	DartsMediator = {
 		url = "dm.gameplay.miniGame.view.darts.DartsMediator",
 		name = "DartsMediator",
+		type = "@C"
+	},
+	PlaneWarClubGameResultMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarClubGameResultMediator",
+		name = "PlaneWarClubGameResultMediator",
+		type = "@C"
+	},
+	PlaneWarWarningMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarWarningMediator",
+		name = "PlaneWarWarningMediator",
+		type = "@C"
+	},
+	PlaneWarActivityResultMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarActivityResultMediator",
+		name = "PlaneWarActivityResultMediator",
+		type = "@C"
+	},
+	PlaneWarActivityMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarActivityMediator",
+		name = "PlaneWarActivityMediator",
+		type = "@C"
+	},
+	PlaneWarStageMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarStageMediator",
+		name = "PlaneWarStageMediator",
+		type = "@C"
+	},
+	PlaneWarRewardListTipMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarRewardListTipMediator",
+		name = "PlaneWarRewardListTipMediator",
+		type = "@C"
+	},
+	PlaneWarActivityBuyTimesMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarActivityBuyTimesMediator",
+		name = "PlaneWarActivityBuyTimesMediator",
+		type = "@C"
+	},
+	PlaneWarActivityLimitTipMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarActivityLimitTipMediator",
+		name = "PlaneWarActivityLimitTipMediator",
+		type = "@C"
+	},
+	PlaneWarClubMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarClubMediator",
+		name = "PlaneWarClubMediator",
+		type = "@C"
+	},
+	PlaneWarClubGamePauseMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarClubGamePauseMediator",
+		name = "PlaneWarClubGamePauseMediator",
+		type = "@C"
+	},
+	PlaneWarStagePauseMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarStagePauseMediator",
+		name = "PlaneWarStagePauseMediator",
+		type = "@C"
+	},
+	ClubGameBuyTimesMediator = {
+		url = "dm.gameplay.miniGame.view.plane.ClubGameBuyTimesMediator",
+		name = "ClubGameBuyTimesMediator",
+		type = "@C"
+	},
+	PlaneWarStageWinMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarStageWinMediator",
+		name = "PlaneWarStageWinMediator",
+		type = "@C"
+	},
+	PlaneWarClubGameRewardsTipMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarClubGameRewardsTipMediator",
+		name = "PlaneWarClubGameRewardsTipMediator",
+		type = "@C"
+	},
+	PlaneWarGameMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarGameMediator",
+		name = "PlaneWarGameMediator",
+		type = "@C"
+	},
+	PlaneWarRuleTipMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarRuleTipMediator",
+		name = "PlaneWarRuleTipMediator",
+		type = "@C"
+	},
+	PlaneWarBaseMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarBaseMediator",
+		name = "PlaneWarBaseMediator",
+		type = "@C"
+	},
+	PlaneWarResultBuyTimesMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarResultBuyTimesMediator",
+		name = "PlaneWarResultBuyTimesMediator",
+		type = "@C"
+	},
+	PlaneWarActivityPauseMediator = {
+		url = "dm.gameplay.miniGame.view.plane.PlaneWarActivityPauseMediator",
+		name = "PlaneWarActivityPauseMediator",
 		type = "@C"
 	},
 	MainTeamMediator = {

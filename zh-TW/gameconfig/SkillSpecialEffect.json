@@ -9758,6 +9758,19 @@
             "slot": "Hero_Proud_LYXi"
         }
     },
+    "StarSE_LYXi_Awake": {
+        "Desc": "StarSE_LYXi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_LYXi_Awaken",
+            "before": "Hero_Unique_LYXi_EX",
+            "slot": "Hero_Unique_LYXi"
+        }
+    },
     "StarSE_MDSi_4": {
         "Desc": "StarSE_MDSi_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -11862,6 +11875,19 @@
             "after": "Hero_Proud_XSMLi_EX",
             "before": "Hero_Proud_XSMLi",
             "slot": "Hero_Proud_XSMLi"
+        }
+    },
+    "StarSE_XSMLi_Awake": {
+        "Desc": "StarSE_XSMLi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XSMLi_Awaken",
+            "before": "Hero_Unique_XSMLi_EX",
+            "slot": "Hero_Unique_XSMLi"
         }
     },
     "StarSE_XXFSi_4": {

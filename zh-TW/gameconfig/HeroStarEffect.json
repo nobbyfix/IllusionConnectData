@@ -9846,6 +9846,29 @@
         "StarUpFactor": 0,
         "Visible": 1
     },
+    "LYXi_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_LYXi_Awake"
+        ],
+        "HeroId": "LYXi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_LYXi_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "Visible": 1
+    },
     "MDSi_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -18623,6 +18646,29 @@
         "StarStive": 6000,
         "StarUpCost": 50000,
         "StarUpFactor": "",
+        "Visible": 1
+    },
+    "XSMLi_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_XSMLi_Awake"
+        ],
+        "HeroId": "XSMLi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_XSMLi_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
         "Visible": 1
     },
     "XXFSi_1": {
