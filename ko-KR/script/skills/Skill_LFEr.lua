@@ -661,7 +661,7 @@ all.Skill_LFEr_Passive_EX = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			2
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -677,7 +677,7 @@ all.Skill_LFEr_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			1
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -705,7 +705,9 @@ all.Skill_LFEr_Passive_EX = {
 			elseif global.FriendMaster(_env) then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.FriendMaster(_env))
 
-				global.ApplyHPRecovery(_env, global.FriendMaster(_env), maxHp * this.HealRateFactor)
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), {
+					val = maxHp * this.HealRateFactor
+				}, false, true)
 
 				local buffeft2 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
