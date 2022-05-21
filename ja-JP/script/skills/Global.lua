@@ -1361,14 +1361,6 @@ function all.ApplyBuff_Buff(_env, actor, target, config, buffEffects, ratefactor
 	ratefactor = ratefactor or 1
 
 	if global.ProbTest(_env, ratefactor) then
-		if dispellable == 1 then
-			config.tags[#config.tags + 1] = "DISPELLABLE"
-			config.tags[#config.tags + 1] = "STEALABLE"
-		elseif dispellable == 0 then
-			config.tags[#config.tags + 1] = "UNDISPELLABLE"
-			config.tags[#config.tags + 1] = "UNSTEALABLE"
-		end
-
 		local result = global.ApplyBuff(_env, target, config, buffEffects)
 
 		if result then
@@ -4752,59 +4744,55 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		global.ApplyRPRecovery(_env, target, BeCuredRage)
 	end
 
-	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15132_2") and Unique then
-		if global.GetUnitCid(_env, actor) == "LFEr" then
-			local LowerHp_HealExtra_ExtraRate = global.SpecialPropGetter(_env, "LowerHp_HealExtra_ExtraRate")(_env, actor)
-			heal.val = heal.val * (1 + LowerHp_HealExtra_ExtraRate)
-		end
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15132_2") and Unique and global.GetUnitCid(_env, actor) then
+		local nummax = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_nummax")(_env, actor)
+		local num = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_num" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env))
+		local MaximumLifeBonus = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_MaximumLifeBonus")(_env, actor)
 
-		if global.GetUnitCid(_env, actor) then
-			local nummax = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_nummax")(_env, actor)
-			local num = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_num" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env))
-			local MaximumLifeBonus = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_MaximumLifeBonus")(_env, actor)
-
-			if num < nummax then
-				local BuffMaxHp = global.MaxHpEffect(_env, heal.val * MaximumLifeBonus)
-
-				global.ApplyBuff_Buff(_env, actor, target, {
-					timing = 0,
-					display = "MaxHpUp",
-					group = "EquipSkill_Weapon_15132_2_maxhp",
-					duration = 999,
-					limit = 99,
-					tags = {
-						"STATUS",
-						"NUMERIC",
-						"BUFF",
-						"MAXHPUP",
-						"DISPELLABLE",
-						"UNSTEALABLE"
-					}
-				}, {
-					BuffMaxHp
-				}, 1, 0)
-
-				local buffeft_num = global.SpecialNumericEffect(_env, "+EquipSkill_Weapon_15132_2_num", {
-					"+Normal",
-					"+Normal"
-				}, num + 1)
-
-				global.ApplyBuff(_env, global.FriendField(_env), {
-					duration = 999,
-					group = "EquipSkill_Weapon_15132_2_num",
-					timing = 0,
-					limit = 1,
-					tags = {
-						"NUMERIC",
-						"BUFF",
-						"UNDISPELLABLE",
-						"UNSTEALABLE",
-						"EquipSkill_Weapon_15132_2_num"
-					}
-				}, {
-					buffeft_num
-				})
+		if num < nummax then
+			if target == global.FriendMaster(_env) then
+				MaximumLifeBonus = MaximumLifeBonus * 0.5
 			end
+
+			local BuffMaxHp = global.MaxHpEffect(_env, heal.val * MaximumLifeBonus)
+
+			global.ApplyBuff_Buff(_env, actor, target, {
+				timing = 4,
+				display = "MaxHpUp",
+				group = "EquipSkill_Weapon_15132_2_maxhp",
+				duration = 30,
+				limit = 3,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"MAXHPUP",
+					"DISPELLABLE",
+					"STEALABLE"
+				}
+			}, {
+				BuffMaxHp
+			}, 1, 0)
+
+			local buffeft_num = global.SpecialNumericEffect(_env, "+EquipSkill_Weapon_15132_2_num", {
+				"+Normal",
+				"+Normal"
+			}, num + 1)
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				duration = 999,
+				group = "EquipSkill_Weapon_15132_2_num",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Weapon_15132_2_num"
+				}
+			}, {
+				buffeft_num
+			})
 		end
 	end
 
