@@ -56,6 +56,25 @@
             }
         ]
     },
+    "CooperateBoss_CLMan_20220601": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_CLMan_20220601",
+        "Name": "HeroBase_Name_CLMan",
+        "PointHead": "Model_CLMan",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_DCJKang": {
         "BGM": [
             "Mus_Battle_Whale",

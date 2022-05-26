@@ -3980,6 +3980,10 @@ function HomeMediator:setComplexActivityEntry()
 			aimpos = cc.p(60, 60),
 			imgpos = cc.p(65, 60),
 			redpos = cc.p(115, 60)
+		},
+		[ActivityType_UI.KActivityEaster] = {
+			img = "hd_rk_fhj.png",
+			imgpos = cc.p(50, 43)
 		}
 	}
 	local extraActBtn = self._rightFuncLayout:getChildByFullName("extraActBtn")

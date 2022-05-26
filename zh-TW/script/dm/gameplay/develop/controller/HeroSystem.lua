@@ -1664,30 +1664,44 @@ function HeroSystem:getHeroInfoById(heroId)
 end
 
 function HeroSystem:checkHeroContain(ids, id)
-	for i = 1, #ids do
-		if id == ids[i] then
-			return true
+	if ids then
+		for i = 1, #ids do
+			if id == ids[i] then
+				return true
+			end
 		end
 	end
 
 	return false
 end
 
-function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds)
+function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds, maxRecommendIds)
 	recommendIds = recommendIds or {}
 	local ids = teamPetIds
 	local ownHeros = ownPetIds
 	local costTypes = {
 		{},
+		{},
 		{}
 	}
+
+	if maxRecommendIds then
+		for i = 1, #maxRecommendIds do
+			local id = maxRecommendIds[i]
+			local hero = self:getHeroInfoById(id)
+
+			if hero and hero.showType == HeroShowType.kHas and not self:checkHeroContain(ids, id) then
+				costTypes[1][#costTypes[1] + 1] = hero
+			end
+		end
+	end
 
 	for i = 1, #recommendIds do
 		local id = recommendIds[i]
 		local hero = self:getHeroInfoById(id)
 
 		if hero and hero.showType == HeroShowType.kHas and not self:checkHeroContain(ids, id) then
-			costTypes[1][#costTypes[1] + 1] = hero
+			costTypes[2][#costTypes[2] + 1] = hero
 		end
 	end
 
@@ -1695,8 +1709,8 @@ function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds)
 		local hero = self:getHeroInfoById(ownHeros[i])
 		local id = hero.id
 
-		if not self:checkHeroContain(recommendIds, id) then
-			costTypes[2][#costTypes[2] + 1] = hero
+		if not self:checkHeroContain(recommendIds, id) and not self:checkHeroContain(maxRecommendIds, id) then
+			costTypes[3][#costTypes[3] + 1] = hero
 		end
 	end
 
@@ -1713,18 +1727,29 @@ function HeroSystem:getTeamPrepared(teamPetIds, ownPetIds, recommendIds)
 
 	table.sort(costTypes[1], heroSort)
 	table.sort(costTypes[2], heroSort)
+	table.sort(costTypes[3], heroSort)
 
 	for i = 1, #costTypes[1] do
 		ids[#ids + 1] = costTypes[1][i].id
 	end
 
-	for i = 1, #costTypes[2] do
-		if #costTypes[2] > 0 then
-			ids[#ids + 1] = costTypes[2][1].id
+	dump(ids, "ids____111")
 
-			table.remove(costTypes[2], 1)
+	for i = 1, #costTypes[2] do
+		ids[#ids + 1] = costTypes[2][i].id
+	end
+
+	dump(ids, "ids____222")
+
+	for i = 1, #costTypes[3] do
+		if #costTypes[3] > 0 then
+			ids[#ids + 1] = costTypes[3][1].id
+
+			table.remove(costTypes[3], 1)
 		end
 	end
+
+	dump(ids, "ids___")
 
 	return ids
 end
@@ -1756,7 +1781,7 @@ function HeroSystem:isLimitHero(list, heroId)
 	return 0
 end
 
-function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType, limitList)
+function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, teamType, limitList, maxRecommendIds)
 	local func = type and HeroSortFuncs.SortFunc[type] or HeroSortFuncs.SortFunc[9]
 
 	if not checkInTeam then
@@ -1787,6 +1812,14 @@ function HeroSystem:sortHeroes(list, type, recommendIds, checkInTeam, tiredIds, 
 					return false
 				elseif not self:checkHeroContain(tiredIds, a.id or a) and self:checkHeroContain(tiredIds, b.id or b) then
 					return true
+				end
+			end
+
+			if maxRecommendIds then
+				if self:checkHeroContain(maxRecommendIds, a.id or a) and not self:checkHeroContain(maxRecommendIds, b.id or b) then
+					return true
+				elseif not self:checkHeroContain(maxRecommendIds, a.id or a) and self:checkHeroContain(maxRecommendIds, b.id or b) then
+					return false
 				end
 			end
 

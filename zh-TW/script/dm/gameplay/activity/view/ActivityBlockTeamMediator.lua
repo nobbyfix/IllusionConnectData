@@ -104,7 +104,7 @@ function ActivityBlockTeamMediator:doReset()
 		return true
 	end
 
-	local activity = model:getBlockMapActivity()
+	local activity = model.getBlockMapActivity and model:getBlockMapActivity()
 
 	if not activity then
 		self:onClickBack()
@@ -112,7 +112,9 @@ function ActivityBlockTeamMediator:doReset()
 		return true
 	end
 
-	return false
+	if model:getType() == ActivityType.KWorldBoss then
+		self:refreshViewBySort()
+	end
 end
 
 function ActivityBlockTeamMediator:enterWithData(data)
@@ -122,10 +124,10 @@ function ActivityBlockTeamMediator:enterWithData(data)
 	self._activityModel = self._activitySystem:getActivityById(self._activityId)
 	self._uiType = self._activityModel:getUI()
 	self._activity = self._data.activity
-	self._param = self._data.param
+	self._param = self._data.param or {}
 	self._pointId = self._param and self._param.pointId and self._param.pointId or nil
 	self._cardsExcept = {}
-	self._cardsRecommend = self._activity:getActivityConfig().BonusHero
+	self._cardsRecommend, self._maxCardsRecommend = self._activitySystem:getRecommendHeroes(self._activity)
 	self._masterList = self._masterSystem:getShowMasterList()
 	self._canChange = true
 	local num = 0
@@ -214,7 +216,6 @@ function ActivityBlockTeamMediator:initData(team)
 	}
 	self._heroes = modelTmp._heroes
 	self._curMasterId = modelTmp._masterId
-	local pointData = self._activity:getPointById(self._pointId)
 	local ownMasterId = self:getOwnMasterId(self._pointId)
 
 	if ownMasterId then
@@ -268,7 +269,7 @@ function ActivityBlockTeamMediator:removeExceptHeros()
 end
 
 function ActivityBlockTeamMediator:showOneKeyHeros()
-	local orderPets = self._heroSystem:getTeamPrepared(self._teamPets, self._petList, self._cardsRecommend)
+	local orderPets = self._heroSystem:getTeamPrepared(self._teamPets, self._petList, self._cardsRecommend, self._maxCardsRecommend)
 	self._orderPets = {}
 	self._leavePets = {}
 
@@ -414,13 +415,15 @@ function ActivityBlockTeamMediator:createTeamCell(cell, index)
 end
 
 function ActivityBlockTeamMediator:checkStageType()
-	self._spPanel:setVisible(true)
-	self._spPanel:getChildByName("ruleBtn"):setVisible(true)
+	if self._activity:getType() ~= ActivityType.KWorldBoss then
+		self._spPanel:setVisible(true)
+		self._spPanel:getChildByName("ruleBtn"):setVisible(true)
 
-	local ruleBtn = self._spPanel:getChildByFullName("ruleBtn")
-	local spRuleLabel = self._spPanel:getChildByFullName("ruleLabel")
+		local ruleBtn = self._spPanel:getChildByFullName("ruleBtn")
+		local spRuleLabel = self._spPanel:getChildByFullName("ruleLabel")
 
-	spRuleLabel:setString(Strings:get("ActivityBlock_UI_2"))
+		spRuleLabel:setString(Strings:get("ActivityBlock_UI_2"))
+	end
 end
 
 function ActivityBlockTeamMediator:setLabelEffect()
@@ -740,7 +743,7 @@ function ActivityBlockTeamMediator:refreshListView(ignoreAdjustOffset)
 	self._petListAll = self._stageSystem:getSortExtendIds(self._petList)
 	local sortType = self._stageSystem:getCardSortType()
 
-	self._heroSystem:sortHeroes(self._petListAll, sortType, self._cardsRecommend)
+	self._heroSystem:sortHeroes(self._petListAll, sortType, self._cardsRecommend, nil, , , , self._maxCardsRecommend)
 	self:sortAssistHero(self._petListAll)
 
 	if table.nums(self._cardsExcept) > 0 then
@@ -806,13 +809,29 @@ function ActivityBlockTeamMediator:initHero(node, info)
 
 	node:removeChildByName("AttrAddMark")
 
-	if self:checkIsRecommend(heroId) then
-		local pos = {
-			x = exceptMark:getPositionX(),
-			y = exceptMark:getPositionY()
-		}
+	local recommendData = self._activitySystem:checkIsRecommend(heroId, self._activity)
 
-		self:createAttrAddMark(node, pos)
+	if recommendData.isRecommend then
+		if recommendData.showType == "recommend" then
+			if recommond then
+				recommond:setVisible(true)
+
+				local text = recommond:getChildByFullName("text")
+
+				text:setString(recommendData.desc)
+
+				if recommendData.color then
+					text:setTextColor(recommendData.color)
+				end
+			end
+		else
+			local pos = {
+				x = exceptMark:getPositionX(),
+				y = exceptMark:getPositionY()
+			}
+
+			self:createAttrAddMark(node, pos)
+		end
 	end
 
 	local skillPanel = node:getChildByName("skillPanel")
@@ -850,9 +869,9 @@ function ActivityBlockTeamMediator:createAttrAddMark(node, pos)
 
 	local text = cc.Label:createWithTTF(Strings:get("ActivityBlock_UI_15"), TTF_FONT_FZYH_M, 24)
 
-	text:addTo(image):center(image:getContentSize())
-	text:enableOutline(cc.c4b(1, 71, 0, 255), 1)
+	text:addTo(image):center(image:getContentSize()):offset(0, 3)
 	text:setName("AttrAddLabel")
+	text:enableOutline(cc.c4b(1, 71, 0, 255), 1)
 
 	local lineGradiantVec2 = {
 		{
@@ -871,16 +890,6 @@ function ActivityBlockTeamMediator:createAttrAddMark(node, pos)
 	}))
 
 	return image
-end
-
-function ActivityBlockTeamMediator:checkIsRecommend(id)
-	for i = 1, #self._cardsRecommend do
-		if self._cardsRecommend[i] == id then
-			return true
-		end
-	end
-
-	return false
 end
 
 function ActivityBlockTeamMediator:refreshPetNode()
@@ -1070,15 +1079,34 @@ function ActivityBlockTeamMediator:initTeamHero(node, info)
 	node:getChildByName("costBg"):setLocalZOrder(1)
 	node:removeChildByName("AttrAddMark")
 
-	if self:checkIsRecommend(heroId) then
-		local pos = {
-			x = 91,
-			y = 172
-		}
-		local image = self:createAttrAddMark(node, pos)
+	local recommendData = self._activitySystem:checkIsRecommend(heroId, self._activity)
 
-		image:getChildByName("AttrAddLabel"):setScale(1.2)
-		image:getChildByName("AttrAddLabel"):offset(0, -5)
+	if recommendData.isRecommend then
+		if recommendData.showType == "recommend" then
+			if recommond then
+				recommond:setVisible(true)
+
+				local text = recommond:getChildByFullName("text")
+
+				text:setString(recommendData.desc)
+
+				if recommendData.color then
+					text:setTextColor(recommendData.color)
+				end
+
+				recommond:setContentSize(text:getContentSize())
+				text:setPosition(cc.p(recommond:getContentSize().width / 2, recommond:getContentSize().height / 2 + 3))
+			end
+		else
+			local pos = {
+				x = 97,
+				y = 182
+			}
+			local image = self:createAttrAddMark(node, pos, recommendData)
+
+			image:getChildByName("AttrAddLabel"):setScale(1.2)
+			image:getChildByName("AttrAddLabel"):offset(0, -5)
+		end
 	end
 end
 
@@ -1382,9 +1410,15 @@ function ActivityBlockTeamMediator:sendChangeTeam(callBack)
 		end
 	end
 
-	params.doActivityType = "101"
+	if self._activity:getType() == ActivityType.KWorldBoss then
+		params.doActivityType = self._param.doActivityType
 
-	self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, callback1)
+		self._activitySystem:requestDoActivity(self._activityId, params, callback1)
+	else
+		params.doActivityType = "101"
+
+		self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), params, callback1)
+	end
 end
 
 function ActivityBlockTeamMediator:onClickRule()
@@ -1396,7 +1430,7 @@ end
 function ActivityBlockTeamMediator:onClickOneKeyBreak()
 	self._teamView:stopScroll()
 
-	local ids = self._heroSystem:getTeamPrepared(self._teamPets, self._petList, self._cardsRecommend)
+	local ids = self._heroSystem:getTeamPrepared(self._teamPets, self._petList, self._cardsRecommend, self._maxCardsRecommend)
 	self._teamPets = {}
 	self._petList = {}
 
@@ -1546,9 +1580,71 @@ function ActivityBlockTeamMediator:onClickFight(sender, eventType)
 		AudioTimerSystem:playStartBattleVoice(self._curTeam)
 		self._activitySystem:setBattleTeamInfo(self._curTeam)
 
-		if self._activity:getType() == ActivityType.KActivityBlockMapNew then
-			local point = self._activity:getSubPointById(self._pointId)
-			self._param.parent._parent._data.enterBattlePointId = point:getOwner():getId()
+		if self._activity:getType() == ActivityType.KWorldBoss then
+			local maxHurtNum = nil
+
+			if self._param.type == WorldBossPointType.kVanguard then
+				maxHurtNum = self._activity:getMaxVanguardHurt()
+			else
+				maxHurtNum = self._activity:getMaxBossHurt()
+			end
+
+			self._activity:setOldMaxHurtNum(maxHurtNum)
+			self._activitySystem:requestDoActivity(self._activityId, {
+				doActivityType = 102,
+				pointType = self._param.type
+			}, function (rsdata)
+				if rsdata.resCode == GS_SUCCESS then
+					self._param.parent:onClickBack()
+					self:dismiss()
+
+					local data = rsdata.data
+					data.isWorldBoss = true
+
+					self._activitySystem:enterActstageBattle(data, self._activityId)
+
+					data.pointType = self._param.type
+				end
+			end, true)
+		else
+			if self._activity:getType() == ActivityType.KActivityBlockMapNew then
+				local point = self._activity:getSubPointById(self._pointId)
+				self._param.parent._parent._data.enterBattlePointId = point:getOwner():getId()
+
+				self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
+					doActivityType = 102,
+					type = self._param.type,
+					mapId = self._param.mapId,
+					pointId = self._pointId
+				}, function (rsdata)
+					if rsdata.resCode == GS_SUCCESS then
+						local function endFunc()
+							self._param.parent:onClickBack()
+							self:dismiss()
+							self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
+						end
+
+						local pointConfig = point:getConfig()
+						local storyLink = pointConfig.StoryLink
+						local storynames = storyLink and storyLink.enter
+						local storyDirector = self:getInjector():getInstance(story.StoryDirector)
+						local storyAgent = storyDirector:getStoryAgent()
+
+						storyAgent:setSkipCheckSave(false)
+						storyAgent:trigger(storynames, nil, endFunc)
+					end
+				end, true)
+
+				return
+			end
+
+			local point = self._activity:getPointById(self._pointId)
+
+			point:recordOldStar()
+			point:recordHpRate()
+
+			self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
+			self._param.parent._parent._data.enterBattlePointId = self._pointId
 
 			self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
 				doActivityType = 102,
@@ -1557,46 +1653,12 @@ function ActivityBlockTeamMediator:onClickFight(sender, eventType)
 				pointId = self._pointId
 			}, function (rsdata)
 				if rsdata.resCode == GS_SUCCESS then
-					local function endFunc()
-						self._param.parent:onClickBack()
-						self:dismiss()
-						self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
-					end
-
-					local pointConfig = point:getConfig()
-					local storyLink = pointConfig.StoryLink
-					local storynames = storyLink and storyLink.enter
-					local storyDirector = self:getInjector():getInstance(story.StoryDirector)
-					local storyAgent = storyDirector:getStoryAgent()
-
-					storyAgent:setSkipCheckSave(false)
-					storyAgent:trigger(storynames, nil, endFunc)
+					self._param.parent:onClickBack()
+					self:dismiss()
+					self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
 				end
 			end, true)
-
-			return
 		end
-
-		local point = self._activity:getPointById(self._pointId)
-
-		point:recordOldStar()
-		point:recordHpRate()
-
-		self._param.parent._parent._data.stageType = self._param.parent._parent._stageType
-		self._param.parent._parent._data.enterBattlePointId = self._pointId
-
-		self._activitySystem:requestDoChildActivity(self._activityId, self._activity:getId(), {
-			doActivityType = 102,
-			type = self._param.type,
-			mapId = self._param.mapId,
-			pointId = self._pointId
-		}, function (rsdata)
-			if rsdata.resCode == GS_SUCCESS then
-				self._param.parent:onClickBack()
-				self:dismiss()
-				self._activitySystem:enterActstageBattle(rsdata.data, self._activityId, self._activity:getId())
-			end
-		end, true)
 	end
 
 	self:onClickBack(nil, , callback)

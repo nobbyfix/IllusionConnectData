@@ -121,49 +121,49 @@
     "Condi_Bento_Food_1": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_1.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_1.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_1_Desc"
     },
     "Condi_Bento_Food_2": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_2.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_2.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_2_Desc"
     },
     "Condi_Bento_Food_3": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_3.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_3.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_3_Desc"
     },
     "Condi_Bento_Food_4": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_4.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_4.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_4_Desc"
     },
     "Condi_Bento_Food_5": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_5.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_5.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_5_Desc"
     },
     "Condi_Bento_Food_6": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_6.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_6.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_6_Desc"
     },
     "Condi_Bento_Food_7": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_7.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220601_7.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_7_Desc"
     },
@@ -551,6 +551,13 @@
         "ConditionType1": "player.bag.items.IM_Dusk_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_DuskExchangeAchieve_Desc"
+    },
+    "Condi_EasterExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Easter_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_EasterExchangeAchieve_Desc"
     },
     "Condi_EliteStage": {
         "AchieveType1": "SIZEREACH",
@@ -1101,7 +1108,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_4.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220528.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1122,7 +1129,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_4.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220528.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1371,6 +1378,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_SumArenaScore_Desc"
     },
+    "Condi_SumCharge": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.dailyMoney",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SumCharge_Desc"
+    },
     "Condi_SummerChengjiuDian": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1391,6 +1405,13 @@
         "ConditionType1": "player.bag.items.IM_Sunflower_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_SunflowerExchangeAchieve_Desc"
+    },
+    "Condi_SurfaceCollectSpecial": {
+        "AchieveType1": "CONTAIN",
+        "AchieveType2": "",
+        "ConditionType1": "player.unlockSurfaces",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SurfaceCollectSpecial_Desc"
     },
     "Condi_TargetResStageLevel": {
         "AchieveType1": "CUSTOM",
@@ -1468,6 +1489,13 @@
         "ConditionType1": "winEliteStage",
         "ConditionType2": "",
         "EffectDesc": "Condi_WinEliteStage_Desc"
+    },
+    "Condi_WorldBossTotal": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "worldBossHurt.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_WorldBossTotal_Name"
     },
     "Condi_WuXiuHuiChengjiuDian": {
         "AchieveType1": "INCREASE",

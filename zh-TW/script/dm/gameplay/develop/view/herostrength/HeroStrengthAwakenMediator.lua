@@ -383,7 +383,10 @@ function HeroStrengthAwakenMediator:refreshInfoNode()
 	local hasStarBoxReward = self._heroData:getHasStarBoxReward()
 
 	self._infoPanel:getChildByFullName("boxPanel.button.red"):setVisible(hasStarBoxReward)
-	self._awakeReplaceBtn:setVisible(self._heroAwakeFinished)
+
+	local hasAnim = self._heroData:hasAwakenAnimation()
+
+	self._awakeReplaceBtn:setVisible(self._heroAwakeFinished and hasAnim)
 end
 
 function HeroStrengthAwakenMediator:refreshAwakeBtn()

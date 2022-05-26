@@ -35,6 +35,7 @@ require("dm.gameplay.activity.model.ActivityDrawCardSp")
 require("dm.gameplay.activity.model.ActivityMail")
 require("dm.gameplay.activity.model.AthenaGoActivity")
 require("dm.gameplay.activity.model.BentoActivity")
+require("dm.gameplay.activity.model.WorldBossActivity")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -108,7 +109,8 @@ ActivityModel = {
 	[ActivityType.KActivityMail] = ActivityMail,
 	[ActivityType.KActivityTrialRoad] = AthenaGoActivity,
 	[ActivityType.kDRAWCARDTS] = BoardActivity,
-	[ActivityType.KActivityBento] = BentoActivity
+	[ActivityType.KActivityBento] = BentoActivity,
+	[ActivityType.KWorldBoss] = WorldBossActivity
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -198,7 +200,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFamily] = "ActivityFamilyMainView",
 		[ActivityType_UI.KActivityMagic] = "ActivityMagicMainView",
 		[ActivityType_UI.KActivitySamurai] = "ActivitySamuraiMainView",
-		[ActivityType_UI.KActivitySpring] = "ActivitySpringMainView"
+		[ActivityType_UI.KActivitySpring] = "ActivitySpringMainView",
+		[ActivityType_UI.KActivityEaster] = "ActivityEasterMainView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -236,7 +239,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFamily] = "ActivityOrientMapView",
 		[ActivityType_UI.KActivityMagic] = "ActivityMapNewView",
 		[ActivityType_UI.KActivitySamurai] = "ActivityMapNewView",
-		[ActivityType_UI.KActivitySpring] = "ActivityMapNewView"
+		[ActivityType_UI.KActivitySpring] = "ActivityMapNewView",
+		[ActivityType_UI.KActivityEaster] = "ActivityMapNewView"
 	},
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
@@ -279,7 +283,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityFamily] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivityMagic] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySamurai] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivitySpring] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivitySpring] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityEaster] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
@@ -453,6 +458,13 @@ ActivityLogin14Config = {
 	},
 	EightDays_Family_Re = {
 		resFile = "asset/ui/ActivityFamilyLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 249, 198, 255)
+		}
+	},
+	EightDays_Easter = {
+		resFile = "asset/ui/ActivityEasterLogin14.csb",
 		textPattern = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 249, 198, 255)

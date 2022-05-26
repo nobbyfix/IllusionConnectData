@@ -4679,7 +4679,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.16,
-        "AwakePic": "",
+        "AwakePic": "portrait_nna_awaken",
         "BaseAttack": 136.0,
         "BaseDefence": 45.0,
         "BaseHp": 555.0,
@@ -4931,7 +4931,8 @@
         "SurfaceList": [
             "Surface_CLMan_1",
             "Surface_CLMan_2",
-            "Surface_CLMan_7"
+            "Surface_CLMan_7",
+            "Surface_CLMan_Awake"
         ],
         "TeamSpecialVoice": {
             "FTLEShi": "Voice_CLMan_33"
@@ -9273,7 +9274,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.31,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [
             "Inner_HLDNan_1",
             "Inner_HLDNan_2",
@@ -15905,7 +15906,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.29,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_MDSi",
         "KeyPassiveSkill": "",
@@ -29410,7 +29411,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.37,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_XSLuo",
         "KeyPassiveSkill": "",

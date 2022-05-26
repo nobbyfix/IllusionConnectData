@@ -155,7 +155,7 @@ all.Skill_GYCZi_Proud = {
 					"UNSTEALABLE"
 				}
 			}, {
-				global.buffeft1
+				buffeft2
 			})
 		end)
 
@@ -246,7 +246,7 @@ all.Skill_GYCZi_Proud_EX = {
 					"UNSTEALABLE"
 				}
 			}, {
-				global.buffeft1
+				buffeft2
 			})
 		end)
 

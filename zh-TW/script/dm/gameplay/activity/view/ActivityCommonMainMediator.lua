@@ -195,6 +195,14 @@ end
 
 function ActivityCommonMainMediator:setupTopInfoWidget()
 	local topInfoNode = self:getView():getChildByName("topinfo_node")
+	local title = Strings:get(self._activity:getTitle())
+	local hideLine = false
+
+	if self._activity:getTitlePath() then
+		title = ""
+		hideLine = true
+	end
+
 	local config = {
 		style = 1,
 		btnHandler = {
@@ -202,7 +210,8 @@ function ActivityCommonMainMediator:setupTopInfoWidget()
 			func = bind1(self.onClickBack, self)
 		},
 		currencyInfo = self._activity:getResourcesBanner(),
-		title = Strings:get(self._activity:getTitle())
+		title = title,
+		hideLine = hideLine
 	}
 	local injector = self:getInjector()
 	self._topInfoWidget = self:autoManageObject(injector:injectInto(TopInfoWidget:new(topInfoNode)))
@@ -372,6 +381,72 @@ function ActivityCommonMainMediator:initView()
 	self:updateStage()
 	self._rightBtn:setVisible(#self._roles > 1)
 	self._leftBtn:setVisible(#self._roles > 1)
+	self:initMiniGameButton()
+end
+
+function ActivityCommonMainMediator:initMiniGameButton()
+	if self._activityConfig.MiniGameActivity then
+		local config = self._activityConfig.MiniGameActivity
+
+		if type(config) == "string" then
+			if self._miniGameBtn then
+				local redPoint = self._miniGameBtn:getChildByName("redPoint")
+				local miniGameActivity = self._activitySystem:getActivityById(self._activityConfig.MiniGameActivity)
+
+				redPoint:setVisible(miniGameActivity:hasRedPoint())
+				self._miniGameBtn:getChildByName("Text_45"):setString(Strings:get(miniGameActivity:getTitle()))
+			end
+		elseif type(config) == "table" then
+			if self._miniGameBtn then
+				self._miniGameBtn:setVisible(false)
+			end
+
+			if not self._miniGameBtnList then
+				self._miniGameBtnList = {}
+
+				for i, v in pairs(config) do
+					local button = ccui.Button:create(v.Icon, v.Icon, "", 1)
+
+					button:addTo(self._main, 10):posite(70, 455 - (i - 1) * 80)
+
+					local miniGameActivity = self._activitySystem:getActivityById(v.Activity)
+					local nameText = ccui.Text:create(Strings:get(miniGameActivity:getTitle()), CUSTOM_TTF_FONT_1, 24)
+
+					nameText:setAnchorPoint(cc.p(0.5, 0.5))
+					nameText:addTo(button):posite(50, 26)
+					nameText:getVirtualRenderer():setHorizontalAlignment(2)
+					nameText:setTextVerticalAlignment(2)
+					nameText:setTextAreaSize(cc.size(100, 35))
+
+					local virtualRenderer = nameText:getVirtualRenderer()
+
+					virtualRenderer:setOverflow(cc.LabelOverflow.NONE)
+					virtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+					button:setTouchEnabled(true)
+					button:addTouchEventListener(function (sender, eventType)
+						if eventType == ccui.TouchEventType.ended then
+							self:onClickMiniGame(v.url)
+						end
+					end)
+
+					local redPointImg = RedPoint:createDefaultNode()
+
+					redPointImg:setScale(0.8)
+
+					local redPoint = RedPoint:new(redPointImg, button, function ()
+						return miniGameActivity:hasRedPoint()
+					end)
+
+					redPoint:offset(-5, 0)
+
+					button.config = v
+					self._miniGameBtnList[#self._miniGameBtnList + 1] = button
+
+					AdjustUtils.adjustLayoutByType(button, AdjustUtils.kAdjustType.Left + AdjustUtils.kAdjustType.Top)
+				end
+			end
+		end
+	end
 end
 
 function ActivityCommonMainMediator:playBackgroundMusic()
@@ -388,7 +463,8 @@ function ActivityCommonMainMediator:initInfo()
 	end
 
 	if self._activity:getTitlePath() then
-		-- Nothing
+		self._titleImage:setVisible(true)
+		self._titleImage:loadTexture(self._activity:getTitlePath(), 1)
 	end
 
 	local tipStr = self._activityConfig.SubActivityEndTip
@@ -512,14 +588,6 @@ function ActivityCommonMainMediator:initInfo()
 
 	if self._voteBtn then
 		self._voteBtn:setVisible(self._activity:isVote())
-	end
-
-	if self._miniGameBtn then
-		local redPoint = self._miniGameBtn:getChildByName("redPoint")
-		local miniGameActivity = self._activitySystem:getActivityById(self._activityConfig.MiniGameActivity)
-
-		redPoint:setVisible(miniGameActivity:hasRedPoint())
-		self._miniGameBtn:getChildByName("Text_45"):setString(Strings:get(miniGameActivity:getTitle()))
 	end
 end
 
@@ -734,6 +802,9 @@ function ActivityCommonMainMediator:onClickStage(sender)
 	if tag > 20 then
 		mapId = KMapIds[2]
 	end
+
+	dump(KMapIds, "KMapIds")
+	dump(mapId, "mapId-___")
 
 	local title = Strings:get(self._blockActivityBaseData[mapId].Title)
 	local st = self:getStatus(mapId)
@@ -1154,8 +1225,8 @@ function ActivityCommonMainMediator:onClickVote()
 	self._activity:checkVote()
 end
 
-function ActivityCommonMainMediator:onClickMiniGame()
-	local url = self._activityConfig.MiniGameUrl
+function ActivityCommonMainMediator:onClickMiniGame(url)
+	local url = url or self._activityConfig.MiniGameUrl
 	local param = {}
 
 	self:getEventDispatcher():dispatchEvent(Event:new(EVT_OPENURL, {

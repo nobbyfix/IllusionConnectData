@@ -1583,7 +1583,8 @@ local modules = {
 					"dm.gameplay.activity.controller.ActivitySystem",
 					"dm.gameplay.activity.service.ActivityService",
 					"dm.gameplay.activity.view.ActivityWidget",
-					"dm.gameplay.activity.view.shuangdan.ActivityHolidayHero"
+					"dm.gameplay.activity.view.shuangdan.ActivityHolidayHero",
+					"dm.gameplay.activity.view.worldBoss.WorldBossHero"
 				},
 				injections = {
 					singletons = {
@@ -2253,6 +2254,36 @@ local modules = {
 							mediator = "ActivityBentoPopupMediator"
 						},
 						{
+							res = "asset/ui/WorldBossMain.csb",
+							name = "WorldBossMainView",
+							mediator = "WorldBossMediator"
+						},
+						{
+							res = "asset/ui/WorldBossRank.csb",
+							name = "WorldBossRankView",
+							mediator = "WorldBossRankMediator"
+						},
+						{
+							res = "asset/ui/WorldBossReward.csb",
+							name = "WorldBossRewardView",
+							mediator = "WorldBossRewardMediator"
+						},
+						{
+							res = "asset/ui/WorldBossFinish.csb",
+							name = "WorldBossFinishView",
+							mediator = "WorldBossFinishMediator"
+						},
+						{
+							res = "asset/ui/WorldBossDetail.csb",
+							name = "WorldBossDetailView",
+							mediator = "WorldBossDetailMediator"
+						},
+						{
+							res = "asset/ui/ArenaRule.csb",
+							name = "WorldBossBuffView",
+							mediator = "WorldBossBuffMediator"
+						},
+						{
 							res = "asset/ui/ActivitySpringMain.csb",
 							name = "ActivitySpringMainView",
 							mediator = "ActivityCommonMainMediator"
@@ -2261,6 +2292,11 @@ local modules = {
 							res = "asset/ui/ActivityEggTask.csb",
 							name = "ActivityEggTaskView",
 							mediator = "ActivityEggTaskMediator"
+						},
+						{
+							res = "asset/ui/ActivityEasterMain.csb",
+							name = "ActivityEasterMainView",
+							mediator = "ActivityCommonMainMediator"
 						}
 					}
 				}

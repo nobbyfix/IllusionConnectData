@@ -9,6 +9,9 @@ RecruitTSResultMediator:has("_recruitSystem", {
 RecruitTSResultMediator:has("_activitySystem", {
 	is = "r"
 }):injectWith("ActivitySystem")
+RecruitTSResultMediator:has("_shopSystem", {
+	is = "r"
+}):injectWith("ShopSystem")
 
 local DrawCardStiveExReward = ConfigReader:getDataByNameIdAndKey("ConfigValue", "DrawCard_StiveExReward", "content")
 local kBtnHandlers = {
@@ -35,6 +38,7 @@ function RecruitTSResultMediator:onRegister()
 	self:mapEventListener(self:getEventDispatcher(), EVT_PLAYER_SYNCHRONIZED, self, self.onDiffRefresh)
 
 	self._recruitManager = self._recruitSystem:getManager()
+	self._bagSystem = self._developSystem:getBagSystem()
 end
 
 function RecruitTSResultMediator:onDiffRefresh(event)
@@ -1079,6 +1083,43 @@ function RecruitTSResultMediator:buyCard(costId, costCount, param)
 		costCount = costCount,
 		param = param
 	}))
+end
+
+function RecruitTSResultMediator:autoBuy(costId, costCount, param)
+	local price = param.times == 1 and RecruitCurrencyStr.KBuyPrice.single[costId] or RecruitCurrencyStr.KBuyPrice.ten[costId]
+	local hasCount = self._bagSystem:getItemCount(costId)
+	local num = costCount - hasCount
+	local cost = num * price
+	local hasDiamondCount = self._bagSystem:getItemCount(CurrencyIdKind.kDiamond)
+	local canBuy = cost <= hasDiamondCount
+
+	if not canBuy then
+		local data = {
+			title = Strings:get("SHOP_REFRESH_DESC_TEXT1"),
+			content = RecruitCurrencyStr.KGoToShop[costId],
+			sureBtn = {},
+			cancelBtn = {}
+		}
+		local outSelf = self
+		local delegate = {
+			willClose = function (self, popupMediator, data)
+				if data.response == "ok" then
+					outSelf._shopSystem:tryEnter({
+						shopId = "Shop_Mall"
+					})
+				end
+			end
+		}
+		local view = self:getInjector():getInstance("AlertView")
+
+		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+		}, data, delegate))
+
+		return
+	else
+		self._recruitSystem:requestRecruit(param)
+	end
 end
 
 function RecruitTSResultMediator:checkHasTimesLimit(recruitDataShow, realTimes)

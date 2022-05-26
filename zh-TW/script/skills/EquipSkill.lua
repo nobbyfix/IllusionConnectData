@@ -11242,6 +11242,11 @@ all.EquipSkill_Boots_15108_2_Passive = {
 
 			if global.SpecialPropGetter(_env, "EquipSkill_Boots_15108_2_times")(_env, global.FriendField(_env)) < 3 and boots_15108_2 and global.ProbTest(_env, this.RateFactor) and global.INSTATUS(_env, "EquipSkill_Boots_15108_2")(_env, _env.ACTOR) then
 				local setLoction = global.FindEmptyCell(_env, global.GetSide(_env, _env.ACTOR))
+
+				if setLoction == nil then
+					setLoction = global.GetCellId(_env, _env.ACTOR)
+				end
+
 				local RpFactor = global.UnitPropGetter(_env, "rp")(_env, _env.ACTOR)
 
 				if RpFactor then

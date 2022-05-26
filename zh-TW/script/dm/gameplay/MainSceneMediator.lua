@@ -248,6 +248,9 @@ local muiscCfg = {
 	ActivityBentoView = {
 		noAutoPlay = true
 	},
+	WorldBossMainView = {
+		noAutoPlay = true
+	},
 	ActivitySpringMainView = {
 		noAutoPlay = true
 	}

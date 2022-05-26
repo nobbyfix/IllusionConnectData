@@ -225,6 +225,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_CLMan_20220601": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_CLMan_20220601",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "XSLuo",
+                    "LFKLFTe"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "BBLMa",
+                    "DCJKang",
+                    "LFEr"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_CLMan_Show",
+        "RoleModel": "Model_CLMan",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_DCJKang": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

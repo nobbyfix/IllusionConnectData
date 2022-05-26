@@ -52,20 +52,31 @@ function HeroStrengthAwakenSuccessMediator:initData(heroId, oldStarId)
 end
 
 function HeroStrengthAwakenSuccessMediator:playVideo(close)
+	local function callback()
+		if close then
+			self:close()
+
+			return
+		end
+
+		AudioEngine:getInstance():playEffect("Se_Effect_Awaken", false)
+		self:showResult()
+	end
+
+	local hasAnim = self._heroData:hasAwakenAnimation()
+
+	if not hasAnim then
+		callback()
+
+		return
+	end
+
 	AudioEngine:getInstance():pauseBackgroundMusic()
 
 	local videoSprite = VideoSprite.create("video/hero/" .. self._heroData:getAwakenStarConfig().Animation .. ".usm", function (sprite, eventName)
 		if eventName == "complete" then
 			sprite:removeFromParent()
-
-			if close then
-				self:close()
-
-				return
-			end
-
-			AudioEngine:getInstance():playEffect("Se_Effect_Awaken", false)
-			self:showResult()
+			callback()
 		end
 	end)
 
