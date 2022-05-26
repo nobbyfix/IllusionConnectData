@@ -28,6 +28,7 @@ function SkillPrototype:getBattleSkillData(level, enemyBuff)
 		local id = param.id
 		local enum = param.type
 		local value = param.value
+		local zoom = param.zoom
 
 		if enum == "FIXED" then
 			args[id] = value[1]
@@ -35,6 +36,14 @@ function SkillPrototype:getBattleSkillData(level, enemyBuff)
 			args[id] = value[level]
 		elseif enum == "LINEAR" then
 			args[id] = value[1] + (level - 1) * value[2]
+		end
+
+		if enemyBuff and enemyBuff.useZoom and enemyBuff.useZoom == 1 and zoom and zoom ~= "" then
+			if zoom <= 0 then
+				zoom = 1
+			end
+
+			args[id] = value[level] * tonumber(zoom)
 		end
 	end
 

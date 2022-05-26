@@ -1567,3 +1567,7 @@ end
 function Hero:getTSoulIdByPos(pos)
 	return self._tsoul[tostring(pos)]
 end
+
+function Hero:hasAwakenAnimation()
+	return self._awakenStarConfig.Animation and self._awakenStarConfig.Animation ~= ""
+end

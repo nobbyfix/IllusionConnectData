@@ -45,8 +45,16 @@ local function formatCount(count)
 		local curLanage = getCurrentLanguage()
 
 		if curLanage == GameLanguageType.CN then
-			count = count - count % 1000
-			count = string.format("%.1f", count / 10000) .. Strings:get("HERO_HP_UNIT")
+			if count > 100000000 then
+				count = count - count % 10000000
+				count = string.format("%.1f", count / 100000000) .. "e"
+			else
+				count = count - count % 1000
+				count = string.format("%.1f", count / 10000) .. Strings:get("HERO_HP_UNIT")
+			end
+		elseif count > 100000000 then
+			count = count - count % 10000000
+			count = string.format("%.1f", count / 100000000) .. "e"
 		else
 			count = count - count % 100
 			count = string.format("%.1f", count / 1000) .. "k"

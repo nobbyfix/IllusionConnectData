@@ -123,5 +123,43 @@
             }
         ],
         "Text": ""
+    },
+    "SpecialRule_worldboss_juju": {
+        "ChangeInfo": 999,
+        "Icon": "IR_Equip13_L_1",
+        "InfoText": 1,
+        "Name": "Activity_WorldBoss_Vanguard_Name",
+        "Pic": [
+            {
+                "Img": "img_SpecialRule_worldBoss_juju1.jpg",
+                "LongText": "SpecialRule_world_juju1",
+                "ShortText": "SpecialRule_world_juju1"
+            },
+            {
+                "Img": "img_SpecialRule_worldBoss_juju1.jpg",
+                "LongText": "SpecialRule_world_juju2",
+                "ShortText": "SpecialRule_world_juju2"
+            }
+        ],
+        "Text": ""
+    },
+    "SpecialRule_worldboss_nianshou": {
+        "ChangeInfo": 999,
+        "Icon": "IR_Equip14_L_1",
+        "InfoText": 1,
+        "Name": "Activity_WorldBoss_Boss_Name",
+        "Pic": [
+            {
+                "Img": "img_SpecialRule_worldBoss_nian1.jpg",
+                "LongText": "SpecialRule_world_nianshou1",
+                "ShortText": "SpecialRule_world_nianshou1"
+            },
+            {
+                "Img": "img_SpecialRule_worldBoss_nian2.jpg",
+                "LongText": "SpecialRule_world_nianshou2",
+                "ShortText": "SpecialRule_world_nianshou2"
+            }
+        ],
+        "Text": ""
     }
 }

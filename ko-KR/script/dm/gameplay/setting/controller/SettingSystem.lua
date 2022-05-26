@@ -963,6 +963,8 @@ function SettingSystem:getShowHeadImgList()
 			else
 				data.unlock = 0
 			end
+		elseif value.Type == 7 then
+			data.unlock = 1
 		end
 
 		if data.unlock == 1 or value.IsHiddenHead == 0 then
@@ -1338,6 +1340,13 @@ function SettingSystem:checkHeadFrameExpire(id, data)
 		end
 	end
 
+	local actFrameInfo = self._settingModel:getActFrameInfo()
+	local value = actFrameInfo[config.CondiType]
+
+	if value and (value < config.TypeNum.value[1] or config.TypeNum.value[2] < value) then
+		data.isExpire = true
+	end
+
 	return data
 end
 
@@ -1501,4 +1510,14 @@ function SettingSystem:changeShowHero(param, callback)
 			callback(response)
 		end
 	end, true)
+end
+
+function SettingSystem:requestActivityHeadFrameInfo()
+	local params = {}
+
+	self._settingService:requestActivityHeadFrameInfo(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self._settingModel:syncActFrameInfo(response.data)
+		end
+	end, false)
 end

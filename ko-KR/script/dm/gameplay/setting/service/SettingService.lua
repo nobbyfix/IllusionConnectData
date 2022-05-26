@@ -94,3 +94,9 @@ function SettingService:changeShowHero(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function SettingService:requestActivityHeadFrameInfo(params, callback, blockUI)
+	local request = self:newRequest(12505, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

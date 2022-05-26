@@ -228,7 +228,6 @@ all.LeadStage_LieSha_skill = {
 					damage = global.min(_env, maxHp * this.MaxHpDamgeRate, atk * 5)
 				end
 
-				global.ApplyRealDamage(_env, _env.ACTOR, global.EnemyMaster(_env), 1, 1, 0, 0, 0, nil, damage)
 				global.AnimForTrgt(_env, global.EnemyMaster(_env), {
 					loop = 1,
 					anim = "baodian_shoujibaodian",
@@ -238,6 +237,7 @@ all.LeadStage_LieSha_skill = {
 						0.5
 					}
 				})
+				global.ApplyRealDamage(_env, _env.ACTOR, global.EnemyMaster(_env), 1, 1, 0, 0, 0, nil, damage)
 			end
 		end)
 

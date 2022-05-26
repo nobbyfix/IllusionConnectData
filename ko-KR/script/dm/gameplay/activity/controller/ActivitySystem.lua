@@ -46,6 +46,21 @@ function ActivitySystem:initialize()
 	end
 end
 
+function ActivitySystem:testActivity()
+	local activityId = "Activity_WorldBoss_220501"
+	local data = {
+		todayOpen = true,
+		activityId = activityId,
+		timeStamp = {
+			finishTs = 1652544000000.0,
+			dailyReset = false,
+			openTs = 1648137600000.0
+		}
+	}
+
+	self._activityList:syncAloneActivity(activityId, data)
+end
+
 function ActivitySystem:dispose()
 	self:shutSchedule()
 
@@ -139,25 +154,64 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 			type = pointType,
 			mapId = blockMapId,
 			pointId = blockPointId,
-			doActivityType = "104"
+			pointType = pointType
 		}
 
-		outSelf:requestLeaveActstage(activityId, subActivityId, params)
+		if data.isWorldBoss then
+			params.resultData = battleSession:getResultSummary()
+
+			outSelf:requestFinishWorldBossBattle(activityId, params, true)
+		else
+			params.doActivityType = "104"
+
+			outSelf:requestLeaveActstage(activityId, subActivityId, params)
+		end
 	end
 
 	function battleDelegate:onPauseBattle(continueCallback, leaveCallback)
-		local popupDelegate = {
-			willClose = function (self, sender, data)
+		local popupDelegate = {}
+
+		if data.isWorldBoss then
+			function popupDelegate:willClose(sender, data)
+				if data.response == AlertResponse.kOK then
+					leaveCallback(true)
+				else
+					continueCallback(data.hpShow, data.effectShow)
+				end
+			end
+
+			local content = nil
+
+			if data.pointType == WorldBossPointType.kVanguard then
+				content = "Activity_WorldBoss_Tip1"
+			else
+				content = "Activity_WorldBoss_Tip2"
+			end
+
+			local data = {
+				title = Strings:get("Tip_Remind"),
+				content = Strings:get(content),
+				sureBtn = {},
+				cancelBtn = {}
+			}
+			local view = outSelf:getInjector():getInstance("AlertView")
+
+			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+			}, data, popupDelegate))
+		else
+			function popupDelegate:willClose(sender, data)
 				if data.opt == BattlePauseResponse.kLeave then
 					leaveCallback()
 				else
 					continueCallback(data.hpShow, data.effectShow)
 				end
 			end
-		}
-		local pauseView = outSelf:getInjector():getInstance("battlePauseView")
 
-		outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, pauseView, nil, {}, popupDelegate))
+			local pauseView = outSelf:getInjector():getInstance("battlePauseView")
+
+			outSelf:dispatch(ViewEvent:new(EVT_SHOW_POPUP, pauseView, nil, {}, popupDelegate))
+		end
 	end
 
 	function battleDelegate:onAMStateChanged(sender, isAuto)
@@ -178,10 +232,16 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 			mapId = blockMapId,
 			pointId = blockPointId,
 			resultData = realData,
-			doActivityType = "103"
+			pointType = pointType
 		}
 
-		outSelf:requestFinishActstage(activityId, subActivityId, params)
+		if data.isWorldBoss then
+			outSelf:requestFinishWorldBossBattle(activityId, params)
+		else
+			params.doActivityType = "103"
+
+			outSelf:requestFinishActstage(activityId, subActivityId, params)
+		end
 	end
 
 	function battleDelegate:onDevWin()
@@ -218,10 +278,16 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 			mapId = blockMapId,
 			pointId = blockPointId,
 			resultData = realData,
-			doActivityType = "103"
+			pointType = pointType
 		}
 
-		outSelf:requestFinishActstage(activityId, subActivityId, params)
+		if data.isWorldBoss then
+			outSelf:requestFinishWorldBossBattle(activityId, params)
+		else
+			params.doActivityType = "103"
+
+			outSelf:requestFinishActstage(activityId, subActivityId, params)
+		end
 	end
 
 	function battleDelegate:onTimeScaleChanged(timeScale)
@@ -281,6 +347,7 @@ function ActivitySystem:enterActstageBattle(data, activityId, subActivityId)
 
 	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", blockPointId)
 	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("WolrdBossBlockBattle", blockPointId)
 	local bgRes = pointConfig.Background or "battle_scene_1"
 	local BGM = pointConfig.BGM
 	local battleSpeed_Display = ConfigReader:getDataByNameIdAndKey("ConfigValue", "BattleSpeed_Display", "content")
@@ -451,6 +518,31 @@ function ActivitySystem:requestLeaveActstage(activityId, subActivityId, params)
 	end
 
 	self:requestDoChildActivity(activityId, subActivityId, params, callback, true)
+end
+
+function ActivitySystem:requestFinishWorldBossBattle(activityId, data)
+	local function callback(response)
+		if response.resCode == GS_SUCCESS then
+			local param = response.data
+			param.activityId = activityId
+			param.pointId = data.pointId
+			param.params = data
+			param.pointType = data.pointType
+
+			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, self:getInjector():getInstance("WorldBossFinishView"), {}, param))
+		else
+			print("requestLeaveWorldBoss error .activityId:" .. tostring(activityId))
+			BattleLoader:popBattleView(self, {})
+		end
+	end
+
+	local params = {
+		doActivityType = 103,
+		pointType = data.pointType,
+		resultData = data.resultData
+	}
+
+	self:requestDoActivity(activityId, params, callback, true)
 end
 
 function ActivitySystem:getActivityOpenStatusById(activityId)
@@ -1511,6 +1603,104 @@ function ActivitySystem:tryEnterBentoView(data)
 	local view = self:getInjector():getInstance("ActivityBentoView")
 
 	self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+end
+
+function ActivitySystem:enterWorldBossView(data)
+	local function enterView(response)
+		local activity = self:getActivityById(data.activityId)
+
+		activity:synchronize(response.data)
+
+		local view = self:getInjector():getInstance("WorldBossMainView")
+
+		self:dispatch(ViewEvent:new(EVT_PUSH_VIEW, view, nil, data))
+	end
+
+	local params = {
+		doActivityType = 101
+	}
+
+	self:requestDoActivity(data.activityId, params, enterView)
+end
+
+function ActivitySystem:checkIsRecommend(checkId, activity)
+	local recommendData = {
+		isRecommend = false,
+		desc = ""
+	}
+
+	if activity then
+		if activity:getType() == ActivityType.KWorldBoss then
+			local buffList = activity:getBuffOpenTime()
+			local activeIndex = activity:getCurBuffIndex()
+			local buffData = buffList[activeIndex]
+
+			if buffData then
+				if buffData.HeroId then
+					for i, v in pairs(buffData.HeroId) do
+						if v == checkId then
+							recommendData.isRecommend = true
+							recommendData.order = 1
+							recommendData.desc = Strings:get("clubBoss_46")
+							recommendData.color = cc.c3b(255, 203, 63)
+							recommendData.showType = "recommend"
+						end
+					end
+				end
+
+				if buffData.Party then
+					local heroSystem = self:getInjector():getInstance("DevelopSystem"):getHeroSystem()
+					local heroData = heroSystem:getHeroById(checkId)
+					local party = heroData:getParty()
+
+					for i, v in pairs(buffData.Party) do
+						if party == v then
+							recommendData.isRecommend = true
+							recommendData.order = 2
+							recommendData.desc = Strings:get("EXPLORE_UI22")
+							recommendData.color = cc.c3b(255, 255, 255)
+							recommendData.showType = "recommend"
+						end
+					end
+				end
+			end
+		else
+			local cardsRecommend = activity:getActivityConfig().BonusHero
+
+			if cardsRecommend then
+				for i = 1, #cardsRecommend do
+					if cardsRecommend[i] == checkId then
+						recommendData.isRecommend = true
+						recommendData.order = 1
+						recommendData.showType = "attrMark"
+					end
+				end
+			end
+		end
+	end
+
+	return recommendData
+end
+
+function ActivitySystem:getRecommendHeroes(activity)
+	local heroSystem = self:getInjector():getInstance("DevelopSystem"):getHeroSystem()
+	local allHeroes = heroSystem:getAllHeroIds()
+	local list = {}
+	local maxList = {}
+
+	for i, v in pairs(allHeroes) do
+		local recommendData = self:checkIsRecommend(v, activity)
+
+		if recommendData.isRecommend then
+			if recommendData.order == 1 then
+				maxList[#maxList + 1] = v
+			else
+				list[#list + 1] = v
+			end
+		end
+	end
+
+	return list, maxList
 end
 
 function ActivitySystem:requestAllActicities(blockUI, callback)

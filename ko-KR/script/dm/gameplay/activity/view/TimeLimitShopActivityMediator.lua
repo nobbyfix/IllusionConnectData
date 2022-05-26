@@ -165,6 +165,13 @@ local timeLimitShopConfig = {
 		CellNameOpacity = 255,
 		CellNameColor = cc.c4b(164, 161, 198, 255),
 		TimeOutLineColor = cc.c4b(41, 28, 24, 0)
+	},
+	easter = {
+		CellBuyEndImg = "jqtd_img_jmmtzl_jldih.png",
+		CellBuyImg = "jqtd_img_jmmtzl_jldi.png",
+		CellNameOpacity = 255,
+		CellNameColor = cc.c4b(164, 161, 198, 255),
+		TimeOutLineColor = cc.c4b(41, 28, 24, 0)
 	}
 }
 local btnHandlers = {

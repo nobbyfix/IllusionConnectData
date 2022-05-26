@@ -259,6 +259,7 @@ all.Skill_SP_SSQXin_Unique = {
 				if global.UnitPropGetter(_env, "hpRatio")(_env, unit) > 0.5 then
 					local realdamage = global.EvalRealDamage(_env, _env.ACTOR, unit, 2, 1, this.RealFactor, 0, 0, damage)
 					damage.val = damage.val + realdamage
+					damage.val = global.BossDamage(_env, _env.ACTOR, unit, damage.val)
 				end
 
 				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)

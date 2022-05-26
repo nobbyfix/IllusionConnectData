@@ -34,6 +34,10 @@ function ResetSystem:listenResetPush(callback)
 				self:getInjector():getInstance(PetRaceSystem):reset()
 				self:getInjector():getInstance(StageSystem):reset()
 			end)
+
+			local settingSystem = self:getInjector():getInstance(SettingSystem)
+
+			settingSystem:requestActivityHeadFrameInfo()
 		end
 
 		if callback then

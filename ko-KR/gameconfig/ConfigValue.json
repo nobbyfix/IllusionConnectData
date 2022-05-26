@@ -169,10 +169,11 @@
     "AnniversaryLoading": {
         "clz": "dict",
         "content": {
-            "end": "2021-10-01 05:00:00",
+            "bg": "Bg_anualhalf_sk",
+            "end": "2022-06-23 05:00:00",
             "start": [
-                "2021-09-09 05:00:00",
-                "2021-10-01 05:00:00"
+                "2022-05-27 05:00:00",
+                "2022-06-23 05:00:00"
             ]
         }
     },
@@ -3346,7 +3347,8 @@
             "actstage",
             "cooperateboss",
             "orrtpk",
-            "stagearena"
+            "stagearena",
+            "worldboss"
         ]
     },
     "FAC_HP_Check": {
@@ -10720,6 +10722,10 @@
         "clz": "int",
         "content": 120
     },
+    "Vanguard_RankMax": {
+        "clz": "int",
+        "content": 200
+    },
     "VillageDecorateShopIcon": {
         "clz": "string[]",
         "content": [
@@ -11005,6 +11011,59 @@
                 "WeekActiveReward_Text2"
             ]
         }
+    },
+    "WorldBoss_Mail": {
+        "clz": "int",
+        "content": 20
+    },
+    "WorldBoss_MainBubble": {
+        "clz": "string[]",
+        "content": [
+            "WorldBoss_MainBubble01",
+            "WorldBoss_MainBubble02",
+            "WorldBoss_MainBubble03",
+            "WorldBoss_MainBubble04",
+            "WorldBoss_MainBubble05",
+            "WorldBoss_MainBubble06",
+            "WorldBoss_MainBubble07",
+            "WorldBoss_MainBubble08",
+            "WorldBoss_MainBubble09",
+            "WorldBoss_MainBubble10"
+        ]
+    },
+    "WorldBoss_MainPlayerNum": {
+        "clz": "int",
+        "content": 6
+    },
+    "WorldBoss_MainRankNum": {
+        "clz": "int",
+        "content": 200
+    },
+    "WorldBoss_ModelSpwanSec": {
+        "clz": "double",
+        "content": 0.5
+    },
+    "WorldBoss_ModelWalkSpeed": {
+        "clz": "int",
+        "content": 50
+    },
+    "WorldBoss_Num": {
+        "clz": "int",
+        "content": 20
+    },
+    "WorldBoss_RankMax": {
+        "clz": "int",
+        "content": 20
+    },
+    "WorldBoss_RankReward": {
+        "clz": "string[]",
+        "content": [
+            "WorldBossRankReward_1",
+            "WorldBossRankReward_2",
+            "WorldBossRankReward_3",
+            "WorldBossRankReward_4",
+            "WorldBossRankReward_5"
+        ]
     },
     "friend_add_reset_key": {
         "clz": "string",

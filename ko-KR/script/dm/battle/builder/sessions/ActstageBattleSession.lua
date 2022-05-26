@@ -19,6 +19,7 @@ function ActstageBattleSession:buildBattleData(playerData, enemyData, randomSeed
 	local playerDrawCard = ConfigReader:getRecordById("ConfigValue", "Fight_PlayerDrawCard").content
 	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
 	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("WolrdBossBlockBattle", self._blockPointId)
 	local enemyCard = pointConfig.EnemyCard
 	local playerCards = playerData.cards
 
@@ -38,6 +39,7 @@ function ActstageBattleSession:genBattleConfigAndData(battleData, randomSeed)
 
 	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
 	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("WolrdBossBlockBattle", self._blockPointId)
 	local maxRound = ConfigReader:getRecordById("ConfigValue", "Fight_MaximumRound").content
 	local battleConfig = self:_getBlockBattleConfig(pointConfig.BlockBattleConfig)
 	local stageEnergy = battleConfig and battleConfig.StageEnergy or self:_getBlockBattleConfig(ConfigReader:getRecordById("ConfigValue", "Fight_StageEnergy").content).StageEnergy
@@ -163,6 +165,7 @@ function ActstageBattleSession:getBattlePassiveSkill()
 	local playerShow = BattleDataHelper:getTowerPassiveSkill(battleData.playerData)
 	local pointConfig = ConfigReader:getRecordById("ActivityBlockPoint", self._blockPointId)
 	pointConfig = pointConfig or ConfigReader:getRecordById("ActivityBlockBattle", self._blockPointId)
+	pointConfig = pointConfig or ConfigReader:getRecordById("WolrdBossBlockBattle", self._blockPointId)
 	local specialSkillShow = pointConfig.SpecialSkillShow or {}
 	local enemyShow = {}
 

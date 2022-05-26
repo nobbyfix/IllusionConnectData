@@ -740,6 +740,34 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
 	end
 
+	if global.INSTATUS(_env, "YDYuan_In_Kill")(_env, actor) then
+		local hp_unit = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local HealRateFactor = 0.85
+		attacker.atk = hp_unit * HealRateFactor
+	end
+
+	if global.INSTATUS(_env, "YDLang_In_Normal")(_env, actor) then
+		local maxHp_unit = global.UnitPropGetter(_env, "hp")(_env, target)
+		local HealRateFactor = 0.15
+		attacker.atk = maxHp_unit * HealRateFactor
+	end
+
+	if global.INSTATUS(_env, "WorldBoss_JSJJu_In_Normal")(_env, actor) then
+		local maxHp_unit = global.UnitPropGetter(_env, "hp")(_env, target)
+		local HealRateFactor = 0.3
+		attacker.atk = maxHp_unit * HealRateFactor
+	end
+
+	if global.INSTATUS(_env, "WorldBoss_JSLLing_Death")(_env, actor) then
+		local maxHp_self = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local HealRateFactor = 0.5
+		attacker.atk = maxHp_self * HealRateFactor * global.InjuryCheck(_env, target)
+
+		if global.GetFriendField(_env, nil, "DieNum") > 2 or #global.CardsInWindow(_env, global.GetOwner(_env, target)) == 0 then
+			attacker.atk = 99
+		end
+	end
+
 	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
 
 	if kuriboh[1] and global.MASTER(_env, target) then
@@ -1117,6 +1145,36 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		local singleunhurtratedown = global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
 		attacker.defweaken = attacker.defweaken + singleweaken
 		defender.unhurtrate = defender.unhurtrate - singleunhurtratedown
+	end
+
+	if global.INSTATUS(_env, "YDYuan_In_Normal")(_env, actor) then
+		local maxHp_unit = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local HealRateFactor = 0.1
+		attacker.atk = maxHp_unit * HealRateFactor
+
+		if global.GetFriendField(_env, nil, "DieNum") >= 2 or #global.CardsInWindow(_env, global.GetOwner(_env, target)) == 0 then
+			global.print(_env, "减少伤害")
+
+			attacker.atk = 99
+		end
+	end
+
+	if global.INSTATUS(_env, "YDYuan_In_Unique")(_env, actor) then
+		local maxHp_unit = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local HealRateFactor = 0.1
+		attacker.atk = maxHp_unit * HealRateFactor
+
+		if global.GetFriendField(_env, nil, "DieNum") >= 2 or #global.CardsInWindow(_env, global.GetOwner(_env, target)) == 0 then
+			global.print(_env, "减少伤害")
+
+			attacker.atk = 99
+		end
+	end
+
+	if global.INSTATUS(_env, "WorldBoss_JSJJu_In_Unique")(_env, actor) then
+		local maxHp_unit = global.UnitPropGetter(_env, "hp")(_env, target)
+		local HealRateFactor = 0.125
+		attacker.atk = maxHp_unit * HealRateFactor * global.InjuryCheck(_env, target)
 	end
 
 	local kuriboh = global.CardsInWindow(_env, global.GetOwner(_env, target), global.CARD_HERO_MARKED(_env, "FCXJi"))
@@ -2099,6 +2157,24 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 				global.ApplyRPRecovery(_env, actor, RpFactor)
 			end
 		end
+
+		if global.MARKED(_env, "CLMan")(_env, actor) and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_CLMan_Passive_Awaken")) > 0 then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_CLMan_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and global.n == global.total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+
+			local num = global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"))
+
+			if num >= 1 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+			end
+
+			if num == 0 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE") - global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 1)
+			end
+		end
 	end
 
 	if damage and damage.block then
@@ -2841,6 +2917,24 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 				global.ApplyRPRecovery(_env, actor, RpFactor)
 			end
 		end
+
+		if global.MARKED(_env, "CLMan")(_env, actor) and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_CLMan_Passive_Awaken")) > 0 then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_CLMan_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and global.n == global.total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+
+			local num = global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"))
+
+			if num >= 1 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+			end
+
+			if num == 0 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE") - global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 1)
+			end
+		end
 	end
 
 	if damage and damage.block then
@@ -3494,6 +3588,24 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 
 			if RpFactor and RpFactor ~= 0 and n == total then
 				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+		end
+
+		if global.MARKED(_env, "CLMan")(_env, actor) and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_CLMan_Passive_Awaken")) > 0 then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_CLMan_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and n == total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+
+			local num = global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"))
+
+			if num >= 1 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+			end
+
+			if num == 0 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE") - global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 1)
 			end
 		end
 	end
@@ -4285,6 +4397,24 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 				global.ApplyRPRecovery(_env, actor, RpFactor)
 			end
 		end
+
+		if global.MARKED(_env, "CLMan")(_env, actor) and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_CLMan_Passive_Awaken")) > 0 then
+			local RpFactor = global.SpecialPropGetter(_env, "Skill_CLMan_Passive_RP")(_env, actor)
+
+			if RpFactor and RpFactor ~= 0 and n == total then
+				global.ApplyRPRecovery(_env, actor, RpFactor)
+			end
+
+			local num = global.SelectBuffCount(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"))
+
+			if num >= 1 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "UNDEAD", "DISPELLABLE"), 1)
+			end
+
+			if num == 0 then
+				global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "BUFF", "DISPELLABLE") - global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 1)
+			end
+		end
 	end
 
 	if n == total then
@@ -4750,12 +4880,18 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		local MaximumLifeBonus = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15132_2_MaximumLifeBonus")(_env, actor)
 
 		if num < nummax then
+			global.print(_env, "角色加成系数=", MaximumLifeBonus)
+
 			if target == global.FriendMaster(_env) then
 				MaximumLifeBonus = MaximumLifeBonus * 0.5
+
+				global.print(_env, "主角加成系数=", MaximumLifeBonus)
 			end
 
 			local BuffMaxHp = global.MaxHpEffect(_env, heal.val * MaximumLifeBonus)
 
+			global.print(_env, "目标受到的治疗=", heal.val, "目标恢复了", heal.val / global.UnitPropGetter(_env, "maxHp")(_env, target), "%")
+			global.print(_env, "目标增加的血量上限=", heal.val * MaximumLifeBonus)
 			global.ApplyBuff_Buff(_env, actor, target, {
 				timing = 4,
 				display = "MaxHpUp",
@@ -5535,6 +5671,61 @@ function all.GetFriendField(_env, actor, name, Field)
 	end
 
 	return SpecialProp
+end
+
+function all.Kick_Check(_env, unit, bool)
+	local this = _env.this
+	local global = _env.global
+	bool = bool or false
+
+	if global.BUFF_MARKED_ALL(_env, "UnKick")(_env, unit) == false then
+		global.Kick_Check(_env, bool)
+	end
+end
+
+function all.ApplyHPDamage_Check(_env, actor, unit, dmgFactor)
+	local this = _env.this
+	local global = _env.global
+	local damage = global.EvalDamage_FlagCheck(_env, actor, unit, dmgFactor)
+
+	global.ApplyHPDamage_ResultCheck(_env, actor, unit, damage)
+end
+
+function all.Skill_SortBy(_env, arr, compare, att)
+	local this = _env.this
+	local global = _env.global
+
+	global.print(_env, compare, "compare======")
+
+	if compare == ">" then
+		for i = 1, #arr do
+			global.print(_env, #arr, "kkkkk")
+			global.print(_env, arr[i], global.UnitPropGetter(_env, att)(_env, arr[i]), "123")
+			global.print(_env, arr[i + 1], global.UnitPropGetter(_env, att)(_env, arr[i + 1]), "123")
+
+			if global.UnitPropGetter(_env, att)(_env, arr[i + 1]) < global.UnitPropGetter(_env, att)(_env, global.unit) then
+				local c = arr[i]
+				arr[i] = arr[i + 1]
+				arr[i + 1] = c
+			end
+		end
+
+		return arr
+	elseif compare == "<" then
+		for i = 1, #arr do
+			global.print(_env, #arr, "kkkkk")
+			global.print(_env, arr[i], global.UnitPropGetter(_env, att)(_env, arr[i]), "123")
+			global.print(_env, arr[i + 1], global.UnitPropGetter(_env, att)(_env, arr[i + 1]), "123")
+
+			if global.UnitPropGetter(_env, att)(_env, global.unit) < global.UnitPropGetter(_env, att)(_env, arr[i + 1]) then
+				local c = arr[i]
+				arr[i] = arr[i + 1]
+				arr[i + 1] = c
+			end
+		end
+
+		return arr
+	end
 end
 
 return _M

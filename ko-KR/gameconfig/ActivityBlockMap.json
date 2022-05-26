@@ -937,6 +937,63 @@
         ],
         "Type": "ELITE"
     },
+    "EasterM01": {
+        "BGM": "Mus_Battle_Festival",
+        "Background": "Main_Event_01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_EasterAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "EasterSN01",
+            "EasterSN02",
+            "EasterSN03",
+            "EasterSN04",
+            "EasterSN05",
+            "EasterSN06",
+            "EasterSN07",
+            "EasterSN08"
+        ],
+        "SubStoryPoint": [
+            "AS01S01",
+            "AS01S02",
+            "AS01S03",
+            "AS01S04",
+            "AS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "EasterM02": {
+        "BGM": "Mus_Battle_Festival",
+        "Background": "Main_Event_02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_EasterAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": [],
+        "SubSort": [
+            "EasterSE01",
+            "EasterSE02",
+            "EasterSE03",
+            "EasterSE04",
+            "EasterSE05",
+            "EasterSE06",
+            "EasterSE07",
+            "EasterSE08",
+            "EasterSE09",
+            "EasterSE10",
+            "EasterSE11"
+        ],
+        "SubStoryPoint": [
+            "AS01E01",
+            "AS01E02",
+            "AS01E03",
+            "AS01E04",
+            "AS01E05"
+        ],
+        "Type": "ELITE"
+    },
     "FWorksM01": {
         "BGM": "Mus_Story_Fireworks_Main",
         "Background": "FireWorks_Scene02",

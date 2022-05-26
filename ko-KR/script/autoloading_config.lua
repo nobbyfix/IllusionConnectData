@@ -1431,6 +1431,36 @@ local mappings = {
 		name = "ActivitySagaWinMediator",
 		type = "@C"
 	},
+	WorldBossDetailMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossDetailMediator",
+		name = "WorldBossDetailMediator",
+		type = "@C"
+	},
+	WorldBossFinishMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossFinishMediator",
+		name = "WorldBossFinishMediator",
+		type = "@C"
+	},
+	WorldBossMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossMediator",
+		name = "WorldBossMediator",
+		type = "@C"
+	},
+	WorldBossRankMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossRankMediator",
+		name = "WorldBossRankMediator",
+		type = "@C"
+	},
+	WorldBossBuffMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossBuffMediator",
+		name = "WorldBossBuffMediator",
+		type = "@C"
+	},
+	WorldBossRewardMediator = {
+		url = "dm.gameplay.activity.view.worldBoss.WorldBossRewardMediator",
+		name = "WorldBossRewardMediator",
+		type = "@C"
+	},
 	ActivityZeroTaskDailyMediator = {
 		url = "dm.gameplay.activity.view.ActivityZeroTaskDailyMediator",
 		name = "ActivityZeroTaskDailyMediator",

@@ -699,7 +699,7 @@ all.Skill_XDE_Passive_EX = {
 			entry = prototype.passive
 		})
 		passive = global["[duration]"](this, {
-			0
+			2
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
@@ -715,7 +715,7 @@ all.Skill_XDE_Passive_EX = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 		exec["@time"]({
-			0
+			1
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -738,12 +738,19 @@ all.Skill_XDE_Passive_EX = {
 
 				if global.ProbTest(_env, this.ProbRateFactor) then
 					global.Sound(_env, "Se_Skill_XDE_Cat_Leave", 1)
-					global.Flee(_env, 1000, _env.ACTOR, true)
+
+					if global.SelectHeroPassiveCount(_env, _env.ACTOR, "Skill_WorldBoss_mechanism") == 0 then
+						global.Flee(_env, 1000, _env.ACTOR, true)
+					end
 				else
 					local units = global.RandomN(_env, this.Num, global.EnemyUnits(_env, global.PETS - global.SUMMONS - global.MARKED(_env, "DAGUN") - global.HASSTATUS(_env, "CANNOT_BACK_TO_CARD") - global.MARKED(_env, "SummonedNian")))
 
 					for _, unit in global.__iter__(units) do
-						global.Flee(_env, 1000, unit, true)
+						if global.INSTATUS(_env, "wroldBoss_marked")(_env, unit) then
+							global.KillTarget(_env, unit)
+						else
+							global.Flee(_env, 1000, unit, true)
+						end
 					end
 				end
 			end

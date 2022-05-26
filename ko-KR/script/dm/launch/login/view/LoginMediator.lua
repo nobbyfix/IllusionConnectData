@@ -54,7 +54,6 @@ function LoginMediator:enterWithData(data)
 	}
 
 	StatisticSystem:send(content)
-	dump(app.pkgConfig, "app.pkgConfig")
 end
 
 function LoginMediator:animOver()
@@ -783,6 +782,11 @@ function LoginMediator:buildLoadingTask()
 				arenaSystem:requestOfflineReport()
 			end
 		end, 1)
+		DO_ACTION(function ()
+			local settingSystem = self:getInjector():getInstance(SettingSystem)
+
+			settingSystem:requestActivityHeadFrameInfo()
+		end, 1)
 		END()
 	end)
 
@@ -877,9 +881,39 @@ function LoginMediator:initAnim(callback)
 
 		bgNode:removeAllChildren()
 
-		local bgAnim = cc.MovieClip:create("zong_KoreaAnniversariesLoading")
+		local loadingConfig = ConfigReader:getDataByNameIdAndKey("ConfigValue", "AnniversaryLoading", "content")
 
-		bgAnim:addTo(bgNode):center(bgNode:getContentSize())
+		if loadingConfig.bg then
+			local imageInfo = ConfigReader:getRecordById("BackGroundPicture", loadingConfig.bg)
+
+			if imageInfo.Picture and imageInfo.Picture ~= "" then
+				local bgImage = ccui.ImageView:create("asset/scene/" .. imageInfo.Picture .. ".jpg")
+
+				bgImage:addTo(bgNode):center(bgNode:getContentSize())
+
+				local flashId = imageInfo.Flash1
+
+				if flashId and flashId ~= "" then
+					local mc = cc.MovieClip:create(flashId)
+
+					mc:addTo(bgNode):center(bgNode:getContentSize())
+
+					local extFlashId = imageInfo.Flash2
+
+					if extFlashId and extFlashId ~= "" then
+						local extMc = cc.MovieClip:create(extFlashId)
+
+						if extMc then
+							extMc:addTo(bgNode):center(bgNode:getContentSize())
+						end
+					end
+				end
+			end
+		else
+			local bgAnim = cc.MovieClip:create("zong_KoreaAnniversariesLoading")
+
+			bgAnim:addTo(bgNode):center(bgNode:getContentSize())
+		end
 
 		self._whaleAnim = nil
 	else

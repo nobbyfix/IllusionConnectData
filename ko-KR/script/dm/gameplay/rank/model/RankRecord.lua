@@ -720,3 +720,19 @@ function StageAreanaRankRecord:synchronize(data)
 	self._nickName = data.n
 	self._oldCoin = data.p
 end
+
+WorldBossRankRecord = class("WorldBossRankRecord", BaseRankRecord, _M)
+
+WorldBossRankRecord:has("_hurtNum", {
+	is = "r"
+})
+
+function WorldBossRankRecord:initialize()
+	super.initialize(self)
+end
+
+function WorldBossRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._hurtNum = data.value
+end
