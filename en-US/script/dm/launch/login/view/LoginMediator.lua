@@ -77,7 +77,6 @@ function LoginMediator:enterWithData(data)
 	}
 
 	StatisticSystem:send(content)
-	dump(app.pkgConfig, "app.pkgConfig")
 end
 
 function LoginMediator:animOver()
@@ -895,6 +894,11 @@ function LoginMediator:buildLoadingTask()
 
 				arenaSystem:requestOfflineReport()
 			end
+		end, 1)
+		DO_ACTION(function ()
+			local settingSystem = self:getInjector():getInstance(SettingSystem)
+
+			settingSystem:requestActivityHeadFrameInfo()
 		end, 1)
 		END()
 	end)

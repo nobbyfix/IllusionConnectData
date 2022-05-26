@@ -172,6 +172,16 @@
             "storage": 5000
         }
     },
+    "AcitvityEasterStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityFamilyStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -1606,6 +1616,27 @@
                 "05:00:00"
             ],
             "setValue": 0
+        }
+    },
+    "WorldBoss_Reset": {
+        "ResetSystem": {
+            "addValue": 3,
+            "max": 3,
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "DAY",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 3,
+            "storage": 3
         }
     },
     "shop1": {

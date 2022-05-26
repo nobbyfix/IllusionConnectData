@@ -8104,6 +8104,32 @@
             "slot": "Hero_Proud_CLMan"
         }
     },
+    "StarSE_CLMan_PBattle_Awake": {
+        "Desc": "StarSE_CLMan_PBattle_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_CLMan_Awaken",
+            "before": "Hero_PBattle_CLMan_EX",
+            "slot": "Hero_PBattle_CLMan"
+        }
+    },
+    "StarSE_CLMan_Unique_Awake": {
+        "Desc": "StarSE_CLMan_Unique_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_CLMan_Awaken",
+            "before": "Hero_Unique_CLMan_EX",
+            "slot": "Hero_Unique_CLMan"
+        }
+    },
     "StarSE_CZheng_4": {
         "Desc": "StarSE_CZheng_4_Desc",
         "EffectType": "CHANGESKILL",

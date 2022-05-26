@@ -334,6 +334,49 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Easter": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Easter_Map",
+                    "AS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "s_main_event_01",
+        "Name": "ActivityBlock_Easter_Name",
+        "Num": 23,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Easter_1",
+                    "Memory_Act_Easter_2",
+                    "Memory_Act_Easter_3",
+                    "Memory_Act_Easter_4",
+                    "Memory_Act_Easter_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Easter_6",
+                    "Memory_Act_Easter_7",
+                    "Memory_Act_Easter_8",
+                    "Memory_Act_Easter_9",
+                    "Memory_Act_Easter_10"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Family": {
         "ActiviType": "",
         "Condition": [

@@ -489,6 +489,7 @@ all.Skill_XDRLa_Unique = {
 				if not global.MASTER(_env, unit) and global.PETS - global.SUMMONS(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 					local extra_damage = maxHp * this.HealRateFactor
+					extra_damage = global.BossDamage(_env, _env.ACTOR, unit, extra_damage)
 
 					global.DelayCall(_env, 300, global.ApplyHPDamage, unit, extra_damage)
 				end
@@ -622,6 +623,7 @@ all.Skill_XDRLa_Unique_EX = {
 				if not global.MASTER(_env, unit) and global.PETS - global.SUMMONS(_env, unit) and global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 					local extra_damage = maxHp * this.HealRateFactor
+					extra_damage = global.BossDamage(_env, _env.ACTOR, unit, extra_damage)
 
 					global.DelayCall(_env, 300, global.ApplyHPDamage, unit, extra_damage)
 

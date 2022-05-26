@@ -832,8 +832,8 @@ function BattleMainMediator:onPause()
 		self:onResume()
 	end
 
-	local function leaveCallback()
-		self:tryLeaving()
+	local function leaveCallback(isFinish)
+		self:tryLeaving(isFinish)
 	end
 
 	if self._delegate.onPauseBattle then
@@ -964,11 +964,23 @@ function BattleMainMediator:flushTouchEnable()
 	self.battleUIMediator:setTouchEnabled(touchEnable)
 end
 
-function BattleMainMediator:tryLeaving()
+function BattleMainMediator:tryLeaving(isFinish)
+	dump(isFinish, "isFinish")
 	self._delegate:tryLeaving(function (leave)
 		if leave then
-			self:stopScheduler()
-			self._delegate:onLeavingBattle()
+			if isFinish then
+				self:sendMessage("leave", {}, function (isOk, _)
+					if isOk then
+						self:tick(0.1)
+						self:stopScheduler()
+						self._delegate:onLeavingBattle()
+					end
+				end)
+				self:onResume()
+			else
+				self:stopScheduler()
+				self._delegate:onLeavingBattle()
+			end
 		else
 			self:onResume()
 		end

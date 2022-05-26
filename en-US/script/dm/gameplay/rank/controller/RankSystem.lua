@@ -29,10 +29,11 @@ RankSystem:has("_eventDispatcher", {
 RankType = {
 	kSupport = 40,
 	kBlockStar = 2,
-	kPetRace = 11,
+	KWBVanguard = 47,
 	KPetWorldScore = 25,
 	kJump = 44,
 	KPlane = 46,
+	kPetRace = 11,
 	kClubBoss = 41,
 	KRTPK = 26,
 	kExp = 6,
@@ -47,6 +48,7 @@ RankType = {
 	kCombat = 1,
 	kCrusade = 30,
 	kHeroCombat = 3,
+	KWBBoss = 48,
 	KNewAreana = 45,
 	kDarts = 42
 }
@@ -71,7 +73,9 @@ RankClass = {
 	[RankType.KStageAreana] = StageAreanaRankRecord,
 	[RankType.kJump] = MiniGameJumpRankRecord,
 	[RankType.KPlane] = MiniGamePlaneRankRecord,
-	[RankType.KNewAreana] = ArenaNewRankRecord
+	[RankType.KNewAreana] = ArenaNewRankRecord,
+	[RankType.KWBVanguard] = WorldBossRankRecord,
+	[RankType.KWBBoss] = WorldBossRankRecord
 }
 RankSwitch = {
 	[RankType.kClubBoss] = "fn_clubBoss",

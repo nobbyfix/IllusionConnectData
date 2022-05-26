@@ -451,6 +451,31 @@
         "Tips": "Unlock_HomeBackground_Dusk",
         "Unlook": 1
     },
+    "HomeBackground_Easter": {
+        "BGM": "Mus_Story_Festival",
+        "BGPContraction": "anualshop_scene_main_easter_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Easter_Desc",
+            "img": "Activity_ExchangeBG_Easter",
+            "name": "HomeBackground_Easter_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Easter_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Easter_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Easter",
+        "Unlook": 1
+    },
     "HomeBackground_Family": {
         "BGM": "Mus_Story_Family_Main",
         "BGPContraction": "anualshop_scene_main_family_preview",

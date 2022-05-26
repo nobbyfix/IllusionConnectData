@@ -715,5 +715,95 @@ all.Skill_CLMan_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_CLMan_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		this.CritStrgFactor = externs.CritStrgFactor
+
+		assert(this.CritStrgFactor ~= nil, "External variable `CritStrgFactor` is not provided.")
+
+		this.RpFactor = externs.RpFactor
+
+		if this.RpFactor == nil then
+			this.RpFactor = 80
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
+				"?Normal"
+			}, this.HurtRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "+critstrg", {
+				"+Normal",
+				"+Normal"
+			}, this.CritStrgFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_CLMan_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			}, 1, 0)
+
+			local buffeft3 = global.SpecialNumericEffect(_env, "+Skill_CLMan_Passive_RP", {
+				"+Normal",
+				"+Normal"
+			}, this.RpFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Skill_CLMan_Passive_Awaken",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft3
+			})
+		end)
+
+		return _env
+	end
+}
 
 return _M
