@@ -9,6 +9,9 @@ SettingModel:has("_recordBeginTime", {
 SettingModel:has("_weatherData", {
 	is = "rw"
 })
+SettingModel:has("_actFrameInfo", {
+	is = "rw"
+})
 
 local kTouchEffectKey = "setting_Toucheffect"
 local kBackGroundMusicKey = "setting_musicId"
@@ -24,6 +27,11 @@ function SettingModel:initialize()
 	self._timeScale = {}
 	self._autoBattle = {}
 	self._isSaveMusic = true
+	self._actFrameInfo = {}
+end
+
+function SettingModel:syncActFrameInfo(data)
+	self._actFrameInfo = data
 end
 
 function SettingModel:isScreenRecordOn()

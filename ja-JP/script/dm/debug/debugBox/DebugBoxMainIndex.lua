@@ -341,7 +341,8 @@ DebugBoxMainIndex = {
 					"投飞镖：设置关卡",
 					"增加小游戏次数",
 					"美食作战：设置初始跳台",
-					"大富翁点数"
+					"大富翁点数",
+					"增加世界boss次数"
 				}
 			},
 			{
@@ -866,6 +867,10 @@ DebugBoxMainIndex = {
 			{
 				"大富翁点数",
 				"ChangeDiceNum"
+			},
+			{
+				"增加世界boss次数",
+				"ChangeWorldBossTimes"
 			},
 			{
 				"触发BOSS共斗",

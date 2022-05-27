@@ -441,6 +441,30 @@
         "Type": "Summon",
         "UniqueSkill": "Skill_Summoned_JNLong_Phantom_Unique"
     },
+    "SummonedJSLLing": {
+        "Cost": 18,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_WorldBoss_Normal_DIE",
+        "DoubleSkill": "",
+        "Flags": [
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 0,
+        "NormalSkill": "Skill_Enemy_WorldBoss_JSLLing_Normal",
+        "PassiveSkill": [
+            "Skill_Enemy_WorldBoss_JSLLing_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_Enemy_JSLLing",
+        "Sex": 1,
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Attack",
+        "UniqueSkill": ""
+    },
     "SummonedLDu": {
         "Cost": 2,
         "CounterSkill": "",
@@ -678,7 +702,7 @@
         "DeathSkill": "",
         "DoubleSkill": "",
         "Flags": [
-            "SUMMONED",
+            "Master",
             "SummonedNian",
             "CANNOT_MOVE"
         ],
@@ -1350,6 +1374,30 @@
         "SkillRate": 0.0,
         "SummonSurface": [],
         "Type": "Summoned",
+        "UniqueSkill": ""
+    },
+    "SummonedYDLang": {
+        "Cost": 18,
+        "CounterSkill": "",
+        "DeathSkill": "Skill_WorldBoss_HIDE_DIE",
+        "DoubleSkill": "",
+        "Flags": [
+            "CANNOT_MOVE"
+        ],
+        "KillRage": 0,
+        "MasterRage": 0,
+        "NormalSkill": "Skill_Enemy_YDLang_Normal",
+        "PassiveSkill": [
+            "Skill_Enemy_YDLang_Passive"
+        ],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {},
+        "RoleModel": "Model_Enemy_MYLang",
+        "Sex": 1,
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Attack",
         "UniqueSkill": ""
     },
     "SummonedYLJSi_AOE": {

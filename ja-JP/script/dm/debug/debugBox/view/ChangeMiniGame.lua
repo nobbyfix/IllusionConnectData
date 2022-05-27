@@ -92,3 +92,17 @@ function ChangeDiceNum:onClick(data)
 		}))
 	end)
 end
+
+ChangeWorldBossTimes = class("ChangeWorldBossTimes", DebugViewTemplate, _M)
+
+function ChangeWorldBossTimes:initialize()
+	self._opType = 426
+	self._viewConfig = {
+		{
+			default = 10,
+			name = "time",
+			title = "次数",
+			type = "Input"
+		}
+	}
+end

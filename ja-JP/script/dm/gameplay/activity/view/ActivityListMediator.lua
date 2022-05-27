@@ -304,8 +304,7 @@ function ActivityListMediator:setupActivity(item, data)
 end
 
 function ActivityListMediator:refreshRedPoint()
-	self:setupTabBtn()
-	self:setupList()
+	self:refreshView()
 end
 
 function ActivityListMediator:refreshView()

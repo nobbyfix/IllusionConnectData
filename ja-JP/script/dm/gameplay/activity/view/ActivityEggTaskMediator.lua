@@ -126,6 +126,12 @@ function ActivityEggTaskMediator:refreshCell(cell, idx)
 
 	descText:setString(str .. " " .. taskValue.currentValue .. "/" .. taskValue.targetValue)
 
+	local condition = taskData:getCondition()[1]
+
+	if condition.conditionType == "Condi_SumCharge" then
+		descText:setString(str .. "    " .. taskValue.currentValue * 0.01 .. "/" .. taskValue.targetValue * 0.01)
+	end
+
 	local rewardPanel = cell:getChildByName("icon")
 
 	rewardPanel:removeAllChildren()

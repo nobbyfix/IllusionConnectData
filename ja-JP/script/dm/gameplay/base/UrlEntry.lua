@@ -373,6 +373,11 @@ local kExtResponseMap = {
 		funcName = "tryEnterBentoView",
 		entry = ViewAreaEntry:new("ActivityBentoView")
 	},
+	ActivityWorldBossView = {
+		instanceName = "ActivitySystem",
+		funcName = "enterWorldBossView",
+		entry = ViewAreaEntry:new("ActivityWorldBossView")
+	},
 	EggView = {
 		instanceName = "ActivitySystem",
 		funcName = "enterEasterEgg",

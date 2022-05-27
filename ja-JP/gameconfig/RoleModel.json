@@ -6624,7 +6624,7 @@
         "Animation": "Enemy_JSJJu",
         "BattlePosition": "HeroBase_BattlePosition_FEMSi",
         "BattleShow": "",
-        "Bust1": "Master_XueZhan_Bust1",
+        "Bust1": "",
         "Bust10": "Enemy_JSJJu_Bust10",
         "Bust11": "",
         "Bust12": "",
@@ -6632,19 +6632,22 @@
         "Bust14": "",
         "Bust15": "",
         "Bust16": "",
-        "Bust2": "Master_XueZhan_Bust2",
-        "Bust3": "Master_XueZhan_Bust3",
-        "Bust4": "Master_XueZhan_Bust4",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "Bust4_Enemy_JSJJu",
         "Bust5": "",
         "Bust6": "",
         "Bust7": "",
         "Bust8": "",
-        "Bust9": "",
-        "BustAwake": "",
+        "Bust9": "Bust9_Enemy_JSJJu",
+        "BustAwake": [
+            44,
+            15
+        ],
         "BustAwake2": "",
         "BustTemp1": [
-            433,
-            403
+            324,
+            331
         ],
         "BustTemp2": "",
         "BustTemp3": "",
@@ -6653,7 +6656,7 @@
         "CommonResource": "Enemy_XXZhe",
         "CutIn": "CutIn_Enemy",
         "DeathVoice": "",
-        "Filename": "battlepic_Enemy_XXZhe_Bust10",
+        "Filename": "portrait_ydzhe",
         "HeadMain": "Enemy_JSJJu_HeadMain",
         "Height": 200,
         "Hero": "Enemy_JSJJu",
@@ -6680,8 +6683,8 @@
         "Width": 200,
         "WinVoice": "",
         "Zoom": 1.0,
-        "bustAwakeZoom": "",
-        "bustZoom": 1.0
+        "bustAwakeZoom": 0.35,
+        "bustZoom": 0.27
     },
     "Model_Enemy_JSLLing": {
         "Animation": "Enemy_JSLLing",

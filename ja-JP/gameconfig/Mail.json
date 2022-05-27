@@ -246,6 +246,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Activity_Egg": {
+        "Content": "Mail_Activity_Egg_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Activity_Egg_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_Activity_Fly": {
         "Content": "Mail_Activity_Fly_Content",
         "ExpireAfterRead": 72000,
@@ -779,6 +792,32 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Easter_AchieveMentTask_Activity": {
+        "Content": "Mail_Easter_AchieveMentTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Easter_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Easter_AchieveMentTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_Easter_DailyTask_Activity": {
+        "Content": "Mail_Easter_DailyTask_Activity_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Easter_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Easter_DailyTask_Activity_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_EightDays_Adult": {
         "Content": "Mail_EightDays_Adult_Content",
         "ExpireAfterRead": 72000,
@@ -893,6 +932,19 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_EightDays_Dusk_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_EightDays_Easter": {
+        "Content": "Mail_EightDays_Easter_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Send_Easter_Name",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_EightDays_Easter_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
@@ -2375,6 +2427,32 @@
         "Reward": "",
         "SubType": 1,
         "Title": "Mail_WebOrder_SSR_Random_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_WorldBoss": {
+        "Content": "Mail_WorldBoss_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_WorldBoss_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
+    "Mail_WorldBoss_Reissue": {
+        "Content": "Mail_WorldBoss_Reissue_Content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_WorldBoss_Reissue_Title",
         "TopStatus": 0,
         "Type": "USER"
     },
