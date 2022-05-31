@@ -248,6 +248,8 @@ all.Skill_ZTXChang_Unique = {
 				damage.val = damage.val + _env.petsextra
 			end
 
+			damage.val = global.BossDamage(_env, _env.ACTOR, _env.TARGET, damage.val)
+
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
 				100,
@@ -452,6 +454,8 @@ all.Skill_ZTXChang_Unique_Awaken = {
 				_env.petsextra = maxHp * this.HpDmgRateFactor
 				damage.val = damage.val + _env.petsextra
 			end
+
+			damage.val = global.BossDamage(_env, _env.ACTOR, _env.TARGET, damage.val)
 
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
@@ -748,6 +752,8 @@ all.Skill_ZTXChang_Unique_EX = {
 				_env.petsextra = maxHp * this.HpDmgRateFactor
 				damage.val = damage.val + _env.petsextra
 			end
+
+			damage.val = global.BossDamage(_env, _env.ACTOR, _env.TARGET, damage.val)
 
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,

@@ -225,7 +225,7 @@ all.Skill_MDSi_Proud_EX = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			if not global.MASTER(_env, _env.TARGET) then
+			if not global.MASTER(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
 				local hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
 				local extra_damage = hp * this.DamageFactor
 

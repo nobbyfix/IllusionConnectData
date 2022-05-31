@@ -36,7 +36,7 @@ all.TacticsCard_Damage_Multi = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.PETS)) do
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian"))) do
 				global.AssignRoles(_env, unit, "target")
 				global.AddAnim(_env, {
 					loop = 1,
@@ -86,7 +86,7 @@ all.TacticsCard_Damage_Single = {
 			local this = _env.this
 			local global = _env.global
 
-			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env, global.PETS))) do
+			for _, unit in global.__iter__(global.RandomN(_env, 1, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")))) do
 				global.AssignRoles(_env, unit, "target")
 				global.AddAnim(_env, {
 					loop = 1,
@@ -136,7 +136,7 @@ all.TacticsCard_Freeze_Multi = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.EnemyUnits(_env, global.PETS)
+			_env.units = global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian"))
 
 			for _, unit in global.__iter__(_env.units) do
 				global.AddAnim(_env, {
@@ -210,7 +210,7 @@ all.TacticsCard_Freeze_Single = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.RandomN(_env, 1, global.EnemyUnits(_env, global.PETS))
+			_env.units = global.RandomN(_env, 1, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")))
 
 			for _, unit in global.__iter__(_env.units) do
 				global.AddAnim(_env, {
