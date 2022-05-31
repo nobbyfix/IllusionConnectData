@@ -230,13 +230,13 @@ all.Skill_NFEr_Unique = {
 			local hp_ratio_friend = 0
 			local hp_max_friend = 0
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), ">", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				hp_ratio_enemy = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 				hp_max_enemy = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 				enemy_chosen = unit
 			end
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				hp_ratio_friend = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 				hp_max_friend = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 				friend_chosen = unit
@@ -500,13 +500,13 @@ all.Skill_NFEr_Unique_EX = {
 			local hp_ratio_friend = 0
 			local hp_max_friend = 0
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS), ">", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), ">", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				hp_ratio_enemy = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 				hp_max_enemy = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 				enemy_chosen = unit
 			end
 
-			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
+			for _, unit in global.__iter__(global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)) do
 				hp_ratio_friend = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
 				hp_max_friend = global.UnitPropGetter(_env, "maxHp")(_env, unit)
 				friend_chosen = unit
