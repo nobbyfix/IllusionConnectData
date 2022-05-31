@@ -2219,7 +2219,7 @@ all.EquipSkill_Weapon_15104_1_Passive = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.primTrgt) == false and global.SpecialPropGetter(_env, "EquipSkill_Weapon_15104_1_check")(_env, _env.ACTOR) > 0 then
+			if global.MASTER(_env, _env.primTrgt) == false and not global.MARKED(_env, "SummonedNian") and global.SpecialPropGetter(_env, "EquipSkill_Weapon_15104_1_check")(_env, _env.ACTOR) > 0 then
 				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.primTrgt)
 
 				global.ApplyHPDamage(_env, _env.primTrgt, maxHp * this.MaxHpFactor)

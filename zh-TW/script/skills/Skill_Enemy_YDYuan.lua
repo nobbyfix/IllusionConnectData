@@ -280,7 +280,7 @@ all.Skill_Enemy_YDYuan_Unique = {
 			local i = 1
 
 			for _, unit in global.__iter__(_env.units) do
-				if #_env.units >= 7 and i == 6 and #global.CardsInWindow(_env, global.GetOwner(_env, unit)) > 0 then
+				if #_env.units >= 7 and i == 6 and #global.CardsInWindow(_env, global.GetOwner(_env, unit)) > 0 and not global.MASTER(_env, unit) then
 					damList[i] = damList[i] * 1000
 				end
 

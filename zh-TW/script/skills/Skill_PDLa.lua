@@ -654,7 +654,7 @@ all.Skill_PDLa_Box_Passive_Death = {
 						cardvaluechange
 					})
 				end
-			else
+			elseif not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
 				local Hp = global.UnitPropGetter(_env, "hp")(_env, _env.TARGET)
 
 				global.AddAnim(_env, {
