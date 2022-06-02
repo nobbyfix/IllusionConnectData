@@ -50,6 +50,57 @@
         "Order": 1,
         "Reward": "ABE_1st_01_Reward"
     },
+    "ABE_1st_01_New": {
+        "Cost": {
+            "IM_Jindan": 1
+        },
+        "EggPicture": [
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3"
+        ],
+        "IsKeyReword": 1,
+        "KeyRewardShow": [
+            "ABE_1st_01_Reward_Core_1",
+            "ABE_1st_01_Reward_Core_2",
+            "ABE_1st_01_Reward_Core_3"
+        ],
+        "NextPoint": "ABE_1st_02_New",
+        "NormalRewardShow": [
+            "ABE_1st_01_Reward_Normal_1",
+            "ABE_1st_01_Reward_Normal_2",
+            "ABE_1st_01_Reward_Normal_3",
+            "ABE_1st_01_Reward_Normal_4",
+            "ABE_1st_01_Reward_Normal_5",
+            "ABE_1st_01_Reward_Normal_6",
+            "ABE_1st_01_Reward_Normal_7",
+            "ABE_1st_01_Reward_Normal_8",
+            "ABE_1st_01_Reward_Normal_9",
+            "ABE_1st_01_Reward_Normal_10",
+            "ABE_1st_01_Reward_Normal_11",
+            "ABE_1st_01_Reward_Normal_12",
+            "ABE_1st_01_Reward_Normal_13",
+            "ABE_1st_01_Reward_Normal_14",
+            "ABE_1st_01_Reward_Normal_15"
+        ],
+        "Order": 1,
+        "Reward": "ABE_1st_01_Reward_New"
+    },
     "ABE_1st_02": {
         "Cost": {
             "IM_Jindan": 1
@@ -100,6 +151,57 @@
         ],
         "Order": 2,
         "Reward": "ABE_1st_02_Reward"
+    },
+    "ABE_1st_02_New": {
+        "Cost": {
+            "IM_Jindan": 1
+        },
+        "EggPicture": [
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4",
+            "fhj_cd_5",
+            "fhj_cd_1",
+            "fhj_cd_2",
+            "fhj_cd_3",
+            "fhj_cd_4"
+        ],
+        "IsKeyReword": 1,
+        "KeyRewardShow": [
+            "ABE_1st_02_Reward_Core_1",
+            "ABE_1st_02_Reward_Core_2",
+            "ABE_1st_02_Reward_Core_3"
+        ],
+        "NextPoint": "ABE_1st_03",
+        "NormalRewardShow": [
+            "ABE_1st_02_Reward_Normal_1",
+            "ABE_1st_02_Reward_Normal_2",
+            "ABE_1st_02_Reward_Normal_3",
+            "ABE_1st_02_Reward_Normal_4",
+            "ABE_1st_02_Reward_Normal_5",
+            "ABE_1st_02_Reward_Normal_6",
+            "ABE_1st_02_Reward_Normal_7",
+            "ABE_1st_02_Reward_Normal_8",
+            "ABE_1st_02_Reward_Normal_9",
+            "ABE_1st_02_Reward_Normal_10",
+            "ABE_1st_02_Reward_Normal_11",
+            "ABE_1st_02_Reward_Normal_12",
+            "ABE_1st_02_Reward_Normal_13",
+            "ABE_1st_02_Reward_Normal_14",
+            "ABE_1st_02_Reward_Normal_15"
+        ],
+        "Order": 2,
+        "Reward": "ABE_1st_02_Reward_New"
     },
     "ABE_1st_03": {
         "Cost": {
