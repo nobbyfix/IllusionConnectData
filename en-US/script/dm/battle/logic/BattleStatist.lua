@@ -112,6 +112,7 @@ function SimpleBattleStatist:on_UnitSpawned(args)
 	unitInfo.cid = unit:getCid()
 	unitInfo.hp = unit:getComponent("Health"):getHp()
 	unitInfo.maxHp = unit:getComponent("Health"):getMaxHp()
+	unitInfo.hpRemain = unit:getComponent("Health"):getHp()
 	unitInfo.owner = player:getId()
 	unitInfo.type = type
 	unitInfo.modelId = unit:getModelId()
