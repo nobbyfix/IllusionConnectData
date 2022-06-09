@@ -2358,6 +2358,28 @@
         "UnlockAnima": "HOME",
         "UnlockDesc": "Stage_Practice_UnlockDesc"
     },
+    "Stage_Maze": {
+        "Condition": {
+            "STAGE": "M06S09"
+        },
+        "Icon": "new_system_club.png",
+        "IsPlay": 0,
+        "Link": "",
+        "LongDesc": "Unlock_Stage_Maze",
+        "Name": "Unlock_Stage_Exercise",
+        "OutputDesc": "Unlock_Stage_Maze_Desc",
+        "ResourcesBanner": [
+            "IR_Gold",
+            "IR_Crystal",
+            "IR_Diamond"
+        ],
+        "ShowCondition": {
+            "STAGE": "M04S13"
+        },
+        "Tip": "Unlock_Stage_Tips",
+        "UnlockAnima": "HOME",
+        "UnlockDesc": "Stage_Practice_UnlockDesc"
+    },
     "Stage_Practice": {
         "Condition": {
             "STAGE": "M06S09"

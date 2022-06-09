@@ -6,6 +6,9 @@ StagePracticeEnterMediator:has("_developSystem", {
 StagePracticeEnterMediator:has("_stagePracticeSystem", {
 	is = "r"
 }):injectWith("StagePracticeSystem")
+StagePracticeEnterMediator:has("_mazeTowerSystem", {
+	is = "r"
+}):injectWith("MazeTowerSystem")
 
 local kBtnHandlers = {
 	touch_1 = {
@@ -14,7 +17,7 @@ local kBtnHandlers = {
 	},
 	touch_2 = {
 		ignoreClickAudio = true,
-		func = "onClickNormal"
+		func = "onClickMazeTower"
 	},
 	touch_3 = {
 		ignoreClickAudio = true,
@@ -141,7 +144,11 @@ end
 function StagePracticeEnterMediator:setRedPoint(index)
 	local redPoint = self:getView():getChildByFullName(string.format("model_%d.redPoint", index))
 
-	redPoint:setVisible(self._stagePracticeSystem:mapHasRedPoint(index))
+	if index == 2 then
+		redPoint:setVisible(self._mazeTowerSystem:hasRedPoint())
+	else
+		redPoint:setVisible(self._stagePracticeSystem:mapHasRedPoint(index))
+	end
 end
 
 function StagePracticeEnterMediator:refreshData()
@@ -255,4 +262,8 @@ function StagePracticeEnterMediator:setupClickEnvs()
 	end))
 
 	self:getView():runAction(sequence)
+end
+
+function StagePracticeEnterMediator:onClickMazeTower()
+	self._mazeTowerSystem:tryEnter()
 end

@@ -87,6 +87,9 @@ DevelopSystem:has("_cooperateBossSystem", {
 DevelopSystem:has("_dreamHouseSystem", {
 	is = "r"
 }):injectWith("DreamHouseSystem")
+DevelopSystem:has("_mazeTowerSystem", {
+	is = "r"
+}):injectWith("MazeTowerSystem")
 
 function DevelopSystem:initialize()
 	super.initialize(self)
@@ -392,6 +395,10 @@ function DevelopSystem:syncPlayer(data, isDiff)
 
 	if data.house then
 		self._dreamHouseSystem:synchronize(data.house)
+	end
+
+	if data.mazeTower then
+		self._mazeTowerSystem:synchronize(data.mazeTower)
 	end
 
 	self:dispatch(Event:new(EVT_PLAYER_SYNCHRONIZED))

@@ -1,0 +1,2802 @@
+{
+    "1": {
+        "AttrEffect": {
+            "MASTER": "BOSS1",
+            "NORMAL": "NORMAL1"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN19M",
+        "EnemyMaster": "MmslM01P01U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "10": {
+        "AttrEffect": {
+            "MASTER": "BOSS10",
+            "NORMAL": "NORMAL10"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN33M",
+        "EnemyMaster": "MmslM01P10U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_PNCao",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "100": {
+        "AttrEffect": {
+            "MASTER": "BOSS100",
+            "NORMAL": "NORMAL100"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN07M",
+        "EnemyMaster": "MmslM01P20U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DFQi",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "11": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN01M",
+        "EnemyMaster": "MmslM01P11U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_NCai",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "12": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN37M",
+        "EnemyMaster": "MmslM01P12U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_TLSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "13": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN23M",
+        "EnemyMaster": "MmslM01P13U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_AMLBLTe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "14": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN06M",
+        "EnemyMaster": "MmslM01P14U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_PNCao",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "15": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN22M",
+        "EnemyMaster": "MmslM01P15U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XXFSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "16": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN17M",
+        "EnemyMaster": "MmslM01P16U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "17": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN26M",
+        "EnemyMaster": "MmslM01P17U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DNTLuo",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "18": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN20M",
+        "EnemyMaster": "MmslM01P18U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LFEr",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "19": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN20M",
+        "EnemyMaster": "MmslM01P19U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_AMLBLTe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "2": {
+        "AttrEffect": {
+            "MASTER": "BOSS2",
+            "NORMAL": "NORMAL2"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN36M",
+        "EnemyMaster": "MmslM01P02U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "20": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN07M",
+        "EnemyMaster": "MmslM01P20U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DFQi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "21": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN16M",
+        "EnemyMaster": "MmslM01P21U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_WEDe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "22": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN34M",
+        "EnemyMaster": "MmslM01P22U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_PGNNi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "23": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN21M",
+        "EnemyMaster": "MmslM01P23U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XDRLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "24": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN12M",
+        "EnemyMaster": "MmslM01P24U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XXFSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "25": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN38M",
+        "EnemyMaster": "MmslM01P25U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_BDFen",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "26": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN10M",
+        "EnemyMaster": "MmslM01P26U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "27": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN18M",
+        "EnemyMaster": "MmslM01P27U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "28": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN38M",
+        "EnemyMaster": "MmslM01P28U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XHMao",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "29": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN25M",
+        "EnemyMaster": "MmslM01P29U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XSMLi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "3": {
+        "AttrEffect": {
+            "MASTER": "BOSS3",
+            "NORMAL": "NORMAL3"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN34M",
+        "EnemyMaster": "MmslM01P03U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "30": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN23M",
+        "EnemyMaster": "MmslM01P30U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XLai",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "31": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN32M",
+        "EnemyMaster": "MmslM01P31U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KEDGong",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "32": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN28M",
+        "EnemyMaster": "MmslM01P32U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "33": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN09M",
+        "EnemyMaster": "MmslM01P33U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "34": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN27M",
+        "EnemyMaster": "MmslM01P34U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MZGXiu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "35": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN01M",
+        "EnemyMaster": "MmslM01P35U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XSMLi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "36": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN15M",
+        "EnemyMaster": "MmslM01P36U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_NFDDi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "37": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN35M",
+        "EnemyMaster": "MmslM01P37U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ZZBBWei",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "38": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN19M",
+        "EnemyMaster": "MmslM01P38U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MDSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "39": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN29M",
+        "EnemyMaster": "MmslM01P39U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSuo",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "4": {
+        "AttrEffect": {
+            "MASTER": "BOSS4",
+            "NORMAL": "NORMAL4"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN15M",
+        "EnemyMaster": "MmslM01P04U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "40": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN10M",
+        "EnemyMaster": "MmslM01P40U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KEDGong",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "41": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN40M",
+        "EnemyMaster": "MmslM01P41U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "42": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN22M",
+        "EnemyMaster": "MmslM01P42U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_PSKe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "43": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN04M",
+        "EnemyMaster": "MmslM01P43U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_TJHDe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "44": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN13M",
+        "EnemyMaster": "MmslM01P44U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CLMan",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "45": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN05M",
+        "EnemyMaster": "MmslM01P45U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "46": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN26M",
+        "EnemyMaster": "MmslM01P46U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XBKLDi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "47": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN11M",
+        "EnemyMaster": "MmslM01P47U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_SSQXin",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "48": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN04M",
+        "EnemyMaster": "MmslM01P48U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_BBLMa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "49": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN21M",
+        "EnemyMaster": "MmslM01P49U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YBYa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "5": {
+        "AttrEffect": {
+            "MASTER": "BOSS5",
+            "NORMAL": "NORMAL5"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN05M",
+        "EnemyMaster": "MmslM01P05U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "50": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN28M",
+        "EnemyMaster": "MmslM01P50U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YMHTPu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "51": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN24M",
+        "EnemyMaster": "MmslM01P51U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SLMen",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "52": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN08M",
+        "EnemyMaster": "MmslM01P52U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DCJKang",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "53": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN30M",
+        "EnemyMaster": "MmslM01P53U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LYXi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "54": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN33M",
+        "EnemyMaster": "MmslM01P54U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_AJTa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "55": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN31M",
+        "EnemyMaster": "MmslM01P55U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_BQDShe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "56": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN39M",
+        "EnemyMaster": "MmslM01P56U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MLYDi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "57": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN32M",
+        "EnemyMaster": "MmslM01P57U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LYSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "58": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN09M",
+        "EnemyMaster": "MmslM01P58U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YXZChun",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "59": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN35M",
+        "EnemyMaster": "MmslM01P59U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LSLTe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "6": {
+        "AttrEffect": {
+            "MASTER": "BOSS6",
+            "NORMAL": "NORMAL6"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN11M",
+        "EnemyMaster": "MmslM01P06U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "60": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN08M",
+        "EnemyMaster": "MmslM01P60U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_BBLMa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "61": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN02M",
+        "EnemyMaster": "MmslM01P61U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_PSKe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "62": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN02M",
+        "EnemyMaster": "MmslM01P62U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XBKLDi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "63": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN27M",
+        "EnemyMaster": "MmslM01P63U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YSTLu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "64": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN39M",
+        "EnemyMaster": "MmslM01P64U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "65": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN29M",
+        "EnemyMaster": "MmslM01P65U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_TLMi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "66": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN24M",
+        "EnemyMaster": "MmslM01P66U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YFZZhu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "67": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN16M",
+        "EnemyMaster": "MmslM01P67U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_HSYZhai",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "68": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN37M",
+        "EnemyMaster": "MmslM01P68U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MGNa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "69": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN03M",
+        "EnemyMaster": "MmslM01P69U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YMHTPu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "7": {
+        "AttrEffect": {
+            "MASTER": "BOSS7",
+            "NORMAL": "NORMAL7"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN25M",
+        "EnemyMaster": "MmslM01P07U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "70": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN03M",
+        "EnemyMaster": "MmslM01P70U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YXNMei",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "71": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN40M",
+        "EnemyMaster": "MmslM01P71U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_ALPo",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "72": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN18M",
+        "EnemyMaster": "MmslM01P72U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_YDZZong",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "73": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN14M",
+        "EnemyMaster": "MmslM01P73U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KEDGong",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "74": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN30M",
+        "EnemyMaster": "MmslM01P74U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_BLTu",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "75": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN07M",
+        "EnemyMaster": "MmslM01P75U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LFEr",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "76": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN13M",
+        "EnemyMaster": "MmslM01P76U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XXFSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "77": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN12M",
+        "EnemyMaster": "MmslM01P77U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "78": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN17M",
+        "EnemyMaster": "MmslM01P78U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KMLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "79": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN06M",
+        "EnemyMaster": "MmslM01P79U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_KTSJKe",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "8": {
+        "AttrEffect": {
+            "MASTER": "BOSS8",
+            "NORMAL": "NORMAL8"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN36M",
+        "EnemyMaster": "MmslM01P08U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MLYTLSha",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "80": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN14M",
+        "EnemyMaster": "MmslM01P80U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ZZBBWei",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "81": {
+        "AttrEffect": {
+            "MASTER": "BOSS11",
+            "NORMAL": "NORMAL11"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN19M",
+        "EnemyMaster": "MmslM01P01U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "82": {
+        "AttrEffect": {
+            "MASTER": "BOSS12",
+            "NORMAL": "NORMAL12"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN36M",
+        "EnemyMaster": "MmslM01P02U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "83": {
+        "AttrEffect": {
+            "MASTER": "BOSS13",
+            "NORMAL": "NORMAL13"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN34M",
+        "EnemyMaster": "MmslM01P03U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "84": {
+        "AttrEffect": {
+            "MASTER": "BOSS14",
+            "NORMAL": "NORMAL14"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN15M",
+        "EnemyMaster": "MmslM01P04U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_CKFSJi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "85": {
+        "AttrEffect": {
+            "MASTER": "BOSS15",
+            "NORMAL": "NORMAL15"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN05M",
+        "EnemyMaster": "MmslM01P05U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_HLa",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "86": {
+        "AttrEffect": {
+            "MASTER": "BOSS16",
+            "NORMAL": "NORMAL16"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN11M",
+        "EnemyMaster": "MmslM01P06U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ATSheng",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "87": {
+        "AttrEffect": {
+            "MASTER": "BOSS17",
+            "NORMAL": "NORMAL17"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN25M",
+        "EnemyMaster": "MmslM01P07U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "88": {
+        "AttrEffect": {
+            "MASTER": "BOSS18",
+            "NORMAL": "NORMAL18"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN36M",
+        "EnemyMaster": "MmslM01P08U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_MLYTLSha",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "89": {
+        "AttrEffect": {
+            "MASTER": "BOSS19",
+            "NORMAL": "NORMAL19"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN31M",
+        "EnemyMaster": "MmslM01P09U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "9": {
+        "AttrEffect": {
+            "MASTER": "BOSS9",
+            "NORMAL": "NORMAL9"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN31M",
+        "EnemyMaster": "MmslM01P09U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_ALSi",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "90": {
+        "AttrEffect": {
+            "MASTER": "BOSS20",
+            "NORMAL": "NORMAL20"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN33M",
+        "EnemyMaster": "MmslM01P10U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_PNCao",
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "91": {
+        "AttrEffect": {
+            "MASTER": "BOSS91",
+            "NORMAL": "NORMAL91"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN01M",
+        "EnemyMaster": "MmslM01P11U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_NCai",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "92": {
+        "AttrEffect": {
+            "MASTER": "BOSS92",
+            "NORMAL": "NORMAL92"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN37M",
+        "EnemyMaster": "MmslM01P12U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_TLSi",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "93": {
+        "AttrEffect": {
+            "MASTER": "BOSS93",
+            "NORMAL": "NORMAL93"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN23M",
+        "EnemyMaster": "MmslM01P13U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_AMLBLTe",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "94": {
+        "AttrEffect": {
+            "MASTER": "BOSS94",
+            "NORMAL": "NORMAL94"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN06M",
+        "EnemyMaster": "MmslM01P14U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_SP_PNCao",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "95": {
+        "AttrEffect": {
+            "MASTER": "BOSS95",
+            "NORMAL": "NORMAL95"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN22M",
+        "EnemyMaster": "MmslM01P15U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_XXFSi",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "96": {
+        "AttrEffect": {
+            "MASTER": "BOSS96",
+            "NORMAL": "NORMAL96"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN17M",
+        "EnemyMaster": "MmslM01P16U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_KXuan",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "97": {
+        "AttrEffect": {
+            "MASTER": "BOSS97",
+            "NORMAL": "NORMAL97"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN26M",
+        "EnemyMaster": "MmslM01P17U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_DNTLuo",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "98": {
+        "AttrEffect": {
+            "MASTER": "BOSS98",
+            "NORMAL": "NORMAL98"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN20M",
+        "EnemyMaster": "MmslM01P18U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_LFEr",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "99": {
+        "AttrEffect": {
+            "MASTER": "BOSS99",
+            "NORMAL": "NORMAL99"
+        },
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_Wait1_5",
+        "BlockBubble": "",
+        "BossHeadPic": "",
+        "EnemyCard": "CardMmslSN20M",
+        "EnemyMaster": "MmslM01P19U01N08",
+        "LoadingBorad": "",
+        "PointBoard": "",
+        "PointHead": "Model_AMLBLTe",
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    }
+}

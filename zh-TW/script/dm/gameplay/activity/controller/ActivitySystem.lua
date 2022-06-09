@@ -533,6 +533,14 @@ function ActivitySystem:requestFinishWorldBossBattle(activityId, data)
 		else
 			print("requestLeaveWorldBoss error .activityId:" .. tostring(activityId))
 			BattleLoader:popBattleView(self, {})
+
+			if not self:isActivityOver(activityId) then
+				self:enterWorldBossView({
+					activityId = activityId
+				})
+			else
+				self:dispatch(SceneEvent:new(EVT_SWITCH_SCENE, "mainScene", nil, ))
+			end
 		end
 	end
 

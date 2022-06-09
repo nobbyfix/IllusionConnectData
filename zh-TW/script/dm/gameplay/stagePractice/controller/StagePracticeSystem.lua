@@ -18,7 +18,7 @@ StagePracticeSystem:has("_systemKeeper", {
 
 kStagePracticeType = {
 	"Stage_Exercise",
-	"Stage_Challenge",
+	"Stage_Maze",
 	"Stage_Battle"
 }
 
@@ -1097,6 +1097,12 @@ function StagePracticeSystem:checkAwardRed()
 				return true
 			end
 		end
+	end
+
+	local mazeTowerSystem = self:getInjector():getInstance("MazeTowerSystem")
+
+	if mazeTowerSystem:hasRedPoint() then
+		return true
 	end
 
 	return false

@@ -750,7 +750,12 @@
         "Type": 3
     },
     "MasterEmblem_3_50": {
-        "CurrencyCost": [],
+        "CurrencyCost": [
+            {
+                "amount": 600000,
+                "id": "IR_Crystal"
+            }
+        ],
         "EquipAttr": {
             "ATK": [
                 400,
@@ -769,8 +774,35 @@
         "Level": 80,
         "LevelLimit": 80,
         "LimitDesc": "",
-        "NextQuality": "",
+        "NextQuality": "MasterEmblem_3_51",
         "Quality": 50,
+        "QualityColor": 5,
+        "QualityLevel": 0,
+        "QualityLimit": "",
+        "Type": 3
+    },
+    "MasterEmblem_3_51": {
+        "CurrencyCost": [],
+        "EquipAttr": {
+            "ATK": [
+                400,
+                30
+            ],
+            "DEF": [
+                600,
+                45
+            ],
+            "UNCRITRATE": [
+                0.15,
+                0
+            ]
+        },
+        "ItemList": [],
+        "Level": 85,
+        "LevelLimit": 85,
+        "LimitDesc": "",
+        "NextQuality": "",
+        "Quality": 51,
         "QualityColor": 5,
         "QualityLevel": 0,
         "QualityLimit": "",
@@ -2093,7 +2125,12 @@
         "Type": 8
     },
     "MasterEmblem_8_50": {
-        "CurrencyCost": [],
+        "CurrencyCost": [
+            {
+                "amount": 600000,
+                "id": "IR_Crystal"
+            }
+        ],
         "EquipAttr": {
             "ATK": [
                 400,
@@ -2112,8 +2149,35 @@
         "Level": 80,
         "LevelLimit": 80,
         "LimitDesc": "",
-        "NextQuality": "",
+        "NextQuality": "MasterEmblem_8_51",
         "Quality": 50,
+        "QualityColor": 5,
+        "QualityLevel": 0,
+        "QualityLimit": "",
+        "Type": 8
+    },
+    "MasterEmblem_8_51": {
+        "CurrencyCost": [],
+        "EquipAttr": {
+            "ATK": [
+                400,
+                30
+            ],
+            "HP": [
+                14400,
+                1080
+            ],
+            "UNHURTRATE": [
+                0.1,
+                0
+            ]
+        },
+        "ItemList": [],
+        "Level": 85,
+        "LevelLimit": 85,
+        "LimitDesc": "",
+        "NextQuality": "",
+        "Quality": 51,
         "QualityColor": 5,
         "QualityLevel": 0,
         "QualityLimit": "",

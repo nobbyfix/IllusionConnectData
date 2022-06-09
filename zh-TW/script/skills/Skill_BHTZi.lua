@@ -689,7 +689,7 @@ all.Skill_BHTZi_Passive_Awaken = {
 
 				this.supportCount = #global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "LIGHT"))
 				this.summonCount = #global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SUMMONER"))
-				this.allCount = this.supportCount + this.summonCount
+				this.allCount = this.supportCount + this.summonCount or 0
 
 				if this.allCount >= 4 then
 					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "BHTZi"))) do

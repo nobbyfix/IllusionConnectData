@@ -1239,7 +1239,7 @@ function FunctionEntranceMediator:refreshRed()
 			return self._petRaceSystem:redPointShow()
 		end,
 		function ()
-			return CommonUtils.GetSwitch("fn_arena_friend") and self._stagePracticeSystem:checkAwardRed()
+			return false
 		end,
 		function ()
 			return self._cooperateBossSystem:redPointShow()
