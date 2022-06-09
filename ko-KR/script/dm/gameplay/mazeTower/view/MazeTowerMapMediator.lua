@@ -145,6 +145,8 @@ function MazeTowerMapMediator:refreshView()
 	else
 		self:refreshGrid()
 	end
+
+	self:refreshNumText()
 end
 
 function MazeTowerMapMediator:refreshNumText()
