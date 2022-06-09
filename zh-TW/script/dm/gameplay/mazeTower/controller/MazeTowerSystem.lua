@@ -96,6 +96,10 @@ function MazeTowerSystem:requestFinishBattle(params, callback)
 			local view = self:getInjector():getInstance("MazeTowerFinishView")
 
 			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {}))
+		else
+			BattleLoader:popBattleView(self, {
+				viewName = "MazeTowerMainView"
+			})
 		end
 	end)
 end

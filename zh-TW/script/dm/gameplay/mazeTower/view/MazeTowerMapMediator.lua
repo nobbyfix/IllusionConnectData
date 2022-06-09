@@ -93,7 +93,6 @@ end
 
 function MazeTowerMapMediator:resumeWithData()
 	self:refreshView()
-	self:resetRolePosition()
 end
 
 function MazeTowerMapMediator:setupTopInfoWidget()
@@ -144,9 +143,9 @@ function MazeTowerMapMediator:refreshView()
 		end)
 	else
 		self:refreshGrid()
+		self:resetRolePosition()
+		self:refreshNumText()
 	end
-
-	self:refreshNumText()
 end
 
 function MazeTowerMapMediator:refreshNumText()
@@ -631,7 +630,9 @@ function MazeTowerMapMediator:resetRolePosition()
 	local key = x .. "_" .. y
 	local cell = self._scrollView:getChildByName(key)
 
-	self._moveBg:posite(cell:getPosition())
+	if cell then
+		self._moveBg:posite(cell:getPosition())
+	end
 end
 
 function MazeTowerMapMediator:showPassView(callback)
