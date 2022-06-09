@@ -26,7 +26,7 @@ all.Skill_XSLuo_Normal = {
 			entry = prototype.main
 		})
 		this.main = global["[duration]"](this, {
-			834
+			800
 		}, main)
 
 		return this
@@ -49,13 +49,13 @@ all.Skill_XSLuo_Normal = {
 			local global = _env.global
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
+				-1,
 				0
 			}, 100, "skill1"))
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			467
+			300
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -93,7 +93,7 @@ all.Skill_XSLuo_Proud = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			1300
+			1167
 		}, main)
 		this.main = global["[proud]"](this, {
 			"Hero_Proud_XSLuo"
@@ -125,7 +125,7 @@ all.Skill_XSLuo_Proud = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			867
+			467
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -135,7 +135,13 @@ all.Skill_XSLuo_Proud = {
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				334
+			}, global.SplitValue(_env, damage, {
+				0.5,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -181,7 +187,7 @@ all.Skill_XSLuo_Unique = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			3433
+			3234
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_XSLuo"
@@ -218,13 +224,13 @@ all.Skill_XSLuo_Unique = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
+				-1.7,
 				0
 			}, 100, "skill3"))
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			2467
+			2134
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -267,7 +273,7 @@ all.Skill_XSLuo_Unique = {
 					"+Normal"
 				}, this.AtkRateFactor)
 
-				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") * global.MARKED(_env, "HEALER"))) do
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") + global.MARKED(_env, "HEALER"))) do
 					global.ApplyBuff(_env, unit, {
 						timing = 4,
 						duration = 12,
@@ -284,7 +290,7 @@ all.Skill_XSLuo_Unique = {
 					})
 				end
 			else
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "WARRIOR") * global.CARD_HERO_MARKED(_env, "HEALER"))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "WARRIOR") + global.CARD_HERO_MARKED(_env, "HEALER"))) do
 					local cardvaluechange = global.CardCostEnchant(_env, "-", this.CostFactor, 1)
 
 					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -303,20 +309,14 @@ all.Skill_XSLuo_Unique = {
 
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				134,
-				234,
-				300,
-				400
+				367
 			}, global.SplitValue(_env, damage, {
-				0.1,
-				0.2,
-				0.2,
-				0.2,
-				0.3
+				0.3,
+				0.7
 			}))
 		end)
 		exec["@time"]({
-			3200
+			3100
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -526,7 +526,7 @@ all.Skill_XSLuo_Proud_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			1300
+			1167
 		}, main)
 		this.main = global["[proud]"](this, {
 			"Hero_Proud_XSLuo"
@@ -558,7 +558,7 @@ all.Skill_XSLuo_Proud_EX = {
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			867
+			467
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -584,7 +584,13 @@ all.Skill_XSLuo_Proud_EX = {
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
 
-			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				334
+			}, global.SplitValue(_env, damage, {
+				0.5,
+				0.5
+			}))
 		end)
 
 		return _env
@@ -636,7 +642,7 @@ all.Skill_XSLuo_Unique_EX = {
 			entry = prototype.main
 		})
 		main = global["[duration]"](this, {
-			3433
+			3234
 		}, main)
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_XSLuo"
@@ -673,13 +679,13 @@ all.Skill_XSLuo_Unique_EX = {
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
-				-1.1,
+				-1.7,
 				0
 			}, 100, "skill3"))
 			global.AssignRoles(_env, _env.TARGET, "target")
 		end)
 		exec["@time"]({
-			2467
+			2134
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
@@ -722,7 +728,7 @@ all.Skill_XSLuo_Unique_EX = {
 					"+Normal"
 				}, this.AtkRateFactor)
 
-				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") * global.MARKED(_env, "HEALER"))) do
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") + global.MARKED(_env, "HEALER"))) do
 					global.ApplyBuff(_env, unit, {
 						timing = 4,
 						duration = 12,
@@ -739,7 +745,7 @@ all.Skill_XSLuo_Unique_EX = {
 					})
 				end
 			else
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "WARRIOR") * global.CARD_HERO_MARKED(_env, "HEALER"))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "WARRIOR") + global.CARD_HERO_MARKED(_env, "HEALER"))) do
 					local cardvaluechange = global.CardCostEnchant(_env, "-", this.CostFactor, 1)
 
 					global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -754,8 +760,8 @@ all.Skill_XSLuo_Unique_EX = {
 				end
 			end
 
-			if friend_count - enemy_count > 4 then
-				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") * global.MARKED(_env, "HEALER"))) do
+			if global.abs(_env, friend_count - enemy_count) > 4 then
+				for _, unit in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") + global.MARKED(_env, "HEALER") - global.MARKED(_env, "XSLuo"))) do
 					global.ApplyRPRecovery(_env, unit, this.RageFactor)
 				end
 			end
@@ -764,16 +770,10 @@ all.Skill_XSLuo_Unique_EX = {
 
 			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
 				0,
-				134,
-				234,
-				300,
-				400
+				367
 			}, global.SplitValue(_env, damage, {
-				0.1,
-				0.2,
-				0.2,
-				0.2,
-				0.3
+				0.3,
+				0.7
 			}))
 		end)
 		exec["@time"]({

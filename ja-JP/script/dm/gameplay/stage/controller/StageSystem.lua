@@ -2075,6 +2075,8 @@ function StageSystem:requestSPChangeTeam(data, callback, blockUI, params)
 				-- Nothing
 			end
 
+			self:dispatch(Event:new(EVT_ARENA_CHANGE_TEAM_SUCC))
+
 			if callback then
 				callback(response)
 			end

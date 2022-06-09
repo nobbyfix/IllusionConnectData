@@ -3030,6 +3030,644 @@
             "LEVEL": 1
         }
     },
+    "Maze_Task_1": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 1,
+        "Prepose": "",
+        "Reward": "Maze_Task_Reward_1",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_10": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    50
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 10,
+        "Prepose": [
+            "Maze_Task_9"
+        ],
+        "Reward": "Maze_Task_Reward_10",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_11": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    55
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 11,
+        "Prepose": [
+            "Maze_Task_10"
+        ],
+        "Reward": "Maze_Task_Reward_11",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_12": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 12,
+        "Prepose": [
+            "Maze_Task_11"
+        ],
+        "Reward": "Maze_Task_Reward_12",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_13": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    65
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 13,
+        "Prepose": [
+            "Maze_Task_12"
+        ],
+        "Reward": "Maze_Task_Reward_13",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_14": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    70
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 14,
+        "Prepose": [
+            "Maze_Task_13"
+        ],
+        "Reward": "Maze_Task_Reward_14",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_15": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    75
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 15,
+        "Prepose": [
+            "Maze_Task_14"
+        ],
+        "Reward": "Maze_Task_Reward_15",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_16": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    80
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 16,
+        "Prepose": [
+            "Maze_Task_15"
+        ],
+        "Reward": "Maze_Task_Reward_16",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_17": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    85
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 17,
+        "Prepose": [
+            "Maze_Task_16"
+        ],
+        "Reward": "Maze_Task_Reward_17",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_18": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 18,
+        "Prepose": [
+            "Maze_Task_17"
+        ],
+        "Reward": "Maze_Task_Reward_18",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_19": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    95
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 19,
+        "Prepose": [
+            "Maze_Task_18"
+        ],
+        "Reward": "Maze_Task_Reward_19",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_2": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 2,
+        "Prepose": [
+            "Maze_Task_1"
+        ],
+        "Reward": "Maze_Task_Reward_2",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_20": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    100
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 20,
+        "Prepose": [
+            "Maze_Task_19"
+        ],
+        "Reward": "Maze_Task_Reward_20",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_3": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    15
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 3,
+        "Prepose": [
+            "Maze_Task_2"
+        ],
+        "Reward": "Maze_Task_Reward_3",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_4": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    20
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 4,
+        "Prepose": [
+            "Maze_Task_3"
+        ],
+        "Reward": "Maze_Task_Reward_4",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_5": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    25
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 5,
+        "Prepose": [
+            "Maze_Task_4"
+        ],
+        "Reward": "Maze_Task_Reward_5",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_6": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 6,
+        "Prepose": [
+            "Maze_Task_5"
+        ],
+        "Reward": "Maze_Task_Reward_6",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_7": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    35
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 7,
+        "Prepose": [
+            "Maze_Task_6"
+        ],
+        "Reward": "Maze_Task_Reward_7",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_8": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    40
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 8,
+        "Prepose": [
+            "Maze_Task_7"
+        ],
+        "Reward": "Maze_Task_Reward_8",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "Maze_Task_9": {
+        "AccumulateTimes": 1,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "Condi_Maze_Total",
+                "factor1": [
+                    45
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "",
+        "OrderNum": 9,
+        "Prepose": [
+            "Maze_Task_8"
+        ],
+        "Reward": "Maze_Task_Reward_9",
+        "TaskIcon": "",
+        "TaskType": 10,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "St_M01_01": {
         "AccumulateTimes": 1,
         "AfterFinish": 1,

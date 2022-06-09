@@ -65,6 +65,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BQDShe_Awake"
     },
+    "CLMan": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -350,
+            0,
+            0.5
+        ],
+        "IAId": "",
+        "ModelId": "Model_CLMan_Awake",
+        "Name": "CLMan_Awake_Name",
+        "NameDesc": "CLMan_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_CLMan_UnAwake",
+        "Reward": "HeroAwaken_CLMan",
+        "ShowHero": "CLMan",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "CLMan_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_CLMan_Awake"
+    },
     "CZheng": {
         "AnimSound": "Se_Effect_Awakening_CZheng",
         "Animation": "CUNZHENG_Awaken",

@@ -20,7 +20,8 @@ function CreateBattleSession(args)
 		orrtpk = RTPVPBattleSession,
 		orrtpkrobot = RTPVPRobotBattleSession,
 		stageArena = StageArenaBattleSession,
-		chessArena = ArenaNewBattleSession
+		chessArena = ArenaNewBattleSession,
+		mazeTower = MazeTowerBattleSession
 	}
 	local sessionClass = SessionMap[args.battleType]
 

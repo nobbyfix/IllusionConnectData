@@ -4419,7 +4419,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.16,
-        "AwakePic": "",
+        "AwakePic": "portrait_nna_awaken",
         "BaseAttack": 136.0,
         "BaseDefence": 45.0,
         "BaseHp": 555.0,
@@ -4675,7 +4675,8 @@
             "Surface_CLMan_4",
             "Surface_CLMan_5",
             "Surface_CLMan_6",
-            "Surface_CLMan_7"
+            "Surface_CLMan_7",
+            "Surface_CLMan_Awake"
         ],
         "TeamSpecialVoice": {
             "FTLEShi": "Voice_CLMan_33"
@@ -15136,7 +15137,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.29,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_MDSi",
         "KeyPassiveSkill": "",
@@ -19546,7 +19547,8 @@
         "Speed": 50,
         "StarId": "PNCao_1",
         "SurfaceList": [
-            "Surface_PNCao_1"
+            "Surface_PNCao_1",
+            "Surface_PNCao_2"
         ],
         "TeamSpecialVoice": "",
         "TimeType": "\"2002-01-28 19:00:00\"",

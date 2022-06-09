@@ -721,6 +721,25 @@ function StageAreanaRankRecord:synchronize(data)
 	self._oldCoin = data.p
 end
 
+MazeTowerRankRecord = class("MazeTowerRankRecord", BaseRankRecord, _M)
+
+MazeTowerRankRecord:has("_score", {
+	is = "r"
+})
+
+function MazeTowerRankRecord:initialize()
+	super.initialize(self)
+
+	self._rankType = RankType.kMazeTower
+	self._score = 0
+end
+
+function MazeTowerRankRecord:synchronize(data)
+	super.synchronize(self, data)
+
+	self._score = data.value or 0
+end
+
 WorldBossRankRecord = class("WorldBossRankRecord", BaseRankRecord, _M)
 
 WorldBossRankRecord:has("_hurtNum", {

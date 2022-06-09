@@ -272,7 +272,27 @@
             "storage": 5000
         }
     },
+    "AcitvityMagicStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityMusicFestivalStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityMusicFestivalStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -293,6 +313,16 @@
         }
     },
     "AcitvityReZeroStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityReZeroStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -393,6 +423,16 @@
         }
     },
     "AcitvitySummerStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySummerStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -1404,6 +1444,27 @@
             ],
             "setValue": 10,
             "unlockId": "Map_Explore"
+        }
+    },
+    "Maze_Reset": {
+        "ResetSystem": {
+            "addValue": 30,
+            "max": 30,
+            "resetDate": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ],
+            "resetMode": "DAY",
+            "resetTime": [
+                "05:00:00"
+            ],
+            "setValue": 30,
+            "storage": 30
         }
     },
     "MonthCardForever_Reset": {

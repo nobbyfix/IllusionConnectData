@@ -35337,15 +35337,16 @@
         "FirstKillReward": "MagicSE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -35367,7 +35368,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE01E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -35382,10 +35383,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -35465,21 +35466,22 @@
         "FirstKillReward": "MagicSE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_1",
                 "4": "Magic_Buff_Star4_2_1",
                 "5": "Magic_Buff_Star5_2_1",
@@ -35491,7 +35493,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE01",
         "Master": "MagicM02P01U02N08",
         "Name": "BlockPoint_MagicS09M_Name",
@@ -35504,7 +35506,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE01M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -35519,10 +35521,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -35595,15 +35597,16 @@
         "FirstKillReward": "MagicSE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -35625,7 +35628,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE02E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -35640,10 +35643,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -35710,21 +35713,22 @@
         "FirstKillReward": "MagicSE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_2",
                 "4": "Magic_Buff_Star4_2_2",
                 "5": "Magic_Buff_Star5_2_2",
@@ -35736,7 +35740,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE02",
         "Master": "",
         "Name": "BlockPoint_MagicS10M_Name",
@@ -35749,7 +35753,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE02M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -35764,10 +35768,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -35833,15 +35837,16 @@
         "FirstKillReward": "MagicSE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -35863,7 +35868,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE03E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -35878,10 +35883,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -35948,21 +35953,22 @@
         "FirstKillReward": "MagicSE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_3",
                 "4": "Magic_Buff_Star4_2_3",
                 "5": "Magic_Buff_Star5_2_3",
@@ -35974,7 +35980,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE03",
         "Master": "",
         "Name": "BlockPoint_MagicS11M_Name",
@@ -35987,7 +35993,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE03M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36002,10 +36008,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -36084,15 +36090,16 @@
         "FirstKillReward": "MagicSE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -36114,7 +36121,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE04E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36126,10 +36133,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -36209,21 +36216,22 @@
         "FirstKillReward": "MagicSE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_4",
                 "4": "Magic_Buff_Star4_2_4",
                 "5": "Magic_Buff_Star5_2_4",
@@ -36235,7 +36243,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE04",
         "Master": "",
         "Name": "BlockPoint_MagicS12M_Name",
@@ -36248,7 +36256,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE04M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36260,10 +36268,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -36336,15 +36344,16 @@
         "FirstKillReward": "MagicSE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -36366,7 +36375,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE05E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36378,10 +36387,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -36455,21 +36464,22 @@
         "FirstKillReward": "MagicSE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_5",
                 "4": "Magic_Buff_Star4_2_5",
                 "5": "Magic_Buff_Star5_2_5",
@@ -36481,7 +36491,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE05",
         "Master": "",
         "Name": "BlockPoint_MagicS13M_Name",
@@ -36494,7 +36504,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE05M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36506,10 +36516,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -36588,15 +36598,16 @@
         "FirstKillReward": "MagicSE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -36618,7 +36629,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE06E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36630,10 +36641,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -36713,21 +36724,22 @@
         "FirstKillReward": "MagicSE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_6",
                 "4": "Magic_Buff_Star4_2_6",
                 "5": "Magic_Buff_Star5_2_6",
@@ -36739,7 +36751,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE06",
         "Master": "",
         "Name": "BlockPoint_MagicS14M_Name",
@@ -36752,7 +36764,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE06M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36764,10 +36776,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -36846,15 +36858,16 @@
         "FirstKillReward": "MagicSE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -36876,7 +36889,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE07E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -36891,10 +36904,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -36974,21 +36987,22 @@
         "FirstKillReward": "MagicSE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_7",
                 "4": "Magic_Buff_Star4_2_7",
                 "5": "Magic_Buff_Star5_2_7",
@@ -37000,7 +37014,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE07",
         "Master": "",
         "Name": "BlockPoint_MagicS15M_Name",
@@ -37013,7 +37027,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE07M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37028,10 +37042,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -37110,15 +37124,16 @@
         "FirstKillReward": "MagicSE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37140,7 +37155,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE08E_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37155,10 +37170,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -37238,21 +37253,22 @@
         "FirstKillReward": "MagicSE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_2_8",
                 "4": "Magic_Buff_Star4_2_8",
                 "5": "Magic_Buff_Star5_2_8",
@@ -37264,7 +37280,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSE08",
         "Master": "",
         "Name": "BlockPoint_MagicS16M_Name",
@@ -37275,7 +37291,7 @@
         "PointPicture": "",
         "PointReward": "MagicSE08M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37290,10 +37306,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -37359,15 +37375,16 @@
         "FirstKillReward": "MagicSH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37391,7 +37408,7 @@
         "PointPicture": "",
         "PointReward": "MagicSH01M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37403,10 +37420,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -37472,15 +37489,16 @@
         "FirstKillReward": "MagicSH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37504,7 +37522,7 @@
         "PointPicture": "",
         "PointReward": "MagicSH02M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37519,10 +37537,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -37588,15 +37606,16 @@
         "FirstKillReward": "MagicSH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37618,7 +37637,7 @@
         "PointPicture": "",
         "PointReward": "MagicSH03M_PointReward",
         "PointTime": {
-            "start": "2022-03-07 05:00:00"
+            "start": "2022-06-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -37633,10 +37652,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_MagicStamina": 20
+            "IR_MagicStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -37709,15 +37728,16 @@
         "FirstKillReward": "MagicSN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37749,10 +37769,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -37826,21 +37846,22 @@
         "FirstKillReward": "MagicSN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_1",
                 "4": "Magic_Buff_Star4_1_1",
                 "5": "Magic_Buff_Star5_1_1",
@@ -37852,7 +37873,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN01",
         "Master": "",
         "Name": "BlockPoint_MagicS01M_Name",
@@ -37875,10 +37896,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -37951,15 +37972,16 @@
         "FirstKillReward": "MagicSN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -37991,10 +38013,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -38068,21 +38090,22 @@
         "FirstKillReward": "MagicSN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_2",
                 "4": "Magic_Buff_Star4_1_2",
                 "5": "Magic_Buff_Star5_1_2",
@@ -38094,7 +38117,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN02",
         "Master": "",
         "Name": "BlockPoint_MagicS02M_Name",
@@ -38117,10 +38140,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -38186,15 +38209,16 @@
         "FirstKillReward": "MagicSN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -38229,10 +38253,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -38299,21 +38323,22 @@
         "FirstKillReward": "MagicSN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_3",
                 "4": "Magic_Buff_Star4_1_3",
                 "5": "Magic_Buff_Star5_1_3",
@@ -38325,7 +38350,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN03",
         "Master": "",
         "Name": "BlockPoint_MagicS03M_Name",
@@ -38351,10 +38376,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -38420,15 +38445,16 @@
         "FirstKillReward": "MagicSN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -38463,10 +38489,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -38533,21 +38559,22 @@
         "FirstKillReward": "MagicSN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_4",
                 "4": "Magic_Buff_Star4_1_4",
                 "5": "Magic_Buff_Star5_1_4",
@@ -38559,7 +38586,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN04",
         "Master": "",
         "Name": "BlockPoint_MagicS04M_Name",
@@ -38585,10 +38612,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -38660,15 +38687,16 @@
         "FirstKillReward": "MagicSN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -38704,10 +38732,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -38788,21 +38816,22 @@
         "FirstKillReward": "MagicSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_5",
                 "4": "Magic_Buff_Star4_1_5",
                 "5": "Magic_Buff_Star5_1_5",
@@ -38814,7 +38843,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN05",
         "Master": "",
         "Name": "BlockPoint_MagicS05M_Name",
@@ -38841,10 +38870,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -38924,15 +38953,16 @@
         "FirstKillReward": "MagicSN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -38968,10 +38998,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -39052,21 +39082,22 @@
         "FirstKillReward": "MagicSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_6",
                 "4": "Magic_Buff_Star4_1_6",
                 "5": "Magic_Buff_Star5_1_6",
@@ -39078,7 +39109,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN06",
         "Master": "MagicM01P06U03N08",
         "Name": "BlockPoint_MagicS06M_Name",
@@ -39105,10 +39136,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -39196,15 +39227,16 @@
         "FirstKillReward": "MagicSN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -39239,10 +39271,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -39316,21 +39348,22 @@
         "FirstKillReward": "MagicSN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_7",
                 "4": "Magic_Buff_Star4_1_7",
                 "5": "Magic_Buff_Star5_1_7",
@@ -39342,7 +39375,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN07",
         "Master": "",
         "Name": "BlockPoint_MagicS07M_Name",
@@ -39368,10 +39401,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -39444,15 +39477,16 @@
         "FirstKillReward": "MagicSN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -39487,10 +39521,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_MagicStamina": 12
+            "IR_MagicStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -39564,21 +39598,22 @@
         "FirstKillReward": "MagicSN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_DDing": "Hero_ABlock_SP_DDing_Extra"
+            "MDSi": "Hero_ABlock_MDSi_Extra",
+            "XDRLa": "Hero_ABlock_XDRLa_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_DDing": {
-                "3": "Magic_SP_DDing_Buff_Star3",
-                "4": "Magic_SP_DDing_Buff_Star4",
-                "5": "Magic_SP_DDing_Buff_Star5",
-                "6": "Magic_SP_DDing_Buff_Star6"
+            "XDRLa": {
+                "3": "Magic_XDRLa_Buff_Star3",
+                "4": "Magic_XDRLa_Buff_Star4",
+                "5": "Magic_XDRLa_Buff_Star5",
+                "6": "Magic_XDRLa_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_DDing": {
+            "MDSi": {
                 "3": "Magic_Buff_Star3_1_8",
                 "4": "Magic_Buff_Star4_1_8",
                 "5": "Magic_Buff_Star5_1_8",
@@ -39590,7 +39625,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_Magic_ExchangeItem",
+        "MainShowItem": "IM_Magic_ExchangeItem_Re",
         "Map": "MagicSN08",
         "Master": "",
         "Name": "BlockPoint_MagicS08M_Name",
@@ -39614,10 +39649,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_MagicStamina": 6
+            "IR_MagicStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [

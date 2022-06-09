@@ -461,7 +461,7 @@ function FriendPvpMediator:refreshGuestInfo()
 	headImg:addTo(headIcon):center(headIcon:getContentSize())
 
 	local function callFunc()
-		self:onClickRolePane(guestInfo)
+		self:onClickRolePanel(guestInfo)
 	end
 
 	mapButtonHandlerClick(nil, headImg, {
