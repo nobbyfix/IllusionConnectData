@@ -120,6 +120,8 @@ function StageTeamMediator:enterWithData(data)
 	self._spData = data and data.data and data.data or {}
 	self._cardsExcept = self._spData.cardsExcept and self._spData.cardsExcept or {}
 	self._limitHero = data.limitHero or {}
+	self._isSpecialStage = data and data.isSpecialStage
+	self._hideFightBtn = data and data.hideFightBtn
 	self._curTabType = data and data.tabType and data.tabType or 1
 	self._masterList = self._masterSystem:getShowMasterList()
 	self._canChange = true
@@ -460,7 +462,7 @@ function StageTeamMediator:ignoreSafeArea()
 
 	self._heroPanel:setContentSize(cc.size(winSize.width, 220))
 
-	if self:isSpecialStage() then
+	if self:isSpecialStage() and not self._hideFightBtn then
 		self._heroPanel:setContentSize(cc.size(winSize.width - 177, 220))
 	end
 end
@@ -650,7 +652,7 @@ function StageTeamMediator:isCrusadeStage()
 end
 
 function StageTeamMediator:isSpecialStage()
-	return self:isSpStage() or self:isCrusadeStage()
+	return self:isSpStage() or self:isCrusadeStage() or self._isSpecialStage
 end
 
 function StageTeamMediator:setLabelEffect()

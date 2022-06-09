@@ -477,6 +477,23 @@ ActivityLogin14Config = {
 			cc.c4b(255, 255, 255, 255),
 			cc.c4b(255, 249, 198, 255)
 		}
+	},
+	EightDays_Summer_Re = {
+		resFile = "asset/ui/ActivitySummerReLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(144, 183, 255, 255)
+		}
+	},
+	EightDays_Magic_Re = {
+		resFile = "asset/ui/ActivityMagicLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 242, 184, 255)
+		}
+	},
+	EightDays_ReZero_Re = {
+		resFile = "asset/ui/ActivityReZeroLogin14.csb"
 	}
 }
 ActivityMainMapTitleConfig = {

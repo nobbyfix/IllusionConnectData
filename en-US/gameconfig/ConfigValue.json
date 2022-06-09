@@ -519,6 +519,10 @@
             "UNHURTRATE": 12
         }
     },
+    "AttributeCoefficientConstant": {
+        "clz": "double",
+        "content": 2.25
+    },
     "BattlePass_BuyLevelCost": {
         "clz": "int[]",
         "content": [
@@ -3271,7 +3275,8 @@
             "cooperateboss",
             "orrtpk",
             "stagearena",
-            "worldboss"
+            "worldboss",
+            "mazeTower"
         ]
     },
     "FAC_HP_Check": {
@@ -5624,6 +5629,10 @@
             "Voice_BEr_24"
         ]
     },
+    "LayerConstant": {
+        "clz": "int",
+        "content": 20
+    },
     "LeadStage_Effective": {
         "clz": "string[]",
         "content": [
@@ -6535,6 +6544,59 @@
     "Master_UnHurtRate_CoefficientB": {
         "clz": "double",
         "content": 1
+    },
+    "Maze_ChallengeCost": {
+        "clz": "int",
+        "content": 1
+    },
+    "Maze_Initial": {
+        "clz": "string",
+        "content": "MM01P01R01"
+    },
+    "Maze_RankMax": {
+        "clz": "int",
+        "content": 200
+    },
+    "Maze_RuleTranslate": {
+        "clz": "string[]",
+        "content": {
+            "Desc": [
+                "Maze_Rule_1",
+                "Maze_Rule_2",
+                "Maze_Rule_3",
+                "Maze_Rule_4",
+                "Maze_Rule_5"
+            ]
+        }
+    },
+    "Maze_ShoeHero": {
+        "clz": "string",
+        "content": "FLYDe"
+    },
+    "Maze_Task": {
+        "clz": "string[]",
+        "content": [
+            "Maze_Task_1",
+            "Maze_Task_2",
+            "Maze_Task_3",
+            "Maze_Task_4",
+            "Maze_Task_5",
+            "Maze_Task_6",
+            "Maze_Task_7",
+            "Maze_Task_8",
+            "Maze_Task_9",
+            "Maze_Task_10",
+            "Maze_Task_11",
+            "Maze_Task_12",
+            "Maze_Task_13",
+            "Maze_Task_14",
+            "Maze_Task_15",
+            "Maze_Task_16",
+            "Maze_Task_17",
+            "Maze_Task_18",
+            "Maze_Task_19",
+            "Maze_Task_20"
+        ]
     },
     "MergeClubNameMailId": {
         "clz": "string",
@@ -10465,12 +10527,12 @@
         "clz": "string[]",
         "content": [
             "spstage",
-            "dreamhouse",
+            "crusade",
+            "practice",
             "explore",
             "tower",
-            "dreamchallenge",
-            "crusade",
-            "practice"
+            "dreamhouse",
+            "dreamchallenge"
         ]
     },
     "Tsoul_AttributeMaxNum": {

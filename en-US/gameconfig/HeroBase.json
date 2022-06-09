@@ -4757,7 +4757,8 @@
         "SurfaceList": [
             "Surface_CLMan_1",
             "Surface_CLMan_2",
-            "Surface_CLMan_7"
+            "Surface_CLMan_7",
+            "Surface_CLMan_Awake"
         ],
         "TeamSpecialVoice": {
             "FTLEShi": "Voice_CLMan_33"
@@ -15367,7 +15368,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.29,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_MDSi",
         "KeyPassiveSkill": "",
@@ -28523,7 +28524,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.37,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_XSLuo",
         "KeyPassiveSkill": "",

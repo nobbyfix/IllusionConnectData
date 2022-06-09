@@ -166,6 +166,7 @@ SettingBattleTypes = {
 	kClubStage = "club_battle",
 	kArenaNew = "arena_new_challenge",
 	kNormalStage = "normal_stage",
+	kMazeTower = "mazeTower_challenge",
 	kPetRace = "hegemony_battle",
 	kHeroStory = "herostory_battle",
 	kTower = "tower_battle",
@@ -200,7 +201,8 @@ local BattleSettingSpeedKeys = {
 	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_speed",
 	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_speed",
 	[SettingBattleTypes.kStageArena] = "stagearena_battle_setting_speed",
-	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_speed"
+	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_speed",
+	[SettingBattleTypes.kMazeTower] = "mazeTower_challenge_setting_speed"
 }
 local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kNormalStage] = "normal_stage_setting_auto",
@@ -227,7 +229,8 @@ local BattleSettingIsAutoKeys = {
 	[SettingBattleTypes.kDreamStage] = "dreamstage_battle_setting_auto",
 	[SettingBattleTypes.kCooperateBoss] = "copper_battle_setting_auto",
 	[SettingBattleTypes.kStageArena] = "stagearena_battle_setting_auto",
-	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_auto"
+	[SettingBattleTypes.kArenaNew] = "arena_new_challenge_setting_auto",
+	[SettingBattleTypes.kMazeTower] = "mazeTower_challenge_setting_auto"
 }
 
 function SettingModel:setHpShowSetting(hpshow)

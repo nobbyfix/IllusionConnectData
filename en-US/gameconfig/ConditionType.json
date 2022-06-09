@@ -961,7 +961,7 @@
     "Condi_MagicExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_Magic_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_Magic_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_MagicExchangeAchieve_Desc"
     },
@@ -1105,6 +1105,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_MasterStarUp_Desc"
     },
+    "Condi_Maze_Total": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.mazeTower.totalPointNum",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Maze_Desc"
+    },
     "Condi_MiniGameDailyScore": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1115,7 +1122,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220427.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220612.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1136,7 +1143,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220427.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220612.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },

@@ -34,6 +34,7 @@ RankType = {
 	kJump = 44,
 	KPlane = 46,
 	kPetRace = 11,
+	kMazeTower = 49,
 	kClubBoss = 41,
 	KRTPK = 26,
 	kExp = 6,
@@ -75,7 +76,8 @@ RankClass = {
 	[RankType.KPlane] = MiniGamePlaneRankRecord,
 	[RankType.KNewAreana] = ArenaNewRankRecord,
 	[RankType.KWBVanguard] = WorldBossRankRecord,
-	[RankType.KWBBoss] = WorldBossRankRecord
+	[RankType.KWBBoss] = WorldBossRankRecord,
+	[RankType.kMazeTower] = MazeTowerRankRecord
 }
 RankSwitch = {
 	[RankType.kClubBoss] = "fn_clubBoss",

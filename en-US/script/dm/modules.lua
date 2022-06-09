@@ -4687,6 +4687,58 @@ local modules = {
 						}
 					}
 				}
+			},
+			{
+				name = "mazeTower",
+				requires = {
+					"dm.gameplay.mazeTower.controller.MazeTowerSystem",
+					"dm.gameplay.mazeTower.service.MazeTowerService"
+				},
+				injections = {
+					singletons = {
+						"MazeTowerSystem"
+					},
+					classes = {
+						"MazeTowerService"
+					},
+					views = {
+						{
+							res = "asset/ui/MazeTowerMain.csb",
+							name = "MazeTowerMainView",
+							mediator = "MazeTowerMainMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerMap.csb",
+							name = "MazeTowerMapView",
+							mediator = "MazeTowerMapMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerRank.csb",
+							name = "MazeTowerRankView",
+							mediator = "MazeTowerRankMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerReward.csb",
+							name = "MazeTowerRewardView",
+							mediator = "MazeTowerRewardMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerChallenge.csb",
+							name = "MazeTowerChallengeView",
+							mediator = "MazeTowerChallengeMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerFinish.csb",
+							name = "MazeTowerFinishView",
+							mediator = "MazeTowerFinishMediator"
+						},
+						{
+							res = "asset/ui/MazeTowerPass.csb",
+							name = "MazeTowerPassView",
+							mediator = "MazeTowerPassMediator"
+						}
+					}
+				}
 			}
 		}
 	},
