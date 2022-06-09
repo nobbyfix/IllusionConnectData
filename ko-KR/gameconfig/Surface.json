@@ -2261,6 +2261,64 @@
         "Type": 2,
         "Unlook": 1
     },
+    "Surface_CLMan_Awake": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    124,
+                    2216
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch2",
+                "part": "body",
+                "point": [
+                    105,
+                    2043
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_CLMan_1Awake_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "Surface_CLMan_Awake_GainDesc",
+        "GoodsId": "",
+        "Hero": "CLMan",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_CLMan_Awake",
+        "Name": "Surface_CLMan_Awake_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 7,
+        "Type": 5,
+        "Unlook": 1
+    },
     "Surface_CZheng_1": {
         "ActivityId": "",
         "AnimeList": "",

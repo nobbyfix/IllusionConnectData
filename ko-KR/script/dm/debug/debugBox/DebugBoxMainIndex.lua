@@ -238,6 +238,13 @@ DebugBoxMainIndex = {
 				}
 			},
 			{
+				"迷梦试炼",
+				{
+					"调整层数",
+					"增加挑战次数"
+				}
+			},
+			{
 				"签到",
 				{}
 			},
@@ -1005,6 +1012,14 @@ DebugBoxMainIndex = {
 				"ActivityBlockReset"
 			},
 			{
+				"调整层数",
+				"MazeTowerAddRoom"
+			},
+			{
+				"增加挑战次数",
+				"MazeTowerAddFightTimes"
+			},
+			{
 				"技能Args检查",
 				"CheckSkillArgsBox"
 			},
@@ -1181,7 +1196,8 @@ DebugBoxMainIndex = {
 			"DebugNewArenaSetUpRank",
 			"DebugRTPKScore",
 			"ChangeTask",
-			"ZeroMapReset"
+			"ZeroMapReset",
+			"AddMazeTower"
 		}
 
 		for k, v in pairs(requireNameMap) do

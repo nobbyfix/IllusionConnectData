@@ -405,8 +405,10 @@ function WorldBossRankMediator:refreshMyselfInfo()
 
 		if rank > -1 then
 			rankIndex:setString(rank)
+			roleFight:setString(showData.hurt)
 		else
 			rankIndex:setString(Strings:get("RTPK_PopUpRank_UI10"))
+			roleFight:setString(Strings:get("RTPK_PopUpRank_UI10"))
 		end
 
 		roleIcon:removeAllChildren()
@@ -423,7 +425,6 @@ function WorldBossRankMediator:refreshMyselfInfo()
 		headIcon:setScale(0.6)
 		oldIcon:setScale(0.5)
 		roleName:setString(showData.name)
-		roleFight:setString(showData.hurt)
 	end
 end
 

@@ -651,6 +651,41 @@ local mappings = {
 		name = "PetRaceRuleMediator",
 		type = "@C"
 	},
+	MazeTowerRewardMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerRewardMediator",
+		name = "MazeTowerRewardMediator",
+		type = "@C"
+	},
+	MazeTowerMainMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerMainMediator",
+		name = "MazeTowerMainMediator",
+		type = "@C"
+	},
+	MazeTowerPassMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerPassMediator",
+		name = "MazeTowerPassMediator",
+		type = "@C"
+	},
+	MazeTowerFinishMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerFinishMediator",
+		name = "MazeTowerFinishMediator",
+		type = "@C"
+	},
+	MazeTowerChallengeMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerChallengeMediator",
+		name = "MazeTowerChallengeMediator",
+		type = "@C"
+	},
+	MazeTowerMapMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerMapMediator",
+		name = "MazeTowerMapMediator",
+		type = "@C"
+	},
+	MazeTowerRankMediator = {
+		url = "dm.gameplay.mazeTower.view.MazeTowerRankMediator",
+		name = "MazeTowerRankMediator",
+		type = "@C"
+	},
 	ArenaNewRankMediator = {
 		url = "dm.gameplay.newArena.view.ArenaNewRankMediator",
 		name = "ArenaNewRankMediator",

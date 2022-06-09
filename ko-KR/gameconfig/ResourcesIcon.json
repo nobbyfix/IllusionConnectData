@@ -1426,6 +1426,23 @@
         "Shine": "",
         "Sicon": "ico_m_magic_stamina_2"
     },
+    "IR_MagicStamina_Re": {
+        "Desc": "IR_MagicStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_magic_stamina_1"
+        ],
+        "Licon": "ico_m_magic_stamina_1",
+        "Name": "IR_MagicStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_magic_stamina_2"
+    },
     "IR_MapPower": {
         "Desc": "IR_MapPower_Desc",
         "LargeIcons": [
@@ -1444,6 +1461,23 @@
         "Sicon": "icon_tili"
     },
     "IR_MusicFestivalStamina": {
+        "Desc": "IR_MusicFestivalStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_musicticket_1"
+        ],
+        "Licon": "ico_m_musicticket_1",
+        "Name": "IR_MusicFestivalStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_musicticket_2"
+    },
+    "IR_MusicFestivalStamina_Re": {
         "Desc": "IR_MusicFestivalStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_musicticket_1"
@@ -1576,6 +1610,23 @@
         "Sicon": "ico_m_pvecoin_2"
     },
     "IR_ReZeroStamina": {
+        "Desc": "IR_ReZeroStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_rezero_stamina_1"
+        ],
+        "Licon": "ico_m_rezero_stamina_1",
+        "Name": "IR_ReZeroStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_rezero_stamina_2"
+    },
+    "IR_ReZeroStamina_Re": {
         "Desc": "IR_ReZeroStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_rezero_stamina_1"
@@ -1752,6 +1803,23 @@
         ],
         "Licon": "IR_HD_SummerAcitvityStamina",
         "Name": "IR_SummerReStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_SummerAcitvityStamina1"
+    },
+    "IR_SummerStamina_Re": {
+        "Desc": "IR_SummerAcitvityStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_SummerAcitvityStamina"
+        ],
+        "Licon": "IR_HD_SummerAcitvityStamina",
+        "Name": "IR_SummerAcitvityStamina_Name",
         "Quality": [
             5
         ],

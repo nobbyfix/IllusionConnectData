@@ -965,7 +965,6 @@ function BattleMainMediator:flushTouchEnable()
 end
 
 function BattleMainMediator:tryLeaving(isFinish)
-	dump(isFinish, "isFinish")
 	self._delegate:tryLeaving(function (leave)
 		if leave then
 			if isFinish then

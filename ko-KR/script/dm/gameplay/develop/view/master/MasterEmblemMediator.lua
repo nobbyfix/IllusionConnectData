@@ -45,6 +45,26 @@ local kAttrPosition = {
 			cc.p(90, -25),
 			cc.p(90, -55)
 		}
+	},
+	kFullPos = {
+		{
+			cc.p(90, 35)
+		},
+		{
+			cc.p(90, 55),
+			cc.p(90, 10)
+		},
+		{
+			cc.p(90, 73),
+			cc.p(90, 33),
+			cc.p(90, -7)
+		},
+		{
+			cc.p(90, 90),
+			cc.p(90, 55),
+			cc.p(90, 15),
+			cc.p(90, -20)
+		}
 	}
 }
 
@@ -502,6 +522,10 @@ function MasterEmblemMediator:refreshRightEmblemInfo(selectindex)
 
 	if canupquatily then
 		pos = kAttrPosition.kQualityPos[showNum]
+	end
+
+	if isEmblemFull then
+		pos = kAttrPosition.kFullPos[showNum]
 	end
 
 	for i = 1, showNum do

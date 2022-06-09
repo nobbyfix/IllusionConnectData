@@ -4181,6 +4181,95 @@
         "bustAwakeZoom": 0.72,
         "bustZoom": 0.88
     },
+    "Model_CLMan_Awake": {
+        "Animation": "ChaLiMan",
+        "BattlePosition": "HeroBase_BattlePosition_CLMan",
+        "BattleShow": "",
+        "Bust1": "Bust1_CLMan_Awake",
+        "Bust10": "Bust10_CLMan_Awake",
+        "Bust11": "Bust11_CLMan_Awake",
+        "Bust12": "Bust12_CLMan_Awake",
+        "Bust13": "Bust13_CLMan_Awake",
+        "Bust14": "Bust14_CLMan_Awake",
+        "Bust15": "Bust15_CLMan_Awake",
+        "Bust16": "",
+        "Bust2": "Bust2_CLMan_Awake",
+        "Bust3": "Bust3_CLMan_Awake",
+        "Bust4": "Bust4_CLMan_Awake",
+        "Bust5": "Bust5_CLMan_Awake",
+        "Bust6": "Bust6_CLMan_Awake",
+        "Bust7": "Bust7_CLMan_Awake",
+        "Bust8": "Bust8_CLMan_Awake",
+        "Bust9": "Bust9_CLMan_Awake",
+        "BustAwake": [
+            -300,
+            -530
+        ],
+        "BustAwake2": [
+            1,
+            -417
+        ],
+        "BustTemp1": [
+            -670,
+            -1029
+        ],
+        "BustTemp2": [
+            -652,
+            -1045
+        ],
+        "BustTemp3": [
+            -683,
+            -1064
+        ],
+        "BustTemp4": [
+            -683,
+            -1064
+        ],
+        "BustTemp5": [
+            -683,
+            -1064
+        ],
+        "CommonResource": "",
+        "CutIn": "Portraitpic_CLMan_Awake",
+        "DeathVoice": "",
+        "Filename": "portrait_nna_awaken",
+        "HeadMain": "HeadMain_CLMan_Awake",
+        "Height": 200,
+        "Hero": "CLMan",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_CLMan",
+        "MasterHeadWide": "",
+        "Model": "CLMan",
+        "Name": "HeroBase_Name_CLMan",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_CLMan_Awake",
+        "SVPText": "SVPText_CLMan",
+        "SkillRange": "ColUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "ChaLiMan",
+        "TagDesc": [],
+        "TagPic": [],
+        "TruthBubble": [
+            "Truth_CLMan_1",
+            "Truth_CLMan_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.42,
+        "bustZoom": 0.7
+    },
     "Model_CLMan_BiliBili": {
         "Animation": "ChaLiMan_BiliBili",
         "BattlePosition": "HeroBase_BattlePosition_CLMan",
@@ -4438,6 +4527,87 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.72,
         "bustZoom": 0.88
+    },
+    "Model_CLMan_UnAwake": {
+        "Animation": "",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": [
+            -300,
+            -530
+        ],
+        "BustAwake2": [
+            1,
+            -417
+        ],
+        "BustTemp1": [
+            -670,
+            -1029
+        ],
+        "BustTemp2": [
+            -652,
+            -1045
+        ],
+        "BustTemp3": [
+            -683,
+            -1064
+        ],
+        "BustTemp4": [
+            -683,
+            -1064
+        ],
+        "BustTemp5": [
+            -683,
+            -1064
+        ],
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "portrait_nna_awakelock",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "CLMan",
+        "HpTierCount": "",
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "CLMan",
+        "Name": "HeroBase_Name_CLMan",
+        "Path": 2,
+        "PicType": 5,
+        "Portrait": "Portraitpic_CLMan_UnAwake",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": "",
+        "SoundVoiceCondition": "",
+        "SoundVoiceText": "",
+        "Tag": "",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": "",
+        "Type": "",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.42,
+        "bustZoom": 0.7
     },
     "Model_CLMan_XHMao": {
         "Animation": "ChaLiMan_XiaoHongMao",

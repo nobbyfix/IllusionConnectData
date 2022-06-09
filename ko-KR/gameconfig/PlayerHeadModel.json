@@ -2477,7 +2477,7 @@
         "HeadName": "XSLuo_HeadName",
         "HeroMasterId": "XSLuo",
         "IconPath": "asset/heros/hswei/battlepic_hswei.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "XSLuo_HeadUnlock",
@@ -2877,6 +2877,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_BQDShe",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_CLMan": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_CLMan_Desc",
+        "HeadName": "HeroAwaken_CLMan_1_Name",
+        "HeroMasterId": "CLMan",
+        "IconPath": "asset/heros/CLMan/battlepic_nna_awaken.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_CLMan",
         "Zoom": 1.0
     },
     "HeroAwaken_CZheng": {

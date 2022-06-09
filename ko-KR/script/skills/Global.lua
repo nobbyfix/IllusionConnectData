@@ -1834,6 +1834,13 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
+		global.ActivateGlobalTrigger(_env, actor, "SELF_DAM", {
+			unit = target,
+			damage = result.eft or 1
+		})
+	end
+
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local singlekillrecoveryrate = global.SpecialPropGetter(_env, "singlekillrecoveryrate")(_env, actor)
@@ -2598,6 +2605,13 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
+
+	if result and result.eft > 0 then
+		global.ActivateSpecificTrigger(_env, actor, "SELF_DAM", {
+			unit = target,
+			damage = result.eft
+		})
+	end
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -4932,7 +4946,16 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		end
 	end
 
-	return global.ApplyHPRecovery(_env, target, heal, switch)
+	local Recovery = global.ApplyHPRecovery(_env, target, heal, switch)
+
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and heal then
+		global.ActivateGlobalTrigger(_env, target, "SELF_TREATMENT", {
+			unit = target,
+			eft = Recovery.eft or 1
+		})
+	end
+
+	return Recovery
 end
 
 function all.ApplyHPRecoveryN(_env, n, total, target, heals, actor, switch)
@@ -5022,6 +5045,11 @@ end
 function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals)
 	local this = _env.this
 	local global = _env.global
+
+	global.ActivateGlobalTrigger(_env, actor, "SELF_TREATMENT", {
+		unit = target,
+		heal = heals.val
+	})
 
 	return global.MultiDelayCall(_env, delays, global.ApplyHPRecoveryN, target, heals, actor)
 end
@@ -5431,6 +5459,31 @@ function all.CellColLocation(_env, cell)
 	return location
 end
 
+function all.Judge_the_unit_behind_the_grid(_env, unit)
+	local this = _env.this
+	local global = _env.global
+	local lattice = global.GetCellId(_env, unit)
+	local list = {
+		-7,
+		-8,
+		-9
+	}
+
+	for _, cell in global.__iter__(list) do
+		if lattice == cell then
+			return true
+		end
+	end
+
+	local Back_grid = lattice - 3
+
+	if global.GetCellUnit(_env, global.GetCellById(_env, Back_grid)) then
+		return true
+	end
+
+	return false
+end
+
 function all.IsEnemy(_env, unit)
 	local this = _env.this
 	local global = _env.global
@@ -5553,6 +5606,40 @@ function all.IsEnemy(_env, unit)
 	end
 
 	return true
+end
+
+function all.add_once_Proud(_env, unit)
+	local this = _env.this
+	local global = _env.global
+
+	global.print(_env, "此人小技能概率", global.UnitPropGetter(_env, "exskillrate")(_env, unit))
+
+	local buffeft1 = global.NumericEffect(_env, "+exskillrate", {
+		"+Normal",
+		"+Normal"
+	}, 1)
+	local buffeft2 = global.Diligent(_env)
+
+	global.ApplyBuff(_env, unit, {
+		duration = 1,
+		group = "add_once_Proud",
+		timing = 1,
+		limit = 1,
+		tags = {
+			"UNDISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		buffeft2
+	})
+	global.DiligentRound(_env, 100)
+end
+
+function all.EqualsCamp(_env, A, B)
+	local this = _env.this
+	local global = _env.global
+
+	return global.GetSide(_env, A) == global.GetSide(_env, B)
 end
 
 function all.SetFriendField(_env, actor, friendField_att, name, Friend)
@@ -5726,6 +5813,20 @@ function all.Skill_SortBy(_env, arr, compare, att)
 
 		return arr
 	end
+end
+
+function all.isCidHero(_env, cid)
+	local this = _env.this
+	local global = _env.global
+	local hero = false
+
+	for _, friend in global.__iter__(global.FriendUnits(_env)) do
+		if global.GetUnitCid(_env, friend) == cid then
+			hero = friend
+		end
+	end
+
+	return hero
 end
 
 return _M
