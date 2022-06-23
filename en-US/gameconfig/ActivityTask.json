@@ -13051,6 +13051,234 @@
         "StoryDesc": "",
         "TaskIcon": ""
     },
+    "Activity_LSLTeTask_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectSpecial",
+                "factor1": [
+                    180
+                ],
+                "params": [
+                    "LSLTe"
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_1_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_LSLTeTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    4
+                ],
+                "params": [
+                    "LSLTe"
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_10_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_LSLTeTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    5
+                ],
+                "params": [
+                    "LSLTe"
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_11_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_LSLTeTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroCollectStar",
+                "factor1": [
+                    6
+                ],
+                "params": [
+                    "LSLTe"
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_12_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_LSLTeTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    30
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_2_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_LSLTeTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    60
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_3_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_LSLTeTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    90
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_4_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_LSLTeTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroLevelUp",
+                "factor1": [
+                    120
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_5_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_LSLTeTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_6_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_LSLTeTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_7_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_LSLTeTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_8_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_LSLTeTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_LSLTeTask_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_HeroQualityUp",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "Activity_LSLTeTask_9_Desc",
+        "Destination": "view://HeroShowListView&viewType=push",
+        "ExtraReward": "",
+        "Name": "Activity_YBYaTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_LSLTeTask_9_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
     "Activity_LYXi_20220602Task_1": {
         "Condition": [
             {
@@ -16177,6 +16405,321 @@
                 ],
                 "params": [
                     "Activity_WorldBoss_220616"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_9_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_9_Name",
+        "OrderNum": 9,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_9_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    5200000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_1_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_1_Name",
+        "OrderNum": 1,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    520000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_10_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_10_Name",
+        "OrderNum": 10,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_10_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_11": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    570000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_11_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_11_Name",
+        "OrderNum": 11,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_11_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_12": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    800000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_12_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_12_Name",
+        "OrderNum": 12,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_12_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_13": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    880000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_13_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_13_Name",
+        "OrderNum": 13,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_13_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_14": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    930000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_14_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_14_Name",
+        "OrderNum": 14,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_14_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    1000000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_15_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    11000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_2_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_2_Name",
+        "OrderNum": 2,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    15000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_3_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_3_Name",
+        "OrderNum": 3,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    22000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_4_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_4_Name",
+        "OrderNum": 4,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    27000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_5_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_5_Name",
+        "OrderNum": 5,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    33000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_6_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_6_Name",
+        "OrderNum": 6,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    110000000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_7_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_7_Name",
+        "OrderNum": 7,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    125200000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
+                ]
+            }
+        ],
+        "Desc": "Activity_WorldBoss_AchieveMentTask_8_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "Activity_WorldBoss_AchieveMentTask_8_Name",
+        "OrderNum": 8,
+        "Reward": "Activity_WorldBoss_AchieveMentTask_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "Activity_WorldBoss_220701_Task_9": {
+        "Condition": [
+            {
+                "conditionType": "Condi_WorldBossTotal",
+                "factor1": [
+                    185200000
+                ],
+                "params": [
+                    "Activity_WorldBoss_220701"
                 ]
             }
         ],
@@ -30505,6 +31048,150 @@
         "Name": "EightDays_8_Name",
         "OrderNum": 8,
         "Reward": "EightDays_20220623_8_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    1
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_1_Name",
+        "OrderNum": 1,
+        "Reward": "EightDays_20220708_1_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    2
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_2_Name",
+        "OrderNum": 2,
+        "Reward": "EightDays_20220708_2_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    3
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_3_Name",
+        "OrderNum": 3,
+        "Reward": "EightDays_20220708_3_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    4
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_4_Name",
+        "OrderNum": 4,
+        "Reward": "EightDays_20220708_4_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    5
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_5_Name",
+        "OrderNum": 5,
+        "Reward": "EightDays_20220708_5_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    6
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_6_Name",
+        "OrderNum": 6,
+        "Reward": "EightDays_20220708_6_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    7
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_7_Name",
+        "OrderNum": 7,
+        "Reward": "EightDays_20220708_7_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "EightDays_20220708_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "EightDays_8_Name",
+        "OrderNum": 8,
+        "Reward": "EightDays_20220708_8_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },
@@ -45994,7 +46681,7 @@
                     50
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46015,7 +46702,7 @@
                     100
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46036,7 +46723,7 @@
                     200
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46057,7 +46744,7 @@
                     300
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46078,7 +46765,7 @@
                     400
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46094,9 +46781,12 @@
     "SummerRe_AchieveMentTask_06": {
         "Condition": [
             {
-                "conditionType": "Condi_SummerReExchangeAchieve",
+                "conditionType": "Condi_winActStage",
                 "factor1": [
-                    5000
+                    500
+                ],
+                "params": [
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46114,7 +46804,7 @@
             {
                 "conditionType": "Condi_SummerReExchangeAchieve",
                 "factor1": [
-                    10000
+                    5000
                 ]
             }
         ],
@@ -46132,7 +46822,7 @@
             {
                 "conditionType": "Condi_SummerReExchangeAchieve",
                 "factor1": [
-                    16000
+                    10000
                 ]
             }
         ],
@@ -46150,7 +46840,7 @@
             {
                 "conditionType": "Condi_SummerReExchangeAchieve",
                 "factor1": [
-                    20000
+                    16000
                 ]
             }
         ],
@@ -46168,7 +46858,7 @@
             {
                 "conditionType": "Condi_SummerReExchangeAchieve",
                 "factor1": [
-                    25000
+                    20000
                 ]
             }
         ],
@@ -46184,9 +46874,9 @@
     "SummerRe_AchieveMentTask_11": {
         "Condition": [
             {
-                "conditionType": "Condi_TodayLogin",
+                "conditionType": "Condi_SummerReExchangeAchieve",
                 "factor1": [
-                    2
+                    25000
                 ]
             }
         ],
@@ -46204,7 +46894,7 @@
             {
                 "conditionType": "Condi_TodayLogin",
                 "factor1": [
-                    4
+                    2
                 ]
             }
         ],
@@ -46222,7 +46912,7 @@
             {
                 "conditionType": "Condi_TodayLogin",
                 "factor1": [
-                    6
+                    4
                 ]
             }
         ],
@@ -46240,7 +46930,7 @@
             {
                 "conditionType": "Condi_TodayLogin",
                 "factor1": [
-                    8
+                    6
                 ]
             }
         ],
@@ -46254,6 +46944,42 @@
         "TaskIcon": ""
     },
     "SummerRe_AchieveMentTask_15": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_SummerRe_AchieveMentTask_15_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_SummerRe_AchieveMentTask_15_Name",
+        "OrderNum": 15,
+        "Reward": "SummerRe_AchieveMentTask_015_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "SummerRe_AchieveMentTask_16": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "ActivityBlock_SummerRe_AchieveMentTask_16_Desc",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_SummerRe_AchieveMentTask_16_Name",
+        "OrderNum": 16,
+        "Reward": "SummerRe_AchieveMentTask_016_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "SummerRe_AchieveMentTask_23": {
         "Condition": [
             {
                 "conditionType": "Condi_FinishTask",
@@ -46274,16 +47000,18 @@
                     "SummerRe_AchieveMentTask_11",
                     "SummerRe_AchieveMentTask_12",
                     "SummerRe_AchieveMentTask_13",
-                    "SummerRe_AchieveMentTask_14"
+                    "SummerRe_AchieveMentTask_14",
+                    "SummerRe_AchieveMentTask_15",
+                    "SummerRe_AchieveMentTask_16"
                 ]
             }
         ],
-        "Desc": "ActivityBlock_SummerRe_AchieveMentTask_15_Desc",
+        "Desc": "ActivityBlock_SummerRe_AchieveMentTask_23_Desc",
         "Destination": "",
         "ExtraReward": "",
-        "Name": "ActivityBlock_SummerRe_AchieveMentTask_15_Name",
-        "OrderNum": 15,
-        "Reward": "SummerRe_AchieveMentTask_015_Reward",
+        "Name": "ActivityBlock_SummerRe_AchieveMentTask_23_Name",
+        "OrderNum": 23,
+        "Reward": "SummerRe_AchieveMentTask_023_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },
@@ -46313,7 +47041,7 @@
                     10
                 ],
                 "params": [
-                    "ActivityBlock_SummerRe_Map"
+                    "ActivityBlock_SummerRe_20220610_Map"
                 ]
             }
         ],
@@ -46528,6 +47256,60 @@
         "Name": "ActivityBlock_SummerRe_Login_7_Name",
         "OrderNum": 7,
         "Reward": "SummerRe_Login_07_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "SummerRe_Login_08": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    8
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_SummerRe_Login_8_Name",
+        "OrderNum": 8,
+        "Reward": "SummerRe_Login_08_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "SummerRe_Login_09": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    9
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_SummerRe_Login_9_Name",
+        "OrderNum": 9,
+        "Reward": "SummerRe_Login_09_Reward",
+        "StoryDesc": "",
+        "TaskIcon": ""
+    },
+    "SummerRe_Login_10": {
+        "Condition": [
+            {
+                "conditionType": "Condi_TodayLogin",
+                "factor1": [
+                    10
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "ExtraReward": "",
+        "Name": "ActivityBlock_SummerRe_Login_10_Name",
+        "OrderNum": 10,
+        "Reward": "SummerRe_Login_10_Reward",
         "StoryDesc": "",
         "TaskIcon": ""
     },

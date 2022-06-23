@@ -31,3 +31,9 @@ function MazeTowerService:requestMainInfo(params, blockUI, callback)
 
 	self:sendRequest(request, blockUI)
 end
+
+function MazeTowerService:requestQuickChallenge(params, blockUI, callback)
+	local request = self:newRequest(37005, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

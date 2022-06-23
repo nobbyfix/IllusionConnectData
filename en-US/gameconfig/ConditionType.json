@@ -135,49 +135,49 @@
     "Condi_Bento_Food_1": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_1.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_1.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_1_Desc"
     },
     "Condi_Bento_Food_2": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_2.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_2.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_2_Desc"
     },
     "Condi_Bento_Food_3": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_3.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_3.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_3_Desc"
     },
     "Condi_Bento_Food_4": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_4.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_4.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_4_Desc"
     },
     "Condi_Bento_Food_5": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_5.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_5.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_5_Desc"
     },
     "Condi_Bento_Food_6": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_6.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_6.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_6_Desc"
     },
     "Condi_Bento_Food_7": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.Bento_Food_220601_7.count",
+        "ConditionType1": "player.bag.items.Bento_Food_220701_7.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_7_Desc"
     },
@@ -1129,7 +1129,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220513.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220627.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1150,7 +1150,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220513.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220627.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1416,7 +1416,7 @@
     "Condi_SummerReExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
-        "ConditionType1": "player.bag.items.IM_SummerRe_ExchangeItem.count",
+        "ConditionType1": "player.bag.items.IM_SummerRe_ExchangeItem_Re.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_SummerReExchangeAchieve_Desc"
     },

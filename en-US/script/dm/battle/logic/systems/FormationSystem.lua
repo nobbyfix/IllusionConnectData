@@ -782,16 +782,22 @@ function FormationSystem:clearOldResident(actor)
 
 		for k, v in pairs(dieRules) do
 			if v == "kick" then
+				local buffSystem = self._battleContext:getObject("BuffSystem")
+				local _, cnt = buffSystem:selectBuffsOnTarget(oldResident, MakeFilter(function (buff)
+					return buff:isMatched("UnKick")
+				end))
 				local skillSystem = self._battleContext:getObject("SkillSystem")
 
 				skillSystem:activateSpecificTrigger(oldResident, "UNIT_KICK_BY_OTHERSET", {
 					dierule = "kick",
-					newunit = actor
+					newunit = actor,
+					UnKickTag = cnt
 				})
 				skillSystem:activateGlobalTrigger("UNIT_KICK_BY_OTHERSET", {
 					dierule = "kick",
 					unit = oldResident,
-					newunit = actor
+					newunit = actor,
+					UnKickTag = cnt
 				})
 				self:_kickUnit(oldResident)
 

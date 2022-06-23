@@ -54255,6 +54255,18 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_MDSi_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_MDSi_Pigment_Hit_1",
                             "rate": 1
                         },
@@ -54283,6 +54295,18 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_MDSi_27",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_MDSi_Pigment_Hit_2",
                             "rate": 1
                         },
@@ -54307,6 +54331,18 @@
     },
     "tnli_skill3": {
         "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_MDSi_28",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
             {
                 "evts": [
                     {
@@ -54353,7 +54389,7 @@
                         "e": "hit"
                     }
                 ],
-                "f": 30
+                "f": 33
             },
             {
                 "evts": [
@@ -54377,30 +54413,6 @@
                         "e": "hit"
                     }
                 ],
-                "f": 33
-            },
-            {
-                "evts": [
-                    {
-                        "d": {
-                            "act": "hurt1",
-                            "final": 0
-                        },
-                        "e": "hit"
-                    }
-                ],
-                "f": 36
-            },
-            {
-                "evts": [
-                    {
-                        "d": {
-                            "act": "hurt1",
-                            "final": 0
-                        },
-                        "e": "hit"
-                    }
-                ],
                 "f": 39
             },
             {
@@ -54413,7 +54425,7 @@
                         "e": "hit"
                     }
                 ],
-                "f": 42
+                "f": 44
             },
             {
                 "evts": [
@@ -54425,7 +54437,7 @@
                         "e": "hit"
                     }
                 ],
-                "f": 45
+                "f": 48
             }
         ]
     },

@@ -429,6 +429,10 @@ all.Skill_FLBDSi_Passive = {
 		_env.dierule = externs.dierule
 
 		assert(_env.dierule ~= nil, "External variable `dierule` is not provided.")
+
+		_env.UnKickTag = externs.UnKickTag
+
+		assert(_env.UnKickTag ~= nil, "External variable `UnKickTag` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -436,6 +440,10 @@ all.Skill_FLBDSi_Passive = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
+				if _env.UnKickTag > 0 then
+					return
+				end
+
 				local cardlocation = global.GetCardWindowIndex(_env, _env.newunit)
 
 				if cardlocation == 0 then
@@ -861,6 +869,10 @@ all.Skill_FLBDSi_Passive_EX = {
 		_env.dierule = externs.dierule
 
 		assert(_env.dierule ~= nil, "External variable `dierule` is not provided.")
+
+		_env.UnKickTag = externs.UnKickTag
+
+		assert(_env.UnKickTag ~= nil, "External variable `UnKickTag` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -868,6 +880,10 @@ all.Skill_FLBDSi_Passive_EX = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "FLBDSi")(_env, _env.newunit) and _env.dierule == "kick" and global.MASTER(_env, _env.ACTOR) and global.PETS - global.SUMMONS(_env, _env.unit) then
+				if _env.UnKickTag > 0 then
+					return
+				end
+
 				local cardlocation = global.GetCardWindowIndex(_env, _env.newunit)
 
 				if cardlocation == 0 then

@@ -227,7 +227,8 @@ function HeroCard:usedByPlayer(player, battleContext, trgtCellNo, cost, wontEven
 		hero = self._heroData,
 		cardIndex = self._cardIndex,
 		seatRules = self._seatRules,
-		enterPauseTime = self._enterPauseTime
+		enterPauseTime = self._enterPauseTime,
+		actualCost = self:getActualCost()
 	})
 
 	local cardSystem = battleContext:getObject("CardSystem")
@@ -258,7 +259,8 @@ function HeroCard:getCardInfo()
 		cardAI = self._cardAI,
 		hero = self._heroData,
 		cardIndex = self._cardIndex,
-		cardType = self._cardType
+		cardType = self._cardType,
+		actualCost = self:getActualCost()
 	}
 	local info = {}
 

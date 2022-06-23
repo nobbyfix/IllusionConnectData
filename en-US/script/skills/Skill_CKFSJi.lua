@@ -48,7 +48,7 @@ all.Skill_CKFSJi_Normal = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill1"))
 		end)
@@ -65,7 +65,7 @@ all.Skill_CKFSJi_Normal = {
 				local heal = (maxHp - hp) * this.HealRateFactor
 				heal = global.min(_env, atk * this.MaxHealRateFactor, heal)
 
-				if heal >= 1 then
+				if heal ~= 0 then
 					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
 				end
 
@@ -139,7 +139,7 @@ all.Skill_CKFSJi_Proud = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill2"))
 		end)
@@ -156,7 +156,7 @@ all.Skill_CKFSJi_Proud = {
 				local heal = (maxHp - hp) * this.HealRateFactor
 				heal = global.min(_env, atk * this.MaxHealRateFactor, heal)
 
-				if heal >= 1 then
+				if heal ~= 0 then
 					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
 				end
 
@@ -701,7 +701,7 @@ all.Skill_CKFSJi_Proud_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+			_env.units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
 
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill2"))
 		end)
@@ -718,7 +718,7 @@ all.Skill_CKFSJi_Proud_EX = {
 				local heal = (maxHp - hp) * this.HealRateFactor
 				heal = global.min(_env, atk * this.MaxHealRateFactor, heal)
 
-				if heal >= 1 then
+				if heal ~= 0 then
 					global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, heal)
 				end
 

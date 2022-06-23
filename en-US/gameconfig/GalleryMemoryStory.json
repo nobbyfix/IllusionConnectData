@@ -754,6 +754,51 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Summer": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_SummerRe_20220610_Map",
+                    "SummerS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "s_main_event_05",
+        "Name": "ActivityBlock_SummerRe_Name",
+        "Num": 23,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Summer_1",
+                    "Memory_Act_Summer_2",
+                    "Memory_Act_Summer_3",
+                    "Memory_Act_Summer_4",
+                    "Memory_Act_Summer_5"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_Summer_6",
+                    "Memory_Act_Summer_7",
+                    "Memory_Act_Summer_8",
+                    "Memory_Act_Summer_9",
+                    "Memory_Act_Summer_10",
+                    "Memory_Act_Summer_11",
+                    "Memory_Act_Summer_12"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Sunflower": {
         "ActiviType": "",
         "Condition": "",

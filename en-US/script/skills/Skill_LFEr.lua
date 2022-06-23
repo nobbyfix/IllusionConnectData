@@ -732,5 +732,98 @@ all.Skill_LFEr_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_LFEr_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HealRateFactor = externs.HealRateFactor
+
+		assert(this.HealRateFactor ~= nil, "External variable `HealRateFactor` is not provided.")
+
+		this.CureRateFactor = externs.CureRateFactor
+
+		assert(this.CureRateFactor ~= nil, "External variable `CureRateFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			2
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			1
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "+curerate", {
+				"+Normal",
+				"+Normal"
+			}, this.CureRateFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_LFEr_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			}, 1)
+
+			if global.MASTER(_env, _env.ACTOR) then
+				-- Nothing
+			elseif global.FriendMaster(_env) then
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.FriendMaster(_env))
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, global.FriendMaster(_env), {
+					val = maxHp * this.HealRateFactor
+				}, false, true)
+
+				local buffeft2 = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, global.FriendMaster(_env), {
+					timing = 2,
+					duration = 1,
+					display = "Heal",
+					tags = {
+						"HEAL",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
+				})
+			end
+
+			global.SelfEX_Cure_OneStage_Secret(_env, _env.ACTOR)
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -251,6 +251,15 @@
         "LowerStandardQuality": 43,
         "StandardLv": 240
     },
+    "LevelLimit_Summer_Re": {
+        "EffectControl": 1,
+        "LeadATK": 27351,
+        "LeadDEF": 6054,
+        "LeadHP": 455869,
+        "LeadSPD": 223,
+        "LowerStandardQuality": 50,
+        "StandardLv": 300
+    },
     "LevelLimit_Sunflower": {
         "EffectControl": 1,
         "LeadATK": 16745,
@@ -280,10 +289,10 @@
     },
     "LevelLimit_WB": {
         "EffectControl": 1,
-        "LeadATK": 36372,
+        "LeadATK": 46372,
         "LeadDEF": 11146,
         "LeadHP": 604261,
-        "LeadSPD": 200,
+        "LeadSPD": 1000,
         "LowerStandardQuality": 50,
         "StandardLv": 300
     }

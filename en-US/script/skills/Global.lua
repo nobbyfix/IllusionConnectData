@@ -5361,15 +5361,12 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 		else
 			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
 
-			global.print(_env, global.GetFriendField(_env, nil, "LLK_is_kill", true), "LLK_is_kill111111")
-			global.print(_env, global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true), "LLK_is_kilss_cid11111")
-
 			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
 				global.SetFriendField(_env, nil, 1, "BackToCard", true)
 			end
 		end
-	elseif cond == "window" then
-		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+	elseif cond == "window" and #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKick")) <= 0 then
 			local cardlocation = global.GetCardWindowIndex(_env, unit)
 
 			if cardlocation == 0 then
@@ -5378,9 +5375,6 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 
 			location = location or cardlocation
 			card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
-
-			global.print(_env, global.GetFriendField(_env, nil, "LLK_is_kill", true), "LLK_is_kill111111")
-			global.print(_env, global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true), "LLK_is_kilss_cid11111")
 
 			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
 				global.SetFriendField(_env, nil, 1, "BackToCard", true)

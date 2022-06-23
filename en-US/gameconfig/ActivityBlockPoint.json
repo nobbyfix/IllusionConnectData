@@ -48847,7 +48847,7 @@
         "CombatNeed": 28000,
         "CombatValue": 30000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P01",
@@ -48856,28 +48856,22 @@
         "FirstKillReward": "SummerE01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_1",
                 "4": "Sum_Buff_Star4_2_1",
                 "5": "Sum_Buff_Star5_2_1",
@@ -48889,7 +48883,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S01_Name",
@@ -48905,7 +48899,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S01_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -48919,10 +48913,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -48976,7 +48970,7 @@
         "CombatNeed": 52400,
         "CombatValue": 60500,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P02",
@@ -48985,28 +48979,22 @@
         "FirstKillReward": "SummerE01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_2",
                 "4": "Sum_Buff_Star4_2_2",
                 "5": "Sum_Buff_Star5_2_2",
@@ -49018,7 +49006,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S02_Name",
@@ -49036,7 +49024,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S02_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49048,10 +49036,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49105,7 +49093,7 @@
         "CombatNeed": 71200,
         "CombatValue": 91000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P03",
@@ -49114,28 +49102,22 @@
         "FirstKillReward": "SummerE01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_3",
                 "4": "Sum_Buff_Star4_2_3",
                 "5": "Sum_Buff_Star5_2_3",
@@ -49147,7 +49129,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S03_Name",
@@ -49165,7 +49147,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S03_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49177,10 +49159,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49234,7 +49216,7 @@
         "CombatNeed": 100000,
         "CombatValue": 132500,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P04",
@@ -49243,28 +49225,22 @@
         "FirstKillReward": "SummerE01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_4",
                 "4": "Sum_Buff_Star4_2_4",
                 "5": "Sum_Buff_Star5_2_4",
@@ -49276,7 +49252,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S04_Name",
@@ -49294,7 +49270,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S04_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49306,10 +49282,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49363,7 +49339,7 @@
         "CombatNeed": 128800,
         "CombatValue": 173500,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P05",
@@ -49372,28 +49348,22 @@
         "FirstKillReward": "SummerE01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_5",
                 "4": "Sum_Buff_Star4_2_5",
                 "5": "Sum_Buff_Star5_2_5",
@@ -49405,7 +49375,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S05_Name",
@@ -49423,7 +49393,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S05_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -49437,10 +49407,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49494,7 +49464,7 @@
         "CombatNeed": 172000,
         "CombatValue": 215000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P06",
@@ -49503,28 +49473,22 @@
         "FirstKillReward": "SummerE01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_6",
                 "4": "Sum_Buff_Star4_2_6",
                 "5": "Sum_Buff_Star5_2_6",
@@ -49536,7 +49500,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S06_Name",
@@ -49554,7 +49518,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S06_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49566,10 +49530,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49623,7 +49587,7 @@
         "CombatNeed": 220000,
         "CombatValue": 265000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P07",
@@ -49632,28 +49596,22 @@
         "FirstKillReward": "SummerE01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_7",
                 "4": "Sum_Buff_Star4_2_7",
                 "5": "Sum_Buff_Star5_2_7",
@@ -49665,7 +49623,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S07_Name",
@@ -49683,7 +49641,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S07_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49695,10 +49653,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49752,7 +49710,7 @@
         "CombatNeed": 292000,
         "CombatValue": 320500,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P08",
@@ -49761,28 +49719,22 @@
         "FirstKillReward": "SummerE01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_8",
                 "4": "Sum_Buff_Star4_2_8",
                 "5": "Sum_Buff_Star5_2_8",
@@ -49794,7 +49746,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S08_Name",
@@ -49812,7 +49764,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S08_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -49824,10 +49776,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -49881,7 +49833,7 @@
         "CombatNeed": 310000,
         "CombatValue": 390000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P09",
@@ -49890,28 +49842,22 @@
         "FirstKillReward": "SummerE01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_9",
                 "4": "Sum_Buff_Star4_2_9",
                 "5": "Sum_Buff_Star5_2_9",
@@ -49927,7 +49873,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S09_Name",
@@ -49945,7 +49891,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S09_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -49959,10 +49905,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -50016,7 +49962,7 @@
         "CombatNeed": 350000,
         "CombatValue": 450000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P10",
@@ -50025,28 +49971,22 @@
         "FirstKillReward": "SummerE01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_10",
                 "4": "Sum_Buff_Star4_2_10",
                 "5": "Sum_Buff_Star5_2_10",
@@ -50058,7 +49998,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S10_Name",
@@ -50076,7 +50016,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S10_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -50088,10 +50028,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -50145,7 +50085,7 @@
         "CombatNeed": 400000,
         "CombatValue": 500000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P11",
@@ -50154,28 +50094,22 @@
         "FirstKillReward": "SummerE01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_11",
                 "4": "Sum_Buff_Star4_2_11",
                 "5": "Sum_Buff_Star5_2_11",
@@ -50187,7 +50121,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S11_Name",
@@ -50205,7 +50139,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S11_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -50219,10 +50153,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -50276,7 +50210,7 @@
         "CombatNeed": 550000,
         "CombatValue": 600000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumE01P12",
@@ -50285,28 +50219,22 @@
         "FirstKillReward": "SummerE01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_2_12",
                 "4": "Sum_Buff_Star4_2_12",
                 "5": "Sum_Buff_Star5_2_12",
@@ -50318,7 +50246,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerE01",
         "Master": "",
         "Name": "BlockPoint_SummerE01S12_Name",
@@ -50334,7 +50262,7 @@
         "PointPicture": "",
         "PointReward": "SummerE01S12_PointReward",
         "PointTime": {
-            "start": "2021-06-20 05:00:00"
+            "start": "2022-07-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -50346,10 +50274,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 12
+            "IR_SummerStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -50403,7 +50331,7 @@
         "CombatNeed": 7000,
         "CombatValue": 7700,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P01",
@@ -50412,28 +50340,22 @@
         "FirstKillReward": "SummerM01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_1",
                 "4": "Sum_Buff_Star4_1_1",
                 "5": "Sum_Buff_Star5_1_1",
@@ -50449,7 +50371,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S01_Name",
@@ -50477,10 +50399,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -50534,7 +50456,7 @@
         "CombatNeed": 9100,
         "CombatValue": 10430,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P02",
@@ -50543,28 +50465,22 @@
         "FirstKillReward": "SummerM01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_2",
                 "4": "Sum_Buff_Star4_1_2",
                 "5": "Sum_Buff_Star5_1_2",
@@ -50576,7 +50492,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S02_Name",
@@ -50604,10 +50520,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -50661,7 +50577,7 @@
         "CombatNeed": 11200,
         "CombatValue": 13160,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P03",
@@ -50670,28 +50586,22 @@
         "FirstKillReward": "SummerM01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_3",
                 "4": "Sum_Buff_Star4_1_3",
                 "5": "Sum_Buff_Star5_1_3",
@@ -50703,7 +50613,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S03_Name",
@@ -50733,10 +50643,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -50790,7 +50700,7 @@
         "CombatNeed": 13300,
         "CombatValue": 15890,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P04",
@@ -50799,28 +50709,22 @@
         "FirstKillReward": "SummerM01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_4",
                 "4": "Sum_Buff_Star4_1_4",
                 "5": "Sum_Buff_Star5_1_4",
@@ -50832,7 +50736,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S04_Name",
@@ -50860,10 +50764,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -50917,7 +50821,7 @@
         "CombatNeed": 15400,
         "CombatValue": 18620,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P05",
@@ -50926,28 +50830,22 @@
         "FirstKillReward": "SummerM01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_5",
                 "4": "Sum_Buff_Star4_1_5",
                 "5": "Sum_Buff_Star5_1_5",
@@ -50959,7 +50857,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S05_Name",
@@ -50987,10 +50885,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51044,7 +50942,7 @@
         "CombatNeed": 17500,
         "CombatValue": 21350,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P06",
@@ -51053,28 +50951,22 @@
         "FirstKillReward": "SummerM01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_6",
                 "4": "Sum_Buff_Star4_1_6",
                 "5": "Sum_Buff_Star5_1_6",
@@ -51086,7 +50978,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S06_Name",
@@ -51116,10 +51008,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51173,7 +51065,7 @@
         "CombatNeed": 19600,
         "CombatValue": 24080,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P07",
@@ -51182,28 +51074,22 @@
         "FirstKillReward": "SummerM01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_7",
                 "4": "Sum_Buff_Star4_1_7",
                 "5": "Sum_Buff_Star5_1_7",
@@ -51215,7 +51101,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S07_Name",
@@ -51243,10 +51129,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51300,7 +51186,7 @@
         "CombatNeed": 21700,
         "CombatValue": 26810,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P08",
@@ -51309,28 +51195,22 @@
         "FirstKillReward": "SummerM01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_8",
                 "4": "Sum_Buff_Star4_1_8",
                 "5": "Sum_Buff_Star5_1_8",
@@ -51342,7 +51222,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S08_Name",
@@ -51370,10 +51250,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51427,7 +51307,7 @@
         "CombatNeed": 23800,
         "CombatValue": 29540,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P09",
@@ -51436,28 +51316,22 @@
         "FirstKillReward": "SummerM01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_9",
                 "4": "Sum_Buff_Star4_1_9",
                 "5": "Sum_Buff_Star5_1_9",
@@ -51473,7 +51347,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S09_Name",
@@ -51503,10 +51377,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51560,7 +51434,7 @@
         "CombatNeed": 28000,
         "CombatValue": 35000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P10",
@@ -51569,28 +51443,22 @@
         "FirstKillReward": "SummerM01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_10",
                 "4": "Sum_Buff_Star4_1_10",
                 "5": "Sum_Buff_Star5_1_10",
@@ -51602,7 +51470,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S10_Name",
@@ -51630,10 +51498,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51687,7 +51555,7 @@
         "CombatNeed": 34000,
         "CombatValue": 40000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P11",
@@ -51696,28 +51564,22 @@
         "FirstKillReward": "SummerM01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_11",
                 "4": "Sum_Buff_Star4_1_11",
                 "5": "Sum_Buff_Star5_1_11",
@@ -51729,7 +51591,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S11_Name",
@@ -51759,10 +51621,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -51816,7 +51678,7 @@
         "CombatNeed": 55000,
         "CombatValue": 60000,
         "Combat_Adjust_Rate": "",
-        "ConfigLevelLimitID": "LevelLimit_Summer",
+        "ConfigLevelLimitID": "LevelLimit_Summer_Re",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardSumM01P12",
@@ -51825,28 +51687,22 @@
         "FirstKillReward": "SummerM01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "AJTa": "Hero_ABlock_AJTa_Extra_Summer",
-            "SRen": "Hero_ABlock_SRen_Extra_Summer"
+            "BDZSheng": "Hero_ABlock_BDZSheng_Extra_Summer",
+            "LLKe": "Hero_ABlock_LLKe_Extra_Summer"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "AJTa": {
-                "3": "Sum_Star3_AJTa",
-                "4": "Sum_Star4_AJTa",
-                "5": "Sum_Star5_AJTa",
-                "6": "Sum_Star6_AJTa"
-            },
-            "SRen": {
-                "3": "Sum_Star3_SRen",
-                "4": "Sum_Star4_SRen",
-                "5": "Sum_Star5_SRen",
-                "6": "Sum_Star6_SRen"
+            "BDZSheng": {
+                "3": "Sum_Star3_BDZSheng",
+                "4": "Sum_Star4_BDZSheng",
+                "5": "Sum_Star5_BDZSheng",
+                "6": "Sum_Star6_BDZSheng"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SRen": {
+            "LLKe": {
                 "3": "Sum_Buff_Star3_1_12",
                 "4": "Sum_Buff_Star4_1_12",
                 "5": "Sum_Buff_Star5_1_12",
@@ -51858,7 +51714,7 @@
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_SummerRe_ExchangeItem",
+        "MainShowItem": "IM_SummerRe_ExchangeItem_Re",
         "Map": "SummerM01",
         "Master": "",
         "Name": "BlockPoint_SummerM01S12_Name",
@@ -51884,10 +51740,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_SummerReStamina": 6
+            "IR_SummerStamina_Re": 6
         },
         "StarCondition": [
             {

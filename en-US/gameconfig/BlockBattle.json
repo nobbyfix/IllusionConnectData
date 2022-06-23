@@ -1953,7 +1953,7 @@
     },
     "Activity_WorldBoss1": {
         "BattleMode": 2,
-        "CombatAdjust": "Skill_CombatDominating",
+        "CombatAdjust": "",
         "EnemyEnergyBase": {
             "pattern": "COVER",
             "value": 0
@@ -1962,12 +1962,12 @@
         "EnemySpecialPassive": [],
         "EnemySpecialPassiveParm": "",
         "EnergyBase": {
-            "pattern": "COVER",
-            "value": 30
+            "pattern": "ADD",
+            "value": 15
         },
         "Fight_StageEnergyMax": [
             60,
-            30
+            45
         ],
         "FriendFBReduction": "",
         "FriendSpecialPassive": [],
@@ -1982,7 +1982,10 @@
             "a3": 250,
             "a4": 17
         },
-        "MasterRageBase": "",
+        "MasterRageBase": {
+            "pattern": "COVER",
+            "value": 1000
+        },
         "MasterRageRules": {
             "a1": [
                 10,

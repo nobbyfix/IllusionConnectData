@@ -22,6 +22,7 @@ local kPartyIcon = {
 	MNJH = "asset/heroRect/heroForm/sl_smzs.png",
 	DWH = "asset/heroRect/heroForm/sl_dongwenhui.png",
 	XD = "asset/heroRect/heroForm/sl_seed.png",
+	UNKNOWN = "asset/heroRect/heroForm/sl_unknown.png",
 	WNSXJ = "asset/heroRect/heroForm/sl_weinasi.png",
 	SSZS = "asset/heroRect/heroForm/sl_shimengzhishe.png"
 }

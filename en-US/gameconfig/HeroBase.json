@@ -3050,7 +3050,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.37,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_BDZSheng",
         "KeyPassiveSkill": "",
@@ -14605,7 +14605,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.04,
-        "AwakePic": "",
+        "AwakePic": "portrait_aen",
         "BaseAttack": 198.0,
         "BaseDefence": 60.0,
         "BaseHp": 842.0,
@@ -19679,11 +19679,11 @@
         "AtkWeaken": 0.0,
         "AttackFactor": 1.2,
         "AwakePic": "",
-        "BaseAttack": 150.0,
-        "BaseDefence": 45.0,
-        "BaseHp": 638.0,
-        "BaseQualityAttr": "SR_10_Cure",
-        "BaseStar": 2,
+        "BaseAttack": 200.0,
+        "BaseDefence": 60.0,
+        "BaseHp": 851.0,
+        "BaseQualityAttr": "SSR_10_Cure",
+        "BaseStar": 3,
         "BasicPower": 1600,
         "BattlePassiveSkill": "Hero_PBattle_PSKe",
         "BattlePassiveType": "PBuff",
@@ -19706,7 +19706,7 @@
         "EnterCD": 1.0,
         "Flags": [
             "PSKe",
-            "zhiliao"
+            "danti"
         ],
         "GainAnim": "",
         "HeadTouchDeviation": [
@@ -19720,21 +19720,37 @@
         "IfHidden": 0,
         "InnerAttr": [],
         "ItemId": "IHF_PSKe",
-        "KeyPassiveSkill": "",
+        "KeyPassiveSkill": "Hero_PBattle_PSKe_Key",
         "LevelUpFactor": 1.0,
         "MVPText": "MVPText_PSKe",
         "MasterRage": 144,
         "MaxLevel": 300,
-        "MaxQuality": "SR_50_Cure",
-        "MaxStar": 5,
-        "MaxStarEffect": "PSKe_5",
+        "MaxQuality": "SSR_50_Cure",
+        "MaxStar": 6,
+        "MaxStarEffect": "PSKe_6",
         "Name": "HeroBase_Name_PSKe",
         "NormalSkill": "Hero_Normal_PSKe",
         "Party": "BSNCT",
-        "PassiveCondition": "",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "QBTe"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
         "Position": "HeroBase_Position_PSKe",
         "ProudSkill": "Hero_Proud_PSKe",
-        "Rareity": 13,
+        "Rareity": 14,
         "Reflection": 0.0,
         "RelationList": [],
         "RoleModel": "Model_PSKe",

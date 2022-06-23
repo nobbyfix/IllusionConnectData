@@ -406,8 +406,15 @@ all.Skill_Enemy_WorldBoss_JSJJu_Unique = {
 			_env.units = global.SortBy(_env, global.EnemyUnits(_env, -global.MASTER), ">", global.unitCompare)
 
 			for _, unit in global.__iter__(_env.units) do
-				if #_env.units == 8 and i == 7 and #global.CardsInWindow(_env, global.GetOwner(_env, unit)) > 0 then
-					dam_list[i] = dam_list[i] * 1000
+				global.dump(_env, {
+					#_env.units,
+					i
+				}, "boss=======")
+
+				if #_env.units == 8 and i >= 7 and #global.CardsInWindow(_env, global.GetOwner(_env, unit)) > 0 then
+					global.print(_env, "进来了")
+
+					dam_list[i] = 100
 				end
 
 				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
@@ -702,6 +709,7 @@ all.Skill_Enemy_WorldBoss_JSLLing_Normal = {
 			local this = _env.this
 			local global = _env.global
 
+			global.print(_env, "普攻了。。。。。")
 			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
 				-1.2,
 				0
