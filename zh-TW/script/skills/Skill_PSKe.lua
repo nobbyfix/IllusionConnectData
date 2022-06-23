@@ -16,7 +16,7 @@ all.Skill_PSKe_Normal = {
 		if this.dmgFactor == nil then
 			this.dmgFactor = {
 				1,
-				1,
+				1.05,
 				0
 			}
 		end
@@ -81,7 +81,7 @@ all.Skill_PSKe_Proud = {
 		this.HealFactor = externs.HealFactor
 
 		if this.HealFactor == nil then
-			this.HealFactor = 1
+			this.HealFactor = 1.1
 		end
 
 		local main = __action(this, {
@@ -188,7 +188,19 @@ all.Skill_PSKe_Unique = {
 		this.HealFactor = externs.HealFactor
 
 		if this.HealFactor == nil then
-			this.HealFactor = 0.2
+			this.HealFactor = 0.25
+		end
+
+		this.UnCritRateFactor = externs.UnCritRateFactor
+
+		if this.UnCritRateFactor == nil then
+			this.UnCritRateFactor = 0.08
+		end
+
+		this.Energy = externs.Energy
+
+		if this.Energy == nil then
+			this.Energy = 1
 		end
 
 		local main = __action(this, {
@@ -201,6 +213,16 @@ all.Skill_PSKe_Unique = {
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_PSKe"
 		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
@@ -259,6 +281,51 @@ all.Skill_PSKe_Unique = {
 				buffeft2
 			}, 1, 0)
 
+			local buffeft_uncritrate1 = global.NumericEffect(_env, "+uncritrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnCritRateFactor)
+			local units = global.FriendUnits(_env, global.NEIGHBORS_OF(_env, _env.ACTOR))
+
+			for _, unit in global.__iter__(units) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 1,
+					display = "UnCritRateUp",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"BUFF",
+						"DISPELLABLE",
+						"STEALABLE",
+						"PSKe_UnCritRate"
+					}
+				}, {
+					buffeft_uncritrate1
+				}, 1)
+			end
+
+			local buffeft_uncritrate2 = global.NumericEffect(_env, "+uncritrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnCritRateFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 1,
+				display = "UnCritRateUp",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"BUFF",
+					"DISPELLABLE",
+					"STEALABLE",
+					"PSKe_UnCritRate"
+				}
+			}, {
+				buffeft_uncritrate2
+			}, 1)
+
 			local buff = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Hprecovery", {
 				HealFactor = this.HealFactor
 			})
@@ -275,6 +342,26 @@ all.Skill_PSKe_Unique = {
 			}, {
 				buff
 			})
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "PSKe_First_Unique")) > 0 then
+				local buffeft3 = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Energyrecovery", {
+					Energy = this.Energy
+				})
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"BUFF",
+						"Skill_PSKe_Energyrecovery",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft3
+				})
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "PSKe_First_Unique"), 1)
+			end
 
 			local buff_anim = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Anim")
 
@@ -301,6 +388,36 @@ all.Skill_PSKe_Unique = {
 		end)
 
 		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff = global.NumericEffect(_env, "+defrate", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"PSKe_First_Unique"
+				}
+			}, {
+				buff
+			})
+		end)
+
+		return _env
 	end
 }
 all.Skill_PSKe_Passive = {
@@ -316,6 +433,12 @@ all.Skill_PSKe_Passive = {
 			this.EnergyRecoveryFactor = 0.1
 		end
 
+		this.Energy = externs.Energy
+
+		if this.Energy == nil then
+			this.Energy = 1
+		end
+
 		local passive1 = __action(this, {
 			name = "passive1",
 			entry = prototype.passive1
@@ -326,6 +449,19 @@ all.Skill_PSKe_Passive = {
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_ACTION"
+		}, passive2)
 
 		return this
 	end,
@@ -360,6 +496,30 @@ all.Skill_PSKe_Passive = {
 			}, {
 				buffeft
 			})
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) and (global.MARKED(_env, "HEALER")(_env, _env.unit) or global.MARKED(_env, "WARRIOR")(_env, _env.unit)) then
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
+			end
 		end)
 
 		return _env
@@ -430,6 +590,63 @@ all.Skill_PSKe_Hprecovery = {
 			local Heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, _env.ACTOR, this.HealFactor, 0)
 
 			global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, _env.ACTOR, Heal)
+		end)
+
+		return _env
+	end
+}
+all.Skill_PSKe_Energyrecovery = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.Energy = externs.Energy
+
+		assert(this.Energy ~= nil, "External variable `Energy` is not provided.")
+
+		this.i = 0
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[schedule_in_cycles]"](this, {
+			2000
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local EnergyMax = global.GetActualCost(_env, _env.ACTOR)
+
+			if EnergyMax == 0 then
+				EnergyMax = 12
+			end
+
+			global.print(_env, "card能量上限1===", EnergyMax)
+
+			if this.i < EnergyMax then
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
+
+				this.i = this.i + 1
+
+				global.print(_env, "计数i========", this.i)
+			end
 		end)
 
 		return _env
@@ -512,6 +729,10 @@ all.Skill_PSKe_Anim = {
 
 			if global.BuffIsMatched(_env, _env.buff, "IMMUNE") and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "IMMUNE")) == 0 then
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_PSKe_Hprecovery"), 99)
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Skill_PSKe_Energyrecovery"), 99)
+
+				local units = global.FriendUnits(_env, global.NEIGHBORS_OF(_env, _env.ACTOR))
+
 				global.SwitchActionTo(_env, "stand", "stand", _env.ACTOR)
 				global.Perform(_env, _env.ACTOR, global.Animation(_env, "skill3_1"))
 			end
@@ -530,7 +751,13 @@ all.Skill_PSKe_Proud_EX = {
 		this.HealFactor = externs.HealFactor
 
 		if this.HealFactor == nil then
-			this.HealFactor = 1.5
+			this.HealFactor = 1.6
+		end
+
+		this.Energy = externs.Energy
+
+		if this.Energy == nil then
+			this.Energy = 1
 		end
 
 		local main = __action(this, {
@@ -616,6 +843,7 @@ all.Skill_PSKe_Proud_EX = {
 			}, {
 				buffeft2
 			})
+			global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
 		end)
 
 		return _env
@@ -637,7 +865,25 @@ all.Skill_PSKe_Unique_EX = {
 		this.HealFactor = externs.HealFactor
 
 		if this.HealFactor == nil then
-			this.HealFactor = 0.3
+			this.HealFactor = 0.35
+		end
+
+		this.UnCritRateFactor = externs.UnCritRateFactor
+
+		if this.UnCritRateFactor == nil then
+			this.UnCritRateFactor = 0.08
+		end
+
+		this.Energy = externs.Energy
+
+		if this.Energy == nil then
+			this.Energy = 1
+		end
+
+		this.RPFactor = externs.RPFactor
+
+		if this.RPFactor == nil then
+			this.RPFactor = 300
 		end
 
 		local main = __action(this, {
@@ -650,6 +896,16 @@ all.Skill_PSKe_Unique_EX = {
 		this.main = global["[cut_in]"](this, {
 			"1#Hero_Unique_PSKe"
 		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
 
 		return this
 	end,
@@ -672,7 +928,6 @@ all.Skill_PSKe_Unique_EX = {
 
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
 			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
-			global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "IMMUNE"), 99)
 		end)
 		exec["@time"]({
 			100
@@ -709,6 +964,51 @@ all.Skill_PSKe_Unique_EX = {
 				buffeft2
 			}, 1, 0)
 
+			local buffeft_uncritrate1 = global.NumericEffect(_env, "+uncritrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnCritRateFactor)
+			local units = global.FriendUnits(_env, global.NEIGHBORS_OF(_env, _env.ACTOR))
+
+			for _, unit in global.__iter__(units) do
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 1,
+					display = "UnCritRateUp",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"BUFF",
+						"DISPELLABLE",
+						"STEALABLE",
+						"PSKe_UnCritRate"
+					}
+				}, {
+					buffeft_uncritrate1
+				}, 1)
+			end
+
+			local buffeft_uncritrate2 = global.NumericEffect(_env, "+uncritrate", {
+				"+Normal",
+				"+Normal"
+			}, this.UnCritRateFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 1,
+				display = "UnCritRateUp",
+				duration = 2,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"BUFF",
+					"DISPELLABLE",
+					"STEALABLE",
+					"PSKe_UnCritRate"
+				}
+			}, {
+				buffeft_uncritrate2
+			}, 1)
+
 			local buff = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Hprecovery", {
 				HealFactor = this.HealFactor
 			})
@@ -726,6 +1026,26 @@ all.Skill_PSKe_Unique_EX = {
 				buff
 			})
 
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "PSKe_First_Unique")) > 0 then
+				local buffeft3 = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Energyrecovery", {
+					Energy = this.Energy
+				})
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"BUFF",
+						"Skill_PSKe_Energyrecovery",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft3
+				})
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "PSKe_First_Unique"), 1)
+			end
+
 			local buff_anim = global.PassiveFunEffectBuff(_env, "Skill_PSKe_Anim")
 
 			global.ApplyBuff(_env, _env.ACTOR, {
@@ -740,6 +1060,23 @@ all.Skill_PSKe_Unique_EX = {
 			}, {
 				buff_anim
 			})
+
+			local buff_RPRecovery = global.PassiveFunEffectBuff(_env, "Skill_PSKe_RPRecovery", {
+				RPFactor = this.RPFactor
+			})
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"Skill_PSKe_RPRecovery"
+				}
+			}, {
+				buff_RPRecovery
+			})
 		end)
 		exec["@time"]({
 			1950
@@ -748,6 +1085,85 @@ all.Skill_PSKe_Unique_EX = {
 			local global = _env.global
 
 			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff = global.NumericEffect(_env, "+defrate", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"PSKe_First_Unique"
+				}
+			}, {
+				buff
+			})
+		end)
+
+		return _env
+	end
+}
+all.Skill_PSKe_RPRecovery = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.RPFactor = externs.RPFactor
+
+		assert(this.RPFactor ~= nil, "External variable `RPFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:BUFF_CANCELED"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.BuffIsMatched(_env, _env.buff, "IMMUNE") and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "IMMUNE")) == 0 then
+				global.ApplyRPRecovery(_env, _env.ACTOR, this.RPFactor)
+			end
 		end)
 
 		return _env
@@ -763,7 +1179,13 @@ all.Skill_PSKe_Passive_EX = {
 		this.EnergyRecoveryFactor = externs.EnergyRecoveryFactor
 
 		if this.EnergyRecoveryFactor == nil then
-			this.EnergyRecoveryFactor = 0.15
+			this.EnergyRecoveryFactor = 0.2
+		end
+
+		this.Energy = externs.Energy
+
+		if this.Energy == nil then
+			this.Energy = 1
 		end
 
 		local passive1 = __action(this, {
@@ -776,6 +1198,19 @@ all.Skill_PSKe_Passive_EX = {
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_UNIQUE"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_AFTER_ACTION"
+		}, passive2)
 
 		return this
 	end,
@@ -810,6 +1245,185 @@ all.Skill_PSKe_Passive_EX = {
 			}, {
 				buffeft
 			})
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.PETS(_env, _env.unit) and (global.MARKED(_env, "HEALER")(_env, _env.unit) or global.MARKED(_env, "WARRIOR")(_env, _env.unit)) then
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.ACTOR), this.Energy)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_PSKe_Passive_Key = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.hurtFactor = externs.hurtFactor
+
+		if this.hurtFactor == nil then
+			this.hurtFactor = 0.3
+		end
+
+		this.AoeDeRateFactor = externs.AoeDeRateFactor
+
+		if this.AoeDeRateFactor == nil then
+			this.AoeDeRateFactor = 0.3
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) then
+				local Window1 = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "QBTe"))
+				local Window2 = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "PSKe"))
+
+				if Window1[1] ~= nil then
+					for _, unit in global.__iter__(Window1) do
+						local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.hurtFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), unit, {
+							timing = 0,
+							display = "HurtRateUp",
+							group = "Skill_PSKe_Passive_Key_2",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"Skill_PSKe_Passive_Key"
+							}
+						}, {
+							buffeft1
+						})
+					end
+				end
+
+				if Window2[1] ~= nil then
+					for _, unit3 in global.__iter__(Window2) do
+						local buffeft3 = global.NumericEffect(_env, "+aoederate", {
+							"+Normal",
+							"+Normal"
+						}, this.AoeDeRateFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), unit3, {
+							timing = 0,
+							display = "AoeUnHurtRateUp",
+							group = "Skill_PSKe_Passive_Key_1",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"CARDBUFF",
+								"Skill_PSKe_Passive_Key"
+							}
+						}, {
+							buffeft3
+						})
+					end
+				end
+			end
+
+			if global.FriendMaster(_env) then
+				-- Nothing
+			elseif global.MARKED(_env, "PSKe")(_env, _env.ACTOR) then
+				local Hero1 = global.FriendUnits(_env, global.MARKED(_env, "QBTe"))
+				local Hero2 = global.FriendUnits(_env, global.MARKED(_env, "PSKe"))
+
+				if Hero1[1] ~= nil then
+					for _, unit2 in global.__iter__(Hero1) do
+						local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
+							"+Normal",
+							"+Normal"
+						}, this.hurtFactor)
+
+						global.ApplyBuff_Buff(_env, _env.ACTOR, unit2, {
+							timing = 2,
+							display = "HurtRateUp",
+							group = "Skill_PSKe_Passive_Key_2",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"Skill_PSKe_Passive_Key"
+							}
+						}, {
+							buffeft2
+						}, 1)
+					end
+				end
+
+				if Hero2[1] ~= nil then
+					for _, unit4 in global.__iter__(Hero2) do
+						local buffeft4 = global.NumericEffect(_env, "+aoederate", {
+							"+Normal",
+							"+Normal"
+						}, this.AoeDeRateFactor)
+
+						global.ApplyBuff_Buff(_env, _env.ACTOR, unit4, {
+							timing = 2,
+							display = "AoeUnHurtRateUp",
+							group = "Skill_PSKe_Passive_Key_1",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"NUMERIC",
+								"BUFF",
+								"Skill_PSKe_Passive_Key"
+							}
+						}, {
+							buffeft4
+						}, 1)
+					end
+				end
+			end
 		end)
 
 		return _env

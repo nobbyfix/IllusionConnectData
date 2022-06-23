@@ -58,7 +58,8 @@ local timeLimitShopConfig = {
 	},
 	summerre = {
 		BG = "jqtd_txt_qlyxzl_di",
-		TimeOutLineColor = cc.c4b(9, 70, 173, 255)
+		TimeOutLineColor = cc.c4b(9, 70, 173, 255),
+		CellNameColor = cc.c4b(82, 168, 247, 128)
 	},
 	fireworks = {
 		TimeOutLineColor = cc.c4b(67, 1, 187, 255),

@@ -14,6 +14,10 @@ local kBtnHandlers = {
 	["main.rightPanel.challenge_btn"] = {
 		ignoreClickAudio = true,
 		func = "onClickChallenge"
+	},
+	["main.rightPanel.btn_quick"] = {
+		ignoreClickAudio = true,
+		func = "onClickQuickChallenge"
 	}
 }
 local kHeroRarityBgAnim = {
@@ -68,6 +72,7 @@ function MazeTowerChallengeMediator:glueFieldAndUi()
 	end
 
 	local touchView = self._main:getChildByName("touchPanel")
+	self._touchView = touchView
 
 	mapButtonHandlerClick(nil, touchView, {
 		clickAudio = "Se_Click_Close_2",
@@ -87,6 +92,9 @@ function MazeTowerChallengeMediator:glueFieldAndUi()
 	self._enemyClone = self:getView():getChildByName("enemyClone")
 
 	self._enemyClone:setVisible(false)
+
+	self._quickChallengeBtn = self._rightPanel:getChildByName("btn_quick")
+	self._remainTimes = self._rightPanel:getChildByName("Text_remainTimes")
 
 	local function callFunc(sender, eventType)
 		self:onClickTeam()
@@ -117,11 +125,25 @@ function MazeTowerChallengeMediator:initAnim()
 		btnAnim:runAction(cc.FadeIn:create(0.5))
 
 		self._challengeAnim = btnAnim
-		local act = cc.Sequence:create(cc.DelayTime:create(0.4375), cc.FadeIn:create(0.3125))
+		local act = cc.Sequence:create(cc.DelayTime:create(0.4), cc.FadeIn:create(0.3))
 
 		self._challengeBtn:runAction(act:clone())
 		self._challengeBtn:changeParent(self._challengeAnim)
 		self._challengeBtn:center(self._challengeAnim:getContentSize())
+		self._remainTimes:runAction(cc.FadeIn:create(0.5))
+
+		if self._quickChallengeBtn:isVisible() then
+			local pos = self._quickChallengeBtn:getParent():convertToWorldSpace(cc.p(self._quickChallengeBtn:getPosition()))
+
+			self._quickChallengeBtn:runAction(cc.FadeIn:create(0.5))
+			self._quickChallengeBtn:changeParent(mc)
+
+			local realPos = self._quickChallengeBtn:getParent():convertToNodeSpace(pos)
+
+			self._quickChallengeBtn:setPosition(realPos)
+			self._challengeAnim:offset(35, -40)
+			self._remainTimes:offset(0, -22)
+		end
 	end)
 
 	local starMc = mc:getChildByName("stardi")
@@ -140,6 +162,12 @@ function MazeTowerChallengeMediator:initAnim()
 
 	self._rolePanel:changeParent(heroRole)
 	self._challengeBtn:setOpacity(0)
+	self._remainTimes:setOpacity(0)
+
+	if self._quickChallengeBtn:isVisible() then
+		self._quickChallengeBtn:setOpacity(0)
+	end
+
 	mc:gotoAndPlay(1)
 
 	local originX, originY = self._enemyPanel:getPosition()
@@ -171,12 +199,31 @@ function MazeTowerChallengeMediator:setupView()
 	self:refreshTimes()
 	self:changeTeamSuc()
 	self:refreshEnemyHero()
+	self:setQuickChallengeButton()
+end
+
+function MazeTowerChallengeMediator:setQuickChallengeButton()
+	local isQuickEnable = self._mazeTowerSystem:isShowQuickChallenge(self._pointId)
+	local isCombatEnable = self._mazeTowerSystem:isCanQuickChallenge(self._pointId)
+	local lockImg = self._quickChallengeBtn:getChildByName("Image_lock")
+
+	self._quickChallengeBtn:setVisible(false)
+
+	if isQuickEnable then
+		self._quickChallengeBtn:setVisible(true)
+	end
+
+	if isCombatEnable then
+		lockImg:setVisible(false)
+		self._quickChallengeBtn:setGray(false)
+	else
+		lockImg:setVisible(true)
+		self._quickChallengeBtn:setGray(true)
+	end
 end
 
 function MazeTowerChallengeMediator:refreshTimes()
-	local remainTimes = self._rightPanel:getChildByName("Text_remainTimes")
-
-	remainTimes:setString(Strings:get("Maze_Num_Surplus", {
+	self._remainTimes:setString(Strings:get("Maze_Num_Surplus", {
 		num = self._mazeTower:getFightTime()
 	}))
 end
@@ -224,96 +271,96 @@ end
 function MazeTowerChallengeMediator:refreshEnemyHero()
 	self:getEnemyHeros()
 
-	for i, v in pairs(self._enemyTeamPets) do
-		local node = self._enemyClone:clone()
+	local line = 3
 
-		node:setVisible(true)
+	for i = 1, line do
+		for j = 1, 4 do
+			local index = j + (i - 1) * 4
+			local enemyId = self._enemyTeamPets[index]
 
-		local config = ConfigReader:getRecordById("EnemyHero", self._enemyTeamPets[i])
-		local heroImg = IconFactory:createRoleIconSpriteNew({
-			id = config.RoleModel
-		})
+			if enemyId then
+				local node = self._enemyClone:clone()
 
-		heroImg:setScale(0.68)
+				node:setVisible(true)
 
-		local heroPanel = node:getChildByName("hero")
+				local config = ConfigReader:getRecordById("EnemyHero", enemyId)
+				local heroImg = IconFactory:createRoleIconSpriteNew({
+					id = config.RoleModel
+				})
 
-		heroPanel:removeAllChildren()
-		heroImg:addTo(heroPanel):center(heroPanel:getContentSize())
+				heroImg:setScale(0.68)
 
-		local rarity = config.Rarity
-		local bg1 = node:getChildByName("bg1")
-		local bg2 = node:getChildByName("bg2")
+				local heroPanel = node:getChildByName("hero")
 
-		bg1:loadTexture(GameStyle:getHeroRarityBg(rarity)[1])
-		bg2:loadTexture(GameStyle:getHeroRarityBg(rarity)[2])
-		bg1:removeAllChildren()
-		bg2:removeAllChildren()
+				heroPanel:removeAllChildren()
+				heroImg:addTo(heroPanel):center(heroPanel:getContentSize())
 
-		if kHeroRarityBgAnim[rarity] then
-			local anim = cc.MovieClip:create(kHeroRarityBgAnim[rarity])
+				local rarity = config.Rarity
+				local bg1 = node:getChildByName("bg1")
+				local bg2 = node:getChildByName("bg2")
 
-			anim:addTo(bg1):center(bg1:getContentSize())
-			anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+				bg1:loadTexture(GameStyle:getHeroRarityBg(rarity)[1])
+				bg2:loadTexture(GameStyle:getHeroRarityBg(rarity)[2])
+				bg1:removeAllChildren()
+				bg2:removeAllChildren()
 
-			if rarity == 15 then
-				anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+				if kHeroRarityBgAnim[rarity] then
+					local anim = cc.MovieClip:create(kHeroRarityBgAnim[rarity])
+
+					anim:addTo(bg1):center(bg1:getContentSize())
+					anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 1, bg1:getContentSize().height / 2 - 30))
+
+					if rarity == 15 then
+						anim:setPosition(cc.p(bg1:getContentSize().width / 2 - 3, bg1:getContentSize().height / 2))
+					end
+
+					if rarity >= 14 then
+						local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
+
+						anim:addTo(bg2):center(bg2:getContentSize()):offset(5, -20)
+					end
+				else
+					local sprite = ccui.ImageView:create(GameStyle:getHeroRarityBg(rarity)[1])
+
+					sprite:addTo(bg1):center(bg1:getContentSize())
+				end
+
+				local rarityNode = node:getChildByFullName("rarityBg.rarity")
+
+				rarityNode:removeAllChildren()
+
+				local rarityAnim = IconFactory:getHeroRarityAnim(rarity)
+
+				rarityAnim:addTo(rarityNode):posite(25, 15)
+
+				local cost = node:getChildByFullName("costBg.cost")
+
+				cost:setString(config.EnergyCost)
+
+				local occupationName, occupationImg = GameStyle:getHeroOccupation(config.Type)
+				local occupation = node:getChildByName("occupation")
+
+				occupation:loadTexture(occupationImg)
+
+				local levelImage = node:getChildByName("levelImage")
+
+				levelImage:setVisible(false)
+
+				local level = node:getChildByName("level")
+
+				level:setVisible(false)
+				level:setString(Strings:get("Strenghten_Text78", {
+					level = config.Level
+				}))
+
+				local levelImageWidth = levelImage:getContentSize().width
+				local levelWidth = level:getContentSize().width
+
+				levelImage:setScaleX((levelWidth + 20) / levelImageWidth)
+				node:setScale(0.45)
+				node:addTo(self._enemyPanel):posite(50 + (j - 1) * 91.5, 233 - (i - 1) * 94)
 			end
-
-			if rarity >= 14 then
-				local anim = cc.MovieClip:create("ssrlizichai_yingxiongxuanze")
-
-				anim:addTo(bg2):center(bg2:getContentSize()):offset(5, -20)
-			end
-		else
-			local sprite = ccui.ImageView:create(GameStyle:getHeroRarityBg(rarity)[1])
-
-			sprite:addTo(bg1):center(bg1:getContentSize())
 		end
-
-		local rarityNode = node:getChildByFullName("rarityBg.rarity")
-
-		rarityNode:removeAllChildren()
-
-		local rarityAnim = IconFactory:getHeroRarityAnim(rarity)
-
-		rarityAnim:addTo(rarityNode):posite(25, 15)
-
-		local cost = node:getChildByFullName("costBg.cost")
-
-		cost:setString(config.EnergyCost)
-
-		local occupationName, occupationImg = GameStyle:getHeroOccupation(config.Type)
-		local occupation = node:getChildByName("occupation")
-
-		occupation:loadTexture(occupationImg)
-
-		local levelImage = node:getChildByName("levelImage")
-
-		levelImage:setVisible(false)
-
-		local level = node:getChildByName("level")
-
-		level:setVisible(false)
-		level:setString(Strings:get("Strenghten_Text78", {
-			level = config.Level
-		}))
-
-		local levelImageWidth = levelImage:getContentSize().width
-		local levelWidth = level:getContentSize().width
-
-		levelImage:setScaleX((levelWidth + 20) / levelImageWidth)
-		node:setScale(0.43)
-
-		local line = 1
-		local index = i
-
-		if i > 5 then
-			index = i - 5
-			line = 2
-		end
-
-		node:addTo(self._enemyPanel):posite(47 + (index - 1) * 91, 140 - (line - 1) * 95)
 	end
 end
 
@@ -357,6 +404,56 @@ function MazeTowerChallengeMediator:onClickChallenge()
 	end)
 end
 
+function MazeTowerChallengeMediator:onClickQuickChallenge()
+	if not self._challengeAnim then
+		return
+	end
+
+	local isCombatEnable = self._mazeTowerSystem:isCanQuickChallenge(self._pointId)
+
+	if not isCombatEnable then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Error_11199")
+		}))
+
+		return
+	end
+
+	if self._enterBattle then
+		return
+	end
+
+	local anim = cc.MovieClip:create("dajia_zhujuedajia")
+
+	anim:addTo(self:getView()):center(self:getView():getContentSize())
+	self._touchView:setTouchEnabled(false)
+
+	local delay = cc.DelayTime:create(1)
+	local sequence = cc.Sequence:create(delay, cc.CallFunc:create(function ()
+		local params = {
+			x = self._gridData:getX(),
+			y = self._gridData:getY()
+		}
+
+		self._mazeTowerSystem:requestQuickChallenge(params, function (response)
+			if response.resCode == GS_SUCCESS then
+				local view = self:getInjector():getInstance("MazeTowerFinishView")
+
+				self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, nil, {
+					battleType = 2
+				}))
+				self:close()
+			else
+				anim:stop()
+				anim:removeFromParent()
+				self._touchView:setTouchEnabled(true)
+			end
+		end, true)
+	end))
+
+	self:getView():runAction(sequence)
+end
+
 function MazeTowerChallengeMediator:onClickTeam()
 	local function battleCallback()
 		self:onClickChallenge()
@@ -374,6 +471,7 @@ end
 
 function MazeTowerChallengeMediator:changeTeamSuc()
 	self:refreshTeamView()
+	self:setQuickChallengeButton()
 end
 
 function MazeTowerChallengeMediator:onTouchMaskLayer()

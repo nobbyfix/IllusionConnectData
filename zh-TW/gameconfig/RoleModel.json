@@ -19594,8 +19594,8 @@
         "Bust1": "Bust1_LSLTe",
         "Bust10": "Bust10_LSLTe",
         "Bust11": "Bust11_LSLTe",
-        "Bust12": "Bust12_LSLTe",
-        "Bust13": "Bust13_LSLTe",
+        "Bust12": "Bust13_LSLTe",
+        "Bust13": "Bust12_LSLTe",
         "Bust14": "Bust14_LSLTe",
         "Bust15": "Bust15_LSLTe",
         "Bust16": "",
@@ -19611,7 +19611,10 @@
             -176,
             -318
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            10,
+            -300
+        ],
         "BustTemp1": [
             -145,
             -448

@@ -310,7 +310,7 @@ function all.SUMMON_damage(_env, unit)
 	if unit and global.IsAlive(_env, unit) and global.SUMMONS(_env, unit) then
 		global.print(_env, "发现召唤物")
 
-		Increase_injury = 10
+		Increase_injury = 20
 	end
 
 	return Increase_injury

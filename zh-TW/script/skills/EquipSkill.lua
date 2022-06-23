@@ -4957,7 +4957,7 @@ all.EquipSkill_Weapon_15127_3 = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"UNIT_ENTER"
+			"SELF:ENTER"
 		}, passive)
 
 		return this
@@ -4969,7 +4969,64 @@ all.EquipSkill_Weapon_15127_3 = {
 		_env.ACTOR = externs.ACTOR
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.PassiveFunEffectBuff(_env, "EquipSkill_Weapon_15127_field", {
+				HurtRateFactor = this.HurtRateFactor,
+				master = _env.ACTOR
+			})
 
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"EquipSkill_Weapon_15127_field",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			})
+		end)
+
+		return _env
+	end
+}
+all.EquipSkill_Weapon_15127_field = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		assert(this.HurtRateFactor ~= nil, "External variable `HurtRateFactor` is not provided.")
+
+		this.master = externs.master
+
+		assert(this.master ~= nil, "External variable `master` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
 		_env.unit = externs.unit
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
@@ -4979,7 +5036,7 @@ all.EquipSkill_Weapon_15127_3 = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.SUMMONS(_env, _env.unit) and global.GetSummoner(_env, _env.unit) == _env.ACTOR then
+			if global.SUMMONS(_env, _env.unit) and global.GetSummoner(_env, _env.unit) == this.master then
 				local buffeft1 = global.PassiveFunEffectBuff(_env, "EquipSkill_Weapon_15127_3_Passive")
 
 				global.ApplyBuff(_env, _env.unit, {

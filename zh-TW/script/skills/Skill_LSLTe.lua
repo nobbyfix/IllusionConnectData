@@ -1224,5 +1224,220 @@ all.Skill_LSLTe_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_LSLTe_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.ExSkillRateFactor = externs.ExSkillRateFactor
+
+		if this.ExSkillRateFactor == nil then
+			this.ExSkillRateFactor = 0.1
+		end
+
+		this.DamageFactor = externs.DamageFactor
+
+		if this.DamageFactor == nil then
+			this.DamageFactor = 1.5
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			400
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_GET_AIEN_CIRCLE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			400
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local delaytime = 350
+
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+				if global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive")) == 1 then
+					local buff = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "LSLTe_Circle_1",
+						tags = {
+							"LSLTe_Passive_1"
+						}
+					}, {
+						buff
+					})
+				elseif global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive")) == 2 then
+					local buff = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "LSLTe_Circle_2",
+						tags = {
+							"LSLTe_Passive_2"
+						}
+					}, {
+						buff
+					})
+				elseif global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive")) == 3 then
+					local buff = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, _env.unit, {
+						timing = 0,
+						duration = 99,
+						display = "LSLTe_Circle_3",
+						tags = {
+							"LSLTe_Passive_3"
+						}
+					}, {
+						buff
+					})
+					global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive"), 99)
+
+					local buffeft1 = global.NumericEffect(_env, "+exskillrate", {
+						"+Normal",
+						"+Normal"
+					}, this.ExSkillRateFactor)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+						timing = 0,
+						display = "SkillRateUp",
+						group = "Skill_AEn_Passive_2",
+						duration = 99,
+						limit = 5,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+					global.DelayCall(_env, delaytime, global.ApplyRealDamage, _env.ACTOR, _env.unit, 1, 1, this.DamageFactor)
+					global.DelayCall(_env, delaytime, global.DispelBuff, _env.unit, global.BUFF_MARKED(_env, "LSLTe_Passive_1"), 99)
+					global.DelayCall(_env, delaytime, global.DispelBuff, _env.unit, global.BUFF_MARKED(_env, "LSLTe_Passive_2"), 99)
+					global.DelayCall(_env, delaytime, global.DispelBuff, _env.unit, global.BUFF_MARKED(_env, "LSLTe_Passive_3"), 99)
+					global.DelayCall(_env, delaytime, global.AnimForTrgt, _env.unit, {
+						loop = 1,
+						anim = "baozha_weienbaodian",
+						zOrder = "TopLayer",
+						pos = {
+							0.5,
+							0.5
+						}
+					})
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Count_LSLTe_Passive"), 99)
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "LSLTe_Passive_1"), 99)
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "LSLTe_Passive_2"), 99)
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "LSLTe_Passive_3"), 99)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			30
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local unit_min = global.Slice(_env, global.SortBy(_env, global.EnemyUnits(_env, global.PETS - global.MARKED(_env, "SummonedNian")), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+
+			if unit_min[1] then
+				global.AnimForTrgt(_env, unit_min[1], {
+					loop = 1,
+					anim = "baodian_shoujibaodian",
+					zOrder = "TopLayer",
+					pos = {
+						0.5,
+						0.5
+					}
+				})
+				global.ApplyHPDamage(_env, unit_min[1], 0)
+				global.Aien_Circle(_env, unit_min[1])
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

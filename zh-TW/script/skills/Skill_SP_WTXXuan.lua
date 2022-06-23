@@ -298,7 +298,8 @@ all.Skill_SP_WTXXuan_Unique = {
 
 					if card then
 						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-							HealRateFactor = 0
+							HealRateFactor = 0,
+							master = _env.ACTOR
 						})
 
 						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -466,7 +467,8 @@ all.Skill_SP_WTXXuan_Passive = {
 
 					if card then
 						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-							HealRateFactor = 0
+							HealRateFactor = 0,
+							master = _env.ACTOR
 						})
 
 						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -605,6 +607,10 @@ all.SummonedCBJun_Passive = {
 
 		assert(this.HealRateFactor ~= nil, "External variable `HealRateFactor` is not provided.")
 
+		this.master = externs.master
+
+		assert(this.master ~= nil, "External variable `master` is not provided.")
+
 		local passive1 = __action(this, {
 			name = "passive1",
 			entry = prototype.passive1
@@ -682,6 +688,7 @@ all.SummonedCBJun_Passive = {
 			})
 			global.MarkSummoned(_env, _env.ACTOR, true)
 			global.AddStatus(_env, _env.ACTOR, "SP_WTXXuan_CBJun")
+			global.SetSummoner(_env, _env.ACTOR, this.master)
 
 			if this.HealRateFactor and this.HealRateFactor ~= 0 then
 				local heal = global.EvalRecovery_FlagCheck(_env, _env.ACTOR, global.FriendMaster(_env), this.HealRateFactor, 0)
@@ -972,7 +979,8 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 
 					if card then
 						local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-							HealRateFactor = 2.5
+							HealRateFactor = 2.5,
+							master = _env.ACTOR
 						})
 
 						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -1182,7 +1190,8 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 							})
 
 							local buff = global.PassiveFunEffectBuff(_env, "SummonedCBJun_Passive", {
-								HealRateFactor = this.HealRateFactor
+								HealRateFactor = this.HealRateFactor,
+								master = _env.ACTOR
 							})
 
 							global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {

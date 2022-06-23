@@ -894,7 +894,7 @@ PowerConfigMap = {
 		next = "Act_SummerRe_Power_RecNext",
 		func = "getPowerByCurrencyId",
 		configId = "AcitvitySummerStamina_Reset_Re",
-		tips = "ACTIVITY_Female_NOT_ENOUGH_1",
+		tips = "ACTIVITY_ENERGY_NOT_ENOUGH2_Summer",
 		tableName = "Reset"
 	},
 	[CurrencyIdKind.kActivityReZeroRePower] = {

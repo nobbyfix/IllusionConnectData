@@ -701,6 +701,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_Summer": {
+        "BGM": "Mus_Story_Summer",
+        "BGPContraction": "anualshop_scene_main_summer_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Summer_Desc",
+            "img": "Activity_ExchangeBG_Summer",
+            "name": "HomeBackground_Summer_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Summer_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Summer_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Summer",
+        "Unlook": 1
+    },
     "HomeBackground_Terror": {
         "BGM": "Mus_Story_Terror",
         "BGPContraction": "anualshop_scene_main_terror_preview",

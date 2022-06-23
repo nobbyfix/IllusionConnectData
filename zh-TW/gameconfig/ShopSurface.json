@@ -122,13 +122,13 @@
                 "code": "IR_Surface"
             }
         ],
-        "Hide": 0,
+        "Hide": 1,
         "ServerCondition": "",
         "Sort": 2001,
         "Surface": "Surface_BBLMa_2",
         "TimeType": {
-            "end": "2021-06-26 05:00:00",
-            "start": "2021-06-21 05:00:00",
+            "end": "2022-07-08 05:00:00",
+            "start": "2022-07-01 05:00:00",
             "type": "limit"
         }
     },
@@ -813,6 +813,25 @@
         "TimeType": {
             "end": "2022-03-15 05:00:00",
             "start": "2022-03-12 05:00:00",
+            "type": "limit"
+        }
+    },
+    "ShopSurface_Surface_WEDe_2": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_WEDe_2",
+        "TimeType": {
+            "end": "2022-07-08 05:00:00",
+            "start": "2022-07-01 05:00:00",
             "type": "limit"
         }
     },

@@ -643,7 +643,8 @@ all.Skill_WLSTNCi_Passive = {
 				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num + 1], true, true)
 				local buff = global.PassiveFunEffectBuff(_env, "Skill_WLSTNCi_Passive_For_King", {
 					Ex = 0,
-					AoeDeRateFactor = this.AoeDeRateFactor
+					AoeDeRateFactor = this.AoeDeRateFactor,
+					master = _env.ACTOR
 				})
 
 				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
@@ -707,6 +708,10 @@ all.Skill_WLSTNCi_Passive_For_King = {
 		if this.AoeDeRateFactor == nil then
 			this.AoeDeRateFactor = 0.15
 		end
+
+		this.master = externs.master
+
+		assert(this.master ~= nil, "External variable `master` is not provided.")
 
 		local passive1 = __action(this, {
 			name = "passive1",
@@ -834,6 +839,7 @@ all.Skill_WLSTNCi_Passive_For_King = {
 				buff
 			})
 			global.MarkSummoned(_env, _env.ACTOR, true)
+			global.SetSummoner(_env, _env.ACTOR, this.master)
 		end)
 
 		return _env
@@ -1286,7 +1292,8 @@ all.Skill_WLSTNCi_Passive_EX = {
 				local card = global.InheritCard(_env, _env.ACTOR, RoleModel[num + 1], true, true)
 				local buff = global.PassiveFunEffectBuff(_env, "Skill_WLSTNCi_Passive_For_King", {
 					Ex = 1,
-					AoeDeRateFactor = this.AoeDeRateFactor
+					AoeDeRateFactor = this.AoeDeRateFactor,
+					master = _env.ACTOR
 				})
 
 				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {

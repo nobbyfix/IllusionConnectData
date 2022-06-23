@@ -82,3 +82,25 @@ function exports.ModifyDamage(env, damage, operator, factor)
 
 	return damage
 end
+
+function exports.Dump(env, obj, str, nesting)
+	dump(obj, str, nesting)
+end
+
+function exports.StrFind(env, s, pattern, init)
+	local startP, endP = string.find(s, pattern, init)
+
+	if startP ~= nil then
+		return true
+	else
+		return false
+	end
+end
+
+function exports.TableRemove(env, list, element)
+	for i, v in pairs(list) do
+		if v == element then
+			table.remove(list, i)
+		end
+	end
+end
