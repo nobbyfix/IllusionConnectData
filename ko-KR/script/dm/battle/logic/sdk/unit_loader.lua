@@ -384,6 +384,18 @@ function exports.GetCost(env, unit)
 	return unit:getHeroCost() == -1 and enemyCost or unit:getHeroCost()
 end
 
+function exports.GetActualCost(env, unit)
+	return unit:getActualCost()
+end
+
 function exports.GetSummoner(env, unit)
+	return unit:getSummoner()
+end
+
+function exports.SetSummoner(env, unit, actor)
+	if unit:getSummoner() == nil and unit:isSummoned() then
+		unit:setSummoner(actor)
+	end
+
 	return unit:getSummoner()
 end

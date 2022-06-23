@@ -245,7 +245,7 @@
         "HeadName": "BDZSheng_HeadName",
         "HeroMasterId": "BDZSheng",
         "IconPath": "asset/heros/tyzhen/battlepic_tyzhen.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "BDZSheng_HeadUnlock",
@@ -1841,7 +1841,7 @@
         "HeadName": "PSKe_HeadName",
         "HeroMasterId": "PSKe",
         "IconPath": "asset/heros/hdie/battlepic_hdie.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "PSKe_HeadUnlock",
@@ -3057,6 +3057,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_LLan",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_LSLTe": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_LSLTe_Desc",
+        "HeadName": "HeroAwaken_LSLTe_1_Name",
+        "HeroMasterId": "LSLTe",
+        "IconPath": "asset/heros/aen/battlepic_aen.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_LSLTe",
         "Zoom": 1.0
     },
     "HeroAwaken_LYXi": {

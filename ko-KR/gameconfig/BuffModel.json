@@ -44,6 +44,36 @@
         "Type": 0,
         "zOrder": 1.0
     },
+    "AoeUnHurtRateDown": {
+        "Color": "",
+        "DescWord": "text_buffimage_aoeunhurtrate_down.png",
+        "Effect": "",
+        "EffectPos": "",
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": "",
+        "Priority": 2,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "AoeUnHurtRateUp": {
+        "Color": "",
+        "DescWord": "text_buffimage_aoeunhurtrate_up.png",
+        "Effect": "",
+        "EffectPos": "",
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": "",
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
+        "zOrder": 1.0
+    },
     "AtkDown": {
         "Color": "",
         "DescWord": "text_buffimage_atk_down.png",
@@ -1182,6 +1212,21 @@
         "Tick": "",
         "TickPos": "",
         "Type": 1,
+        "zOrder": 1.0
+    },
+    "NoKick": {
+        "Color": "",
+        "DescWord": "text_buffimage_cannot_backtocard.png",
+        "Effect": "",
+        "EffectPos": "",
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": "",
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
         "zOrder": 1.0
     },
     "PigHead": {

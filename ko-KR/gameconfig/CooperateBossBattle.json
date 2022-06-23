@@ -360,6 +360,25 @@
             }
         ]
     },
+    "CooperateBoss_LSLTe": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_LSLTe",
+        "Name": "HeroBase_Name_LSLTe",
+        "PointHead": "Model_LSLTe",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_LYXi": {
         "BGM": [
             "Mus_Battle_Whale",

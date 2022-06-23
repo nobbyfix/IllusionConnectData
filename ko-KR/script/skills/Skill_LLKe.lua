@@ -596,11 +596,21 @@ all.Skill_LLKe_Proud_EX = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
-			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local extra_damage = global.min(_env, maxHp * this.MaxHpRateFactor, atk * 10)
+			if global.MARKED(_env, "ClubBoss")(_env, _env.TARGET) then
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local extra_damage = maxHp * this.MaxHpRateFactor
 
-			global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
+				global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
+			end
+
+			if not global.MASTER(_env, _env.TARGET) and not global.MARKED(_env, "DAGUN")(_env, _env.TARGET) and not global.MARKED(_env, "SummonedNian")(_env, _env.TARGET) then
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+				local extra_damage = global.min(_env, maxHp * this.MaxHpRateFactor, atk * 10)
+
+				global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
+			end
 		end)
 
 		return _env

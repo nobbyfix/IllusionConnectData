@@ -19,6 +19,7 @@ function MazeTowerFinishMediator:onRegister()
 end
 
 function MazeTowerFinishMediator:enterWithData(data)
+	local battleType = data.battleType or 1
 	local anim = cc.MovieClip:create("dhb_tiaozhanjieshu")
 
 	anim:addTo(self._main):center(self._main:getContentSize())
@@ -31,7 +32,11 @@ function MazeTowerFinishMediator:enterWithData(data)
 		anim:stop()
 	end)
 	anim:addEndCallback(function ()
-		BattleLoader:popBattleView(self, {})
+		if battleType == 2 then
+			self:close()
+		else
+			BattleLoader:popBattleView(self, {})
+		end
 	end)
 
 	self._anim = anim

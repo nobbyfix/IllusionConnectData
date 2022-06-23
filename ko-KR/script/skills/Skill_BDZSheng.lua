@@ -170,6 +170,12 @@ all.Skill_BDZSheng_Unique = {
 			this.RageSpdactor = 0.12
 		end
 
+		this.MaxHitFactor = externs.MaxHitFactor
+
+		if this.MaxHitFactor == nil then
+			this.MaxHitFactor = 3
+		end
+
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -238,7 +244,7 @@ all.Skill_BDZSheng_Unique = {
 				display = "RageGainUp",
 				group = "BDZSheng_Unique",
 				duration = 99,
-				limit = 8,
+				limit = 5,
 				tags = {
 					"NUMERIC",
 					"BUFF",
@@ -253,7 +259,7 @@ all.Skill_BDZSheng_Unique = {
 			global.ShakeScreen(_env, {
 				Id = 4,
 				duration = 80,
-				enhance = 9
+				enhance = 5
 			})
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
@@ -261,9 +267,11 @@ all.Skill_BDZSheng_Unique = {
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
+			local max_realdamage = global.EvalRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, this.MaxHitFactor)
+			local extra_damage = global.min(_env, shield, max_realdamage)
 
 			if shield and shield ~= 0 then
-				global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, shield)
+				global.DelayCall(_env, 134, global.ApplyRealDamage, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
 			end
 		end)
 		exec["@time"]({
@@ -535,6 +543,12 @@ all.Skill_BDZSheng_Unique_EX = {
 			this.ShieldRateFactor = 0.3
 		end
 
+		this.MaxHitFactor = externs.MaxHitFactor
+
+		if this.MaxHitFactor == nil then
+			this.MaxHitFactor = 3
+		end
+
 		local main = __action(this, {
 			name = "main",
 			entry = prototype.main
@@ -603,7 +617,7 @@ all.Skill_BDZSheng_Unique_EX = {
 				display = "RageGainUp",
 				group = "BDZSheng_Unique",
 				duration = 99,
-				limit = 8,
+				limit = 5,
 				tags = {
 					"NUMERIC",
 					"BUFF",
@@ -618,7 +632,7 @@ all.Skill_BDZSheng_Unique_EX = {
 			global.ShakeScreen(_env, {
 				Id = 4,
 				duration = 80,
-				enhance = 9
+				enhance = 5
 			})
 
 			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
@@ -643,9 +657,11 @@ all.Skill_BDZSheng_Unique_EX = {
 			})
 
 			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
+			local max_realdamage = global.EvalRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, this.MaxHitFactor)
+			local extra_damage = global.min(_env, shield, max_realdamage)
 
 			if shield and shield ~= 0 then
-				global.ApplyRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, shield)
+				global.DelayCall(_env, 134, global.ApplyRealDamage, _env.ACTOR, _env.TARGET, 1, 1, 0, 0, 0, nil, extra_damage)
 			end
 		end)
 		exec["@time"]({
