@@ -521,3 +521,11 @@ function BattleUnit:calcDroppingItems()
 		return packet.hpRatio ~= nil and hp <= packet.hpRatio * maxHp
 	end)
 end
+
+function BattleUnit:getActualCost()
+	if self._cardInfo then
+		return self._cardInfo.actualCost
+	end
+
+	return self._cost
+end

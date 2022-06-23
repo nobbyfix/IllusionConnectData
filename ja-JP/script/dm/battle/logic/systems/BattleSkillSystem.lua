@@ -233,7 +233,8 @@ function BattleSkillSystem:skillActionDidFinish(executor, actionEnv, reason)
 
 			if unitHpComp and angerSystem ~= nil and detail.eft ~= nil and detail.eft > 0 then
 				self:activateSpecificTrigger(unit, "HURTED", {
-					detail = detail
+					detail = detail,
+					attacker = actor
 				})
 
 				local battleStatist = self._battleContext:getObject("BattleStatist")

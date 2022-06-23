@@ -61,6 +61,28 @@ function MazeTowerSystem:getRecommendCombat(pointId)
 	return combat
 end
 
+function MazeTowerSystem:isShowQuickChallenge(pointId)
+	local pointConfig = ConfigReader:getRecordById("MazeBlockBattle", pointId)
+	local isquick = pointConfig.QuickChallenge
+
+	if isquick and isquick == 1 then
+		return true
+	end
+
+	return false
+end
+
+function MazeTowerSystem:isCanQuickChallenge(pointId)
+	local comBatRequireRadio = ConfigReader:requireDataByNameIdAndKey("ConfigValue", "QuickChallenge_Combat", "content")
+	comBatRequireRadio = comBatRequireRadio or 1
+	local developSystem = self:getInjector():getInstance("DevelopSystem")
+	local team = developSystem:getSpTeamByType(StageTeamType.MAZE_TOWER)
+	local curCombat = team:getCombat()
+	local comBatRequire = self:getRecommendCombat(pointId) * comBatRequireRadio
+
+	return tonumber(comBatRequire) <= tonumber(curCombat)
+end
+
 function MazeTowerSystem:requestMainInfo(callback)
 	local params = {}
 
@@ -101,6 +123,20 @@ function MazeTowerSystem:requestFinishBattle(params, callback)
 				viewName = "MazeTowerMainView"
 			})
 		end
+	end)
+end
+
+function MazeTowerSystem:requestQuickChallenge(params, callback)
+	self._mazeTowerService:requestQuickChallenge(params, true, function (response)
+		if response.resCode == GS_SUCCESS then
+			self._isReset = response.data.isReset
+		end
+
+		if callback then
+			callback(response)
+		end
+
+		self:dispatch(Event:new(EVT_MAZE_TOWER_MOVE_END, response.data))
 	end)
 end
 
