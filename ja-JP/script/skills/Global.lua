@@ -1829,6 +1829,12 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		damage.val = damage.val * 2
 	end
 
+	if global.isBuffHero(_env, actor, "SelfEX_Cure_OneStage_Secret_SubFunction_Buff2", 1) and target == global.EnemyMaster(_env) then
+		global.ApplyHPDamage(_env, actor, damage.val * 0.1)
+
+		damage.val = damage.val * 0.9
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -2599,6 +2605,12 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 		damage = global.SNGLSi_Damage_Share(_env, deers, damage, deer_ratio)
+	end
+
+	if global.isBuffHero(_env, actor, "SelfEX_Cure_OneStage_Secret_SubFunction_Buff2", 1) and target == global.EnemyMaster(_env) then
+		global.ApplyHPDamage(_env, actor, damage.val * 0.1)
+
+		damage.val = damage.val * 0.9
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -3422,6 +3434,13 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	end
 
 	local LLK_is_kilss_cid = global.GetUnitCid(_env, target)
+
+	if global.isBuffHero(_env, actor, "SelfEX_Cure_OneStage_Secret_SubFunction_Buff2", 1) and target == global.EnemyMaster(_env) then
+		global.ApplyHPDamage(_env, actor, damages[n].val * 0.1)
+
+		damages[n].val = damages[n].val * 0.9
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -4282,6 +4301,12 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) == 0 then
 		damages[n] = global.SNGLSi_Damage_Share(_env, deers, damages[n], deer_ratio)
+	end
+
+	if global.isBuffHero(_env, actor, "SelfEX_Cure_OneStage_Secret_SubFunction_Buff2", 1) and target == global.EnemyMaster(_env) then
+		global.ApplyHPDamage(_env, actor, damages[n].val * 0.1)
+
+		damages[n].val = damages[n].val * 0.9
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -5821,6 +5846,31 @@ function all.isCidHero(_env, cid)
 	end
 
 	return hero
+end
+
+function all.isBuffHero(_env, unit, tag, side)
+	local this = _env.this
+	local global = _env.global
+
+	if side == 1 then
+		for _, friend in global.__iter__(global.FriendUnits(_env)) do
+			if #global.SelectBuffs(_env, friend, global.BUFF_MARKED_ALL(_env, tag)) > 0 then
+				global.print(_env, tag, "isBuffHero == true")
+
+				return true
+			end
+		end
+	elseif side == 0 then
+		for _, enemy in global.__iter__(global.EnemyUnits(_env)) do
+			if #global.SelectBuffs(_env, enemy, global.BUFF_MARKED_ALL(_env, tag)) > 0 then
+				global.print(_env, tag, "isBuffHero == true")
+
+				return true
+			end
+		end
+	end
+
+	return false
 end
 
 return _M
