@@ -287,14 +287,17 @@ end
 function all.SelfEX_Cure_OneStage_Secret_SubFunction_Buff2(_env, actor, unit)
 	local this = _env.this
 	local global = _env.global
-	local buff2 = global.DamageTransferEffect(_env, unit, 0.1)
 
 	if global.FriendMaster(_env) then
-		global.ApplyBuff_Buff(_env, actor, global.FriendMaster(_env), {
+		local buff2 = global.SpecialNumericEffect(_env, "+SelfEX_Cure_OneStage_Secret_SubFunction_Buff2", {
+			"?Normal"
+		}, 1)
+
+		global.ApplyBuff_Buff(_env, actor, unit, {
 			timing = 4,
 			duration = 20,
-			display = "FanGao_Shield",
 			tags = {
+				"SelfEX_Cure_OneStage_Secret_SubFunction_Buff2",
 				"DEBUFF",
 				"DISPELLABLE",
 				"STEALABLE"
