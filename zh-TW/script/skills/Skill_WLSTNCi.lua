@@ -664,6 +664,9 @@ all.Skill_WLSTNCi_Passive = {
 				global.ClearCardFlags(_env, card, {
 					"MAGE"
 				})
+				global.AddCardFlags(_env, card, {
+					"King_Check"
+				})
 			end
 		end)
 
@@ -1312,6 +1315,9 @@ all.Skill_WLSTNCi_Passive_EX = {
 				})
 				global.ClearCardFlags(_env, card, {
 					"MAGE"
+				})
+				global.AddCardFlags(_env, card, {
+					"King_Check"
 				})
 			end
 		end)
