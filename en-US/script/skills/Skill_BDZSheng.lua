@@ -267,7 +267,8 @@ all.Skill_BDZSheng_Unique = {
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
-			local max_realdamage = global.EvalRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, this.MaxHitFactor)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local max_realdamage = atk * this.MaxHitFactor
 			local extra_damage = global.min(_env, shield, max_realdamage)
 
 			if shield and shield ~= 0 then
@@ -657,7 +658,8 @@ all.Skill_BDZSheng_Unique_EX = {
 			})
 
 			local shield = global.UnitPropGetter(_env, "shield")(_env, _env.ACTOR)
-			local max_realdamage = global.EvalRealDamage(_env, _env.ACTOR, _env.TARGET, 1, 1, this.MaxHitFactor)
+			local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
+			local max_realdamage = atk * this.MaxHitFactor
 			local extra_damage = global.min(_env, shield, max_realdamage)
 
 			if shield and shield ~= 0 then
