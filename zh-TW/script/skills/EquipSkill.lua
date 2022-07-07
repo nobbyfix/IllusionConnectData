@@ -9542,25 +9542,38 @@ all.EquipSkill_Shoes_15118_3 = {
 				return
 			end
 
-			local _car = global.BackToCard_ResultCheck(_env, _env.ACTOR, "window")
+			for i = 1, 4 do
+				local card_window = global.CardAtWindowIndex(_env, global.GetOwner(_env, _env.ACTOR), i)
 
-			if _car then
-				global.Kick(_env, _env.ACTOR)
+				if card_window == nil then
+					local card_battle = global.BackToCard_ResultCheck(_env, _env.ACTOR, "window", i)
+
+					if card_battle then
+						global.Kick(_env, _env.ACTOR)
+					end
+				end
+
+				if i == 4 and card_window ~= nil then
+					local cardlocation = global.Random(_env, 1, 4)
+					local card_battle = global.BackToCard_ResultCheck(_env, _env.ACTOR, "window", cardlocation)
+
+					if card_battle then
+						global.Kick(_env, _env.ACTOR)
+					end
+				end
 			end
 
 			global.print(_env, this.spend, "费用======")
 
-			local card = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, _env.ACTOR)))[1]
+			local card = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, _env.ACTOR)), global.i)[1]
 
 			if card then
 				local cardvaluechange = global.CardCostEnchant(_env, "+", this.spend, 1)
 
-				global.ApplyEnchant(_env, global.GetOwner(_env, global.FriendMaster(_env)), card, {
-					timing = 1,
-					duration = 1,
+				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
 					tags = {
 						"CARDBUFF",
-						"Skill_MTZMEShi_Passive",
+						"EquipSkill_Shoes_15118_3_buff",
 						"UNDISPELLABLE"
 					}
 				}, {
@@ -13098,15 +13111,29 @@ all.EquipSkill_Decoration_15114_2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local MyRp = global.UnitPropGetter(_env, "rp")(_env, _env.ACTOR) or 0
-			local num = global.GetFriendField(_env, _env.ACTOR, "EquipSkill_Decoration_15114_2")
 
-			global.print(_env, num, num < 2, "num=========")
+			if global.SpecialPropGetter(_env, "EquipSkill_Decoration_15114_2_count")(_env, global.FriendField(_env)) < 2 then
+				global.print(_env, this.anger, "====怒气值")
+				global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.anger)
 
-			if num < 2 then
-				global.print(_env, this.anger + MyRp, "====怒气值")
-				global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.anger + MyRp)
-				global.SetFriendField(_env, _env.ACTOR, "EquipSkill_Decoration_15114_2", num + 1)
+				local count = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15114_2_count", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"EquipSkill_Decoration_15114_2"
+					}
+				}, {
+					count
+				})
 			end
 		end)
 

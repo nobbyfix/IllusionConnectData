@@ -75,6 +75,11 @@ function ChatMainMediator:enterWithData(data)
 	self:initTabView()
 	self:flyInAnim()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHAT_NEW_MESSAGE, self, self.refreshNewMessage)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGECHATBUBBLE_SUCC, self, self.refreshViewByBubbleChange)
+end
+
+function ChatMainMediator:refreshViewByBubbleChange()
+	self:setupListView()
 end
 
 function ChatMainMediator:setUpView()

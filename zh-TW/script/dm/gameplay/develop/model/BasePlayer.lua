@@ -96,6 +96,12 @@ BasePlayer:has("_unlockedEmoji", {
 BasePlayer:has("_showHeroes", {
 	is = "rw"
 })
+BasePlayer:has("_chatBubble", {
+	is = "rw"
+})
+BasePlayer:has("_curChatBubbleId", {
+	is = "rw"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -124,6 +130,8 @@ function BasePlayer:initialize(config)
 	self._usedEmoji = {}
 	self._unlockedEmoji = {}
 	self._showHeroes = {}
+	self._chatBubble = {}
+	self._curChatBubbleId = ""
 end
 
 function BasePlayer:synchronizeInfoDiff(diffData)
@@ -298,6 +306,16 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 		for i, v in pairs(diffData.showHeroes) do
 			self._showHeroes[i + 1] = v
 		end
+	end
+
+	if diffData.chatBubble then
+		for k, v in pairs(diffData.chatBubble) do
+			self._chatBubble[k] = v
+		end
+	end
+
+	if diffData.curChatBubbleId then
+		self._curChatBubbleId = diffData.curChatBubbleId
 	end
 end
 

@@ -1170,6 +1170,9 @@ all.Skill_LDu_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+
+			global.test_skill_(_env, _env.ACTOR)
+
 			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
 				"?Normal"
 			}, this.DmgRateFactor)
@@ -1210,7 +1213,7 @@ all.Skill_LDu_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and (global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) or global.GetSummoner(_env, _env.unit) == _env.ACTOR) then
 				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal",
 					"+Normal"
@@ -1231,6 +1234,183 @@ all.Skill_LDu_Passive_EX = {
 				}, {
 					buffeft2
 				}, 1)
+
+				if global.ProbTest(_env, 0.2) then
+					local buffeft1 = global.DeathImmuneEffect(_env, 1)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+						timing = 0,
+						display = "Undead",
+						group = "EquipSkill_Armor_15012",
+						duration = 99,
+						limit = 1,
+						tags = {
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"UNDEAD",
+							"DISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					}, 1)
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) then
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "BUFF", "Skill_LDu_Passive", "UNDISPELLABLE", "UNSTEALABLE"), 1)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_LDu_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AtkRateFactor = externs.AtkRateFactor
+
+		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+
+		this.DmgRateFactor = externs.DmgRateFactor
+
+		assert(this.DmgRateFactor ~= nil, "External variable `DmgRateFactor` is not provided.")
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive2)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
+				"?Normal"
+			}, this.DmgRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "Skill_LDu_Passive",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_LDu_Passive",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			})
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and (global.INSTATUS(_env, "SummonedLDu")(_env, _env.unit) or global.GetSummoner(_env, _env.unit) == _env.ACTOR) then
+				local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+					"+Normal",
+					"+Normal"
+				}, this.AtkRateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					display = "AtkUp",
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"Skill_LDu_Passive",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2
+				}, 1)
+				global.SelfEX_Summon_OneStage_inherit(_env, _env.unit)
 			end
 		end)
 

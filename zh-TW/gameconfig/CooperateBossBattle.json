@@ -56,6 +56,25 @@
             }
         ]
     },
+    "CooperateBoss_BQDShe": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_BQDShe",
+        "Name": "HeroBase_Name_BQDShe",
+        "PointHead": "Model_BQDShe",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_CLMan_20220601": {
         "BGM": [
             "Mus_Battle_Whale",
@@ -144,6 +163,25 @@
         "EnemyMaster": "CooperateBoss_FLYDe_220313",
         "Name": "HeroBase_Name_FLYDe",
         "PointHead": "Model_FLYDe",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_HGEr": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_HGEr",
+        "Name": "HeroBase_Name_HGEr",
+        "PointHead": "Model_HGEr",
         "VictoryConditions": [
             {
                 "type": "TimeOut",

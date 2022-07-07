@@ -1115,7 +1115,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220528.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220712.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1136,7 +1136,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220528.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220712.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1293,6 +1293,13 @@
         "ConditionType1": "player.bag.items.IM_ReZero_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_ReZeroExchangeAchieve_Desc"
+    },
+    "Condi_ReZeroReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ReZeroRe_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ReZeroReExchangeAchieve_Desc"
     },
     "Condi_RelationLevelSum": {
         "AchieveType1": "REACHCOUNT",

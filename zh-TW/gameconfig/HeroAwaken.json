@@ -337,7 +337,7 @@
             0,
             1.5
         ],
-        "IAId": "",
+        "IAId": "LDu_IA_1",
         "ModelId": "Model_LDu_Awake",
         "Name": "LDu_Awake_Name",
         "NameDesc": "LDu_Awake_Desc",
@@ -570,6 +570,28 @@
         "StarId": "SLMen_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SLMen_Awake"
+    },
+    "SP_PNCao": {
+        "AnimSound": "Se_Effect_Awakening_PNCao_SP",
+        "Animation": "sp_hhji_Awaken",
+        "CutIn": [
+            0,
+            0,
+            0.64
+        ],
+        "IAId": "",
+        "ModelId": "Model_SP_PNCao_Awake",
+        "Name": "SP_PNCao_Awake_Name",
+        "NameDesc": "SP_PNCao_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SP_PNCao_UnAwake",
+        "Reward": "HeroAwaken_SP_PNCao",
+        "ShowHero": "SP_PNCao",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SP_PNCao_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SP_PNCao_Awake"
     },
     "SRen": {
         "AnimSound": "Se_Effect_Awakening_SRen",

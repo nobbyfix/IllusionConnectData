@@ -4760,6 +4760,19 @@
             "slot": "Hero_Unique_FGao"
         }
     },
+    "IA_LDu_1": {
+        "Desc": "StarSE_LDu_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_LDu_SelfAwaken",
+            "before": "Hero_PBattle_LDu_EX",
+            "slot": "Hero_PBattle_LDu"
+        }
+    },
     "IA_LFEr_1": {
         "Desc": "StarSE_LFEr_IA1_Desc",
         "EffectType": "CHANGESKILL",

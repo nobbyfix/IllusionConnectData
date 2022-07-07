@@ -151158,6 +151158,48 @@
             0.05
         ]
     },
+    "Star_IA_LDu_1": {
+        "AttrType": [
+            "DEF_RATE",
+            "HP_RATE",
+            "UNCRITRATE"
+        ],
+        "EffectDesc": "Star_IA_LDu_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.08,
+            0.08,
+            0.1
+        ]
+    },
+    "Star_IA_LDu_2": {
+        "AttrType": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_IA_LDu_2_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.02,
+            0.05
+        ]
+    },
     "Star_IA_LFEr_1": {
         "AttrType": [
             "DEF_RATE",
