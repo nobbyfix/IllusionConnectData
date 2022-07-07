@@ -3,6 +3,7 @@ EVT_CHAT_NEW_PRIVATEMESSAGE = "EVT_CHAT_NEW_PRIVATEMESSAGE"
 EVT_CHAT_SEND_MESSAGE_SUCC = "EVT_CHAT_SEND_MESSAGE_SUCC"
 EVT_CHAT_REMOVE_MESSAGE_SUCC = "EVT_CHAT_REMOVE_MESSAGE_SUCC"
 EVT_CHAT_SHIELD_MESSAGE_SUCC = "EVT_CHAT_SHIELD_MESSAGE_SUCC"
+EVT_CHANGECHATBUBBLE_SUCC = "EVT_CHANGECHATBUBBLE_SUCC"
 ChatSystem = class("ChatSystem", Facade, _M)
 
 ChatSystem:has("_service", {
@@ -93,7 +94,8 @@ function ChatSystem:updateActiveMember()
 		tags = player:getTags(),
 		headFrame = player:getCurHeadFrame(),
 		leadStageId = id,
-		leadStageLevel = level
+		leadStageLevel = level,
+		chatBubble = player:getCurChatBubbleId()
 	}
 	activeMembers[rid] = sender
 end
@@ -356,4 +358,125 @@ function ChatSystem:requestRemoveMessage(channelId, playerId, callback)
 			}))
 		end
 	end, true)
+end
+
+function ChatSystem:requestChangeBubble(id)
+	local params = {
+		id = id
+	}
+
+	self:getService():requestChangeBubble(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:updateActiveMember()
+			self:dispatch(Event:new(EVT_CHANGECHATBUBBLE_SUCC))
+		end
+	end, false)
+end
+
+function ChatSystem:getShowBubbleList()
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local db = ConfigReader:getDataTable("ChatBubble")
+	local player = developSystem:getPlayer()
+	local bubbles = player:getChatBubble()
+	local list = {}
+
+	for k, v in pairs(db) do
+		local show = true
+
+		if v.Unlook == 0 and bubbles[k] == nil then
+			show = false
+		end
+
+		if show then
+			local data = {
+				id = k,
+				config = v,
+				unlock = bubbles[k] and 1 or 0
+			}
+			list[#list + 1] = data
+
+			if bubbles[k] then
+				data.getTime = bubbles[k]
+
+				self:setLimitBubbleData(k, data)
+
+				if data.isLimit and data.isExpire then
+					data.unlock = 0
+				else
+					data.unlock = 1
+				end
+			end
+		end
+	end
+
+	table.sort(list, function (a, b)
+		if a.unlock == b.unlock then
+			return a.config.Sort < b.config.Sort
+		else
+			return b.unlock < a.unlock
+		end
+	end)
+
+	return list
+end
+
+function ChatSystem:checkBubbleExpire(id, data)
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local player = developSystem:getPlayer()
+	local bubbles = player:getChatBubble()
+	data = data or {}
+	data.isExpire = false
+	local getDate = bubbles[id]
+	local config = ConfigReader:getRecordById("ChatBubble", id)
+
+	if config.CondiType == "TIME" then
+		data.isLimit = true
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimeMillis()
+		data.expireTime = getDate + config.TypeNum.time * 3600 * 1000
+
+		if data.expireTime < curTime then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "RTPK" then
+		data.isLimit = true
+		local rtpk = self:getInjector():getInstance(RTPKSystem):getRtpk()
+		local rank = rtpk:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "StageArena" then
+		data.isLimit = true
+		local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem):getLeadStageArena()
+		local rank = leadStageArena:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	local settingSystem = self:getInjector():getInstance(SettingSystem)
+	local actFrameInfo = settingSystem:getSettingModel():getActFrameInfo()
+	local value = actFrameInfo[config.CondiType]
+
+	if value then
+		data.isLimit = true
+
+		if value < config.TypeNum.value[1] or config.TypeNum.value[2] < value then
+			data.isExpire = true
+		end
+	end
+
+	return data
+end
+
+function ChatSystem:setLimitBubbleData(id, data)
+	data.isLimit = false
+
+	self:checkBubbleExpire(id, data)
 end

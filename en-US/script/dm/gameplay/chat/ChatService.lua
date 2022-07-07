@@ -6,6 +6,7 @@ local opType = {
 	removeMessage = 30008,
 	blockUser = 30006,
 	readMsg = 30003,
+	changeBubble = 30009,
 	getBlockList = 30007
 }
 
@@ -57,6 +58,12 @@ end
 
 function ChatService:requestRemoveMessage(params, callback, notShowWaiting)
 	local request = self:newRequest(opType.removeMessage, params, callback)
+
+	self:sendRequest(request, not notShowWaiting)
+end
+
+function ChatService:requestChangeBubble(params, callback, notShowWaiting)
+	local request = self:newRequest(opType.changeBubble, params, callback)
 
 	self:sendRequest(request, not notShowWaiting)
 end

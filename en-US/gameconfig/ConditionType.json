@@ -1308,6 +1308,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_ReZeroExchangeAchieve_Desc"
     },
+    "Condi_ReZeroReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_ReZeroRe_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_ReZeroReExchangeAchieve_Desc"
+    },
     "Condi_RelationLevelSum": {
         "AchieveType1": "REACHCOUNT",
         "AchieveType2": "",

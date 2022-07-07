@@ -1753,7 +1753,7 @@ function ShopSystem:getMonthCardHeadFrame()
 			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
 
 			for _, reward in pairs(rewards) do
-				if reward.type == 14 then
+				if reward.type == RewardType.kHeadFrame or reward.type == RewardType.kChatBubble then
 					return reward
 				end
 			end

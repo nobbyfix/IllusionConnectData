@@ -436,6 +436,10 @@ function MazeTowerChallengeMediator:onClickQuickChallenge()
 		}
 
 		self._mazeTowerSystem:requestQuickChallenge(params, function (response)
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
 			if response.resCode == GS_SUCCESS then
 				local view = self:getInjector():getInstance("MazeTowerFinishView")
 

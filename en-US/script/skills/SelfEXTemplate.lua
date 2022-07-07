@@ -109,14 +109,30 @@ function all.SelfEX_Cure_OneStage_Choice(_env, actor, unit, allChoice)
 		atk = 0.033
 	}
 	local unit_hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, unit)
+
+	if global.MARKED(_env, "XBKLDi")(_env, actor) then
+		unit_hpRatio = global.UnitPropGetter(_env, "hpRatio")(_env, actor)
+	end
+
 	local actor_atk = global.UnitPropGetter(_env, "atk")(_env, actor) * buffFactor.atk
 	local actor_def = global.UnitPropGetter(_env, "def")(_env, actor) * buffFactor.def
 
 	if allChoice then
-		global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff1(_env, actor, unit, actor_atk)
-		global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff2(_env, actor, unit, actor_def)
+		if global.MARKED(_env, "XBKLDi")(_env, actor) then
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff3(_env, actor, unit)
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff4(_env, actor, unit)
+		else
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff1(_env, actor, unit, actor_atk)
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff2(_env, actor, unit, actor_def)
+		end
 	elseif unit_hpRatio >= 0.5 then
-		global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff1(_env, actor, unit, actor_atk)
+		if global.MARKED(_env, "XBKLDi")(_env, actor) then
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff4(_env, actor, unit)
+		else
+			global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff1(_env, actor, unit, actor_atk)
+		end
+	elseif global.MARKED(_env, "XBKLDi")(_env, actor) then
+		global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff3(_env, actor, unit)
 	else
 		global.SelfEX_Cure_OneStage_Choice_SubFunction_Buff2(_env, actor, unit, actor_def)
 	end
@@ -168,6 +184,66 @@ function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff2(_env, actor, unit, de
 	}, {
 		buff2
 	})
+end
+
+function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff3(_env, actor, unit)
+	local this = _env.this
+	local global = _env.global
+	local Victim = global.LoadUnit(_env, unit, "ALL")
+	local attacker = global.LoadUnit(_env, actor, "ALL")
+
+	if global.GetSide(_env, unit) ~= global.GetSide(_env, actor) and global.EvalProb1(_env, attacker, Victim, 0.22, 0.11) then
+		global.print(_env, "宋阿姨二觉给谁加了诅咒==", global.GetUnitCid(_env, unit))
+
+		local buff3 = global.Curse(_env)
+
+		global.ApplyBuff_Debuff(_env, actor, unit, {
+			duration = 1,
+			display = "Poison",
+			group = "SelfEX_Cure_OneStage_Choice_SubFunction_Buff3",
+			timing = 0,
+			limit = 1,
+			tags = {
+				"Curse",
+				"DISPELLABLE",
+				"STEALABLE",
+				"DEBUFF"
+			}
+		}, {
+			buff3
+		})
+	end
+end
+
+function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff4(_env, actor, unit)
+	local this = _env.this
+	local global = _env.global
+
+	global.dump(_env, global.getFlag(_env, unit), "cid===")
+
+	if global.GetSide(_env, unit) == global.GetSide(_env, actor) and global.ProbTest(_env, global.UnitPropGetter(_env, "effectrate")(_env, actor) + 0.25) and (global.MARKED(_env, "defense")(_env, unit) or global.MARKED(_env, "cure")(_env, unit)) then
+		global.print(_env, "宋阿姨二觉给谁加了暴击==", global.GetUnitCid(_env, unit))
+
+		local buff4 = global.NumericEffect(_env, "+critrate", {
+			"+Normal",
+			"+Normal"
+		}, 0.15)
+
+		global.ApplyBuff_Buff(_env, actor, unit, {
+			duration = 99,
+			display = "CritRateUp",
+			group = "SelfEX_Cure_OneStage_Choice_SubFunction_Buff4",
+			timing = 0,
+			limit = 3,
+			tags = {
+				"BUFF",
+				"DISPELLABLE",
+				"STEALABLE"
+			}
+		}, {
+			buff4
+		})
+	end
 end
 
 function all.SelfEX_Cure_OneStage_Secret(_env, actor)
@@ -237,8 +313,6 @@ all.SelfEX_Cure_OneStage_Secret_SubSkill = {
 				return
 			end
 
-			global.print(_env, global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR), global.SUMMONS(_env, _env.unit) == false, _env.event.isRevive, "[[[[[[[[[")
-
 			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.SUMMONS(_env, _env.unit) == false and _env.event.isRevive == nil then
 				global.SelfEX_Cure_OneStage_Secret_Sub(_env, _env.ACTOR, _env.unit)
 				global.SetFriendField(_env, _env.ACTOR, num + 1, "SelfEX_Cure_OneStage_Secret_SubSkill")
@@ -253,6 +327,9 @@ all.SelfEX_Cure_OneStage_Secret_SubSkill = {
 function all.SelfEX_Cure_OneStage_Secret_Sub(_env, actor, unit)
 	local this = _env.this
 	local global = _env.global
+
+	global.print(_env, "111")
+
 	local effect = {
 		global.SelfEX_Cure_OneStage_Secret_SubFunction_Buff1,
 		global.SelfEX_Cure_OneStage_Secret_SubFunction_Buff2,
@@ -388,6 +465,10 @@ all.SelfEX_Defend_OneStage_Together_SubSkill = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
+		_env.target = externs.target
+
+		assert(_env.target ~= nil, "External variable `target` is not provided.")
+
 		_env.attacker = externs.attacker
 
 		assert(_env.attacker ~= nil, "External variable `attacker` is not provided.")
@@ -403,6 +484,459 @@ all.SelfEX_Defend_OneStage_Together_SubSkill = {
 					1,
 					0
 				})
+			end
+		end)
+
+		return _env
+	end
+}
+
+function all.SelfEX_Summon_OneStage_inherit(_env, unit)
+	local this = _env.this
+	local global = _env.global
+	local pbuff = global.PassiveFunEffectBuff(_env, "SelfEX_Summon_OneStage_inherit_SubSkill")
+
+	global.ApplyBuff_Buff(_env, unit, unit, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"DIE",
+			"UNDISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		pbuff
+	})
+end
+
+all.SelfEX_Summon_OneStage_inherit_SubSkill = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:DYING"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local summons = global.FriendUnits(_env, global.SUMMONS)
+			local unit = nil
+
+			if #summons > 0 then
+				unit = global.RandomN(_env, 1, summons)[1]
+			end
+
+			if unit then
+				local atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * 0.08
+				local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+
+				global.ApplyHPRecovery_ResultCheck(_env, _env.ACTOR, unit, {
+					val = maxHp * 0.2
+				})
+
+				local buff1 = global.NumericEffect(_env, "+atk", {
+					"+Normal",
+					"+Normal"
+				}, atk)
+				local buff2 = global.MaxHpEffect(_env, maxHp * 0.2)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					duration = 99,
+					display = "AtkUp",
+					tags = {
+						"BUFF",
+						"DISPELLABLE",
+						"UNSTEALABLE",
+						"ATKUP"
+					}
+				}, {
+					buff1
+				})
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					duration = 99,
+					display = "MaxHpUp",
+					tags = {
+						"BUFF",
+						"DISPELLABLE",
+						"UNSTEALABLE",
+						"MaxHpUp"
+					}
+				}, {
+					buff2
+				})
+				global.print(_env, "atk and maxHp=", atk, maxHp)
+			end
+		end)
+
+		return _env
+	end
+}
+
+function all.SelfEX_Support_OneStage_treasury(_env, unit, num)
+	local this = _env.this
+	local global = _env.global
+	num = 4
+	local position_list = {
+		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Decoration",
+		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Boots",
+		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Top",
+		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Weapon"
+	}
+
+	for i = 1, num do
+		local pos = global.Random(_env, 1, #position_list)
+		local position = position_list[pos]
+		local pbuff = global.PassiveFunEffectBuff(_env, position)
+
+		global.ApplyBuff_Buff(_env, unit, unit, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"Passive",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			pbuff
+		})
+		global.TableRemove(_env, position_list, position)
+	end
+
+	global.dump(_env, position_list, "看看移除效果==")
+end
+
+function all.SelfEX_Support_OneStage_treasury_Subfun(_env, actor, att, position, times)
+	local this = _env.this
+	local global = _env.global
+	times = times or 0
+
+	if position == "Top" or position == "Decoration" then
+		local buff1 = global.NumericEffect(_env, "+" .. att[1], {
+			"+Normal",
+			"+Normal"
+		}, 0.04)
+
+		global.ApplyBuff_Buff(_env, actor, actor, {
+			duration = 1,
+			timing = 2,
+			display = att[2],
+			tags = {
+				"BUFF",
+				"DISPELLABLE",
+				"STEALABLE",
+				position
+			},
+			group = position .. global.UnitPropGetter(_env, "hp")(_env, actor)
+		}, {
+			buff1
+		})
+	else
+		local buff1 = global.NumericEffect(_env, "+" .. att[1], {
+			"+Normal",
+			"+Normal"
+		}, 0.04)
+
+		global.ApplyBuff_Buff(_env, actor, actor, {
+			timing = 2,
+			duration = 1 + times,
+			display = att[2],
+			tags = {
+				"BUFF",
+				"DISPELLABLE",
+				"STEALABLE",
+				position
+			},
+			group = position .. global.UnitPropGetter(_env, "hp")(_env, actor)
+		}, {
+			buff1
+		})
+	end
+end
+
+all.SelfEX_Support_OneStage_treasury_SubSkill_Decoration = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.ACTOR) ~= global.GetSide(_env, _env.unit) and not global.SUMMONS(_env, _env.unit) then
+				local att_list = {
+					{
+						"uneffectrate",
+						"UnEffectRateUp"
+					},
+					{
+						"uncritrate",
+						"UnCritRateUp"
+					},
+					{
+						"aoederate",
+						"DefUp"
+					}
+				}
+				local pos = global.floor(_env, global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)) % #att_list
+
+				if pos == 0 then
+					pos = global.Random(_env, 1, #att_list)
+				end
+
+				local att = att_list[pos]
+				local num = 2
+
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Decoration")) < num then
+					global.dump(_env, att, "触发了饰品效果")
+					global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Decoration")
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.SelfEX_Support_OneStage_treasury_SubSkill_Top = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:HURTED"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.detail = externs.detail
+
+		assert(_env.detail ~= nil, "External variable `detail` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if not global.IsAlive(_env, _env.ACTOR) then
+				return
+			end
+
+			local att_list = {
+				{
+					"defrate",
+					"DefUp"
+				},
+				{
+					"unhurtrate",
+					"UnHurtRateUp"
+				},
+				{
+					"blockrate",
+					"BlockRateUp"
+				}
+			}
+			local pos = (_env.detail.eft + global.floor(_env, global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR))) % #att_list
+
+			if pos == 0 then
+				pos = global.Random(_env, 1, #att_list)
+			end
+
+			local att = att_list[pos]
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Top")) < 2 then
+				global.dump(_env, att, "触发了衣服效果")
+				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Top")
+			end
+		end)
+
+		return _env
+	end
+}
+all.SelfEX_Support_OneStage_treasury_SubSkill_Boots = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:AFTER_UNIQUE"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local att_list = {
+				{
+					"effectrate",
+					"EffectRateUp"
+				},
+				{
+					"absorption",
+					"Absorption"
+				},
+				{
+					"rprecvrate",
+					"RageGainUp"
+				}
+			}
+			local att = att_list[global.Random(_env, 1, #att_list)]
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Boots")) < 2 then
+				global.dump(_env, att, "触发了鞋子效果")
+				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Boots")
+			end
+		end)
+
+		return _env
+	end
+}
+all.SelfEX_Support_OneStage_treasury_SubSkill_Weapon = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:AFTER_ACTION"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local att_list = {
+				{
+					"hurtrate",
+					"HurtRateUp"
+				},
+				{
+					"defweaken",
+					"DefWeakenUp"
+				},
+				{
+					"unblockrate",
+					"UnBlockRateUp"
+				},
+				{
+					"critrate",
+					"CritRateUp"
+				}
+			}
+			local att = att_list[global.Random(_env, 1, #att_list)]
+			local num = 2
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Weapon")) < num then
+				global.dump(_env, att, "触发了武器效果")
+				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Weapon")
+
+				if num > 2 then
+					global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Weapon")
+				end
 			end
 		end)
 

@@ -179,6 +179,7 @@ function FriendListMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_DELECT_SUCC, self, self.onDelectFriendCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_ADD_SUCC, self, self.onApplySuccCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHAT_REMOVE_MESSAGE_SUCC, self, self.onRemoveMessageCallback)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGECHATBUBBLE_SUCC, self, self.onBubbleChangeCallback)
 end
 
 function FriendListMediator:setChatWidget()
@@ -945,4 +946,8 @@ end
 
 function FriendListMediator:onRemoveMessageCallback(data)
 	self:refreshView()
+end
+
+function FriendListMediator:onBubbleChangeCallback(data)
+	self._chatWidget:updateView(self._chatFriend, nil, true)
 end

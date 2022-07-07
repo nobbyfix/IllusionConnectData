@@ -840,6 +840,10 @@
             "IB_RHeroF_R2SSR"
         ]
     },
+    "Bubble_Init": {
+        "clz": "string",
+        "content": "Bubble_0"
+    },
     "Build_Benefit_Detail": {
         "clz": "dict",
         "content": {
@@ -9849,43 +9853,63 @@
                 },
                 {
                     "end": "2022-8-22 23:59:59",
-                    "reward": "MonthCard_ReReward_Leo",
+                    "reward": "MonthCard_Bubble_Reward_Leo",
                     "start": "2022-7-23 00:00:00"
                 },
                 {
                     "end": "2022-9-22 23:59:59",
-                    "reward": "MonthCard_ReReward_Virgo",
+                    "reward": "MonthCard_Bubble_Reward_Virgo",
                     "start": "2022-8-23 00:00:00"
                 },
                 {
                     "end": "2022-10-23 23:59:59",
-                    "reward": "MonthCard_ReReward_Libra",
+                    "reward": "MonthCard_Bubble_Reward_Libra",
                     "start": "2022-9-23 00:00:00"
                 },
                 {
                     "end": "2022-11-22 23:59:59",
-                    "reward": "MonthCard_ReReward_Scorpio",
+                    "reward": "MonthCard_Bubble_Reward_Scorpio",
                     "start": "2022-10-24 00:00:00"
                 },
                 {
                     "end": "2022-12-21 23:59:59",
-                    "reward": "MonthCard_ReReward_Sagittarius",
+                    "reward": "MonthCard_Bubble_Reward_Sagittarius",
                     "start": "2022-11-23 00:00:00"
                 },
                 {
                     "end": "2023-1-19 23:59:59",
-                    "reward": "MonthCard_ReReward_Capricorn",
+                    "reward": "MonthCard_Bubble_Reward_Capricorn",
                     "start": "2022-12-22 00:00:00"
                 },
                 {
                     "end": "2023-2-18 23:59:59",
-                    "reward": "MonthCard_ReReward_Aquarius",
+                    "reward": "MonthCard_Bubble_Reward_Aquarius",
                     "start": "2023-1-20 00:00:00"
                 },
                 {
                     "end": "2023-3-20 23:59:59",
-                    "reward": "MonthCard_ReReward_Pisces",
+                    "reward": "MonthCard_Bubble_Reward_Pisces",
                     "start": "2023-2-19 00:00:00"
+                },
+                {
+                    "end": "2023-4-19 23:59:59",
+                    "reward": "MonthCard_Bubble_Reward_Aries",
+                    "start": "2023-3-21 00:00:00"
+                },
+                {
+                    "end": "2023-5-20 23:59:59",
+                    "reward": "MonthCard_Bubble_Reward_Taurus",
+                    "start": "2023-4-20 00:00:00"
+                },
+                {
+                    "end": "2023-6-21 23:59:59",
+                    "reward": "MonthCard_Bubble_Reward_Gemini",
+                    "start": "2023-5-21 00:00:00"
+                },
+                {
+                    "end": "2023-7-22 23:59:59",
+                    "reward": "MonthCard_Bubble_Reward_Cancer",
+                    "start": "2023-6-22 00:00:00"
                 }
             ]
         }

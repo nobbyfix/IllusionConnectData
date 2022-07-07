@@ -42723,8 +42723,8 @@
         "Bust1": "Bust1_XBKLDi",
         "Bust10": "Bust10_XBKLDi",
         "Bust11": "Bust11_XBKLDi",
-        "Bust12": "Bust12_XBKLDi",
-        "Bust13": "Bust13_XBKLDi",
+        "Bust12": "Bust13_XBKLDi",
+        "Bust13": "Bust12_XBKLDi",
         "Bust14": "Bust14_XBKLDi",
         "Bust15": "Bust15_XBKLDi",
         "Bust16": "",
@@ -42740,7 +42740,10 @@
             -35,
             -737
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            -27,
+            -737
+        ],
         "BustTemp1": [
             113,
             -706
