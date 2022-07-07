@@ -183,7 +183,7 @@ function FriendChatWidget:setupChatOperatorWidget()
 	end
 end
 
-function FriendChatWidget:updateView(data, curTabType)
+function FriendChatWidget:updateView(data, curTabType, forceRefresh)
 	if not data then
 		return
 	end
@@ -262,7 +262,7 @@ function FriendChatWidget:updateView(data, curTabType)
 	local delBtn = self._chatPanel:getChildByName("btn_del")
 	local fightBtn = self._chatPanel:getChildByName("btn_fight")
 
-	if self._data ~= data then
+	if self._data ~= data or forceRefresh then
 		self._data = data
 
 		self:setupListView()

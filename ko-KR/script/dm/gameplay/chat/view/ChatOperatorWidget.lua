@@ -60,6 +60,11 @@ function ChatOperatorWidget:bindWidgets()
 			func = bind1(self.onClickSend, self)
 		}
 	})
+
+	mapButtonHandlerClick(self, "main_panel.btn_bubble", {
+		clickAudio = "Se_Click_Common_1",
+		func = "onClickBubble"
+	})
 end
 
 function ChatOperatorWidget:enterWithData(data)
@@ -398,4 +403,30 @@ end
 
 function ChatOperatorWidget:isIMEOpen()
 	return self._isIMEOpen
+end
+
+function ChatOperatorWidget:onClickBubble(sender, eventType)
+	local widget = ChatBubbleWidget:createWidgetNode()
+	self._bubbleWidget = self:autoManageObject(self:getInjector():injectInto(ChatBubbleWidget:new(widget)))
+	local view = self._bubbleWidget:getView()
+
+	view:setAnchorPoint(cc.p(0, 0))
+	view:addTo(self._parentMediator):center(self._parentMediator:getContentSize())
+
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local curId = developSystem:getPlayer():getCurChatBubbleId()
+
+	local function callFunc(data)
+		if curId ~= data.selectId then
+			self._chatSystem:requestChangeBubble(data.selectId)
+		end
+	end
+
+	self._bubbleWidget:enterWithData({
+		list = self._chatSystem:getShowBubbleList(),
+		selectId = curId,
+		sender = sender,
+		callFunc = callFunc,
+		type = self._enterType
+	})
 end

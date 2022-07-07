@@ -1101,6 +1101,12 @@ function IconFactory:createIcon(info, style)
 		return IconFactory:createTSoulIcon(info, style)
 	end
 
+	config = ConfigReader:getRecordById("ChatBubble", tostring(id))
+
+	if config and config.Id then
+		return IconFactory:createChatBubbleIcon(info, style)
+	end
+
 	assert(false, "未找到对应id配置：" .. id)
 end
 
@@ -3460,6 +3466,18 @@ function IconFactory:createPic(info, style)
 		return IconFactory:createSkillPic(info, style)
 	end
 
+	config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config and config.Id then
+		return IconFactory:createHeadFramePic(info, style)
+	end
+
+	config = ConfigReader:getRecordById("ChatBubble", id)
+
+	if config and config.Id then
+		return IconFactory:createChatBubblePic(info, style)
+	end
+
 	return self:createSprite(GameStyle:getDefaultUnfoundFile())
 end
 
@@ -4066,6 +4084,37 @@ function IconFactory:createPlayerFrameIcon(info, style)
 
 		return node
 	end
+end
+
+function IconFactory:createHeadFramePic(info, style)
+	local config = ConfigReader:getRecordById("PlayerHeadFrame", tostring(info.id))
+	local size = cc.size(110, 110)
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(size)
+
+	local img = config.Picture or "sz_bg_txk"
+	img = "asset/head/" .. img .. ".png"
+	local icon = ccui.ImageView:create(img)
+
+	icon:addTo(node):setScale(0.5):center(node:getContentSize())
+
+	if config.Type == "LIMIT" then
+		local tnode = IconFactory:createBaseNode()
+		local img = ccui.ImageView:create("asset/common/common_bg_xb_4.png", ccui.TextureResType.localType)
+
+		IconFactory:centerAddNode(tnode, img)
+
+		local lvLabel = cc.Label:createWithTTF("", CUSTOM_TTF_FONT_1, 18)
+
+		lvLabel:setString(Strings:get("ActivityBlock_UI_13"))
+		lvLabel:setColor(cc.c3b(255, 255, 255))
+		lvLabel:addTo(tnode):offset(0, 5)
+		tnode:setScale(1 / icon:getScale() * 0.8)
+		tnode:addTo(icon):center(icon:getContentSize()):offset(70, 90)
+	end
+
+	return node
 end
 
 function IconFactory:createRactHeadImage(info)
@@ -5192,6 +5241,66 @@ function IconFactory:createTSoulIcon(info, style)
 	end
 
 	node:setPosImg(pos)
+
+	return node
+end
+
+function IconFactory:createChatBubbleIcon(info, style)
+	style = style or {}
+	local id = info.id
+	local config = ConfigReader:getRecordById("ChatBubble", id) or {}
+	local quality = config.Quality or 3
+	local quaImgType = style and style.rectType and style.rectType or 1
+	local qualityImg = GameStyle:getItemQuaRectFile(quality, quaImgType)
+	local quaRectImg = IconFactory:createSprite(qualityImg)
+
+	if quaImgType == 2 then
+		quaRectImg:setScale(1.2)
+	end
+
+	local size = cc.size(110, 110)
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(size)
+	IconFactory:centerAddNode(node, quaRectImg)
+
+	local path = "asset/ui/chatBubble/" .. config.Icon .. ".png"
+	local icon = ccui.ImageView:create(path)
+
+	icon:addTo(node):center(node:getContentSize())
+
+	local markImg = ccui.ImageView:create("asset/common/common_bg_xb_3.png")
+
+	markImg:setRotation(30)
+	markImg:setPosition(node:getContentSize().width - 20, node:getContentSize().height - 20)
+	node:addChild(markImg)
+	markImg:setScale(1.3)
+
+	local label = cc.Label:createWithTTF("", "asset/font/CustomFont_FZYH_R.TTF", 18)
+
+	label:setString(Strings:get("Bubble_Name"))
+	label:setTextColor(cc.c3b(0, 0, 0))
+	label:setAlignment(cc.TEXT_ALIGNMENT_CENTER, cc.TEXT_ALIGNMENT_CENTER)
+	label:setOverflow(cc.LabelOverflow.SHRINK)
+	label:setDimensions(50, 27)
+	label:addTo(markImg):center(markImg:getContentSize()):offset(0, 3)
+
+	return node
+end
+
+function IconFactory:createChatBubblePic(info, style)
+	style = style or {}
+	local id = info.id
+	local size = cc.size(110, 110)
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(size)
+
+	local config = ConfigReader:getRecordById("ChatBubble", id) or {}
+	local path = "asset/ui/chatBubble/" .. config.Icon .. ".png"
+	local icon = ccui.ImageView:create(path)
+
+	icon:addTo(node):center(node:getContentSize()):setScale(1.3)
 
 	return node
 end

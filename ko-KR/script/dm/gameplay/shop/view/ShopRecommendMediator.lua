@@ -169,7 +169,9 @@ function ShopRecommendMediator:refreshView()
 			end
 
 			if not self._bgImage.frameIcon then
-				local icon = IconFactory:createRewardIcon(frameData, {
+				local icon = IconFactory:createPic({
+					id = frameData.code
+				}, {
 					isWidget = true,
 					showAmount = false
 				})

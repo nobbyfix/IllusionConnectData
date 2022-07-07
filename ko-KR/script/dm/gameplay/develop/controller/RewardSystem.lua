@@ -16,6 +16,7 @@ RewardType = {
 	kEquip = 6,
 	kExp = 1,
 	kRewardLink = 9,
+	kChatBubble = 36,
 	kBuff = 17,
 	kSpecialValue = 4,
 	kInvalid = -1,
@@ -128,6 +129,12 @@ function RewardSystem.class:getName(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Name) .. "x" .. rewardData.amount
+			end
+		elseif info.rewardType == RewardType.kChatBubble then
+			local config = ConfigReader:getRecordById("ChatBubble", id)
+
+			if config and config.Id then
+				return Strings:get(config.Name)
 			end
 		end
 	end
@@ -303,6 +310,12 @@ function RewardSystem.class:getDesc(rewardData)
 
 			if config and config.Id then
 				return Strings:get(config.Log)
+			end
+		elseif info.rewardType == RewardType.kChatBubble then
+			local config = ConfigReader:getRecordById("ChatBubble", id)
+
+			if config and config.Id then
+				return Strings:get(config.Desc)
 			end
 		end
 	end

@@ -4291,6 +4291,10 @@ function HomeMediator:showCoopTips(baseview)
 		local times = ConfigReader:getDataByNameIdAndKey("ConfigValue", "CooperationBossBumbleTip", "content") or 30
 
 		local function callback(data)
+			if DisposableObject:isDisposed(self) then
+				return
+			end
+
 			local maps = data.invitedBossIdMap
 
 			if #maps > 0 then
