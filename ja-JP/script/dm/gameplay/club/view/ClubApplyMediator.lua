@@ -895,12 +895,7 @@ function ClubApplyMediator:onClickPlayerInfo(sender, eventType, idx)
 			leadStageId = data:getLeadStageId(),
 			leadStageLevel = data:getLeadStageLevel()
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getPropRid(), function (response)

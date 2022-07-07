@@ -391,9 +391,9 @@ function PlayerInfoWidget:onClickHead(sender, eventType)
 	if eventType == ccui.TouchEventType.ended then
 		AudioEngine:getInstance():playEffect("Se_Click_Open_1", false)
 
-		local view = self:getInjector():getInstance("settingView")
+		local player = self._developSystem:getPlayer()
 
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, nil))
+		self._settingSystem:tryEnter(player:getRid())
 	end
 end
 

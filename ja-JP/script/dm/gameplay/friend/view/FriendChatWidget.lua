@@ -183,7 +183,7 @@ function FriendChatWidget:setupChatOperatorWidget()
 	end
 end
 
-function FriendChatWidget:updateView(data, curTabType)
+function FriendChatWidget:updateView(data, curTabType, forceRefresh)
 	if not data then
 		return
 	end
@@ -262,7 +262,7 @@ function FriendChatWidget:updateView(data, curTabType)
 	local delBtn = self._chatPanel:getChildByName("btn_del")
 	local fightBtn = self._chatPanel:getChildByName("btn_fight")
 
-	if self._data ~= data then
+	if self._data ~= data or forceRefresh then
 		self._data = data
 
 		self:setupListView()
@@ -435,11 +435,8 @@ function FriendChatWidget:onClickDetails(sender, eventType)
 		})
 
 		record.lastView = "friendChatView"
-		local view = self:getInjector():getInstance("PlayerInfoView")
 
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(self._data:getRid(), function (response)

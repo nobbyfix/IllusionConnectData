@@ -368,12 +368,8 @@ function ClubRankMediator:onCellClicked(sender, eventType, idx)
 			end
 
 			local friendSystem = self:getInjector():getInstance(FriendSystem)
-			local view = self:getInjector():getInstance("PlayerInfoView")
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				remainLastView = true,
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, rankRecord, delegate))
+			friendSystem:showFriendPlayerInfoView(rankRecord:getRid(), rankRecord)
 		end
 	elseif eventType == ccui.TouchEventType.began then
 		self._tableViewPosY = self:getTableViewPosY()

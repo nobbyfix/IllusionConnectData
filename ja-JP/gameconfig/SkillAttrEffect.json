@@ -16904,6 +16904,26 @@
             0.3
         ]
     },
+    "Hero_ABlock_PSKe_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
     "Hero_ABlock_QBTe_Extra": {
         "AttrType": [
             "HURTRATE",
@@ -17222,7 +17242,8 @@
     },
     "Hero_ABlock_TLSi_Extra": {
         "AttrType": [
-            "HURTRATE"
+            "HURTRATE",
+            "UNHURTRATE"
         ],
         "EffectDesc": "",
         "EffectRange": [
@@ -17235,6 +17256,7 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
+            0.8,
             0.8
         ]
     },
@@ -109209,6 +109231,86 @@
             1350
         ]
     },
+    "Music_TLSi_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Music_TLSi_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.35,
+            0.35
+        ]
+    },
+    "Music_TLSi_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "Music_TLSi_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.55,
+            0.55
+        ]
+    },
     "P1_Q1_01": {
         "AttrType": [
             "ATK"
@@ -150868,6 +150970,48 @@
             0.05
         ]
     },
+    "Star_IA_LDu_1": {
+        "AttrType": [
+            "DEF_RATE",
+            "HP_RATE",
+            "UNCRITRATE"
+        ],
+        "EffectDesc": "Star_IA_LDu_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.08,
+            0.08,
+            0.1
+        ]
+    },
+    "Star_IA_LDu_2": {
+        "AttrType": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_IA_LDu_2_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.02,
+            0.05
+        ]
+    },
     "Star_IA_LFEr_1": {
         "AttrType": [
             "DEF_RATE",
@@ -155846,6 +155990,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_XBKLDi_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_XBKLDi_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_XDE_3_1": {

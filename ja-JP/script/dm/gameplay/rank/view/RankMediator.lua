@@ -312,11 +312,6 @@ function RankMediator:initWigetInfo()
 
 		if (type ~= RankType.kClub or type ~= RankType.kClubBoss) and myselfData:getRid() ~= "" then
 			showView = true
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, myselfData))
 		elseif myselfData:getRid() == "" then
 			self:dispatch(ShowTipEvent({
 				duration = 0.35,
@@ -324,11 +319,10 @@ function RankMediator:initWigetInfo()
 			}))
 		else
 			showView = true
-			local view = self:getInjector():getInstance("PlayerInfoView")
+		end
 
-			self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, myselfData, nil))
+		if showView then
+			self._friendSystem:showFriendPlayerInfoView(myselfData:getRid(), myselfData)
 		end
 	end)
 	self._title1:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
@@ -495,11 +489,7 @@ function RankMediator:onClickRankCell(cell)
 			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
 		}, nil)
 	else
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 end
 

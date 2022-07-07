@@ -1059,12 +1059,7 @@ function ClubBasicInfoMediator:infoBtn(sender, eventType)
 			tags = memberData:getTags(),
 			block = response.block
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(memberData:getRid(), function (response)

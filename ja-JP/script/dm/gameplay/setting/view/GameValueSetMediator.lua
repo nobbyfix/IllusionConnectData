@@ -82,6 +82,121 @@ local volumeConHeight = 9
 local volumeConWidth = 2.6
 local volumeConWidth2 = 2.4
 local adjustSafeX = 100
+local TabType = {
+	kSound = 1,
+	kAccount = 3,
+	kOther = 4,
+	kPicture = 2
+}
+local TabName = {
+	{
+		"Game_Set_Sound",
+		"UITitle_EN_Shengyinshezhi",
+		"btn_1_view"
+	},
+	{
+		"Game_Set_Picture",
+		"UITitle_EN_Huamianshezhi",
+		"btn_2_view"
+	},
+	{
+		"Setting_Ui_Text_15",
+		"UITitle_EN_Zhanghaoshezhi",
+		"btn_3_view"
+	},
+	{
+		"Setting_Ui_Text_16",
+		"UITitle_EN_Qita",
+		"btn_3_view"
+	}
+}
+local kBtnTabList = {
+	{
+		btnRes = "sz_btn_grxx_wtfk.png",
+		btnShow = "isAccountCenterBtnShow",
+		btnName = "setting_ui_AccountCenter",
+		id = "accountBtn",
+		sort = 1,
+		callback = {
+			clickAudio = "Se_Click_Common_2",
+			func = "onClickAccountCenterBtn"
+		},
+		tab = TabType.kAccount
+	},
+	{
+		btnShow = "isBindAccountBtnShow",
+		btnName = "Setting_Ui_Text_18",
+		id = "bindAccountBtn",
+		sort = 1,
+		callback = {
+			clickAudio = "Se_Click_Common_1",
+			func = "onClickBindAccount"
+		},
+		tab = TabType.kAccount
+	},
+	{
+		btnShow = "isDeleteAccountBtnShow",
+		btnName = "Setting_Ui_Text_20",
+		id = "deleteAccountBtn",
+		sort = 4,
+		callback = {
+			clickAudio = "Se_Click_Common_1",
+			func = "onClickDeleteAccount"
+		},
+		tab = TabType.kAccount
+	},
+	{
+		btnShow = "isReLoginBtnShow",
+		btnName = "Setting_Ui_Text_21",
+		id = "reLoginBtn",
+		sort = 5,
+		callback = {
+			clickAudio = "Se_Click_Common_1",
+			func = "onClickReLoginBtn"
+		},
+		tab = TabType.kAccount
+	},
+	{
+		btnShow = "isCustomerServiceBtnShow",
+		btnName = "Setting_Ui_Text_23",
+		id = "customerServiceBtn",
+		sort = 2,
+		callback = {
+			func = "onClickCustomerService"
+		},
+		tab = TabType.kOther
+	},
+	{
+		btnShow = "isTermsBtnShow",
+		btnName = "Setting_Ui_Text_25",
+		id = "termsBtn",
+		sort = 4,
+		callback = {
+			func = "onClickTermsBtn"
+		},
+		tab = TabType.kOther
+	},
+	{
+		btnShow = "isPrivacyBtnShow",
+		btnName = "Setting_Ui_Text_26",
+		id = "privacyBtn",
+		sort = 5,
+		callback = {
+			func = "onClickPrivacyBtn"
+		},
+		tab = TabType.kOther
+	},
+	{
+		btnShow = "isInheritanceCodeBtnShow",
+		btnName = "Setting_Ui_Text_41",
+		id = "InheritanceCode",
+		sort = 2,
+		callback = {
+			func = "onClickInheritanceCodeBtn"
+		},
+		tab = TabType.kAccount
+	}
+}
 
 function GameValueSetMediator:initialize()
 	super.initialize(self)
@@ -144,46 +259,51 @@ function GameValueSetMediator:setupView()
 		self:onClickFPSBtn(sender)
 	end)
 	self:onClickFPSBtn()
+
+	self._tabPanel = self._main:getChildByFullName("tanpanel")
+	local btnView = self._main:getChildByFullName("btn_3_view")
+
+	soundSetView:setVisible(false)
+	pictureSetView:setVisible(false)
+	btnView:setVisible(false)
+
+	self._btnClone = self._main:getChildByFullName("BtnClone"):setVisible(false)
 end
 
 function GameValueSetMediator:setTab()
-	for i = 1, 2 do
-		local _btn = self:getView():getChildByFullName("main.btn_" .. i)
-		local view = self:getView():getChildByFullName("main.btn_" .. i .. "_view")
-
-		if i == self._selectTag then
-			_btn:getChildByFullName("light"):setVisible(true)
-			_btn:getChildByFullName("dark"):setVisible(false)
-			view:setVisible(true)
-		else
-			_btn:getChildByFullName("light"):setVisible(false)
-			_btn:getChildByFullName("dark"):setVisible(true)
-			view:setVisible(false)
+	local config = {
+		onClickTab = function (name, tag)
+			self:onClickTabBtn(name, tag)
 		end
+	}
+	local data = {}
 
-		_btn:setTag(i)
-
-		_btn.view = view
-
-		local function callfunc(sender)
-			self:onClickTabBtn(sender)
-		end
-
-		mapButtonHandlerClick(nil, _btn, {
-			clickAudio = "Se_Click_Tab_1",
-			func = callfunc
-		})
-
-		local lightText = _btn:getChildByFullName("light.text")
-		local darkText = _btn:getChildByFullName("dark.text")
-
-		lightText:enableOutline(cc.c4b(3, 1, 4, 51), 1)
-		lightText:setColor(cc.c4b(177, 235, 16, 73.94999999999999))
-		lightText:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
-		darkText:enableOutline(cc.c4b(3, 1, 4, 51), 1)
-		darkText:setColor(cc.c4b(110, 108, 108, 255))
-		darkText:enableShadow(cc.c4b(3, 1, 4, 25.5), cc.size(1, 0), 1)
+	for i = 1, #TabName do
+		data[#data + 1] = {
+			tabText = Strings:get(TabName[i][1]),
+			tabTextTranslate = Strings:get(TabName[i][2])
+		}
 	end
+
+	config.btnDatas = data
+	local injector = self:getInjector()
+	local widget = TabBtnWidget:createWidgetNode()
+	self._tabBtnWidget = self:autoManageObject(injector:injectInto(TabBtnWidget:new(widget)))
+
+	self._tabBtnWidget:adjustScrollViewSize(0, 272)
+	self._tabBtnWidget:initTabBtn(config, {
+		ignoreSound = true,
+		noCenterBtn = true,
+		ignoreRedSelectState = true
+	})
+	self._tabBtnWidget:selectTabByTag(self._selectTag)
+	self._tabBtnWidget:removeTabBg()
+
+	local view = self._tabBtnWidget:getMainView()
+
+	view:setScale(0.7)
+	view:addTo(self._tabPanel):posite(13, 0)
+	view:setLocalZOrder(1100)
 end
 
 function GameValueSetMediator:initGameSetValue()
@@ -307,27 +427,67 @@ function GameValueSetMediator:initRoleSoundSlider()
 	end)
 end
 
-function GameValueSetMediator:onClickTabBtn(sender)
-	local tag = sender:getTag()
+function GameValueSetMediator:refreshButtonList(tag)
+	local buttons = {}
 
-	if tag == self._selectTag then
-		return
+	for i = 1, #kBtnTabList do
+		local temp = kBtnTabList[i]
+
+		if temp.tab and temp.tab == tag then
+			local isShow, pointShow = self[kBtnTabList[i].btnShow](self)
+
+			if isShow then
+				local _tabValue = {
+					index = i,
+					id = kBtnTabList[i].id,
+					sort = kBtnTabList[i].sort or 1,
+					btnName = kBtnTabList[i].btnName,
+					callback = kBtnTabList[i].callback
+				}
+				buttons[#buttons + 1] = _tabValue
+			end
+		end
 	end
 
-	local oldBtn = self:getView():getChildByFullName("main.btn_" .. self._selectTag)
+	table.sort(buttons, function (a, b)
+		if a.sort == b.sort then
+			return a.index < b.index
+		else
+			return a.sort < b.sort
+		end
+	end)
 
-	oldBtn:getChildByFullName("light"):setVisible(false)
-	oldBtn:getChildByFullName("dark"):setVisible(true)
+	self._buttons = buttons
+	local btnPanel = self._main:getChildByFullName("btn_3_view")
 
-	local oldView = oldBtn.view
+	btnPanel:removeAllChildren()
+
+	for index = 1, #self._buttons do
+		local btn = self._btnClone:clone():setVisible(true)
+
+		btn:getChildByName("btnText"):setString(Strings:get(self._buttons[index].btnName))
+		btn:setName(self._buttons[index].id)
+		btn:setAnchorPoint(cc.p(0, 0))
+
+		local line = math.ceil(index / 2)
+		local pos = cc.p(200 * (index - 2 * (line - 1) - 1) + 20, 230 - 80 * line)
+
+		self:mapButtonHandlerClick(btn, self._buttons[index].callback)
+		btn:addTo(btnPanel)
+		btn:setPosition(pos)
+	end
+end
+
+function GameValueSetMediator:onClickTabBtn(name, tag)
+	local oldView = self._main:getChildByName(TabName[self._selectTag][3])
+	local newView = self._main:getChildByName(TabName[tag][3])
 
 	oldView:setVisible(false)
-	sender:getChildByFullName("light"):setVisible(true)
-	sender:getChildByFullName("dark"):setVisible(false)
+	newView:setVisible(true)
 
-	local view = sender.view
-
-	view:setVisible(true)
+	if tag == TabType.kAccount or tag == TabType.kOther then
+		self:refreshButtonList(tag)
+	end
 
 	self._selectTag = tag
 end
@@ -452,6 +612,38 @@ function GameValueSetMediator:isResourceDomShow()
 	return false
 end
 
+function GameValueSetMediator:isTermsBtnShow()
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and CommonUtils.GetSwitch("fn_setting_url")
+end
+
+function GameValueSetMediator:isPrivacyBtnShow()
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and CommonUtils.GetSwitch("fn_setting_url")
+end
+
+function GameValueSetMediator:isReLoginBtnShow()
+	return SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn
+end
+
+function GameValueSetMediator:isBindAccountBtnShow()
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and not PlatformHelper:isDMMChannel()
+end
+
+function GameValueSetMediator:isDeleteAccountBtnShow()
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and not PlatformHelper:isDMMChannel()
+end
+
+function GameValueSetMediator:isCustomerServiceBtnShow()
+	return SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn
+end
+
+function GameValueSetMediator:isInheritanceCodeBtnShow()
+	return (SDKHelper and SDKHelper:isEnableSdk() or GameConfigs.showAllSettingBtn) and CommonUtils.GetSwitch("fn_inheritanceCode") and not PlatformHelper:isDMMChannel()
+end
+
+function GameValueSetMediator:isAccountCenterBtnShow()
+	return false
+end
+
 function GameValueSetMediator:onClickGameAnnounce(sender, eventType)
 	if CommonUtils.GetSwitch("fn_announce_check_in") then
 		local view = self:getInjector():getInstance("serverAnnounceViewNew")
@@ -537,4 +729,143 @@ end
 
 function GameValueSetMediator:downloadSoundCVOver()
 	self:refreshRightList()
+end
+
+function GameValueSetMediator:onClickAccountCenterBtn(sender, eventType)
+	if eventType == ccui.TouchEventType.ended and SDKHelper and SDKHelper:isEnableSdk() then
+		SDKHelper:userCenterByPwrdView()
+	end
+end
+
+function GameValueSetMediator:onClickCustomerService()
+	local loginSystem = self:getInjector():getInstance(LoginSystem)
+	local serverInfo = loginSystem:getCurServer()
+	local player = self._developSystem:getPlayer()
+	local data = {
+		remark = "some string",
+		roleId = tostring(player:getRid()),
+		roleName = tostring(player:getNickName()),
+		serverName = serverInfo:getName(),
+		serverId = tostring(serverInfo:getSecId()),
+		roleLevel = tostring(player:getLevel()),
+		vip = tostring(serverInfo:getVipLevel())
+	}
+
+	SDKHelper:customerService(data)
+
+	if false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Item_PleaseWait")
+		}))
+
+		return
+	end
+end
+
+function GameValueSetMediator:onClickTermsBtn()
+	local config = ConfigReader:getRecordById("ConfigValue", "Using_Conventions")
+
+	assert(config, "config value Using_Conventions not find")
+
+	local view = self:getInjector():getInstance("NativeWebView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		url = config.content
+	}, nil))
+end
+
+function GameValueSetMediator:onClickPrivacyBtn()
+	local config = ConfigReader:getRecordById("ConfigValue", "Privacy_Clause")
+
+	assert(config, "config value Privacy_Clause not find")
+
+	local view = self:getInjector():getInstance("NativeWebView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {
+		url = config.content
+	}, nil))
+end
+
+function GameValueSetMediator:onClickBindAccount()
+	if SDKHelper and SDKHelper:isEnableSdk() then
+		SDKHelper:bindAccount()
+	else
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Item_PleaseWait")
+		}))
+
+		return
+	end
+end
+
+function GameValueSetMediator:onClickDeleteAccount()
+	SDKHelper:deleteAccount()
+end
+
+function GameValueSetMediator:onClickReLoginBtn()
+	local data = {
+		title = Strings:get("Setting_Ui_Text_21"),
+		title1 = Strings:get("UITitle_EN_Fanhuidenglu"),
+		content = Strings:get("Setting_Ui_Text_30"),
+		sureBtn = {},
+		cancelBtn = {}
+	}
+	local outSelf = self
+	local delegate = {}
+
+	function delegate:willClose(popupMediator, data)
+		if data.response == "ok" then
+			if SDKHelper and SDKHelper:isEnableSdk() then
+				SDKHelper:logOut()
+
+				local developSystem = popupMediator:getInjector():getInstance("DevelopSystem")
+				local player = developSystem:getPlayer()
+
+				SDKHelper:reportLogout({
+					roleName = tostring(player:getNickName()),
+					roleId = tostring(player:getRid()),
+					roleLevel = tostring(player:getLevel()),
+					roleCombat = checkint(player:getCombat()),
+					ip = tostring(developSystem:getServerIp()),
+					port = tostring(developSystem:getServerPort())
+				})
+			end
+
+			REBOOT("REBOOT_NOUPDATE")
+		elseif data.response == "cancel" then
+			-- Nothing
+		elseif data.response == "close" then
+			-- Nothing
+		end
+	end
+
+	local view = self:getInjector():getInstance("AlertView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, data, delegate))
+
+	if false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Item_PleaseWait")
+		}))
+
+		return
+	end
+end
+
+function GameValueSetMediator:onClickInheritanceCodeBtn()
+	SDKHelper:getInheritanceCode()
+
+	if false then
+		self:dispatch(ShowTipEvent({
+			tip = Strings:get("Item_PleaseWait")
+		}))
+
+		return
+	end
 end

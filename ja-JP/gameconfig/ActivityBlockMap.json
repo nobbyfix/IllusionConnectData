@@ -286,6 +286,74 @@
         ],
         "Type": "NORMAL"
     },
+    "AMusicFestival_ReE01": {
+        "BGM": "Mus_Story_MusicFestival_2",
+        "Background": "MusicFestival_Re_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MusicFestivalAE01_Name",
+        "StarBoxReward": {
+            "10": "AMusicFestival_ReE01BOX01",
+            "20": "AMusicFestival_ReE01BOX02",
+            "30": "AMusicFestival_ReE01BOX03"
+        },
+        "SubPoint": [
+            "AMusicFestival_ReE01S01",
+            "AMusicFestival_ReE01S02",
+            "AMusicFestival_ReE01S03",
+            "AMusicFestival_ReE01S04",
+            "AMusicFestival_ReE01S05",
+            "AMusicFestival_ReE01S06",
+            "AMusicFestival_ReE01S07",
+            "AMusicFestival_ReE01S08",
+            "AMusicFestival_ReE01S09",
+            "AMusicFestival_ReE01S10",
+            "AMusicFestival_ReE01S11",
+            "AMusicFestival_ReE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "AMusicFestival_ReS01E01",
+            "AMusicFestival_ReS01E02",
+            "AMusicFestival_ReS01E03",
+            "AMusicFestival_ReS01E04"
+        ],
+        "Type": "ELITE"
+    },
+    "AMusicFestival_ReM01": {
+        "BGM": "Mus_Story_MusicFestival_2",
+        "Background": "MusicFestival_Re_Scene01",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_MusicFestivalAM01_Name",
+        "StarBoxReward": {
+            "10": "AMusicFestival_ReM01BOX01",
+            "20": "AMusicFestival_ReM01BOX02",
+            "30": "AMusicFestival_ReM01BOX03"
+        },
+        "SubPoint": [
+            "AMusicFestival_ReM01S01",
+            "AMusicFestival_ReM01S02",
+            "AMusicFestival_ReM01S03",
+            "AMusicFestival_ReM01S04",
+            "AMusicFestival_ReM01S05",
+            "AMusicFestival_ReM01S06",
+            "AMusicFestival_ReM01S07",
+            "AMusicFestival_ReM01S08",
+            "AMusicFestival_ReM01S09",
+            "AMusicFestival_ReM01S10",
+            "AMusicFestival_ReM01S11",
+            "AMusicFestival_ReM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "AMusicFestival_ReS01S01",
+            "AMusicFestival_ReS01S02",
+            "AMusicFestival_ReS01S03",
+            "AMusicFestival_ReS01S04"
+        ],
+        "Type": "NORMAL"
+    },
     "ANewYearM01": {
         "BGM": "Mus_Story_Christmas",
         "Background": "Bg_Copy_ANewYea_1",

@@ -458,8 +458,11 @@ all.Skill_SP_PNCao_Passive = {
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
 					local num = global.GetCardSufaceIndex(_env, card)
+					local cardcopy = global.InheritCard(_env, card, RoleModel[num + 1])
 
-					global.InheritCard(_env, card, RoleModel[num + 1])
+					global.AddCardFlags(_env, cardcopy, {
+						"SP_NNuo_Check"
+					})
 				end
 			end
 		end)
@@ -991,8 +994,11 @@ all.Skill_SP_PNCao_Passive_EX = {
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
 					local num = global.GetCardSufaceIndex(_env, card)
+					local cardcopy = global.InheritCard(_env, card, RoleModel[num + 1])
 
-					global.InheritCard(_env, card, RoleModel[num + 1])
+					global.AddCardFlags(_env, cardcopy, {
+						"SP_NNuo_Check"
+					})
 				end
 			end
 		end)
@@ -1412,8 +1418,11 @@ all.Skill_SP_PNCao_Passive_Awaken = {
 
 				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
 					local num = global.GetCardSufaceIndex(_env, card)
+					local cardcopy = global.InheritCard(_env, card, RoleModel[num + 1])
 
-					global.InheritCard(_env, card, RoleModel[num + 1])
+					global.AddCardFlags(_env, cardcopy, {
+						"SP_NNuo_Check"
+					})
 				end
 			end
 		end)

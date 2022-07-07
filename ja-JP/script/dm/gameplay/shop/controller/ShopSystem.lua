@@ -1717,20 +1717,18 @@ function ShopSystem:getMonthCardHeadFrame()
 
 	local curTime = self._gameServerAgent:remoteTimestamp()
 
-	if data then
-		for i, v in pairs(data.normal) do
-			local startDate = TimeUtil:parseDateTime({}, v.start)
-			local endDate = TimeUtil:parseDateTime({}, v["end"])
-			local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
-			local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
+	for i, v in pairs(data.normal) do
+		local startDate = TimeUtil:parseDateTime({}, v.start)
+		local endDate = TimeUtil:parseDateTime({}, v["end"])
+		local startT = TimeUtil:getTimeByDateForTargetTime(startDate)
+		local endT = TimeUtil:getTimeByDateForTargetTime(endDate)
 
-			if startT <= curTime and curTime <= endT then
-				local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
+		if startT <= curTime and curTime <= endT then
+			local rewards = ConfigReader:getDataByNameIdAndKey("Reward", v.reward, "Content")
 
-				for _, reward in pairs(rewards) do
-					if reward.type == 14 then
-						return reward
-					end
+			for _, reward in pairs(rewards) do
+				if reward.type == RewardType.kHeadFrame or reward.type == RewardType.kChatBubble then
+					return reward
 				end
 			end
 		end

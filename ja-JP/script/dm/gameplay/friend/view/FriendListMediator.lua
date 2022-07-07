@@ -172,6 +172,7 @@ function FriendListMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_DELECT_SUCC, self, self.onDelectFriendCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_FRIEND_ADD_SUCC, self, self.onApplySuccCallback)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHAT_REMOVE_MESSAGE_SUCC, self, self.onRemoveMessageCallback)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGECHATBUBBLE_SUCC, self, self.onBubbleChangeCallback)
 end
 
 function FriendListMediator:setChatWidget()
@@ -928,12 +929,7 @@ function FriendListMediator:onClickHead(data, sender)
 			leadStageId = data:getLeadStageId(),
 			leadStageLevel = data:getLeadStageLevel()
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	friendSystem:requestSimpleFriendInfo(data:getRid(), function (response)
@@ -943,4 +939,8 @@ end
 
 function FriendListMediator:onRemoveMessageCallback(data)
 	self:refreshView()
+end
+
+function FriendListMediator:onBubbleChangeCallback(data)
+	self._chatWidget:updateView(self._chatFriend, nil, true)
 end

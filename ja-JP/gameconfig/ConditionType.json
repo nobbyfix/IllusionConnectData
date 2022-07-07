@@ -1115,7 +1115,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220612.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220712.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1136,7 +1136,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220612.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220712.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1146,6 +1146,13 @@
         "ConditionType1": "player.bag.items.IM_MusicFestival_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_MusicFestivalExchangeAchieve_Desc"
+    },
+    "Condi_MusicFestival_Re_ExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_MusicFestival_Re_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MusicFestival_ExchangeAchieve_Desc"
     },
     "Condi_NormalLabEnter": {
         "AchieveType1": "CUSTOM",

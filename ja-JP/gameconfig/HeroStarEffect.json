@@ -9297,6 +9297,58 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "LDu_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_LDu_1"
+        ],
+        "HeroId": "LDu",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "LDu_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "LDu_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_LDu_2"
+        ],
+        "HeroId": "LDu",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_LDu_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
     "LEMHou_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -20265,6 +20317,32 @@
         "StarStive": 6000,
         "StarUpCost": 50000,
         "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "XBKLDi_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_XBKLDi_Awake"
+        ],
+        "HeroId": "XBKLDi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_PBattle_XBKLDi_Awaken",
+            "StarSE_XBKLDi_Awaken"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
         "UpNeedItem": "",
         "Visible": 1
     },

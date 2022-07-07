@@ -1,6 +1,6 @@
 local kMaxPlayerContentWidth = 450
 local kMaxSystemContentWidth = 668
-local kDefaultBubbleWidth = 81
+local kDefaultBubbleWidth = 80
 local kDefaultBubbleHeight = 66
 
 local function openUrlView(url, injector, extraData, param)
@@ -51,12 +51,38 @@ function PlayerMessageWidget:isRichText(string)
 end
 
 function PlayerMessageWidget:decorateView(message, senderInfo, parent)
-	dump(message, "message >>>>>>>>>>>")
-	dump(senderInfo, "senderInfo >>>>>>>>>>>")
-
 	self._message = message
 	self._parentMediator = parent
+	local bubble = self._main:getChildByFullName("Text_panel.bubble")
 	local contentRect = self._main:getChildByFullName("Text_panel.bubble.content_rect")
+	local initBubble = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Bubble_Init", "content")
+	local bubbleWidth = kDefaultBubbleWidth
+	local bubbleheight = kDefaultBubbleHeight
+
+	if senderInfo.chatBubble and senderInfo.chatBubble ~= "" and senderInfo.chatBubble ~= initBubble then
+		local config = ConfigReader:getRecordById("ChatBubble", senderInfo.chatBubble)
+		local path = "asset/ui/chatBubble/" .. config.Icon .. ".png"
+		local parent = bubble:getParent()
+		local x, y = bubble:getPosition()
+		local ch = bubble:getAnchorPoint()
+
+		contentRect:removeFromParent()
+		bubble:removeFromParent()
+
+		bubble = ccui.ImageView:create(path)
+
+		bubble:addTo(parent):posite(x, y):setName("bubble")
+		bubble:setAnchorPoint(ch)
+
+		bubbleWidth = bubble:getContentSize().width
+		bubbleheight = bubble:getContentSize().height
+
+		contentRect:addTo(bubble):setName("content_rect")
+	end
+
+	bubble:setScale9Enabled(true)
+	bubble:setCapInsets(cc.rect(45, 37, 1, 1))
+
 	local content = message:getContent()
 	local contentText = self._main:getChildByFullName("content_text")
 
@@ -68,7 +94,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 			contentText:setSwallowTouches(false)
 			contentText:setWrapMode(1)
 			contentText:setAnchorPoint(contentRect:getAnchorPoint())
-			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):offset(6, 0):setName("content_text")
 			contentText:setOpenUrlHandler(function (url)
 				openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
 			end)
@@ -91,7 +117,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 			contentText = cc.Label:createWithTTF(xmlUnescape(content), TTF_FONT_FZYH_R, 18)
 
 			contentText:setAnchorPoint(contentRect:getAnchorPoint())
-			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+			contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):offset(7, 0):setName("content_text")
 			contentText:setColor(cc.c3b(52, 52, 52))
 			contentText:setOverflow(cc.LabelOverflow.CLAMP)
 		else
@@ -109,9 +135,8 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 	end
 
 	local realSize = self._contentText:getContentSize()
-	local bubble = self._main:getChildByFullName("Text_panel.bubble")
-	local setBubbleSizeX = kDefaultBubbleWidth < realSize.width + 28 and realSize.width + 28 or kDefaultBubbleWidth
-	local setBubbleSizeY = kDefaultBubbleHeight < realSize.height + 25 and realSize.height + 25 or kDefaultBubbleHeight
+	local setBubbleSizeX = bubbleWidth < realSize.width + 40 and realSize.width + 40 or bubbleWidth
+	local setBubbleSizeY = bubbleheight < realSize.height + 40 and realSize.height + 40 or bubbleheight
 
 	bubble:setContentSize(setBubbleSizeX, setBubbleSizeY)
 	contentText:setPositionY(setBubbleSizeY * 0.5)
@@ -152,7 +177,6 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		local nameText = self._main:getChildByFullName("Text_panel.name_text")
 
 		nameText:setString(senderInfo.nickname or "")
-		nameText:setPositionY(kDefaultBubbleHeight)
 		nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
 		local vipNode = self._main:getChildByFullName("Text_panel.vipnode")
@@ -172,7 +196,7 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 	local mainSize = self._main:getContentSize()
 	local msgLine = math.modf(realSize.height / 24)
 
-	self._view:setContentSize(mainSize.width, mainSize.height + 24 * msgLine)
+	self._view:setContentSize(mainSize.width, setBubbleSizeY + 35)
 	self._main:posite(0, self._view:getContentSize().height)
 	self:createEmotionView(message, senderInfo, parent)
 end
@@ -232,12 +256,7 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 				leadStageId = senderInfo.leadStageId,
 				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)
@@ -446,7 +465,36 @@ function PrivateMessageWidget:decorateView(message, senderInfo, parent)
 	nameText:setString(senderInfo.nickname or "")
 	nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
+	local bubble = self._main:getChildByFullName("bubble")
 	local contentRect = self._main:getChildByFullName("bubble.content_rect")
+	local initBubble = ConfigReader:getDataByNameIdAndKey("ConfigValue", "Bubble_Init", "content")
+	local bubbleWidth = kDefaultBubbleWidth
+	local bubbleheight = kDefaultBubbleHeight
+
+	if senderInfo.chatBubble and senderInfo.chatBubble ~= "" and senderInfo.chatBubble ~= initBubble then
+		local config = ConfigReader:getRecordById("ChatBubble", senderInfo.chatBubble)
+		local path = "asset/ui/chatBubble/" .. config.Icon .. ".png"
+		local parent = bubble:getParent()
+		local x, y = bubble:getPosition()
+		local ch = bubble:getAnchorPoint()
+
+		contentRect:removeFromParent()
+		bubble:removeFromParent()
+
+		bubble = ccui.ImageView:create(path)
+
+		bubble:addTo(parent):posite(x, y):setName("bubble")
+		bubble:setAnchorPoint(ch)
+
+		bubbleWidth = bubble:getContentSize().width
+		bubbleheight = bubble:getContentSize().height
+
+		contentRect:addTo(bubble):setName("content_rect")
+	end
+
+	bubble:setScale9Enabled(true)
+	bubble:setCapInsets(cc.rect(46, 35, 1, 1))
+
 	local content = message:getContent()
 	local contentText = self._main:getChildByFullName("content_text")
 
@@ -460,7 +508,7 @@ function PrivateMessageWidget:decorateView(message, senderInfo, parent)
 		contentText:setSwallowTouches(false)
 		contentText:setWrapMode(1)
 		contentText:setAnchorPoint(contentRect:getAnchorPoint())
-		contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):setName("content_text")
+		contentText:addTo(contentRect:getParent()):posite(contentRect:getPosition()):offset(6, 0):setName("content_text")
 		contentText:setOpenUrlHandler(function (url)
 			openUrlView(url, self:getInjector(), message:getExtraData(), message:getParams())
 		end)
@@ -476,7 +524,6 @@ function PrivateMessageWidget:decorateView(message, senderInfo, parent)
 	contentText:renderContent(realWidth, 0, true)
 
 	local realSize = contentText:getContentSize()
-	local bubble = self._main:getChildByFullName("bubble")
 	local setBubbleSizeX = kDefaultBubbleWidth < realSize.width + 20 and realSize.width + 20 or kDefaultBubbleWidth
 	local setBubbleSizeY = kDefaultBubbleHeight < realSize.height + 26 and realSize.height + 26 or kDefaultBubbleHeight
 
@@ -521,12 +568,7 @@ function PrivateMessageWidget:onClickHead(senderInfo, sender)
 				leadStageId = senderInfo.leadStageId,
 				leadStageLevel = senderInfo.leadStageLevel
 			})
-
-			local view = self:getInjector():getInstance("PlayerInfoView")
-
-			self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-				transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-			}, record))
+			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end
 
 		friendSystem:requestSimpleFriendInfo(senderInfo.id, function (response)

@@ -902,7 +902,12 @@ all.Skill_YBYa_Redfox_Passive_Death = {
 
 					if DmgRateFactor == 0 then
 						local MyMaster = global.GetSummoner(_env, _env.ACTOR)
-						DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, MyMaster)
+
+						if MyMaster then
+							DmgRateFactor = global.SpecialPropGetter(_env, "specialnum1")(_env, MyMaster)
+						else
+							DmgRateFactor = 1.2
+						end
 					end
 
 					global.print(_env, DmgRateFactor, "DmgRateFactor=====")

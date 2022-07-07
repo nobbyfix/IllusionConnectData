@@ -5379,18 +5379,36 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	local this = _env.this
 	local global = _env.global
 	local card = nil
+	local flag = 0
+	local check = 0
 
-	if cond == "card" then
-		if #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) ~= 0 then
-			-- Nothing
-		else
-			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) ~= 0 then
+		flag = 1
+	end
 
-			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
-				global.SetFriendField(_env, nil, 1, "BackToCard", true)
-			end
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SummonedCBJun_Check")) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "King_Check")) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SP_NNuo_Check")) and not global.MARKED(_env, "SP_NNuo_Check")(_env, unit) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SP_NNuo_Check")) == 0 and global.MARKED(_env, "SP_NNuo_Check")(_env, unit) then
+		flag = 0
+	end
+
+	if cond == "card" and flag == 0 then
+		card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+
+		if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+			global.SetFriendField(_env, nil, 1, "BackToCard", true)
 		end
-	elseif cond == "window" and #global.CardsInWindow(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == 0 then
+	elseif cond == "window" and flag == 0 then
 		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKick")) <= 0 then
 			local cardlocation = global.GetCardWindowIndex(_env, unit)
 

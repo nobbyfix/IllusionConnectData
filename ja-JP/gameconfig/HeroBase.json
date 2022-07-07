@@ -26934,7 +26934,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.17,
-        "AwakePic": "",
+        "AwakePic": "portrait_yasong",
         "BaseAttack": 240.0,
         "BaseDefence": 60.0,
         "BaseHp": 989.0,
@@ -26978,7 +26978,7 @@
         "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_XBKLDi",
-        "KeyPassiveSkill": "",
+        "KeyPassiveSkill": "Skill_XBKLDi_Passive_Key",
         "LevelUpFactor": 1.0,
         "MVPText": "MVPText_XBKLDi",
         "MasterRage": 216,
@@ -26989,7 +26989,32 @@
         "Name": "HeroBase_Name_XBKLDi",
         "NormalSkill": "Hero_Normal_XBKLDi",
         "Party": "XD",
-        "PassiveCondition": "",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_BiLei"
+                        ],
+                        [
+                            "Master_SenLing"
+                        ],
+                        [
+                            "Tower_1_Master3"
+                        ],
+                        [
+                            "Tower_1_Master5"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
         "Position": "HeroBase_Position_XBKLDi",
         "ProudSkill": "Hero_Proud_XBKLDi",
         "Rareity": 14,

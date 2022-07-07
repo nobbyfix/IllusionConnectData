@@ -264,12 +264,7 @@ function FriendBlackMediator:onClickFriendCell(data)
 			leadStageId = data.leadStageId,
 			leadStageLevel = data.leadStageLevel
 		})
-
-		local view = self:getInjector():getInstance("PlayerInfoView")
-
-		self:getEventDispatcher():dispatchEvent(ViewEvent:new(EVT_SHOW_POPUP, view, {
-			transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
-		}, record))
+		self._friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end
 
 	self._friendSystem:requestSimpleFriendInfo(data.rid, function (response)
