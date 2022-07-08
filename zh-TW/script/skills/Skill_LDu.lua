@@ -1170,9 +1170,6 @@ all.Skill_LDu_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.test_skill_(_env, _env.ACTOR)
-
 			local buffeft1 = global.SpecialNumericEffect(_env, "+specialnum1", {
 				"?Normal"
 			}, this.DmgRateFactor)
@@ -1234,28 +1231,6 @@ all.Skill_LDu_Passive_EX = {
 				}, {
 					buffeft2
 				}, 1)
-
-				if global.ProbTest(_env, 0.2) then
-					local buffeft1 = global.DeathImmuneEffect(_env, 1)
-
-					global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
-						timing = 0,
-						display = "Undead",
-						group = "EquipSkill_Armor_15012",
-						duration = 99,
-						limit = 1,
-						tags = {
-							"STATUS",
-							"NUMERIC",
-							"BUFF",
-							"UNDEAD",
-							"DISPELLABLE",
-							"UNSTEALABLE"
-						}
-					}, {
-						buffeft1
-					}, 1)
-				end
 			end
 		end)
 

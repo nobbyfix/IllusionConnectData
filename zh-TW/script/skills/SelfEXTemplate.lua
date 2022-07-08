@@ -201,7 +201,7 @@ function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff3(_env, actor, unit)
 			duration = 1,
 			display = "Poison",
 			group = "SelfEX_Cure_OneStage_Choice_SubFunction_Buff3",
-			timing = 0,
+			timing = 3,
 			limit = 1,
 			tags = {
 				"Curse",
@@ -304,9 +304,6 @@ all.SelfEX_Cure_OneStage_Secret_SubSkill = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-
-			global.print(_env, "进来了")
-
 			local num = global.GetFriendField(_env, _env.ACTOR, "SelfEX_Cure_OneStage_Secret_SubSkill")
 
 			if num > 0 then
@@ -327,9 +324,6 @@ all.SelfEX_Cure_OneStage_Secret_SubSkill = {
 function all.SelfEX_Cure_OneStage_Secret_Sub(_env, actor, unit)
 	local this = _env.this
 	local global = _env.global
-
-	global.print(_env, "111")
-
 	local effect = {
 		global.SelfEX_Cure_OneStage_Secret_SubFunction_Buff1,
 		global.SelfEX_Cure_OneStage_Secret_SubFunction_Buff2,
@@ -465,10 +459,6 @@ all.SelfEX_Defend_OneStage_Together_SubSkill = {
 
 		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
 
-		_env.target = externs.target
-
-		assert(_env.target ~= nil, "External variable `target` is not provided.")
-
 		_env.attacker = externs.attacker
 
 		assert(_env.attacker ~= nil, "External variable `attacker` is not provided.")
@@ -588,7 +578,6 @@ all.SelfEX_Summon_OneStage_inherit_SubSkill = {
 				}, {
 					buff2
 				})
-				global.print(_env, "atk and maxHp=", atk, maxHp)
 			end
 		end)
 
@@ -625,8 +614,6 @@ function all.SelfEX_Support_OneStage_treasury(_env, unit, num)
 		})
 		global.TableRemove(_env, position_list, position)
 	end
-
-	global.dump(_env, position_list, "看看移除效果==")
 end
 
 function all.SelfEX_Support_OneStage_treasury_Subfun(_env, actor, att, position, times)
@@ -739,7 +726,6 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Decoration = {
 				local num = 2
 
 				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Decoration")) < num then
-					global.dump(_env, att, "触发了饰品效果")
 					global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Decoration")
 				end
 			end
@@ -812,7 +798,6 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Top = {
 			local att = att_list[pos]
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Top")) < 2 then
-				global.dump(_env, att, "触发了衣服效果")
 				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Top")
 			end
 		end)
@@ -869,7 +854,6 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Boots = {
 			local att = att_list[global.Random(_env, 1, #att_list)]
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Boots")) < 2 then
-				global.dump(_env, att, "触发了鞋子效果")
 				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Boots")
 			end
 		end)
@@ -931,7 +915,6 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Weapon = {
 			local num = 2
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "Weapon")) < num then
-				global.dump(_env, att, "触发了武器效果")
 				global.SelfEX_Support_OneStage_treasury_Subfun(_env, _env.ACTOR, att, "Weapon")
 
 				if num > 2 then
