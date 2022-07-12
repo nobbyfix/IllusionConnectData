@@ -176,7 +176,7 @@ function MazeTowerMainMediator:onClickChallenge()
 	local pointConfig = ConfigReader:getRecordById("MazeRoom", curPointId)
 	local nextPointId = pointConfig.Next
 
-	if nextPointId == nil or nextPointId == "" then
+	if self._mazeTowerSystem:checkCurrPointPass() and (nextPointId == nil or nextPointId == "") then
 		self:dispatch(ShowTipEvent({
 			tip = Strings:get("Maze_Tip_1")
 		}))
