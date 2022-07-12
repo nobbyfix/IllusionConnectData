@@ -83,6 +83,21 @@ function MazeTowerSystem:isCanQuickChallenge(pointId)
 	return tonumber(comBatRequire) <= tonumber(curCombat)
 end
 
+function MazeTowerSystem:checkCurrPointPass()
+	local pass = true
+	local mapInfo = self._mazeTower:getMap()
+
+	for i, v in pairs(mapInfo) do
+		for j, gridData in pairs(v) do
+			if gridData:isHasUnFinishEvent() then
+				pass = false
+			end
+		end
+	end
+
+	return pass
+end
+
 function MazeTowerSystem:requestMainInfo(callback)
 	local params = {}
 
