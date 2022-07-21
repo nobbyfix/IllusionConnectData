@@ -191,8 +191,9 @@ function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff3(_env, actor, unit)
 	local global = _env.global
 	local Victim = global.LoadUnit(_env, unit, "ALL")
 	local attacker = global.LoadUnit(_env, actor, "ALL")
+	local prob = global.EvalProb1(_env, attacker, Victim, 0.22, 0.11)
 
-	if global.GetSide(_env, unit) ~= global.GetSide(_env, actor) and global.EvalProb1(_env, attacker, Victim, 0.22, 0.11) then
+	if global.GetSide(_env, unit) ~= global.GetSide(_env, actor) and global.ProbTest(_env, prob) then
 		global.print(_env, "宋阿姨二觉给谁加了诅咒==", global.GetUnitCid(_env, unit))
 
 		local buff3 = global.Curse(_env)
@@ -218,8 +219,6 @@ end
 function all.SelfEX_Cure_OneStage_Choice_SubFunction_Buff4(_env, actor, unit)
 	local this = _env.this
 	local global = _env.global
-
-	global.dump(_env, global.getFlag(_env, unit), "cid===")
 
 	if global.GetSide(_env, unit) == global.GetSide(_env, actor) and global.ProbTest(_env, global.UnitPropGetter(_env, "effectrate")(_env, actor) + 0.25) and (global.MARKED(_env, "defense")(_env, unit) or global.MARKED(_env, "cure")(_env, unit)) then
 		global.print(_env, "宋阿姨二觉给谁加了暴击==", global.GetUnitCid(_env, unit))

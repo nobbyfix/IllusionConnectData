@@ -869,6 +869,21 @@
         "Type": 2,
         "zOrder": 1.0
     },
+    "Hudun_hskji": {
+        "Color": "",
+        "DescWord": "",
+        "Effect": "main_huangsekejidun",
+        "EffectPos": 0.5,
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": 1,
+        "Priority": "",
+        "Tick": "",
+        "TickPos": "",
+        "Type": 1,
+        "zOrder": ""
+    },
     "HurtRateDown": {
         "Color": "",
         "DescWord": "text_buffimage_hurtrate_down.png",
@@ -1592,6 +1607,21 @@
     "SingleHurtRateUp": {
         "Color": "",
         "DescWord": "text_buffimage_singlehurtrate_up.png",
+        "Effect": "",
+        "EffectPos": "",
+        "HorizontalPos": "",
+        "Icon": "",
+        "Invisible": 1,
+        "Loop": "",
+        "Priority": 1,
+        "Tick": "",
+        "TickPos": "",
+        "Type": 0,
+        "zOrder": 1.0
+    },
+    "SingleUnHurtRateUp": {
+        "Color": "",
+        "DescWord": "text_buffimage_singleunhurtrate_up.png",
         "Effect": "",
         "EffectPos": "",
         "HorizontalPos": "",
