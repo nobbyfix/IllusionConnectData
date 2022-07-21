@@ -4165,6 +4165,116 @@
             "DrawCard_1_UP_GCZi_Desc_3"
         ]
     },
+    "DrawCard_1UP_GCZi_20220721_1": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_1UP_GCZi_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_GCZi_20220721_1_Tittle1",
+                "DrawCard_1UP_GCZi_20220721_1_Text1"
+            ],
+            [
+                "DrawCard_1UP_GCZi_20220721_1_Tittle2",
+                "DrawCard_1UP_GCZi_20220721_1_Text2"
+            ],
+            [
+                "DrawCard_1UP_GCZi_20220721_1_Tittle3",
+                "DrawCard_1UP_GCZi_20220721_1_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_GCZi_",
+            "imgcolor": [
+                "0x3f14ab",
+                "0x0ef78"
+            ],
+            "main": "drawcard_bg_GCZi",
+            "type": "1UP"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_1UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_GCZi_20220721_1_1",
+            "DrawCard_1UP_GCZi_20220721_1_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "GCZi",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "GCZi"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_GCZi_20220721_1_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_1_UP_Desc_1",
+            "DrawCard_1_UP_Desc_2",
+            "DrawCard_1_UP_GCZi_Desc_3"
+        ]
+    },
     "DrawCard_1UP_HGEr_20210324": {
         "Condition": "",
         "Coupon": "IM_DiamondDrawEX",
@@ -6151,6 +6261,116 @@
         ],
         "ShowReward": {
             "Draw_HeroBtnName": "DrawCard_1UP_LEMHou_20220512_2_Show"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_1_UP_Desc_1",
+            "DrawCard_1_UP_Desc_2",
+            "DrawCard_1_UP_LEMHou_Desc_3"
+        ]
+    },
+    "DrawCard_1UP_LEMHou_20220721_2": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "25": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_1UP_LEMHou_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_1UP_LEMHou_20220721_2_Tittle1",
+                "DrawCard_1UP_LEMHou_20220721_2_Text1"
+            ],
+            [
+                "DrawCard_1UP_LEMHou_20220721_2_Tittle2",
+                "DrawCard_1UP_LEMHou_20220721_2_Text2"
+            ],
+            [
+                "DrawCard_1UP_LEMHou_20220721_2_Tittle3",
+                "DrawCard_1UP_LEMHou_20220721_2_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_LEMHou_",
+            "imgcolor": [
+                "194,119,52",
+                "212,89,46"
+            ],
+            "main": "drawcard_bg_LEMHou",
+            "type": "1UP"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_1UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_1UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_1UP_LEMHou_20220721_2_1",
+            "DrawCard_1UP_LEMHou_20220721_2_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "LEMHou",
+                "position": [
+                    900,
+                    400
+                ],
+                "showhero": "LEMHou"
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_1UP_LEMHou_20220721_2_Show"
         },
         "SpecialReward": "",
         "Tag": [
@@ -15996,6 +16216,114 @@
             "DrawCard_2_UP_Desc_2"
         ]
     },
+    "DrawCard_2UP_FEMSiHSheng_20220721_1": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_Party2Up_Test_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Tittle1",
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Text1"
+            ],
+            [
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Tittle2",
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Text2"
+            ],
+            [
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Tittle3",
+                "DrawCard_2UP_FEMSiHSheng_20220721_1_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_FEMSiHSheng_",
+            "main": "drawcard_bg_FEMSiHSheng"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_2UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_FEMSiHSheng_20220721_1_1",
+            "DrawCard_2UP_FEMSiHSheng_20220721_1_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "FEMSi",
+                "position": [
+                    250,
+                    290
+                ]
+            },
+            {
+                "hero": "HSheng",
+                "position": [
+                    870,
+                    320
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_Heros_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_2_UP_Desc_1",
+            "DrawCard_2_UP_Desc_2"
+        ]
+    },
     "DrawCard_2UP_FEMSiQBTe_20210923": {
         "Condition": "",
         "Coupon": "IM_DiamondDraw",
@@ -17341,6 +17669,114 @@
         "Times": [],
         "UPDesc": ""
     },
+    "DrawCard_2UP_JNLongLCYShi_20220721_1": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_Party2Up_Test_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Tittle1",
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Text1"
+            ],
+            [
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Tittle2",
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Text2"
+            ],
+            [
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Tittle3",
+                "DrawCard_2UP_JNLongLCYShi_20220721_1_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_JNLongLCYShi_",
+            "main": "drawcard_bg_JNLongLCYShi"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_2UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_JNLongLCYShi_20220721_1_1",
+            "DrawCard_2UP_JNLongLCYShi_20220721_1_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "LCYShi",
+                "position": [
+                    250,
+                    290
+                ]
+            },
+            {
+                "hero": "JNLong",
+                "position": [
+                    870,
+                    320
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_Heros_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_2_UP_Desc_1",
+            "DrawCard_2_UP_Desc_2"
+        ]
+    },
     "DrawCard_2UP_JNLongNXYYi_20210407": {
         "Condition": "",
         "Coupon": "IM_DiamondDraw",
@@ -17740,6 +18176,114 @@
         "TimeRewardReset": "",
         "Times": [],
         "UPDesc": ""
+    },
+    "DrawCard_2UP_LCYShiJNLong_20220721_1": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_Party2Up_Test_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Tittle1",
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Text1"
+            ],
+            [
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Tittle2",
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Text2"
+            ],
+            [
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Tittle3",
+                "DrawCard_2UP_LCYShiJNLong_20220721_1_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_LCYShiJNLong_",
+            "main": "drawcard_bg_LCYShiJNLong"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_2UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_LCYShiJNLong_20220721_1_1",
+            "DrawCard_2UP_LCYShiJNLong_20220721_1_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "LCYShi",
+                "position": [
+                    250,
+                    290
+                ]
+            },
+            {
+                "hero": "JNLong",
+                "position": [
+                    870,
+                    320
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_Heros_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_2_UP_Desc_1",
+            "DrawCard_2_UP_Desc_2"
+        ]
     },
     "DrawCard_2UP_LFErMTZMEShi": {
         "Condition": "",
@@ -19587,6 +20131,114 @@
         "TimeRewardReset": "",
         "Times": [],
         "UPDesc": ""
+    },
+    "DrawCard_2UP_SGHQShouJNLong_20220721_1": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDraw",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "2": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "15": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "83": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "",
+        "DrawCardName": "DrawCard_Party2Up_Test_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Tittle1",
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Text1"
+            ],
+            [
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Tittle2",
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Text2"
+            ],
+            [
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Tittle3",
+                "DrawCard_2UP_SGHQShouJNLong_20220721_1_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "drawcard_tab_SGHQShou_JNLong_",
+            "main": "drawcard_bg_SGHQShou_JNLong"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_2UP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_2UP_Special"
+        ],
+        "Reward": [
+            "DrawCard_2UP_SGHQShouJNLong_20220721_1_1",
+            "DrawCard_2UP_SGHQShouJNLong_20220721_1_10"
+        ],
+        "RoleDetail": [
+            {
+                "hero": "SGHQShou",
+                "position": [
+                    250,
+                    290
+                ]
+            },
+            {
+                "hero": "JNLong",
+                "position": [
+                    870,
+                    320
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Diamond_1_ShortDesc",
+            "DrawCard_Diamond_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_2UP_Heros_Show"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_2_UP_Desc_1",
+            "DrawCard_2_UP_Desc_2"
+        ]
     },
     "DrawCard_2UP_SLMenBBLMa_20210924": {
         "Condition": "",
@@ -25696,6 +26348,174 @@
         "Times": [],
         "UPDesc": ""
     },
+    "DrawCard_SP_ALSi_1st_Up": {
+        "Condition": "",
+        "Coupon": "IM_DiamondDrawEX",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "1": [
+                    "pic",
+                    "common_img_SP"
+                ]
+            },
+            {
+                "3": [
+                    "pic",
+                    "common_img_ssr"
+                ]
+            },
+            {
+                "24": [
+                    "pic",
+                    "common_img_sr"
+                ]
+            },
+            {
+                "72": [
+                    "pic",
+                    "common_img_r"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "",
+        "DrawCardENName": "UITitle_EN_Up",
+        "DrawCardName": "DrawCard_Up_Name",
+        "DrawCardType": "ACTIVITYDRAW",
+        "DrawCardUPDesc": [
+            [
+                "DrawCard_SP_PNCao_Title1",
+                "DrawCard_SP_PNCao_Text1"
+            ],
+            [
+                "DrawCard_SP_PNCao_Title2",
+                "DrawCard_SP_ALSi_Text2"
+            ],
+            [
+                "DrawCard_SP_PNCao_Title3",
+                "DrawCard_SP_PNCao_Text3"
+            ]
+        ],
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "",
+        "NormalReward": "DrawCard_Diamond_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "SPbmg": "drawcard_bg_sp_PNCao_1",
+            "bannerbmg": "drawcard_bg_SP_ALSi_2",
+            "chancetips": "sp_kachi_txt_xd"
+        },
+        "Rank": 80,
+        "Rebate": "",
+        "ReviewText": [
+            "Notes_SP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_SP_Special"
+        ],
+        "Reward": [
+            "DrawCard_SP_ALSi_1st_1",
+            "DrawCard_SP_ALSi_1st_10"
+        ],
+        "RoleDetail": [
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        -445,
+                        -120
+                    ],
+                    "scale": 0.45,
+                    "shadow": 3
+                },
+                "detail": [
+                    -455,
+                    -188
+                ],
+                "hero": "XHMao",
+                "modeltype": 0,
+                "position": [
+                    -400,
+                    -160
+                ]
+            },
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        -120,
+                        -100
+                    ],
+                    "scale": 0.7,
+                    "shadow": 3
+                },
+                "detail": [
+                    -120,
+                    -140
+                ],
+                "hero": "NXYYi",
+                "modeltype": 0,
+                "position": [
+                    -45,
+                    -160
+                ]
+            },
+            {
+                "ModelIdOffset": {
+                    "pos": [
+                        520,
+                        -170
+                    ],
+                    "scale": 0.8
+                },
+                "detail": [
+                    277,
+                    -120
+                ],
+                "hero": "SP_ALSi",
+                "modeltype": 1,
+                "position": [
+                    485,
+                    -90
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Equip_1_ShortDesc",
+            "DrawCard_Equip_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_HeroBtnName": "DrawCard_SP_KTSJKe_HeroShow"
+        },
+        "SpecialReward": "",
+        "Tag": [
+            "1UP"
+        ],
+        "TimeRewardId": [
+            "TimeReward_SP_ALSi_1st_1",
+            "TimeReward_SP_ALSi_1st_2",
+            "TimeReward_SP_ALSi_1st_3",
+            "TimeReward_SP_ALSi_1st_4",
+            "TimeReward_SP_ALSi_1st_5",
+            "TimeReward_SP_ALSi_1st_6",
+            "TimeReward_SP_ALSi_1st_7",
+            "TimeReward_SP_ALSi_1st_8"
+        ],
+        "TimeRewardReset": 1,
+        "Times": [],
+        "UPDesc": []
+    },
     "DrawCard_SP_DDing_Up": {
         "Condition": "",
         "Coupon": "IM_DiamondDrawEX",
@@ -29115,6 +29935,105 @@
             {
                 "equip": "CO_Shoes_15001",
                 "showequip": "Shoes_15001",
+                "urposition": [
+                    865,
+                    350
+                ]
+            }
+        ],
+        "ShortDesc": [
+            "DrawCard_Equip_1_ShortDesc",
+            "DrawCard_Equip_10_ShortDesc"
+        ],
+        "ShortENDesc": [
+            "UILINK_EN_Zhaohuan1ci",
+            "UILINK_EN_Zhaohuan10ci"
+        ],
+        "ShowReward": {
+            "Draw_UR_EquipBtnName": "DrawCard_UR_Equip_MainShow"
+        },
+        "SpecialReward": "",
+        "Tag": "",
+        "TimeRewardId": "",
+        "TimeRewardReset": "",
+        "Times": [],
+        "UPDesc": [
+            "DrawCard_UR_Desc_1",
+            "DrawCard_UR_Desc_2"
+        ]
+    },
+    "DrawCard_UR_2UP_20220728": {
+        "Condition": "Draw_Equip",
+        "Coupon": "IM_DiamondDraw_UR",
+        "CouponCost": [
+            1,
+            10
+        ],
+        "DrawCardDesc": [
+            {
+                "3": [
+                    "str",
+                    "UREquip_DrawCardDesc_1"
+                ]
+            },
+            {
+                "14.5": [
+                    "str",
+                    "UREquip_DrawCardDesc_2"
+                ]
+            },
+            {
+                "39": [
+                    "str",
+                    "UREquip_DrawCardDesc_3"
+                ]
+            },
+            {
+                "43.5": [
+                    "str",
+                    "UREquip_DrawCardDesc_4"
+                ]
+            }
+        ],
+        "DrawCardDescTitle": "DrawCard_UR_2UP_20220728_Desc",
+        "DrawCardENName": "UITitle_EN_YLSBaiUp",
+        "DrawCardName": "",
+        "DrawCardType": "ACTIVITYDRAWUR",
+        "DrawCardUPDesc": "",
+        "DrawLimit": -1,
+        "ExtraReward": "",
+        "FreeReset": "DrawCard_TimeUp",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Timelimitedmall&subid=Shop_TimeLimit",
+        "NormalReward": "DrawCard_Equip_1_normal",
+        "Number": [
+            1,
+            10
+        ],
+        "OffCount": [],
+        "Preview": {
+            "btn": "draw_urtab_2_",
+            "main": "draw_urbg_1"
+        },
+        "Rank": 2,
+        "Rebate": "",
+        "ReviewText": "",
+        "ReviewTextSpecial": "",
+        "Reward": [
+            "DrawCard_UREquip_0721_CO_Weapon_15103_3_TopBag",
+            "DrawCard_UREquip_0721_CO_Weapon_15103_3_10_TopBag"
+        ],
+        "RoleDetail": [
+            {
+                "equip": "CO_Weapon_15103_3",
+                "showequip": "Weapon_15103_3",
+                "urposition": [
+                    575,
+                    380
+                ]
+            },
+            {
+                "equip": "CO_Tops_15002",
+                "showequip": "Tops_15002",
                 "urposition": [
                     865,
                     350

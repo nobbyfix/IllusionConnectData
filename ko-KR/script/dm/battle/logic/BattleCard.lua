@@ -27,6 +27,8 @@ function BattleCard:initialize(data)
 	if data ~= nil then
 		self:initWithData(data)
 	end
+
+	self._lockTime = -1
 end
 
 function BattleCard:initWithData(data)
@@ -144,6 +146,14 @@ end
 
 function BattleCard:isGenre(genre)
 	return false
+end
+
+function BattleCard:getLockTime()
+	return self._lockTime
+end
+
+function BattleCard:setLockTime(time)
+	self._lockTime = time
 end
 
 HeroCard = class("HeroCard", BattleCard, _M)

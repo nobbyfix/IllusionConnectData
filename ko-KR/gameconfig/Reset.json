@@ -92,6 +92,16 @@
             "storage": 5000
         }
     },
+    "AcitvityBakingStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityCollapsedStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -223,6 +233,16 @@
         }
     },
     "AcitvityFireWorksStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFireworksStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -372,6 +392,16 @@
             "storage": 5000
         }
     },
+    "AcitvitySamuraiStamina_Reset_Re": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvitySilentNightStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -393,6 +423,16 @@
         }
     },
     "AcitvitySpringStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvitySpringStamina_Reset_Re": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,

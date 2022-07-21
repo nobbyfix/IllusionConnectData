@@ -1660,6 +1660,34 @@ end
 function UnitTLInterpreter:act_CancelSpecificSkill(action, args)
 end
 
+function UnitTLInterpreter:act_ThrownKick(action, args)
+	local performAct = self._dataModel:getPerformAct()
+
+	if performAct then
+		local skillAction = self._context:getSkillAction(performAct)
+
+		if skillAction then
+			local targets = skillAction:getTargets()
+
+			for roleId, flags in pairs(targets) do
+				local role = self._unitManager:getUnitById(roleId)
+
+				if role then
+					role:subActivateNums(performAct)
+				end
+			end
+
+			skillAction:clearTargets()
+		end
+	end
+
+	self._unit:doAction(action, args)
+
+	if self._heroHeadWidget and self._heroHeadWidget.unitDie then
+		self._heroHeadWidget:unitDie(self._id)
+	end
+end
+
 function UnitTLInterpreter:act_GuideDie(action, args)
 	self._unit:switchState("fakedie")
 end

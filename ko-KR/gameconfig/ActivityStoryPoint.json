@@ -3768,6 +3768,108 @@
         ],
         "StoryLink": "eventstory_sayounara_04a"
     },
+    "FireWorks_ReS01S01": {
+        "FirstReward": "FWorksS01S01_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -250
+        ],
+        "Map": "FWorksM01",
+        "Name": "FireWorksS01S01_Name",
+        "NextStoryPoint": [
+            "FireWorks_ReS01S02"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [],
+        "PreStoryPoint": [],
+        "StoryLink": "eventstory_sayounara_01a"
+    },
+    "FireWorks_ReS01S02": {
+        "FirstReward": "FWorksS01S02_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FWorksM01",
+        "Name": "FireWorksS01S02_Name",
+        "NextStoryPoint": [
+            "FireWorks_ReS01S03"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FWorksSN03"
+        ],
+        "PreStoryPoint": [
+            "FireWorks_ReS01S01"
+        ],
+        "StoryLink": "eventstory_sayounara_02a"
+    },
+    "FireWorks_ReS01S03": {
+        "FirstReward": "FWorksS01S03_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -150
+        ],
+        "Map": "FWorksM02",
+        "Name": "FireWorksS01S03_Name",
+        "NextStoryPoint": [
+            "FireWorks_ReS01S04"
+        ],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FWorksSE03"
+        ],
+        "PreStoryPoint": [
+            "FireWorks_ReS01S02"
+        ],
+        "StoryLink": "eventstory_sayounara_03a"
+    },
+    "FireWorks_ReS01S04": {
+        "FirstReward": "FWorksS01S04_Reward",
+        "Icon": "s_album_story_1",
+        "IsAuto": "",
+        "IsHide": "",
+        "Location": [
+            -200,
+            -200
+        ],
+        "Map": "FWorksM02",
+        "Name": "FireWorksS01S04_Name",
+        "NextStoryPoint": [],
+        "PointIcon": [
+            "main_bg_xq_jqicon01.png",
+            "main_bg_xq_jqxw01.png"
+        ],
+        "PointPicture": "",
+        "PreBattlePoint": [
+            "FWorksSE07"
+        ],
+        "PreStoryPoint": [
+            "FireWorks_ReS01S03"
+        ],
+        "StoryLink": "eventstory_sayounara_04a"
+    },
     "KnightS01E01": {
         "FirstReward": "KnightS01E01_Reward",
         "Icon": "s_album_story_1",

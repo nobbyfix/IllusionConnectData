@@ -490,7 +490,7 @@ function CardArrayWidget:onTouchMoved(touch, event)
 				end
 			end
 		end
-	elseif cc.pGetLength(moved) > 10 and hittedCard:isEnergyEnough() then
+	elseif cc.pGetLength(moved) > 10 and hittedCard:isEnergyEnough() and not hittedCard:isLock() then
 		if self._activeCard then
 			self:resetActiveCard()
 		end

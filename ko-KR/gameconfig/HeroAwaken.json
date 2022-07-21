@@ -175,6 +175,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_FLYDe_Awake"
     },
+    "FTLEShi": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -250,
+            100,
+            0.9
+        ],
+        "IAId": "",
+        "ModelId": "Model_FTLEShi",
+        "Name": "FTLEShi_Awake_Name",
+        "NameDesc": "FTLEShi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_FTLEShi",
+        "Reward": "HeroAwaken_FTLEShi",
+        "ShowHero": "FTLEShi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "FTLEShi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_FTLEShi_1"
+    },
     "HGEr": {
         "AnimSound": "Se_Effect_Awakening_HGEr",
         "Animation": "glte_Awaken",
@@ -689,7 +711,7 @@
             0,
             0.84
         ],
-        "IAId": "",
+        "IAId": "XBKLDi_IA_1",
         "ModelId": "Model_XBKLDi",
         "Name": "XBKLDi_Awake_Name",
         "NameDesc": "XBKLDi_Awake_Desc",

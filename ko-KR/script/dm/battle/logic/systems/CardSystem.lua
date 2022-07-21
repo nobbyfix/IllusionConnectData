@@ -7,6 +7,7 @@ function CardSystem:initialize()
 	self._playerRegistry = {}
 	self._cardAgentRegistry = {}
 	self._timingEventDispatcher = BattleEventDispatcher:new()
+	self._lockCards = {}
 end
 
 function CardSystem:startup(battleContext)
@@ -329,16 +330,36 @@ function CardSystem:clearHeroCardSeatRules(player, card, rules, killOrKick)
 	return false
 end
 
-function CardSystem:lockHeroCards(player, cardfilter)
-	local cards = self:getHeroCards(player, cardfilter)
+function CardSystem:lockHeroCards(player, cardfilter, lockConfig)
+	local cards = {}
+
+	if lockConfig.card then
+		cards = {
+			lockConfig.card
+		}
+	else
+		cards = self:getHeroCards(player, cardfilter)
+	end
 
 	for _, card in ipairs(cards) do
 		local detail = card:lock()
 
 		if detail then
 			detail.idx = self:getCardIdx(player, card)
+			detail.lockAnim = lockConfig.anim
+			detail.animLoop = lockConfig.loop
 
 			self._processRecorder:recordObjectEvent(player:getId(), "LockCard", detail)
+
+			if lockConfig.time then
+				card:setLockTime(lockConfig.time)
+
+				if not self._lockCards[player] then
+					self._lockCards[player] = {}
+				end
+
+				self._lockCards[player][card:getId()] = card
+			end
 		end
 	end
 end
@@ -347,12 +368,36 @@ function CardSystem:unlockHeroCards(player, cardfilter)
 	local cards = self:getHeroCards(player, cardfilter)
 
 	for _, card in ipairs(cards) do
-		local detail = card:unlock()
+		self:unlockHeroCard(card, player)
+	end
+end
 
-		if detail then
-			detail.idx = self:getCardIdx(player, card)
+function CardSystem:unlockHeroCard(card, player)
+	local detail = card:unlock()
 
-			self._processRecorder:recordObjectEvent(player:getId(), "UnlockCard", detail)
+	if detail then
+		detail.idx = self:getCardIdx(player, card)
+
+		self._processRecorder:recordObjectEvent(player:getId(), "UnlockCard", detail)
+	end
+end
+
+function CardSystem:updateOnNewSecond(elapsed)
+	self:updateTiming(elapsed, BuffTiming.kOnNewSecond)
+end
+
+function CardSystem:updateTiming(elapsed, timingMode)
+	for player, v in pairs(self._lockCards) do
+		for id, card in pairs(v) do
+			if card:getLockTime() <= 0 then
+				card:setLockTime(-1)
+
+				self._lockCards[player][id] = nil
+
+				self:unlockHeroCard(card, player)
+			else
+				card:setLockTime(card:getLockTime() - elapsed.delta)
+			end
 		end
 	end
 end

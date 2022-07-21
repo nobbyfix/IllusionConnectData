@@ -2015,6 +2015,18 @@
         "UnlockDesc": "SP_ALPo_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_SP_ALSi": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_SP_ALSi",
+        "HeadName": "SP_ALSi_HeadName",
+        "HeroMasterId": "SP_ALSi",
+        "IconPath": "asset/heros/sp_alsi/battlepic_sp_alsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_ALSi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SP_DDing": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_SP_DDing",
@@ -2937,6 +2949,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_FLYDe",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FTLEShi": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_FTLEShi_Desc",
+        "HeadName": "HeroAwaken_FTLEShi_1_Name",
+        "HeroMasterId": "FTLEShi",
+        "IconPath": "asset/heros/FTLEShi/battlepic_FTLEShi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FTLEShi",
         "Zoom": 1.0
     },
     "HeroAwaken_HGEr": {

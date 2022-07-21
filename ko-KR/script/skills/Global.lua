@@ -1865,7 +1865,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		local singlekillragegainfactor = global.SpecialPropGetter(_env, "singlekillragegainfactor")(_env, actor)
 
 		if singlekillragegainfactor and singlekillragegainfactor ~= 0 then
-			global.ApplyRPRecovery(_env, actor, singlekillragegainfactor)
+			global.RecoveApplyRPry(_env, actor, singlekillragegainfactor)
 		end
 
 		if global.PETS - global.SUMMONS(_env, target) then
@@ -2301,6 +2301,40 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		}, {
 			buff_damage_count
 		})
+	end
+
+	local units_ALSi = global.FriendUnits(_env, global.MARKED(_env, "SP_ALSi"))
+
+	if units_ALSi[1] and global.INSTATUS(_env, "Passive_EX")(_env, units_ALSi[1]) and global.GetSide(_env, actor) == global.GetSide(_env, units_ALSi[1]) and global.PETS - global.SUMMONS(_env, actor) then
+		local unit1 = units_ALSi[1]
+		local SingleFactor = global.SpecialPropGetter(_env, "SP_ALSi_SingleFactor")(_env, unit1)
+		local ShieldMaxFactor = global.SpecialPropGetter(_env, "SP_ALSi_ShieldMaxFactor")(_env, unit1)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, unit1)
+		local shield = global.UnitPropGetter(_env, "shield")(_env, unit1)
+
+		if shield < ShieldMaxFactor * atk then
+			local shield_add = global.ShieldEffect(_env, damage.val * SingleFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+				timing = 0,
+				display = "Shield",
+				group = "Skill_SP_ALSi_Passive_EX",
+				duration = 99,
+				limit = 999,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"SHIELD",
+					"Skill_SP_ALSi_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				shield_add
+			}, 1)
+		end
+
+		global.print(_env, "SP_ALSi_shield===", shield)
 	end
 
 	return result
@@ -3074,6 +3108,40 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		}, {
 			buff_damage_count
 		})
+	end
+
+	local units_ALSi = global.FriendUnits(_env, global.MARKED(_env, "SP_ALSi"))
+
+	if units_ALSi[1] and global.INSTATUS(_env, "Passive_EX")(_env, units_ALSi[1]) and global.GetSide(_env, actor) == global.GetSide(_env, units_ALSi[1]) and global.PETS - global.SUMMONS(_env, actor) then
+		local unit1 = units_ALSi[1]
+		local ShieldMaxFactor = global.SpecialPropGetter(_env, "SP_ALSi_ShieldMaxFactor")(_env, unit1)
+		local AoeFactor = global.SpecialPropGetter(_env, "SP_ALSi_AoeFactor")(_env, unit1)
+		local shield = global.UnitPropGetter(_env, "shield")(_env, unit1)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, unit1)
+
+		if shield < ShieldMaxFactor * atk then
+			local shield_add = global.ShieldEffect(_env, damage.val * AoeFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+				timing = 0,
+				display = "Shield",
+				group = "Skill_SP_ALSi_Passive_EX",
+				duration = 99,
+				limit = 999,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"SHIELD",
+					"Skill_SP_ALSi_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				shield_add
+			}, 1)
+		end
+
+		global.print(_env, "SP_ALSi_shield===", shield)
 	end
 
 	return result
@@ -3958,6 +4026,40 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		})
 	end
 
+	local units_ALSi = global.FriendUnits(_env, global.MARKED(_env, "SP_ALSi"))
+
+	if units_ALSi[1] and global.INSTATUS(_env, "Passive_EX")(_env, units_ALSi[1]) and global.GetSide(_env, actor) == global.GetSide(_env, units_ALSi[1]) and global.PETS - global.SUMMONS(_env, actor) then
+		local unit1 = units_ALSi[1]
+		local SingleFactor = global.SpecialPropGetter(_env, "SP_ALSi_SingleFactor")(_env, unit1)
+		local ShieldMaxFactor = global.SpecialPropGetter(_env, "SP_ALSi_ShieldMaxFactor")(_env, unit1)
+		local shield = global.UnitPropGetter(_env, "shield")(_env, unit1)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, unit1)
+
+		if shield < ShieldMaxFactor * atk then
+			local shield_add = global.ShieldEffect(_env, damages[n].val * SingleFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+				timing = 0,
+				display = "Shield",
+				group = "Skill_SP_ALSi_Passive_EX",
+				duration = 99,
+				limit = 999,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"SHIELD",
+					"Skill_SP_ALSi_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				shield_add
+			}, 1)
+		end
+
+		global.print(_env, "SP_ALSi_shield===", shield)
+	end
+
 	return result
 end
 
@@ -4790,6 +4892,40 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		}, {
 			buff_damage_count
 		})
+	end
+
+	local units_ALSi = global.FriendUnits(_env, global.MARKED(_env, "SP_ALSi"))
+
+	if units_ALSi[1] and global.INSTATUS(_env, "Passive_EX")(_env, units_ALSi[1]) and global.GetSide(_env, actor) == global.GetSide(_env, units_ALSi[1]) and global.PETS - global.SUMMONS(_env, actor) then
+		local unit1 = units_ALSi[1]
+		local ShieldMaxFactor = global.SpecialPropGetter(_env, "SP_ALSi_ShieldMaxFactor")(_env, unit1)
+		local AoeFactor = global.SpecialPropGetter(_env, "SP_ALSi_AoeFactor")(_env, unit1)
+		local shield = global.UnitPropGetter(_env, "shield")(_env, unit1)
+		local atk = global.UnitPropGetter(_env, "atk")(_env, unit1)
+
+		if shield < ShieldMaxFactor * atk then
+			local shield_add = global.ShieldEffect(_env, damages[n].val * AoeFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+				timing = 0,
+				display = "Shield",
+				group = "Skill_SP_ALSi_Passive_EX",
+				duration = 99,
+				limit = 999,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"SHIELD",
+					"Skill_SP_ALSi_Passive_EX",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				shield_add
+			}, 1)
+		end
+
+		global.print(_env, "SP_ALSi_shield===", shield)
 	end
 
 	return result

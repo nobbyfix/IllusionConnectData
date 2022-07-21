@@ -685,6 +685,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_FireWorksExchangeAchieve_Desc"
     },
+    "Condi_FireWorks_ReExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_FireWorks_Re_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireWorksExchangeAchieve_Desc"
+    },
     "Condi_FriendCount": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1129,7 +1136,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220609.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220728.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1150,7 +1157,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220609.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220728.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },

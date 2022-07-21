@@ -2008,6 +2008,63 @@
         "WaitMode": 1,
         "WaitModeLimit": 1500
     },
+    "Activity_WorldBoss2": {
+        "BattleMode": 2,
+        "CombatAdjust": "",
+        "EnemyEnergyBase": {
+            "pattern": "COVER",
+            "value": 0
+        },
+        "EnemyFBReduction": "",
+        "EnemySpecialPassive": [],
+        "EnemySpecialPassiveParm": "",
+        "EnergyBase": {
+            "pattern": "ADD",
+            "value": 20
+        },
+        "Fight_StageEnergyMax": [
+            60,
+            35
+        ],
+        "FriendFBReduction": "",
+        "FriendSpecialPassive": [],
+        "FriendSpecialPassiveParm": "",
+        "HeroRageBase": "",
+        "HeroRageRules": {
+            "a1": [
+                10,
+                0
+            ],
+            "a2": 250,
+            "a3": 350,
+            "a4": 17
+        },
+        "MasterRageBase": {
+            "pattern": "COVER",
+            "value": 500
+        },
+        "MasterRageRules": {
+            "a1": [
+                10,
+                250
+            ],
+            "a2": 250,
+            "a3": 350,
+            "a4": 17
+        },
+        "SkipTime": 0,
+        "StageEnergy": [
+            [
+                {
+                    "EnemyEnergySpeed": 1,
+                    "EnergySpeed": 3,
+                    "duration": 90000
+                }
+            ]
+        ],
+        "WaitMode": 1,
+        "WaitModeLimit": 1500
+    },
     "BattleZero": {
         "BattleMode": 2,
         "CombatAdjust": "Skill_CombatDominating",
