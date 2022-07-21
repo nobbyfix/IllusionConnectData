@@ -738,6 +738,23 @@
         "Shine": "",
         "Sicon": "ico_m_baking_stamina_2"
     },
+    "IR_BakingStamina_Re": {
+        "Desc": "IR_BakingStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_baking_stamina_1"
+        ],
+        "Licon": "ico_m_baking_stamina_1",
+        "Name": "IR_BakingStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_baking_stamina_2"
+    },
     "IR_Club": {
         "Desc": "ResourcesIcon_8_Desc",
         "LargeIcons": [
@@ -1099,6 +1116,23 @@
         ],
         "Licon": "ico_m_fireworks_stamina_1",
         "Name": "IR_FireWorksStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_fireworks_stamina_2"
+    },
+    "IR_FireworksStamina_Re": {
+        "Desc": "IR_FireworksStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_fireworks_stamina_1"
+        ],
+        "Licon": "ico_m_fireworks_stamina_1",
+        "Name": "IR_FireworksStamina_Name",
         "Quality": [
             5
         ],
@@ -1571,6 +1605,23 @@
         "Shine": "",
         "Sicon": "ico_m_samurai_stamina_2"
     },
+    "IR_SamuraiStamina_Re": {
+        "Desc": "IR_SamuraiStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_samurai_stamina_1"
+        ],
+        "Licon": "ico_m_samurai_stamina_1",
+        "Name": "IR_SamuraiStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_samurai_stamina_2"
+    },
     "IR_SilentNightStamina": {
         "Desc": "IR_SilentNightStamina_FunctionDesc",
         "LargeIcons": [
@@ -1606,6 +1657,23 @@
         "Sicon": "IR_HD_SnowflakeStamina_small"
     },
     "IR_SpringStamina": {
+        "Desc": "IR_SpringStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_spring_stamina_1"
+        ],
+        "Licon": "IHG_Quality4_4",
+        "Name": "IR_SpringStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_spring_stamina_2"
+    },
+    "IR_SpringStamina_Re": {
         "Desc": "IR_SpringStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_spring_stamina_1"

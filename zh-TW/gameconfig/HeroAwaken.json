@@ -637,6 +637,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_TPGZhu_Awake"
     },
+    "XBKLDi": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -150,
+            0,
+            0.84
+        ],
+        "IAId": "XBKLDi_IA_1",
+        "ModelId": "Model_XBKLDi",
+        "Name": "XBKLDi_Awake_Name",
+        "NameDesc": "XBKLDi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_XBKLDi",
+        "Reward": "HeroAwaken_XBKLDi",
+        "ShowHero": "XBKLDi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "XBKLDi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_XBKLDi_1"
+    },
     "XHMao": {
         "AnimSound": "Se_Effect_Awakening_XHMao",
         "Animation": "lbi_Awaken",

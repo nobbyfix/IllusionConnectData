@@ -4848,6 +4848,19 @@
         "Name": "",
         "Parameter": {}
     },
+    "IA_XBKLDi_1": {
+        "Desc": "StarSE_XBKLDi_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XBKLDi_SelfAwaken",
+            "before": "Hero_Unique_XBKLDi_Awaken",
+            "slot": "Hero_Unique_XBKLDi"
+        }
+    },
     "MainCity_CrystalStorage": {
         "Desc": "Building_Value",
         "EffectType": "PRODUCTION",
@@ -10691,6 +10704,19 @@
             "slot": "Hero_Proud_NXYYi"
         }
     },
+    "StarSE_PBattle_XBKLDi_Awaken": {
+        "Desc": "StarSE_XBKLDi_PBattle_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_XBKLDi_Awaken",
+            "before": "Hero_PBattle_XBKLDi_EX",
+            "slot": "Hero_PBattle_XBKLDi"
+        }
+    },
     "StarSE_PDLa_4": {
         "Desc": "StarSE_PDLa_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -12067,6 +12093,19 @@
             "after": "Hero_Proud_XBKLDi_EX",
             "before": "Hero_Proud_XBKLDi",
             "slot": "Hero_Proud_XBKLDi"
+        }
+    },
+    "StarSE_XBKLDi_Awaken": {
+        "Desc": "StarSE_XBKLDi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_XBKLDi_Awaken",
+            "before": "Hero_Unique_XBKLDi_EX",
+            "slot": "Hero_Unique_XBKLDi"
         }
     },
     "StarSE_XDE_4": {

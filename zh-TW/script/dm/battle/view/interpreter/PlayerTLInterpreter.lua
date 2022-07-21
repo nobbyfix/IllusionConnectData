@@ -388,3 +388,19 @@ function PlayerTLInterpreter:act_TriggerBuff(action, args)
 		end
 	end
 end
+
+function PlayerTLInterpreter:act_LockCard(action, args)
+	if self._isMainPlayer then
+		local idx = args.idx
+
+		self._battleUIMediator:showLockAnim(idx, args)
+	end
+end
+
+function PlayerTLInterpreter:act_UnlockCard(action, args)
+	if self._isMainPlayer then
+		local idx = args.idx
+
+		self._battleUIMediator:hideLockAnim(idx, args)
+	end
+end

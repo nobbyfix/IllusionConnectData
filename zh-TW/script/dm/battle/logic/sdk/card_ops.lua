@@ -269,14 +269,14 @@ function exports.SelectEnhanceCount(env, player, target, tagOrFilter)
 	return count
 end
 
-function exports.LockHeroCards(env, player, cardfilter)
+function exports.LockHeroCards(env, player, cardfilter, lockConfig)
 	local cardSystem = env.global["$CardSystem"]
 
 	if cardSystem == nil then
 		return nil
 	end
 
-	cardSystem:lockHeroCards(player, cardfilter)
+	cardSystem:lockHeroCards(player, cardfilter, lockConfig)
 end
 
 function exports.UnlockHeroCards(env, player, cardfilter)

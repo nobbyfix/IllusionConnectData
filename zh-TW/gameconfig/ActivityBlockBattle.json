@@ -26576,15 +26576,17 @@
         "FirstKillReward": "FWorksSE01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -26606,7 +26608,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE01E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26622,10 +26624,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -26706,21 +26708,23 @@
         "FirstKillReward": "FWorksSE01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_1",
                 "4": "FWorks_Buff_Star4_2_1",
                 "5": "FWorks_Buff_Star5_2_1",
@@ -26732,7 +26736,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE01",
         "Master": "",
         "Name": "BlockPoint_FireWorksS09M_Name",
@@ -26745,7 +26749,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE01M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26760,10 +26764,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -26837,15 +26841,17 @@
         "FirstKillReward": "FWorksSE02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -26867,7 +26873,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE02E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -26882,10 +26888,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -26952,21 +26958,23 @@
         "FirstKillReward": "FWorksSE02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_2",
                 "4": "FWorks_Buff_Star4_2_2",
                 "5": "FWorks_Buff_Star5_2_2",
@@ -26978,7 +26986,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE02",
         "Master": "",
         "Name": "BlockPoint_FireWorksS10M_Name",
@@ -26991,7 +26999,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE02M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27003,10 +27011,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27072,15 +27080,17 @@
         "FirstKillReward": "FWorksSE03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27102,7 +27112,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE03E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27117,10 +27127,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27187,21 +27197,23 @@
         "FirstKillReward": "FWorksSE03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_3",
                 "4": "FWorks_Buff_Star4_2_3",
                 "5": "FWorks_Buff_Star5_2_3",
@@ -27213,7 +27225,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE03",
         "Master": "",
         "Name": "BlockPoint_FireWorksS11M_Name",
@@ -27226,7 +27238,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE03M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27238,10 +27250,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27307,15 +27319,17 @@
         "FirstKillReward": "FWorksSE04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27337,7 +27351,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE04E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27352,10 +27366,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27422,21 +27436,23 @@
         "FirstKillReward": "FWorksSE04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_4",
                 "4": "FWorks_Buff_Star4_2_4",
                 "5": "FWorks_Buff_Star5_2_4",
@@ -27448,7 +27464,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE04",
         "Master": "",
         "Name": "BlockPoint_FireWorksS12M_Name",
@@ -27461,7 +27477,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE04M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27473,10 +27489,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27542,15 +27558,17 @@
         "FirstKillReward": "FWorksSE05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27572,7 +27590,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE05E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27587,10 +27605,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27657,21 +27675,23 @@
         "FirstKillReward": "FWorksSE05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_5",
                 "4": "FWorks_Buff_Star4_2_5",
                 "5": "FWorks_Buff_Star5_2_5",
@@ -27683,7 +27703,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE05",
         "Master": "",
         "Name": "BlockPoint_FireWorksS13M_Name",
@@ -27696,7 +27716,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE05M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27708,10 +27728,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -27777,15 +27797,17 @@
         "FirstKillReward": "FWorksSE06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -27807,7 +27829,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE06E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27822,10 +27844,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -27892,21 +27914,23 @@
         "FirstKillReward": "FWorksSE06M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_6",
                 "4": "FWorks_Buff_Star4_2_6",
                 "5": "FWorks_Buff_Star5_2_6",
@@ -27918,7 +27942,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE06",
         "Master": "",
         "Name": "BlockPoint_FireWorksS14M_Name",
@@ -27931,7 +27955,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE06M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -27943,10 +27967,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28018,15 +28042,17 @@
         "FirstKillReward": "FWorksSE07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28048,7 +28074,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE07E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28064,10 +28090,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28148,21 +28174,23 @@
         "FirstKillReward": "FWorksSE07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_7",
                 "4": "FWorks_Buff_Star4_2_7",
                 "5": "FWorks_Buff_Star5_2_7",
@@ -28174,7 +28202,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE07",
         "Master": "",
         "Name": "BlockPoint_FireWorksS15M_Name",
@@ -28187,7 +28215,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE07M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28202,10 +28230,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28279,15 +28307,17 @@
         "FirstKillReward": "FWorksSE08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28309,7 +28339,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE08E_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28324,10 +28354,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28394,21 +28424,23 @@
         "FirstKillReward": "FWorksSE08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_2_8",
                 "4": "FWorks_Buff_Star4_2_8",
                 "5": "FWorks_Buff_Star5_2_8",
@@ -28420,7 +28452,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSE08",
         "Master": "",
         "Name": "BlockPoint_FireWorksS16M_Name",
@@ -28431,7 +28463,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSE08M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28443,10 +28475,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -28512,15 +28544,17 @@
         "FirstKillReward": "FWorksSH01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28544,7 +28578,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSH01M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28556,10 +28590,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28625,15 +28659,17 @@
         "FirstKillReward": "FWorksSH02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28657,7 +28693,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSH02M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28669,10 +28705,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28738,15 +28774,17 @@
         "FirstKillReward": "FWorksSH03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28768,7 +28806,7 @@
         "PointPicture": "",
         "PointReward": "FWorksSH03M_PointReward",
         "PointTime": {
-            "start": "2021-08-22 05:00:00"
+            "start": "2022-08-07 05:00:00"
         },
         "PointType": "NORMAL",
         "PositionLimit": "",
@@ -28783,10 +28821,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 20
+            "IR_FireworksStamina_Re": 20
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28858,15 +28896,17 @@
         "FirstKillReward": "FWorksSN01E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -28902,10 +28942,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -28986,21 +29026,23 @@
         "FirstKillReward": "FWorksSN01M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_1",
                 "4": "FWorks_Buff_Star4_1_1",
                 "5": "FWorks_Buff_Star5_1_1",
@@ -29012,7 +29054,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN01",
         "Master": "",
         "Name": "BlockPoint_FireWorksS01M_Name",
@@ -29038,10 +29080,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29121,15 +29163,17 @@
         "FirstKillReward": "FWorksSN02E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29165,10 +29209,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29249,21 +29293,23 @@
         "FirstKillReward": "FWorksSN02M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_2",
                 "4": "FWorks_Buff_Star4_1_2",
                 "5": "FWorks_Buff_Star5_1_2",
@@ -29275,7 +29321,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN02",
         "Master": "",
         "Name": "BlockPoint_FireWorksS02M_Name",
@@ -29301,10 +29347,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29384,15 +29430,17 @@
         "FirstKillReward": "FWorksSN03E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29428,10 +29476,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29512,21 +29560,23 @@
         "FirstKillReward": "FWorksSN03M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_3",
                 "4": "FWorks_Buff_Star4_1_3",
                 "5": "FWorks_Buff_Star5_1_3",
@@ -29538,7 +29588,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN03",
         "Master": "",
         "Name": "BlockPoint_FireWorksS03M_Name",
@@ -29564,10 +29614,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29641,15 +29691,17 @@
         "FirstKillReward": "FWorksSN04E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29684,10 +29736,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29754,21 +29806,23 @@
         "FirstKillReward": "FWorksSN04M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_4",
                 "4": "FWorks_Buff_Star4_1_4",
                 "5": "FWorks_Buff_Star5_1_4",
@@ -29780,7 +29834,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN04",
         "Master": "",
         "Name": "BlockPoint_FireWorksS04M_Name",
@@ -29803,10 +29857,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -29872,15 +29926,17 @@
         "FirstKillReward": "FWorksSN05E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -29915,10 +29971,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -29985,21 +30041,23 @@
         "FirstKillReward": "FWorksSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_5",
                 "4": "FWorks_Buff_Star4_1_5",
                 "5": "FWorks_Buff_Star5_1_5",
@@ -30011,7 +30069,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN05",
         "Master": "",
         "Name": "BlockPoint_FireWorksS05M_Name",
@@ -30034,10 +30092,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30109,15 +30167,17 @@
         "FirstKillReward": "FWorksSN06E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30153,10 +30213,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30237,21 +30297,23 @@
         "FirstKillReward": "FWorksSN05M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_6",
                 "4": "FWorks_Buff_Star4_1_6",
                 "5": "FWorks_Buff_Star5_1_6",
@@ -30263,7 +30325,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN06",
         "Master": "",
         "Name": "BlockPoint_FireWorksS06M_Name",
@@ -30289,10 +30351,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30366,15 +30428,17 @@
         "FirstKillReward": "FWorksSN07E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30409,10 +30473,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30479,21 +30543,23 @@
         "FirstKillReward": "FWorksSN07M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_7",
                 "4": "FWorks_Buff_Star4_1_7",
                 "5": "FWorks_Buff_Star5_1_7",
@@ -30505,7 +30571,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN07",
         "Master": "",
         "Name": "BlockPoint_FireWorksS07M_Name",
@@ -30528,10 +30594,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [
@@ -30597,15 +30663,17 @@
         "FirstKillReward": "FWorksSN08E_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -30640,10 +30708,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 12
+            "IR_FireworksStamina_Re": 12
         },
         "StaminaCostAgain": 0,
         "StarCondition": [
@@ -30710,21 +30778,23 @@
         "FirstKillReward": "FWorksSN08M_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "SP_SSQXin": "Hero_ABlock_SP_SSQXin_Extra"
+            "BHTZi": "Hero_ABlock_BHTZi_Extra",
+            "SGBao": "Hero_ABlock_SGBao_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "SP_SSQXin": {
-                "3": "FWorks_SP_SSQXin_Buff_Star3",
-                "4": "FWorks_SP_SSQXin_Buff_Star4",
-                "5": "FWorks_SP_SSQXin_Buff_Star5",
-                "6": "FWorks_SP_SSQXin_Buff_Star6"
+            "BHTZi": {
+                "3": "FWorks_BHTZi_Buff_Star3",
+                "4": "FWorks_BHTZi_Buff_Star4",
+                "5": "FWorks_BHTZi_Buff_Star5",
+                "6": "FWorks_BHTZi_Buff_Star6",
+                "Awaken": "FWorks_BHTZi_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "SP_SSQXin": {
+            "SGBao": {
                 "3": "FWorks_Buff_Star3_1_8",
                 "4": "FWorks_Buff_Star4_1_8",
                 "5": "FWorks_Buff_Star5_1_8",
@@ -30736,7 +30806,7 @@
         "ItemCard": "",
         "LoadingBorad": "",
         "Location": "",
-        "MainShowItem": "IM_FireWorks_ExchangeItem",
+        "MainShowItem": "IM_FireWorks_Re_ExchangeItem",
         "Map": "FWorksSN08",
         "Master": "",
         "Name": "BlockPoint_FireWorksS08M_Name",
@@ -30757,10 +30827,10 @@
         "StageEffect": "",
         "StageGuide": "[]",
         "StaminaBack": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_FireWorksStamina": 6
+            "IR_FireworksStamina_Re": 6
         },
         "StaminaCostAgain": 1,
         "StarCondition": [

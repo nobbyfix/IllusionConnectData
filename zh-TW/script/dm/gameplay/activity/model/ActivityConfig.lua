@@ -486,6 +486,34 @@ ActivityLogin14Config = {
 	},
 	EightDays_ReZero_Re = {
 		resFile = "asset/ui/ActivityReZeroLogin14.csb"
+	},
+	EightDays_Fireworks_Re = {
+		resFile = "asset/ui/ActivityFireWorksLogin14.csb",
+		textPattern = {
+			cc.c4b(204, 184, 255, 255),
+			cc.c4b(255, 255, 255, 255)
+		}
+	},
+	EightDays_Samurai_Re = {
+		resFile = "asset/ui/ActivitySamuraiLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 242, 184, 255)
+		}
+	},
+	EightDays_Baking_Re = {
+		resFile = "asset/ui/ActivityBakingLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 254, 249, 255),
+			cc.c4b(255, 213, 133, 255)
+		}
+	},
+	EightDays_Spring_Re = {
+		resFile = "asset/ui/ActivitySpringLogin14.csb",
+		textPattern = {
+			cc.c4b(232, 244, 254, 255),
+			cc.c4b(210, 226, 248, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {

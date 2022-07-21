@@ -551,6 +551,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_Fireworks": {
+        "BGM": "Mus_Story_Fireworks_Main",
+        "BGPContraction": "anualshop_scene_main_fireworks_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Riddle_Desc",
+            "img": "Welfare_Background_Fireworks",
+            "name": "HomeBackground_Fireworks_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Fireworks_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Fireworks_Name",
+        "Price": "",
+        "Sort": 100,
+        "TimeFactor": "",
+        "Tips": "Unlock_BG_Welfare",
+        "Unlook": 1
+    },
     "HomeBackground_Magic": {
         "BGM": "Mus_Story_Magic_Main",
         "BGPContraction": "anualshop_scene_main_magic_preview",

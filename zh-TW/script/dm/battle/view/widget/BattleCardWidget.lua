@@ -421,6 +421,43 @@ function BattleCardWidget:hideCardAnim()
 	self._animBuffEffect:setPosition(cc.p(0, -34))
 end
 
+function BattleCardWidget:playLockAnim(args)
+	if args.lockAnim then
+		if not self._lockAnim then
+			local anim = cc.MovieClip:create(args.lockAnim, "BattleMCGroup")
+
+			anim:addTo(self._cardNode, 1):center(self._cardNode:getContentSize()):setScale(0.62):offset(0, 6)
+			anim:addEndCallback(function (fid, mc)
+				mc:stop()
+
+				if args.animLoop then
+					mc:gotoAndPlay(1)
+				end
+			end)
+
+			self._lockAnim = anim
+		end
+
+		self._lockAnim:setVisible(true)
+		self._lockAnim:gotoAndPlay(1)
+	end
+
+	self._lockStatus = true
+end
+
+function BattleCardWidget:hideLockAnim()
+	if self._lockAnim then
+		self._lockAnim:stop()
+		self._lockAnim:setVisible(false)
+	end
+
+	self._lockStatus = false
+end
+
+function BattleCardWidget:isLock()
+	return self._lockStatus
+end
+
 HeroCardWidget = class("HeroCardWidget", BattleCardWidget, _M)
 
 HeroCardWidget:has("_targetPreview", {
