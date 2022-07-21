@@ -2004,3 +2004,19 @@ function BattleUIMediator:showMaster(friend, enemy)
 		enemy = enemy
 	}, popupDelegate))
 end
+
+function BattleUIMediator:showLockAnim(idxInSlot, args)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:playLockAnim(args)
+	end
+end
+
+function BattleUIMediator:hideLockAnim(idxInSlot, args)
+	local card = self._cardArray:getCardAtIndex(idxInSlot)
+
+	if card then
+		card:hideLockAnim()
+	end
+end

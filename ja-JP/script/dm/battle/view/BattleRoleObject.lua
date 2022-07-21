@@ -758,6 +758,12 @@ function BattleRoleObject:doAction(actionName, record)
 		self:goBack()
 	end
 
+	function processors.ThrownKick(cmd, args)
+		self._liveState = LiveState.Dead
+
+		self:thrownKick()
+	end
+
 	runCmd(actionName, record)
 end
 
@@ -4957,10 +4963,10 @@ function BattleRoleObject:shake(frameCount)
 
 end
 
-function BattleRoleObject:thrown(force, callback)
+function BattleRoleObject:thrown(force, callback, state)
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #0 1-15, warpins: 1 ---
+	--- BLOCK #0 1-7, warpins: 1 ---
 	local flag = {
 		a4 = 12,
 		a3 = 8,
@@ -4969,13 +4975,11 @@ function BattleRoleObject:thrown(force, callback)
 	}
 	local anim = self._roleAnim
 	local activeNode = self._activeNode
-
-	self:switchState("down")
-	anim:goToFrameIndexAndPaused(0, flag.a1)
-
+	slot9 = self
+	slot7 = self.switchState
 	--- END OF BLOCK #0 ---
 
-	if self._displacement == nil then
+	slot10 = if not state then
 	JUMP TO BLOCK #1
 	else
 	JUMP TO BLOCK #2
@@ -4984,11 +4988,9 @@ function BattleRoleObject:thrown(force, callback)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #1 16-17, warpins: 1 ---
-	self._displacement = {
-		0,
-		0
-	}
+	--- BLOCK #1 8-8, warpins: 1 ---
+	local time = "down"
+
 	--- END OF BLOCK #1 ---
 
 	FLOW; TARGET BLOCK #2
@@ -4996,10 +4998,13 @@ function BattleRoleObject:thrown(force, callback)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #2 18-20, warpins: 2 ---
+	--- BLOCK #2 9-17, warpins: 2 ---
+	slot7(slot9, time)
+	anim:goToFrameIndexAndPaused(0, flag.a1)
+
 	--- END OF BLOCK #2 ---
 
-	slot6 = if not self._velocity then
+	if self._displacement == nil then
 	JUMP TO BLOCK #3
 	else
 	JUMP TO BLOCK #4
@@ -5008,8 +5013,8 @@ function BattleRoleObject:thrown(force, callback)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #3 21-21, warpins: 1 ---
-	local velocity = {
+	--- BLOCK #3 18-19, warpins: 1 ---
+	self._displacement = {
 		0,
 		0
 	}
@@ -5020,7 +5025,31 @@ function BattleRoleObject:thrown(force, callback)
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #4 22-55, warpins: 2 ---
+	--- BLOCK #4 20-22, warpins: 2 ---
+	--- END OF BLOCK #4 ---
+
+	slot7 = if not self._velocity then
+	JUMP TO BLOCK #5
+	else
+	JUMP TO BLOCK #6
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #5 23-23, warpins: 1 ---
+	local velocity = {
+		0,
+		0
+	}
+	--- END OF BLOCK #5 ---
+
+	FLOW; TARGET BLOCK #6
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #6 24-57, warpins: 2 ---
 	local xdist = self._displacement[1]
 	local height = self._displacement[2]
 	xdist = math.max(0, xdist)
@@ -5030,18 +5059,18 @@ function BattleRoleObject:thrown(force, callback)
 		math.max(velocity[2], 0) + force[2] / (1 + height)
 	}
 	local time = 0
-	--- END OF BLOCK #4 ---
+	--- END OF BLOCK #6 ---
 
 	if self._flyTask == nil then
-	JUMP TO BLOCK #5
+	JUMP TO BLOCK #7
 	else
-	JUMP TO BLOCK #6
+	JUMP TO BLOCK #8
 	end
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #5 56-63, warpins: 1 ---
+	--- BLOCK #7 58-65, warpins: 1 ---
 	self._flyTask = self._context:scalableSchedule(function (task, dt)
 
 		-- Decompilation error in this vicinity:
@@ -5218,16 +5247,36 @@ function BattleRoleObject:thrown(force, callback)
 
 	end, 0, true)
 
-	--- END OF BLOCK #5 ---
+	--- END OF BLOCK #7 ---
 
-	FLOW; TARGET BLOCK #6
+	FLOW; TARGET BLOCK #8
 
 
 
 	-- Decompilation error in this vicinity:
-	--- BLOCK #6 64-65, warpins: 2 ---
+	--- BLOCK #8 66-67, warpins: 2 ---
 	return
-	--- END OF BLOCK #6 ---
+	--- END OF BLOCK #8 ---
+
+
+
+end
+
+function BattleRoleObject:thrownKick()
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-23, warpins: 1 ---
+	self:thrown({
+		-9,
+		10
+	}, nil, "hurt")
+
+	local activeNode = self._activeNode
+
+	activeNode:runAction(cc.RepeatForever:create(cc.RotateBy:create(0.05, -70)))
+
+	return
+	--- END OF BLOCK #0 ---
 
 
 

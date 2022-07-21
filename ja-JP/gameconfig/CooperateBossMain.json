@@ -411,6 +411,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_FTLEShi": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_FTLEShi",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SP_ALSi",
+                    "LEMHou"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "FEMSi",
+                    "HSheng",
+                    "XHMao"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_FTLEShi_Show",
+        "RoleModel": "Model_FTLEShi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_HGEr": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

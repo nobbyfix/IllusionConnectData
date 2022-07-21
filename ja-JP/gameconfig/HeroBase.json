@@ -7607,7 +7607,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 0.72,
-        "AwakePic": "",
+        "AwakePic": "portraitpic_FTLEShi",
         "BaseAttack": 145.0,
         "BaseDefence": 45.0,
         "BaseHp": 585.0,
@@ -22147,6 +22147,273 @@
         "UneffectRate": 0.0,
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_SP_ALPo"
+    },
+    "SP_ALSi": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.28,
+        "AwakePic": "",
+        "BaseAttack": 230.0,
+        "BaseDefence": 54.0,
+        "BaseHp": 680.0,
+        "BaseQualityAttr": "SP_10_Attack",
+        "BaseStar": 3,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_SP_ALSi",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AISP_ALSi",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "SP_ALSi_CVName",
+        "Cost": 15,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 0.82,
+        "Desc": "HeroBase_Desc_SP_ALSi",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "SP_ALSi",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_SP_ALSi",
+        "HeroStoryMap": "",
+        "HpFactor": 0.73,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_SP_ALSi",
+        "KeyPassiveSkill": "Hero_PBattle_SP_ALSi_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_SP_ALSi",
+        "MasterRage": 180,
+        "MaxLevel": 300,
+        "MaxQuality": "SP_50_Attack",
+        "MaxStar": 6,
+        "MaxStarEffect": "SP_ALSi_6",
+        "Name": "HeroBase_Name_SP_ALSi",
+        "NormalSkill": "Hero_Normal_SP_ALSi",
+        "Party": "WNSXJ",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "Master_LieSha"
+                        ],
+                        [
+                            "Master_FuHun"
+                        ],
+                        [
+                            "Tower_1_Master2"
+                        ],
+                        [
+                            "Tower_1_Master4"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "master"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_SP_ALSi",
+        "ProudSkill": "Hero_Proud_SP_ALSi",
+        "Rareity": 15,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_SP_ALSi",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_SP_ALSi",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_SP_ALSi",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_SP_ALSi_01",
+            "Voice_SP_ALSi_35",
+            "Voice_SP_ALSi_40_1",
+            "Voice_SP_ALSi_40_2",
+            "Voice_SP_ALSi_40_3",
+            "Voice_SP_ALSi_37",
+            "Voice_SP_ALSi_38",
+            "Voice_SP_ALSi_39",
+            "Voice_SP_ALSi_47",
+            "Voice_SP_ALSi_48",
+            "Voice_SP_ALSi_50",
+            "Voice_SP_ALSi_51",
+            "Voice_SP_ALSi_52",
+            "Voice_SP_ALSi_53",
+            "Voice_SP_ALSi_54",
+            "Voice_SP_ALSi_55",
+            "Voice_SP_ALSi_56",
+            "Voice_SP_ALSi_57",
+            "Voice_SP_ALSi_60",
+            "Voice_SP_ALSi_07",
+            "Voice_SP_ALSi_08",
+            "Voice_SP_ALSi_09",
+            "Voice_SP_ALSi_58",
+            "Voice_SP_ALSi_59",
+            "Voice_SP_ALSi_10",
+            "Voice_SP_ALSi_11",
+            "Voice_SP_ALSi_14",
+            "Voice_SP_ALSi_15",
+            "Voice_SP_ALSi_16",
+            "Voice_SP_ALSi_21",
+            "Voice_SP_ALSi_17",
+            "Voice_SP_ALSi_18",
+            "Voice_SP_ALSi_34",
+            "Voice_SP_ALSi_19",
+            "Voice_SP_ALSi_63",
+            "Voice_SP_ALSi_61",
+            "Voice_SP_ALSi_25",
+            "Voice_SP_ALSi_26",
+            "Voice_SP_ALSi_27",
+            "Voice_SP_ALSi_28",
+            "Voice_SP_ALSi_29",
+            "Voice_SP_ALSi_30",
+            "Voice_SP_ALSi_31",
+            "Voice_SP_ALSi_32"
+        ],
+        "Speed": 50,
+        "StarId": "SP_ALSi_1",
+        "SurfaceList": [
+            "Surface_SP_ALSi_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Attack",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_SP_ALSi"
     },
     "SP_DDing": {
         "Absorption": 0.0,

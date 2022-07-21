@@ -305,3 +305,17 @@ function exports.GetPlayerEnergy(env, unit)
 
 	return player:getEnergyReservoir():getEnergy()
 end
+
+function exports.ThrownKick(env, target, joinReferee)
+	joinReferee = joinReferee or false
+	local unit = excludeTarget(env, target, joinReferee)
+
+	if unit == nil then
+		return false
+	end
+
+	stopAffectedSkillActions(env, target)
+	env.global.RecordEffect(env, unit:getId(), "ThrownKick", animation)
+
+	return true
+end

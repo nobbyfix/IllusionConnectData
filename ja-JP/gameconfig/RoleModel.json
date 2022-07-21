@@ -12351,8 +12351,8 @@
         "Bust1": "Bust1_FTLEShi",
         "Bust10": "Bust10_FTLEShi",
         "Bust11": "Bust11_FTLEShi",
-        "Bust12": "Bust12_FTLEShi",
-        "Bust13": "Bust13_FTLEShi",
+        "Bust12": "Bust13_FTLEShi",
+        "Bust13": "Bust12_FTLEShi",
         "Bust14": "Bust14_FTLEShi",
         "Bust15": "Bust15_FTLEShi",
         "Bust16": "Bust5_FTLEShi",
@@ -12368,7 +12368,10 @@
             -14,
             -510
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            200,
+            -480
+        ],
         "BustTemp1": [
             137,
             -457
@@ -29217,6 +29220,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.72,
         "bustZoom": 0.8
+    },
+    "Model_SP_ALSi": {
+        "Animation": "sp_alsi",
+        "BattlePosition": "HeroBase_BattlePosition_SP_ALSi",
+        "BattleShow": "",
+        "Bust1": "Bust1_SP_ALSi",
+        "Bust10": "Bust10_SP_ALSi",
+        "Bust11": "Bust11_SP_ALSi",
+        "Bust12": "Bust12_SP_ALSi",
+        "Bust13": "Bust13_SP_ALSi",
+        "Bust14": "Bust14_SP_ALSi",
+        "Bust15": "Bust15_SP_ALSi",
+        "Bust16": "",
+        "Bust2": "Bust2_SP_ALSi",
+        "Bust3": "Bust3_SP_ALSi",
+        "Bust4": "Bust4_SP_ALSi",
+        "Bust5": "Bust5_SP_ALSi",
+        "Bust6": "Bust6_SP_ALSi",
+        "Bust7": "Bust7_SP_ALSi",
+        "Bust8": "Bust8_SP_ALSi",
+        "Bust9": "Bust9_SP_ALSi",
+        "BustAwake": [
+            -106,
+            -229
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -128,
+            -404
+        ],
+        "BustTemp2": [
+            -113,
+            -435
+        ],
+        "BustTemp3": [
+            -114,
+            -435
+        ],
+        "BustTemp4": [
+            -129,
+            -451
+        ],
+        "BustTemp5": [
+            -129,
+            -451
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_sp_alsi",
+        "DeathVoice": "",
+        "Filename": "portrait_sp_alsi",
+        "HeadMain": "HeadMain_SP_ALSi",
+        "Height": 200,
+        "Hero": "SP_ALSi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_SP_ALSi",
+        "MasterHeadWide": "",
+        "Model": "sp_alsi",
+        "Name": "HeroBase_Name_SP_ALSi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_SP_ALSi",
+        "SVPText": "SVPText_SP_ALSi",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "SP_ALSi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_SP_ALSi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_SP_ALSi"
+        ],
+        "TruthBubble": [
+            "Truth_SP_ALSi_1",
+            "Truth_SP_ALSi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.5,
+        "bustZoom": 0.68
     },
     "Model_SP_DDing": {
         "Animation": "sp_bytsi",

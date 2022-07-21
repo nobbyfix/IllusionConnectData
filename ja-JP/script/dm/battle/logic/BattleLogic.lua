@@ -631,4 +631,6 @@ function BattleLogic:on_NewTime(_, args)
 	if math.floor(args.prev / 1000) < math.floor(args.now / 1000) then
 		self._formationSystem:updateOnNewSecond(math.floor(args.now / 1000))
 	end
+
+	self._cardSystem:updateOnNewSecond(args)
 end

@@ -2711,6 +2711,15 @@ local data = {
 		"asset/anim/portrait_fhyhua_awaken.plist",
 		"asset/anim/global_fhyhua_jxing_lihui_lz.plist"
 	},
+	["LYSi_CDan_Maozi.skel"] = {
+		"asset/anim/global_lysmz_xda.plist",
+		"asset/anim/global_lysmz_cx.plist",
+		"asset/anim/global_lysmz_xca.plist",
+		"asset/anim/spine_LYSi_CDan.plist",
+		"asset/anim/global_lysmz_xcb.plist",
+		"asset/anim/global_lysmz_xdb.plist",
+		"asset/anim/ninja1.plist"
+	},
 	["CZheng_YZhuang.skel"] = {
 		"asset/anim/global_CZhenYZ_skill2_QA.plist",
 		"asset/anim/global_xrc_dizuo.plist",
@@ -3215,6 +3224,10 @@ local data = {
 	["portrait_scheng_awaken.skel"] = {
 		"asset/anim/portrait_scheng_awaken.plist",
 		"asset/anim/global_scheng_awaken_jx_lz.plist"
+	},
+	["portrait_sp_alsi.skel"] = {
+		"asset/anim/portrait_sp_alsi.plist",
+		"asset/anim/portrait_sp_alsi1.plist"
 	},
 	["ALSi_TGWu.skel"] = {
 		"asset/anim/global_alsi_die2_xunhuan.plist",
@@ -4474,14 +4487,30 @@ local data = {
 		"asset/anim/global_ruchang_xialuo.plist",
 		"asset/anim/ninja1.plist"
 	},
-	["LYSi_CDan_Maozi.skel"] = {
-		"asset/anim/global_lysmz_xda.plist",
-		"asset/anim/global_lysmz_cx.plist",
-		"asset/anim/global_lysmz_xca.plist",
-		"asset/anim/spine_LYSi_CDan.plist",
-		"asset/anim/global_lysmz_xcb.plist",
-		"asset/anim/global_lysmz_xdb.plist",
-		"asset/anim/ninja1.plist"
+	["sp_alsi.skel"] = {
+		"asset/anim/global_ailisi_skill1_bl.plist",
+		"asset/anim/global_ailisi_skill3_bsde.plist",
+		"asset/anim/spine_YFZZhu.plist",
+		"asset/anim/global_ailisi_skill3_sg.plist",
+		"asset/anim/global_ailisi_skill2_df.plist",
+		"asset/anim/global_ruchang_xialuo.plist",
+		"asset/anim/global_ailisi_skill3_xlq.plist",
+		"asset/anim/ninja1.plist",
+		"asset/anim/global_ailisi_skill1_q.plist",
+		"asset/anim/sp_alsi.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_ailisi_skill2_dg.plist",
+		"asset/anim/global_ailisi_skill3_bsde1.plist",
+		"asset/anim/global_ailisi_skill3_dg.plist",
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_ailisi_skill3_bs.plist",
+		"asset/anim/global_ailisi_skill2_hy.plist",
+		"asset/anim/global_ailisi_skill1_lz.plist",
+		"asset/anim/global_ailisi_skill2_qy.plist",
+		"asset/anim/sp_alsi1.plist",
+		"asset/anim/global_ruchang_dixian.plist",
+		"asset/anim/global_ailisi_skill1_bd.plist",
+		"asset/anim/global_ailisi_skill2_bd.plist"
 	},
 	["Enemy_YLMNYi_Enemy01.skel"] = {
 		"asset/anim/global_ruchang_dixian.plist",
