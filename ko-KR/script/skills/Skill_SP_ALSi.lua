@@ -289,7 +289,7 @@ all.Skill_SP_ALSi_Unique = {
 									card = card,
 									time = this.LockTime * 1000
 								})
-								global.LockCardFlag(_env, card, this.LockTime)
+								global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 							end
 						end
 
@@ -324,7 +324,7 @@ all.Skill_SP_ALSi_Unique = {
 										card = card,
 										time = this.LockTime * 1000
 									})
-									global.LockCardFlag(_env, card, this.LockTime)
+									global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 								end
 							end
 
@@ -355,7 +355,7 @@ all.Skill_SP_ALSi_Unique = {
 										card = card,
 										time = this.LockTime * 1000
 									})
-									global.LockCardFlag(_env, card, this.LockTime)
+									global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 								end
 							end
 						end
@@ -460,6 +460,9 @@ all.Skill_SP_ALSi_Passive_Key = {
 			name = "passive3",
 			entry = prototype.passive3
 		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
 		this.passive3 = global["[trigger_by]"](this, {
 			"UNIT_ENTER"
 		}, passive3)
@@ -594,14 +597,13 @@ all.Skill_SP_ALSi_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MARKED(_env, "SP_ALSi")(_env, _env.ACTOR) and global.MARKED(_env, "SP_ALSi")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+			if global.MARKED(_env, "SP_ALSi")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 				for _, units in global.__iter__(global.EnemyUnits(_env)) do
 					global.DispelBuff(_env, units, global.BUFF_MARKED(_env, "Skill_SP_ALSi_Key"), 99)
 				end
 			end
 
 			if global.MARKED(_env, "SP_ALSi")(_env, _env.ACTOR) and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
-				global.DispelBuff(_env, _env.unit, global.BUFF_MARKED(_env, "Skill_SP_ALSi_Key"), 99)
 				global.SP_ALSi_Taunt(_env)
 			end
 		end)
@@ -629,7 +631,7 @@ all.Skill_SP_ALSi_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MARKED(_env, "SP_ALSi")(_env, _env.ACTOR) and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.BuffIsMatched(_env, _env.buff, "IMMUNE") then
+			if global.MARKED(_env, "SP_ALSi")(_env, _env.ACTOR) and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.BuffIsMatched(_env, _env.buff, "IMMUNE") and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "IMMUNE")) == 0 then
 				global.SP_ALSi_Taunt(_env)
 			end
 		end)
@@ -641,7 +643,6 @@ all.Skill_SP_ALSi_Passive_Key = {
 function all.SP_ALSi_Taunt(_env)
 	local this = _env.this
 	local global = _env.global
-	local buffeft = global.Taunt(_env)
 
 	for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 		global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_SP_ALSi_Key"), 99)
@@ -651,6 +652,8 @@ function all.SP_ALSi_Taunt(_env)
 		local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
 
 		if #enemyfront <= 0 then
+			local buffeft = global.Taunt(_env)
+
 			global.ApplyBuff(_env, unit, {
 				timing = 0,
 				display = "Taunt",
@@ -920,7 +923,7 @@ all.Skill_SP_ALSi_Unique_EX = {
 									card = card,
 									time = this.LockTime * 1000
 								})
-								global.LockCardFlag(_env, card, this.LockTime)
+								global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 							end
 						end
 
@@ -955,7 +958,7 @@ all.Skill_SP_ALSi_Unique_EX = {
 										card = card,
 										time = this.LockTime * 1000
 									})
-									global.LockCardFlag(_env, card, this.LockTime)
+									global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 								end
 							end
 
@@ -986,7 +989,7 @@ all.Skill_SP_ALSi_Unique_EX = {
 										card = card,
 										time = this.LockTime * 1000
 									})
-									global.LockCardFlag(_env, card, this.LockTime)
+									global.LockCardFlag(_env, _env.TARGET, card, this.LockTime)
 								end
 							end
 						end
@@ -1202,10 +1205,28 @@ all.Skill_SP_ALSi_Unique_Dmg_Field = {
 	end
 }
 
-function all.LockCardFlag(_env, card, locktime)
+function all.LockCardFlag(_env, target, card, locktime)
 	local this = _env.this
 	local global = _env.global
+	local buff = global.NumericEffect(_env, "+def", {
+		"+Normal",
+		"+Normal"
+	}, 0)
 
+	global.ApplyHeroCardBuff(_env, global.GetOwner(_env, target), card, {
+		group = "SP_ALSi_LOCK",
+		timing = 4,
+		limit = 1,
+		duration = locktime,
+		tags = {
+			"LOCK_ALSi",
+			"UNDISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		buff
+	})
+	global.DelayCall(_env, locktime * 1000, global.DispelBuffOnHeroCard, card, "LOCK_ALSi")
 	global.AddCardFlags(_env, card, {
 		"LOCK"
 	})

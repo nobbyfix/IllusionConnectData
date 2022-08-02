@@ -587,7 +587,6 @@ all.SelfEX_Summon_OneStage_inherit_SubSkill = {
 function all.SelfEX_Support_OneStage_treasury(_env, unit, num)
 	local this = _env.this
 	local global = _env.global
-	num = 4
 	local position_list = {
 		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Decoration",
 		[#position_list + 1] = "SelfEX_Support_OneStage_treasury_SubSkill_Boots",
@@ -624,11 +623,12 @@ function all.SelfEX_Support_OneStage_treasury_Subfun(_env, actor, att, position,
 		local buff1 = global.NumericEffect(_env, "+" .. att[1], {
 			"+Normal",
 			"+Normal"
-		}, 0.04)
+		}, 0.075)
 
 		global.ApplyBuff_Buff(_env, actor, actor, {
 			duration = 1,
-			timing = 2,
+			timing = 1,
+			limit = 2,
 			display = att[2],
 			tags = {
 				"BUFF",
@@ -640,14 +640,38 @@ function all.SelfEX_Support_OneStage_treasury_Subfun(_env, actor, att, position,
 		}, {
 			buff1
 		})
-	else
+	end
+
+	if position == "Weapon" then
 		local buff1 = global.NumericEffect(_env, "+" .. att[1], {
 			"+Normal",
 			"+Normal"
-		}, 0.04)
+		}, 0.15)
 
 		global.ApplyBuff_Buff(_env, actor, actor, {
-			timing = 2,
+			timing = 0,
+			duration = 1 + times,
+			display = att[2],
+			tags = {
+				"BUFF",
+				"DISPELLABLE",
+				"STEALABLE",
+				position
+			},
+			group = position .. global.UnitPropGetter(_env, "hp")(_env, actor)
+		}, {
+			buff1
+		})
+	end
+
+	if position == "Boots" then
+		local buff1 = global.NumericEffect(_env, "+" .. att[1], {
+			"+Normal",
+			"+Normal"
+		}, 0.075)
+
+		global.ApplyBuff_Buff(_env, actor, actor, {
+			timing = 0,
 			duration = 1 + times,
 			display = att[2],
 			tags = {
@@ -712,7 +736,7 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Decoration = {
 					},
 					{
 						"aoederate",
-						"DefUp"
+						"AoeUnHurtRateUp"
 					}
 				}
 				local pos = global.floor(_env, global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)) % #att_list

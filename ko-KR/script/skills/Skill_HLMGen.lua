@@ -299,7 +299,7 @@ all.Skill_HLMGen_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))
+			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
@@ -589,7 +589,7 @@ all.Skill_HLMGen_Passive_EX = {
 				buffeft1
 			}, 1, 0)
 
-			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))
+			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {

@@ -12896,23 +12896,21 @@ all.EquipSkill_Shoes_15120_2 = {
 		_env.unit = externs.unit
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.eft = externs.eft
-
-		assert(_env.eft ~= nil, "External variable `eft` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local BloodLoss = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit) - global.UnitPropGetter(_env, "hp")(_env, _env.unit)
-			local Gear = global.floor(_env, BloodLoss / this.hp)
+			local maxHp = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_maxHp")(_env, _env.unit)
+			local realheal = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realheal")(_env, _env.unit)
 
-			if Gear < 1 or _env.eft <= 0 then
+			global.print(_env, "诏令当前积累真实治疗量", global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realheal")(_env, _env.unit), "谁", global.GetUnitCid(_env, _env.unit))
+
+			local buff_num = global.floor(_env, realheal / (maxHp * this.hp))
+
+			if buff_num < 0 or realheal <= 0 then
 				return
 			end
-
-			local buff_num = _env.eft / global.UnitPropGetter(_env, "maxHp")(_env, _env.unit) / this.hp
 
 			if global.floor(_env, 1 / this.hp) < buff_num then
 				buff_num = global.floor(_env, 1 / this.hp)
@@ -12921,49 +12919,53 @@ all.EquipSkill_Shoes_15120_2 = {
 			local count = global.GetFriendField(_env, nil, "EquipSkill_Shoes_15120_2")
 
 			if buff_num >= 1 and count <= 18 then
-				global.print(_env, "要加几次buff=", count, "加多少攻击率=", 0.055 * count, "当前攻击率=", global.UnitPropGetter(_env, "atkrate")(_env, _env.unit), global.GetUnitCid(_env, _env.unit))
+				global.print(_env, "要加几次buff=", buff_num, "加多少攻击率=", 0.055 * buff_num, "当前攻击率=", global.UnitPropGetter(_env, "atkrate")(_env, _env.unit), "谁", global.GetUnitCid(_env, _env.unit))
 
-				for i = 1, buff_num - 1 do
-					count = count + 1
-					local buff = global.NumericEffect(_env, "+atkrate", {
-						"+Normal"
-					}, 0.055)
-
-					global.ApplyBuff(_env, _env.unit, {
-						duration = 99,
-						group = "EquipSkill_Shoes_15120_2",
-						timing = 0,
-						limit = 99,
-						tags = {
-							"BUFF",
-							"EquipSkill_Shoes_15120_2",
-							"UR_EQUIPMENT"
-						}
-					}, {
-						buff
-					})
-				end
-
-				local buff = global.NumericEffect(_env, "+atkrate", {
+				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
 					"+Normal"
-				}, 0.055)
+				}, 0.055 * buff_num)
 
-				global.ApplyBuff(_env, _env.unit, {
-					duration = 99,
-					display = "AtkUp",
-					group = "EquipSkill_Shoes_15120_2_1",
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
 					timing = 0,
+					display = "AtkUp",
+					duration = 99,
 					limit = 99,
 					tags = {
-						"EquipSkill_Shoes_15120_2"
+						"EquipSkill_Shoes_15120_2",
+						"UR_EQUIPMENT",
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"ATKUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
 					}
 				}, {
-					buff
-				})
-				global.SetFriendField(_env, nil, count + 1, "EquipSkill_Shoes_15120_2")
-			end
+					buffeft1
+				}, 1, 0)
 
-			global.print(_env, "最终攻击率=", global.UnitPropGetter(_env, "atkrate")(_env, _env.unit), global.GetUnitCid(_env, _env.unit))
+				count = count + 1 * buff_num
+
+				global.SetFriendField(_env, nil, count, "EquipSkill_Shoes_15120_2")
+
+				local buff1 = global.SpecialNumericEffect(_env, "-EquipSkill_Shoes_15120_2_realheal", {
+					"+Normal",
+					"+Normal"
+				}, buff_num * maxHp * this.hp)
+
+				global.ApplyBuff(_env, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"EquipSkill_Decoration_15114_2_realheal"
+					}
+				}, {
+					buff1
+				})
+				global.print(_env, "诏令剩余积累真实治疗量", global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realheal")(_env, _env.unit), "谁", global.GetUnitCid(_env, _env.unit))
+				global.print(_env, "最终攻击率=", global.UnitPropGetter(_env, "atkrate")(_env, _env.unit), "谁", global.GetUnitCid(_env, _env.unit))
+				global.print(_env, "当前已用次数", count)
+			end
 		end)
 
 		return _env
@@ -12979,17 +12981,21 @@ all.EquipSkill_Shoes_15120_2 = {
 		_env.unit = externs.unit
 
 		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
-
-		_env.damage = externs.damage
-
-		assert(_env.damage ~= nil, "External variable `damage` is not provided.")
 		exec["@time"]({
 			0
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
 			local max_hp = global.UnitPropGetter(_env, "maxHp")(_env, _env.unit)
-			local buff_num = global.floor(_env, _env.damage / max_hp / this.hp)
+			local realdamage = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, _env.unit))(_env, global.FriendField(_env))
+
+			global.print(_env, "诏令当前积累-同一单个目标-有效伤害量", realdamage, "谁", global.GetUnitCid(_env, _env.unit))
+
+			local buff_num = global.floor(_env, realdamage / (max_hp * this.dam))
+
+			if buff_num < 0 or realdamage <= 0 then
+				return
+			end
 
 			if buff_num > 4 then
 				buff_num = 4
@@ -13001,72 +13007,69 @@ all.EquipSkill_Shoes_15120_2 = {
 			global.print(_env, "当前防御率=", global.UnitPropGetter(_env, "defrate")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 			global.print(_env, "当前最大生命值=", global.UnitPropGetter(_env, "maxHp")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 
-			if buff_num then
-				for i = 1, buff_num - 1 do
-					local buff1 = global.NumericEffect(_env, "+defrate", {
-						"+Normal",
-						"+Normal"
-					}, 0.0125)
-
-					global.ApplyBuff(_env, units[1], {
-						duration = 99,
-						group = "EquipSkill_Shoes_15120_2_1",
-						timing = 0,
-						limit = 3,
-						tags = {
-							"BUFF"
-						}
-					}, {
-						buff1
-					})
-
-					local buff2 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * 0.05)
-
-					global.ApplyBuff(_env, units[1], {
-						duration = 99,
-						group = "EquipSkill_Shoes_15120_2_2",
-						timing = 0,
-						limit = 3,
-						tags = {
-							"BUFF"
-						}
-					}, {
-						buff2
-					})
-				end
-
+			if buff_num >= 1 then
 				local buff1 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
-				}, 0.0125)
+				}, buff_num * 0.0125)
 
 				global.ApplyBuff(_env, units[1], {
 					timing = 0,
 					display = "DefUp",
 					group = "EquipSkill_Shoes_15120_2_3",
 					duration = 99,
-					limit = 1,
+					limit = 4,
 					tags = {
-						"BUFF"
+						"EquipSkill_Shoes_15120_2",
+						"UR_EQUIPMENT",
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"DEFUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
 					}
 				}, {
 					buff1
 				})
 
-				local buff2 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * 0.05)
+				local buff2 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * buff_num * 0.05)
 
 				global.ApplyBuff(_env, units[1], {
 					timing = 0,
 					display = "MaxHpUp",
 					group = "EquipSkill_Shoes_15120_2_4",
 					duration = 99,
-					limit = 1,
+					limit = 4,
 					tags = {
-						"BUFF"
+						"EquipSkill_Shoes_15120_2",
+						"UR_EQUIPMENT",
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"MAXHPUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
 					}
 				}, {
 					buff2
 				})
+
+				local buff1 = global.SpecialNumericEffect(_env, "-EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, _env.unit), {
+					"+Normal",
+					"+Normal"
+				}, buff_num * max_hp * this.dam)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"EquipSkill_Decoration_15114_2_realdamage"
+					}
+				}, {
+					buff1
+				})
+				global.print(_env, "诏令剩余积累-同一单个目标-有效伤害量", global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realdamage")(_env, _env.unit), "谁", global.GetUnitCid(_env, units[1]))
 				global.print(_env, "最终防御率=", global.UnitPropGetter(_env, "defrate")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 				global.print(_env, "最终最大生命值=", global.UnitPropGetter(_env, "maxHp")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 			end
