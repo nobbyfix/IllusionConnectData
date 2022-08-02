@@ -667,6 +667,9 @@ all.Skill_WLSTNCi_Passive = {
 				global.AddCardFlags(_env, card, {
 					"King_Check"
 				})
+				global.AddCardFlags(_env, card, {
+					"SUMMONED"
+				})
 			end
 		end)
 
@@ -1318,6 +1321,9 @@ all.Skill_WLSTNCi_Passive_EX = {
 				})
 				global.AddCardFlags(_env, card, {
 					"King_Check"
+				})
+				global.AddCardFlags(_env, card, {
+					"SUMMONED"
 				})
 			end
 		end)

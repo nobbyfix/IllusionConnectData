@@ -226,7 +226,7 @@ all.Skill_FCXJi_Unique = {
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft = global.RageGainEffect(_env, "+", {
@@ -466,7 +466,7 @@ all.Skill_FCXJi_Proud_EX = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft = global.NumericEffect(_env, "+atkrate", {
@@ -571,7 +571,7 @@ all.Skill_FCXJi_Unique_EX = {
 			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
 			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
 
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.RageGainEffect(_env, "+", {

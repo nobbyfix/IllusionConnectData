@@ -322,6 +322,9 @@ all.Skill_SP_WTXXuan_Unique = {
 						global.AddCardFlags(_env, card, {
 							"SummonedCBJun_Check"
 						})
+						global.AddCardFlags(_env, card, {
+							"SUMMONED"
+						})
 					end
 				else
 					for i = 1, this.Quantity do
@@ -494,6 +497,9 @@ all.Skill_SP_WTXXuan_Passive = {
 						})
 						global.AddCardFlags(_env, card, {
 							"SummonedCBJun_Check"
+						})
+						global.AddCardFlags(_env, card, {
+							"SUMMONED"
 						})
 					end
 				end
@@ -1009,6 +1015,9 @@ all.Skill_SP_WTXXuan_Unique_EX = {
 						global.AddCardFlags(_env, card, {
 							"SummonedCBJun_Check"
 						})
+						global.AddCardFlags(_env, card, {
+							"SUMMONED"
+						})
 					end
 				else
 					local SummonedCBJun = global.Summon(_env, _env.ACTOR, "SummonedCBJun", {
@@ -1222,6 +1231,9 @@ all.Skill_SP_WTXXuan_Passive_EX = {
 							})
 							global.AddCardFlags(_env, card, {
 								"SummonedCBJun_Check"
+							})
+							global.AddCardFlags(_env, card, {
+								"SUMMONED"
 							})
 						end
 					end

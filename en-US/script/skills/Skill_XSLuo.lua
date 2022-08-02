@@ -367,7 +367,7 @@ all.Skill_XSLuo_Passive = {
 			local global = _env.global
 
 			if global.SpecialPropGetter(_env, "XSLuo_Passive")(_env, global.FriendField(_env)) == 0 then
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))) do
 					if card then
 						local value = global.GetCardCost(_env, card)
 						local change_value = global.abs(_env, this.CostFactor - value)
@@ -430,7 +430,7 @@ all.Skill_XSLuo_Passive = {
 					end
 				end
 
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))) do
 					if card then
 						local value = global.GetCardCost(_env, card)
 						local change_value = global.abs(_env, this.CostFactor - value)
@@ -834,7 +834,7 @@ all.Skill_XSLuo_Passive_EX = {
 			local global = _env.global
 
 			if global.SpecialPropGetter(_env, "XSLuo_Passive")(_env, global.FriendField(_env)) == 0 then
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))) do
 					if card then
 						local value = global.GetCardCost(_env, card)
 						local change_value = global.abs(_env, this.CostFactor - value)
@@ -897,7 +897,7 @@ all.Skill_XSLuo_Passive_EX = {
 					end
 				end
 
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))) do
 					if card then
 						local value = global.GetCardCost(_env, card)
 						local change_value = global.abs(_env, this.CostFactor - value)
