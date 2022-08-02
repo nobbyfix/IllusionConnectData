@@ -404,7 +404,7 @@ all.Skill_XLDBLTe_Passive = {
 			local global = _env.global
 
 			if global.MASTER(_env, _env.ACTOR) then
-				local cards = global.Slice(_env, global.SortBy(_env, global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+				local cards = global.Slice(_env, global.SortBy(_env, global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), "<", global.GetCardCost), 1, 1)
 
 				for _, card in global.__iter__(cards) do
 					local buff = global.NumericEffect(_env, "+def", {
@@ -1127,7 +1127,7 @@ all.Skill_XLDBLTe_Passive_EX = {
 			local global = _env.global
 
 			if global.MASTER(_env, _env.ACTOR) then
-				local cards = global.Slice(_env, global.SortBy(_env, global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR)), "<", global.GetCardCost), 1, 1)
+				local cards = global.Slice(_env, global.SortBy(_env, global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), "<", global.GetCardCost), 1, 1)
 
 				for _, card in global.__iter__(cards) do
 					local buff = global.NumericEffect(_env, "+def", {

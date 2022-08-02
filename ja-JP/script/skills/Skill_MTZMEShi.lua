@@ -297,7 +297,7 @@ all.Skill_MTZMEShi_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))
+			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))
 			local Energy = 6
 			local buff_num = global.SpecialNumericEffect(_env, "+MTZMEShi_Passive_Energy", {
 				"+Normal",
@@ -384,7 +384,7 @@ all.MTZMEShi_For_BackCard = {
 			local global = _env.global
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "MTZMEShi_BackCard_Check")) == 0 then
-				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))) do
+				for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))) do
 					if global.SelectEnhanceCount(_env, global.GetOwner(_env, _env.ACTOR), card, global.BUFF_MARKED(_env, "Skill_MTZMEShi_Passive")) == 0 then
 						local cardvaluechange = global.CardCostEnchant(_env, "-", global.SpecialPropGetter(_env, "MTZMEShi_Passive_Energy")(_env, global.FriendField(_env)), 1)
 
@@ -678,7 +678,7 @@ all.Skill_MTZMEShi_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))
+			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))
 			local Energy = 9
 			local buff_num = global.SpecialNumericEffect(_env, "+MTZMEShi_Passive_Energy", {
 				"+Normal",

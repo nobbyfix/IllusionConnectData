@@ -345,7 +345,7 @@ all.Skill_MYing_Passive = {
 			if num == 0 then
 				global.ApplyEnergyDamage(_env, global.GetOwner(_env, global.EnemyField(_env)), this.Energy)
 
-				for _, card in global.__iter__(global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env))))) do
+				for _, card in global.__iter__(global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")))) do
 					local Aibo = nil
 
 					if global.GetAIPosition(_env, global.GetSide(_env, global.EnemyField(_env)), card) then
@@ -794,7 +794,7 @@ all.Skill_MYing_Passive_EX = {
 			if num == 0 then
 				global.ApplyEnergyDamage(_env, global.GetOwner(_env, global.EnemyField(_env)), this.Energy)
 
-				for _, card in global.__iter__(global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env))))) do
+				for _, card in global.__iter__(global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")))) do
 					local Aibo = nil
 
 					if global.GetAIPosition(_env, global.GetSide(_env, global.EnemyField(_env)), card) then

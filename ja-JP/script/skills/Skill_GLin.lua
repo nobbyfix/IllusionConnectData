@@ -294,7 +294,7 @@ all.Skill_GLin_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 2)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 2)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
@@ -401,7 +401,7 @@ all.Skill_GLin_Proud_EX = {
 
 			global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.NumericEffect(_env, "+atkrate", {
@@ -598,7 +598,7 @@ all.Skill_GLin_Passive_EX = {
 				buffeft3
 			}, 1, 0)
 
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 2)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 2)
 
 			for _, card in global.__iter__(cards) do
 				local buffeft1 = global.NumericEffect(_env, "+atkrate", {

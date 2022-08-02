@@ -335,7 +335,7 @@ all.Skill_NCai_Passive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local cost = global.GetCardCost(_env, card)
@@ -620,7 +620,7 @@ all.Skill_NCai_Passive_EX = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)), ">", global.GetCardCost), 1, 1)
+			local cards = global.Slice(_env, global.SortBy(_env, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")), ">", global.GetCardCost), 1, 1)
 
 			for _, card in global.__iter__(cards) do
 				local cost = global.GetCardCost(_env, card)
