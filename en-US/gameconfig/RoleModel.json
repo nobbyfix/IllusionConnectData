@@ -192,11 +192,11 @@
         "Bust1": "Bust1_AJTa",
         "Bust10": "Bust10_AJTa",
         "Bust11": "Bust11_AJTa",
-        "Bust12": "Bust12_AJTa",
-        "Bust13": "Bust13_AJTa",
+        "Bust12": "Bust13_AJTa",
+        "Bust13": "Bust12_AJTa",
         "Bust14": "Bust14_AJTa",
         "Bust15": "Bust15_AJTa",
-        "Bust16": "",
+        "Bust16": "Bust5_AJTa",
         "Bust2": "Bust2_AJTa",
         "Bust3": "Bust3_AJTa",
         "Bust4": "Bust4_AJTa",
@@ -209,7 +209,10 @@
             -104,
             -125
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            60,
+            -100
+        ],
         "BustTemp1": [
             64,
             -122
@@ -28814,6 +28817,177 @@
         "TagDesc": "",
         "TagPic": "",
         "TruthBubble": [],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.65,
+        "bustZoom": 0.62
+    },
+    "Model_SMSNv_BOTu": {
+        "Animation": "rabbittoy",
+        "BattlePosition": "HeroBase_BattlePosition_SMSNv",
+        "BattleShow": "Model_SMSNv_SR",
+        "Bust1": "",
+        "Bust10": "Bust10_Enemy_BOTu",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "Bust15_SMSNv_BOTu",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "Bust4_Enemy_BOTu",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "Bust9_SMSNv_BOTu",
+        "BustAwake": [
+            222,
+            76
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            462,
+            413
+        ],
+        "BustTemp2": "",
+        "BustTemp3": "",
+        "BustTemp4": "",
+        "BustTemp5": "",
+        "CommonResource": "",
+        "CutIn": "CutIn_smsnv",
+        "DeathVoice": "",
+        "Filename": "portrait_rabbittoy",
+        "HeadMain": "HeadMain_Enemy_BOTu",
+        "Height": 200,
+        "Hero": "Enemy_BOTu",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_SMSNv",
+        "MasterHeadWide": "",
+        "Model": "rabbittoy",
+        "Name": "HeroBase_Name_SMSNv_BOTu",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_Enemy_BOTu",
+        "SVPText": "SVPText_SMSNv",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "Enemy_BOTu",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_SMSNv",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_SMSNv"
+        ],
+        "TruthBubble": [],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.38,
+        "bustZoom": 0.18
+    },
+    "Model_SMSNv_SR": {
+        "Animation": "smsnv",
+        "BattlePosition": "HeroBase_BattlePosition_SMSNv",
+        "BattleShow": "",
+        "Bust1": "Bust1_SMSNv",
+        "Bust10": "Bust10_SMSNv",
+        "Bust11": "Bust11_SMSNv",
+        "Bust12": "Bust12_SMSNv",
+        "Bust13": "Bust13_SMSNv",
+        "Bust14": "Bust14_SMSNv",
+        "Bust15": "Bust15_SMSNv",
+        "Bust16": "",
+        "Bust2": "Bust2_SMSNv",
+        "Bust3": "Bust3_SMSNv",
+        "Bust4": "Bust4_SMSNv",
+        "Bust5": "Bust5_SMSNv",
+        "Bust6": "Bust6_SMSNv",
+        "Bust7": "Bust7_SMSNv",
+        "Bust8": "Bust8_SMSNv",
+        "Bust9": "Bust9_SMSNv",
+        "BustAwake": [
+            147,
+            -339
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            343,
+            -245
+        ],
+        "BustTemp2": [
+            360,
+            -230
+        ],
+        "BustTemp3": [
+            360,
+            -230
+        ],
+        "BustTemp4": [
+            332,
+            -230
+        ],
+        "BustTemp5": [
+            332,
+            -230
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_smsnv",
+        "DeathVoice": "",
+        "Filename": "portrait_smsnv",
+        "HeadMain": "HeadMain_SMSNv",
+        "Height": 200,
+        "Hero": "SMSNv",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_SMSNv",
+        "MasterHeadWide": "",
+        "Model": "smsnv",
+        "Name": "HeroBase_Name_SMSNv",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_SMSNv",
+        "SVPText": "SVPText_SMSNv",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "SMSNv",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_SMSNv",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_SMSNv"
+        ],
+        "TruthBubble": [
+            "Truth_SMSNv_1",
+            "Truth_SMSNv_2"
+        ],
         "Type": "Hero",
         "UniqueVoice": "",
         "Width": 200,

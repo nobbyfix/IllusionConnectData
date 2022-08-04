@@ -2207,6 +2207,19 @@
         "UnlockDesc": "SLWan_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_SMSNv": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_SMSNv",
+        "HeadMove": "",
+        "HeadName": "SMSNv_HeadName",
+        "HeroMasterId": "SMSNv",
+        "IconPath": "asset/heros/smsnv/battlepic_smsnv.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SMSNv_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SNGLSi": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_SNGLSi",
@@ -3142,6 +3155,19 @@
         "Type": 5,
         "UnlockDesc": "ZZBBWei_2_HeadUnlock",
         "Zoom": 0.5
+    },
+    "HeroAwaken_AJTa": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_AJTa_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_AJTa_1_Name",
+        "HeroMasterId": "AJTa",
+        "IconPath": "asset/heros/AJTa/battlepic_AJTa.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_AJTa",
+        "Zoom": 1.0
     },
     "HeroAwaken_BBLMa": {
         "Condition": "",

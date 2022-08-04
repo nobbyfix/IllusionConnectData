@@ -3909,7 +3909,7 @@
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE02": {
@@ -3932,7 +3932,7 @@
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE03": {
@@ -3955,7 +3955,7 @@
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE04": {
@@ -3980,7 +3980,7 @@
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE05": {
@@ -4003,7 +4003,7 @@
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE06": {
@@ -4022,13 +4022,11 @@
             "SamuraiSE05"
         ],
         "PointType": "NORMAL",
-        "PreStoryPoint": [
-            "SamuraiS02S03"
-        ],
+        "PreStoryPoint": [],
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE07": {
@@ -4047,11 +4045,13 @@
             "SamuraiSE06"
         ],
         "PointType": "NORMAL",
-        "PreStoryPoint": [],
+        "PreStoryPoint": [
+            "SamuraiS02S03"
+        ],
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE08": {
@@ -4070,13 +4070,11 @@
             "SamuraiSE07"
         ],
         "PointType": "NORMAL",
-        "PreStoryPoint": [
-            "SamuraiS02S04"
-        ],
+        "PreStoryPoint": [],
         "ShowCondition": "",
         "Type": "ELITE",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE09": {
@@ -4098,7 +4096,7 @@
         "ShowCondition": "",
         "Type": "HARD",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE10": {
@@ -4116,11 +4114,13 @@
             "SamuraiSE09"
         ],
         "PointType": "NORMAL",
-        "PreStoryPoint": [],
+        "PreStoryPoint": [
+            "SamuraiS02S04"
+        ],
         "ShowCondition": "",
         "Type": "HARD",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSE11": {
@@ -4140,7 +4140,7 @@
         "ShowCondition": "",
         "Type": "HARD",
         "UnlockCondition": {
-            "start": "2022-04-07 05:00:00"
+            "start": "2022-08-22 05:00:00"
         }
     },
     "SamuraiSN01": {
@@ -4163,7 +4163,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN02": {
@@ -4186,7 +4186,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN03": {
@@ -4209,7 +4209,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN04": {
@@ -4228,13 +4228,11 @@
             "SamuraiSN03"
         ],
         "PointType": "NORMAL",
-        "PreStoryPoint": [
-            "SamuraiS01S02"
-        ],
+        "PreStoryPoint": [],
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN05": {
@@ -4257,7 +4255,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN06": {
@@ -4282,7 +4280,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN07": {
@@ -4305,7 +4303,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SamuraiSN08": {
@@ -4328,7 +4326,7 @@
         "ShowCondition": "",
         "Type": "NORMAL",
         "UnlockCondition": {
-            "start": "2022-04-01 05:00:00"
+            "start": "2022-08-16 05:00:00"
         }
     },
     "SilentNightSE01": {
