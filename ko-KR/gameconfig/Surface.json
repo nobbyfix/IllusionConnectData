@@ -9912,6 +9912,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_SMSNv_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -252,
+                    1962
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -142,
+                    1674
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SMSNv_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SMSNv",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SMSNv_SR",
+        "Name": "Surface_SMSNv_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_SNGLSi_1": {
         "ActivityId": "",
         "AnimeList": "",

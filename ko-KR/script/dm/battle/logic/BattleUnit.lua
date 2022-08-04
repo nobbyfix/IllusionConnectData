@@ -221,6 +221,8 @@ function BattleUnit:initWithRawData(data)
 	self._isBattleField = data.isBattleField
 	self._enemyCost = data.enemyCost
 	self._sex = data.sex
+	self._initialFigure = data
+	self._figureState = "INITIAL"
 
 	super.initWithRawData(self, data)
 
@@ -456,7 +458,8 @@ function BattleUnit:dumpInformation()
 		isSummoned = self._isSummoned,
 		side = self._side,
 		flags = flagComp:getFlags(),
-		isBattleField = self._isBattleField
+		isBattleField = self._isBattleField,
+		figure = self:getFigureState()
 	}
 end
 
@@ -528,4 +531,55 @@ function BattleUnit:getActualCost()
 	end
 
 	return self._cost
+end
+
+local function createFullFigureData(variant, origin)
+	local figure = {
+		model = variant.model or origin.model,
+		quality = variant.quality or origin.quality,
+		rarity = variant.rarity or origin.rarity,
+		star = variant.star or origin.star,
+		tags = variant.flags or origin.flags,
+		sex = variant.sex or origin.sex
+	}
+
+	return figure
+end
+
+function BattleUnit:getFigureState()
+	return self._figureState
+end
+
+function BattleUnit:transfigure(figureState, figureData)
+	if figureState == "INITIAL" then
+		figureData = self._initialFigure
+	end
+
+	if self._figureState == figureState or figureData == nil then
+		return false
+	end
+
+	if figureData ~= self._initialFigure then
+		figureData = createFullFigureData(figureData, self._initialFigure)
+	end
+
+	self:applyTransfiguration(figureData)
+
+	self._figureState = figureState
+
+	return true
+end
+
+function BattleUnit:applyTransfiguration(figure)
+	self._modelId = figure.model
+	self._quality = figure.quality
+	self._rarity = figure.rarity
+	self._star = figure.star
+	self._sex = figure.sex
+	local flagComp = self:getComponent("Flag")
+
+	if flagComp ~= nil then
+		flagComp:clearFlags()
+		flagComp:setFlags(figure.flags)
+	end
 end

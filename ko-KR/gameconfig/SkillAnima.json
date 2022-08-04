@@ -51087,6 +51087,98 @@
                 "evts": [
                     {
                         "d": {
+                            "file": "Voice_DDing_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SMSNv_Stone_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            }
+        ]
+    },
+    "smsnv_skill2": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_DDing_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Se_Skill_SMSNv_Stone_Hit",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "act": "hurt1",
+                            "final": 0
+                        },
+                        "e": "hit"
+                    }
+                ],
+                "f": 15
+            }
+        ]
+    },
+    "smsnv_skill3": {
+        "events": [
+            {
+                "evts": [
+                    {
+                        "d": {
+                            "file": "Voice_DDing_26",
+                            "rate": 1
+                        },
+                        "e": "sound"
+                    }
+                ],
+                "f": 0
+            },
+            {
+                "evts": [
+                    {
+                        "d": {
                             "file": "Se_Skill_SMSNv_Stone_Hit",
                             "rate": 1
                         },

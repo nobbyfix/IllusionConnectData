@@ -7926,3 +7926,47 @@ function BattleRoleObject:showAtkAndDef(atk, def, hurtrate, unhurtrate)
 
 
 end
+
+function BattleRoleObject:onTransShap()
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #0 1-14, warpins: 1 ---
+	self:cancelThrown()
+	self:setRelPosition(self._homePlace)
+	--- END OF BLOCK #0 ---
+
+	slot1 = if not self._dataModel:getModelConfig()
+
+	.Zoom then
+	JUMP TO BLOCK #1
+	else
+	JUMP TO BLOCK #2
+	end
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #1 15-15, warpins: 1 ---
+	slot1 = 1
+	--- END OF BLOCK #1 ---
+
+	FLOW; TARGET BLOCK #2
+
+
+
+	-- Decompilation error in this vicinity:
+	--- BLOCK #2 16-28, warpins: 2 ---
+	self._modelScale = slot1
+
+	self:createHeroAnim()
+	self:refreshBuffEffect()
+	self:switchState("stand", {
+		loop = 1
+	})
+
+	return
+	--- END OF BLOCK #2 ---
+
+
+
+end

@@ -1767,3 +1767,17 @@ function UnitTLInterpreter:act_SetRoleScale(action, args)
 
 	self._unit:setRoleScale(scale)
 end
+
+function UnitTLInterpreter:act_Transfigure(action, args)
+	local roleDataModel = self._dataModel
+
+	roleDataModel:setHp(args.hp)
+	roleDataModel:setRp(args.anger)
+	roleDataModel:setMaxHp(args.maxHp)
+	roleDataModel:setMaxRp(args.maxAnger)
+	roleDataModel:setStar(args.star)
+	roleDataModel:setModelId(args.model)
+	roleDataModel:setFlags(args.flags)
+	self._unit:onTransShap()
+	self._unit:goBack()
+end
