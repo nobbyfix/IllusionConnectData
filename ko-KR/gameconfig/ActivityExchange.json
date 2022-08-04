@@ -11813,6 +11813,19 @@
     "Exchange_ReZeroDraw_2": {
         "Cost": [
             {
+                "amount": 1,
+                "code": "IM_DiamondDraw_ReZero",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Exchange_ReZeroDraw_Reward",
+        "Times": 99999,
+        "isRemind": 1
+    },
+    "Exchange_ReZeroDraw_20": {
+        "Cost": [
+            {
                 "amount": 5000,
                 "code": "IM_ReZeroRe_ExchangeItem",
                 "type": 2
