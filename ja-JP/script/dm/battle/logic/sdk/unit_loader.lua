@@ -378,6 +378,10 @@ function exports.GetUnitUid(env, unit)
 	return unit:getUid()
 end
 
+function exports.GetUnitId(env, unit)
+	return unit:getId()
+end
+
 function exports.GetCost(env, unit)
 	local enemyCost = unit:getEnemyCost() == 0 and unit:getCost() or unit:getEnemyCost()
 

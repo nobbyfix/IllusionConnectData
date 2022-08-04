@@ -317,6 +317,31 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "AJTa_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_AJTa_Awake"
+        ],
+        "HeroId": "AJTa",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_AJTa_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
     "AJYHou_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -7341,6 +7366,58 @@
         "StarUpCost": 60000,
         "StarUpFactor": 240,
         "UpNeedItem": "",
+        "Visible": 1
+    },
+    "HSheng_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_HSheng_1"
+        ],
+        "HeroId": "HSheng",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "HSheng_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "HSheng_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_HSheng_2"
+        ],
+        "HeroId": "HSheng",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_HSheng_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
         "Visible": 1
     },
     "JDCZhang_1": {
@@ -16196,6 +16273,165 @@
         "Star": 6,
         "StarStive": 6000,
         "StarUpCost": 50000,
+        "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_1": {
+        "AtkStarBaseValue": 0.0,
+        "AtkStarFactor": 0.0,
+        "DefStarBaseValue": 0.0,
+        "DefStarFactor": 0.0,
+        "Effect": [],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 0.0,
+        "HpStarFactor": 0.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SMSNv_2",
+        "SpecialEffect": [],
+        "Speed": 0,
+        "Star": 1,
+        "StarStive": 0,
+        "StarUpCost": 0,
+        "StarUpFactor": 10,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_2": {
+        "AtkStarBaseValue": 100.0,
+        "AtkStarFactor": 0.0,
+        "DefStarBaseValue": 30.0,
+        "DefStarFactor": 0.0,
+        "Effect": [],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 400.0,
+        "HpStarFactor": 0.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SMSNv_3",
+        "SpecialEffect": [],
+        "Speed": 15,
+        "Star": 2,
+        "StarStive": 0,
+        "StarUpCost": 3000,
+        "StarUpFactor": 20,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_3": {
+        "AtkStarBaseValue": 250.0,
+        "AtkStarFactor": 2.0,
+        "DefStarBaseValue": 75.0,
+        "DefStarFactor": 0.6,
+        "Effect": [],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 1000.0,
+        "HpStarFactor": 8.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SMSNv_3_1",
+        "SpecialEffect": [
+            "StarSE_SMSNv_3"
+        ],
+        "Speed": 30,
+        "Star": 3,
+        "StarStive": 0,
+        "StarUpCost": 4000,
+        "StarUpFactor": 30,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_3_1": {
+        "AtkStarBaseValue": 425.0,
+        "AtkStarFactor": 4.0,
+        "DefStarBaseValue": 128.0,
+        "DefStarFactor": 1.2,
+        "Effect": [
+            "Star_SMSNv_3_1"
+        ],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 1700.0,
+        "HpStarFactor": 16.0,
+        "MiniStar": 1,
+        "NeedLove": "",
+        "NextId": "SMSNv_4",
+        "SpecialEffect": [],
+        "Speed": 45,
+        "Star": 3,
+        "StarStive": 0,
+        "StarUpCost": 5000,
+        "StarUpFactor": 30,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_4": {
+        "AtkStarBaseValue": 600.0,
+        "AtkStarFactor": 6.0,
+        "DefStarBaseValue": 180.0,
+        "DefStarFactor": 1.8,
+        "Effect": [],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 2400.0,
+        "HpStarFactor": 24.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SMSNv_4_1",
+        "SpecialEffect": [
+            "StarSE_SMSNv_4"
+        ],
+        "Speed": 60,
+        "Star": 4,
+        "StarStive": 400,
+        "StarUpCost": 6000,
+        "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_4_1": {
+        "AtkStarBaseValue": 800.0,
+        "AtkStarFactor": 8.0,
+        "DefStarBaseValue": 240.0,
+        "DefStarFactor": 2.4,
+        "Effect": [
+            "Star_SMSNv_4_1"
+        ],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 3200.0,
+        "HpStarFactor": 32.0,
+        "MiniStar": 1,
+        "NeedLove": "",
+        "NextId": "SMSNv_5",
+        "SpecialEffect": [],
+        "Speed": 75,
+        "Star": 4,
+        "StarStive": 0,
+        "StarUpCost": 8000,
+        "StarUpFactor": 60,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SMSNv_5": {
+        "AtkStarBaseValue": 1000.0,
+        "AtkStarFactor": 10.0,
+        "DefStarBaseValue": 300.0,
+        "DefStarFactor": 3.0,
+        "Effect": [
+            "Star_SMSNv_5"
+        ],
+        "HeroId": "SMSNv",
+        "HpStarBaseValue": 4000.0,
+        "HpStarFactor": 40.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_SMSNv_5"
+        ],
+        "Speed": 90,
+        "Star": 5,
+        "StarStive": 800,
+        "StarUpCost": 12000,
         "StarUpFactor": 0,
         "UpNeedItem": "",
         "Visible": 1

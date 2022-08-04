@@ -37,6 +37,25 @@
             }
         ]
     },
+    "CooperateBoss_AJTa": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_AJTa",
+        "Name": "HeroBase_Name_AJTa",
+        "PointHead": "Model_AJTa",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_BBLMa": {
         "BGM": [
             "Mus_Battle_Whale",

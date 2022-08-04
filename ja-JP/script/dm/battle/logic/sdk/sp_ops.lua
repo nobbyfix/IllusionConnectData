@@ -257,7 +257,7 @@ function exports.TruthBubble(env, unit)
 	})
 end
 
-function exports.InheritCardByConfig(env, config)
+function exports.InheritCardByConfig(env, config, owner)
 	local card = config.card
 	local modelId = config.modelId
 	local ignorePassive = config.ignorePassive
@@ -269,10 +269,10 @@ function exports.InheritCardByConfig(env, config)
 	local maxHp = config.maxHp
 
 	if card and (card._unitType or card:getType() == "hero") then
-		local player = env["$actor"]:getOwner()
+		local player = owner or env["$actor"]:getOwner()
 		local _cardInfo = card:getCardInfo()
 		local cardSystem = env.global["$CardSystem"]
-		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "c")
+		local cardInfo = cardSystem:genNewHeroCard(player, _cardInfo, "c" .. player:getId())
 
 		if cardInfo.hero and cardInfo.hero.skills then
 			for k, v in pairs(cardInfo.hero.skills.passive or {}) do
@@ -572,8 +572,8 @@ function exports.BackToWindow(env, unit, windowIndex, owner)
 	end
 end
 
-function exports.RefreshCardPool(env, buffTag)
-	local player = env["$actor"]:getOwner()
+function exports.RefreshCardPool(env, buffTag, owner)
+	local player = owner or env["$actor"]:getOwner()
 
 	for i = 1, 4 do
 		local windowIndex = i

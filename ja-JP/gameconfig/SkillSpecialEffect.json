@@ -4760,6 +4760,19 @@
             "slot": "Hero_Unique_FGao"
         }
     },
+    "IA_HSheng_1": {
+        "Desc": "StarSE_HSheng_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_HSheng_SelfAwaken",
+            "before": "Hero_PBattle_HSheng_EX",
+            "slot": "Hero_PBattle_HSheng"
+        }
+    },
     "IA_LDu_1": {
         "Desc": "StarSE_LDu_IA1_Desc",
         "EffectType": "CHANGESKILL",
@@ -7556,6 +7569,19 @@
             "after": "Hero_Proud_AJTa_EX",
             "before": "Hero_Proud_AJTa",
             "slot": "Hero_Proud_AJTa"
+        }
+    },
+    "StarSE_AJTa_Awake": {
+        "Desc": "StarSE_AJTa_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_AJTa_Awaken",
+            "before": "Hero_Unique_AJTa_EX",
+            "slot": "Hero_Unique_AJTa"
         }
     },
     "StarSE_ALPo_3": {
@@ -11092,6 +11118,45 @@
             "after": "Hero_Proud_SLWan_EX",
             "before": "Hero_Proud_SLWan",
             "slot": "Hero_Proud_SLWan"
+        }
+    },
+    "StarSE_SMSNv_3": {
+        "Desc": "StarSE_SMSNv_3_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SMSNv_EX",
+            "before": "Hero_Unique_SMSNv",
+            "slot": "Hero_Unique_SMSNv"
+        }
+    },
+    "StarSE_SMSNv_4": {
+        "Desc": "StarSE_SMSNv_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SMSNv_EX",
+            "before": "Hero_PBattle_SMSNv",
+            "slot": "Hero_PBattle_SMSNv"
+        }
+    },
+    "StarSE_SMSNv_5": {
+        "Desc": "StarSE_SMSNv_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_SMSNv_EX",
+            "before": "Hero_Proud_SMSNv",
+            "slot": "Hero_Proud_SMSNv"
         }
     },
     "StarSE_SNGLSi_4": {

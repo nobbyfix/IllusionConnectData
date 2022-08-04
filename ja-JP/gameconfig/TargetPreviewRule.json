@@ -284,6 +284,9 @@
     "Target_SLWan": {
         "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
     },
+    "Target_SMSNv": {
+        "Function": "return MainTarget()"
+    },
     "Target_SNGLSi": {
         "Function": ""
     },
