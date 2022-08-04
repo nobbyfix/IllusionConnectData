@@ -1841,9 +1841,26 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
-		global.ActivateGlobalTrigger(_env, actor, "SELF_DAM", {
+		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
+		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local realdamage = global.min(_env, damage.val, DEFBloodLossRate * ZL_DEFmaxHp)
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
+			"+Normal",
+			"+Normal"
+		}, realdamage)
+
+		global.ApplyBuff(_env, global.FriendField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Shoes_15120_2_realdamage"
+			}
+		}, {
+			buff1
+		})
+		global.ActivateGlobalTrigger(_env, target, "SELF_DAM", {
 			unit = target,
-			damage = result.eft or 1
+			ACTOR = actor
 		})
 	end
 
@@ -2652,10 +2669,27 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
-	if result and result.eft > 0 then
-		global.ActivateSpecificTrigger(_env, actor, "SELF_DAM", {
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
+		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
+		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local realdamage = global.min(_env, damage.val, DEFBloodLossRate * ZL_DEFmaxHp)
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
+			"+Normal",
+			"+Normal"
+		}, realdamage)
+
+		global.ApplyBuff(_env, global.FriendField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Shoes_15120_2_realdamage"
+			}
+		}, {
+			buff1
+		})
+		global.ActivateGlobalTrigger(_env, target, "SELF_DAM", {
 			unit = target,
-			damage = result.eft
+			ACTOR = actor
 		})
 	end
 
@@ -4942,6 +4976,39 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 	local this = _env.this
 	local global = _env.global
 	Unique = Unique or false
+
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and heal then
+		local BloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_BloodLossRate", {
+			"?Normal"
+		}, BloodLossRate)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15114_2_BloodLossRate"
+			}
+		}, {
+			buff1
+		})
+
+		local ZL_maxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local buff2 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_maxHp", {
+			"?Normal"
+		}, ZL_maxHp)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15114_2_maxHp"
+			}
+		}, {
+			buff2
+		})
+	end
+
 	local extrapetshealrate = global.SpecialPropGetter(_env, "extrapetshealrate")(_env, actor)
 
 	if extrapetshealrate and extrapetshealrate ~= 0 then
@@ -5107,14 +5174,31 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		end
 	end
 
-	local Recovery = global.ApplyHPRecovery(_env, target, heal, switch)
-
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and heal then
+		local ZL_maxHp = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_maxHp")(_env, target)
+		local BloodLossRate = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_BloodLossRate")(_env, target)
+		local realheal = global.min(_env, heal.val, BloodLossRate * ZL_maxHp)
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realheal", {
+			"+Normal",
+			"+Normal"
+		}, realheal)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Shoes_15120_2_realheal"
+			}
+		}, {
+			buff1
+		})
 		global.ActivateGlobalTrigger(_env, target, "SELF_TREATMENT", {
-			unit = target,
-			eft = Recovery.eft or 1
+			ACTOR = actor,
+			unit = target
 		})
 	end
+
+	local Recovery = global.ApplyHPRecovery(_env, target, heal, switch)
 
 	return Recovery
 end
@@ -5206,11 +5290,6 @@ end
 function all.ApplyHPMultiRecovery_ResultCheck(_env, actor, target, delays, heals)
 	local this = _env.this
 	local global = _env.global
-
-	global.ActivateGlobalTrigger(_env, actor, "SELF_TREATMENT", {
-		unit = target,
-		heal = heals.val
-	})
 
 	return global.MultiDelayCall(_env, delays, global.ApplyHPRecoveryN, target, heals, actor)
 end
@@ -5535,6 +5614,10 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	end
 
 	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SP_NNuo_Check")) == 0 and global.MARKED(_env, "SP_NNuo_Check")(_env, unit) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SMSNv_BOTu_Check")) then
 		flag = 0
 	end
 

@@ -1293,20 +1293,20 @@ all.Skill_PSKe_Passive_Key = {
 			this.AoeDeRateFactor = 0.3
 		end
 
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
 		})
-		passive1 = global["[duration]"](this, {
+		passive = global["[duration]"](this, {
 			0
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
-			"SELF:PRE_ENTER"
-		}, passive1)
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive)
 
 		return this
 	end,
-	passive1 = function (_env, externs)
+	passive = function (_env, externs)
 		local this = _env.this
 		local global = _env.global
 		local exec = _env["$executor"]
@@ -1319,110 +1319,48 @@ all.Skill_PSKe_Passive_Key = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MASTER(_env, _env.ACTOR) then
-				local Window1 = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "QBTe"))
-				local Window2 = global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "PSKe"))
+			if global.MARKED(_env, "QBTe")(_env, _env.ACTOR) then
+				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.hurtFactor)
 
-				if Window1[1] ~= nil then
-					for _, unit in global.__iter__(Window1) do
-						local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
-							"+Normal",
-							"+Normal"
-						}, this.hurtFactor)
-
-						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), unit, {
-							timing = 0,
-							display = "HurtRateUp",
-							group = "Skill_PSKe_Passive_Key_2",
-							duration = 99,
-							limit = 1,
-							tags = {
-								"CARDBUFF",
-								"Skill_PSKe_Passive_Key"
-							}
-						}, {
-							buffeft1
-						})
-					end
-				end
-
-				if Window2[1] ~= nil then
-					for _, unit3 in global.__iter__(Window2) do
-						local buffeft3 = global.NumericEffect(_env, "+aoederate", {
-							"+Normal",
-							"+Normal"
-						}, this.AoeDeRateFactor)
-
-						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), unit3, {
-							timing = 0,
-							display = "AoeUnHurtRateUp",
-							group = "Skill_PSKe_Passive_Key_1",
-							duration = 99,
-							limit = 1,
-							tags = {
-								"CARDBUFF",
-								"Skill_PSKe_Passive_Key"
-							}
-						}, {
-							buffeft3
-						})
-					end
-				end
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					display = "HurtRateUp",
+					group = "Skill_PSKe_Passive_Key_1",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"Skill_PSKe_Passive_Key_1"
+					}
+				}, {
+					buffeft1
+				})
 			end
 
-			if global.FriendMaster(_env) then
-				-- Nothing
-			elseif global.MARKED(_env, "PSKe")(_env, _env.ACTOR) then
-				local Hero1 = global.FriendUnits(_env, global.MARKED(_env, "QBTe"))
-				local Hero2 = global.FriendUnits(_env, global.MARKED(_env, "PSKe"))
+			if global.MARKED(_env, "PSKe")(_env, _env.ACTOR) then
+				local buffeft2 = global.NumericEffect(_env, "+aoederate", {
+					"+Normal",
+					"+Normal"
+				}, this.AoeDeRateFactor)
 
-				if Hero1[1] ~= nil then
-					for _, unit2 in global.__iter__(Hero1) do
-						local buffeft2 = global.NumericEffect(_env, "+hurtrate", {
-							"+Normal",
-							"+Normal"
-						}, this.hurtFactor)
-
-						global.ApplyBuff_Buff(_env, _env.ACTOR, unit2, {
-							timing = 2,
-							display = "HurtRateUp",
-							group = "Skill_PSKe_Passive_Key_2",
-							duration = 99,
-							limit = 1,
-							tags = {
-								"NUMERIC",
-								"BUFF",
-								"Skill_PSKe_Passive_Key"
-							}
-						}, {
-							buffeft2
-						}, 1)
-					end
-				end
-
-				if Hero2[1] ~= nil then
-					for _, unit4 in global.__iter__(Hero2) do
-						local buffeft4 = global.NumericEffect(_env, "+aoederate", {
-							"+Normal",
-							"+Normal"
-						}, this.AoeDeRateFactor)
-
-						global.ApplyBuff_Buff(_env, _env.ACTOR, unit4, {
-							timing = 2,
-							display = "AoeUnHurtRateUp",
-							group = "Skill_PSKe_Passive_Key_1",
-							duration = 99,
-							limit = 1,
-							tags = {
-								"NUMERIC",
-								"BUFF",
-								"Skill_PSKe_Passive_Key"
-							}
-						}, {
-							buffeft4
-						}, 1)
-					end
-				end
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					display = "AoeUnHurtRateUp",
+					group = "Skill_PSKe_Passive_Key_2",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"Skill_PSKe_Passive_Key_2"
+					}
+				}, {
+					buffeft2
+				})
 			end
 		end)
 

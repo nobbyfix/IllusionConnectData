@@ -4214,7 +4214,8 @@
             "XDRLa",
             "SP_WTXXuan",
             "FCXJi",
-            "LLKe"
+            "LLKe",
+            "SMSNv"
         ]
     },
     "HeroStar_BoxNum": {
@@ -5433,7 +5434,7 @@
     },
     "KOF_AutoMaxNum": {
         "clz": "int",
-        "content": 3000
+        "content": 5000
     },
     "KOF_AutoNumber": {
         "clz": "int",
@@ -5510,7 +5511,6 @@
     "KOF_MatchNumber": {
         "clz": "string[]",
         "content": [
-            "17:00:00",
             "19:00:00"
         ]
     },

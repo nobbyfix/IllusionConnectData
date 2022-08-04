@@ -289,7 +289,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.15,
-        "AwakePic": "",
+        "AwakePic": "portraitpic_AJTa",
         "BaseAttack": 203.0,
         "BaseDefence": 60.0,
         "BaseHp": 684.0,
@@ -22432,6 +22432,264 @@
         "UnhurtRate": 0.0,
         "UniqueSkill": "Hero_Unique_SLWan"
     },
+    "SMSNv": {
+        "Absorption": 0.0,
+        "Anger": {
+            "a1": [
+                10,
+                750
+            ],
+            "a2": 320,
+            "a3": 150
+        },
+        "AngerBase": 1000.0,
+        "AngerMax": 1000.0,
+        "AngerRate": 0.0,
+        "AtkRate": 1.0,
+        "AtkWeaken": 0.0,
+        "AttackFactor": 1.1,
+        "AwakePic": "",
+        "BaseAttack": 139.0,
+        "BaseDefence": 45.0,
+        "BaseHp": 562.0,
+        "BaseQualityAttr": "SR_10_Curse",
+        "BaseStar": 2,
+        "BasicPower": 1600,
+        "BattlePassiveSkill": "Hero_PBattle_SMSNv",
+        "BattlePassiveType": "PBuff",
+        "BeCuredRate": 0.0,
+        "BlockAI": "AISMSNv",
+        "BlockRate": 0.0,
+        "BlockStrg": 0.0,
+        "CVName": "SMSNv_CVName",
+        "Cost": 11,
+        "CounterRate": 0.0,
+        "CritRate": 0.0,
+        "CritStrg": 0.0,
+        "DefRate": 1.0,
+        "DefWeaken": 0.0,
+        "DefenceFactor": 1.0,
+        "Desc": "HeroBase_Desc_SMSNv",
+        "DoubleRate": 0.0,
+        "EffectRate": 0.0,
+        "EffectStrg": 0.0,
+        "EnterCD": 1.0,
+        "Equip": "",
+        "EquipDecs": "",
+        "Flags": [
+            "SMSNv",
+            "danti"
+        ],
+        "GainAnim": "",
+        "HeadTouchDeviation": [
+            0,
+            0
+        ],
+        "HeroShowIntro": "HeroBase_Intro_SMSNv",
+        "HeroStoryMap": "",
+        "HpFactor": 1.08,
+        "HurtRate": 0.0,
+        "IfHidden": 1,
+        "InnerAttr": [],
+        "ItemId": "IHF_SMSNv",
+        "KeyPassiveSkill": "Hero_PBattle_SMSNv_Key",
+        "LevelUpFactor": 1.0,
+        "MVPText": "MVPText_SMSNv",
+        "MasterRage": 132,
+        "MaxLevel": 300,
+        "MaxQuality": "SR_50_Curse",
+        "MaxStar": 5,
+        "MaxStarEffect": "SMSNv_5",
+        "Name": "HeroBase_Name_SMSNv",
+        "NormalSkill": "Hero_Normal_SMSNv",
+        "Party": "MNJH",
+        "PassiveCondition": [
+            [
+                {
+                    "param": [
+                        [
+                            "SMSNv"
+                        ]
+                    ],
+                    "range": "group",
+                    "scope": [
+                        1,
+                        1
+                    ],
+                    "type": "tag"
+                }
+            ]
+        ],
+        "Position": "HeroBase_Position_SMSNv",
+        "ProudSkill": "Hero_Proud_SMSNv",
+        "Rareity": 13,
+        "Reflection": 0.0,
+        "RelationList": [],
+        "RoleModel": "Model_SMSNv_SR",
+        "RtpkPercent": [
+            0,
+            0,
+            0
+        ],
+        "SVPText": "SVPText_SMSNv",
+        "Sex": 0,
+        "ShortDesc": "HeroBase_ShortDesc_SMSNv",
+        "SkillCost": {
+            "BattlePassiveSkill": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "NormalSkill": {
+                "amount": [
+                    3,
+                    6,
+                    9,
+                    12,
+                    15,
+                    18,
+                    21,
+                    24,
+                    27,
+                    30
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill1": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "PassiveSkill2": {
+                "amount": [
+                    3,
+                    7,
+                    10,
+                    14,
+                    18,
+                    21,
+                    25,
+                    28,
+                    32,
+                    36
+                ],
+                "code": "ISU_Attack"
+            },
+            "ProudSkill": {
+                "amount": [
+                    4,
+                    9,
+                    13,
+                    18,
+                    22,
+                    27,
+                    31,
+                    36,
+                    40,
+                    45
+                ],
+                "code": "ISU_Attack"
+            },
+            "UniqueSkill": {
+                "amount": [
+                    6,
+                    12,
+                    18,
+                    24,
+                    30,
+                    36,
+                    42,
+                    48,
+                    54,
+                    60
+                ],
+                "code": "ISU_Attack"
+            }
+        },
+        "SkillRate": 0.15,
+        "Soul": [],
+        "SoundList": [
+            "Voice_SMSNv_01",
+            "Voice_SMSNv_35",
+            "Voice_SMSNv_40_1",
+            "Voice_SMSNv_40_2",
+            "Voice_SMSNv_40_3",
+            "Voice_SMSNv_37",
+            "Voice_SMSNv_38",
+            "Voice_SMSNv_39",
+            "Voice_SMSNv_47",
+            "Voice_SMSNv_48",
+            "Voice_SMSNv_50",
+            "Voice_SMSNv_51",
+            "Voice_SMSNv_52",
+            "Voice_SMSNv_53",
+            "Voice_SMSNv_54",
+            "Voice_SMSNv_55",
+            "Voice_SMSNv_56",
+            "Voice_SMSNv_57",
+            "Voice_SMSNv_60",
+            "Voice_SMSNv_07",
+            "Voice_SMSNv_08",
+            "Voice_SMSNv_09",
+            "Voice_SMSNv_58",
+            "Voice_SMSNv_59",
+            "Voice_SMSNv_10",
+            "Voice_SMSNv_11",
+            "Voice_SMSNv_14",
+            "Voice_SMSNv_15",
+            "Voice_SMSNv_16",
+            "Voice_SMSNv_21",
+            "Voice_SMSNv_17",
+            "Voice_SMSNv_18",
+            "Voice_SMSNv_34",
+            "Voice_SMSNv_19",
+            "Voice_SMSNv_63",
+            "Voice_SMSNv_61",
+            "Voice_SMSNv_25",
+            "Voice_SMSNv_26",
+            "Voice_SMSNv_27",
+            "Voice_SMSNv_28",
+            "Voice_SMSNv_29",
+            "Voice_SMSNv_30",
+            "Voice_SMSNv_31",
+            "Voice_SMSNv_32"
+        ],
+        "Speed": 50,
+        "StarId": "SMSNv_1",
+        "SurfaceList": [
+            "Surface_SMSNv_1"
+        ],
+        "TeamSpecialVoice": {},
+        "TimeType": "\"2002-01-28 19:00:00\"",
+        "Transform": "",
+        "Type": "Curse",
+        "UnblockRate": 0.0,
+        "UncritRate": 0.0,
+        "UndeadRate": 0.0,
+        "UneffectRate": 0.0,
+        "UnhurtRate": 0.0,
+        "UniqueSkill": "Hero_Unique_SMSNv"
+    },
     "SNGLSi": {
         "Absorption": 0.0,
         "Anger": {
@@ -23709,7 +23967,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.26,
-        "AwakePic": "",
+        "AwakePic": "portrait_sp_xmlhui_awaken",
         "BaseAttack": 244.0,
         "BaseDefence": 54.0,
         "BaseHp": 714.0,
@@ -23922,7 +24180,8 @@
         "Speed": 50,
         "StarId": "SP_SSQXin_1",
         "SurfaceList": [
-            "Surface_SP_SSQXin_1"
+            "Surface_SP_SSQXin_1",
+            "Surface_SP_SSQXin_Awake"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -24444,7 +24703,8 @@
         "StarId": "SRen_1",
         "SurfaceList": [
             "Surface_SRen_1",
-            "Surface_SRen_Awake"
+            "Surface_SRen_Awake",
+            "Surface_SRen_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",

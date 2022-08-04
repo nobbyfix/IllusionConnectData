@@ -1,4 +1,26 @@
 {
+    "AJTa": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -150,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_AJTa",
+        "Name": "AJTa_Awake_Name",
+        "NameDesc": "AJTa_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_AJTa",
+        "Reward": "HeroAwaken_AJTa",
+        "ShowHero": "AJTa",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "AJTa_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_AJTa_1"
+    },
     "BBLMa": {
         "AnimSound": "",
         "Animation": "BBLMa_Awaken",
@@ -227,7 +249,7 @@
             0,
             1
         ],
-        "IAId": "",
+        "IAId": "HSheng_IA_1",
         "ModelId": "Model_HSheng_Awake",
         "Name": "HSheng_Awake_Name",
         "NameDesc": "HSheng_Awake_Desc",
@@ -592,6 +614,28 @@
         "StarId": "SP_PNCao_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SP_PNCao_Awake"
+    },
+    "SP_SSQXin": {
+        "AnimSound": "Se_Effect_Awakening_SSQXin_SP",
+        "Animation": "sp_xmlhui_Awaken",
+        "CutIn": [
+            -290,
+            0,
+            0.64
+        ],
+        "IAId": "",
+        "ModelId": "Model_SP_SSQXin_Awake",
+        "Name": "SP_SSQXin_Awake_Name",
+        "NameDesc": "SP_SSQXin_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SP_SSQXin_UnAwake",
+        "Reward": "HeroAwaken_SP_SSQXin",
+        "ShowHero": "SP_SSQXin",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SP_SSQXin_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SP_SSQXin_Awake"
     },
     "SRen": {
         "AnimSound": "Se_Effect_Awakening_SRen",

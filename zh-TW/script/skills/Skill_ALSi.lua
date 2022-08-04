@@ -332,7 +332,7 @@ all.Skill_ALSi_Passive = {
 				}, 1, 0)
 			end
 
-			local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)))
+			local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")))
 
 			for _, card in global.__iter__(cards) do
 				local buffeft3 = global.NumericEffect(_env, "+atkrate", {
@@ -655,7 +655,7 @@ all.Skill_ALSi_Passive_EX = {
 				}, 1, 0)
 			end
 
-			local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)))
+			local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")))
 
 			for _, card in global.__iter__(cards) do
 				if card and global.CARD_HERO_GENRE(_env, "WeiNaSiXianJing")(_env, card) then

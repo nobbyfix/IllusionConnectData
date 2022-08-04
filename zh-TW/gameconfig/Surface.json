@@ -8844,7 +8844,7 @@
         ],
         "Desc": "Surface_PDLa_toy_Desc",
         "GainDesc": "",
-        "GainShortDesc": "Surface_PDLa_2_GainShort",
+        "GainShortDesc": "Surface_GainShort",
         "GoodsId": "",
         "Hero": "PDLa",
         "Link": "",
@@ -9256,7 +9256,7 @@
         ],
         "Desc": "Surface_QBTe_toy_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
-        "GainShortDesc": "Surface_QBTe_2_GainShort",
+        "GainShortDesc": "Surface_GainShort",
         "GoodsId": "ShopSurface_anual_Surface_QBTe_2",
         "Hero": "QBTe",
         "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
@@ -10029,6 +10029,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_SMSNv_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -252,
+                    1962
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -142,
+                    1674
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SMSNv_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SMSNv",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SMSNv_SR",
+        "Name": "Surface_SMSNv_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_SNGLSi_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -10710,11 +10768,11 @@
             }
         ],
         "Desc": "Surface_SRen_toy_Desc",
-        "GainDesc": "",
-        "GainShortDesc": "Surface_SRen_2_GainShort",
-        "GoodsId": "",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GainShort",
+        "GoodsId": "ShopSurface_Surface_SRen_2_0808",
         "Hero": "SRen",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_SRen_toy_LongDecs",
         "Model": "Model_SRen_toy",
         "Name": "Surface_SRen_toy_Name",
@@ -10722,9 +10780,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_SRen_Awake": {
@@ -13216,7 +13274,7 @@
         ],
         "Desc": "Surface_YKDMLai_pirate_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
-        "GainShortDesc": "Surface_YKDMLai_2_GainShort",
+        "GainShortDesc": "Surface_GainShort",
         "GoodsId": "ShopSurface_anual_Surface_YKDMLai_2",
         "Hero": "YKDMLai",
         "Link": "view://shopView&viewType=push&shopId=Shop_Surface",

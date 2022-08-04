@@ -638,7 +638,7 @@ all.Skill_PDLa_Box_Passive_Death = {
 					global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, unit, 1000)
 				end
 			elseif _env.i < 601 then
-				local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR)))
+				local cards = global.RandomN(_env, 1, global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED")))
 
 				for _, card in global.__iter__(cards) do
 					local cost = global.GetCardCost(_env, card)
