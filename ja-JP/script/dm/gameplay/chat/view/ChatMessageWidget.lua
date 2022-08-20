@@ -179,6 +179,30 @@ function PlayerMessageWidget:decorateView(message, senderInfo, parent)
 		nameText:setString(senderInfo.nickname or "")
 		nameText:enableOutline(cc.c4b(0, 0, 0, 219.29999999999998), 1)
 
+		local textPanel = self._main:getChildByName("Text_panel")
+		local titleIcon = textPanel:getChildByName("title")
+
+		if titleIcon then
+			titleIcon:removeFromParent()
+		end
+
+		local title = senderInfo.title
+
+		if title ~= nil and title ~= "" then
+			titleIcon = IconFactory:createTitleIcon({
+				id = title
+			})
+
+			titleIcon:addTo(textPanel):setName("title")
+			titleIcon:setScale(0.57)
+
+			if self:getChatSystem():isMySend(message) then
+				titleIcon:posite(nameText:getPositionX() - nameText:getContentSize().width - 38, nameText:getPositionY() + 15)
+			else
+				titleIcon:posite(nameText:getPositionX() + nameText:getContentSize().width + 42, nameText:getPositionY() + 15)
+			end
+		end
+
 		local vipNode = self._main:getChildByFullName("Text_panel.vipnode")
 		local vipLevel = senderInfo.vipLevel or 0
 		self._playerVipWidget = self:getInjector():injectInto(PlayerVipWidget:new(vipNode))
@@ -254,7 +278,8 @@ function PlayerMessageWidget:onClickHead(senderInfo, sender)
 				tags = senderInfo.tags,
 				block = response.block,
 				leadStageId = senderInfo.leadStageId,
-				leadStageLevel = senderInfo.leadStageLevel
+				leadStageLevel = senderInfo.leadStageLevel,
+				title = senderInfo.title
 			})
 			friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 		end

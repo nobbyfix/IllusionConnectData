@@ -752,6 +752,23 @@ function ClubNewHallMediator:createCell(cell, idx)
 		level = data:getLevel()
 	}))
 
+	if cell:getChildByName("title") then
+		cell:removeChildByName("title")
+	end
+
+	if data:getTitle() ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = data:getTitle()
+		})
+
+		icon:addTo(cell):posite(135, 94)
+		icon:setName("title")
+		icon:setScale(0.53)
+		nameLabel:setPositionY(67)
+	else
+		nameLabel:setPositionY(84)
+	end
+
 	local playerOnline = cell:getChildByFullName("playerOnline")
 	local playerOffline = cell:getChildByFullName("playerOffline")
 	local positionLabel = cell:getChildByFullName("positionlabel")
@@ -1143,7 +1160,8 @@ function ClubNewHallMediator:sendMessageBtn(sender, eventType)
 			close = response.isFriend == 1 and response.close or nil,
 			block = response.block,
 			leadStageId = memberData:getLeadStageId(),
-			leadStageLevel = memberData:getLeadStageLevel()
+			leadStageLevel = memberData:getLeadStageLevel(),
+			title = memberData:getTitle()
 		}
 
 		friendSystem:addRecentFriend(data)
@@ -1215,7 +1233,8 @@ function ClubNewHallMediator:infoBtn(sender, eventType)
 			tags = memberData:getTags(),
 			block = response.block,
 			leadStageId = memberData:getLeadStageId(),
-			leadStageLevel = memberData:getLeadStageLevel()
+			leadStageLevel = memberData:getLeadStageLevel(),
+			title = memberData:getTitle()
 		})
 		friendSystem:showFriendPlayerInfoView(record:getRid(), record)
 	end

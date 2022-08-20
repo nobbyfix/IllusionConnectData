@@ -68,7 +68,7 @@ end
 function ActivitySagaSupportScoreRewardMediator:initView()
 	self:initContent()
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activity:getUI() == ActivityType_UI.KActivityReZhan then
 		self:getView():getChildByFullName("main.tipTxt"):setString(Strings:get("Activity_Saga_UI_18_wxh"))
 	end
 end

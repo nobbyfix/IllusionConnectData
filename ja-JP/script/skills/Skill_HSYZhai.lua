@@ -220,6 +220,16 @@ all.Skill_HSYZhai_Unique = {
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "HSYZhai_First_Unique")) > 0 and global.EnemyMaster(_env) then
 				_env.target = global.EnemyMaster(_env)
 
+				for _, unit in global.__iter__(global.AllUnits(_env)) do
+					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
+
+						break
+					end
+				end
+
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
 						_env.target = unit
@@ -632,6 +642,16 @@ all.Skill_HSYZhai_Unique_EX = {
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "HSYZhai_First_Unique")) > 0 and global.EnemyMaster(_env) then
 				_env.target = global.EnemyMaster(_env)
 
+				for _, unit in global.__iter__(global.AllUnits(_env)) do
+					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
+
+						break
+					end
+				end
+
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
 						_env.target = unit
@@ -950,6 +970,16 @@ all.Skill_HSYZhai_Unique_Awaken = {
 
 			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "HSYZhai_First_Unique")) > 0 and global.EnemyMaster(_env) then
 				_env.target = global.EnemyMaster(_env)
+
+				for _, unit in global.__iter__(global.AllUnits(_env)) do
+					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
+
+						break
+					end
+				end
 
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
 					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then

@@ -301,6 +301,11 @@ local modules = {
 							res = "asset/ui/SetHeroShowDetail.csb",
 							name = "SetHeroShowDetailView",
 							mediator = "SetHeroShowDetailMediator"
+						},
+						{
+							res = "asset/ui/PlayerTitle.csb",
+							name = "PlayerTitleView",
+							mediator = "PlayerTitleMediator"
 						}
 					}
 				}
@@ -2297,6 +2302,11 @@ local modules = {
 							res = "asset/ui/ActivityEasterMain.csb",
 							name = "ActivityEasterMainView",
 							mediator = "ActivityCommonMainMediator"
+						},
+						{
+							res = "asset/ui/ActivityBlockSupportMainWxh.csb",
+							name = "ActivityBlockSupportNewView",
+							mediator = "ActivityBlockSupportNewMediator"
 						}
 					}
 				}

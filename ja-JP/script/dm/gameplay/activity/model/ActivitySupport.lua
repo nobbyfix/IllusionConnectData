@@ -500,6 +500,18 @@ function ActivitySupport:getResourcesBanner()
 	return self:getActivityConfig().ResourcesBanner
 end
 
+function ActivitySupport:getBgm()
+	return self:getActivityConfig().bgm
+end
+
+function ActivitySupport:getLastPeriodRestTime()
+	local idList = self:getActivityConfig().ActivitySupportId
+	local lastId = idList[#idList]
+	local config = ConfigReader:getRecordById("ActivitySupport", lastId)
+
+	return config.RestTime
+end
+
 function ActivitySupport:getActivity()
 	local actConfig = self:getActivityConfig()
 

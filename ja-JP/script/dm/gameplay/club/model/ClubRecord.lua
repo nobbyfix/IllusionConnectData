@@ -99,6 +99,9 @@ ClubMemberBasisRecord:has("_leadStageId", {
 ClubMemberBasisRecord:has("_leadStageLevel", {
 	is = "rw"
 })
+ClubMemberBasisRecord:has("_title", {
+	is = "rw"
+})
 
 function ClubMemberBasisRecord:initialize(player)
 	super.initialize(self)
@@ -115,6 +118,7 @@ function ClubMemberBasisRecord:initialize(player)
 	self._rid = ""
 	self._leadStageId = ""
 	self._leadStageLevel = 0
+	self._title = ""
 end
 
 function ClubMemberBasisRecord:synchronize(data)
@@ -176,6 +180,10 @@ function ClubMemberBasisRecord:synchronize(data)
 
 	if data.leadStageLevel then
 		self._leadStageLevel = data.leadStageLevel
+	end
+
+	if data.title then
+		self._title = data.title
 	end
 end
 

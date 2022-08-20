@@ -492,6 +492,21 @@ all.Skill_SP_DDing_Passive_Key = {
 			local global = _env.global
 
 			if global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) and global.MASTER(_env, _env.ACTOR) then
+				local buff_master = global.NumericEffect(_env, "+defrate", {
+					"+Normal",
+					"+Normal"
+				}, 0)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Player_Master"
+					}
+				}, {
+					buff_master
+				})
+
 				local rp = global.SpecialPropGetter(_env, "SP_DDing_Rp")(_env, _env.ACTOR)
 
 				global.ApplyRPRecovery(_env, _env.ACTOR, rp)
