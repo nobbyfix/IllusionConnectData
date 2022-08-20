@@ -153,6 +153,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_DCJKang_Awake"
     },
+    "FEMSi": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -230,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_FEMSi",
+        "Name": "FEMSi_Awake_Name",
+        "NameDesc": "FEMSi_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_FEMSi",
+        "Reward": "HeroAwaken_FEMSi",
+        "ShowHero": "FEMSi",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "FEMSi_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_FEMSi_1"
+    },
     "FGao": {
         "AnimSound": "Se_Effect_Awakening_FGao",
         "Animation": "dmse_Awaken",
@@ -861,7 +883,7 @@
             0,
             1.5
         ],
-        "IAId": "",
+        "IAId": "ZZBBWei_IA_1",
         "ModelId": "Model_ZZBBWei_Awake",
         "Name": "ZZBBWei_Awake_Name",
         "NameDesc": "ZZBBWei_Awake_Desc",

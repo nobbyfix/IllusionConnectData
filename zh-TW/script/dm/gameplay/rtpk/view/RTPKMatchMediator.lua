@@ -209,6 +209,27 @@ function RTPKMatchMediator:setMyselfInfo(data)
 	self:runAction(panel:getChildByName("Image_10"), 0, cc.p(-500, 0), cc.p(0, 0))
 	self:runAction(heroNode, 0.1, cc.p(-500, 0), cc.p(30, 0))
 	self:runAction(infoPanel, 0.2, cc.p(0, 0), cc.p(0, 0))
+
+	if infoPanel:getChildByName("title") then
+		infoPanel:removeChildByName("title")
+	end
+
+	if player:getCurTitleId() ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = player:getCurTitleId()
+		})
+
+		icon:addTo(infoPanel):posite(145, 90)
+		icon:setName("title")
+		icon:setScale(0.53)
+		nameText:setPositionY(139)
+		combatText:setPositionY(112)
+		serverText:setPositionY(163)
+	else
+		nameText:setPositionY(126)
+		combatText:setPositionY(99)
+		serverText:setPositionY(150)
+	end
 end
 
 function RTPKMatchMediator:setRivalInfo(data)
@@ -279,6 +300,28 @@ function RTPKMatchMediator:setRivalInfo(data)
 	local icon = IconFactory:createRTPKGradeIcon(gradeData.Id)
 
 	icon:addTo(iconImg):center(iconImg:getContentSize()):offset(0, 17):setScale(0.4)
+
+	if infoPanel:getChildByName("title") then
+		infoPanel:removeChildByName("title")
+	end
+
+	if rivalInfo.title ~= nil and rivalInfo.title ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = rivalInfo.title
+		})
+
+		icon:addTo(infoPanel):posite(-145, 90)
+		icon:setName("title")
+		icon:setScale(0.53)
+		nameText:posite(-106, 139)
+		combatText:posite(-106, 112)
+		serverText:posite(-106, 163)
+	else
+		nameText:posite(-106, 126)
+		combatText:posite(-106, 99)
+		serverText:posite(-106, 150)
+	end
+
 	self:runAction(panel:getChildByName("Image_10"), 0, cc.p(500, 0), cc.p(0, 0))
 	self:runAction(heroNode, 0.1, cc.p(500, 0), cc.p(-30, 0))
 	self:runAction(infoPanel, 0.2, cc.p(0, 0), cc.p(0, 0))

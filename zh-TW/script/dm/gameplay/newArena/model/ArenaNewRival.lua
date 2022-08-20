@@ -45,6 +45,9 @@ ArenaNewRival:has("_isRobot", {
 ArenaNewRival:has("_headFrame", {
 	is = "r"
 })
+ArenaNewRival:has("_title", {
+	is = "r"
+})
 
 function ArenaNewRival:initialize()
 	super.initialize(self)
@@ -63,6 +66,7 @@ function ArenaNewRival:initialize()
 	self._rank = 0
 	self._isRobot = false
 	self._bubble = ""
+	self._title = ""
 end
 
 function ArenaNewRival:synchronize(data)
@@ -124,6 +128,10 @@ function ArenaNewRival:synchronize(data)
 
 	if data.robot then
 		self._isRobot = data.robot
+	end
+
+	if data.title then
+		self._title = data.title
 	end
 end
 

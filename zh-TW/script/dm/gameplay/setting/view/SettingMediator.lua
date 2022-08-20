@@ -51,6 +51,10 @@ local kBtnHandlers = {
 	["main.btn_Ok"] = {
 		clickAudio = "Se_Click_Confirm",
 		func = "onClickBtn"
+	},
+	["main.setUsr.titleBg"] = {
+		clickAudio = "Se_Click_Confirm",
+		func = "onClickChangeTitle"
 	}
 }
 local kHeroRarityBg = {
@@ -135,6 +139,7 @@ function SettingMediator:mapEventListeners()
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADIMG_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGEHEADFRAME_SUCC, self, self.showSettingView)
 	self:mapEventListener(self:getEventDispatcher(), EVT_RESET_DONE, self, self.showSettingView)
+	self:mapEventListener(self:getEventDispatcher(), EVT_CHANGETITLE_SUCC, self, self.showSettingView)
 end
 
 function SettingMediator:showSettingView()
@@ -268,6 +273,31 @@ function SettingMediator:showSettingView()
 
 	self._main:getChildByFullName("setUsr.btn_exit"):setVisible(self._isSelf)
 	self._main:getChildByFullName("setUsr.btn_gameSet"):setVisible(self._isSelf)
+
+	local curTitleId = nil
+
+	if self._isSelf then
+		curTitleId = self._developSystem:getPlayer():getCurTitleId()
+	else
+		curTitleId = player.title
+	end
+
+	local titletips = self._usrNode:getChildByName("titletips")
+
+	titletips:setVisible(curTitleId == "")
+
+	local titleBg = self._usrNode:getChildByName("titleBg")
+
+	titleBg:removeAllChildren()
+
+	if curTitleId ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = curTitleId
+		})
+
+		icon:addTo(titleBg):center(titleBg:getContentSize())
+		icon:setScale(0.9)
+	end
 
 	local rtpkPanel = self._main:getChildByFullName("rtPK")
 	local stageArenaPanel = self._main:getChildByFullName("leaderStage")
@@ -763,6 +793,14 @@ function SettingMediator:onClickBuyMonthCard()
 	activitySystem:tryEnter({
 		id = "MonthCard"
 	})
+end
+
+function SettingMediator:onClickChangeTitle(sender, eventType)
+	local view = self:getInjector():getInstance("PlayerTitleView")
+
+	self:dispatch(ViewEvent:new(EVT_SHOW_POPUP, view, {
+		transition = ViewTransitionFactory:create(ViewTransitionType.kPopupEnter)
+	}, {}))
 end
 
 function SettingMediator:onClickBtn(sender)

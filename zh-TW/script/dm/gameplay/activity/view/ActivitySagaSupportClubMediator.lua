@@ -53,6 +53,7 @@ end
 function ActivitySagaSupportClubMediator:enterWithData(data)
 	self._data = data.data
 	self._activityId = data.activityId or ActivityId.kActivityBlockZuoHe
+	self._activity = self._activitySystem:getActivityById(self._activityId)
 
 	self:initData()
 	self:initView()
@@ -78,7 +79,7 @@ function ActivitySagaSupportClubMediator:initView()
 
 	local titlePanel = self:getView():getChildByFullName("main.titlePanel")
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activity:getUI() == ActivityType_UI.KActivityReZhan then
 		titlePanel:getChildByFullName("t3"):setString(Strings:get("Activity_Saga_UI_24_3_wxh"))
 		titlePanel:getChildByFullName("t4"):setString(Strings:get("Activity_Saga_UI_24_4_wxh"))
 	end

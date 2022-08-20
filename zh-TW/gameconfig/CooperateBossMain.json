@@ -349,6 +349,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_FEMSi": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_FEMSi",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "FEMSi",
+                    "BDZSheng"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "FCXJi",
+                    "ZZBBWei",
+                    "AJTa"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_FEMSi_Show",
+        "RoleModel": "Model_FEMSi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_FGao": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

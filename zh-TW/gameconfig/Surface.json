@@ -10205,6 +10205,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_SP_ALSi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    92,
+                    1362
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    102,
+                    1185
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_SP_ALSi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "SP_ALSi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_SP_ALSi",
+        "Name": "Surface_SP_ALSi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": "",
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_SP_DDing_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -11290,11 +11348,11 @@
             }
         ],
         "Desc": "Surface_TLSi_artist_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_TLSi_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_TLSi_2_0825",
         "Hero": "TLSi",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_TLSi_artist_LongDecs",
         "Model": "Model_TLSi_artist",
         "Name": "Surface_TLSi_artist_Name",
@@ -11302,9 +11360,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 3,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_TPGZhu_1": {

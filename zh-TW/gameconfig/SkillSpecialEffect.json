@@ -4874,6 +4874,19 @@
             "slot": "Hero_Unique_XBKLDi"
         }
     },
+    "IA_ZZBBWei_1": {
+        "Desc": "StarSE_ZZBBWei_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_ZZBBWei_SelfAwaken",
+            "before": "Hero_Unique_ZZBBWei_Awaken_Show",
+            "slot": "Hero_Unique_ZZBBWei"
+        }
+    },
     "MainCity_CrystalStorage": {
         "Desc": "Building_Value",
         "EffectType": "PRODUCTION",
@@ -8520,6 +8533,19 @@
             "slot": "Hero_Proud_FEMSi"
         }
     },
+    "StarSE_FEMSi_Awake": {
+        "Desc": "StarSE_FEMSi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_FEMSi_Awaken",
+            "before": "Hero_Unique_FEMSi_EX",
+            "slot": "Hero_Unique_FEMSi"
+        }
+    },
     "StarSE_FGao_4": {
         "Desc": "StarSE_FGao_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -11326,6 +11352,45 @@
             "after": "Hero_Proud_SP_ALPo_EX",
             "before": "Hero_Proud_SP_ALPo",
             "slot": "Hero_Proud_SP_ALPo"
+        }
+    },
+    "StarSE_SP_ALSi_4": {
+        "Desc": "StarSE_SP_ALSi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SP_ALSi_EX",
+            "before": "Hero_Unique_SP_ALSi",
+            "slot": "Hero_Unique_SP_ALSi"
+        }
+    },
+    "StarSE_SP_ALSi_5": {
+        "Desc": "StarSE_SP_ALSi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SP_ALSi_EX",
+            "before": "Hero_PBattle_SP_ALSi",
+            "slot": "Hero_PBattle_SP_ALSi"
+        }
+    },
+    "StarSE_SP_ALSi_6": {
+        "Desc": "StarSE_SP_ALSi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_SP_ALSi_EX",
+            "before": "Hero_Proud_SP_ALSi",
+            "slot": "Hero_Proud_SP_ALSi"
         }
     },
     "StarSE_SP_DDing_4": {

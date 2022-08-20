@@ -1835,6 +1835,47 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		damage.val = damage.val * 0.9
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_FTLYShi_Passive_Check")) > 0 and global.MARKED(_env, "FTLYShi")(_env, target) then
+		global.print(_env, "奥古斯特-伤害分摊计算")
+
+		local DamageDownFactor = global.SpecialPropGetter(_env, "Skill_FTLYShi_DamageDownFactor")(_env, target)
+		local MasterHpFactor = global.SpecialPropGetter(_env, "Skill_FTLYShi_MasterHpFactor")(_env, target)
+
+		global.print(_env, "奥古斯特-伤害降低系数", DamageDownFactor)
+
+		if DamageDownFactor and DamageDownFactor ~= 0 then
+			local Enemy_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, -global.ONESELF(_env, target))) do
+				if global.MASTER(_env, unit) and global.UnitPropGetter(_env, "hpRatio")(_env, unit) < MasterHpFactor then
+					-- Nothing
+				elseif global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "GUIDIE_SHENYIN")) == 0 then
+					Enemy_count = Enemy_count + 1
+				end
+			end
+
+			global.print(_env, "奥古斯特-场上可分摊伤害单位", Enemy_count)
+
+			local Enemy_damage = damage.val * (1 - DamageDownFactor) / Enemy_count
+			local last_damage = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, -global.ONESELF(_env, target))) do
+				if global.MASTER(_env, unit) and global.UnitPropGetter(_env, "hpRatio")(_env, unit) < MasterHpFactor then
+					-- Nothing
+				elseif global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, Enemy_damage)
+				end
+			end
+
+			if Enemy_count > 0 then
+				damage.val = 0
+			end
+
+			global.print(_env, "奥古斯特-总伤害", damage.val)
+			global.print(_env, "奥古斯特-每人分摊的伤害", Enemy_damage)
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -1843,7 +1884,10 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
 		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local realdamage = global.min(_env, damage.val, DEFBloodLossRate * ZL_DEFmaxHp)
+		local realdamage = global.min(_env, result.eft, DEFBloodLossRate * ZL_DEFmaxHp)
+
+		global.print(_env, "诏令-伤害-本次有效伤害量", realdamage, "本次总伤害", damage.val, "本次有效伤害eft", result.eft, "手动获取本次有效伤害eft", DEFBloodLossRate * ZL_DEFmaxHp)
+
 		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
 			"+Normal",
 			"+Normal"
@@ -2672,7 +2716,10 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
 		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
 		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
-		local realdamage = global.min(_env, damage.val, DEFBloodLossRate * ZL_DEFmaxHp)
+		local realdamage = global.min(_env, result.eft, DEFBloodLossRate * ZL_DEFmaxHp)
+
+		global.print(_env, "诏令-伤害-本次有效伤害量", realdamage, "本次总伤害", damage.val, "本次有效伤害eft", result.eft, "手动获取本次有效伤害eft", DEFBloodLossRate * ZL_DEFmaxHp)
+
 		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
 			"+Normal",
 			"+Normal"
@@ -3543,10 +3590,78 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		damages[n].val = damages[n].val * 0.9
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "Skill_FTLYShi_Passive_Check")) > 0 and global.MARKED(_env, "FTLYShi")(_env, target) then
+		global.print(_env, "奥古斯特-伤害分摊计算")
+
+		local DamageDownFactor = global.SpecialPropGetter(_env, "Skill_FTLYShi_DamageDownFactor")(_env, target)
+		local MasterHpFactor = global.SpecialPropGetter(_env, "Skill_FTLYShi_MasterHpFactor")(_env, target)
+
+		global.print(_env, "奥古斯特-伤害降低系数", DamageDownFactor)
+
+		if DamageDownFactor and DamageDownFactor ~= 0 then
+			local Enemy_count = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, -global.ONESELF(_env, target))) do
+				if global.MASTER(_env, unit) and global.UnitPropGetter(_env, "hpRatio")(_env, unit) < MasterHpFactor then
+					-- Nothing
+				elseif global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "GUIDIE_SHENYIN")) == 0 then
+					Enemy_count = Enemy_count + 1
+				end
+			end
+
+			global.print(_env, "奥古斯特-场上可分摊伤害单位", Enemy_count)
+
+			local Enemy_damage = damages[n].val * (1 - DamageDownFactor) / Enemy_count
+			local last_damage = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, -global.ONESELF(_env, target))) do
+				if global.MASTER(_env, unit) and global.UnitPropGetter(_env, "hpRatio")(_env, unit) < MasterHpFactor then
+					-- Nothing
+				elseif global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ANY(_env, "GUIDIE_SHENYIN")) == 0 then
+					global.ApplyHPDamage(_env, unit, Enemy_damage)
+				end
+			end
+
+			if Enemy_count > 0 then
+				damages[n].val = 0
+			end
+
+			global.print(_env, "奥古斯特-总伤害", damages[n].val)
+			global.print(_env, "奥古斯特-每人分摊的伤害", Enemy_damage)
+		end
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
+
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
+		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
+		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local realdamage = global.min(_env, result.eft, DEFBloodLossRate * ZL_DEFmaxHp)
+
+		global.print(_env, "诏令-伤害-本次有效伤害量", realdamage, "本次总伤害", damages[n].val, "本次有效伤害eft", result.eft, "手动获取本次有效伤害eft", DEFBloodLossRate * ZL_DEFmaxHp)
+
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
+			"+Normal",
+			"+Normal"
+		}, realdamage)
+
+		global.ApplyBuff(_env, global.FriendField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Shoes_15120_2_realdamage"
+			}
+		}, {
+			buff1
+		})
+		global.ActivateGlobalTrigger(_env, target, "SELF_DAM", {
+			unit = target,
+			ACTOR = actor
+		})
+	end
 
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
@@ -4450,6 +4565,33 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
 	global.ActivateGlobalTrigger(_env, target, "UNIT_GET_ATTACKED")
 
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and result and result.eft > 0 then
+		local DEFBloodLossRate = 1 - global.UnitPropGetter(_env, "hpRatio")(_env, target)
+		local ZL_DEFmaxHp = global.UnitPropGetter(_env, "maxHp")(_env, target)
+		local realdamage = global.min(_env, result.eft, DEFBloodLossRate * ZL_DEFmaxHp)
+
+		global.print(_env, "诏令-伤害-本次有效伤害量", realdamage, "本次总伤害", damages[n].val, "本次有效伤害eft", result.eft, "手动获取本次有效伤害eft", DEFBloodLossRate * ZL_DEFmaxHp)
+
+		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, target), {
+			"+Normal",
+			"+Normal"
+		}, realdamage)
+
+		global.ApplyBuff(_env, global.FriendField(_env), {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Shoes_15120_2_realdamage"
+			}
+		}, {
+			buff1
+		})
+		global.ActivateGlobalTrigger(_env, target, "SELF_DAM", {
+			unit = target,
+			ACTOR = actor
+		})
+	end
+
 	if result and result.deadly then
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local aoekillrecoveryrate = global.SpecialPropGetter(_env, "aoekillrecoveryrate")(_env, actor)
@@ -5110,10 +5252,12 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		end
 	end
 
-	local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15106_3") > 0 then
+		local BeCuredRage = global.SpecialPropGetter(_env, "BeCuredRage")(_env, target)
 
-	if BeCuredRage and BeCuredRage ~= 0 then
-		global.ApplyRPRecovery(_env, target, BeCuredRage)
+		if BeCuredRage and BeCuredRage ~= 0 then
+			global.ApplyRPRecovery(_env, target, BeCuredRage)
+		end
 	end
 
 	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Weapon_15132_2") and Unique and global.GetUnitCid(_env, actor) then
@@ -5174,10 +5318,15 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 		end
 	end
 
-	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and heal then
+	local Recovery = global.ApplyHPRecovery(_env, target, heal, switch)
+
+	if global.SelectHeroPassiveCount(_env, actor, "EquipSkill_Shoes_15120_2") > 0 and Recovery and Recovery.eft > 0 then
 		local ZL_maxHp = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_maxHp")(_env, target)
 		local BloodLossRate = global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_BloodLossRate")(_env, target)
-		local realheal = global.min(_env, heal.val, BloodLossRate * ZL_maxHp)
+		local realheal = global.min(_env, Recovery.eft, BloodLossRate * ZL_maxHp)
+
+		global.print(_env, "承诏之路-本次有效治疗", realheal, "本次有效治疗eft", Recovery.eft, "手动获取有效治疗", BloodLossRate * ZL_maxHp)
+
 		local buff1 = global.SpecialNumericEffect(_env, "+EquipSkill_Shoes_15120_2_realheal", {
 			"+Normal",
 			"+Normal"
@@ -5197,8 +5346,6 @@ function all.ApplyHPRecovery_ResultCheck(_env, actor, target, heal, switch, Uniq
 			unit = target
 		})
 	end
-
-	local Recovery = global.ApplyHPRecovery(_env, target, heal, switch)
 
 	return Recovery
 end

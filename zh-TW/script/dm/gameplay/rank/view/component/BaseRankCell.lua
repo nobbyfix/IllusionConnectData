@@ -97,6 +97,20 @@ function BaseRankCell:refreshData(record)
 		self._rankChange:getChildByName("type"):loadTexture("asset/common/common_icon_jt_2.png")
 		self._rankChange:getChildByName("text"):setTextColor(cc.c3b(255, 77, 7))
 	end
+
+	if self._cellBg:getChildByName("title") then
+		self._cellBg:removeChildByName("title")
+	end
+
+	if record:getTitle() ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = record:getTitle()
+		})
+
+		icon:addTo(self._cellBg):posite(self._textRank:getPositionX() + 80, self._textRank:getPositionY() + 5)
+		icon:setName("title")
+		icon:setScale(0.58)
+	end
 end
 
 function BaseRankCell:refreshEmpty(index)
@@ -113,6 +127,10 @@ function BaseRankCell:refreshEmpty(index)
 	self._textName:setString("")
 	self._text3:setString("")
 	self._text4:setString("")
+
+	if self._cellBg:getChildByName("title") then
+		self._cellBg:removeChildByName("title")
+	end
 end
 
 BlockRankCell = class("BlockRankCell", BaseRankCell, _M)

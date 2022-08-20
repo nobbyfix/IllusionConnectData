@@ -208,6 +208,25 @@ function ActivityTaskDailyMediator:createCell(cell, index)
 				btnGo:addTo(panel):posite(362, 48)
 				btnGo:setName("TodoMark")
 				btnGo:setVisible(true)
+
+				local function callFunc()
+					self:onClickGo(taskData)
+				end
+
+				mapButtonHandlerClick(nil, btnGo, {
+					ignoreClickAudio = true,
+					func = callFunc
+				})
+
+				local url = taskData:getDestUrl()
+
+				btnGo:setTouchEnabled(url ~= nil and url ~= "")
+
+				if url ~= nil and url ~= "" then
+					btnGo:getChildByName("done"):setString(Strings:get("Task_UI7"))
+				else
+					btnGo:getChildByName("done"):setString(Strings:get("ActivityBlock_UI_18"))
+				end
 			end
 
 			local rewards = taskData:getReward().Content

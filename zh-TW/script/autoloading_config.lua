@@ -1591,6 +1591,11 @@ local mappings = {
 		name = "ActivitySagaSupportRankMediator",
 		type = "@C"
 	},
+	ActivityBlockSupportNewMediator = {
+		url = "dm.gameplay.activity.view.ActivityBlockSupportNewMediator",
+		name = "ActivityBlockSupportNewMediator",
+		type = "@C"
+	},
 	ActivitySagaSupportStageMediator = {
 		url = "dm.gameplay.activity.view.ActivitySagaSupportStageMediator",
 		name = "ActivitySagaSupportStageMediator",
@@ -3529,6 +3534,11 @@ local mappings = {
 	SetBirthdayPopMediator = {
 		url = "dm.gameplay.setting.view.SetBirthdayPopMediator",
 		name = "SetBirthdayPopMediator",
+		type = "@C"
+	},
+	PlayerTitleMediator = {
+		url = "dm.gameplay.setting.view.PlayerTitleMediator",
+		name = "PlayerTitleMediator",
 		type = "@C"
 	},
 	ChangeNameMediator = {

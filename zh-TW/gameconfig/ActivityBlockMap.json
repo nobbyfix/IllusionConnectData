@@ -1810,6 +1810,62 @@
         ],
         "Type": "ELITE"
     },
+    "Spring_2ndM01": {
+        "BGM": "Mus_Story_Spring_Main",
+        "Background": "Spring_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SpringAM01_Name",
+        "StarBoxReward": "",
+        "SubPoint": "",
+        "SubSort": [
+            "SpringSN01",
+            "SpringSN02",
+            "SpringSN03",
+            "SpringSN04",
+            "SpringSN05",
+            "SpringSN06",
+            "SpringSN07",
+            "SpringSN08"
+        ],
+        "SubStoryPoint": [
+            "SpringS01S01",
+            "SpringS01S02",
+            "SpringS01S03",
+            "SpringS01S04",
+            "SpringS01S05"
+        ],
+        "Type": "NORMAL"
+    },
+    "Spring_2ndM02": {
+        "BGM": "Mus_Story_Spring_Resistance",
+        "Background": "Spring_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_SpringAM02_Name",
+        "StarBoxReward": "",
+        "SubPoint": "",
+        "SubSort": [
+            "SpringSE01",
+            "SpringSE02",
+            "SpringSE03",
+            "SpringSE04",
+            "SpringSE05",
+            "SpringSE06",
+            "SpringSE07",
+            "SpringSE08",
+            "SpringSE09",
+            "SpringSE10",
+            "SpringSE11"
+        ],
+        "SubStoryPoint": [
+            "SpringS02S01",
+            "SpringS02S02",
+            "SpringS02S03",
+            "SpringS02S04"
+        ],
+        "Type": "ELITE"
+    },
     "StoryBookE01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "StoryBook_Scene03",

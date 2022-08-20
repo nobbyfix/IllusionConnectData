@@ -99,7 +99,7 @@ function ActivitySagaSupportRankMediator:initView()
 
 	self._main:getChildByFullName("tipTxt"):setString(Strings:get("Activity_Saga_UI_49") .. Strings:get(self._data.config.Name))
 
-	if self._activityId == ActivityId.kActivityWxh then
+	if self._activityId == ActivityId.kActivityWxh or self._activity:getUI() == ActivityType_UI.KActivityReZhan then
 		self._main:getChildByFullName("TText2"):setString(Strings:get("Activity_Saga_UI_43_wxh"))
 		self._main:getChildByFullName("TText4"):setString(Strings:get("Activity_Saga_UI_43_wxh"))
 		self._main:getChildByFullName("tipTxt1"):setString(Strings:get("Activity_Saga_UI_51_wxh"))

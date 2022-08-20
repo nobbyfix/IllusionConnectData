@@ -2233,6 +2233,19 @@
         "UnlockDesc": "SP_ALPo_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_SP_ALSi": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_SP_ALSi",
+        "HeadMove": "",
+        "HeadName": "SP_ALSi_HeadName",
+        "HeroMasterId": "SP_ALSi",
+        "IconPath": "asset/heros/sp_alsi/battlepic_sp_alsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "SP_ALSi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_SP_DDing": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_SP_DDing",
@@ -2435,7 +2448,7 @@
         "HeadName": "TLSi_2_HeadName",
         "HeroMasterId": "TLSi",
         "IconPath": "asset/heros/lda_artist/battlepic_lda_artist.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_TLSi_2",
         "Type": 5,
         "UnlockDesc": "TLSi_2_HeadUnlock",
@@ -3254,6 +3267,19 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_DCJKang",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FEMSi": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_FEMSi_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_FEMSi_1_Name",
+        "HeroMasterId": "FEMSi",
+        "IconPath": "asset/heros/xlte/battlepic_xlte.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FEMSi",
         "Zoom": 1.0
     },
     "HeroAwaken_FGao": {

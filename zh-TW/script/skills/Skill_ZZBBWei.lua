@@ -1230,5 +1230,272 @@ all.Skill_ZZBBWei_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_ZZBBWei_Unique_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		this.DazeRateFactor = externs.DazeRateFactor
+
+		assert(this.DazeRateFactor ~= nil, "External variable `DazeRateFactor` is not provided.")
+
+		this.flag = 0
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			5400
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_ZZBBWei"
+		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			4367
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:AFTER_UNIQUE"
+		}, passive1)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.untis = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.print(_env, "运行")
+
+			_env.units = global.EnemyUnits(_env, global.COL_OF(_env, _env.TARGET))
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			1700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+				global.SelfEX_ASSASSIN_OneStage_Break(_env, _env.ACTOR, unit)
+
+				local buffeft1 = global.Daze(_env)
+				local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+				local defender = global.LoadUnit(_env, unit, "DEFENDER")
+				local prob = global.EvalProb1(_env, attacker, defender, this.DazeRateFactor, 0)
+
+				if global.ProbTest(_env, prob) then
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						display = "Daze",
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"DAZE",
+							"ABNORMAL",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+			end
+		end)
+		exec["@time"]({
+			2400
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local prob = global.SpecialPropGetter(_env, "ChainProbRateFactor1")(_env, _env.ACTOR)
+
+			if global.ProbTest(_env, prob) then
+				global.CancelTargetView(_env)
+
+				this.flag = 1
+				local result = true
+
+				for _, unit in global.__iter__(_env.units) do
+					result = result and not global.IsAlive(_env, unit)
+				end
+
+				if result == true then
+					global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+					global.Stop(_env)
+
+					this.flag = 2
+				else
+					global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil), 100, "skill3"))
+					global.HarmTargetView(_env, _env.units)
+
+					for _, unit in global.__iter__(_env.units) do
+						global.AssignRoles(_env, unit, "target")
+					end
+				end
+			else
+				global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			3200
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local DmgRateFactor = global.SpecialPropGetter(_env, "ChainDmgRateFactor1")(_env, _env.ACTOR)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+					1,
+					DmgRateFactor,
+					0
+				})
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			3900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local prob = global.SpecialPropGetter(_env, "ChainProbRateFactor2")(_env, _env.ACTOR)
+
+			if global.ProbTest(_env, prob) then
+				global.CancelTargetView(_env)
+
+				local result = true
+
+				for _, unit in global.__iter__(_env.units) do
+					result = result and not global.IsAlive(_env, unit)
+				end
+
+				if result == true then
+					global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+					global.Stop(_env)
+				else
+					global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, 0, nil), 100, "skill3"))
+					global.HarmTargetView(_env, _env.units)
+
+					for _, unit in global.__iter__(_env.units) do
+						global.AssignRoles(_env, unit, "target")
+					end
+				end
+			else
+				global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			4700
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local DmgRateFactor = global.SpecialPropGetter(_env, "ChainDmgRateFactor2")(_env, _env.ACTOR)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, {
+					1,
+					DmgRateFactor,
+					0
+				})
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			5400
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if this.flag == 0 or this.flag == 2 and global.IsAlive(_env, global.EnemyMaster(_env)) then
+				global.SelfEX_ASSASSIN_OneStage_Double(_env, _env.ACTOR)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -101,6 +101,61 @@ all.SelfEX_Curse_OneStage_Reflex_SubSkill = {
 	end
 }
 
+function all.SelfEX_Curse_OneStage_AtkDown(_env, actor, AtkDownFactor, selfcost, rate)
+	local this = _env.this
+	local global = _env.global
+
+	for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, global.EnemyField(_env)))) do
+		if card then
+			local value = global.GetCardCost(_env, card)
+
+			if value < selfcost then
+				local buff = global.NumericEffect(_env, "-atkrate", {
+					"+Normal",
+					"+Normal"
+				}, global.UnitPropGetter(_env, "atk")(_env, actor) * AtkDownFactor / global.GetHeroCardAttr(_env, card, "atk") * rate)
+
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, global.EnemyField(_env)), card, {
+					timing = 0,
+					display = "AtkDown",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"DEBUFF",
+						"ATKDOWN",
+						"CARDBUFF",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				}, "week_shoupaitishi")
+			elseif selfcost <= value then
+				local buff = global.NumericEffect(_env, "-atkrate", {
+					"+Normal",
+					"+Normal"
+				}, global.UnitPropGetter(_env, "atk")(_env, actor) * AtkDownFactor / global.GetHeroCardAttr(_env, card, "atk"))
+
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, global.EnemyField(_env)), card, {
+					timing = 0,
+					display = "AtkDown",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"DEBUFF",
+						"ATKDOWN",
+						"CARDBUFF",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buff
+				}, "week_shoupaitishi")
+			end
+		end
+	end
+end
+
 function all.SelfEX_Cure_OneStage_Choice(_env, actor, unit, allChoice)
 	local this = _env.this
 	local global = _env.global
@@ -949,5 +1004,49 @@ all.SelfEX_Support_OneStage_treasury_SubSkill_Weapon = {
 		return _env
 	end
 }
+
+function all.SelfEX_ASSASSIN_OneStage_Double(_env, actor)
+	local this = _env.this
+	local global = _env.global
+	local buffeft2 = global.RageGainEffect(_env, "-", {
+		"+Normal",
+		"+Normal"
+	}, 1)
+	local buffeft3 = global.Diligent(_env)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 2,
+		duration = 1,
+		tags = {
+			"UNDISPELLABLE",
+			"UNSTEALABLE"
+		}
+	}, {
+		buffeft2,
+		buffeft3
+	})
+	global.DiligentRound(_env, 100)
+end
+
+function all.SelfEX_ASSASSIN_OneStage_Break(_env, actor, target)
+	local this = _env.this
+	local global = _env.global
+	local applydamage = global.SpecialPropGetter(_env, "ApplyDamageValue")(_env, actor)
+	local hp = global.UnitPropGetter(_env, "hp")(_env, target)
+	local shield = global.UnitPropGetter(_env, "shield")(_env, target)
+	local overdamage = applydamage - hp - shield
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "UNDEAD")) > 0 then
+		overdamage = applydamage - hp - shield + 1
+	end
+
+	if global.SelectBuffCount(_env, target, global.BUFF_MARKED_ANY(_env, "IMMUNE", "GUIDIE_SHENYIN", "Invisible_Immune", "DAGUN_IMMUNE", "SKONG_IMMUNE")) > 0 then
+		overdamage = applydamage
+	end
+
+	if overdamage > 0 then
+		global.DispelBuff(_env, target, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+	end
+end
 
 return _M

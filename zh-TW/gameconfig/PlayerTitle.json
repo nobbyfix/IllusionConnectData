@@ -1,0 +1,135 @@
+{
+    "PlayerTitle_1": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_1_Desc",
+        "Icon": "PlayerTitle_7",
+        "Name": "PlayerTitle_1_Name",
+        "Order": 1,
+        "ResourceDesc": "PlayerTitle_1_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 744
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_2": {
+        "CondiType": "RTPK",
+        "Desc": "PlayerTitle_2_Desc",
+        "Icon": "PlayerTitle_11",
+        "Name": "PlayerTitle_2_Name",
+        "Order": 2,
+        "ResourceDesc": "PlayerTitle_2_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "value": [
+                1,
+                3
+            ]
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_3": {
+        "CondiType": "StageArena",
+        "Desc": "PlayerTitle_3_Desc",
+        "Icon": "PlayerTitle_15",
+        "Name": "PlayerTitle_3_Name",
+        "Order": 3,
+        "ResourceDesc": "PlayerTitle_3_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "value": [
+                1,
+                3
+            ]
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_1": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_1_Desc",
+        "Icon": "PlayerTitle_2",
+        "Name": "PlayerTitle_TW_1_Name",
+        "Order": 20,
+        "ResourceDesc": "PlayerTitle_TW_1_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_2": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_2_Desc",
+        "Icon": "PlayerTitle_4",
+        "Name": "PlayerTitle_TW_2_Name",
+        "Order": 21,
+        "ResourceDesc": "PlayerTitle_TW_2_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_3": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_3_Desc",
+        "Icon": "PlayerTitle_16",
+        "Name": "PlayerTitle_TW_3_Name",
+        "Order": 22,
+        "ResourceDesc": "PlayerTitle_TW_3_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_4": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_4_Desc",
+        "Icon": "PlayerTitle_2",
+        "Name": "PlayerTitle_TW_4_Name",
+        "Order": 23,
+        "ResourceDesc": "PlayerTitle_TW_4_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_5": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_5_Desc",
+        "Icon": "PlayerTitle_4",
+        "Name": "PlayerTitle_TW_5_Name",
+        "Order": 24,
+        "ResourceDesc": "PlayerTitle_TW_5_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_6": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_6_Desc",
+        "Icon": "PlayerTitle_16",
+        "Name": "PlayerTitle_TW_6_Name",
+        "Order": 25,
+        "ResourceDesc": "PlayerTitle_TW_6_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_TW_7": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_TW_7_Desc",
+        "Icon": "PlayerTitle_2",
+        "Name": "PlayerTitle_TW_7_Name",
+        "Order": 26,
+        "ResourceDesc": "PlayerTitle_TW_7_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    },
+    "PlayerTitle_egg": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_egg_Desc",
+        "Icon": "PlayerTitle_1",
+        "Name": "PlayerTitle_egg_Name",
+        "Order": 4,
+        "ResourceDesc": "PlayerTitle_egg_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    }
+}

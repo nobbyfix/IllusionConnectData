@@ -4786,6 +4786,31 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "FEMSi_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_FEMSi_Awake"
+        ],
+        "HeroId": "FEMSi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_FEMSi_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
     "FGao_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -17425,6 +17450,209 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "SP_ALSi_1": {
+        "AtkStarBaseValue": 0.0,
+        "AtkStarFactor": 0.0,
+        "DefStarBaseValue": 0.0,
+        "DefStarFactor": 0.0,
+        "Effect": [],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 0.0,
+        "HpStarFactor": 0.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_2",
+        "SpecialEffect": [],
+        "Speed": 0,
+        "Star": 1,
+        "StarStive": 0,
+        "StarUpCost": 0,
+        "StarUpFactor": 10,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_2": {
+        "AtkStarBaseValue": 100.0,
+        "AtkStarFactor": 0.0,
+        "DefStarBaseValue": 30.0,
+        "DefStarFactor": 0.0,
+        "Effect": [],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 400.0,
+        "HpStarFactor": 0.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_3",
+        "SpecialEffect": [],
+        "Speed": 15,
+        "Star": 2,
+        "StarStive": 0,
+        "StarUpCost": 4000,
+        "StarUpFactor": 20,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_3": {
+        "AtkStarBaseValue": 250.0,
+        "AtkStarFactor": 2.0,
+        "DefStarBaseValue": 75.0,
+        "DefStarFactor": 0.6,
+        "Effect": [],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 1000.0,
+        "HpStarFactor": 8.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_3_1",
+        "SpecialEffect": [],
+        "Speed": 30,
+        "Star": 3,
+        "StarStive": 0,
+        "StarUpCost": 6000,
+        "StarUpFactor": 30,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_3_1": {
+        "AtkStarBaseValue": 425.0,
+        "AtkStarFactor": 4.0,
+        "DefStarBaseValue": 128.0,
+        "DefStarFactor": 1.2,
+        "Effect": [
+            "Star_SP_ALSi_3_1"
+        ],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 1700.0,
+        "HpStarFactor": 16.0,
+        "MiniStar": 1,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_4",
+        "SpecialEffect": [],
+        "Speed": 45,
+        "Star": 3,
+        "StarStive": 0,
+        "StarUpCost": 10000,
+        "StarUpFactor": 60,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_4": {
+        "AtkStarBaseValue": 600.0,
+        "AtkStarFactor": 6.0,
+        "DefStarBaseValue": 180.0,
+        "DefStarFactor": 1.8,
+        "Effect": [],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 2400.0,
+        "HpStarFactor": 24.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_4_1",
+        "SpecialEffect": [
+            "StarSE_SP_ALSi_4"
+        ],
+        "Speed": 60,
+        "Star": 4,
+        "StarStive": 800,
+        "StarUpCost": 15000,
+        "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_4_1": {
+        "AtkStarBaseValue": 800.0,
+        "AtkStarFactor": 8.0,
+        "DefStarBaseValue": 240.0,
+        "DefStarFactor": 2.4,
+        "Effect": [
+            "Star_SP_ALSi_4_1"
+        ],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 3200.0,
+        "HpStarFactor": 32.0,
+        "MiniStar": 1,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_5",
+        "SpecialEffect": [],
+        "Speed": 75,
+        "Star": 4,
+        "StarStive": 0,
+        "StarUpCost": 20000,
+        "StarUpFactor": 60,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_5": {
+        "AtkStarBaseValue": 1000.0,
+        "AtkStarFactor": 10.0,
+        "DefStarBaseValue": 300.0,
+        "DefStarFactor": 3.0,
+        "Effect": [],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 4000.0,
+        "HpStarFactor": 40.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_5_1",
+        "SpecialEffect": [
+            "StarSE_SP_ALSi_5"
+        ],
+        "Speed": 90,
+        "Star": 5,
+        "StarStive": 3200,
+        "StarUpCost": 30000,
+        "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_5_1": {
+        "AtkStarBaseValue": 1250.0,
+        "AtkStarFactor": 12.5,
+        "DefStarBaseValue": 375.0,
+        "DefStarFactor": 3.75,
+        "Effect": [
+            "Star_SP_ALSi_5_1"
+        ],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 5000.0,
+        "HpStarFactor": 50.0,
+        "MiniStar": 1,
+        "NeedLove": "",
+        "NextId": "SP_ALSi_6",
+        "SpecialEffect": [],
+        "Speed": 105,
+        "Star": 5,
+        "StarStive": 0,
+        "StarUpCost": 40000,
+        "StarUpFactor": 120,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
+    "SP_ALSi_6": {
+        "AtkStarBaseValue": 1500.0,
+        "AtkStarFactor": 15.0,
+        "DefStarBaseValue": 450.0,
+        "DefStarFactor": 4.5,
+        "Effect": [
+            "Star_SP_ALSi_6"
+        ],
+        "HeroId": "SP_ALSi",
+        "HpStarBaseValue": 6000.0,
+        "HpStarFactor": 60.0,
+        "MiniStar": 0,
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_SP_ALSi_6"
+        ],
+        "Speed": 120,
+        "Star": 6,
+        "StarStive": 6000,
+        "StarUpCost": 50000,
+        "StarUpFactor": 0,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
     "SP_DDing_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -26084,6 +26312,58 @@
         "StarUpCost": 60000,
         "StarUpFactor": 240,
         "UpNeedItem": "",
+        "Visible": 1
+    },
+    "ZZBBWei_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_ZZBBWei_1"
+        ],
+        "HeroId": "ZZBBWei",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "ZZBBWei_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "ZZBBWei_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_ZZBBWei_2"
+        ],
+        "HeroId": "ZZBBWei",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_ZZBBWei_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
         "Visible": 1
     }
 }
