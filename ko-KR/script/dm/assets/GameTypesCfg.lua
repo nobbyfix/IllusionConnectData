@@ -394,6 +394,7 @@ ActivityType_UI = {
 	kActivityWxh = "ACTIVITYWUXIUHUI",
 	KActivityDusk = "ACTIVITYDUSK",
 	KActivitySamurai = "ACTIVITYSAMURAI",
+	KActivityReZhan = "ACTIVITYREZHAN",
 	KTASKSTAGESTAR = "TASKSTAGESTAR",
 	KActivityKnight = "ACTIVITYKNIGHT",
 	kActivityZero = "ACTIVITYREZERO",

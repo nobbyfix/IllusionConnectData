@@ -269,6 +269,15 @@ function ActivitySagaSupportStageWxhMediator:initView()
 
 	self:updateStageView()
 	self:updateMainView()
+	self:playBackgroundMusic()
+end
+
+function ActivitySagaSupportStageWxhMediator:playBackgroundMusic()
+	local bgm = self._activity:getBgm()
+
+	if bgm then
+		AudioEngine:getInstance():playBackgroundMusic(bgm)
+	end
 end
 
 function ActivitySagaSupportStageWxhMediator:updateMainView()

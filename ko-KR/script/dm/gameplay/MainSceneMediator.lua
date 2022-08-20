@@ -250,6 +250,15 @@ local muiscCfg = {
 	},
 	ActivitySpringMainView = {
 		noAutoPlay = true
+	},
+	ActivityBlockSupportNewView = {
+		noAutoPlay = true
+	},
+	ActivitySagaSupportStageWxhView = {
+		noAutoPlay = true
+	},
+	ActivitySagaSupportScheduleWxhView = {
+		noAutoPlay = true
 	}
 }
 local UINavigateHistory = {}

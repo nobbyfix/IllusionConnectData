@@ -725,6 +725,21 @@ all.DaGunPassive = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
+			local buff_master = global.NumericEffect(_env, "+defrate", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Player_Master"
+				}
+			}, {
+				buff_master
+			})
+
 			local rp = global.SpecialPropGetter(_env, "DaGun_Rp")(_env, _env.ACTOR)
 
 			global.ApplyRPRecovery(_env, _env.ACTOR, rp)

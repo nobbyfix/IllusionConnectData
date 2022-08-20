@@ -462,6 +462,20 @@ function LeadStageArenaRivalMediator:refreshRivalView()
 
 	roleNode:addChild(heroIcon)
 	heroIcon:setPosition(cc.p(400, 80))
+
+	if self._rivalNode:getChildByName("title") then
+		self._rivalNode:removeChildByName("title")
+	end
+
+	if rivalData.rivalTitle ~= nil and rivalData.rivalTitle ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = rivalData.rivalTitle
+		})
+
+		icon:addTo(self._rivalNode):posite(68, 184)
+		icon:setName("title")
+		icon:setScale(0.9)
+	end
 end
 
 function LeadStageArenaRivalMediator:refreshRivalTeamView(index)

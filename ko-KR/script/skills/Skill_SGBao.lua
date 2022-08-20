@@ -247,7 +247,6 @@ all.Skill_SGBao_Unique = {
 					display = "Taunt",
 					tags = {
 						"STATUS",
-						"DEBUFF",
 						"TAUNT",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"
@@ -674,7 +673,6 @@ all.Skill_SGBao_Unique_EX = {
 					display = "Taunt",
 					tags = {
 						"STATUS",
-						"DEBUFF",
 						"TAUNT",
 						"UNDISPELLABLE",
 						"UNSTEALABLE"

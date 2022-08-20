@@ -6340,6 +6340,36 @@
             "VIP": 0
         }
     },
+    "StageArena_Task16_14": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    48000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3016,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_16_14",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task16_2": {
         "AccumulateTimes": 0,
         "AfterFinish": 0,
@@ -7090,6 +7120,36 @@
             "VIP": 0
         }
     },
+    "StageArena_Task31_14": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    115000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3031,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_31_14",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task31_2": {
         "AccumulateTimes": 0,
         "AfterFinish": 0,
@@ -7540,6 +7600,36 @@
             "VIP": 0
         }
     },
+    "StageArena_Task38_14": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    150000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3038,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_38_14",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
     "StageArena_Task38_2": {
         "AccumulateTimes": 0,
         "AfterFinish": 0,
@@ -7983,6 +8073,36 @@
         "OrderNum": 3044,
         "Prepose": "",
         "Reward": "StageArena_GoldReward_44_13",
+        "TaskIcon": "201201",
+        "TaskType": 8,
+        "UnlockCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        }
+    },
+    "StageArena_Task44_14": {
+        "AccumulateTimes": 0,
+        "AfterFinish": 0,
+        "ClientCondition": {
+            "LEVEL": 1,
+            "VIP": 0
+        },
+        "Condition": [
+            {
+                "conditionType": "StageArena_GoldReward",
+                "factor1": [
+                    180000
+                ]
+            }
+        ],
+        "Desc": "",
+        "Destination": "",
+        "IsDailyRestart": 0,
+        "IsStartTask": 1,
+        "Name": "StageArena_TaskName",
+        "OrderNum": 3044,
+        "Prepose": "",
+        "Reward": "StageArena_GoldReward_44_14",
         "TaskIcon": "201201",
         "TaskType": 8,
         "UnlockCondition": {

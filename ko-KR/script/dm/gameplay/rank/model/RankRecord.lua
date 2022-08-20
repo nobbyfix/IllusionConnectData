@@ -117,6 +117,9 @@ BaseRankRecord:has("_stageArenaRank", {
 BaseRankRecord:has("_stageArenaScore", {
 	is = "rw"
 })
+BaseRankRecord:has("_title", {
+	is = "rw"
+})
 
 function BaseRankRecord:initialize()
 	super.initialize(self)
@@ -195,6 +198,7 @@ function BaseRankRecord:synchronize(data)
 		self._rtpkScore = data.rtpkScore or 0
 		self._stageArenaRank = data.stageArenaRank or 0
 		self._stageArenaScore = data.stageArenaScore or 0
+		self._title = data.title or ""
 	end
 end
 

@@ -164,6 +164,15 @@ function ActivitySagaSupportScheduleMediator:initView()
 		nums = self._activity:getTimeStr()
 	}))
 	self:updateView()
+	self:playBackgroundMusic()
+end
+
+function ActivitySagaSupportScheduleMediator:playBackgroundMusic()
+	local bgm = self._activity:getBgm()
+
+	if bgm then
+		AudioEngine:getInstance():playBackgroundMusic(bgm)
+	end
 end
 
 function ActivitySagaSupportScheduleMediator:updateView()

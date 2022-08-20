@@ -839,5 +839,206 @@ all.Skill_FEMSi_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_FEMSi_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				2.5,
+				0
+			}
+		end
+
+		this.murderer_rate = externs.murderer_rate
+
+		if this.murderer_rate == nil then
+			this.murderer_rate = 2
+		end
+
+		this.BurningRateFactor = externs.BurningRateFactor
+
+		if this.BurningRateFactor == nil then
+			this.BurningRateFactor = 0.3
+		end
+
+		this.RageFactor = externs.RageFactor
+
+		if this.RageFactor == nil then
+			this.RageFactor = 0.2
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3034
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_FEMSi"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2267
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(_env.units) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) == 0 then
+					local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+					local buffeft1 = global.HPPeriodDamage(_env, "Burning", attacker.atk * this.BurningRateFactor)
+
+					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+						timing = 1,
+						display = "Burning",
+						group = "Burning",
+						duration = 3,
+						limit = 99,
+						tags = {
+							"STATUS",
+							"DEBUFF",
+							"BURNING",
+							"ABNORMAL",
+							"DISPELLABLE"
+						}
+					}, {
+						buffeft1
+					}, 1, 0)
+				end
+
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 then
+					damage.val = damage.val * this.murderer_rate
+				end
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			2500
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local flag = 0
+
+			for _, unit in global.__iter__(_env.units) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "MURDERER")) > 0 and global.IsAlive(_env, unit) then
+					flag = 1
+				end
+			end
+
+			if flag == 1 then
+				local buff_murder = global.SpecialNumericEffect(_env, "+murder", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.EnemyMaster(_env), {
+					timing = 0,
+					display = "Murderer",
+					group = "FEMSi_MURDERER",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"MURDERER",
+						"ABNORMAL",
+						"Skill_FEMSi_Unique_Awaken",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff_murder
+				})
+
+				local buffeft = global.RageGainEffect(_env, "-", {
+					"+Normal",
+					"+Normal"
+				}, this.RageFactor)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, global.EnemyMaster(_env), {
+					timing = 1,
+					display = "AngerRateDown",
+					group = "FEMSi_MURDERER_ANGERRATEDOWN",
+					duration = 3,
+					limit = 3,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"ANGERRATEDOWN",
+						"Skill_FEMSi_Unique_RAGE",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buffeft
+				}, 1, 0)
+			end
+		end)
+		exec["@time"]({
+			2834
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

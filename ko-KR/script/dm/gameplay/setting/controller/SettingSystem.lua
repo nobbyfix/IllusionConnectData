@@ -1,6 +1,7 @@
 EVT_CHANGEHEADIMG_SUCC = "EVT_CHANGEHEADIMG_SUCC"
 EVT_BUGFEEDBACK_SUCC = "EVT_BUGFEEDBACK_SUCC"
 EVT_CHANGEHEADFRAME_SUCC = "EVT_CHANGEHEADFRAME_SUCC"
+EVT_CHANGETITLE_SUCC = "EVT_CHANGETITLE_SUCC"
 BattleHp_ShowType = {
 	Simple = 0,
 	Hide = -1,
@@ -1285,6 +1286,12 @@ KFrameSort = {
 	LIMIT = 6,
 	RARE = 3
 }
+KTitleType = {
+	ACHIEVEMENT = "ACHIEVEMENT",
+	ACTIVITY = "ACTIVITY",
+	RARE = "RARE",
+	LIMIT = "LIMIT"
+}
 
 function SettingSystem:getHeadFrameData()
 	if not self._headFrameDB then
@@ -1520,4 +1527,125 @@ function SettingSystem:requestActivityHeadFrameInfo()
 			self._settingModel:syncActFrameInfo(response.data)
 		end
 	end, false)
+end
+
+function SettingSystem:requestChangeTitle(id, type)
+	local params = {
+		id = id,
+		type = type
+	}
+
+	self._settingService:requestChangeTitle(params, function (response)
+		if response.resCode == GS_SUCCESS then
+			self:dispatch(Event:new(EVT_CHANGETITLE_SUCC))
+			self:dispatch(ShowTipEvent({
+				tip = Strings:get("PlayerTitle_Tip_1")
+			}))
+		end
+	end, false)
+end
+
+function SettingSystem:getShowTitleList()
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local db = ConfigReader:getDataTable("PlayerTitle")
+	local player = developSystem:getPlayer()
+	local titles = player:getTitles()
+	local list = {}
+
+	for k, v in pairs(db) do
+		local show = true
+
+		if v.Unlook == 0 and titles[k] == nil then
+			show = false
+		end
+
+		if show then
+			local data = {
+				id = k,
+				config = v,
+				unlock = titles[k] and 1 or 0
+			}
+			list[#list + 1] = data
+
+			if titles[k] then
+				data.getTime = titles[k]
+
+				self:setLimitTitleData(k, data)
+
+				if data.isLimit and data.isExpire then
+					data.unlock = 0
+				else
+					data.unlock = 1
+				end
+			end
+		end
+	end
+
+	table.sort(list, function (a, b)
+		if a.unlock == b.unlock then
+			return a.config.Order < b.config.Order
+		else
+			return b.unlock < a.unlock
+		end
+	end)
+
+	return list
+end
+
+function SettingSystem:checkTitleExpire(id, data)
+	local developSystem = self:getInjector():getInstance(DevelopSystem)
+	local player = developSystem:getPlayer()
+	local titles = player:getTitles()
+	data = data or {}
+	data.isExpire = false
+	local getDate = titles[id]
+	local config = ConfigReader:getRecordById("PlayerTitle", id)
+
+	if config.CondiType == "TIME" then
+		local gameServerAgent = self:getInjector():getInstance(GameServerAgent)
+		local curTime = gameServerAgent:remoteTimeMillis()
+		data.expireTime = getDate + config.TypeNum.time * 3600 * 1000
+		data.useText = "PlayerTitle_Time_2"
+
+		if data.expireTime < curTime then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "RTPK" then
+		local rtpk = self:getInjector():getInstance(RTPKSystem):getRtpk()
+		local rank = rtpk:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	if config.CondiType == "StageArena" then
+		local leadStageArena = self:getInjector():getInstance(LeadStageArenaSystem):getLeadStageArena()
+		local rank = leadStageArena:getHistoryRank()
+
+		if rank < config.TypeNum.value[1] or config.TypeNum.value[2] < rank then
+			data.isExpire = true
+		end
+	end
+
+	local actFrameInfo = self._settingModel:getActFrameInfo()
+	local value = actFrameInfo[config.CondiType]
+
+	if value and (value < config.TypeNum.value[1] or config.TypeNum.value[2] < value) then
+		data.isExpire = true
+	end
+
+	return data
+end
+
+function SettingSystem:setLimitTitleData(id, data)
+	local config = ConfigReader:getRecordById("PlayerTitle", id)
+
+	if config.Type == KTitleType.LIMIT then
+		data.isLimit = true
+
+		self:checkTitleExpire(id, data)
+	end
 end

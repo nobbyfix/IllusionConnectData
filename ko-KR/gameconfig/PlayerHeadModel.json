@@ -659,6 +659,18 @@
         "UnlockDesc": "FTLEShi_4_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_FTLYShi": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_FTLYShi",
+        "HeadName": "FTLYShi_HeadName",
+        "HeroMasterId": "FTLYShi",
+        "IconPath": "asset/heros/agste/battlepic_agste.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "FTLYShi_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_GCZi": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_GCZi",
@@ -729,6 +741,30 @@
         "SurfaceMasterId": "",
         "Type": 7,
         "UnlockDesc": "Ghost_3_HeadUnlock",
+        "Zoom": 1.0
+    },
+    "Head_Ghost_4": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_4",
+        "HeadName": "Ghost_1_HeadName",
+        "HeroMasterId": "PlayerHead_Ghost_4",
+        "IconPath": "asset/items/Head_HeroCollect_4.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_1_HeadUnlock",
+        "Zoom": 1.0
+    },
+    "Head_Ghost_5": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_5",
+        "HeadName": "Ghost_2_HeadName",
+        "HeroMasterId": "PlayerHead_Ghost_5",
+        "IconPath": "asset/items/Head_HeroCollect_5.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_1_HeadUnlock",
         "Zoom": 1.0
     },
     "Head_HGEr": {
@@ -2949,6 +2985,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_DCJKang",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_FEMSi": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_FEMSi_Desc",
+        "HeadName": "HeroAwaken_FEMSi_1_Name",
+        "HeroMasterId": "FEMSi",
+        "IconPath": "asset/heros/xlte/battlepic_xlte.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_FEMSi",
         "Zoom": 1.0
     },
     "HeroAwaken_FGao": {

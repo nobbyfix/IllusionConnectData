@@ -100,3 +100,9 @@ function SettingService:requestActivityHeadFrameInfo(params, callback, blockUI)
 
 	self:sendRequest(request, blockUI)
 end
+
+function SettingService:requestChangeTitle(params, callback, blockUI)
+	local request = self:newRequest(10036, params, callback)
+
+	self:sendRequest(request, blockUI)
+end

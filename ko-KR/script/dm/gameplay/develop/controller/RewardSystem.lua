@@ -11,12 +11,13 @@ end
 
 RewardType = {
 	kHero = 3,
-	kGalleryMemory = 16,
+	kTitle = 35,
 	kEquipExplore = 11,
 	kEquip = 6,
 	kExp = 1,
 	kRewardLink = 9,
 	kChatBubble = 36,
+	kGalleryMemory = 16,
 	kBuff = 17,
 	kSpecialValue = 4,
 	kInvalid = -1,
@@ -132,6 +133,12 @@ function RewardSystem.class:getName(rewardData)
 			end
 		elseif info.rewardType == RewardType.kChatBubble then
 			local config = ConfigReader:getRecordById("ChatBubble", id)
+
+			if config and config.Id then
+				return Strings:get(config.Name)
+			end
+		elseif info.rewardType == RewardType.kTitle then
+			local config = ConfigReader:getRecordById("PlayerTitle", id)
 
 			if config and config.Id then
 				return Strings:get(config.Name)
@@ -339,6 +346,12 @@ function RewardSystem.class:getDesc(rewardData)
 	end
 
 	config = ConfigReader:getRecordById("PlayerHeadFrame", id)
+
+	if config and config.Id then
+		return Strings:get(config.Desc)
+	end
+
+	config = ConfigReader:getRecordById("PlayerTitle", id)
 
 	if config and config.Id then
 		return Strings:get(config.Desc)

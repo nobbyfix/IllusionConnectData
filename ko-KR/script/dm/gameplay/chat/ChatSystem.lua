@@ -95,7 +95,8 @@ function ChatSystem:updateActiveMember()
 		headFrame = player:getCurHeadFrame(),
 		leadStageId = id,
 		leadStageLevel = level,
-		chatBubble = player:getCurChatBubbleId()
+		chatBubble = player:getCurChatBubbleId(),
+		title = player:getCurTitleId()
 	}
 	activeMembers[rid] = sender
 end

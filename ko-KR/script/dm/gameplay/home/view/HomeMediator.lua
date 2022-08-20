@@ -3594,11 +3594,34 @@ function HomeMediator:checkExtraRedPoint()
 		else
 			chargeBtn:setVisible(false)
 		end
-
-		return
+	else
+		chargeBtn:setVisible(false)
 	end
 
-	chargeBtn:setVisible(false)
+	local extActBtn = self:getView():getChildByFullName("URLAdjustNode.URLLayout.extActivityBtn")
+
+	extActBtn:setVisible(false)
+
+	local activity = self._activitySystem:getActivityByComplexUI(ActivityType_UI.KActivityReZhan)
+
+	if activity and not self._activitySystem:isActivityOver(activity:getId()) then
+		extActBtn:setVisible(true)
+		mapButtonHandlerClick(nil, extActBtn, {
+			func = function (sender, eventType)
+				self:onClickComplexBtn(ActivityType_UI.KActivityReZhan)
+			end
+		})
+
+		local redPoint = extActBtn:getChildByName("redPoint")
+
+		redPoint:setVisible(activity:hasRedPoint())
+	end
+
+	extActBtn:setPositionX(chargeBtn:getPositionX())
+
+	if chargeBtn:isVisible() then
+		extActBtn:setPositionX(chargeBtn:getPositionX() - 120)
+	end
 end
 
 function HomeMediator:onReceiveFriendPvpInviteCallback(event)
