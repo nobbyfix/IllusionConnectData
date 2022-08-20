@@ -4874,6 +4874,19 @@
             "slot": "Hero_Unique_XBKLDi"
         }
     },
+    "IA_ZZBBWei_1": {
+        "Desc": "StarSE_ZZBBWei_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_ZZBBWei_SelfAwaken",
+            "before": "Hero_Unique_ZZBBWei_Awaken_Show",
+            "slot": "Hero_Unique_ZZBBWei"
+        }
+    },
     "MainCity_CrystalStorage": {
         "Desc": "Building_Value",
         "EffectType": "PRODUCTION",
@@ -8520,6 +8533,19 @@
             "slot": "Hero_Proud_FEMSi"
         }
     },
+    "StarSE_FEMSi_Awake": {
+        "Desc": "StarSE_FEMSi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_FEMSi_Awaken",
+            "before": "Hero_Unique_FEMSi_EX",
+            "slot": "Hero_Unique_FEMSi"
+        }
+    },
     "StarSE_FGao_4": {
         "Desc": "StarSE_FGao_4_Desc",
         "EffectType": "CHANGESKILL",
@@ -8778,6 +8804,45 @@
             "after": "Hero_Unique_FTLEShi_Awaken",
             "before": "Hero_Unique_FTLEShi_EX",
             "slot": "Hero_Unique_FTLEShi"
+        }
+    },
+    "StarSE_FTLYShi_4": {
+        "Desc": "StarSE_FTLYShi_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_FTLYShi_EX",
+            "before": "Hero_Unique_FTLYShi",
+            "slot": "Hero_Unique_FTLYShi"
+        }
+    },
+    "StarSE_FTLYShi_5": {
+        "Desc": "StarSE_FTLYShi_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_FTLYShi_EX",
+            "before": "Hero_PBattle_FTLYShi",
+            "slot": "Hero_PBattle_FTLYShi"
+        }
+    },
+    "StarSE_FTLYShi_6": {
+        "Desc": "StarSE_FTLYShi_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_FTLYShi_EX",
+            "before": "Hero_Proud_FTLYShi",
+            "slot": "Hero_Proud_FTLYShi"
         }
     },
     "StarSE_GCZi_4": {

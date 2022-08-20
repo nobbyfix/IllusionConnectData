@@ -239,6 +239,8 @@ function ArenaNewMediator:refreshLeftView()
 	local Panel_head = self._leftPanel:getChildByFullName("Panel_head")
 	local text_noreward = self._leftPanel:getChildByFullName("text_noreward")
 	local panelRankReward = self._leftPanel:getChildByFullName("Panel_83")
+	local textCombatTitle = self._leftPanel:getChildByFullName("text_combatTitle")
+	local textMaxRankTitle = self._leftPanel:getChildByFullName("text_maxRankTitle")
 
 	nodeRank:removeAllChildren()
 	imgRankDi:setVisible(false)
@@ -292,6 +294,30 @@ function ArenaNewMediator:refreshLeftView()
 	oldIcon:setScale(0.5)
 	textCombat:setString(myCombat)
 	textMaxRank:setString(myMaxRank > 0 and myMaxRank or Strings:get("StageArena_MainUI19"))
+
+	if self._leftPanel:getChildByName("title") then
+		self._leftPanel:removeChildByName("title")
+	end
+
+	if self._developSystem:getPlayer():getCurTitleId() ~= "" then
+		local icon = IconFactory:createTitleIcon({
+			id = self._developSystem:getPlayer():getCurTitleId()
+		})
+
+		icon:addTo(self._leftPanel):posite(190, 355)
+		icon:setName("title")
+		icon:setScale(0.51)
+		textCombat:setPositionY(403)
+		textMaxRank:setPositionY(377)
+		textCombatTitle:setPositionY(403)
+		textMaxRankTitle:setPositionY(377)
+	else
+		textCombat:setPositionY(391)
+		textMaxRank:setPositionY(361)
+		textCombatTitle:setPositionY(391)
+		textMaxRankTitle:setPositionY(361)
+	end
+
 	rewardPanel1:removeAllChildren()
 
 	local rewardConfig = self._arenaNewSystem:getDailyRewardConfigByRank(myRank)
@@ -566,6 +592,34 @@ function ArenaNewMediator:refreshRivalView()
 		combat:setString(Strings:get("ClassArena_UI04", {
 			Num = rivalInfo:getCombat()
 		}))
+
+		if panel:getChildByName("title") then
+			panel:removeChildByName("title")
+		end
+
+		local combatDi = panel:getChildByName("Image_44")
+
+		if rivalInfo:getTitle() ~= "" then
+			local icon = IconFactory:createTitleIcon({
+				id = rivalInfo:getTitle()
+			})
+
+			icon:addTo(panel):posite(116, 298)
+			icon:setName("title")
+			icon:setScale(0.53)
+			combat:setPositionY(253)
+			roleName:setPositionY(275)
+			combatDi:setPositionY(253)
+			Panel_head:setPositionY(308)
+			combat:setScale(0.9)
+			combatDi:setScale(0.9)
+			Panel_head:setScale(0.9)
+		else
+			combat:setPositionY(258)
+			roleName:setPositionY(285)
+			combatDi:setPositionY(258)
+			Panel_head:setPositionY(298)
+		end
 
 		local masterPanel = panel:getChildByFullName("Panel_role")
 		local master = rivalInfo:getMaster()

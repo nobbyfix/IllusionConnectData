@@ -914,5 +914,123 @@ all.YSTLu_Kick = {
 		return _env
 	end
 }
+all.Skill_YSTLu_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HealRateFactor = externs.HealRateFactor
+
+		assert(this.HealRateFactor ~= nil, "External variable `HealRateFactor` is not provided.")
+
+		this.RageFactor = externs.RageFactor
+
+		assert(this.RageFactor ~= nil, "External variable `RageFactor` is not provided.")
+
+		this.AtkDownFactor = externs.AtkDownFactor
+
+		assert(this.AtkDownFactor ~= nil, "External variable `AtkDownFactor` is not provided.")
+
+		this.rate = externs.rate
+
+		assert(this.rate ~= nil, "External variable `rate` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		this.main = global["[duration]"](this, {
+			0
+		}, main)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive2)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) then
+				-- Nothing
+			elseif global.MARKED(_env, "YSTLu")(_env, _env.ACTOR) then
+				if global.FriendMaster(_env) then
+					local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, global.FriendMaster(_env))
+
+					global.ApplyHPRecovery(_env, global.FriendMaster(_env), maxHp * this.HealRateFactor)
+					global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.RageFactor)
+
+					local buffeft2 = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0)
+
+					global.ApplyBuff(_env, global.FriendMaster(_env), {
+						timing = 2,
+						duration = 1,
+						display = "Heal",
+						tags = {
+							"HEAL",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft2
+					})
+				end
+
+				for _, friend in global.__iter__(global.FriendUnits(_env, global.PETS)) do
+					if global.MARKED(_env, "BEr")(_env, friend) then
+						global.ApplyRPRecovery(_env, friend, this.RageFactor)
+					end
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "YSTLu")(_env, _env.ACTOR) then
+				global.SelfEX_Curse_OneStage_AtkDown(_env, _env.ACTOR, this.AtkDownFactor, 12, this.rate)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

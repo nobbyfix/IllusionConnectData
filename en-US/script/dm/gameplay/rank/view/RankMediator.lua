@@ -196,6 +196,10 @@ function RankMediator:setTopThreeInfo()
 		local rankNum = cellPanel:getChildByFullName("rankNum")
 		local data = self._rankList[i]
 
+		if cellPanel:getChildByName("title") then
+			cellPanel:removeChildByName("title")
+		end
+
 		if data then
 			local rankNumText = data._value
 
@@ -235,15 +239,19 @@ function RankMediator:setTopThreeInfo()
 					heroAnim, jsonPath = RoleFactory:createHeroAnimation("Model_" .. data._board)
 				end
 
-				if heroAnim then
-					heroAnim:setAnchorPoint(cc.p(0.5, 0.5))
-					heroAnim:addTo(rolePanel):posite(rolePanel:getContentSize().width / 2, 2)
-					heroAnim:setScale(0.6)
-				end
-			end
+				heroAnim:setAnchorPoint(cc.p(0.5, 0.5))
+				heroAnim:addTo(rolePanel):posite(rolePanel:getContentSize().width / 2, 2)
+				heroAnim:setScale(0.6)
 
-			if type == RankType.kPetRace or type == RankType.kSubPetRace then
-				rankNumText = data:getScore()
+				if data:getTitle() ~= "" then
+					local icon = IconFactory:createTitleIcon({
+						id = data:getTitle()
+					})
+
+					icon:addTo(cellPanel):posite(name:getPositionX() + 3, name:getPositionY() + 25)
+					icon:setName("title")
+					icon:setScale(0.58)
+				end
 			end
 
 			if type == RankType.KPetWorldScore or type == RankType.kSubPetRace then

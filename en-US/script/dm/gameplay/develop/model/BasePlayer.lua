@@ -102,6 +102,12 @@ BasePlayer:has("_chatBubble", {
 BasePlayer:has("_curChatBubbleId", {
 	is = "rw"
 })
+BasePlayer:has("_titles", {
+	is = "rw"
+})
+BasePlayer:has("_curTitleId", {
+	is = "rw"
+})
 
 function BasePlayer:initialize(config)
 	super.initialize(self)
@@ -132,6 +138,7 @@ function BasePlayer:initialize(config)
 	self._showHeroes = {}
 	self._chatBubble = {}
 	self._curChatBubbleId = ""
+	self._titles = {}
 end
 
 function BasePlayer:synchronizeInfoDiff(diffData)
@@ -316,6 +323,16 @@ function BasePlayer:synchronizeInfoDiff(diffData)
 
 	if diffData.curChatBubbleId then
 		self._curChatBubbleId = diffData.curChatBubbleId
+	end
+
+	if diffData.title then
+		for k, v in pairs(diffData.title) do
+			self._titles[k] = v
+		end
+	end
+
+	if diffData.curTitleId then
+		self._curTitleId = diffData.curTitleId
 	end
 end
 

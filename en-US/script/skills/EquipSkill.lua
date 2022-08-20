@@ -1931,9 +1931,6 @@ all.EquipSkill_Weapon_15103_3 = {
 		passive1 = global["[duration]"](this, {
 			0
 		}, passive1)
-		passive1 = global["[trigger_by]"](this, {
-			"SELF:BEFORE_UNIQUE"
-		}, passive1)
 		this.passive1 = global["[trigger_by]"](this, {
 			"SELF:BEFORE_FINDTARGET"
 		}, passive1)
@@ -1987,6 +1984,36 @@ all.EquipSkill_Weapon_15103_3 = {
 					end
 				end
 
+				for _, unit in global.__iter__(global.AllUnits(_env)) do
+					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+						count = count + 1
+
+						global.print(_env, "奥古斯特在场", count)
+
+						local TAR = global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, TAR[1]))
+						global.AssignRoles(_env, TAR[1], "target")
+
+						local buff_taunt = global.Taunt(_env)
+
+						global.ApplyBuff(_env, TAR[1], {
+							duration = 2,
+							group = "Skill_FTLYShi_Passive_1",
+							timing = 4,
+							limit = 1,
+							tags = {
+								"Skill_FTLYShi_Passive_Taunt"
+							}
+						}, {
+							buff_taunt
+						})
+						global.ApplyRPDamage(_env, TAR[1], this.RageFactor)
+
+						break
+					end
+				end
+
 				if count == 0 then
 					global.AssignRoles(_env, global.EnemyMaster(_env), "target")
 
@@ -1997,8 +2024,6 @@ all.EquipSkill_Weapon_15103_3 = {
 						duration = 2,
 						tags = {
 							"NUMERIC",
-							"BUFF",
-							"TAUNT",
 							"UNDISPELLABLE",
 							"UNSTEALABLE",
 							"EquipSkill_Weapon_15103_3_Taunt"
@@ -13001,24 +13026,71 @@ all.EquipSkill_Shoes_15120_2 = {
 				buff_num = 4
 			end
 
-			local units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
+			local units = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env), "<", global.UnitPropGetter(_env, "hpRatio")), 1, 1)
 
-			global.print(_env, "要加几次buff=", buff_num, "加多少防御血量=", 0.0125 * buff_num + global.UnitPropGetter(_env, "defrate")(_env, units[1]), "|", (buff_num * 0.05 + 1) * global.UnitPropGetter(_env, "maxHp")(_env, units[1]))
+			global.print(_env, "要加几次buff=", buff_num, "加后防御血量=", 0.0125 * buff_num + global.UnitPropGetter(_env, "defrate")(_env, units[1]), "|", (buff_num * 0.05 + 1) * global.UnitPropGetter(_env, "maxHp")(_env, units[1]))
 			global.print(_env, "当前防御率=", global.UnitPropGetter(_env, "defrate")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 			global.print(_env, "当前最大生命值=", global.UnitPropGetter(_env, "maxHp")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
 
 			if buff_num >= 1 then
-				local buff1 = global.NumericEffect(_env, "+defrate", {
+				for i = 1, buff_num - 1 do
+					local buff1 = global.NumericEffect(_env, "+defrate", {
+						"+Normal",
+						"+Normal"
+					}, 0.0125)
+
+					global.ApplyBuff(_env, units[1], {
+						duration = 99,
+						group = "EquipSkill_Shoes_15120_2_1",
+						timing = 0,
+						limit = 3,
+						tags = {
+							"EquipSkill_Shoes_15120_2",
+							"UR_EQUIPMENT",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"DEFUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff1
+					})
+
+					local buff2 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * 0.05)
+
+					global.ApplyBuff(_env, units[1], {
+						duration = 99,
+						group = "EquipSkill_Shoes_15120_2_2",
+						timing = 0,
+						limit = 3,
+						tags = {
+							"EquipSkill_Shoes_15120_2",
+							"UR_EQUIPMENT",
+							"STATUS",
+							"NUMERIC",
+							"BUFF",
+							"MAXHPUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buff2
+					})
+				end
+
+				local buff3 = global.NumericEffect(_env, "+defrate", {
 					"+Normal",
 					"+Normal"
-				}, buff_num * 0.0125)
+				}, 0.0125)
 
 				global.ApplyBuff(_env, units[1], {
 					timing = 0,
 					display = "DefUp",
 					group = "EquipSkill_Shoes_15120_2_3",
 					duration = 99,
-					limit = 4,
+					limit = 1,
 					tags = {
 						"EquipSkill_Shoes_15120_2",
 						"UR_EQUIPMENT",
@@ -13030,17 +13102,17 @@ all.EquipSkill_Shoes_15120_2 = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buff1
+					buff3
 				})
 
-				local buff2 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * buff_num * 0.05)
+				local buff4 = global.MaxHpEffect(_env, global.UnitPropGetter(_env, "maxHp")(_env, units[1]) * 0.05)
 
 				global.ApplyBuff(_env, units[1], {
 					timing = 0,
 					display = "MaxHpUp",
 					group = "EquipSkill_Shoes_15120_2_4",
 					duration = 99,
-					limit = 4,
+					limit = 1,
 					tags = {
 						"EquipSkill_Shoes_15120_2",
 						"UR_EQUIPMENT",
@@ -13052,10 +13124,10 @@ all.EquipSkill_Shoes_15120_2 = {
 						"UNSTEALABLE"
 					}
 				}, {
-					buff2
+					buff4
 				})
 
-				local buff1 = global.SpecialNumericEffect(_env, "-EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, _env.unit), {
+				local buff5 = global.SpecialNumericEffect(_env, "-EquipSkill_Shoes_15120_2_realdamage" .. global.GetUnitId(_env, _env.unit), {
 					"+Normal",
 					"+Normal"
 				}, buff_num * max_hp * this.dam)
@@ -13067,7 +13139,7 @@ all.EquipSkill_Shoes_15120_2 = {
 						"EquipSkill_Decoration_15114_2_realdamage"
 					}
 				}, {
-					buff1
+					buff5
 				})
 				global.print(_env, "诏令剩余积累-同一单个目标-有效伤害量", global.SpecialPropGetter(_env, "EquipSkill_Shoes_15120_2_realdamage")(_env, _env.unit), "谁", global.GetUnitCid(_env, units[1]))
 				global.print(_env, "最终防御率=", global.UnitPropGetter(_env, "defrate")(_env, units[1]), "谁", global.GetUnitCid(_env, units[1]))
@@ -15539,7 +15611,7 @@ all.EquipSkill_Decoration_15115_3 = {
 				this.damage_rate = this.damage_rate * 2
 			end
 
-			global.print(_env, "unhurtrate之前===111", global.UnitPropGetter(_env, "unhurtrate")(_env, _env.primTrgt))
+			global.print(_env, "承誓---unhurtrate之前===", global.UnitPropGetter(_env, "unhurtrate")(_env, _env.primTrgt), "目标为", global.GetUnitCid(_env, _env.primTrgt))
 
 			local buff = global.NumericEffect(_env, "-unhurtrate", {
 				"+Normal",
@@ -15548,7 +15620,7 @@ all.EquipSkill_Decoration_15115_3 = {
 
 			global.ApplyBuff(_env, _env.primTrgt, {
 				timing = 0,
-				display = "UnHurtRate",
+				display = "UnHurtRateDown",
 				group = "EquipSkill_Decoration_15115_3_1",
 				duration = 99,
 				limit = 10,
@@ -15559,25 +15631,28 @@ all.EquipSkill_Decoration_15115_3 = {
 			}, {
 				buff
 			})
+			global.print(_env, "承誓---unhurtrate之后2222===", global.UnitPropGetter(_env, "unhurtrate")(_env, _env.primTrgt), "目标为", global.GetUnitCid(_env, _env.primTrgt))
 
-			local buff1 = global.NumericEffect(_env, "-unhurtrate", {
-				"+Normal",
-				"+Normal"
-			}, this.damage_rate / 2)
+			if global.IsAlive(_env, _env.primTrgt) then
+				local buff1 = global.NumericEffect(_env, "-unhurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.damage_rate / 2)
 
-			global.ApplyBuff(_env, _env.ACTOR, {
-				timing = 0,
-				display = "UnHurtRate",
-				group = "EquipSkill_Decoration_15115_3_2",
-				duration = 99,
-				limit = 10,
-				tags = {
-					"NUMERIC",
-					"DEBUFF"
-				}
-			}, {
-				buff1
-			})
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					display = "UnHurtRateDown",
+					group = "EquipSkill_Decoration_15115_3_2",
+					duration = 99,
+					limit = 10,
+					tags = {
+						"NUMERIC",
+						"DEBUFF"
+					}
+				}, {
+					buff1
+				})
+			end
 		end)
 
 		return _env
@@ -20080,7 +20155,7 @@ all.EquipSkill_Accesory_14019 = {
 
 			if global.SpecialPropGetter(_env, "EquipSkill_Accesory_14019")(_env, global.FriendField(_env)) == 0 then
 				if global.EnemyMaster(_env) then
-					if global.MARKED(_env, "Player_Master")(_env, global.EnemyMaster(_env)) then
+					if global.MARKED(_env, "Player_Master")(_env, global.EnemyMaster(_env)) or global.MARKED(_env, "DAGUN")(_env, global.EnemyMaster(_env)) or global.MARKED(_env, "SP_DDing")(_env, global.EnemyMaster(_env)) then
 						this.BackRateFactor_now = this.BackRateFactor1
 						local buffeft3 = global.SpecialNumericEffect(_env, "+Accesory_14019", {
 							"+Normal",

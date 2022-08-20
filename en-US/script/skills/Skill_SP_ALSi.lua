@@ -663,7 +663,6 @@ function all.SP_ALSi_Taunt(_env)
 				tags = {
 					"Skill_SP_ALSi_Key",
 					"STATUS",
-					"DEBUFF",
 					"TAUNT",
 					"UNDISPELLABLE",
 					"UNSTEALABLE"

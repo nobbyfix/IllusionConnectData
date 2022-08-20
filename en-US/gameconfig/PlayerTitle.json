@@ -1,0 +1,58 @@
+{
+    "PlayerTitle_1": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_1_Desc",
+        "Icon": "PlayerTitle_7",
+        "Name": "PlayerTitle_1_Name",
+        "Order": 1,
+        "ResourceDesc": "PlayerTitle_1_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 744
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_2": {
+        "CondiType": "RTPK",
+        "Desc": "PlayerTitle_2_Desc",
+        "Icon": "PlayerTitle_11",
+        "Name": "PlayerTitle_2_Name",
+        "Order": 2,
+        "ResourceDesc": "PlayerTitle_2_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "value": [
+                1,
+                3
+            ]
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_3": {
+        "CondiType": "StageArena",
+        "Desc": "PlayerTitle_3_Desc",
+        "Icon": "PlayerTitle_15",
+        "Name": "PlayerTitle_3_Name",
+        "Order": 3,
+        "ResourceDesc": "PlayerTitle_3_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "value": [
+                1,
+                3
+            ]
+        },
+        "Unlook": 1
+    },
+    "PlayerTitle_egg": {
+        "CondiType": "FOREVER",
+        "Desc": "PlayerTitle_egg_Desc",
+        "Icon": "PlayerTitle_1",
+        "Name": "PlayerTitle_egg_Name",
+        "Order": 4,
+        "ResourceDesc": "PlayerTitle_egg_Condition",
+        "Type": "ACHIEVEMENT",
+        "TypeNum": "",
+        "Unlook": 1
+    }
+}

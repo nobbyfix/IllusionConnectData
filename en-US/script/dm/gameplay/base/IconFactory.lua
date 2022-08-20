@@ -549,7 +549,6 @@ function IconFactory:getRoleIconPath(id, type)
 end
 
 function IconFactory:createRoleIconSprite(info)
-	dump(info, "===========================createRoleIconSprite")
 	assert(false, "invalid function")
 
 	local id = info.id
@@ -1105,6 +1104,12 @@ function IconFactory:createIcon(info, style)
 
 	if config and config.Id then
 		return IconFactory:createChatBubbleIcon(info, style)
+	end
+
+	config = ConfigReader:getRecordById("PlayerTitle", tostring(id))
+
+	if config and config.Id then
+		return IconFactory:createTitleIcon(info, style)
 	end
 
 	assert(false, "未找到对应id配置：" .. id)
@@ -3553,6 +3558,12 @@ function IconFactory:createItemPic(info, style)
 		scale = 1
 	end
 
+	local size = icon:getContentSize()
+
+	if size.width > 200 then
+		scale = 200 / size.width * scale
+	end
+
 	icon:setScale(scale)
 
 	local node = ccui.Widget:create()
@@ -3561,10 +3572,8 @@ function IconFactory:createItemPic(info, style)
 	node:setAnchorPoint(cc.p(0.5, 0.5))
 	icon:addTo(node):center(node:getContentSize())
 
-	icon = node
-
 	if info.scaleRatio then
-		icon:setScale(info.scaleRatio)
+		node:setScale(info.scaleRatio)
 	end
 
 	local debrisIcon = nil
@@ -3572,6 +3581,24 @@ function IconFactory:createItemPic(info, style)
 	if config.Type == ItemTypes.K_HERO_F or config.Type == ItemTypes.K_EQUIP_F or config.Type == ItemTypes.K_MASTER_F then
 		debrisIcon = cc.Sprite:createWithSpriteFrameName(IconFactory.debrisPath)
 	end
+
+	if config.DescConfig then
+		local descConfig = config.DescConfig
+
+		if descConfig.Desc then
+			local font = descConfig.fontFace and "asset/font/" .. descConfig.fontFace or CUSTOM_TTF_FONT_1
+			local text = ccui.Text:create(Strings:get(descConfig.Desc), font, descConfig.fontSize)
+
+			text:addTo(icon):center(icon:getContentSize()):offset(0, 24)
+			text:setTextColor(GameStyle:stringToColor(descConfig.color))
+
+			if descConfig.outline then
+				text:enableOutline(GameStyle:stringToColor(descConfig.outline), 2)
+			end
+		end
+	end
+
+	icon = node
 
 	if style and style.showWidth then
 		local showWidth = style.showWidth
@@ -5326,6 +5353,37 @@ function IconFactory:createChatBubblePic(info, style)
 	local icon = ccui.ImageView:create(path)
 
 	icon:addTo(node):center(node:getContentSize()):setScale(1.3)
+
+	return node
+end
+
+function IconFactory:createTitleIcon(info, style)
+	local id = info.id
+	local config = ConfigReader:getRecordById("PlayerTitle", id)
+
+	if not config then
+		return
+	end
+
+	local size = cc.size(110, 110)
+	local node = self:createBaseNode(style and style.isWidget)
+
+	node:setContentSize(size)
+
+	local diImg = ccui.ImageView:create(config.Icon .. ".png", 1)
+
+	diImg:addTo(node):center(node:getContentSize())
+
+	local nameText = ccui.Text:create("", CUSTOM_TTF_FONT_1, 18)
+
+	nameText:addTo(node):center(node:getContentSize()):offset(-4, -4)
+
+	local virtualRenderer = nameText:getVirtualRenderer()
+
+	virtualRenderer:setAlignment(1, 1)
+	virtualRenderer:setOverflow(cc.LabelOverflow.SHRINK)
+	virtualRenderer:setDimensions(120, 30)
+	nameText:setString(Strings:get(config.Name))
 
 	return node
 end

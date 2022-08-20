@@ -202,7 +202,8 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityMagic] = "ActivityMagicMainView",
 		[ActivityType_UI.KActivitySamurai] = "ActivitySamuraiMainView",
 		[ActivityType_UI.KActivitySpring] = "ActivitySpringMainView",
-		[ActivityType_UI.KActivityEaster] = "ActivityEasterMainView"
+		[ActivityType_UI.KActivityEaster] = "ActivityEasterMainView",
+		[ActivityType_UI.KActivityReZhan] = "ActivityBlockSupportNewView"
 	},
 	enterBlockMonsterShopView = {
 		[ActivityType_UI.kActivityBlockWsj] = "ActivityBlockMonsterShopView",
@@ -246,11 +247,13 @@ ActivityComplexUI = {
 	enterSagaSupportStageView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportStageWxhView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportStageView",
-		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportHolidayView"
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportHolidayView",
+		[ActivityType_UI.KActivityReZhan] = "ActivitySagaSupportStageWxhView"
 	},
 	enterSagaSupportScheduleView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportScheduleWxhView",
-		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportScheduleView"
+		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportScheduleView",
+		[ActivityType_UI.KActivityReZhan] = "ActivitySagaSupportScheduleWxhView"
 	},
 	enterSupportTaskView = {
 		[ActivityType_UI.kActivityWxh] = "ActivityBlockTaskView",
@@ -285,17 +288,20 @@ ActivityComplexUI = {
 		[ActivityType_UI.KActivityMagic] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySamurai] = "ActivityBlockTaskView",
 		[ActivityType_UI.KActivitySpring] = "ActivityBlockTaskView",
-		[ActivityType_UI.KActivityEaster] = "ActivityBlockTaskView"
+		[ActivityType_UI.KActivityEaster] = "ActivityBlockTaskView",
+		[ActivityType_UI.KActivityReZhan] = "ActivityBlockTaskView"
 	},
 	enterSagaSupportRankRewardView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaSupportRankRewardWxhView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaSupportRankRewardView",
-		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportRankHolidayView"
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportRankHolidayView",
+		[ActivityType_UI.KActivityReZhan] = "ActivitySagaSupportRankRewardWxhView"
 	},
 	enterSagaWinView = {
 		[ActivityType_UI.kActivityWxh] = "ActivitySagaWinWxhView",
 		[ActivityType_UI.kActivityBlockZuoHe] = "ActivitySagaWinView",
-		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportWinHolidayView"
+		[ActivityType_UI.KActivitySupportHoliday] = "ActivitySupportWinHolidayView",
+		[ActivityType_UI.KActivityReZhan] = "ActivitySagaWinWxhView"
 	}
 }
 ActivityLogin14Config = {
@@ -775,7 +781,8 @@ ActivityMainMapTitleConfig = {
 }
 ActivitySupportScheduleId = {
 	[ActivityType_UI.kActivityBlockZuoHe] = "ABS_ZuoHe",
-	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui"
+	[ActivityType_UI.kActivityWxh] = "ABS_WuXiuHui",
+	[ActivityType_UI.KActivityReZhan] = "ABS_ReZhan"
 }
 OrientActivityMainConfig = {
 	anim = {

@@ -993,6 +993,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_LabFinish_Desc"
     },
+    "Condi_LeadStage": {
+        "AchieveType1": "REACHCOUNT",
+        "AchieveType2": "",
+        "ConditionType1": "player.cultivation.heroes.*.LeadStage",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_LeadStage_Desc"
+    },
     "Condi_Login": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -1161,6 +1168,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_MasterStarUp_Desc"
     },
+    "Condi_MazeFinish": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.mazeTaskCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_MazeFinish_Desc"
+    },
     "Condi_Maze_Total": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -1185,7 +1199,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220627.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220828.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1206,7 +1220,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220627.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220828.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1223,6 +1237,13 @@
         "ConditionType1": "panslabEnter.?1",
         "ConditionType2": "",
         "EffectDesc": "Condi_NormalLabEnter_Desc"
+    },
+    "Condi_O_GEMCount": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.O_GEMCount",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_O_GEMCount_Des"
     },
     "Condi_PansBuyHeroNum": {
         "AchieveType1": "CUSTOM",
@@ -1357,6 +1378,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_QualityCollect_Desc"
     },
+    "Condi_RTPKWin": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerRTPK.Win",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RTPKWin_Desc"
+    },
     "Condi_ReZeroExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1440,6 +1468,20 @@
         "ConditionType1": "player.bag.items.IM_Spring_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_SpringExchangeAchieve_Desc"
+    },
+    "Condi_Spring_2ndExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Spring_2nd_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_SpringExchangeAchieve_Desc"
+    },
+    "Condi_StageArenaWin": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.playerStageArena.Win",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StageArenaWin_Desc"
     },
     "Condi_StageStarSum": {
         "AchieveType1": "SIZESUM",
