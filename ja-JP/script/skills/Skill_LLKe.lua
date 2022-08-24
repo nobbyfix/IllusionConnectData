@@ -194,6 +194,9 @@ all.Skill_LLKe_Unique = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.target = nil
+
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -202,12 +205,28 @@ all.Skill_LLKe_Unique = {
 			local units = global.EnemyUnits(_env, global.MID_COL)
 
 			if units[1] then
-				_env.TARGET = units[1]
+				_env.target = units[1]
 			end
 
-			global.RetainObject(_env, _env.TARGET)
+			for _, unit in global.__iter__(global.AllUnits(_env)) do
+				if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+					global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
+
+					break
+				end
+			end
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					_env.target = _env.TARGET
+				end
+			end
+
+			global.RetainObject(_env, _env.target)
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+			global.EnergyRestrain(_env, _env.ACTOR, _env.target)
 		end)
 		exec["@time"]({
 			900
@@ -216,11 +235,11 @@ all.Skill_LLKe_Unique = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
 				-1,
 				0
 			}, 100, "skill3"))
-			global.AssignRoles(_env, _env.TARGET, "target")
+			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
 			2634
@@ -228,10 +247,10 @@ all.Skill_LLKe_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.target)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.target)
 
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.target)
 			local shield = maxHp * this.ShieldRateFactor
 
 			global.ShakeScreen(_env, {
@@ -240,9 +259,9 @@ all.Skill_LLKe_Unique = {
 				enhance = 9
 			})
 
-			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.target, this.dmgFactor)
 
-			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.target, {
 				0,
 				67,
 				134,
@@ -272,7 +291,7 @@ all.Skill_LLKe_Unique = {
 				"+Normal"
 			}, this.DeBeCuredRateFactor)
 
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.target, {
 				timing = 4,
 				display = "LLKe_blood",
 				group = "Skill_LLKe_Unique",
@@ -313,7 +332,7 @@ all.Skill_LLKe_Unique = {
 			local this = _env.this
 			local global = _env.global
 
-			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.target)
 		end)
 
 		return _env
@@ -676,6 +695,9 @@ all.Skill_LLKe_Unique_EX = {
 		_env.TARGET = externs.TARGET
 
 		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.target = nil
+
 		exec["@time"]({
 			0
 		}, _env, function (_env)
@@ -684,12 +706,28 @@ all.Skill_LLKe_Unique_EX = {
 			local units = global.EnemyUnits(_env, global.MID_COL)
 
 			if units[1] then
-				_env.TARGET = units[1]
+				_env.target = units[1]
 			end
 
-			global.RetainObject(_env, _env.TARGET)
+			for _, unit in global.__iter__(global.AllUnits(_env)) do
+				if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
+					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+
+					global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
+
+					break
+				end
+			end
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					_env.target = _env.TARGET
+				end
+			end
+
+			global.RetainObject(_env, _env.target)
 			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
-			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+			global.EnergyRestrain(_env, _env.ACTOR, _env.target)
 		end)
 		exec["@time"]({
 			900
@@ -698,11 +736,11 @@ all.Skill_LLKe_Unique_EX = {
 			local global = _env.global
 
 			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
-			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.target) + {
 				-1,
 				0
 			}, 100, "skill3"))
-			global.AssignRoles(_env, _env.TARGET, "target")
+			global.AssignRoles(_env, _env.target, "target")
 		end)
 		exec["@time"]({
 			2634
@@ -710,15 +748,15 @@ all.Skill_LLKe_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
-			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.target)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.target)
 
-			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.TARGET)
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.target)
 			local shield = maxHp * this.ShieldRateFactor
 
 			global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "LLKe_For_BackCard"), 99)
 
-			local cost = global.GetCost(_env, _env.TARGET) * 0.5
+			local cost = global.GetCost(_env, _env.target) * 0.5
 			local buff_num = global.SpecialNumericEffect(_env, "+LLKe_Unique_Energy", {
 				"+Normal",
 				"+Normal"
@@ -741,9 +779,9 @@ all.Skill_LLKe_Unique_EX = {
 				enhance = 9
 			})
 
-			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.target, this.dmgFactor)
 
-			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+			global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.target, {
 				0,
 				67,
 				134,
@@ -773,7 +811,7 @@ all.Skill_LLKe_Unique_EX = {
 				"+Normal"
 			}, this.DeBeCuredRateFactor)
 
-			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.TARGET, {
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.target, {
 				timing = 4,
 				display = "LLKe_blood",
 				group = "Skill_LLKe_Unique",
@@ -816,7 +854,7 @@ all.Skill_LLKe_Unique_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.target)
 		end)
 
 		return _env
