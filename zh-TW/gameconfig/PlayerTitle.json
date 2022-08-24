@@ -44,6 +44,19 @@
         },
         "Unlook": 1
     },
+    "PlayerTitle_TWWB": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_TWWB_Desc",
+        "Icon": "PlayerTitle_8",
+        "Name": "PlayerTitle_TWWB_Name",
+        "Order": 19,
+        "ResourceDesc": "PlayerTitle_TWWB_Condition",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 480
+        },
+        "Unlook": 1
+    },
     "PlayerTitle_TW_1": {
         "CondiType": "FOREVER",
         "Desc": "PlayerTitle_TW_1_Desc",

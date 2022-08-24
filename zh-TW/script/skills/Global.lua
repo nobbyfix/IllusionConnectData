@@ -733,6 +733,12 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		attacker.critrate = 0
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15134_2")) > 0 then
+		attacker.hurtrate = attacker.hurtrate + global.EquipSkill_Weapon_15134_2_extra(_env, actor, target)
+
+		global.print(_env, "目标为", global.GetUnitCid(_env, target), "权柄明珠-穿戴者当前伤害率", attacker.hurtrate)
+	end
+
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
 		local singleweaken = 2 * global.SpecialPropGetter(_env, "singleweaken")(_env, actor)
 		local singleunhurtratedown = 2 * global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
@@ -1138,6 +1144,12 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_No_Crit")) > 0 or global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "HGEr_Passive_Uni_No_Crit")) > 0 then
 		attacker.critrate = 0
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15134_2")) > 0 then
+		attacker.hurtrate = attacker.hurtrate + global.EquipSkill_Weapon_15134_2_extra(_env, actor, target)
+
+		global.print(_env, "目标为", global.GetUnitCid(_env, target), "权柄明珠-穿戴者当前伤害率", attacker.hurtrate)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
@@ -5874,7 +5886,7 @@ function all.Judge_the_unit_behind_the_grid(_env, unit)
 
 	for _, cell in global.__iter__(list) do
 		if lattice == cell then
-			return true
+			return false
 		end
 	end
 

@@ -43732,14 +43732,14 @@
         "Desc": "",
         "DescConfig": "",
         "FunctionDesc": "Frame_BP_BBLMa_Desc",
-        "Icon": "Frame_BP_BBLMa",
+        "Icon": "IM_FMasterAll",
         "Isvisible": 1,
         "Link": "",
         "Lock": "",
         "MaxPile": 999999,
         "MultiUse": 1,
         "Name": "Frame_BP_BBLMa_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 748,
         "RedTips": "",
@@ -43754,7 +43754,7 @@
         "Sort": 770001,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -47511,7 +47511,7 @@
         "Viplevel": 1
     },
     "IM_ReZhanBox": {
-        "CN_Name": "",
+        "CN_Name": "锦盒",
         "Compose": "",
         "Desc": "IM_ReZhanBox_Desc",
         "DescConfig": "",
@@ -47842,7 +47842,7 @@
         "Viplevel": 1
     },
     "IM_ReZhanClubAttrItem_1": {
-        "CN_Name": "",
+        "CN_Name": "人参",
         "Compose": "",
         "Desc": "IM_ReZhanClubAttrItem_1_Desc",
         "DescConfig": "",
@@ -47875,7 +47875,7 @@
         "Viplevel": 1
     },
     "IM_ReZhanClubAttrItem_2": {
-        "CN_Name": "",
+        "CN_Name": "天山雪莲",
         "Compose": "",
         "Desc": "IM_ReZhanClubAttrItem_2_Desc",
         "DescConfig": "",
@@ -47908,7 +47908,7 @@
         "Viplevel": 1
     },
     "IM_ReZhanSoreItem_1": {
-        "CN_Name": "",
+        "CN_Name": "何首乌",
         "Compose": "",
         "Desc": "IM_ReZhanSoreItem_1_Desc",
         "DescConfig": "",
@@ -47941,7 +47941,7 @@
         "Viplevel": 1
     },
     "IM_ReZhanSoreItem_2": {
-        "CN_Name": "",
+        "CN_Name": "灵芝",
         "Compose": "",
         "Desc": "IM_ReZhanSoreItem_2_Desc",
         "DescConfig": "",
@@ -60402,7 +60402,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_1_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 749,
         "RedTips": 0,
@@ -60417,7 +60417,7 @@
         "Sort": 770002,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60435,7 +60435,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_2_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 750,
         "RedTips": 0,
@@ -60450,7 +60450,7 @@
         "Sort": 770003,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60468,7 +60468,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_3_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 751,
         "RedTips": 0,
@@ -60483,7 +60483,7 @@
         "Sort": 770004,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60501,7 +60501,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_4_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 752,
         "RedTips": 0,
@@ -60516,7 +60516,7 @@
         "Sort": 770005,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60534,7 +60534,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_5_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 753,
         "RedTips": 0,
@@ -60549,7 +60549,7 @@
         "Sort": 770006,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60567,7 +60567,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_6_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 754,
         "RedTips": 0,
@@ -60582,7 +60582,7 @@
         "Sort": 770007,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0
@@ -60600,7 +60600,7 @@
         "MaxPile": 999999,
         "MultiUse": 0,
         "Name": "PlayerTitle_TW_7_Name",
-        "Page": "OTHER",
+        "Page": "CONSUMABLE",
         "Quality": 5,
         "Rank": 755,
         "RedTips": 0,
@@ -60615,7 +60615,7 @@
         "Sort": 770008,
         "SoulExp": -1,
         "TargetId": "",
-        "Type": "ACTIVITY_ITEM",
+        "Type": "BOX_RANDOM",
         "UseAtOnce": 0,
         "UseLevel": 1,
         "Viplevel": 0

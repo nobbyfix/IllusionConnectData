@@ -1175,6 +1175,29 @@ all.Skill_SP_KTSJKe_Passive_EX = {
 			this.RpFactor = 500
 		end
 
+		this.summonFactorHp = externs.summonFactorHp
+
+		if this.summonFactorHp == nil then
+			this.summonFactorHp = 1
+		end
+
+		this.summonFactorAtk = externs.summonFactorAtk
+
+		if this.summonFactorAtk == nil then
+			this.summonFactorAtk = 1
+		end
+
+		this.summonFactorDef = externs.summonFactorDef
+
+		if this.summonFactorDef == nil then
+			this.summonFactorDef = 1
+		end
+
+		this.summonFactor = {
+			this.summonFactorHp,
+			this.summonFactorAtk,
+			this.summonFactorDef
+		}
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
