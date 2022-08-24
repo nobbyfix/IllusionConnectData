@@ -5737,21 +5737,8 @@ all.EquipSkill_Weapon_15134_2 = {
 			0
 		}, passive)
 		this.passive = global["[trigger_by]"](this, {
-			"SELF:HURTED"
+			"SELF:ENTER"
 		}, passive)
-		local passive1 = __action(this, {
-			name = "passive1",
-			entry = prototype.passive1
-		})
-		passive1 = global["[duration]"](this, {
-			34
-		}, passive1)
-		passive1 = global["[trigger_by]"](this, {
-			"SELF:BEFORE_ACTION"
-		}, passive1)
-		this.passive1 = global["[trigger_by]"](this, {
-			"SELF:BEFORE_UNIQUE"
-		}, passive1)
 
 		return this
 	end,
@@ -5767,7 +5754,7 @@ all.EquipSkill_Weapon_15134_2 = {
 		}, _env, function (_env)
 			local this = _env.this
 			local global = _env.global
-			local buff1 = global.SpecialNumericEffect(_env, "+hurtrate", {
+			local buff1 = global.NumericEffect(_env, "+hurtrate", {
 				"+Normal",
 				"+Normal"
 			}, 0.1)
@@ -5775,7 +5762,6 @@ all.EquipSkill_Weapon_15134_2 = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
-				display = "HurtRateUp",
 				tags = {
 					"NUMERIC",
 					"BUFF",
@@ -5787,99 +5773,74 @@ all.EquipSkill_Weapon_15134_2 = {
 			}, {
 				buff1
 			}, 1)
-		end)
 
-		return _env
-	end,
-	passive1 = function (_env, externs)
-		local this = _env.this
-		local global = _env.global
-		local exec = _env["$executor"]
-		_env.ACTOR = externs.ACTOR
-
-		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
-
-		_env.primTrgt = externs.primTrgt
-
-		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
-		exec["@time"]({
-			0
-		}, _env, function (_env)
-			local this = _env.this
-			local global = _env.global
-
-			global.dump(_env, global.GetUnitCid(_env, _env.ACTOR), "ACTOR")
-			global.dump(_env, global.GetUnitCid(_env, _env.primTrgt), "primTrgt")
-			global.print(_env, "触发了行动前触发器")
-
-			local actor_atk = global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR)
-			local actor_hp = global.UnitPropGetter(_env, "hp")(_env, _env.ACTOR)
-			local target_atk = global.UnitPropGetter(_env, "atk")(_env, _env.primTrgt)
-			local target_hp = global.UnitPropGetter(_env, "hp")(_env, _env.primTrgt)
-			local atk_rate = (target_atk - actor_atk) / actor_atk
-
-			global.dump(_env, {
-				target_atk = target_atk,
-				actor_atk = actor_atk,
-				atk_rate = atk_rate
-			})
-
-			if atk_rate < 0 then
-				atk_rate = 0
-			end
-
-			local hp_rate = (target_hp - actor_hp) / actor_hp
-
-			global.dump(_env, {
-				target_hp = target_hp,
-				actor_hp = actor_hp,
-				hp_rate = hp_rate
-			})
-
-			if hp_rate < 0 then
-				hp_rate = 0
-			end
-
-			local ah_rate = atk_rate + hp_rate
-
-			if ah_rate > 0.1 then
-				ah_rate = 0.1
-			end
-
-			if global.Judge_the_unit_behind_the_grid(_env, _env.primTrgt) == false then
-				global.print(_env, "目标身后没人")
-
-				ah_rate = ah_rate + 0.1
-			end
-
-			global.print(_env, "最终加成 atk_rate", atk_rate, "+ hp_rate（最大10%）", ah_rate, "+ 目标身后没人0.1 =", ah_rate)
-
-			local buff = global.SpecialNumericEffect(_env, "+hurtrate", {
+			local buffeft1 = global.SpecialNumericEffect(_env, "+EquipSkill_Weapon_15134_2_dam", {
 				"+Normal",
 				"+Normal"
-			}, ah_rate)
+			}, this.dam)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
-				timing = 1,
-				duration = 1,
-				display = "HurtRateUp",
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
 				tags = {
-					"NUMERIC",
-					"BUFF",
-					"UNIQUE_HURTRATEUP",
-					"EquipSkill_Weapon_15134_2",
-					"UNDISPELLABLE",
-					"UNSTEALABLE",
-					"UR_EQUIPMENT"
+					"EquipSkill_Weapon_15134_2_dam"
 				}
 			}, {
-				buff
-			}, 1)
+				buffeft1
+			})
 		end)
 
 		return _env
 	end
 }
+
+function all.EquipSkill_Weapon_15134_2_extra(_env, actor, target)
+	local this = _env.this
+	local global = _env.global
+	local dam = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15134_2_dam")(_env, actor)
+	local actor_atk = global.UnitPropGetter(_env, "atk")(_env, actor)
+	local actor_hp = global.UnitPropGetter(_env, "hp")(_env, actor)
+	local target_atk = global.UnitPropGetter(_env, "atk")(_env, target)
+	local target_hp = global.UnitPropGetter(_env, "hp")(_env, target)
+	local atk_rate = (target_atk - actor_atk) / actor_atk
+
+	global.dump(_env, {
+		target_atk = target_atk,
+		actor_atk = actor_atk,
+		atk_rate = atk_rate
+	})
+
+	if atk_rate < 0 then
+		atk_rate = 0
+	end
+
+	local hp_rate = (target_hp - actor_hp) / actor_hp
+
+	global.dump(_env, {
+		target_hp = target_hp,
+		actor_hp = actor_hp,
+		hp_rate = hp_rate
+	})
+
+	if hp_rate < 0 then
+		hp_rate = 0
+	end
+
+	local ah_rate = atk_rate + hp_rate
+
+	if ah_rate > 0.1 then
+		ah_rate = 0.1
+	end
+
+	if global.Judge_the_unit_behind_the_grid(_env, target) == false then
+		ah_rate = ah_rate + dam
+	end
+
+	global.print(_env, "目标为", global.GetUnitCid(_env, target), "权柄明珠-最终额外加成：atk_rate", atk_rate, "+ hp_rate", hp_rate, "+ 目标身后检测 =", ah_rate)
+
+	return ah_rate
+end
+
 all.EquipSkill_Tops_15114_2 = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
