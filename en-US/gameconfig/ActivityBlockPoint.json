@@ -20992,7 +20992,7 @@
         "CombatNeed": 169168,
         "CombatValue": 55600,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S01",
@@ -21001,20 +21001,36 @@
         "FirstKillReward": "BakingE01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S01_Name",
         "NextPoint": [
@@ -21029,7 +21045,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S01_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21041,10 +21057,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21098,7 +21114,7 @@
         "CombatNeed": 169168,
         "CombatValue": 71800,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S02",
@@ -21107,20 +21123,36 @@
         "FirstKillReward": "BakingE01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S02_Name",
         "NextPoint": [
@@ -21137,7 +21169,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S02_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21149,10 +21181,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21206,7 +21238,7 @@
         "CombatNeed": 169168,
         "CombatValue": 98700,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S03",
@@ -21215,20 +21247,36 @@
         "FirstKillReward": "BakingE01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S03_Name",
         "NextPoint": [
@@ -21245,7 +21293,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S03_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21260,10 +21308,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21317,7 +21365,7 @@
         "CombatNeed": 169168,
         "CombatValue": 114900,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S04",
@@ -21326,20 +21374,36 @@
         "FirstKillReward": "BakingE01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S04_Name",
         "NextPoint": [
@@ -21356,7 +21420,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S04_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21371,10 +21435,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21428,7 +21492,7 @@
         "CombatNeed": 169168,
         "CombatValue": 141800,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S05",
@@ -21437,20 +21501,36 @@
         "FirstKillReward": "BakingE01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S05_Name",
         "NextPoint": [
@@ -21467,7 +21547,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S05_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21479,10 +21559,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21536,7 +21616,7 @@
         "CombatNeed": 169168,
         "CombatValue": 163400,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S06",
@@ -21545,20 +21625,36 @@
         "FirstKillReward": "BakingE01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_3",
+                "4": "Baking_Buff_9",
+                "5": "Baking_Buff_15",
+                "6": "Baking_Buff_21"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S06_Name",
         "NextPoint": [
@@ -21575,7 +21671,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S06_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21587,10 +21683,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21644,7 +21740,7 @@
         "CombatNeed": 169168,
         "CombatValue": 199000,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S07",
@@ -21653,20 +21749,36 @@
         "FirstKillReward": "BakingE01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S07_Name",
         "NextPoint": [
@@ -21683,7 +21795,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S07_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21698,10 +21810,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21755,7 +21867,7 @@
         "CombatNeed": 169168,
         "CombatValue": 226000,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S08",
@@ -21764,20 +21876,36 @@
         "FirstKillReward": "BakingE01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S08_Name",
         "NextPoint": [
@@ -21794,7 +21922,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S08_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21809,10 +21937,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21866,7 +21994,7 @@
         "CombatNeed": 169168,
         "CombatValue": 247500,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S09",
@@ -21875,20 +22003,36 @@
         "FirstKillReward": "BakingE01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S09_Name",
         "NextPoint": [
@@ -21905,7 +22049,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S09_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -21920,10 +22064,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -21977,7 +22121,7 @@
         "CombatNeed": 169168,
         "CombatValue": 298200,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S10",
@@ -21986,20 +22130,36 @@
         "FirstKillReward": "BakingE01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S10_Name",
         "NextPoint": [
@@ -22016,7 +22176,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S10_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -22028,10 +22188,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -22085,7 +22245,7 @@
         "CombatNeed": 169168,
         "CombatValue": 464400,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S11",
@@ -22094,20 +22254,36 @@
         "FirstKillReward": "BakingE01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S11_Name",
         "NextPoint": [
@@ -22124,7 +22300,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S11_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -22136,10 +22312,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -22193,7 +22369,7 @@
         "CombatNeed": 169168,
         "CombatValue": 756000,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingE01S12",
@@ -22202,20 +22378,36 @@
         "FirstKillReward": "BakingE01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_4",
+                "4": "Baking_Buff_12",
+                "5": "Baking_Buff_20",
+                "6": "Baking_Buff_28"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingE01",
+        "Map": "BakingE01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingE01S12_Name",
         "NextPoint": [],
@@ -22230,7 +22422,7 @@
         "PointPicture": "",
         "PointReward": "BakingE01S12_PointReward",
         "PointTime": {
-            "start": "2021-02-18 05:00:00"
+            "start": "2022-09-22 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -22242,10 +22434,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StaminaCost": {
-            "IR_BakingStamina": 12
+            "IR_BakingStamina_Re": 12
         },
         "StarCondition": [
             {
@@ -22299,7 +22491,7 @@
         "CombatNeed": 169168,
         "CombatValue": 4100,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S01",
@@ -22308,20 +22500,36 @@
         "FirstKillReward": "BakingM01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_8",
+                "6": "Baking_Buff_11"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S01_Name",
         "NextPoint": [
@@ -22348,10 +22556,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22405,7 +22613,7 @@
         "CombatNeed": 169168,
         "CombatValue": 11600,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S02",
@@ -22414,20 +22622,36 @@
         "FirstKillReward": "BakingM01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_8",
+                "6": "Baking_Buff_11"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S02_Name",
         "NextPoint": [
@@ -22454,10 +22678,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22511,7 +22735,7 @@
         "CombatNeed": 169168,
         "CombatValue": 20200,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S03",
@@ -22520,20 +22744,36 @@
         "FirstKillReward": "BakingM01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_8",
+                "6": "Baking_Buff_11"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S03_Name",
         "NextPoint": [
@@ -22560,10 +22800,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22617,7 +22857,7 @@
         "CombatNeed": 169168,
         "CombatValue": 27600,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S04",
@@ -22626,20 +22866,36 @@
         "FirstKillReward": "BakingM01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_9",
+                "6": "Baking_Buff_12"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S04_Name",
         "NextPoint": [
@@ -22669,10 +22925,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22726,7 +22982,7 @@
         "CombatNeed": 169168,
         "CombatValue": 36200,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S05",
@@ -22735,20 +22991,36 @@
         "FirstKillReward": "BakingM01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_9",
+                "6": "Baking_Buff_12"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S05_Name",
         "NextPoint": [
@@ -22780,10 +23052,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22837,7 +23109,7 @@
         "CombatNeed": 169168,
         "CombatValue": 44300,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S06",
@@ -22846,20 +23118,36 @@
         "FirstKillReward": "BakingM01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_5",
+                "5": "Baking_Buff_9",
+                "6": "Baking_Buff_12"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S06_Name",
         "NextPoint": [
@@ -22889,10 +23177,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -22946,7 +23234,7 @@
         "CombatNeed": 169168,
         "CombatValue": 53800,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S07",
@@ -22955,20 +23243,36 @@
         "FirstKillReward": "BakingM01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S07_Name",
         "NextPoint": [
@@ -22998,10 +23302,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -23055,7 +23359,7 @@
         "CombatNeed": 169168,
         "CombatValue": 62300,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S08",
@@ -23064,20 +23368,36 @@
         "FirstKillReward": "BakingM01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S08_Name",
         "NextPoint": [
@@ -23107,10 +23427,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -23164,7 +23484,7 @@
         "CombatNeed": 169168,
         "CombatValue": 70400,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S09",
@@ -23173,20 +23493,36 @@
         "FirstKillReward": "BakingM01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S09_Name",
         "NextPoint": [
@@ -23218,10 +23554,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -23275,7 +23611,7 @@
         "CombatNeed": 169168,
         "CombatValue": 81400,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S10",
@@ -23284,20 +23620,36 @@
         "FirstKillReward": "BakingM01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S10_Name",
         "NextPoint": [
@@ -23328,10 +23680,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -23385,7 +23737,7 @@
         "CombatNeed": 169168,
         "CombatValue": 88000,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S11",
@@ -23394,20 +23746,36 @@
         "FirstKillReward": "BakingM01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S11_Name",
         "NextPoint": [
@@ -23439,10 +23807,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {
@@ -23496,7 +23864,7 @@
         "CombatNeed": 169168,
         "CombatValue": 195300,
         "Combat_Adjust_Rate": 0.0,
-        "ConfigLevelLimitID": "LevelLimit_Baking",
+        "ConfigLevelLimitID": "LevelLimit_Baking_2nd",
         "CrystalReward": 0,
         "Element": "",
         "EnemyCard": "CardBakingM01S12",
@@ -23505,20 +23873,36 @@
         "FirstKillReward": "BakingM01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "QBTe": "Hero_ABlock_QBTe_Extra"
+            "SP_ALPo": "Hero_ABlock_SP_ALPo_Extra",
+            "YBYa": "Hero_ABlock_YBYa_Extra"
         },
         "HeroAttrExtraLua": "",
-        "HeroAttrSatrExtra": "",
+        "HeroAttrSatrExtra": {
+            "YBYa": {
+                "3": "Baking_YBYa_Buff_Star3",
+                "4": "Baking_YBYa_Buff_Star4",
+                "5": "Baking_YBYa_Buff_Star5",
+                "6": "Baking_YBYa_Buff_Star6",
+                "Awaken": "Baking_YBYa_Buff_Star6"
+            }
+        },
         "HeroExpReward": "",
         "HeroItemExtra": "",
-        "HeroItemSatrExtra": "",
+        "HeroItemSatrExtra": {
+            "SP_ALPo": {
+                "3": "Baking_Buff_2",
+                "4": "Baking_Buff_6",
+                "5": "Baking_Buff_10",
+                "6": "Baking_Buff_14"
+            }
+        },
         "HeroSkillSatrExtra": "",
         "HiddenStory": "",
         "IsSweep": 1,
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "",
-        "Map": "BakingM01",
+        "Map": "BakingM01_2nd",
         "Master": "",
         "Name": "BlockPoint_BakingM01S12_Name",
         "NextPoint": [],
@@ -23548,10 +23932,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StaminaCost": {
-            "IR_BakingStamina": 6
+            "IR_BakingStamina_Re": 6
         },
         "StarCondition": [
             {

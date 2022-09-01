@@ -1057,6 +1057,86 @@
             0.05
         ]
     },
+    "Baking_YBYa_Buff_Star3": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.15,
+            0.15
+        ]
+    },
+    "Baking_YBYa_Buff_Star4": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.3,
+            0.3
+        ]
+    },
+    "Baking_YBYa_Buff_Star5": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.45,
+            0.45
+        ]
+    },
+    "Baking_YBYa_Buff_Star6": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.6,
+            0.6
+        ]
+    },
     "Co_Buff_Star3": {
         "AttrType": [
             "HURTRATE",
@@ -17140,6 +17220,26 @@
             0.8
         ]
     },
+    "Hero_ABlock_SP_ALPo_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
     "Hero_ABlock_SP_ALSi_Extra": {
         "AttrType": [
             "HURTRATE",
@@ -17513,6 +17613,26 @@
         ]
     },
     "Hero_ABlock_XSLuo_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.8,
+            0.8
+        ]
+    },
+    "Hero_ABlock_YBYa_Extra": {
         "AttrType": [
             "HURTRATE",
             "UNHURTRATE"
@@ -151438,6 +151558,98 @@
             0.04
         ]
     },
+    "Star_IA_YBYa_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_IA_YBYa_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.08,
+            0.08,
+            0.08,
+            0.1
+        ]
+    },
+    "Star_IA_YBYa_2": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_IA_YBYa_2_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.05,
+            0.05,
+            0.05
+        ]
+    },
+    "Star_IA_YSTLu_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE",
+            "EFFECTSTRG"
+        ],
+        "EffectDesc": "Star_IA_YSTLu_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.08,
+            0.08,
+            0.08,
+            0.1
+        ]
+    },
+    "Star_IA_YSTLu_2": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_IA_YSTLu_2_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.05,
+            0.05,
+            0.05
+        ]
+    },
     "Star_IA_ZZBBWei_1": {
         "AttrType": [
             "ATK_RATE",
@@ -155978,6 +156190,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_TJHDe_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_TJHDe_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_TLMi_3_1": {

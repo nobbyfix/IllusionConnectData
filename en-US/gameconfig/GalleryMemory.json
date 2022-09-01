@@ -410,16 +410,13 @@
     "Memory_Act_Baking_1": {
         "Condition": [
             {
-                "conditionType": "Condi_CommonStage",
+                "conditionType": "Condi_Activity_Story_Block",
                 "factor1": [
                     1
                 ],
-                "factor2": [],
-                "factorSt1": [],
-                "factorSt2": [],
                 "params": [
-                    "M01",
-                    "M01S01"
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S01"
                 ]
             }
         ],
@@ -427,7 +424,7 @@
         "Englishname": "",
         "Listpicture": "img_story_baking_1",
         "Name": "BakingS01S01_Name",
-        "Num": 611,
+        "Num": 990,
         "Picture": "",
         "Screen": "",
         "StoryLink": "eventstory_baking_01a",
@@ -437,16 +434,13 @@
     "Memory_Act_Baking_2": {
         "Condition": [
             {
-                "conditionType": "Condi_CommonStage",
+                "conditionType": "Condi_Activity_Story_Block",
                 "factor1": [
                     1
                 ],
-                "factor2": [],
-                "factorSt1": [],
-                "factorSt2": [],
                 "params": [
-                    "M01",
-                    "M01S01"
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S02"
                 ]
             }
         ],
@@ -454,7 +448,7 @@
         "Englishname": "",
         "Listpicture": "img_story_baking_1",
         "Name": "BakingS01S02_Name",
-        "Num": 612,
+        "Num": 991,
         "Picture": "",
         "Screen": "",
         "StoryLink": "eventstory_baking_02a",
@@ -464,16 +458,13 @@
     "Memory_Act_Baking_3": {
         "Condition": [
             {
-                "conditionType": "Condi_CommonStage",
+                "conditionType": "Condi_Activity_Story_Block",
                 "factor1": [
                     1
                 ],
-                "factor2": [],
-                "factorSt1": [],
-                "factorSt2": [],
                 "params": [
-                    "M01",
-                    "M01S01"
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S03"
                 ]
             }
         ],
@@ -481,7 +472,7 @@
         "Englishname": "",
         "Listpicture": "img_story_baking_1",
         "Name": "BakingS01S03_Name",
-        "Num": 613,
+        "Num": 992,
         "Picture": "",
         "Screen": "",
         "StoryLink": "eventstory_baking_03a",
@@ -491,16 +482,13 @@
     "Memory_Act_Baking_4": {
         "Condition": [
             {
-                "conditionType": "Condi_CommonStage",
+                "conditionType": "Condi_Activity_Story_Block",
                 "factor1": [
                     1
                 ],
-                "factor2": [],
-                "factorSt1": [],
-                "factorSt2": [],
                 "params": [
-                    "M01",
-                    "M01S01"
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S04"
                 ]
             }
         ],
@@ -508,7 +496,7 @@
         "Englishname": "",
         "Listpicture": "img_story_baking_1",
         "Name": "BakingS01S04_Name",
-        "Num": 614,
+        "Num": 993,
         "Picture": "",
         "Screen": "",
         "StoryLink": "eventstory_baking_04a",
@@ -3506,12 +3494,12 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "img_story_Spring_1",
+        "Listpicture": "s_album_active_spring_3",
         "Name": "SpringS01S00_Name",
         "Num": 990,
         "Picture": "",
         "Screen": "",
-        "StoryLink": "eventstory_Thend_00a",
+        "StoryLink": "eventstory_Thend_08a",
         "Time": "",
         "Type": "STORY"
     },
@@ -3530,7 +3518,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_1",
+        "Listpicture": "s_album_active_spring_1",
         "Name": "SpringS01S01_Name",
         "Num": 1000,
         "Picture": "",
@@ -3554,7 +3542,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_1",
+        "Listpicture": "s_album_active_spring_1",
         "Name": "SpringS01S02_Name",
         "Num": 1001,
         "Picture": "",
@@ -3578,7 +3566,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_1",
+        "Listpicture": "s_album_active_spring_1",
         "Name": "SpringS01S03_Name",
         "Num": 1002,
         "Picture": "",
@@ -3602,7 +3590,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_1",
+        "Listpicture": "s_album_active_spring_1",
         "Name": "SpringS01S04_Name",
         "Num": 1003,
         "Picture": "",
@@ -3626,7 +3614,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_1",
+        "Listpicture": "s_album_active_spring_1",
         "Name": "SpringS01S05_Name",
         "Num": 1004,
         "Picture": "",
@@ -3650,7 +3638,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_3",
+        "Listpicture": "s_album_active_spring_3",
         "Name": "SpringS02S01_Name",
         "Num": 1005,
         "Picture": "",
@@ -3674,7 +3662,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_3",
+        "Listpicture": "s_album_active_spring_3",
         "Name": "SpringS02S02_Name",
         "Num": 1006,
         "Picture": "",
@@ -3698,7 +3686,7 @@
         ],
         "Desc": "",
         "Englishname": "",
-        "Listpicture": "s_album_active_Spring_3",
+        "Listpicture": "s_album_active_spring_3",
         "Name": "SpringS02S03_Name",
         "Num": 1007,
         "Picture": "",

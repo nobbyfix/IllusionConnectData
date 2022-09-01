@@ -351,6 +351,31 @@
         "Tips": "Unlock_HomeBackground_Animal",
         "Unlook": 1
     },
+    "HomeBackground_Baking": {
+        "BGM": "Mus_Story_Baking_1",
+        "BGPContraction": "anualshop_scene_main_Baking_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Baking_Desc",
+            "img": "Activity_ExchangeBG_Baking",
+            "name": "HomeBackground_Baking_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Baking_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Baking_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Baking",
+        "Unlook": 1
+    },
     "HomeBackground_Collapsed": {
         "BGM": "Mus_Story_Collapsed",
         "BGPContraction": "anualshop_scene_main_collapsed_preview",

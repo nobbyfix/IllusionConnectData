@@ -2410,6 +2410,18 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		global.print(_env, "SP_ALSi_shield===", shield)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 and global.GetCost(_env, actor) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env)) < 2 then
+		for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, target))) do
+			local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
+
+			if #enemyfront <= 0 then
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+
+				break
+			end
+		end
+	end
+
 	return result
 end
 
@@ -3245,6 +3257,8 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local global = _env.global
 	local is_summons = global.SUMMONS(_env, target)
 
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local flag_ajyhou = 0
 		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
@@ -3507,6 +3521,20 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			buff_count
 		})
 	end
+
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damages[n].val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
@@ -4235,6 +4263,8 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	local this = _env.this
 	local global = _env.global
 
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local flag_ajyhou = 0
 		local hp_ajyh = global.UnitPropGetter(_env, "hp")(_env, target)
@@ -4497,6 +4527,20 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 			buff_count
 		})
 	end
+
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damages[n].val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
@@ -5114,6 +5158,18 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 
 		global.print(_env, "SP_ALSi_shield===", shield)
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 and global.GetCost(_env, actor) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env)) < 2 then
+		for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, target))) do
+			local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
+
+			if #enemyfront <= 0 then
+				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+
+				break
+			end
+		end
 	end
 
 	return result
