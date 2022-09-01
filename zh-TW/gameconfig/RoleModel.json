@@ -12429,8 +12429,8 @@
         "Bust1": "Bust1_FTLEShi",
         "Bust10": "Bust10_FTLEShi",
         "Bust11": "Bust11_FTLEShi",
-        "Bust12": "Bust12_FTLEShi",
-        "Bust13": "Bust13_FTLEShi",
+        "Bust12": "Bust13_FTLEShi",
+        "Bust13": "Bust12_FTLEShi",
         "Bust14": "Bust14_FTLEShi",
         "Bust15": "Bust15_FTLEShi",
         "Bust16": "Bust5_FTLEShi",
@@ -12446,7 +12446,10 @@
             -14,
             -510
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            200,
+            -480
+        ],
         "BustTemp1": [
             137,
             -457
@@ -12790,6 +12793,99 @@
         "Zoom": 1.0,
         "bustAwakeZoom": 0.77,
         "bustZoom": 0.77
+    },
+    "Model_FTLYShi": {
+        "Animation": "agste",
+        "BattlePosition": "HeroBase_BattlePosition_FTLYShi",
+        "BattleShow": "",
+        "Bust1": "Bust1_FTLYShi",
+        "Bust10": "Bust10_FTLYShi",
+        "Bust11": "Bust11_FTLYShi",
+        "Bust12": "Bust12_FTLYShi",
+        "Bust13": "Bust13_FTLYShi",
+        "Bust14": "Bust14_FTLYShi",
+        "Bust15": "Bust15_FTLYShi",
+        "Bust16": "",
+        "Bust2": "Bust2_FTLYShi",
+        "Bust3": "Bust3_FTLYShi",
+        "Bust4": "Bust4_FTLYShi",
+        "Bust5": "Bust5_FTLYShi",
+        "Bust6": "Bust6_FTLYShi",
+        "Bust7": "Bust7_FTLYShi",
+        "Bust8": "Bust8_FTLYShi",
+        "Bust9": "Bust9_FTLYShi",
+        "BustAwake": [
+            -156,
+            -496
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -154,
+            -845
+        ],
+        "BustTemp2": [
+            -142,
+            -857
+        ],
+        "BustTemp3": [
+            -143,
+            -857
+        ],
+        "BustTemp4": [
+            -156,
+            -877
+        ],
+        "BustTemp5": [
+            -156,
+            -877
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_agste",
+        "DeathVoice": "",
+        "Filename": "portrait_agste",
+        "HeadMain": "HeadMain_FTLYShi",
+        "Height": 200,
+        "Hero": "FTLYShi",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_FTLYShi",
+        "MasterHeadWide": "",
+        "Model": "agste",
+        "Name": "HeroBase_Name_FTLYShi",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_FTLYShi",
+        "SVPText": "SVPText_FTLYShi",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "FTLYShi",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_FTLYShi",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_FTLYShi"
+        ],
+        "TruthBubble": [
+            "Truth_FTLYShi_1",
+            "Truth_FTLYShi_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.5,
+        "bustZoom": 0.7
     },
     "Model_FTLYShi_single": {
         "Animation": "",
@@ -41015,8 +41111,8 @@
         "Bust1": "Bust1_TJHDe",
         "Bust10": "Bust10_TJHDe",
         "Bust11": "Bust11_TJHDe",
-        "Bust12": "Bust12_TJHDe",
-        "Bust13": "Bust13_TJHDe",
+        "Bust12": "Bust13_TJHDe",
+        "Bust13": "Bust12_TJHDe",
         "Bust14": "Bust14_TJHDe",
         "Bust15": "Bust15_TJHDe",
         "Bust16": "Bust5_TJHDe",
@@ -41032,7 +41128,10 @@
             -23,
             -324
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            250,
+            -300
+        ],
         "BustTemp1": [
             175,
             -294

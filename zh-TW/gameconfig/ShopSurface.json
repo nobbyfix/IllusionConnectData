@@ -303,6 +303,25 @@
             "type": "limit"
         }
     },
+    "ShopSurface_Surface_FTLEShi_2_0902": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_FTLEShi_2",
+        "TimeType": {
+            "end": "2022-09-08 05:00:00",
+            "start": "2022-09-02 05:00:00",
+            "type": "limit"
+        }
+    },
     "ShopSurface_Surface_FTLEShi_3": {
         "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",
@@ -854,6 +873,25 @@
             "type": "limit"
         }
     },
+    "ShopSurface_Surface_TJHDe_2_0902": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_TJHDe_2",
+        "TimeType": {
+            "end": "2022-09-16 05:00:00",
+            "start": "2022-09-11 05:00:00",
+            "type": "limit"
+        }
+    },
     "ShopSurface_Surface_TLSi_2_0825": {
         "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",
@@ -965,6 +1003,25 @@
         "TimeType": {
             "end": "2022-02-22 05:00:00",
             "start": "2022-02-15 05:00:00",
+            "type": "limit"
+        }
+    },
+    "ShopSurface_Surface_XHMao_2_0902": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 118,
+                "code": "IR_Surface"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2001,
+        "Surface": "Surface_XHMao_2",
+        "TimeType": {
+            "end": "2022-09-08 05:00:00",
+            "start": "2022-09-02 05:00:00",
             "type": "limit"
         }
     },

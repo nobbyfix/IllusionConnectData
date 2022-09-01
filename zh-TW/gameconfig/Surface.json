@@ -3782,11 +3782,11 @@
             }
         ],
         "Desc": "Surface_FTLEShi_2_Desc",
-        "GainDesc": "Surface_Activity_GainDesc",
+        "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_Activity_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_FTLEShi_2_0902",
         "Hero": "FTLEShi",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_FTLEShi_2_LongDesc",
         "Model": "Model_FTLEShi_WZi",
         "Name": "Surface_FTLEShi_2_Name",
@@ -3794,9 +3794,9 @@
         "Quality": 5,
         "RepeatReward": 28,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 4,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_FTLEShi_3": {
@@ -3913,6 +3913,64 @@
         "ShopID": "Shop_Surface",
         "Sort": 3,
         "Type": 2,
+        "Unlook": 1
+    },
+    "Surface_FTLYShi_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -255,
+                    1953
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -130,
+                    1659
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_FTLYShi_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "FTLYShi",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_FTLYShi",
+        "Name": "Surface_FTLYShi_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
         "Unlook": 1
     },
     "Surface_GCZi_1": {
@@ -11176,9 +11234,9 @@
         "Desc": "Surface_TJHDe_trick_Decs",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_GainShort",
-        "GoodsId": "ShopSurface_Surface_TJHDe_2",
+        "GoodsId": "ShopSurface_Surface_TJHDe_2_0902",
         "Hero": "TJHDe",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_TJHDe_trick_LongDesc",
         "Model": "Model_TJHDe_trick",
         "Name": "Surface_TJHDe_trick_Name",
@@ -12519,11 +12577,11 @@
             }
         ],
         "Desc": "Surface_XHMao_animal_Desc",
-        "GainDesc": "",
+        "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_XHMao_2_GainShort",
-        "GoodsId": "",
+        "GoodsId": "ShopSurface_Surface_XHMao_2_0902",
         "Hero": "XHMao",
-        "Link": "",
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
         "LongDesc": "Surface_XHMao_animal_LongDecs",
         "Model": "Model_XHMao_animal",
         "Name": "Surface_XHMao_animal_Name",
@@ -12531,9 +12589,9 @@
         "Quality": 5,
         "RepeatReward": 118,
         "SKIN": "",
-        "ShopID": "",
+        "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": "",
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_XHMao_Awake": {

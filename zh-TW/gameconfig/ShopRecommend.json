@@ -498,5 +498,89 @@
             "type": "limit"
         },
         "Vanish": 1
+    },
+    "ShopRecommend_surface_20220902": {
+        "BackGroundImg": "sd_tjpf_bg_dr",
+        "ClientCondition": "",
+        "Config": {
+            "Scale": [
+                0.55
+            ],
+            "Surface": [
+                "ShopSurface_Surface_XHMao_2_0902"
+            ]
+        },
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "PackageId": [
+            "SurfaceShop"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 4,
+        "TabName": "ShopRecommend_surface_Name",
+        "TimeType": {
+            "amount": -1,
+            "end": "2022-09-08 05:00:00",
+            "start": "2022-09-02 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
+    },
+    "ShopRecommend_surface_20220903": {
+        "BackGroundImg": "sd_tjpf_bg_dr",
+        "ClientCondition": "",
+        "Config": {
+            "Scale": [
+                0.55
+            ],
+            "Surface": [
+                "ShopSurface_Surface_FTLEShi_2_0902"
+            ]
+        },
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "PackageId": [
+            "SurfaceShop"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 4,
+        "TabName": "ShopRecommend_surface_Name",
+        "TimeType": {
+            "amount": -1,
+            "end": "2022-09-08 05:00:00",
+            "start": "2022-09-02 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
+    },
+    "ShopRecommend_surface_20220911": {
+        "BackGroundImg": "sd_tjpf_bg_dr",
+        "ClientCondition": "",
+        "Config": {
+            "Scale": [
+                0.55
+            ],
+            "Surface": [
+                "ShopSurface_Surface_TJHDe_2_0902"
+            ]
+        },
+        "Hide": 1,
+        "Link": "view://shopView&viewType=push&shopId=Shop_Surface",
+        "PackageId": [
+            "SurfaceShop"
+        ],
+        "Prepose": "",
+        "ServerCondition": "",
+        "Sort": 4,
+        "TabName": "ShopRecommend_surface_Name",
+        "TimeType": {
+            "amount": -1,
+            "end": "2022-09-16 05:00:00",
+            "start": "2022-09-11 05:00:00",
+            "type": "limit"
+        },
+        "Vanish": 1
     }
 }

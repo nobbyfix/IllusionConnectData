@@ -192,6 +192,38 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_Baking": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S01"
+                ]
+            }
+        ],
+        "Listpicture": "img_story_baking_1",
+        "Name": "ActivityBlock_Baking_Name",
+        "Num": 25,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_Baking_1",
+                    "Memory_Act_Baking_2",
+                    "Memory_Act_Baking_3",
+                    "Memory_Act_Baking_4"
+                ],
+                "type": "NORMAL"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_DeepSea": {
         "ActiviType": "",
         "Condition": [
