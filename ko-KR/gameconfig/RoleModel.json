@@ -40961,8 +40961,8 @@
         "Bust1": "Bust1_TJHDe",
         "Bust10": "Bust10_TJHDe",
         "Bust11": "Bust11_TJHDe",
-        "Bust12": "Bust12_TJHDe",
-        "Bust13": "Bust13_TJHDe",
+        "Bust12": "Bust13_TJHDe",
+        "Bust13": "Bust12_TJHDe",
         "Bust14": "Bust14_TJHDe",
         "Bust15": "Bust15_TJHDe",
         "Bust16": "Bust5_TJHDe",
@@ -40978,7 +40978,10 @@
             -23,
             -324
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            250,
+            -300
+        ],
         "BustTemp1": [
             175,
             -294

@@ -725,6 +725,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SRen_Awake"
     },
+    "TJHDe": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -200,
+            200,
+            1.3
+        ],
+        "IAId": "",
+        "ModelId": "Model_TJHDe",
+        "Name": "TJHDe_Awake_Name",
+        "NameDesc": "TJHDe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_TJHDe",
+        "Reward": "HeroAwaken_TJHDe",
+        "ShowHero": "TJHDe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "TJHDe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_TJHDe_1"
+    },
     "TPGZhu": {
         "AnimSound": "",
         "Animation": "FHYH_Awaken",
@@ -887,7 +909,7 @@
             0,
             1.5
         ],
-        "IAId": "",
+        "IAId": "YSTLu_IA_1",
         "ModelId": "Model_YSTLu_Awake",
         "Name": "YSTLu_Awake_Name",
         "NameDesc": "YSTLu_Awake_Desc",

@@ -19901,6 +19901,31 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "TJHDe_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_TJHDe_Awake"
+        ],
+        "HeroId": "TJHDe",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_TJHDe_Awake"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
     "TLMi_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -23560,6 +23585,58 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "YBYa_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_YBYa_1"
+        ],
+        "HeroId": "YBYa",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "YBYa_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "YBYa_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_YBYa_2"
+        ],
+        "HeroId": "YBYa",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_YBYa_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
     "YDZZong_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,
@@ -25153,6 +25230,58 @@
         "StarUpCost": 60000,
         "StarUpFactor": 240,
         "UpNeedItem": "",
+        "Visible": 1
+    },
+    "YSTLu_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_YSTLu_1"
+        ],
+        "HeroId": "YSTLu",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "YSTLu_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "YSTLu_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_YSTLu_2"
+        ],
+        "HeroId": "YSTLu",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_YSTLu_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
         "Visible": 1
     },
     "YSuo_1": {

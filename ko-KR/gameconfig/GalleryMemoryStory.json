@@ -255,10 +255,21 @@
     },
     "Memory_Act_Baking": {
         "ActiviType": "",
-        "Condition": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_Baking_2nd_Map",
+                    "BakingS01S01"
+                ]
+            }
+        ],
         "Listpicture": "img_story_baking_1",
         "Name": "ActivityBlock_Baking_Name",
-        "Num": 11,
+        "Num": 25,
         "Story": [
             {
                 "id": [

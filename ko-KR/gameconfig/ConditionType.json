@@ -139,6 +139,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_BakingExchangeAchieve_Desc"
     },
+    "Condi_Baking_2ndExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Baking_2nd_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_BakingExchangeAchieve_Desc"
+    },
     "Condi_Bento_Food_1": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -150,6 +157,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_1_0816.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_1_Desc"
+    },
+    "Condi_Bento_Food_1_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_1_0916.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_1_Desc"
     },
@@ -167,6 +181,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_2_Desc"
     },
+    "Condi_Bento_Food_2_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_2_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_2_Desc"
+    },
     "Condi_Bento_Food_3": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -178,6 +199,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_3_0816.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_3_Desc"
+    },
+    "Condi_Bento_Food_3_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_3_0916.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_3_Desc"
     },
@@ -195,6 +223,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_4_Desc"
     },
+    "Condi_Bento_Food_4_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_4_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_4_Desc"
+    },
     "Condi_Bento_Food_5": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -206,6 +241,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_5_0816.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_5_Desc"
+    },
+    "Condi_Bento_Food_5_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_5_0916.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_5_Desc"
     },
@@ -223,6 +265,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_6_Desc"
     },
+    "Condi_Bento_Food_6_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_6_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_6_Desc"
+    },
     "Condi_Bento_Food_7": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -234,6 +283,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_7_0816.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_7_Desc"
+    },
+    "Condi_Bento_Food_7_0916": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_7_0916.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_7_Desc"
     },
@@ -1199,7 +1255,7 @@
     "Condi_MiniGameDailyScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220712.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220912.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Fly_Decs"
     },
@@ -1220,7 +1276,7 @@
     "Condi_MiniGameTotalScore_Fly": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220712.TotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Fly_20220912.TotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Fly_Decs"
     },
