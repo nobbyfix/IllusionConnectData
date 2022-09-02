@@ -15943,6 +15943,21 @@ all.EquipSkill_Accesory_15117_2 = {
 				}, {
 					buff_check
 				})
+
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique_single")) > 0 then
+					global.print(_env, "月食星运行驱散无敌=====")
+
+					for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, _env.primTrgt))) do
+						local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
+
+						if #enemyfront <= 0 then
+							global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+
+							break
+						end
+					end
+				end
+
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique"), 99)
 				global.KillTarget(_env, _env.ACTOR)
 			end
@@ -15998,6 +16013,8 @@ all.EquipSkill_Accesory_15117_2 = {
 			local global = _env.global
 
 			if global.GetCost(_env, _env.ACTOR) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, _env.ACTOR))(_env, global.FriendField(_env)) < 2 then
+				global.print(_env, "月食星运行驱散无敌-上标记=====")
+
 				local buff_check2 = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique", {
 					"+Normal",
 					"+Normal"
@@ -16081,7 +16098,7 @@ all.EquipSkill_Accesory_15117_2_field = {
 
 				local cost = global.min(_env, global.GetActualCost(_env, _env.unit), global.GetCost(_env, _env.unit))
 
-				global.print(_env, "月食星登场==", global.GetCardWindowIndex(_env, _env.unit))
+				global.print(_env, "月食星登场GetCardWindowIndex==", global.GetCardWindowIndex(_env, _env.unit))
 
 				if global.GetCardWindowIndex(_env, _env.unit) == 0 then
 					cost = 0

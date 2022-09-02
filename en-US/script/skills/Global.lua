@@ -1888,6 +1888,26 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
+		global.print(_env, "月食星返回是单体伤害=====")
+
+		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Accesory_15117_2_unique_single",
+				"UR_EQUIPMENT"
+			}
+		}, {
+			buff_check
+		})
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -2388,7 +2408,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damage.val * SingleFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -2408,18 +2428,6 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 
 		global.print(_env, "SP_ALSi_shield===", shield)
-	end
-
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 and global.GetCost(_env, actor) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env)) < 2 then
-		for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, target))) do
-			local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
-
-			if #enemyfront <= 0 then
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
-
-				break
-			end
-		end
 	end
 
 	return result
@@ -3227,7 +3235,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damage.val * AoeFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -3669,6 +3677,26 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			global.print(_env, "奥古斯特-总伤害", damages[n].val)
 			global.print(_env, "奥古斯特-每人分摊的伤害", Enemy_damage)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
+		global.print(_env, "月食星返回是单体伤害=====")
+
+		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Accesory_15117_2_unique_single",
+				"UR_EQUIPMENT"
+			}
+		}, {
+			buff_check
+		})
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -4227,7 +4255,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damages[n].val * SingleFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -5138,7 +5166,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damages[n].val * AoeFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -5158,18 +5186,6 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		end
 
 		global.print(_env, "SP_ALSi_shield===", shield)
-	end
-
-	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 and global.GetCost(_env, actor) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, actor))(_env, global.FriendField(_env)) < 2 then
-		for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, target))) do
-			local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
-
-			if #enemyfront <= 0 then
-				global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
-
-				break
-			end
-		end
 	end
 
 	return result
