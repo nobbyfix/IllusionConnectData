@@ -1888,6 +1888,26 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		end
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
+		global.print(_env, "月食星返回是单体伤害=====")
+
+		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Accesory_15117_2_unique_single",
+				"UR_EQUIPMENT"
+			}
+		}, {
+			buff_check
+		})
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -2388,7 +2408,7 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damage.val * SingleFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -3215,7 +3235,7 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damage.val * AoeFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -3244,6 +3264,8 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local this = _env.this
 	local global = _env.global
 	local is_summons = global.SUMMONS(_env, target)
+
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local flag_ajyhou = 0
@@ -3508,6 +3530,20 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		})
 	end
 
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damages[n].val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
+
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
 	end
@@ -3641,6 +3677,26 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			global.print(_env, "奥古斯特-总伤害", damages[n].val)
 			global.print(_env, "奥古斯特-每人分摊的伤害", Enemy_damage)
 		end
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
+		global.print(_env, "月食星返回是单体伤害=====")
+
+		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Accesory_15117_2_unique_single",
+				"UR_EQUIPMENT"
+			}
+		}, {
+			buff_check
+		})
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -4199,7 +4255,7 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damages[n].val * SingleFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",
@@ -4234,6 +4290,8 @@ end
 function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	local this = _env.this
 	local global = _env.global
+
+	global.DispelBuff(_env, actor, global.BUFF_MARKED(_env, "APPLYDAMAGEVALUE"), 99)
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "AJYHou_Passive_Done")) == 0 then
 		local flag_ajyhou = 0
@@ -4497,6 +4555,20 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 			buff_count
 		})
 	end
+
+	local buffeft_damage = global.SpecialNumericEffect(_env, "+ApplyDamageValue", {
+		"?Normal"
+	}, damages[n].val)
+
+	global.ApplyBuff(_env, actor, {
+		timing = 0,
+		duration = 99,
+		tags = {
+			"APPLYDAMAGEVALUE"
+		}
+	}, {
+		buffeft_damage
+	})
 
 	if global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "GUIDIE_SHENYIN")) > 0 then
 		damages[n].val = 0
@@ -5094,7 +5166,7 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		if shield < ShieldMaxFactor * atk then
 			local shield_add = global.ShieldEffect(_env, damages[n].val * AoeFactor)
 
-			global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+			global.ApplyBuff_Buff(_env, actor, unit1, {
 				timing = 0,
 				display = "Shield",
 				group = "Skill_SP_ALSi_Passive_EX",

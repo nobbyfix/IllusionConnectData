@@ -5841,6 +5841,141 @@ function all.EquipSkill_Weapon_15134_2_extra(_env, actor, target)
 	return ah_rate
 end
 
+all.EquipSkill_Weapon_15135_3 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AtkFactor = externs.AtkFactor
+
+		if this.AtkFactor == nil then
+			this.AtkFactor = 0.1
+		end
+
+		this.AbsorptionFactor = externs.AbsorptionFactor
+
+		if this.AbsorptionFactor == nil then
+			this.AbsorptionFactor = 0.1
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		if this.HurtRateFactor == nil then
+			this.HurtRateFactor = 0.05
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		passive1 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_ACTION"
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_UNIQUE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15135_3_2")) < 3 then
+				local buffeft3 = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+					timing = 1,
+					display = "HurtRateUp",
+					group = "EquipSkill_Weapon_15135_3_2",
+					duration = 3,
+					limit = 3,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE",
+						"UR_EQUIPMENT",
+						"EquipSkill_Weapon_15135_3_2"
+					}
+				}, {
+					buffeft3
+				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "+atk", {
+				"+Normal",
+				"+Normal"
+			}, global.UnitPropGetter(_env, "atk")(_env, _env.ACTOR) * this.AtkFactor)
+			local buffeft2 = global.NumericEffect(_env, "+absorption", {
+				"+Normal",
+				"+Normal"
+			}, this.AbsorptionFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "EquipSkill_Weapon_15135_3_1",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Weapon_15135_3_1",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			})
+		end)
+
+		return _env
+	end
+}
 all.EquipSkill_Tops_15114_2 = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -9522,6 +9657,10 @@ all.EquipSkill_Shoes_15118_3 = {
 			local this = _env.this
 			local global = _env.global
 
+			if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Decoration_15117_2") > 0 and global.GetCost(_env, _env.ACTOR) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, _env.ACTOR))(_env, global.FriendField(_env)) < 2 then
+				return
+			end
+
 			global.print(_env, global.GetFriendField(_env, _env.ACTOR, "EquipSkill_Shoes_15118_3"), "11111111")
 
 			if global.GetFriendField(_env, _env.ACTOR, "EquipSkill_Shoes_15118_3") >= 1 then
@@ -13111,6 +13250,112 @@ all.EquipSkill_Shoes_15120_2 = {
 		return _env
 	end
 }
+all.EquipSkill_Shoes_15122_1 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DeCriRateFactor = externs.DeCriRateFactor
+
+		if this.DeCriRateFactor == nil then
+			this.DeCriRateFactor = 0.15
+		end
+
+		this.MaxHpRateFactor = externs.MaxHpRateFactor
+
+		if this.MaxHpRateFactor == nil then
+			this.MaxHpRateFactor = 0.45
+		end
+
+		this.AOEDeRateFactor = externs.AOEDeRateFactor
+
+		if this.AOEDeRateFactor == nil then
+			this.AOEDeRateFactor = 0.45
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "-critrate", {
+				"+Normal",
+				"+Normal"
+			}, this.DeCriRateFactor)
+			local buffeft2 = global.NumericEffect(_env, "-critstrg", {
+				"+Normal",
+				"+Normal"
+			}, this.DeCriRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "EquipSkill_Shoes_15122_1",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			})
+
+			local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, _env.ACTOR)
+			local buffeft3 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
+			local buffeft4 = global.NumericEffect(_env, "+aoederate", {
+				"+Normal",
+				"+Normal"
+			}, this.AOEDeRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "EquipSkill_Shoes_15122_2",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"EquipSkill_Shoes_15122_1",
+					"AOEDERATEUP",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft3,
+				buffeft4
+			})
+		end)
+
+		return _env
+	end
+}
 all.EquipSkill_Decoration_15114_2 = {
 	__new__ = function (prototype, externs, global)
 		local __function = global.__skill_function__
@@ -15613,6 +15858,255 @@ all.EquipSkill_Decoration_15115_3 = {
 				}, {
 					buff1
 				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.EquipSkill_Accesory_15117_2 = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.EnergyFactor = externs.EnergyFactor
+
+		if this.EnergyFactor == nil then
+			this.EnergyFactor = 0.7
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:AFTER_UNIQUE"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_UNIQUE"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetCost(_env, _env.ACTOR) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, _env.ACTOR))(_env, global.FriendField(_env)) < 2 then
+				local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, _env.ACTOR), {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"COUNT_Accesory_15117_2",
+						"UR_EQUIPMENT"
+					}
+				}, {
+					buff_check
+				})
+
+				if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique_single")) > 0 then
+					global.print(_env, "月食星运行驱散无敌=====")
+
+					for _, unit in global.__iter__(global.EnemyUnits(_env, global.COL_OF(_env, _env.primTrgt))) do
+						local enemyfront = global.EnemyUnits(_env, global.FRONT_OF(_env, unit, true) * global.COL_OF(_env, unit))
+
+						if #enemyfront <= 0 then
+							global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+
+							break
+						end
+					end
+				end
+
+				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique"), 99)
+				global.KillTarget(_env, _env.ACTOR)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "EquipSkill_Accesory_15117_2_field", {
+				EnergyFactor = this.EnergyFactor
+			})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buff
+			})
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetCost(_env, _env.ACTOR) >= 14 and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_check" .. global.GetUnitCid(_env, _env.ACTOR))(_env, global.FriendField(_env)) < 2 then
+				global.print(_env, "月食星运行驱散无敌-上标记=====")
+
+				local buff_check2 = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"EquipSkill_Accesory_15117_2_unique",
+						"UR_EQUIPMENT"
+					}
+				}, {
+					buff_check2
+				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.EquipSkill_Accesory_15117_2_field = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.EnergyFactor = externs.EnergyFactor
+
+		if this.EnergyFactor == nil then
+			this.EnergyFactor = 0.7
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectHeroPassiveCount(_env, _env.unit, "EquipSkill_Decoration_15117_2") > 0 and global.GetCost(_env, _env.unit) >= 14 and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.SpecialPropGetter(_env, "EquipSkill_Accesory_15117_2_energy" .. global.GetUnitCid(_env, _env.unit))(_env, global.FriendField(_env)) < 2 then
+				local buff_check1 = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_energy" .. global.GetUnitCid(_env, _env.unit), {
+					"+Normal",
+					"+Normal"
+				}, 1)
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"COUNT_Accesory_15117_2_energy",
+						"UR_EQUIPMENT"
+					}
+				}, {
+					buff_check1
+				})
+
+				local cost = global.min(_env, global.GetActualCost(_env, _env.unit), global.GetCost(_env, _env.unit))
+
+				global.print(_env, "月食星登场GetCardWindowIndex==", global.GetCardWindowIndex(_env, _env.unit))
+
+				if global.GetCardWindowIndex(_env, _env.unit) == 0 then
+					cost = 0
+				end
+
+				local Energy = global.floor(_env, cost * this.EnergyFactor)
+
+				global.ApplyEnergyRecovery(_env, global.GetOwner(_env, _env.unit), Energy)
 			end
 		end)
 
