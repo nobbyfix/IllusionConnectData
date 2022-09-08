@@ -12785,6 +12785,19 @@
         "Times": 1,
         "isRemind": 1
     },
+    "Exchange_PVPSHOP_1": {
+        "Cost": [
+            {
+                "amount": 180,
+                "code": "IR_Arena",
+                "type": 2
+            }
+        ],
+        "Order": 1,
+        "Target": "Exchange_PVPSHOP_Reward_1",
+        "Times": 14,
+        "isRemind": 1
+    },
     "Exchange_PveDraw_1": {
         "Cost": [
             {
