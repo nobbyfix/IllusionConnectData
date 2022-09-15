@@ -559,21 +559,21 @@
         },
         "Cost": "",
         "Information": {
-            "desc": "HomeBackground_Fire_Desc",
+            "desc": "HomeBackground_Desc",
             "img": "Welfare_Background_Fire",
             "name": "HomeBackground_Fire_Name"
         },
         "Item": "HomeBackground_1_Item",
         "Loop": {
             "01:00:00": {
-                "BG": "Fire_Scene01"
+                "BG": "Fire_Scene_Reward"
             }
         },
         "Name": "HomeBackground_Fire_Name",
         "Price": "",
-        "Sort": 100,
+        "Sort": 12,
         "TimeFactor": "",
-        "Tips": "Unlock_BG_Welfare",
+        "Tips": "Unlock_HomeBackground_Fire",
         "Unlook": 1
     },
     "HomeBackground_Fireworks": {

@@ -615,6 +615,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_PDLa_Awake"
     },
+    "QBTe": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -230,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_QBTe",
+        "Name": "QBTe_Awake_Name",
+        "NameDesc": "QBTe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_QBTe",
+        "Reward": "HeroAwaken_QBTe",
+        "ShowHero": "QBTe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "QBTe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_QBTe_1"
+    },
     "SDTZi": {
         "AnimSound": "",
         "Animation": "SDTZi_Awaken",
@@ -839,7 +861,7 @@
             0,
             1.1
         ],
-        "IAId": "",
+        "IAId": "YBYa_IA_1",
         "ModelId": "Model_YBYa_Awake",
         "Name": "YBYa_Awake_Name",
         "NameDesc": "YBYa_Awake_Desc",

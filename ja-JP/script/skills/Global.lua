@@ -1908,6 +1908,30 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		})
 	end
 
+	if global.SelectHeroPassiveCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15116_1")) > 0 then
+		global.print(_env, "三月野兔：目标无法返回牌库=====")
+
+		local buff = global.NumericEffect(_env, "-def", {
+			"+Normal",
+			"+Normal"
+		}, 0)
+
+		global.ApplyBuff_Buff(_env, actor, target, {
+			timing = 0,
+			duration = 99,
+			display = "NoKickMax",
+			tags = {
+				"UnKickMax",
+				"EquipSkill_Decoration_15116_1",
+				"DEBUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			buff
+		})
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -1941,6 +1965,26 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	end
 
 	if result and result.deadly then
+		if global.SelectBuffCount(_env, actor, "EquipSkill_Tops_15116_1_unique") > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+EquipSkill_Tops_15116_1_kill", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Tops_15116_1_kill",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+		end
+
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local singlekillrecoveryrate = global.SpecialPropGetter(_env, "singlekillrecoveryrate")(_env, actor)
 
@@ -2773,6 +2817,26 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 	end
 
 	if result and result.deadly then
+		if global.SelectBuffCount(_env, actor, "EquipSkill_Tops_15116_1_unique") > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+EquipSkill_Tops_15116_1_kill", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Tops_15116_1_kill",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+		end
+
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local aoekillrecoveryrate = global.SpecialPropGetter(_env, "aoekillrecoveryrate")(_env, actor)
 
@@ -3699,6 +3763,30 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		})
 	end
 
+	if global.SelectHeroPassiveCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15116_1")) > 0 then
+		global.print(_env, "三月野兔：目标无法返回牌库=====")
+
+		local buff = global.NumericEffect(_env, "-def", {
+			"+Normal",
+			"+Normal"
+		}, 0)
+
+		global.ApplyBuff_Buff(_env, actor, target, {
+			timing = 0,
+			duration = 99,
+			display = "NoKickMax",
+			tags = {
+				"UnKickMax",
+				"EquipSkill_Decoration_15116_1",
+				"DEBUFF",
+				"UNDISPELLABLE",
+				"UNSTEALABLE"
+			}
+		}, {
+			buff
+		})
+	end
+
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
 
 	global.ActivateSpecificTrigger(_env, target, "GET_ATTACKED")
@@ -3732,6 +3820,26 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	end
 
 	if result and result.deadly then
+		if global.SelectBuffCount(_env, actor, "EquipSkill_Tops_15116_1_unique") > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+EquipSkill_Tops_15116_1_kill", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Tops_15116_1_kill",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+		end
+
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local singlekillrecoveryrate = global.SpecialPropGetter(_env, "singlekillrecoveryrate")(_env, actor)
 
@@ -4677,6 +4785,26 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 	end
 
 	if result and result.deadly then
+		if global.SelectBuffCount(_env, actor, "EquipSkill_Tops_15116_1_unique") > 0 then
+			local buffeft1 = global.SpecialNumericEffect(_env, "+EquipSkill_Tops_15116_1_kill", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+
+			global.ApplyBuff(_env, actor, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"EquipSkill_Tops_15116_1_kill",
+					"UR_EQUIPMENT"
+				}
+			}, {
+				buffeft1
+			})
+		end
+
 		local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, actor)
 		local aoekillrecoveryrate = global.SpecialPropGetter(_env, "aoekillrecoveryrate")(_env, actor)
 
@@ -5853,10 +5981,14 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	end
 
 	if cond == "card" and flag == 0 then
-		card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKickMax")) > 0 then
+			-- Nothing
+		else
+			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
 
-		if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
-			global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+				global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			end
 		end
 	elseif cond == "window" and flag == 0 then
 		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKick")) <= 0 then

@@ -97,6 +97,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_AttendArena_Desc"
     },
+    "Condi_AttendClubBoss": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "clubBossBattleTime",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AttendClubBoss_Desc"
+    },
     "Condi_AttendRTPK": {
         "AchieveType1": "CUSTOM",
         "AchieveType2": "",
@@ -769,6 +776,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_FireExchangeAchieve_Desc"
     },
+    "Condi_FireExchangeAchieve_2nd": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Fire_2nd_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireExchangeAchieve_Desc"
+    },
     "Condi_FireWorksExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
@@ -1426,6 +1440,13 @@
         "ConditionType1": "player.cultivation.heroes.*.quality",
         "ConditionType2": "",
         "EffectDesc": "Condi_QualityCollect_Desc"
+    },
+    "Condi_RTPKScore": {
+        "AchieveType1": "CUSTOMREACH",
+        "AchieveType2": "",
+        "ConditionType1": "rtpkMaxScore",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_RTPKScore_Desc"
     },
     "Condi_RTPKWin": {
         "AchieveType1": "REACH",
