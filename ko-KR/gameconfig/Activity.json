@@ -53568,6 +53568,46 @@
             "LEVEL": 1
         },
         "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-09-24 05:00:00",
+            "start": [
+                "2022-09-16 05:00:00",
+                "2022-09-24 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "DRAWCARDOPEN",
+        "UI": "",
+        "Version": ""
+    },
+    "DrawCard_2UP_20220901_3_1_Activity": {
+        "ActivityConfig": {
+            "DRAW": "DrawCard_2UP_MGNaYBYa_20220901_3",
+            "URL": "view://RecruitView&viewType=push&recruitType=DrawCard_2UP_MGNaYBYa_20220901_3",
+            "VANISH": 0,
+            "drawhero": [
+                "MGNa",
+                "YBYa"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
         "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
