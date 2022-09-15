@@ -13220,6 +13220,99 @@
         "bustAwakeZoom": "",
         "bustZoom": ""
     },
+    "Model_GLFu_L": {
+        "Animation": "swfte_l",
+        "BattlePosition": "HeroBase_BattlePosition_GLFu_L",
+        "BattleShow": "",
+        "Bust1": "Bust1_GLFu_L",
+        "Bust10": "Bust10_GLFu_L",
+        "Bust11": "Bust11_GLFu_L",
+        "Bust12": "Bust12_GLFu_L",
+        "Bust13": "Bust13_GLFu_L",
+        "Bust14": "Bust14_GLFu_L",
+        "Bust15": "Bust15_GLFu_L",
+        "Bust16": "",
+        "Bust2": "Bust2_GLFu_L",
+        "Bust3": "Bust3_GLFu_L",
+        "Bust4": "Bust4_GLFu_L",
+        "Bust5": "Bust5_GLFu_L",
+        "Bust6": "Bust6_GLFu_L",
+        "Bust7": "Bust7_GLFu_L",
+        "Bust8": "Bust8_GLFu_L",
+        "Bust9": "Bust9_GLFu_L",
+        "BustAwake": [
+            83,
+            -286
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            255,
+            -428
+        ],
+        "BustTemp2": [
+            268,
+            -428
+        ],
+        "BustTemp3": [
+            282,
+            -339
+        ],
+        "BustTemp4": [
+            261,
+            -336
+        ],
+        "BustTemp5": [
+            261,
+            -336
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_swfte_l",
+        "DeathVoice": "",
+        "Filename": "portrait_swfte_l",
+        "HeadMain": "HeadMain_GLFu_L",
+        "Height": 200,
+        "Hero": "GLFu_L",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_GLFu_L",
+        "MasterHeadWide": "",
+        "Model": "swfte_l",
+        "Name": "HeroBase_Name_GLFu_L",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_GLFu_L",
+        "SVPText": "SVPText_GLFu_L",
+        "SkillRange": "SingleUnit_Word",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "GLFu_L",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_GLFu_L",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_GLFu_L"
+        ],
+        "TruthBubble": [
+            "Truth_GLFu_L_1",
+            "Truth_GLFu_L_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.6,
+        "bustZoom": 0.75
+    },
     "Model_GLin": {
         "Animation": "GeLin",
         "BattlePosition": "HeroBase_BattlePosition_GLin",
@@ -26952,8 +27045,8 @@
         "Bust1": "Bust1_QBTe",
         "Bust10": "Bust10_QBTe",
         "Bust11": "Bust11_QBTe",
-        "Bust12": "Bust12_QBTe",
-        "Bust13": "Bust13_QBTe",
+        "Bust12": "Bust13_QBTe",
+        "Bust13": "Bust12_QBTe",
         "Bust14": "Bust14_QBTe",
         "Bust15": "Bust15_QBTe",
         "Bust16": "",
@@ -26969,7 +27062,10 @@
             -96,
             -106
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            100,
+            -106
+        ],
         "BustTemp1": [
             10,
             -68

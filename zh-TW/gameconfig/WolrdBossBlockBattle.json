@@ -307,6 +307,50 @@
         "SpecialSkillShow": [],
         "StoryLink": ""
     },
+    "WBSE22E7": {
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_WorldBoss1",
+        "BlockBubble": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "Model_Enemy_NShou",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_worldboss_nianshou"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "ConfigLevelLimitID": "",
+        "Desc": "BlockPoint_WB1E_BlockDesc",
+        "EnemyCard": "CardWBSE22E7",
+        "EnemyMaster": "WBE01P01U01N08",
+        "EnemyName": "NORMAL",
+        "HeroAttrExtraLua": "",
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Master": "",
+        "Name": "Activity_WorldBoss_Boss_Name",
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_NShou",
+        "PointTime": {
+            "start": "2022-05-08 05:00:00"
+        },
+        "PointType": "BOSS",
+        "ReslutBoard": "",
+        "SoulForceRotatesBuff": "",
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StoryLink": ""
+    },
     "WBSN01M": {
         "BGM": [
             "Mus_Battle_Whale_Boss",
@@ -1020,6 +1064,96 @@
                 "Time": [
                     "2022-09-19 05:00:00",
                     "2022-09-23 05:00:00"
+                ]
+            }
+        ],
+        "SpecialRuleShow": [],
+        "SpecialSkillShow": [],
+        "StoryLink": ""
+    },
+    "WBSN11M7": {
+        "BGM": [
+            "Mus_Battle_Whale_Boss",
+            "",
+            ""
+        ],
+        "Background": "Collapsed_Scene05",
+        "BlockBattleConfig": "Activity_WorldBoss1",
+        "BlockBubble": "",
+        "BlockInformation": {
+            "BossDetail": {
+                "BossModel": "Model_Enemy_JSJJu",
+                "show": "1"
+            },
+            "SpecialRule": [
+                "SpecialRule_worldboss_juju"
+            ]
+        },
+        "BlockPrompt": "",
+        "BossHeadPic": "",
+        "BossRound": 1,
+        "CardsExcept": "",
+        "ConfigLevelLimitID": "LevelLimit_WB",
+        "Desc": "BlockPoint_WB1M_BlockDesc",
+        "EnemyCard": "CardWBSN11M7",
+        "EnemyMaster": "WBM01P01U01N08",
+        "EnemyName": "NORMAL",
+        "HeroAttrExtraLua": "",
+        "ItemCard": "",
+        "LoadingBorad": "",
+        "Master": "",
+        "Name": "Activity_WorldBoss_Vanguard_Name",
+        "PointBoard": "",
+        "PointHead": "Model_Enemy_JSJJu",
+        "PointTime": {
+            "start": "2022-05-01 05:00:00"
+        },
+        "PointType": "NORMAL",
+        "ReslutBoard": "",
+        "SoulForceRotatesBuff": [
+            {
+                "FirstDesc": "",
+                "HeroBuffId": {
+                    "3": "WorldBoss_hero_startBuff_3",
+                    "4": "WorldBoss_hero_startBuff_4",
+                    "5": "WorldBoss_hero_startBuff_5",
+                    "6": "WorldBoss_hero_startBuff_6",
+                    "Awaken": "WorldBoss_hero_startBuff_awaken"
+                },
+                "HeroId": [
+                    "SGBao",
+                    "YBYa"
+                ],
+                "Party": [
+                    "SSZS",
+                    "DWH"
+                ],
+                "PartyBuffId": "WorldBoss_Buff_1",
+                "Time": [
+                    "2022-10-01 05:00:00",
+                    "2022-10-04 05:00:00"
+                ]
+            },
+            {
+                "HeroBuffId": {
+                    "3": "WorldBoss_hero_startBuff_3",
+                    "4": "WorldBoss_hero_startBuff_4",
+                    "5": "WorldBoss_hero_startBuff_5",
+                    "6": "WorldBoss_hero_startBuff_6",
+                    "Awaken": "WorldBoss_hero_startBuff_awaken"
+                },
+                "HeroId": [
+                    "HSYZhai",
+                    "SP_PNCao"
+                ],
+                "Party": [
+                    "BSNCT",
+                    "WNSXJ"
+                ],
+                "PartyBuffId": "WorldBoss_Buff_2",
+                "Time": [
+                    "2022-10-04 05:00:00",
+                    "2022-10-08 05:00:00"
                 ]
             }
         ],

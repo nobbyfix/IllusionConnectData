@@ -371,7 +371,9 @@ function ActivityFireMainMediator:initInfo()
 				type = StageType.kHard
 			end
 
-			redPoint:setVisible(self._blockActivity[mapId] and self._blockActivity[mapId]:hasRedPointByType(type))
+			if redPoint then
+				redPoint:setVisible(self._blockActivity[mapId] and self._blockActivity[mapId]:hasRedPointByType(type))
+			end
 		end
 	end
 

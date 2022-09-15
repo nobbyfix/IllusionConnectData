@@ -701,5 +701,220 @@ all.Skill_BDFen_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_BDFen_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.5,
+				0
+			}
+		end
+
+		this.AbsFactor = externs.AbsFactor
+
+		if this.AbsFactor == nil then
+			this.AbsFactor = 0.2
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		if this.HurtRateFactor == nil then
+			this.HurtRateFactor = 0.2
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3067
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_BDFen"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env, global.ROW_OF(_env, _env.TARGET))
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+		end)
+		exec["@time"]({
+			1000
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS)) do
+				local buff1 = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor)
+				local buff2 = global.NumericEffect(_env, "+absorption", {
+					"+Normal",
+					"+Normal"
+				}, this.AbsFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 2,
+					display = "HurtRateUp",
+					group = "Skill_BDFen_Unique_Awaken_1",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1
+				}, 1, 0)
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 2,
+					display = "Absorption",
+					group = "Skill_BDFen_Unique_Awaken_2",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff2
+				}, 1, 0)
+			end
+
+			local runtime = 1366
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.MID_ROW)) do
+				for _, cell in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, global.GetCell(_env, unit)) * global.FRONT_ROW_CELL)) do
+					if not global.GetCellUnit(_env, cell) then
+						global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+					end
+				end
+			end
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env, global.BACK_ROW)) do
+				if not global.MASTER(_env, unit) then
+					for _, cell in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, global.GetCell(_env, unit)) * global.FRONT_ROW_CELL)) do
+						if global.GetCellUnit(_env, cell) then
+							for _, cell_else in global.__iter__(global.EnemyCells(_env, global.COL_CELL_OF(_env, cell) * global.MID_ROW_CELL)) do
+								if not global.GetCellUnit(_env, cell_else) then
+									global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell_else), runtime, 1)
+								end
+							end
+						else
+							global.transportExt_ResultCheck(_env, unit, global.IdOfCell(_env, cell), runtime, 1)
+						end
+					end
+				end
+			end
+
+			local num = 0
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				num = num + 1
+			end
+
+			if num ~= 1 then
+				_env.units = global.EnemyUnits(_env, global.FRONT_ROW)
+			end
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2366
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+
+			for _, friend in global.__iter__(global.FriendUnits(_env)) do
+				local buffeft2 = global.RageGainEffect(_env, "-", {
+					"+Normal",
+					"+Normal"
+				}, 1)
+				local buffeft3 = global.Diligent(_env)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft2,
+					buffeft3
+				}, 1)
+			end
+
+			global.DiligentRound(_env)
+		end)
+		exec["@time"]({
+			2834
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

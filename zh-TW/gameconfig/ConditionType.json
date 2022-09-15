@@ -776,6 +776,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_FireExchangeAchieve_Desc"
     },
+    "Condi_FireExchangeAchieve_2nd": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Fire_2nd_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireExchangeAchieve_Desc"
+    },
     "Condi_FireWorksExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
