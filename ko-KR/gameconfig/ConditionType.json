@@ -167,6 +167,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_1_Desc"
     },
+    "Condi_Bento_Food_1_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_1_1001.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_1_Desc"
+    },
     "Condi_Bento_Food_2": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -185,6 +192,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_2_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_2_Desc"
+    },
+    "Condi_Bento_Food_2_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_2_1001.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_2_Desc"
     },
@@ -209,6 +223,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_3_Desc"
     },
+    "Condi_Bento_Food_3_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_3_1001.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_3_Desc"
+    },
     "Condi_Bento_Food_4": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -227,6 +248,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_4_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_4_Desc"
+    },
+    "Condi_Bento_Food_4_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_4_1001.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_4_Desc"
     },
@@ -251,6 +279,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_5_Desc"
     },
+    "Condi_Bento_Food_5_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_5_1001.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_5_Desc"
+    },
     "Condi_Bento_Food_6": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -272,6 +307,13 @@
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_6_Desc"
     },
+    "Condi_Bento_Food_6_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_6_1001.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_6_Desc"
+    },
     "Condi_Bento_Food_7": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
@@ -290,6 +332,13 @@
         "AchieveType1": "REACH",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.Bento_Food_7_0916.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_Bento_Food_7_Desc"
+    },
+    "Condi_Bento_Food_7_1001": {
+        "AchieveType1": "REACH",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.Bento_Food_7_1001.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_Bento_Food_7_Desc"
     },
@@ -787,6 +836,13 @@
         "AchieveType1": "INCREASE",
         "AchieveType2": "",
         "ConditionType1": "player.bag.items.IM_Fire_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_FireExchangeAchieve_Desc"
+    },
+    "Condi_FireExchangeAchieve_2nd": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Fire_2nd_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_FireExchangeAchieve_Desc"
     },

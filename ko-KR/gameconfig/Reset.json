@@ -232,7 +232,27 @@
             "storage": 5000
         }
     },
+    "AcitvityFireStamina_Reset_2nd": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityFireWorksStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFire_2nd_Stamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -272,6 +292,16 @@
             "storage": 5000
         }
     },
+    "AcitvityHalloween_2nd_Stamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvityHolidayStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -283,6 +313,16 @@
         }
     },
     "AcitvityKnightStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityKnight_2nd_Stamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -333,6 +373,16 @@
         }
     },
     "AcitvityPurewhiteStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityPurewhite_2nd_Stamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
@@ -412,6 +462,16 @@
             "storage": 5000
         }
     },
+    "AcitvitySilentNight_2nd_Stamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
     "AcitvitySnowflakeStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -453,6 +513,16 @@
         }
     },
     "AcitvityStoryBookStamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityStoryBook_2nd_Stamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,
