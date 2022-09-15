@@ -792,6 +792,19 @@
         "UnlockDesc": "GCZi_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_GLFu_L": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_GLFu_L",
+        "HeadMove": "",
+        "HeadName": "GLFu_L_HeadName",
+        "HeroMasterId": "GLFu_L",
+        "IconPath": "asset/heros/swfte_l/battlepic_swfte_l.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "GLFu_L_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_GLin": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_GLin",
@@ -3531,6 +3544,19 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_PDLa",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_QBTe": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_QBTe_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_QBTe_1_Name",
+        "HeroMasterId": "QBTe",
+        "IconPath": "asset/heros/qmi/battlepic_qmi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_QBTe",
         "Zoom": 1.0
     },
     "HeroAwaken_SDTZi": {

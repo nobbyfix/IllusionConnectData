@@ -1022,7 +1022,7 @@ all.Skill_SP_PNCao_Passive_EX = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.MARKED(_env, "SP_PNCao")(_env, _env.unit) and global.MASTER(_env, _env.ACTOR) then
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "SP_PNCao")(_env, _env.unit) and global.MASTER(_env, _env.ACTOR) then
 				for _, unit in global.__iter__(global.FriendUnits(_env)) do
 					if global.MARKED(_env, "SP_PNCao")(_env, unit) then
 						global.ApplyRPRecovery(_env, unit, this.RpFactor)
@@ -1450,6 +1450,168 @@ all.Skill_SP_PNCao_Passive_Awaken = {
 				for _, unit in global.__iter__(global.FriendUnits(_env)) do
 					if global.MARKED(_env, "SP_PNCao")(_env, unit) then
 						global.ApplyRPRecovery(_env, unit, this.RpFactor)
+					end
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_SP_PNCao_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.RpFactor = externs.RpFactor
+
+		if this.RpFactor == nil then
+			this.RpFactor = 1000
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:PRE_ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) and not global.MARKED(_env, "DAGUN")(_env, _env.ACTOR) and not global.MARKED(_env, "SP_DDing")(_env, _env.ACTOR) then
+				local RoleModel = {
+					"Model_SP_PNCao_NNuo",
+					"Model_SP_PNCao_NNuo_Awake",
+					"Model_SP_PNCao_NNuo_yyu"
+				}
+
+				for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SP_PNCao"))) do
+					local num = global.GetCardSufaceIndex(_env, card)
+					local cardcopy = global.InheritCard(_env, card, RoleModel[num + 1])
+
+					global.AddCardFlags(_env, cardcopy, {
+						"SP_NNuo_Check"
+					})
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "SP_PNCao")(_env, _env.unit) and global.MASTER(_env, _env.ACTOR) then
+				for _, unit1 in global.__iter__(global.FriendUnits(_env)) do
+					if global.MARKED(_env, "SP_PNCao")(_env, unit1) then
+						global.ApplyRPRecovery(_env, unit1, this.RpFactor)
+					end
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "SP_PNCao")(_env, _env.unit) and global.MASTER(_env, _env.ACTOR) then
+				local count = 0
+
+				for _, unit1 in global.__iter__(global.FriendUnits(_env)) do
+					if global.MARKED(_env, "SP_PNCao")(_env, unit1) then
+						count = count + 1
+					end
+				end
+
+				if count > 1 then
+					for _, unit1 in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "SP_PNCao") + global.MASTER)) do
+						local buffeft1 = global.DeathImmuneEffect(_env, 1)
+
+						global.ApplyBuff_Buff(_env, _env.ACTOR, unit1, {
+							timing = 0,
+							display = "Undead",
+							group = "Skill_SP_PNCao_Passive_SelfAwaken",
+							duration = 99,
+							limit = 1,
+							tags = {
+								"BUFF",
+								"UNDEAD",
+								"STATUS",
+								"Skill_SP_PNCao_Passive_SelfAwaken",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft1
+						}, 1, 0)
 					end
 				end
 			end

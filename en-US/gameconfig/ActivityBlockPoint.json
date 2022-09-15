@@ -30753,7 +30753,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 55600,
+        "CombatValue": 166800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -30764,9 +30764,8 @@
         "FirstKillReward": "FireE01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -30775,22 +30774,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_1",
-                "4": "Fire_Buff_Star4_2_1",
-                "5": "Fire_Buff_Star5_2_1",
-                "6": "Fire_Buff_Star6_2_1"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -30814,7 +30807,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S01_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -30828,10 +30821,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -30883,7 +30876,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 71800,
+        "CombatValue": 215400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -30894,9 +30887,8 @@
         "FirstKillReward": "FireE01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -30905,22 +30897,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_2",
-                "4": "Fire_Buff_Star4_2_2",
-                "5": "Fire_Buff_Star5_2_2",
-                "6": "Fire_Buff_Star6_2_2"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -30946,7 +30932,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S02_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -30958,10 +30944,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31013,7 +30999,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 98700,
+        "CombatValue": 296100,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31024,9 +31010,8 @@
         "FirstKillReward": "FireE01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31035,22 +31020,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_3",
-                "4": "Fire_Buff_Star4_2_3",
-                "5": "Fire_Buff_Star5_2_3",
-                "6": "Fire_Buff_Star6_2_3"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31076,7 +31055,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S03_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31091,10 +31070,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31146,7 +31125,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 114900,
+        "CombatValue": 344700,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31157,9 +31136,8 @@
         "FirstKillReward": "FireE01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31168,22 +31146,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_4",
-                "4": "Fire_Buff_Star4_2_4",
-                "5": "Fire_Buff_Star5_2_4",
-                "6": "Fire_Buff_Star6_2_4"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31209,7 +31181,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S04_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31224,10 +31196,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31279,7 +31251,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 141800,
+        "CombatValue": 425400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31290,9 +31262,8 @@
         "FirstKillReward": "FireE01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31301,22 +31272,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_5",
-                "4": "Fire_Buff_Star4_2_5",
-                "5": "Fire_Buff_Star5_2_5",
-                "6": "Fire_Buff_Star6_2_5"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31342,7 +31307,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S05_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31354,10 +31319,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31409,7 +31374,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 163400,
+        "CombatValue": 490200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31420,9 +31385,8 @@
         "FirstKillReward": "FireE01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31431,22 +31395,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_6",
-                "4": "Fire_Buff_Star4_2_6",
-                "5": "Fire_Buff_Star5_2_6",
-                "6": "Fire_Buff_Star6_2_6"
+            "GLFu_L": {
+                "3": "Fire_Buff_3",
+                "4": "Fire_Buff_9",
+                "5": "Fire_Buff_15",
+                "6": "Fire_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31472,7 +31430,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S06_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
@@ -31486,10 +31444,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31541,7 +31499,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 199000,
+        "CombatValue": 597000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31552,9 +31510,8 @@
         "FirstKillReward": "FireE01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31563,22 +31520,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_7",
-                "4": "Fire_Buff_Star4_2_7",
-                "5": "Fire_Buff_Star5_2_7",
-                "6": "Fire_Buff_Star6_2_7"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31604,7 +31555,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S07_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31616,10 +31567,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31671,7 +31622,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 226000,
+        "CombatValue": 615800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31682,9 +31633,8 @@
         "FirstKillReward": "FireE01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31693,22 +31643,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_8",
-                "4": "Fire_Buff_Star4_2_8",
-                "5": "Fire_Buff_Star5_2_8",
-                "6": "Fire_Buff_Star6_2_8"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31734,7 +31678,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S08_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31746,10 +31690,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31801,7 +31745,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 247500,
+        "CombatValue": 678000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31812,9 +31756,8 @@
         "FirstKillReward": "FireE01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31823,22 +31766,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_9",
-                "4": "Fire_Buff_Star4_2_9",
-                "5": "Fire_Buff_Star5_2_9",
-                "6": "Fire_Buff_Star6_2_9"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31864,7 +31801,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S09_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -31876,10 +31813,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -31931,7 +31868,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 298200,
+        "CombatValue": 742500,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -31942,9 +31879,8 @@
         "FirstKillReward": "FireE01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -31953,22 +31889,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_10",
-                "4": "Fire_Buff_Star4_2_10",
-                "5": "Fire_Buff_Star5_2_10",
-                "6": "Fire_Buff_Star6_2_10"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -31994,7 +31924,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S10_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32006,10 +31936,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32061,7 +31991,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 464400,
+        "CombatValue": 775700,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32072,9 +32002,8 @@
         "FirstKillReward": "FireE01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32083,22 +32012,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_11",
-                "4": "Fire_Buff_Star4_2_11",
-                "5": "Fire_Buff_Star5_2_11",
-                "6": "Fire_Buff_Star6_2_11"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -32124,7 +32047,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S11_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32139,10 +32062,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32194,7 +32117,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 756000,
+        "CombatValue": 803000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32205,9 +32128,8 @@
         "FirstKillReward": "FireE01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32216,22 +32138,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_2_12",
-                "4": "Fire_Buff_Star4_2_12",
-                "5": "Fire_Buff_Star5_2_12",
-                "6": "Fire_Buff_Star6_2_12"
+            "GLFu_L": {
+                "3": "Fire_Buff_4",
+                "4": "Fire_Buff_12",
+                "5": "Fire_Buff_20",
+                "6": "Fire_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -32255,7 +32171,7 @@
         "PointPicture": "",
         "PointReward": "FireE01S12_PointReward",
         "PointTime": {
-            "start": "2021-05-05 05:00:00"
+            "start": "2022-10-05 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32270,10 +32186,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32325,7 +32241,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 55600,
+        "CombatValue": 835400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32336,9 +32252,8 @@
         "FirstKillReward": "FireN01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32347,12 +32262,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32379,7 +32288,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S01_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32391,10 +32300,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32446,7 +32355,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 71800,
+        "CombatValue": 886900,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32457,9 +32366,8 @@
         "FirstKillReward": "FireN01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32468,12 +32376,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32502,7 +32404,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S02_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32514,10 +32416,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32569,7 +32471,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 98700,
+        "CombatValue": 912400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32580,9 +32482,8 @@
         "FirstKillReward": "FireN01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32591,12 +32492,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32625,7 +32520,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S03_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32637,10 +32532,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32692,7 +32587,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 114900,
+        "CombatValue": 995400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32703,9 +32598,8 @@
         "FirstKillReward": "FireN01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32714,12 +32608,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32748,7 +32636,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S04_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32760,10 +32648,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32815,7 +32703,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 141800,
+        "CombatValue": 110000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32826,9 +32714,8 @@
         "FirstKillReward": "FireN01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32837,12 +32724,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32871,7 +32752,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S05_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -32886,10 +32767,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -32941,7 +32822,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 163400,
+        "CombatValue": 125000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -32952,9 +32833,8 @@
         "FirstKillReward": "FireN01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -32963,12 +32843,6 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
@@ -32995,7 +32869,7 @@
         "PointPicture": "",
         "PointReward": "FireN01S06_PointReward",
         "PointTime": {
-            "start": "2021-05-09 05:00:00"
+            "start": "2022-10-09 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
@@ -33010,10 +32884,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_FireStamina": 12
+            "IR_Fire_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -33065,7 +32939,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 4100,
+        "CombatValue": 12300,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33076,9 +32950,8 @@
         "FirstKillReward": "FireM01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33087,22 +32960,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_1",
-                "4": "Fire_Buff_Star4_1_1",
-                "5": "Fire_Buff_Star5_1_1",
-                "6": "Fire_Buff_Star6_1_1"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_8",
+                "6": "Fire_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33138,10 +33005,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33193,7 +33060,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 11600,
+        "CombatValue": 34800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33204,9 +33071,8 @@
         "FirstKillReward": "FireM01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33215,22 +33081,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_2",
-                "4": "Fire_Buff_Star4_1_2",
-                "5": "Fire_Buff_Star5_1_2",
-                "6": "Fire_Buff_Star6_1_2"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_8",
+                "6": "Fire_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33266,10 +33126,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33321,7 +33181,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 20200,
+        "CombatValue": 60600,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33332,9 +33192,8 @@
         "FirstKillReward": "FireM01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33343,22 +33202,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_3",
-                "4": "Fire_Buff_Star4_1_3",
-                "5": "Fire_Buff_Star5_1_3",
-                "6": "Fire_Buff_Star6_1_3"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_8",
+                "6": "Fire_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33394,10 +33247,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33449,7 +33302,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 27600,
+        "CombatValue": 82800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33460,9 +33313,8 @@
         "FirstKillReward": "FireM01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33471,22 +33323,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_4",
-                "4": "Fire_Buff_Star4_1_4",
-                "5": "Fire_Buff_Star5_1_4",
-                "6": "Fire_Buff_Star6_1_4"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_9",
+                "6": "Fire_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33527,10 +33373,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33582,7 +33428,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 36200,
+        "CombatValue": 108600,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33593,9 +33439,8 @@
         "FirstKillReward": "FireM01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33604,22 +33449,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_5",
-                "4": "Fire_Buff_Star4_1_5",
-                "5": "Fire_Buff_Star5_1_5",
-                "6": "Fire_Buff_Star6_1_5"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_9",
+                "6": "Fire_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33658,10 +33497,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33713,7 +33552,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 44300,
+        "CombatValue": 132900,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33724,9 +33563,8 @@
         "FirstKillReward": "FireM01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33735,22 +33573,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_6",
-                "4": "Fire_Buff_Star4_1_6",
-                "5": "Fire_Buff_Star5_1_6",
-                "6": "Fire_Buff_Star6_1_6"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_5",
+                "5": "Fire_Buff_9",
+                "6": "Fire_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33789,10 +33621,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33844,7 +33676,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 53800,
+        "CombatValue": 161400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33855,9 +33687,8 @@
         "FirstKillReward": "FireM01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33866,22 +33697,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_7",
-                "4": "Fire_Buff_Star4_1_7",
-                "5": "Fire_Buff_Star5_1_7",
-                "6": "Fire_Buff_Star6_1_7"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -33920,10 +33745,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -33975,7 +33800,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 62300,
+        "CombatValue": 186900,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -33986,9 +33811,8 @@
         "FirstKillReward": "FireM01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -33997,22 +33821,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_8",
-                "4": "Fire_Buff_Star4_1_8",
-                "5": "Fire_Buff_Star5_1_8",
-                "6": "Fire_Buff_Star6_1_8"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -34050,10 +33868,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -34105,7 +33923,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 70400,
+        "CombatValue": 211200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -34116,9 +33934,8 @@
         "FirstKillReward": "FireM01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -34127,22 +33944,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_9",
-                "4": "Fire_Buff_Star4_1_9",
-                "5": "Fire_Buff_Star5_1_9",
-                "6": "Fire_Buff_Star6_1_9"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -34178,10 +33989,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -34233,7 +34044,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 81400,
+        "CombatValue": 244200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -34244,9 +34055,8 @@
         "FirstKillReward": "FireM01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -34255,22 +34065,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_10",
-                "4": "Fire_Buff_Star4_1_10",
-                "5": "Fire_Buff_Star5_1_10",
-                "6": "Fire_Buff_Star6_1_10"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -34306,10 +34110,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -34361,7 +34165,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 88000,
+        "CombatValue": 264000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -34372,9 +34176,8 @@
         "FirstKillReward": "FireM01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -34383,22 +34186,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_11",
-                "4": "Fire_Buff_Star4_1_11",
-                "5": "Fire_Buff_Star5_1_11",
-                "6": "Fire_Buff_Star6_1_11"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -34434,10 +34231,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -34489,7 +34286,7 @@
         "CardsExcept": "",
         "Challenge": [],
         "CombatNeed": 169168,
-        "CombatValue": 195300,
+        "CombatValue": 585900,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_Fire",
         "CrystalReward": 0,
@@ -34500,9 +34297,8 @@
         "FirstKillReward": "FireM01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "MZGXiu": "Hero_ABlock_MZGXiu_Extra",
-            "QTQCi": "Hero_ABlock_QTQCi_Extra",
-            "SLWan": "Hero_ABlock_SLWan_Extra"
+            "GLFu_L": "Hero_ABlock_GLFu_L_Extra",
+            "QTQCi": "Hero_ABlock_QTQCi_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
@@ -34511,22 +34307,16 @@
                 "4": "Fire_QTQCi_Buff_Star4",
                 "5": "Fire_QTQCi_Buff_Star5",
                 "6": "Fire_QTQCi_Buff_Star6"
-            },
-            "SLWan": {
-                "3": "Fire_SLWan_Buff_Star3",
-                "4": "Fire_SLWan_Buff_Star4",
-                "5": "Fire_SLWan_Buff_Star5",
-                "6": "Fire_SLWan_Buff_Star6"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "MZGXiu": {
-                "3": "Fire_Buff_Star3_1_12",
-                "4": "Fire_Buff_Star4_1_12",
-                "5": "Fire_Buff_Star5_1_12",
-                "6": "Fire_Buff_Star6_1_12"
+            "GLFu_L": {
+                "3": "Fire_Buff_2",
+                "4": "Fire_Buff_6",
+                "5": "Fire_Buff_10",
+                "6": "Fire_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -34563,10 +34353,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_FireStamina": 6
+            "IR_Fire_2nd_Stamina": 6
         },
         "StarCondition": [
             {
