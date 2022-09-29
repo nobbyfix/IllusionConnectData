@@ -766,5 +766,189 @@ all.Skill_YLMGZhu_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_YLMGZhu_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.DmgRateFactor = externs.DmgRateFactor
+
+		assert(this.DmgRateFactor ~= nil, "External variable `DmgRateFactor` is not provided.")
+
+		this.RageFactor = externs.RageFactor
+
+		if this.RageFactor == nil then
+			this.RageFactor = 90
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		if this.HurtRateFactor == nil then
+			this.HurtRateFactor = 0.04
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			20
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"UNIT_BUFF_CANCELED"
+		}, passive3)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			15
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				local buffeft1 = global.HPPeriodDamage(_env, "Poison", attacker.atk * this.DmgRateFactor, 1)
+				local buffeft2 = global.Curse(_env)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 1,
+					display = "Poison",
+					group = "CURSE",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DISPELLABLE",
+						"CURSE",
+						"ABNORMAL"
+					}
+				}, {
+					buffeft1,
+					buffeft2
+				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local attacker = global.LoadUnit(_env, _env.ACTOR, "ATTACKER")
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				local buffeft1 = global.HPPeriodDamage(_env, "Poison", attacker.atk * this.DmgRateFactor, 1)
+				local buffeft2 = global.Curse(_env)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 1,
+					display = "Poison",
+					group = "CURSE",
+					duration = 2,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"DISPELLABLE",
+						"CURSE",
+						"ABNORMAL"
+					}
+				}, {
+					buffeft1,
+					buffeft2
+				}, 1, 0)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.buff = externs.buff
+
+		assert(_env.buff ~= nil, "External variable `buff` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.BuffIsMatched(_env, _env.buff, "CURSE") and global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) then
+				global.ApplyRPRecovery(_env, _env.ACTOR, this.RageFactor)
+
+				local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+					"+Normal",
+					"+Normal"
+				}, this.HurtRateFactor)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"Skill_YLMGZhu_Passive_SelfAwaken",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

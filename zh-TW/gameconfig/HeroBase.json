@@ -2633,7 +2633,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 1.28,
-        "AwakePic": "",
+        "AwakePic": "portrait_abo",
         "BaseAttack": 223.0,
         "BaseDefence": 54.0,
         "BaseHp": 663.0,
@@ -8151,7 +8151,7 @@
         "BaseAttack": 204.0,
         "BaseDefence": 60.0,
         "BaseHp": 811.0,
-        "BaseQualityAttr": "SSR_10_Support",
+        "BaseQualityAttr": "SSR_10_Curse",
         "BaseStar": 3,
         "BasicPower": 1600,
         "BattlePassiveSkill": "Hero_PBattle_FTLYShi",
@@ -8672,7 +8672,7 @@
         "HeroStoryMap": "",
         "HpFactor": 1.16,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_GLFu_L",
         "KeyPassiveSkill": "",
@@ -24689,7 +24689,8 @@
         "StarId": "SP_PNCao_1",
         "SurfaceList": [
             "Surface_SP_PNCao_1",
-            "Surface_SP_PNCao_Awake"
+            "Surface_SP_PNCao_Awake",
+            "Surface_SP_PNCao_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",

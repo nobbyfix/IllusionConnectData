@@ -520,6 +520,34 @@ ActivityLogin14Config = {
 			cc.c4b(232, 244, 254, 255),
 			cc.c4b(210, 226, 248, 255)
 		}
+	},
+	EightDays_Knight_2nd = {
+		resFile = "asset/ui/ActivityKnightLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 252, 238, 255),
+			cc.c4b(255, 234, 177, 255)
+		}
+	},
+	EightDays_Fire_2nd = {
+		resFile = "asset/ui/ActivityFireLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(176, 228, 254, 255)
+		}
+	},
+	EightDays_StoryBook_2nd = {
+		resFile = "asset/ui/ActivityStoryBookLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 233, 133, 255)
+		}
+	},
+	EightDays_SilentNight_2nd = {
+		resFile = "asset/ui/ActivitySilentNightLogin14.csb",
+		textPattern = {
+			cc.c4b(255, 255, 255, 255),
+			cc.c4b(255, 251, 189, 255)
+		}
 	}
 }
 ActivityMainMapTitleConfig = {

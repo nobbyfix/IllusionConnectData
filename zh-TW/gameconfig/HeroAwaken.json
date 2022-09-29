@@ -29,7 +29,7 @@
             0,
             1.5
         ],
-        "IAId": "",
+        "IAId": "BBLMa_IA_1",
         "ModelId": "Model_BBLMa_Awake",
         "Name": "BBLMa_Awake_Name",
         "NameDesc": "BBLMa_Awake_Desc",
@@ -42,6 +42,28 @@
         "StarId": "BBLMa_Awake",
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_BBLMa_Awake"
+    },
+    "BDFen": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -230,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_BDFen",
+        "Name": "BDFen_Awake_Name",
+        "NameDesc": "BDFen_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_BDFen",
+        "Reward": "HeroAwaken_BDFen",
+        "ShowHero": "BDFen",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "BDFen_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_BDFen_1"
     },
     "BHTZi": {
         "AnimSound": "Se_Effect_Awakening_BSu",
@@ -461,6 +483,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_LLan_Awake"
     },
+    "LSLTe": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -150,
+            0,
+            0.84
+        ],
+        "IAId": "",
+        "ModelId": "Model_LSLTe",
+        "Name": "LSLTe_Awake_Name",
+        "NameDesc": "LSLTe_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_LSLTe",
+        "Reward": "HeroAwaken_LSLTe",
+        "ShowHero": "LSLTe",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "LSLTe_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_LSLTe_1"
+    },
     "LYXi": {
         "AnimSound": "Se_Effect_Awakening_LYXi",
         "Animation": "slming_Awaken",
@@ -667,7 +711,7 @@
             0,
             0.64
         ],
-        "IAId": "",
+        "IAId": "SP_PNCao_IA_1",
         "ModelId": "Model_SP_PNCao_Awake",
         "Name": "SP_PNCao_Awake_Name",
         "NameDesc": "SP_PNCao_Awake_Desc",

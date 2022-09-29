@@ -2318,7 +2318,7 @@
         "HeadName": "SP_PNCao_2_HeadName",
         "HeroMasterId": "SP_PNCao",
         "IconPath": "asset/heros/sp_hhji_yyu/battlepic_sp_hhji_yyu.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "Surface_SP_PNCao_2",
         "Type": 5,
         "UnlockDesc": "SP_PNCao_2_HeadUnlock",
@@ -3230,6 +3230,19 @@
         "UnlockDesc": "HeroAwaken_BBLMa",
         "Zoom": 1.0
     },
+    "HeroAwaken_BDFen": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_BDFen_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_BDFen_1_Name",
+        "HeroMasterId": "BDFen",
+        "IconPath": "asset/heros/abo/battlepic_abo.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_BDFen",
+        "Zoom": 1.0
+    },
     "HeroAwaken_BHTZi": {
         "Condition": "",
         "HeadDesc": "HeroAwaken_BHTZi_Desc",
@@ -3484,7 +3497,7 @@
         "HeadName": "HeroAwaken_LSLTe_1_Name",
         "HeroMasterId": "LSLTe",
         "IconPath": "asset/heros/aen/battlepic_aen.png",
-        "IsHiddenHead": 1,
+        "IsHiddenHead": 0,
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_LSLTe",

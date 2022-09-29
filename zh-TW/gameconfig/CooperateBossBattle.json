@@ -56,6 +56,25 @@
             }
         ]
     },
+    "CooperateBoss_BDFen": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_BDFen",
+        "Name": "HeroBase_Name_BDFen",
+        "PointHead": "Model_BDFen",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_BQDShe": {
         "BGM": [
             "Mus_Battle_Whale",
@@ -353,6 +372,25 @@
         "EnemyMaster": "CooperateBoss_LFEr",
         "Name": "HeroBase_Name_LFEr",
         "PointHead": "Model_LFEr",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
+    "CooperateBoss_LSLTe": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_LSLTe",
+        "Name": "HeroBase_Name_LSLTe",
+        "PointHead": "Model_LSLTe",
         "VictoryConditions": [
             {
                 "type": "TimeOut",

@@ -739,6 +739,20 @@ function all.EvalDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFactors
 		global.print(_env, "目标为", global.GetUnitCid(_env, target), "权柄明珠-穿戴者当前伤害率", attacker.hurtrate)
 	end
 
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15136_1_EnergyCount")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15136_1_HurtRateFactor")(_env, actor)
+		local count = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15136_1_EnergyCount")(_env, actor)
+		local FinalHurtRateFactor = count * HurtRateFactor
+
+		if count < 10 then
+			FinalHurtRateFactor = 0.1
+		end
+
+		attacker.hurtrate = attacker.hurtrate + FinalHurtRateFactor
+
+		global.print(_env, "诉诸科学-额外加成的伤害率（非最终）", FinalHurtRateFactor, "能量数为", count)
+	end
+
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
 		local singleweaken = 2 * global.SpecialPropGetter(_env, "singleweaken")(_env, actor)
 		local singleunhurtratedown = 2 * global.SpecialPropGetter(_env, "singleunhurtratedown")(_env, actor)
@@ -1150,6 +1164,20 @@ function all.EvalAOEDamage_FlagCheck(_env, actor, target, dmgFactor, passiveFact
 		attacker.hurtrate = attacker.hurtrate + global.EquipSkill_Weapon_15134_2_extra(_env, actor, target)
 
 		global.print(_env, "目标为", global.GetUnitCid(_env, target), "权柄明珠-穿戴者当前伤害率", attacker.hurtrate)
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15136_1_EnergyCount")) > 0 then
+		local HurtRateFactor = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15136_1_HurtRateFactor")(_env, actor)
+		local count = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15136_1_EnergyCount")(_env, actor)
+		local FinalHurtRateFactor = count * HurtRateFactor
+
+		if count < 10 then
+			FinalHurtRateFactor = 0.1
+		end
+
+		attacker.hurtrate = attacker.hurtrate + FinalHurtRateFactor
+
+		global.print(_env, "诉诸科学-额外加成的伤害率（非最终）", FinalHurtRateFactor, "能量数为", count)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Weapon_15111_2")) > 0 then
@@ -6008,6 +6036,94 @@ function all.BackToCard_ResultCheck(_env, unit, cond, location)
 	end
 
 	if card then
+		global.ActivateSpecificTrigger(_env, unit, "BACK_CARD", {
+			card = card
+		})
+		global.ActivateGlobalTrigger(_env, unit, "UNIT_BACK_CARD", {
+			unit = unit,
+			card = card
+		})
+
+		return card
+	end
+end
+
+function all.BackToCard_ResultIDCheck(_env, actor, unit, cond, location)
+	local this = _env.this
+	local global = _env.global
+	local card = nil
+	local flag = 0
+	local check = 0
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) ~= 0 then
+		flag = 1
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SummonedCBJun_Check")) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "King_Check")) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SP_NNuo_Check")) and not global.MARKED(_env, "SP_NNuo_Check")(_env, unit) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SP_NNuo_Check")) == 0 and global.MARKED(_env, "SP_NNuo_Check")(_env, unit) then
+		flag = 0
+	end
+
+	if #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, global.GetUnitCid(_env, unit))) == #global.CardsOfPlayer(_env, global.GetOwner(_env, unit), global.CARD_HERO_MARKED(_env, "SMSNv_BOTu_Check")) then
+		flag = 0
+	end
+
+	if cond == "card" and flag == 0 then
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKickMax")) > 0 then
+			-- Nothing
+		else
+			card = global.BackToCard(_env, unit, global.GetOwner(_env, unit))
+
+			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+				global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			end
+		end
+	elseif cond == "window" and flag == 0 then
+		if global.SelectBuffCount(_env, unit, global.BUFF_MARKED_ALL(_env, "UnKick")) <= 0 then
+			local cardlocation = global.GetCardWindowIndex(_env, unit)
+
+			if cardlocation == 0 then
+				cardlocation = global.Random(_env, 1, 4)
+			end
+
+			location = location or cardlocation
+			card = global.BackToWindow(_env, unit, location, global.GetOwner(_env, unit))
+
+			if global.GetFriendField(_env, nil, "LLK_is_kill", true) == 1 and global.GetFriendField(_env, nil, global.GetUnitCid(_env, unit), true) == 1 then
+				global.SetFriendField(_env, nil, 1, "BackToCard", true)
+			end
+		end
+	end
+
+	if card then
+		if global.GetUnitCid(_env, actor) then
+			local buff = global.NumericEffect(_env, "+def", {
+				"+Normal",
+				"+Normal"
+			}, 0)
+
+			global.ApplyHeroCardBuff(_env, global.GetOwner(_env, unit), card, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Back" .. global.GetUnitCid(_env, actor)
+				}
+			}, {
+				buff
+			})
+		end
+
 		global.ActivateSpecificTrigger(_env, unit, "BACK_CARD", {
 			card = card
 		})

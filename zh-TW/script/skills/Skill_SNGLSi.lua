@@ -219,7 +219,7 @@ all.Skill_SNGLSi_Unique = {
 
 			if _env.mode == 1 then
 				if _env.units[1] then
-					local card = global.BackToCard_ResultCheck(_env, _env.units[1], "card")
+					local card = global.BackToCard_ResultIDCheck(_env, _env.ACTOR, _env.units[1], "card")
 
 					if card then
 						global.Kick(_env, _env.units[1])
@@ -662,7 +662,7 @@ all.Skill_SNGLSi_Unique_EX = {
 
 			if _env.mode == 1 then
 				if _env.units[1] then
-					local card = global.BackToCard_ResultCheck(_env, _env.units[1], "card")
+					local card = global.BackToCard_ResultIDCheck(_env, _env.ACTOR, _env.units[1], "card")
 
 					if card then
 						global.Kick(_env, _env.units[1])

@@ -971,5 +971,292 @@ all.Skill_BBLMa_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_BBLMa_Unique_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3.6,
+				0
+			}
+		end
+
+		this.ProbRateFactor1 = externs.ProbRateFactor1
+
+		assert(this.ProbRateFactor1 ~= nil, "External variable `ProbRateFactor1` is not provided.")
+
+		this.ProbRateFactor2 = externs.ProbRateFactor2
+
+		assert(this.ProbRateFactor2 ~= nil, "External variable `ProbRateFactor2` is not provided.")
+
+		this.DmgRateFactor1 = externs.DmgRateFactor1
+
+		assert(this.DmgRateFactor1 ~= nil, "External variable `DmgRateFactor1` is not provided.")
+
+		this.DmgRateFactor2 = externs.DmgRateFactor2
+
+		assert(this.DmgRateFactor2 ~= nil, "External variable `DmgRateFactor2` is not provided.")
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			5000
+		}, main)
+		main = global["[cut_in]"](this, {
+			"1#Hero_Unique_BBLMa"
+		}, main)
+		this.main = global["[load]"](this, {
+			"Movie_BBLMa_Skill3"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.HarmTargetView(_env, {
+				_env.TARGET
+			})
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+				-2.1,
+				0
+			}, 100, "skill3"))
+			global.AssignRoles(_env, _env.TARGET, "target")
+		end)
+		exec["@time"]({
+			1367
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			if global.SelectBuffCount(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "EquipSkill_Weapon_15101_biaozhi")) > 0 then
+				global.DispelBuff(_env, _env.TARGET, global.BUFF_MARKED_ALL(_env, "IMMUNE", "DISPELLABLE"), 99)
+
+				this.ProbRateFactor1 = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15101_First")(_env, _env.ACTOR)
+				this.ProbRateFactor2 = global.SpecialPropGetter(_env, "EquipSkill_Weapon_15101_Second")(_env, _env.ACTOR)
+
+				global.Serious_Injury(_env, _env.ACTOR, _env.TARGET, 0.6, 20, 4)
+			end
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, this.dmgFactor)
+			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.5,
+				0.5
+			}))
+
+			if #global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR)) > 0 then
+				for _, unit in global.__iter__(global.RandomN(_env, 2, global.FriendUnits(_env, -global.ONESELF(_env, _env.ACTOR)))) do
+					local buffeft2 = global.RageGainEffect(_env, "-", {
+						"+Normal",
+						"+Normal"
+					}, 1)
+					local buffeft3 = global.Diligent(_env)
+
+					global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+						timing = 2,
+						duration = 1,
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"ATKUP",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft2,
+						buffeft3
+					}, 1)
+				end
+
+				global.DiligentRound(_env)
+			end
+		end)
+		exec["@time"]({
+			2300
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.ProbTest(_env, this.ProbRateFactor1) then
+				if global.IsAlive(_env, _env.TARGET) then
+					global.CancelTargetView(_env)
+					global.HarmTargetView(_env, {
+						_env.TARGET
+					})
+					global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+						-2.1,
+						0
+					}, 100, "skill3"))
+					global.AssignRoles(_env, _env.TARGET, "target")
+				else
+					global.UnassignRoles(_env, _env.TARGET, "target")
+
+					local units = global.RandomN(_env, 1, global.EnemyUnits(_env, -global.ONESELF(_env, _env.TARGET)))
+
+					if units[1] then
+						for _, unit in global.__iter__(units) do
+							_env.TARGET = unit
+
+							global.CancelTargetView(_env)
+							global.HarmTargetView(_env, {
+								_env.TARGET
+							})
+							global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+								-2.1,
+								0
+							}, 100, "skill3"))
+							global.AssignRoles(_env, _env.TARGET, "target")
+						end
+					else
+						global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+						global.Stop(_env)
+					end
+				end
+			else
+				global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			2766
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, {
+				1,
+				this.DmgRateFactor1,
+				0
+			})
+			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.5,
+				0.5
+			}))
+		end)
+		exec["@time"]({
+			3600
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.ProbTest(_env, this.ProbRateFactor2) then
+				if global.IsAlive(_env, _env.TARGET) then
+					global.CancelTargetView(_env)
+					global.HarmTargetView(_env, {
+						_env.TARGET
+					})
+					global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+						-2.1,
+						0
+					}, 100, "skill3"))
+					global.AssignRoles(_env, _env.TARGET, "target")
+				else
+					global.UnassignRoles(_env, _env.TARGET, "target")
+
+					local units = global.RandomN(_env, 1, global.EnemyUnits(_env, -global.ONESELF(_env, _env.TARGET)))
+
+					if units[1] then
+						for _, unit in global.__iter__(units) do
+							_env.TARGET = unit
+
+							global.CancelTargetView(_env)
+							global.HarmTargetView(_env, {
+								_env.TARGET
+							})
+							global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET) + {
+								-2.1,
+								0
+							}, 100, "skill3"))
+							global.AssignRoles(_env, _env.TARGET, "target")
+						end
+					else
+						global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+						global.Stop(_env)
+					end
+				end
+			else
+				global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+				global.Stop(_env)
+			end
+		end)
+		exec["@time"]({
+			4066
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.ApplyStatusEffect(_env, _env.ACTOR, _env.TARGET)
+			global.ApplyRPEffect(_env, _env.ACTOR, _env.TARGET)
+
+			local damage = global.EvalDamage_FlagCheck(_env, _env.ACTOR, _env.TARGET, {
+				1,
+				this.DmgRateFactor2,
+				0
+			})
+			local result = global.ApplyHPMultiDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, {
+				0,
+				500
+			}, global.SplitValue(_env, damage, {
+				0.5,
+				0.5
+			}))
+		end)
+		exec["@time"]({
+			4950
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

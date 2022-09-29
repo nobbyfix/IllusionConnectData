@@ -537,7 +537,8 @@ all.Skill_GCZi_Passive = {
 
 						if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive_Activity")) == 0 then
 							local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
-								CostFactor = this.CostFactor
+								CostFactor = this.CostFactor,
+								holder = _env.ACTOR
 							})
 
 							global.ApplyBuff(_env, global.FriendMaster(_env), {
@@ -744,7 +745,8 @@ all.Skill_GCZi_Passive = {
 					})
 
 					local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
-						CostFactor = this.CostFactor
+						CostFactor = this.CostFactor,
+						holder = _env.ACTOR
 					})
 
 					global.ApplyBuff(_env, _env.ACTOR, {
@@ -778,6 +780,10 @@ all.GCZi_Passive_jianzhen = {
 		if this.CostFactor == nil then
 			this.CostFactor = 3
 		end
+
+		this.holder = externs.holder
+
+		assert(this.holder ~= nil, "External variable `holder` is not provided.")
 
 		local passive1 = __action(this, {
 			name = "passive1",
@@ -846,7 +852,7 @@ all.GCZi_Passive_jianzhen = {
 					local card_window = global.CardAtWindowIndex(_env, global.GetOwner(_env, _env.ACTOR), i)
 
 					if card_window == nil then
-						local card_battle = global.BackToCard_ResultCheck(_env, _env.unit, "window", i)
+						local card_battle = global.BackToCard_ResultIDCheck(_env, this.holder, _env.unit, "window", i)
 
 						if card_battle then
 							global.Kick(_env, _env.unit)
@@ -891,7 +897,7 @@ all.GCZi_Passive_jianzhen = {
 
 					if i == 4 and card_window ~= nil then
 						local cardlocation = global.Random(_env, 1, 4)
-						local card = global.BackToCard_ResultCheck(_env, _env.unit, "window", cardlocation)
+						local card = global.BackToCard_ResultIDCheck(_env, this.holder, _env.unit, "window", cardlocation)
 
 						if card then
 							global.Kick(_env, _env.unit)
@@ -1459,7 +1465,8 @@ all.Skill_GCZi_Passive_EX = {
 
 					if global.SelectBuffCount(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "Skill_GCZi_Passive_Activity")) == 0 then
 						local buff = global.PassiveFunEffectBuff(_env, "GCZi_Passive_jianzhen", {
-							CostFactor = this.CostFactor
+							CostFactor = this.CostFactor,
+							holder = _env.ACTOR
 						})
 
 						global.ApplyBuff(_env, global.FriendMaster(_env), {

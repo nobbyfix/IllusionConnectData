@@ -375,7 +375,41 @@
         "Shine": "",
         "Sicon": "IM_HD_HalloweenBossStamina_Small"
     },
+    "IM_HalloweenBoss_2nd_Stamina": {
+        "Desc": "IM_HalloweenBossStamina_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenBossStamina"
+        ],
+        "Licon": "IM_HD_HalloweenBossStamina",
+        "Name": "IM_HalloweenBossStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenBossStamina_Small"
+    },
     "IM_HalloweenExchange_4": {
+        "Desc": "IM_Exchange_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenExchange_4"
+        ],
+        "Licon": "IM_HD_HalloweenExchange_4",
+        "Name": "IM_HalloweenExchange_4_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenExchange_4_Small"
+    },
+    "IM_Halloween_2nd_Exchange_4": {
         "Desc": "IM_Exchange_FunctionDesc",
         "LargeIcons": [
             "IM_HD_HalloweenExchange_4"
@@ -1127,12 +1161,12 @@
         "Sicon": "ico_m_fireworks_stamina_2"
     },
     "IR_Fire_2nd_Stamina": {
-        "Desc": "IR_Fire_Stamina_FunctionDesc",
+        "Desc": "IR_FireStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_fire_stamina_1"
         ],
         "Licon": "ico_m_fire_stamina_1",
-        "Name": "IR_Fire_Stamina_Name",
+        "Name": "IR_FireStamina_Name",
         "Quality": [
             5
         ],
@@ -1264,6 +1298,40 @@
         "Shine": "",
         "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
     },
+    "IR_Halloween_2nd_Stamina": {
+        "Desc": "IR_HalloweenStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_HalloweenAcitvityStamina"
+        ],
+        "Licon": "IR_HD_HalloweenAcitvityStamina",
+        "Name": "IR_HalloweenStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
+    },
+    "IR_Halloween_2nd_StaminaConsumed": {
+        "Desc": "IR_HalloweenStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_HalloweenAcitvityStamina"
+        ],
+        "Licon": "IR_HD_HalloweenAcitvityStamina",
+        "Name": "IR_HalloweenStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_HalloweenAcitvityStamina_Small"
+    },
     "IR_HeroStive": {
         "Desc": "IR_HeroStive_FunctionDesc",
         "LargeIcons": [
@@ -1321,6 +1389,23 @@
         "Sicon": "icon_zhengbabi"
     },
     "IR_KnightStamina": {
+        "Desc": "IR_KnightStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_knight_stamina_1"
+        ],
+        "Licon": "ico_m_knight_stamina_1",
+        "Name": "IR_KnightStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_knight_stamina_2"
+    },
+    "IR_Knight_2nd_Stamina": {
         "Desc": "IR_KnightStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_knight_stamina_1"
@@ -1516,6 +1601,23 @@
         "Shine": "",
         "Sicon": "IR_HD_SnowflakeStamina_small"
     },
+    "IR_Purewhite_2nd_Stamina": {
+        "Desc": "IR_SnowflakeStamina_FunctionDesc",
+        "LargeIcons": [
+            "IR_HD_SnowflakeStamina"
+        ],
+        "Licon": "IR_HD_SnowflakeStamina",
+        "Name": "IR_SnowflakeStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IR_HD_SnowflakeStamina_small"
+    },
     "IR_Pve": {
         "Desc": "ResourcesIcon_IR_Pve_Desc",
         "LargeIcons": [
@@ -1656,6 +1758,23 @@
         "Shine": "",
         "Sicon": "ico_m_silentnight_stamina_2"
     },
+    "IR_SilentNight_2nd_Stamina": {
+        "Desc": "IR_SilentNightStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_silentnight_stamina_1"
+        ],
+        "Licon": "ico_m_silentnight_stamina_1",
+        "Name": "IR_SilentNightStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_silentnight_stamina_2"
+    },
     "IR_SnowflakeStamina": {
         "Desc": "IR_SnowflakeStamina_FunctionDesc",
         "LargeIcons": [
@@ -1725,6 +1844,23 @@
         "Sicon": "ico_m_stagearenajiu_2"
     },
     "IR_StoryBookStamina": {
+        "Desc": "IR_StoryBookStamina_FunctionDesc",
+        "LargeIcons": [
+            "ico_m_storybook_stamina_1"
+        ],
+        "Licon": "ico_m_storybook_stamina_1",
+        "Name": "IR_StoryBookStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "ico_m_storybook_stamina_2"
+    },
+    "IR_StoryBook_2nd_Stamina": {
         "Desc": "IR_StoryBookStamina_FunctionDesc",
         "LargeIcons": [
             "ico_m_storybook_stamina_1"
