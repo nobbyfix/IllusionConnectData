@@ -995,14 +995,10 @@ all.Skill_QBTe_Unique_Awaken = {
 				end
 
 				if units_sis[1] or units_alive[1] then
-					damage.val = damage.val * (1 - this.RealDamageFactor)
-
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-					global.DelayCall(_env, 120, global.ApplyRealDamage, _env.ACTOR, unit, 2, 1, this.dmgFactor[2] * this.RealDamageFactor, 0, 0, damage)
-				else
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+					damage.val = damage.val * (1 - this.RealDamageFactor) + global.EvalRealDamage(_env, _env.ACTOR, unit, 2, 1, this.dmgFactor[2], 0, 0, damage) * this.RealDamageFactor
 				end
 
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
 					zOrder = "TopLayer",
@@ -1022,14 +1018,10 @@ all.Skill_QBTe_Unique_Awaken = {
 				end
 
 				if units_sis[1] or units_alive[1] then
-					damage.val = damage.val * (1 - this.RealDamageFactor)
-
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-					global.DelayCall(_env, 120, global.ApplyRealDamage, _env.ACTOR, unit, 2, 1, this.dmgFactor[2] * this.RealDamageFactor, 0, 0, damage)
-				else
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+					damage.val = damage.val * (1 - this.RealDamageFactor) + global.EvalRealDamage(_env, _env.ACTOR, unit, 2, 1, this.dmgFactor[2], 0, 0, damage) * this.RealDamageFactor
 				end
 
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
 					zOrder = "TopLayer",
@@ -1049,14 +1041,10 @@ all.Skill_QBTe_Unique_Awaken = {
 				end
 
 				if units_sis[1] or units_alive[1] then
-					damage.val = damage.val * (1 - this.RealDamageFactor)
-
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
-					global.DelayCall(_env, 120, global.ApplyRealDamage, _env.ACTOR, unit, 2, 1, this.dmgFactor[2] * this.RealDamageFactor, 0, 0, damage)
-				else
-					global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+					damage.val = damage.val * (1 - this.RealDamageFactor) + global.EvalRealDamage(_env, _env.ACTOR, unit, 2, 1, this.dmgFactor[2], 0, 0, damage) * this.RealDamageFactor
 				end
 
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
 				global.AddAnim(_env, {
 					loop = 1,
 					zOrder = "TopLayer",

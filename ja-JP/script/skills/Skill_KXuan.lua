@@ -366,7 +366,7 @@ all.Skill_KXuan_Passive = {
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then
 						for _, friendunit in global.__iter__(_env.units) do
 							local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
-							local card = global.BackToCard_ResultCheck(_env, friendunit, "card")
+							local card = global.BackToCard_ResultIDCheck(_env, _env.ACTOR, friendunit, "card")
 
 							if card then
 								global.Kick(_env, friendunit)
@@ -726,7 +726,7 @@ all.Skill_KXuan_Passive_EX = {
 					if not global.MARKED(_env, "CANNOT_BACK_TO_CARD")(_env, _env.units[1]) then
 						for _, friendunit in global.__iter__(_env.units) do
 							local maxHp = global.UnitPropGetter(_env, "maxHp")(_env, friendunit)
-							local card = global.BackToCard_ResultCheck(_env, friendunit, "card")
+							local card = global.BackToCard_ResultIDCheck(_env, _env.ACTOR, friendunit, "card")
 
 							if card then
 								global.Kick(_env, friendunit)

@@ -317,6 +317,7 @@ all.Skill_GLFu_L_Unique = {
 						duration = this.TimeFactor,
 						tags = {
 							"Skill_GLFu_L_Unique_Daze",
+							"DAZE",
 							"STATUS",
 							"ABNORMAL",
 							"UNDISPELLABLE"
@@ -969,6 +970,7 @@ all.Skill_GLFu_L_Unique_EX = {
 						tags = {
 							"Skill_GLFu_L_Unique_Daze",
 							"STATUS",
+							"DAZE",
 							"ABNORMAL",
 							"UNDISPELLABLE"
 						}

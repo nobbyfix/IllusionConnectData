@@ -49144,8 +49144,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 55600,
+        "CombatNeed": 98700,
+        "CombatValue": 98700,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49153,29 +49153,29 @@
         "EnemyCard": "CardBookStoryE01S01",
         "EnemyMaster": "StroyBook02P01U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S01_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_1",
-                "4": "Story_Buff_Star4_2_1",
-                "5": "Story_Buff_Star5_2_1",
-                "6": "Story_Buff_Star6_2_1"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49184,7 +49184,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S01_Name",
         "NextPoint": [
@@ -49197,26 +49197,26 @@
         "PointBoard": "",
         "PointHead": "Model_GLin",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S01_PointReward",
+        "PointReward": "StoryBook_2nd_E01S01_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01E01"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S01_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S01_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49267,8 +49267,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 71800,
+        "CombatNeed": 114900,
+        "CombatValue": 114900,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49276,29 +49276,29 @@
         "EnemyCard": "CardBookStoryE01S02",
         "EnemyMaster": "StroyBook02P02U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S02_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_2",
-                "4": "Story_Buff_Star4_2_2",
-                "5": "Story_Buff_Star5_2_2",
-                "6": "Story_Buff_Star6_2_2"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49307,7 +49307,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S02_Name",
         "NextPoint": [
@@ -49322,24 +49322,24 @@
         "PointBoard": "",
         "PointHead": "Model_TJHDe_trick",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S02_PointReward",
+        "PointReward": "StoryBook_2nd_E01S02_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S02_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S02_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49390,8 +49390,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 98700,
+        "CombatNeed": 141800,
+        "CombatValue": 141800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49399,29 +49399,29 @@
         "EnemyCard": "CardBookStoryE01S03",
         "EnemyMaster": "StroyBook02P03U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S03_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_3",
-                "4": "Story_Buff_Star4_2_3",
-                "5": "Story_Buff_Star5_2_3",
-                "6": "Story_Buff_Star6_2_3"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49430,7 +49430,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S03_Name",
         "NextPoint": [
@@ -49445,14 +49445,14 @@
         "PointBoard": "",
         "PointHead": "Model_MLYTLSha_forest",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S03_PointReward",
+        "PointReward": "StoryBook_2nd_E01S03_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S03_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S03_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -49462,10 +49462,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49516,8 +49516,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 114900,
+        "CombatNeed": 163400,
+        "CombatValue": 163400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49525,29 +49525,29 @@
         "EnemyCard": "CardBookStoryE01S04",
         "EnemyMaster": "StroyBook02P04U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S04_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_4",
-                "4": "Story_Buff_Star4_2_4",
-                "5": "Story_Buff_Star5_2_4",
-                "6": "Story_Buff_Star6_2_4"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49556,7 +49556,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S04_Name",
         "NextPoint": [
@@ -49571,14 +49571,14 @@
         "PointBoard": "",
         "PointHead": "Model_ALSi_forest",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S04_PointReward",
+        "PointReward": "StoryBook_2nd_E01S04_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S04_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S04_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -49588,10 +49588,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49642,8 +49642,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 141800,
+        "CombatNeed": 199000,
+        "CombatValue": 199000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49651,29 +49651,29 @@
         "EnemyCard": "CardBookStoryE01S05",
         "EnemyMaster": "StroyBook02P05U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S05_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_5",
-                "4": "Story_Buff_Star4_2_5",
-                "5": "Story_Buff_Star5_2_5",
-                "6": "Story_Buff_Star6_2_5"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49682,7 +49682,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S05_Name",
         "NextPoint": [
@@ -49697,26 +49697,26 @@
         "PointBoard": "",
         "PointHead": "Model_TLSi",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S05_PointReward",
+        "PointReward": "StoryBook_2nd_E01S05_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01E02"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S05_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S05_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49767,8 +49767,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 163400,
+        "CombatNeed": 226000,
+        "CombatValue": 226000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49776,29 +49776,29 @@
         "EnemyCard": "CardBookStoryE01S06",
         "EnemyMaster": "StroyBook02P06U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S06_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_6",
-                "4": "Story_Buff_Star4_2_6",
-                "5": "Story_Buff_Star5_2_6",
-                "6": "Story_Buff_Star6_2_6"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_3",
+                "4": "StoryBook_Buff_9",
+                "5": "StoryBook_Buff_15",
+                "6": "StoryBook_Buff_21"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49807,7 +49807,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S06_Name",
         "NextPoint": [
@@ -49822,24 +49822,24 @@
         "PointBoard": "",
         "PointHead": "Model_LDu_Awake",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S06_PointReward",
+        "PointReward": "StoryBook_2nd_E01S06_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S06_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S06_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -49890,8 +49890,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 199000,
+        "CombatNeed": 247500,
+        "CombatValue": 247500,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -49899,29 +49899,29 @@
         "EnemyCard": "CardBookStoryE01S07",
         "EnemyMaster": "StroyBook02P07U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S07_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_7",
-                "4": "Story_Buff_Star4_2_7",
-                "5": "Story_Buff_Star5_2_7",
-                "6": "Story_Buff_Star6_2_7"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -49930,7 +49930,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S07_Name",
         "NextPoint": [
@@ -49945,14 +49945,14 @@
         "PointBoard": "",
         "PointHead": "Model_LYSi",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S07_PointReward",
+        "PointReward": "StoryBook_2nd_E01S07_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S07_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S07_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -49962,10 +49962,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50016,8 +50016,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 226000,
+        "CombatNeed": 298200,
+        "CombatValue": 298200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50025,29 +50025,29 @@
         "EnemyCard": "CardBookStoryE01S08",
         "EnemyMaster": "StroyBook02P08U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S08_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_8",
-                "4": "Story_Buff_Star4_2_8",
-                "5": "Story_Buff_Star5_2_8",
-                "6": "Story_Buff_Star6_2_8"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50056,7 +50056,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S08_Name",
         "NextPoint": [
@@ -50071,14 +50071,14 @@
         "PointBoard": "",
         "PointHead": "Model_BEr_WZi",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S08_PointReward",
+        "PointReward": "StoryBook_2nd_E01S08_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S08_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S08_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -50089,10 +50089,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50143,8 +50143,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 247500,
+        "CombatNeed": 464400,
+        "CombatValue": 464400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50152,29 +50152,29 @@
         "EnemyCard": "CardBookStoryE01S09",
         "EnemyMaster": "StroyBook02P09U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S09_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_9",
-                "4": "Story_Buff_Star4_2_9",
-                "5": "Story_Buff_Star5_2_9",
-                "6": "Story_Buff_Star6_2_9"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50183,7 +50183,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S09_Name",
         "NextPoint": [
@@ -50198,26 +50198,26 @@
         "PointBoard": "",
         "PointHead": "Model_DDing_TNLang",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S09_PointReward",
+        "PointReward": "StoryBook_2nd_E01S09_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01E03"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S09_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S09_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50268,8 +50268,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 298200,
+        "CombatNeed": 756000,
+        "CombatValue": 756000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50277,29 +50277,29 @@
         "EnemyCard": "CardBookStoryE01S10",
         "EnemyMaster": "StroyBook02P10U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S10_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_10",
-                "4": "Story_Buff_Star4_2_10",
-                "5": "Story_Buff_Star5_2_10",
-                "6": "Story_Buff_Star6_2_10"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50308,7 +50308,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S10_Name",
         "NextPoint": [
@@ -50323,24 +50323,24 @@
         "PointBoard": "",
         "PointHead": "Model_PNCao_vt",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S10_PointReward",
+        "PointReward": "StoryBook_2nd_E01S10_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S10_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S10_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50391,8 +50391,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 464400,
+        "CombatNeed": 854400,
+        "CombatValue": 854400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50400,29 +50400,29 @@
         "EnemyCard": "CardBookStoryE01S11",
         "EnemyMaster": "StroyBook02P11U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S11_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_11",
-                "4": "Story_Buff_Star4_2_11",
-                "5": "Story_Buff_Star5_2_11",
-                "6": "Story_Buff_Star6_2_11"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50431,7 +50431,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S11_Name",
         "NextPoint": [
@@ -50446,14 +50446,14 @@
         "PointBoard": "",
         "PointHead": "Model_Enemy_MYLang",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S11_PointReward",
+        "PointReward": "StoryBook_2nd_E01S11_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S11_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S11_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -50463,10 +50463,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50517,8 +50517,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 756000,
+        "CombatNeed": 956000,
+        "CombatValue": 956000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50526,29 +50526,29 @@
         "EnemyCard": "CardBookStoryE01S12",
         "EnemyMaster": "StroyBook02P12U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookE01S12_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_E01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_2_12",
-                "4": "Story_Buff_Star4_2_12",
-                "5": "Story_Buff_Star5_2_12",
-                "6": "Story_Buff_Star6_2_12"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_4",
+                "4": "StoryBook_Buff_12",
+                "5": "StoryBook_Buff_20",
+                "6": "StoryBook_Buff_28"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50557,7 +50557,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookE01",
+        "Map": "StoryBookE01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookE01S12_Name",
         "NextPoint": [],
@@ -50570,14 +50570,14 @@
         "PointBoard": "",
         "PointHead": "Model_Enemy_MYLang",
         "PointPicture": "",
-        "PointReward": "StoryBookE01S12_PointReward",
+        "PointReward": "StoryBook_2nd_E01S12_PointReward",
         "PointTime": {
-            "start": "2021-06-05 05:00:00"
+            "start": "2022-10-08 05:00:00"
         },
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookE01S12_ShowReward",
+        "ShowItem": "StoryBook_2nd_E01S12_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -50588,10 +50588,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 12
+            "IR_StoryBook_2nd_Stamina": 12
         },
         "StarCondition": [
             {
@@ -50642,8 +50642,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 4100,
+        "CombatNeed": 11100,
+        "CombatValue": 11100,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50651,29 +50651,29 @@
         "EnemyCard": "CardBookStoryM01S01",
         "EnemyMaster": "StroyBook01P01U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S01_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S01_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_1",
-                "4": "Story_Buff_Star4_1_1",
-                "5": "Story_Buff_Star5_1_1",
-                "6": "Story_Buff_Star6_1_1"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_8",
+                "6": "StoryBook_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50682,7 +50682,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S01_Name",
         "NextPoint": [
@@ -50695,24 +50695,24 @@
         "PointBoard": "",
         "PointHead": "Model_YSuo",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S01_PointReward",
+        "PointReward": "StoryBook_2nd_M01S01_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01S01"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S01_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S01_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -50763,8 +50763,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 11600,
+        "CombatNeed": 27600,
+        "CombatValue": 27600,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50772,29 +50772,29 @@
         "EnemyCard": "CardBookStoryM01S02",
         "EnemyMaster": "StroyBook01P02U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S02_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S02_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_2",
-                "4": "Story_Buff_Star4_1_2",
-                "5": "Story_Buff_Star5_1_2",
-                "6": "Story_Buff_Star6_1_2"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_8",
+                "6": "StoryBook_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50803,7 +50803,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S02_Name",
         "NextPoint": [
@@ -50818,22 +50818,22 @@
         "PointBoard": "",
         "PointHead": "Model_BEr_WZi",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S02_PointReward",
+        "PointReward": "StoryBook_2nd_M01S02_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S02_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S02_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -50884,8 +50884,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 20200,
+        "CombatNeed": 36200,
+        "CombatValue": 36200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -50893,29 +50893,29 @@
         "EnemyCard": "CardBookStoryM01S03",
         "EnemyMaster": "StroyBook01P03U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S03_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S03_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_3",
-                "4": "Story_Buff_Star4_1_3",
-                "5": "Story_Buff_Star5_1_3",
-                "6": "Story_Buff_Star6_1_3"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_8",
+                "6": "StoryBook_Buff_11"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -50924,7 +50924,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S03_Name",
         "NextPoint": [
@@ -50939,22 +50939,22 @@
         "PointBoard": "",
         "PointHead": "Model_CLMan_XHMao",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S03_PointReward",
+        "PointReward": "StoryBook_2nd_M01S03_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S03_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S03_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [],
         "SpecialSkillShow": [],
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51005,8 +51005,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 27600,
+        "CombatNeed": 44300,
+        "CombatValue": 44300,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51014,29 +51014,29 @@
         "EnemyCard": "CardBookStoryM01S04",
         "EnemyMaster": "StroyBook01P04U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S04_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S04_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_4",
-                "4": "Story_Buff_Star4_1_4",
-                "5": "Story_Buff_Star5_1_4",
-                "6": "Story_Buff_Star6_1_4"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_9",
+                "6": "StoryBook_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51045,7 +51045,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S04_Name",
         "NextPoint": [
@@ -51060,12 +51060,12 @@
         "PointBoard": "",
         "PointHead": "Model_TLSi",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S04_PointReward",
+        "PointReward": "StoryBook_2nd_M01S04_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S04_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S04_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51075,10 +51075,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51129,8 +51129,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 36200,
+        "CombatNeed": 53800,
+        "CombatValue": 53800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51138,29 +51138,29 @@
         "EnemyCard": "CardBookStoryM01S05",
         "EnemyMaster": "StroyBook01P05U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S05_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S05_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_5",
-                "4": "Story_Buff_Star4_1_5",
-                "5": "Story_Buff_Star5_1_5",
-                "6": "Story_Buff_Star6_1_5"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_9",
+                "6": "StoryBook_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51169,7 +51169,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S05_Name",
         "NextPoint": [
@@ -51184,14 +51184,14 @@
         "PointBoard": "",
         "PointHead": "Model_XHMao",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S05_PointReward",
+        "PointReward": "StoryBook_2nd_M01S05_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01S02"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S05_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S05_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51201,10 +51201,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51255,8 +51255,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 44300,
+        "CombatNeed": 62300,
+        "CombatValue": 62300,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51264,29 +51264,29 @@
         "EnemyCard": "CardBookStoryM01S06",
         "EnemyMaster": "StroyBook01P06U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S06_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S06_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_6",
-                "4": "Story_Buff_Star4_1_6",
-                "5": "Story_Buff_Star5_1_6",
-                "6": "Story_Buff_Star6_1_6"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_5",
+                "5": "StoryBook_Buff_9",
+                "6": "StoryBook_Buff_12"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51295,7 +51295,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S06_Name",
         "NextPoint": [
@@ -51310,12 +51310,12 @@
         "PointBoard": "",
         "PointHead": "Model_PDLa",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S06_PointReward",
+        "PointReward": "StoryBook_2nd_M01S06_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S06_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S06_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51325,10 +51325,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51379,8 +51379,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 53800,
+        "CombatNeed": 70400,
+        "CombatValue": 70400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51388,29 +51388,29 @@
         "EnemyCard": "CardBookStoryM01S07",
         "EnemyMaster": "StroyBook01P07U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S07_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S07_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_7",
-                "4": "Story_Buff_Star4_1_7",
-                "5": "Story_Buff_Star5_1_7",
-                "6": "Story_Buff_Star6_1_7"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51419,7 +51419,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S07_Name",
         "NextPoint": [
@@ -51434,12 +51434,12 @@
         "PointBoard": "",
         "PointHead": "Model_PDLa_toy",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S07_PointReward",
+        "PointReward": "StoryBook_2nd_M01S07_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S07_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S07_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51449,10 +51449,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51503,8 +51503,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 62300,
+        "CombatNeed": 81400,
+        "CombatValue": 81400,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51512,29 +51512,29 @@
         "EnemyCard": "CardBookStoryM01S08",
         "EnemyMaster": "StroyBook01P08U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S08_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S08_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_8",
-                "4": "Story_Buff_Star4_1_8",
-                "5": "Story_Buff_Star5_1_8",
-                "6": "Story_Buff_Star6_1_8"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51543,7 +51543,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S08_Name",
         "NextPoint": [
@@ -51558,12 +51558,12 @@
         "PointBoard": "",
         "PointHead": "Model_SRen",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S08_PointReward",
+        "PointReward": "StoryBook_2nd_M01S08_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S08_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S08_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51574,10 +51574,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51628,8 +51628,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 70400,
+        "CombatNeed": 88000,
+        "CombatValue": 88000,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51637,29 +51637,29 @@
         "EnemyCard": "CardBookStoryM01S09",
         "EnemyMaster": "StroyBook01P09U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S09_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S09_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_9",
-                "4": "Story_Buff_Star4_1_9",
-                "5": "Story_Buff_Star5_1_9",
-                "6": "Story_Buff_Star6_1_9"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51668,7 +51668,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S09_Name",
         "NextPoint": [
@@ -51683,14 +51683,14 @@
         "PointBoard": "",
         "PointHead": "Model_SRen_toy",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S09_PointReward",
+        "PointReward": "StoryBook_2nd_M01S09_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01S03"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S09_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S09_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51701,10 +51701,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51755,8 +51755,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 81400,
+        "CombatNeed": 195300,
+        "CombatValue": 195300,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51764,29 +51764,29 @@
         "EnemyCard": "CardBookStoryM01S10",
         "EnemyMaster": "StroyBook01P10U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S10_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S10_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_10",
-                "4": "Story_Buff_Star4_1_10",
-                "5": "Story_Buff_Star5_1_10",
-                "6": "Story_Buff_Star6_1_10"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51795,7 +51795,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S10_Name",
         "NextPoint": [
@@ -51810,12 +51810,12 @@
         "PointBoard": "",
         "PointHead": "Model_ALSi",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S10_PointReward",
+        "PointReward": "StoryBook_2nd_M01S10_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S10_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S10_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51826,10 +51826,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -51880,8 +51880,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 88000,
+        "CombatNeed": 298200,
+        "CombatValue": 298200,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -51889,29 +51889,29 @@
         "EnemyCard": "CardBookStoryM01S11",
         "EnemyMaster": "StroyBook01P11U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S11_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S11_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_11",
-                "4": "Story_Buff_Star4_1_11",
-                "5": "Story_Buff_Star5_1_11",
-                "6": "Story_Buff_Star6_1_11"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -51920,7 +51920,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S11_Name",
         "NextPoint": [
@@ -51935,12 +51935,12 @@
         "PointBoard": "",
         "PointHead": "Model_ALSi_TGWu",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S11_PointReward",
+        "PointReward": "StoryBook_2nd_M01S11_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S11_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S11_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -51951,10 +51951,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {
@@ -52005,8 +52005,8 @@
         "BossRound": 1,
         "CardsExcept": "",
         "Challenge": [],
-        "CombatNeed": 169168,
-        "CombatValue": 195300,
+        "CombatNeed": 71800,
+        "CombatValue": 71800,
         "Combat_Adjust_Rate": 0.0,
         "ConfigLevelLimitID": "LevelLimit_StoryBook",
         "CrystalReward": 0,
@@ -52014,29 +52014,29 @@
         "EnemyCard": "CardBookStoryM01S12",
         "EnemyMaster": "StroyBook01P12U01N08",
         "EnemyName": "",
-        "FirstKillReward": "StoryBookM01S12_FirstReward",
+        "FirstKillReward": "StoryBook_2nd_M01S12_FirstReward",
         "GoldReward": 0,
         "HeroAttrExtra": {
-            "TLSi": "Hero_ABlock_TLSi_Extra",
-            "XHMao": "Hero_ABlock_XHMao_Extra"
+            "GCZi": "Hero_ABlock_GCZi_Extra",
+            "SP_XTXXuan": "Hero_ABlock_SP_XTXXuan_Extra"
         },
         "HeroAttrExtraLua": "",
         "HeroAttrSatrExtra": {
-            "XHMao": {
-                "3": "Story_Star3_XHMao",
-                "4": "Story_Star4_XHMao",
-                "5": "Story_Star5_XHMao",
-                "6": "Story_Star6_XHMao"
+            "GCZi": {
+                "3": "Story_Star3_GCZi",
+                "4": "Story_Star4_GCZi",
+                "5": "Story_Star5_GCZi",
+                "6": "Story_Star6_GCZi"
             }
         },
         "HeroExpReward": "",
         "HeroItemExtra": "",
         "HeroItemSatrExtra": {
-            "TLSi": {
-                "3": "Story_Buff_Star3_1_12",
-                "4": "Story_Buff_Star4_1_12",
-                "5": "Story_Buff_Star5_1_12",
-                "6": "Story_Buff_Star6_1_12"
+            "SP_WTXXuan": {
+                "3": "StoryBook_Buff_2",
+                "4": "StoryBook_Buff_6",
+                "5": "StoryBook_Buff_10",
+                "6": "StoryBook_Buff_14"
             }
         },
         "HeroSkillSatrExtra": "",
@@ -52045,7 +52045,7 @@
         "LoadingBorad": "",
         "Location": "",
         "MainShowItem": "IM_StoryBook_ExchangeItem",
-        "Map": "StoryBookM01",
+        "Map": "StoryBookM01_2nd",
         "Master": "",
         "Name": "BlockPoint_StoryBookM01S12_Name",
         "NextPoint": [],
@@ -52058,14 +52058,14 @@
         "PointBoard": "",
         "PointHead": "Model_ALSi_TGWu",
         "PointPicture": "",
-        "PointReward": "StoryBookM01S12_PointReward",
+        "PointReward": "StoryBook_2nd_M01S12_PointReward",
         "PointTime": "",
         "PointType": "NORMAL",
         "PreStoryPoint": [
             "StoryBookS01S04"
         ],
         "ReslutBoard": "",
-        "ShowItem": "StoryBookM01S12_ShowReward",
+        "ShowItem": "StoryBook_2nd_M01S12_ShowReward",
         "SpRuleBubble": "",
         "SpecialRuleShow": [
             "SpecialRule_StoryBook_Tittle_1",
@@ -52076,10 +52076,10 @@
         "StageEffect": "",
         "StageGuide": "",
         "StaminaBack": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StaminaCost": {
-            "IR_StoryBookStamina": 6
+            "IR_StoryBook_2nd_Stamina": 6
         },
         "StarCondition": [
             {

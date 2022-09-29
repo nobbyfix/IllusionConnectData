@@ -424,6 +424,12 @@ all.Skill_MYing_Stage = {
 			this.Ex = 1
 		end
 
+		this.Time = externs.Time
+
+		if this.Time == nil then
+			this.Time = 8
+		end
+
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -475,8 +481,8 @@ all.Skill_MYing_Stage = {
 
 					global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
 						timing = 4,
-						duration = 8,
 						display = "Mute",
+						duration = this.Time,
 						tags = {
 							"STATUS",
 							"DEBUFF",
@@ -1014,6 +1020,161 @@ all.Skill_MYing_Unique_TRANS = {
 			if global.SpecialPropGetter(_env, "Unique_count")(_env, _env.ACTOR) >= 2 then
 				global.KillTarget(_env, _env.ACTOR)
 			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_MYing_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3,
+				0
+			}
+		end
+
+		this.Time = externs.Time
+
+		if this.Time == nil then
+			this.Time = 14
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			2833
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_MYing"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.13, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			2267
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+
+			local buff = global.SpecialNumericEffect(_env, "+MYing_stage_bingo", {
+				"?Normal"
+			}, 1)
+			local trap = global.BuffTrap(_env, {
+				timing = 2,
+				duration = 1,
+				tags = {
+					"MYING_STAGE_BINGO"
+				}
+			}, {
+				buff
+			})
+
+			for _, cell in global.__iter__(global.RandomN(_env, 9, global.FriendCells(_env, global.EMPTY_CELL(_env)))) do
+				if global.SelectTrapCount(_env, cell, global.BUFF_MARKED(_env, "TRAP")) == 0 then
+					global.ApplyTrap(_env, cell, {
+						display = "Stage",
+						duration = 99,
+						triggerLife = 99,
+						tags = {
+							"MYING_STAGE",
+							"TRAP"
+						}
+					}, {
+						trap
+					})
+
+					break
+				end
+			end
+
+			if global.SelectBuffCount(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "Skill_MYing_Stage")) == 0 then
+				local buffeft = global.PassiveFunEffectBuff(_env, "Skill_MYing_Stage", {
+					Ex = 1,
+					Time = this.Time
+				})
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"Skill_MYing_Stage",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft
+				})
+			end
+		end)
+		exec["@time"]({
+			2800
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
 		end)
 
 		return _env

@@ -726,6 +726,31 @@
         "Tips": "Unlock_HomeBackground_Spring",
         "Unlook": 1
     },
+    "HomeBackground_StoryBook2": {
+        "BGM": "Mus_Story_Mystery_2",
+        "BGPContraction": "anualshop_scene_main_storybook2_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Desc",
+            "img": "Welfare_Background_Storybook2",
+            "name": "HomeBackground_StoryBook2_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "StoryBook2_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_StoryBook2_Name",
+        "Price": "",
+        "Sort": 13,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Fire",
+        "Unlook": 1
+    },
     "HomeBackground_Storybook": {
         "BGM": "Mus_Main_Scene",
         "BGPContraction": "anualshop_scene_main_storybook_preview",

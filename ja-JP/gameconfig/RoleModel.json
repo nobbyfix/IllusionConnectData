@@ -2183,8 +2183,8 @@
         "Bust1": "Bust1_BDFen",
         "Bust10": "Bust10_BDFen",
         "Bust11": "Bust11_BDFen",
-        "Bust12": "Bust12_BDFen",
-        "Bust13": "Bust13_BDFen",
+        "Bust12": "Bust13_BDFen",
+        "Bust13": "Bust12_BDFen",
         "Bust14": "Bust14_BDFen",
         "Bust15": "Bust15_BDFen",
         "Bust16": "",
@@ -2200,7 +2200,10 @@
             -47,
             -505
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            100,
+            -500
+        ],
         "BustTemp1": [
             -20,
             -640

@@ -3719,6 +3719,198 @@
         "Time": "",
         "Type": "STORY"
     },
+    "Memory_Act_StoryBook_1": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01S01_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_1",
+        "Name": "StoryBookS01S01_Name",
+        "Num": 1000,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_01a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_2": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01S02_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_2",
+        "Name": "StoryBookS01S02_Name",
+        "Num": 1001,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_02a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_3": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01S03_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_3",
+        "Name": "StoryBookS01S03_Name",
+        "Num": 1002,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_03a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_4": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01S04_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_4",
+        "Name": "StoryBookS01S04_Name",
+        "Num": 1003,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_04a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_5": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01E01_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_5",
+        "Name": "StoryBookS01E01_Name",
+        "Num": 1004,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_05a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_6": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01E02_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_6",
+        "Name": "StoryBookS01E02_Name",
+        "Num": 1005,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_06a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_7": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01E03_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_7",
+        "Name": "StoryBookS01E03_Name",
+        "Num": 1006,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_07a",
+        "Time": "",
+        "Type": "STORY"
+    },
+    "Memory_Act_StoryBook_8": {
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01E04_2nd"
+                ]
+            }
+        ],
+        "Desc": "",
+        "Englishname": "",
+        "Listpicture": "s_album_active_storybook_8",
+        "Name": "StoryBookS01E04_Name",
+        "Num": 1007,
+        "Picture": "",
+        "Screen": "",
+        "StoryLink": "eventstory_Logan_08a",
+        "Time": "",
+        "Type": "STORY"
+    },
     "Memory_Act_Summer_1": {
         "Condition": [
             {
