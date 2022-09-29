@@ -232,16 +232,6 @@
             "storage": 5000
         }
     },
-    "AcitvityFireStamina_Reset_2nd": {
-        "ResetSystem": {
-            "addValue": 1,
-            "cd": 540,
-            "initial": 200,
-            "limit": 400,
-            "resetMode": "CD",
-            "storage": 5000
-        }
-    },
     "AcitvityFireWorksStamina_Reset": {
         "ResetSystem": {
             "addValue": 1,
@@ -253,6 +243,16 @@
         }
     },
     "AcitvityFire_2nd_Stamina_Reset": {
+        "ResetSystem": {
+            "addValue": 1,
+            "cd": 540,
+            "initial": 200,
+            "limit": 400,
+            "resetMode": "CD",
+            "storage": 5000
+        }
+    },
+    "AcitvityFire_Stamina_Reset_2nd": {
         "ResetSystem": {
             "addValue": 1,
             "cd": 540,

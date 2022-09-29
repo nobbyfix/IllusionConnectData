@@ -900,6 +900,47 @@
         "UnlockDesc": "",
         "UnlockStory": ""
     },
+    "Memory_Act_StoryBook": {
+        "ActiviType": "",
+        "Condition": [
+            {
+                "conditionType": "Condi_Activity_Story_Block",
+                "factor1": [
+                    1
+                ],
+                "params": [
+                    "ActivityBlock_StoryBook_2nd_Map",
+                    "StoryBookS01S01_2nd"
+                ]
+            }
+        ],
+        "Listpicture": "s_album_active_storybook_1",
+        "Name": "ActivityBlock_StoryBook_Name",
+        "Num": 25,
+        "Story": [
+            {
+                "id": [
+                    "Memory_Act_StoryBook_1",
+                    "Memory_Act_StoryBook_2",
+                    "Memory_Act_StoryBook_3",
+                    "Memory_Act_StoryBook_4"
+                ],
+                "type": "NORMAL"
+            },
+            {
+                "id": [
+                    "Memory_Act_StoryBook_5",
+                    "Memory_Act_StoryBook_6",
+                    "Memory_Act_StoryBook_7",
+                    "Memory_Act_StoryBook_8"
+                ],
+                "type": "ELITE"
+            }
+        ],
+        "Type": "ACTIVILIST",
+        "UnlockDesc": "",
+        "UnlockStory": ""
+    },
     "Memory_Act_Summer": {
         "ActiviType": "",
         "Condition": [

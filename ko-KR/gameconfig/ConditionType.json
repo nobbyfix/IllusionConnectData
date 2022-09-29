@@ -1318,7 +1318,7 @@
     "Condi_MiniGameDailyScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220828.dailyTotalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20221012.dailyTotalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameDailyScore_Jump_Decs"
     },
@@ -1339,7 +1339,7 @@
     "Condi_MiniGameTotalScore_Jump": {
         "AchieveType1": "REACH",
         "AchieveType2": "",
-        "ConditionType1": "player.activities.activityMap.Activity_Jump_20220828.totalScore",
+        "ConditionType1": "player.activities.activityMap.Activity_Jump_20221012.totalScore",
         "ConditionType2": "",
         "EffectDesc": "Condi_MiniGameTotalScore_Jump_Decs"
     },
@@ -1622,6 +1622,13 @@
         "ConditionType1": "player.bag.items.IM_StoryBook_ExchangeItem.count",
         "ConditionType2": "",
         "EffectDesc": "Condi_StoryBookExchangeAchieve_Desc"
+    },
+    "Condi_StoryBookExchangeAchieve_2nd": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_StoryBook_2nd_ExchangeItem.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_StoryBook_ExchangeAchieve_Desc"
     },
     "Condi_SumArenaScore": {
         "AchieveType1": "INCREASE",

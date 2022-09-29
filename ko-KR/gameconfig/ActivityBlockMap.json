@@ -1963,6 +1963,40 @@
         ],
         "Type": "ELITE"
     },
+    "StoryBookE01_2nd": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "StoryBook_Scene03",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_StoryBookAE01_Name",
+        "StarBoxReward": {
+            "10": "StoryBookE01BOX01",
+            "20": "StoryBookE01BOX02",
+            "30": "StoryBookE01BOX03"
+        },
+        "SubPoint": [
+            "StoryBookE01S01",
+            "StoryBookE01S02",
+            "StoryBookE01S03",
+            "StoryBookE01S04",
+            "StoryBookE01S05",
+            "StoryBookE01S06",
+            "StoryBookE01S07",
+            "StoryBookE01S08",
+            "StoryBookE01S09",
+            "StoryBookE01S10",
+            "StoryBookE01S11",
+            "StoryBookE01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "StoryBookS01E01_2nd",
+            "StoryBookS01E02_2nd",
+            "StoryBookS01E03_2nd",
+            "StoryBookS01E04_2nd"
+        ],
+        "Type": "ELITE"
+    },
     "StoryBookM01": {
         "BGM": "Mus_Story_Mystery_2",
         "Background": "StoryBook_Scene02",
@@ -1994,6 +2028,40 @@
             "StoryBookS01S02",
             "StoryBookS01S03",
             "StoryBookS01S04"
+        ],
+        "Type": "NORMAL"
+    },
+    "StoryBookM01_2nd": {
+        "BGM": "Mus_Story_Mystery_2",
+        "Background": "StoryBook_Scene02",
+        "BackgroundLength": 960,
+        "ColourEgg": "",
+        "MapName": "BlockMap_StoryBookAM01_Name",
+        "StarBoxReward": {
+            "10": "StoryBookM01BOX01",
+            "20": "StoryBookM01BOX02",
+            "30": "StoryBookM01BOX03"
+        },
+        "SubPoint": [
+            "StoryBookM01S01",
+            "StoryBookM01S02",
+            "StoryBookM01S03",
+            "StoryBookM01S04",
+            "StoryBookM01S05",
+            "StoryBookM01S06",
+            "StoryBookM01S07",
+            "StoryBookM01S08",
+            "StoryBookM01S09",
+            "StoryBookM01S10",
+            "StoryBookM01S11",
+            "StoryBookM01S12"
+        ],
+        "SubSort": "",
+        "SubStoryPoint": [
+            "StoryBookS01S01_2nd",
+            "StoryBookS01S02_2nd",
+            "StoryBookS01S03_2nd",
+            "StoryBookS01S04_2nd"
         ],
         "Type": "NORMAL"
     },
