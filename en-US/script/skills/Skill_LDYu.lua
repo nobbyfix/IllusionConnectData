@@ -428,7 +428,9 @@ all.Skill_LDYu_Passive_Key = {
 			if global.FriendMaster(_env) and global.MARKED(_env, "LDYu")(_env, _env.ACTOR) then
 				global.DispelBuff(_env, global.FriendMaster(_env), global.BUFF_MARKED(_env, "LDYu_Passive_Time"), 99)
 
-				local buff = global.PassiveFunEffectBuff(_env, "LDYu_Back")
+				local buff = global.PassiveFunEffectBuff(_env, "LDYu_Back", {
+					holder = _env.ACTOR
+				})
 
 				global.ApplyBuff(_env, global.FriendField(_env), {
 					timing = 0,
@@ -471,6 +473,10 @@ all.LDYu_Back = {
 		local this = global.__skill({
 			global = global
 		}, prototype, externs)
+		this.holder = externs.holder
+
+		assert(this.holder ~= nil, "External variable `holder` is not provided.")
+
 		local passive = __action(this, {
 			name = "passive",
 			entry = prototype.passive
@@ -507,7 +513,7 @@ all.LDYu_Back = {
 					return
 				end
 
-				local card = global.BackToCard_ResultCheck(_env, _env.unit, "window")
+				local card = global.BackToCard_ResultIDCheck(_env, this.holder, _env.unit, "window")
 
 				if card then
 					global.Kick(_env, _env.unit)
