@@ -26496,6 +26496,43 @@
             "LEVEL": 3
         },
         "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2008,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-10-15 05:00:00",
+            "start": [
+                "2022-10-01 05:00:00",
+                "2022-10-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ZBRZhan_ExtraMap_1001": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_ZBRZhan_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
         "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
@@ -26534,6 +26571,44 @@
             "LEVEL": 3
         },
         "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2007,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-10-15 05:00:00",
+            "start": [
+                "2022-10-01 05:00:00",
+                "2022-10-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ZBRZhan_ExtraNormal_1001": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_ZBRZhan_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
         "Enable": 1,
         "Icon": "",
         "LeftBanner": "",
@@ -26561,6 +26636,45 @@
         "Version": ""
     },
     "ActivityBlock_ZBRZhan_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_ZBRZhan_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 2009,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-10-15 05:00:00",
+            "start": [
+                "2022-10-01 05:00:00",
+                "2022-10-15 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_ZBRZhan_ExtraSorce_1001": {
         "ActivityConfig": {
             "Reward": "ActivityBlock_ZBRZhan_ExtraSource_R",
             "block": [
