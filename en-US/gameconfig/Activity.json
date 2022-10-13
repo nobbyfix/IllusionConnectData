@@ -35523,6 +35523,183 @@
         "UI": "WorldBoss",
         "Version": ""
     },
+    "Aishop": {
+        "ActivityConfig": {
+            "GiftPic1": [
+                {
+                    "Name": "AiGift1_Base_11_Name",
+                    "NamePg": "txt_title_1_1",
+                    "PicBg": "img_aishop_wkttlya",
+                    "SubTitle": "AiGift1_Base_11_SubTitle",
+                    "type": "Base"
+                },
+                {
+                    "Name": "AiGift1_Special_21_Name",
+                    "NamePg": "txt_title_2_1",
+                    "PicBg": "img_aishop_2",
+                    "SubTitle": "AiGift1_Special_21_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_3l_Name",
+                    "NamePg": "txt_title_3_1",
+                    "PicBg": "img_aishop_6",
+                    "SubTitle": "AiGift1_Special_31_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_4l_Name",
+                    "NamePg": "txt_title_4_1",
+                    "PicBg": "img_aishop_7",
+                    "SubTitle": "AiGift1_Special_41_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_5l_Name",
+                    "NamePg": "txt_title_5_1",
+                    "PicBg": "img_aishop_10",
+                    "SubTitle": "AiGift1_Special_51_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_6l_Name",
+                    "NamePg": "txt_title_6_1",
+                    "PicBg": "img_aishop_13",
+                    "SubTitle": "AiGift1_Special_61_SubTitle",
+                    "type": "Special"
+                }
+            ],
+            "GiftPic2": [
+                {
+                    "Name": "AiGift1_Base_12_Name",
+                    "NamePg": "txt_title_1_2",
+                    "PicBg": "img_aishop_clman",
+                    "SubTitle": "AiGift1_Base_12_SubTitle",
+                    "type": "Base"
+                },
+                {
+                    "Name": "AiGift1_Special_22_Name",
+                    "NamePg": "txt_title_2_2",
+                    "PicBg": "img_aishop_1",
+                    "SubTitle": "AiGift1_Special_22_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_32_Name",
+                    "NamePg": "txt_title_3_2",
+                    "PicBg": "img_aishop_5",
+                    "SubTitle": "AiGift1_Special_32_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_42_Name",
+                    "NamePg": "txt_title_4_2",
+                    "PicBg": "img_aishop_8",
+                    "SubTitle": "AiGift1_Special_42_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_52_Name",
+                    "NamePg": "txt_title_5_2",
+                    "PicBg": "img_aishop_11",
+                    "SubTitle": "AiGift1_Special_52_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_62_Name",
+                    "NamePg": "txt_title_6_2",
+                    "PicBg": "img_aishop_14",
+                    "SubTitle": "AiGift1_Special_62_SubTitle",
+                    "type": "Special"
+                }
+            ],
+            "GiftPic3": [
+                {
+                    "Name": "AiGift1_Base_13_Name",
+                    "NamePg": "txt_title_1_3",
+                    "PicBg": "img_aishop_ztxchang",
+                    "SubTitle": "AiGift1_Base_13_SubTitle",
+                    "type": "Base"
+                },
+                {
+                    "Name": "AiGift1_Special_23_Name",
+                    "NamePg": "txt_title_2_3",
+                    "PicBg": "img_aishop_3",
+                    "SubTitle": "AiGift1_Special_23_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_33_Name",
+                    "NamePg": "txt_title_3_3",
+                    "PicBg": "img_aishop_4",
+                    "SubTitle": "AiGift1_Special_33_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_43_Name",
+                    "NamePg": "txt_title_4_3",
+                    "PicBg": "img_aishop_9",
+                    "SubTitle": "AiGift1_Special_43_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_53_Name",
+                    "NamePg": "txt_title_5_3",
+                    "PicBg": "img_aishop_12",
+                    "SubTitle": "AiGift1_Special_53_SubTitle",
+                    "type": "Special"
+                },
+                {
+                    "Name": "AiGift1_Special_63_Name",
+                    "NamePg": "txt_title_6_3",
+                    "PicBg": "img_aishop_15",
+                    "SubTitle": "AiGift1_Special_63_SubTitle",
+                    "type": "Special"
+                }
+            ],
+            "PayId": [
+                "Pay_Ai_6",
+                "Pay_Ai_12",
+                "Pay_Ai_30",
+                "Pay_Ai_68",
+                "Pay_Ai_98",
+                "Pay_Ai_128",
+                "Pay_Ai_198",
+                "Pay_Ai_328",
+                "Pay_Ai_648"
+            ],
+            "Probability": "0.2"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "Aishop_Desc",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "hd_btn_aishop",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1,
+        "ShowTab": 1,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2023-08-18 05:00:00",
+            "start": [
+                "2022-10-07 05:00:00",
+                "2023-08-18 05:00:00"
+            ]
+        },
+        "Title": "Aishop_name",
+        "Type": "AISHOP",
+        "UI": "AISHOP",
+        "Version": ""
+    },
     "Carnival": {
         "ActivityConfig": {
             "Activity": [
