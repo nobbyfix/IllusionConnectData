@@ -2076,12 +2076,12 @@
         "EnemySpecialPassive": [],
         "EnemySpecialPassiveParm": "",
         "EnergyBase": {
-            "pattern": "ADD",
-            "value": 50
+            "pattern": "COVER",
+            "value": 30
         },
         "Fight_StageEnergyMax": [
-            80,
-            40
+            50,
+            50
         ],
         "FriendFBReduction": "",
         "FriendSpecialPassive": [],
@@ -2098,7 +2098,7 @@
         },
         "MasterRageBase": {
             "pattern": "COVER",
-            "value": 700
+            "value": 500
         },
         "MasterRageRules": {
             "a1": [
