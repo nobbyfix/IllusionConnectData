@@ -35060,7 +35060,7 @@
             "LEVEL": 1
         },
         "Desc": "",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "",
         "Loop": "",
@@ -36087,6 +36087,118 @@
             "start": [
                 "2022-10-01 05:00:00",
                 "2022-10-13 05:00:00"
+            ]
+        },
+        "Title": "Activity_WorldBoss_Name",
+        "Type": "WorldBoss",
+        "UI": "WorldBoss",
+        "Version": ""
+    },
+    "Activity_WorldBoss_221016": {
+        "ActivityConfig": {
+            "Boss": [
+                {
+                    "Boss": "WBSN11M6",
+                    "Time": [
+                        "2022-10-16 05:00:00",
+                        "2022-10-23 05:00:00"
+                    ],
+                    "buyLimit": 5,
+                    "buyTimesCost": {
+                        "amount": [
+                            50,
+                            100,
+                            200,
+                            200,
+                            300
+                        ],
+                        "id": "IR_Diamond"
+                    },
+                    "dailyTimes": 3,
+                    "eachBuyNum": 1
+                },
+                {
+                    "Boss": "WBSE22E6",
+                    "Time": [
+                        "2022-10-24 05:00:00",
+                        "2022-10-25 05:00:00"
+                    ],
+                    "buyTimesCost": {
+                        "amount": 100,
+                        "id": "IR_Diamond"
+                    },
+                    "dailyTimes": 5,
+                    "eachBuyNum": 1
+                }
+            ],
+            "BuffTime": "WorldBoss_Buff_OpenTime",
+            "Main": [
+                "WorldBoss_MainBubble",
+                "WorldBoss_MainPlayerNum",
+                "WorldBoss_MainRankNum",
+                "WorldBoss_ModelSpwanSec",
+                "WorldBoss_ModelWalkSpeed"
+            ],
+            "Num": "WorldBoss_Num",
+            "Rank": [
+                "Vanguard_RankMax",
+                "WorldBoss_RankMax"
+            ],
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "WorldBossRule_Desc1",
+                "WorldBossRule_Desc2",
+                "WorldBossRule_Desc3",
+                "WorldBossRule_Desc4",
+                "WorldBossRule_Desc5",
+                "WorldBossRule_Desc6"
+            ],
+            "bgm": "Mus_Story_Magic_Ave",
+            "task": [
+                "Activity_WorldBoss_221016_Task_1",
+                "Activity_WorldBoss_221016_Task_2",
+                "Activity_WorldBoss_221016_Task_3",
+                "Activity_WorldBoss_221016_Task_4",
+                "Activity_WorldBoss_221016_Task_5",
+                "Activity_WorldBoss_221016_Task_6",
+                "Activity_WorldBoss_221016_Task_7",
+                "Activity_WorldBoss_221016_Task_8",
+                "Activity_WorldBoss_221016_Task_9",
+                "Activity_WorldBoss_221016_Task_10",
+                "Activity_WorldBoss_221016_Task_11",
+                "Activity_WorldBoss_221016_Task_12",
+                "Activity_WorldBoss_221016_Task_13",
+                "Activity_WorldBoss_221016_Task_14",
+                "Activity_WorldBoss_221016_Task_15"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_WorldBoss_Reissue",
+        "Primary": 1,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 95010,
+        "ShowTab": 2,
+        "Tag": "NEW",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-10-28 05:00:00",
+            "start": [
+                "2022-10-16 05:00:00",
+                "2022-10-28 05:00:00"
             ]
         },
         "Title": "Activity_WorldBoss_Name",
@@ -66685,7 +66797,7 @@
                 "2022-10-24 05:00:00"
             ]
         },
-        "Title": "FestivalPackage_20221002pailian_Name",
+        "Title": "FestivalPackage_20210601pailian_Name",
         "Type": "TPURCHASE",
         "UI": "FESTIVALPACKAGE",
         "Version": ""
