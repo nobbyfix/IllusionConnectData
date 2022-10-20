@@ -593,6 +593,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_MTZMEShi_Awake"
     },
+    "MYing": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -230,
+            0,
+            1
+        ],
+        "IAId": "",
+        "ModelId": "Model_MYing",
+        "Name": "MYing_Awake_Name",
+        "NameDesc": "MYing_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_MYing",
+        "Reward": "HeroAwaken_MYing",
+        "ShowHero": "MYing",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "MYing_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_MYing_1"
+    },
     "MZGXiu": {
         "AnimSound": "Se_Effect_Awakening_MZGXiu",
         "Animation": "cxgdie_Awaken",
@@ -905,7 +927,7 @@
             0,
             0.7
         ],
-        "IAId": "",
+        "IAId": "YLMGZhu_IA_1",
         "ModelId": "Model_YLMGZhu_Awake",
         "Name": "YLMGZhu_Awake_Name",
         "NameDesc": "YLMGZhu_Awake_Desc",

@@ -569,6 +569,7 @@ all.Skill_JNLong_Phantom_Unique = {
 			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
 				timing = 0,
 				duration = 99,
+				display = "MaxHpUp",
 				tags = {
 					"STATUS",
 					"NUMERIC",
@@ -620,6 +621,19 @@ all.Skill_JNLong_Phantom_Passive = {
 		this.passive = global["[trigger_by]"](this, {
 			"SELF:ENTER"
 		}, passive)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		passive1 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_ACTION"
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_UNIQUE"
+		}, passive1)
 
 		return this
 	end,
@@ -656,6 +670,56 @@ all.Skill_JNLong_Phantom_Passive = {
 				}, {
 					buff
 				})
+			end
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.SelectHeroPassiveCount(_env, global.GetSummoner(_env, _env.ACTOR), "Hero_PBattle_JNLong_SelfAwaken") > 0 then
+				local BeCureRateFactor = global.SpecialPropGetter(_env, "Skill_JNLong_Passive_SelfAwaken_BeCureRateFactor")(_env, global.FriendField(_env)) or 0.1
+				local RageSpdactor = global.SpecialPropGetter(_env, "Skill_JNLong_Passive_SelfAwaken_RageSpdactor")(_env, global.FriendField(_env)) or 0.1
+				local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
+					"+Normal",
+					"+Normal"
+				}, BeCureRateFactor)
+				local buffeft2 = global.RageGainEffect(_env, "-", {
+					"+Normal",
+					"+Normal"
+				}, RageSpdactor)
+
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.primTrgt, {
+					timing = 4,
+					display = "BeCuredRateDown",
+					group = "Skill_JNLong_Passive_SelfAwaken",
+					duration = 15,
+					limit = 3,
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"BECUREDRATEDOWN",
+						"DISPELLABLE"
+					}
+				}, {
+					buffeft1,
+					buffeft2
+				}, 1, 0)
 			end
 		end)
 
@@ -1273,7 +1337,7 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 					"+Normal"
 				}, this.AOEDeRateFactor)
 
-				global.AddStatus(_env, SummonedJNLong3, "SummonedJNLong3")
+				global.AddStatus(_env, SummonedJNLong3, "SummonedJNLong")
 				global.ApplyBuff(_env, SummonedJNLong3, {
 					duration = 99,
 					group = "Skill_JNLong_Passive_Death_Awaken",
@@ -1349,6 +1413,457 @@ all.Skill_JNLong_Passive_Death_Awaken = {
 
 			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedJNLong")(_env, _env.unit) then
 				global.ApplyRPRecovery(_env, _env.unit, this.FactorRP)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_JNLong_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AOEDeRateFactor = externs.AOEDeRateFactor
+
+		if this.AOEDeRateFactor == nil then
+			this.AOEDeRateFactor = 0.6
+		end
+
+		this.summonFactorHp = externs.summonFactorHp
+
+		if this.summonFactorHp == nil then
+			this.summonFactorHp = 0.5
+		end
+
+		this.summonFactorAtk = externs.summonFactorAtk
+
+		if this.summonFactorAtk == nil then
+			this.summonFactorAtk = 1.2
+		end
+
+		this.summonFactorDef = externs.summonFactorDef
+
+		if this.summonFactorDef == nil then
+			this.summonFactorDef = 0.5
+		end
+
+		this.FactorRP = externs.FactorRP
+
+		if this.FactorRP == nil then
+			this.FactorRP = 400
+		end
+
+		this.summonFactor = {
+			this.summonFactorHp,
+			this.summonFactorAtk,
+			this.summonFactorDef
+		}
+		this.BeCureRateFactor = externs.BeCureRateFactor
+
+		if this.BeCureRateFactor == nil then
+			this.BeCureRateFactor = 0.1
+		end
+
+		this.RageSpdactor = externs.RageSpdactor
+
+		if this.RageSpdactor == nil then
+			this.RageSpdactor = 0.1
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		this.main = global["[duration]"](this, {
+			667
+		}, main)
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		passive3 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_ACTION"
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:BEFORE_UNIQUE"
+		}, passive3)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Perform(_env, _env.ACTOR, global.Animation(_env, "fakedie"))
+		end)
+		exec["@time"]({
+			500
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff1 = global.Diligent(_env)
+			local buff2 = global.RageGainEffect(_env, "-", {
+				"+Normal",
+				"+Normal"
+			}, 1)
+			local SummonedJNLong1 = global.Summon(_env, _env.ACTOR, "SummonedJNLong_Awaken", this.summonFactor, nil, {
+				global.Random(_env, 2, 1, 3, 5, 4, 6, 7, 8, 9)
+			})
+
+			if SummonedJNLong1 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong1, _env.ACTOR)
+				end
+
+				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOEDeRateFactor)
+
+				global.AddStatus(_env, SummonedJNLong1, "SummonedJNLong")
+				global.ApplyBuff(_env, SummonedJNLong1, {
+					duration = 99,
+					group = "Skill_JNLong_Passive_Death_Awaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"AOEDERATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+				global.ApplyBuff(_env, SummonedJNLong1, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"DILIGENT",
+						"Skill_JNLong_Passive_SelfAwaken",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1,
+					buff2
+				})
+			end
+
+			local SummonedJNLong2 = global.Summon(_env, _env.ACTOR, "SummonedJNLong_Awaken", this.summonFactor, nil, {
+				global.Random(_env, 2, 1, 3, 5, 4, 6, 7, 8, 9)
+			})
+
+			if SummonedJNLong2 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong2, _env.ACTOR)
+				end
+
+				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOEDeRateFactor)
+
+				global.AddStatus(_env, SummonedJNLong2, "SummonedJNLong")
+				global.ApplyBuff(_env, SummonedJNLong2, {
+					duration = 99,
+					group = "Skill_JNLong_Passive_Death_Awaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"AOEDERATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+				global.ApplyBuff(_env, SummonedJNLong2, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"DILIGENT",
+						"Skill_JNLong_Passive_SelfAwaken",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1,
+					buff2
+				})
+			end
+
+			local SummonedJNLong3 = global.Summon(_env, _env.ACTOR, "SummonedJNLong_Awaken", this.summonFactor, nil, {
+				global.Random(_env, 2, 1, 3, 5, 4, 6, 7, 8, 9)
+			})
+
+			if SummonedJNLong3 then
+				if global.SelectHeroPassiveCount(_env, _env.ACTOR, "EquipSkill_Boots_15108_2") > 0 or global.INSTATUS(_env, "zhuomu")(_env, _env.ACTOR) then
+					global.zhuomu(_env, SummonedJNLong3, _env.ACTOR)
+				end
+
+				local buffeft1 = global.NumericEffect(_env, "+aoederate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOEDeRateFactor)
+
+				global.AddStatus(_env, SummonedJNLong3, "SummonedJNLong")
+				global.ApplyBuff(_env, SummonedJNLong3, {
+					duration = 99,
+					group = "Skill_JNLong_Passive_Death_Awaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"AOEDERATEUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+				global.ApplyBuff(_env, SummonedJNLong3, {
+					timing = 2,
+					duration = 1,
+					tags = {
+						"STATUS",
+						"DILIGENT",
+						"Skill_JNLong_Passive_SelfAwaken",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buff1,
+					buff2
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "+aoederate", {
+				"+Normal",
+				"+Normal"
+			}, this.AOEDeRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				duration = 99,
+				group = "Skill_JNLong_Passive_Death_Awaken",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"AOEDERATEUP",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft1
+			})
+
+			local buff = global.PassiveFunEffectBuff(_env, "Skill_JNLong_Passive_SelfAwaken_DiligentRound")
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"Skill_JNLong_Passive_SelfAwaken_DiligentRound"
+				}
+			}, {
+				buff
+			})
+
+			local buffeft1 = global.SpecialNumericEffect(_env, "+Skill_JNLong_Passive_SelfAwaken_BeCureRateFactor", {
+				"+Normal",
+				"+Normal"
+			}, this.BeCureRateFactor)
+			local buffeft2 = global.SpecialNumericEffect(_env, "+Skill_JNLong_Passive_SelfAwaken_RageSpdactor", {
+				"+Normal",
+				"+Normal"
+			}, this.RageSpdactor)
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				duration = 99,
+				group = "Skill_JNLong_Passive_SelfAwaken_debuff",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"Skill_JNLong_Passive_SelfAwaken"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			}, 1)
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedJNLong")(_env, _env.unit) then
+				global.ApplyRPRecovery(_env, _env.unit, this.FactorRP)
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.primTrgt = externs.primTrgt
+
+		assert(_env.primTrgt ~= nil, "External variable `primTrgt` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "-becuredrate", {
+				"+Normal",
+				"+Normal"
+			}, this.BeCureRateFactor)
+			local buffeft2 = global.RageGainEffect(_env, "-", {
+				"+Normal",
+				"+Normal"
+			}, this.RageSpdactor)
+
+			global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.primTrgt, {
+				timing = 4,
+				display = "BeCuredRateDown",
+				group = "Skill_JNLong_Passive_SelfAwaken",
+				duration = 15,
+				limit = 3,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"BECUREDRATEDOWN",
+					"DISPELLABLE"
+				}
+			}, {
+				buffeft1,
+				buffeft2
+			}, 1, 0)
+		end)
+
+		return _env
+	end
+}
+all.Skill_JNLong_Passive_SelfAwaken_DiligentRound = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.INSTATUS(_env, "SummonedJNLong")(_env, _env.unit) then
+				global.DiligentRound(_env, 100)
 			end
 		end)
 

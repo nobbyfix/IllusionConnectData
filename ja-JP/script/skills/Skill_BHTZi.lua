@@ -845,5 +845,151 @@ all.Skill_BHTZi_Passive_Awaken = {
 		return _env
 	end
 }
+all.Skill_BHTZi_Unique_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.dmgFactor = externs.dmgFactor
+
+		if this.dmgFactor == nil then
+			this.dmgFactor = {
+				1,
+				3,
+				0
+			}
+		end
+
+		this.ExDamage = externs.ExDamage
+
+		if this.ExDamage == nil then
+			this.ExDamage = 1.2
+		end
+
+		this.HurtRateFactor = externs.HurtRateFactor
+
+		if this.HurtRateFactor == nil then
+			this.HurtRateFactor = 0.05
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3200
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_BHTZi"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+
+		_env.units = nil
+
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			_env.units = global.EnemyUnits(_env, global.ROW_OF(_env, _env.TARGET))
+
+			for _, unit in global.__iter__(_env.units) do
+				global.RetainObject(_env, unit)
+			end
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.UnitPos(_env, _env.TARGET, nil, 2) + {
+				-2.1,
+				0
+			}, 100, "skill3"))
+			global.HarmTargetView(_env, _env.units)
+
+			for _, unit in global.__iter__(_env.units) do
+				global.AssignRoles(_env, unit, "target")
+			end
+		end)
+		exec["@time"]({
+			1850
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local back_damage = 0
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.COL_OF(_env, _env.ACTOR) * global.NEIGHBORS_OF(_env, _env.ACTOR) * global.BACK_OF(_env, _env.ACTOR))) do
+				if global.PETS - global.SUMMONS(_env, unit) then
+					global.DispelBuff(_env, unit, global.BUFF_MARKED_ALL(_env, "DEBUFF", "DISPELLABLE"), 2)
+
+					local buffeft1 = global.NumericEffect(_env, "+hurtrate", {
+						"+Normal",
+						"+Normal"
+					}, this.HurtRateFactor)
+
+					global.ApplyBuff(_env, unit, {
+						timing = 0,
+						duration = 99,
+						display = "HurtRateUp",
+						tags = {
+							"NUMERIC",
+							"BUFF",
+							"ATKUP",
+							"Skill_BHTZi_Unique_SelfAwaken",
+							"UNDISPELLABLE",
+							"UNSTEALABLE"
+						}
+					}, {
+						buffeft1
+					})
+
+					local back_atk = global.UnitPropBaseGetter(_env, "atk")(_env, unit)
+					back_damage = back_atk * this.ExDamage
+				end
+			end
+
+			for _, unit in global.__iter__(_env.units) do
+				global.ApplyStatusEffect(_env, _env.ACTOR, unit)
+				global.ApplyRPEffect(_env, _env.ACTOR, unit)
+
+				local damage = global.EvalAOEDamage_FlagCheck(_env, _env.ACTOR, unit, this.dmgFactor)
+				damage.val = damage.val + back_damage
+
+				global.ApplyAOEHPDamage_ResultCheck(_env, _env.ACTOR, unit, damage)
+			end
+		end)
+		exec["@time"]({
+			3200
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M
