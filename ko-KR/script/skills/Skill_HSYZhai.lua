@@ -222,7 +222,7 @@ all.Skill_HSYZhai_Unique = {
 
 				for _, unit in global.__iter__(global.AllUnits(_env)) do
 					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
-						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
 
@@ -231,7 +231,7 @@ all.Skill_HSYZhai_Unique = {
 				end
 
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						_env.target = unit
 					end
 				end
@@ -644,7 +644,7 @@ all.Skill_HSYZhai_Unique_EX = {
 
 				for _, unit in global.__iter__(global.AllUnits(_env)) do
 					if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
-						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+						_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 						global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
 
@@ -653,7 +653,7 @@ all.Skill_HSYZhai_Unique_EX = {
 				end
 
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						_env.target = unit
 
 						if not global.MASTER(_env, _env.target) and not global.MARKED(_env, "DAGUN")(_env, _env.target) and not global.MARKED(_env, "SummonedNian")(_env, _env.target) then
@@ -982,7 +982,7 @@ all.Skill_HSYZhai_Unique_Awaken = {
 				end
 
 				for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						_env.target = unit
 
 						if not global.MASTER(_env, _env.target) and not global.MARKED(_env, "DAGUN")(_env, _env.target) and not global.MARKED(_env, "SummonedNian")(_env, _env.target) then

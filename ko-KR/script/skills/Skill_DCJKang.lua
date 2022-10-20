@@ -468,7 +468,7 @@ all.Skill_DCJKang_Unique_EX = {
 
 				global.ApplyBuff_Buff(_env, _env.ACTOR, friend, {
 					timing = 2,
-					duration = 2,
+					duration = 3,
 					display = "Taunt",
 					tags = {
 						"NUMERIC",

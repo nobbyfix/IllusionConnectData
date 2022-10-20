@@ -149,6 +149,9 @@
     "Target_HGEr": {
         "Function": "return MainTarget()"
     },
+    "Target_HLDKen": {
+        "Function": ""
+    },
     "Target_HLDNan": {
         "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
     },

@@ -791,6 +791,18 @@
         "UnlockDesc": "HGEr_HeadUnlock",
         "Zoom": 0.5
     },
+    "Head_HLDKen": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_HLDKen",
+        "HeadName": "HLDKen_HeadName",
+        "HeroMasterId": "HLDKen",
+        "IconPath": "asset/heros/fbi/battlepic_fbi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "HLDKen_HeadUnlock",
+        "Zoom": 0.5
+    },
     "Head_HLDNan": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_HLDNan",
@@ -3237,6 +3249,18 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_MTZMEShi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_MYing": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_MYing_Desc",
+        "HeadName": "HeroAwaken_MYing_1_Name",
+        "HeroMasterId": "MYing",
+        "IconPath": "asset/heros/mwsi/battlepic_mwsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_MYing",
         "Zoom": 1.0
     },
     "HeroAwaken_MZGXiu": {

@@ -2,7 +2,8 @@
     "ABS": {
         "Bubble": "",
         "ModelId": "",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_Holiday_1": {
         "Bubble": {
@@ -36,7 +37,8 @@
             }
         },
         "ModelId": "Model_SDTZi_DYMEr",
-        "RankIcon": "hd_word_zhld_name_3"
+        "RankIcon": "hd_word_zhld_name_3",
+        "RewardId": ""
     },
     "ABS_Holiday_2": {
         "Bubble": {
@@ -70,7 +72,43 @@
             }
         },
         "ModelId": "Model_ZTXChang",
-        "RankIcon": "hd_word_zhld_name_3"
+        "RankIcon": "hd_word_zhld_name_3",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_1": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_YXZChun_68",
+                    "tip": "Voice_YXZChun_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_YXZChun_69",
+                    "tip": "Voice_YXZChun_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_YXZChun_68",
+                    "tip": "Voice_YXZChun_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_YXZChun_69",
+                    "tip": "Voice_YXZChun_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_YXZChun_66",
+                "tip": "Voice_YXZChun_66_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_YXZChun_31",
+                "tip": "Voice_YXZChun_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_YXZChun_holloween",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_1"
     },
     "ABS_ReZhan_1_0901": {
         "Bubble": {
@@ -104,7 +142,43 @@
             }
         },
         "ModelId": "Model_ZZBBWei_QPao",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_2": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_YLMGZhu_68",
+                    "tip": "Voice_YLMGZhu_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_YLMGZhu_69",
+                    "tip": "Voice_YLMGZhu_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_YLMGZhu_68",
+                    "tip": "Voice_YLMGZhu_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_YLMGZhu_69",
+                    "tip": "Voice_YLMGZhu_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_YLMGZhu_66",
+                "tip": "Voice_YLMGZhu_66_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_YLMGZhu_31",
+                "tip": "Voice_YLMGZhu_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_YLMGZhu_WSJie",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_2"
     },
     "ABS_ReZhan_2_0901": {
         "Bubble": {
@@ -138,7 +212,43 @@
             }
         },
         "ModelId": "Model_ZTXChang_YYing",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_3": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_FGao_68",
+                    "tip": "Voice_FGao_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_FGao_69",
+                    "tip": "Voice_FGao_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_FGao_68",
+                    "tip": "Voice_FGao_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_FGao_69",
+                    "tip": "Voice_FGao_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_FGao_66",
+                "tip": "Voice_FGao_66_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_FGao_31",
+                "tip": "Voice_FGao_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_FGao_holloween",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_3"
     },
     "ABS_ReZhan_3_0901": {
         "Bubble": {
@@ -172,7 +282,43 @@
             }
         },
         "ModelId": "Model_FTLEShi_dwhui",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_4": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_BHTZi_68",
+                    "tip": "Voice_BHTZi_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_BHTZi_69",
+                    "tip": "Voice_BHTZi_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_BHTZi_68",
+                    "tip": "Voice_BHTZi_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_BHTZi_69",
+                    "tip": "Voice_BHTZi_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_BHTZi_66",
+                "tip": "Voice_BHTZi_66_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_BHTZi_31",
+                "tip": "Voice_BHTZi_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_BHTZi_ghost",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_4"
     },
     "ABS_ReZhan_4_0901": {
         "Bubble": {
@@ -206,7 +352,43 @@
             }
         },
         "ModelId": "Model_FEMSi_classic",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_5": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_MLYTLSha_68",
+                    "tip": "Voice_MLYTLSha_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_MLYTLSha_69",
+                    "tip": "Voice_MLYTLSha_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_MLYTLSha_68",
+                    "tip": "Voice_MLYTLSha_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_MLYTLSha_69",
+                    "tip": "Voice_MLYTLSha_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_MLYTLSha_67",
+                "tip": "Voice_MLYTLSha_67_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_MLYTLSha_31_1",
+                "tip": "Voice_MLYTLSha_31_1_SoundDesc"
+            }
+        },
+        "ModelId": "Model_MLYTLSha_forest",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_5"
     },
     "ABS_ReZhan_5_0901": {
         "Bubble": {
@@ -240,7 +422,43 @@
             }
         },
         "ModelId": "Model_CLMan_XHMao",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_6": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_MZGXiu_68",
+                    "tip": "Voice_MZGXiu_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_MZGXiu_69",
+                    "tip": "Voice_MZGXiu_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_MZGXiu_68",
+                    "tip": "Voice_MZGXiu_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_MZGXiu_69",
+                    "tip": "Voice_MZGXiu_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_MZGXiu_67",
+                "tip": "Voice_MZGXiu_67_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_MZGXiu_31",
+                "tip": "Voice_MZGXiu_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_MZGXiu_pirate",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_6"
     },
     "ABS_ReZhan_6_0901": {
         "Bubble": {
@@ -274,7 +492,43 @@
             }
         },
         "ModelId": "Model_ALPo_2",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_7": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_DDing_68",
+                    "tip": "Voice_DDing_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_DDing_69",
+                    "tip": "Voice_DDing_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_DDing_68",
+                    "tip": "Voice_DDing_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_DDing_69",
+                    "tip": "Voice_DDing_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_DDing_67",
+                "tip": "Voice_DDing_67_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_DDing_31",
+                "tip": "Voice_DDing_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_DDing_TNLang",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_7"
     },
     "ABS_ReZhan_7_0901": {
         "Bubble": {
@@ -308,7 +562,43 @@
             }
         },
         "ModelId": "Model_SDTZi_DYMEr",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
+    },
+    "ABS_ReZhan_8": {
+        "Bubble": {
+            "ClubAttrItem": [
+                {
+                    "sound": "Voice_ALPo_68",
+                    "tip": "Voice_ALPo_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_ALPo_69",
+                    "tip": "Voice_ALPo_69_SoundDesc"
+                }
+            ],
+            "ScoreItem": [
+                {
+                    "sound": "Voice_ALPo_68",
+                    "tip": "Voice_ALPo_68_SoundDesc"
+                },
+                {
+                    "sound": "Voice_ALPo_69",
+                    "tip": "Voice_ALPo_69_SoundDesc"
+                }
+            ],
+            "Stand": {
+                "sound": "Voice_ALPo_66",
+                "tip": "Voice_ALPo_66_SoundDesc"
+            },
+            "Winner": {
+                "sound": "Voice_ALPo_31",
+                "tip": "Voice_ALPo_31_SoundDesc"
+            }
+        },
+        "ModelId": "Model_ALPo_WSJie",
+        "RankIcon": "",
+        "RewardId": "ABS_ReZhan_ChampionReward_8"
     },
     "ABS_ReZhan_8_0901": {
         "Bubble": {
@@ -342,7 +632,8 @@
             }
         },
         "ModelId": "Model_YLSBai_xnian",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_1": {
         "Bubble": {
@@ -376,7 +667,8 @@
             }
         },
         "ModelId": "Model_BHTZi",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_2": {
         "Bubble": {
@@ -410,7 +702,8 @@
             }
         },
         "ModelId": "Model_SSQXin",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_3": {
         "Bubble": {
@@ -444,7 +737,8 @@
             }
         },
         "ModelId": "Model_BBLMa",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_4": {
         "Bubble": {
@@ -478,7 +772,8 @@
             }
         },
         "ModelId": "Model_ZZBBWei",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_5": {
         "Bubble": {
@@ -512,7 +807,8 @@
             }
         },
         "ModelId": "Model_LYXi",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_6": {
         "Bubble": {
@@ -546,7 +842,8 @@
             }
         },
         "ModelId": "Model_ZTXCun",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_7": {
         "Bubble": {
@@ -580,7 +877,8 @@
             }
         },
         "ModelId": "Model_CZheng",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_8": {
         "Bubble": {
@@ -614,7 +912,8 @@
             }
         },
         "ModelId": "Model_TPGZhu",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_1": {
         "Bubble": {
@@ -648,7 +947,8 @@
             }
         },
         "ModelId": "Model_BHTZi",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_2": {
         "Bubble": {
@@ -682,7 +982,8 @@
             }
         },
         "ModelId": "Model_SSQXin",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_3": {
         "Bubble": {
@@ -716,7 +1017,8 @@
             }
         },
         "ModelId": "Model_BBLMa",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_4": {
         "Bubble": {
@@ -750,7 +1052,8 @@
             }
         },
         "ModelId": "Model_ZZBBWei",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_5": {
         "Bubble": {
@@ -784,7 +1087,8 @@
             }
         },
         "ModelId": "Model_LYXi",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_6": {
         "Bubble": {
@@ -818,7 +1122,8 @@
             }
         },
         "ModelId": "Model_ZTXCun",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_7": {
         "Bubble": {
@@ -852,7 +1157,8 @@
             }
         },
         "ModelId": "Model_CZheng",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_WuXiuHui_New_8": {
         "Bubble": {
@@ -886,7 +1192,8 @@
             }
         },
         "ModelId": "Model_TPGZhu",
-        "RankIcon": ""
+        "RankIcon": "",
+        "RewardId": ""
     },
     "ABS_ZuoHe_1": {
         "Bubble": {
@@ -920,7 +1227,8 @@
             }
         },
         "ModelId": "Model_GYCZi",
-        "RankIcon": "hd_word_zhld_name_1"
+        "RankIcon": "hd_word_zhld_name_1",
+        "RewardId": ""
     },
     "ABS_ZuoHe_2": {
         "Bubble": {
@@ -954,7 +1262,8 @@
             }
         },
         "ModelId": "Model_SYAi",
-        "RankIcon": "hd_word_zhld_name_2"
+        "RankIcon": "hd_word_zhld_name_2",
+        "RewardId": ""
     },
     "ABS_ZuoHe_3": {
         "Bubble": {
@@ -988,7 +1297,8 @@
             }
         },
         "ModelId": "Model_SDTZi_DYMEr",
-        "RankIcon": "hd_word_zhld_name_3"
+        "RankIcon": "hd_word_zhld_name_3",
+        "RewardId": ""
     },
     "ABS_ZuoHe_4": {
         "Bubble": {
@@ -1022,7 +1332,8 @@
             }
         },
         "ModelId": "Model_LFEr_LHJPai",
-        "RankIcon": "hd_word_zhld_name_4"
+        "RankIcon": "hd_word_zhld_name_4",
+        "RewardId": ""
     },
     "ABS_ZuoHe_5": {
         "Bubble": {
@@ -1056,7 +1367,8 @@
             }
         },
         "ModelId": "Model_DFQi_MNGJi",
-        "RankIcon": "hd_word_zhld_name_5"
+        "RankIcon": "hd_word_zhld_name_5",
+        "RewardId": ""
     },
     "ABS_ZuoHe_6": {
         "Bubble": {
@@ -1090,7 +1402,8 @@
             }
         },
         "ModelId": "Model_MKLJLuo_HBXLv",
-        "RankIcon": "hd_word_zhld_name_6"
+        "RankIcon": "hd_word_zhld_name_6",
+        "RewardId": ""
     },
     "ABS_ZuoHe_7": {
         "Bubble": {
@@ -1124,7 +1437,8 @@
             }
         },
         "ModelId": "Model_DNTLuo_YDXGuang",
-        "RankIcon": "hd_word_zhld_name_7"
+        "RankIcon": "hd_word_zhld_name_7",
+        "RewardId": ""
     },
     "ABS_ZuoHe_8": {
         "Bubble": {
@@ -1158,6 +1472,7 @@
             }
         },
         "ModelId": "Model_YYing",
-        "RankIcon": "hd_word_zhld_name_8"
+        "RankIcon": "hd_word_zhld_name_8",
+        "RewardId": ""
     }
 }
