@@ -204,13 +204,21 @@ all.Skill_LLKe_Unique = {
 			local global = _env.global
 			local units = global.EnemyUnits(_env, global.MID_COL)
 
-			if units[1] then
+			if units[3] and global.SelectBuffCount(_env, units[3], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+				_env.target = units[3]
+			end
+
+			if units[2] and global.SelectBuffCount(_env, units[2], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+				_env.target = units[2]
+			end
+
+			if units[1] and global.SelectBuffCount(_env, units[1], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 				_env.target = units[1]
 			end
 
 			for _, unit in global.__iter__(global.AllUnits(_env)) do
 				if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
-					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
 
@@ -219,9 +227,13 @@ all.Skill_LLKe_Unique = {
 			end
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
-					_env.target = _env.TARGET
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+					_env.target = unit
 				end
+			end
+
+			if _env.target == nil then
+				_env.target = _env.TARGET
 			end
 
 			global.RetainObject(_env, _env.target)
@@ -705,13 +717,21 @@ all.Skill_LLKe_Unique_EX = {
 			local global = _env.global
 			local units = global.EnemyUnits(_env, global.MID_COL)
 
-			if units[1] then
+			if units[3] and global.SelectBuffCount(_env, units[3], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+				_env.target = units[3]
+			end
+
+			if units[2] and global.SelectBuffCount(_env, units[2], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+				_env.target = units[2]
+			end
+
+			if units[1] and global.SelectBuffCount(_env, units[1], global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 				_env.target = units[1]
 			end
 
 			for _, unit in global.__iter__(global.AllUnits(_env)) do
 				if global.MARKED(_env, "FTLYShi")(_env, unit) and global.IsAlive(_env, unit) then
-					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env))
+					_env.target = _env.TARGET or global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.ACTOR), "受奥古斯特影响当前随机目标为", global.GetUnitId(_env, _env.target))
 
@@ -720,9 +740,13 @@ all.Skill_LLKe_Unique_EX = {
 			end
 
 			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
-				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
-					_env.target = _env.TARGET
+				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
+					_env.target = unit
 				end
+			end
+
+			if _env.target == nil then
+				_env.target = _env.TARGET
 			end
 
 			global.RetainObject(_env, _env.target)

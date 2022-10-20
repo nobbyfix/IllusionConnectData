@@ -13951,6 +13951,164 @@
         "bustAwakeZoom": 0.45,
         "bustZoom": 0.92
     },
+    "Model_HLDKen": {
+        "Animation": "fbi",
+        "BattlePosition": "HeroBase_BattlePosition_HLDKen",
+        "BattleShow": "",
+        "Bust1": "Bust1_HLDKen",
+        "Bust10": "Bust10_HLDKen",
+        "Bust11": "Bust11_HLDKen",
+        "Bust12": "Bust12_HLDKen",
+        "Bust13": "Bust13_HLDKen",
+        "Bust14": "Bust14_HLDKen",
+        "Bust15": "Bust15_HLDKen",
+        "Bust16": "",
+        "Bust2": "Bust2_HLDKen",
+        "Bust3": "Bust3_HLDKen",
+        "Bust4": "Bust4_HLDKen",
+        "Bust5": "Bust5_HLDKen",
+        "Bust6": "Bust6_HLDKen",
+        "Bust7": "Bust7_HLDKen",
+        "Bust8": "Bust8_HLDKen",
+        "Bust9": "Bust9_HLDKen",
+        "BustAwake": [
+            -141,
+            -50
+        ],
+        "BustAwake2": "",
+        "BustTemp1": [
+            -80,
+            -50
+        ],
+        "BustTemp2": [
+            -11,
+            -100
+        ],
+        "BustTemp3": [
+            -67,
+            -100
+        ],
+        "BustTemp4": [
+            -58,
+            -100
+        ],
+        "BustTemp5": [
+            -49,
+            -100
+        ],
+        "CommonResource": "",
+        "CutIn": "CutIn_fbi",
+        "DeathVoice": "",
+        "Filename": "portrait_fbi",
+        "HeadMain": "HeadMain_HLDKen",
+        "Height": 200,
+        "Hero": "HLDKen",
+        "HpTierCount": 1,
+        "MVPText": "MVPText_HLDKen",
+        "MasterHeadWide": "",
+        "Model": "fbi",
+        "Name": "HeroBase_Name_HLDKen",
+        "Path": 2,
+        "PicType": 2,
+        "Portrait": "Portraitpic_HLDKen",
+        "SVPText": "SVPText_HLDKen",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "HLDKen",
+        "TagDesc": [
+            {
+                "code": "TagDesc1_HLDKen",
+                "color": "#FFFFFF"
+            }
+        ],
+        "TagPic": [
+            "TagDesc1_HLDKen"
+        ],
+        "TruthBubble": [
+            "Truth_HLDKen_1",
+            "Truth_HLDKen_2"
+        ],
+        "Type": "Hero",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 1.0,
+        "bustAwakeZoom": 0.7,
+        "bustZoom": 0.8
+    },
+    "Model_HLDKen_xbai": {
+        "Animation": "fbi_xbai",
+        "BattlePosition": "",
+        "BattleShow": "",
+        "Bust1": "",
+        "Bust10": "",
+        "Bust11": "",
+        "Bust12": "",
+        "Bust13": "",
+        "Bust14": "",
+        "Bust15": "",
+        "Bust16": "",
+        "Bust2": "",
+        "Bust3": "",
+        "Bust4": "",
+        "Bust5": "",
+        "Bust6": "",
+        "Bust7": "",
+        "Bust8": "",
+        "Bust9": "",
+        "BustAwake": "",
+        "BustAwake2": "",
+        "BustTemp1": "",
+        "BustTemp2": "",
+        "BustTemp3": "",
+        "BustTemp4": "",
+        "BustTemp5": "",
+        "CommonResource": "",
+        "CutIn": "",
+        "DeathVoice": "",
+        "Filename": "",
+        "HeadMain": "",
+        "Height": 200,
+        "Hero": "HLDKen_xbai",
+        "HpTierCount": 1,
+        "MVPText": "",
+        "MasterHeadWide": "",
+        "Model": "fbi_xbai",
+        "Name": "HeroBase_Name_HLDKen_xbai",
+        "Path": "",
+        "PicType": "",
+        "Portrait": "Portraitpic_PDLa_Mhe",
+        "SVPText": "",
+        "SkillRange": "",
+        "SoundEffect": [],
+        "SoundVoice": [],
+        "SoundVoiceCondition": [
+            1,
+            3,
+            5,
+            10
+        ],
+        "SoundVoiceText": [],
+        "Tag": "fbi_xbai",
+        "TagDesc": "",
+        "TagPic": "",
+        "TruthBubble": [],
+        "Type": "Summoned",
+        "UniqueVoice": "",
+        "Width": 200,
+        "WinVoice": "",
+        "Zoom": 0.6,
+        "bustAwakeZoom": "",
+        "bustZoom": ""
+    },
     "Model_HLDNan": {
         "Animation": "HengLiDuNan",
         "BattlePosition": "HeroBase_BattlePosition_HLDNan",
@@ -22582,8 +22740,8 @@
         "Bust1": "Bust1_MYing",
         "Bust10": "Bust10_MYing",
         "Bust11": "Bust11_MYing",
-        "Bust12": "Bust12_MYing",
-        "Bust13": "Bust13_MYing",
+        "Bust12": "Bust13_MYing",
+        "Bust13": "Bust12_MYing",
         "Bust14": "Bust14_MYing",
         "Bust15": "Bust15_MYing",
         "Bust16": "",
@@ -22599,7 +22757,10 @@
             -21,
             -439
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            200,
+            -400
+        ],
         "BustTemp1": [
             135,
             -357

@@ -1249,5 +1249,243 @@ all.Skill_SGHQShou_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_SGHQShou_Passive_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AtkRateFactor = externs.AtkRateFactor
+
+		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+
+		this.MaxHpRateFactor = externs.MaxHpRateFactor
+
+		assert(this.MaxHpRateFactor ~= nil, "External variable `MaxHpRateFactor` is not provided.")
+
+		this.RPFactor = externs.RPFactor
+
+		if this.RPFactor == nil then
+			this.RPFactor = 200
+		end
+
+		this.MasterRPFactor = externs.MasterRPFactor
+
+		if this.MasterRPFactor == nil then
+			this.MasterRPFactor = 100
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MASTER(_env, _env.ACTOR) then
+				if global.PETS(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and global.MARKED(_env, "SUMMONER")(_env, _env.unit) then
+					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SGHQShou"))) do
+						local cardvaluechange = global.CardCostEnchant(_env, "-", 1, 1)
+
+						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							tags = {
+								"CARDBUFF",
+								"WEDEKEY",
+								"UNDISPELLABLE",
+								"Skill_SGHQShou_Passive"
+							}
+						}, {
+							cardvaluechange
+						})
+
+						local maxHp = global.GetHeroCardAttr(_env, card, "maxHp")
+						local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+							"+Normal",
+							"+Normal"
+						}, this.AtkRateFactor)
+						local buffeft2 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"CARDBUFF",
+								"Skill_SGHQShou_Passive",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft1,
+							buffeft2
+						})
+					end
+				end
+
+				if (global.MARKED(_env, "SummonedCBJun_Check")(_env, _env.unit) or global.MARKED(_env, "King_Check")(_env, _env.unit) or global.MARKED(_env, "SMSNv_BOTu_Check")(_env, _env.unit)) and global.SpecialPropGetter(_env, "Skill_SGHQShou_Passive_Awaken_Count")(_env, global.FriendField(_env)) < 5 then
+					for _, card in global.__iter__(global.CardsOfPlayer(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "SGHQShou"))) do
+						local cardvaluechange = global.CardCostEnchant(_env, "-", 1, 1)
+
+						global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							tags = {
+								"CARDBUFF",
+								"WEDEKEY",
+								"UNDISPELLABLE",
+								"Skill_SGHQShou_Passive"
+							}
+						}, {
+							cardvaluechange
+						})
+
+						local maxHp = global.GetHeroCardAttr(_env, card, "maxHp")
+						local buffeft1 = global.NumericEffect(_env, "+atkrate", {
+							"+Normal",
+							"+Normal"
+						}, this.AtkRateFactor)
+						local buffeft2 = global.MaxHpEffect(_env, maxHp * this.MaxHpRateFactor)
+
+						global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"CARDBUFF",
+								"Skill_SGHQShou_Passive",
+								"UNDISPELLABLE",
+								"UNSTEALABLE"
+							}
+						}, {
+							buffeft1,
+							buffeft2
+						})
+
+						local buffeft_count = global.SpecialNumericEffect(_env, "+Skill_SGHQShou_Passive_Awaken_Count", {
+							"+Normal",
+							"+Normal"
+						}, 1)
+
+						global.ApplyBuff(_env, global.FriendField(_env), {
+							timing = 0,
+							duration = 99,
+							tags = {
+								"Skill_SGHQShou_Passive_Awaken_Count"
+							}
+						}, {
+							buffeft_count
+						})
+					end
+				end
+			end
+
+			if global.MARKED(_env, "SGHQShou")(_env, _env.ACTOR) then
+				local buff1 = global.PassiveFunEffectBuff(_env, "SGHQShou_Passive_Awaken_Field", {
+					RPFactor = this.RPFactor,
+					MasterRPFactor = this.MasterRPFactor
+				})
+
+				global.ApplyBuff(_env, global.FriendField(_env), {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"SGHQShou_Passive_Awaken_Field"
+					}
+				}, {
+					buff1
+				})
+			end
+		end)
+
+		return _env
+	end
+}
+all.SGHQShou_Passive_Awaken_Field = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.RPFactor = externs.RPFactor
+
+		if this.RPFactor == nil then
+			this.RPFactor = 200
+		end
+
+		this.MasterRPFactor = externs.MasterRPFactor
+
+		if this.MasterRPFactor == nil then
+			this.MasterRPFactor = 100
+		end
+
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.INSTATUS(_env, "SummonedSGHQShou")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, unit1 in global.__iter__(global.FriendUnits(_env, global.MARKED(_env, "SGHQShou"))) do
+					global.ApplyRPRecovery(_env, unit1, this.RPFactor)
+				end
+
+				if global.FriendMaster(_env) then
+					global.ApplyRPRecovery(_env, global.FriendMaster(_env), this.MasterRPFactor)
+				end
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M

@@ -4913,6 +4913,19 @@
             "slot": "Hero_Unique_YBYa"
         }
     },
+    "IA_YLMGZhu_1": {
+        "Desc": "StarSE_YLMGZhu_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_YLMGZhu_SelfAwaken",
+            "before": "Hero_PBattle_YLMGZhu_EX",
+            "slot": "Hero_PBattle_YLMGZhu"
+        }
+    },
     "IA_YSTLu_1": {
         "Desc": "StarSE_YSTLu_IA1_Desc",
         "EffectType": "CHANGESKILL",
@@ -9131,6 +9144,45 @@
             "slot": "Hero_Unique_HGEr"
         }
     },
+    "StarSE_HLDKen_4": {
+        "Desc": "StarSE_HLDKen_4_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_HLDKen_EX",
+            "before": "Hero_Unique_HLDKen",
+            "slot": "Hero_Unique_HLDKen"
+        }
+    },
+    "StarSE_HLDKen_5": {
+        "Desc": "StarSE_HLDKen_5_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_HLDKen_EX",
+            "before": "Hero_PBattle_HLDKen",
+            "slot": "Hero_PBattle_HLDKen"
+        }
+    },
+    "StarSE_HLDKen_6": {
+        "Desc": "StarSE_HLDKen_6_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Proud_HLDKen_EX",
+            "before": "Hero_Proud_HLDKen",
+            "slot": "Hero_Proud_HLDKen"
+        }
+    },
     "StarSE_HLDNan_2": {
         "Desc": "StarSE_HLDNan_2_Desc",
         "EffectType": "CHANGESKILL",
@@ -10611,6 +10663,19 @@
             "after": "Hero_Proud_MYing_EX",
             "before": "Hero_Proud_MYing",
             "slot": "Hero_Proud_MYing"
+        }
+    },
+    "StarSE_MYing_Awake": {
+        "Desc": "StarSE_MYing_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_MYing_Awaken",
+            "before": "Hero_Unique_MYing_EX",
+            "slot": "Hero_Unique_MYing"
         }
     },
     "StarSE_MZGXiu_4": {

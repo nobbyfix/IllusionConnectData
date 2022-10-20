@@ -375,23 +375,6 @@
         "Shine": "",
         "Sicon": "IM_HD_HalloweenBossStamina_Small"
     },
-    "IM_HalloweenBoss_2nd_Stamina": {
-        "Desc": "IM_HalloweenBossStamina_FunctionDesc",
-        "LargeIcons": [
-            "IM_HD_HalloweenBossStamina"
-        ],
-        "Licon": "IM_HD_HalloweenBossStamina",
-        "Name": "IM_HalloweenBossStamina_Name",
-        "Quality": [
-            5
-        ],
-        "Resource": [],
-        "Segmentation": [
-            1
-        ],
-        "Shine": "",
-        "Sicon": "IM_HD_HalloweenBossStamina_Small"
-    },
     "IM_HalloweenExchange_4": {
         "Desc": "IM_Exchange_FunctionDesc",
         "LargeIcons": [
@@ -408,6 +391,23 @@
         ],
         "Shine": "",
         "Sicon": "IM_HD_HalloweenExchange_4_Small"
+    },
+    "IM_Halloween_2nd_BossStamina": {
+        "Desc": "IM_HalloweenBossStamina_FunctionDesc",
+        "LargeIcons": [
+            "IM_HD_HalloweenBossStamina"
+        ],
+        "Licon": "IM_HD_HalloweenBossStamina",
+        "Name": "IM_HalloweenBossStamina_Name",
+        "Quality": [
+            5
+        ],
+        "Resource": [],
+        "Segmentation": [
+            1
+        ],
+        "Shine": "",
+        "Sicon": "IM_HD_HalloweenBossStamina_Small"
     },
     "IM_Halloween_2nd_Exchange_4": {
         "Desc": "IM_Exchange_FunctionDesc",

@@ -335,7 +335,8 @@ all.Skill_GLFu_L_Unique = {
 							"Skill_GLFu_L_Unique_Stealth",
 							"STATUS",
 							"ABNORMAL",
-							"UNDISPELLABLE"
+							"UNDISPELLABLE",
+							"STEALTH"
 						}
 					}, {
 						buffeft2,
@@ -987,7 +988,8 @@ all.Skill_GLFu_L_Unique_EX = {
 							"Skill_GLFu_L_Unique_Stealth",
 							"STATUS",
 							"ABNORMAL",
-							"UNDISPELLABLE"
+							"UNDISPELLABLE",
+							"STEALTH"
 						}
 					}, {
 						buffeft2,

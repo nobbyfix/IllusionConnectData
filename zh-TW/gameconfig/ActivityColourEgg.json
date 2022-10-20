@@ -127,7 +127,7 @@
             "Type": "Portrait"
         },
         "Name": "ColourEgg_Name_1",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 1,
         "StoryLink": ""
     },
@@ -147,7 +147,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_2",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 1,
         "StoryLink": ""
     },
@@ -167,7 +167,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_3",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 1,
         "StoryLink": ""
     },
@@ -187,7 +187,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_4",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 1,
         "StoryLink": ""
     },
@@ -207,7 +207,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_5",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 1,
         "StoryLink": ""
     },
@@ -227,7 +227,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_6",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 0,
         "StoryLink": ""
     },
@@ -247,7 +247,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_7",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 0,
         "StoryLink": ""
     },
@@ -267,7 +267,7 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_8",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 0,
         "StoryLink": ""
     },
@@ -287,14 +287,14 @@
             "Type": "Bust4"
         },
         "Name": "ColourEgg_Name_9",
-        "Reward": "AHalloween_EE",
+        "Reward": "AHalloween_2nd_EE",
         "Show": 0,
         "StoryLink": ""
     },
     "ACE_STORY_1": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "400"
+                "IR_Halloween_2nd_StaminaConsumed": "400"
             }
         ],
         "Content": "",
@@ -307,14 +307,14 @@
         "Map": "AHalloweenM01",
         "Model": "",
         "Name": "Story_Name_1",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_01a"
     },
     "ACE_STORY_10": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "2200"
+                "IR_Halloween_2nd_StaminaConsumed": "2200"
             }
         ],
         "Content": "",
@@ -327,14 +327,14 @@
         "Map": "AHalloweenM03",
         "Model": "",
         "Name": "Story_Name_10",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_10a"
     },
     "ACE_STORY_2": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "600"
+                "IR_Halloween_2nd_StaminaConsumed": "600"
             }
         ],
         "Content": " ",
@@ -347,14 +347,14 @@
         "Map": "AHalloweenM01",
         "Model": "",
         "Name": "Story_Name_2",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_02a"
     },
     "ACE_STORY_3": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "800"
+                "IR_Halloween_2nd_StaminaConsumed": "800"
             }
         ],
         "Content": "",
@@ -367,14 +367,14 @@
         "Map": "AHalloweenM01",
         "Model": "",
         "Name": "Story_Name_3",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_03a"
     },
     "ACE_STORY_4": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "1000"
+                "IR_Halloween_2nd_StaminaConsumed": "1000"
             }
         ],
         "Content": "",
@@ -387,14 +387,14 @@
         "Map": "AHalloweenM02",
         "Model": "",
         "Name": "Story_Name_4",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_04a"
     },
     "ACE_STORY_5": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "1200"
+                "IR_Halloween_2nd_StaminaConsumed": "1200"
             }
         ],
         "Content": "",
@@ -407,14 +407,14 @@
         "Map": "AHalloweenM02",
         "Model": "",
         "Name": "Story_Name_5",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_05a"
     },
     "ACE_STORY_6": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "1400"
+                "IR_Halloween_2nd_StaminaConsumed": "1400"
             }
         ],
         "Content": "",
@@ -427,14 +427,14 @@
         "Map": "AHalloweenM02",
         "Model": "",
         "Name": "Story_Name_6",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_06a"
     },
     "ACE_STORY_7": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "1600"
+                "IR_Halloween_2nd_StaminaConsumed": "1600"
             }
         ],
         "Content": "",
@@ -447,14 +447,14 @@
         "Map": "AHalloweenM03",
         "Model": "",
         "Name": "Story_Name_7",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_07a"
     },
     "ACE_STORY_8": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "1800"
+                "IR_Halloween_2nd_StaminaConsumed": "1800"
             }
         ],
         "Content": "",
@@ -467,14 +467,14 @@
         "Map": "AHalloweenM03",
         "Model": "",
         "Name": "Story_Name_8",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_08a"
     },
     "ACE_STORY_9": {
         "Condition": [
             {
-                "IR_HalloweenStaminaConsumed": "2000"
+                "IR_Halloween_2nd_StaminaConsumed": "2000"
             }
         ],
         "Content": "",
@@ -487,7 +487,7 @@
         "Map": "AHalloweenM03",
         "Model": "",
         "Name": "Story_Name_9",
-        "Reward": "AHalloween_Story",
+        "Reward": "AHalloween_2nd_Story",
         "Show": 0,
         "StoryLink": "eventstory_Halloween_09a"
     }

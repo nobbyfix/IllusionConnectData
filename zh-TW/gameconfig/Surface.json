@@ -4322,6 +4322,64 @@
         "Type": 5,
         "Unlook": 1
     },
+    "Surface_HLDKen_1": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    -18,
+                    562
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    -44,
+                    369
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_HLDKen_1_Desc",
+        "GainDesc": "",
+        "GainShortDesc": "1",
+        "GoodsId": "",
+        "Hero": "HLDKen",
+        "Link": "",
+        "LongDesc": "",
+        "Model": "Model_HLDKen",
+        "Name": "Surface_HLDKen_1_Name",
+        "NotGetUnlook": "",
+        "Quality": 2,
+        "RepeatReward": "",
+        "SKIN": 1,
+        "ShopID": "",
+        "Sort": 1,
+        "Type": 1,
+        "Unlook": 1
+    },
     "Surface_HLDNan_1": {
         "ActivityId": "",
         "AnimeList": "",
@@ -10596,7 +10654,7 @@
         "Desc": "Surface_SP_PNCao_yyu_Desc",
         "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_SP_PNCao_2_GainShort",
-        "GoodsId": "ShopSurface_Surface_SP_PNCao_2_0930",
+        "GoodsId": "ShopSurface_Surface_SP_PNCao_2_1021",
         "Hero": "SP_PNCao",
         "Link": "",
         "LongDesc": "Surface_SP_PNCao_yyu_LongDesc",
@@ -14027,9 +14085,9 @@
             }
         ],
         "Desc": "Surface_YSLBin_2_Desc",
-        "GainDesc": "Surface_YSLBin_WSJie_GainDesc",
+        "GainDesc": "Surface_Shop_GainDesc",
         "GainShortDesc": "Surface_WSJie_GainShort",
-        "GoodsId": "Surface_13",
+        "GoodsId": "ShopSurface_Surface_YSLBin_2_1031",
         "Hero": "YSLBin",
         "Link": "",
         "LongDesc": "Surface_YSLBin_2_LongDesc",
@@ -14041,7 +14099,7 @@
         "SKIN": "",
         "ShopID": "Shop_Surface",
         "Sort": 2,
-        "Type": 3,
+        "Type": 2,
         "Unlook": 1
     },
     "Surface_YSTLu_1": {

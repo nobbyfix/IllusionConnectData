@@ -712,5 +712,161 @@ all.Skill_PGNNi_Passive_EX = {
 		return _env
 	end
 }
+all.Skill_PGNNi_Unique_Awaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.HurtRateDownFactor = externs.HurtRateDownFactor
+
+		if this.HurtRateDownFactor == nil then
+			this.HurtRateDownFactor = 0.4
+		end
+
+		this.ExSkillRateFactor = externs.ExSkillRateFactor
+
+		if this.ExSkillRateFactor == nil then
+			this.ExSkillRateFactor = 1
+		end
+
+		this.RageFactor = externs.RageFactor
+
+		if this.RageFactor == nil then
+			this.RageFactor = 400
+		end
+
+		local main = __action(this, {
+			name = "main",
+			entry = prototype.main
+		})
+		main = global["[duration]"](this, {
+			3067
+		}, main)
+		this.main = global["[cut_in]"](this, {
+			"1#Hero_Unique_PGNNi"
+		}, main)
+
+		return this
+	end,
+	main = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.TARGET = externs.TARGET
+
+		assert(_env.TARGET ~= nil, "External variable `TARGET` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.GroundEft(_env, _env.ACTOR, "BGEffectBlack")
+			global.EnergyRestrain(_env, _env.ACTOR, _env.TARGET)
+		end)
+		exec["@time"]({
+			900
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.Focus(_env, _env.ACTOR, global.FixedPos(_env, 0, 0, 2), 1.1, 80)
+			global.Perform(_env, _env.ACTOR, global.CreateSkillAnimation(_env, global.FixedPos(_env, 0, 0, 2), 100, "skill3"))
+			global.AssignRoles(_env, _env.TARGET, "target")
+		end)
+		exec["@time"]({
+			2233
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buffeft1 = global.NumericEffect(_env, "-hurtrate", {
+				"+Normal",
+				"+Normal"
+			}, this.HurtRateDownFactor)
+
+			for _, unit in global.__iter__(global.EnemyUnits(_env)) do
+				global.ApplyBuff_Debuff(_env, _env.ACTOR, unit, {
+					timing = 2,
+					duration = 2,
+					display = "HurtRateDown",
+					tags = {
+						"STATUS",
+						"DEBUFF",
+						"UNHURTRATEDOWN",
+						"Skill_PGNNi_Unique",
+						"DISPELLALBE"
+					}
+				}, {
+					buffeft1
+				}, 1, 0)
+			end
+
+			local buffeft2 = global.NumericEffect(_env, "+exskillrate", {
+				"+Normal",
+				"+Normal"
+			}, this.ExSkillRateFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 2,
+				duration = 2,
+				tags = {
+					"NUMERIC",
+					"BUFF",
+					"EXSKILLRATE",
+					"Skill_PGNNi_Unique",
+					"UNDISPELLABLE"
+				}
+			}, {
+				buffeft2
+			})
+
+			for _, friend in global.__iter__(global.RandomN(_env, 2, global.FriendUnits(_env, global.MARKED(_env, "WARRIOR") + global.MARKED(_env, "HEALER") - global.ONESELF(_env, _env.ACTOR)))) do
+				global.ApplyRPRecovery(_env, friend, this.RageFactor)
+			end
+
+			local hpmin = global.Slice(_env, global.SortBy(_env, global.FriendUnits(_env, global.PETS - global.SUMMONS), "<", global.UnitPropGetter(_env, "hp")), 1, 1)
+
+			if hpmin[1] then
+				global.DispelBuff(_env, hpmin[1], global.BUFF_MARKED_ALL(_env, "ABNORMAL", "DISPELLABLE"), 99)
+
+				local buffeft1 = global.DeathImmuneEffect(_env, 1)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, hpmin[1], {
+					timing = 0,
+					display = "Undead",
+					group = "Skill_PGNNi_Unique_Awaken",
+					duration = 99,
+					limit = 1,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"BUFF",
+						"UNDEAD",
+						"DISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1)
+			end
+		end)
+		exec["@time"]({
+			2834
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			global.EnergyRestrainStop(_env, _env.ACTOR, _env.TARGET)
+		end)
+
+		return _env
+	end
+}
 
 return _M

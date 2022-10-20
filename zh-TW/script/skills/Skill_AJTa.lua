@@ -685,12 +685,14 @@ all.Skill_AJTa_Unique_Awaken = {
 				}, 0)
 
 				global.ApplyBuff(_env, unit, {
-					timing = 1,
 					duration = 2,
+					group = "AJTa_Unique_Awaken_Flag",
+					timing = 2,
+					limit = 1,
 					tags = {
 						"NUMERIC",
 						"DEBUFF",
-						"UNDISPELLABLE",
+						"DISPELLABLE",
 						"UNSTEALABLE",
 						"AJTa_Unique_Awaken_Flag"
 					}
@@ -749,7 +751,7 @@ all.Skill_AJTa_Unique_Awaken_For_Field = {
 		this.HurtRateFactor = externs.HurtRateFactor
 
 		if this.HurtRateFactor == nil then
-			this.HurtRateFactor = 0.01
+			this.HurtRateFactor = 0.008
 		end
 
 		local passive = __action(this, {
@@ -810,7 +812,7 @@ all.Skill_AJTa_Unique_Awaken_For_Field = {
 			local this = _env.this
 			local global = _env.global
 
-			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and _env.curHpPercent < _env.prevHpPercent and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "AJTa_Unique_Awaken_Flag")) > 0 then
+			if global.GetSide(_env, _env.unit) ~= global.GetSide(_env, _env.ACTOR) and global.SelectBuffCount(_env, _env.unit, global.BUFF_MARKED_ALL(_env, "AJTa_Unique_Awaken_Flag")) > 0 then
 				global.DispelBuff(_env, _env.ACTOR, global.BUFF_MARKED_ALL(_env, "AJTa_Unique_Awaken_Check"), 99)
 
 				this.HurtRateFactor = this.HurtRateFactor * 100 * (1 - global.UnitPropGetter(_env, "hpRatio")(_env, _env.unit))
@@ -820,7 +822,7 @@ all.Skill_AJTa_Unique_Awaken_For_Field = {
 				}, this.HurtRateFactor)
 
 				global.ApplyBuff_Debuff(_env, _env.ACTOR, _env.unit, {
-					timing = 1,
+					timing = 2,
 					display = "HurtRateDown",
 					group = "AJTa_Unique_Awaken_Check",
 					duration = 2,
@@ -828,8 +830,6 @@ all.Skill_AJTa_Unique_Awaken_For_Field = {
 					tags = {
 						"NUMERIC",
 						"DEBUFF",
-						"UNDISPELLABLE",
-						"UNSTEALABLE",
 						"AJTa_Unique_Awaken_Check"
 					}
 				}, {
