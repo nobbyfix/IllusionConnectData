@@ -23,6 +23,13 @@ function TimeUtil:getLocalTimeZone()
 	return localTimeZone
 end
 
+function TimeUtil:getLocalTimeZoneId()
+	local diffTime = self:getLocalTimeZone()
+	local zone = diffTime / 3600
+
+	return zone
+end
+
 function TimeUtil:timeByRemoteDate(date)
 	if date then
 		local timeZoneDiff = self:getRemoteTimeZone() - self:getLocalTimeZone()

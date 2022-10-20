@@ -452,7 +452,7 @@ all.Skill_FTLYShi_Passive = {
 				local count = 0
 
 				for _, unit1 in global.__iter__(global.EnemyUnits(_env)) do
-					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						count = count + 1
 
 						global.print(_env, "场上存在嘲讽角色", count)
@@ -462,7 +462,7 @@ all.Skill_FTLYShi_Passive = {
 				end
 
 				if count == 0 then
-					local TAR = global.RandomN(_env, 1, global.EnemyUnits(_env))
+					local TAR = global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.unit), "随机目标为", global.GetUnitId(_env, TAR[1]))
 					global.AssignRoles(_env, TAR[1], "target")
@@ -502,7 +502,7 @@ all.Skill_FTLYShi_Passive = {
 				local count = 0
 
 				for _, unit1 in global.__iter__(global.FriendUnits(_env)) do
-					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						count = count + 1
 
 						global.print(_env, "场上存在嘲讽角色", count)
@@ -512,7 +512,7 @@ all.Skill_FTLYShi_Passive = {
 				end
 
 				if count == 0 then
-					local TAR = global.RandomN(_env, 1, global.FriendUnits(_env))
+					local TAR = global.RandomN(_env, 1, global.FriendUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.unit), "随机目标为", global.GetUnitId(_env, TAR[1]))
 					global.AssignRoles(_env, TAR[1], "target")
@@ -1081,7 +1081,7 @@ all.Skill_FTLYShi_Passive_EX = {
 				local count = 0
 
 				for _, unit1 in global.__iter__(global.EnemyUnits(_env)) do
-					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						count = count + 1
 
 						global.print(_env, "场上存在嘲讽角色", count)
@@ -1091,7 +1091,7 @@ all.Skill_FTLYShi_Passive_EX = {
 				end
 
 				if count == 0 then
-					local TAR = global.RandomN(_env, 1, global.EnemyUnits(_env))
+					local TAR = global.RandomN(_env, 1, global.EnemyUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.unit), "随机目标为", global.GetUnitId(_env, TAR[1]))
 					global.AssignRoles(_env, TAR[1], "target")
@@ -1131,7 +1131,7 @@ all.Skill_FTLYShi_Passive_EX = {
 				local count = 0
 
 				for _, unit1 in global.__iter__(global.FriendUnits(_env)) do
-					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 then
+					if global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "TAUNT")) > 0 and global.SelectBuffCount(_env, unit1, global.BUFF_MARKED(_env, "STEALTH")) == 0 then
 						count = count + 1
 
 						global.print(_env, "场上存在嘲讽角色", count)
@@ -1141,7 +1141,7 @@ all.Skill_FTLYShi_Passive_EX = {
 				end
 
 				if count == 0 then
-					local TAR = global.RandomN(_env, 1, global.FriendUnits(_env))
+					local TAR = global.RandomN(_env, 1, global.FriendUnits(_env, -global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "STEALTH"))))
 
 					global.print(_env, "谁", global.GetUnitCid(_env, _env.unit), "随机目标为", global.GetUnitId(_env, TAR[1]))
 					global.AssignRoles(_env, TAR[1], "target")

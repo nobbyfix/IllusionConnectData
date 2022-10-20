@@ -1820,13 +1820,13 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 			damage.val = damage.val * 0.7
 			local summons_count = 0
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				summons_count = summons_count + 1
 			end
 
 			summons_damage = summons_damage / summons_count
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				global.AddAnim(_env, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
@@ -1917,8 +1917,6 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
-		global.print(_env, "月食星返回是单体伤害=====")
-
 		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
 			"+Normal",
 			"+Normal"
@@ -1937,8 +1935,6 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 	end
 
 	if global.SelectHeroPassiveCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15116_1")) > 0 then
-		global.print(_env, "三月野兔：目标无法返回牌库=====")
-
 		local buff = global.NumericEffect(_env, "-def", {
 			"+Normal",
 			"+Normal"
@@ -1958,6 +1954,44 @@ function all.ApplyHPDamage_ResultCheck(_env, actor, target, damage, lowerLimit)
 		}, {
 			buff
 		})
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_end")) == 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_biaozhi")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_check")) == 0 then
+		local buffeft_tag = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_count", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_count"
+			}
+		}, {
+			buffeft_tag
+		})
+
+		local buffeft_check = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_check", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_check"
+			}
+		}, {
+			buffeft_check
+		})
+	end
+
+	if global.INSTATUS(_env, "SummonedHLDKen")(_env, target) and global.FriendMaster(_env) ~= nil then
+		local xbai_ratio = global.SpecialPropGetter(_env, "Skill_HLDKen_xbai_Passive_radio")(_env, global.FriendField(_env))
+
+		global.SNGLSi_Damage_Copy(_env, global.EnemyMaster(_env), damage, xbai_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -2773,13 +2807,13 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 			damage.val = damage.val * 0.7
 			local summons_count = 0
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				summons_count = summons_count + 1
 			end
 
 			summons_damage = summons_damage / summons_count
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				global.AddAnim(_env, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
@@ -2810,6 +2844,44 @@ function all.ApplyAOEHPDamage_ResultCheck(_env, actor, target, damage, lowerLimi
 		global.ApplyHPDamage(_env, actor, damage.val * 0.1)
 
 		damage.val = damage.val * 0.9
+	end
+
+	if global.INSTATUS(_env, "SummonedHLDKen")(_env, target) and global.FriendMaster(_env) ~= nil then
+		local xbai_ratio = global.SpecialPropGetter(_env, "Skill_HLDKen_xbai_Passive_radio")(_env, global.FriendField(_env))
+
+		global.SNGLSi_Damage_Copy(_env, global.EnemyMaster(_env), damage, xbai_ratio)
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_end")) == 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_biaozhi")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_check")) == 0 then
+		local buffeft_tag = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_count", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_count"
+			}
+		}, {
+			buffeft_tag
+		})
+
+		local buffeft_check = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_check", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_check"
+			}
+		}, {
+			buffeft_check
+		})
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damage, lowerLimit)
@@ -3671,13 +3743,13 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 			damages[n].val = damages[n].val * 0.7
 			local summons_count = 0
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				summons_count = summons_count + 1
 			end
 
 			summons_damage = summons_damage / summons_count
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				global.AddAnim(_env, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
@@ -3772,8 +3844,6 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	end
 
 	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Accesory_15117_2_unique")) > 0 then
-		global.print(_env, "月食星返回是单体伤害=====")
-
 		local buff_check = global.SpecialNumericEffect(_env, "+EquipSkill_Accesory_15117_2_unique_single", {
 			"+Normal",
 			"+Normal"
@@ -3792,8 +3862,6 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 	end
 
 	if global.SelectHeroPassiveCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15116_1")) > 0 then
-		global.print(_env, "三月野兔：目标无法返回牌库=====")
-
 		local buff = global.NumericEffect(_env, "-def", {
 			"+Normal",
 			"+Normal"
@@ -3813,6 +3881,44 @@ function all.ApplyHPDamageN(_env, n, total, target, damages, actor, lowerLimit)
 		}, {
 			buff
 		})
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_end")) == 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_biaozhi")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_check")) == 0 then
+		local buffeft_tag = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_count", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_count"
+			}
+		}, {
+			buffeft_tag
+		})
+
+		local buffeft_check = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_check", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_check"
+			}
+		}, {
+			buffeft_check
+		})
+	end
+
+	if global.INSTATUS(_env, "SummonedHLDKen")(_env, target) and global.FriendMaster(_env) ~= nil then
+		local xbai_ratio = global.SpecialPropGetter(_env, "Skill_HLDKen_xbai_Passive_radio")(_env, global.FriendField(_env))
+
+		global.SNGLSi_Damage_Copy(_env, global.EnemyMaster(_env), damages[n], xbai_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)
@@ -4741,13 +4847,13 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 			damages[n].val = damages[n].val * 0.7
 			local summons_count = 0
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				summons_count = summons_count + 1
 			end
 
 			summons_damage = summons_damage / summons_count
 
-			for _, unit in global.__iter__(global.EnemyUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
+			for _, unit in global.__iter__(global.AllUnits(_env, global.HASBUFFTAG(_env, global.BUFF_MARKED(_env, "EquipSkill_Armor_15108_2_check")))) do
 				global.AddAnim(_env, {
 					loop = 1,
 					anim = "cisha_zhanshupai",
@@ -4778,6 +4884,44 @@ function all.ApplyAOEHPDamageN(_env, n, total, target, damages, actor, lowerLimi
 		global.ApplyHPDamage(_env, actor, damages[n].val * 0.1)
 
 		damages[n].val = damages[n].val * 0.9
+	end
+
+	if global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_end")) == 0 and global.SelectBuffCount(_env, actor, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_biaozhi")) > 0 and global.SelectBuffCount(_env, target, global.BUFF_MARKED(_env, "EquipSkill_Decoration_15119_2_check")) == 0 then
+		local buffeft_tag = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_count", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, actor, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_count"
+			}
+		}, {
+			buffeft_tag
+		})
+
+		local buffeft_check = global.SpecialNumericEffect(_env, "+EquipSkill_Decoration_15119_2_check", {
+			"+Normal",
+			"+Normal"
+		}, 1)
+
+		global.ApplyBuff(_env, target, {
+			timing = 0,
+			duration = 99,
+			tags = {
+				"EquipSkill_Decoration_15119_2_check"
+			}
+		}, {
+			buffeft_check
+		})
+	end
+
+	if global.INSTATUS(_env, "SummonedHLDKen")(_env, target) and global.FriendMaster(_env) ~= nil then
+		local xbai_ratio = global.SpecialPropGetter(_env, "Skill_HLDKen_xbai_Passive_radio")(_env, global.FriendField(_env))
+
+		global.SNGLSi_Damage_Copy(_env, global.EnemyMaster(_env), damages[n], xbai_ratio)
 	end
 
 	local result = global.ApplyHPDamage(_env, target, damages[n], lowerLimit, n ~= total)

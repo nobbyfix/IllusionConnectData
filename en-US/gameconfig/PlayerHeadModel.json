@@ -870,6 +870,32 @@
         "UnlockDesc": "Ghost_3_HeadUnlock",
         "Zoom": 1.0
     },
+    "Head_Ghost_4": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_4",
+        "HeadMove": "",
+        "HeadName": "Ghost_1_HeadName",
+        "HeroMasterId": "PlayerHead_Ghost_4",
+        "IconPath": "asset/items/Head_HeroCollect_4.jpg",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_1_HeadUnlock",
+        "Zoom": 1.0
+    },
+    "Head_Ghost_5": {
+        "Condition": "",
+        "HeadDesc": "GhostBase_Desc_5",
+        "HeadMove": "",
+        "HeadName": "Ghost_2_HeadName",
+        "HeroMasterId": "PlayerHead_Ghost_5",
+        "IconPath": "asset/items/Head_HeroCollect_5.jpg",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 3,
+        "UnlockDesc": "Ghost_1_HeadUnlock",
+        "Zoom": 1.0
+    },
     "Head_HGEr": {
         "Condition": "",
         "HeadDesc": "HeroBase_Desc_HGEr",
@@ -881,6 +907,19 @@
         "SurfaceMasterId": "",
         "Type": 1,
         "UnlockDesc": "HGEr_HeadUnlock",
+        "Zoom": 0.5
+    },
+    "Head_HLDKen": {
+        "Condition": "",
+        "HeadDesc": "HeroBase_Desc_HLDKen",
+        "HeadMove": "",
+        "HeadName": "HLDKen_HeadName",
+        "HeroMasterId": "HLDKen",
+        "IconPath": "asset/heros/fbi/battlepic_fbi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 1,
+        "UnlockDesc": "HLDKen_HeadUnlock",
         "Zoom": 0.5
     },
     "Head_HLDNan": {
@@ -3531,6 +3570,19 @@
         "SurfaceMasterId": "",
         "Type": 4,
         "UnlockDesc": "HeroAwaken_MTZMEShi",
+        "Zoom": 1.0
+    },
+    "HeroAwaken_MYing": {
+        "Condition": "",
+        "HeadDesc": "HeroAwaken_MYing_Desc",
+        "HeadMove": "",
+        "HeadName": "HeroAwaken_MYing_1_Name",
+        "HeroMasterId": "MYing",
+        "IconPath": "asset/heros/mwsi/battlepic_mwsi.png",
+        "IsHiddenHead": 0,
+        "SurfaceMasterId": "",
+        "Type": 4,
+        "UnlockDesc": "HeroAwaken_MYing",
         "Zoom": 1.0
     },
     "HeroAwaken_MZGXiu": {

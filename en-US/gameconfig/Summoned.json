@@ -373,6 +373,36 @@
         "Type": "Summoned",
         "UniqueSkill": ""
     },
+    "SummonedHLDKen": {
+        "Cost": 2,
+        "CounterSkill": "",
+        "DeathSkill": "",
+        "DoubleSkill": "",
+        "Flags": [
+            "SUMMONED"
+        ],
+        "KillRage": 0,
+        "MasterRage": 10,
+        "NormalSkill": "Skill_Summoned_HLDKen_xbai_Normal",
+        "PassiveSkill": [],
+        "ProudSkill": "",
+        "RageBase": 0,
+        "RageRules": {
+            "a1": [
+                0,
+                0
+            ],
+            "a2": 0,
+            "a3": 0,
+            "a4": 0
+        },
+        "RoleModel": "Model_HLDKen_xbai",
+        "Sex": "",
+        "SkillRate": 0.0,
+        "SummonSurface": "",
+        "Type": "Summoned",
+        "UniqueSkill": ""
+    },
     "SummonedJNLong": {
         "Cost": 2,
         "CounterSkill": "",
