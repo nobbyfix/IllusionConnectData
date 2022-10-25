@@ -5694,6 +5694,12 @@ local data = {
 		"asset/anim/global_luodu_sk2cb.plist",
 		"asset/anim/ninja1.plist"
 	},
+	["fbi_xbai.skel"] = {
+		"asset/anim/fbi.plist",
+		"asset/anim/ninja1.plist",
+		"asset/anim/global_HAILUN_SK1_xulidaoguang.plist",
+		"asset/anim/global_HAILUN_SK1_baodian.plist"
+	},
 	["Master_LieSha2.skel"] = {
 		"asset/anim/global_xiaozi_skill3_xhxx.plist",
 		"asset/anim/global_xiaozi_skill1_dd.plist",
@@ -6878,6 +6884,30 @@ local data = {
 	},
 	["portraitpic_FTLEShi_WZi.skel"] = {
 		"asset/anim/portraitpic_FTLEShi_WZi.plist"
+	},
+	["fbi.skel"] = {
+		"asset/anim/global_HAILUN_SK3_jiaodifz.plist",
+		"asset/anim/global_HAILUN_SK3_zhoushentao.plist",
+		"asset/anim/global_ruchang_xialuo.plist",
+		"asset/anim/ninja1.plist",
+		"asset/anim/global_HAILUN_SK3_fuhao.plist",
+		"asset/anim/global_HAILUN_SK2_bt.plist",
+		"asset/anim/global_HAILUN_SK1_baodian.plist",
+		"asset/anim/global_HAILUN_SK2_taoxin.plist",
+		"asset/anim/global_HAILUN_SK2_ywbaozha.plist",
+		"asset/anim/global_HAILUN_SK2_btbaozha.plist",
+		"asset/anim/global_HAILUN_SK2_suduxian.plist",
+		"asset/anim/fbi.plist",
+		"asset/anim/global_HAILUN_SK3_zhaohuanxuanzhuanxin.plist",
+		"asset/anim/global_HAILUN_SK2_gy.plist",
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_HAILUN_SK2_kuosanbaodian.plist",
+		"asset/anim/global_HAILUN_SK1_xulidaoguang.plist",
+		"asset/anim/global_HAILUN_SK2_tiaodai.plist",
+		"asset/anim/global_HAILUN_SK2_xingguang.plist",
+		"asset/anim/global_HAILUN_SK3_zhaohuan.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_ruchang_dixian.plist"
 	},
 	["portraitpic_ZTXCun.skel"] = {
 		"asset/anim/portraitpic_ZTXCun.plist"
