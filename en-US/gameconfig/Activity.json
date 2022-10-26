@@ -20818,7 +20818,7 @@
             "Bmg": "zhldgf_z_zwzf_bj",
             "ButtonIcon": "zbrzhan_btn_zjm_rukou",
             "Buygift": {
-                "IM_ReZhanClubAttrItem_2": "shopView&amp;viewType=push&amp;shopId=Shop_TimeLimit"
+                "IM_ReZhanClubAttrItem_2": "shopView&viewType=push&shopId=Shop_TimeLimit"
             },
             "ClubAttrItem": {
                 "IM_ReZhanClubAttrItem_1": [
@@ -20965,22 +20965,22 @@
     "ActivityBlock_ReZhan_Support_1023": {
         "ActivityConfig": {
             "Activity": [
-                "ActivityBlock_ReZhan_DailyTask",
-                "ActivityBlock_ReZhan_AchieveMentTask"
+                "ActivityBlock_ReZhan_DailyTask_1023",
+                "ActivityBlock_ReZhan_AchieveMentTask_1023"
             ],
             "ActivitySupportId": [
-                "ABS_ReZhan_1_1_1023",
-                "ABS_ReZhan_1_2_1023",
-                "ABS_ReZhan_1_3_1023",
-                "ABS_ReZhan_1_4_1023",
-                "ABS_ReZhan_2_1_1023",
-                "ABS_ReZhan_2_2_1023",
-                "ABS_ReZhan_3_1_1023"
+                "ABS_ReZhan_1_1",
+                "ABS_ReZhan_1_2",
+                "ABS_ReZhan_1_3",
+                "ABS_ReZhan_1_4",
+                "ABS_ReZhan_2_1",
+                "ABS_ReZhan_2_2",
+                "ABS_ReZhan_3_1"
             ],
             "Bmg": "zhldgf_z_zwzf_bj",
             "ButtonIcon": "zbrzhan_btn_zjm_rukou",
             "Buygift": {
-                "IM_ReZhanClubAttrItem_2": "shopView&amp;viewType=push&amp;shopId=Shop_TimeLimit"
+                "IM_ReZhanClubAttrItem_2": "shopView&viewType=push&amp;shopId=Shop_TimeLimit"
             },
             "ClubAttrItem": {
                 "IM_ReZhanClubAttrItem_1": [
@@ -36382,28 +36382,28 @@
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_3l_Name",
+                    "Name": "AiGift1_Special_31_Name",
                     "NamePg": "txt_title_3_1",
                     "PicBg": "img_aishop_6",
                     "SubTitle": "AiGift1_Special_31_SubTitle",
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_4l_Name",
+                    "Name": "AiGift1_Special_41_Name",
                     "NamePg": "txt_title_4_1",
                     "PicBg": "img_aishop_7",
                     "SubTitle": "AiGift1_Special_41_SubTitle",
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_5l_Name",
+                    "Name": "AiGift1_Special_51_Name",
                     "NamePg": "txt_title_5_1",
                     "PicBg": "img_aishop_10",
                     "SubTitle": "AiGift1_Special_51_SubTitle",
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_6l_Name",
+                    "Name": "AiGift1_Special_61_Name",
                     "NamePg": "txt_title_6_1",
                     "PicBg": "img_aishop_13",
                     "SubTitle": "AiGift1_Special_61_SubTitle",
@@ -74890,7 +74890,7 @@
                 "2022-11-11 05:00:00"
             ]
         },
-        "Title": "TaskHeroCollect_20221022_Title",
+        "Title": "TaskHeroCollect_20220401_Title",
         "Type": "TASK",
         "UI": "TASKCOLLECT",
         "Version": ""
