@@ -16478,7 +16478,7 @@
     },
     "Hero_ABlock_CKFSJi_Extra": {
         "AttrType": [
-            "CURERATE",
+            "HURTRATE",
             "UNHURTRATE"
         ],
         "EffectDesc": "",
@@ -16492,8 +16492,8 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
-            0.8,
-            0.8
+            3,
+            0.3
         ]
     },
     "Hero_ABlock_FCXJi_Extra": {
@@ -16684,6 +16684,26 @@
         "Value": [
             0.6,
             0.6
+        ]
+    },
+    "Hero_ABlock_HLDKen_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            3,
+            0.3
         ]
     },
     "Hero_ABlock_HLa_Extra": {

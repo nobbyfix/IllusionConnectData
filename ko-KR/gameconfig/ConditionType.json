@@ -1,4 +1,18 @@
 {
+    "Condi_AHalloween_2nd_ExchangeAchieve": {
+        "AchieveType1": "INCREASE",
+        "AchieveType2": "",
+        "ConditionType1": "player.bag.items.IM_Halloween_2nd_Exchange_4.count",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AHalloween_ExchangeAchieve_Desc"
+    },
+    "Condi_AHalloween_2nd_StageStarSum": {
+        "AchieveType1": "CUSTOM",
+        "AchieveType2": "",
+        "ConditionType1": "starCount.?1",
+        "ConditionType2": "",
+        "EffectDesc": "Condi_AHalloween_StageStarSum_Desc"
+    },
     "Condi_ANewYearExchangeAchieve": {
         "AchieveType1": "INCREASE",
         "AchieveType2": "",

@@ -4402,7 +4402,7 @@
         "UI": "BattlePassShop",
         "Version": ""
     },
-    "ActivityBattlePassShop_20221101": {
+    "ActivityBattlePassShop_20221102": {
         "ActivityConfig": {
             "ModelId": "Model_SDTZ_Shop",
             "ResourcesBanner": [
@@ -5507,7 +5507,7 @@
         "UI": "BattlePass",
         "Version": ""
     },
-    "ActivityBattlePass_20221101": {
+    "ActivityBattlePass_20221102": {
         "ActivityConfig": {
             "Activity": [],
             "ActivityBattlePass": "ActivityBattlePass_20221101"
@@ -16044,6 +16044,595 @@
         "Title": "ActivityBlock_Halloween_Name",
         "Type": "ActivityBlock",
         "UI": "ACTIVITYHALLOWEEN",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd": {
+        "ActivityConfig": {
+            "Activity": [
+                "ActivityBlock_Halloween_2nd_Map",
+                "ActivityBlock_Halloween_2nd_DailyTask",
+                "ActivityBlock_Halloween_2nd_AchieveMentTask",
+                "ActivityBlock_Halloween_2nd_ColourEgg",
+                "ActivityBlock_Halloween_2nd_MonsterShop"
+            ],
+            "ActivityComplexId": "ActivityBlock_Halloween_2nd",
+            "ActivityStaminaId": "IR_Halloween_2nd_Stamina",
+            "Bmg": "wsj_zhujiemian_bg",
+            "BonusHero": [
+                "HLDKen",
+                "CKFSJi"
+            ],
+            "ButtonIcon": "zh_zy_btn_big",
+            "DrawCard": "DrawCard_1UP_HLDKen_20221020_2",
+            "DrawCardLink": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HLDKen_20221020_2",
+            "LoginActivity": "EightDays_Halloween_2nd",
+            "LoginActivityLink": "view://ActivityView&id=EightDays_Halloween_2nd",
+            "Logo": "wsj_zjm_logo",
+            "ModelId": [
+                {
+                    "desc": "AB_Model_Desc",
+                    "model": "HLDKen",
+                    "type": "Hero",
+                    "url": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_HLDKen_20221020_2"
+                },
+                {
+                    "desc": "AB_Model_Desc",
+                    "model": "CKFSJi",
+                    "type": "Hero",
+                    "url": "view://RecruitView&viewType=push&recruitType=DrawCard_1UP_CKFSJi_20221020_2"
+                }
+            ],
+            "ResourcesBanner": [
+                "IR_Diamond",
+                "IR_Halloween_2nd_Stamina",
+                "IR_Crystal",
+                "IR_Gold"
+            ],
+            "RuleDesc": [
+                "ActivityTotal_Halloween_RuleDesc_1",
+                "ActivityTotal_Halloween_RuleDesc_2",
+                "ActivityTotal_Halloween_RuleDesc_3",
+                "ActivityTotal_Halloween_RuleDesc_4",
+                "ActivityTotal_Halloween_RuleDesc_5"
+            ],
+            "SubActivityEndTip": "SubActivity_Halloween_EndTip_AB_1st",
+            "bgm": "Mus_Active_Halloween"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1101,
+        "ShowTab": 2,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-16 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-16 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Halloween_Name",
+        "Type": "ActivityBlock",
+        "UI": "ACTIVITYHALLOWEEN",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_AchieveMentTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "HalloweenAchieveMentTask_entitle",
+            "task": [
+                "AHalloween_2nd_AchieveMentTask_StageStarSum_1",
+                "AHalloween_2nd_AchieveMentTask_StageStarSum_2",
+                "AHalloween_2nd_AchieveMentTask_StageStarSum_3",
+                "AHalloween_2nd_AchieveMentTask_StageStarSum_4",
+                "AHalloween_2nd_AchieveMentTask_StageStarSum_5",
+                "AHalloween_2nd_AchieveMentTask_winActStage_1",
+                "AHalloween_2nd_AchieveMentTask_winActStage_2",
+                "AHalloween_2nd_AchieveMentTask_winActStage_3",
+                "AHalloween_2nd_AchieveMentTask_winActStage_4",
+                "AHalloween_2nd_AchieveMentTask_winActStage_5",
+                "AHalloween_2nd_AchieveMentTask_winActBossStage_1",
+                "AHalloween_2nd_AchieveMentTask_winActBossStage_2",
+                "AHalloween_2nd_AchieveMentTask_winActBossStage_3",
+                "AHalloween_2nd_AchieveMentTask_winActBossStage_4",
+                "AHalloween_2nd_AchieveMentTask_winActBossStage_5",
+                "AHalloween_2nd_AchieveMentTask_ExchangeAchieve_1",
+                "AHalloween_2nd_AchieveMentTask_ExchangeAchieve_2",
+                "AHalloween_2nd_AchieveMentTask_ExchangeAchieve_3",
+                "AHalloween_2nd_AchieveMentTask_ExchangeAchieve_4",
+                "AHalloween_2nd_AchieveMentTask_ExchangeAchieve_5",
+                "AHalloween_2nd_AchieveMentTask_TodayLogin_1",
+                "AHalloween_2nd_AchieveMentTask_TodayLogin_2",
+                "AHalloween_2nd_AchieveMentTask_TodayLogin_3",
+                "AHalloween_2nd_AchieveMentTask_TodayLogin_4"
+            ],
+            "titleImg": "Halloween_AchieveMentTask_banner"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Halloween_AchieveMentTask_Activity",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1104,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Halloween_AchieveMentTask_Name",
+        "Type": "TASK",
+        "UI": "ABACHIEVEMENTTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_ColourEgg": {
+        "ActivityConfig": {
+            "Egg": {
+                "ACE_Reward_1": 100,
+                "ACE_Reward_2": 100,
+                "ACE_Reward_3": 100,
+                "ACE_Reward_4": 100,
+                "ACE_Reward_5": 100,
+                "ACE_Reward_6": 100,
+                "ACE_Reward_7": 100,
+                "ACE_Reward_8": 100,
+                "ACE_Reward_9": 100
+            },
+            "StaminaStack": "IR_Halloween_2nd_StaminaConsumed",
+            "power": " IR_Halloween_2nd_Stamina",
+            "value": 3
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1109,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "COLOUREGG",
+        "UI": "COLOUREGG",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_DailyTask": {
+        "ActivityConfig": {
+            "Bmg": "renwu_bd_bj",
+            "entitle": "HalloweenailyTask_entitle",
+            "task": [
+                "AHalloween_2nd_DailyTask_1",
+                "AHalloween_2nd_DailyTask_2",
+                "AHalloween_2nd_DailyTask_3",
+                "AHalloween_2nd_DailyTask_4",
+                "AHalloween_2nd_DailyTask_5"
+            ],
+            "titleImg": "Halloween_DailyTask_banner"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Halloween_DailyTask_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1103,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Halloween_DailyTask_Name",
+        "Type": "TASK",
+        "UI": "ABDAILYTASK",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_Exchange": {
+        "ActivityConfig": {
+            "ModelId": "Model_SGBao",
+            "ModelIdOffset": {
+                "pos": [
+                    200,
+                    240
+                ],
+                "scale": 0.7
+            },
+            "ResourceBanner": [
+                "IM_Halloween_2nd_ExchangeItem"
+            ],
+            "exchange": [
+                "ActivityBlock_Halloween_2nd_Exchange_1",
+                "ActivityBlock_Halloween_2nd_Exchange_2",
+                "ActivityBlock_Halloween_2nd_Exchange_3",
+                "ActivityBlock_Halloween_2nd_Exchange_4",
+                "ActivityBlock_Halloween_2nd_Exchange_5",
+                "ActivityBlock_Halloween_2nd_Exchange_6",
+                "ActivityBlock_Halloween_2nd_Exchange_18",
+                "ActivityBlock_Halloween_2nd_Exchange_17",
+                "ActivityBlock_Halloween_2nd_Exchange_16",
+                "ActivityBlock_Halloween_2nd_Exchange_7",
+                "ActivityBlock_Halloween_2nd_Exchange_15",
+                "ActivityBlock_Halloween_2nd_Exchange_8",
+                "ActivityBlock_Halloween_2nd_Exchange_9",
+                "ActivityBlock_Halloween_2nd_Exchange_10",
+                "ActivityBlock_Halloween_2nd_Exchange_11",
+                "ActivityBlock_Halloween_2nd_Exchange_12",
+                "ActivityBlock_Halloween_2nd_Exchange_13",
+                "ActivityBlock_Halloween_2nd_Exchange_14"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "ActivityBlock_Halloween_Exchange_Desc",
+        "Enable": 0,
+        "Icon": "",
+        "LeftBanner": "NewExchange",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1121,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-09-16 05:00:00",
+            "start": [
+                "2022-09-01 05:00:00",
+                "2022-09-16 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "兑换活动",
+        "UI": "EXCHANGE",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_ExtraMap": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_Halloween_2nd_ExtraMap_R",
+            "block": [
+                "Map"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1107,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_ExtraNormal": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_Halloween_2nd_ExtraNormal_R",
+            "block": [
+                "Normal",
+                "Elite"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1106,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_ExtraSorce": {
+        "ActivityConfig": {
+            "Reward": "ActivityBlock_Halloween_2nd_ExtraSource_R",
+            "block": [
+                "GOLD",
+                "EXP",
+                "CRYSTAL"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1108,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "ExtraReward",
+        "UI": "ExtraRewardBoard",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_Map": {
+        "ActivityConfig": {
+            "ActivityBlockMap": {
+                "Normal": [
+                    "AHalloweenM01",
+                    "AHalloweenM02",
+                    "AHalloweenM03"
+                ]
+            },
+            "ActivityStaminaId": "IR_Halloween_2nd_Stamina",
+            "BonusHero": [
+                "HLDKen",
+                "CKFSJi"
+            ],
+            "BonusHeroDesc": [
+                "ABMap_Halloween_2nd_RuleDesc_1",
+                "ABMap_Halloween_2nd_RuleDesc_2",
+                "ABMap_Halloween_2nd_RuleDesc_3"
+            ],
+            "ButtonIcon": "zh_zy_btn_fb",
+            "DeleteItem": [
+                "IR_Halloween_2nd_StaminaConsumed"
+            ],
+            "MapSort": {
+                "AHalloweenM01": "1",
+                "AHalloweenM02": "2",
+                "AHalloweenM03": "3"
+            },
+            "ResourcesBanner": [
+                "IR_Gold",
+                "IR_Crystal",
+                "IM_HalloweenBossStamina",
+                "IR_Halloween_2nd_Stamina",
+                "IR_Diamond"
+            ],
+            "RuleDesc": [
+                "ActivityBlock_Halloween_RuleDesc_1",
+                "ActivityBlock_Halloween_RuleDesc_2",
+                "ActivityBlock_Halloween_RuleDesc_3",
+                "ActivityBlock_Halloween_RuleDesc_4",
+                "ActivityBlock_Halloween_RuleDesc_5",
+                "ActivityBlock_Halloween_RuleDesc_6"
+            ],
+            "ShowReward": "ShowReward_ABR",
+            "StaminaStack": "IR_Halloween_2nd_StaminaConsumed"
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 0,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1102,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "ActivityBlock_Halloween_Map_Name",
+        "Type": "ActivityBlockMap",
+        "UI": "ACTIVITYBLOCKMAP",
+        "Version": ""
+    },
+    "ActivityBlock_Halloween_2nd_MonsterShop": {
+        "ActivityConfig": {
+            "BankRate": [
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1,
+                0.1
+            ],
+            "Bubble": [
+                "Bubble_1",
+                "Bubble_2",
+                "Bubble_3"
+            ],
+            "Change": [
+                {
+                    "IM_Halloween_2nd_Exchange_1": 25
+                },
+                {
+                    "IM_Halloween_2nd_Exchange_2": 5
+                },
+                {
+                    "IM_Halloween_2nd_Exchange_3": 1
+                }
+            ],
+            "Exchange": "20",
+            "MonsterExchange": [
+                "AHalloween_2nd_Shop_1",
+                "AHalloween_2nd_Shop_2",
+                "AHalloween_2nd_Shop_3",
+                "AHalloween_2nd_Shop_4",
+                "AHalloween_2nd_Shop_5",
+                "AHalloween_2nd_Shop_6",
+                "AHalloween_2nd_Shop_7",
+                "AHalloween_2nd_Shop_8",
+                "AHalloween_2nd_Shop_9",
+                "AHalloween_2nd_Shop_10",
+                "AHalloween_2nd_Shop_11",
+                "AHalloween_2nd_Shop_12",
+                "AHalloween_2nd_Shop_13",
+                "AHalloween_2nd_Shop_14",
+                "AHalloween_2nd_Shop_15"
+            ],
+            "MonsterModelId": "Model_Gold_LMao",
+            "Price": "IM_Halloween_2nd_Exchange_4",
+            "ReturnChange": {
+                "IM_Halloween_2nd_Exchange_1": "500",
+                "IM_Halloween_2nd_Exchange_2": "100",
+                "IM_Halloween_2nd_Exchange_3": "20"
+            },
+            "RuleDesc": [
+                "Halloween_MonsterShop_RuleDesc_1",
+                "Halloween_MonsterShop_RuleDesc_2",
+                "Halloween_MonsterShop_RuleDesc_3",
+                "Halloween_MonsterShop_RuleDesc_4",
+                "Halloween_MonsterShop_RuleDesc_5"
+            ],
+            "TaskBgUI": "hd_bg_xddl1",
+            "Time": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Halloween_Activity",
+        "Primary": 0,
+        "Reset": 1,
+        "ServerCondition": "",
+        "ShowIndex": 1110,
+        "ShowTab": 0,
+        "Tag": "",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-16 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-16 05:00:00"
+            ]
+        },
+        "Title": "",
+        "Type": "MONSTERSHOP",
+        "UI": "MONSTERSHOP",
         "Version": ""
     },
     "ActivityBlock_Halloween_AchieveMentTask": {
@@ -36848,14 +37437,14 @@
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_3l_Name",
+                    "Name": "AiGift1_Special_31_Name",
                     "NamePg": "txt_title_3_1",
                     "PicBg": "img_aishop_6",
                     "SubTitle": "AiGift1_Special_31_SubTitle",
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_4l_Name",
+                    "Name": "AiGift1_Special_41_Name",
                     "NamePg": "txt_title_4_1",
                     "PicBg": "img_aishop_7",
                     "SubTitle": "AiGift1_Special_41_SubTitle",
@@ -36869,7 +37458,7 @@
                     "type": "Special"
                 },
                 {
-                    "Name": "AiGift1_Special_6l_Name",
+                    "Name": "AiGift1_Special_61_Name",
                     "NamePg": "txt_title_6_1",
                     "PicBg": "img_aishop_13",
                     "SubTitle": "AiGift1_Special_61_SubTitle",
@@ -64747,6 +65336,66 @@
         "Title": "EightDays_FireWorks_Name",
         "Type": "TASK",
         "UI": "Login14",
+        "Version": ""
+    },
+    "EightDays_Halloween_2nd": {
+        "ActivityConfig": {
+            "ActivityDesc": "Activity_Fruit_Supply_Tips",
+            "GetRewardClose": 1,
+            "IsTimeClose": 1,
+            "Title": "Activity_Fruit_Supply_Title",
+            "showHero": "YSLBin",
+            "specailDay": [
+                5,
+                7,
+                12,
+                14
+            ],
+            "task": [
+                "AHalloween_2nd_Login14_1",
+                "AHalloween_2nd_Login14_2",
+                "AHalloween_2nd_Login14_3",
+                "AHalloween_2nd_Login14_4",
+                "AHalloween_2nd_Login14_5",
+                "AHalloween_2nd_Login14_6",
+                "AHalloween_2nd_Login14_7",
+                "AHalloween_2nd_Login14_8",
+                "AHalloween_2nd_Login14_9",
+                "AHalloween_2nd_Login14_10",
+                "AHalloween_2nd_Login14_11",
+                "AHalloween_2nd_Login14_12",
+                "AHalloween_2nd_Login14_13",
+                "AHalloween_2nd_Login14_14"
+            ]
+        },
+        "ClientCondition": {
+            "LEVEL": 3
+        },
+        "Desc": "Login14_Desc",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "hd_btn_14r_ng",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 1,
+        "MailId": "Mail_Halloween_Activity_Login14",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 1111,
+        "ShowTab": 1,
+        "Tag": "WONDERFUL",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-14 05:00:00",
+            "start": [
+                "2022-10-31 05:00:00",
+                "2022-11-14 05:00:00"
+            ]
+        },
+        "Title": "Activity_Fruit_Supply_LeftTitle",
+        "Type": "TASK",
+        "UI": "Login_Halloween",
         "Version": ""
     },
     "EightDays_Knight": {

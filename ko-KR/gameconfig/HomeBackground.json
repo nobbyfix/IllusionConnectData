@@ -601,6 +601,31 @@
         "Tips": "Unlock_BG_Welfare",
         "Unlook": 1
     },
+    "HomeBackground_Halloween": {
+        "BGM": "Mus_Active_Halloween",
+        "BGPContraction": "anualshop_scene_main_halloween_preview",
+        "Condition": {
+            "LEVEL": 1
+        },
+        "Cost": "",
+        "Information": {
+            "desc": "HomeBackground_Halloween_Desc",
+            "img": "Welfare_Background_halloween",
+            "name": "HomeBackground_Halloween_Name"
+        },
+        "Item": "HomeBackground_1_Item",
+        "Loop": {
+            "01:00:00": {
+                "BG": "Halloween_Scene_Reward"
+            }
+        },
+        "Name": "HomeBackground_Halloween_Name",
+        "Price": "",
+        "Sort": 12,
+        "TimeFactor": "",
+        "Tips": "Unlock_HomeBackground_Halloween",
+        "Unlook": 1
+    },
     "HomeBackground_Magic": {
         "BGM": "Mus_Story_Magic_Main",
         "BGPContraction": "anualshop_scene_main_magic_preview",
