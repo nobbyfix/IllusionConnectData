@@ -1,4 +1,43 @@
 {
+    "PlayTitle_Continents": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_10rtpk2_Desc",
+        "Icon": "PlayerTitle_11",
+        "Name": "PlayTitle_Continents_Name",
+        "Order": 31,
+        "ResourceDesc": "PlayerTitle_10rtpk2_Desc",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 584
+        },
+        "Unlook": 1
+    },
+    "PlayTitle_Country": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_10rtpk3_Desc",
+        "Icon": "PlayerTitle_11",
+        "Name": "PlayTitle_Country_Name",
+        "Order": 32,
+        "ResourceDesc": "PlayerTitle_10rtpk3_Desc",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 584
+        },
+        "Unlook": 1
+    },
+    "PlayTitle_World": {
+        "CondiType": "TIME",
+        "Desc": "PlayerTitle_10rtpk1_Desc",
+        "Icon": "PlayerTitle_11",
+        "Name": "PlayTitle_World_Name",
+        "Order": 30,
+        "ResourceDesc": "PlayerTitle_10rtpk1_Desc",
+        "Type": "LIMIT",
+        "TypeNum": {
+            "time": 584
+        },
+        "Unlook": 1
+    },
     "PlayTitle_twjp_qrj": {
         "CondiType": "FOREVER",
         "Desc": "PlayTitle_twjp_qrj_Desc",
