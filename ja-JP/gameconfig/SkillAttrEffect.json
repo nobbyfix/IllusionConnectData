@@ -16550,6 +16550,26 @@
             1
         ]
     },
+    "Hero_ABlock_FTLYShi_Extra": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            3,
+            0.3
+        ]
+    },
     "Hero_ABlock_GCZi_Extra": {
         "AttrType": [
             "HURTRATE"
@@ -17272,8 +17292,8 @@
         "Name": "",
         "Target": "SELF",
         "Value": [
-            0.8,
-            0.8
+            3,
+            0.3
         ]
     },
     "Hero_ABlock_SP_DDing_Extra": {
