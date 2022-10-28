@@ -16819,8 +16819,44 @@
         "TimeTag": 1,
         "TimeType": {
             "amount": 50,
-            "end": "2022-11-06 05:00:00",
-            "start": "2022-10-23 05:00:00",
+            "end": "2021-11-14 05:00:00",
+            "start": "2021-11-01 05:00:00",
+            "type": "day"
+        },
+        "Vanish": 0,
+        "Version": "",
+        "WindowIcon": ""
+    },
+    "PackageShop_ReZhanGift2": {
+        "ClientCondition": "",
+        "Condition": "",
+        "CoolDown": "",
+        "CostOffTag": "",
+        "Desc": "PackageShop_ReZhanGift_Desc",
+        "GameCoin": {
+            "amount": 188,
+            "type": "IR_Diamond"
+        },
+        "Hide": "",
+        "Icon": "IM_HD_WuXiuHuiClubAttrItem_2",
+        "IsFree": 2,
+        "Item": "PackageShop_ReZhanGift_Reward",
+        "ItemShow": "PackageShop_ReZhanGift_Reward",
+        "Name": "PackageShop_ReZhanGift_Name",
+        "Pay": "",
+        "Platform": "ios",
+        "Prepose": "",
+        "Price": "",
+        "Quality": 5,
+        "ServerCondition": "",
+        "ShopSort": "TimeLimitShop",
+        "Sort": 2,
+        "Tag": "",
+        "TimeTag": 1,
+        "TimeType": {
+            "amount": 50,
+            "end": "2022-11-21 05:00:00",
+            "start": "2022-11-07 05:00:00",
             "type": "day"
         },
         "Vanish": 0,
