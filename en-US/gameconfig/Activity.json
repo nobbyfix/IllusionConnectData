@@ -37643,10 +37643,10 @@
         "Tag": "NEW",
         "Time": "RANGE_CONTINUE",
         "TimeFactor": {
-            "end": "2022-11-26 05:00:00",
+            "end": "2022-11-28 05:00:00",
             "start": [
                 "2022-11-16 05:00:00",
-                "2022-11-26 05:00:00"
+                "2022-11-28 05:00:00"
             ]
         },
         "Title": "Activity_WorldBoss_Name",
@@ -67233,6 +67233,86 @@
             ]
         },
         "Title": "FestivalLimitPack_WSJ_Name",
+        "Type": "TPURCHASE",
+        "UI": "FESTIVALPACKAGE",
+        "Version": ""
+    },
+    "FestivalPackage_20221116pailian": {
+        "ActivityConfig": {
+            "PackType": "halloweenday",
+            "TimePurchaseId": [
+                "PackageShop_20221116pailian_1",
+                "PackageShop_20221116pailian_2",
+                "PackageShop_20221116pailian_3"
+            ],
+            "UIBG": "jqtd_txt_ayzl_di"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 999,
+        "ShowTab": 0,
+        "Tag": "RECOMMEND",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-23 05:00:00",
+            "start": [
+                "2022-11-16 05:00:00",
+                "2022-11-23 05:00:00"
+            ]
+        },
+        "Title": "FestivalLimitPack_WSJ_Name",
+        "Type": "TPURCHASE",
+        "UI": "FESTIVALPACKAGE",
+        "Version": ""
+    },
+    "FestivalPackage_20221125tspailian": {
+        "ActivityConfig": {
+            "PackType": "xide",
+            "TimePurchaseId": [
+                "PackageShop_20221125tspailian_1",
+                "PackageShop_20221125tspailian_2",
+                "PackageShop_20221125tspailian_3"
+            ],
+            "UIBG": "jqtd_txt_typl_di"
+        },
+        "ClientCondition": {
+            "LEVEL": 1
+        },
+        "Desc": "",
+        "Enable": 1,
+        "Icon": "",
+        "LeftBanner": "",
+        "Loop": "",
+        "LoopFactor": "",
+        "Mail": 0,
+        "MailId": "",
+        "Primary": 1,
+        "Reset": 0,
+        "ServerCondition": "",
+        "ShowIndex": 999,
+        "ShowTab": 0,
+        "Tag": "RECOMMEND",
+        "Time": "RANGE_CONTINUE",
+        "TimeFactor": {
+            "end": "2022-11-30 05:00:00",
+            "start": [
+                "2022-11-25 05:00:00",
+                "2022-11-30 05:00:00"
+            ]
+        },
+        "Title": "FestivalLimitPack_XDe_Name",
         "Type": "TPURCHASE",
         "UI": "FESTIVALPACKAGE",
         "Version": ""
