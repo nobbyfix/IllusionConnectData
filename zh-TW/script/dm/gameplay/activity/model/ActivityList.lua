@@ -19,17 +19,17 @@ function ActivityList:initialize()
 	self._disableActivityList = list
 end
 
-function ActivityList:synchronize(data)
+function ActivityList:synchronize(data, isReset)
 	if not data then
 		return
 	end
 
 	for id, actData in pairs(data) do
-		self:syncAloneActivity(id, actData)
+		self:syncAloneActivity(id, actData, isReset)
 	end
 end
 
-function ActivityList:syncAloneActivity(id, data)
+function ActivityList:syncAloneActivity(id, data, isReset)
 	if not data then
 		return
 	end
@@ -37,7 +37,7 @@ function ActivityList:syncAloneActivity(id, data)
 	local activity = self:getActivityById(id)
 
 	if activity then
-		activity:synchronize(data)
+		activity:synchronize(data, isReset)
 	else
 		local config = ConfigReader:getRecordById("Activity", id)
 

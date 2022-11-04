@@ -231,6 +231,13 @@ function TimeUtil:calcLocalUTCDiff()
 	return diffTime
 end
 
+function TimeUtil:getLocalTimeZone()
+	local diffTime = self:calcLocalUTCDiff()
+	local zone = diffTime / 3600
+
+	return zone
+end
+
 function TimeUtil:timeByRemoteDate(date)
 	if date then
 		local localUTCDiff = self:calcLocalUTCDiff()

@@ -73,7 +73,7 @@ function CustomDataSystem:sync(data)
 	self._customData:sync(data)
 end
 
-function CustomDataSystem:setValue(type, key, value, callback, isBlockUI)
+function CustomDataSystem:setValue(type, key, value, callback, isBlockUI, immediately)
 	type = type or PrefixType.kGlobal
 	local saveData = {
 		[type .. "#" .. key] = value
@@ -81,6 +81,10 @@ function CustomDataSystem:setValue(type, key, value, callback, isBlockUI)
 
 	if isBlockUI == nil then
 		isBlockUI = true
+	end
+
+	if immediately then
+		self._customData:setValue(type, key, value)
 	end
 
 	self:requestSaveData(saveData, isBlockUI, function ()

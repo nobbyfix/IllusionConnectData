@@ -341,6 +341,7 @@ ActivityType = {
 	KEXCHANGE = "EXCHANGE",
 	KMiniGame = "MINIGAME",
 	KWorldBoss = "WorldBoss",
+	kAIShop = "AISHOP",
 	KMonsterShop = "MONSTERSHOP",
 	KEightLogin = "EightLogin",
 	KTASKMONTHCARD = "TASKMONTHCARD",

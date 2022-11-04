@@ -3,6 +3,7 @@ EVT_ACTIVITY_REFRESH = "EVT_ACTIVITY_REFRESH"
 EVT_ACTIVITY_CLOSE = "EVT_ACTIVITY_CLOSE"
 EVT_ACTIVITY_REDPOINT_REFRESH = "EVT_ACTIVITY_REDPOINT_REFRESH"
 EVT_ACTIVITY_SAGA_SCORE = "EVT_ACTIVITY_SAGA_SCORE"
+EVT_ACTIVITYT_PAY_SUCC = "EVT_ACTIVITYT_PAY_SUCC"
 DailyGift = "FreeStamina"
 ActivitySystem = class("ActivitySystem", legs.Actor)
 
@@ -1147,8 +1148,17 @@ end
 
 function ActivitySystem:doReset(resetId, value, response)
 	if response then
-		self:getActivityList():synchronize(response.activityMap)
+		self:getActivityList():synchronize(response.activityMap, true)
 		self:dispatch(Event:new(EVT_ACTIVITY_REFRESH))
+	end
+
+	local activity = self:getActivityByType("AISHOP")
+
+	if activity then
+		activity:doReset()
+		delayCallByTime(3000, function ()
+			self:requestActicityById(activity:getId())
+		end)
 	end
 end
 

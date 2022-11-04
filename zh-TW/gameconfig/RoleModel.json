@@ -28359,8 +28359,8 @@
         "Bust1": "Bust1_SGHQShou",
         "Bust10": "Bust10_SGHQShou",
         "Bust11": "Bust11_SGHQShou",
-        "Bust12": "Bust12_SGHQShou",
-        "Bust13": "Bust13_SGHQShou",
+        "Bust12": "Bust13_SGHQShou",
+        "Bust13": "Bust12_SGHQShou",
         "Bust14": "Bust14_SGHQShou",
         "Bust15": "Bust15_SGHQShou",
         "Bust16": "Bust5_SGHQShou",
@@ -28376,7 +28376,10 @@
             -118,
             -388
         ],
-        "BustAwake2": "",
+        "BustAwake2": [
+            80,
+            -400
+        ],
         "BustTemp1": [
             -85,
             -558

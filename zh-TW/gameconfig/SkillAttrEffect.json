@@ -151720,6 +151720,50 @@
             0.05
         ]
     },
+    "Star_IA_BHTZi_1": {
+        "AttrType": [
+            "ATK_RATE",
+            "DEF_RATE",
+            "HP_RATE",
+            "UNEFFECTRATE"
+        ],
+        "EffectDesc": "Star_IA_BHTZi_1_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.08,
+            0.08,
+            0.08,
+            0.1
+        ]
+    },
+    "Star_IA_BHTZi_2": {
+        "AttrType": [
+            "DEF_RATE",
+            "HP_RATE"
+        ],
+        "EffectDesc": "Star_IA_BHTZi_2_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.05,
+            0.05
+        ]
+    },
     "Star_IA_FGao_1": {
         "AttrType": [
             "DEF_RATE",
@@ -155576,6 +155620,26 @@
         "Target": "SELF",
         "Value": [
             0.15
+        ]
+    },
+    "Star_SGHQShou_Awake": {
+        "AttrType": [
+            "HURTRATE",
+            "UNHURTRATE"
+        ],
+        "EffectDesc": "Star_SGHQShou_Awake_Desc",
+        "EffectRange": [
+            "ALL"
+        ],
+        "EffectType": "ATTR",
+        "GrowType": "FIXED",
+        "Icon": "",
+        "LevelUpDesc": "",
+        "Name": "",
+        "Target": "SELF",
+        "Value": [
+            0.1,
+            0.1
         ]
     },
     "Star_SLMen_3_1": {
