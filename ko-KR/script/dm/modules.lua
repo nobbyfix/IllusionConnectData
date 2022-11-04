@@ -2310,6 +2310,11 @@ local modules = {
 							res = "asset/ui/ActivityBlockSupportMainWxh.csb",
 							name = "ActivityBlockSupportNewView",
 							mediator = "ActivityBlockSupportNewMediator"
+						},
+						{
+							res = "asset/ui/ActivityAIShop.csb",
+							name = "ActivityAIShopView",
+							mediator = "ActivityAIShopMediator"
 						}
 					}
 				}

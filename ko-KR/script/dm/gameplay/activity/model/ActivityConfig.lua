@@ -36,6 +36,7 @@ require("dm.gameplay.activity.model.ActivityMail")
 require("dm.gameplay.activity.model.AthenaGoActivity")
 require("dm.gameplay.activity.model.BentoActivity")
 require("dm.gameplay.activity.model.WorldBossActivity")
+require("dm.gameplay.activity.model.AIShopActivity")
 
 ActivityShowTab = {
 	kInAll = 3,
@@ -110,7 +111,8 @@ ActivityModel = {
 	[ActivityType.KActivityTrialRoad] = AthenaGoActivity,
 	[ActivityType.kDRAWCARDTS] = BoardActivity,
 	[ActivityType.KActivityBento] = BentoActivity,
-	[ActivityType.KWorldBoss] = WorldBossActivity
+	[ActivityType.KWorldBoss] = WorldBossActivity,
+	[ActivityType.kAIShop] = AIShopActivity
 }
 ActivityUI = {
 	ACTIVITYBLOCKEGG = "ActivityBlockEggView",
@@ -135,6 +137,7 @@ ActivityUI = {
 	Questionnaire = "QuestionActivityView",
 	ABDAILYTASK = "ActivityTaskDailyView",
 	ExtraRewardBoard = "ExtraRewardActivityView",
+	AISHOP = "ActivityAIShopView",
 	ZEROACHIEVEMENTTASK = "ActivityZeroTaskAchievementView",
 	[ActivityType.KEightLogin] = "eightDayLoginView",
 	[ActivityType.KEightLoginCommon] = "commonEightDayLoginView",

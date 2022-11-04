@@ -1,4 +1,5 @@
 require("dm.statistic.StatisticPointConfig")
+require("dm.base.TimeUtil")
 
 StatisticSystem = StatisticSystem or {}
 StatisticSystem.baseInfo = StatisticSystem.baseInfo or {}
@@ -17,6 +18,7 @@ function StatisticSystem:init()
 		rid = "",
 		server = ""
 	}
+	baseInfo._gameplt_ = baseInfo.game .. "_" .. baseInfo.platform
 
 	self:addInfoValues(baseInfo)
 
@@ -65,8 +67,6 @@ local function genSign(params)
 end
 
 function StatisticSystem:send(content)
-	dump(content, "content-____")
-
 	if GameConfigs.closeClientStatistic then
 		return
 	end
@@ -130,6 +130,7 @@ function StatisticSystem:send(content)
 	content._time_ = os.date("%Y-%m-%d %H:%M:%S", ts)
 	content._date_ = os.date("%Y-%m-%d", ts)
 	content.type = nil
+	content._utc_ = TimeUtil:getLocalTimeZone()
 	local cjson = require("cjson.safe")
 	local xhr = cc.XMLHttpRequest:new()
 	xhr.responseType = cc.XMLHTTPREQUEST_RESPONSE_STRING

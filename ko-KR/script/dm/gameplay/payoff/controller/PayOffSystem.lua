@@ -398,6 +398,8 @@ function PayOffSystem:showPayReward(response, callback)
 
 			self:dispatch(Event:new(EVT_PASSPORT_REFRESH))
 		end
+
+		self:dispatch(Event:new(EVT_ACTIVITYT_PAY_SUCC, response.data))
 	end
 end
 
