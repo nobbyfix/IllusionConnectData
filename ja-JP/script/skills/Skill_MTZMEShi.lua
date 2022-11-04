@@ -838,5 +838,265 @@ all.Skill_MTZMEShi_Unique_Awken = {
 		return _env
 	end
 }
+all.Skill_MTZMEShi_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.EffectRateFactor = externs.EffectRateFactor
+
+		if this.EffectRateFactor == nil then
+			this.EffectRateFactor = 0.35
+		end
+
+		this.EnergyRecoveryFactor = externs.EnergyRecoveryFactor
+
+		if this.EnergyRecoveryFactor == nil then
+			this.EnergyRecoveryFactor = 0.15
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		passive2 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_DIE"
+		}, passive2)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local cards = global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR), global.CARD_HERO_MARKED(_env, "HERO") - global.CARD_HERO_MARKED(_env, "SUMMONED"))
+			local Energy = 9
+			local buff_num = global.SpecialNumericEffect(_env, "+MTZMEShi_Passive_Energy", {
+				"+Normal",
+				"+Normal"
+			}, Energy)
+			local buff = global.PassiveFunEffectBuff(_env, "MTZMEShi_For_BackCard", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MTZMEShi_For_BackCard"
+				}
+			}, {
+				buff,
+				buff_num
+			})
+
+			for _, card in global.__iter__(cards) do
+				local cardvaluechange = global.CardCostEnchant(_env, "-", Energy, 1)
+
+				global.ApplyEnchant(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					timing = 1,
+					duration = 1,
+					tags = {
+						"CARDBUFF",
+						"Skill_MTZMEShi_Passive",
+						"UNDISPELLABLE"
+					}
+				}, {
+					cardvaluechange
+				})
+			end
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				local buffeft1 = global.NumericEffect(_env, "+effectrate", {
+					"+Normal",
+					"+Normal"
+				}, this.EffectRateFactor)
+
+				global.ApplyBuff(_env, _env.ACTOR, {
+					duration = 99,
+					group = "Skill_MTZMEShi_Passive_SelfAwaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+
+			for _, card in global.__iter__(global.CardsInWindow(_env, global.GetOwner(_env, _env.ACTOR))) do
+				local buffeft1 = global.NumericEffect(_env, "+effectrate", {
+					"+Normal",
+					"+Normal"
+				}, this.EffectRateFactor)
+
+				global.ApplyHeroCardBuff(_env, global.GetOwner(_env, _env.ACTOR), card, {
+					duration = 99,
+					group = "Skill_MTZMEShi_Passive_SelfAwaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"NUMERIC",
+						"BUFF",
+						"DISPELLABLE",
+						"STEALABLE"
+					}
+				}, {
+					buffeft1
+				})
+			end
+
+			local buffeft_s1 = global.EnergyEffect(_env, 1 + this.EnergyRecoveryFactor)
+
+			global.ApplyBuff(_env, _env.ACTOR, {
+				timing = 0,
+				display = "EnergyEffectUp",
+				group = "Skill_MTZMEShi_Passive_SelfAwaken_Energy",
+				duration = 99,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"BUFF",
+					"ENERGYEFFECTUP",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"MTZMEShi_ENERGYEFFECTUP"
+				}
+			}, {
+				buffeft_s1
+			})
+
+			local buffeft_s2 = global.EnergyEffect(_env, 1 - this.EnergyRecoveryFactor)
+
+			global.ApplyBuff(_env, global.EnemyField(_env), {
+				duration = 99,
+				group = "Skill_MTZMEShi_Passive_SelfAwaken_EnergyDown",
+				timing = 0,
+				limit = 1,
+				tags = {
+					"STATUS",
+					"DEBUFF",
+					"ENERGYEFFECTDOWN",
+					"UNDISPELLABLE",
+					"UNSTEALABLE",
+					"MTZMEShi_ENERGYEFFECTDOWN"
+				}
+			}, {
+				buffeft_s2
+			})
+
+			local buffeft_s3 = global.PassiveFunEffectBuff(_env, "Skill_MTZMEShi_Passive_SelfAwaken_Field", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"Skill_MTZMEShi_Passive_SelfAwaken_Field"
+				}
+			}, {
+				buffeft_s3
+			})
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.ACTOR) == global.GetSide(_env, _env.unit) and global.MARKED(_env, "MTZMEShi")(_env, _env.unit) then
+				global.DispelBuff(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "MTZMEShi_ENERGYEFFECTDOWN"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_MTZMEShi_Passive_SelfAwaken_Field = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		local passive = __action(this, {
+			name = "passive",
+			entry = prototype.passive
+		})
+		passive = global["[duration]"](this, {
+			0
+		}, passive)
+		this.passive = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive)
+
+		return this
+	end,
+	passive = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.ACTOR) == global.GetSide(_env, _env.unit) and global.MARKED(_env, "MTZMEShi")(_env, _env.unit) then
+				global.DispelBuff(_env, global.EnemyField(_env), global.BUFF_MARKED(_env, "MTZMEShi_ENERGYEFFECTDOWN"), 99)
+			end
+		end)
+
+		return _env
+	end
+}
 
 return _M
