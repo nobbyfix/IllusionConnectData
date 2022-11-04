@@ -307,6 +307,7 @@ all.MGNa_Kick = {
 			if global.MARKED(_env, "MGNa")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
 				for _, unit_one in global.__iter__(global.FriendUnits(_env)) do
 					global.DispelBuff(_env, unit_one, global.BUFF_MARKED_ALL(_env, "Skill_MGNa_Passive", "UNDISPELLABLE"), 99)
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED(_env, "Skill_MGNa_Passive_SelfAwaken"), 99)
 				end
 
 				global.DispelBuff(_env, global.FriendField(_env), global.BUFF_MARKED(_env, "MGNa_Kick"), 99)
@@ -1044,6 +1045,289 @@ all.Skill_MGNa_Passive_EX = {
 			for _, unit in global.__iter__(global.FriendUnits(_env)) do
 				if global.SelectBuffCount(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive")) > 0 then
 					global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive"), 99)
+				end
+			end
+		end)
+
+		return _env
+	end
+}
+all.Skill_MGNa_Passive_SelfAwaken = {
+	__new__ = function (prototype, externs, global)
+		local __function = global.__skill_function__
+		local __action = global.__skill_action__
+		local this = global.__skill({
+			global = global
+		}, prototype, externs)
+		this.AOERateFactor = externs.AOERateFactor
+
+		assert(this.AOERateFactor ~= nil, "External variable `AOERateFactor` is not provided.")
+
+		this.AtkRateFactor = externs.AtkRateFactor
+
+		assert(this.AtkRateFactor ~= nil, "External variable `AtkRateFactor` is not provided.")
+
+		this.RageSpdactor = externs.RageSpdactor
+
+		if this.RageSpdactor == nil then
+			this.RageSpdactor = 0.2
+		end
+
+		this.RageFactor = externs.RageFactor
+
+		if this.RageFactor == nil then
+			this.RageFactor = 200
+		end
+
+		local passive1 = __action(this, {
+			name = "passive1",
+			entry = prototype.passive1
+		})
+		passive1 = global["[duration]"](this, {
+			0
+		}, passive1)
+		this.passive1 = global["[trigger_by]"](this, {
+			"SELF:ENTER"
+		}, passive1)
+		local passive2 = __action(this, {
+			name = "passive2",
+			entry = prototype.passive2
+		})
+		passive2 = global["[duration]"](this, {
+			0
+		}, passive2)
+		this.passive2 = global["[trigger_by]"](this, {
+			"UNIT_ENTER"
+		}, passive2)
+		local passive3 = __action(this, {
+			name = "passive3",
+			entry = prototype.passive3
+		})
+		passive3 = global["[duration]"](this, {
+			0
+		}, passive3)
+		this.passive3 = global["[trigger_by]"](this, {
+			"SELF:DIE"
+		}, passive3)
+		local passive4 = __action(this, {
+			name = "passive4",
+			entry = prototype.passive4
+		})
+		passive4 = global["[duration]"](this, {
+			0
+		}, passive4)
+		this.passive4 = global["[trigger_by]"](this, {
+			"UNIT_KICK"
+		}, passive4)
+
+		return this
+	end,
+	passive1 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+			local buff = global.PassiveFunEffectBuff(_env, "MGNa_Kick", {})
+
+			global.ApplyBuff(_env, global.FriendField(_env), {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"MGNa_Kick"
+				}
+			}, {
+				buff
+			})
+
+			local buffeft2 = global.NumericEffect(_env, "+atkrate", {
+				"+Normal",
+				"+Normal"
+			}, this.AtkRateFactor)
+
+			global.ApplyBuff_Buff(_env, _env.ACTOR, _env.ACTOR, {
+				timing = 0,
+				duration = 99,
+				tags = {
+					"STATUS",
+					"NUMERIC",
+					"Skill_MGNa_Passive_EX1",
+					"UNDISPELLABLE",
+					"UNSTEALABLE"
+				}
+			}, {
+				buffeft2
+			}, 1, 0)
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOERateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"Skill_MGNa_Passive",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1, 0)
+			end
+
+			for _, unit in global.__iter__(global.FriendUnits(_env, global.PETS - global.SUMMONS - global.MASTER)) do
+				local buffeft = global.RageGainEffect(_env, "+", {
+					"+Normal",
+					"+Normal"
+				}, this.RageSpdactor)
+
+				global.ApplyBuff(_env, unit, {
+					duration = 99,
+					group = "Skill_MGNa_Passive_SelfAwaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"Skill_MGNa_Passive_SelfAwaken",
+						"NUMERIC",
+						"BUFF",
+						"RAGESPEEDUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive2 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+
+		_env.event = externs.event
+
+		assert(_env.event ~= nil, "External variable `event` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				local buffeft1 = global.NumericEffect(_env, "+aoerate", {
+					"+Normal",
+					"+Normal"
+				}, this.AOERateFactor)
+
+				global.ApplyBuff_Buff(_env, _env.ACTOR, _env.unit, {
+					timing = 0,
+					duration = 99,
+					tags = {
+						"STATUS",
+						"NUMERIC",
+						"Skill_MGNa_Passive",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft1
+				}, 1, 0)
+			end
+
+			if global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) and _env.ACTOR ~= _env.unit and global.PETS - global.SUMMONS - global.MASTER(_env, _env.unit) then
+				local buffeft = global.RageGainEffect(_env, "+", {
+					"+Normal",
+					"+Normal"
+				}, this.RageSpdactor)
+
+				global.ApplyBuff(_env, _env.unit, {
+					duration = 99,
+					group = "Skill_MGNa_Passive_SelfAwaken",
+					timing = 0,
+					limit = 1,
+					tags = {
+						"Skill_MGNa_Passive_SelfAwaken",
+						"NUMERIC",
+						"BUFF",
+						"RAGESPEEDUP",
+						"UNDISPELLABLE",
+						"UNSTEALABLE"
+					}
+				}, {
+					buffeft
+				})
+			end
+		end)
+
+		return _env
+	end,
+	passive3 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			for _, unit in global.__iter__(global.FriendUnits(_env)) do
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive"), 99)
+				global.DispelBuff(_env, unit, global.BUFF_MARKED(_env, "Skill_MGNa_Passive_SelfAwaken"), 99)
+
+				if (global.MARKED(_env, "ASSASSIN")(_env, unit) or global.MARKED(_env, "MAGE")(_env, unit)) and global.PETS - global.SUMMONS - global.MASTER(_env, unit) then
+					global.ApplyRPRecovery(_env, unit, this.RageFactor)
+				end
+			end
+		end)
+
+		return _env
+	end,
+	passive4 = function (_env, externs)
+		local this = _env.this
+		local global = _env.global
+		local exec = _env["$executor"]
+		_env.ACTOR = externs.ACTOR
+
+		assert(_env.ACTOR ~= nil, "External variable `ACTOR` is not provided.")
+
+		_env.unit = externs.unit
+
+		assert(_env.unit ~= nil, "External variable `unit` is not provided.")
+		exec["@time"]({
+			0
+		}, _env, function (_env)
+			local this = _env.this
+			local global = _env.global
+
+			if global.MARKED(_env, "MGNa")(_env, _env.unit) and global.GetSide(_env, _env.unit) == global.GetSide(_env, _env.ACTOR) then
+				for _, unit_one in global.__iter__(global.FriendUnits(_env)) do
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED(_env, "Skill_MGNa_Passive"), 99)
+					global.DispelBuff(_env, unit_one, global.BUFF_MARKED(_env, "Skill_MGNa_Passive_SelfAwaken"), 99)
 				end
 			end
 		end)

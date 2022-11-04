@@ -1155,6 +1155,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_SGHQShou": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_SGHQShou",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "SGHQShou",
+                    "HLDKen"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "CKFSJi",
+                    "BHTZi",
+                    "HGEr"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_SGHQShou_Show",
+        "RoleModel": "Model_SGHQShou",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_SLMen": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",

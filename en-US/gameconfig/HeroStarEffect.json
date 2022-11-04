@@ -2702,6 +2702,58 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "BHTZi_IA_1": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_BHTZi_1"
+        ],
+        "HeroId": "BHTZi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 10,
+        "NextId": "BHTZi_IA_2",
+        "SpecialEffect": [],
+        "Speed": 150,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 60,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
+    "BHTZi_IA_2": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_IA_BHTZi_2"
+        ],
+        "HeroId": "BHTZi",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": 11,
+        "NextId": "",
+        "SpecialEffect": [
+            "IA_BHTZi_1"
+        ],
+        "Speed": 175,
+        "Star": 6,
+        "StarStive": "",
+        "StarUpCost": "",
+        "StarUpFactor": 90,
+        "UpNeedItem": {
+            "IM_MasterStage_Exp": 500
+        },
+        "Visible": 1
+    },
     "BLTu_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,

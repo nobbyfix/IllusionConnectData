@@ -179,13 +179,13 @@ all.Skill_GLFu_L_Unique = {
 		this.RageFactor = externs.RageFactor
 
 		if this.RageFactor == nil then
-			this.RageFactor = 100
+			this.RageFactor = 200
 		end
 
 		this.RealDamageFactor = externs.RealDamageFactor
 
 		if this.RealDamageFactor == nil then
-			this.RealDamageFactor = 0.3
+			this.RealDamageFactor = 0.5
 		end
 
 		this.DeRageFactor = externs.DeRageFactor
@@ -263,6 +263,11 @@ all.Skill_GLFu_L_Unique = {
 			local result = global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, this.DeRageFactor)
+			global.ShakeScreen(_env, {
+				Id = 3,
+				duration = 20,
+				enhance = 5
+			})
 
 			if global.INSTATUS(_env, "SMALL")(_env, _env.ACTOR) then
 				if global.FriendMaster(_env) then
@@ -832,13 +837,13 @@ all.Skill_GLFu_L_Unique_EX = {
 		this.RageFactor = externs.RageFactor
 
 		if this.RageFactor == nil then
-			this.RageFactor = 200
+			this.RageFactor = 300
 		end
 
 		this.RealDamageFactor = externs.RealDamageFactor
 
 		if this.RealDamageFactor == nil then
-			this.RealDamageFactor = 0.5
+			this.RealDamageFactor = 0.7
 		end
 
 		this.DeRageFactor = externs.DeRageFactor
@@ -916,6 +921,11 @@ all.Skill_GLFu_L_Unique_EX = {
 			local result = global.ApplyHPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, damage)
 
 			global.ApplyRPDamage_ResultCheck(_env, _env.ACTOR, _env.TARGET, this.DeRageFactor)
+			global.ShakeScreen(_env, {
+				Id = 3,
+				duration = 20,
+				enhance = 5
+			})
 
 			if global.INSTATUS(_env, "SMALL")(_env, _env.ACTOR) then
 				if global.FriendMaster(_env) then
@@ -1036,7 +1046,7 @@ all.Skill_GLFu_L_Passive_EX = {
 		this.MaxHpFactor = externs.MaxHpFactor
 
 		if this.MaxHpFactor == nil then
-			this.MaxHpFactor = 0.05
+			this.MaxHpFactor = 0.08
 		end
 
 		this.RageSpdactor = externs.RageSpdactor
