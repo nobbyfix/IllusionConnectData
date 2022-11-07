@@ -11406,6 +11406,32 @@
             "slot": "Hero_Proud_SGHQShou"
         }
     },
+    "StarSE_SGHQShou_Awake": {
+        "Desc": "StarSE_SGHQShou_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_SGHQShou_Awaken",
+            "before": "Hero_PBattle_SGHQShou_EX",
+            "slot": "Hero_PBattle_SGHQShou"
+        }
+    },
+    "StarSE_SGHQShou_Awake_Show": {
+        "Desc": "",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": 1,
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_SGHQShou_Awaken_Show",
+            "before": "Hero_Unique_SGHQShou_EX",
+            "slot": "Hero_Unique_SGHQShou"
+        }
+    },
     "StarSE_SLMen_4": {
         "Desc": "StarSE_SLMen_4_Desc",
         "EffectType": "CHANGESKILL",

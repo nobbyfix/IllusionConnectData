@@ -3634,7 +3634,6 @@ function HomeMediator:checkExtraRedPoint()
 	end
 
 	extActBtn:setPositionX(chargeBtn:getPositionX())
-	extActBtn:setVisible(false)
 
 	if chargeBtn:isVisible() then
 		extActBtn:setPositionX(chargeBtn:getPositionX() - 120)

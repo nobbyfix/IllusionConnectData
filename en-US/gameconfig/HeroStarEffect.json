@@ -17268,6 +17268,32 @@
         "UpNeedItem": "",
         "Visible": 1
     },
+    "SGHQShou_Awake": {
+        "AtkStarBaseValue": 2000.0,
+        "AtkStarFactor": 20.0,
+        "DefStarBaseValue": 600.0,
+        "DefStarFactor": 6.0,
+        "Effect": [
+            "Star_SGHQShou_Awake"
+        ],
+        "HeroId": "SGHQShou",
+        "HpStarBaseValue": 8000.0,
+        "HpStarFactor": 80.0,
+        "MiniStar": "",
+        "NeedLove": "",
+        "NextId": "",
+        "SpecialEffect": [
+            "StarSE_SGHQShou_Awake",
+            "StarSE_SGHQShou_Awake_Show"
+        ],
+        "Speed": 135,
+        "Star": 6,
+        "StarStive": 7200,
+        "StarUpCost": 60000,
+        "StarUpFactor": 240,
+        "UpNeedItem": "",
+        "Visible": 1
+    },
     "SLMen_1": {
         "AtkStarBaseValue": 0.0,
         "AtkStarFactor": 0.0,

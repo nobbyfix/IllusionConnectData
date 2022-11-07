@@ -703,6 +703,28 @@
         "StoryLink": "S11S01",
         "SurfaceId": "Surface_SDTZi_Awake"
     },
+    "SGHQShou": {
+        "AnimSound": "",
+        "Animation": "",
+        "CutIn": [
+            -150,
+            0,
+            0.84
+        ],
+        "IAId": "",
+        "ModelId": "Model_SGHQShou",
+        "Name": "SGHQShou_Awake_Name",
+        "NameDesc": "SGHQShou_Awake_Desc",
+        "NeedLove": 10,
+        "Portrait": "Model_SGHQShou",
+        "Reward": "HeroAwaken_SGHQShou",
+        "ShowHero": "SGHQShou",
+        "Since": "qm_bg_bj",
+        "StandVFX": "CounterRateUp",
+        "StarId": "SGHQShou_Awake",
+        "StoryLink": "S11S01",
+        "SurfaceId": "Surface_SGHQShou_1"
+    },
     "SLMen": {
         "AnimSound": "Se_Effect_Awakening_SLMen",
         "Animation": "ltnan_Awaken",
