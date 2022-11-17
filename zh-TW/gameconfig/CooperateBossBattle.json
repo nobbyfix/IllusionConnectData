@@ -512,6 +512,25 @@
             }
         ]
     },
+    "CooperateBoss_PGNNi": {
+        "BGM": [
+            "Mus_Battle_Whale",
+            "",
+            ""
+        ],
+        "Background": "Battle_Scene_27",
+        "BlockBattleConfig": "CooperateBoss_Stage_1",
+        "EnemyCard": "CooperateBoss_1",
+        "EnemyMaster": "CooperateBoss_PGNNi",
+        "Name": "HeroBase_Name_PGNNi",
+        "PointHead": "Model_PGNNi",
+        "VictoryConditions": [
+            {
+                "type": "TimeOut",
+                "winner": "SideB"
+            }
+        ]
+    },
     "CooperateBoss_QBTe": {
         "BGM": [
             "Mus_Battle_Whale",

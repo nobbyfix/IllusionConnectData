@@ -8844,7 +8844,8 @@
         "Speed": 50,
         "StarId": "GLFu_L_1",
         "SurfaceList": [
-            "Surface_GLFu_L_1"
+            "Surface_GLFu_L_1",
+            "Surface_GLFu_L_2"
         ],
         "TeamSpecialVoice": {},
         "TimeType": "\"2002-01-28 19:00:00\"",
@@ -20533,7 +20534,7 @@
         "AtkRate": 1.0,
         "AtkWeaken": 0.0,
         "AttackFactor": 0.72,
-        "AwakePic": "",
+        "AwakePic": "portrait_yqing",
         "BaseAttack": 165.0,
         "BaseDefence": 66.0,
         "BaseHp": 936.0,
@@ -31234,7 +31235,7 @@
         "HeroStoryMap": "",
         "HpFactor": 0.73,
         "HurtRate": 0.0,
-        "IfHidden": 0,
+        "IfHidden": 1,
         "InnerAttr": [],
         "ItemId": "IHF_XXFSi",
         "KeyPassiveSkill": "",
