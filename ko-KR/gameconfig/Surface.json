@@ -4089,6 +4089,64 @@
         "Type": 1,
         "Unlook": 1
     },
+    "Surface_GLFu_L_2": {
+        "ActivityId": "",
+        "AnimeList": "",
+        "ClickAction": [
+            {
+                "action": "touch2",
+                "part": "head",
+                "point": [
+                    103,
+                    890
+                ],
+                "range": [
+                    128,
+                    128
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "body",
+                "point": [
+                    138,
+                    735
+                ],
+                "range": [
+                    128,
+                    95
+                ]
+            },
+            {
+                "action": "touch1",
+                "part": "all",
+                "point": [
+                    "all"
+                ],
+                "range": [
+                    0,
+                    0
+                ]
+            }
+        ],
+        "Desc": "Surface_GLFu_L_s_Desc",
+        "GainDesc": "Surface_Shop_GainDesc",
+        "GainShortDesc": "Surface_GLFu_L_2_GainShort",
+        "GoodsId": "ShopSurface_Surface_GLFu_L_2_1201",
+        "Hero": "GLFu_L",
+        "Link": "",
+        "LongDesc": "Surface_GLFu_L_s_LongDesc",
+        "Model": "Model_GLFu_L_s",
+        "Name": "Surface_GLFu_L_s_Name",
+        "NotGetUnlook": "",
+        "Quality": 5,
+        "RepeatReward": 118,
+        "SKIN": "",
+        "ShopID": "Shop_Surface",
+        "Sort": 3,
+        "Type": 2,
+        "Unlook": 1
+    },
     "Surface_GLin_1": {
         "ActivityId": "",
         "AnimeList": "",
