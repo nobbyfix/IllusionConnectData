@@ -1062,6 +1062,37 @@
         "Time": 1800,
         "Type": "Normal"
     },
+    "CooperateBoss_PGNNi": {
+        "AwakenAttrEffect": "ExcellentHero_Awaken",
+        "AwakenBoss": "",
+        "BossBattle": "CooperateBoss_PGNNi",
+        "ExcellentHero": [
+            {
+                "Effect": "ExcellentHero_Attr_Big",
+                "Hero": [
+                    "PGNNi",
+                    "FTLYShi"
+                ]
+            },
+            {
+                "Effect": "ExcellentHero_Attr_Small",
+                "Hero": [
+                    "BDZSheng",
+                    "XDE",
+                    "JNLong"
+                ]
+            }
+        ],
+        "Revelry": "",
+        "RewardRevelry": "",
+        "RewardShow": "CooperateBossMain_PGNNi_Show",
+        "RoleModel": "Model_PGNNi",
+        "StarsAttrEffect": "ExcellentHero_Stars",
+        "Story": [],
+        "TiggerAwaken": "",
+        "Time": 1800,
+        "Type": "Normal"
+    },
     "CooperateBoss_QBTe": {
         "AwakenAttrEffect": "ExcellentHero_Awaken",
         "AwakenBoss": "",
