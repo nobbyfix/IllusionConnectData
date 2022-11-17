@@ -4799,6 +4799,19 @@
             "slot": "Hero_PBattle_HSheng"
         }
     },
+    "IA_JNLong_1": {
+        "Desc": "StarSE_JNLong_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_JNLong_SelfAwaken",
+            "before": "Hero_PBattle_JNLong_Awaken",
+            "slot": "Hero_PBattle_JNLong"
+        }
+    },
     "IA_LDu_1": {
         "Desc": "StarSE_LDu_IA1_Desc",
         "EffectType": "CHANGESKILL",
@@ -11105,6 +11118,19 @@
             "after": "Hero_Proud_PGNNi_EX",
             "before": "Hero_Proud_PGNNi",
             "slot": "Hero_Proud_PGNNi"
+        }
+    },
+    "StarSE_PGNNi_Awake": {
+        "Desc": "StarSE_PGNNi_Awake_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_Unique_PGNNi_Awaken",
+            "before": "Hero_Unique_PGNNi_EX",
+            "slot": "Hero_Unique_PGNNi"
         }
     },
     "StarSE_PNCao_3": {

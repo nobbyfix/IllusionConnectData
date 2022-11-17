@@ -5060,6 +5060,40 @@ local data = {
 		"asset/anim/global_bqds_yx.plist",
 		"asset/anim/global_bqds_sy.plist"
 	},
+	["swfte_s.skel"] = {
+		"asset/anim/global_ruchang_beiguang.plist",
+		"asset/anim/global_swfte_s_skill2_kqadd.plist",
+		"asset/anim/spine_YFZZhu.plist",
+		"asset/anim/swfte_s2.plist",
+		"asset/anim/global_ruchang_xialuo.plist",
+		"asset/anim/global_swfte_s_skill2_ywadd.plist",
+		"asset/anim/ninja1.plist",
+		"asset/anim/global_swfte_s_skill3x_cc.plist",
+		"asset/anim/global_swfte_s_skill3x_ccadd.plist",
+		"asset/anim/global_swfte_s_skill3x_cs.plist",
+		"asset/anim/global_swfte_s_skill3x_bd.plist",
+		"asset/anim/global_swfte_s_skill3x_bdadd.plist",
+		"asset/anim/global_swfte_s_skill1_sjxadd.plist",
+		"asset/anim/global_swfte_s_skill3d_sjxadd.plist",
+		"asset/anim/swfte_s1.plist",
+		"asset/anim/global_swfte_s_skill2_yw.plist",
+		"asset/anim/global_swfte_s_skill1_sf.plist",
+		"asset/anim/global_swfte_s_skill2_qqadd.plist",
+		"asset/anim/global_swfte_s_skill1_sj.plist",
+		"asset/anim/global_swfte_s_skill1_sjx.plist",
+		"asset/anim/global_swfte_s_skill2_lj.plist",
+		"asset/anim/global_swfte_s_skill2_sf.plist",
+		"asset/anim/global_swfte_s_skill1_sjadd.plist",
+		"asset/anim/global_swfte_s_skill2_sj.plist",
+		"asset/anim/global_swfte_s_skill3x_cy.plist",
+		"asset/anim/global_swfte_s_skill3x_ry.plist",
+		"asset/anim/global_swfte_s_skill1_sfadd.plist",
+		"asset/anim/global_swfte_s_skill2_kq.plist",
+		"asset/anim/global_ruchang_landian.plist",
+		"asset/anim/global_swfte_s_skill2_sjadd.plist",
+		"asset/anim/swfte_s.plist",
+		"asset/anim/global_ruchang_dixian.plist"
+	},
 	["BBLMa.skel"] = {
 		"asset/anim/global_xrc_dizuo.plist",
 		"asset/anim/global_bblm_skill3_xdg.plist",
@@ -7436,6 +7470,9 @@ local data = {
 		"asset/anim/global_ruchang_dixian.plist",
 		"asset/anim/global_glte_sk3_gx.plist",
 		"asset/anim/global_glte_sk3_dc.plist"
+	},
+	["portrait_swfte_s.skel"] = {
+		"asset/anim/portrait_swfte_s.plist"
 	},
 	["portraitpic_SDTZi_DYMEr.skel"] = {
 		"asset/anim/global_SWMXue_lihui_ouxiang_xx_02.plist",
