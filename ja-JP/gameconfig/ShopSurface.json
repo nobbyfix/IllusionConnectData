@@ -361,7 +361,7 @@
         }
     },
     "ShopSurface_Surface_GLFu_L_2_1201": {
-        "BackGroundImg": "sd_bg",
+        "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",
         "Cost": [
             {
@@ -813,6 +813,25 @@
         "TimeType": {
             "end": "2021-12-06 05:00:00",
             "start": "2021-12-04 05:00:00",
+            "type": "limit"
+        }
+    },
+    "ShopSurface_Surface_SP_PNCao_2_1201": {
+        "BackGroundImg": "sd_pf_bg",
+        "ClientCondition": "",
+        "Cost": [
+            {
+                "amount": 1180,
+                "code": "IR_Diamond"
+            }
+        ],
+        "Hide": 1,
+        "ServerCondition": "",
+        "Sort": 2002,
+        "Surface": "Surface_SP_PNCao_2",
+        "TimeType": {
+            "end": "2022-12-08 05:00:00",
+            "start": "2022-12-01 05:00:00",
             "type": "limit"
         }
     },

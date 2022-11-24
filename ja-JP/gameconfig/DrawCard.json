@@ -35565,8 +35565,12 @@
         "Rank": 80,
         "Rebate": "",
         "ResourcesBanner": "",
-        "ReviewText": "",
-        "ReviewTextSpecial": "",
+        "ReviewText": [
+            "Notes_SP_Desc"
+        ],
+        "ReviewTextSpecial": [
+            "Notes_SP_Special"
+        ],
         "Reward": [
             "DrawCard_SP_PNCao_20221209_1",
             "DrawCard_SP_PNCao_20221209_10"
@@ -35644,7 +35648,9 @@
             "Draw_HeroBtnName": "DrawCard_SP_WTXXuan__HeroShow"
         },
         "SpecialReward": "",
-        "Tag": "",
+        "Tag": [
+            "1UP"
+        ],
         "TimeRewardId": [
             "TimeReward_SP_PNCao_20221209_1",
             "TimeReward_SP_PNCao_20221209_2",

@@ -4838,6 +4838,19 @@
             "slot": "Hero_PBattle_LFEr"
         }
     },
+    "IA_MGNa_1": {
+        "Desc": "StarSE_MGNa_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_MGNa_SelfAwaken",
+            "before": "Hero_PBattle_MGNa_EX",
+            "slot": "Hero_PBattle_MGNa"
+        }
+    },
     "IA_MLYTLSha_1": {
         "Desc": "StarSE_MLYTLSha_IA1_Desc",
         "EffectType": "CHANGESKILL",
@@ -4868,6 +4881,19 @@
         "IsHidden": "",
         "Name": "",
         "Parameter": {}
+    },
+    "IA_MTZMEShi_1": {
+        "Desc": "StarSE_MTZMEShi_IA1_Desc",
+        "EffectType": "CHANGESKILL",
+        "GrowType": "",
+        "Icon": "",
+        "IsHidden": "",
+        "Name": "",
+        "Parameter": {
+            "after": "Hero_PBattle_MTZMEShi_SelfAwaken",
+            "before": "Hero_PBattle_MTZMEShi_EX",
+            "slot": "Hero_PBattle_MTZMEShi"
+        }
     },
     "IA_SDTZi_1": {
         "Desc": "StarSE_SDTZi_IA1_Desc",
