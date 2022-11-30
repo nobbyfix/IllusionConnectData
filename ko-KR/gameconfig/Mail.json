@@ -1299,6 +1299,19 @@
         "TopStatus": 0,
         "Type": "USER"
     },
+    "Mail_Fin": {
+        "Content": "Mail_Fin_content",
+        "ExpireAfterRead": 72000,
+        "ExpireTime": 0,
+        "Icon": "",
+        "Name": "Mail_Sender",
+        "QuickGet": 1,
+        "Reward": "",
+        "SubType": 1,
+        "Title": "Mail_Fin_Title",
+        "TopStatus": 0,
+        "Type": "USER"
+    },
     "Mail_FireWorks_AchieveMentTask_Activity": {
         "Content": "Mail_FireWorks_AchieveMentTask_Activity_Content",
         "ExpireAfterRead": 72000,
