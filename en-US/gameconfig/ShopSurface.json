@@ -280,12 +280,12 @@
         }
     },
     "ShopSurface_Surface_GLFu_L_2_1201": {
-        "BackGroundImg": "sd_bg",
+        "BackGroundImg": "sd_pf_bg",
         "ClientCondition": "",
         "Cost": [
             {
-                "amount": 118,
-                "code": "IR_Surface"
+                "amount": 1180,
+                "code": "IR_Diamond"
             }
         ],
         "DrawCard_Id": "",
@@ -294,8 +294,8 @@
         "Sort": 2002,
         "Surface": "Surface_GLFu_L_2",
         "TimeType": {
-            "end": "2022-12-21 05:00:00",
-            "start": "2022-12-16 05:00:00",
+            "end": "2022-12-08 05:00:00",
+            "start": "2022-12-01 05:00:00",
             "type": "limit"
         }
     },
