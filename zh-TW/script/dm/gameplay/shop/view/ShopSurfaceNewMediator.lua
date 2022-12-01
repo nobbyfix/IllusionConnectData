@@ -455,6 +455,11 @@ end
 
 function ShopSurfaceNewMediator:refreshPackage()
 	local data = self._packageItems[1]
+
+	if not data then
+		return
+	end
+
 	local panel = self._mainPanel:getChildByFullName("rightPanel.package.cell")
 	local iconLayout = panel:getChildByFullName("icon_layout")
 	local nameText = panel:getChildByFullName("goods_name")

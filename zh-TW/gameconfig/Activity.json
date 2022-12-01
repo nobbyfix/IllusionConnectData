@@ -35514,7 +35514,7 @@
             "LEVEL": 1
         },
         "Desc": "Aishop_Desc",
-        "Enable": 1,
+        "Enable": 0,
         "Icon": "",
         "LeftBanner": "hd_btn_aishop",
         "Loop": "",
@@ -57126,10 +57126,10 @@
         "Tag": "",
         "Time": "RANGE_CONTINUE",
         "TimeFactor": {
-            "end": "2022-11-17 05:00:00",
+            "end": "2022-12-17 05:00:00",
             "start": [
-                "2022-11-06 05:00:00",
-                "2022-11-17 05:00:00"
+                "2022-12-06 05:00:00",
+                "2022-12-17 05:00:00"
             ]
         },
         "Title": "DrawCard_SP_PNCao_Activity_Name",
@@ -57162,10 +57162,10 @@
         "Tag": "",
         "Time": "RANGE_CONTINUE",
         "TimeFactor": {
-            "end": "2022-11-09 05:00:00",
+            "end": "2022-12-09 05:00:00",
             "start": [
-                "2022-11-06 05:00:00",
-                "2022-11-09 05:00:00"
+                "2022-12-06 05:00:00",
+                "2022-12-09 05:00:00"
             ]
         },
         "Title": "DrawCard_SP_PNCao_Activity_Daily_Name",
